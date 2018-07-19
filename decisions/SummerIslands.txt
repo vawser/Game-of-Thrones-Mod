@@ -1,0 +1,93 @@
+country_decisions = {
+	practice_the_act_of_lovemaking = {
+		potential = {
+			culture_group = culture_summer_isles
+			NOT = { has_ruler_modifier = act_of_lovemaking }
+		}
+		allow = {
+			culture_group = culture_summer_isles
+			NOT = { has_ruler_modifier = act_of_lovemaking }
+			
+			adm_power = 50
+			dip_power = 50
+			mil_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+			
+			add_ruler_modifier = {
+				name = act_of_lovemaking
+				duration = -1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	construct_swan_ships = {
+		potential = {
+			culture_group = culture_summer_isles
+			NOT = { has_country_modifier = constructing_swan_ships }
+		}
+		allow = {
+			NOT = { has_country_modifier = constructing_swan_ships }
+            OR  = {
+                has_idea_group = raiding_ideas
+                has_idea_group = navy_combat_ideas
+                has_idea_group = navy_recruitment_ideas
+                has_idea_group = navy_organisation_ideas
+                has_idea_group = navy_leadership_ideas
+            }
+			years_of_income = 1
+		}
+		effect = {
+			add_years_of_income = -1
+			
+			add_country_modifier = {
+				name = constructing_swan_ships
+				duration = -1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	export_goldenwood_bows = {
+		potential = {
+			culture_group = culture_summer_isles
+			NOT = { has_ruler_modifier = exported_goldenwood_bows }
+		}
+		allow = {
+            OR  = {
+                has_idea_group = foreign_trade_ideas
+                has_idea_group = domestic_trade_ideas
+                has_idea_group = naval_trade_ideas
+            }
+			NOT = { has_ruler_modifier = exported_goldenwood_bows }
+			
+			adm_power = 50
+			dip_power = 50
+			mil_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+			
+			add_ruler_modifier = {
+				name = exported_goldenwood_bows
+				duration = 3650
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

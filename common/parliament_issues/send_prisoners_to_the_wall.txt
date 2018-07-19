@@ -1,0 +1,33 @@
+send_prisoners_to_the_wall = {
+	category = 2 		# same category = 90% less likely
+
+	allow = {
+		A02 = {
+			has_opinion = {
+				who = ROOT
+				value = 0
+			}
+		}
+		capital_scope = {
+			continent = europe 
+		}
+		NOT = { tag = A02 }
+	}
+	
+	effect = {
+		
+	}
+	
+	modifier = {
+		diplomatic_reputation = 1
+		ae_impact = -0.05
+	}
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}

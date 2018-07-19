@@ -1,0 +1,82 @@
+namespace = GOT_BATTLES
+
+#title: $FROMCOUNTRY$ has humiliated us!
+#desc: Our poor performance during a recent battle has brought $MONARCH$ $MONARCHTITLE$'s legitimacy into question.
+#1: Damn them!
+country_event = {
+	id = GOT_BATTLES.1
+	title = GOT_BATTLES.1.title
+	desc = GOT_BATTLES.1.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { tag = REB }
+	}
+	
+	option = {
+		name = GOT_BATTLES.1.option.a
+		
+		add_legitimacy = -5
+		add_prestige = -5
+	}
+}
+
+#title: We humiliated $FROMCOUNTRY$
+#desc: Our excellent performance during a recent battle has given the legitimacy of $MONARCH$ $MONARCHTITLE$'s rule a much needed bolster among [Root.Monarch.GetHerHis] people. 
+#1: Wonderful!
+country_event = {
+	id = GOT_BATTLES.2
+	title = GOT_BATTLES.2.title
+	desc = GOT_BATTLES.2.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { FROM = { tag = REB } }
+	}
+	
+	option = {
+		name = GOT_BATTLES.2.option.a
+		
+		add_legitimacy = 5
+		add_prestige = 5
+	}
+}
+
+# Royal House control
+country_event = {
+	id = GOT_BATTLES.3
+	title = GOT_BATTLES.3.title
+	desc = GOT_BATTLES.3.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			government = kingdom
+			government_rank = 3
+			capital_scope = {
+				continent = europe
+			}
+		}
+		government = kingdom
+		government_rank = 2
+		capital_scope = {
+			continent = europe
+		}
+		NOT = { has_global_flag = rr_war }
+	}
+	
+	option = {
+		name = GOT_BATTLES.2.option.a
+		
+		FROM = {
+			set_government_rank = 2
+		}
+		set_government_rank = 3
+	}
+}

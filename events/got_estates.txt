@@ -1,0 +1,856 @@
+namespace = GOT_ESTATES
+
+# A Noble Predicament
+country_event = {
+	id = GOT_ESTATES.1
+	title = GOT_ESTATES.1.title
+	desc = GOT_ESTATES.1.desc
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Cossacks"
+		has_estate = estate_nobles
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_nobles
+                modifier = EST_VAL_RESOLVED_PREDICAMENT
+            }
+        }
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_nobles
+                modifier = EST_VAL_PREDICAMENT_INFLUENCE
+            }
+        }
+	}
+	
+	option = {
+		name = GOT_ESTATES.1.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_nobles
+			desc = EST_VAL_RESOLVED_PREDICAMENT
+			influence = 15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				
+				estate_influence = {
+					estate = estate_nobles
+					influence = 60
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_ESTATES.1.option.b
+		
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_nobles
+			desc = EST_VAL_PREDICAMENT_INFLUENCE
+			influence = -15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# A Holy Predicament
+country_event = {
+	id = GOT_ESTATES.2
+	title = GOT_ESTATES.2.title
+	desc = GOT_ESTATES.2.desc
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Cossacks"
+		has_estate = estate_clergy
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_clergy
+                modifier = EST_VAL_RESOLVED_PREDICAMENT
+            }
+        }
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_clergy
+                modifier = EST_VAL_PREDICAMENT_INFLUENCE
+            }
+        }
+	}
+	
+	option = {
+		name = GOT_ESTATES.2.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_clergy
+			loyalty = 15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_clergy
+			desc = EST_VAL_RESOLVED_PREDICAMENT
+			influence = 15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				
+				estate_influence = {
+					estate = estate_clergy
+					influence = 60
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_ESTATES.2.option.b
+		
+		add_estate_loyalty = {
+			estate = estate_clergy
+			loyalty = -15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_clergy
+			desc = EST_VAL_PREDICAMENT_INFLUENCE
+			influence = -15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# A Trade Predicament
+country_event = {
+	id = GOT_ESTATES.3
+	title = GOT_ESTATES.3.title
+	desc = GOT_ESTATES.3.desc
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Cossacks"
+		has_estate = estate_merchants
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_merchants
+                modifier = EST_VAL_RESOLVED_PREDICAMENT
+            }
+        }
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_merchants
+                modifier = EST_VAL_PREDICAMENT_INFLUENCE
+            }
+        }
+	}
+	
+	option = {
+		name = GOT_ESTATES.3.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_merchants
+			loyalty = 15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_merchants
+			desc = EST_VAL_RESOLVED_PREDICAMENT
+			influence = 15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				
+				estate_influence = {
+					estate = estate_merchants
+					influence = 60
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_ESTATES.3.option.b
+		
+		add_estate_loyalty = {
+			estate = estate_merchants
+			loyalty = -15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_merchants
+			desc = EST_VAL_PREDICAMENT_INFLUENCE
+			influence = -15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# A Land Predicament
+country_event = {
+	id = GOT_ESTATES.4
+	title = GOT_ESTATES.4.title
+	desc = GOT_ESTATES.4.desc
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Cossacks"
+		has_estate = estate_commoners
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_commoners
+                modifier = EST_VAL_RESOLVED_PREDICAMENT
+            }
+        }
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_commoners
+                modifier = EST_VAL_PREDICAMENT_INFLUENCE
+            }
+        }
+	}
+	
+	option = {
+		name = GOT_ESTATES.4.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_commoners
+			loyalty = 15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_commoners
+			desc = EST_VAL_RESOLVED_PREDICAMENT
+			influence = 15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				
+				estate_influence = {
+					estate = estate_commoners
+					influence = 60
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_ESTATES.4.option.b
+		
+		add_estate_loyalty = {
+			estate = estate_commoners
+			loyalty = -15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_commoners
+			desc = EST_VAL_PREDICAMENT_INFLUENCE
+			influence = -15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# Chieftains Quarrel
+country_event = {
+	id = GOT_ESTATES.5
+	title = GOT_ESTATES.5.title
+	desc = GOT_ESTATES.5.desc
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Cossacks"
+		has_estate = estate_chieftains
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_chieftains
+                modifier = EST_VAL_QUARRELING_CHIEFTAINS
+            }
+        }
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_chieftains
+                modifier = EST_VAL_PREDICAMENT_INFLUENCE
+            }
+        }
+	}
+	
+	option = {
+		name = GOT_ESTATES.5.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_chieftains
+			loyalty = 15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_chieftains
+			desc = EST_VAL_QUARRELING_CHIEFTAINS
+			influence = 15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				
+				estate_influence = {
+					estate = estate_chieftains
+					influence = 60
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_ESTATES.5.option.b
+		
+		add_estate_loyalty = {
+			estate = estate_chieftains
+			loyalty = -15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_chieftains
+			desc = EST_VAL_PREDICAMENT_INFLUENCE
+			influence = -15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# Feuding Magi
+country_event = {
+	id = GOT_ESTATES.6
+	title = GOT_ESTATES.6.title
+	desc = GOT_ESTATES.6.desc
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Cossacks"
+		has_estate = estate_magi
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_magi
+                modifier = EST_VAL_FEUDING_MAGI
+            }
+        }
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_magi
+                modifier = EST_VAL_PREDICAMENT_INFLUENCE
+            }
+        }
+	}
+	
+	option = {
+		name = GOT_ESTATES.6.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_magi
+			loyalty = 15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_magi
+			desc = EST_VAL_FEUDING_MAGI
+			influence = 15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				
+				estate_influence = {
+					estate = estate_magi
+					influence = 60
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_ESTATES.6.option.b
+		
+		add_estate_loyalty = {
+			estate = estate_magi
+			loyalty = -15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_magi
+			desc = EST_VAL_PREDICAMENT_INFLUENCE
+			influence = -15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# Troublesome Bloodriders
+country_event = {
+	id = GOT_ESTATES.7
+	title = GOT_ESTATES.7.title
+	desc = GOT_ESTATES.7.desc
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Cossacks"
+		has_estate = estate_khalasar
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_khalasar
+                modifier = EST_VAL_TROUBLESOME_BLOODRIDERS
+            }
+        }
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_khalasar
+                modifier = EST_VAL_PREDICAMENT_INFLUENCE
+            }
+        }
+	}
+	
+	option = {
+		name = GOT_ESTATES.7.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_khalasar
+			loyalty = 15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_khalasar
+			desc = EST_VAL_TROUBLESOME_BLOODRIDERS
+			influence = 15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				
+				estate_influence = {
+					estate = estate_khalasar
+					influence = 60
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_ESTATES.7.option.b
+		
+		add_estate_loyalty = {
+			estate = estate_khalasar
+			loyalty = -15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_khalasar
+			desc = EST_VAL_PREDICAMENT_INFLUENCE
+			influence = -15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+#------------------------------
+# Disaster Events
+#------------------------------
+# Nobles
+country_event = {
+	id = GOT_ESTATES.50
+	title = GOT_ESTATES.50.title
+	desc = GOT_ESTATES.50.desc
+	picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = noble_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATES.50.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_NOBLES_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATES.51
+	title = GOT_ESTATES.51.title
+	desc = GOT_ESTATES.51.desc
+	picture = NOBLE_ESTATE_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATES.51.option.a
+	}
+}
+
+# Clergy
+country_event = {
+	id = GOT_ESTATES.52
+	title = GOT_ESTATES.52.title
+	desc = GOT_ESTATES.52.desc
+	picture = CLERGY_ESTATE_TAKE_OVER_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = clergy_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATES.52.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_CLERGY_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATES.53
+	title = GOT_ESTATES.53.title
+	desc = GOT_ESTATES.53.desc
+	picture = CLERGY_ESTATE_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATES.53.option.a
+	}
+}
+
+# Merchants
+country_event = {
+	id = GOT_ESTATES.54
+	title = GOT_ESTATES.54.title
+	desc = GOT_ESTATES.54.desc
+	picture = BURGHERS_ESTATE_TAKE_OVER_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = merchants_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATES.54.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_MERCHANTS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATES.55
+	title = GOT_ESTATES.55.title
+	desc = GOT_ESTATES.55.desc
+	picture = BURGHERS_ESTATE_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATES.55.option.a
+	}
+}
+
+# Commoners
+country_event = {
+	id = GOT_ESTATES.56
+	title = GOT_ESTATES.56.title
+	desc = GOT_ESTATES.56.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = commoners_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATES.56.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_COMMONERS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATES.57
+	title = GOT_ESTATES.57.title
+	desc = GOT_ESTATES.57.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATES.57.option.a
+	}
+}
+
+# Kos
+country_event = {
+	id = GOT_ESTATES.58
+	title = GOT_ESTATES.58.title
+	desc = GOT_ESTATES.58.desc
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = kos_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATES.58.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_KOS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATES.59
+	title = GOT_ESTATES.59.title
+	desc = GOT_ESTATES.59.desc
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATES.59.option.a
+	}
+}
+
+# Chieftains
+country_event = {
+	id = GOT_ESTATES.60
+	title = GOT_ESTATES.60.title
+	desc = GOT_ESTATES.60.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = chieftains_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATES.60.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_CHIEFTAINS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATES.61
+	title = GOT_ESTATES.61.title
+	desc = GOT_ESTATES.61.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATES.61.option.a
+	}
+}
+
+# Magi
+country_event = {
+	id = GOT_ESTATES.62
+	title = GOT_ESTATES.62.title
+	desc = GOT_ESTATES.62.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = magi_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATES.61.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_MAGI_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATES.63
+	title = GOT_ESTATES.63.title
+	desc = GOT_ESTATES.63.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATES.63.option.a
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

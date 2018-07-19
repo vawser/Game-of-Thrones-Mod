@@ -1,0 +1,495 @@
+namespace = GOT_FAITH_OF_THE_SEVEN
+
+# Ruined Sept in $PROVINCENAME$
+province_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.1
+	title = GOT_FAITH_OF_THE_SEVEN.1.title
+	desc = GOT_FAITH_OF_THE_SEVEN.1.desc
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		owner = { 
+			religion = asoiaf_faith_of_the_seven 
+			papal_influence = 5
+		} 
+		religion = asoiaf_faith_of_the_seven
+	}
+	
+	mean_time_to_happen = {
+		months = 12000
+	}
+
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.1.option.a
+		
+		owner = {
+			add_papal_influence = 5
+			add_years_of_income = -0.1
+			
+			if = {
+				limit = { has_estate = estate_clergy }
+				
+				add_estate_loyalty = {
+					estate = estate_clergy
+					loyalty = 5
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.1.option.b
+		owner = {
+			add_papal_influence = -5
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# A warrior demands representation!
+country_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.2
+	title = GOT_FAITH_OF_THE_SEVEN.2.title
+	desc = GOT_FAITH_OF_THE_SEVEN.2.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = asoiaf_faith_of_the_seven
+		papal_influence = 5
+	}
+	
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.2.option.a
+		
+		if = {
+			limit = { has_estate = estate_clergy }
+				
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 5
+			}
+		}
+			
+		add_papal_influence = 10
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.2.option.b
+		
+		add_papal_influence = 5
+		add_adm_power = 25
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.2.option.c
+		
+		add_papal_influence = -5
+		add_mil_power = 25
+		
+		if = {
+			limit = { has_estate = estate_clergy }
+				
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = -5
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# The begging brother from $PROVINCENAME$ desires a home.
+province_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.3
+	title = GOT_FAITH_OF_THE_SEVEN.3.title
+	desc = GOT_FAITH_OF_THE_SEVEN.3.desc
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	trigger = {
+		owner = { 
+			religion = asoiaf_faith_of_the_seven 
+			papal_influence = 10
+		} 
+		religion = asoiaf_faith_of_the_seven
+		OR = {
+			NOT = { has_province_modifier = begging_brother_1 }
+			NOT = { has_province_modifier = begging_brother_2 }
+			NOT = { has_province_modifier = begging_brother_3 }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12000
+	}
+
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.3.option.a
+		
+		owner = { 
+			add_adm_power = -25
+
+			capital_scope = {
+				add_province_modifier = {
+					name = begging_brother_2
+					duration = 3650
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.3.option.b
+		
+		owner = { add_adm_power = -10 }
+		
+		add_province_modifier = {
+			name = begging_brother_1
+			duration = 3650
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.3.option.c
+		
+		owner = { add_papal_influence = -10 }
+		add_province_modifier = {
+			name = begging_brother_3
+			duration = 3650
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# Our Faith Rewarded!
+country_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.4
+	title = GOT_FAITH_OF_THE_SEVEN.4.title
+	desc = GOT_FAITH_OF_THE_SEVEN.4.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = asoiaf_faith_of_the_seven
+		
+		NOT = { has_country_modifier = faith_reward_faith_of_the_seven }
+		NOT = { num_of_cardinals = 3 }
+		
+		any_owned_province = {
+			is_overseas = no
+			has_cardinal = no
+		}
+	}
+
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.4.option.a
+		
+		hidden_effect = {
+			add_country_modifier = {
+				name = faith_reward_faith_of_the_seven
+				duration = 3650
+			}
+		}
+		
+		if = {
+			limit = { has_estate = estate_clergy }
+				
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 10
+			}
+		}
+		
+		random_owned_province = {
+			limit = {
+				is_overseas = no
+			}
+			
+			add_cardinal = yes
+		}
+	}
+}
+
+
+# Hand of the Father
+country_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.5
+	title = GOT_FAITH_OF_THE_SEVEN.5.title
+	desc = GOT_FAITH_OF_THE_SEVEN.5.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = asoiaf_faith_of_the_seven
+	}
+
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.5.option.a
+		
+		add_prestige = 10
+		
+		if = {
+			limit = { has_estate = estate_clergy }
+				
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 5
+			}
+		}
+	}
+}
+
+# Embrace of the Mother
+country_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.6
+	title = GOT_FAITH_OF_THE_SEVEN.6.title
+	desc = GOT_FAITH_OF_THE_SEVEN.6.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = asoiaf_faith_of_the_seven
+	}
+
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.6.option.a
+		
+		add_stability = 1
+		
+		if = {
+			limit = { has_estate = estate_clergy }
+				
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 5
+			}
+		}
+	}
+}
+
+# Fury of the Warrior
+country_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.7
+	title = GOT_FAITH_OF_THE_SEVEN.7.title
+	desc = GOT_FAITH_OF_THE_SEVEN.7.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = asoiaf_faith_of_the_seven
+	}
+
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.7.option.a
+		
+		add_yearly_manpower = 1
+		
+		if = {
+			limit = { has_estate = estate_clergy }
+				
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 5
+			}
+		}
+	}
+}
+
+# Purity of the Maiden
+country_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.8
+	title = GOT_FAITH_OF_THE_SEVEN.8.title
+	desc = GOT_FAITH_OF_THE_SEVEN.8.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = asoiaf_faith_of_the_seven
+	}
+	
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.8.option.a
+		
+		add_legitimacy = 10
+		
+		if = {
+			limit = { has_estate = estate_clergy }
+				
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 5
+			}
+		}
+	}
+}
+
+# Hammer of the Smith
+country_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.9
+	title = GOT_FAITH_OF_THE_SEVEN.9.title
+	desc = GOT_FAITH_OF_THE_SEVEN.9.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = asoiaf_faith_of_the_seven
+	}
+	
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.9.option.a
+		
+		add_years_of_income = 0.5
+		
+		if = {
+			limit = { has_estate = estate_clergy }
+				
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 5
+			}
+		}
+	}
+}
+
+# Whispers of the Crone
+country_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.10
+	title = GOT_FAITH_OF_THE_SEVEN.10.title
+	desc = GOT_FAITH_OF_THE_SEVEN.10.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = asoiaf_faith_of_the_seven
+	}
+	
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.10.option.a
+		
+		add_adm_power = 33
+		add_dip_power = 33
+		add_mil_power = 33
+		
+		if = {
+			limit = { has_estate = estate_clergy }
+				
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 5
+			}
+		}
+	}
+}
+
+# Presence of the Stranger
+country_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.11
+	title = GOT_FAITH_OF_THE_SEVEN.11.title
+	desc = GOT_FAITH_OF_THE_SEVEN.11.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = asoiaf_faith_of_the_seven
+	}
+	
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.11.option.a
+		
+		random_list = {
+			10 = {
+				add_adm_power = -100
+			}
+			10 = {
+				add_dip_power = -100
+			}
+			10 = {
+				add_mil_power = -100
+			}
+			10 = {
+				add_legitimacy = -25
+			}
+			10 = {
+				add_yearly_manpower = -0.5
+			}
+			10 = {
+				add_stability = -1
+			}
+			10 = {
+				add_prestige = -25
+			}
+			10 = {
+				if = {
+					limit = { has_estate = estate_clergy }
+						
+					add_estate_loyalty = {
+						estate = estate_clergy
+						loyalty = -15
+					}
+				}
+			}
+		}
+	}
+}
+
+# The Song of the Seven
+country_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.12
+	title = GOT_FAITH_OF_THE_SEVEN.12.title
+	desc = GOT_FAITH_OF_THE_SEVEN.12.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = asoiaf_faith_of_the_seven
+	}
+	
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.12.option.a
+		
+		add_papal_influence = 10
+		
+		if = {
+			limit = { has_estate = estate_clergy }
+				
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 5
+			}
+		}
+	}
+}

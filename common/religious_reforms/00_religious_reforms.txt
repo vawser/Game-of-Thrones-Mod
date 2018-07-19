@@ -1,0 +1,43 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+# ai_will do does not actually determine weighting, but AI will not pick an idea with ai_will_do = 0
+# ROOT = country picking the idea
+# groups set to colonial=yes will be higher prioritized by the AI when spending power
+
+dothraki_reforms = {
+	trigger = {
+		religion = asoiaf_the_great_stallion
+	}	
+
+	can_buy_idea = {
+		horde_unity = 100
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+		OR = {
+			stability = 1
+			prestige = 50
+		}
+		NOT = { doom = 50 }
+	}
+	
+	dothraki_reform_1 = {
+		loot_amount = 0.5
+	}
+	dothraki_reform_2 = {
+		reinforce_cost_modifier = -0.50
+	}
+	dothraki_reform_3 = {
+		cavalry_flanking = 0.25
+	}
+	dothraki_reform_4 = {
+		army_tradition_from_battle = 0.5
+	}
+	dothraki_reform_5 = {
+		core_creation = -0.25
+	}	
+	
+	ai_will_do = {
+		factor = 1
+	}
+}

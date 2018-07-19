@@ -1,0 +1,287 @@
+namespace = GOT_OLD_GODS
+
+#title: Preserve the weirwood in $PROVINCENAME$
+#desc: The weirwood in $PROVINCENAME$ has come under threat from various merchants wanting to sell it's lumber. If we grant them access to the wood, it would be a great offence to the gods.
+#1: It is our duty to preserve the weirwoods.
+#2: Money makes beasts of us all.
+province_event = {
+	id = GOT_OLD_GODS.1
+	title = "GOT_OLD_GODS.1t"
+	desc = "GOT_OLD_GODS.1d"
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		religion = asoiaf_the_old_gods
+		owner = { religion = asoiaf_the_old_gods }
+	}
+	
+	mean_time_to_happen = {
+		months = 12000
+	}
+
+	option = {
+		name = "GOT_OLD_GODS.1a"
+		
+		owner = { 
+			add_prestige = 10 
+			
+			if = {
+				limit = { has_estate = estate_clergy }
+					
+				add_estate_loyalty = {
+					estate = estate_clergy
+					loyalty = 5
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+			
+			modifier = {
+				factor = 0.5
+				owner = { prestige = 50 }
+			}
+		}
+	}
+	option = {
+		name = "GOT_OLD_GODS.1b"
+		
+		owner = {
+			add_treasury = 25
+			add_prestige = -10
+		}
+		
+		ai_chance = {
+			factor = 50
+			
+			modifier = {
+				factor = 2
+				owner = { NOT = { treasury = 100 } }
+			}
+		}
+	}
+}
+
+#title: A warg has been spotted in $PROVINENAME$
+#desc: A young man has been spotted warging in $PROVINCENAM$. An ancient form of magic, it can sow fear and dissidence in our realm.
+#1: Arrange a 'visit' with our executioner.
+#2: Ignore him.
+#3: Bring him to our maesters.
+province_event = {
+	id = GOT_OLD_GODS.2
+	title = "GOT_OLD_GODS.2t"
+	desc = "GOT_OLD_GODS.2d"
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		religion = asoiaf_the_old_gods
+		owner = { religion = asoiaf_the_old_gods }
+	}
+	
+	mean_time_to_happen = {
+		months = 12000
+	}
+
+	option = {
+		name = "GOT_OLD_GODS.2a"
+		
+		add_prestige = -10
+		
+		if = {
+			limit = { has_estate = estate_commoners }
+					
+			add_estate_loyalty = {
+				estate = estate_commoners
+				loyalty = -10
+			}
+		}
+			
+		ai_chance = {
+			factor = 20
+		}
+	}
+	option = {
+		name = "GOT_OLD_GODS.2b"
+		
+		owner = {
+			random_core_province = {
+				limit = {
+					NOT = { has_province_modifier = greenseer_hate }
+				}
+				add_province_modifier = {
+					name = greenseer_hate
+					duration = 3650
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+	option = {
+		name = "GOT_OLD_GODS.2c"
+		
+		owner = {
+			add_country_modifier = {
+				name = greenseer_ideas
+				duration = 3650
+			}
+			
+			random_core_province = {
+				limit = {
+					NOT = { has_province_modifier = greenseer_hate }
+				}
+				add_province_modifier = {
+					name = greenseer_hate
+					duration = 3650
+				}
+			}
+			random_core_province = {
+				limit = {
+					NOT = { has_province_modifier = greenseer_hate }
+				}
+				add_province_modifier = {
+					name = greenseer_hate
+					duration = 3650
+				}
+			}
+			random_core_province = {
+				limit = {
+					NOT = { has_province_modifier = greenseer_hate }
+				}
+				add_province_modifier = {
+					name = greenseer_hate
+					duration = 3650
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+#title: Weirwood in $PROVINCENAME$ attacked!
+#desc: A ruttish gang of men have 'attacked' the weirwood in $PROVINCENAME$. If we don't set an example, more of these disgraceful acts will be committed.
+#1: Execute them yourself.
+#2: Tell the master-at-arms to execute them.
+#3: Let them go.
+province_event = {
+	id = GOT_OLD_GODS.3
+	title = "GOT_OLD_GODS.3t"
+	desc = "GOT_OLD_GODS.3d"
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		religion = asoiaf_the_old_gods
+		owner = { religion = asoiaf_the_old_gods }
+	}
+	
+	mean_time_to_happen = {
+		months = 12000
+	}
+
+	option = {
+		name = "GOT_OLD_GODS.3a"
+		
+		owner = {
+			add_mil_power = 50
+			
+			random = {
+				chance = 1
+				kill_ruler = yes
+			}
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+	option = {
+		name = "GOT_OLD_GODS.3b"
+		
+		owner = { add_dip_power = 50 }
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = "GOT_OLD_GODS.3c"
+		
+		owner = {
+			add_adm_power = 50
+			add_prestige = -25
+		}
+		
+		random = {
+			chance = 25
+			random_neighbor_province = {
+				limit = {
+					AND = {
+						religion = asoiaf_the_old_gods
+						owner = { religion = asoiaf_the_old_gods }
+					}
+				}
+				province_event = { id = GOT_OLD_GODS.3 }
+			}
+		}
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+#title: Old God Worshippers want investment in $PROVINCENAME$
+#desc: Worshippers of the Old Gods are demanding investment in $PROVINCENAME$. If we do not accet their request, they could get uppity and cause rebellion in our realm."
+#1: Invest in $PROVINCENAME$.
+#2: Ignore them.
+province_event = {
+	id = GOT_OLD_GODS.4
+	title = "GOT_OLD_GODS.4t"
+	desc = "GOT_OLD_GODS.4d"
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		religion = asoiaf_the_old_gods
+		owner = { religion = asoiaf_the_old_gods }
+	}
+	
+	mean_time_to_happen = {
+		months = 12000
+	}
+
+	option = {
+		name = "GOT_OLD_GODS.4a"
+		
+		owner = {
+			add_treasury = -100
+			add_prestige = 10
+			if = {
+				limit = { has_estate = estate_commoners }
+						
+				add_estate_loyalty = {
+					estate = estate_commoners
+					loyalty = 5
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = "GOT_OLD_GODS.4b"
+		
+		owner = { add_prestige = -20 }
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}

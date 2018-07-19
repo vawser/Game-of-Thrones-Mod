@@ -1,0 +1,64 @@
+recover_abysmal_prestige = {
+
+	type = country
+
+	category = ADM
+	
+	allow = {
+		NOT = { prestige = -50 }
+	}
+	abort = {
+	}
+	success = {
+		prestige = 0
+	}
+	chance = {
+		factor = 1000
+		
+		modifier = {
+			factor = 1.05
+			NOT = { stability = 1 }
+		}		
+		modifier = {
+			factor = 1.05
+			NOT = { stability = 3 }
+		}		
+	}
+	effect = {
+		add_stability = 1
+	}
+	
+}
+
+
+improve_prestige = {
+
+	type = country
+	
+	category = ADM
+	
+	allow = {
+		prestige = -25
+		NOT = { prestige = 25 }
+	}
+	abort = {
+	}
+	success = {
+		prestige = 50
+	}
+	chance = {
+		factor = 1000
+		
+		modifier = {
+			factor = 1.05
+			NOT = { stability = 1 }
+		}		
+		modifier = {
+			factor = 1.05
+			NOT = { stability = 3 }
+		}
+	}
+	effect = {
+		add_stability = 1
+	}
+}

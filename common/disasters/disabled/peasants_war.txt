@@ -1,0 +1,76 @@
+peasant_war = {
+	potential = {	
+		num_of_cities = 5
+		NOT = { has_country_modifier = had_peasant_war }
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		NOT = { manpower_percentage = 0.25 }
+	}
+	progress = {
+		modifier = {
+			factor = 1
+			war_exhaustion = 10
+			is_at_war = no
+		}
+		modifier = {
+			factor = 1
+			NOT = { stability = 1 }
+			is_at_war = no
+		}		
+		modifier = {
+			factor = 1.5
+			NOT = { legitimacy = 50 }
+			is_at_war = no
+		} 
+		modifier = {
+			factor = 1
+			num_of_loans = 10
+			is_at_war = no
+		}	
+		modifier = {
+			factor = 2
+			is_bankrupt = yes
+			is_at_war = no
+		}		
+		modifier = {
+			factor = 0.5
+			overextension_percentage = 0.25
+			NOT = { 
+				overextension_percentage = 0.5
+			}
+			is_at_war = no
+		}
+		modifier = {
+			factor = 1.0
+			overextension_percentage = 0.5
+			is_at_war = no
+		}
+	}
+	
+	can_end = {
+		NOT = { num_of_revolts = 1 }
+		stability = 1
+	}
+	
+
+	modifier = {
+		global_unrest = 5
+		stability_cost_modifier = 0.50
+	}	
+	
+	
+	on_start = peasant_war.1
+	on_end = peasant_war.3
+	
+	on_monthly = {
+		events = {
+	
+		}
+		random_events = { 
+			1000 = 0
+			100 = peasant_war.2
+		}
+	}
+}

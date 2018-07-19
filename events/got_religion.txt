@@ -1,0 +1,782 @@
+namespace = GOT_RELIGION
+
+# A Holy Day
+country_event = {
+	id = GOT_RELIGION.1
+	title = GOT_RELIGION.1.title
+	desc = GOT_RELIGION.1.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = { 
+            uses_karma = yes
+            uses_patriarch_authority = yes
+            uses_piety = yes
+            uses_fervor = yes
+            uses_papacy = yes
+            uses_church_aspects = yes
+        }
+	}
+
+	option = {
+		name = GOT_RELIGION.1.option.a
+		
+        add_treasury = -100
+        
+		if = {
+            limit = {
+                uses_fervor = yes
+            }
+				
+            add_fervor = 10
+        }
+			
+        if = {
+            limit = {
+                uses_karma = yes
+            }
+            add_karma = 10
+        }
+			
+        if = {
+            limit = {
+                uses_papacy = yes
+            }
+				
+            add_papal_influence = 10
+        }
+			
+        if = {
+            limit = {
+                uses_patriarch_authority = yes
+            }
+            add_patriarch_authority = 0.1
+		}
+			
+        if = {
+            limit = {
+                uses_piety = yes
+            }
+            add_piety = 0.1
+        }
+			
+        if = {
+            limit = {
+                uses_church_aspects = yes
+            }
+            add_church_power = 15
+        }
+	}
+	option = {
+		name = GOT_RELIGION.1.option.b
+		
+        if = {
+            limit = {
+                uses_fervor = yes
+            }
+				
+            add_fervor = -10
+        }
+			
+        if = {
+            limit = {
+                uses_karma = yes
+            }
+            add_karma = -10
+        }
+			
+        if = {
+            limit = {
+                uses_papacy = yes
+            }
+				
+            add_papal_influence = -5
+        }
+			
+        if = {
+            limit = {
+                uses_patriarch_authority = yes
+            }
+            add_patriarch_authority = -0.1
+		}
+			
+        if = {
+            limit = {
+                uses_piety = yes
+            }
+            add_piety = -0.1
+        }
+			
+        if = {
+            limit = {
+                uses_church_aspects = yes
+            }
+            add_church_power = -10
+        }
+	}
+}
+
+
+# Religious Festival
+country_event = {
+	id = GOT_RELIGION.2
+	title = GOT_RELIGION.2.title
+	desc = GOT_RELIGION.2.desc
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = { 
+            uses_karma = yes
+            uses_patriarch_authority = yes
+            uses_piety = yes
+            uses_fervor = yes
+            uses_papacy = yes
+            uses_church_aspects = yes
+        }
+	}
+	
+	option = {
+		name = GOT_RELIGION.2.option.a
+		
+		add_treasury = -500
+        
+		if = {
+            limit = {
+                uses_fervor = yes
+            }
+				
+            add_fervor = 25
+        }
+			
+        if = {
+            limit = {
+                uses_karma = yes
+            }
+            add_karma = 25
+        }
+			
+        if = {
+            limit = {
+                uses_papacy = yes
+            }
+				
+            add_papal_influence = 25
+        }
+			
+        if = {
+            limit = {
+                uses_patriarch_authority = yes
+            }
+            add_patriarch_authority = 0.25
+		}
+			
+        if = {
+            limit = {
+                uses_piety = yes
+            }
+            add_piety = 0.25
+        }
+			
+        if = {
+            limit = {
+                uses_church_aspects = yes
+            }
+            add_church_power = 25
+        }
+	}
+	option = {
+		name = GOT_RELIGION.2.option.b
+		
+		if = {
+            limit = {
+                uses_fervor = yes
+            }
+				
+            add_fervor = -10
+        }
+			
+        if = {
+            limit = {
+                uses_karma = yes
+            }
+            add_karma = -10
+        }
+			
+        if = {
+            limit = {
+                uses_papacy = yes
+            }
+				
+            add_papal_influence = -5
+        }
+			
+        if = {
+            limit = {
+                uses_patriarch_authority = yes
+            }
+            add_patriarch_authority = -0.1
+		}
+			
+        if = {
+            limit = {
+                uses_piety = yes
+            }
+            add_piety = -0.1
+        }
+			
+        if = {
+            limit = {
+                uses_church_aspects = yes
+            }
+            add_church_power = -10
+        }
+	}
+}
+
+
+# Our Faith Renewed!
+country_event = {
+	id = GOT_RELIGION.3
+	title = GOT_RELIGION.3.title
+	desc = GOT_RELIGION.3.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = { 
+            uses_karma = yes
+            uses_patriarch_authority = yes
+            uses_piety = yes
+            uses_fervor = yes
+            uses_papacy = yes
+            uses_church_aspects = yes
+        }
+	}
+	
+	option = {
+		name = GOT_RELIGION.3.option.a
+		
+		if = {
+            limit = {
+                uses_fervor = yes
+            }
+				
+            add_fervor = 10
+        }
+			
+        if = {
+            limit = {
+                uses_karma = yes
+            }
+            add_karma = 10
+        }
+			
+        if = {
+            limit = {
+                uses_papacy = yes
+            }
+				
+            add_papal_influence = 10
+        }
+			
+        if = {
+            limit = {
+                uses_patriarch_authority = yes
+            }
+            add_patriarch_authority = 0.1
+		}
+			
+        if = {
+            limit = {
+                uses_piety = yes
+            }
+            add_piety = 0.1
+        }
+			
+        if = {
+            limit = {
+                uses_church_aspects = yes
+            }
+            add_church_power = 15
+        }
+	}
+}
+
+# Our Faith Declines!
+country_event = {
+	id = GOT_RELIGION.4
+	title = GOT_RELIGION.4.title
+	desc = GOT_RELIGION.4.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = { 
+            uses_karma = yes
+            uses_patriarch_authority = yes
+            uses_piety = yes
+            uses_fervor = yes
+            uses_papacy = yes
+            uses_church_aspects = yes
+        }
+	}
+	
+	option = {
+		name = GOT_RELIGION.4.option.a
+		
+		if = {
+            limit = {
+                uses_fervor = yes
+            }
+				
+            add_fervor = -10
+        }
+			
+        if = {
+            limit = {
+                uses_karma = yes
+            }
+            add_karma = -10
+        }
+			
+        if = {
+            limit = {
+                uses_papacy = yes
+            }
+				
+            add_papal_influence = -5
+        }
+			
+        if = {
+            limit = {
+                uses_patriarch_authority = yes
+            }
+            add_patriarch_authority = -0.1
+		}
+			
+        if = {
+            limit = {
+                uses_piety = yes
+            }
+            add_piety = -0.1
+        }
+			
+        if = {
+            limit = {
+                uses_church_aspects = yes
+            }
+            add_church_power = -10
+        }
+	}
+}
+
+# Stability brings Faith
+country_event = {
+	id = GOT_RELIGION.5
+	title = GOT_RELIGION.5.title
+	desc = GOT_RELIGION.5.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = { 
+            uses_karma = yes
+            uses_patriarch_authority = yes
+            uses_piety = yes
+            uses_fervor = yes
+            uses_papacy = yes
+            uses_church_aspects = yes
+        }
+		stability = 1
+	}
+
+	option = {
+		name = GOT_RELIGION.5.option.a
+		
+		if = {
+            limit = {
+                uses_fervor = yes
+            }
+				
+            add_fervor = 10
+        }
+			
+        if = {
+            limit = {
+                uses_karma = yes
+            }
+            add_karma = 10
+        }
+			
+        if = {
+            limit = {
+                uses_papacy = yes
+            }
+				
+            add_papal_influence = 10
+        }
+			
+        if = {
+            limit = {
+                uses_patriarch_authority = yes
+            }
+            add_patriarch_authority = 0.1
+		}
+			
+        if = {
+            limit = {
+                uses_piety = yes
+            }
+            add_piety = 0.1
+        }
+			
+        if = {
+            limit = {
+                uses_church_aspects = yes
+            }
+            add_church_power = 15
+        }
+	}
+}
+
+# Loss of Faith
+country_event = {
+	id = GOT_RELIGION.6
+	title = GOT_RELIGION.6.title
+	desc = GOT_RELIGION.6.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = { 
+            uses_karma = yes
+            uses_patriarch_authority = yes
+            uses_piety = yes
+            uses_fervor = yes
+            uses_papacy = yes
+            uses_church_aspects = yes
+        }
+		NOT = { stability = 0 }
+	}
+	
+	option = {
+		name = GOT_RELIGION.6.option.a
+		
+		if = {
+            limit = {
+                uses_fervor = yes
+            }
+				
+            add_fervor = -10
+        }
+			
+        if = {
+            limit = {
+                uses_karma = yes
+            }
+            add_karma = -10
+        }
+			
+        if = {
+            limit = {
+                uses_papacy = yes
+            }
+				
+            add_papal_influence = -5
+        }
+			
+        if = {
+            limit = {
+                uses_patriarch_authority = yes
+            }
+            add_patriarch_authority = -0.1
+		}
+			
+        if = {
+            limit = {
+                uses_piety = yes
+            }
+            add_piety = -0.1
+        }
+			
+        if = {
+            limit = {
+                uses_church_aspects = yes
+            }
+            add_church_power = -10
+        }
+	}
+}
+
+# At a Crossroads
+country_event = {
+	id = GOT_RELIGION.7
+	title = GOT_RELIGION.7.title
+	desc = GOT_RELIGION.7.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = { 
+            uses_karma = yes
+            uses_patriarch_authority = yes
+            uses_piety = yes
+            uses_fervor = yes
+            uses_papacy = yes
+            uses_church_aspects = yes
+        }
+		stability = 0
+	}
+	
+	option = {
+		name = GOT_RELIGION.7.option.a
+		
+		if = {
+            limit = {
+                uses_fervor = yes
+            }
+				
+            add_fervor = 10
+        }
+			
+        if = {
+            limit = {
+                uses_karma = yes
+            }
+            add_karma = 10
+        }
+			
+        if = {
+            limit = {
+                uses_papacy = yes
+            }
+				
+            add_papal_influence = 10
+        }
+			
+        if = {
+            limit = {
+                uses_patriarch_authority = yes
+            }
+            add_patriarch_authority = 0.1
+		}
+			
+        if = {
+            limit = {
+                uses_piety = yes
+            }
+            add_piety = 0.1
+        }
+			
+        if = {
+            limit = {
+                uses_church_aspects = yes
+            }
+            add_church_power = 15
+        }
+	}
+	
+	option = {
+		name = GOT_RELIGION.7.option.b
+		
+        add_treasury = 250
+	}
+}
+
+# Temple for R'hllor
+country_event = {
+	id = GOT_RELIGION.8
+	title = GOT_RELIGION.8.title
+	desc = GOT_RELIGION.8.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = asoiaf_rhllor
+	}
+	
+	option = {
+		name = GOT_RELIGION.8.option.a
+		
+		add_church_power = 50
+		
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+	option = {
+		name = GOT_RELIGION.8.option.b
+		
+		add_stability = 1
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# Restore the Great Sept of Baelor
+country_event = {
+	id = GOT_RELIGION.9
+	title = GOT_RELIGION.9.title
+	desc = GOT_RELIGION.9.desc
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+        always = no
+		NOT = { exists = FAT }
+        owns = 27
+        NOT = { has_country_flag = offered_restore_the_faith }
+	}
+	
+    mean_time_to_happen = {
+		months = 24
+	}
+    
+    immediate = {
+        set_country_flag = offered_restore_the_faith
+    }
+    
+	option = {
+		name = GOT_RELIGION.9.option.a
+		
+		27 = {
+            cede_province = FAT
+            add_core = FAT
+        }
+		
+        custom_tooltip = tt_the_faith_restored_pleased
+        hidden_effect = { 
+            every_known_country = {
+                limit = {
+                    capital_scope = {
+                        continent = europe
+                    }
+                    government = kingdom
+                    religion = asoiaf_faith_of_the_seven
+                }
+                add_opinion = {
+                    who = ROOT
+                    modifier = restored_the_faith
+                }
+            }
+        }
+        
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = GOT_RELIGION.9.option.b
+		
+		add_stability = -3
+		
+        custom_tooltip = tt_the_faith_restored_angry
+        hidden_effect = { 
+            every_known_country = {
+                limit = {
+                    capital_scope = {
+                        continent = europe
+                    }
+                    government = kingdom
+                    religion = asoiaf_faith_of_the_seven
+                }
+                add_opinion = {
+                    who = ROOT
+                    modifier = failed_to_restore_the_faith
+                }
+            }
+        }
+        
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# Tidy up event
+country_event = {
+	id = GOT_RELIGION.10
+	title = GOT_RELIGION.10.title
+	desc = GOT_RELIGION.10.desc
+	picture = RELIGION_eventPicture
+	
+    hidden = yes
+    
+	trigger = {
+        has_country_flag = offered_restore_the_faith
+    }
+
+    immediate = {
+        clr_country_flag = offered_restore_the_faith
+    }
+    
+	option = {
+		name = GOT_RELIGION.10.option.a
+		
+	}
+}
+
+#------------------------------------------------------------
+# Barbarism
+#------------------------------------------------------------
+# Yellow Bellies
+# Our people are cowardly, mirroring the actions of their [Root.Monarch.GetTitle]. If the people of [Root.GetName] do not fight soon, are reputation will fall into disarray.
+# No....
+country_event = {
+	id = GOT_RELIGION.11
+	title = GOT_RELIGION.11.title
+	desc = GOT_RELIGION.11.desc
+	picture = RELIGION_eventPicture
+	
+    hidden = yes
+    
+	trigger = {
+        uses_piety = yes
+        NOT = { had_recent_war = 2 }
+    }
+
+	option = {
+		name = GOT_RELIGION.11.option.a
+		
+        add_piety = -0.1
+	}
+}
+
+# Bloodlust
+# Our people are driven into a rage by the frenzies of war. Their [Root.Monarch.GetTitle] has taught them well, and the reputation of [Root.GetName] has been made.
+# Bwahaha!
+country_event = {
+	id = GOT_RELIGION.12
+	title = GOT_RELIGION.12.title
+	desc = GOT_RELIGION.12.desc
+	picture = RELIGION_eventPicture
+	
+    hidden = yes
+    
+	trigger = {
+        uses_piety = yes
+        is_at_war = yes
+    }
+
+	option = {
+		name = GOT_RELIGION.12.option.a
+		
+        add_piety = 0.1
+	}
+}
+
+
+

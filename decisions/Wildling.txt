@@ -1,0 +1,70 @@
+country_decisions = {
+	commision_runestone = {
+		potential = {
+			technology_group = wildling
+			NOT = { has_country_modifier = commissioned_runestone }
+		}
+		allow = {
+			technology_group = wildling
+			years_of_income = 1
+			NOT = { has_country_modifier = commissioned_runestone }
+		}
+		effect = {
+			add_years_of_income = -1
+			
+			add_ruler_modifier = {
+				name = commissioned_runestone
+				duration = -1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				
+				religious_unity = 0.9
+			}
+		}
+	}
+    
+    construct_canoes = {
+		potential = {
+			technology_group = wildling
+		}
+		allow = {
+			treasury = 100
+            NOT = { navy_size_percentage = 1 }
+            any_owned_province = {
+                has_port = yes
+            }
+		}
+		effect = {
+			add_treasury = -100
+            
+            random_owned_province = {
+                limit = {
+                    has_port = yes
+                }
+                
+                add_unit_construction = {
+                    type = transport
+                    amount = 5
+                    speed = 0.25
+                    cost = 0
+                }
+            }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				
+				navy_size_percentage = 0.5
+			}
+		}
+	}
+}

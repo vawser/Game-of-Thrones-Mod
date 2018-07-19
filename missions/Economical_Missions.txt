@@ -1,0 +1,196 @@
+get_minor_cash_reserve = {
+
+	type = country
+
+	category = ADM
+
+	allow = {
+		NOT = { years_of_income = 0.5 }
+		NOT = { num_of_loans = 1 }
+	}
+	abort = {
+		num_of_loans = 1
+	}
+	success = {
+		years_of_income = 1.0
+	}
+	chance = {
+		factor = 1000
+	}
+	effect = {
+		add_prestige = 10
+	}	
+}
+
+
+amass_wealth = {
+
+	type = country
+	
+	category = ADM
+
+	allow = {
+		NOT = { treasury = 1000 }
+		monthly_income = 100
+		treasury = 300
+		is_at_war = no
+		NOT = { num_of_loans = 1 }
+	}
+	abort = {
+		OR = {
+			NOT = { treasury = 200 }
+			num_of_loans = 1
+		}
+	}
+	success = {
+		treasury = 2000
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.02
+			inflation = 1
+		}			
+	}
+	effect = {
+		add_prestige = 10
+		add_inflation = -1
+	}	
+}
+
+
+recover_negative_stability = {
+
+	type = country
+
+	category = ADM
+
+	allow = {
+		is_at_war = no
+		NOT = { stability = 0 }
+	}
+	abort = {
+	}
+	success = {
+		stability = 0
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.25
+			adm = 3
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { stability = -1 }
+		}
+	}
+	effect = {
+		add_prestige = 5
+	}	
+}
+
+
+improve_economical_mismanagement = {
+
+	type = country
+
+	category = ADM
+
+	allow = {
+		is_at_war = no
+		num_of_loans = 10
+	}
+	abort = {
+		is_bankrupt = yes
+	}
+	success = {
+		NOT = { num_of_loans = 1 }
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.05
+			adm = 2
+		}
+	}
+	effect = {
+		add_inflation = -1
+	}	
+}
+
+recover_from_warexhaustion = {
+
+	type = country
+
+	category = ADM
+
+	allow = {
+		war_exhaustion = 5
+		is_at_war = no
+	}
+	abort = {
+		is_at_war = yes
+	}
+	success = {
+		NOT = { war_exhaustion = 1 }
+		is_at_war = no
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.11
+			war_exhaustion = 8
+		}
+		modifier = {
+			factor = 1.17
+			war_exhaustion = 12
+		}
+	}
+	effect = {
+		add_prestige = 10
+	}	
+}
+
+
+buildup_manpower_reserves = {
+
+	type = country
+
+	category = ADM
+
+	allow = {
+		max_manpower = 5
+		NOT = { manpower_percentage = 0.50 }
+		is_at_war = no
+	}	
+	abort = {
+		is_at_war = yes
+	}
+	success = {
+		manpower_percentage = 0.90
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.06
+			NOT = { manpower_percentage = 0.40 }
+		}		
+		modifier = {
+			factor = 1.08
+			NOT = { manpower_percentage = 0.30 }
+		}		
+		modifier = {
+			factor = 1.05
+			NOT = { manpower_percentage = 0.20 }
+		}		
+	}
+	effect = {
+		add_prestige = 5
+		add_army_tradition = 10
+	}	
+}

@@ -1,0 +1,208 @@
+namespace = GOT_CULTURAL
+
+# Deserters from the Wall
+# Several runaways from the Wall have been captured by a local patrol. Deserters of the Night's Watch deserve only death, and it is said that the man who passes the sentence should swing the sword.
+#1: I will swing the sword.
+#2: Imprison them instead.
+country_event = {
+	id = GOT_CULTURAL.1
+	title = GOT_CULTURAL.1.title
+	desc = GOT_CULTURAL.1.desc
+	picture = ACCUSATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		capital_scope = {
+			region = region_the_north
+		}
+		primary_culture = men_of_the_north
+	}
+	
+	option = {
+		name = GOT_CULTURAL.1.option.a
+		
+		add_prestige = 10
+		
+		if = {
+			limit = { has_estate = estate_nobles }
+			
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 5
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+	option = {
+		name = GOT_CULTURAL.1.option.b
+		
+		add_dip_power = 50
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# Mountain Clan Turmoil
+# A dispute within a mountain clan has led to a leadership dispute. They look to their liege lord, the [Root.Monarch.GetName] for arbitration.
+#1: Support the builder
+#2: Support the hunter
+#3: Support the barbarian
+#4: Ignore them
+country_event = {
+	id = GOT_CULTURAL.2
+	title = GOT_CULTURAL.2.title
+	desc = GOT_CULTURAL.2.desc
+	picture = CONQUEST_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		capital_scope = {
+			region = region_the_north
+		}
+		primary_culture = men_of_the_north
+	}
+
+	option = {
+		name = GOT_CULTURAL.2.option.a
+		
+		add_adm_power = 25
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+	option = {
+		name = GOT_CULTURAL.2.option.b
+		
+		add_dip_power = 25
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+	option = {
+		name = GOT_CULTURAL.2.option.c
+		
+		add_mil_power = 25
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+	option = {
+		name = GOT_CULTURAL.2.option.d
+		
+		add_legitimacy = 5
+		
+		if = {
+			limit = { has_estate = estate_nobles }
+			
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 5
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# The Old Way
+# The Old Way is still highly regarded on the Iron Islands. The Old Way embodies the remembered values of a culture based on raiding. A man's worth was judged primarily on his skill as a raider, as evidenced in the disdain jewellery and ornament bought with coin. Men on the Iron Islands wear no tokens unless they have paid the iron price.
+# A raider's stash...
+country_event = {
+	id = GOT_CULTURAL.3
+	title = GOT_CULTURAL.3.title
+	desc = GOT_CULTURAL.3.desc
+	picture = NAVAL_MILITARY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		primary_culture = ironborn
+		stability = 0
+	}
+	
+	option = {
+		name = GOT_CULTURAL.3.option.a
+		
+		add_years_of_income = 1
+		
+		if = {
+			limit = { has_estate = estate_commoners }
+			
+			add_estate_loyalty = {
+				estate = estate_commoners
+				loyalty = 5
+			}
+		}
+	}
+}
+
+# A Silken Lover...
+# She giggles. - 'My [Root.Monarch.GetTitle]...', she says. You look towards your lover, smitten by the beauty that befalls you. You say nothing. Life is short in Westeros, and you are taken in with the intoxicating scent of your lover, when a thought crosses your mind...
+# Cute...
+# Naive...
+country_event = {
+	id = GOT_CULTURAL.4
+	title = GOT_CULTURAL.4.title
+	desc = GOT_CULTURAL.4.desc
+	picture = CULTURE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		culture_group = culture_westeros
+		any_known_country = {
+			has_opinion = {
+				who = ROOT
+				value = 0
+			}
+		}
+		has_heir = no
+		has_regency = no
+	}
+
+	option = {
+		name = GOT_CULTURAL.4.option.a
+		
+		define_heir = {
+			claim = 30
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+	option = {
+		name = GOT_CULTURAL.4.option.b
+		
+		random_known_country = {
+			limit = {
+				has_opinion = {
+					who = ROOT
+					value = 0
+				}
+			}
+			create_marriage = ROOT
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}

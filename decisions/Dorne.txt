@@ -1,0 +1,29 @@
+country_decisions = {
+	cultivate_sand_steeds = {
+		potential = {
+			OR = {
+				primary_culture = sand_dornish 
+				primary_culture = salt_dornish
+				primary_culture = stone_dornish
+			}
+			NOT = { has_country_modifier = cultivating_sand_steeds }
+		}
+		allow = {
+			years_of_income = 1
+			mil_tech = 5
+			NOT = { has_country_modifier = cultivating_sand_steeds }
+		}
+		effect = {
+			add_years_of_income = -1
+			
+			add_ruler_modifier = {
+				name = cultivating_sand_steeds
+				duration = -1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

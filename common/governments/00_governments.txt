@@ -1,0 +1,433 @@
+#Do not change tags in here without changing every other reference to them.
+#If adding new forms of governemnts, make sure they are uniquely named.
+
+#Uses all 'modifiers' possible that's exported as a Modifier.
+
+# valid_for_new_country determines which governments can be converted to normally
+# allow_convert determines which governments can be force-converted to and from via CBs
+
+#ai_will_do will only check if it's valid,and won't break unions or switch to republic from monarchy, nor check to convert to something earlier in the file.
+
+# Country settings:
+# Type:
+#   monarchy = yes
+#   republic yes
+#   tribal = yes
+#   nomad = yes	
+#   religion = yes
+#   monastic = yes
+#   papacy = yes
+
+# Attributes:
+#	duration = 4
+#	min_autonomy = 50
+#	unique_government = yes
+#	valid_for_new_country
+#	valid_for_nation_designer
+#	nation_designer_cost
+#	allow_convert = no
+#	queen = no
+#   heir = no
+#   foreign_slave_rulers = yes
+#   allow_force_tributary = no
+#	republican_name = yes
+#	royal_marriage = no
+#	rulers_can_be_generals = no
+#	maintain_dynasty = yes          # Maintain Dynasty
+#	max_states = 1
+# 	different_religion_acceptance = -20
+# 	different_religion_group_acceptance = -50
+
+# Mechanics:
+#	allow_vassal_war = yes          # Shogunate
+#	allow_vassal_alliance = yes     # Shogunate
+#	allow_migration = yes           # Tribal Migration
+#	native_mechanic = yes           # Tribal Advancement
+#	has_parliament = yes            # Parliament
+# 	has_devotion = yes              # Devotion
+#   has_meritocracy = yes           # Meritocracy
+#	has_harem = yes                 # Harem
+#   has_pashas = yes                # Pasha
+#	is_elective = yes               # Elective Monarchy
+#	is_trading_city = yes           # Trading City
+#	free_city = yes                 # Free City
+#	dutch_mechanics = yes           # Dutch Republic
+#	militarised_society = yes	    # Prussian Militarization
+#	boost_income = yes              # Merchant Republic Boost
+#	can_use_trade_post = yes        # Trade Post
+#	can_form_trade_league = yes     # Trade Leagues
+#	claim_states = yes              # Claim State
+#   government_abilities
+#       russian_mechanic
+#       feudal_theocracy_mechanic
+#       tribal_federation_mechanic
+#       mamluk_mechanic
+#       iqta_mechanic
+#	faction = XXX
+
+####################################
+#Monarchies
+####################################
+kingdom = {
+	monarchy = yes
+	
+	valid_for_new_country = yes
+	allow_convert = no
+	
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+
+	maintain_dynasty = yes
+	different_religion_acceptance = -15
+	different_religion_group_acceptance = -50
+	
+	color = { 224 179 43 }
+	
+	ai_will_do = {
+		factor = 0
+	}
+	ai_importance = 1
+	
+	max_states = 8
+	
+    claim_states = yes
+    
+	rank = {
+		1 = {
+			global_tax_modifier = 0.1
+            max_absolutism = 5
+		}
+		2 = {
+			global_tax_modifier = 0.15
+			global_autonomy = -0.05
+            max_absolutism = 5
+		}
+		3 = {
+			global_tax_modifier = 0.25
+			global_autonomy = -0.1
+            max_absolutism = 5
+		}
+	}
+}
+
+####################################
+# Theocracy
+####################################
+the_faith = {
+	religion = yes
+	
+    has_devotion = yes
+    rulers_can_be_generals = no
+    royal_marriage = no
+    
+	valid_for_new_country = no
+	allow_convert = no
+	
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	different_religion_acceptance = -50
+	different_religion_group_acceptance = -100
+	
+	color = { 224 179 43 }
+	
+	ai_will_do = {
+		factor = 0
+	}
+	ai_importance = 1
+	
+	max_states = 10
+	
+	rank = {
+		1 = {
+			missionaries = 1
+            max_absolutism = 5
+		}
+	}
+    fixed_rank = 1
+}
+
+####################################
+# Republics
+####################################
+free_city = {
+	republic = yes
+
+	color = { 27 160 227 }
+	
+	valid_for_new_country = yes
+	allow_convert = no
+	
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+	royal_marriage = yes
+	boost_income = yes
+	#can_use_trade_post = yes
+    can_form_trade_league = yes
+    
+	different_religion_acceptance = -5
+	different_religion_group_acceptance = -25
+	
+	ai_will_do = {
+		factor = 0
+	}
+	ai_importance = 1
+	
+	max_states = 8
+	
+    claim_states = yes
+    
+	rank = {
+		1 = {
+			naval_forcelimit_modifier = 0.1
+            max_absolutism = -5
+		}
+		2 = {
+			naval_forcelimit_modifier = 0.15
+			global_autonomy = -0.05
+            max_absolutism = -5
+		}
+		3 = {
+			naval_forcelimit_modifier = 0.25
+			global_autonomy = -0.1
+            max_absolutism = -5
+		}
+	}
+}
+
+#################################
+# Unique
+#################################
+pirate_haven = {
+	tribal = yes
+    monarchy = yes
+    
+	unique_government = yes
+	
+	color = { 18 179 113 }
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+
+	different_religion_acceptance = -25
+	different_religion_group_acceptance = -50
+	
+	min_autonomy = 25
+	
+	ai_will_do = {
+		factor = 0
+	}
+	ai_importance = 1
+	
+	max_states = 4
+	
+	rank = {
+		1 = {
+			naval_forcelimit = 20
+            naval_forcelimit_modifier = 0.25
+			privateer_efficiency = 0.5
+            max_absolutism = 10
+		}
+	}
+	fixed_rank = 1
+}
+
+pirate_kingdom = {
+	monarchy = yes
+
+	unique_government = yes
+	
+	color = { 18 179 113 }
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+
+	maintain_dynasty = yes
+	
+	different_religion_acceptance = -25
+	different_religion_group_acceptance = -50
+	
+	ai_will_do = {
+		factor = 0
+	}
+	ai_importance = 1
+	
+	max_states = 8
+	
+	rank = {
+		3 = {
+			naval_forcelimit = 50
+            naval_forcelimit_modifier = 0.5
+			privateer_efficiency = 1.0
+            max_absolutism = 10
+		}
+	}
+	fixed_rank = 3
+}
+
+wildling_clan = {
+	tribal = yes
+
+	unique_government = yes
+	
+	color = { 30 30 128 }
+	
+	native_mechanic = yes
+	allow_migration = no
+	
+	valid_for_new_country = no
+	allow_convert = no
+
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+
+	min_autonomy = 25
+        
+	ai_will_do = {
+		factor = 0
+	}
+	ai_importance = 1
+
+	max_states = 4
+
+	rank = {
+		1 = {
+            infantry_power = 0.05
+			global_manpower_modifier = 0.1
+            land_attrition = -0.1
+            max_absolutism = 10
+		}
+	}
+	fixed_rank = 1
+}
+
+khas = {
+    monarchy = yes
+	nomad = yes
+    tribal = yes
+	
+    allow_migration = yes
+    
+	color = { 116 198 240 }
+	valid_for_new_country = no
+	allow_convert = no
+
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+
+	different_religion_acceptance = -25
+	different_religion_group_acceptance = -50
+	
+	ai_will_do = {
+		factor = 0
+	}
+	ai_importance = 1
+	
+	max_states = 4
+	
+	rank = {
+		1 = {
+			cav_to_inf_ratio = 0.5
+            cavalry_cost = -0.5
+            reinforce_cost_modifier = -0.75
+		}
+	}
+	fixed_rank = 1
+}
+
+ancient_city = {
+	monarchy = yes
+	
+	color = { 105 68 62 }
+	
+	valid_for_new_country = no
+	allow_convert = no
+
+	valid_for_nation_designer = yes
+	nation_designer_cost = 50
+
+	different_religion_acceptance = -25
+	different_religion_group_acceptance = -50
+	
+	boost_income = yes
+	
+	max_states = 8
+	
+    claim_states = yes
+    
+	ai_will_do = {
+		factor = 0
+	}
+	ai_importance = 1
+	
+	rank = {
+		1 = {
+			development_cost = -0.1
+			global_autonomy = -0.1
+		}
+	}
+	fixed_rank = 1
+}
+
+nw_government = {
+	republic = yes
+	
+	color = { 44 130 117 }
+	
+	unique_government = yes
+	
+	valid_for_new_country = no
+	allow_convert = no
+
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	
+	royal_marriage = no
+	
+	max_states = 8
+	
+	rank = {
+		1 = {
+			enemy_core_creation = 1
+			global_manpower_modifier = 0.5
+            max_absolutism = -15
+		}
+	}
+	fixed_rank = 1
+}
+
+colonial_government = {
+	republic = yes
+	
+	color = { 32 30 65 }
+	
+	unique_government = yes
+
+	duration = 8
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	republican_name = yes
+	royal_marriage = no
+	
+	ai_will_do = {
+		factor = 0
+	}
+
+	rank = {
+		1 = {
+			global_autonomy = -0.1
+			recover_army_morale_speed = 0.02
+            max_absolutism = -5
+		}
+	}
+	fixed_rank = 1
+}

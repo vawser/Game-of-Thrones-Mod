@@ -1,0 +1,28 @@
+host_a_tournament = {
+	category = 1 		# same category = 90% less likely
+
+	allow = {
+		always = yes
+	}
+	
+	effect = {
+		every_neighbor_country = {
+			limit = {
+				NOT = { is_rival = ROOT }
+			}
+			add_opinion = { who = ROOT modifier = hosted_a_tournament }
+		}
+	}
+	
+	modifier = {
+		prestige = 1
+	}
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}

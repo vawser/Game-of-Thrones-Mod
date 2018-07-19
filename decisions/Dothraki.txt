@@ -1,0 +1,31 @@
+country_decisions = {
+	reform_khalasar = {
+		major = yes
+		potential = {
+			government = khas
+            primitives = yes 
+		}
+		allow = {
+			government = khas
+			total_development = 300
+			stability = 3
+		}
+		effect = {
+			change_government = kingdom
+			add_stability = -6
+			change_technology_group = eastern
+			
+			capital_scope = {
+				pretender_rebels = 10
+			}
+			
+            set_primitive = no
+            
+			#country_event = { id = GOT_DOTHRAKI.4 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

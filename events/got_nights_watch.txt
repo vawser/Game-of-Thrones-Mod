@@ -1,0 +1,62 @@
+namespace = GOT_NIGHTS_WATCH
+
+#t: The Night's Watch demands men!
+#d:	The Night's Watch relies on the kingdoms of Westeros sending men to man the Wall. If we send them men, we can empty our cells of prisoners whilst also currying favour with the Lord Commander.
+#1: Send them some men.
+#2: Refuse their requests.
+country_event = {
+	id = GOT_NIGHTS_WATCH.1
+	title = "GOT_NIGHTS_WATCH.1.title"
+	desc = "GOT_NIGHTS_WATCH.1.desc"
+	picture = ADVISOR_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = no
+		A02 = {
+			exists = yes
+			has_opinion = {
+				who = ROOT
+				value = 0
+			}
+		}
+		has_opinion = {
+			who = A02
+			value = 0
+		}
+		capital_scope = {
+			continent = europe
+		}
+	}
+	
+	option = {
+		name = "GOT_NIGHTS_WATCH.1.option.a"
+		
+		add_manpower = -1
+		
+		A02 = { 
+			add_opinion = { 
+				who = ROOT modifier = helped_the_nights_watch 
+			} 
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+	option = {
+		name = "GOT_NIGHTS_WATCH.1.option.b"
+		
+		A02 = { 
+			add_opinion = { 
+				who = ROOT modifier = refused_the_nights_watch 
+			} 
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}

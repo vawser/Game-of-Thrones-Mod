@@ -1,0 +1,27 @@
+namespace = GOT_RANDOM_PROVINCE
+
+# Bloody flux has appeared in PROVINCE
+province_event = {
+	id = GOT_RANDOM_PROVINCE.1
+	title = GOT_RANDOM_PROVINCE.1.title
+	desc = GOT_RANDOM_PROVINCE.1.desc
+	picture = PLAGUE_eventPicture
+	
+	trigger = {
+		is_capital = no
+		NOT = { has_province_modifier = bloody_flux_quar }
+	}
+	
+	mean_time_to_happen = {
+		months = 12000
+	}
+
+	option = {
+		name = GOT_RANDOM_PROVINCE.1.option.a
+	
+		add_province_modifier = {
+			name = bloody_flux_quar
+			duration = 3650
+		}
+	}
+}

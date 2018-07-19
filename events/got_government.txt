@@ -1,0 +1,316 @@
+namespace = GOT_GOVERNMENT
+
+#title: Grand Magister of [Root.GetName]
+#desc: The previous [Root.Monarch.GetTitle] has passed away, so it is time for [Root.GetName] to pick a new [Root.Monarch.GetTitle]. However, if the people think ill of the chosen [Root.Monarch.GetTitle], there is likely to be pretenders to the position.
+#1: An administrative [Root.Monarch.GetTitle]
+#2: A diplomatic [Root.Monarch.GetTitle]
+#3: A militaristic [Root.Monarch.GetTitle]
+
+country_event = {
+	id = GOT_GOVERNMENT.1
+	title = GOT_GOVERNMENT.1.title
+	desc = GOT_GOVERNMENT.1.desc
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		government = free_city
+		NOT = { primary_culture = volantene }
+	}
+	
+	option = {
+		name = GOT_GOVERNMENT.1.option.a
+
+		define_ruler = {
+			adm = 4
+			dip = 1
+			mil = 1
+			dynasty = ROOT
+		}
+		
+		if = {
+			limit = { has_estate = estate_commoners }
+				
+			add_estate_loyalty = {
+				estate = estate_commoners
+				loyalty = 5
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = GOT_GOVERNMENT.1.option.b
+
+		define_ruler = {
+			adm = 1
+			dip = 4
+			mil = 1
+			dynasty = ROOT
+		}
+
+		if = {
+			limit = { has_estate = estate_merchants }
+				
+			add_estate_loyalty = {
+				estate = estate_merchants
+				loyalty = 5
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = GOT_GOVERNMENT.1.option.c
+
+		define_ruler = {
+			adm = 1
+			dip = 1
+			mil = 4
+			dynasty = ROOT
+		}
+		
+		if = {
+			limit = { has_estate = estate_nobles }
+				
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 5
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+#title: [Root.Monarch.GetTitle] of [Root.GetName]
+#desc: The previous [Root.Monarch.GetTitle] has passed away, so it is time for [Root.GetName] to pick a new [Root.Monarch.GetTitle]. However, if the people think ill of the chosen [Root.Monarch.GetTitle], there is likely to be pretenders to the position.
+#1: A candidate from the Tiger Party
+#2: A candidate from the Elephant Party
+#3: Re-elect [Root.Monarch.GetName]
+country_event = {
+	id = GOT_GOVERNMENT.2
+	title = GOT_GOVERNMENT.2.title
+	desc = GOT_GOVERNMENT.2.desc
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		government = free_city
+		primary_culture = volantene
+	}
+	
+	# Tiger
+	option = {
+		name = GOT_GOVERNMENT.2.option.a
+
+		clr_country_flag = has_tiger_ruler
+		clr_country_flag = has_elephant_ruler
+		
+		define_ruler = {
+			adm = 3
+			dip = 1
+			mil = 4
+			fixed = yes
+		}
+		
+		add_estate_loyalty = {
+			estate = estate_elephants
+			loyalty = -5
+		}
+		
+		set_country_flag = has_tiger_ruler
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	# Elephant
+	option = {
+		name = GOT_GOVERNMENT.2.option.b
+		
+		clr_country_flag = has_tiger_ruler
+		clr_country_flag = has_elephant_ruler
+		
+		define_ruler = {
+			adm = 3
+			dip = 4
+			mil = 1
+			fixed = yes
+		}
+		
+		add_estate_loyalty = {
+			estate = estate_tigers
+			loyalty = -5
+		}
+		
+		set_country_flag = has_elephant_ruler
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	# Re-elect
+	option = {
+		name = GOT_GOVERNMENT.2.option.c
+		
+		trigger = {
+			OR = {
+				has_country_flag = has_tiger_ruler
+				has_country_flag = has_elephant_ruler
+			}
+		}
+		
+		random_list = {
+			40 = {
+			
+			}
+			20 = {
+				change_adm = 1
+			}
+			20 = {
+				change_dip = 1
+			}
+			20 = {
+				change_mil = 1
+			}
+		}
+		
+		add_republican_tradition = -2
+		
+		custom_tooltip = RE_ELECTION_TOOLTIP
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+#t: The Education of [Root.Monarch.GetName]
+#d: Whilst preparing to rule, [Root.Monarch.GetName] was taught the lessons of administration, diplomacy, and military organisation. However, [Root.Monarch.GetSheHe] was far more adept at...
+#1: Administration!
+#2: Diplomacy!
+#3: Military Organisation!
+country_event = {
+	id = GOT_GOVERNMENT.4
+	title = GOT_GOVERNMENT.4.title
+	desc = GOT_GOVERNMENT.4.desc
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = GOT_GOVERNMENT.4.option.a
+		
+		random_list = {
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_adm_1
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_adm_2
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_adm_3
+					duration = -1
+				}
+			}
+		}
+		
+		if = {
+			limit = { has_estate = estate_commoners }
+				
+			add_estate_loyalty = {
+				estate = estate_commoners
+				loyalty = 5
+			}
+		}
+	}
+
+	option = {
+		name = GOT_GOVERNMENT.4.option.b
+		
+		random_list = {
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_dip_1
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_dip_2
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_dip_3
+					duration = -1
+				}
+			}
+		}
+		
+		if = {
+			limit = { has_estate = estate_merchants }
+				
+			add_estate_loyalty = {
+				estate = estate_merchants
+				loyalty = 5
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_GOVERNMENT.4.option.c
+		
+		random_list = {
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_mil_1
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_mil_2
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_mil_3
+					duration = -1
+				}
+			}
+		}
+		
+		if = {
+			limit = { has_estate = estate_nobles }
+				
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 5
+			}
+		}
+	}
+}
+

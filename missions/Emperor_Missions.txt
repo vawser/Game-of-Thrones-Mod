@@ -1,0 +1,132 @@
+improved_relations_with_electors = {
+	
+	type = elector_countries
+
+	category = DIP
+
+	allow = {
+		FROM = {
+			is_emperor = yes
+		}
+		is_elector = yes
+		is_emperor = no
+		has_opinion = { who = FROM value = 0 }
+		NOT = { has_opinion = { who = FROM value = 50 } }
+		NOT = { hre_reform_level = 6 }
+	}
+	abort = {
+		FROM = { is_emperor = no }
+	}
+	success = {
+		has_opinion = { who = FROM value = 100 }
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.05
+			NOT = { has_opinion = { who = FROM value = 0 } }
+		}
+		modifier = {
+			factor = 1.07
+			preferred_emperor = FROM
+		}
+		modifier = {
+			factor = 1.04
+			num_of_cities = 4
+		}	
+		modifier = {
+			factor = 1.20
+			religion = FROM
+		}			
+		modifier = {
+			factor = 1.15
+			primary_culture = FROM
+		}
+		modifier = {
+			factor = 1.05
+			dynasty = FROM
+		}
+		modifier = {
+			factor = 1.02
+			is_neighbor_of = FROM
+		}	
+	}
+	effect = {
+		FROM = { 
+			add_adm_power = 10
+			add_legitimacy = 5
+			add_imperial_influence = 5
+		}
+	}
+}
+convince_elector = {
+	
+	type = elector_countries
+
+	category = DIP
+
+	allow = {
+		FROM = {
+			capital_scope = { is_part_of_hre = yes }
+			government = monarchy
+			num_of_cities = 4
+			is_female = no
+		}
+		hre_religion = FROM
+		has_opinion = { who = FROM value = 50 }
+		NOT = { preferred_emperor = FROM }
+		NOT = { preferred_emperor = ROOT }
+		NOT = { num_of_cities = 6 }
+		is_subject = no
+		ai = yes
+	}
+	abort = {
+		OR = {
+			ai = no
+			is_elector = no
+			is_subject = yes
+			num_of_cities = 6
+			NOT = {
+				FROM = {
+					capital_scope = { is_part_of_hre = yes }
+					government = monarchy
+					num_of_cities = 4
+				}
+			}
+			FROM = { is_female = yes }
+		}
+	}
+	success = {
+		preferred_emperor = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.07
+			has_opinion = { who = FROM value = 50 }
+		}
+		modifier = {
+			factor = 1.1
+			religion = FROM
+		}			
+		modifier = {
+			factor = 1.1
+			primary_culture = FROM
+		}
+		modifier = {
+			factor = 1.1
+			dynasty = FROM
+		}
+		modifier = {
+			factor = 1.1
+			is_neighbor_of = FROM
+		}	
+	}
+	effect = {
+		FROM = { 
+			add_prestige = 25
+			add_legitimacy = 10
+			add_dip_power = 50
+		}
+	}
+}

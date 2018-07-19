@@ -1,0 +1,518 @@
+annex_minor_mission = {
+
+	type = neighbor_countries
+	category = MIL
+	
+	target_provinces = {
+		owned_by = ROOT
+	}
+	allow = {
+		is_subject = no
+		FROM = {	
+			is_subject = no
+			is_at_war = no
+			NOT = { alliance_with = FROM }
+		}
+		num_of_cities = 1
+		NOT = { num_of_cities = 2 }
+		NOT = { has_opinion = { who = FROM value = 0 } }
+		OR = {
+			is_part_of_hre = no
+			FROM = { is_part_of_hre = no }
+		}
+		capital_scope = {
+			has_discovered = FROM
+		}
+	}
+	abort = {
+		NOT = { num_of_cities = 1 }
+	}
+	success = {
+		all_target_province = {
+			owned_by = FROM
+		}
+		exists = no
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.5
+			capital_scope = {
+				culture = FROM
+			}
+		}
+		modifier = {
+			factor = 1.5
+			capital_scope = {
+				religion = FROM
+			}
+		}
+		modifier = {
+			factor = 1.5
+			FROM = { mil = 3 }
+		}
+		modifier = {
+			factor = 0.5
+			truce_with = FROM
+		}
+		modifier = {
+			factor = 0.5
+			FROM = { NOT = { mil = 2 } }
+		}		
+	}
+	immediate = {
+		every_target_province = {
+			add_claim = FROM
+		}
+	}
+	abort_effect = {
+		every_target_province = {
+			remove_claim = FROM
+		}
+	}
+	effect = {
+		FROM = {
+			add_prestige = 5
+		}
+	}
+}
+
+
+conquer_a_port = {
+
+	type = neighbor_provinces
+	category = MIL
+	
+	allow = {
+		FROM = {
+			is_subject = no
+			is_at_war = no
+			NOT = { num_of_total_ports = 1 } 
+		}
+		owner = {
+			NOT = { truce_with = FROM }
+			NOT = { alliance_with = FROM }
+		}
+		has_port = yes
+		has_discovered = FROM
+		OR = {
+			owner = { is_part_of_hre = no }
+			FROM = { is_part_of_hre = no }
+		}
+		OR = {
+			is_capital = no
+			owner = { NOT = { num_of_cities = 2} }
+		}
+	}
+	abort = {
+		FROM = { 
+			num_of_total_ports = 1
+		}
+	}
+	success = {
+		owned_by = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 0.75
+			NOT = { culture = FROM }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { religion = FROM }
+		}
+		modifier = {
+			factor = 1.5
+			FROM = { mil = 4 }
+		}
+	}
+	immediate = {
+		add_claim = FROM
+	}
+	abort_effect = {
+		remove_claim = FROM
+	}
+	effect = {
+		FROM = {
+			add_navy_tradition = 5
+		}
+	}
+}
+
+
+conquer_neighbour = {
+
+	type = neighbor_provinces
+	category = MIL
+	
+	allow = {
+		FROM = {	
+			is_subject = no
+		}
+		NOT = { is_core = FROM }
+		is_colony = no
+		NOT = { owner = { has_opinion = { who = FROM value = 0 } } }
+		culture_group = FROM
+		owner = { NOT = { truce_with = FROM } }
+		NOT = { owner = { num_of_infantry = FROM  } }
+		NOT = { owner = { vassal_of = FROM } }
+		owner = { is_subject = no }
+		owner = { is_at_war = no }
+		has_discovered = FROM
+		OR = {
+			owner = { is_part_of_hre = no }
+			FROM = { is_part_of_hre = no }
+		}
+		OR = {
+			is_capital = no
+			owner = { NOT = { num_of_cities = 2} }
+		}
+	}
+	abort = {
+		owner = { NOT = { is_neighbor_of = FROM } }
+	}
+	success = {
+		owned_by = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.5
+			culture = FROM
+		}
+		modifier = {
+			factor = 1.5
+			religion = FROM
+		}
+		modifier = {
+			factor = 1.5
+			FROM = { mil = 3 }
+		}
+		modifier = {
+			factor = 0.5
+			FROM = { NOT = { mil = 2 } }
+		}
+		modifier =  {
+			factor = 0.5
+			owner = { truce_with = FROM }
+		}
+	}
+	immediate = {
+		add_claim = FROM
+	}
+	abort_effect = {
+		remove_claim = FROM
+	}
+	effect = {
+		FROM = {
+			add_prestige = 10
+			add_adm_power = 15
+		}
+	}	
+}
+
+
+conquer_core = {
+
+	type = neighbor_provinces 
+	category = MIL
+
+	allow = {
+		FROM = {	
+			is_subject = no
+		}
+		is_core = FROM
+		is_colony = no
+		OR = {
+			is_capital = no
+			owner = { NOT = { num_of_cities = 2} }
+		}
+		NOT = { owner = { vassal_of = FROM } }
+		NOT = { owner = { junior_union_with = FROM } }
+		owner = { NOT = { truce_with = FROM } }
+		owner = { is_subject = no }
+		owner = { is_at_war = no }
+		has_discovered = FROM
+	}
+	abort = {
+		NOT = { is_core = FROM }
+	}
+	success = {
+		owned_by = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.5
+			culture = FROM
+		}
+		modifier = {
+			factor = 1.5
+			religion = FROM
+		}
+		modifier = {
+			factor = 1.5
+			FROM = { mil = 3 }
+		}
+		modifier = {
+			factor = 0.5
+			FROM = { NOT = { mil = 2 } }
+		}
+		modifier = { 
+			factor = 0.5
+			owner = { truce_with = FROM }
+		}
+	}
+	effect = {
+		FROM = {
+			add_prestige = 10
+		}
+	}	
+}
+
+protect_religious_minority = {
+
+	type = neighbor_provinces
+	category = MIL
+	
+	allow = {
+		FROM = {
+			is_subject = no
+			is_at_war = no
+			has_regency = no
+		}
+		religion = FROM
+		owner = { NOT = { religion = FROM } }
+		owner = { NOT = { alliance_with = FROM } }
+		owner = { NOT = { is_subject_of = FROM } }
+		has_discovered = FROM
+		OR = {
+			is_capital = no
+			owner = { NOT = { num_of_cities = 2} }
+		}
+	}
+	abort = {
+		OR = {
+			NOT = { religion = FROM }
+			owner = { alliance_with = FROM }
+			owner = { religion = FROM }
+			owner = { is_subject_of = FROM }
+		}
+	}
+	success = {
+		owned_by = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.5
+			culture = FROM
+		}
+		modifier = {
+			factor = 1.5
+			religion = FROM
+		}
+		modifier = {
+			factor = 1.5
+			FROM = { mil = 3 }
+		}
+		modifier = {
+			factor = 0.5
+		FROM = { NOT = { mil = 2 } }
+		}		
+		modifier = { 
+			factor = 0.5
+			owner = { truce_with = FROM }
+		}
+	}
+	immediate = {
+		add_claim = FROM
+	}
+	abort_effect = {
+		remove_claim = FROM
+	}
+	effect = {
+		FROM = { add_prestige = 5 }
+	}
+}
+
+
+protect_cultural_minority = {
+
+	type = neighbor_provinces
+	category = MIL
+	
+	allow = {
+		FROM = {	
+			is_subject = no
+			is_at_war = no
+			has_regency = no
+		}
+		culture = FROM
+		owner = { NOT = { primary_culture = FROM } }
+		owner = { NOT = { alliance_with = FROM } }
+		owner = { NOT = { is_subject_of = FROM } }
+		has_discovered = FROM
+		OR = {
+			is_capital = no
+			owner = { NOT = { num_of_cities = 2} }
+		}
+		
+		OR = {
+			owner = { is_part_of_hre = no }
+			FROM = { is_part_of_hre = no }
+		}
+		is_capital = no	
+	}
+	abort = {
+		OR = {
+			NOT = { culture = FROM }
+			owner = { primary_culture = FROM }
+			owner = { alliance_with = FROM }
+			owner = { is_subject_of = FROM }
+		}
+	}
+	success = {
+		owned_by = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.5
+			culture = FROM
+		}
+		modifier = {
+			factor = 1.5
+			religion = FROM
+		}
+		modifier = {
+			factor = 1.5
+		FROM = { mil = 3 }
+		}
+		modifier = {
+			factor = 0.5
+			FROM = { NOT = { mil = 2 } }
+		}		
+		modifier = {
+			factor = 0.5
+			owner = { truce_with = FROM }
+		}
+	}
+	immediate = {
+		add_claim = FROM
+	}
+	abort_effect = {
+		remove_claim = FROM
+	}
+	effect = {
+		FROM = { add_prestige = 5 }
+	}
+}
+
+
+attack_prestigous_rival = {
+
+	type = rival_countries
+	category = MIL
+
+	allow = {
+		prestige = FROM
+		is_neighbor_of = FROM
+		FROM = { 
+			num_of_cities = 5
+			is_at_war = no
+			is_subject = no
+			has_regency = no
+		}
+		num_of_cities = 5
+		has_regency = no
+		NOT = { is_nomad = yes } #not vs nomads!
+		NOT = { truce_with = FROM }
+		NOT = { alliance_with = FROM }
+		NOT = { is_subject = yes }
+		FROM = { NOT = { is_subject = yes } }
+		OR = {
+			is_part_of_hre = no
+			FROM = { is_part_of_hre = no }
+		}
+	}
+	abort = {
+		OR = {
+			FROM = {
+				is_subject = yes
+			}
+			NOT = { num_of_cities = 1 }
+		}
+	}
+	success = {
+		war_with = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.5
+			FROM = { mil = 3 }
+		}
+		modifier = {
+			factor = 0.5
+			FROM = { NOT = { dip = 2 } }
+		}
+	}
+	effect = {
+		FROM = { add_prestige = 5 }
+	}	
+}
+
+
+attack_weaker_rival = {
+
+	type = rival_countries
+	category = MIL
+
+	allow = {
+		FROM = {	
+			is_subject = no
+			num_of_cities = 5
+			is_at_war = no
+			has_regency = no
+		}	
+		NOT = { num_of_infantry = FROM }
+		is_neighbor_of = FROM
+		is_at_war = yes
+		num_of_cities = 5
+		NOT = { truce_with = FROM }
+		NOT = { alliance_with = FROM }
+		NOT = { is_subject = yes }
+		FROM = { NOT = { is_subject = yes } } 
+		OR = {
+			is_part_of_hre = no
+			FROM = { is_part_of_hre = no }
+		}
+	}
+	abort = {
+		OR = {
+			FROM = {
+				is_subject = yes
+			}
+			is_at_war = no
+		}
+	}
+	success = {
+		war_with = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.5
+			FROM = { mil = 3 }
+		}
+		modifier = {
+			factor = 0.5
+			FROM = { NOT = { dip = 2 } }
+		}
+	}
+	effect = {
+		FROM = { add_prestige = 5 }
+	}	
+}

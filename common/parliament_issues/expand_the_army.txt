@@ -1,0 +1,24 @@
+expand_the_navy = {
+	category = 3 		# same category = 90% less likely
+
+	allow = {
+		NOT = { army_size_percentage = 0.75 }
+	}
+	
+	effect = {
+		
+	}
+	
+	modifier = {
+		land_forcelimit_modifier = 0.25
+		global_regiment_cost = -0.25
+	}
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}

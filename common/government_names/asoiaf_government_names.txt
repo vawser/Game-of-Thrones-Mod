@@ -1,0 +1,571 @@
+# For specific government types
+# Will pick the first valid one it finds in list
+
+# Kingdom
+#	Noble House
+#	Great House
+#	Royal House
+
+gov_kingdom_astapor = {
+	rank = {
+		1 = HOLDING
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = GOOD_MASTER
+		2 = GOOD_MASTER
+		3 = GOOD_MASTER
+	}
+	
+	ruler_female = {
+		1 = GOOD_MISTRESS
+		2 = GOOD_MISTRESS
+		3 = GOOD_MISTRESS
+	}
+	
+	trigger = {
+		government = kingdom
+		primary_culture = astapor
+	}
+}
+
+gov_kingdom_yunkai = {
+	rank = {
+		1 = HOLDING
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = WISE_MASTER
+		2 = WISE_MASTER
+		3 = WISE_MASTER
+	}
+	
+	ruler_female = {
+		1 = WISE_MISTRESS
+		2 = WISE_MISTRESS
+		3 = WISE_MISTRESS
+	}
+	
+	trigger = {
+		government = kingdom
+		primary_culture = yunkai
+	}
+}
+
+gov_kingdom_meereen = {
+	rank = {
+		1 = HOLDING
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = GREAT_MASTER
+		2 = GREAT_MASTER
+		3 = GREAT_MASTER
+	}
+	
+	ruler_female = {
+		1 = GREAT_MISTRESS
+		2 = GREAT_MISTRESS
+		3 = GREAT_MISTRESS
+	}
+	
+	trigger = {
+		government = kingdom
+		primary_culture = meereen
+	}
+}
+
+gov_kingdom_white_walker = {
+	rank = {
+		1 = HOLDING
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = NIGHTS_KING
+		2 = NIGHTS_KING
+		3 = NIGHTS_KING
+	}
+	
+	ruler_female = {
+		1 = NIGHTS_QUEEN
+		2 = NIGHTS_QUEEN
+		3 = NIGHTS_QUEEN
+	}
+	
+	trigger = {
+		government = kingdom
+		primary_culture = white_walkers
+	}
+}
+
+gov_kingdom_dornish = {
+	rank = {
+		1 = NOBLE_HOUSE
+		2 = GREAT_HOUSE
+		3 = ROYAL_HOUSE
+	}
+	
+	ruler_male = {
+		1 = PRINCE
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	ruler_female = {
+		1 = PRINCESS
+		2 = PRINCESS
+		3 = PRINCESS
+	}
+	
+	trigger = {
+		government = kingdom
+		OR = {
+			primary_culture = salt_dornish
+			primary_culture = sand_dornish
+			primary_culture = stone_dornish
+		}
+	}
+}
+
+gov_kingdom_westeros = {
+	rank = {
+		1 = NOBLE_HOUSE
+		2 = GREAT_HOUSE
+		3 = ROYAL_HOUSE
+	}
+	
+	ruler_male = {
+		1 = LORD
+		2 = LORD
+		3 = KING
+	}
+	
+	ruler_female = {
+		1 = LADY
+		2 = LADY
+		3 = QUEEN
+	}
+	
+	trigger = {
+		government = kingdom
+		culture_group = culture_westeros
+	}
+}
+
+gov_kingdom = {
+	rank = {
+		1 = HOLDING
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = LORD
+		2 = KING
+		3 = EMPEROR
+	}
+	
+	ruler_female = {
+		1 = LADY
+		2 = QUEEN
+		3 = EMPRESS
+	}
+	
+	trigger = {
+		government = kingdom
+	}
+}
+
+gov_the_faith = {
+	rank = {
+		1 = THE_FAITH
+	}
+	
+	ruler_male = {
+		1 = HIGH_SEPTON
+	}
+	
+	ruler_female = {
+		1 = HIGH_SEPTA
+	}
+	
+	trigger = {
+		government = the_faith
+	}
+}
+
+
+# Night's Watch
+#	fixed_rank
+gov_nw_government = {
+	rank = {
+		1 = COUNCIL
+	}
+	
+	ruler_male = {
+		1 = LORD_COMMANDER
+	}
+	
+	ruler_female = {
+		1 = LADY_COMMANDER
+	}
+	
+	trigger = {
+		government = nw_government
+	}
+}
+
+# Wildling Clan
+#	fixed_rank
+gov_wildling_clan = {
+	rank = {
+		1 = WILDLING_CLAN
+	}
+	
+	ruler_male = {
+		1 = CHIEF
+	}
+	
+	ruler_female = {
+		1 = CHEIFESS
+	}
+	
+	trigger = {
+		government = wildling_clan
+	}
+}
+
+
+# Free City
+gov_volanteane_free_city = {
+	rank = {
+		1 = VOLANTEANE_REPUBLIC
+		2 = VOLANTEANE_REPUBLIC
+		3 = VOLANTEANE_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = TRIARCH
+		2 = TRIARCH
+		3 = TRIARCH
+	}
+	
+	ruler_female = {
+		1 = TRIARCH
+		2 = TRIARCH
+		3 = TRIARCH
+	}
+	
+	trigger = {
+		government = free_city
+		primary_culture = volantene
+	}
+}
+
+
+
+gov_pentoshi_city = {
+	rank = {
+		1 = PENTOSHI_CITY
+		2 = PENTOSHI_CITY
+		3 = PENTOSHI_CITY
+	}
+	
+	ruler_male = {
+		1 = PRINCE
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	ruler_female = {
+		1 = PRINCESS
+		2 = PRINCESS
+		3 = PRINCESS
+	}
+	
+	trigger = {
+		government = free_city
+		primary_culture = pentoshi
+	}
+}
+
+gov_braavosi_city = {
+	rank = {
+		1 = BRAAVOSI_CITY
+		2 = BRAAVOSI_CITY
+		3 = BRAAVOSI_CITY
+	}
+	
+	ruler_male = {
+		1 = SEALORD
+		2 = SEALORD
+		3 = SEALORD
+	}
+	
+	ruler_female = {
+		1 = SEALADY
+		2 = SEALADY
+		3 = SEALADY
+	}
+	
+	trigger = {
+		government = free_city
+		primary_culture = braavosi
+	}
+}
+
+gov_lysene_city = {
+	rank = {
+		1 = LYSENE_CITY
+		2 = LYSENE_CITY
+		3 = LYSENE_CITY
+	}
+	
+	ruler_male = {
+		1 = GRAND_MAGISTER
+		2 = GRAND_MAGISTER
+		3 = GRAND_MAGISTER
+	}
+	
+	ruler_female = {
+		1 = GRAND_MAGISTER
+		2 = GRAND_MAGISTER
+		3 = GRAND_MAGISTER
+	}
+	
+	trigger = {
+		government = free_city
+		primary_culture = lysene
+	}
+}
+
+gov_qohor_city = {
+	rank = {
+		1 = QOHORIK_CITY
+		2 = QOHORIK_CITY
+		3 = QOHORIK_CITY
+	}
+	
+	ruler_male = {
+		1 = GRAND_MAGISTER
+		2 = GRAND_MAGISTER
+		3 = GRAND_MAGISTER
+	}
+	
+	ruler_female = {
+		1 = GRAND_MAGISTER
+		2 = GRAND_MAGISTER
+		3 = GRAND_MAGISTER
+	}
+	
+	trigger = {
+		government = free_city
+		primary_culture = qohorik
+	}
+}
+
+gov_norvos_city = {
+	rank = {
+		1 = NORVOS_CITY
+		2 = NORVOS_CITY
+		3 = NORVOS_CITY
+	}
+	
+	ruler_male = {
+		1 = HIGH_MAGISTER
+		2 = HIGH_MAGISTER
+		3 = HIGH_MAGISTER
+	}
+	
+	ruler_female = {
+		1 = HIGH_MAGISTER
+		2 = HIGH_MAGISTER
+		3 = HIGH_MAGISTER
+	}
+	
+	trigger = {
+		government = free_city
+		primary_culture = norvosi
+	}
+}
+
+gov_myr_city = {
+	rank = {
+		1 = MYR_CITY
+		2 = MYR_CITY
+		3 = MYR_CITY
+	}
+	
+	ruler_male = {
+		1 = GRAND_MAGISTER
+		2 = GRAND_MAGISTER
+		3 = GRAND_MAGISTER
+	}
+	
+	ruler_female = {
+		1 = GRAND_MAGISTER
+		2 = GRAND_MAGISTER
+		3 = GRAND_MAGISTER
+	}
+	
+	trigger = {
+		government = free_city
+		primary_culture = myrish
+	}
+}
+
+gov_tyrosh_city = {
+	rank = {
+		1 = TYROSHI_CITY
+		2 = TYROSHI_CITY
+		3 = TYROSHI_CITY
+	}
+	
+	ruler_male = {
+		1 = ARCHON
+		2 = ARCHON
+		3 = ARCHON
+	}
+	
+	ruler_female = {
+		1 = ARCHONESS
+		2 = ARCHONESS
+		3 = ARCHONESS
+	}
+	
+	trigger = {
+		government = free_city
+		primary_culture = tyroshi
+	}
+}
+
+gov_lorath_city = {
+	rank = {
+		1 = LORATHI_CITY
+		2 = LORATHI_CITY
+		3 = LORATHI_CITY
+	}
+	
+	ruler_male = {
+		1 = GRAND_MAGISTER
+		2 = GRAND_MAGISTER
+		3 = GRAND_MAGISTER
+	}
+	
+	ruler_female = {
+		1 = GRAND_MAGISTER
+		2 = GRAND_MAGISTER
+		3 = GRAND_MAGISTER
+	}
+	
+	trigger = {
+		government = free_city
+		primary_culture = lorathi
+	}
+}
+
+# Ancient City
+# 	fixed_rank
+gov_ancient_city = {
+	rank = {
+		1 = QARTH
+	}
+	
+	ruler_male = {
+		1 = PUREBORN
+	}
+	
+	ruler_female = {
+		1 = PUREBORN
+	}
+	
+	trigger = {
+		government = ancient_city
+	}
+}
+
+# Khas
+# 	fixed_rank
+gov_khas_jogos = {
+	rank = {
+		1 = HORDE_KHAS
+	}
+	
+	ruler_male = {
+		1 = CHIEF
+	}
+	
+	ruler_female = {
+		1 = CHEIFESS
+	}
+	
+	trigger = {
+		government = khas
+		primary_culture = jogos_nhai
+	}
+}
+
+gov_khas = {
+	rank = {
+		1 = KHAS
+	}
+	
+	ruler_male = {
+		1 = KHAL
+	}
+	
+	ruler_female = {
+		1 = KHALEESI
+	}
+	
+	trigger = {
+		government = khas
+	}
+}
+
+# Pirate Clan
+# 	fixed_rank
+gov_pirate_clan = {
+	rank = {
+		1 = PIRATE_HAVEN
+	}
+	
+	ruler_male = {
+		1 = LORD
+	}
+	
+	ruler_female = {
+		1 = LADY
+	}
+	
+	trigger = {
+		government = pirate_haven
+	}
+}
+
+gov_pirate_kingdom = {
+	rank = {
+		1 = PIRATE_KINGDOM
+	}
+	
+	ruler_male = {
+		1 = KING
+	}
+	
+	ruler_female = {
+		1 = QUEEN
+	}
+	
+	trigger = {
+		government = pirate_kingdom
+	}
+}
+

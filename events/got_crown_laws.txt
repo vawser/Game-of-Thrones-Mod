@@ -1,0 +1,84 @@
+namespace = GOT_CROWN_LAWS
+
+country_event = {
+	id = GOT_CROWN_LAWS.1
+	title = GOT_CROWN_LAWS.1.title
+	desc = GOT_CROWN_LAWS.1.desc
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+    
+	trigger = {
+		NOT = { has_country_flag = setup_crown_laws }
+	}
+	
+	immediate = {   
+        set_country_flag = setup_crown_laws
+        set_country_flag = show_centralisation
+        set_country_flag = show_slavery
+        
+    }
+	
+	option = {
+		name = GOT_CROWN_LAWS.1.option.a
+
+        if = {
+            limit = {
+                OR = {
+                    discovery_wildling_trigger = yes
+                    discovery_dothraki_trigger = yes
+                }
+            }
+            
+            set_variable = { 
+                which = centralisation_level
+                value = 0
+            }
+            
+            add_country_modifier = {
+                name = minimum_centralisation
+                duration = -1
+            }
+        }
+        
+        if = {
+            limit = {
+                discovery_nights_watch_trigger = yes
+            }
+            
+            set_variable = { 
+                which = centralisation_level
+                value = 1
+            }
+            
+            add_country_modifier = {
+                name = low_centralisation
+                duration = -1
+            }
+        }
+        
+        if = {
+            limit = {
+                OR = {
+                    discovery_westeros_trigger = yes
+                    discovery_free_cities_trigger = yes
+                    discovery_slavers_cities_trigger = yes
+                    discovery_mythical_cities_trigger = yes
+                    discovery_far_east_trigger = yes
+                    discovery_summer_islands_trigger = yes
+                }
+            }
+            
+            set_variable = { 
+                which = centralisation_level
+                value = 2
+            }
+            
+            add_country_modifier = {
+                name = medium_centralisation
+                duration = -1
+            }
+        }
+	}
+}

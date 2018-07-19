@@ -1,0 +1,606 @@
+namespace = GOT_SUBJECTS
+
+# Annex event
+country_event = {
+	id = GOT_SUBJECTS.1
+	title = GOT_SUBJECTS.1.title
+	desc = GOT_SUBJECTS.1.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.1.option.a
+
+        every_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+            }
+            add_liberty_desire = 25
+        }
+	}
+}
+
+# Bankruptcy event
+country_event = {
+	id = GOT_SUBJECTS.2
+	title = GOT_SUBJECTS.2.title
+	desc = GOT_SUBJECTS.2.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        vassal = 1
+        is_subject = no
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.2.option.a
+
+        every_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+            }
+            add_liberty_desire = 25
+        }
+	}
+}
+
+# Bad
+country_event = {
+	id = GOT_SUBJECTS.3
+	title = GOT_SUBJECTS.3.title
+	desc = GOT_SUBJECTS.3.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        vassal = 1
+        is_subject = no
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.3.option.a
+
+        every_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+            }
+            
+            add_liberty_desire = 10
+        }
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+    
+    option = {
+		name = GOT_SUBJECTS.3.option.b
+
+        add_adm_power = -100
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+
+country_event = {
+	id = GOT_SUBJECTS.4
+	title = GOT_SUBJECTS.4.title
+	desc = GOT_SUBJECTS.4.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        vassal = 1
+        is_subject = no
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.4.option.a
+
+        every_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+            }
+            
+            add_liberty_desire = 10
+        }
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+    
+    option = {
+		name = GOT_SUBJECTS.4.option.b
+
+        add_dip_power = -100
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SUBJECTS.5
+	title = GOT_SUBJECTS.5.title
+	desc = GOT_SUBJECTS.5.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        vassal = 1
+        is_subject = no
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.5.option.a
+
+        every_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+            }
+            
+            add_liberty_desire = 10
+        }
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+    
+    option = {
+		name = GOT_SUBJECTS.5.option.b
+
+        add_mil_power = -100
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SUBJECTS.6
+	title = GOT_SUBJECTS.6.title
+	desc = GOT_SUBJECTS.6.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        vassal = 1
+        is_subject = no
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.6.option.a
+
+        every_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+            }
+            
+            add_liberty_desire = 10
+        }
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+    
+    option = {
+		name = GOT_SUBJECTS.6.option.b
+
+        add_legitimacy = -25
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SUBJECTS.7
+	title = GOT_SUBJECTS.7.title
+	desc = GOT_SUBJECTS.7.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        vassal = 1
+        is_subject = no
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.7.option.a
+
+        every_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+            }
+            
+            add_liberty_desire = 10
+        }
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+    
+    option = {
+		name = GOT_SUBJECTS.7.option.b
+
+        add_prestige = -50
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# Good
+country_event = {
+	id = GOT_SUBJECTS.8
+	title = GOT_SUBJECTS.8.title
+	desc = GOT_SUBJECTS.8.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        vassal = 1
+        is_subject = no
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.8.option.a
+
+        every_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+            }
+            
+            add_liberty_desire = -10
+        }
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+    
+    option = {
+		name = GOT_SUBJECTS.8.option.b
+
+        add_adm_power = 100
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+
+country_event = {
+	id = GOT_SUBJECTS.9
+	title = GOT_SUBJECTS.9.title
+	desc = GOT_SUBJECTS.9.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        vassal = 1
+        is_subject = no
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.9.option.a
+
+        every_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+            }
+            
+            add_liberty_desire = -10
+        }
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+    
+    option = {
+		name = GOT_SUBJECTS.9.option.b
+
+        add_dip_power = 100
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SUBJECTS.10
+	title = GOT_SUBJECTS.10.title
+	desc = GOT_SUBJECTS.10.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        vassal = 1
+        is_subject = no
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.10.option.a
+
+        every_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+            }
+            
+            add_liberty_desire = -10
+        }
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+    
+    option = {
+		name = GOT_SUBJECTS.10.option.b
+
+        add_mil_power = 100
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SUBJECTS.11
+	title = GOT_SUBJECTS.11.title
+	desc = GOT_SUBJECTS.11.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        vassal = 1
+        is_subject = no
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.11.option.a
+
+        every_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+            }
+            
+            add_liberty_desire = -10
+        }
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+    
+    option = {
+		name = GOT_SUBJECTS.11.option.b
+
+        add_legitimacy = 25
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SUBJECTS.12
+	title = GOT_SUBJECTS.12.title
+	desc = GOT_SUBJECTS.12.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        vassal = 1
+        is_subject = no
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.12.option.a
+
+        every_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+            }
+            
+            add_liberty_desire = -10
+        }
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+    
+    option = {
+		name = GOT_SUBJECTS.12.option.b
+
+        add_prestige = 50
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# Individual
+country_event = {
+	id = GOT_SUBJECTS.13
+	title = GOT_SUBJECTS.13.title
+	desc = GOT_SUBJECTS.13.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        is_subject = no
+        
+        any_subject_country = {
+            is_part_of_hre = yes
+            government = kingdom
+            NOT = {
+                has_opinion = {
+                    who = ROOT
+                    value = 0
+                }
+            }
+        }
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.13.option.a
+
+        random_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+                NOT = {
+                    has_opinion = {
+                        who = ROOT
+                        value = 0
+                    }
+                }
+            }
+            
+            add_liberty_desire = 25
+        }
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+    
+    option = {
+		name = GOT_SUBJECTS.13.option.b
+
+        add_stability = -1
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SUBJECTS.14
+	title = GOT_SUBJECTS.14.title
+	desc = GOT_SUBJECTS.14.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+        is_part_of_hre = yes
+        government = kingdom
+        is_subject = no
+        
+        any_subject_country = {
+            is_part_of_hre = yes
+            government = kingdom
+            has_opinion = {
+                who = ROOT
+                value = 50
+            }
+        }
+	}
+	
+	option = {
+		name = GOT_SUBJECTS.14.option.a
+
+        random_subject_country = {
+            limit = {
+                is_part_of_hre = yes
+                government = kingdom
+                has_opinion = {
+                    who = ROOT
+                    value = 50
+                }
+            }
+            
+            add_liberty_desire = -25
+        }
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+    
+    option = {
+		name = GOT_SUBJECTS.14.option.b
+
+        add_stability = 1
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}

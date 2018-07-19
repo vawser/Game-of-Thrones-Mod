@@ -1,0 +1,450 @@
+country_decisions = {
+
+    form_the_kingdom_of_the_stepstones = {
+		major = yes
+		potential = {
+			government = pirate_haven
+			NOT = { exists = J23 }
+		}
+		allow = {
+			upper_stepstones_area = {
+				type = all
+				owned_by = ROOT
+			}
+			central_stepstones_area = {
+				type = all
+				owned_by = ROOT
+			}
+			lower_stepstones_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = J23
+			add_prestige = 200
+			add_stability = 6
+			change_government = pirate_kingdom
+			set_government_rank = 3
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+	become_king_beyond_the_wall = {
+		major = yes
+		potential = {
+			technology_group = wildling
+			NOT = { exists = Z01 }
+		}
+		allow = {
+            area_hardhome = {
+				type = all
+				owned_by = ROOT
+			}
+            area_antler_vale = {
+				type = all
+				owned_by = ROOT
+			}
+            area_southern_frostfangs = {
+				type = all
+				owned_by = ROOT
+			}
+            area_northern_frostfangs = {
+				type = all
+				owned_by = ROOT
+			}
+			area_the_frozen_shore = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = Z01
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+			change_government = kingdom
+			set_government_rank = 2
+            set_primitive = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_the_kingdom_of_sarnor = {
+		major = yes
+		potential = {
+			primary_culture = saathi
+			NOT = { exists = J22 }
+		}
+		allow = {
+			region_sarnor = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = J22
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+			
+            hidden_effect = {
+                546 = {
+                    change_province_name = "Sarys"
+                }
+                697 = {
+                    change_province_name = "Sarnath"
+                }
+                555 = {
+                    change_province_name = "Kasath"
+                }
+                561 = {
+                    change_province_name = "Sallosh"
+                }
+                562 = {
+                    change_province_name = "Gornath"
+                }
+                565 = {
+                    change_province_name = "Sathar"
+                }
+			}
+            
+			change_government = kingdom
+			set_government_rank = 2
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_the_summer_islands = {
+		major = yes
+		potential = {
+			culture_group = culture_summer_isles
+			NOT = { exists = J14 }
+		}
+		allow = {
+			region_summer_islands = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = J14
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+			
+			change_government = kingdom
+			set_government_rank = 2
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_the_ghiscari_empire = {
+		major = yes
+		potential = {
+			culture_group = culture_central_essos
+			NOT = { exists = J15 }
+		}
+		allow = {
+			region_slavers_bay = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = J15
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+			
+			change_government = kingdom
+			set_government_rank = 3
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_the_patrimony_of_hyrkoon = {
+		major = yes
+		potential = {
+			culture_group = culture_hyrkoon
+			NOT = { exists = J16 }
+		}
+		allow = {
+			region_hyrkoon = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = J16
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+			
+			change_government = kingdom
+			set_government_rank = 3
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_new_valyria = {
+		major = yes
+		potential = {
+			culture_group = culture_valyrian
+			NOT = { exists = J17 }
+		}
+		allow = {
+			mantarys_area = {
+				type = all
+				owned_by = ROOT
+			}
+            tolos_area = {
+				type = all
+				owned_by = ROOT
+			}
+            the_demon_road_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = J17
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+			
+            hidden_effect = {
+                every_owned_province = {    
+                    limit = {
+                        region = region_valyria
+                    }
+                    add_base_tax = 3
+                    add_base_production = 3
+                    add_base_manpower = 3
+                }
+			}
+            
+			change_government = kingdom
+			set_government_rank = 2
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# Shattered World
+	form_the_kingdom_of_the_north = {
+		major = yes
+		potential = {
+			has_global_flag = shattered_world
+			primary_culture = men_of_the_north
+			NOT = { exists = J07 }
+		}
+		allow = {
+			region_the_north = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = J07
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_the_kingdom_of_the_isles_and_rivers = {
+		major = yes
+		potential = {
+			has_global_flag = shattered_world
+			OR = {
+				primary_culture = ironborn
+				primary_culture = men_of_the_riverlands
+				primary_culture = men_of_the_crownlands
+				primary_culture = men_of_the_claw_isle
+			}
+			NOT = { exists = J08 }
+		}
+		allow = {
+			region_riverlands = {
+				type = all
+				owned_by = ROOT
+			}
+			region_iron_islands = {
+				type = all
+				owned_by = ROOT
+			}
+			region_crownlands = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = J08
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_the_kingdom_of_the_rock = {
+		major = yes
+		potential = {
+			has_global_flag = shattered_world
+			primary_culture = men_of_the_westerlands
+			NOT = { exists = J09 }
+		}
+		allow = {
+			region_westerlands = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = J09
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_the_kingdom_of_the_stormlands = {
+		major = yes
+		potential = {
+			has_global_flag = shattered_world
+			OR = {
+				primary_culture = men_of_the_stormlands
+				primary_culture = men_of_the_crownlands
+			}
+			NOT = { exists = J10 }
+		}
+		allow = {
+			region_stormlands = {
+				type = all
+				owned_by = ROOT
+			}
+			
+		}
+		effect = {
+			change_tag = J10
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_the_kingdom_of_the_mountain_and_the_vale = {
+		major = yes
+		potential = {
+			has_global_flag = shattered_world
+			primary_culture = men_of_the_vale
+			NOT = { exists = J11 }
+		}
+		allow = {
+			region_vale = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = J11
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_the_principality_of_dorne = {
+		major = yes
+		potential = {
+			has_global_flag = shattered_world
+			OR = {
+				primary_culture = sand_dornish
+				primary_culture = salt_dornish
+				primary_culture = stone_dornish
+			}
+			NOT = { exists = J12 }
+		}
+		allow = {
+			region_dorne = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = J12
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_the_kingdom_of_the_reach = {
+		major = yes
+		potential = {
+			has_global_flag = shattered_world
+			primary_culture = men_of_the_reach
+			NOT = { exists = J13 }
+		}
+		allow = {
+			region_reach = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = J13
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

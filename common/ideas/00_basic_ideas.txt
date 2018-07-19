@@ -1,0 +1,1077 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+# ai_will do is only used to determine which idea group is picked if AI_USES_HISTORICAL_IDEA_GROUPS define is 0, OR start is custom/random
+# ai never picks an idea that resolves to ai_will_do = 0, even if AI_USES_HISTORICAL_IDEA_GROUPS = 1
+# ROOT = country picking the idea
+# groups set to colonial=yes will be higher prioritized by the AI when spending power
+
+#--------------------------
+# ADM
+#--------------------------
+administrative_organisation_ideas = {
+    category = ADM
+    # development_cost
+    # global_tax_modifier
+    # idea_cost
+    # adm_tech_cost_modifier
+    
+    bonus = {
+        adm_tech_cost_modifier = -0.1
+    }
+    
+    administrative_organisation_ideas_1 = {
+        development_cost = -0.2
+    }
+    
+    administrative_organisation_ideas_2 = {
+        global_tax_modifier = 0.2
+    }
+    
+    administrative_organisation_ideas_3 = {
+        idea_cost = -0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+banking_ideas = {
+    category = ADM
+    # inflation_action_cost
+    # inflation_reduction
+    # interest
+    # global_tax_income
+    
+    bonus = {
+        global_tax_income = 24
+    }
+    
+    banking_ideas_1 = {
+        inflation_action_cost = -0.33
+    }
+    
+    banking_ideas_2 = {
+        inflation_reduction = 0.1
+    }
+    
+    banking_ideas_3 = {
+        interest = -1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 10
+            
+            num_of_loans = 5
+        }
+        
+        modifier = {
+            factor = 1.1
+            NOT = { monthly_income = 5 }
+        }
+    }
+}
+
+advisor_ideas = {
+    category = ADM
+    # advisor_pool
+    # advisor_cost
+    # yearly_corruption
+    # prestige_decay
+    
+    bonus = {
+        prestige_decay = -0.02
+    }
+    
+    advisor_ideas_1 = {
+        advisor_pool = 2
+    }
+    
+    advisor_ideas_2 = {
+        advisor_cost = -0.33
+    }
+    
+    advisor_ideas_3 = {
+        yearly_corruption = -0.05
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+administration_ideas = {
+    category = ADM
+    # envoy_travel_time
+    # state_maintenance_modifier
+    # core_creation
+    # max_states
+    
+    bonus = {
+        max_states = 5
+    }
+    
+    administration_ideas_1 = {
+        envoy_travel_time = -0.5
+    }
+    
+    administration_ideas_2 = {
+        state_maintenance_modifier = -0.33
+    }
+    
+    administration_ideas_3 = {
+        core_creation = -0.25
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+religion_ideas = {
+    category = ADM
+    # missionaries
+    # global_missionary_strength
+    # tolerance_own
+    # cb_on_religious_enemies
+    
+    bonus = {
+        cb_on_religious_enemies = yes
+    }
+    
+    religion_ideas_1 = {
+        missionaries = 2
+    }
+    
+    religion_ideas_2 = {
+        global_missionary_strength = 0.03
+    }
+    
+    religion_ideas_3 = {
+        tolerance_own = 3
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+tolerance_ideas = {
+    category = ADM
+    # tolerance_heretic
+    # tolerance_heathen
+    # num_accepted_cultures
+    # no_religion_penalty
+    
+    bonus = {
+        no_religion_penalty = yes
+    }
+    
+    tolerance_ideas_1 = {
+        tolerance_heretic = 3
+    }
+    
+    tolerance_ideas_2 = {
+        tolerance_heathen = 3
+    }
+    
+    tolerance_ideas_3 = {
+        num_accepted_cultures = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+stability_ideas = {
+    category = ADM
+    # global_unrest
+    # stability_cost_modifier
+    # years_of_nationalism
+    # global_autonomy
+    
+    bonus = {
+        global_autonomy = -0.05
+    }
+    
+    stability_ideas_1 = {
+        global_unrest = -2
+    }
+    
+    stability_ideas_2 = {
+        stability_cost_modifier = -0.33
+    }
+    
+    stability_ideas_3 = {
+        years_of_nationalism = -10
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+espionage_ideas = {
+    category = ADM
+    # spy_offence
+    # discovered_relations_impact
+    # global_spy_defence
+    # rebel_support_efficiency
+    
+    bonus = {
+        rebel_support_efficiency = 1.0
+    }
+    
+    espionage_ideas_1 = {
+        spy_offence = 0.5
+    }
+    
+    espionage_ideas_2 = {
+        discovered_relations_impact = -0.75
+    }
+    
+    espionage_ideas_3 = {
+        global_spy_defence = 0.75
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Monarchy only
+monarchy_ideas = {
+    category = ADM
+    # heir_chance
+    # advisor_pool
+    # prestige
+    # legitimacy
+    
+    trigger = {
+        government = kingdom
+    }
+    
+    bonus = {
+        advisor_pool = 1
+    }
+    
+    monarchy_ideas_1 = {
+        heir_chance = 0.5
+    }
+    
+    monarchy_ideas_2 = {
+        legitimacy = 1
+    }
+    
+    monarchy_ideas_3 = {
+        prestige = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Republic only
+free_city_ideas = {
+    category = ADM
+    # embracement_cost
+    # advisor_pool
+    # war_exhaustion_cost
+    # republican_tradition
+    
+    trigger = {
+        government = free_city
+    }
+    
+    bonus = {
+        advisor_pool = 1
+    }
+    
+    free_city_ideas_1 = {
+        embracement_cost = -0.25
+    }
+    
+    free_city_ideas_2 = {
+        republican_tradition = 1
+    }
+    
+    free_city_ideas_3 = {
+        war_exhaustion_cost = -0.25
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Khas only
+khas_ideas = {
+    category = ADM
+    # horde_unity
+    # monthly_militarized_society
+    # core_creation
+    # cavalry_power
+    
+    trigger = {
+        government = khas
+    }
+    
+    bonus = {
+        core_creation = -0.25
+    }
+    
+    khas_ideas_1 = {
+        horde_unity = 1
+    }
+    
+    khas_ideas_2 = {
+        monthly_militarized_society = 0.1
+    }
+    
+    khas_ideas_3 = {
+        cavalry_power = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#--------------------------
+# DIP
+#--------------------------
+exploration_ideas = {
+    category = DIP
+    # may_explore
+    # colonists
+    # auto_explore_adjacent_to_colony
+    # range
+    
+    bonus = {
+        range = 0.25
+    }
+    
+    exploration_ideas_1 = {
+        may_explore = yes
+    }
+    
+    exploration_ideas_2 = {
+        colonists = 1
+    }
+    
+    exploration_ideas_3 = {
+        auto_explore_adjacent_to_colony = yes
+        may_establish_frontier = yes
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+foreign_trade_ideas = {
+    category = DIP
+    # global_foreign_trade_power
+    # trade_range_modifier
+    # global_tariffs
+    # merchants
+    
+    bonus = {
+        global_tariffs = 0.5
+    }
+    
+    foreign_trade_ideas_1 = {
+        global_foreign_trade_power = 0.2
+    }
+    
+    foreign_trade_ideas_2 = {
+        trade_range_modifier = 0.33
+    }
+    
+    foreign_trade_ideas_3 = {
+        merchants = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+domestic_trade_ideas = {
+    category = DIP
+    # global_own_trade_power
+    # trade_steering
+    # trade_efficiency
+    # merchants
+    
+    bonus = {
+        trade_efficiency = 0.15
+    }
+    
+    domestic_trade_ideas_1 = {
+        global_own_trade_power = 0.2
+    }
+    
+    domestic_trade_ideas_2 = {
+        trade_steering = 0.33
+    }
+    
+    domestic_trade_ideas_3 = {
+        merchants = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+manufacturing_ideas = {
+    category = DIP
+    # production_efficiency
+    # build_cost
+    # global_trade_goods_size_modifier
+    # build_time
+    
+    bonus = {
+        global_trade_goods_size_modifier = 0.25
+    }
+    
+    manufacturing_ideas_1 = {
+        production_efficiency = 0.2
+    }
+    
+    manufacturing_ideas_2 = {
+        build_cost = -0.33
+    }
+    
+    manufacturing_ideas_3 = {
+        build_time = -0.5
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+aggressive_diplomacy_ideas = {
+    category = DIP
+    # fabricate_claims_time
+    # province_warscore_cost
+    # unjustified_demands
+    # diplomatic_annexation_cost
+    
+    bonus = {
+        diplomatic_annexation_cost = -0.25
+    }
+    
+    aggressive_diplomacy_ideas_1 = {
+        idea_claim_colonies = yes
+    }
+    
+    aggressive_diplomacy_ideas_2 = {
+        province_warscore_cost = -0.33
+    }
+    
+    aggressive_diplomacy_ideas_3 = {
+        unjustified_demands = -0.5
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+peaceful_diplomacy_ideas = {
+    category = DIP
+    # ae_impact 
+    # diplomatic_reputation
+    # diplomatic_upkeep
+    # improve_relation_modifier
+    
+    bonus = {
+        diplomatic_upkeep = 1
+    }
+    
+    peaceful_diplomacy_ideas_1 = {
+        ae_impact = -0.15
+    }
+    
+    peaceful_diplomacy_ideas_2 = {
+        diplomatic_reputation = 2
+    }
+    
+    peaceful_diplomacy_ideas_3 = {
+        improve_relation_modifier = 0.2
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+civil_organisation_ideas = {
+    category = DIP
+    # diplomats
+    # vassal_income
+    # vassal_forcelimit_bonus
+    # dip_tech_cost_modifier
+    
+    bonus = {
+        dip_tech_cost_modifier = -0.1
+    }
+    
+    civil_organisation_ideas_1 = {
+        diplomats = 1
+    }
+    
+    civil_organisation_ideas_2 = {
+        vassal_income = 0.25
+    }
+    
+    civil_organisation_ideas_3 = {
+        vassal_forcelimit_bonus = 0.25
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+naval_trade_ideas = {
+    category = DIP
+    # blockade_efficiency
+    # global_trade_power
+    # embargo_efficiency
+    # global_ship_trade_power
+    
+    bonus = {
+        embargo_efficiency = 0.5
+    }
+    
+    naval_trade_ideas_1 = {
+        global_trade_power = 0.1
+    }
+    
+    naval_trade_ideas_2 = {
+        global_ship_trade_power = 0.25
+    }
+    
+    naval_trade_ideas_3 = {
+        blockade_efficiency = 0.5
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+raiding_ideas = {
+    category = DIP
+    # privateer_efficiency
+    # capture_ship_chance
+    # sunk_ship_morale_hit_recieved
+    # may_perform_slave_raid
+    
+    bonus = {
+        sunk_ship_morale_hit_recieved = -0.25
+    }
+    
+    raiding_ideas_1 = {
+        privateer_efficiency = 0.33
+    }
+    
+    raiding_ideas_2 = {
+        capture_ship_chance = 0.25
+    }
+    
+    raiding_ideas_3 = {
+        may_perform_slave_raid = yes
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 4
+            
+            OR = {
+                technology_group = stepstones
+                technology_group = ghiscari
+            }
+        }
+        
+        modifier = {
+            factor = 2
+            
+            primary_culture = ironborn
+        }
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+navy_combat_ideas = {
+    category = DIP
+    # naval_morale
+    # galley_power
+    # heavy_ship_power
+    # ship_durability
+    
+    bonus = {
+        ship_durability = 0.1
+    }
+    
+    navy_combat_ideas_1 = {
+        naval_morale = 0.2
+    }
+    
+    navy_combat_ideas_2 = {
+        galley_power = 0.2
+    }
+    
+    navy_combat_ideas_3 = {
+        heavy_ship_power = 0.2
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 2
+            
+            OR = {
+                technology_group = stepstones
+                technology_group = ghiscari
+            }
+        }
+        
+        modifier = {
+            factor = 2
+            
+            primary_culture = ironborn
+        }
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+navy_recruitment_ideas = {
+    category = DIP
+    # global_sailors_modifier
+    # global_ship_recruit_speed
+    # naval_maintenance_modifier
+    # naval_forcelimit_modifier
+    
+    bonus = {
+        global_sailors_modifier = 0.5
+    }
+    
+    navy_recruitment_ideas_1 = {
+        global_ship_recruit_speed = -0.33
+    }
+    
+    navy_recruitment_ideas_2 = {
+        naval_forcelimit_modifier = 0.5
+    }
+    
+    navy_recruitment_ideas_3 = {
+        naval_maintenance_modifier = -0.25
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 2
+            
+            OR = {
+                technology_group = stepstones
+                technology_group = ghiscari
+            }
+        }
+        
+        modifier = {
+            factor = 2
+            
+            primary_culture = ironborn
+        }
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+navy_organisation_ideas = {
+    category = DIP
+    # naval_attrition
+    # navy_tradition
+    # recover_navy_morale_speed
+    # sea_repair
+    
+    bonus = {
+        navy_tradition = 1
+    }
+    
+    navy_organisation_ideas_1 = {
+        naval_attrition = -0.25
+    }
+    
+    navy_organisation_ideas_2 = {
+        sea_repair = yes
+    }
+    
+    navy_organisation_ideas_3 = {
+        recover_navy_morale_speed = 0.25
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 2
+            
+            OR = {
+                technology_group = stepstones
+                technology_group = ghiscari
+            }
+        }
+        
+        modifier = {
+            factor = 2
+            
+            primary_culture = ironborn
+        }
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+navy_leadership_ideas = {   
+    category = DIP
+    # leader_naval_fire
+    # leader_naval_shock
+    # leader_naval_manuever
+    # free_leader_pool
+    
+    bonus = {
+        free_leader_pool = 1
+    }
+    
+    navy_leadership_ideas_1 = {
+        leader_naval_fire = 1
+    }
+    
+    navy_leadership_ideas_2 = {
+        leader_naval_shock = 1
+    }
+    
+    navy_leadership_ideas_3 = {
+        leader_naval_manuever = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 2
+            
+            OR = {
+                technology_group = stepstones
+                technology_group = ghiscari
+            }
+        }
+        
+        modifier = {
+            factor = 2
+            
+            primary_culture = ironborn
+        }
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+#--------------------------
+# MIL
+#--------------------------
+infantry_ideas = {
+    category = MIL
+    # infantry_power
+    # infantry_cost
+    # fire_damage
+    # shock_damage_received
+    
+    bonus = {
+        shock_damage_received = -0.1
+    }
+    
+    infantry_ideas_1 = {
+        infantry_power = 0.15
+    }
+    
+    infantry_ideas_2 = {
+        infantry_cost = -0.25
+    }
+    
+    infantry_ideas_3 = {
+        fire_damage = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+cavalry_ideas = {
+	category = MIL
+
+    bonus = {
+        shock_damage = 0.1
+    }
+    
+    cavalry_ideas_1 = {
+        cavalry_power = 0.15
+    }
+    
+    cavalry_ideas_2 = {
+        cavalry_cost = -0.25
+    }
+    
+    cavalry_ideas_3 = {
+        cavalry_flanking = 0.25
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 0.1
+			always = yes
+		}
+    }
+}
+
+siege_ideas = {
+    category = MIL
+    # artillery_power
+    # artillery_cost
+    # siege_ability
+    # leader_siege
+    
+    bonus = {
+        leader_siege = 1
+    }
+    
+    siege_ideas_ideas_1 = {
+        artillery_power = 0.15
+    }
+    
+    siege_ideas_ideas_2 = {
+        artillery_cost = -0.25
+    }
+    
+    siege_ideas_ideas_3 = {
+        siege_ability = 0.2
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+fortification_ideas = {
+    category = MIL
+    # defensiveness
+    # garrison_size + global_garrison_growth
+    # reinforce_speed
+    # fort_maintenance_modifier
+    
+    bonus = {
+        reinforce_speed = 0.25
+    }
+    
+    fortification_ideas_1 = {
+        defensiveness = 0.5
+    }
+    
+    fortification_ideas_2 = {
+        garrison_size = 1.0
+        global_garrison_growth = 1.0
+    }
+    
+    fortification_ideas_3 = {
+        fort_maintenance_modifier = -0.33
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+army_leadership_ideas = {
+    category = MIL
+    # leader_land_fire
+    # leader_land_shock
+    # leader_land_manuever
+    # land_morale
+    
+    bonus = {
+        land_morale = 0.15
+    }
+    
+    army_leadership_ideas_1 = {
+        leader_land_fire = 1
+    }
+    
+    army_leadership_ideas_2 = {
+        leader_land_manuever = 1
+    }
+    
+    army_leadership_ideas_3 = {
+        leader_land_shock = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+army_organisation_ideas = {
+    category = MIL
+    # army_tradition_from_battle
+    # land_attrition
+    # hostile_attrition
+    # discipline
+    
+    bonus = {
+        discipline = 0.05
+    }
+    
+    army_organisation_ideas_1 = {
+        army_tradition_from_battle = 0.5
+    }
+    
+    army_organisation_ideas_2 = {
+        land_attrition = -0.25
+    }
+    
+    army_organisation_ideas_3 = {
+        hostile_attrition = 2
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+army_recruitment_ideas = {
+    category = MIL
+    # global_manpower_modifier
+    # global_regiment_cost
+    # global_regiment_recruit_speed
+    # reinforce_cost_modifier
+    
+    bonus = {
+        reinforce_cost_modifier = -0.25
+    }
+    
+    army_recruitment_ideas_1 = {
+        global_manpower_modifier = 0.5
+    }
+    
+    army_recruitment_ideas_2 = {
+        global_regiment_cost = -0.33
+    }
+    
+    army_recruitment_ideas_3 = {
+        global_regiment_recruit_speed = -0.5
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+army_infrastructure_ideas = {
+    category = MIL
+    # land_forcelimit_modifier
+    # land_maintenance_modifier
+    # recover_army_morale_speed
+    # mil_tech_cost_modifier
+    
+    bonus = {
+        mil_tech_cost_modifier = -0.1
+    }
+    
+    army_infrastructure_ideas_1 = {
+        land_forcelimit_modifier = 0.5
+    }
+    
+    army_infrastructure_ideas_2 = {
+        land_maintenance_modifier = -0.25
+    }
+    
+    army_infrastructure_ideas_3 = {
+        recover_army_morale_speed = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+merc_ideas = {
+    category = MIL
+    # mercenary_cost
+    # merc_maintenance_modifier
+    # possible_mercenaries
+    # possible_condottieri
+    
+    bonus = {
+        possible_condottieri = 1
+    }
+    
+    merc_ideas_1 = {
+        mercenary_cost = -0.5
+    }
+    
+    merc_ideas_2 = {
+        merc_maintenance_modifier = -0.33
+    }
+    
+    merc_ideas_3 = {
+        possible_mercenaries = 1
+    }
+}

@@ -1,0 +1,224 @@
+namespace = GOT_HRE
+
+# Peaceful Westeros
+country_event = {
+	id = GOT_HRE.2
+	title = "GOT_HRE.2.title"
+	desc = "GOT_HRE.2.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+    trigger = {
+        is_emperor = yes
+        
+        all_country = {
+            government = kingdom
+            government_rank = 2
+            NOT = { is_emperor = yes }
+            is_part_of_hre = yes
+            has_opinion = {
+                who = ROOT
+                value = 0
+            }
+        }
+    }
+	
+	option = {
+		name = "GOT_HRE.2.option.a"
+		
+		add_imperial_influence = 5
+	}
+}
+
+# Westerosi Feuds
+country_event = {
+	id = GOT_HRE.3
+	title = "GOT_HRE.3.title"
+	desc = "GOT_HRE.3.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+    trigger = {
+        is_emperor = yes
+        
+        any_country = {
+            government = kingdom
+            government_rank = 2
+            NOT = { is_emperor = yes }
+            is_part_of_hre = yes
+            NOT = {
+                has_opinion = {
+                    who = ROOT
+                    value = 0
+                }
+            }
+        }
+    }
+	
+	option = {
+		name = "GOT_HRE.3.option.a"
+		
+		add_imperial_influence = -5
+	}
+}
+
+# Noble Misunderstandings
+country_event = {
+	id = GOT_HRE.4
+	title = "GOT_HRE.4.title"
+	desc = "GOT_HRE.4.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+    trigger = {
+        is_emperor = yes
+        average_home_autonomy = 50
+    }
+	
+	option = {
+		name = "GOT_HRE.4.option.a"
+		
+		add_imperial_influence = -5
+	}
+}
+
+# Tyrannical [Root.Monarch.GetTitle]
+country_event = {
+	id = GOT_HRE.5
+	title = "GOT_HRE.5.title"
+	desc = "GOT_HRE.5.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+    trigger = {
+        is_emperor = yes
+        had_recent_war = 1
+    }
+	
+	option = {
+		name = "GOT_HRE.5.option.a"
+		
+		add_imperial_influence = -5
+	}
+}
+
+# Inept [Root.Monarch.GetTitle]
+country_event = {
+	id = GOT_HRE.6
+	title = "GOT_HRE.6.title"
+	desc = "GOT_HRE.6.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+    trigger = {
+        is_emperor = yes
+        NOT = { adm = 2 }
+        NOT = { dip = 2 }
+        NOT = { mil = 2 }
+    }
+	
+	option = {
+		name = "GOT_HRE.6.option.a"
+		
+		add_imperial_influence = -5
+	}
+}
+
+# Weak [Root.Monarch.GetTitle]
+country_event = {
+	id = GOT_HRE.7
+	title = "GOT_HRE.7.title"
+	desc = "GOT_HRE.7.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+    trigger = {
+        is_emperor = yes
+        any_country = {
+            government = kingdom
+            NOT = { is_emperor = yes }
+            is_part_of_hre = yes
+            army_strength = {
+                who = ROOT
+                value = 1.1
+            }
+        }
+    }
+	
+	option = {
+		name = "GOT_HRE.7.option.a"
+		
+		add_imperial_influence = -5
+	}
+}
+
+# Prosperous [Root.Monarch.GetTitle]
+country_event = {
+	id = GOT_HRE.8
+	title = "GOT_HRE.8.title"
+	desc = "GOT_HRE.8.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+    trigger = {
+        is_emperor = yes
+        stability = 2
+    }
+	
+	option = {
+		name = "GOT_HRE.8.option.a"
+		
+		add_imperial_influence = 5
+	}
+}
+
+# Genius [Root.Monarch.GetTitle]
+country_event = {
+	id = GOT_HRE.9
+	title = "GOT_HRE.9.title"
+	desc = "GOT_HRE.9.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+    trigger = {
+        is_emperor = yes
+        adm = 5
+        dip = 5
+        mil = 5
+    }
+	
+	option = {
+		name = "GOT_HRE.9.option.a"
+		
+		add_imperial_influence = 5
+	}
+}
+
+# Strong [Root.Monarch.GetTitle]
+country_event = {
+	id = GOT_HRE.10
+	title = "GOT_HRE.10.title"
+	desc = "GOT_HRE.10.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+    trigger = {
+        is_emperor = yes
+        army_size_percentage = 0.75
+    }
+	
+	option = {
+		name = "GOT_HRE.10.option.a"
+		
+		add_imperial_influence = 5
+	}
+}

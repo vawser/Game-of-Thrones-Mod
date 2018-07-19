@@ -1,0 +1,24 @@
+namespace = GOT_RULER
+
+#title: $FROMCOUNTRY$ has humiliated us!
+#desc: Our poor performance during a recent battle has brought $MONARCH$ $MONARCHTITLE$'s legitimacy into question.
+#1: Damn them!
+country_event = {
+	id = GOT_RULER.1
+	title = GOT_RULER.1.title
+	desc = GOT_RULER.1.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { tag = REB }
+	}
+	
+	option = {
+		name = GOT_RULER.1.option.a
+		
+		add_legitimacy = -5
+		add_prestige = -5
+	}
+}

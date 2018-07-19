@@ -1,0 +1,385 @@
+namespace = GOT_COUNCIL
+
+# Council of [Root.GetName]
+# The [Root.Monarch.GetTitle] of [Root.GetName], [Root.Monarch.GetName] has met with a group of important nobles from our realm. They have petitioned for various different actions, and it is up to [Root.Monarch.GetName] to choose which to satisfy.
+# I will go to war with my rival
+# I will forge a claim on my rival's land
+# I will protect a neighbouring realm
+# I will forge an alliance with a neighbouring realm
+# I will support an royal marriage with a neighbouring realm
+# I will go to war with a neighbour
+# I will ensure our realm's prosperity 
+country_event = {
+	id = GOT_COUNCIL.1
+	title = GOT_COUNCIL.1.title
+	desc = GOT_COUNCIL.1.desc
+	picture = DIET_eventPicture
+	
+	is_triggered_only = yes
+	
+	# War with neighbour
+	option = {
+		name = GOT_COUNCIL.1.option.a
+		
+		trigger = {
+			any_neighbor_country = {  
+				NOT = { is_rival = ROOT }
+				NOT = { war_with = ROOT }
+			}
+		}
+		
+		add_country_modifier = {
+			name = council_request_timer_001
+			duration = 3650
+		}
+		set_country_flag = assembled_council
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+	
+	# Stability = 3
+	option = {
+		name = GOT_COUNCIL.1.option.b
+		
+		trigger = {
+			NOT = { stability = 3 }
+		}
+		
+		add_country_modifier = {
+			name = council_request_timer_002
+			duration = 3650
+		}
+		set_country_flag = assembled_council
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+	
+	# Guarantee neighbour
+	option = {
+		name = GOT_COUNCIL.1.option.c
+		
+		trigger = {
+			any_neighbor_country = {  
+				NOT = { is_rival = ROOT }
+				has_opinion = {
+					who = ROOT
+					value = -25
+				}
+				ROOT = {
+					NOT = { has_guaranteed = PREV }
+				}
+			}
+		}
+		
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { has_guaranteed = ROOT }
+				}
+				set_country_flag = temp_council_guarantee
+			}
+		}
+		
+		add_country_modifier = {
+			name = council_request_timer_003
+			duration = 3650
+		}
+		set_country_flag = assembled_council
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+	
+	# Ally neighbour
+	option = {
+		name = GOT_COUNCIL.1.option.d
+		
+		trigger = {
+			any_neighbor_country = {  
+				NOT = { is_rival = ROOT }
+				has_opinion = {
+					who = ROOT
+					value = -25
+				}
+				ROOT = {
+					NOT = { alliance_with = PREV }
+				}
+			}
+		}
+		
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { alliance_with = ROOT }
+				}
+				set_country_flag = temp_council_alliance
+			}
+		}
+		
+		add_country_modifier = {
+			name = council_request_timer_004
+			duration = 3650
+		}
+		set_country_flag = assembled_council
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+	
+	# Marry neighbour
+	option = {
+		name = GOT_COUNCIL.1.option.e
+		
+		trigger = {
+			any_neighbor_country = {  
+				NOT = { is_rival = ROOT }
+				has_opinion = {
+					who = ROOT
+					value = -25
+				}
+				ROOT = {
+					NOT = { marriage_with = PREV }
+				}
+			}
+		}
+		
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { marriage_with = ROOT }
+				}
+				set_country_flag = temp_council_marriage
+			}
+		}
+		
+		add_country_modifier = {
+			name = council_request_timer_005
+			duration = 3650
+		}
+		set_country_flag = assembled_council
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+	
+	# Ignore their requests
+	option = {
+		name = GOT_COUNCIL.1.option.g
+		
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -25
+		}
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# Failure
+country_event = {
+	id = GOT_COUNCIL.2
+	title = GOT_COUNCIL.2.title
+	desc = GOT_COUNCIL.2.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+
+	trigger = {
+		has_country_flag = assembled_council
+		AND = {
+			NOT = { has_country_modifier = council_request_timer_001 }
+			NOT = { has_country_modifier = council_request_timer_002 }
+			NOT = { has_country_modifier = council_request_timer_003 }
+			NOT = { has_country_modifier = council_request_timer_004 }
+			NOT = { has_country_modifier = council_request_timer_005 }
+		}
+	}
+	
+	immediate = {
+		clr_country_flag = assembled_council
+		
+	}
+	
+	option = {
+		name = GOT_COUNCIL.2.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -25
+		}
+	}
+}
+
+# War with neighbour
+country_event = {
+	id = GOT_COUNCIL.3
+	title = GOT_COUNCIL.3.title
+	desc = GOT_COUNCIL.3.desc
+	picture = DIET_eventPicture
+
+	trigger = {
+		has_country_modifier = council_request_timer_001
+		any_neighbor_country = {  
+			war_with = ROOT
+		}
+	}
+	
+	immediate = {
+		clr_country_flag = assembled_council
+		remove_country_modifier = council_request_timer_001
+	}
+	
+	option = {
+		name = GOT_COUNCIL.3.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 25
+		}
+	}
+}
+
+# Guarantee neighbour
+country_event = {
+	id = GOT_COUNCIL.4
+	title = GOT_COUNCIL.4.title
+	desc = GOT_COUNCIL.4.desc
+	picture = DIET_eventPicture
+
+	trigger = {
+		has_country_modifier = council_request_timer_003
+		any_neighbor_country = {  
+			has_country_flag = temp_council_guarantee
+			guaranteed_by = ROOT
+		}
+	}
+	
+	immediate = {
+		clr_country_flag = assembled_council
+		remove_country_modifier = council_request_timer_003
+		
+		hidden_effect = {
+			every_country = {  
+				limit = { has_country_flag = temp_council_guarantee }
+				clr_country_flag = temp_council_guarantee
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_COUNCIL.4.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 25
+		}
+	}
+}
+
+# Ally neighbour
+country_event = {
+	id = GOT_COUNCIL.5
+	title = GOT_COUNCIL.5.title
+	desc = GOT_COUNCIL.5.desc
+	picture = DIET_eventPicture
+
+	trigger = {
+		has_country_modifier = council_request_timer_004
+		any_neighbor_country = {  
+			has_country_flag = temp_council_alliance
+			alliance_with = ROOT
+		}
+	}
+	
+	immediate = {
+		clr_country_flag = assembled_council
+		remove_country_modifier = council_request_timer_004
+		
+		hidden_effect = {
+			every_country = {  
+				limit = { has_country_flag = temp_council_alliance }
+				clr_country_flag = temp_council_alliance
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_COUNCIL.5.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 25
+		}
+	}
+}
+
+# Marry neighbour
+country_event = {
+	id = GOT_COUNCIL.6
+	title = GOT_COUNCIL.6.title
+	desc = GOT_COUNCIL.6.desc
+	picture = DIET_eventPicture
+
+	trigger = {
+		has_country_modifier = council_request_timer_005
+		any_neighbor_country = {  
+			has_country_flag = temp_council_marriage
+			marriage_with = ROOT
+		}
+	}
+	
+	immediate = {
+		clr_country_flag = assembled_council
+		remove_country_modifier = council_request_timer_005
+		
+		hidden_effect = {
+			every_country = {  
+				limit = { has_country_flag = temp_council_marriage }
+				clr_country_flag = temp_council_marriage
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_COUNCIL.6.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 25
+		}
+	}
+}
+
+# Stability = 3
+country_event = {
+	id = GOT_COUNCIL.7
+	title = GOT_COUNCIL.7.title
+	desc = GOT_COUNCIL.7.desc
+	picture = DIET_eventPicture
+
+	trigger = {
+		has_country_modifier = council_request_timer_002
+		stability = 3
+	}
+	
+	immediate = {
+		clr_country_flag = assembled_council
+		remove_country_modifier = council_request_timer_002
+	}
+	
+	option = {
+		name = GOT_COUNCIL.7.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 25
+		}
+	}
+}

@@ -1,0 +1,1088 @@
+namespace = GOT_RANDOM_COUNTRY
+
+# Envoy falls Ill
+country_event = {
+	id = GOT_RANDOM_COUNTRY.1
+	title = GOT_RANDOM_COUNTRY.1.title
+	desc = GOT_RANDOM_COUNTRY.1.desc
+	picture = PLAGUE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.1.option.a
+		
+		add_dip_power = 50
+		
+		add_country_modifier = {
+			name = absent_diplomat
+			duration = 365
+		}
+		ai_chance = { factor = 50 }
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.1.option.b
+		
+		add_dip_power = -50
+		
+		ai_chance = { factor = 50 }
+	}
+}
+
+# Insulted by a Maester
+country_event = {
+	id = GOT_RANDOM_COUNTRY.2
+	title = GOT_RANDOM_COUNTRY.2.title
+	desc = GOT_RANDOM_COUNTRY.2.desc
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = monarchy
+		has_advisor = yes
+	}
+
+	option = {
+		name = GOT_RANDOM_COUNTRY.2.option.a
+		kill_advisor = random
+		
+		if = {
+			limit = { has_estate = estate_nobles }
+						
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -10
+			}
+		}
+		
+		ai_chance = { factor = 50 }
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.2.option.b
+		
+		add_legitimacy = -25
+		
+		ai_chance = {
+			factor = 50
+
+			modifier = {
+				factor = 0
+				
+				NOT = { legitimacy = 75 }
+			}
+		}
+	}
+}
+
+# Exotic Trader
+country_event = {
+	id = GOT_RANDOM_COUNTRY.3
+	title = GOT_RANDOM_COUNTRY.3.title
+	desc = GOT_RANDOM_COUNTRY.3.desc
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_advisor = yes
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.3.option.a
+		
+		add_years_of_income = -1
+		add_country_modifier = {
+			name = essosian_book
+			duration = -1
+		}
+
+		ai_chance = { factor = 25 }
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.3.option.b
+		
+		add_years_of_income = -0.5
+		add_country_modifier = {
+			name = toy_soldier
+			duration = -1
+		}
+		
+		ai_chance = { factor = 25 }
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.3.option.c
+		
+		add_years_of_income = -0.25
+		
+		add_country_modifier = {
+			name = miniature_warship
+			duration = -1
+		}
+		ai_chance = { factor = 25 }
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.3.option.d
+		
+		add_years_of_income = 0.25
+		
+		ai_chance = { factor = 25 }
+	}
+}
+
+# Grand Feast
+country_event = {
+	id = GOT_RANDOM_COUNTRY.4
+	title = GOT_RANDOM_COUNTRY.4.title
+	desc = GOT_RANDOM_COUNTRY.4.desc
+	picture = FEAST_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_advisor = yes
+		NOT = { stability = 0 }
+	}
+
+	option = {
+		name = GOT_RANDOM_COUNTRY.4.option.a
+		
+		add_prestige = 15
+		
+		add_country_modifier = {
+			name = dishonored_gods
+			duration = 365
+		}
+		ai_chance = { 
+			factor = 50 
+		
+			modifier = { 
+				factor = 0
+				
+				prestige = 50
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.4.option.b
+		
+		add_legitimacy = 15
+		
+		add_country_modifier = {
+			name = honored_gods
+			duration = 365
+		}
+		ai_chance = { factor = 50 }
+	}
+}
+
+# Tales from beyond the Wall
+country_event = {
+	id = GOT_RANDOM_COUNTRY.5
+	title = GOT_RANDOM_COUNTRY.5.title
+	desc = GOT_RANDOM_COUNTRY.5.desc
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		technology_group = western
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.5.option.a
+		
+		add_stability = -1
+	}
+}
+
+# Infighting
+country_event = {
+	id = GOT_RANDOM_COUNTRY.6
+	title = GOT_RANDOM_COUNTRY.6.title
+	desc = GOT_RANDOM_COUNTRY.6.desc
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		army_size_percentage = 0.25
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.6.option.a
+		
+		add_country_modifier = {
+			name = disorganised_men 
+			duration = 1200
+		}
+		
+		ai_chance = { factor = 25 }
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.6.option.b
+		
+		add_mil_power = -100
+		
+		ai_chance = { factor = 75 }
+	}
+}
+
+# Essosian Traders
+country_event = {
+	id = GOT_RANDOM_COUNTRY.7
+	title = GOT_RANDOM_COUNTRY.7.title
+	desc = GOT_RANDOM_COUNTRY.7.desc
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		technology_group = western
+		any_known_country = {  
+			NOT = { technology_group = western }
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.7.option.a
+		
+		add_mercantilism = 5
+		
+		ai_chance = { 
+			factor = 50 
+			
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.7.option.b
+		
+		add_mercantilism = -5
+		
+		add_adm_power = 100
+		
+		ai_chance = { 
+			factor = 50 
+			
+			modifier = {
+				factor = 5
+				
+				NOT = { adm_power = 100 }
+			}
+		}
+	}
+}
+
+# Westerosi Traders
+country_event = {
+	id = GOT_RANDOM_COUNTRY.8
+	title = GOT_RANDOM_COUNTRY.8.title
+	desc = GOT_RANDOM_COUNTRY.8.desc
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { technology_group = western }
+		any_known_country = {  
+			technology_group = western
+		}
+	}
+
+	option = {
+		name = GOT_RANDOM_COUNTRY.8.option.a
+		
+		add_mercantilism = 5
+		
+		ai_chance = { 
+			factor = 50 
+			
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.8.option.b
+		
+		add_mercantilism = -5
+		
+		add_adm_power = 100
+		
+		ai_chance = { 
+			factor = 50 
+			
+			modifier = {
+				factor = 5
+				
+				NOT = { adm_power = 100 }
+			}
+		}
+	}
+}
+
+# Barrow of the First Men
+country_event = {
+	id = GOT_RANDOM_COUNTRY.9
+	title = GOT_RANDOM_COUNTRY.9.title
+	desc = GOT_RANDOM_COUNTRY.9.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		capital_scope = {
+			superregion = westeros_superregion
+		}	
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.9.option.a
+		
+		random_list = {
+			25 = {
+				add_ruler_modifier = {
+					name = ruler_maimed
+					duration = -1
+				}
+			}
+			25 = {
+				add_ruler_modifier = {
+					name = ruler_enlightened
+					duration = -1
+				}	
+			}
+			25 = {
+				add_ruler_modifier = {
+					name = ruler_mad
+					duration = -1
+				}	
+			}
+			25 = {
+					
+			}
+		}
+		
+		ai_chance = { factor = 25 }
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.9.option.b
+		
+		random_list = {
+			50 = {
+				add_mil_power = 50
+			}
+			50 = {
+				add_mil_power = -50
+			}
+		}
+		
+		ai_chance = { factor = 25 }
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.9.option.c
+		
+		add_prestige = -5
+		
+		ai_chance = { factor = 25 }
+	}
+}
+
+# Visit from a Spice Trader
+country_event = {
+	id = GOT_RANDOM_COUNTRY.10
+	title = GOT_RANDOM_COUNTRY.10.title
+	desc = GOT_RANDOM_COUNTRY.10.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			trade_goods = spices
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.10.option.a
+
+		add_adm_power = 100
+		
+		random = {
+			chance = 10
+			kill_ruler = yes
+		}
+		
+		ai_chance = { 
+			factor = 25 
+			
+			modifier = {
+				factor = 0
+				ADM = 3
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.10.option.b
+
+		add_dip_power = 100
+		
+		random = {
+			chance = 10
+			kill_ruler = yes
+		}
+		
+		ai_chance = { 
+			factor = 25 
+			
+			modifier = {
+				factor = 0
+				DIP = 3
+			}
+		}
+	}
+	option = {
+		name = GOT_RANDOM_COUNTRY.10.option.c
+
+		add_mil_power = 100
+		
+		random = {
+			chance = 10
+			kill_ruler = yes
+		}
+		
+		ai_chance = { 
+			factor = 25 
+			
+			modifier = {
+				factor = 0
+				MIL = 3
+			}
+		}
+	}
+	option = {
+		name = GOT_RANDOM_COUNTRY.10.option.d
+
+		add_legitimacy = -10
+		add_republican_tradition = -10
+	}
+}
+
+# Repair the Titan
+country_event = {
+	id = GOT_RANDOM_COUNTRY.11
+	title = GOT_RANDOM_COUNTRY.11.title
+	desc = GOT_RANDOM_COUNTRY.11.desc
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owns = 470
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.11.option.a
+
+		add_years_of_income = -2
+		add_stability = 1
+		add_prestige = 50
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.11.option.b
+
+		add_prestige = -25
+		add_legitimacy = -10
+		add_republican_tradition = -10
+	}
+}
+
+
+# Commoner's Request
+country_event = {
+	id = GOT_RANDOM_COUNTRY.12
+	title = GOT_RANDOM_COUNTRY.12.title
+	desc = GOT_RANDOM_COUNTRY.12.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_advisor = yes
+		technology_group = western
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.12.option.a
+	
+		add_legitimacy = 10
+	}
+	option = {
+		name = GOT_RANDOM_COUNTRY.12.option.b
+	
+		add_dip_power = 50
+	}
+	option = {
+		name = GOT_RANDOM_COUNTRY.12.option.c
+	
+		add_mil_power = 50
+	}
+}
+
+# Popular Hedge Wizard
+country_event = {
+	id = GOT_RANDOM_COUNTRY.13
+	title = GOT_RANDOM_COUNTRY.13.title
+	desc = GOT_RANDOM_COUNTRY.13.desc
+	picture = FEAST_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		technology_group = western
+	}
+	
+	option = {
+		name =  GOT_RANDOM_COUNTRY.13.option.a
+	
+		add_mil_power = 50
+		add_dip_power = -50
+	}
+	option = {
+		name =  GOT_RANDOM_COUNTRY.13.option.b
+	
+		add_dip_power = 50
+		add_legitimacy = -10
+	}
+}
+
+# Out of Myrish Fire
+country_event = {
+	id = GOT_RANDOM_COUNTRY.14
+	title = GOT_RANDOM_COUNTRY.14.title
+	desc = GOT_RANDOM_COUNTRY.14.desc
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		technology_group = western
+		
+		AND = {
+			NOT = { has_country_modifier = myrish_fire_sent_merchant }
+			NOT = { has_country_modifier = myrish_fire_used_wine }
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.14.option.a
+	
+		add_country_modifier = {
+			name = myrish_fire_sent_merchant
+			duration = 3650
+		}
+	}
+	option = {
+		name = GOT_RANDOM_COUNTRY.14.option.b
+	
+		add_country_modifier = {
+			name = myrish_fire_used_wine
+			duration = 3650
+		}
+	}
+}
+
+# $HEIR$ is a lizard!
+country_event = {
+	id = GOT_RANDOM_COUNTRY.15
+	title = GOT_RANDOM_COUNTRY.15.title
+	desc = GOT_RANDOM_COUNTRY.15.desc
+	picture = PLAGUE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_heir = yes
+		NOT = { heir_age = 18 }
+	}
+
+	option = {
+		name = GOT_RANDOM_COUNTRY.15.option.a
+	
+		add_years_of_income = -2
+		
+		random = {
+			chance = 10
+			kill_heir = yes
+		}
+	}
+	option = {
+		name = GOT_RANDOM_COUNTRY.15.option.b
+
+		random = {
+			chance = 50
+			kill_heir = yes
+		}
+	}
+	option = {
+		name = GOT_RANDOM_COUNTRY.15.option.c
+	
+		kill_heir = yes
+	}
+}
+
+# Fever in court
+country_event = {
+	id = GOT_RANDOM_COUNTRY.16
+	title = GOT_RANDOM_COUNTRY.16.title
+	desc = GOT_RANDOM_COUNTRY.16.desc
+	picture = PLAGUE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_advisor = yes
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.16.option.a
+	
+		add_years_of_income = -0.5
+	}
+	option = {
+		name = GOT_RANDOM_COUNTRY.16.option.b
+	
+		kill_advisor = random
+	}
+}
+
+# A Red Comet
+country_event = {
+	id = GOT_RANDOM_COUNTRY.17
+	title = GOT_RANDOM_COUNTRY.17.title
+	desc = GOT_RANDOM_COUNTRY.17.desc
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.17.option.a
+	
+		add_prestige = -25
+		
+		if = {
+			limit = {
+				NOT = { prestige = -100 }
+			}
+			add_adm_power = -100
+		}
+	}
+	option = {
+		name = GOT_RANDOM_COUNTRY.17.option.b
+	
+		add_stability = -1
+		
+		if = {
+			limit = {
+				NOT = { stability = -2 }
+			}
+			add_adm_power = -100
+		}
+	}
+}
+
+# Sighting of a Wanderer
+country_event = {
+	id = GOT_RANDOM_COUNTRY.18
+	title = GOT_RANDOM_COUNTRY.18.title
+	desc = GOT_RANDOM_COUNTRY.18.desc
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = GOT_RANDOM_COUNTRY.18.option.a
+	
+		if = {
+			limit = { stability = 3 }
+			add_adm_power = 100
+		}
+		
+		if = {
+			limit = { NOT = { stability = 3 } }
+			add_stability = 1
+		}
+	}
+}
+
+# Sighting of the Red Wanderer
+country_event = {
+	id = GOT_RANDOM_COUNTRY.19
+	title = GOT_RANDOM_COUNTRY.19.title
+	desc = GOT_RANDOM_COUNTRY.19.desc
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.19.option.a
+	
+		if = {
+			limit = { NOT = { stability = -2 } }
+			add_adm_power = -100
+		}
+		
+		if = {
+			limit = { stability = -2 }
+			add_stability = -1
+		}
+	}
+}
+
+# Child of the Forest sighted!
+country_event = {
+	id = GOT_RANDOM_COUNTRY.20
+	title = GOT_RANDOM_COUNTRY.20.title
+	desc = GOT_RANDOM_COUNTRY.20.desc
+	picture = PAINTER_ARTIST_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		technology_group = western
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.20.option.a
+		
+		add_prestige = -5
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.20.option.b
+		
+		add_legitimacy = -10
+		
+		random_list = {
+			25 = {
+				add_stability = 1
+			}
+			25 = {
+				add_adm_power = 10
+			}
+			25 = {
+				add_dip_power = 10
+			}
+			25 = {
+				add_mil_power = 10
+			}
+			50 = {
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# Crannogmen disappearances
+country_event = {
+	id = GOT_RANDOM_COUNTRY.21
+	title = GOT_RANDOM_COUNTRY.21.title
+	desc = GOT_RANDOM_COUNTRY.21.desc
+	picture = EXPLORERS_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			culture = crannogmen
+		}
+	}
+
+	option = {
+		name = GOT_RANDOM_COUNTRY.21.option.a
+		
+		add_legitimacy = 5
+		
+		random_list = {
+			25 = {
+				add_stability = -1
+			}
+			25 = {
+				add_adm_power = 25
+			}
+			25 = {
+				add_dip_power = 25
+			}
+			25 = {
+				add_mil_power = 25
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.21.option.b
+		
+		random = {
+			chance = 50
+			random_owned_province = {
+				limit = {
+					culture = crannogmen
+				}
+				add_unrest = 10
+			}
+		}
+		
+		add_prestige = -10
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+# Summer Merchant
+country_event = {
+	id = GOT_RANDOM_COUNTRY.22
+	title = GOT_RANDOM_COUNTRY.22.title
+	desc = GOT_RANDOM_COUNTRY.22.desc
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { technology_group = summer_islanders }
+	}
+
+	option = {
+		name = GOT_RANDOM_COUNTRY.22.option.a
+		
+		add_years_of_income = -0.25
+		
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.22.option.b
+		
+		add_years_of_income = -0.50
+		
+		change_adm = 1
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.22.option.c
+		
+		add_years_of_income = -0.50
+		
+		change_dip = 1
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.22.option.d
+		
+		add_years_of_income = -0.50
+
+		change_mil = 1
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.22.option.e
+		
+		add_prestige = -5
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# Westerosi Merchant
+country_event = {
+	id = GOT_RANDOM_COUNTRY.23
+	title = GOT_RANDOM_COUNTRY.23.title
+	desc = GOT_RANDOM_COUNTRY.23.desc
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { technology_group = western }
+	}
+
+	option = {
+		name = GOT_RANDOM_COUNTRY.23.option.a
+		
+		add_years_of_income = -0.25
+		
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.23.option.b
+		
+		add_years_of_income = -0.50
+		
+		change_adm = 1
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.23.option.c
+		
+		add_years_of_income = -0.50
+		
+		change_dip = 1
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.23.option.d
+		
+		add_years_of_income = -0.50
+
+		change_mil = 1
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.23.option.e
+		
+		add_prestige = -5
+		
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+# Grand Tournament
+country_event = {
+	id = GOT_RANDOM_COUNTRY.24
+	title = GOT_RANDOM_COUNTRY.24.title
+	desc = GOT_RANDOM_COUNTRY.24.desc
+	picture = TOURNAMENT_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = GOT_RANDOM_COUNTRY.24.option.a
+		
+		create_general = 100
+	}
+}
+
+# [Root.Heir.GetName] adores whores!
+country_event = {
+	id = GOT_RANDOM_COUNTRY.25
+	title = GOT_RANDOM_COUNTRY.25.title
+	desc = GOT_RANDOM_COUNTRY.25.desc
+	picture = ACCUSATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_heir = yes
+		heir_age = 12
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.25.option.a
+		
+		add_heir_claim = -25
+		add_dip_power = 100
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.25.option.b
+		
+		add_prestige = -10
+		add_legitimacy = -10
+	}
+}
+
+#t: War calls!
+#d: Our realm has been at war, and our officers are calling for our ruler, [Root.Monarch.GetTitle] [Root.Monarch.GetName] to step up and lead [Root.Monarch.GetHerHis] soldiers.
+#1: Step up.
+#2: Send your heir, [Root.Heir.GetName]
+country_event = {
+	id = GOT_RANDOM_COUNTRY.26
+	title = GOT_RANDOM_COUNTRY.26.title
+	desc = GOT_RANDOM_COUNTRY.26.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_heir = yes
+		heir_age = 13
+		is_at_war = yes
+		has_regency = no
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.26.option.a
+		
+		add_prestige = 10
+		convert_ruler_to_general = yes
+	}
+	
+	option = {
+		name = GOT_RANDOM_COUNTRY.26.option.b
+		
+		add_prestige = -10
+		convert_heir_to_general = yes
+	}
+}

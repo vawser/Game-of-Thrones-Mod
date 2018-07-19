@@ -1,0 +1,79 @@
+civil_war = {
+	potential = {
+		num_of_cities = 2
+		any_owned_province = {
+			base_tax = 5
+		}
+		government = monarchy
+		is_subject = no
+		NOT = { has_country_flag = had_civil_war }
+	}
+
+	can_start = {
+		has_any_disaster = no
+		has_regency = no
+		NOT = { legitimacy = 50 }
+		average_home_autonomy = 10
+	}
+	
+	progress = {
+		modifier = {
+			factor = 1
+			NOT = { ADM = 1 }
+		}
+		modifier = {
+			factor = 1
+			NOT = { DIP = 1 }
+		}
+		modifier = {
+			factor = 1
+			NOT = { MIL = 1 }
+		}
+		modifier = {
+			factor = 1
+			overextension_percentage = 0.10
+		}		
+		modifier = {
+			factor = 2
+			revolt_percentage = 0.10
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { stability = 0 }
+		}		
+	}
+
+	can_end = {
+		stability = 3
+		legitimacy = 50
+	}
+
+	modifier = {
+		global_unrest = 10
+	}	
+	
+	on_start = civil_war.1
+	on_end = civil_war.100
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			100 = civil_war.2
+			100 = civil_war.3
+			100 = civil_war.4
+			100 = civil_war.5
+			100 = civil_war.6
+			100 = civil_war.7
+			100 = civil_war.8
+			100 = civil_war.9
+			100 = civil_war.10
+			100 = civil_war.11
+			100 = civil_war.12
+			100 = civil_war.13
+		
+		}
+	}
+}
+

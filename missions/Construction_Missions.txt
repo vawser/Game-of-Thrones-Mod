@@ -1,0 +1,313 @@
+construct_grand_fleet = {
+
+	type = country
+
+	category = ADM
+	
+	allow = {
+		num_of_ports = 5
+		naval_forcelimit = 40
+		NOT = { num_of_heavy_ship = 15 }
+		num_of_heavy_ship = 5
+	}
+	abort = {
+		NOT = { num_of_ports = 1 }
+	}
+	success = {
+		num_of_heavy_ship = 20
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.05
+			num_of_ports = 10
+		}
+		modifier = {
+			factor = 1.05
+			prestige = 10
+		}
+	}
+	effect = {
+		add_navy_tradition = 10
+		add_prestige = 10
+	}	
+}
+
+
+rule_the_seas = {
+
+	type = country
+	
+	category = ADM
+
+	allow = {
+		num_of_ports = 5
+		num_of_heavy_ship = 25
+		naval_forcelimit = 25
+		any_known_country = {
+			num_of_heavy_ship = FROM
+		}
+	}
+	abort = {
+		NOT = { num_of_ports = 1 }
+	}
+	success = {
+		NOT = {
+			any_known_country = {
+				num_of_heavy_ship = FROM
+			}
+		}
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.15
+			num_of_ports = 10
+		}
+		modifier = {
+			factor = 1.1
+			prestige = 10
+		}
+	}
+	effect = {
+		add_navy_tradition = 10
+		add_prestige = 5
+	}	
+}
+
+construct_army = {
+
+	type = country
+
+	category = ADM
+	
+	allow = {
+		OR = {
+			NOT = { has_country_flag = construct_army_mission }
+			had_country_flag = { flag = construct_army_mission days = 7300 }
+		}
+		NOT = { army_size_percentage = 0.5 }
+		is_emperor = no
+	}
+	abort = {
+	}
+	success = {
+		army_size_percentage = 0.75
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 2.0
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { army_size_percentage = 0.5 }
+		}		
+		modifier = {
+			factor = 2.0
+			NOT = { army_size_percentage = 0.3 }
+		}		
+	}
+	effect = {
+		set_country_flag = construct_army_mission
+		add_army_tradition = 5
+		add_prestige = 5
+	}	
+}
+
+
+construct_navy = {
+
+	type = country
+	
+	category = ADM
+
+	allow = {
+		any_owned_province = {
+			has_port = yes
+			is_core = FROM
+		}
+		OR = {
+			NOT = { has_country_flag = construct_navy_mission }
+			had_country_flag = { flag = construct_navy_mission days = 7300 }
+		}
+		NOT = { navy_size_percentage = 0.5 }
+	}
+	abort = {
+		NOT = {
+			any_owned_province = {
+				has_port = yes
+				is_core = FROM
+			}
+		}
+	}
+	success = {
+		navy_size_percentage = 0.75
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 2.0
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { navy_size_percentage = 0.5 }
+		}		
+		modifier = {
+			factor = 2.0
+			NOT = { navy_size_percentage = 0.3 }
+		}		
+	}
+	effect = {
+		set_country_flag = construct_navy_mission
+		add_navy_tradition = 5
+		add_prestige = 5
+	}	
+}
+
+
+fortify_province = {
+
+	type = our_provinces
+	
+	category = ADM
+	
+	allow = {
+		NOT = { has_building = fort_15th }
+		can_build = fort_15th
+		owner = { is_at_war = no }
+		is_colony = no
+	}
+	abort = {
+		NOT = {	owned_by = FROM }
+	}
+	success = {
+		has_building = fort_15th
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.2
+			any_neighbor_province = {
+				owner = {
+					has_casus_belli_against = FROM
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.12
+			base_tax = 5
+		}		
+		modifier = {
+			factor = 1.07
+			any_neighbor_province = {
+				owner = {
+					NOT = { religion_group = FROM }
+				}
+			}
+		}		
+	}
+	effect = {
+		add_base_manpower = 1
+		owner = {
+			add_army_tradition = 1
+		}
+	}
+}
+
+
+rival_army = {
+
+	type = rival_countries
+
+	category = ADM
+	
+	allow = {
+		FROM = {
+			NOT = { army_size = ROOT }
+		}
+		NOT = { alliance_with = FROM }
+		NOT = { is_subject_of = FROM }
+		NOT = { overlord_of = FROM }
+	}
+	abort = {
+		OR = {
+			alliance_with = FROM
+			is_subject_of = FROM
+			overlord_of = FROM
+		}
+	}	
+	success = {
+		FROM = { army_size = ROOT }
+	}
+	chance = {
+		factor = 1000
+
+		modifier = {
+			factor = 1.5
+			FROM = { mil = 3 }
+		}
+	}
+	effect = {
+		FROM = { add_army_tradition = 5 }
+	}	
+}
+
+
+rival_navy = {
+
+	type = rival_countries
+	
+	category = ADM
+	
+	allow = {
+		FROM = {
+			NOT = { navy_size = ROOT }
+		}
+		NOT = { alliance_with = FROM }
+		NOT = { is_subject_of = FROM }
+		NOT = { overlord_of = FROM }
+		num_of_ports = 1
+		FROM = {
+			any_owned_province = {
+				has_port = yes
+				is_core = owner
+			}
+		}
+	}
+	abort = {
+		OR = {
+			FROM = {
+				NOT = {
+					any_owned_province = {
+						has_port = yes
+						is_core = owner
+					}
+				}
+			}	
+			alliance_with = FROM
+			is_subject_of = FROM
+			overlord_of = FROM
+		}
+	}
+	success = {
+		FROM = { navy_size = ROOT }
+	}
+	chance = {
+		factor = 1000
+
+		modifier = {
+			factor = 1.5
+			FROM = { mil = 3 }
+		}
+	}
+	effect = {
+		FROM = { add_navy_tradition = 5 }
+	}	
+}

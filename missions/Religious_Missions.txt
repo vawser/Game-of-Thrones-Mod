@@ -1,0 +1,87 @@
+
+convert_province_mission = {
+
+	type = our_provinces
+
+	category = ADM
+
+	allow = {
+		FROM = {
+			is_at_war = no
+			num_of_missionaries = 1
+		}
+		NOT =  { religion = FROM }
+		NOT = { has_province_modifier = religious_migration }
+	}
+	abort = {
+		OR = {
+			has_province_modifier = religious_migration
+			NOT = { owned_by = FROM }
+		}
+	}
+	success = {
+		religion = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.05
+			FROM = {  num_of_missionaries = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			FROM = {  is_defender_of_faith = yes }
+		}				
+	}
+	effect = {
+		owner = {
+			add_prestige = 10
+		}
+	}
+}
+
+achive_religious_unity = {
+
+	type = country
+
+	category = ADM
+
+	allow = {
+		has_factions = no
+		NOT = { religious_unity = 1 }
+	}
+	abort = {
+		
+	}
+	success = {
+		religious_unity = 1
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.1
+			is_defender_of_faith = yes
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { religious_unity = 0.5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { religious_unity = 0.6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { religious_unity = 0.7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { religious_unity = 0.8 }
+		}
+	}
+	effect = {
+		add_prestige = 10
+		add_adm_power = 25
+		add_dip_power = 25
+	}
+}

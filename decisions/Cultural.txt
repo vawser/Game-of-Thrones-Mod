@@ -1,0 +1,23 @@
+country_decisions = {
+
+	cultural_shift = {
+		potential = {
+			capital_scope = {
+				NOT = { culture = ROOT }
+			}
+		}
+		allow =  {
+			dominant_culture = capital
+			stability = 1
+			is_at_war = no 
+			is_subject = no
+		}
+	  	effect = {
+			change_primary_culture = capital
+			add_stability = -5
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

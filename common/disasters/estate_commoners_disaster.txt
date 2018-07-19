@@ -1,0 +1,123 @@
+estate_commoners_disaster = {
+	potential = {
+		has_dlc = "The Cossacks"
+		has_estate = estate_commoners
+		estate_influence = {
+			estate = estate_commoners
+			influence = 60
+		}
+	}
+
+
+	can_start = {
+		has_any_disaster = no
+		estate_influence = {
+			estate = estate_commoners
+			influence = 80
+		}
+	}
+	
+	can_stop = {
+		NOT = {
+			estate_influence = {
+				estate = estate_commoners
+				influence = 80
+			}		
+		}
+	}
+	
+	down_progress = {
+		factor = 1
+	}
+	
+	progress = {
+		modifier = {
+			factor = 1
+			estate_influence = {
+				estate = estate_commoners
+				influence = 80
+			}
+			hidden_trigger = {
+				NOT = {
+					estate_influence = {
+						estate = estate_commoners
+						influence = 85
+					}			
+				}			
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_influence = {
+				estate = estate_commoners
+				influence = 85
+			}
+			hidden_trigger = {
+				NOT = {
+					estate_influence = {
+						estate = estate_commoners
+						influence = 90
+					}			
+				}			
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_influence = {
+				estate = estate_commoners
+				influence = 90
+			}
+			hidden_trigger = {
+				NOT = {
+					estate_influence = {
+						estate = estate_commoners
+						influence = 95
+					}			
+				}			
+			}
+		}	
+		modifier = {
+			factor = 4
+			estate_influence = {
+				estate = estate_commoners
+				influence = 95
+			}
+			hidden_trigger = {
+				NOT = {
+					estate_influence = {
+						estate = estate_commoners
+						influence = 100
+					}			
+				}			
+			}
+		}	
+		modifier = {
+			factor = 5
+			estate_influence = {
+				estate = estate_commoners
+				influence = 100
+			}
+		}		
+	}
+	
+	can_end = {
+		custom_trigger_tooltip = {
+			tooltip = EST_CRUSHED_COMMONERS
+			
+            NOT = { has_country_flag = commoners_estate_in_power }					
+		}
+	}
+	
+	modifier = {	
+		years_of_nationalism = 10
+        global_unrest = 4
+        stability_cost_modifier = 0.5
+	}
+
+	on_start = GOT_ESTATES.56
+	on_end = GOT_ESTATES.57
+	
+	on_monthly = {
+	}
+}
+

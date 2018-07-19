@@ -1,0 +1,362 @@
+get_an_alliance_mission = {
+
+	type = neighbor_countries
+
+	category = DIP
+
+	allow = {
+		FROM = { NOT = { num_of_allies = 2 } }
+		NOT = { num_of_allies = 2 }
+		NOT = { is_enemy = FROM }
+		is_at_war = no
+		has_opinion = { who = FROM value = 10 }
+		NOT = { alliance_with = FROM }
+		NOT = { is_subject = yes }
+		FROM = { NOT = { is_subject = yes } }
+	}
+	abort = {
+		OR = {
+			war_with = FROM
+			FROM = { num_of_allies = 3 }
+			NOT = { num_of_cities = 1 }
+		}
+	}
+	success = {
+		alliance_with = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.10
+			primary_culture = FROM
+		}
+		modifier = {
+			factor = 1.5
+			religion = FROM
+		}
+		modifier = {
+			factor = 1.15
+			FROM = { dip = 3 }
+		}
+		modifier = {
+			factor = 0.85
+			FROM = { NOT = { dip = 2 } }
+		}
+		modifier = {
+			factor = 1.1
+			num_of_cities = 10
+		}		
+	}
+	effect = {
+		FROM = {
+			add_prestige = 10
+			add_dip_power = 25
+		}
+	}
+}
+
+
+improve_relations_mission = {
+
+	type = neighbor_countries
+
+	category = DIP
+
+	allow = {
+		is_at_war = no
+		religion_group = FROM
+		NOT = { has_opinion = { who = FROM value = 50 } }
+		has_opinion = { who = FROM value = 0 }
+		OR = {
+			is_subject = no
+			overlord = {
+				tag = FROM
+			}
+		}
+	}
+	abort = {
+		OR = {
+			war_with = FROM
+			exists = no
+		}
+	}
+
+	success = {
+		has_opinion = { who = FROM value = 100 }
+	}
+	
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.25
+			primary_culture = FROM
+		}
+		modifier = {
+			factor = 1.1
+			religion = FROM
+		}
+		modifier = {
+			factor = 1.1
+			FROM = { dip = 3 }
+		}
+		modifier = {
+			factor = 0.8
+			FROM = { NOT = { dip = 2 } }
+		}
+	}
+	effect = {
+		FROM = { add_prestige = 3 }
+	}	
+}
+
+
+generic_annex_vassal_mission = {
+	
+	type = neighbor_countries
+
+	category = DIP
+
+	target_provinces = {
+		owned_by = ROOT
+	}
+	allow = {
+		FROM = { is_at_war = no }
+		vassal_of = FROM
+		NOT = { num_of_cities = FROM }
+		religion_group = FROM
+	}
+	abort = {
+		OR = {
+			exists = no
+			NOT = { vassal_of = FROM }
+			NOT = { religion_group = FROM }
+		}
+	}
+	success = {
+		exists = no
+		all_target_province = {
+			owned_by = FROM
+		}
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.1
+			FROM = { dip = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			FROM = { dip = 5 }
+		}
+	}
+	effect = {
+		FROM = { 
+			add_prestige = 5
+			add_adm_power = 25
+		}
+	}
+}
+
+
+improve_reputation_mission = {
+
+	type = country
+	
+	category = DIP
+	
+	allow = {
+		overextension_percentage = 0.50
+	}
+	abort = {
+	}
+	success = {
+		NOT = { overextension_percentage = 0.01 }
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.05
+			dip = 3
+		}
+		modifier = {
+			factor = 1.10
+			dip = 5
+		}
+		modifier = {
+			factor = 1.10
+			overextension_percentage = 0.75
+		}
+	}
+	effect = {
+		define_advisor = { type = diplomat skill = 3 }
+	}
+}
+
+
+vassalize_mission = {
+
+	type = neighbor_countries
+	
+	category = DIP
+
+	allow = {
+		is_subject = no
+		has_regency = no
+		FROM = { 
+			is_subject = no 
+			num_of_cities = 5
+		}
+		NOT = { num_of_cities = 4 }
+		NOT = { total_base_tax = 25 }
+		religion_group = FROM
+		NOT = { war_with = FROM }
+		NOT = { alliance_with = FROM }
+		has_opinion = { who = FROM value = 50 }
+	}
+	abort = {
+		OR = {
+			NOT = { num_of_cities = 1 }
+			AND = {
+				is_subject = yes
+				NOT = { vassal_of = FROM }
+			}
+			NOT = {
+				FROM = {
+					has_casus_belli = {
+						type = cb_vassalize_mission
+						target = ROOT
+					}
+				}
+			}
+		}
+	}
+	success = {
+		vassal_of = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.15
+			primary_culture = FROM
+		}
+		modifier = {
+			factor = 1.1
+			religion = FROM
+		}
+		modifier = {
+			factor = 1.1
+			capital_scope = {
+				base_tax = 5
+			}
+		}		
+		modifier = {
+			factor = 1.1
+			NOT = { num_of_cities = 2 }
+		}
+	}
+	immediate = {
+		FROM = {
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				months = 300
+				target = ROOT
+			}
+		}
+	}
+	abort_effect = {
+		FROM = {
+			remove_casus_belli = {
+				type = cb_vassalize_mission
+				target = ROOT
+			}
+		}
+	}
+	effect = {
+		FROM = {
+			add_dip_power = 25
+			add_adm_power = 25
+		}
+		hidden_effect = {
+			remove_casus_belli = {
+				type = cb_vassalize_mission
+				target = ROOT
+			}
+		}
+	}	
+}
+
+
+royal_marriage_mission = {
+
+	type = neighbor_countries
+	
+	category = DIP
+
+	allow = {
+		is_at_war = no	
+		FROM = {
+			government = monarchy
+			is_subject = no
+			num_of_free_diplomatic_relations = 1
+		}
+		government = monarchy
+		religion_group = FROM
+		is_subject = no 
+		NOT = {  
+			marriage_with = FROM 
+			war_with = FROM
+		}
+		has_opinion = { who = FROM value = 10 }
+	}
+	abort = {
+		OR = {
+			NOT = { num_of_cities = 1 }	#exists won't work, as we don't know the tag.
+			war_with =  FROM
+			FROM = {
+				OR = {
+					NOT = { government = monarchy }
+					is_subject = yes
+				}
+			}
+			NOT = { government = monarchy }
+			is_subject = yes
+		}
+	}
+	success = {
+		marriage_with = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.12
+			primary_culture = FROM
+		}
+		modifier = {
+			factor = 1.03
+			religion = FROM
+		}
+		modifier = {
+			factor = 1.1
+			has_opinion = { who = FROM value = 50 }
+		}
+		modifier = {
+			factor = 1.1
+			FROM = { dip = 3 }
+		}
+		modifier = {
+			factor = 1.04
+			prestige = FROM
+		}
+		modifier = {
+			factor = 1.08
+			NOT = { legitimacy = FROM }
+		}
+	}
+	effect = {
+		FROM = {
+			add_prestige = 5
+			add_dip_power = 25
+		}
+	}	
+}
+

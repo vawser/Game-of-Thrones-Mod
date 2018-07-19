@@ -1,0 +1,237 @@
+namespace = GOT_RHLLOR
+
+# Rework to integrate the Religious Leagues
+# R'Hllor should appear and gain ground via the event below
+# At 25% of all Lords being R'Hllor, a crisis emerges and the leagues start
+
+# A Fiery Temptress
+# The Lord of Light, or R'hllor is a popular god in the Free Cities of Essos. A dualistic view on the world, those who worship R'hllor beleive him to be the god of light, heat and life, with his antithesis being the Great Other, the god of ice and death. Locked in an eternal struggle over the fate of the world, it is told that once Azor Ahai rises, wielding the flaming sword Lightbringer, only then will their struggle end.
+# Banish these flame-loving heathens!
+# Tolerate their prescence, but do not endorse their practices
+# Accept them openly, and adopt their practices
+country_event = {
+	id = GOT_RHLLOR.1
+	title = GOT_RHLLOR.1.title
+	desc = GOT_RHLLOR.1.desc
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+        always = no # Will rework eventually
+		capital_scope = {
+			superregion = westeros_superregion
+		}
+		NOT = { religion = asoiaf_rhllor }
+		
+		AND = {
+			NOT = { has_ruler_modifier = rhllor_worshippers_banished }
+			NOT = { has_ruler_modifier = rhllor_worshippers_tolerated }
+			NOT = { has_ruler_modifier = rhllor_worshippers_accepted }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+	}
+	
+	option = {
+		name = GOT_RHLLOR.1.option.a
+		
+		add_ruler_modifier = {
+			name = rhllor_worshippers_banished
+			duration = -1
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+		
+		
+	}
+	
+	option = {
+		name = GOT_RHLLOR.1.option.b
+		
+		add_ruler_modifier = {
+			name = rhllor_worshippers_tolerated
+			duration = -1
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+	option = {
+		name = GOT_RHLLOR.1.option.c
+		
+		add_ruler_modifier = {
+			name = rhllor_worshippers_accepted
+			duration = -1
+		}
+		
+		ai_chance = {
+			factor = 20
+			
+			modifier = {
+				factor = 0
+				OR = {
+					primary_culture = free_folk
+					primary_culture = men_of_the_north
+					primary_culture = crannogmen
+					primary_culture = skagosi
+					primary_culture = ironborn
+				}
+			}
+			
+			modifier = {
+				factor = 200
+				OR = {
+					primary_culture = sand_dornish
+					primary_culture = salt_dornish
+					primary_culture = stone_dornish
+					primary_culture = men_of_the_stormlands
+				}
+			}
+		}
+	}
+}
+
+# Lord of Light
+# The red priests of R'hllor have consulted with [Root.Monarch.GetName], and [Root.Monarch.GetSheHe] has begun to come around to the idea of converting. It would be a radical move, and other lords and ladies in the Seven Kingdoms will not like it very much.
+# I am Azor Ahai!
+# Ignore these fools
+country_event = {
+	id = GOT_RHLLOR.2
+	title = GOT_RHLLOR.2.title
+	desc = GOT_RHLLOR.2.desc
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+        always = no
+		NOT = { religion = asoiaf_rhllor }
+		has_ruler_modifier = rhllor_worshippers_accepted
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+		
+		modifier = {
+			factor = 0.5
+			NOt = { religious_unity = 0.5 }
+		}
+		
+		modifier = {
+			factor = 0.5
+			NOt = { religious_unity = 0.25 }
+		}
+	}
+	
+	option = {
+		name = GOT_RHLLOR.2.option.a
+		
+		add_ruler_modifier = {
+			name = rhllors_blessing
+			duration = -1
+		}
+		
+		change_religion = asoiaf_rhllor
+		
+		every_country = {
+			limit = {
+				capital_scope = {
+					superregion = westeros_superregion
+				}
+			}
+
+			add_opinion = {
+				who = ROOT
+				modifier = converted_to_rhllor
+			}
+		}
+		
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+	option = {
+		name = GOT_RHLLOR.2.option.b
+		
+		add_prestige = 25
+		
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# R'hllor Worship spreads
+# Our acceptance of R'hllor and it's practices has lead to an influx of worshippers in our realm.
+# Great news
+# This was not what I wanted
+country_event = {
+	id = GOT_RHLLOR.3
+	title = GOT_RHLLOR.3.title
+	desc = GOT_RHLLOR.3.desc
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+        always = no
+		any_owned_province = {
+			NOT = { religion = asoiaf_rhllor }
+		}
+		NOT = { religion = asoiaf_rhllor }
+		OR = {
+			has_ruler_modifier = rhllor_worshippers_tolerated
+			has_ruler_modifier = rhllor_worshippers_accepted
+		}
+		stability = -1
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+		
+		modifier = { 
+			factor = 0.1
+			religion = asoiaf_rhllor
+		}
+
+		modifier = { 
+			factor = 10
+			has_ruler_modifier = rhllor_worshippers_tolerated
+		}
+	}
+	
+	option = {
+		name = GOT_RHLLOR.3.option.a
+		
+		random_owned_province = {
+			limit = { NOT = { religion = asoiaf_rhllor } }
+			change_religion = asoiaf_rhllor
+		}
+		
+		ai_chance = {
+			factor = 100
+			
+			modifier = {
+				factor = 0
+				has_ruler_modifier = rhllor_worshippers_tolerated
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_RHLLOR.3.option.b
+		
+		add_stability = -1
+		
+		ai_chance = {
+			factor = 100
+			
+			modifier = {
+				factor = 0
+				has_ruler_modifier = rhllor_worshippers_accepted
+			}
+		}
+	}
+}

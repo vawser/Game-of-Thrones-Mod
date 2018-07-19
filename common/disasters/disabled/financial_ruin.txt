@@ -1,0 +1,69 @@
+financial_ruin = {
+	potential = {	
+		num_of_loans = 5
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		num_of_loans = 5
+	}
+	progress = {
+		modifier = {
+			factor = 1
+			num_of_loans = 6
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 8
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 10
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 12
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 14
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 16
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 18
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 20
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 22
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 24
+		}
+	}
+	
+	can_end = {
+		has_country_flag = financial_ruin
+	}
+	
+	modifier = {
+	}	
+	
+	on_start = financial_ruin.1
+	on_end = financial_ruin.2
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+		}
+	}
+}

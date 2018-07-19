@@ -1,0 +1,32 @@
+naval_reform = {
+	category = 2 		# same category = 90% less likely
+
+	allow = {
+		any_province = {
+			has_port = yes
+		}
+	}
+	
+	effect = {
+		
+	}
+	
+	modifier = {
+		navy_tradition_decay = -0.01
+		ship_durability = 0.1
+	}
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			all_province = {
+				NOT = { has_port = yes }
+			}
+		}
+	}
+}

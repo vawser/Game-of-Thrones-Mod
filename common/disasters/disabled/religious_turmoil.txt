@@ -1,0 +1,61 @@
+religious_turmoil = {
+	potential = {
+		NOT = { has_country_flag = had_religious_turmoil } 
+	}
+
+	can_start = {
+		has_any_disaster = no
+		NOT = { religious_unity = 0.75 }
+		any_owned_province = {
+			has_owner_religion = no
+		}
+	}
+
+	progress = {
+		modifier = {
+			factor = 1
+			NOT = { religious_unity = 0.75 }
+			religious_unity = 0.5
+		} 		
+		modifier = {
+			factor = 2
+			NOT = { religious_unity = 0.5 }
+		} 
+		modifier = {
+			factor = 1
+			NOT = { stability = 1 }
+		}
+	}
+
+	can_end = {
+		NOT = { num_of_revolts = 1 }
+		OR = {
+			is_force_converted = yes
+			religious_unity = 0.9
+			NOT = {
+				any_owned_province = {
+					has_owner_religion = no
+				}		
+			}
+		}
+	}
+	
+	modifier = {
+	}
+	
+	on_start = religious_turmoil.1
+	on_end = religious_turmoil.2
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			100 = religious_turmoil.3
+			100 = religious_turmoil.4
+			100 = religious_turmoil.5
+			100 = religious_turmoil.6
+		}
+	}
+}
+

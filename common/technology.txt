@@ -1,0 +1,120 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new technology, make sure they are uniquely named.
+
+# Armies get a insufficient support penalty when the ratio cav / (inf+cav) is _higher_ than "cav_to_inf_ratio". This applies for the "unit_type" of a country.
+
+# Groups must be defined BEFORE tables.
+
+
+groups = {
+	# Westerois
+	western = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+	}
+	# Essosian
+	eastern = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+		
+	}
+	ghiscari = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+		
+	}
+	quartheen = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+		
+	}
+	naathi = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+		
+	}
+	farosi = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+		
+	}
+	yiti = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+		
+	}
+	hyrkooni = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+	}
+	nefer = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+		
+	}
+	stepstones = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+		
+	}
+	ibbenese = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+		
+	}
+	summer_islanders = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+		
+	}
+	
+	# Dothraki
+	dothraki = {
+		start_cost_modifier = 0
+		start_level = 0
+        is_primitive = yes
+	}
+	# Wildling
+	wildling = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+        is_primitive = yes
+		
+	}
+	# White Walkers
+	white_walker = {
+		start_cost_modifier = 0
+		start_level = 0
+		
+        is_primitive = yes
+	}
+    
+    native_dummy = {
+		start_cost_modifier = 0.0
+		start_level = 0
+
+        nation_designer_trigger = {
+			always = no
+		}
+        is_primitive = yes
+	}
+}
+
+tables = {
+	adm_tech = "technologies/adm.txt"
+	dip_tech = "technologies/dip.txt"
+	mil_tech = "technologies/mil.txt"
+}

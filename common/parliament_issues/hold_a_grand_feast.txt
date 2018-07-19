@@ -1,0 +1,28 @@
+hold_a_grand_feast = {
+	category = 1 		# same category = 90% less likely
+
+	allow = {
+		always = yes
+	}
+	
+	effect = {
+		every_neighbor_country = {
+			limit = {
+				NOT = { is_rival = ROOT }
+			}
+			add_opinion = { who = ROOT modifier = hosted_grand_feast }
+		}
+	}
+	
+	modifier = {
+		legitimacy = 1
+	}
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}

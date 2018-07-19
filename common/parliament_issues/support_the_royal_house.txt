@@ -1,0 +1,30 @@
+support_the_royal_house = {
+	category = 1 		# same category = 90% less likely
+
+	allow = {
+		any_country = {  
+			government = royal_house
+			has_opinion = {
+				who = ROOT
+				value = 0
+			}
+		}
+	}
+	
+	effect = {
+		
+	}
+	
+	modifier = {
+		legitimacy = 1
+		advisor_pool = 1
+	}
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}

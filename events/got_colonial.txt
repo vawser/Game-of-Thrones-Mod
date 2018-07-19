@@ -1,0 +1,277 @@
+namespace = got_colonial
+
+province_event = {
+	id =  got_colonial.1
+	title = got_colonial.1.title
+	desc = got_colonial.1.desc
+	picture = COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = { has_idea_group = exploration_ideas }
+		has_empty_adjacent_province = yes
+		owner = { NOT = { num_of_colonies = 2 } }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = got_colonial.1.option.a
+		random_empty_neighbor_province = {
+			create_colony = 200
+		}
+	}
+	option = {
+		name = got_colonial.1.option.b
+		trigger = {
+			owner = {
+			num_of_colonies = 1
+			}
+		}
+		owner = {
+			random_owned_province = {
+				limit = {
+					is_colony = yes
+				}
+				add_colonysize = 50
+			}
+		}
+	}
+}
+
+
+# Rival Settlements
+province_event = {
+	id = got_colonial.2
+	title = got_colonial.2.title
+	desc = got_colonial.2.desc
+	picture = COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_province_flag = rival_settlements }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = got_colonial.2.option.a
+		owner = { add_prestige = 10 }
+	}
+	option = {
+		name = got_colonial.2.option.b
+		add_base_tax = 1	
+		set_province_flag = rival_settlements
+	}
+}
+
+# Rival Settlements
+province_event = {
+	id = got_colonial.3
+	title = got_colonial.3.title
+	desc = got_colonial.3.desc
+	picture = COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_province_flag = rival_settlements
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = got_colonial.3.option.a
+		owner = {  add_dip_power = 10 }
+	}
+	option = {
+		name = got_colonial.3.option.b
+		owner = {  add_adm_power = 10 }
+	}	
+}
+
+# Rival Settlements
+province_event = {
+	id = got_colonial.4
+	title = got_colonial.4.title
+	desc = got_colonial.4.desc
+	picture = COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_province_flag = rival_settlements
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = got_colonial.4.option.a
+		owner = { add_mil_power = -25 }
+
+	}
+	option = {
+		name = got_colonial.4.option.b
+		owner = { add_years_of_income = -0.10 }
+
+	}
+}
+
+# The Call of the Hunt
+province_event = {
+	id = got_colonial.5
+	title = got_colonial.5.title
+	desc = got_colonial.5.desc
+	picture = NATIVES_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		any_empty_neighbor_province = {
+			NOT = { trade_goods = fur }
+			native_size = 10
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = got_colonial.5.option.a
+		add_base_manpower = 2
+	}
+	option = {
+		name = got_colonial.5.option.b
+		create_advisor = colonial_governor
+	}
+	option = {
+		name = got_colonial.5.option.c
+		change_trade_goods = fur
+	}
+}
+
+# Fur Trade Dwindles
+province_event = {
+	id = got_colonial.6
+	title = got_colonial.6.title
+	desc = got_colonial.6.desc
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		trade_goods = fur
+		OR = {
+			NOT = { has_province_flag = received_trade_goods }
+			had_province_flag = { flag = received_trade_goods days = 3650 }
+		}
+		has_empty_adjacent_province = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = got_colonial.6.option.a
+		change_trade_goods = naval_supplies
+	}
+	option = {
+		name = got_colonial.6.option.b
+		change_trade_goods = grain
+	}
+}
+
+# Colonial Expansion
+province_event = {
+	id = got_colonial.7
+	title = got_colonial.7.title
+	desc = got_colonial.7.desc
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_empty_adjacent_province = yes
+		any_empty_neighbor_province = {
+			has_discovered = ROOT
+		}
+		owner = { NOT = { num_of_colonies = 3 } }
+
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = got_colonial.7.option.a
+		random_empty_neighbor_province = {
+			limit = {
+				has_discovered = ROOT
+			}
+			create_colony = 200
+		}
+	}
+	option = {
+		name = got_colonial.7.option.b
+		trigger = {
+			owner = { num_of_colonies = 1 }
+		}
+		owner = {
+			random_owned_province = {
+				limit = {
+					is_colony = yes
+				}
+				add_colonysize = 50
+			}
+		}
+	}
+}
+
+# Colonial Migration
+province_event = {
+	id = got_colonial.8
+	title = got_colonial.8.title
+	desc = got_colonial.8.desc
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		colonysize = 300
+		NOT = { colonysize = 500 }
+		owner = {
+			any_owned_province = {
+				is_colony = yes
+				colonysize = 500
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = got_colonial.8.option.a
+		add_colonysize = -200
+		owner = {
+			random_owned_province = {
+				limit = { is_colony = yes colonysize = 500 }
+				add_colonysize = 200
+			}
+		}	
+	}
+}

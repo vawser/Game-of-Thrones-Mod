@@ -1,0 +1,1343 @@
+namespace = GOT_META
+
+# Decision: Personal Reflection - Cleanup
+country_event = {
+	id = GOT_META.1
+	title = "GOT_META.1.title"
+	desc = "GOT_META.1.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	hidden = yes
+	
+	trigger = {
+		had_country_flag = {
+			flag = reflected_on_life
+			days = 3650
+		}
+	}
+	
+	option = {
+		name = "GOT_META.1.option.1"
+		
+		clr_country_flag = reflected_on_life
+	}
+}
+
+# Decision: Alchemist Guild - Cleanup
+country_event = {
+	id = GOT_META.2
+	title = "GOT_META.2.title"
+	desc = "GOT_META.2.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	hidden = yes
+	
+	trigger = {
+		had_country_flag = {
+			flag = consulted_the_alchemists_guild
+			days = 1600
+		}
+	}
+	
+	option = {
+		name = "GOT_META.2.option.1"
+		
+		clr_country_flag = consulted_the_alchemists_guild
+	}
+}
+
+# Cleanup Capital movement due to random Estate placement
+# 	Perhaps manually place estates to remove need for this event
+country_event = {
+	id = GOT_META.3
+	title = "GOT_META.3.title"
+	desc = "GOT_META.3.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	hidden = yes
+	trigger = {
+		has_dlc = "The Cossacks"
+		NOT = { has_country_flag = estate_fix }
+	}
+	
+	immediate = {
+		set_country_flag = estate_fix
+	}
+	
+	option = {
+		name = "GOT_META.2.option.1"
+		
+		# Stark
+		if = {
+			limit = {
+				tag = A01
+				capital_scope = {
+					NOT = { province_id = 47 }
+				}
+			}
+			47 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 47
+		}
+		
+		# Tully
+		if = {
+			limit = {
+				tag = A03
+				capital_scope = {
+					NOT = { province_id = 101 }
+				}
+			}
+			101 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 101
+		}
+		
+		# Arryn
+		if = {
+			limit = {
+				tag = A04
+				capital_scope = {
+					NOT = { province_id = 136 }
+				}
+			}
+			136 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 136
+		}
+		
+		# Lannister
+		if = {
+			limit = {
+				tag = A06
+				capital_scope = {
+					NOT = { province_id = 182 }
+				}
+			}
+			182 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 182
+		}
+		
+		# Baratheon
+		if = {
+			limit = {
+				tag = A07
+				capital_scope = {
+					NOT = { province_id = 304 }
+				}
+			}
+			304 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 304
+		}
+		
+		# Martell
+		if = {
+			limit = {
+				tag = A09
+				capital_scope = {
+					NOT = { province_id = 352 }
+				}
+			}
+			352 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 352
+		}
+		
+		# Targaryen
+		if = {
+			limit = {
+				tag = A10
+				capital_scope = {
+					NOT = { province_id = 226 }
+				}
+			}
+			226 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 226
+		}
+		
+		# Tyrell
+		if = {
+			limit = {
+				tag = F20
+				capital_scope = {
+					NOT = { province_id = 267 }
+				}
+			}
+			267 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 267
+		}
+		
+		# Greyjoy
+		if = {
+			limit = {
+				tag = M09
+				capital_scope = {
+					NOT = { province_id = 162 }
+				}
+			}
+			162 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 162
+		}
+		
+		# Tyrosh
+		if = {
+			limit = {
+				tag = X01
+				capital_scope = {
+					NOT = { province_id = 367 }
+				}
+			}
+			367 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 367
+		}
+		
+		# Lys
+		if = {
+			limit = {
+				tag = X06
+				capital_scope = {
+					NOT = { province_id = 368 }
+				}
+			}
+			368 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 368
+		}
+		
+		# Myr
+		if = {
+			limit = {
+				tag = U01
+				capital_scope = {
+					NOT = { province_id = 378 }
+				}
+			}
+			378 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 378
+		}
+		
+		# Pentos
+		if = {
+			limit = {
+				tag = U12
+				capital_scope = {
+					NOT = { province_id = 406 }
+				}
+			}
+			406 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 406
+		}
+		
+		# Braavos
+		if = {
+			limit = {
+				tag = U25
+				capital_scope = {
+					NOT = { province_id = 470 }
+				}
+			}
+			470 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 470
+		}
+		
+		# Lorath
+		if = {
+			limit = {
+				tag = U38
+				capital_scope = {
+					NOT = { province_id = 471 }
+				}
+			}
+			471 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 471
+		}
+		
+		# Norvos
+		if = {
+			limit = {
+				tag = U44
+				capital_scope = {
+					NOT = { province_id = 433 }
+				}
+			}
+			433 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 433
+		}
+		
+		# Qohor
+		if = {
+			limit = {
+				tag = U72
+				capital_scope = {
+					NOT = { province_id = 476 }
+				}
+			}
+			476 = {
+				remove_estate = estate_nobles
+				remove_estate = estate_clergy
+				remove_estate = estate_merchants
+				remove_estate = estate_commoners
+			}
+			
+			set_capital = 476
+		}
+	}
+}
+
+country_event = {
+	id = GOT_META.4
+	title = "GOT_META.4.title"
+	desc = "GOT_META.4.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		ai = no
+	}
+	
+	option = {
+		name = "GOT_META.4.option.1"
+		
+		if = {
+			limit = {
+				any_country = {
+					has_country_flag = is_player
+				}
+			}
+			set_global_flag = multiplayer_game
+		}
+		
+		set_country_flag = is_player
+	}
+}
+
+country_event = {
+	id = GOT_META.5
+	title = "GOT_META.5.title"
+	desc = "GOT_META.5.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		ai = no
+	}
+
+	option = {
+		name = "GOT_META.5.option.1"
+		
+		if = {
+			limit = {
+				is_year = 106
+				NOT = { is_year = 106 }
+			}
+			set_global_flag = war_for_the_stepstones
+		}
+		
+		if = {
+			limit = {
+				is_year = 129
+				NOT = { is_year = 129 }
+			}
+			set_global_flag = the_dance_of_dragons
+		}
+		
+		if = {
+			limit = {
+				is_year = 282
+				NOT = { is_year = 282 }
+			}
+			set_global_flag = roberts_rebellion
+		}
+		
+		if = {
+			limit = {
+				is_year = 900
+				NOT = { is_year = 900 }
+			}
+			set_global_flag = shattered_world
+		}
+	}
+}
+
+country_event = {
+	id = GOT_META.6
+	title = "GOT_META.6.title"
+	desc = "GOT_META.6.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = no
+		NOT = { has_global_flag = native_randomise }
+	}
+	
+	immediate = {
+		set_global_flag = native_randomise
+	}
+	
+	option = {
+		name = "GOT_META.6.option.1"
+		
+		region_sothoryos = {
+			limit = { 
+				is_empty = yes
+			}
+			province_event = { id = GOT_META.7 }
+		}
+		
+		region_ulthos = {
+			limit = { 
+				is_empty = yes
+			}
+			province_event = { id = GOT_META.7 }
+		}
+		
+		region_shadowlands = {
+			limit = { 
+				is_empty = yes
+			}
+			province_event = { id = GOT_META.7 }
+		}
+		
+		region_bloodlands = {
+			limit = { 
+				is_empty = yes
+			}
+			province_event = { id = GOT_META.7 }
+		}
+		
+		region_mossovy = {
+			limit = { 
+				is_empty = yes
+			}
+			province_event = { id = GOT_META.7 }
+		}
+		
+		region_cannibal_sands = {
+			limit = { 
+				is_empty = yes
+			}
+			province_event = { id = GOT_META.7 }
+		}
+		
+		region_thousand_islands = {
+			limit = { 
+				is_empty = yes
+			}
+			province_event = { id = GOT_META.7 }
+		}
+		
+		region_dry_bones = {
+			limit = { 
+				is_empty = yes
+			}
+			province_event = { id = GOT_META.7 }
+		}
+		
+		region_qarth = {
+			limit = { 
+				is_empty = yes
+			}
+			province_event = { id = GOT_META.7 }
+		}
+		
+		region_dothraki_sea = {
+			limit = { 
+				is_empty = yes
+			}
+			province_event = { id = GOT_META.7 }
+		}
+		
+		region_sarnor = {
+			limit = { 
+				is_empty = yes
+			}
+			province_event = { id = GOT_META.7 }
+		}
+		
+		region_rhoyne = {
+			limit = { 
+				is_empty = yes
+			}
+			province_event = { id = GOT_META.7 }
+		}
+	}
+}
+
+country_event = {
+	id = GOT_META.7
+	title = "GOT_META.7.title"
+	desc = "GOT_META.7.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_empty = yes
+	}
+	
+	option = {
+		name = "GOT_META.7.option.1"
+		
+			random_list = {
+				10 = { }
+				10 = {
+					change_native_ferocity = -1
+				}
+				10 = {
+					change_native_ferocity = -2
+				}
+				10 = {
+					change_native_ferocity = -3
+				}
+				10 = {
+					change_native_ferocity = -4
+				}
+				10 = {
+					change_native_ferocity = -5
+				}
+				10 = {
+					change_native_ferocity = -6
+				}
+				10 = {
+					change_native_ferocity = -7
+				}
+				10 = {
+					change_native_ferocity = -8
+				}
+				10 = {
+					change_native_ferocity = -9
+				}
+			}
+			
+			random_list = {
+				10 = { }
+				10 = {
+					change_native_hostileness = -1
+				}
+				10 = {
+					change_native_hostileness = -2
+				}
+				10 = {
+					change_native_hostileness = -3
+				}
+				10 = {
+					change_native_hostileness = -4
+				}
+				10 = {
+					change_native_hostileness = -5
+				}
+				10 = {
+					change_native_hostileness = -6
+				}
+				10 = {
+					change_native_hostileness = -7
+				}
+				10 = {
+					change_native_hostileness = -8
+				}
+				10 = {
+					change_native_hostileness = -9
+				}
+			}
+			
+			change_native_size = -1000
+			
+			random_list = {
+				10 = {
+					change_native_size = 100
+				}
+				10 = {
+					change_native_size = 99
+				}
+				10 = {
+					change_native_size = 98
+				}
+				10 = {
+					change_native_size = 97
+				}
+				10 = {
+					change_native_size = 96
+				}
+				10 = {
+					change_native_size = 95
+				}
+				10 = {
+					change_native_size = 94
+				}
+				10 = {
+					change_native_size = 93
+				}
+				10 = {
+					change_native_size = 92
+				}
+				10 = {
+					change_native_size = 91
+				}
+				10 = {
+					change_native_size = 90
+				}
+				10 = {
+					change_native_size = 89
+				}
+				10 = {
+					change_native_size = 88
+				}
+				10 = {
+					change_native_size = 87
+				}
+				10 = {
+					change_native_size = 86
+				}
+				10 = {
+					change_native_size = 85
+				}
+				10 = {
+					change_native_size = 84
+				}
+				10 = {
+					change_native_size = 83
+				}
+				10 = {
+					change_native_size = 82
+				}
+				10 = {
+					change_native_size = 81
+				}
+				10 = {
+					change_native_size = 80
+				}
+				10 = {
+					change_native_size = 79
+				}
+				10 = {
+					change_native_size = 78
+				}
+				10 = {
+					change_native_size = 77
+				}
+				10 = {
+					change_native_size = 76
+				}
+				10 = {
+					change_native_size = 75
+				}
+				10 = {
+					change_native_size = 74
+				}
+				10 = {
+					change_native_size = 73
+				}
+				10 = {
+					change_native_size = 72
+				}
+				10 = {
+					change_native_size = 71
+				}
+				10 = {
+					change_native_size = 70
+				}
+				10 = {
+					change_native_size = 69
+				}
+				10 = {
+					change_native_size = 68
+				}
+				10 = {
+					change_native_size = 67
+				}
+				10 = {
+					change_native_size = 66
+				}
+				10 = {
+					change_native_size = 65
+				}
+				10 = {
+					change_native_size = 64
+				}
+				10 = {
+					change_native_size = 63
+				}
+				10 = {
+					change_native_size = 62
+				}
+				10 = {
+					change_native_size = 61
+				}
+				10 = {
+					change_native_size = 60
+				}
+				10 = {
+					change_native_size = 59
+				}
+				10 = {
+					change_native_size = 58
+				}
+				10 = {
+					change_native_size = 57
+				}
+				10 = {
+					change_native_size = 56
+				}
+				10 = {
+					change_native_size = 55
+				}
+				10 = {
+					change_native_size = 54
+				}
+				10 = {
+					change_native_size = 53
+				}
+				10 = {
+					change_native_size = 52
+				}
+				10 = {
+					change_native_size = 51
+				}
+				10 = {
+					change_native_size = 50
+				}
+				10 = {
+					change_native_size = 49
+				}
+				10 = {
+					change_native_size = 48
+				}
+				10 = {
+					change_native_size = 47
+				}
+				10 = {
+					change_native_size = 46
+				}
+				10 = {
+					change_native_size = 45
+				}
+				10 = {
+					change_native_size = 44
+				}
+				10 = {
+					change_native_size = 43
+				}
+				10 = {
+					change_native_size = 42
+				}
+				10 = {
+					change_native_size = 41
+				}
+				10 = {
+					change_native_size = 40
+				}
+				10 = {
+					change_native_size = 39
+				}
+				10 = {
+					change_native_size = 38
+				}
+				10 = {
+					change_native_size = 37
+				}
+				10 = {
+					change_native_size = 36
+				}
+				10 = {
+					change_native_size = 35
+				}
+				10 = {
+					change_native_size = 34
+				}
+				10 = {
+					change_native_size = 33
+				}
+				10 = {
+					change_native_size = 32
+				}
+				10 = {
+					change_native_size = 31
+				}
+				10 = {
+					change_native_size = 30
+				}
+				10 = {
+					change_native_size = 29
+				}
+				10 = {
+					change_native_size = 28
+				}
+				10 = {
+					change_native_size = 27
+				}
+				10 = {
+					change_native_size = 26
+				}
+				10 = {
+					change_native_size = 25
+				}
+				10 = {
+					change_native_size = 24
+				}
+				10 = {
+					change_native_size = 23
+				}
+				10 = {
+					change_native_size = 22
+				}
+				10 = {
+					change_native_size = 21
+				}
+				10 = {
+					change_native_size = 20
+				}
+				10 = {
+					change_native_size = 19
+				}
+				10 = {
+					change_native_size = 18
+				}
+				10 = {
+					change_native_size = 17
+				}
+				10 = {
+					change_native_size = 16
+				}
+				10 = {
+					change_native_size = 15
+				}
+				10 = {
+					change_native_size = 14
+				}
+				10 = {
+					change_native_size = 13
+				}
+				10 = {
+					change_native_size = 12
+				}
+				10 = {
+					change_native_size = 11
+				}
+				10 = {
+					change_native_size = 10
+				}
+				10 = {
+					change_native_size = 9
+				}
+				10 = {
+					change_native_size = 8
+				}
+				10 = {
+					change_native_size = 7
+				}
+				10 = {
+					change_native_size = 6
+				}
+				10 = {
+					change_native_size = 5
+				}
+				10 = {
+					change_native_size = 4
+				}
+				10 = {
+					change_native_size = 3
+				}
+				10 = {
+					change_native_size = 2
+				}
+				10 = {
+					change_native_size = 1
+				}
+			}
+			
+			random_list = {
+				90 = { }
+				40 = {
+					add_base_tax = 1
+				}
+				20 = {
+					add_base_tax = 2
+				}
+				10 = {
+					add_base_tax = 3
+				}
+				5 = {
+					add_base_tax = 4
+				}
+				2 = {
+					add_base_tax = 5
+				}
+				1 = {
+					add_base_tax = 6
+				}
+			}
+			
+			random_list = {
+				90 = { }
+				40 = {
+					add_base_production = 1
+				}
+				20 = {
+					add_base_production = 2
+				}
+				10 = {
+					add_base_production = 3
+				}
+				5 = {
+					add_base_production = 4
+				}
+				2 = {
+					add_base_production = 5
+				}
+				1 = {
+					add_base_production = 6
+				}
+			}
+			
+			random_list = {
+				90 = { }
+				40 = {
+					add_base_manpower = 1
+				}
+				20 = {
+					add_base_manpower = 2
+				}
+				10 = {
+					add_base_manpower = 3
+				}
+				5 = {
+					add_base_manpower = 4
+				}
+				2 = {
+					add_base_manpower = 5
+				}
+				1 = {
+					add_base_manpower = 6
+				}
+			}
+	}
+}
+
+# Handle Discovery
+country_event = {
+	id = GOT_META.8
+	title = GOT_META.1.title
+	desc = GOT_META.1.desc
+	picture = ASSASSINATION_eventPicture
+	
+    hidden = yes
+    
+	trigger = {
+		always = yes
+        NOT = { has_country_flag = revealed_map }
+	}
+	
+	immediate = {   
+        set_country_flag = revealed_map
+    }
+	
+	option = {
+		name = GOT_META.7.option.a
+		  
+		# Westeros
+        if = {
+            limit = {
+                OR = {
+                    discovery_nights_watch_trigger = yes
+					discovery_westeros_trigger = yes
+					discovery_wildling_trigger = yes
+                }
+            }
+            westeros_superregion = {
+                discover_country = ROOT
+            }
+			westeros_sea_region = {
+                discover_country = ROOT
+            }
+			west_essos_superregion = {
+                discover_country = ROOT
+            }
+			westeros_wastelands = {
+                discover_country = ROOT
+            }
+			essos_west_wastelands = {
+                discover_country = ROOT
+            }
+			shivering_sea_region = {
+				undiscover_country = ROOT
+			}
+        }
+
+		# Free Cities
+        if = {
+            limit = {
+                OR = {
+                    discovery_free_cities_trigger = yes
+                }
+            }
+			westeros_superregion = {
+                discover_country = ROOT
+            }
+			westeros_sea_region = {
+                discover_country = ROOT
+            }
+			west_essos_superregion = {
+                discover_country = ROOT
+            }
+			westeros_wastelands = {
+                discover_country = ROOT
+            }
+			essos_west_wastelands = {
+                discover_country = ROOT
+            }
+			ghiscari_sea_region = {
+                discover_country = ROOT
+            }
+			region_slavers_bay = {
+                discover_country = ROOT
+            }
+			region_valyria = {
+                discover_country = ROOT
+            }
+			region_sarnor = {
+                discover_country = ROOT
+            }
+			omber_sea_region = {
+                discover_country = ROOT
+            }
+			shivering_sea_region = {
+				undiscover_country = ROOT
+			}
+        } 
+        
+		# Free Cities
+        if = {
+            limit = {
+                OR = {
+                    discovery_slavers_cities_trigger = yes
+					discovery_valyrian_remnants_trigger = yes
+					discovery_dothraki_trigger = yes
+                }
+            }
+			
+			west_essos_superregion = {
+                discover_country = ROOT
+            }
+			central_essos_superregion = {
+                discover_country = ROOT
+            }
+			essos_central_wastelands = {
+                discover_country = ROOT
+            }
+			essos_west_wastelands = {
+                discover_country = ROOT
+            }
+		}
+		
+		# Qarth/Faros
+        if = {
+            limit = {
+                OR = {
+                    discovery_qarth_trigger = yes
+					discovery_faros_trigger = yes
+                }
+            }
+			
+			central_essos_superregion = {
+                discover_country = ROOT
+            }
+			essos_central_wastelands = {
+                discover_country = ROOT
+            }
+			essos_east_wastelands = {
+                discover_country = ROOT
+            }
+			far_essos_superregion = {
+                discover_country = ROOT
+            }
+			region_thousand_islands = {
+                undiscover_country = ROOT
+            }
+			nefer_sea_region = {
+                undiscover_country = ROOT
+            }
+			region_cannibal_sands = {
+                undiscover_country = ROOT
+            }
+			region_mossovy = {
+                undiscover_country = ROOT
+            }
+			region_shadowlands = {
+                undiscover_country = ROOT
+            }
+			region_bloodlands = {
+                undiscover_country = ROOT
+            }
+			east_sothoryos_sea_area = {
+                discover_country = ROOT
+            }
+		}
+		
+		# Far East
+        if = {
+            limit = {
+                OR = {
+                    discovery_yiti_trigger = yes
+                    discovery_hyrkoon_trigger = yes
+					discovery_jogos_trigger = yes
+					discovery_asshai_trigger = yes
+                    discovery_mythical_cities_trigger = yes
+                }
+            }
+            far_essos_superregion = {
+                discover_country = ROOT
+            }
+			region_qarth = {
+                discover_country = ROOT
+            }
+			region_slavers_bay = {
+                discover_country = ROOT
+            }
+			ghiscari_sea_region = {
+                discover_country = ROOT
+            }
+			essos_east_wastelands = {
+                discover_country = ROOT
+            }
+			essos_central_wastelands = {
+                discover_country = ROOT
+            }
+			east_sothoryos_sea_area = {
+                discover_country = ROOT
+            }
+        } 
+
+		# Asshai and the Mythicals
+		if = {
+            limit = {
+                OR = {
+					discovery_asshai_trigger = yes
+                    discovery_mythical_cities_trigger = yes
+                }
+            }
+            far_essos_superregion = {
+                discover_country = ROOT
+            }
+			region_qarth = {
+                discover_country = ROOT
+            }
+			region_slavers_bay = {
+                discover_country = ROOT
+            }
+			ghiscari_sea_region = {
+                discover_country = ROOT
+            }
+			essos_east_wastelands = {
+                discover_country = ROOT
+            }
+			essos_central_wastelands = {
+                discover_country = ROOT
+            }
+			region_gemstone_islands = {
+                discover_country = ROOT
+            }
+			region_ulthos = {
+                discover_country = ROOT
+            }
+			ulthos_sea_region = {
+                discover_country = ROOT
+            }
+			ulthos_wastelands = {
+                discover_country = ROOT
+            }
+			east_sothoryos_sea_area = {
+                discover_country = ROOT
+            }
+        } 
+		
+		# Summer Islands and Stepstones
+        if = {
+            limit = {
+                OR = {
+                    discovery_summer_islands_trigger = yes
+                    discovery_pirate_trigger = yes
+                }
+            }
+            region_summer_islands = {
+                discover_country = ROOT
+            }
+			summer_islands_sea_region = {
+                discover_country = ROOT
+            }
+			westeros_sea_region = {
+                discover_country = ROOT
+            }
+			westeros_superregion = {
+                discover_country = ROOT
+            }
+			shivering_sea_region = {
+                undiscover_country = ROOT
+            }
+			west_essos_superregion = {
+                discover_country = ROOT
+            }
+			north_essosian_coast_area = {
+                undiscover_country = ROOT
+            }
+			westeros_wastelands = {
+                discover_country = ROOT
+            }
+			essos_west_wastelands = {
+                discover_country = ROOT
+            }
+			west_sothoryos_sea_area = {
+                discover_country = ROOT
+            }
+        } 
+        
+        if = {
+            limit = {
+                discovery_ibben_trigger = yes
+            }
+            central_essos_superregion = {
+                discover_country = ROOT
+            }
+			narrow_sea_area = {
+                discover_country = ROOT
+            }
+			shivering_sea_region = {
+                discover_country = ROOT
+            }
+			nefer_sea_region = {
+                discover_country = ROOT
+            }
+			region_qarth = {
+                undiscover_country = ROOT
+            }
+			region_valyria = {
+                undiscover_country = ROOT
+            }
+			ghiscari_sea_region = {
+                undiscover_country = ROOT
+            }
+			essos_central_wastelands = {
+                discover_country = ROOT
+            }
+        }  
+    }
+}
+
+# Picture test
+country_event = {
+	id = GOT_META.100
+	title = "GOT_META.100.title"
+	desc = "GOT_META.100.desc"
+	picture = KINGS_LANDING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		
+	}
+	option = {
+		name = "GOT_META.100.option.1"
+		
+		
+	}
+}

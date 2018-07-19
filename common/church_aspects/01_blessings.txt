@@ -1,0 +1,219 @@
+#-------------------------------
+# Default
+#-------------------------------
+legitimize_government = {
+	is_blessing = yes
+
+	effect = {
+		legitimacy = 0.5
+		horde_unity = 0.5
+		republican_tradition = 0.2
+		devotion = 0.5
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 3
+			NOT = {
+				OR = {
+					legitimacy = 70
+					republican_tradition = 70
+					devotion = 70
+				}
+			}
+		}
+	}
+}
+
+encourage_warriors_of_the_faith = {
+	is_blessing = yes
+
+	effect = {
+		manpower_recovery_speed = 0.1
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 3
+			NOT = {
+				manpower = 4
+			}
+		}
+	}
+}
+
+proselytize_lords = {
+	is_blessing = yes
+
+	effect = {
+		global_missionary_strength = 0.015
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.9
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.7
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.5
+			}
+		}
+	}
+}
+
+promote_territorial_rights = {
+	is_blessing = yes
+
+	effect = {
+		core_creation = -0.1
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			overextension_percentage = 0.7
+		}
+		modifier = {
+			factor = 3
+			overextension_percentage = 0.5
+		}
+	}
+}
+
+will_of_the_martyrs = {
+	is_blessing = yes
+
+	effect = {
+		discipline = 0.025
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+#-------------------------------
+# Dothraki
+#-------------------------------
+
+slave_raids = {    
+    is_blessing = yes
+    
+    effect = {
+		global_manpower_modifier = 0.2
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+dothraki_hegemony = {    
+    is_blessing = yes
+    
+    effect = {
+		core_creation = -0.25
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+efficient_looters = {    
+    is_blessing = yes
+    
+    effect = {
+		loot_amount = 0.25
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+blessed_kos_riders = {    
+    is_blessing = yes
+    
+    effect = {
+		cavalry_power = 0.1
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+battleworn = {    
+    is_blessing = yes
+    
+    effect = {
+		army_tradition_from_battle = 0.5
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+#-------------------------------
+# Ghiscari
+#-------------------------------
+fighting_pits = {    
+    is_blessing = yes
+    
+    effect = {
+		infantry_power = 0.1
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+cat_o_nine_tails = {    
+    is_blessing = yes
+    
+    effect = {
+		recover_army_morale_speed = 0.1
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+desert_adaptation = {    
+    is_blessing = yes
+    
+    effect = {
+		land_attrition = -0.2
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+slave_raiding = {    
+    is_blessing = yes
+    
+    effect = {
+		global_regiment_cost = -0.25
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+diplomatic_quagmires = {    
+    is_blessing = yes
+    
+    effect = {
+		diplomatic_upkeep = 1
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}

@@ -1,0 +1,712 @@
+#
+# remember to add graphics for relevant ones when you add to this
+#
+# if a modifier is scaled, its multiplied with development in the province.
+
+# Westerosi
+westerosi_practices = {
+    penalty = 0.05
+    
+    bonus = {
+        global_manpower_modifier = 0.1
+	}
+
+	history = {
+        owner = {
+            OR = {
+                technology_group = western
+                technology_group = eastern
+            }
+        }
+	}
+	
+	can_embrace = {
+		always = yes
+	}
+    
+    embracement_speed = {
+        # Regular friendly border embracement
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_friendly_border_westerosi
+                
+                any_friendly_coast_border_province = {
+                    westerosi_practices = 100
+                }
+            }
+        }
+        
+        # High relations will slowly increase embracement
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_high_relations_westerosi
+                
+                owner = {
+                    any_known_country = {
+                        capital_scope = { westerosi_practices = 100 }
+                        has_opinion = {
+                            who = PREV
+                            value = 150
+                        }
+                    }
+                }
+            }
+        }
+        
+        # Has Embraced
+        modifier = {
+			factor = 2
+			scale = yes
+            
+            potential = {
+				owner = {
+					has_institution = westerosi_practices
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tt_embraced_westerosi
+                
+				owner = {
+					has_institution = westerosi_practices
+				}
+			}
+        }
+    }
+    
+    ai_will_do = {
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+# Essosian
+essosian_practices = {
+    penalty = 0.05
+    
+    bonus = {
+        global_trade_power = 0.1
+	}
+
+	history = {
+        owner = {
+            OR = {
+                technology_group = western
+                technology_group = eastern
+            }
+        }
+	}
+	
+	can_embrace = {
+		always = yes
+	}
+    
+    embracement_speed = {
+        # Regular friendly border embracement
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_friendly_border_essosian
+                
+                any_friendly_coast_border_province = {
+                    essosian_practices = 100
+                }
+            }
+        }
+        
+        # High relations will slowly increase embracement
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_high_relations_essosian
+                
+                owner = {
+                    any_known_country = {
+                        capital_scope = { essosian_practices = 100 }
+                        has_opinion = {
+                            who = PREV
+                            value = 150
+                        }
+                    }
+                }
+            }
+        }
+        
+        # Has Embraced
+        modifier = {
+			factor = 2
+			scale = yes
+            
+            potential = {
+				owner = {
+					has_institution = essosian_practices
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tt_embraced_essosian
+                
+				owner = {
+					has_institution = essosian_practices
+				}
+			}
+        }
+    }
+    
+    ai_will_do = {
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+# Ghiscari
+ghiscari_practices = {
+    penalty = 0.05
+    
+    bonus = {
+        mercenary_cost = -0.1
+        merc_maintenance_modifier = -0.1
+	}
+
+	history = {
+        owner = {
+            OR = {
+                technology_group = ghiscari
+                technology_group = quartheen
+            }
+        }
+	}
+	
+	can_embrace = {
+		always = yes
+	}
+    
+    embracement_speed = {
+        # Regular friendly border embracement
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_friendly_border_ghiscari
+                
+                any_friendly_coast_border_province = {
+                    ghiscari_practices = 100
+                }
+            }
+        }
+        
+        # High relations will slowly increase embracement
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_high_relations_ghiscari
+                
+                owner = {
+                    any_known_country = {
+                        capital_scope = { ghiscari_practices = 100 }
+                        has_opinion = {
+                            who = PREV
+                            value = 150
+                        }
+                    }
+                }
+            }
+        }
+        
+        # Has Embraced
+        modifier = {
+			factor = 2
+			scale = yes
+            
+            potential = {
+				owner = {
+					has_institution = ghiscari_practices
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tt_embraced_ghiscari
+                
+				owner = {
+					has_institution = ghiscari_practices
+				}
+			}
+        }
+    }
+    
+    ai_will_do = {
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+# Yitish
+yitish_practices = {
+    penalty = 0.05
+    
+    bonus = {
+        advisor_cost = -0.1
+        advisor_pool = 1
+	}
+
+	history = {
+        owner = { technology_group = yiti }
+	}
+	
+	can_embrace = {
+		always = yes
+	}
+    
+    embracement_speed = {
+        # Regular friendly border embracement
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_friendly_border_yitish
+                
+                any_friendly_coast_border_province = {
+                    yitish_practices = 100
+                }
+            }
+        }
+        
+        # High relations will slowly increase embracement
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_high_relations_yitish
+                
+                owner = {
+                    any_known_country = {
+                        capital_scope = { yitish_practices = 100 }
+                        has_opinion = {
+                            who = PREV
+                            value = 150
+                        }
+                    }
+                }
+            }
+        }
+        
+        # Has Embraced
+        modifier = {
+			factor = 2
+			scale = yes
+            
+            potential = {
+				owner = {
+					has_institution = yitish_practices
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tt_embraced_yitish
+                
+				owner = {
+					has_institution = yitish_practices
+				}
+			}
+        }
+    }
+    
+    ai_will_do = {
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+# Quartheen
+quartheen_practices = {
+    penalty = 0.05
+    
+    bonus = {
+        global_foreign_trade_power = 0.1
+        global_institution_spread = 0.05
+	}
+
+	history = {
+        owner = { 
+            OR = {
+                technology_group = ghiscari
+                technology_group = quartheen
+            }
+        }
+	}
+	
+	can_embrace = {
+		always = yes
+	}
+    
+    embracement_speed = {
+        # Regular friendly border embracement
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_friendly_border_quartheen
+                
+                any_friendly_coast_border_province = {
+                    quartheen_practices = 100
+                }
+            }
+        }
+        
+        # High relations will slowly increase embracement
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_high_relations_quartheen
+                
+                owner = {
+                    any_known_country = {
+                        capital_scope = { quartheen_practices = 100 }
+                        has_opinion = {
+                            who = PREV
+                            value = 150
+                        }
+                    }
+                }
+            }
+        }
+        
+        # Has Embraced
+        modifier = {
+			factor = 2
+			scale = yes
+            
+            potential = {
+				owner = {
+					has_institution = quartheen_practices
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tt_embraced_quartheen
+                
+				owner = {
+					has_institution = quartheen_practices
+				}
+			}
+        }
+    }
+    
+    ai_will_do = {
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+# Islander
+islander_practices = {
+    penalty = 0.05
+    
+    bonus = {
+        heavy_ship_cost = -0.1
+        heavy_ship_power = 0.05
+	}
+    
+    history = {
+        owner = { 
+            technology_group = summer_islanders
+        }
+	}
+    
+    can_embrace = {
+		always = yes
+	}
+    
+    embracement_speed = {
+        # Regular friendly border embracement
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_friendly_border_islander
+                
+                any_friendly_coast_border_province = {
+                    islander_practices = 100
+                }
+            }
+        }
+        
+        # High relations will slowly increase embracement
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_high_relations_islander
+                
+                owner = {
+                    any_known_country = {
+                        capital_scope = { islander_practices = 100 }
+                        has_opinion = {
+                            who = PREV
+                            value = 150
+                        }
+                    }
+                }
+            }
+        }
+        
+        # Has Embraced
+        modifier = {
+			factor = 2
+			scale = yes
+            
+            potential = {
+				owner = {
+					has_institution = islander_practices
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tt_embraced_islander
+                
+				owner = {
+					has_institution = islander_practices
+				}
+			}
+        }
+    }
+    
+    ai_will_do = {
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+# Magical (Asshai + other far east nations)
+magical_practices = {
+    penalty = 0.2
+    
+    bonus = {
+        all_power_cost = -0.05
+	}
+    
+    history = {
+        owner = {
+            is_magical_nation = yes
+        }
+	}
+    
+    can_embrace = {
+		always = yes
+	}
+    
+    embracement_speed = {
+        # Regular friendly border embracement
+        modifier = {
+			factor = 0.1
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_friendly_border_magical
+                
+                any_friendly_coast_border_province = {
+                    magical_practices = 100
+                }
+            }
+        }
+        
+        # High relations will slowly increase embracement
+        modifier = {
+			factor = 0.1
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_high_relations_magical
+                
+                owner = {
+                    any_known_country = {
+                        capital_scope = { magical_practices = 100 }
+                        has_opinion = {
+                            who = PREV
+                            value = 150
+                        }
+                    }
+                }
+            }
+        }
+        
+        # Has Embraced
+        modifier = {
+			factor = 2
+			scale = yes
+            
+            potential = {
+				owner = {
+					has_institution = magical_practices
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tt_embraced_magical
+                
+				owner = {
+					has_institution = magical_practices
+				}
+			}
+        }
+    }
+    
+    ai_will_do = {
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+

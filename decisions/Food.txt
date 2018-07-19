@@ -1,0 +1,40 @@
+country_decisions = {
+    # Food
+    food_check = {
+		major = yes
+		potential = {
+			has_global_flag = food_system_active
+		}
+		allow = {
+            hidden_trigger = {
+                always = no
+            }
+            
+			check_variable = {
+                which = food_count
+                value = 0
+            }
+            check_variable = {
+                which = dbg_total_dev_count
+                value = 0
+            }
+            check_variable = {
+                which = dbg_army_size_count
+                value = 0
+            }
+            check_variable = {
+                which = dbg_navy_size_count
+                value = 0
+            }
+		}
+		effect = {
+            custom_tooltip = food_harvest_tt
+            custom_tooltip = food_consumption_tt
+            custom_tooltip = food_goods_tt
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

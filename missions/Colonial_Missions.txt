@@ -1,0 +1,134 @@
+discover_mission = {
+
+	type = empty_provinces
+	
+	category = DIP
+	
+	allow = {
+		FROM = { has_idea = quest_for_the_new_world }
+		range = FROM
+		has_port = yes
+		NOT = { has_discovered = FROM }
+		FROM = {
+			is_at_war = no
+			num_of_ports = 1
+		}
+		NOT = {
+			FROM = { has_country_modifier = "colonial_enthusiasm" }
+		}
+		
+	}
+	abort = {
+		OR = {
+			FROM = { NOT = { num_of_ports = 1 } }
+			FROM = { NOT = { has_idea = quest_for_the_new_world } }
+		}
+	}
+	success = {
+		has_discovered = FROM
+	}
+	chance = {
+		factor = 1000
+	}
+	effect = {
+		FROM = {
+			add_country_modifier = {
+				name = "colonial_enthusiasm"
+				duration = 1825
+			}
+		}
+	}
+}
+
+
+build_colony_to_city = {
+
+	type = our_provinces
+	
+	category = ADM
+	
+	allow = {
+		FROM = { is_at_war = no }
+		is_colony = yes
+		owner = {
+			num_of_colonists = 1
+			monthly_income = 10
+		}
+	}
+	abort = {
+		NOT = { owned_by = FROM }
+	}
+	success = {
+		is_colony = false
+		owned_by = FROM
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.2
+			base_tax = 3
+		}		
+		modifier = {
+			factor = 1.25
+			base_tax = 5
+		}		
+		
+	}
+	effect = {
+		add_base_tax = 1
+		add_base_manpower = 1
+	}
+}
+
+establish_colony_mission = {
+
+	type = empty_provinces
+	
+	category = DIP
+	
+	allow = {
+		FROM = { 
+			num_of_ports = 1
+			num_of_colonists = 1
+		}
+		range = FROM
+		has_port = yes
+		has_discovered = FROM
+		OR = {
+			FROM = { is_colonial_nation = no }
+			any_neighbor_province = { owned_by = FROM }
+		}
+		NOT = {
+			FROM = { has_country_modifier = "colonial_enthusiasm" }
+		}
+	}
+	abort = {
+		OR = {
+			is_empty = no
+			FROM = { NOT = { num_of_ports = 1 } }
+		}
+	}
+	success = {
+		owned_by = FROM
+	}
+	chance = {
+		factor = 1000
+
+		modifier = {
+			factor = 1.05
+			base_tax = 3
+		}		
+		modifier = {
+			factor = 1.05
+			base_tax = 5
+		}		
+	}
+	effect = {
+		FROM = {
+			add_country_modifier = {
+				name = "colonial_enthusiasm"
+				duration = 1825
+			}
+		}
+	}
+}

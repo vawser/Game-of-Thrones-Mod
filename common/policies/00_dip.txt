@@ -1,0 +1,271 @@
+# Exploration
+exploration_surge = {
+	monarch_power = DIP
+	
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = exploration_ideas
+	}
+	
+	colonists = 1
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Foreign Trade
+distant_trade_negotiations = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = foreign_trade_ideas
+	}
+	
+	global_foreign_trade_power = 0.1
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Domestic Trade
+domestic_trade_negotiations = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = domestic_trade_ideas
+	}
+	
+	global_own_trade_power = 0.1
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Maunfacturing
+establish_manufactories = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = manufacturing_ideas
+	}
+	
+	global_trade_goods_size_modifier = 0.1
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Warmonger
+increased_intergration = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = aggressive_diplomacy_ideas
+	}
+	
+	diplomatic_annexation_cost = -0.1
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Peace-maker
+diplomatic_initiative = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = peaceful_diplomacy_ideas
+	}
+	
+	ae_impact = -0.075
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Civic
+expand_civic_service = {
+	monarch_power = DIP
+	
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = civil_organisation_ideas
+	}
+	
+	diplomats = 1
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Maritime
+harbour_restoration = {
+	monarch_power = DIP
+	
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = naval_trade_ideas
+	}
+	
+	global_ship_trade_power = 0.125
+	
+	ai_will_do = {
+		factor = 1
+		
+		modifier = {
+			factor = 0
+			
+			NOT = { num_of_ports = 1 }
+		}
+	}
+}
+
+# Raiding
+increase_raids = {
+	monarch_power = DIP
+	
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = raiding_ideas
+	}
+	
+	privateer_efficiency = 0.25
+	
+	ai_will_do = {
+		factor = 1
+		
+		modifier = {
+			factor = 0
+			
+			NOT = { num_of_ports = 1 }
+		}
+	}
+}
+
+# Naval Combat
+inspire_sailors = {
+	monarch_power = DIP
+	
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = navy_combat_ideas
+	}
+	
+	naval_morale = 0.1
+	
+	ai_will_do = {
+		factor = 1
+		
+		modifier = {
+			factor = 0
+			
+			NOT = { num_of_ports = 1 }
+		}
+	}
+}
+
+# Naval Recruitment
+step_up_sailor_recruitment = {
+	monarch_power = DIP
+	
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = navy_recruitment_ideas
+	}
+	
+	global_sailors_modifier = 0.25
+	
+	ai_will_do = {
+		factor = 1
+		
+		modifier = {
+			factor = 0
+			
+			NOT = { num_of_ports = 1 }
+		}
+	}
+}
+
+
+# Naval Organisation
+ensure_citrus_stocks = {
+	monarch_power = DIP
+	
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = navy_organisation_ideas
+	}
+	
+	naval_attrition = -0.1
+	
+	ai_will_do = {
+		factor = 1
+		
+		modifier = {
+			factor = 0
+			
+			NOT = { num_of_ports = 1 }
+		}
+	}
+}
+
+# Naval Leadership
+expand_admirality = {
+	monarch_power = DIP
+	
+	potential = {
+		always = yes
+	}
+	allow = {
+		full_idea_group = navy_leadership_ideas
+	}
+	
+	free_leader_pool = 1
+	
+	ai_will_do = {
+		factor = 1
+		
+		modifier = {
+			factor = 0
+			
+			NOT = { num_of_ports = 1 }
+		}
+	}
+}
+

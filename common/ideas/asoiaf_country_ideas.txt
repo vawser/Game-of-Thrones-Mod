@@ -1,0 +1,2345 @@
+# These ideas are loaded after all country ideas, but before default idea.
+
+northmen_ideas = {
+	start = {
+		hostile_attrition = 1
+		global_manpower_modifier = 0.1
+	}
+	
+	bonus = {
+		diplomatic_reputation = 1
+	}
+	
+	trigger = {
+		primary_culture = men_of_the_north
+		NOT = { tag = A02 }
+	}
+	free = yes
+	
+	# Harsh Living
+	northmen_1 = {
+		land_attrition = -0.15
+	}
+	# Mountain Clans
+	northmen_2 = {	
+		land_forcelimit_modifier = 0.15
+	}
+	# The Old Gods
+	northmen_3 = {
+		global_spy_defence = 0.33
+	}
+	# The Kingsroad
+	northmen_4 = {
+		global_own_trade_power = 0.15
+	}
+	# Stark Legacy
+	northmen_5 = {
+		core_creation = -0.15
+	}
+	# Rivalry of the Boltons
+	northmen_6 = { 
+		discipline = 0.05
+	}
+	# Winter is Coming
+	northmen_7 = {
+		ae_impact = -0.15
+	}
+}
+
+ironborn_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		galley_power = 0.2
+	}
+	
+	bonus = {
+		privateer_efficiency = 0.25
+	}
+	
+	trigger = {
+		primary_culture = ironborn
+	}
+	free = yes
+	
+	# The Old Way
+	ironborn_1 = {
+		galley_cost = -0.33
+		navy_tradition = 1
+	}
+	# The Drowned God
+	ironborn_2 = {	
+		free_leader_pool = 1
+		global_ship_recruit_speed = -0.25
+	}
+	# Raid the Scum
+	ironborn_3 = {
+		infantry_power = 0.1
+		blockade_efficiency = 0.33
+	}
+	# Subdue the Weak
+	ironborn_4 = {
+		leader_naval_shock = 1
+		leader_naval_fire = 1
+	}
+	# The Iron Fleet
+	ironborn_5 = {
+		naval_morale = 0.2
+		ship_durability = 0.2
+	}
+	# A Game of Finger Dance
+	ironborn_6 = {
+		naval_forcelimit_modifier = 0.33
+	}
+	# The Iron Price
+	ironborn_7 = {
+		naval_maintenance_modifier = -0.5
+	}
+}
+
+valeman_ideas = {
+	start = {
+		global_trade_goods_size_modifier = 0.15
+		global_unrest = -1
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		primary_culture = men_of_the_vale
+	}
+	free = yes
+	
+	valeman_1 = {
+		defensiveness = 0.5
+	}
+	valeman_2 = {	
+		diplomatic_upkeep = 2
+	}
+	valeman_3 = {
+		free_leader_pool = 1
+	}
+	valeman_4 = {
+		land_morale = 0.15
+	}
+	valeman_5 = {
+		trade_efficiency = 0.1
+		global_trade_power = 0.1
+	}
+	valeman_6 = {
+		stability_cost_modifier = -0.15
+	}
+	valeman_7 = {
+		legitimacy = 1
+	}
+}
+
+reachman_ideas = {
+	start = {
+		global_tax_modifier = 0.15
+		idea_cost = -0.05
+	}
+	
+	bonus = {
+		advisor_pool = 1
+	}
+	
+	trigger = {
+		primary_culture = men_of_the_reach
+	}
+	free = yes
+	
+	reachman_1 = {
+		prestige = 1
+	}
+	reachman_2 = {	
+		heir_chance = 1.0
+	}
+	reachman_3 = {
+		land_morale = 0.15
+	}
+	reachman_4 = {
+		global_heretic_missionary_strength = 0.02
+	}
+	reachman_5 = {
+		improve_relation_modifier = 0.25
+	}
+	reachman_6 = {
+		global_regiment_cost = -0.15
+	}
+	reachman_7 = {
+		legitimacy = 1
+	}
+}
+
+dornish_ideas = {
+	start = {
+		infantry_power = 0.05
+		army_tradition_decay = -0.01
+	}
+	
+	bonus = {
+		recover_army_morale_speed = 0.1
+	}
+	
+	trigger = {	
+		OR = {
+			primary_culture = sand_dornish
+			primary_culture = salt_dornish
+			primary_culture = stone_dornish
+		}
+	}
+	free = yes
+	
+	dornish_1 = {
+		global_manpower_modifier = 0.15
+	}
+	dornish_2 = {
+		hostile_attrition = 1
+	}
+	dornish_3 = {
+		land_attrition = -0.15
+	}
+	dornish_4 = {
+		cavalry_power = 0.1
+	}
+	dornish_5 = {
+		leader_land_shock = 1
+	}
+	dornish_6 = {
+		trade_efficiency = 0.15
+	}
+	dornish_7 = {
+		diplomatic_upkeep = 1
+	}
+}
+
+stormlander_ideas = {
+	start = {
+		build_cost = -0.1
+		development_cost = -0.05
+	}
+	
+	bonus = {
+		global_tax_modifier = 0.15
+	}
+	
+	trigger = {
+		primary_culture = men_of_the_stormlands
+	}
+	free = yes
+	
+	stormlander_1 = {
+		defensiveness = 0.25
+	}
+	stormlander_2 = {
+		army_tradition = 1
+	}
+	stormlander_3 = {
+		unjustified_demands = -0.25
+	}
+	stormlander_4 = {
+		navy_tradition = 1
+	}
+	stormlander_5 = {
+		global_prov_trade_power_modifier = 0.2
+	}
+	stormlander_6 = {
+		war_exhaustion_cost = -0.2
+	}
+	stormlander_7 = {
+		ae_impact = -0.15
+	}
+}
+
+crownlander_ideas = {
+	start = {
+		idea_cost = -0.05
+		production_efficiency = 0.1
+	}
+	
+	bonus = {
+		development_cost = -0.1
+	}
+	
+	trigger = {
+		primary_culture = men_of_the_crownlands
+	}
+	free = yes
+	
+	crownlander_1 = {
+		stability_cost_modifier = -0.15
+	}
+	crownlander_2 = {
+		dip_tech_cost_modifier = -0.1
+	}
+	crownlander_3 = {
+		global_missionary_strength = 0.02
+	}
+	crownlander_4 = {
+		recover_army_morale_speed = 0.05
+	}
+	crownlander_5 = {
+		prestige = 1
+	}
+	crownlander_6 = {
+		siege_ability = 0.1
+	}
+	crownlander_7 = {
+		ae_impact = -0.15
+	}
+}
+
+westerman_ideas = {
+	start = {
+		caravan_power = 0.15
+		improve_relation_modifier = 0.25
+	}
+	
+	bonus = {
+		diplomats = 1
+	}
+	
+	trigger = {
+		primary_culture = men_of_the_westerlands
+	}
+	free = yes
+	
+	westerman_1 = {
+		years_of_nationalism = -5
+	}
+	westerman_2 = {
+		diplomatic_reputation = 2
+	}
+	westerman_3 = {
+		diplomatic_upkeep = 1
+	}
+	westerman_4 = {
+		trade_efficiency = 0.1
+	}
+	westerman_5 = {
+		global_trade_goods_size_modifier = 0.15
+	}
+	westerman_6 = {
+		improve_relation_modifier = 0.15
+	}
+	westerman_7 = {
+		core_creation = -0.15
+	}
+}
+
+crackclaw_ideas = {
+	start = {
+		hostile_attrition = 1
+		global_spy_defence = 0.25
+	}
+	
+	bonus = {
+		land_maintenance_modifier = -0.33
+	}
+	
+	trigger = {
+		primary_culture = men_of_the_claw_isle
+	}
+	free = yes
+	
+	crackclaw_1 = {
+		infantry_power = 0.1
+	}
+	crackclaw_2 = {
+		land_attrition = -0.15
+	}
+	crackclaw_3 = {
+		land_morale = 0.15
+	}
+	crackclaw_4 = {
+		defensiveness = 0.25
+	}
+	crackclaw_5 = {
+		discipline = 0.05
+	}
+	crackclaw_6 = {
+		siege_ability = 0.15
+	}
+	crackclaw_7 = {
+		global_manpower_modifier = 0.25
+	}
+}
+
+riverlands_ideas = {
+	start = {
+		trade_steering = 0.15
+		caravan_power = 0.1
+	}
+	
+	bonus = {
+		years_of_nationalism = -5
+	}
+	
+	trigger = {
+		primary_culture = men_of_the_riverlands
+	}
+	free = yes
+	
+	riverlands_1 = {
+		global_trade_goods_size_modifier = 0.15
+	}
+	riverlands_2 = {
+		war_exhaustion = -0.1
+		global_garrison_growth = 0.5
+	}
+	riverlands_3 = {
+		num_accepted_cultures = 1
+	}
+	riverlands_4 = {
+		trade_range_modifier = 0.25
+	}
+	riverlands_5 = {
+		global_own_trade_power = 0.1
+	}
+	riverlands_6 = {
+		naval_forcelimit_modifier = 0.25
+	}
+	riverlands_7 = {
+		stability_cost_modifier = -0.1
+	}
+}
+
+tyroshi_ideas = {
+	start = {
+		navy_tradition_decay = -0.01
+		embargo_efficiency = 0.2
+	}
+	
+	bonus = {
+		naval_morale = 0.15
+	}
+	
+	trigger = {
+		primary_culture = tyroshi
+	}
+	free = yes
+	
+	# Tyroshi Greed
+	tyroshi_1 = {
+		caravan_power = 0.2
+	}
+	# Fountain of the Drunked God
+	tyroshi_2 = {
+		global_spy_defence = 0.5
+	}
+	# Stepstones Ambitions
+	tyroshi_3 = {
+		naval_forcelimit_modifier = 0.2
+	}
+	# Valyrian Spirit
+	tyroshi_4 = {
+		infantry_power = 0.1
+	}
+	# Traditions of Trade
+	tyroshi_5 = {
+		light_ship_cost = -0.2
+		light_ship_power = 0.2
+	}
+	# Disputed Lands
+	tyroshi_6 = {
+		mercenary_cost = -0.25
+		possible_mercenaries = 0.5
+	}
+	# Tyroshi Fashion
+	tyroshi_7 = {
+		prestige = 1
+	}
+}
+
+lysene_ideas = {
+	start = {
+		discovered_relations_impact = -0.25
+		culture_conversion_cost = -0.25
+	}
+	
+	bonus = {
+		stability_cost_modifier = -0.15
+	}
+	
+	trigger = {
+		primary_culture = lysene
+	}
+	free = yes
+	
+	# Blood of the Freehold
+	lysene_1 = {
+		spy_offence = 0.33
+		rebel_support_efficiency = 0.25
+	}
+	# Lysene Alchemists
+	lysene_2 = {
+		may_study_technology = yes
+	}
+	# Weeping Lady of Lys
+	lysene_3 = {
+		global_missionary_strength = 0.01
+	}
+	# Lysene Coins
+	lysene_4 = {
+		advisor_cost = -0.15
+	}
+	# Tears of Lys
+	lysene_5 = {
+		global_spy_defence = 0.5
+	}
+	# Booming Population
+	lysene_6 = {
+		years_of_nationalism = -10
+	}
+	# Ambitions over the Disputed Lands
+	lysene_7 = {
+		mercenary_cost = -0.15
+		merc_maintenance_modifier = -0.15
+	}
+}
+
+myrish_ideas = {
+	start = {
+		ae_impact = -0.1
+		improve_relation_modifier = 0.15
+	}
+	
+	bonus = {
+		build_cost = -0.2
+	}
+	
+	trigger = {
+		primary_culture = myrish
+	}
+	free = yes
+	
+	# Valyrian Technology
+	myrish_1 = {
+		embracement_cost = -0.05
+	}
+	# Craftsmen of Myr
+	myrish_2 = {
+		global_tax_modifier = 0.15
+	}
+	# Myrish Glass
+	myrish_3 = {
+		production_efficiency = 0.2
+	}
+	# Trade through the Myrth
+	myrish_4 = {
+		trade_steering = 0.15
+	}
+	# Far-Eyes from Myr
+	myrish_5 = {
+		prestige = 1
+	}
+	# Supporters of Blackfyre
+	myrish_6 = {
+		diplomatic_upkeep = 1
+	}
+	# Myrish Architecture
+	myrish_7 = {
+		development_cost = -0.15
+	}
+}
+
+
+pentoshi_ideas = {
+	start = {
+		global_own_trade_power = 0.15
+		trade_range_modifier = 0.15
+	}
+	
+	bonus = {
+		global_prov_trade_power_modifier = 0.15
+	}
+	
+	trigger = {
+		primary_culture = pentoshi
+	}
+	free = yes
+	
+	# Bay of Pentos
+	pentoshi_1 = {
+		merchants = 1
+	}
+	# Booming Population
+	pentoshi_2 = {
+		num_accepted_cultures = 1
+	}
+	# Dominance of Spice Traders
+	pentoshi_3 = {
+		global_trade_power = 0.2
+	}
+	# Sunrise Gate
+	pentoshi_4 = {
+		land_attrition = -0.15
+	}
+	# Wealth equals Power
+	pentoshi_5 = {
+		army_tradition_decay = -0.01
+	}
+	# Slaves in all but Name
+	pentoshi_6 = {
+		global_manpower_modifier = 0.15
+	}
+	# Braavosi Influence
+	pentoshi_7 = {
+		global_foreign_trade_power = 0.15
+	}
+}
+
+braavosi_ideas = {
+	start = {
+		global_spy_defence = 0.25
+		num_accepted_cultures = 1
+	}
+	
+	bonus = {
+		global_trade_power = 0.25
+	}
+	
+	trigger = {
+		primary_culture = braavosi
+	}
+	free = yes
+	
+	# Refugees from Valyria
+	braavosi_1 = {
+		ae_impact = -0.15
+	}
+	# A Secret City
+	braavosi_2 = {
+		improve_relation_modifier = 0.2
+	}
+	# The Drowned Town
+	braavosi_3 = {
+		build_cost = -0.15
+	}
+	# The Titan of Braavos
+	braavosi_4 = {
+		defensiveness = 0.33
+	}
+	# Traditions of the Sealords
+	braavosi_5 = {
+		navy_tradition = 1
+	}
+	# House of Black and White
+	braavosi_6 = {
+		infantry_power = 0.1
+	}
+	# Temple of the Moonsingers
+	braavosi_7 = {
+		religious_unity = 0.2
+	}
+}
+
+pirate_ideas = {
+	start = {
+		navy_tradition = 1
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		galley_power = 0.25
+	}
+	
+	trigger = {
+		government = pirate_haven
+	}
+	free = yes
+	
+	# Arm of Dorne
+	pirate_1 = {
+		blockade_efficiency = 0.33
+		privateer_efficiency = 0.33
+	}
+	# Pirate Dens
+	pirate_2 = {
+		global_ship_cost = -0.25
+		global_ship_repair = 0.25
+	}
+	# Essosian Claimants
+	pirate_3 = {
+		prestige_from_naval = 1
+	}
+	# Lady of the Waves
+	pirate_4 = {
+		global_ship_cost = -0.33
+	}
+	# Pirate Kings
+	pirate_5 = {
+		leader_naval_fire = 1
+		leader_naval_manuever = 1
+		leader_naval_shock = 1
+	}
+	# Rule of the Stepstones
+	pirate_6 = {
+		naval_forcelimit_modifier = 0.33
+	}
+	# Veteran Pirates
+	pirate_7 = {
+		ship_durability = 0.2
+	}
+}
+
+northern_essosian_ideas = {
+	start = {
+		discipline = 0.05
+		hostile_attrition = 2
+	}
+	
+	bonus = {
+		land_forcelimit_modifier = 0.25
+	}
+	
+	trigger = {
+		primary_culture = lorathi
+	}
+	free = yes
+	
+	# Breakers of Volantis
+	northern_essosian_1 = {
+		fabricate_claims_cost = -0.25
+	}
+	# Qohorik Craftsmen
+	northern_essosian_2 = {
+		production_efficiency = 0.2
+	}
+	# Wood from Qohor
+	northern_essosian_3 = {
+		ship_durability = 0.1
+	}
+	# Ancient Valyrian Roads
+	northern_essosian_4 = {
+		land_forcelimit_modifier = 0.1
+	}
+	# Order of the Bearded Priests
+	northern_essosian_5 = {
+		land_morale = 0.2
+	}
+	# Repulsion of the Dothraki
+	northern_essosian_6 = {
+		defensiveness = 0.33
+	}
+	# Lorathi Velvet
+	northern_essosian_7 = {
+		army_tradition_decay = -0.02
+	}
+}
+
+volantene_ideas = {
+	start = {
+		global_tax_modifier = 0.1
+		build_cost = -0.1
+	}
+	
+	bonus = {
+		development_cost = -0.15
+	}
+	
+	trigger = {
+		primary_culture = volantene
+	}
+	free = yes
+	
+	# The Temple of the Lord of Light
+	volantene_1 = {
+		global_missionary_strength = 0.03
+		missionaries = 1
+	}
+	# The Black Wall
+	volantene_2 = {
+		defensiveness = 0.25
+	}
+	# The Merchant's House
+	volantene_3 = {
+		merchants = 1
+	}
+	# Slavers
+	volantene_4 = {
+		global_manpower_modifier = 0.2
+	}
+	# Volantene Honors
+	volantene_5 = {
+		global_own_trade_power = 0.15
+	}
+	# Valyrian Freehold
+	volantene_6 = {
+		dip_tech_cost_modifier = -0.1
+	}
+	# The Harbor
+	volantene_7 = {
+		light_ship_cost = -0.15
+		light_ship_power = 0.15
+	}
+}
+
+
+summer_islander_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		core_creation = -0.1
+	}
+	
+	bonus = {
+		privateer_efficiency = 0.33
+	}
+	
+	trigger = {
+		culture_group = culture_summer_isles
+	}
+	free = yes
+	
+	# Deposition of Jalabhar Xho
+	summer_islander_1 = {
+		land_morale = 0.15
+	}
+	# The Smiling Sea
+	summer_islander_2 = {
+		global_ship_recruit_speed = -0.25
+		global_ship_repair = 0.25
+	}
+	# Trade through Lotus Port
+	summer_islander_3 = {
+		global_foreign_trade_power = 0.1
+	}
+	# The Holy Art of Lovemaking
+	summer_islander_4 = {
+		heir_chance = 0.5
+	}
+	# Respect of Elders
+	summer_islander_5 = {
+		advisor_cost = -0.15
+	}
+	# Origin of the Swan Ship
+	summer_islander_6 = {
+		navy_tradition = 1
+	}
+	# Expert Archers
+	summer_islander_7 = {
+		leader_naval_fire = 1
+		leader_land_fire = 1
+	}
+}
+
+
+naathi_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		global_unrest = -1
+	}
+	
+	bonus = {
+		years_of_nationalism = -5
+	}
+	
+	trigger = {
+		primary_culture = naathi
+	}
+	free = yes
+	
+	# Lovers, not Fighters
+	naathi_1 = {
+		diplomatic_upkeep = 1
+	}
+	# Lord of Harmony
+	naathi_2 = {
+		global_missionary_strength = 0.05
+	}
+	# Butterfly Spirits
+	naathi_3 = {
+		tolerance_own = 3
+	}
+	# Naathi Explorers
+	naathi_4 = {
+		colonists = 1
+		global_colonial_growth = 20
+	}
+	# Aura of Naath
+	naathi_5 = {
+		diplomatic_reputation = 1
+	}
+	# Peace through Tolerance
+	naathi_6 = {
+		num_accepted_cultures = 1
+	}
+	# Love conquers all
+	naathi_7 = {
+		global_spy_defence = 1
+	}
+}
+
+wildling_ideas = {
+	start = {
+		land_forcelimit_modifier = 0.25
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		technology_group = wildling
+		NOT = { tag = Z01 }
+	}
+	free = yes
+	
+	# The Wall
+	wildling_1 = {
+		leader_land_manuever = 1
+	}
+	# Freefolk Spirit
+	wildling_2 = {
+		land_morale = 0.2
+	}
+	# Hatred of Crows
+	wildling_3 = {
+		recover_army_morale_speed = 0.1
+	}
+	# Spearwives
+	wildling_4 = {
+		global_regiment_cost = -0.25
+	}
+	# Raids on the North
+	wildling_5 = {
+		land_attrition = -0.15
+	}
+	# Employ of Giants
+	wildling_6 = {
+		artillery_power = 0.1
+	}
+	# Traditions of the First Men
+	wildling_7 = {
+		army_tradition = 1
+	}
+}
+
+ghiscari_ideas = {
+	start = {
+		advisor_pool = 1
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		global_tax_modifier = 0.15
+	}
+	
+	trigger = {
+		primary_culture = ghis
+	}
+	free = yes
+	
+	# The Death of the Ghiscari 
+	ghiscari_1 = {
+		culture_conversion_cost = -0.2
+	}
+	# Tactics from Old Ghis
+	ghiscari_2 = {
+		infantry_power = 0.1
+	}
+	# The Slave Traders
+	ghiscari_3 = {
+		global_manpower_modifier = 0.33
+	}
+	# The Unsullied
+	ghiscari_4 = {
+		discipline = 0.05
+	}
+	# The Harpy
+	ghiscari_5 = {
+		spy_offence = 0.5
+	}
+	# Tokars
+	ghiscari_6 = {
+		prestige = 1
+	}
+	# Legacy of Grazdan the Great
+	ghiscari_7 = {
+		legitimacy = 1
+	}
+}
+
+
+dothraki_ideas = {
+	start = {
+        loot_amount = 0.5
+        war_exhaustion = -0.1
+	}
+	
+	bonus = {
+		army_tradition_decay = -0.01
+	}
+	
+	trigger = {
+		technology_group = dothraki
+		NOT = { primary_culture = jogos_nhai }
+	}
+	free = yes
+	
+	# Nomadic Life
+	dothraki_1 = {
+		land_attrition = -0.1
+	}
+	# Mother of Mountains
+	dothraki_2 = {
+		discipline = 0.05
+	}
+	# Bloodriders
+	dothraki_3 = {
+		cavalry_power = 0.15
+	}
+	# Taming the Dothraki Sea
+	dothraki_4 = {
+		land_forcelimit_modifier = 0.2
+	}
+	# Crush the Maegi
+	dothraki_5 = {
+		global_regiment_recruit_speed = -0.2
+	}
+	# Braided Topknots
+	dothraki_6 = {
+		raze_power_gain = 0.25
+	}
+	# Horselords
+	dothraki_7 = {
+		general_cost = -0.25
+	}
+}
+
+
+quartheen_ideas = {
+	start = {
+		diplomats = 1
+		diplomatic_upkeep = 1
+	}
+	
+	bonus = {
+		improve_relation_modifier = 0.33
+	}
+	
+	trigger = {
+		technology_group = quartheen
+	}
+	free = yes
+	
+	# Wealth beyond Imagination
+	quartheen_1 = {
+		global_tax_modifier = 0.25
+	}
+	# The Jade Gateway
+	quartheen_2 = {
+		advisor_pool = 1
+	}
+	# The Pureborn
+	quartheen_3 = {
+		legitimacy = 1
+		prestige = 1
+	}
+	# House of the Undying
+	quartheen_4 = {
+		embracement_cost = -0.05
+	}
+	# Port of Qarth
+	quartheen_5 = {
+		trade_efficiency = 0.25
+	}
+	# A Warlock's Lies
+	quartheen_6 = {
+		stability_cost_modifier = -0.15
+	}
+	# The Hall of a Thousand Thrones
+	quartheen_7 = {
+		diplomatic_annexation_cost = -0.2
+	}
+}
+
+farosi_ideas = {
+	start = {
+		galley_cost = -0.25
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		leader_naval_shock = 1
+	}
+	
+	trigger = {
+		technology_group = farosi
+	}
+	free = yes
+	
+	# The Stone Cow of Faros
+	farosi_1 = {
+		religious_unity = 0.33
+	}
+	# Tropical Climate
+	farosi_2 = {
+		hostile_attrition = 1
+	}
+	# Trade through the Jade Sea
+	farosi_3 = {
+		global_trade_power = 0.2
+	}
+	# Yi Ti Influences
+	farosi_4 = {
+		army_tradition = 1
+	}
+	# Farosi Galleys
+	farosi_5 = {
+		galley_power = 0.2
+	}
+	# Cinnamon Straits
+	farosi_6 = {
+		trade_steering = 0.2
+	}
+	# Port Moraq
+	farosi_7 = {
+		merchants = 1
+	}
+}
+
+yi_ti_ideas = {
+	start = {
+		army_tradition = 1
+		diplomatic_upkeep = 1
+	}
+	
+	bonus = {
+		embracement_cost = -0.05
+	}
+	
+	trigger = {
+		primary_culture = yitish
+	}
+	free = yes
+	
+	# Golden Empire of Yi Ti
+	yi_ti_1 = {
+		legitimacy = 1
+	}
+	# Verdant Rainforests and Vast Farmlands
+	yi_ti_2 = {
+		global_regiment_cost = -0.3
+	}
+	# Roaming Basilisks
+	yi_ti_3 = {
+		province_warscore_cost = -0.15
+	}
+	# The Grand City of Yin
+	yi_ti_4 = {
+		stability_cost_modifier = -0.15
+	}
+	# Yitish Princes
+	yi_ti_5 = {
+		land_forcelimit_modifier = 0.2
+	}
+	# Golden Saffron
+	yi_ti_6 = {
+		global_trade_power = 0.1
+		trade_steering = 0.1
+	}
+	# The Five Forts
+	yi_ti_7 = {
+		defensiveness = 0.25
+		global_garrison_growth = 0.25
+	}
+}
+
+hyrkoon_ideas = {
+	start = {
+		army_tradition = 1
+		infantry_power = 0.1
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = bayasabhad
+			primary_culture = samyriana
+			primary_culture = kayakayanaya
+			primary_culture = asabhad
+		}
+	}
+	free = yes
+	
+	# Legacy of Hyrkoon
+	hyrkoon_1 = {
+		legitimacy = 1
+	}
+
+	# The Great Sand Sea
+	hyrkoon_2 = {
+		hostile_attrition = 1
+	}
+
+	# The Steel Road
+	hyrkoon_3 = {
+		caravan_power = 0.15
+	}
+
+	# Warrior Women of Kayakayanaya
+	hyrkoon_4 = {
+		land_morale = 0.2
+	}
+
+	# Lost People of Yinishar
+	hyrkoon_5 = {
+		infantry_cost = -0.15
+	}
+
+	# The Bone Mountains
+	hyrkoon_6 = {
+		land_attrition = -0.2
+	}
+
+	# Trade with Qarth
+	hyrkoon_7 = {
+		merchants = 1
+		global_trade_power = 0.1
+	}
+}
+
+trader_town_ideas = {
+	start = {
+		merchants = 1
+		global_trade_power = 0.1
+	}
+	
+	bonus = {
+		trade_efficiency = 0.1
+	}
+	
+	trigger = {
+		primary_culture = trader_town
+	}
+	free = yes
+	
+	# Trade is Blood
+	trader_town_1 = {
+		caravan_power = 0.2
+	}
+
+	# Hyrkoon Allegiance
+	trader_town_2 = {
+		global_own_trade_power = 0.1
+	}
+
+	# Hyrkoon Mercenaries
+	trader_town_3 = {
+		merc_maintenance_modifier = -0.33
+	}
+
+	# The Disaster of the Sand Sea
+	trader_town_4 = {
+		trade_range_modifier = 0.25
+	}
+
+	# Links to the Yi Ti
+	trader_town_5 = {
+		trade_steering = 0.25
+	}
+
+	# Trade with the Five Forts
+	trader_town_6 = {
+		global_prov_trade_power_modifier = 0.1
+	}
+
+	# Bloodless Men and their Gold
+	trader_town_7 = {
+		trade_efficiency = 0.1
+	}
+}
+
+
+nefer_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		leader_naval_shock = 1
+	}
+	
+	bonus = {
+		leader_naval_fire = 1
+		leader_naval_manuever = 1	
+	}
+	
+	trigger = {
+		primary_culture = nefer
+	}
+	free = yes
+	
+	# The Last Capital of N'Ghai
+	nefer_1 = {
+		legitimacy = 1
+	}
+
+	# The Thousand Islands
+	nefer_2 = {
+		navy_tradition = 1
+	}
+
+	# Mystical Taint
+	nefer_3 = {
+		prestige = 1
+	}
+
+	# Relations to the Jogos Nhai
+	nefer_4 = {
+		cavalry_cost = -0.1
+	}
+
+	# Timber Galore
+	nefer_5 = {
+		global_regiment_cost = -0.15
+	}
+
+	# Trade through the Cannibal Sands	
+	nefer_6 = {
+		global_trade_power = 0.1
+	}
+
+	# Hardy People
+	nefer_7 = {
+		land_attrition = -0.15
+	}
+}
+
+jogos_nhai_ideas = {
+	start = {
+		cavalry_cost = -0.25
+		cavalry_power = 0.25
+	}
+	
+	bonus = {
+		leader_land_shock = 1
+	}
+	
+	trigger = {
+		primary_culture = jogos_nhai
+	}
+	free = yes
+	
+	# Plains of Jogos Nhai
+	jogos_nhai_1 = {
+		prestige_from_land = 1
+        reinforce_cost_modifier = -0.75
+	}
+
+	# Trade Links with the Nefer
+	jogos_nhai_2 = {
+		merchants = 1
+	}
+
+	# Moonsinger Influence
+	jogos_nhai_3 = {
+		religious_unity = 0.25
+	}
+
+	# Nomadic People
+	jogos_nhai_4 = {
+		land_maintenance_modifier = -0.15
+	}
+
+	# Zebra Cavalry
+	jogos_nhai_5 = {
+		discipline = 0.05
+	}
+
+	# Honour Bound
+	jogos_nhai_6 = {
+		land_morale = 0.2
+	}
+
+	# Survival Instinct
+	jogos_nhai_7 = {
+		reinforce_speed = 0.25
+	}
+}
+
+bloodless_men_ideas = {
+	start = {
+		army_tradition = 1
+		discipline = 0.05
+	}
+	
+	bonus = {
+		land_forcelimit_modifier = 0.2
+	}
+	
+	trigger = {
+		primary_culture = bloodless_men
+	}
+	free = yes
+	
+	# The Pale and the Dead
+	bloodless_men_1 = {
+		recover_army_morale_speed = 0.05
+	}
+
+	# The Dry Deep
+	bloodless_men_2 = {
+		leader_land_manuever = 1
+	}
+
+	# Magic and Mysticism
+	bloodless_men_3 = {
+		artillery_power = 0.1
+	}
+
+	# Without Blood
+	bloodless_men_4 = {
+		global_manpower_modifier = 0.25
+	}
+
+	# Mysterious Folk
+	bloodless_men_5 = {
+		land_morale = 0.15
+	}
+
+	# Explosive Magic
+	bloodless_men_6 = {
+		siege_ability = 0.1
+	}
+
+	# The Bloodless
+	bloodless_men_7 = {
+		province_warscore_cost = -0.25
+	}
+}
+
+asshai_ideas = {
+	start = {
+		reduced_stab_impacts = yes
+		enemy_core_creation = 2.0
+	}
+	
+	bonus = {
+		embracement_cost = -0.1
+	}
+	
+	trigger = {
+		primary_culture = asshai
+	}
+	free = yes
+	
+	# The City of Black Stone
+	asshai_1 = {
+		development_cost = -0.15
+	}
+
+	# asshai, the City of Trade
+	asshai_2 = {
+		merchants = 1
+	}
+
+	# Magical Lands
+	asshai_3 = {
+		prestige = 1
+	}
+
+	# Esoteric Knowledge
+	asshai_4 = {
+		idea_cost = -0.1
+	}
+
+	# Ominous Reputation
+	asshai_5 = {
+		diplomatic_annexation_cost = -0.2
+	}
+
+	# Witchcraft of asshai
+	asshai_6 = {
+		discipline = 0.05
+	}
+
+	# The Ash River
+	asshai_7 = {
+		hostile_attrition = 2
+	}
+}
+
+
+ibben_ideas = {
+	start = {
+		heavy_ship_power = 0.1
+		sea_repair = yes
+	}
+	
+	bonus = {
+		naval_forcelimit_modifier = 0.33
+	}
+	
+	trigger = {
+		primary_culture = ibbenese
+	}
+	free = yes
+	
+	# Whalers
+	ibben_1 = {
+		transport_cost = -0.25
+		transport_power = 0.25
+	}
+
+	# Hairy Men
+	ibben_2 = {
+		navy_tradition = 1
+	}
+
+	# Ibben
+	ibben_3 = {
+		naval_morale = 0.3
+	}
+
+	# Neandethal Remenants
+	ibben_4 = {
+		free_leader_pool = 1
+	}
+
+	# Ibben Council
+	ibben_5 = {
+		legitimacy = 1
+	}
+
+	# Ships of Ibben
+	ibben_6 = {
+		galley_cost = -0.25
+		galley_power = 0.15
+	}
+	
+	# Expert Sailors
+	ibben_7 = {
+		ship_durability = 0.25
+	}
+}
+
+white_walker_ideas = {
+	start = {
+		reinforce_cost_modifier = -1
+		land_attrition = -0.25
+	}
+	
+	bonus = {
+		manpower_recovery_speed = 1
+	}
+	
+	trigger = {
+		primary_culture = white_walkers
+	}
+	free = yes
+	
+	# Mythological Creatures
+	white_walker_1 = {
+		ae_impact = -0.25
+	}
+
+	# The Long Night
+	white_walker_2 = {
+		may_explore = yes
+	}
+
+	# War of the Dawn
+	white_walker_3 = {
+		recover_army_morale_speed = 0.1
+	}
+
+	# Horrifying Visage
+	white_walker_4 = {
+		infantry_power = 0.15
+	}
+
+	# Oathkeepers
+	white_walker_5 = {
+		free_leader_pool = 1
+	}
+
+	# Ice Magic
+	white_walker_6 = {
+		siege_ability = 0.33
+	}
+	
+	# The Night's King
+	white_walker_7 = {
+		legitimacy = 1
+		prestige = 1
+	}
+}
+
+freefolk_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		infantry_power = 0.15
+	}
+	
+	bonus = {
+		discipline = 0.1
+	}
+	
+	trigger = {
+		tag = Z01
+	}
+	free = yes
+	
+	# Under One Banner
+	freefolk_1 = {
+		land_morale = 0.2
+	}
+	
+	# Freefolk Spirit
+	freefolk_2 = {
+		global_manpower_modifier = 0.25
+	}
+	
+	# Fire of the North
+	freefolk_3 = {
+		recover_army_morale_speed = 0.1
+	}
+	
+	# Spearwives
+	freefolk_4 = {
+		manpower_recovery_speed = 0.15
+	}
+	
+	# Friends of the Giants
+	freefolk_5 = {
+		siege_ability = 0.15
+	}
+	
+	# Expert Raiders
+	freefolk_6 = {
+		army_tradition_decay = -0.02
+	}
+	
+	# Traditions of the First Men
+	freefolk_7 = {
+		loot_amount = 0.5
+	}
+}
+
+# Valyrian Ideas
+valyrian_ideas = {
+	start = {
+		development_cost = -0.2
+		embracement_cost = -0.05
+	}
+	
+	bonus = {
+		global_tax_modifier = 0.25
+	}
+	
+	trigger = {
+		tag = J17
+	}
+	free = yes
+	
+	# The Valyrian Legacy
+	valyrian_1 = {
+		prestige = 1
+	}
+
+	# Valyrian Blades
+	valyrian_2 = {
+		discipline = 0.1
+	}
+	
+	# Masters of Magic
+	valyrian_3 = {
+		leader_land_shock = 1
+	}
+	
+	# The Doom
+	valyrian_4 = {
+		idea_cost = -0.1
+	}
+	
+	# Resilient Breed
+	valyrian_5 = {
+		defensiveness = 0.25
+	}
+	
+	# Dragonlords
+	valyrian_6 = {
+		free_leader_pool = 1
+	}
+	
+	# Valyrian Imperialism
+	valyrian_7 = {
+		unjustified_demands = -0.33
+	}
+}
+
+# K'Dath Ideas
+kdath_ideas = {
+	start = {
+		war_exhaustion_cost = -0.15
+		global_unrest = -1
+	}
+	
+	bonus = {
+		core_creation = -0.25
+	}
+	
+	trigger = {
+		tag = J18
+	}
+	free = yes
+	
+	kdath_1 = {
+		prestige = 1
+	}
+
+	kdath_2 = {
+		advisor_cost = -0.25
+	}
+	
+	kdath_3 = {
+		global_garrison_growth = 0.5
+	}
+	
+	kdath_4 = {
+		trade_efficiency = 0.1
+	}
+	
+	kdath_5 = {
+		global_manpower_modifier = 0.25
+	}
+	
+	kdath_6 = {
+		hostile_attrition = 1
+	}
+	
+	kdath_7 = {
+		infantry_power = 0.1
+	}
+}
+
+# Bonetown Ideas
+bonetown_ideas = {
+	start = {
+		stability_cost_modifier = -0.15
+		discovered_relations_impact = -0.25
+	}
+	
+	bonus = {
+		merchants = 1
+	}
+	
+	trigger = {
+		tag = J20
+	}
+	free = yes
+	
+	bonetown_1 = {
+		global_trade_goods_size_modifier = 0.15
+	}
+
+	bonetown_2 = {
+		global_spy_defence = 0.33
+	}
+	
+	bonetown_3 = {
+		culture_conversion_cost = -0.15
+	}
+	
+	bonetown_4 = {
+		diplomatic_reputation = 1
+	}
+	
+	bonetown_5 = {
+		caravan_power = 0.15
+	}
+	
+	bonetown_6 = {
+		global_own_trade_power = 0.15
+	}
+	
+	bonetown_7 = {
+		global_foreign_trade_power = 0.15
+	}
+}
+
+# Winged Men Ideas
+winged_men_ideas = {
+	start = {
+		embracement_cost = -0.1
+		build_cost = -0.1
+	}
+	
+	bonus = {
+		fabricate_claims_cost = -0.25
+	}
+	
+	trigger = {
+		tag = J19
+	}
+	free = yes
+	
+	winged_men_1 = {
+		legitimacy = 1
+	}
+
+	winged_men_2 = {
+		global_tax_income = 24
+	}
+	
+	winged_men_3 = {
+		core_creation = -0.15
+	}
+	
+	winged_men_4 = {
+		land_morale = 0.15
+	}
+	
+	winged_men_5 = {
+		prestige = 1
+	}
+	
+	winged_men_6 = {
+		development_cost = -0.15
+	}
+	
+	winged_men_7 = {
+		province_warscore_cost = -0.15
+	}
+}
+
+# Carcosa Ideas
+carcosa_ideas = {
+	start = {
+		global_manpower_modifier = 0.15
+		land_maintenance_modifier = -0.1
+	}
+	
+	bonus = {
+		manpower_recovery_speed = 0.15
+	}
+	
+	trigger = {
+		tag = J21
+	}
+	free = yes
+	
+	carcosa_1 = {
+		diplomatic_reputation = 1
+	}
+
+	carcosa_2 = {
+		unjustified_demands = -0.2
+	}
+	
+	carcosa_3 = {
+		global_garrison_growth = 0.5
+	}
+	
+	carcosa_4 = {
+		defensiveness = 0.33
+	}
+	
+	carcosa_5 = {
+		hostile_attrition = 2
+	}
+	
+	carcosa_6 = {
+		land_attrition = -0.15
+	}
+	
+	carcosa_7 = {
+		reinforce_speed = 0.33
+	}
+}
+
+lengii_ideas = {
+	start = {
+		production_efficiency = 0.15
+		advisor_pool = 1
+	}
+	
+	bonus = {
+		advisor_cost = -0.33
+	}
+	
+	trigger = {
+		primary_culture = lengii
+	}
+	free = yes
+	
+	lengii_1 = {
+		ae_impact = -0.1
+	}
+
+	lengii_2 = {
+		province_warscore_cost = -0.1
+	}
+	
+	lengii_3 = {
+		diplomatic_reputation = 1
+	}
+	
+	lengii_4 = {
+		diplomatic_upkeep = 1
+	}
+	
+	lengii_5 = {
+		diplomatic_annexation_cost = -0.15
+	}
+	
+	lengii_6 = {
+		unjustified_demands = -0.25
+	}
+	
+	lengii_7 = {
+		adm_tech_cost_modifier = -0.15
+	}
+}
+
+lhazareen_ideas = {
+	start = {
+		caravan_power = 0.2
+		global_trade_power = 0.1
+	}
+	
+	bonus = {
+		trade_efficiency = 0.2
+	}
+	
+	trigger = {
+		primary_culture = lhazar
+	}
+	free = yes
+	
+	lhazareen_1 = {
+		global_unrest = -2
+	}
+
+	lhazareen_2 = {
+		global_prov_trade_power_modifier = 0.15
+	}
+	
+	lhazareen_3 = {
+		years_of_nationalism = -5
+	}
+	
+	lhazareen_4 = {
+		defensiveness = 0.25
+	}
+	
+	lhazareen_5 = {
+		hostile_attrition = 1
+	}
+	
+	lhazareen_6 = {
+		stability_cost_modifier = -0.15
+	}
+	
+	lhazareen_7 = {
+		global_trade_goods_size_modifier = 0.15
+	}
+}
+
+mereenese_ideas = {
+	start = {
+		stability_cost_modifier = -0.1
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		merc_maintenance_modifier = -0.25
+	}
+	
+	trigger = {
+		primary_culture = meereen
+	}
+	free = yes
+	
+	mereenese_1 = {
+		free_leader_pool = 1
+	}
+
+	mereenese_2 = {
+		global_missionary_strength = 0.01
+	}
+	
+	mereenese_3 = {
+		possible_mercenaries = 0.5
+	}
+	
+	mereenese_4 = {
+		war_exhaustion = -0.05
+	}
+	
+	mereenese_5 = {
+		global_regiment_cost = -0.2
+	}
+	
+	mereenese_6 = {
+		free_leader_pool = 1
+	}
+	
+	mereenese_7 = {
+		mercenary_cost = -0.25
+	}
+}
+
+yunkai_ideas = {
+	start = {
+		global_spy_defence = 0.33
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		rebel_support_efficiency = 0.5
+	}
+	
+	trigger = {
+		primary_culture = yunkai
+	}
+	free = yes
+	
+	yunkai_1 = {
+		global_unrest = -1
+	}
+
+	yunkai_2 = {
+		global_manpower_modifier = 0.15
+	}
+	
+	yunkai_3 = {
+		advisor_cost = -0.15
+	}
+	
+	yunkai_4 = {
+		advisor_pool = 1
+	}
+	
+	yunkai_5 = {
+		prestige = 1
+	}
+	
+	yunkai_6 = {
+		land_forcelimit_modifier = 0.15
+	}
+	
+	yunkai_7 = {
+		spy_offence = 0.33
+	}
+}
+
+astapori_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		recover_army_morale_speed = 0.05
+	}
+	
+	bonus = {
+		land_forcelimit_modifier = 0.25
+	}
+	
+	trigger = {
+		primary_culture = astapor
+	}
+	free = yes
+	
+	astapori_1 = {
+		army_tradition = 0.5
+	}
+
+	astapori_2 = {
+		global_manpower_modifier = 0.15
+	}
+	
+	astapori_3 = {
+		land_morale = 0.15
+	}
+	
+	astapori_4 = {
+		infantry_power = 0.1
+	}
+	
+	astapori_5 = {
+		land_maintenance_modifier = -0.15
+	}
+	
+	astapori_6 = {
+		discipline = 0.1
+	}
+	
+	astapori_7 = {
+		core_creation = -0.1
+	}
+}
+
+valyrian_remnants_ideas = {
+	start = {
+		legitimacy = 0.5
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		global_colonial_growth = 15
+	}
+	
+	trigger = {
+		culture_group = culture_valyrian
+	}
+	free = yes
+	
+	valyrian_remnants_1 = {
+		auto_explore_adjacent_to_colony = yes
+		colonists = 1
+	}
+
+	valyrian_remnants_2 = {
+		naval_forcelimit_modifier = 0.5
+	}
+	
+	valyrian_remnants_3 = {
+		development_cost = -0.1
+	}
+	
+	valyrian_remnants_4 = {
+		global_tax_modifier = 0.15
+	}
+	
+	valyrian_remnants_5 = {
+		embracement_cost = -0.05
+	}
+	
+	valyrian_remnants_6 = {
+		build_cost = -0.15
+	}
+	
+	valyrian_remnants_7 = {
+		discipline = 0.05
+	}
+}
+
+omber_ideas = {
+	start = {
+		naval_morale = 0.15
+		navy_tradition = 1
+	}
+	
+	bonus = {
+		heavy_ship_power = 0.2
+	}
+	
+	trigger = {
+		primary_culture = omber
+	}
+	free = yes
+	
+	omber_1 = {
+		ship_durability = 0.1
+	}
+
+	omber_2 = {
+		global_ship_cost = -0.25
+	}
+	
+	omber_3 = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	
+	omber_4 = {
+		trade_range_modifier = 0.25
+	}
+	
+	omber_5 = {
+		defensiveness = 0.2
+	}
+	
+	omber_6 = {
+		stability_cost_modifier = -0.1
+	}
+	
+	omber_7 = {
+		heavy_ship_cost = -0.2
+	}
+}
+
+sarnor_ideas = {
+	start = {
+		infantry_cost = -0.2
+		global_garrison_growth = 0.5
+	}
+	
+	bonus = {
+		global_regiment_recruit_speed = -0.25
+	}
+	
+	trigger = {
+		primary_culture = saathi
+	}
+	free = yes
+	
+	sarnor_1 = {
+		auto_explore_adjacent_to_colony = yes
+		colonists = 1
+	}
+
+	sarnor_2 = {
+		global_foreign_trade_power = 0.15
+	}
+	
+	sarnor_3 = {
+		global_colonial_growth = 10
+		native_assimilation = 0.5
+	}
+	
+	sarnor_4 = {
+		cavalry_cost = -0.1
+		cavalry_power = 0.1
+	}
+	
+	sarnor_5 = {
+		land_morale = 0.15
+	}
+	
+	sarnor_6 = {
+		prestige = 1
+	}
+	
+	sarnor_7 = {
+		global_unrest = -1
+	}
+}
+
+qohori_ideas = {
+	start = {
+		diplomatic_reputation = 1
+		ae_impact = -0.1
+	}
+	
+	bonus = {
+		leader_land_shock = 1
+	}
+	
+	trigger = {
+		primary_culture = qohorik
+	}
+	free = yes
+	
+	qohori_1 = {
+		native_assimilation = 0.25
+		global_colonial_growth = 10
+	}
+
+	qohori_2 = {
+		galley_cost = -0.1
+		galley_power = 0.1
+	}
+	
+	qohori_3 = {
+		tolerance_own = 2
+	}
+	
+	qohori_4 = {
+		infantry_power = 0.1
+	}
+	
+	qohori_5 = {
+		land_attrition = -0.15
+	}
+	
+	qohori_6 = {
+		global_trade_goods_size_modifier = 0.15
+	}
+	
+	qohori_7 = {
+		leader_land_manuever = 1
+	}
+}
+
+norvosi_ideas = {
+	start = {
+		unjustified_demands = -0.25
+		improve_relation_modifier = 0.25
+	}
+	
+	bonus = {
+		diplomatic_annexation_cost = -0.25
+	}
+	
+	trigger = {
+		primary_culture = norvosi
+	}
+	free = yes
+	
+	norvosi_1 = {
+		build_cost = -0.2
+	}
+
+	norvosi_2 = {
+		development_cost = -0.1
+	}
+	
+	norvosi_3 = {
+		global_missionary_strength = 0.02
+		missionaries = 1
+	}
+	
+	norvosi_4 = {
+		global_unrest = -1
+	}
+	
+	norvosi_5 = {
+		devotion = 1
+	}
+	
+	norvosi_6 = {
+		diplomats = 1
+	}
+	
+	norvosi_7 = {
+		ae_impact = -0.15
+	}
+}
+
+nights_watch_ideas = {
+	start = {
+		land_forcelimit_modifier = 0.15
+		fort_maintenance_modifier = -0.25
+	}
+	
+	bonus = {
+		garrison_size = 0.5
+	}
+	
+	trigger = {
+		tag = A02
+	}
+	free = yes
+	
+	nights_watch_1 = {
+		defensiveness = 0.5
+	}
+
+	nights_watch_2 = {
+		discipline = 0.05
+	}
+	
+	nights_watch_3 = {
+		infantry_cost = -0.15
+	}
+	
+	nights_watch_4 = {
+		development_cost = -0.15
+	}
+	
+	nights_watch_5 = {
+		build_cost = -0.15
+	}
+	
+	nights_watch_6 = {
+		global_manpower_modifier = 0.15
+	}
+	
+	nights_watch_7 = {
+		land_maintenance_modifier = -0.33
+	}
+}

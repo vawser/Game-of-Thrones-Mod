@@ -1,0 +1,43 @@
+edict_advancement_effort = {
+	potential = {
+		always = yes		#we support "potential" if modders want to have lots and just show some.
+	}
+	
+	allow = {
+		always = yes
+	}
+	
+	modifier = {
+		local_institution_spread = 0.33
+	}
+	
+	color = { 50 173 192 }
+	
+	
+	ai_will_do = {
+		# has to be around at least 10 to be picked (depends on maintainance cost and general economy)
+		factor = 100
+		modifier = {
+			factor = 0
+			all_province_in_state = {
+				OR = {
+					current_institution = 95
+					NOT = {
+						current_institution = 1
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			all_province_in_state = {
+				AND = {
+					current_institution = 1
+					NOT = {
+						current_institution = 95
+					}
+				}
+			}
+		}
+	}
+}

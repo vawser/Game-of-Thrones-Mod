@@ -1,0 +1,488 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new buildings, make sure they are uniquely named.
+
+# cost = x #==> cost in $ to build (subject to other modifiers)
+# time = x #==> number of months to build.
+# modifier = m # a modifier on the province that the building gives
+# trigger = t # an and trigger that needs to be fullfilled to build and keep the building
+# one_per_country = yes/no # if yes, only one of these can exist in a country
+# manufactory = { trade_good trade_good } # list of trade goods that get a production bonus
+# onmap = yes/no # show as a sprite on the map
+
+# FROM = owner
+# ROOT = province
+
+# AI will consider buildings it does not have the tech for at 20% of scripted AI weight (in case it wants to save slots)
+
+# Base localisation is for Good, i.e. building_<name>
+# Alternate localisation for Evil (use religion group, i.e. building_<name>_<group>:
+
+#--------------------------------------
+# General
+#--------------------------------------
+# Town Hall
+town_hall = {
+	cost = 100
+	time = 12
+
+	modifier = {
+        local_development_cost = -0.20
+		allowed_num_of_buildings = 1
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Tavern
+tavern = {
+	cost = 100
+	time = 12
+
+	modifier = {
+        local_unrest = -1
+        local_culture_conversion_cost = -0.1
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Market
+market = {
+	cost = 100
+	time = 12
+
+	modifier = {
+        province_trade_power_modifier = 0.5
+	}
+	
+	ai_will_do = {
+		factor = 1.5
+	}
+}
+
+# Farm
+farm = {
+	cost = 100
+	time = 12
+
+	modifier = {
+        local_tax_modifier = 0.5
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Mine
+mine = {
+	cost = 100
+	time = 12
+
+	modifier = {
+        local_production_efficiency = 0.5
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Church / Temple
+temple = {
+	cost = 100
+	time = 12
+
+	modifier = {
+        local_missionary_strength = 0.03
+        local_state_maintenance_modifier = -0.25
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Dock
+dock = {
+	cost = 100
+	time = 12
+
+    trigger = {
+		has_port = yes
+	}
+    
+	modifier = {
+        local_sailors_modifier = 0.5
+	}
+	
+	ai_will_do = {
+		factor = 1
+        
+        modifier = {
+			factor = 105 # Little above build cost
+			FROM = { navy_size_percentage = 0.95 }
+		}
+	}
+}
+
+# Shipyard
+shipyard = {
+	cost = 100
+	time = 12
+
+    trigger = {
+		has_port = yes
+	}
+    
+	modifier = {
+        naval_forcelimit = 2
+		ship_recruit_speed = -0.25
+		local_ship_repair = 0.25
+	}
+	
+	ai_will_do = {
+		factor = 1
+        
+        modifier = {
+			factor = 105 # Little above build cost
+			FROM = { navy_size_percentage = 0.95 }
+		}
+	}
+}
+
+# Barracks
+barracks = {
+	cost = 100
+	time = 12
+
+	modifier = {
+        local_manpower_modifier = 0.5
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Drill Square
+drill_square = {
+	cost = 100
+	time = 12
+
+	modifier = {
+        land_forcelimit = 2
+        regiment_recruit_speed = -0.25
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Paved Road
+paved_road = {
+	cost = 100
+	time = 12
+
+	modifier = {
+        local_friendly_movement_speed = 0.25
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Supply Depot
+supply_depot = {
+	cost = 100
+	time = 12
+
+	modifier = {
+        supply_limit_modifier = 0.25
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+#--------------------------------------
+# Forts
+#--------------------------------------
+# Motte and Bailey
+motte_and_bailey = {
+	cost = 100
+	time = 12
+
+    onmap = yes
+	influencing_fort = yes
+    
+	modifier = {
+        fort_level = 1
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Castle
+castle = {
+	cost = 250
+	time = 12
+    make_obsolete = motte_and_bailey
+    
+    onmap = yes
+	influencing_fort = yes
+    
+	modifier = {
+        fort_level = 2
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Fortress
+fortress = {
+	cost = 500
+	time = 12
+    make_obsolete = castle
+    
+    onmap = yes
+	influencing_fort = yes
+    
+	modifier = {
+        fort_level = 3
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+#--------------------------------------
+# Manufactories
+#--------------------------------------
+manufactory = {
+	cost = 500
+	time = 60
+	modifier = {
+		trade_goods_size = 1.0
+	}
+}
+
+# Farmers Guild
+# grain, fish, tea, coffee, cotton, sugar, tobacco, cocoa
+farmers_guild = {
+    manufactory = {
+        grain
+        fish
+        tea
+        coffee
+        cotton
+        sugar
+        tobacco
+        cocoa
+    }
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Foresters Guild
+# naval_supplies, ironwood, tropical_wood
+foresters_guild = {
+    manufactory = {
+        naval_supplies
+        ironwood
+        tropical_wood
+    }
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Blacksmiths Guild
+# iron, copper
+blacksmiths_guild = {
+    manufactory = {
+        iron
+        copper
+    }
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Artisans Guild
+# wine, ivory, spices, silk, dyes, candles, salt
+artisans_guild = {
+    manufactory = {
+        wine
+        ivory
+        spices
+        silk
+        dyes
+        candles
+        salt
+    }
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Tailors Guild
+# wool, cloth, fur
+tailors_guild = {
+    manufactory = {
+        wool
+        cloth
+        fur
+    }
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Slavers Guild
+# slaves
+slavers_guild = {
+    trigger = {
+        owner = { has_country_modifier = permits_slavery }
+    }
+    
+    manufactory = {
+        slaves
+    }
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+#--------------------------------------
+# Unique
+#--------------------------------------
+# Royal Palace
+grand_palace = {
+	cost = 2000
+	time = 120
+    one_per_country = yes
+    
+	modifier = {
+        legitimacy = 1
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Merchant's Quarter
+merchants_quarter = {
+	cost = 2000
+	time = 120
+    one_per_country = yes
+    
+	modifier = {
+        merchants = 1
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Citadel
+citadel = {
+	cost = 2000
+	time = 120
+    one_per_country = yes
+    make_obsolete = fortress
+    
+	modifier = {
+        fort_level = 4
+        defensiveness = 0.5
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Cathedral / Grand Temple
+grand_temple = {
+	cost = 2000
+	time = 120
+    one_per_country = yes
+    
+	modifier = {
+        global_missionary_strength = 0.03
+        missionaries = 1
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Tourney Grounds
+tourney_grounds = {
+	cost = 2000
+	time = 120
+    one_per_country = yes
+    
+	modifier = {
+        diplomatic_reputation = 1
+        improve_relation_modifier = 0.25
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Military Academy
+military_academy = {
+	cost = 2000
+	time = 120
+    one_per_country = yes
+    
+	modifier = {
+        free_leader_pool = 1
+        prestige_from_land = 1.0
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Naval Academy
+naval_academy = {
+	cost = 2000
+	time = 120
+    one_per_country = yes
+    
+	modifier = {
+        free_leader_pool = 1
+        prestige_from_naval = 1.0
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}

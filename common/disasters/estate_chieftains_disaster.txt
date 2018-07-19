@@ -1,0 +1,124 @@
+estate_chieftains_disaster = {
+	potential = {
+		has_dlc = "The Cossacks"
+		has_estate = estate_chieftains
+		estate_influence = {
+			estate = estate_chieftains
+			influence = 60
+		}
+	}
+
+
+	can_start = {
+		has_any_disaster = no
+		estate_influence = {
+			estate = estate_chieftains
+			influence = 80
+		}
+	}
+	
+	can_stop = {
+		NOT = {
+			estate_influence = {
+				estate = estate_chieftains
+				influence = 80
+			}		
+		}
+	}
+	
+	down_progress = {
+		factor = 1
+	}
+	
+	progress = {
+		modifier = {
+			factor = 1
+			estate_influence = {
+				estate = estate_chieftains
+				influence = 80
+			}
+			hidden_trigger = {
+				NOT = {
+					estate_influence = {
+						estate = estate_chieftains
+						influence = 85
+					}			
+				}			
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_influence = {
+				estate = estate_chieftains
+				influence = 85
+			}
+			hidden_trigger = {
+				NOT = {
+					estate_influence = {
+						estate = estate_chieftains
+						influence = 90
+					}			
+				}			
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_influence = {
+				estate = estate_chieftains
+				influence = 90
+			}
+			hidden_trigger = {
+				NOT = {
+					estate_influence = {
+						estate = estate_chieftains
+						influence = 95
+					}			
+				}			
+			}
+		}	
+		modifier = {
+			factor = 4
+			estate_influence = {
+				estate = estate_chieftains
+				influence = 95
+			}
+			hidden_trigger = {
+				NOT = {
+					estate_influence = {
+						estate = estate_chieftains
+						influence = 100
+					}			
+				}			
+			}
+		}	
+		modifier = {
+			factor = 5
+			estate_influence = {
+				estate = estate_chieftains
+				influence = 100
+			}
+		}		
+	}
+	
+	can_end = {
+		custom_trigger_tooltip = {
+			tooltip = EST_CRUSHED_CHIEFTAINS
+			
+            NOT = { has_country_flag = chieftains_estate_in_power }					
+		}
+	}
+	
+	modifier = {	
+		army_tradition_decay = 0.02
+		global_manpower_modifier = -0.25
+		land_forcelimit_modifier = -0.25
+		global_regiment_recruit_speed = 0.5
+	}
+
+	on_start = GOT_ESTATES.60
+	on_end = GOT_ESTATES.61
+	
+	on_monthly = {
+	}
+}
+

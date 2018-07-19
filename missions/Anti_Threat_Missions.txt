@@ -1,0 +1,248 @@
+befriend_threat_rival = {
+
+	type = threats_rivals
+	
+	category = DIP
+	
+	allow = {
+		NOT = { is_rival = FROM }
+		NOT = { has_opinion = { who = FROM value = 50 } }
+		has_opinion = { who = FROM value = 0 }
+		NOT = { war_with = FROM }
+		FROM = {
+			is_subject = no
+			knows_country = ROOT
+		}
+	}
+	abort = {
+		FROM = { is_subject = yes }
+		OR = {
+			war_with = FROM
+			is_rival = FROM
+			exists = no
+		}
+	}
+	success = {
+		has_opinion = { who = FROM value = 125 }
+	}
+	chance = {
+		factor = 1100
+		modifier = {
+			factor = 2
+			FROM = { DIP = 6 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { DIP = 3 }
+		}
+	}
+	effect = {
+		FROM = { 
+			add_prestige = 5 
+			add_dip_power = 25
+		}
+	}
+}
+
+
+improve_fort_threat_1 = {
+
+	type = our_provinces
+	
+	category = ADM
+	
+	allow = {
+		has_building = fort_15th
+		NOT = { has_building = fort_16th }
+		can_build = fort_16th
+		owner = { is_at_war = no }
+		any_neighbor_province = {
+			NOT = { owned_by = FROM }
+			owner = {
+				FROM = { is_threat = PREV }
+			}
+		}
+	}
+	abort = {
+		NOT = {	owned_by = FROM }
+	}
+	success = {
+		has_building = fort_16th
+	}
+	chance = {
+		factor = 1100
+		modifier = {
+			factor = 1.5
+			is_capital = yes
+		}		
+	}
+	effect = {
+		owner = {
+			add_army_tradition = 5
+		}
+	}
+}
+
+
+improve_fort_threat_2 = {
+
+	type = our_provinces
+	
+	category = ADM
+	
+	allow = {
+		has_building = fort_16th
+		NOT = { has_building = fort_17th }
+		can_build = fort_17th
+		owner = { is_at_war = no }
+		any_neighbor_province = {
+			NOT = { owned_by = FROM }
+			owner = {
+				FROM = { is_threat = PREV }
+			}
+		}
+	}
+	abort = {
+		NOT = {	owned_by = FROM }
+	}
+	success = {
+		has_building = fort_17th
+	}
+	chance = {
+		factor = 1100
+		modifier = {
+			factor = 1.5
+			is_capital = yes
+		}	
+	}
+	effect = {
+		owner = {
+			add_army_tradition = 5
+		}
+	}
+}
+
+
+improve_relations_threat = {
+
+	type = threat_countries
+
+	category = DIP
+
+	allow = {
+		is_at_war = no
+		NOT = { 
+			has_opinion = { who = FROM value = 75 } 
+		}
+		has_opinion = { who = FROM value = 25 }
+	}
+	abort = {
+		OR = {
+			war_with = FROM
+			exists = no
+		}
+	}
+	success = {
+		has_opinion = { who = FROM value = 100 }
+	}
+	chance = {
+		factor = 1100
+		modifier = {
+			factor = 1.25
+			primary_culture = FROM
+		}
+		modifier = {
+			factor = 1.1
+			religion = FROM
+		}
+		modifier = {
+			factor = 1.1
+			FROM = { dip = 3 }
+		}
+		modifier = {
+			factor = 0.8
+			FROM = { NOT = { dip = 2 } }
+		}
+	}
+	effect = {
+		FROM = { 
+			add_prestige = 5 
+			add_dip_power = 25
+		}
+	}	
+}
+
+
+royal_marriage_threat = {
+
+	type = threat_countries
+	
+	category = DIP
+
+	allow = {
+		is_at_war = no	
+		FROM = { 
+			government = monarchy
+			is_subject = no
+			num_of_free_diplomatic_relations = 1
+		}
+		government = monarchy
+		religion_group = FROM
+		is_subject = no 
+		NOT = {  
+			marriage_with = FROM 
+			war_with = FROM
+		}
+		has_opinion = { who = FROM value = 100 }
+	}
+	abort = {
+		OR = {
+			exists = no
+			war_with = FROM
+			FROM = {
+				OR = {
+					NOT = { government = monarchy }
+					is_subject = yes
+				}
+			}
+			NOT = { government = monarchy }
+			is_subject = yes
+		}
+	}
+	success = {
+		FROM = { marriage_with = ROOT }
+	}
+	chance = {
+		factor = 1100
+		modifier = {
+			factor = 1.12
+			primary_culture = FROM
+		}
+		modifier = {
+			factor = 1.03
+			religion = FROM
+		}
+		modifier = {
+			factor = 1.1
+			has_opinion = { who = FROM value = 50 }
+		}
+		modifier = {
+			factor = 1.1
+			FROM = { dip = 3 }
+		}
+		modifier = {
+			factor = 1.04
+			prestige = FROM
+		}
+		modifier = {
+			factor = 1.08
+			NOT = { legitimacy = FROM }
+		}
+	}
+	effect = {
+		FROM = {
+			add_prestige = 5
+			add_dip_power = 25
+		}
+	}	
+}

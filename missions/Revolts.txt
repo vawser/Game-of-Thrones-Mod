@@ -1,0 +1,36 @@
+defeat_rebels_mission = {
+
+	type = country
+	
+	category = MIL
+	
+	allow = {
+		is_at_war = no
+		num_of_revolts = 1
+		NOT = { stability = 3 }
+	}
+	abort = {
+		is_at_war = yes
+	}
+	success = {
+		NOT = { num_of_revolts = 1 }
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.1
+			revolt_percentage = 0.25
+		}
+		modifier = {
+			factor = 1.2
+			revolt_percentage = 0.5
+		}
+		modifier = {
+			factor = 1.5
+			revolt_percentage = 0.75
+		}
+	}
+	effect = {
+		add_prestige = 5
+	}	
+}

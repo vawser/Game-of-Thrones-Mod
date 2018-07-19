@@ -1,0 +1,214 @@
+country_decisions = {
+    # Slaves
+    permit_slavery = {
+		major = yes
+		potential = {
+			NOT = { has_country_modifier = slavery_permitted }
+		}
+		allow = {
+            NOT = { has_country_modifier = slavery_permitted }
+            has_idea_group = raiding_ideas
+		}
+		effect = {
+            add_stability = -3
+            custom_tooltip = SLAVERY_NOW_PERMITTED
+            
+            hidden_effect = {
+                remove_country_modifier = slavery_prohibited
+                add_country_modifier = {
+                    name = slavery_permitted
+                    duration = -1
+                    hidden = yes
+                }
+                every_known_country = {
+                    limit = {
+                        has_country_modifier = slavery_prohibited
+                    }
+                    add_opinion = { who = ROOT modifier = permits_slavery }
+                    reverse_add_opinion = { who = ROOT modifier = prohibits_slavery }
+                }
+            } 
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    prohibit_slavery = {
+		major = yes
+		potential = {
+			NOT = { has_country_modifier = slavery_prohibited }
+		}
+		allow = {
+            NOT = { has_country_modifier = slavery_prohibited }
+            has_idea_group = tolerance_ideas
+		}
+		effect = {
+            add_stability = -3
+            custom_tooltip = SLAVERY_NOW_PROHIBITED
+            
+            hidden_effect = {
+                remove_country_modifier = slavery_permitted
+                add_country_modifier = {
+                    name = slavery_prohibited
+                    duration = -1
+                    hidden = yes
+                }
+                every_known_country = {
+                    limit = {
+                        has_country_modifier = slavery_permitted
+                    }
+                    add_opinion = { who = ROOT modifier = prohibits_slavery }
+                    reverse_add_opinion = { who = ROOT modifier = permits_slavery }
+                }
+            }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    slave_check = {
+		major = yes
+		potential = {
+			has_country_modifier = slavery_permitted
+		}
+		allow = {
+            hidden_trigger = {
+                always = no
+            }
+            
+            custom_trigger_tooltip = {
+                tooltip = SLAVERY_CHECK
+  
+                check_variable = {
+                    which = slave_count
+                    value = 0
+                }
+            }
+		}
+		effect = {
+            custom_tooltip = slave_collection_tt
+            custom_tooltip = slave_usage_tt
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    hasten_construction_projects = {
+        potential = {
+			has_country_modifier = slavery_permitted
+            NOT = { has_country_modifier = slavery_construction }
+		}
+		allow = {
+			check_variable = {
+                which = slave_count
+                value = 500
+            }
+		}
+		effect = {
+            subtract_slaves_500 = yes
+            
+            add_country_modifier = {
+                name = slavery_construction
+                duration = 3650
+            }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+    }
+    
+    send_slave_labour = {
+        potential = {
+			has_country_modifier = slavery_permitted
+            NOT = { has_country_modifier = slavery_production }
+		}
+		allow = {
+			check_variable = {
+                which = slave_count
+                value = 500
+            }
+		}
+		effect = {
+            subtract_slaves_500 = yes
+            
+            add_country_modifier = {
+                name = slavery_production
+                duration = 3650
+            }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+    }
+    
+    crack_down_on_rebellious_slaves = {
+        potential = {
+			has_country_modifier = slavery_permitted
+		}
+		allow = {
+			check_variable = {
+                which = slave_count
+                value = 500
+            }
+		}
+		effect = {
+            subtract_slaves_500 = yes
+            
+            add_absolutism = 5
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+    }
+    
+    distribute_slaves_to_nobles = {
+        potential = {
+			has_country_modifier = slavery_permitted
+            NOT = { stability = 3 }
+		}
+		allow = {
+			check_variable = {
+                which = slave_count
+                value = 500
+            }
+		}
+		effect = {
+            subtract_slaves_500 = yes
+            add_stability = 1
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+    }
+    
+    train_slave_soldiers = {
+        potential = {
+			has_country_modifier = slavery_permitted
+            NOT = { manpower_percentage = 1.0 }
+		}
+		allow = {
+			check_variable = {
+                which = slave_count
+                value = 1000
+            }
+		}
+		effect = {
+            subtract_slaves_1000 = yes
+            add_yearly_manpower = 1
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+    }
+}

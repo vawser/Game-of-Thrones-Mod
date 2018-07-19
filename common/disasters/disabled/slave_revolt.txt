@@ -1,0 +1,69 @@
+slave_revolt = {
+	potential = {	
+		has_country_modifier = permits_slavery
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		has_country_modifier = permits_slavery
+		NOT = { manpower_percentage = 0.25 }
+	}
+	progress = {
+		modifier = {
+			factor = 1
+			war_exhaustion = 10
+			is_at_war = no
+		}
+		modifier = {
+			factor = 1
+			NOT = { stability = 1 }
+			is_at_war = no
+		}		
+		modifier = {
+			factor = 1
+			num_of_loans = 10
+			is_at_war = no
+		}	
+		modifier = {
+			factor = 2
+			is_bankrupt = yes
+			is_at_war = no
+		}		
+		modifier = {
+			factor = 0.5
+			overextension_percentage = 0.25
+			NOT = { 
+				overextension_percentage = 0.5
+			}
+			is_at_war = no
+		}
+		modifier = {
+			factor = 1.0
+			overextension_percentage = 0.5
+			is_at_war = no
+		}
+	}
+	
+	can_end = {
+		NOT = { num_of_revolts = 1 }
+		stability = 1
+	}
+	
+	modifier = {
+		global_unrest = 5
+		stability_cost_modifier = 0.50
+		global_manpower_modifier = -0.25
+	}
+	
+	on_start = slave_revolt.1
+	on_end = slave_revolt.2
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			100 = slave_revolt.3
+		}
+	}
+}

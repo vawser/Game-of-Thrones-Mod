@@ -1,0 +1,309 @@
+country_decisions = {
+	restore_the_faith = {
+        major = yes
+		potential = {
+			religion = asoiaf_faith_of_the_seven
+            NOT = { exists = FAT }
+            27 = {
+                owned_by = ROOT
+            }
+		}
+		allow = {
+			religion = asoiaf_faith_of_the_seven
+		}
+		effect = {
+			27 = {
+                cede_province = FAT
+                add_core = FAT
+            }
+            
+            add_stability = 1
+            
+            custom_tooltip = tt_the_faith_restored_pleased
+            hidden_effect = { 
+                every_known_country = {
+                    limit = {
+                        capital_scope = {
+                            continent = europe
+                        }
+                        government = kingdom
+                    }
+                    add_opinion = {
+                        who = ROOT
+                        modifier = restored_the_faith
+                    }
+                }
+            }
+            
+            clr_country_flag = offered_restore_the_faith
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+	promote_worship = {
+		potential = {
+			OR = { 
+				uses_karma = yes
+                uses_patriarch_authority = yes
+                uses_piety = yes
+                uses_fervor = yes
+                uses_papacy = yes
+                uses_church_aspects = yes
+			}
+		}
+		allow = {
+			years_of_income = 1
+		}
+		effect = {
+			add_years_of_income = -1
+		
+			if = {
+				limit = {
+					uses_fervor = yes
+				}
+				
+				add_fervor = 10
+			}
+			
+			if = {
+				limit = {
+					uses_karma = yes
+				}
+				add_karma = 10
+			}
+			
+			if = {
+				limit = {
+					uses_papacy = yes
+				}
+				
+				add_papal_influence = 10
+			}
+			
+			if = {
+				limit = {
+					uses_patriarch_authority = yes
+				}
+				add_patriarch_authority = 0.1
+			}
+			
+			if = {
+				limit = {
+					uses_piety = yes
+				}
+				add_piety = 0.1
+			}
+			
+			if = {
+				limit = {
+					uses_church_aspects = yes
+				}
+				add_church_power = 15
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	restrict_worship = {
+		potential = {
+			OR = { 
+				uses_karma = yes
+                uses_patriarch_authority = yes
+                uses_piety = yes
+			}
+		}
+		allow = {
+			years_of_income = 1
+		}
+		effect = {
+			add_years_of_income = -1
+
+			if = {
+				limit = {
+					uses_karma = yes
+				}
+				add_karma = -10
+			}
+			
+			if = {
+				limit = {
+					uses_patriarch_authority = yes
+				}
+				add_patriarch_authority = -0.1
+			}
+            
+            if = {
+				limit = {
+					uses_piety = yes
+				}
+				add_piety = -0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	promote_sept_attendance = {
+		potential = {
+			NOT = { has_country_modifier = promoted_sept_attendance }
+			religion = asoiaf_faith_of_the_seven
+		}
+		allow = {
+			NOT = { has_country_modifier = promoted_sept_attendance }
+			years_of_income = 1
+		}
+		effect = {
+			add_years_of_income = -1
+			
+			add_country_modifier = {
+				name = promoted_sept_attendance
+				duration = 3650
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				NOT = { religious_unity = 0.75 }
+			}
+		}
+	}
+	
+	promote_weirwood_attendance = {
+		potential = {
+			NOT = { has_country_modifier = promoted_weirwood_attendance }
+			religion = asoiaf_the_old_gods
+		}
+		allow = {
+			NOT = { has_country_modifier = promoted_weirwood_attendance }
+			years_of_income = 1
+		}
+		effect = {
+			add_years_of_income = -1
+			
+			add_country_modifier = {
+				name = promoted_weirwood_attendance
+				duration = 3650
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				NOT = { religious_unity = 0.75 }
+			}
+		}
+	}
+	
+	promote_drowning = {
+		potential = {
+			NOT = { has_country_modifier = promoted_drowning }
+			religion = asoiaf_the_drowned_god
+		}
+		allow = {
+			NOT = { has_country_modifier = promoted_drowning }
+			years_of_income = 1
+		}
+		effect = {
+			add_years_of_income = -1
+			
+			add_country_modifier = {
+				name = promoted_drowning
+				duration = 3650
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				NOT = { religious_unity = 0.75 }
+			}
+		}
+	}
+	
+	promote_the_great_stallion = {
+		potential = {
+			NOT = { has_country_modifier = promoted_the_great_stallion }
+			religion = asoiaf_the_great_stallion
+		}
+		allow = {
+			NOT = { has_country_modifier = promoted_the_great_stallion }
+			years_of_income = 1
+		}
+		effect = {
+			add_years_of_income = -1
+			
+			add_country_modifier = {
+				name = promoted_the_great_stallion
+				duration = 3650
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				NOT = { religious_unity = 0.75 }
+			}
+		}
+	}
+	
+	promote_temple_attendance = {
+		potential = {
+			NOT = { has_country_modifier = promoted_temple_attendance }
+			OR = {	
+				religion = asoiaf_summer_gods
+				religion = asoiaf_god_of_harmony
+				religion = asoiaf_mother_rhoyne
+				religion = asoiaf_trios
+				religion = asoiaf_bearded_priests
+				religion = asoiaf_gods_of_lorath
+				religion = asoiaf_black_goat_of_qohor
+				religion = asoiaf_gods_of_sarnor
+				religion = asoiaf_graces
+				religion = asoiaf_gods_of_ibben
+				religion = asoiaf_great_shepherd
+				religion = asoiaf_moonsingers
+				religion = asoiaf_tribal
+				religion = asoiaf_lady_of_the_waves
+				religion = asoiaf_gods_of_hyrkoon
+				religion = asoiaf_rhllor
+				religion = asoiaf_lion_of_the_night
+				religion = asoiaf_stone_cow_of_faros
+				religion = asoiaf_magic
+			}
+		}
+		allow = {
+			NOT = { has_country_modifier = promoted_temple_attendance }
+			years_of_income = 1
+		}
+		effect = {
+			add_years_of_income = -1
+			
+			add_country_modifier = {
+				name = promoted_temple_attendance
+				duration = 3650
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				NOT = { religious_unity = 0.75 }
+			}
+		}
+	}
+
+}

@@ -1,0 +1,791 @@
+namespace = got_aow_events
+
+# The Plight of [Province]
+province_event = {
+	id = got_aow_events.1
+	title = "got_aow_events.1.t"
+	desc = "got_aow_events.1.d"
+	picture = FAMINE_eventPicture
+	
+	is_mtth_scaled_to_size = 1
+
+	trigger = {
+		is_looted = yes
+		owner = { is_at_war = yes }
+		NOT = { has_province_modifier = famine_refused_aid }
+	}
+
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 1.5
+			owner = {
+				any_owned_province = {
+					has_province_modifier = famine_refused_aid
+				}
+			}
+		}
+	}
+
+	# Send aid
+	option = {
+		name = "got_aow_events.1.a"
+		owner = { add_years_of_income = -0.1 }
+	}
+
+	# Refuse aid
+	option = {
+		name = "got_aow_events.1.b"
+		add_province_modifier = {
+			name = "famine_refused_aid"
+			duration = 3650
+		}
+	}
+}
+
+# Cruelty of Mercenaries
+country_event = {
+	id = got_aow_events.12
+	title = "got_aow_events.12.t"
+	desc = "got_aow_events.12.d"
+	picture = BORDER_TENSION_eventPicture
+
+	trigger = {
+		is_at_war = yes
+		num_of_mercenaries = 1
+		NOT = { has_country_modifier = curtailed_mercenaries }
+		any_known_country = {
+			war_with = ROOT
+			any_owned_province = {
+				controlled_by = ROOT
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	# Rein them in
+	option = {
+		name = "got_aow_events.12.a"
+		add_prestige = -5
+		add_country_modifier = {
+			name = "curtailed_mercenaries"
+			duration = 1825
+		}
+	}
+
+	# Bellum se ipsum alet
+	option = {
+		name = "got_aow_events.12.b"
+		add_prestige = -10
+		every_province = {
+			limit = {
+				controlled_by = ROOT
+				NOT = { owned_by = ROOT }
+			}
+			add_province_modifier = {
+				name = "terrorized_by_mercenaries"
+				duration = 1095
+			}
+		}
+	}
+}
+
+# Mercenary Bands Raid [Province]
+province_event = {
+	id = got_aow_events.13
+	title = "got_aow_events.13.t"
+	desc = "got_aow_events.13.d"
+	picture = BORDER_TENSION_eventPicture
+
+	trigger = {
+		has_province_modifier = terrorized_by_mercenaries
+		NOT = { has_province_modifier = plundered_in_war }
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	# Greed corrupts men's hearts...
+	option = {
+		name = "got_aow_events.13.a"
+		add_province_modifier = {
+			name = "plundered_in_war"
+			duration = 1095
+		}
+	}
+}
+
+# Displaced Refugees from [Province]
+province_event = {
+	id = got_aow_events.14
+	title = "got_aow_events.14.t"
+	desc = "got_aow_events.14.d"
+	picture = FAMINE_eventPicture
+
+	trigger = {
+		OR = {
+			has_province_modifier = plundered_in_war
+			has_province_modifier = famine_refused_aid
+		}
+		base_tax = 2
+		owner = {
+			is_at_war = no
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 480
+	}
+
+	# The war may be over, but our troubles are not.
+	option = {
+		name = "got_aow_events.14.a"
+		add_base_tax = -1
+		random_neighbor_province = {
+			limit = { owned_by = ROOT }
+			add_base_tax = 1
+		}
+	}
+}
+
+# The Families Left Behind
+country_event = {
+	id = got_aow_events.15
+	title = "got_aow_events.15.t"
+	desc = "got_aow_events.15.d"
+	picture = FARMING_eventPicture
+
+	trigger = {
+		NOT = { manpower_percentage = 0.1 }
+		had_recent_war = 3
+		NOT = { has_country_modifier = post_war_tax_relief }
+		NOT = { has_country_modifier = decreased_drafting }
+		NOT = { has_country_modifier = suffering_bereaved }
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	# We can ease the tax burden on the bereaved.
+	option = {
+		name = "got_aow_events.15.a"
+		add_country_modifier = {
+			name = "post_war_tax_relief"
+			duration = 1825
+		}
+	}
+
+	# Let us be more lenient drafting for the army in the future.
+	option = {
+		name = "got_aow_events.15.b"
+		add_country_modifier = {
+			name = "decreased_drafting"
+			duration = 1825
+		}
+	}
+
+	# This is the price that must be paid for our glorious nation.
+	option = {
+		name = "got_aow_events.15.c"
+		add_country_modifier = {
+			name = "suffering_bereaved"
+			duration = 1825
+		}
+	}
+}
+
+# Witchcraft
+province_event = {
+	id = got_aow_events.16
+	title = "got_aow_events.16.t"
+	desc = "got_aow_events.16.d"
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		OR = {
+			has_province_modifier = lingering_plague
+			has_province_modifier = plundered_in_war
+			has_province_modifier = famine_refused_aid
+		}
+		owner = {
+			is_at_war = no
+			religion_group = religion_westeros
+			NOT = { has_country_modifier = forbade_witch_hunts }
+			NOT = { has_country_modifier = nationwide_witch_hunts }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 480
+	}
+
+	# Allow them to proceed with the local trials.
+	option = {
+		name = "got_aow_events.16.a"
+		add_province_modifier = {
+			name = "local_witch_hunts"
+			duration = 3650
+		}
+	}
+
+	# [Inquisitor] can see to these matters in a more organized fashion.
+	option = {
+		name = "got_aow_events.16.b"
+		trigger = {
+			owner = { advisor = inquisitor }
+		}
+		owner = {
+			add_country_modifier = {
+				name = "nationwide_witch_hunts"
+				duration = 3650
+			}
+		}
+	}
+
+	# Such foolish superstitions have no place in [Country]!
+	option = {
+		name = "got_aow_events.16.c"
+		owner = {
+			add_country_modifier = {
+				name = "forbade_witch_hunts"
+				duration = 3650
+			}
+		}
+	}
+}
+
+# Witch-hunt
+province_event = {
+	id = got_aow_events.17
+	title = "got_aow_events.17.t"
+	desc = "got_aow_events.17.d"
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		has_province_modifier = local_witch_hunts
+		owner = {
+			is_at_war = no
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 480
+	}
+
+	# Cease this madness!
+	option = {
+		name = "got_aow_events.17.a"
+		owner = { add_adm_power = -80 }
+		remove_province_modifier = local_witch_hunts
+	}
+
+	# Intervene on behalf of the nobles.
+	option = {
+		name = "got_aow_events.17.b"
+		spawn_rebels = {
+			type = anti_tax_rebels
+			size = 1
+		}
+	}
+
+	# Intervene on behalf of the commoners.
+	option = {
+		name = "got_aow_events.17.c"
+		spawn_rebels = {
+			type = noble_rebels
+			size = 1
+		}
+	}
+
+	# Let them exact justice as they see fit.
+	option = {
+		name = "got_aow_events.17.e"
+		trigger = { is_capital = no }
+		add_local_autonomy = 25
+	}
+}
+
+# A Witch from Foreign Lands
+province_event = {
+	id = got_aow_events.18
+	title = "got_aow_events.18.t"
+	desc = "got_aow_events.18.d"
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		has_province_modifier = local_witch_hunts
+		owner = {
+			is_at_war = no
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 480
+	}
+
+	# This fear of the unfamiliar must be stopped.
+	option = {
+		name = "got_aow_events.18.a"
+		owner = { add_adm_power = -50 }
+	}
+
+	# Witches, spies, who know what they're up to?
+	option = {
+		name = "got_aow_events.18.b"
+		owner = {
+			random_neighbor_country = {
+				add_opinion = {
+					who = PREV
+					modifier = accused_compatriot_of_witchcraft
+				}
+			}
+		}
+	}
+}
+
+# A Highly Troubling Accusation
+country_event = {
+	id = got_aow_events.19
+	title = "got_aow_events.19.t"
+	desc = "got_aow_events.19.d"
+	picture = ACCUSATION_eventPicture
+
+	trigger = {
+		has_country_modifier = nationwide_witch_hunts
+		advisor = inquisitor
+		OR = {
+			advisor = statesman
+			advisor = trader
+			advisor = spymaster
+			advisor = diplomat
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	# Thou shalt not suffer a witch to live.
+	option = {
+		name = "got_aow_events.19.a"
+		kill_advisor = statesman
+		kill_advisor = trader
+		kill_advisor = spymaster
+		kill_advisor = diplomat
+	}
+
+	# Thou shalt not bear false witness against thy neighbor.
+	option = {
+		name = "got_aow_events.19.b"
+		kill_advisor = inquisitor
+		remove_country_modifier = nationwide_witch_hunts
+	}
+}
+
+# The Fires of Hell
+country_event = {
+	id = got_aow_events.20
+	title = "got_aow_events.20.t"
+	desc = "got_aow_events.20.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	trigger = {
+		has_country_modifier = nationwide_witch_hunts
+		advisor = inquisitor
+		heir_age = 6
+		NOT = { heir_age = 16 }
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	# The child is right. We have been blinded by our zeal.
+	option = {
+		name = "got_aow_events.20.a"
+		remove_advisor = inquisitor
+		remove_country_modifier = nationwide_witch_hunts
+		add_dip_power = 100
+	}
+
+	# Hush child, and hope no one heard that...
+	option = {
+		name = "got_aow_events.20.b"
+		add_adm_power = 100
+		add_heir_claim = -10
+	}
+}
+
+# A Change of Character
+country_event = {
+	id = got_aow_events.22
+	title = "got_aow_events.22.t"
+	desc = "got_aow_events.22.d"
+	picture = DIPLOMACY_eventPicture
+
+	trigger = {
+		war_exhaustion = 8
+		is_at_war = no
+		mil = 2
+		NOT = { dip = 6 }
+		advisor = diplomat
+	}
+
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.75
+			war_exhaustion = 15
+		}
+	}
+
+	# You are right, [Country] needs peace.
+	option = {
+		name = "got_aow_events.22.a"
+		change_dip = 1
+		change_mil = -1
+	}
+
+	# Forsake the spirit that called me to war? Ridiculous.
+	option = {
+		name = "got_aow_events.22.b"
+		remove_advisor = diplomat
+		add_dip_power = -50
+	}
+}
+
+# The Faithful in Enemy Lands
+country_event = {
+	id = got_aow_events.23
+	title = "got_aow_events.23.t"
+	desc = "got_aow_events.23.d"
+	picture = SIEGE_eventPicture
+
+	trigger = {
+		is_at_war = yes
+		any_known_country = {
+			war_with = ROOT
+			any_owned_province = {
+				sieged_by = ROOT
+				religion = ROOT
+				NOT = { religion = owner }
+				religion_group = owner
+				NOT = { has_province_modifier = religious_center}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 480
+	}
+
+	# Spare the faithful
+	option = {
+		name = "got_aow_events.23.a"
+		random_province = {
+			limit = {
+				sieged_by = ROOT
+				religion = ROOT
+				NOT = { religion = owner }
+				religion_group = owner
+				NOT = { has_province_modifier = religious_center}
+			}
+			change_siege = -2
+		}
+	}
+
+	# No mercy for enemies of [Country]!
+	option = {
+		name = "got_aow_events.23.b"
+		random_province = {
+			limit = {
+				sieged_by = ROOT
+				religion = ROOT
+				NOT = { religion = owner }
+				religion_group = owner
+				NOT = { has_province_modifier = religious_center}
+			}
+			tooltip = {
+				change_religion = owner
+			}
+			province_event = {
+				id = got_aow_events.24
+				days = 1
+			}
+		}
+	}
+}
+
+# [Province] Betrayed by Brothers in Faith
+province_event = {
+	id = got_aow_events.24
+	title = "got_aow_events.24.t"
+	desc = "got_aow_events.24.d"
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	# We will show them the [Religion] faith has more integrity than that.
+	option = {
+		name = "got_aow_events.24.a"
+		change_religion = owner
+	}
+}
+
+
+# Unbelievers in [Province] Waver
+province_event = {
+	id = got_aow_events.25
+	title = "got_aow_events.25.t"
+	desc = "got_aow_events.25.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	trigger = {
+		owner = {
+			is_at_war = yes
+		}
+		NOT = { controlled_by = owner }
+		NOT = { controlled_by = REB }
+		NOT = { religion = owner }
+		NOT = { is_core = controller }
+		religion = controller
+		any_neighbor_province = {
+			owned_by = controller
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 640
+		modifier = {
+			factor = 1.5
+			owner = { tolerance_to_this = 0 }
+		}
+		modifier = {
+			factor = 2.0
+			owner = { tolerance_to_this = 1 }
+		}
+	}
+
+	# We will reward loyalty with respect.
+	option = {
+		name = "got_aow_events.25.a"
+		trigger = { is_capital = no }
+		add_local_autonomy = 30
+	}
+
+	# We will not accept disloyalty.
+	option = {
+		name = "got_aow_events.25.b"
+		tooltip = { add_core = controller }
+		controller = {
+			country_event = {
+				id = got_aow_events.26
+				days = 1
+			}
+		}
+	}
+}
+
+# [Religion] Defectors
+country_event = {
+	id = got_aow_events.26
+	title = "got_aow_events.26.t"
+	desc = "got_aow_events.26.d"
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	is_triggered_only = yes
+
+	# We may be able to accommodate them...
+	option = {
+		name = "got_aow_events.26.a"
+		FROM = { add_core = controller }
+	}
+}
+
+# [Religion] of [Province] Betray Us!
+province_event = {
+	id = got_aow_events.27
+	title = "got_aow_events.27.t"
+	desc = "got_aow_events.27.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	trigger = {
+		NOT = { religion = owner }
+		owner = {
+			is_at_war = yes
+			any_known_country = {
+				war_with = PREV
+				religion = ROOT
+			}
+			NOT = { tolerance_to_this = 0 }
+		}
+		
+	}
+
+	mean_time_to_happen = {
+		months = 800
+	}
+
+	# Faith determines the path of all, even the wicked.
+	option = {
+		name = "got_aow_events.27.a"
+		spawn_rebels = {
+			type = religious_rebels
+			size = 2
+		}
+	}
+}
+
+# Struggle Without, Struggle Within
+province_event = {
+	id = got_aow_events.28
+	title = "got_aow_events.28.t"
+	desc = "got_aow_events.28.d"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	is_mtth_scaled_to_size = 1
+
+	trigger = {
+		NOT = { religion = owner }
+		owner = {
+			is_at_war = yes
+			any_known_country = {
+				war_with = PREV
+				religion = ROOT
+			}
+		}
+		
+		NOT = { has_province_modifier = religious_center }
+		any_neighbor_province = {
+			owned_by = ROOT
+			religion = owner
+			is_reformation_center = no
+			NOT = { has_province_modifier = religious_center }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 800
+	}
+
+	# Like the war, this conflict must take its course.
+	option = {
+		name = "got_aow_events.28.a"
+		owner = { add_manpower = -4 }
+		random_list = {
+			75 = { change_religion = owner }
+			25 = {
+				random_neighbor_province = {
+					limit = {
+						owned_by = ROOT
+						religion = owner
+						is_reformation_center = no
+						NOT = { has_province_modifier = religious_center }
+					}
+					change_religion = ROOT
+				}
+			}
+		}
+	}
+
+	# Unite against the true enemy! You are all [subject nationality here]!
+	option = {
+		name = "got_aow_events.28.b"
+		owner = { add_dip_power = -50 }
+	}
+}
+
+# Country Before Faith
+province_event = {
+	id = got_aow_events.29
+	title = "got_aow_events.29.t"
+	desc = "got_aow_events.29.d"
+	picture = SPY_eventPicture
+	
+	is_mtth_scaled_to_size = 1
+
+	trigger = {
+		owner = {
+			any_rival_country = {
+				religion = ROOT
+			}
+			NOT = { has_country_modifier = loyal_unbelievers }
+			NOT = { has_country_modifier = disloyal_unbelievers }
+		}
+		NOT = { religion = owner }
+	}
+
+	mean_time_to_happen = {
+		months = 1600
+	}
+
+	# We will trust them to remain loyal to us.
+	option = {
+		name = "got_aow_events.29.a"
+		random_list = {
+			75 = {
+				owner = {
+					add_country_modifier = {
+						name = "loyal_unbelievers"
+						duration = 1825
+					}
+				}
+			}
+			25 = {
+				owner = {
+					add_country_modifier = {
+						name = "disloyal_unbelievers"
+						duration = 1825
+					}
+				}
+			}
+		}
+	}
+
+	# There is no need for such underhanded tactics... or risks.
+	option = {
+		name = "got_aow_events.29.b"
+		owner = { add_prestige = 10 }
+	}
+}
+
+# Warriors of the [Religion] Faith
+province_event = {
+	id = got_aow_events.30
+	title = "got_aow_events.30.t"
+	desc = "got_aow_events.30.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	is_mtth_scaled_to_size = 1
+
+	trigger = {
+		religion = owner
+		has_siege = no
+		controlled_by = owner
+		any_neighbor_province = {
+			owner = {
+				offensive_war_with = ROOT
+				NOT = { religion = ROOT }
+			}
+			religion = owner
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+	}
+
+	# Forward, sentinels of the truth!
+	option = {
+		name = "got_aow_events.30.a"
+		infantry = ROOT
+		infantry = ROOT
+		infantry = ROOT
+		infantry = ROOT
+	}
+}

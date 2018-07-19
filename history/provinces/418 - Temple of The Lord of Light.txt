@@ -1,0 +1,26 @@
+# 418 - Temple of The Lord of Light.txt
+is_city = yes
+
+owner = U87
+controller = U87
+add_core = U87
+
+base_tax = 8
+base_production = 8
+base_manpower = 4
+
+culture = volantene
+religion = asoiaf_rhllor
+
+trade_goods = gold
+hre = no
+
+add_building = grand_temple
+
+100.1.1 = {
+	add_permanent_province_modifier = {
+		name = religious_center
+		duration = -1
+	}
+}
+

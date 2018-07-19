@@ -1,0 +1,84 @@
+namespace = GOT_DAENERYS
+
+country_event = {
+	id = GOT_DAENERYS.1
+	title = GOT_DAENERYS.1.title
+	desc = GOT_DAENERYS.1.desc
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_DAENERYS.1.option.a
+		
+        tooltip = {
+            define_ruler = {
+                name = "Daenerys"
+                dynasty = "Targaryen"
+                adm = 4
+                dip = 4
+                mil = 3
+                age = 18
+                female = yes
+                religion = asoiaf_faith_of_the_seven
+                culture = valyrian
+            }
+        }
+        
+        
+	}
+}
+
+country_event = {
+	id = GOT_DAENERYS.100
+	title = GOT_DAENERYS.100.title
+	desc = GOT_DAENERYS.100.desc
+	picture = KING_SICK_IN_BED_eventPicture
+	
+    hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+        tag = S25
+		government = khas
+        NOT = { has_country_flag = dothraki_daenerys }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			change_tag = S23
+            define_ruler = {
+                name = "Daenerys"
+                dynasty = "Targaryen"
+                adm = 4
+                dip = 4
+                mil = 3
+                age = 18
+                female = yes
+                religion = asoiaf_faith_of_the_seven
+                culture = valyrian
+            }
+            set_country_flag = dothraki_daenerys
+            
+            remove_country_modifier = slavery_permitted
+            add_country_modifier = {
+                name = slavery_prohibited
+                duration = -1
+                hidden = yes
+            }
+		}
+	}
+	
+	option = {
+		name = GOT_DAENERYS.100.option.a
+
+        country_event = {
+            id = GOT_DAENERYS.1
+        }
+	}
+}
+
+
+
+
+

@@ -1,0 +1,179 @@
+# INSTRUCTIONS:
+# -------------
+# is_triggered_only - Triggered from within the code or by event effects. DO NOT REMOVE THE STOCK ONES.
+# months - The number of months this CB will be valid. Only works for triggered CBs.
+# prerequisites - A condition that automatically activates a CB. Does not work for triggered CBs.
+# no_opinion_hit - If yes you get no negative opinion from this
+#
+# ROOT = attacker
+# FROM = target
+#
+# NOTE: The order in which the peace options are listed is the order in which the AI will normally prioritize them in peace treaties
+#
+# TRIGGERED - Triggered from within the code or by event effects
+# --------------------------------------------------------------
+# Tribal vs Tribal Feud
+cb_iron_throne_rebellion = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		is_part_of_hre = yes
+		government = kingdom
+        government_rank = 2
+        FROM = { 
+            is_emperor = yes 
+            is_part_of_hre = yes
+            government = kingdom
+        }
+        OR = { 
+            ai = no
+            AND = {
+                ai = yes
+                NOT = {
+                    has_opinion = {
+                        who = FROM
+                        value = -50
+                    }
+                }
+            }
+        }
+	}
+    
+    war_goal = take_capital_throne
+}
+
+cb_royal_domain = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		is_part_of_hre = yes
+		government = kingdom
+        government_rank = 3
+        
+        FROM = {
+            is_part_of_hre = yes
+            government = kingdom
+            NOT = { government_rank = 3 }
+            OR = {
+                AND = { 
+                    ROOT = { ai = yes }
+                    NOT = {
+                        has_opinion = {
+                            who = ROOT
+                            value = 0
+                        }
+                    }
+                }
+                ROOT = { ai = no }
+            }
+        }
+	}
+    
+    war_goal = take_land
+}
+
+cb_great_lord_feud = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		is_part_of_hre = yes
+		government = kingdom
+        government_rank = 2
+        
+        FROM = {
+            is_part_of_hre = yes
+            government = kingdom
+            OR = {
+                government_rank = 2
+                government_rank = 3
+            }
+            OR = {
+                AND = { 
+                    ROOT = { ai = yes }
+                    NOT = {
+                        has_opinion = {
+                            who = ROOT
+                            value = 0
+                        }
+                    }
+                }
+                ROOT = { ai = no }
+            }
+        }
+	}
+    
+    war_goal = take_land
+}
+
+cb_lordly_feud = {
+    valid_for_subject = yes
+    
+    prerequisites = {
+		is_part_of_hre = yes
+		government = kingdom
+        is_subject = yes
+
+        FROM = {
+            is_part_of_hre = yes
+            government = kingdom
+            is_subject = yes
+            OR = {
+                AND = { 
+                    ROOT = { ai = yes }
+                    NOT = {
+                        has_opinion = {
+                            who = ROOT
+                            value = 0
+                        }
+                    }
+                }
+                ROOT = { ai = no }
+            }
+        }
+	}
+    
+    war_goal = take_land
+}
+
+cb_defend_the_wall = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		tag = A02
+        
+        FROM = {
+            government = wildling_clan
+        }
+	}
+    
+    war_goal = take_land
+}
+
+cb_wildling_assault = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		government = wildling_clan
+        
+        FROM = {
+            NOT = { government = wildling_clan }
+        }
+	}
+    
+    war_goal = take_land_as_wildling
+}
+
+cb_wildling_feud = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		government = wildling_clan
+        
+        FROM = {
+            government = wildling_clan
+        }
+	}
+    
+    war_goal = take_land
+}
+

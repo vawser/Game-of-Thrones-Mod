@@ -1,0 +1,25 @@
+earn_more_from_trade ={
+
+	type = country
+
+	category = ADM
+	
+	allow = {
+		is_at_war = no
+		
+		num_of_merchants = 4
+		trade_income_percentage = 0.40
+		NOT = {  trade_income_percentage = 0.55 }
+		NOT = { last_mission = earn_more_from_trade }
+	}
+	success = {
+		trade_income_percentage = 0.60
+	}
+	chance = {
+		factor = 1000
+	}
+	effect = {
+		add_prestige = 10
+		add_mercantilism = 0.01
+	}
+}

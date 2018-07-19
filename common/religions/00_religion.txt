@@ -1,0 +1,965 @@
+# If you add religions, and use those tags, do not change them without changing everywhere they are used.
+
+# Uses all 'modifiers' possible thats exported as a Modifier.
+
+religion_westeros = {
+	defender_of_faith = no
+	can_form_personal_unions = yes
+	
+	center_of_religion = 27
+
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 18 }
+	
+	asoiaf_faith_of_the_seven = {
+		color = { 1.0 1.0 1.0 }
+		icon = 1
+		country = {
+			tolerance_own = 1
+			legitimacy = 1
+		}
+		country_as_secondary = {
+			tolerance_own = 1
+			legitimacy = 1
+		}
+		
+        hre_religion = yes
+        
+		
+		
+		papacy = {
+			papal_tag = FAT
+			election_cost = 5
+			seat_of_papacy = 27
+			
+			# Prestige
+			appeal_to_the_father = {
+				cost = 20
+				potential = {
+                    NOT = { tag = FAT }
+                    FAT = {
+                        has_opinion = {
+                            who = ROOT
+                            value = 0
+                        }
+                    }
+                    exists = FAT
+				}
+				allow = {
+					NOT = { prestige = 100 }
+				}
+				effect = {
+					add_prestige = 10
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			# Stability
+			appeal_to_the_mother = {
+				cost = 100
+				potential = {
+					NOT = { tag = FAT }
+                    FAT = {
+                        has_opinion = {
+                            who = ROOT
+                            value = 0
+                        }
+                    }
+                    exists = FAT
+				}
+				allow = {
+					NOT = { stability = 3 }
+				}
+				effect = {
+					add_stability = 1
+				}
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						factor = 1
+						NOT = { stability = 0 }
+					}
+				}
+			}
+			# Manpower
+			appeal_to_the_warrior = {
+				cost = 40
+				potential = {
+					NOT = { tag = FAT }
+                    FAT = {
+                        has_opinion = {
+                            who = ROOT
+                            value = 0
+                        }
+                    }
+                    exists = FAT
+				}
+				allow = {
+					always = yes
+				}
+				effect = {
+					add_yearly_manpower = 1
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			# Legitimacy
+			appeal_to_the_maiden = {
+				cost = 40
+				potential = {
+					NOT = { tag = FAT }
+                    FAT = {
+                        has_opinion = {
+                            who = ROOT
+                            value = 0
+                        }
+                    }
+                    exists = FAT
+				}
+				allow = {
+					OR = {
+						NOT = { legitimacy = 100 }
+						NOT = { republican_tradition = 1 }
+					}
+				}
+				effect = {
+					add_legitimacy = 5
+					add_republican_tradition = 0.05
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			# Goods
+			appeal_to_the_smith = {
+				cost = 40
+				potential = {
+					NOT = { tag = FAT }
+                    FAT = {
+                        has_opinion = {
+                            who = ROOT
+                            value = 0
+                        }
+                    }
+                    exists = FAT
+				}
+				allow = {
+					always = yes
+				}
+				effect = {
+					add_years_of_income = 1
+				}
+				ai_will_do = {
+					factor = 1
+				}				
+			}			
+			appeal_to_the_crone = {
+				cost = 60
+				potential = {
+					NOT = { tag = FAT }
+                    FAT = {
+                        has_opinion = {
+                            who = ROOT
+                            value = 0
+                        }
+                    }
+                    exists = FAT
+				}
+				allow = {
+					always = yes
+				}
+				effect = {
+					add_adm_power = 25
+					add_dip_power = 25
+					add_mil_power = 25
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			appeal_to_the_stranger = {
+				cost = 50
+				potential = {
+					NOT = { tag = FAT }
+                    FAT = {
+                        has_opinion = {
+                            who = ROOT
+                            value = 0
+                        }
+                    }
+                    exists = FAT
+				}
+				allow = {
+					NOT = { stability = 0 }
+				}
+				effect = {
+					random_list = {
+						10 = {
+							add_stability = 1
+						}
+						10 = {
+							add_yearly_manpower = 1
+						}
+						10 = {
+							add_prestige = 25
+						}
+						10 = {
+							add_adm_power = 50
+							add_dip_power = 50
+							add_mil_power = 50
+						}
+						10 = {
+							add_years_of_income = 1
+						}
+						50 = {
+							
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 0
+					modifier = {
+						NOT = { stability = -2 }
+						factor = 1
+					}
+				}
+			}
+		}
+	}
+
+	asoiaf_the_drowned_god = {
+		color = { 0.28 0.28 0.54 }
+		icon = 5
+		country = {
+			navy_tradition = 1
+			naval_attrition = -0.1
+		}
+		country_as_secondary = {
+			navy_tradition = 1
+			naval_attrition = -0.1
+		}
+		province = {
+			local_missionary_strength = -0.01
+		}
+		
+		# Zealotry
+		has_patriarchs = yes
+        
+        # Kraken
+        # Squid
+        # Whale
+        # Seal
+        # Fish
+        
+        orthodox_icons = { 
+            # If no icon has ai_will_do above 1 - <current patriarch authority> , the AI will not enact it. (60% PA = 0.6 -> ai_will_do has to be at least 0.4)
+
+			deity_kraken = {
+                shock_damage = 0.05
+                heavy_ship_power = 0.05
+                
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+            
+            deity_squid = {
+                naval_morale = 0.1
+                leader_naval_manuever = 1
+                
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+            
+            deity_whale = {
+                ship_durability = 0.05
+                sunk_ship_morale_hit_recieved = -0.05
+                
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+            
+            deity_seal = {
+                global_ship_cost = -0.2
+                global_ship_recruit_speed = -0.2
+
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+            
+            deity_fish = {
+                naval_forcelimit_modifier = 0.2
+                naval_maintenance_modifier = -0.2
+
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+        }
+
+		heretic = { STORM_GOD }
+	}
+	
+	asoiaf_the_old_gods = {
+		color = { 0.65 0.82 0.93 }
+		icon = 2
+		country = {
+			tolerance_heathen = 1
+			tolerance_heretic = 1
+		}
+		country_as_secondary = {
+			tolerance_heathen = 1
+			tolerance_heretic = 1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+
+		hre_heretic_religion = yes
+        
+		# Zealotry
+		has_patriarchs = yes
+
+        # Raven
+        # Wolf
+        # Boar
+        # Horse
+        # Rabbit
+        
+        orthodox_icons = { 
+            # If no icon has ai_will_do above 1 - <current patriarch authority> , the AI will not enact it. (60% PA = 0.6 -> ai_will_do has to be at least 0.4)
+
+            deity_raven = {
+                core_creation = -0.05
+                technology_cost = -0.05
+                
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+            
+            deity_boar = {
+                defensiveness = 0.33
+                shock_damage = 0.05
+                
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+            
+            deity_horse = {
+                movement_speed = 0.2
+                production_efficiency = 0.2
+                
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+
+			deity_wolf = {
+				discipline = 0.025
+				reinforce_speed = 0.05
+				
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						factor = 0
+						is_at_war = no
+					}
+					modifier = {
+						factor = 3
+						is_in_important_war = yes
+					}
+				}
+			}
+            
+            deity_rabbit = {
+                global_manpower_modifier = 0.2
+                global_regiment_recruit_speed = -0.2
+                
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+        }
+
+		heretic = { ANCIENT_OLD_GODS }
+	}
+	
+	crusade_name = RELIGIOUS_CRUSADE
+}
+
+religion_essos = {
+	defender_of_faith = no
+	can_form_personal_unions = yes
+	
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 18 }
+
+	asoiaf_rhllor = {
+		color = { 0.81 0.46 0.45 }
+		icon = 3
+		country = {
+			global_missionary_strength = 0.03
+			tolerance_heathen = -2
+			tolerance_heretic = -2
+		}
+		country_as_secondary = {
+			global_missionary_strength = 0.03
+			tolerance_heathen = -2
+			tolerance_heretic = -2
+		}
+		province = {
+			local_missionary_strength = -0.02
+		}
+
+		uses_church_power = yes				# Uses church power/aspect mechanics
+		aspects = {
+			vision_of_grandeur
+			vision_of_horror
+			vision_of_strength
+			vision_of_wealth
+			vision_of_revenge
+			vision_of_bravery
+			vision_of_diplomacy
+			vision_of_faith
+			vision_of_war
+			vision_of_ambition
+			vision_of_legitimacy
+			vision_of_cruelty
+		}			
+	}
+	
+	asoiaf_mother_rhoyne = {
+		color = { 0.47 0.56 0.36  }
+		icon = 6
+		country = {
+			global_trade_power = 0.1
+			global_unrest = -1
+		}
+		country_as_secondary = {
+			global_trade_power = 0.1
+			global_unrest = -1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		
+		# Barbarism
+		uses_piety = yes				
+	}
+	
+	asoiaf_trios = {
+		color = { 0.36 0.36 0.56 }
+		icon = 6
+		country = {
+			trade_efficiency = 0.1
+			global_unrest = -1
+		}
+		country_as_secondary = {
+			trade_efficiency = 0.1
+			global_unrest = -1
+		}
+		
+		# Barbarism
+		uses_piety = yes	
+	}
+	
+	asoiaf_bearded_priests = {
+		color = { 0.36 0.56 0.54 }
+		icon = 6
+		country = {
+			land_morale = 0.1
+			tolerance_heathen = -1
+			tolerance_heretic = -1
+		}
+		country_as_secondary = {
+			land_morale = 0.1
+			tolerance_heathen = -1
+			tolerance_heretic = -1
+		}
+		
+		holy_sites = { 433 476 471 470 544 }
+		
+		blessings = {
+			legitimize_government
+			encourage_warriors_of_the_faith
+			proselytize_lords
+			promote_territorial_rights
+			will_of_the_martyrs
+		}			
+	}
+	
+	asoiaf_gods_of_lorath = {
+		color = { 0.56 0.36 0.40 }
+		icon = 6
+		country = {
+			spy_offence = 0.25
+			global_unrest = -1
+		}
+		country_as_secondary = {
+			spy_offence = 0.25
+			global_unrest = -1
+		}
+		
+		holy_sites = { 433 476 471 470 544 }
+		
+		blessings = {
+			legitimize_government
+			encourage_warriors_of_the_faith
+			proselytize_lords
+			promote_territorial_rights
+			will_of_the_martyrs
+		}
+	}
+
+	
+	asoiaf_black_goat_of_qohor = {
+		color = { 0.49 0.36 0.56 }
+		icon = 6
+		country = {
+			siege_ability = 0.05
+			global_unrest = -1
+		}
+		country_as_secondary = {
+			siege_ability = 0.05
+			global_unrest = -1
+		}
+		
+		holy_sites = { 433 476 471 470 544 }
+		
+		blessings = {
+			legitimize_government
+			encourage_warriors_of_the_faith
+			proselytize_lords
+			promote_territorial_rights
+			will_of_the_martyrs
+		}		
+	}
+	
+	asoiaf_gods_of_sarnor = {
+		color = { 0.43 0.61 0.81  }
+		icon = 6
+		country = {
+			stability_cost_modifier = -0.1
+			global_unrest = -1
+		}
+		country_as_secondary = {
+			stability_cost_modifier = -0.1
+			global_unrest = -1
+		}
+		
+        holy_sites = { 433 476 471 470 544 }
+		
+		blessings = {
+			legitimize_government
+			encourage_warriors_of_the_faith
+			proselytize_lords
+			promote_territorial_rights
+			will_of_the_martyrs
+		}
+	}
+	
+	crusade_name = RELIGIOUS_CRUSADE
+}
+
+religion_middle_essos = {
+	defender_of_faith = no
+	can_form_personal_unions = yes
+
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 18 }
+	
+	# The Harpy
+	asoiaf_graces = {
+		color = { 0.81 0.65 0.43 }
+		icon = 6
+		country = {
+			global_tax_modifier = 0.1
+			production_efficiency = 0.1
+		}
+		country_as_secondary = {
+			global_tax_modifier = 0.1
+			production_efficiency = 0.1
+		}
+		
+		holy_sites = { 599 619 610 606 613 }
+		
+		blessings = {
+			fighting_pits
+			cat_o_nine_tails
+			desert_adaptation
+			slave_raiding
+			diplomatic_quagmires
+		}				
+	}
+	
+	asoiaf_great_shepherd = {
+		color = { 0.81 0.43 0.52 }
+		icon = 6
+		country = {
+			hostile_attrition = 1
+			prestige_decay = -0.01
+		}
+		country_as_secondary = {
+			hostile_attrition = 1
+			prestige_decay = -0.01
+		}
+		province = {
+			local_missionary_strength = 0.01
+		}
+		
+		can_have_secondary_religion = yes    
+	}
+	
+	asoiaf_gods_of_ibben = {
+		color = { 0.52 0.45 0.44 }
+		icon = 6
+		country = {
+			ship_durability = 0.1
+			global_unrest = -1
+		}
+		country_as_secondary = {
+			ship_durability = 0.1
+			global_unrest = -1
+		}
+		
+		uses_piety = yes				
+	}
+}
+
+religion_distant_essos = {
+	defender_of_faith = no
+	can_form_personal_unions = yes
+
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 18 }
+	
+	asoiaf_lion_of_the_night = {
+		color = { 0.43 0.81 0.57  }
+		icon = 6
+		country = {
+			tolerance_own = 1
+			discipline = 0.05
+		}
+		country_as_secondary = {
+			tolerance_own = 1
+			discipline = 0.05
+		}
+		province = {
+			local_missionary_strength = -0.02
+		}
+		
+		has_patriarchs = yes		# Uses patriarch authority
+
+        # Lion
+        # Tiger
+        # Manticore
+        # Basilisk
+        # Elephant
+        
+        orthodox_icons = {
+			# If no icon has ai_will_do above 1 - <current patriarch authority> , the AI will not enact it. (60% PA = 0.6 -> ai_will_do has to be at least 0.4)
+
+            deity_lion = {
+                army_tradition_decay = -0.02
+                free_leader_pool = 1
+                
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+            
+            deity_tiger = {
+                movement_speed = 0.2
+                leader_land_manuever = 1
+                
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+            
+            deity_manticore = {
+                fire_damage_received = -0.1
+                shock_damage_received = -0.1
+                
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+            
+            deity_basilisk = {
+                defensiveness = 0.33
+                backrow_artillery_damage = 0.1
+                
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+            
+            deity_elephant = {
+                land_attrition = -0.15
+                recover_army_morale_speed = 0.05
+                
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}        
+	}
+	
+	asoiaf_stone_cow_of_faros = {
+		color = { 0.7 0.43 0.81 }
+		icon = 6
+		country = {
+			tolerance_own = 1
+			defensiveness = 0.25
+		}
+		country_as_secondary = {
+			tolerance_own = 1
+			defensiveness = 0.25
+		}
+		
+		# Karma
+		uses_karma = yes	
+	}
+	
+	asoiaf_gods_of_hyrkoon = {
+		color = { 0.79 0.79 0.43 }
+		icon = 6
+		country = {
+			infantry_power = 0.1
+			global_unrest = -1
+		}
+		country_as_secondary = {
+			infantry_power = 0.1
+			global_unrest = -1
+		}
+		
+        uses_karma = yes
+	}
+	
+	# Used by Braavos
+	# Moonsingers
+	asoiaf_moonsingers = {
+		color = { 0.43 0.55 0.55 }
+		icon = 11
+		country = {
+			cavalry_cost = -0.1
+			global_unrest = -1
+		}
+		country_as_secondary = {
+			cavalry_cost = -0.1
+			global_unrest = -1
+		}
+		
+		can_have_secondary_religion = yes			
+	}
+	
+	# Magic based religions
+	#	Qarth
+	#	Asshai
+	#	Nefer
+	asoiaf_magic = {
+		color = { 0.47 0.43 0.811  }
+		icon = 6
+		country = {
+			technology_cost = -0.1
+			tolerance_heathen = -1
+			tolerance_heretic = -1
+		}
+		country_as_secondary = {
+			technology_cost = -0.1
+			tolerance_heathen = -1
+			tolerance_heretic = -1
+		}
+		
+		personal_deity = yes
+	}
+	
+	crusade_name = RELIGIOUS_CRUSADE
+}
+
+religion_summer = {
+	defender_of_faith = no
+	can_form_personal_unions = yes
+	
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 18 }
+	
+	asoiaf_summer_gods = {
+		color = { 0.43 0.81 0.81 }
+		icon = 6
+		country = {
+			tolerance_own = 1
+			caravan_power = 0.15
+		}
+		country_as_secondary = {
+			tolerance_own = 1
+			caravan_power = 0.15
+		}
+
+		uses_piety = yes		
+	}
+	
+	asoiaf_god_of_harmony = {
+		color = { 0.43 0.81 0.70 }
+		icon = 6
+		country = {
+			tolerance_own = 3
+			tolerance_heathen = -3
+			tolerance_heretic = -3
+		}
+		country_as_secondary = {
+			tolerance_own = 3
+			tolerance_heathen = -3
+			tolerance_heretic = -3
+		}
+		
+		uses_piety = yes				
+	}
+}
+
+
+religion_dothraki = {
+	defender_of_faith = no
+	can_form_personal_unions = no
+	
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 18 }
+	
+	asoiaf_the_great_stallion = {
+		color = { 0.67 0.81 0.43 }
+		icon = 4
+		country = {
+			cavalry_power = 0.1
+            cavalry_flanking = 0.1
+		}
+		country_as_secondary = {
+			cavalry_power = 0.1
+            cavalry_flanking = 0.1
+		}
+        personal_deity = yes
+	}
+	
+	crusade_name = RELIGIOUS_CRUSADE
+}
+
+religion_tribal = {
+	defender_of_faith = no
+	can_form_personal_unions = no
+	
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 18 }
+	
+	# Idol Worship
+	asoiaf_tribal = {
+		color = { 0.30 0.45 0.7 }
+		icon = 6
+		
+		country = {
+			land_morale = 0.1
+		}
+		country_as_secondary = {
+			land_morale = 0.1
+		}
+		province = {
+			local_missionary_strength = 0.002
+		}
+		
+		can_have_secondary_religion = yes
+	}
+	
+	# Piracy
+	asoiaf_lady_of_the_waves = {
+		color = { 0.56 0.57 0.36 }
+		icon = 6
+		country = {
+			naval_forcelimit_modifier = 0.15
+		}
+		country_as_secondary = {
+			naval_forcelimit_modifier = 0.15
+		}
+		province = {
+			local_missionary_strength = 0.03
+		}
+		
+		can_have_secondary_religion = yes			
+	}
+	
+	crusade_name = RELIGIOUS_CRUSADE
+}
+
+religion_mythological = {
+	defender_of_faith = no
+	can_form_personal_unions = no
+	
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 18 }
+	
+	asoiaf_white_walker = {
+		color = { 0 0 0 }
+		icon = 6
+		country = {
+			discipline = 0.1
+			diplomatic_upkeep = -4
+		}	
+		country_as_secondary = {
+			discipline = 0.05
+		}	
+		province = {
+			local_missionary_strength = -0.05
+		}
+	}
+}

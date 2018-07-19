@@ -1,0 +1,122 @@
+go_legitimate = {
+
+	type = country
+	
+	category = ADM
+
+	allow = {
+		government = monarchy
+		has_regency = no
+		NOT = { legitimacy = 90 }
+		is_at_war = no
+	}
+	abort = {
+		OR = {
+			NOT = { government = monarchy }
+			has_regency = yes
+		}
+	}
+	success = {
+		legitimacy = 100
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.05
+			NOT = { legitimacy = 50 }
+		}	
+		modifier = {
+			factor = 1.05
+			NOT = { legitimacy = 60 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { legitimacy = 70 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { legitimacy = 80 }
+		}
+		
+	}
+	effect = {
+		add_prestige = 10
+		add_adm_power = 25
+	}	
+}
+
+
+make_core_province = {
+
+	type = our_provinces
+	
+	category = ADM
+	
+	allow = {
+		NOT = { is_core = owner }
+		owner = { is_at_war = no }
+		is_colony = no
+		NOT = { has_construction = core }
+	}
+	abort = {
+		NOT = {	owned_by = FROM }
+	}
+	success = {
+		is_core = owner
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.5
+			base_tax = 5
+		}				
+	}
+	effect = {
+		owner = {
+			add_adm_power = 10
+		}
+	}
+}
+
+
+change_province_culture = {
+
+	type = our_provinces
+	
+	category = ADM
+	
+	allow = {
+		has_owner_culture = no
+		has_owner_accepted_culture = no
+		NOT = { culture_group = owner }
+		is_core = owner
+		has_owner_religion = yes
+		owner = { is_at_war = no }
+		is_colony = no
+		NOT = { has_construction = culture }
+		NOT = {
+			any_country = {
+				primary_culture = ROOT
+			}
+			nationalism = 0.1
+		}
+	}
+	abort = {
+		NOT = {	owned_by = FROM }
+	}
+	success = {
+		culture = owner
+	}
+	chance = {
+		factor = 1000
+		modifier = {
+			factor = 1.2
+			base_tax = 5
+		}
+	}
+	effect = {
+		owner = {
+			add_dip_power = 10
+		}
+	}
+}

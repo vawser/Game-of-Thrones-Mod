@@ -1,0 +1,23 @@
+iron_bank_contract = {
+	category = 2		# same category = 90% less likely
+
+	allow = {
+		always = yes
+	}
+	
+	effect = {
+		loan_size = 120
+	}
+	
+	modifier = {
+		inflation_action_cost = -0.25
+	}
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}

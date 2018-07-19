@@ -1,0 +1,289 @@
+tutorial = {
+	index = 4
+	category = 1
+	title = "TUT_BAS_CHAPTER04_TITLE"
+	desc = "TUT_BAS_CHAPTER04_DESC"
+	buttonText = "TUT_BAS_CHAPTER04_BUTTON"
+	country = A01
+	window = "hints_window"	# default window
+	moveable = yes
+	save_game = "eu4_tutorial_chapter4.eu4"
+	
+	page = {
+		index = 1
+		title = "TUT_BAS_CHAPTER04_PAGE01_TITLE" # Declare War
+		text = "TUT_BAS_CHAPTER04_PAGE01_TEXT"
+		object = "TUT_BAS_CHAPTER04_PAGE01_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+		
+		effect = { # This page's effects on the world
+			ai = no
+			goto = 236 #London
+			pauseable = yes
+			pause = yes
+			add_treasury = 500
+			speed = 3
+			A01 = {				
+				add_country_modifier = {
+					name = tutorial_negative_modifier
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = tutorial_modifier
+				duration = -1
+			}
+			country_event = {
+				id = tutorial.6
+			}
+			direction_pointer = {
+				enable = yes
+				target = 374
+			}
+			province_highlight = {
+				enable = yes
+				target = 374
+			}
+			A01 = {
+				add_core = 374
+			}
+		}
+		leave_page_effect = {
+			direction_pointer = { enable = no }
+			province_highlight = { enable = no }
+		}
+		
+		#extra_window = {
+		#	window = "dummy-ul"
+		#	sprite = "GFX_uiarrow_right"
+		#	position = {
+		#		x = 230
+		#		y = 347
+		#	}
+		#}
+		#connected_icons = { dummy-ul countrydiplomacyview button_homecountry }	
+		
+		trigger = { 
+			war_with = A01
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}	
+	page = {
+		index = 2
+		title = "TUT_BAS_CHAPTER04_PAGE02_TITLE" # War against Leinster
+		text = "TUT_BAS_CHAPTER04_PAGE02_TEXT"
+		object = "TUT_BAS_CHAPTER04_PAGE02_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+		
+		effect = { # This page's effects on the world
+			ai = no
+			goto = 374 # Leinster
+			pauseable = yes
+			pause = yes
+			#mapmode = "political"
+			#close_window = "all"
+			direction_pointer = {
+				enable = yes
+				target = 374
+			}
+			province_highlight = {
+				enable = yes
+				target = 374
+			}
+		}
+		
+		leave_page_effect = {
+			direction_pointer = { enable = no }
+			province_highlight = { enable = no }
+		}
+		
+		trigger = {
+			page = 3
+			war_score = 100
+		}
+		trigger = {
+			page = 4
+			A01 = { truce_with = A01 }
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	page = {
+		index = 3
+		title = "TUT_BAS_CHAPTER04_PAGE03_TITLE" # Sue for peace
+		text = "TUT_BAS_CHAPTER04_PAGE03_TEXT"
+		object = "TUT_BAS_CHAPTER04_PAGE03_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+	
+		effect = { # This page's effects on the world
+			pauseable = no
+			pause = yes
+			ai = no
+			direction_pointer = {
+				enable = yes
+				target = 374
+			}
+			province_highlight = {
+				enable = yes
+				target = 374
+			}
+		}
+		
+		leave_page_effect = {
+			direction_pointer = { enable = no }
+			province_highlight = { enable = no }
+		}
+		
+		
+		trigger = {
+			page = 4
+			A01 = { truce_with = A01 }
+		}
+		trigger = { 
+			page = 4
+			NOT = { exists = A01 }
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	page = {
+		index = 4
+		title = "TUT_BAS_CHAPTER04_PAGE04_TITLE" # Truce with Leinster
+		text = "TUT_BAS_CHAPTER04_PAGE04_TEXT"
+		object = "TUT_BAS_CHAPTER04_PAGE04_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+		
+		#extra_window = {
+		#	window = "dummy-ul"
+		#	sprite = "GFX_uiarrow_up"
+		#	position = {
+		#		x = 215
+		#		y = 140
+		#	}
+		#}
+		
+		effect = { # This page's effects on the world
+			pauseable = no
+			pause = yes
+			ai = no
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_NEXT"
+			action = "continue"
+			tooltip = "TUT_NEXT_TOOLTIP"
+			position = {
+				x = 183 #180
+				y = 338
+			}
+		}
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	page = {
+		index = 5
+		title = "TUT_BAS_CHAPTER04_PAGE05_TITLE" # The End... or the beginning?
+		text = "TUT_BAS_CHAPTER04_PAGE05_TEXT"
+		object = "TUT_BAS_CHAPTER04_PAGE05_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+
+		effect = { # This page's effects on the world
+			pauseable = no
+			pause = yes
+			close_window = "all"
+			ai = no
+		}
+		
+		trigger = { #prevent tutorial from automatically skipping to next page
+			NOT = { ai = no }
+		}
+				
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+}

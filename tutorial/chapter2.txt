@@ -1,0 +1,613 @@
+tutorial = {
+	index = 2
+	category = 1
+	title = "TUT_BAS_CHAPTER02_TITLE"
+	desc = "TUT_BAS_CHAPTER02_DESC"
+	buttonText = "TUT_BAS_CHAPTER02_BUTTON"
+	country = A01
+	window = "hints_window"	# default window
+	moveable = yes
+	save_game = "eu4_tutorial_chapter2.eu4"
+	#pauseable = no
+	
+	page = {
+		index = 1
+		title = "TUT_BAS_CHAPTER02_PAGE01_TITLE" # Select the Army
+		text = "TUT_BAS_CHAPTER02_PAGE01_TEXT"
+		object = "TUT_BAS_CHAPTER02_PAGE01_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { open_build_interface_button }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { single_unitpanel enable_rebel_button }
+				
+		effect = { # This page's effects on the world
+			close_window = "all"
+			keep_window_closed = yes
+			allow_select_province = no
+			#mapmode = political
+			goto = 236 # London
+			zoom = 200
+			pauseable = yes
+			pause = yes
+			allow_select_army = yes
+			allow_select_navy = no
+			ai = no
+			add_country_modifier = {
+				name = tutorial_modifier
+				duration = -1
+			}
+			373 = { # Meath
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = 1
+				}
+				change_controller = REB
+			}
+			direction_pointer = {
+				enable = yes
+				target = 236
+			}
+			province_highlight = {
+				enable = yes
+				target = 236
+			}
+		}
+		leave_page_effect = {
+			direction_pointer = { enable = no }
+			province_highlight = { enable = no }
+		}
+		
+		trigger = { # Conditions that will take you to the next page if fulfilled
+			select_army = "Royal Army"
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+
+	page = {
+		index = 2
+		title = "TUT_BAS_CHAPTER02_PAGE02_TITLE" # Move the Army
+		text = "TUT_BAS_CHAPTER02_PAGE02_TEXT"
+		object = "TUT_BAS_CHAPTER02_PAGE02_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { open_build_interface_button }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { single_unitpanel enable_rebel_button }
+		
+		effect = { # This page's effects on the world
+			pauseable = yes
+			pause = yes
+			speed = 2
+			allow_select_army = yes
+			allow_select_navy = no
+			allow_select_province = no
+			ai = no
+			close_window = "all"
+			keep_window_closed = yes
+			direction_pointer = {
+				enable = yes
+				target = 242
+			}
+			province_highlight = {
+				enable = yes
+				target = 242
+			}
+		}
+		
+		leave_page_effect = {
+			direction_pointer = { enable = no }
+			province_highlight = { enable = no }
+		}
+		
+		trigger = { # Conditions that will take you to the next page if fulfilled
+			242 = { # Gwynedd
+				infantry_in_province = 1
+				units_in_province = 1
+			}
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+
+	page = {
+		index = 3
+		title = "TUT_BAS_CHAPTER02_PAGE03_TITLE" # Load the unit into ships
+		text = "TUT_BAS_CHAPTER02_PAGE03_TEXT"
+		object = "TUT_BAS_CHAPTER02_PAGE03_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { open_build_interface_button }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { single_unitpanel enable_rebel_button }
+				
+		effect = { # This page's effects on the world
+			goto = 242 # Gwynedd
+			close_window = "all"
+			keep_window_closed = yes
+			allow_select_province = no
+			allow_select_army = yes
+			allow_select_navy = no
+			ai = no
+			pauseable = yes
+			pause = yes
+		}
+		
+		trigger = {
+			attached_army = "Royal Army"
+		}
+		
+		extra_window = {
+			window = "dummy-ul"
+			sprite = "GFX_uiarrow_left"
+			position = {
+				x = 490
+				y = 250
+			}
+		}
+		connected_icons = { dummy-ul unitpanel attach_to_transport }
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+		
+	}
+		page = {
+		index = 4
+		title = "TUT_BAS_CHAPTER02_PAGE04_TITLE" # Select the fleet and move it
+		text = "TUT_BAS_CHAPTER02_PAGE04_TEXT"
+		object = "TUT_BAS_CHAPTER02_PAGE04_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { open_build_interface_button }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { single_unitpanel enable_rebel_button }
+		
+		effect = { # This page's effects on the world
+			goto = 1284 # Irish Sea
+			close_window = "all"
+			keep_window_closed = yes
+			allow_select_army = yes
+			allow_select_navy = yes
+			ai = no
+			pauseable = yes
+			pause = no
+			speed = 2
+			allow_select_province = no
+			direction_pointer = {
+				enable = yes
+				target = 242
+			}
+			province_highlight = {
+				enable = yes
+				target = 242
+			}
+		}
+		leave_page_effect = {
+			direction_pointer = { enable = no }
+			province_highlight = { enable = no }
+		}
+		
+		trigger = { # Conditions that will take you to the next page if fulfilled			
+			select_navy = "Royal Navy"
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+
+	page = {
+		index = 5
+		title = "TUT_BAS_CHAPTER02_PAGE05_TITLE" # Select the fleet and move it
+		text = "TUT_BAS_CHAPTER02_PAGE05_TEXT"
+		object = "TUT_BAS_CHAPTER02_PAGE05_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { open_build_interface_button }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { single_unitpanel enable_rebel_button }
+		
+		effect = { # This page's effects on the world
+			goto = 1284 # Irish Sea
+			close_window = "all"
+			keep_window_closed = yes
+			allow_select_army = yes
+			allow_select_navy = yes
+			ai = no
+			pauseable = yes
+			pause = no
+			speed = 2
+			allow_select_province = no
+			select_navy = "Royal Navy"
+			direction_pointer = {
+				enable = yes
+				target = 1284
+			}
+			province_highlight = {
+				enable = yes
+				target = 1284
+			}
+		}
+		leave_page_effect = {
+			direction_pointer = { enable = no }
+			province_highlight = { enable = no }
+		}
+		
+		trigger = { # Conditions that will take you to the next page if fulfilled
+			1284 = { # Irish Sea
+				units_in_province = 1
+				infantry_in_province = 1
+			}
+			embarked = "Royal Army"
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+
+	page = {
+		index = 6
+		title = "TUT_BAS_CHAPTER02_PAGE06_TITLE" # Select army
+		text = "TUT_BAS_CHAPTER02_PAGE06_TEXT"
+		object = "TUT_BAS_CHAPTER02_PAGE06_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { open_build_interface_button }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { single_unitpanel enable_rebel_button }
+				
+		effect = { # This page's effects on the world
+			goto = 1284 # Irish Sea
+			close_window = "all"
+			keep_window_closed = yes
+			allow_select_army = yes
+			allow_select_navy = yes
+			select_navy = "Royal Navy"
+			pauseable = yes
+			pause = no
+			allow_select_province = no
+			ai = no
+			direction_pointer = {
+				enable = yes
+				target = 373
+			}
+			province_highlight = {
+				enable = yes
+				target = 373
+			}
+		}
+		
+		leave_page_effect = {
+			direction_pointer = { enable = no }
+			province_highlight = { enable = no }
+		}		
+		
+		extra_window = {
+			window = "dummy-ul"
+			sprite = "GFX_uiarrow_left"
+			position = {
+				x = 600
+				y = 255
+			}
+		}
+		connected_icons = { dummy-ul unitpanel button_embarked }
+		
+		trigger = { # Conditions that will take you to the next page if fulfilled			
+			select_army = "Royal Army"
+		}
+		trigger = { # Conditions that will take you to the next page if fulfilled	
+			373 = { # Meath
+				infantry_in_province = 1
+				unit_in_battle = yes
+			}
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+
+	page = {
+		index = 7
+		title = "TUT_BAS_CHAPTER02_PAGE07_TITLE" # Disembark the Army
+		text = "TUT_BAS_CHAPTER02_PAGE07_TEXT"
+		object = "TUT_BAS_CHAPTER02_PAGE07_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { open_build_interface_button }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { single_unitpanel enable_rebel_button }
+				
+		effect = { # This page's effects on the world
+			goto = 1284 # Irish Sea
+			close_window = "all"
+			keep_window_closed = yes
+			allow_select_army = yes
+			allow_select_navy = yes
+			select_navy = "Royal Army"
+			pauseable = yes
+			pause = no
+			allow_select_province = no
+			ai = no
+			direction_pointer = {
+				enable = yes
+				target = 373
+			}
+			province_highlight = {
+				enable = yes
+				target = 373
+			}
+		}
+		
+		leave_page_effect = {
+			direction_pointer = { enable = no }
+			province_highlight = { enable = no }
+		}		
+		
+		trigger = { # Conditions that will take you to the next page if fulfilled
+			#page = 5
+			373 = { # Meath
+				infantry_in_province = 1
+				unit_in_battle = yes
+			}
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	page = {
+		index = 8
+		title = "TUT_BAS_CHAPTER02_PAGE08_TITLE" # Battles
+		text = "TUT_BAS_CHAPTER02_PAGE08_TEXT"
+		object = "TUT_BAS_CHAPTER02_PAGE08_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { open_build_interface_button }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { single_unitpanel enable_rebel_button }
+		
+		effect = { # This page's effects on the world
+			goto = 373 # Meath
+			close_window = "all"
+			keep_window_closed = yes
+			allow_select_army = yes
+			allow_select_navy = yes
+			pauseable = yes
+			pause = yes
+			speed = 3
+			allow_select_province = no
+			ai = no
+		}
+		trigger = { # Conditions that will take you to the next page if fulfilled
+			373 = { # Meath
+				infantry_in_province = 1
+				unit_in_siege = yes
+			}
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	page = {
+		index = 9
+		title = "TUT_BAS_CHAPTER02_PAGE09_TITLE" # Sieges
+		text = "TUT_BAS_CHAPTER02_PAGE09_TEXT"
+		object = "TUT_BAS_CHAPTER02_PAGE09_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { open_build_interface_button }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { single_unitpanel enable_rebel_button }
+		
+		effect = { # This page's effects on the world
+			select_army = "Royal Army"
+			close_window = "all"
+			keep_window_closed = yes
+			allow_select_army = yes
+			allow_select_navy = yes
+			pauseable = yes
+			pause = yes
+			goto = 373 # Meath
+			speed = 3
+			allow_select_province = no
+			ai = no
+			REB = {
+				add_country_modifier = {
+					name = tutorial_negative_modifier
+					duration = -1
+				}
+			}
+		}
+		
+		trigger = { # Conditions that will take you to the next page if fulfilled
+			A01 = {
+				controls = 373			
+			}
+			#373 = { # Meath
+			#	NOT = {
+			#		unit_in_siege = 1
+			#	}
+			#}
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	page = {
+		index = 10
+		title = "TUT_BAS_CHAPTER02_PAGE10_TITLE" # Victory
+		text = "TUT_BAS_CHAPTER02_PAGE10_TEXT"
+		object = "TUT_BAS_CHAPTER02_PAGE10_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { open_build_interface_button }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { single_unitpanel enable_rebel_button }
+	
+		effect = { # This page's effects on the world
+			select_army = "Royal Army"
+			close_window = "all"
+			keep_window_closed = yes
+			goto = 373 # Meath
+			pauseable = yes
+			pause = yes
+			allow_select_province = no
+			ai = no
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_NEXT"
+			action = "continue"
+			tooltip = "TUT_NEXT_TOOLTIP"
+			position = {
+				x = 183 #180
+				y = 338
+			}
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+}

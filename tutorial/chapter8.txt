@@ -1,0 +1,374 @@
+tutorial = {
+	index = 8
+	category = 3
+	title = "TUT_CAM_CHAPTER01_TITLE"
+	desc = "TUT_CAM_CHAPTER01_DESC"
+	buttonText = "TUT_CAM_CHAPTER01_BUTTON"
+	country = CAS
+	window = "hints_window"	# default window
+	moveable = yes
+	save_game = "eu4_tutorial_chapter8.eu4"
+	
+	page = {
+		index = 1
+		title = "TUT_CAM_CHAPTER01_PAGE01_TITLE"
+		text = "TUT_CAM_CHAPTER01_PAGE01_TEXT"
+		object = "TUT_CAM_CHAPTER01_PAGE01_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { countrydiplomacyview button_diploaction }
+		disabled_gui_object = { countrymissionsdecisionsview mission_window select_button }
+		
+		effect = {
+			ai = no
+			speed = 4
+			add_country_modifier = {
+				name = tutorial_modifier
+				duration = -1
+			}
+			A01 = {				
+				add_country_modifier = {
+					name = tutorial_negative_modifier
+					duration = -1
+				}
+			}
+		}
+		extra_window = {
+			window = "dummy-ul"
+			sprite = "GFX_uiarrow_up"
+			position = {
+				x = -10
+				y = 165
+			}
+		}
+		
+		trigger = {
+			open_window = "macrobuild_units"
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}	
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	page = {
+		index = 2
+		title = "TUT_CAM_CHAPTER01_PAGE02_TITLE"
+		text = "TUT_CAM_CHAPTER01_PAGE02_TEXT"
+		object = "TUT_CAM_CHAPTER01_PAGE02_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { countrydiplomacyview button_diploaction }
+		disabled_gui_object = { countrymissionsdecisionsview mission_window select_button }
+		
+		effect = {
+			ai = no
+			speed = 4
+		}
+		
+		trigger = {
+			army_size = 27
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}	
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	page = {
+		index = 3
+		title = "TUT_CAM_CHAPTER01_PAGE03_TITLE"
+		text = "TUT_CAM_CHAPTER01_PAGE03_TEXT"
+		object = "TUT_CAM_CHAPTER01_PAGE03_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+		disabled_gui_object = { countrydiplomacyview button_diploaction }
+		
+		effect = {
+			ai = no
+			close_window = "macrobuild_units"
+			close_window = "all"
+			speed = 2
+		}		
+		extra_window = {
+			window = "dummy-ul"
+			sprite = "GFX_uiarrow_left"
+			position = {
+				x = 465
+				y = 327
+			}
+		}
+		connected_icons = { dummy-ul countrymissionsdecisionsview mission_window }	
+		
+		trigger = {
+			#active_major_mission = finish_reconquista
+			#No trigger = Skips 
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}	
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	page = {
+		index = 4
+		title = "TUT_CAM_CHAPTER01_PAGE04_TITLE"
+		text = "TUT_CAM_CHAPTER01_PAGE04_TEXT"
+		object = "TUT_CAM_CHAPTER01_PAGE04_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+		
+		effect = {
+			ai = no
+			close_window = "all"
+			direction_pointer = {
+				enable = yes
+				target = 223
+			}
+			province_highlight = {
+				enable = yes
+				target = 223
+			}
+		}
+		leave_page_effect = {
+			direction_pointer = { enable = no }
+			province_highlight = { enable = no }
+		}
+		
+		trigger = {
+			war_with = A01
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}		
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	
+	page = {
+		index = 5
+		title = "TUT_CAM_CHAPTER01_PAGE05_TITLE"
+		text = "TUT_CAM_CHAPTER01_PAGE05_TEXT"
+		object = "TUT_CAM_CHAPTER01_PAGE05_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+		
+		effect = {
+			pauseable = no
+			pause = yes
+			ai = no			
+			allow_select_army = no
+			allow_select_navy = no
+		}
+		
+		extra_window = {
+			window = "dummy-br"
+			sprite = "GFX_uiarrow_down"
+			position = {
+				x = -605
+				y = -150
+			}
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}	
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_NEXT"
+			action = "continue"
+			tooltip = "TUT_NEXT_TOOLTIP"
+			position = {
+				x = 183 #180
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	page = {
+		index = 6
+		title = "TUT_CAM_CHAPTER01_PAGE06_TITLE"
+		text = "TUT_CAM_CHAPTER01_PAGE06_TEXT"
+		object = "TUT_CAM_CHAPTER01_PAGE06_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+		
+		effect = {
+			ai = no
+		}
+		
+		trigger = {
+			war_score = 100
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}				
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	page = {
+		index = 7
+		title = "TUT_CAM_CHAPTER01_PAGE07_TITLE"
+		text = "TUT_CAM_CHAPTER01_PAGE07_TEXT"
+		object = "TUT_CAM_CHAPTER01_PAGE07_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+				
+		effect = {
+			ai = no
+			pause = no
+		}
+		
+		extra_window = {
+			window = "dummy-br"
+			sprite = "GFX_uiarrow_down"
+			position = {
+				x = -585
+				y = -150
+			}
+		}
+		
+		trigger = {
+			owns = 223
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}		
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+	}
+	page = {
+		index = 8
+		title = "TUT_CAM_CHAPTER01_PAGE08_TITLE"
+		text = "TUT_CAM_CHAPTER01_PAGE08_TEXT"
+		object = "TUT_CAM_CHAPTER01_PAGE08_OBJECTIVES"
+		disabled_gui_object = { f_button_1 }
+		disabled_gui_object = { f_button_2 }
+		disabled_gui_object = { unitpanel disbandbutton }
+		
+		effect = {
+			ai = no
+		}
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_MENU"
+			action = "close"
+			tooltip = "TUT_MENU_TOOLTIP"
+			position = {
+				x = 7 #10
+				y = 338
+			}
+		}	
+		
+		option = {
+			button = "TutorialPageButtonOption"
+			text = "TUT_NEXT"
+			action = "continue"
+			tooltip = "TUT_NEXT_TOOLTIP"
+			position = {
+				x = 183 #180
+				y = 338
+			}
+		}
+		option = {
+			name = "hint_minimise"
+			text = "MINIMISE"
+			action = "minimize"
+			tooltip = "TUT_BAS_CLOSE_TOOLTIP"
+		}
+		
+	}
+}

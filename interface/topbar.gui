@@ -16,7 +16,39 @@ guiTypes = {
 		animation_type = "decelerated"
 		animation_time = 600	
 
-        iconType =
+		iconType = {
+			name = "brown_bg"
+			spriteType ="GFX_brown_bg"
+			position = { x= 676 y = 20 }
+			alwaystransparent = yes
+		}
+
+
+		iconType =
+		{
+			name ="topbar_1"
+			spriteType = "GFX_remove"
+			position = { x= 99512 y = -1 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		iconType =
+		{
+			name ="topbar_2"
+			spriteType = "GFX_remove"
+			position = { x= 991024 y = -1 }
+			Orientation = "UPPER_LEFT"
+		}
+	
+		iconType =
+		{
+			name ="topbar_3"
+			spriteType = "GFX_remove"
+			position = { x= 991532 y = -1 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		iconType =
 		{
 			name ="topbar_upper_left_bg"
 			spriteType = "GFX_topbar_bg"
@@ -33,18 +65,10 @@ guiTypes = {
 
 		}
 
-        iconType =
-		{
-			name ="topbar_upper_left_bg2"
-			spriteType = "GFX_topbar_portrait_value_bg"
-			position = { x= 731 y = 30 }
-			Orientation = "UPPER_LEFT"
-		}
-        
 		guiButtonType = {
 			name = "player_shield"
 			quadTextureSprite ="GFX_mega_flag"
-			position = { x= -5 y = -3 }
+			position = { x= -5 y = -5 }
 			Orientation = "UPPER_LEFT"
 			tooltip = ""
 			tooltipText =""
@@ -60,25 +84,20 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-        iconType = {
+        #-------------------------------------
+        # Buttons
+        #-------------------------------------		
+		iconType = {
 			name = "great_power_button_base"
-			quadTextureSprite ="GFX_great_power_button_base"
-			position = { x= 820 y = -9999 }
+			quadTextureSprite ="GFX_close_gold2"
+			position = { x= 910 y = 5 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}		
-        
-        iconType = {
-			name = "build_interface_button_base"
-			quadTextureSprite ="GFX_great_power_button_base"
-			position = { x= 0 y = 120 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
 		
 		guiButtonType = {
 			name = "open_build_interface_button"
-			position = { x = 7 y = 127 }
+			position = { x = 910 y = 8 }
 			quadTextureSprite ="GFX_open_build_interface"
 			tooltip = ""
 			tooltipText =""
@@ -86,12 +105,12 @@ guiTypes = {
 			buttonFont = "Main_14_black"
 			clicksound = macro_build
 			hint_tag = "hint_macrobuild"
-            shortcut = "b"
+			shortcut = "b"
 		}
 		
 		guiButtonType = {
 			name = "great_power_button"
-			position = { x = 827 y = -9999 }
+			position = { x = 98 y = -9999 }
 			quadTextureSprite ="GFX_great_power_button"
 			buttonFont = "Main_14_black"
 			clicksound = macro_build
@@ -134,6 +153,16 @@ guiTypes = {
 			hint_tag = "hint_missionary"
 		}
 		
+	##########################################	
+		
+		iconType =
+		{
+			name ="topbar_upper_left_bg2"
+			spriteType = "GFX_topbar_portrait_value_bg"
+			position = { x= 731 y = 30 }
+			Orientation = "UPPER_LEFT"
+		}
+	
 	#############  portrait values #############
 	
 		instantTextBoxType = {
@@ -588,7 +617,6 @@ guiTypes = {
 			position = { x = 722 y = 32 }
 			quadTextureSprite ="GFX_age_button"
 			clicksound = macro_build
-            shortcut = "a"
 		}
 		
 		guiButtonType = {

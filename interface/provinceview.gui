@@ -1500,17 +1500,32 @@ guiTypes = {
 				format = right			
 			}
 
+			iconType = {
+				name = "latent_resource_icon"
+				position = { x= 423 y = 485 }
+				spriteType = "GFX_resource_icon"
+				Orientation = "UPPER_LEFT"
+				hint_tag = "hint_tradegoods"
+			}
+
 			guiButtonType = {
 				name = "resource_icon"
-				position = { x= 413 y = 500 }
+				position = { x= 408 y = 500 }
 				quadTextureSprite = "GFX_resource_icon"
 				Orientation = "UPPER_LEFT"
 				hint_tag = "hint_tradegoods"
-			}			
+			}
+
+			iconType = {
+				name = "hidden_latent_resource_icon"
+				position = { x= 448 y = 490 }
+				Orientation = "UPPER_LEFT"
+				spriteType = "GFX_resource_transparent"
+			}
 
 			instantTextBoxType = {
 				name = "resource_price_value"
-				position = { x= 320 y = 560 }
+				position = { x= 310 y = 560 }
 				textureFile = ""
 				font = "vic_18"
 				borderSize = {x = 2 y = 2}	
@@ -1524,7 +1539,7 @@ guiTypes = {
 			iconType = {
 				name ="resource_price_gold"
 				spriteType = "GFX_icon_gold_font_medium"
-				position = { x= 445 y = 555 }
+				position = { x= 435 y = 555 }
 				Orientation = "UPPER_LEFT"
 			}			
 			
@@ -5686,13 +5701,13 @@ guiTypes = {
         
         checkboxType = {
 			name = "build_manufactory"
-			position = { x = 215 y = 216 }
+			position = { x = 165 y = 216 }
 			quadTextureSprite = "GFX_courthouse_muslimgfx"
 		}
 
 		instantTextBoxType={
 			name = "manufactory_cost"
-			position = {x = 215 y = 266 }
+			position = {x = 165 y = 266 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128

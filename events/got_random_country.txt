@@ -192,7 +192,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		technology_group = western
+		technology_group = westerosi
 	}
 	
 	option = {
@@ -245,9 +245,9 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		technology_group = western
+		technology_group = westerosi
 		any_known_country = {  
-			NOT = { technology_group = western }
+			NOT = { technology_group = westerosi }
 		}
 	}
 	
@@ -291,9 +291,9 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { technology_group = western }
+		NOT = { technology_group = westerosi }
 		any_known_country = {  
-			technology_group = western
+			technology_group = westerosi
 		}
 	}
 
@@ -519,7 +519,7 @@ country_event = {
 	
 	trigger = {
 		has_advisor = yes
-		technology_group = western
+		technology_group = westerosi
 	}
 	
 	option = {
@@ -549,7 +549,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		technology_group = western
+		technology_group = westerosi
 	}
 	
 	option = {
@@ -576,7 +576,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		technology_group = western
+		technology_group = westerosi
 		
 		AND = {
 			NOT = { has_country_modifier = myrish_fire_sent_merchant }
@@ -759,7 +759,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		technology_group = western
+		technology_group = westerosi
 	}
 	
 	option = {
@@ -944,7 +944,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { technology_group = western }
+		NOT = { technology_group = westerosi }
 	}
 
 	option = {

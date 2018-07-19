@@ -1,114 +1,103 @@
-# Do not change tags in here without changing every other reference to them.
-# If adding new technology, make sure they are uniquely named.
-
-# Armies get a insufficient support penalty when the ratio cav / (inf+cav) is _higher_ than "cav_to_inf_ratio". This applies for the "unit_type" of a country.
-
-# Groups must be defined BEFORE tables.
-
-
 groups = {
-	# Westerois
-	western = {
+	westerosi = {
 		start_cost_modifier = 0
 		start_level = 0
-		
 	}
-	# Essosian
-	eastern = {
+	essosian = {
 		start_cost_modifier = 0
 		start_level = 0
-		
-		
 	}
 	ghiscari = {
 		start_cost_modifier = 0
 		start_level = 0
-		
-		
 	}
 	quartheen = {
 		start_cost_modifier = 0
 		start_level = 0
-		
-		
 	}
 	naathi = {
 		start_cost_modifier = 0
 		start_level = 0
-		
-		
 	}
 	farosi = {
 		start_cost_modifier = 0
 		start_level = 0
-		
-		
 	}
 	yiti = {
 		start_cost_modifier = 0
 		start_level = 0
-		
-		
 	}
 	hyrkooni = {
 		start_cost_modifier = 0
 		start_level = 0
-		
 	}
 	nefer = {
 		start_cost_modifier = 0
 		start_level = 0
-		
-		
 	}
 	stepstones = {
 		start_cost_modifier = 0
 		start_level = 0
-		
-		
 	}
 	ibbenese = {
 		start_cost_modifier = 0
 		start_level = 0
-		
-		
 	}
 	summer_islanders = {
 		start_cost_modifier = 0
 		start_level = 0
-		
-		
 	}
-	
-	# Dothraki
+	valyrian = {
+		start_cost_modifier = 0
+		start_level = 0
+	}
+    asshai = {
+		start_cost_modifier = 0
+		start_level = 0
+	}
+    white_walker = {
+		start_cost_modifier = 0
+		start_level = 0
+	}
+    bloodless_men = {
+		start_cost_modifier = 0
+		start_level = 0
+        is_primitive = yes
+	}
+    
 	dothraki = {
 		start_cost_modifier = 0
 		start_level = 0
         is_primitive = yes
 	}
-	# Wildling
+    jogos_nhai = {
+		start_cost_modifier = 0
+		start_level = 0
+        is_primitive = yes
+	}
 	wildling = {
 		start_cost_modifier = 0
 		start_level = 0
-		
         is_primitive = yes
-		
 	}
-	# White Walkers
-	white_walker = {
+    mossovi = {
 		start_cost_modifier = 0
 		start_level = 0
-		
         is_primitive = yes
 	}
-    
-    native_dummy = {
-		start_cost_modifier = 0.0
+    sothoryosi = {
+		start_cost_modifier = 0
 		start_level = 0
-
-        nation_designer_trigger = {
-			always = no
-		}
+        is_primitive = yes
+	}
+    ulthosi = {
+		start_cost_modifier = 0
+		start_level = 0
+        is_primitive = yes
+	}
+    fishfolk = {
+		start_cost_modifier = 0
+		start_level = 0
         is_primitive = yes
 	}
 }

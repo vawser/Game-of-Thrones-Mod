@@ -212,25 +212,28 @@ country_decisions = {
 			NOT = { exists = J17 }
 		}
 		allow = {
-			mantarys_area = {
+			region_valyria = {
 				type = all
 				owned_by = ROOT
 			}
-            tolos_area = {
+            region_slavers_bay = {
 				type = all
 				owned_by = ROOT
 			}
-            the_demon_road_area = {
+            region_volantis = {
 				type = all
 				owned_by = ROOT
 			}
+            
 		}
 		effect = {
 			change_tag = J17
 			add_prestige = 200
 			add_stability = 6
 			swap_free_idea_group = yes
-			
+            
+            country_event = { id = GOT_VALYRIA.1 }
+            
             hidden_effect = {
                 every_owned_province = {    
                     limit = {

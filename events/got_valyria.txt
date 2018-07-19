@@ -1,0 +1,20 @@
+namespace = GOT_VALYRIA
+
+country_event = {
+	id = GOT_VALYRIA.1
+	title = GOT_VALYRIA.1.title
+	desc = GOT_VALYRIA.1.desc
+	picture = CONQUEST_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_VALYRIA.1.option.a
+		
+        custom_tooltip = ENABLE_VALYRIAN_DRAGONS
+        hidden_effect = {
+            change_unit_type = valyrian
+        }
+	}
+}
+

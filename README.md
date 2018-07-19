@@ -8,6 +8,3 @@ Game of Thrones mod for Europa Universalis 4
 
 [Music](http://steamcommunity.com/sharedfiles/filedetails/?id=950191900)
 
-### Discord
-
-[Invite](https://discord.gg/ZDzvnGA)

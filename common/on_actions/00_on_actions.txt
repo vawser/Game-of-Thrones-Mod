@@ -1,13 +1,15 @@
 # country
 on_startup = {	
 	events = {
-		GOT_META.3 # Fix estates moving the capitals
-		GOT_META.4 # Multiplayer flag
-		GOT_META.6 # Native randomisation
-        GOT_META.8 # Discovery
+        GOT_SETUP.1 
+        GOT_SETUP.2 
+        GOT_SETUP.3
+        
+		GOT_CLEANUP.3
+        
+        GOT_DISCOVERY.1
+
         slaves.100
-        setup.1 # Global
-        setup.2 # Country-specific
 	}
     
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_startup" }
@@ -168,9 +170,7 @@ on_abandon_colony = {
 # country 
 on_new_monarch = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_new_monarch" }
-    
-    succession_culture_religion_effect = yes
-    
+
     if = {
 		limit = {
 			has_consort_regency = no
@@ -183,6 +183,9 @@ on_new_monarch = {
 			remove_province_modifier = domain_of_spouses_family
 		}
 	}
+    
+    succession_culture_religion_effect = yes
+    
 	events = {
 		GOT_GOVERNMENT.4    # The Education of [Root.Monarch.GetName]
 		GOT_DOTHRAKI.1      # Dothraki Succession

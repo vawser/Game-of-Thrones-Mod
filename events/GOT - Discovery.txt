@@ -1,0 +1,354 @@
+namespace = GOT_DISCOVERY
+
+# Handle Discovery
+country_event = {
+	id = GOT_DISCOVERY.1
+	title = GOT_DISCOVERY.1.title
+	desc = GOT_DISCOVERY.1.desc
+	picture = ASSASSINATION_eventPicture
+	
+    hidden = yes
+    
+	trigger = {
+        NOT = { has_country_flag = revealed_map }
+	}
+	
+	immediate = {   
+        set_country_flag = revealed_map
+    }
+	
+	option = {
+		name = GOT_DISCOVERY.1.option.a
+		  
+		# Westeros
+        if = {
+            limit = {
+                OR = {
+                    discovery_nights_watch_trigger = yes
+					discovery_westeros_trigger = yes
+					discovery_wildling_trigger = yes
+                }
+            }
+            westeros_superregion = {
+                discover_country = ROOT
+            }
+			westeros_sea_region = {
+                discover_country = ROOT
+            }
+			west_essos_superregion = {
+                discover_country = ROOT
+            }
+			westeros_wastelands = {
+                discover_country = ROOT
+            }
+			essos_west_wastelands = {
+                discover_country = ROOT
+            }
+			shivering_sea_region = {
+				undiscover_country = ROOT
+			}
+            # Lakes
+            884 = {
+                discover_country = ROOT
+            }
+            885 = {
+                discover_country = ROOT
+            }      
+            882 = {
+                discover_country = ROOT
+            }        
+            883 = {
+                discover_country = ROOT
+            }        
+            881 = {
+               discover_country = ROOT
+            }          
+            880 = {
+                discover_country = ROOT
+            }
+        }
+
+		# Free Cities
+        if = {
+            limit = {
+                OR = {
+                    discovery_free_cities_trigger = yes
+                }
+            }
+			westeros_superregion = {
+                discover_country = ROOT
+            }
+			westeros_sea_region = {
+                discover_country = ROOT
+            }
+			west_essos_superregion = {
+                discover_country = ROOT
+            }
+			westeros_wastelands = {
+                discover_country = ROOT
+            }
+			essos_west_wastelands = {
+                discover_country = ROOT
+            }
+			ghiscari_sea_region = {
+                discover_country = ROOT
+            }
+			region_slavers_bay = {
+                discover_country = ROOT
+            }
+			region_valyria = {
+                discover_country = ROOT
+            }
+			region_sarnor = {
+                discover_country = ROOT
+            }
+			omber_sea_region = {
+                discover_country = ROOT
+            }
+			shivering_sea_region = {
+				undiscover_country = ROOT
+			}
+            # Lakes
+            3005 = {
+                discover_country = ROOT
+            }
+            3006 = {
+                discover_country = ROOT
+            }
+            3007 = {
+                discover_country = ROOT
+            }
+            1076 = {
+                discover_country = ROOT
+            }
+        } 
+        
+		# Free Cities
+        if = {
+            limit = {
+                OR = {
+                    discovery_slavers_cities_trigger = yes
+					discovery_valyrian_remnants_trigger = yes
+					discovery_dothraki_trigger = yes
+                }
+            }
+			
+			west_essos_superregion = {
+                discover_country = ROOT
+            }
+			central_essos_superregion = {
+                discover_country = ROOT
+            }
+			essos_central_wastelands = {
+                discover_country = ROOT
+            }
+			essos_west_wastelands = {
+                discover_country = ROOT
+            }
+            3005 = {
+                discover_country = ROOT
+            }
+            3006 = {
+                discover_country = ROOT
+            }
+            3007 = {
+                discover_country = ROOT
+            }
+            1076 = {
+                discover_country = ROOT
+            }
+		}
+		
+		# Qarth/Faros
+        if = {
+            limit = {
+                OR = {
+                    discovery_qarth_trigger = yes
+					discovery_faros_trigger = yes
+                }
+            }
+			
+			central_essos_superregion = {
+                discover_country = ROOT
+            }
+			essos_central_wastelands = {
+                discover_country = ROOT
+            }
+			essos_east_wastelands = {
+                discover_country = ROOT
+            }
+			far_essos_superregion = {
+                discover_country = ROOT
+            }
+			region_thousand_islands = {
+                undiscover_country = ROOT
+            }
+			nefer_sea_region = {
+                undiscover_country = ROOT
+            }
+			region_cannibal_sands = {
+                undiscover_country = ROOT
+            }
+			region_mossovy = {
+                undiscover_country = ROOT
+            }
+			region_shadowlands = {
+                undiscover_country = ROOT
+            }
+			region_bloodlands = {
+                undiscover_country = ROOT
+            }
+			east_sothoryos_sea_area = {
+                discover_country = ROOT
+            }
+		}
+		
+		# Far East
+        if = {
+            limit = {
+                OR = {
+                    discovery_yiti_trigger = yes
+                    discovery_hyrkoon_trigger = yes
+					discovery_jogos_trigger = yes
+					discovery_asshai_trigger = yes
+                    discovery_mythical_cities_trigger = yes
+                }
+            }
+            far_essos_superregion = {
+                discover_country = ROOT
+            }
+			region_qarth = {
+                discover_country = ROOT
+            }
+			region_slavers_bay = {
+                discover_country = ROOT
+            }
+			ghiscari_sea_region = {
+                discover_country = ROOT
+            }
+			essos_east_wastelands = {
+                discover_country = ROOT
+            }
+			essos_central_wastelands = {
+                discover_country = ROOT
+            }
+			east_sothoryos_sea_area = {
+                discover_country = ROOT
+            }
+        } 
+
+		# Asshai and the Mythicals
+		if = {
+            limit = {
+                OR = {
+					discovery_asshai_trigger = yes
+                    discovery_mythical_cities_trigger = yes
+                }
+            }
+            far_essos_superregion = {
+                discover_country = ROOT
+            }
+			region_qarth = {
+                discover_country = ROOT
+            }
+			region_slavers_bay = {
+                discover_country = ROOT
+            }
+			ghiscari_sea_region = {
+                discover_country = ROOT
+            }
+			essos_east_wastelands = {
+                discover_country = ROOT
+            }
+			essos_central_wastelands = {
+                discover_country = ROOT
+            }
+			region_gemstone_islands = {
+                discover_country = ROOT
+            }
+			region_ulthos = {
+                discover_country = ROOT
+            }
+			ulthos_sea_region = {
+                discover_country = ROOT
+            }
+			ulthos_wastelands = {
+                discover_country = ROOT
+            }
+			east_sothoryos_sea_area = {
+                discover_country = ROOT
+            }
+        } 
+		
+		# Summer Islands and Stepstones
+        if = {
+            limit = {
+                OR = {
+                    discovery_summer_islands_trigger = yes
+                    discovery_pirate_trigger = yes
+                }
+            }
+            region_summer_islands = {
+                discover_country = ROOT
+            }
+			summer_islands_sea_region = {
+                discover_country = ROOT
+            }
+			westeros_sea_region = {
+                discover_country = ROOT
+            }
+			westeros_superregion = {
+                discover_country = ROOT
+            }
+			shivering_sea_region = {
+                undiscover_country = ROOT
+            }
+			west_essos_superregion = {
+                discover_country = ROOT
+            }
+			north_essosian_coast_area = {
+                undiscover_country = ROOT
+            }
+			westeros_wastelands = {
+                discover_country = ROOT
+            }
+			essos_west_wastelands = {
+                discover_country = ROOT
+            }
+			west_sothoryos_sea_area = {
+                discover_country = ROOT
+            }
+        } 
+        
+        if = {
+            limit = {
+                discovery_ibben_trigger = yes
+            }
+            central_essos_superregion = {
+                discover_country = ROOT
+            }
+			narrow_sea_area = {
+                discover_country = ROOT
+            }
+			shivering_sea_region = {
+                discover_country = ROOT
+            }
+			nefer_sea_region = {
+                discover_country = ROOT
+            }
+			region_qarth = {
+                undiscover_country = ROOT
+            }
+			region_valyria = {
+                undiscover_country = ROOT
+            }
+			ghiscari_sea_region = {
+                undiscover_country = ROOT
+            }
+			essos_central_wastelands = {
+                discover_country = ROOT
+            }
+        }  
+    }
+}
+

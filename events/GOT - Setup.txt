@@ -1,62 +1,61 @@
-namespace = setup
+namespace = GOT_SETUP
 
 country_event = {
-	id = setup.1
-	title = setup.1.title
-	desc = setup.1.desc
+	id = GOT_SETUP.1
+	title = GOT_SETUP.1.title
+	desc = GOT_SETUP.1.desc
 	picture = SPY_eventPicture
 	
 	is_triggered_only = yes
 	hidden = yes
     
     trigger = {
-        NOT = { has_global_flag = completed_setup }
+        NOT = { has_global_flag = completed_global_setup }
     }
 	
     immediate = {
-        set_global_flag = completed_setup
+        set_global_flag = completed_global_setup
     }
     
 	option = {
-		name = setup.1.option.a
+		name = GOT_SETUP.1.option.a
 		
         #set_global_flag = enable_onaction_logging
         #set_global_flag = enable_event_logging
         
-        if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - setup.1.option.a" }
+        if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - GOT_SETUP.1.option.a" }
         
         hre_inheritable = yes
+        set_allow_female_emperor = yes
+        set_hre_religion_treaty = yes
         
-        # Add Westeros to HRE
-        region_the_north = {
-            set_in_empire = yes
-        }
-        region_riverlands = {
-            set_in_empire = yes
-        }
-        region_crownlands = {
-            set_in_empire = yes
-        }
-        region_stormlands = {
-            set_in_empire = yes
-        }
-        region_iron_islands = {
-            set_in_empire = yes
-        }
-        region_reach = {
-            set_in_empire = yes
-        }
-        region_westerlands = {
-            set_in_empire = yes
-        }
-        region_dorne = {
-            set_in_empire = yes
-        }
-        
-        # Remove HRE for Shattered World
         if = {
-            limit = { NOT = { is_year = 101 } }
-            dismantle_hre = yes
+            limit = { is_year = 101 } 
+    
+            region_the_north = {
+                set_in_empire = yes
+            }
+            region_riverlands = {
+                set_in_empire = yes
+            }
+            region_crownlands = {
+                set_in_empire = yes
+            }
+            region_stormlands = {
+                set_in_empire = yes
+            }
+            region_iron_islands = {
+                set_in_empire = yes
+            }
+            region_reach = {
+                set_in_empire = yes
+            }
+            region_westerlands = {
+                set_in_empire = yes
+            }
+            region_dorne = {
+                set_in_empire = yes
+            }
         }
         
         # Bookmark flags
@@ -95,9 +94,9 @@ country_event = {
 }
 
 country_event = {
-	id = setup.2
-	title = setup.2.title
-	desc = setup.2.desc
+	id = GOT_SETUP.2
+	title = GOT_SETUP.2.title
+	desc = GOT_SETUP.2.desc
 	picture = SPY_eventPicture
 	
 	is_triggered_only = yes
@@ -112,9 +111,9 @@ country_event = {
     }
     
 	option = {
-		name = setup.2.option.a
+		name = GOT_SETUP.2.option.a
 		
-        if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - setup.2.option.a" }
+        if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - GOT_SETUP.2.option.a" }
         
         if = {
             limit = { tag = U87 }
@@ -123,3 +122,35 @@ country_event = {
         }
 	}
 }
+
+country_event = {
+	id = GOT_SETUP.3
+	title = "GOT_SETUP.3.title"
+	desc = "GOT_SETUP.3.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		ai = no
+	}
+	
+	option = {
+		name = "GOT_SETUP.3.option.1"
+		
+		if = {
+			limit = {
+				any_country = {
+					has_country_flag = is_player
+				}
+			}
+			set_global_flag = multiplayer_game
+		}
+		
+		set_country_flag = is_player
+	}
+}
+
+
+

@@ -1,0 +1,35 @@
+country_decisions = {
+	establish_the_seven_kingdoms = {
+        major = yes
+		potential = {
+			has_global_flag = shattered_world
+            exists = SEC
+		}
+		allow = {
+            government = monarchy
+            prestige = 95
+            legitimacy = 95
+            treasury = 5000
+        
+            NOT = {
+                any_country = {
+                    capital_scope = { continent = europe }
+                    total_base_tax = ROOT
+                }
+            }
+            capital_scope = {
+                province_id = 226
+                development = 50
+            }
+		}
+		effect = {
+            add_treasury = -5000
+            
+			country_event = { id = GOT_SHATTERED_WORLD.1 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

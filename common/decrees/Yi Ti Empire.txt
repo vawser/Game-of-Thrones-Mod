@@ -1,0 +1,76 @@
+# cost is the Meritocracy cost
+# duration is in days
+# ai_will_do has to be 10 for AI to do it (with >=99 Meritocracy).
+
+expand_bureaucracy_decree = {
+	cost = 20
+	duration = 3650
+    
+	modifier = {
+		development_cost = -0.1
+		core_creation = -0.1
+	}
+	ai_will_do = {
+		factor = 20
+	}
+}
+
+rouse_yitish_war_spirit_decree = {
+	cost = 80
+	duration = 3650
+    
+	modifier = {
+		land_morale = 0.2
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+establish_diplomatic_links_decree = {
+	cost = 30
+	duration = 3650
+    
+	modifier = {
+		diplomatic_reputation = 2
+	}
+	ai_will_do = {
+		factor = 50
+	}
+}
+
+conduct_census_decree = {
+	cost = 20
+	duration = 3650
+    
+	modifier = {
+		global_tax_modifier = 0.25
+	}
+	ai_will_do = {
+		factor = 50
+	}
+}
+
+promote_centralization_decree = {
+	cost = 30
+	duration = 3650
+    
+	modifier = {
+		yearly_absolutism = 1
+	}
+	ai_will_do = {
+		factor = 80
+	}
+}
+
+mass_conversion_decree = {
+	cost = 40
+	duration = 3650
+    
+	modifier = {
+		global_missionary_strength = 0.03
+	}
+	ai_will_do = {
+		factor = 80
+	}
+}

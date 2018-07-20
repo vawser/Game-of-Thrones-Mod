@@ -503,6 +503,17 @@ on_integrate = {
 # Nation annexed
 on_annexed = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_annexed" }
+    
+    events = {
+		#GOT_YITISH_EMPIRE.1 # Empire dismantled
+	}
+    FROM = {
+		if = {
+			limit = { is_emperor_of_china = yes }
+			dismantle_empire_of_china = yes
+			set_global_flag = empire_of_yiti_dismantled
+		}
+	}
 }
 
 # FROM = Emperor, ROOT = Current Nation
@@ -515,12 +526,53 @@ on_chinese_empire_dismantled = {
 # FROM = Old Emperor, ROOT = New Emperor
 on_mandate_of_heaven_gained = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - old emperor: [From.GetName] - new emperor: [Root.GetName] - on_mandate_of_heaven_gained" }
+    
+	change_government = yiti_empire
+	set_mandate = 60
+	region_yi_ti = {
+		limit = {
+			NOT = { is_core = ROOT }
+		}
+		add_permanent_claim = ROOT
+	}
+    if = {
+		limit = {
+			has_country_modifier = lost_mandate_of_heaven
+		}
+		remove_country_modifier = lost_mandate_of_heaven
+	}
+	# country_event = { #Reforming the Bureaucracy
+		# id = china_events.31
+		# days = 365
+	# }
+	# country_event = {
+		# id = china_events.32 #Records of the last Empire
+		# days = 183
+	# }
+	# country_event = {
+		# id = celestial_empire_events.2
+		# days = 1825
+	# }
 }
 
 
 # FROM = New Emperor, ROOT = Old Emperor
 on_mandate_of_heaven_lost = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - old emperor: [Root.GetName] - new emperor: [From.GetName] - on_mandate_of_heaven_lost" }
+    
+    change_government = kingdom
+	set_government_rank = 2
+	add_country_modifier = {
+		name = lost_mandate_of_heaven
+		duration = 7300
+	}
+	add_stability = -2
+	region_yi_ti = {
+		limit = {
+			is_permanent_claim = ROOT
+		}
+		remove_claim = ROOT
+	}
 }
 
 on_dismantle_revolution = {

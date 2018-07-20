@@ -65,9 +65,9 @@
 #       iqta_mechanic
 #	faction = XXX
 
-####################################
-#Monarchies
-####################################
+#-----------------------------------------
+# Monarchies
+#-----------------------------------------
 kingdom = {
 	monarchy = yes
 	
@@ -110,9 +110,9 @@ kingdom = {
 	}
 }
 
-####################################
+#-----------------------------------------
 # Theocracy
-####################################
+#-----------------------------------------
 the_faith = {
 	religion = yes
 	
@@ -147,9 +147,9 @@ the_faith = {
     fixed_rank = 1
 }
 
-####################################
+#-----------------------------------------
 # Republics
-####################################
+#-----------------------------------------
 free_city = {
 	republic = yes
 
@@ -196,9 +196,46 @@ free_city = {
 	}
 }
 
-#################################
+#-----------------------------------------
 # Unique
-#################################
+#-----------------------------------------
+yiti_empire = {
+	monarchy = yes
+	
+    unique_government = yes
+	has_meritocracy = yes
+	
+	allow_force_tributary = no
+    
+	valid_for_new_country = yes
+	allow_convert = no
+	
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+
+	maintain_dynasty = yes
+	different_religion_acceptance = -15
+	different_religion_group_acceptance = -50
+	
+	color = { 60 128 30 }
+	
+	ai_will_do = {
+		factor = 0
+	}
+	ai_importance = 1
+	
+	max_states = 20
+	
+	rank = {
+		3 = {
+			global_tax_modifier = 0.1
+			global_autonomy = -0.05
+            max_absolutism = 20
+		}
+	}
+    fixed_rank = 3
+}
+
 pirate_haven = {
 	tribal = yes
     monarchy = yes

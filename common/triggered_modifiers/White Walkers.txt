@@ -1,0 +1,47 @@
+rise_of_the_white_walkers = {
+    potential = {
+        tag = WIT
+	}
+	
+	trigger = {
+		NOT = { num_of_states = 5 }
+	}
+    
+    land_maintenance_modifier = -0.75
+    land_forcelimit = 30
+    
+    global_tax_income = 120
+    global_manpower = 25
+}
+consolidation_of_the_white_walkers = {
+    potential = {
+        tag = WIT
+	}
+	
+	trigger = {
+        num_of_states = 5
+        NOT = { num_of_states = 10 }
+	}
+    
+    land_maintenance_modifier = -0.5
+    land_forcelimit = 30
+    
+    global_tax_income = 64
+    global_manpower = 25
+}
+the_ancient_war_machine = {
+    potential = {
+        tag = WIT
+	}
+	
+	trigger = {
+        num_of_states = 10
+	}
+    
+    land_maintenance_modifier = -0.25
+    land_forcelimit = 30
+    
+    global_manpower = 25
+}
+
+

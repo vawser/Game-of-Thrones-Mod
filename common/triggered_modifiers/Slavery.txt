@@ -1,0 +1,26 @@
+forbids_slavery = {
+	potential = {
+		has_country_modifier = slavery_prohibited
+	}
+	
+	trigger = {
+		has_country_modifier = slavery_prohibited
+	}
+	
+	diplomatic_reputation = 1
+}
+
+allows_slavery = {
+	potential = {
+		has_country_modifier = slavery_permitted
+	}
+	
+	trigger = {
+		has_country_modifier = slavery_permitted
+	}
+	
+	diplomatic_reputation = -1
+}
+
+
+

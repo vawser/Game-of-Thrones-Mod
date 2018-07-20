@@ -1,0 +1,70 @@
+leading_by_example = {
+	potential = {
+		OR = {
+			government = khas_city
+			government = khas
+		}
+	}
+	
+	trigger = {
+		is_monarch_leader = yes
+	}
+	
+	army_tradition = 1
+}
+
+
+daenerys_the_unburnt = {
+    potential = {
+		tag = S23
+	}
+	
+	trigger = {
+        tag = S23
+        # add dragon checks here eventually
+	}
+    
+    discipline = 0.1
+    land_morale = 0.1
+    siege_ability = 0.33
+}
+
+# Used to discourage the player from just conquering immediately.
+# Rather, they can migrate and establish tributaries and gather gold
+# Or take and raze provinces, returning them to keep the bonus here
+nomadic_people = {
+    potential = {
+        ai = no
+		OR = {
+			government = khas_city
+			government = khas
+		}
+	}
+	
+	trigger = {
+		NOT = { num_of_states = 2 }
+	}
+    
+    land_maintenance_modifier = -0.75
+    land_forcelimit = 30
+}
+
+# A more lenient version for the AI
+nomadic_people_ai = {
+    potential = {
+        ai = yes
+		OR = {
+			government = khas_city
+			government = khas
+		}
+	}
+	
+	trigger = {
+		NOT = { num_of_states = 5 }
+	}
+    
+    land_maintenance_modifier = -0.75
+    land_forcelimit = 30
+}
+
+

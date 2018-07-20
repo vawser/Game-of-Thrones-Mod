@@ -24,50 +24,57 @@ the_seven_kingdoms = {
 	}
     
 	objectives = {
-		obj_prestigious_capital = {
+        # Prestigious Capital
+        obj_prestigious_capital = {
             capital_scope = {
                 development = 50
+            }
+            capital_scope = {
                 religion = ROOT
+            }
+            capital_scope = {
                 culture = ROOT
+            }
+            capital_scope = {
                 NOT = { devastation = 5 }
             }
         }
         # Wise Ruler
-		obj_wise_ruler = {
+        obj_wise_ruler = {
             OR = {
-                adm = 6
-                dip = 6
-                mil = 6
+                adm = 5
+                dip = 5
+                mil = 5
             }
         }
-        # Religious Defender
-        obj_religious_defender = {
-            is_defender_of_faith = yes
+        # United People
+        obj_united_people = {
             religious_unity = 1.0
+            dominant_culture = ROOT
         }
         obj_colossal_fleet = {
-            naval_forcelimit = 100
-            navy_size_percentage = 0.9
+            naval_forcelimit = 50
+            navy_size_percentage = 0.5
         }
         obj_colossal_army = {
-            land_forcelimit = 100
-            army_size_percentage = 0.9
+            land_forcelimit = 50
+            army_size_percentage = 0.5
         }
         obj_realm_of_virtues = {
-            prestige = 100
+            prestige = 75
             NOT = { corruption = 5 }
             OR = {
-                legitimacy = 100
-                horde_unity = 100
-                devotion = 100
-                republican_tradition = 100
-                meritocracy = 100
+                legitimacy = 75
+                horde_unity = 75
+                devotion = 75
+                republican_tradition = 75
+                meritocracy = 75
             }
         }
-        obj_noble_connections = {
-            num_of_royal_marriages = 5
+        obj_diplomatic_connections = {
+            num_of_allies = 4
         }
-	}		
+    }   
 	
 	abilities = {
 		ab_soldiers_of_fortune = {
@@ -144,7 +151,7 @@ the_seven_kingdoms = {
         
         ab_annual_purges = {
             modifier = {
-                yearly_corruption = -0.2
+                yearly_corruption = -0.1
             }
             ai_will_do = {
 				factor = 100
@@ -195,50 +202,57 @@ the_long_winter = {
 	}
     
 	objectives = {
-		obj_prestigious_capital = {
+        # Prestigious Capital
+        obj_prestigious_capital = {
             capital_scope = {
                 development = 50
+            }
+            capital_scope = {
                 religion = ROOT
+            }
+            capital_scope = {
                 culture = ROOT
+            }
+            capital_scope = {
                 NOT = { devastation = 5 }
             }
         }
         # Wise Ruler
-		obj_wise_ruler = {
+        obj_wise_ruler = {
             OR = {
-                adm = 6
-                dip = 6
-                mil = 6
+                adm = 5
+                dip = 5
+                mil = 5
             }
         }
-        # Religious Defender
-        obj_religious_defender = {
-            is_defender_of_faith = yes
+        # United People
+        obj_united_people = {
             religious_unity = 1.0
+            dominant_culture = ROOT
         }
         obj_colossal_fleet = {
-            naval_forcelimit = 100
-            navy_size_percentage = 0.9
+            naval_forcelimit = 50
+            navy_size_percentage = 0.5
         }
         obj_colossal_army = {
-            land_forcelimit = 100
-            army_size_percentage = 0.9
+            land_forcelimit = 50
+            army_size_percentage = 0.5
         }
         obj_realm_of_virtues = {
-            prestige = 100
+            prestige = 75
             NOT = { corruption = 5 }
             OR = {
-                legitimacy = 100
-                horde_unity = 100
-                devotion = 100
-                republican_tradition = 100
-                meritocracy = 100
+                legitimacy = 75
+                horde_unity = 75
+                devotion = 75
+                republican_tradition = 75
+                meritocracy = 75
             }
         }
-        obj_noble_connections = {
-            num_of_royal_marriages = 5
+        obj_diplomatic_connections = {
+            num_of_allies = 4
         }
-	}		
+    }   	
 	
 	abilities = {
 		ab_soldiers_of_fortune = {
@@ -315,7 +329,7 @@ the_long_winter = {
         
         ab_annual_purges = {
             modifier = {
-                yearly_corruption = -0.2
+                yearly_corruption = -0.1
             }
             ai_will_do = {
 				factor = 100
@@ -366,50 +380,57 @@ the_seven_kingdoms_2 = {
 	}
     
 	objectives = {
-		obj_prestigious_capital = {
+        # Prestigious Capital
+        obj_prestigious_capital = {
             capital_scope = {
                 development = 50
+            }
+            capital_scope = {
                 religion = ROOT
+            }
+            capital_scope = {
                 culture = ROOT
+            }
+            capital_scope = {
                 NOT = { devastation = 5 }
             }
         }
         # Wise Ruler
-		obj_wise_ruler = {
+        obj_wise_ruler = {
             OR = {
-                adm = 6
-                dip = 6
-                mil = 6
+                adm = 5
+                dip = 5
+                mil = 5
             }
         }
-        # Religious Defender
-        obj_religious_defender = {
-            is_defender_of_faith = yes
+        # United People
+        obj_united_people = {
             religious_unity = 1.0
+            dominant_culture = ROOT
         }
         obj_colossal_fleet = {
-            naval_forcelimit = 100
-            navy_size_percentage = 0.9
+            naval_forcelimit = 50
+            navy_size_percentage = 0.5
         }
         obj_colossal_army = {
-            land_forcelimit = 100
-            army_size_percentage = 0.9
+            land_forcelimit = 50
+            army_size_percentage = 0.5
         }
         obj_realm_of_virtues = {
-            prestige = 100
+            prestige = 75
             NOT = { corruption = 5 }
             OR = {
-                legitimacy = 100
-                horde_unity = 100
-                devotion = 100
-                republican_tradition = 100
-                meritocracy = 100
+                legitimacy = 75
+                horde_unity = 75
+                devotion = 75
+                republican_tradition = 75
+                meritocracy = 75
             }
         }
-        obj_noble_connections = {
-            num_of_royal_marriages = 5
+        obj_diplomatic_connections = {
+            num_of_allies = 4
         }
-	}		
+    }   	
 	
 	abilities = {
 		ab_soldiers_of_fortune = {
@@ -486,7 +507,7 @@ the_seven_kingdoms_2 = {
         
         ab_annual_purges = {
             modifier = {
-                yearly_corruption = -0.2
+                yearly_corruption = -0.1
             }
             ai_will_do = {
 				factor = 100

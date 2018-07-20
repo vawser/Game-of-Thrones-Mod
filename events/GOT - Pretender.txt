@@ -1,0 +1,28 @@
+namespace = GOT_PRETENDER
+
+country_event = {
+	id = GOT_PRETENDER.1
+	title = GOT_PRETENDER.1.title
+	desc = GOT_PRETENDER.1.desc
+	picture = MILITARY_CAMP_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = { 
+		num_of_cities = 3 
+		government = monarchy
+	}
+	
+	option = {
+		name = GOT_PRETENDER.1.option.a
+		random_owned_province = {
+			limit = { 
+				OR = {
+					is_core = ROOT 
+					is_capital = yes
+				}
+			}
+			pretender_rebels = 1
+		}
+	}
+}

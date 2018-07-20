@@ -1,5 +1,21 @@
 namespace = GOT_SUBJECTS
 
+# Integration event
+country_event = {
+	id = GOT_SUBJECTS.100
+	title = GOT_SUBJECTS.100.title
+	desc = GOT_SUBJECTS.100.desc
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_SUBJECTS.100.option.a
+		add_legitimacy = -10
+		add_republican_tradition = -10
+	}
+}
+
 # Annex event
 country_event = {
 	id = GOT_SUBJECTS.1

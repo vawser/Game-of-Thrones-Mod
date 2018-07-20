@@ -57,7 +57,7 @@ on_war_won = {
 
 	}
 	random_events = {
-		100 = GOT_ACTIONS.1 # History is written by the victors!
+		100 = GOT_ACCOMPLISHMENTS.1 # History is written by the victors!
 		5000 = 0
 	}
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - winner : [Root.GetName] - loser : [From.GetName] - on_war_won" }
@@ -74,7 +74,7 @@ on_war_lost = {
 on_battle_won_country = {
 	random_events = {
 		#100 = GOT_BATTLES.1	# $FROMCOUNTRY$ has humiliated us!
-		#100 = GOT_ACTIONS.2 # Excellent Performance
+		#100 = GOT_ACCOMPLISHMENTS.2 # Excellent Performance
         1000 = slaves.2 # "Victory over $FROMCOUNTRY$"
         1000 = slaves.3 # "Slaves of War"
 		10000 = 0
@@ -136,7 +136,7 @@ on_siege_won_country = {
     }
     
 	random_events = {
-		100 = GOT_ACTIONS.3 # Strategic Excellence
+		100 = GOT_ACCOMPLISHMENTS.3 # Strategic Excellence
 		5000 = 0
 	}
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - province : [From.GetName] - winner : [Root.GetName] - on_siege_won_country" }
@@ -268,7 +268,7 @@ on_bankruptcy = {
 # country (country annexing, root = target)
 on_diplomatic_annex = {
 	events = {
-		610 # Integrating FROMCOUNTRY
+		GOT_SUBJECTS.100 
         GOT_SUBJECTS.1
 	}
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_diplomatic_annex" }
@@ -379,7 +379,7 @@ on_new_heir = {
 on_weak_heir_claim = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_weak_heir_claim" }
 	events = {
-		611 # Successor Claim
+		GOT_PRETENDER.1 # Successor Claim
 	}
 }
 
@@ -599,18 +599,18 @@ on_bi_yearly_pulse = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_bi_yearly_pulse" }
     
 	random_events = {
-		100 = GOT_ACTIONS.6 # Grand Army
-		100 = GOT_ACTIONS.7 # Colonial Vigor
-		100 = GOT_ACTIONS.8 # Treasures of Exploration
-		100 = GOT_ACTIONS.9 # Peaceful Realm
-		100 = GOT_ACTIONS.10 # One Faith
-		100 = GOT_ACTIONS.11 # Royal Network
-		100 = GOT_ACTIONS.12 # Marcher Lords
-		100 = GOT_ACTIONS.13 # Lord of Many
-		100 = GOT_ACTIONS.14 # Bleed Them Dry
-		100 = GOT_ACTIONS.15 # Prestigeous Realm
-		100 = GOT_ACTIONS.16 # Grand Fleet
-		100 = GOT_ACTIONS.17 # Strategic Blockades
+		100 = GOT_ACCOMPLISHMENTS.6 # Grand Army
+		100 = GOT_ACCOMPLISHMENTS.7 # Colonial Vigor
+		100 = GOT_ACCOMPLISHMENTS.8 # Treasures of Exploration
+		100 = GOT_ACCOMPLISHMENTS.9 # Peaceful Realm
+		100 = GOT_ACCOMPLISHMENTS.10 # One Faith
+		100 = GOT_ACCOMPLISHMENTS.11 # Royal Network
+		100 = GOT_ACCOMPLISHMENTS.12 # Marcher Lords
+		100 = GOT_ACCOMPLISHMENTS.13 # Lord of Many
+		100 = GOT_ACCOMPLISHMENTS.14 # Bleed Them Dry
+		100 = GOT_ACCOMPLISHMENTS.15 # Prestigeous Realm
+		100 = GOT_ACCOMPLISHMENTS.16 # Grand Fleet
+		100 = GOT_ACCOMPLISHMENTS.17 # Strategic Blockades
 		1000 = 0
 	}
 }
@@ -808,7 +808,7 @@ on_five_year_pulse_3 = {
     
 	random_events = {
 		500 = GOT_NIGHTS_WATCH.1 # The Night's Watch demands men!
-		500 = GOT_ACTIONS.18 # A Noble Fool
+		500 = GOT_ACCOMPLISHMENTS.18 # A Noble Fool
 		10000 = 0
 	}
 }
@@ -831,7 +831,7 @@ on_explore_coast = {
     
 	random_events = {
 		100 = GOT_EXPLORATION.9 # Corsairs!
-		100 = GOT_ACTIONS.4 # Coastal Surveying
+		100 = GOT_ACCOMPLISHMENTS.4 # Coastal Surveying
 		10000 = 0
 	}
 }
@@ -849,7 +849,7 @@ on_conquistador_empty = {
 		100 = GOT_EXPLORATION.6 # Basilisks in $PROVINCENAME$
 		100 = GOT_EXPLORATION.7 # Mysterious Idol
 		100 = GOT_EXPLORATION.8 # Wyverns!
-		100 = GOT_ACTIONS.3 # Explorer's Intution
+		100 = GOT_ACCOMPLISHMENTS.3 # Explorer's Intution
 		10000 = 0
 	}
 }

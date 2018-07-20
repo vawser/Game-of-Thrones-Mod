@@ -1,10 +1,10 @@
-namespace = got_aow_events
+namespace = GOT_WARTIME
 
 # The Plight of [Province]
 province_event = {
-	id = got_aow_events.1
-	title = "got_aow_events.1.t"
-	desc = "got_aow_events.1.d"
+	id = GOT_WARTIME.1
+	title = "GOT_WARTIME.1.title"
+	desc = "GOT_WARTIME.1.desc"
 	picture = FAMINE_eventPicture
 	
 	is_mtth_scaled_to_size = 1
@@ -29,13 +29,13 @@ province_event = {
 
 	# Send aid
 	option = {
-		name = "got_aow_events.1.a"
+		name = "GOT_WARTIME.1.option.a"
 		owner = { add_years_of_income = -0.1 }
 	}
 
 	# Refuse aid
 	option = {
-		name = "got_aow_events.1.b"
+		name = "GOT_WARTIME.1.option.b"
 		add_province_modifier = {
 			name = "famine_refused_aid"
 			duration = 3650
@@ -45,9 +45,9 @@ province_event = {
 
 # Cruelty of Mercenaries
 country_event = {
-	id = got_aow_events.12
-	title = "got_aow_events.12.t"
-	desc = "got_aow_events.12.d"
+	id = GOT_WARTIME.2
+	title = "GOT_WARTIME.2.title"
+	desc = "GOT_WARTIME.2.desc"
 	picture = BORDER_TENSION_eventPicture
 
 	trigger = {
@@ -68,7 +68,7 @@ country_event = {
 
 	# Rein them in
 	option = {
-		name = "got_aow_events.12.a"
+		name = "GOT_WARTIME.2.option.a"
 		add_prestige = -5
 		add_country_modifier = {
 			name = "curtailed_mercenaries"
@@ -78,7 +78,7 @@ country_event = {
 
 	# Bellum se ipsum alet
 	option = {
-		name = "got_aow_events.12.b"
+		name = "GOT_WARTIME.2.option.b"
 		add_prestige = -10
 		every_province = {
 			limit = {
@@ -95,9 +95,9 @@ country_event = {
 
 # Mercenary Bands Raid [Province]
 province_event = {
-	id = got_aow_events.13
-	title = "got_aow_events.13.t"
-	desc = "got_aow_events.13.d"
+	id = GOT_WARTIME.3
+	title = "GOT_WARTIME.3.title"
+	desc = "GOT_WARTIME.3.desc"
 	picture = BORDER_TENSION_eventPicture
 
 	trigger = {
@@ -111,7 +111,7 @@ province_event = {
 
 	# Greed corrupts men's hearts...
 	option = {
-		name = "got_aow_events.13.a"
+		name = "GOT_WARTIME.3.option.a"
 		add_province_modifier = {
 			name = "plundered_in_war"
 			duration = 1095
@@ -121,9 +121,9 @@ province_event = {
 
 # Displaced Refugees from [Province]
 province_event = {
-	id = got_aow_events.14
-	title = "got_aow_events.14.t"
-	desc = "got_aow_events.14.d"
+	id = GOT_WARTIME.4
+	title = "GOT_WARTIME.4.title"
+	desc = "GOT_WARTIME.4.desc"
 	picture = FAMINE_eventPicture
 
 	trigger = {
@@ -143,7 +143,7 @@ province_event = {
 
 	# The war may be over, but our troubles are not.
 	option = {
-		name = "got_aow_events.14.a"
+		name = "GOT_WARTIME.4.option.a"
 		add_base_tax = -1
 		random_neighbor_province = {
 			limit = { owned_by = ROOT }
@@ -154,9 +154,9 @@ province_event = {
 
 # The Families Left Behind
 country_event = {
-	id = got_aow_events.15
-	title = "got_aow_events.15.t"
-	desc = "got_aow_events.15.d"
+	id = GOT_WARTIME.5
+	title = "GOT_WARTIME.5.title"
+	desc = "GOT_WARTIME.5.desc"
 	picture = FARMING_eventPicture
 
 	trigger = {
@@ -173,7 +173,7 @@ country_event = {
 
 	# We can ease the tax burden on the bereaved.
 	option = {
-		name = "got_aow_events.15.a"
+		name = "GOT_WARTIME.5.option.a"
 		add_country_modifier = {
 			name = "post_war_tax_relief"
 			duration = 1825
@@ -182,7 +182,7 @@ country_event = {
 
 	# Let us be more lenient drafting for the army in the future.
 	option = {
-		name = "got_aow_events.15.b"
+		name = "GOT_WARTIME.5.option.b"
 		add_country_modifier = {
 			name = "decreased_drafting"
 			duration = 1825
@@ -191,7 +191,7 @@ country_event = {
 
 	# This is the price that must be paid for our glorious nation.
 	option = {
-		name = "got_aow_events.15.c"
+		name = "GOT_WARTIME.5.option.c"
 		add_country_modifier = {
 			name = "suffering_bereaved"
 			duration = 1825
@@ -201,9 +201,9 @@ country_event = {
 
 # Witchcraft
 province_event = {
-	id = got_aow_events.16
-	title = "got_aow_events.16.t"
-	desc = "got_aow_events.16.d"
+	id = GOT_WARTIME.6
+	title = "GOT_WARTIME.6.title"
+	desc = "GOT_WARTIME.6.desc"
 	picture = ANGRY_MOB_eventPicture
 
 	trigger = {
@@ -226,7 +226,7 @@ province_event = {
 
 	# Allow them to proceed with the local trials.
 	option = {
-		name = "got_aow_events.16.a"
+		name = "GOT_WARTIME.6.option.a"
 		add_province_modifier = {
 			name = "local_witch_hunts"
 			duration = 3650
@@ -235,7 +235,7 @@ province_event = {
 
 	# [Inquisitor] can see to these matters in a more organized fashion.
 	option = {
-		name = "got_aow_events.16.b"
+		name = "GOT_WARTIME.6.option.b"
 		trigger = {
 			owner = { advisor = inquisitor }
 		}
@@ -249,7 +249,7 @@ province_event = {
 
 	# Such foolish superstitions have no place in [Country]!
 	option = {
-		name = "got_aow_events.16.c"
+		name = "GOT_WARTIME.6.option.c"
 		owner = {
 			add_country_modifier = {
 				name = "forbade_witch_hunts"
@@ -261,9 +261,9 @@ province_event = {
 
 # Witch-hunt
 province_event = {
-	id = got_aow_events.17
-	title = "got_aow_events.17.t"
-	desc = "got_aow_events.17.d"
+	id = GOT_WARTIME.7
+	title = "GOT_WARTIME.7.title"
+	desc = "GOT_WARTIME.7.desc"
 	picture = ANGRY_MOB_eventPicture
 
 	trigger = {
@@ -279,14 +279,14 @@ province_event = {
 
 	# Cease this madness!
 	option = {
-		name = "got_aow_events.17.a"
+		name = "GOT_WARTIME.7.option.a"
 		owner = { add_adm_power = -80 }
 		remove_province_modifier = local_witch_hunts
 	}
 
 	# Intervene on behalf of the nobles.
 	option = {
-		name = "got_aow_events.17.b"
+		name = "GOT_WARTIME.7.option.b"
 		spawn_rebels = {
 			type = anti_tax_rebels
 			size = 1
@@ -295,7 +295,7 @@ province_event = {
 
 	# Intervene on behalf of the commoners.
 	option = {
-		name = "got_aow_events.17.c"
+		name = "GOT_WARTIME.7.option.c"
 		spawn_rebels = {
 			type = noble_rebels
 			size = 1
@@ -304,7 +304,7 @@ province_event = {
 
 	# Let them exact justice as they see fit.
 	option = {
-		name = "got_aow_events.17.e"
+		name = "GOT_WARTIME.7.option.d"
 		trigger = { is_capital = no }
 		add_local_autonomy = 25
 	}
@@ -312,9 +312,9 @@ province_event = {
 
 # A Witch from Foreign Lands
 province_event = {
-	id = got_aow_events.18
-	title = "got_aow_events.18.t"
-	desc = "got_aow_events.18.d"
+	id = GOT_WARTIME.8
+	title = "GOT_WARTIME.8.title"
+	desc = "GOT_WARTIME.8.desc"
 	picture = ANGRY_MOB_eventPicture
 
 	trigger = {
@@ -330,13 +330,13 @@ province_event = {
 
 	# This fear of the unfamiliar must be stopped.
 	option = {
-		name = "got_aow_events.18.a"
+		name = "GOT_WARTIME.8.option.a"
 		owner = { add_adm_power = -50 }
 	}
 
 	# Witches, spies, who know what they're up to?
 	option = {
-		name = "got_aow_events.18.b"
+		name = "GOT_WARTIME.8.option.b"
 		owner = {
 			random_neighbor_country = {
 				add_opinion = {
@@ -350,9 +350,9 @@ province_event = {
 
 # A Highly Troubling Accusation
 country_event = {
-	id = got_aow_events.19
-	title = "got_aow_events.19.t"
-	desc = "got_aow_events.19.d"
+	id = GOT_WARTIME.9
+	title = "GOT_WARTIME.9.title"
+	desc = "GOT_WARTIME.9.desc"
 	picture = ACCUSATION_eventPicture
 
 	trigger = {
@@ -372,7 +372,7 @@ country_event = {
 
 	# Thou shalt not suffer a witch to live.
 	option = {
-		name = "got_aow_events.19.a"
+		name = "GOT_WARTIME.9.option.a"
 		kill_advisor = statesman
 		kill_advisor = trader
 		kill_advisor = spymaster
@@ -381,7 +381,7 @@ country_event = {
 
 	# Thou shalt not bear false witness against thy neighbor.
 	option = {
-		name = "got_aow_events.19.b"
+		name = "GOT_WARTIME.9.option.b"
 		kill_advisor = inquisitor
 		remove_country_modifier = nationwide_witch_hunts
 	}
@@ -389,9 +389,9 @@ country_event = {
 
 # The Fires of Hell
 country_event = {
-	id = got_aow_events.20
-	title = "got_aow_events.20.t"
-	desc = "got_aow_events.20.d"
+	id = GOT_WARTIME.10
+	title = "GOT_WARTIME.10.title"
+	desc = "GOT_WARTIME.10.desc"
 	picture = RELIGIOUS_TURMOIL_eventPicture
 
 	trigger = {
@@ -407,7 +407,7 @@ country_event = {
 
 	# The child is right. We have been blinded by our zeal.
 	option = {
-		name = "got_aow_events.20.a"
+		name = "GOT_WARTIME.10.option.a"
 		remove_advisor = inquisitor
 		remove_country_modifier = nationwide_witch_hunts
 		add_dip_power = 100
@@ -415,7 +415,7 @@ country_event = {
 
 	# Hush child, and hope no one heard that...
 	option = {
-		name = "got_aow_events.20.b"
+		name = "GOT_WARTIME.10.option.b"
 		add_adm_power = 100
 		add_heir_claim = -10
 	}
@@ -423,9 +423,9 @@ country_event = {
 
 # A Change of Character
 country_event = {
-	id = got_aow_events.22
-	title = "got_aow_events.22.t"
-	desc = "got_aow_events.22.d"
+	id = GOT_WARTIME.11
+	title = "GOT_WARTIME.11.title"
+	desc = "GOT_WARTIME.11.desc"
 	picture = DIPLOMACY_eventPicture
 
 	trigger = {
@@ -446,14 +446,14 @@ country_event = {
 
 	# You are right, [Country] needs peace.
 	option = {
-		name = "got_aow_events.22.a"
+		name = "GOT_WARTIME.11.option.a"
 		change_dip = 1
 		change_mil = -1
 	}
 
 	# Forsake the spirit that called me to war? Ridiculous.
 	option = {
-		name = "got_aow_events.22.b"
+		name = "GOT_WARTIME.11.option.b"
 		remove_advisor = diplomat
 		add_dip_power = -50
 	}
@@ -461,9 +461,9 @@ country_event = {
 
 # The Faithful in Enemy Lands
 country_event = {
-	id = got_aow_events.23
-	title = "got_aow_events.23.t"
-	desc = "got_aow_events.23.d"
+	id = GOT_WARTIME.12
+	title = "GOT_WARTIME.12.title"
+	desc = "GOT_WARTIME.12.desc"
 	picture = SIEGE_eventPicture
 
 	trigger = {
@@ -486,7 +486,7 @@ country_event = {
 
 	# Spare the faithful
 	option = {
-		name = "got_aow_events.23.a"
+		name = "GOT_WARTIME.12.option.a"
 		random_province = {
 			limit = {
 				sieged_by = ROOT
@@ -501,7 +501,7 @@ country_event = {
 
 	# No mercy for enemies of [Country]!
 	option = {
-		name = "got_aow_events.23.b"
+		name = "GOT_WARTIME.12.option.b"
 		random_province = {
 			limit = {
 				sieged_by = ROOT
@@ -514,7 +514,7 @@ country_event = {
 				change_religion = owner
 			}
 			province_event = {
-				id = got_aow_events.24
+				id = GOT_WARTIME.13
 				days = 1
 			}
 		}
@@ -523,16 +523,16 @@ country_event = {
 
 # [Province] Betrayed by Brothers in Faith
 province_event = {
-	id = got_aow_events.24
-	title = "got_aow_events.24.t"
-	desc = "got_aow_events.24.d"
+	id = GOT_WARTIME.13
+	title = "GOT_WARTIME.13.title"
+	desc = "GOT_WARTIME.13.desc"
 	picture = BORDER_TENSION_eventPicture
 
 	is_triggered_only = yes
 
 	# We will show them the [Religion] faith has more integrity than that.
 	option = {
-		name = "got_aow_events.24.a"
+		name = "GOT_WARTIME.13.option.a"
 		change_religion = owner
 	}
 }
@@ -540,9 +540,9 @@ province_event = {
 
 # Unbelievers in [Province] Waver
 province_event = {
-	id = got_aow_events.25
-	title = "got_aow_events.25.t"
-	desc = "got_aow_events.25.d"
+	id = GOT_WARTIME.14
+	title = "GOT_WARTIME.14.title"
+	desc = "GOT_WARTIME.14.desc"
 	picture = RELIGIOUS_TURMOIL_eventPicture
 
 	trigger = {
@@ -573,18 +573,18 @@ province_event = {
 
 	# We will reward loyalty with respect.
 	option = {
-		name = "got_aow_events.25.a"
+		name = "GOT_WARTIME.14.option.a"
 		trigger = { is_capital = no }
 		add_local_autonomy = 30
 	}
 
 	# We will not accept disloyalty.
 	option = {
-		name = "got_aow_events.25.b"
+		name = "GOT_WARTIME.14.option.b"
 		tooltip = { add_core = controller }
 		controller = {
 			country_event = {
-				id = got_aow_events.26
+				id = GOT_WARTIME.15
 				days = 1
 			}
 		}
@@ -593,25 +593,25 @@ province_event = {
 
 # [Religion] Defectors
 country_event = {
-	id = got_aow_events.26
-	title = "got_aow_events.26.t"
-	desc = "got_aow_events.26.d"
+	id = GOT_WARTIME.15
+	title = "GOT_WARTIME.15.title"
+	desc = "GOT_WARTIME.15.desc"
 	picture = RELIGIOUS_CONVERSION_eventPicture
 
 	is_triggered_only = yes
 
 	# We may be able to accommodate them...
 	option = {
-		name = "got_aow_events.26.a"
+		name = "GOT_WARTIME.15.option.a"
 		FROM = { add_core = controller }
 	}
 }
 
 # [Religion] of [Province] Betray Us!
 province_event = {
-	id = got_aow_events.27
-	title = "got_aow_events.27.t"
-	desc = "got_aow_events.27.d"
+	id = GOT_WARTIME.16
+	title = "GOT_WARTIME.16.title"
+	desc = "GOT_WARTIME.16.desc"
 	picture = RELIGIOUS_TURMOIL_eventPicture
 
 	trigger = {
@@ -633,7 +633,7 @@ province_event = {
 
 	# Faith determines the path of all, even the wicked.
 	option = {
-		name = "got_aow_events.27.a"
+		name = "GOT_WARTIME.16.option.a"
 		spawn_rebels = {
 			type = religious_rebels
 			size = 2
@@ -643,9 +643,9 @@ province_event = {
 
 # Struggle Without, Struggle Within
 province_event = {
-	id = got_aow_events.28
-	title = "got_aow_events.28.t"
-	desc = "got_aow_events.28.d"
+	id = GOT_WARTIME.17
+	title = "GOT_WARTIME.17.title"
+	desc = "GOT_WARTIME.17.desc"
 	picture = RELIGIOUS_TURMOIL_eventPicture
 	
 	is_mtth_scaled_to_size = 1
@@ -675,7 +675,7 @@ province_event = {
 
 	# Like the war, this conflict must take its course.
 	option = {
-		name = "got_aow_events.28.a"
+		name = "GOT_WARTIME.17.option.a"
 		owner = { add_manpower = -4 }
 		random_list = {
 			75 = { change_religion = owner }
@@ -695,16 +695,16 @@ province_event = {
 
 	# Unite against the true enemy! You are all [subject nationality here]!
 	option = {
-		name = "got_aow_events.28.b"
+		name = "GOT_WARTIME.17.option.b"
 		owner = { add_dip_power = -50 }
 	}
 }
 
 # Country Before Faith
 province_event = {
-	id = got_aow_events.29
-	title = "got_aow_events.29.t"
-	desc = "got_aow_events.29.d"
+	id = GOT_WARTIME.18
+	title = "GOT_WARTIME.18.title"
+	desc = "GOT_WARTIME.18.desc"
 	picture = SPY_eventPicture
 	
 	is_mtth_scaled_to_size = 1
@@ -726,7 +726,7 @@ province_event = {
 
 	# We will trust them to remain loyal to us.
 	option = {
-		name = "got_aow_events.29.a"
+		name = "GOT_WARTIME.18.option.a"
 		random_list = {
 			75 = {
 				owner = {
@@ -749,16 +749,16 @@ province_event = {
 
 	# There is no need for such underhanded tactics... or risks.
 	option = {
-		name = "got_aow_events.29.b"
+		name = "GOT_WARTIME.18.option.b"
 		owner = { add_prestige = 10 }
 	}
 }
 
 # Warriors of the [Religion] Faith
 province_event = {
-	id = got_aow_events.30
-	title = "got_aow_events.30.t"
-	desc = "got_aow_events.30.d"
+	id = GOT_WARTIME.19
+	title = "GOT_WARTIME.19.title"
+	desc = "GOT_WARTIME.19.desc"
 	picture = ANGRY_MOB_eventPicture
 	
 	is_mtth_scaled_to_size = 1
@@ -782,7 +782,7 @@ province_event = {
 
 	# Forward, sentinels of the truth!
 	option = {
-		name = "got_aow_events.30.a"
+		name = "GOT_WARTIME.19.option.a"
 		infantry = ROOT
 		infantry = ROOT
 		infantry = ROOT

@@ -1,0 +1,259 @@
+namespace = GOT_ELECTIONS
+
+# Election!
+country_event = {
+	id = GOT_ELECTIONS.1
+	title = GOT_ELECTIONS.1.title
+    
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	desc = {
+		trigger = { NOT = { has_ruler_flag = leader_has_been_pushed_out } }
+		desc = GOT_ELECTIONS.1.desc.1
+	}
+	
+	desc = {
+		trigger = { has_ruler_flag = leader_has_been_pushed_out }
+		desc = GOT_ELECTIONS.1.desc.2
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { is_dutch_government = yes }
+	}
+
+	option = {
+		name = GOT_ELECTIONS.1.option.a
+		trigger = {
+			has_regency = no
+			NOT = { has_ruler_flag = leader_has_been_pushed_out }
+		}
+		ai_chance = { 
+			factor = 60
+			modifier = {
+				factor = 0
+				NOT = { republican_tradition = 25 }
+			}	
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 50 }
+			}				
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 75 }
+			}	
+			modifier = {
+				factor = 2.0
+				republican_tradition = 90
+			}		
+		}
+		custom_tooltip = remains_ruler_tt
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
+		if = {
+			limit = {
+				government = republic
+				NOT = { republican_tradition = 20 }
+			}
+			change_government = kingdom
+		}	
+		add_scaled_republican_tradition = -10
+		random_list = {
+			10 = {
+				add_adm_power = 50
+			}
+			10 = {
+				add_dip_power = 50
+			}
+			10 = {
+				add_mil_power = 50
+			}
+		}
+		add_karma = -5
+	}
+	option = {
+		name = GOT_ELECTIONS.1.option.b
+		ai_chance = { factor = 20 }
+		define_ruler = {
+			mil = 1
+			adm = 4
+			dip = 1					
+			fixed = yes
+		}
+		add_karma = 10
+	}
+	option = {
+		name = GOT_ELECTIONS.1.option.c
+		ai_chance = { factor = 20 }
+		define_ruler = {
+			dip = 4
+			adm = 1
+			mil = 1					
+			fixed = yes
+		}
+		add_karma = 10		
+	}
+	option = {
+		name = GOT_ELECTIONS.1.option.d
+		ai_chance = { factor = 20 }
+		define_ruler = {
+			mil = 4
+			adm = 1
+			dip = 1					
+			fixed = yes
+		}
+		add_karma = 10
+	}
+}
+
+# Election!
+country_event = {
+	id = GOT_ELECTIONS.2
+	title = GOT_ELECTIONS.2.title
+	desc = GOT_ELECTIONS.2.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { is_dutch_government = yes }
+	}
+	
+	option = {
+		name = GOT_ELECTIONS.2.option.a
+		ai_chance = { factor = 40 }
+		define_ruler = {
+			mil = 1
+			adm = 4
+			dip = 1					
+			fixed = yes
+		}
+	}
+	option = {
+		name = GOT_ELECTIONS.2.option.b
+		ai_chance = { factor = 30 }
+		define_ruler = {
+			dip = 4
+			adm = 1
+			mil = 1					
+			fixed = yes
+		}	
+	}
+	option = {
+		name = GOT_ELECTIONS.2.option.c
+		ai_chance = { factor = 30 }
+		define_ruler = {
+			mil = 4
+			adm = 1
+			dip = 1					
+			fixed = yes
+		}		
+	}
+}
+
+# Election!
+country_event = {
+	id = GOT_ELECTIONS.3
+	title = GOT_ELECTIONS.3.title
+	desc = GOT_ELECTIONS.3.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ELECTIONS.3.option.a
+		ai_chance = { factor = 20 }
+		FROM = {
+			define_ruler = {
+				adm = 4
+				mil = 2
+				dip = 2
+				fixed = yes
+			}
+			set_ruler_flag = appointed_by_overlord
+		}
+	}
+	option = {
+		name = GOT_ELECTIONS.3.option.b
+		ai_chance = { factor = 20 }
+		FROM = {
+			define_ruler = {
+				adm = 2
+				dip = 4
+				mil = 2
+				fixed = yes
+			}
+			set_ruler_flag = appointed_by_overlord
+		}
+	}
+	option = {
+		name = GOT_ELECTIONS.3.option.c
+		ai_chance = { factor = 20 }
+		FROM = {
+			define_ruler = {
+				adm = 2
+				dip = 2
+				mil = 4
+				fixed = yes
+			}	
+			set_ruler_flag = appointed_by_overlord
+		}
+	}
+}
+
+# Dutch Republic
+country_event = {
+	id = GOT_ELECTIONS.4
+	title = GOT_ELECTIONS.4.title
+	desc = GOT_ELECTIONS.4.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = volantene_republic
+	}
+	
+	option = {
+		name = GOT_ELECTIONS.4.option.a
+		define_ruler = {
+		}
+		change_statists_vs_orangists = 0.33
+	
+	}
+	option = {
+		name = GOT_ELECTIONS.4.option.b
+		define_ruler = {
+		}
+		change_statists_vs_orangists = -0.33
+	}
+}
+
+country_event = {
+	id = GOT_ELECTIONS.5
+	title = GOT_ELECTIONS.5.title
+	desc = GOT_ELECTIONS.5.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = volantene_republic
+	}
+	
+	option = {
+		name = GOT_ELECTIONS.5.option.a
+		define_ruler = {
+		}
+		change_statists_vs_orangists = 0.33
+	
+	}
+	option = {
+		name = GOT_ELECTIONS.5.option.a
+		define_ruler = {
+		}
+		change_statists_vs_orangists = -0.33
+	}
+}

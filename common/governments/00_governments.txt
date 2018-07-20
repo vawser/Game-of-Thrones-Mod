@@ -196,6 +196,53 @@ free_city = {
 	}
 }
 
+volanteane_republic = {
+	republic = yes
+
+	color = { 220 120 20 }
+	
+	unique_government = yes
+
+	duration = 3 # 1 year for each triach
+	
+	valid_for_new_country = no
+	allow_convert = no
+	
+	republican_name = no
+	royal_marriage = yes
+	
+	dutch_mechanics = yes
+	
+	max_states = 2
+	
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+	nation_designer_trigger = {
+		has_dlc = "Res Publica"
+	}			
+
+	rank = {
+		1 = {
+			heavy_ship_power = 0.10
+			trade_efficiency = 0.10
+			global_autonomy = -0.025
+			max_absolutism = -5
+		}
+		2 = {
+			heavy_ship_power = 0.10
+			trade_efficiency = 0.10
+			global_autonomy = -0.05	
+			max_absolutism = -5
+		}
+		3 = {	
+			heavy_ship_power = 0.10
+			trade_efficiency = 0.10
+			global_autonomy = -0.075
+			max_absolutism = -5
+		}
+	}
+}
+
 #-----------------------------------------
 # Unique
 #-----------------------------------------

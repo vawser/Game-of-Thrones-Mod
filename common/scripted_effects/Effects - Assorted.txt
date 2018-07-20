@@ -1,3 +1,15 @@
+add_or_extend_province_modifier_effect = {
+	if = {
+		limit = {
+			has_province_modifier = $MODIFIER$
+		}
+		extend_province_modifier = { name = $MODIFIER$ duration = $DURATION$ }
+	}
+	else = {
+		add_province_modifier = { name = $MODIFIER$ duration = $DURATION$ }
+	}
+}
+
 add_stability_or_adm_power = {
 	if = {
 		limit = {
@@ -26,5 +38,154 @@ succession_culture_religion_effect = {
 		}
 		set_country_flag = had_culture_religion_reaction_event_flag #Note: Cleared in the event below, all future effects from ruler culture/religion are gated behind this flag being cleared.
 		country_event = { id = culture_religion_events.2 days = 75 random = 7 }
+	}
+}
+
+
+#Used in army professionalism event:
+#used where FROM is a province and ROOT is a country, ie onaction for provinces fallen
+add_loot_from_province_effect = { 
+	if = {
+		limit = {
+			FROM = {
+				NOT = { development = 18 }
+			}
+		}
+		add_treasury = 115
+		add_mil_power = 15
+	}
+	if = {
+		limit = {
+			FROM = {
+				development = 18
+				NOT = { development = 21 }
+			}
+		}
+		add_treasury = 135
+		add_mil_power = 15
+	}
+	if = {
+		limit = {
+			FROM = {
+				development = 21
+				NOT = { development = 24 }
+			}
+		}
+		add_treasury = 155
+		add_mil_power = 25
+	}
+	if = {
+		limit = {
+			FROM = {
+				development = 24
+				NOT = { development = 27 }
+			}
+		}
+		add_treasury = 180
+		add_mil_power = 30
+	}
+	if = {
+		limit = {
+			FROM = {
+				development = 27
+				NOT = { development = 30 }
+			}
+		}
+		add_treasury = 210
+		add_mil_power = 40
+	}
+	if = {
+		limit = {
+			FROM = {
+				development = 30
+				NOT = { development = 33 }
+			}
+		}
+		add_treasury = 230
+		add_mil_power = 50
+	}
+	if = {
+		limit = {
+			FROM = {
+				development = 33
+			}
+		}
+		add_treasury = 250
+		add_mil_power = 55
+	}
+}
+
+#Generalized version of the same effect, for use in province scope.
+#used where ROOT is a province, ie onaction for provinces fallen
+#$LOOTER$ is the scope of the tag performing the Looting (so for instance owner)
+add_loot_from_rich_province_general_effect = { 
+	add_devastation = 80
+	if = {
+		limit = {
+			NOT = { development = 18 }
+		}
+		$LOOTER$ = {
+			add_treasury = 400
+			add_mil_power = 15
+		}
+	}
+	if = {
+		limit = {
+			development = 18
+			NOT = { development = 21 }
+		}
+		$LOOTER$ = {
+			add_treasury = 435
+			add_mil_power = 15
+		}
+	}
+	if = {
+		limit = {
+			development = 21
+			NOT = { development = 24 }
+		}
+		$LOOTER$ = {
+			add_treasury = 455
+			add_mil_power = 25
+		}
+	}
+	if = {
+		limit = {
+			development = 24
+			NOT = { development = 27 }
+		}
+		$LOOTER$ = {
+			add_treasury = 480
+			add_mil_power = 30
+		}
+	}
+	if = {
+		limit = {
+			development = 27
+			NOT = { development = 30 }
+		}
+		$LOOTER$ = {
+			add_treasury = 510
+			add_mil_power = 40
+		}
+	}
+	if = {
+		limit = {
+			development = 30
+			NOT = { development = 33 }
+		}
+		$LOOTER$ = {
+			add_treasury = 530
+			add_mil_power = 50
+		}
+	}
+	if = {
+		limit = {
+			development = 33
+		}
+		$LOOTER$ = {
+			add_treasury = 550
+			add_mil_power = 55
+		}
 	}
 }

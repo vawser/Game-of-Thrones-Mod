@@ -1,3 +1,6 @@
+#-----------------------------------------
+# The Seven Kingdoms
+#-----------------------------------------
 the_seven_kingdoms = {
 	start = 106
 	
@@ -8,7 +11,16 @@ the_seven_kingdoms = {
 	religious_conflicts = yes
 	
     absolutism = {
-
+        harsh_treatment = 1
+		stability = 1
+		decrease_autonomy_command = 1
+		strengthen_government = 2
+		
+		increase_autonomy_command = -2
+		debase_currency = -1
+		execute_rebel_acceptance_command = -10
+		seat_in_parliament = -3
+		war_exhaustion = -1
 	}
     
 	objectives = {
@@ -159,6 +171,9 @@ the_seven_kingdoms = {
 	}
 }
 
+#-----------------------------------------
+# The Long Winter
+#-----------------------------------------
 the_long_winter = {
 	can_start = {
         exists = WIT
@@ -167,7 +182,16 @@ the_long_winter = {
 	religious_conflicts = yes
 	
     absolutism = {
-
+        harsh_treatment = 1
+		stability = 1
+		decrease_autonomy_command = 1
+		strengthen_government = 2
+		
+		increase_autonomy_command = -2
+		debase_currency = -1
+		execute_rebel_acceptance_command = -10
+		seat_in_parliament = -3
+		war_exhaustion = -1
 	}
     
 	objectives = {
@@ -318,6 +342,9 @@ the_long_winter = {
 	}
 }
 
+#-----------------------------------------
+# The Seven Kingdoms (again)
+#-----------------------------------------
 the_seven_kingdoms_2 = {
 	can_start = {
 		NOT = { exists = WIT }
@@ -326,7 +353,16 @@ the_seven_kingdoms_2 = {
 	religious_conflicts = yes
 	
     absolutism = {
-
+        harsh_treatment = 1
+		stability = 1
+		decrease_autonomy_command = 1
+		strengthen_government = 2
+		
+		increase_autonomy_command = -2
+		debase_currency = -1
+		execute_rebel_acceptance_command = -10
+		seat_in_parliament = -3
+		war_exhaustion = -1
 	}
     
 	objectives = {

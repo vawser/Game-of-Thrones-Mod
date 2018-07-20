@@ -169,6 +169,8 @@ on_abandon_colony = {
 on_new_monarch = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_new_monarch" }
     
+    succession_culture_religion_effect = yes
+    
     if = {
 		limit = {
 			has_consort_regency = no
@@ -642,6 +644,8 @@ on_bi_yearly_pulse = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_bi_yearly_pulse" }
     
 	random_events = {
+        100 = GOT_CULTURAL_UPRISING.1
+        
 		100 = GOT_ACCOMPLISHMENTS.6 # Grand Army
 		100 = GOT_ACCOMPLISHMENTS.7 # Colonial Vigor
 		100 = GOT_ACCOMPLISHMENTS.8 # Treasures of Exploration
@@ -660,6 +664,29 @@ on_bi_yearly_pulse = {
 		100 = GOT_CORRUPTION.18
 		100 = GOT_CORRUPTION.19
 		100 = GOT_CORRUPTION.20
+        
+        125 = culture_religion_events.1
+		125 = culture_religion_events.3
+		125 = culture_religion_events.4
+		125 = culture_religion_events.5
+		125 = culture_religion_events.6
+		125 = culture_religion_events.7
+		125 = culture_religion_events.8
+		125 = culture_religion_events.9
+		125 = culture_religion_events.10
+		125 = culture_religion_events.11
+		125 = culture_religion_events.12
+		125 = culture_religion_events.13
+		125 = culture_religion_events.14
+		125 = culture_religion_events.15
+		125 = culture_religion_events.16
+		100 = culture_religion_events.17
+		125 = culture_religion_events.18
+		125 = culture_religion_events.19
+		125 = culture_religion_events.20
+		175 = culture_religion_events.21
+		125 = culture_religion_events.22
+		125 = culture_religion_events.23
         
 		1000 = 0
 	}

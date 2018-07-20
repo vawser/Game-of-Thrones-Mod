@@ -13,4 +13,18 @@ add_stability_or_adm_power = {
 	}
 }
 
-
+succession_culture_religion_effect = {
+	if = {
+        limit = {
+			has_regency = no
+			NOT = { has_ruler_flag = had_culture_religion_reaction_event_flag }
+			NOT = { has_government_mechanic = mamluk_mechanic }
+			OR = {
+				NOT = { ruler_culture = ROOT }
+				NOT = { ruler_religion = ROOT }
+			}
+		}
+		set_country_flag = had_culture_religion_reaction_event_flag #Note: Cleared in the event below, all future effects from ruler culture/religion are gated behind this flag being cleared.
+		country_event = { id = culture_religion_events.2 days = 75 random = 7 }
+	}
+}

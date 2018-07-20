@@ -127,12 +127,9 @@ on_company_disolved ={
 # country
 # root = winning country, from = location
 on_siege_won_country = {
-    events = {
-        GOT_DOTHRAKI.6 # Sack of X (capital)
-    }
     random_events = {
-        100 = GOT_DOTHRAKI.7 # Sack of X
-        1000 = 0
+        10 = army_professionalism_events.1 #City Sacked
+        100 = 0
     }
     
 	random_events = {

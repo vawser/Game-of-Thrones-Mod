@@ -1,1 +1,16 @@
+add_stability_or_adm_power = {
+	if = {
+		limit = {
+			stability = 3
+		}
+		add_adm_power = 50
+	}
+	if = {
+		limit = {
+			NOT = { stability = 3 }
+		}
+		add_stability = 1
+	}
+}
+
 

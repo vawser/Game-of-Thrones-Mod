@@ -1,0 +1,17 @@
+defined_text = {
+	name = GetRoyalOrState
+
+	text = {
+		localisation_key = string_royal
+		trigger = {
+			NOT = { government = republic }
+		}
+	}
+	text = {
+		localisation_key = string_state
+		trigger = {
+			government = republic
+		}
+	}
+}
+

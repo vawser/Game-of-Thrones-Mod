@@ -1,0 +1,1823 @@
+namespace = GOT_DYNASTIC
+
+# Carnal sins
+country_event = {
+	id = GOT_DYNASTIC.1
+	title = GOT_DYNASTIC.1.title
+	desc = GOT_DYNASTIC.1.desc
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		papacy_active = yes
+		has_heir = no
+		has_regency = no
+		is_female = no
+		is_lesser_in_union = no
+		government = monarchy
+        religion = asoiaf_faith_of_the_seven
+		dip = 2
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+		
+		modifier = {
+			factor = 0.5
+			dip = 4
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.1.option.a
+		define_heir = {
+			dynasty = ROOT
+			claim = 30
+		}
+		add_papal_influence = -5
+		add_reform_desire = 0.01
+	}
+	option = {
+		name = GOT_DYNASTIC.1.option.b
+		add_papal_influence = 2
+	}
+}
+
+# A beloved heir dies
+country_event = {
+	id = GOT_DYNASTIC.2
+	title = GOT_DYNASTIC.2.title
+	desc = GOT_DYNASTIC.2.desc
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		has_heir = yes
+		heir_claim = 90
+		is_female = no
+		is_lesser_in_union = no
+		has_regency = no
+		government = monarchy
+		any_owned_province = {
+			num_free_building_slots = 1
+			NOT = { has_building = temple }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3600
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.2.option.a
+		kill_heir = yes
+		random_owned_province = {
+			limit = {
+				NOT = { has_building = temple }
+				num_free_building_slots = 1
+			}
+			add_building = temple
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.2.option.b
+		kill_heir = yes
+		define_heir = {
+			dynasty = ROOT
+			claim = 30
+		}
+	}
+}
+
+# Palace Coup
+country_event = {
+	id = GOT_DYNASTIC.3
+	title = GOT_DYNASTIC.3.title
+	desc = GOT_DYNASTIC.3.desc
+	picture = ASSASSINATION_eventPicture
+	
+	trigger = {
+		has_heir = yes
+		heir_age = 15
+		heir_claim = 90
+		is_lesser_in_union = no
+		NOT = {
+			stability = -2
+		}
+		has_regency = no
+		government = monarchy
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+		modifier = {
+			factor = 0.5
+			is_at_war = yes
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.3.option.a
+		kill_ruler = yes
+		add_country_modifier = {
+			name = "illegitimate_ruler"
+			duration = 1825
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.3.option.b
+		kill_heir = yes
+	}
+}
+
+# The Weeping Song
+country_event = {
+	id = GOT_DYNASTIC.4
+	title = GOT_DYNASTIC.4.title
+	desc = GOT_DYNASTIC.4.desc
+	picture = COURT_eventPicture
+	
+	trigger = {
+		has_heir = yes
+		has_wartaxes = yes
+		is_lesser_in_union = no
+		treasury = 40
+		war_exhaustion = 4
+		OR = {
+			has_regency = no
+			AND = {
+				has_consort_regency = yes
+				has_female_consort = no
+			}
+		}
+		government = monarchy
+		heir_age = 4
+	}
+	
+	mean_time_to_happen = {
+		months = 25
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.4.option.a
+		add_treasury = -40
+		add_war_exhaustion = -2
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.4.option.b
+		add_manpower = 1
+	}
+}
+
+# Springtime
+country_event = {
+	id = GOT_DYNASTIC.5
+	title = GOT_DYNASTIC.5.title
+	desc = GOT_DYNASTIC.5.desc
+	picture = COURT_eventPicture
+	
+	trigger = {
+		government = monarchy
+		is_month = 3
+		NOT = { is_month = 6 }
+		has_heir = no
+		is_female = no
+		is_lesser_in_union = no
+		has_regency = no
+		OR = {
+			NOT = { has_dlc = "Rights of Man" }
+			has_consort = no
+		}
+		any_known_country = {
+			religion = ROOT
+			government = monarchy
+			is_lesser_in_union = no
+			alliance_with = ROOT
+			ai = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					religion = ROOT
+					government = monarchy
+					is_lesser_in_union = no
+					alliance_with = ROOT
+					NOT = { marriage_with = ROOT }
+					ai = yes
+				}
+				save_event_target_as = bargaining_chip_country
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.5.option.a
+		define_heir = {
+			dynasty = ROOT
+			claim = 30
+		}
+	}
+	option = {
+		name = GOT_DYNASTIC.5.option.b
+		trigger = {
+			any_known_country = {
+				religion = ROOT
+				government = monarchy
+				is_lesser_in_union = no
+				alliance_with = ROOT
+				NOT = { marriage_with = ROOT }
+				ai = yes
+			}
+		}
+		event_target:bargaining_chip_country = {
+			create_marriage = ROOT
+		}
+		if = {
+			limit = {
+				has_dlc = "Rights of Man"
+			}
+			define_consort = {
+				country_of_origin = event_target:bargaining_chip_country
+				culture = event_target:bargaining_chip_country
+				religion = event_target:bargaining_chip_country
+			}
+		}
+	}
+}
+
+# Soirée
+country_event = {
+	id = GOT_DYNASTIC.6
+	title = GOT_DYNASTIC.6.title
+	desc = GOT_DYNASTIC.6.desc
+	picture = COURT_eventPicture
+	
+	trigger = {
+		has_heir = no
+		is_lesser_in_union = no
+		government = monarchy
+		has_regency = no
+	}
+	
+	mean_time_to_happen = {
+		months = 800
+	}
+	
+	immediate = {
+		check_if_non_state_advisor_effect = {
+			chance_of_primary = 85 #Not percentages!
+			chance_of_tertiary = 5
+			chance_of_secondary = 15
+		}
+		hidden_effect = {
+			random_list = {
+				33 = { set_country_flag = treasurer_flag }
+				33 = { set_country_flag = philosopher_flag }
+				33 = { set_country_flag = diplomat_flag }
+			}
+		}
+		
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.6.option.a
+		trigger = {
+			is_female = no
+		}
+		define_heir = {
+			dynasty = ROOT
+			claim = 30
+		}
+		add_prestige = -10
+	}
+	option = {
+		name = GOT_DYNASTIC.6.option.b
+		trigger = {
+			is_female = yes
+		}
+		define_heir = {
+			dynasty = ROOT
+			claim = 30
+		}
+		add_prestige = -10
+	}
+	option = {
+		name = GOT_DYNASTIC.6.option.c
+		trigger_switch = {
+			on_trigger = has_country_flag
+			treasurer_flag = {
+				generate_advisor_of_type_and_semi_random_religion_effect = {
+					advisor_type=treasurer
+					advisor_type_if_not_state=trader
+					skill=1
+					scaled_skill = no
+					discount=yes
+				}
+			}
+			philosopher_flag = {
+				generate_advisor_of_type_and_semi_random_religion_effect = {
+					advisor_type=philosopher
+					advisor_type_if_not_state=artist
+					scaled_skill = no
+					skill=1
+					discount=yes
+				}
+			}
+			diplomat_flag = {
+				generate_advisor_of_type_and_semi_random_religion_effect = {
+					advisor_type=diplomat
+					advisor_type_if_not_state=spymaster
+					skill=1
+					scaled_skill = no
+					discount=yes
+				}
+			}
+		}
+		add_prestige = -5
+	}
+	after = {
+		erase_advisor_flags_effect = yes
+		trigger_switch = {
+			on_trigger = has_country_flag
+			treasurer_flag = { clr_country_flag = treasurer_flag }
+			philosopher_flag = { clr_country_flag = philosopher_flag }
+			diplomat_flag = { clr_country_flag = diplomat_flag }
+		}
+	}
+}
+
+# Heir Falls ill
+country_event = {
+	id = GOT_DYNASTIC.7
+	title = GOT_DYNASTIC.7.title
+	desc = GOT_DYNASTIC.7.desc
+	picture = PLAGUE_eventPicture
+	
+	trigger = {
+		has_heir = yes
+		government = monarchy
+		has_regency = no
+		is_lesser_in_union = no
+	}
+	
+	mean_time_to_happen = {
+		months = 2400
+	}
+	option = {
+		name = GOT_DYNASTIC.7.option.a
+		add_years_of_income = -0.2
+		random_list = {
+			50 = { kill_heir = yes }
+			50 = {
+				add_legitimacy = 5
+				add_horde_unity = 5
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.7.option.b
+		random_list = {
+			75 = { kill_heir = yes}
+			25 = {
+				add_legitimacy = 30
+				add_horde_unity = 30
+			}
+		}
+	}
+}
+
+# Child in the Reeds
+country_event = {
+	id = GOT_DYNASTIC.8
+	title = GOT_DYNASTIC.8.title
+	desc = GOT_DYNASTIC.8.desc
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		has_heir = no
+		is_lesser_in_union = no
+		government = monarchy
+		has_regency = no
+	}
+	
+	mean_time_to_happen = {
+		months = 1500
+		modifier = {
+			factor = 0.7
+			is_defender_of_faith = yes
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.8.option.a
+        
+		define_heir = {
+			claim = 20
+			dynasty = ROOT
+			adm = 3
+			dip = 3
+			mil = 3
+			male = yes
+			no_consort_with_heir = yes
+		}
+		add_prestige = -5
+		add_country_modifier = {
+			name = adopted_heir
+			duration = 1825
+		}
+	}
+	option = {
+		name = GOT_DYNASTIC.8.option.b
+		add_treasury = 5
+	}
+}
+
+# Tournament
+country_event = {
+	id = GOT_DYNASTIC.9
+	title = GOT_DYNASTIC.9.title
+	desc = GOT_DYNASTIC.9.desc
+	picture = TOURNAMENT_eventPicture
+	
+	trigger = {
+		has_heir = yes
+		heir_age = 15
+		is_lesser_in_union = no
+		army_tradition =  20
+	}
+	
+	mean_time_to_happen = {
+		months = 2400
+		modifier = {
+			factor = 0.9
+			army_tradition = 40
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.9.option.a
+		random_list = {
+			50 = { add_years_of_income = 0.05 }
+			45 = { add_legitimacy = 20}
+			5 = { kill_heir = yes}
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.9.option.b
+		add_adm_power = 20
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.9.option.c
+		add_prestige = 5
+	}
+}
+
+
+# Hunting accident
+country_event = {
+	id = GOT_DYNASTIC.10
+	title = GOT_DYNASTIC.10.title
+	desc = GOT_DYNASTIC.10.desc
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		has_heir = yes
+		heir_age = 15
+		is_lesser_in_union = no
+	}
+	mean_time_to_happen = {
+		months = 2700
+        
+        # Heh
+        modifier = {
+            factor = 0.9
+            heir_adm = 5
+        }
+        modifier = {
+            factor = 0.9
+            heir_dip = 5
+        }
+        modifier = {
+            factor = 0.9
+            heir_mil = 5
+        }
+	}
+	option = {
+		name = GOT_DYNASTIC.10.option.a
+		kill_heir = yes
+		add_stability = -1
+	}
+	option = {
+		name = GOT_DYNASTIC.10.option.b
+		kill_heir = yes
+		add_prestige = -10
+	}
+}
+
+# The Family
+country_event = {
+	id = GOT_DYNASTIC.11
+	title = GOT_DYNASTIC.11.title
+	desc = GOT_DYNASTIC.11.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		stability = 3
+		treasury = 100
+		government = monarchy
+		has_regency = no
+		any_known_country = {
+			dynasty = ROOT
+			government = monarchy
+			NOT = { stability = -2 }
+			NOT = { senior_union_with = ROOT }
+			NOT = { junior_union_with = ROOT }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.11.option.a
+		random_country = {
+			limit = {
+				dynasty = ROOT
+				government = monarchy
+				NOT = { stability = -2 }
+				NOT = { senior_union_with = ROOT }
+				NOT = { junior_union_with = ROOT }
+			}
+			country_event = { id = GOT_DYNASTIC.12 }
+			add_opinion = { who = ROOT modifier = opinion_dynastic_helper }
+		}
+		add_treasury = -100
+		add_prestige = 10
+	}
+	option = {
+		name = GOT_DYNASTIC.11.option.b
+		random_country = {
+			limit = { 
+				dynasty = ROOT
+				government = monarchy
+				NOT = { stability = -2 }
+				NOT = { senior_union_with = ROOT }
+				NOT = { junior_union_with = ROOT }
+			}
+			country_event  = { id = GOT_DYNASTIC.13 }
+			add_opinion = { who = ROOT modifier = opinion_ignore_dynasty }
+		}
+	}
+}
+
+# The Family Opt 1
+country_event = {
+	id = GOT_DYNASTIC.12
+	title = GOT_DYNASTIC.12.title
+	desc = GOT_DYNASTIC.12.desc
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_DYNASTIC.12.option.a
+		add_treasury = 100
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_stability_or_adm_power = yes
+		}
+		if = {
+			limit = {
+				NOT = { stability = 3 }
+			}
+			random_list = {
+				10 = {
+					add_stability = 1
+				}
+				10 = {
+					add_stability = 2
+				}
+				
+				10 = { 
+					add_stability = 3
+				}
+			}
+		}
+	}
+}
+
+# The Family Opt 2
+country_event = {
+	id = GOT_DYNASTIC.13
+	title = GOT_DYNASTIC.13.title
+	desc = GOT_DYNASTIC.13.desc
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_DYNASTIC.13.option.a
+        
+		random_list = {
+			10 = {
+				add_stability_or_adm_power = yes
+			}
+			10 = {
+				kill_ruler = yes
+			}
+			10 = {
+				add_stability = -2
+			}
+		}
+	}
+}
+
+# Regent usurps throne
+country_event = {
+	id = GOT_DYNASTIC.14
+	title = GOT_DYNASTIC.14.title
+	desc = GOT_DYNASTIC.14.desc
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		NOT = { stability = -1 }
+		is_lesser_in_union = no
+		government = monarchy
+		NOT = { legitimacy_or_horde_unity = 50 }
+		has_regency = yes
+		has_consort_regency = no
+		has_heir = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 700
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.14.option.a
+        
+		kill_heir = yes
+		define_ruler = {
+		}
+		add_stability = -1
+	}
+	option = {
+		name = GOT_DYNASTIC.14.option.b
+		add_stability = -2
+		add_heir_claim = 30
+	}
+}
+
+# Born under a star
+country_event = {
+	id = GOT_DYNASTIC.15
+	title = GOT_DYNASTIC.15.title
+	desc = GOT_DYNASTIC.15.desc
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		government = monarchy
+		is_lesser_in_union = no
+		has_heir = no
+		has_regency = no
+		OR = {
+			NOT = { has_dlc = "Rights of Man" }
+			has_consort = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 5000
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.15.option.a
+
+		define_heir = {
+			male = yes
+			dynasty = ROOT
+			name = "Daemon"
+			claim = 100
+			adm = 6
+		}
+	}
+	option = {
+		name = "GOT_DYNASTIC.15.option.b"
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			name = "Rhaegar"
+			claim = 100
+			dip = 6
+		}
+	}
+	option = {
+		name = GOT_DYNASTIC.15.option.c
+
+		define_heir = {
+			male = yes
+			dynasty = ROOT
+			name = "Aegon"
+			claim = 100
+			mil = 6
+		}
+	}
+}
+
+# Heir is of our Dynasty
+country_event = {
+	id = GOT_DYNASTIC.16
+	title = GOT_DYNASTIC.16.title
+	desc = GOT_DYNASTIC.16.desc
+	picture = DIPLOMACY_eventPicture
+	
+	trigger = {
+		government = monarchy
+		has_regency = no
+		is_lesser_in_union = no
+		num_of_royal_marriages = 4
+		any_country = {
+			government = monarchy
+			marriage_with = ROOT
+			NOT = { dynasty = ROOT }
+			has_heir = no
+			is_lesser_in_union = no
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = {
+					government = monarchy
+					marriage_with = ROOT
+					NOT = { dynasty = ROOT }
+					has_heir = no
+					is_lesser_in_union = no
+				}
+				save_event_target_as = marriage_policy_paid_off_here
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1500
+        
+		modifier = {
+			factor = 0.9
+			num_of_royal_marriages = 6
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.16.option.a
+
+		event_target:marriage_policy_paid_off_here = {
+			define_heir = { #Generated immediately, rather than in the followup event, so that the actual heir matches the tooltip for ROOT.
+				dynasty = ROOT
+				age = 14
+			}
+			hidden_effect = {
+				country_event = { id = GOT_DYNASTIC.17 }
+				set_heir_culture = FROM
+				set_heir_religion = FROM
+			}
+		}
+	}
+}
+
+# Marriage Policies paid off
+country_event = {
+	id = GOT_DYNASTIC.17
+	title = GOT_DYNASTIC.17.title
+	desc = GOT_DYNASTIC.17.desc
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_DYNASTIC.17.option.a
+        
+		custom_tooltip = GOT_DYNASTIC.17.tt
+	}
+}
+
+
+# Fear and Loathing 1/3
+province_event = {
+	id = GOT_DYNASTIC.18
+	title = GOT_DYNASTIC.18.title
+	desc = GOT_DYNASTIC.18.desc
+	picture = ASSASSINATION_eventPicture
+	
+	trigger = {
+		is_capital = yes
+		owner = {
+			has_regency = no
+			has_heir = yes
+			is_lesser_in_union = no
+			NOT = { heir_age = 3 }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 4000
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.18.option.a
+		owner = {
+			kill_heir = yes
+			set_country_flag = murdering_bastard
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.18.option.b
+		owner = {
+			add_stability = 1
+			set_country_flag = contained_insanity
+		}
+	}
+}
+
+# Fear and Loathing 2/3
+country_event = {
+	id = GOT_DYNASTIC.19
+	title = GOT_DYNASTIC.19.title
+	desc = GOT_DYNASTIC.19.desc
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		has_country_flag = murdering_bastard
+		NOT = { has_country_flag = contained_insanity }
+		has_regency = no
+		is_lesser_in_union = no
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.19.option.a
+		kill_ruler = yes
+		clr_country_flag = murdering_bastard
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.19.option.b
+		add_prestige = -5
+		add_treasury = -100
+		set_country_flag = contained_insanity
+	}
+}
+
+# Fear and Loathing 3/3
+country_event = {
+	id = GOT_DYNASTIC.20
+	title = GOT_DYNASTIC.20.title
+	desc = GOT_DYNASTIC.20.desc
+	picture = DEATH_OF_HEIR_eventPicture
+
+	trigger = {
+		has_country_flag = contained_insanity
+		has_regency = no
+		is_lesser_in_union = no
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.20.option.a
+		add_stability = -3
+		add_prestige = -20
+		clr_country_flag = contained_insanity
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.20.option.b
+		kill_ruler = yes
+		add_country_modifier = {
+			name = "relief_from"
+			duration = 3650
+		}
+		clr_country_flag = contained_insanity
+	}
+}
+
+# Fear and Loathing removal on ruler death, ontriggered
+country_event = {
+	id = GOT_DYNASTIC.21
+	title = GOT_DYNASTIC.21.title
+	desc = GOT_DYNASTIC.21.desc
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_flag = contained_insanity
+			has_country_flag = murdering_bastard
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_DYNASTIC.21.option.a
+		add_country_modifier = {
+			name = "relief_from"
+			duration = 3650
+		}
+		clr_country_flag = contained_insanity
+		clr_country_flag = murdering_bastard
+	}
+}
+
+# Wedding bells
+country_event = {
+	id = GOT_DYNASTIC.22
+	title = GOT_DYNASTIC.22.title
+	desc = GOT_DYNASTIC.22.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		prestige = 30
+		government = monarchy
+		is_lesser_in_union = no
+		is_at_war = no
+		has_regency = no
+		has_heir = no
+		is_female = no
+		OR = {
+			NOT = { num_of_royal_marriages = 2 }
+			AND = {
+				has_dlc = "Rights of Man"
+				has_consort = no
+			}
+		}
+		any_known_country = {
+			religion = ROOT
+			government = monarchy
+			is_lesser_in_union = no
+			alliance_with = ROOT
+			ai = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.22.option.a
+		random_country = {
+			limit = {
+				religion = ROOT
+				government = monarchy
+				is_lesser_in_union = no
+				alliance_with = ROOT
+				ai = yes
+			}
+			create_marriage = ROOT
+		}
+		
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.22.option.b
+		add_prestige = 5
+		add_country_modifier = {
+			name = "sought_after_bachelor"
+			duration = -1
+		}
+	}
+}
+
+# A modest proposal
+country_event = {
+	id = GOT_DYNASTIC.23
+	title = GOT_DYNASTIC.23.title
+	desc = GOT_DYNASTIC.23.desc
+	picture = DIPLOMACY_eventPicture
+	
+	trigger = {
+		any_known_country = {
+			has_country_modifier = sought_after_bachelor
+			is_lesser_in_union = no
+			government = monarchy
+			religion_group = ROOT
+		}
+		government = monarchy
+		is_lesser_in_union = no
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.23.option.a
+		random_country = {
+			limit = {
+				has_country_modifier = sought_after_bachelor
+				religion_group = ROOT
+			}
+			random_list = {
+				20 = { country_event = { id = GOT_DYNASTIC.24 } }
+				80 = { country_event = { id = GOT_DYNASTIC.25 } }
+			}
+		}
+		add_treasury = -15
+		add_dip_power = -10
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.23.option.b
+		add_treasury = 10
+		add_adm_power = 10
+	}
+}
+
+# Wedding bells
+country_event = {
+	id = GOT_DYNASTIC.24
+	title = GOT_DYNASTIC.24.title
+	desc = GOT_DYNASTIC.24.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_DYNASTIC.24.option.a
+		if = {
+			limit = {
+				has_dlc = "Rights of Man"
+			}
+			define_consort = {
+				country_of_origin = FROM
+				culture = FROM
+				religion = FROM
+			}
+		}
+		create_marriage = FROM
+		add_opinion = { who = FROM modifier = opinion_marriage_offer }
+		remove_country_modifier = sought_after_bachelor
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.24.option.b
+		reverse_add_opinion = { who = FROM modifier = opinion_witchcraft }
+	}
+}
+
+# Wedding bells
+country_event = {
+	id = GOT_DYNASTIC.25
+	title = GOT_DYNASTIC.25.title
+	desc = GOT_DYNASTIC.25.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_DYNASTIC.25.option.a
+		if = {
+			limit = {
+				has_dlc = "Rights of Man"
+			}
+			define_consort = {
+				country_of_origin = FROM
+				culture = FROM
+				religion = FROM
+			}
+		}
+		create_marriage = FROM
+		add_opinion = { who = FROM modifier = opinion_united_dynasties }
+		remove_country_modifier = sought_after_bachelor
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.25.option.b
+		reverse_add_opinion = { who = FROM modifier = opinion_refused_marriage }
+	}
+}
+
+#Last war was a failure
+country_event = {
+	id = GOT_DYNASTIC.26
+	title = GOT_DYNASTIC.26.title
+	desc = GOT_DYNASTIC.26.desc
+	picture = MILITARY_CAMP_eventPicture
+	
+	trigger = {
+		government = monarchy
+		NOT = { government = elective_monarchy }
+		has_heir = yes
+		is_heir_leader = yes
+		heir_age = 20
+		any_known_country = {
+			truce_with = ROOT
+		}
+		is_at_war = no
+		is_lesser_in_union = no
+		war_exhaustion = 12
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.26.option.a
+		kill_ruler = yes
+		add_war_exhaustion = -4
+		add_stability_or_adm_power = yes
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.26.option.b
+		kill_heir = yes
+		add_war_exhaustion = -2
+	}
+}
+
+# The Moon
+country_event = {
+	id = GOT_DYNASTIC.27
+	title = GOT_DYNASTIC.27.title
+	desc = GOT_DYNASTIC.27.desc
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	trigger = {
+		war_exhaustion = 4
+		adm = 3
+	}
+	
+	mean_time_to_happen = {
+		months = 800
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.27.option.a
+		add_prestige = 5
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.27.option.b
+		add_mil_power = 25
+	}
+}
+
+# Seeing the real you
+country_event = {
+	id = GOT_DYNASTIC.28
+	title = GOT_DYNASTIC.28.title
+	desc = GOT_DYNASTIC.28.desc
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		is_lesser_in_union = no
+		government = monarchy
+		has_heir = no
+		is_female = no
+		has_regency = no
+		num_of_royal_marriages = 1
+		NOT = {
+			has_country_modifier = a_woman_scorned
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1400
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.28.option.a
+		define_heir = {
+			dynasty = ROOT
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.28.option.b
+		add_years_of_income = 0.5
+		add_country_modifier = {
+			name = "a_woman_scorned"
+			duration = 1825
+		}
+	}
+}
+
+# Starlight
+country_event = {
+	id = GOT_DYNASTIC.29
+	title = GOT_DYNASTIC.29.title
+	desc = GOT_DYNASTIC.29.desc
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		has_heir = no
+		ruler_age = 40
+		government = monarchy
+		is_lesser_in_union = no
+	}
+	
+	mean_time_to_happen = {
+		months = 10000
+		
+		modifier = {
+			factor = 0.5
+			ruler_age = 50
+		}
+		modifier = {
+			factor = 0.5
+			ruler_age = 60
+		}
+		modifier = {
+			factor = 0.5
+			ruler_age = 70
+		}
+		modifier = {
+			factor = 0.5
+			ruler_age = 80
+		}
+		modifier = {
+			factor = 0.5
+			ruler_age = 90
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.29.option.a
+		define_heir = {
+			name = "Elisabeth"
+			dynasty = ROOT
+			claim = 50
+			female = yes
+			adm = 4
+			dip = 3
+			mil = 3
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.29.option.b
+		define_heir = {
+			dynasty = ROOT
+			name = "Caterine"
+			claim = 50
+			adm = 3
+			dip = 3
+			mil = 4
+			female = yes
+		}
+	}
+	option = {
+		name = GOT_DYNASTIC.29.option.c
+		define_heir = {
+			dynasty = ROOT
+			claim = 50
+			adm = 3
+			dip = 4
+			mil = 3
+			female = yes
+		}
+	}
+	option = {
+		name = GOT_DYNASTIC.29.option.d
+		define_heir = {
+			dynasty = ROOT
+			name = "Sara"
+			claim = 50
+			adm = 3
+			dip = 3
+			mil = 4
+			female = yes
+		}
+	}
+}
+
+# Newborn Daughter
+country_event = {
+	id = GOT_DYNASTIC.30
+	title = GOT_DYNASTIC.30.title
+	desc = GOT_DYNASTIC.30.desc
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		has_heir = no
+		ruler_age = 20
+		government = monarchy
+		is_lesser_in_union = no
+		NOT = {
+			has_country_modifier = dyn_newborn_daughter
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.30.option.a
+        
+		add_horde_unity = 10
+		add_legitimacy = -10
+
+		define_heir = {
+			dynasty = ROOT
+			female = yes
+			claim = 50
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.30.option.b
+        
+		add_country_modifier = {
+			name = dyn_newborn_daughter
+			duration = 365
+		}
+	}
+}
+
+# Talented and Ambitious Daughter
+country_event = {
+	id = GOT_DYNASTIC.31
+	title = GOT_DYNASTIC.31.title
+	desc = GOT_DYNASTIC.31.desc
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		has_heir = no
+		ruler_age = 40
+		government = monarchy
+		is_lesser_in_union = no
+		NOT = { has_ruler_flag = talented_daughter_happened }
+	}
+	
+	immediate = {
+		set_ruler_flag = talented_daughter_happened
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+		
+		modifier = {
+			factor = 0.9
+			ruler_age = 50
+		}
+		
+		modifier = {
+			factor = 0.9
+			ruler_age = 60
+		}
+		modifier = {
+			factor = 0.9
+			ruler_age = 70
+		}
+		modifier = {
+			factor = 0.9
+			ruler_age = 80
+		}
+		modifier = {
+			factor = 0.9
+			ruler_age = 90
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.31.option.a
+        
+		add_horde_unity = -10
+		add_legitimacy = -10
+
+		define_heir = {
+			dynasty = ROOT
+			age = 13
+			adm = 3
+			dip = 3
+			mil = 3
+			claim = 50
+			female = yes
+			no_consort_with_heir = yes
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.31.option.b
+        
+		random_owned_province = {
+			limit = {
+				is_capital = yes
+			}
+			add_province_modifier = {
+				name = add_unrest_5_modifier
+				duration = 1825
+			}
+		}
+	}
+}
+
+# The Ruler's Daughter
+country_event = {
+	id = GOT_DYNASTIC.32
+	title = GOT_DYNASTIC.32.title
+	desc = GOT_DYNASTIC.32.desc
+	picture = NEW_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_heir = no
+		num_of_cities = 2
+		has_regency = yes
+		is_lesser_in_union = no
+		government = monarchy
+
+		any_known_country = {
+			government = monarchy
+
+			has_regency = no
+			is_free_or_tributary_trigger = yes
+			num_of_cities = ROOT
+			is_female = no
+			NOT = { has_country_flag = dyn_woman_pretender_flag }
+
+			NOT = {
+				war_with = ROOT
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					government = monarchy
+
+					has_regency = no
+					is_free_or_tributary_trigger = yes
+					num_of_cities = ROOT
+					is_female = no
+
+					NOT = {
+						war_with = ROOT
+					}
+				}
+				set_country_flag = dyn_woman_pretender_flag
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.32.option.a
+
+		define_ruler = {
+			dynasty = ROOT
+			age = 20
+			adm = 3
+			dip = 3
+			mil = 3
+			claim = 50
+			female = yes
+		}
+		random_known_country = {
+			limit = {
+				has_country_flag = dyn_woman_pretender_flag
+			}
+			add_casus_belli = {
+				target = ROOT
+				type = cb_restore_personal_union
+				months = 12
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_spurned_heir
+			}
+			clr_country_flag = dyn_woman_pretender_flag
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.32.option.b
+		random_known_country = {
+			limit = {
+				has_country_flag = dyn_woman_pretender_flag
+			}
+			clr_country_flag = dyn_woman_pretender_flag
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_choose_heir
+			}
+			ROOT = {
+				define_ruler = {
+					dynasty = PREV
+					age = 20
+				}
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 2
+				female = yes
+			}
+		}
+	}
+}
+
+# Offer Personal Union
+country_event = {
+	id = GOT_DYNASTIC.33
+	title = GOT_DYNASTIC.33.title
+	desc = GOT_DYNASTIC.33.desc
+	picture = DIPLOMACY_eventPicture
+	
+	trigger = {
+		has_heir = no
+		government = monarchy
+		is_free_or_tributary_trigger = yes
+		ruler_age = 16
+		NOT = {
+			ruler_age = 40
+		}
+		any_neighbor_country = {
+			government = monarchy
+			has_heir = no
+			ruler_age = 16
+			NOT = {
+				ruler_age = 40
+			}
+			NOT = {
+				OR = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = opinion_spurned_pu
+					}
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						modifier = opinion_spurned_pu
+					}
+				}
+			}
+			OR = {
+				AND = {
+					is_female = no
+					ROOT = {
+						is_female = yes
+					}
+				}
+				AND = {
+					is_female = yes
+					ROOT = {
+						is_female = no
+					}
+				}
+			}
+			OR = {
+				dynasty = ROOT
+				culture_group = ROOT
+			}
+			has_opinion = { who = ROOT value = 75 }
+			reverse_has_opinion = { who = ROOT value = 75 }
+			is_free_or_tributary_trigger = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+	}
+	
+	immediate = {
+		random_neighbor_country = {
+			limit = {
+				government = monarchy
+				has_heir = no
+				ruler_age = 16
+				NOT = {
+					ruler_age = 40
+				}
+				NOT = {
+					OR = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = opinion_spurned_pu
+						}
+						reverse_has_opinion_modifier = {
+							who = ROOT
+							modifier = opinion_spurned_pu
+						}
+					}
+				}
+				OR = {
+					AND = {
+						is_female = no
+						ROOT = {
+							is_female = yes
+						}
+					}
+					AND = {
+						is_female = yes
+						ROOT = {
+							is_female = no
+						}
+					}
+				}
+				OR = {
+					dynasty = ROOT
+					culture_group = ROOT
+				}
+				has_opinion = { who = ROOT value = 75 }
+				reverse_has_opinion = { who = ROOT value = 75 }
+				is_free_or_tributary_trigger = yes
+			}
+			save_event_target_as = nameless_neighbor_no_more
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.33.option.a
+		random_neighbor_country = {
+			limit = {
+				government = monarchy
+				has_heir = no
+				ruler_age = 16
+				NOT = {
+					ruler_age = 40
+				}
+				OR = {
+					AND = {
+						is_female = no
+						ROOT = {
+							is_female = yes
+						}
+					}
+					AND = {
+						is_female = yes
+						ROOT = {
+							is_female = no
+						}
+					}
+				}
+				OR = {
+					dynasty = ROOT
+					culture_group = ROOT
+				}
+				has_opinion = { who = ROOT value = 75 }
+				reverse_has_opinion = { who = ROOT value = 75 }
+				is_free_or_tributary_trigger = yes
+			}
+			country_event = {
+				id = dynastic_events.6
+				tooltip = dynastic_events.6.t
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.33.option.b
+		add_legitimacy = 10
+	}
+}
+
+# Personal Union Offered
+country_event = {
+	id = GOT_DYNASTIC.34
+	title = GOT_DYNASTIC.34.title
+	desc = GOT_DYNASTIC.34.desc
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_DYNASTIC.34.option.a
+        
+		add_legitimacy = 20
+		FROM = {
+			set_country_flag = dyn_pu_accepted_flag
+			create_union = ROOT
+			country_event = {
+				id = GOT_DYNASTIC.35
+				tooltip = GOT_DYNASTIC.35.tt
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.34.option.a
+        
+		FROM = {
+			set_country_flag = dyn_pu_refused_flag
+			add_opinion = {
+				modifier = opinion_spurned_pu
+				who = ROOT
+			}
+			add_casus_belli = {
+				target = ROOT
+				type = cb_insult
+				months = 12
+			}
+			country_event = {
+				id = GOT_DYNASTIC.35
+				tooltip = GOT_DYNASTIC.35.tt
+			}
+		}
+	}
+}
+
+# A Political Marriage - Accepted or Not?
+country_event = {
+	id = GOT_DYNASTIC.35
+	title = GOT_DYNASTIC.35.title
+	desc = GOT_DYNASTIC.35.desc
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_DYNASTIC.35.option.a
+        
+		trigger = {
+			has_country_flag = dyn_pu_accepted_flag
+		}
+		add_legitimacy = 20
+		tooltip = {
+			create_union = FROM
+		}
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.35.option.b
+        
+		trigger = {
+			has_country_flag = dyn_pu_refused_flag
+		}
+		tooltip = {
+			add_opinion = {
+				modifier = opinion_spurned_pu
+				who = FROM
+			}
+			add_casus_belli = {
+				target = FROM
+				type = cb_insult
+				months = 12
+			}
+		}
+	}
+}
+
+# Heir goes out at night
+country_event = {
+	id = GOT_DYNASTIC.36
+	title = GOT_DYNASTIC.36.title
+	desc = GOT_DYNASTIC.36.desc
+	picture = COURT_eventPicture
+	
+	trigger = {
+		capital_scope = { continent = europe }
+		has_heir = yes
+		heir_age = 15
+		is_lesser_in_union = no
+		government = monarchy
+	}
+	
+	mean_time_to_happen = {
+		months = 2000
+		
+	}
+	option = {
+		name = GOT_DYNASTIC.36.option.a
+		add_prestige = -20
+	}
+	
+	option = {
+		name = GOT_DYNASTIC.36.option.b
+		add_heir_claim = -10
+	}
+}
+
+

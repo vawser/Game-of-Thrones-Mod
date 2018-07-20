@@ -188,6 +188,7 @@ on_new_monarch = {
 		GOT_DOTHRAKI.1      # Dothraki Succession
         GOT_DAENERYS.100
         GOT_YITI_EMPIRE.3
+        GOT_DYNASTIC.21
 	}
 }
 
@@ -758,7 +759,30 @@ on_bi_yearly_pulse_4 = {
 on_thri_yearly_pulse = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_thri_yearly_pulse" }
     
-
+    random_events = {
+        100 = devotion_events.1
+		100 = devotion_events.2
+		100 = devotion_events.3
+		100 = devotion_events.4
+		100 = devotion_events.5
+		100 = devotion_events.7
+		100 = devotion_events.8
+		100 = devotion_events.9
+		100 = devotion_events.10
+		100 = devotion_events.11
+		100 = devotion_events.12
+		100 = devotion_events.13
+		100 = devotion_events.14
+		100 = devotion_events.15
+		100 = devotion_events.16
+		100 = devotion_events.18
+		100 = devotion_events.19
+		100 = devotion_events.22
+		100 = devotion_events.23
+		100 = devotion_events.24
+        
+        1000 = 0
+    }
 }
 
 on_thri_yearly_pulse_2 = {

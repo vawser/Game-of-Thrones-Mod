@@ -61,6 +61,8 @@ replace_path="common/state_edicts"
 replace_path="common/ages"
 replace_path="common/imperial_reforms"
 replace_path="common/decrees"
+replace_path="common/scripted_effects"
+replace_path="common/scripted_triggers"
 tags={
 	"Alternative History"
 	"Events"

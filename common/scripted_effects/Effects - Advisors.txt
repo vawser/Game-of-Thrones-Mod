@@ -1,0 +1,467 @@
+#All are Country Scope unless otherwise stated.
+
+#Sets flags to use when generating advisors, must be used in immediate = { } and be followed by erase_advisor_flags_effect in after = {}
+check_if_non_state_advisor_effect = {
+	#Needs these arguments:
+	#chance_of_primary = State religion
+	#chance_of_secondary = 
+	#chance_of_tertiary = Remaining Heathen Religions
+	#Note: These are not actual chances, they are just weights, the script then uses them differently depending on what region you are in. There is a higher or lower chance of variety depending on where minorities where big historically.
+	
+	hidden_effect = {
+        # North Westeros
+		if = {
+			limit = {
+				capital_scope = {
+					OR = {
+                        region = region_beyond_the_wall
+                        region = region_nights_watch
+                        region = region_the_north
+                    }
+				}
+			}
+			random_list = {
+                $chance_of_primary$ = { set_country_flag = state_religion_advisor }
+				$chance_of_secondary$ = { set_country_flag = old_gods_advisor }
+				$chance_of_tertiary$ = { set_country_flag = drowned_god_advisor }
+				$chance_of_tertiary$ = { set_country_flag = rhllor_advisor }
+			}
+		}
+        # South Westeros
+        else_if = {
+			limit = {
+				capital_scope = {
+					OR = {
+                        region = region_riverlands
+                        region = region_crownlands
+                        region = region_stormlands
+                        region = region_iron_islands
+                        region = region_vale
+                        region = region_reach
+                        region = region_westerlands
+                        region = region_dorne
+                    }
+				}
+			}
+			random_list = {
+				$chance_of_primary$ = { set_country_flag = state_religion_advisor }
+				$chance_of_secondary$ = { set_country_flag = old_gods_advisor }
+                $chance_of_secondary$ = { set_country_flag = rhllor_advisor }
+				$chance_of_tertiary$ = { set_country_flag = drowned_god_advisor }
+				$chance_of_tertiary$ = { set_country_flag = moonsinger_advisor }
+			}
+		}
+        # West Essos
+		else_if = {
+			limit = {
+				capital_scope = {
+					OR = {
+                        region = region_stepstones
+                        region = region_tyrosh
+                        region = region_lys
+                        region = region_volantis
+                        region = region_rhoyne
+                        region = region_myr
+                        region = region_pentos
+                        region = region_braavos
+                        region = region_lorath
+                        region = region_norvos
+                        region = region_qohor
+                        region = region_sarnor
+                    }
+				}
+			}
+			random_list = {
+				$chance_of_primary$ = { set_country_flag = state_religion_advisor }
+				$chance_of_secondary$ = { set_country_flag = faith_of_the_seven_advisor }
+                $chance_of_secondary$ = { set_country_flag = mother_rhoyne_advisor }
+                $chance_of_secondary$ = { set_country_flag = bearded_priests_advisor }
+                $chance_of_secondary$ = { set_country_flag = black_goat_advisor }
+                $chance_of_tertiary$ = { set_country_flag = lorath_advisor }
+                $chance_of_tertiary$ = { set_country_flag = sarnor_advisor }
+				$chance_of_tertiary$ = { set_country_flag = trios_advisor }
+				$chance_of_tertiary$ = { set_country_flag = moonsinger_advisor }
+			}
+		}
+        # Dothraki
+        else_if = {
+			limit = {
+				capital_scope = {
+					region = region_dothraki_sea
+				}
+			}
+			random_list = {
+				$chance_of_primary$ = { set_country_flag = state_religion_advisor }
+                $chance_of_secondary$ = { set_country_flag = great_shepherd_advisor }
+                $chance_of_secondary$ = { set_country_flag = harpy_advisor }
+			}
+		}
+        # Ghiscari
+        else_if = {
+			limit = {
+				capital_scope = {
+                    OR = {
+                        region = region_valyria
+                        region = region_slavers_bay
+                    }
+				}
+			}
+			random_list = {
+				$chance_of_primary$ = { set_country_flag = state_religion_advisor }
+				$chance_of_secondary$ = { set_country_flag = faith_of_the_seven_advisor }
+                $chance_of_secondary$ = { set_country_flag = great_shepherd_advisor }
+				$chance_of_tertiary$ = { set_country_flag = moonsinger_advisor }
+                $chance_of_tertiary$ = { set_country_flag = dothraki_advisor }
+			}
+		}
+        # Qarth
+        else_if = {
+			limit = {
+				capital_scope = {
+                    region = region_qarth
+				}
+			}
+			random_list = {
+				$chance_of_primary$ = { set_country_flag = state_religion_advisor }
+				$chance_of_secondary$ = { set_country_flag = yiti_advisor }
+                $chance_of_tertiary$ = { set_country_flag = dothraki_advisor }
+                $chance_of_tertiary$ = { set_country_flag = faros_advisor }
+				$chance_of_tertiary$ = { set_country_flag = hyrkoon_advisor }
+                $chance_of_tertiary$ = { set_country_flag = dothraki_advisor }
+                $chance_of_tertiary$ = { set_country_flag = magic_advisor }
+			}
+		}
+        # Yi Ti
+        else_if = {
+			limit = {
+				capital_scope = {
+                    OR = {
+                        region = region_yi_ti
+                        region = region_leng
+                    }
+				}
+			}
+			random_list = {
+				$chance_of_primary$ = { set_country_flag = state_religion_advisor }
+                $chance_of_tertiary$ = { set_country_flag = dothraki_advisor }
+                $chance_of_tertiary$ = { set_country_flag = faros_advisor }
+				$chance_of_tertiary$ = { set_country_flag = hyrkoon_advisor }
+                $chance_of_tertiary$ = { set_country_flag = dothraki_advisor }
+                $chance_of_tertiary$ = { set_country_flag = magic_advisor }
+			}
+		}
+        # Summer Islander
+		else_if = {
+			limit = {
+				capital_scope = {
+					region = region_summer_islands
+				}
+			}
+			random_list = {
+				$chance_of_primary$ = { set_country_flag = state_religion_advisor }
+                $chance_of_tertiary$ = { set_country_flag = harmony_advisor }
+			}
+		}
+		else = {
+			set_country_flag = state_religion_advisor
+		}
+	}
+}
+
+erase_advisor_flags_effect = { #Goes into the after = {} effect after check_if_non_state_advisor_effect
+	trigger_switch = {
+		on_trigger = has_country_flag
+		state_religion_advisor = { clr_country_flag = state_religion_advisor }
+		old_gods_advisor = { clr_country_flag = old_gods_advisor }
+		drowned_god_advisor = { clr_country_flag = drowned_god_advisor }
+		rhllor_advisor = { clr_country_flag = rhllor_advisor }
+        moonsinger_advisor = { clr_country_flag = moonsinger_advisor }
+		faith_of_the_seven_advisor = { clr_country_flag = faith_of_the_seven_advisor }
+		mother_rhoyne_advisor = { clr_country_flag = mother_rhoyne_advisor }
+		bearded_priests_advisor = { clr_country_flag = bearded_priests_advisor }
+		black_goat_advisor = { clr_country_flag = black_goat_advisor }
+		lorath_advisor = { clr_country_flag = lorath_advisor }
+		sarnor_advisor = { clr_country_flag = sarnor_advisor }
+		great_shepherd_advisor = { clr_country_flag = great_shepherd_advisor }
+		harpy_advisor = { clr_country_flag = harpy_advisor }
+		dothraki_advisor = { clr_country_flag = dothraki_advisor }
+		trios_advisor = { clr_country_flag = trios_advisor }
+		yiti_advisor = { clr_country_flag = yiti_advisor }
+		faros_advisor = { clr_country_flag = faros_advisor }
+		hyrkoon_advisor = { clr_country_flag = hyrkoon_advisor }
+		magic_advisor = { clr_country_flag = magic_advisor }
+		harmony_advisor = { clr_country_flag = harmony_advisor }
+	}
+}
+
+internal_advisor_generation_effect = { #Only used within generate_advisor_of_type_and_semi_random_religion_effect
+#Requires check_if_non_state_advisor_effect in immediate as that gives the arguments to generate_advisor_of_type_and_semi_random_religion_effect that then passes it on to this.
+#$advisor_type$ = Advisor type if state religion.
+#$advisor_type_if_not_state$ = Advisor type if non-state religion.
+#$skill$ = Skill Level
+#$discount$ = yes/no for discount
+	trigger_switch = {
+		on_trigger = has_country_flag #Flags set by check_if_non_state_advisor_effect
+		state_religion_advisor = {
+			define_advisor = {
+				type = $advisor_type$
+				skill = $skill$
+				discount = $discount$
+			}
+		}
+		old_gods_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_the_old_gods
+			}
+		}
+		drowned_god_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_the_drowned_god
+			}
+		}
+		rhllor_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_rhllor
+			}
+		}
+		moonsinger_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_moonsingers
+			}
+		}
+		faith_of_the_seven_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_faith_of_the_seven
+			}
+		}
+		mother_rhoyne_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_mother_rhoyne
+			}
+		}
+		bearded_priests_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_bearded_priests
+			}
+		}
+		black_goat_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_black_goat_of_qohor
+			}
+		}
+		lorath_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_gods_of_lorath
+			}
+		}
+		sarnor_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_gods_of_sarnor
+			}
+		}
+		great_shepherd_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_great_shepherd
+			}
+		}
+		harpy_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_graces
+			}
+		}
+		dothraki_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_the_great_stallion
+			}
+		}
+        trios_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_trios
+			}
+		}
+        yiti_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_lion_of_the_night
+			}
+		}
+        faros_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_stone_cow_of_faros
+			}
+		}
+        hyrkoon_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_gods_of_hyrkoon
+			}
+		}
+        magic_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_magic
+			}
+		}
+        harmony_advisor = {
+			define_advisor = {
+				type = $advisor_type_if_not_state$
+				skill = $skill$
+				discount = $discount$
+				religion = asoiaf_god_of_harmony
+			}
+		}
+	}
+}
+
+generate_advisor_of_type_and_semi_random_religion_effect = {
+#Actual work is done by internal_advisor_generation_effect above but it goes through this first.
+#Requires check_if_non_state_advisor_effect in immediate.
+#$advisor_type$ = Advisor type if state religion.
+#$advisor_type_if_not_state$ = Advisor type if non-state religion.
+#$scaled_skill$ = yes/no
+#$skill$ = Skill Level
+#$discount$ = yes/no for discount
+	set_country_flag = $scaled_skill$_scaled_skill_flag #Must be cleared in this effect, or we won't find it again.
+	
+	if = { #If scaled skill is yes we continue after checking what level is apropriate
+		limit = { has_country_flag = yes_scaled_skill_flag }
+		if = {
+			limit = {
+				NOT = { monthly_income = 15 }
+			}
+			internal_advisor_generation_effect = {
+				advisor_type = $advisor_type$
+				advisor_type_if_not_state = $advisor_type_if_not_state$
+				skill = 1
+				discount = $discount$
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { monthly_income = 25 }
+			}
+			internal_advisor_generation_effect = {
+				advisor_type = $advisor_type$
+				advisor_type_if_not_state = $advisor_type_if_not_state$
+				skill = 2
+				discount = $discount$
+			}
+		}
+		else = {
+			internal_advisor_generation_effect = {
+				advisor_type = $advisor_type$
+				advisor_type_if_not_state = $advisor_type_if_not_state$
+				skill = 3
+				discount = $discount$
+			}
+		}
+	}
+	else = { #If we didn't set scaled skill to yes then we just take the skill you specified.
+		internal_advisor_generation_effect = {
+			advisor_type = $advisor_type$
+			advisor_type_if_not_state = $advisor_type_if_not_state$
+			skill = $skill$
+			discount = $discount$
+		}
+	}
+	
+	clr_country_flag = $scaled_skill$_scaled_skill_flag #Important, unless cleared like this you will be unable to find it again.
+}
+
+
+remove_advisor_adm_effect = {
+	if = {
+		limit = {
+			advisor = inquisitor
+		}
+		remove_advisor = inquisitor
+	}
+	if = {
+		limit = {
+			advisor = natural_scientist
+		}
+		remove_advisor = natural_scientist
+	}
+	if = {
+		limit = {
+			advisor = master_of_mint
+		}
+		remove_advisor = master_of_mint
+	}
+	if = {
+		limit = {
+			advisor = theologian
+		}
+		remove_advisor = theologian
+	}
+	if = { 
+		limit = {
+			advisor = artist
+		}
+		remove_advisor = artist
+	}
+	if = {
+		limit = {
+			advisor = philosopher
+		}
+		remove_advisor = philosopher
+	}
+	if = {
+		limit = { 
+			advisor = treasurer
+		}
+		remove_advisor = treasurer
+	}
+}
+

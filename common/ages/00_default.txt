@@ -182,7 +182,10 @@ the_seven_kingdoms = {
 # The Long Winter
 #-----------------------------------------
 the_long_winter = {
+    start = 500
+    
 	can_start = {
+        has_global_flag = winter_active
         exists = WIT
 	}
 	
@@ -360,8 +363,11 @@ the_long_winter = {
 # The Seven Kingdoms (again)
 #-----------------------------------------
 the_seven_kingdoms_2 = {
+    start = 500
+    
 	can_start = {
-		NOT = { exists = WIT }
+        has_global_flag = winter_active
+        NOT = { exists = WIT }
 	}
 	
 	religious_conflicts = yes

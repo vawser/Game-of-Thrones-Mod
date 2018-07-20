@@ -1,2 +1,144 @@
 namespace = GOT_YITI_EMPIRE
 
+country_event = {
+	id = GOT_YITI_EMPIRE.1
+	title = GOT_YITI_EMPIRE.1.title
+	desc = GOT_YITI_EMPIRE.1.desc
+	picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	trigger = {
+		FROM = { is_emperor_of_china = yes }
+	}
+	
+	option = {
+		name = "GOT_YITI_EMPIRE.1.option.a"
+		add_prestige = 20
+		add_dip_power = 50
+		add_mil_power = 50
+		add_adm_power = 50
+	}
+}
+
+country_event = {
+	id = GOT_YITI_EMPIRE.2
+	title = GOT_YITI_EMPIRE.2.title
+	desc = GOT_YITI_EMPIRE.2.desc
+	picture = IMPERIAL_EXAMINATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor_of_china = yes
+		has_dlc = "Mandate of Heaven"
+		NOT = { religion = asoiaf_lion_of_the_night }
+		NOT = { has_country_flag = became_yiti_emperor }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = became_yiti_emperor
+		}
+	}
+	
+	option = {
+		name = "GOT_YITI_EMPIRE.2.option.a"
+		ai_chance = {
+			factor = 100
+		}
+		change_religion = asoiaf_lion_of_the_night
+		add_meritocracy_effect = yes
+		add_mandate_effect = yes
+	}
+	option = {
+		name = "GOT_YITI_EMPIRE.2.option.b"
+		ai_chance = {
+			factor = 0
+		}
+		reduce_meritocracy_effect = yes
+		add_stability = -1
+	}
+}
+
+country_event = {
+	id = GOT_YITI_EMPIRE.3
+	title = GOT_YITI_EMPIRE.3.title
+	desc = GOT_YITI_EMPIRE.3.desc
+	picture = MERITOCRACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor_of_china = yes
+		has_dlc = "Mandate of Heaven"
+		NOT = { culture_group = culture_yi_ti }
+		any_owned_province = {
+			has_owner_culture = yes
+		}
+		NOT = { has_country_flag = had_cultural_discord_event }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = had_cultural_discord_event
+			random_owned_province = {
+				limit = {
+					has_owner_culture = yes
+					is_state = yes
+				}
+				area = {
+					limit = { owned_by = ROOT }
+					set_province_flag = resentment_to_yitish
+				}
+			}
+			random_owned_province = {
+				limit = {
+					has_owner_culture = yes
+					is_state = yes
+					NOT = { has_province_flag = resentment_to_yitish }
+				}
+				area = {
+					limit = { owned_by = ROOT }
+					set_province_flag = resentment_to_yitish
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "GOT_YITI_EMPIRE.3.option.a"
+		ai_chance = {
+			factor = 75
+		}
+		add_mandate_effect = yes
+		add_meritocracy_large_effect = yes
+		every_owned_province = {	
+			limit = {
+				has_province_flag = resentment_to_yitish
+			}
+			clr_province_flag = resentment_to_yitish
+			add_province_modifier = {
+				name = "resistance_to_cultural_changes"
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "GOT_YITI_EMPIRE.3.option.b"
+		ai_chance = {
+			factor = 25
+		}
+		add_adm_power = -75
+		reduce_mandate_effect = yes
+		hidden_effect = {
+			every_owned_province = {
+				limit = { has_province_flag = resentment_to_yitish }
+				clr_province_flag = resentment_to_yitish
+			}
+		}
+	}
+}
+

@@ -1,0 +1,165 @@
+namespace = GOT_WHITE_WALKER
+
+country_event = {
+	id = GOT_WHITE_WALKER.100
+	title = GOT_WHITE_WALKER.100.title
+	desc = GOT_WHITE_WALKER.100.desc
+	picture = FEAST_eventPicture
+	
+    hidden = yes
+    
+	trigger = {
+		tag = WIT
+        NOT = { has_ruler = "The Night King"}
+	}
+
+    mean_time_to_happen = {
+		months = 1
+    }
+
+	option = {
+		name = GOT_WHITE_WALKER.100.option.a
+	
+        define_ruler = {
+            name = "The Night King"
+            dynasty = "of the Eternal Winter"
+            age = 20
+            adm = 6
+            dip = 6
+            mil = 6
+            male = yes
+            fixed = yes
+        }
+        add_ruler_personality = immortal_personality
+        
+        define_ruler_to_general = {
+            fire = 6
+            shock = 6
+            manuever = 6
+            siege = 6
+        }
+	}
+}
+
+# Summer fades...
+country_event = {
+	id = GOT_WHITE_WALKER.1
+	title = GOT_WHITE_WALKER.1.title
+	desc = GOT_WHITE_WALKER.1.desc
+	picture = FEAST_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+    
+    trigger = {
+        ai = no
+        NOT = { exists = WIT }
+    }
+    
+	option = {
+		name = GOT_WHITE_WALKER.1.option.a
+	
+        custom_tooltip = SUMMER_FADES_TT
+        hidden_effect = {
+            change_variable = { which = winter_power value = 1 }
+        }
+	}
+    option = {
+		name = GOT_WHITE_WALKER.1.option.b
+    
+        custom_tooltip = SUMMER_PERSISTS_TT
+        
+        add_adm_power = -100
+        add_dip_power = -100
+        add_mil_power = -100
+	}
+}
+
+# The Winter begins!
+country_event = {
+	id = GOT_WHITE_WALKER.2
+	title = GOT_WHITE_WALKER.2.title
+	desc = GOT_WHITE_WALKER.2.desc
+	picture = FEAST_eventPicture
+	
+	trigger = {
+        ai = no
+		NOT = { exists = WIT }
+        check_variable = {
+            which = winter_power
+            value = 10
+        }
+	}
+
+    mean_time_to_happen = {
+		months = 1
+    }
+    
+    immediate = {
+        hidden_effect = {
+            set_global_flag = winter_active
+            1 = {
+                cede_province = WIT
+                add_core = WIT
+                add_base_tax = 9
+                add_base_production = 9
+                add_base_manpower = 9
+            }
+            europe = {
+                add_claim = WIT
+                discover_country = WIT
+            }
+            westeros_sea_region = {
+                discover_country = WIT
+            }
+            WIT = {
+                define_ruler = {
+                    name = "The Night King"
+                    dynasty = "of the Eternal Winter"
+                    age = 20
+                    adm = 6
+                    dip = 6
+                    mil = 6
+                    male = yes
+                    fixed = yes
+                }
+            }
+        }
+    }
+
+	option = {
+		name = GOT_WHITE_WALKER.2.option.a
+	
+        
+	}
+    option = {
+		name = GOT_WHITE_WALKER.2.option.b
+        
+        switch_tag = WIT
+	}
+}
+
+# Summer begins!
+country_event = {
+	id = GOT_WHITE_WALKER.3
+	title = GOT_WHITE_WALKER.3.title
+	desc = GOT_WHITE_WALKER.3.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+    
+    trigger = {
+        ai = no
+        has_global_flag = winter_active
+        NOT = { exists = WIT }
+    }
+    
+	option = {
+		name = GOT_WHITE_WALKER.3.option.a
+	
+        hidden_effect = {
+            clr_global_flag = winter_active
+            set_variable = { which = winter_power value = 0 }
+        }
+	}
+}

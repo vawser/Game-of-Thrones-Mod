@@ -706,7 +706,7 @@ province_event = {
 
 	trigger = {
 		has_dlc = "Cradle of Civilization"
-		has_building = weapons
+		has_building = blacksmiths_guild
 		NOT = { has_province_modifier = thriving_weapons_industry }
 		owner = {
 			army_professionalism = 0.4
@@ -752,9 +752,8 @@ province_event = {
 		has_dlc = "Cradle of Civilization"
 		OR = {
 			has_building = barracks
-			has_building = training_fields
-			has_building = conscription_center
-			has_building = regimental_camp
+            has_building = drill_square
+            has_building = supply_depot
 		}
 		is_capital = no
 		NOT = { has_province_flag = regimental_town_flag }

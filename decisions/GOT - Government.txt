@@ -1,0 +1,148 @@
+country_decisions = {
+	educate_heir = {
+		potential = {
+            NOT = { has_dlc = "The Cossacks" }
+			NOT = { has_ruler_modifier = educated_heir }
+			has_heir = yes
+			government = monarchy
+		}
+		allow = {
+			NOT = { has_ruler_modifier = educated_heir }
+			has_heir = yes
+			heir_age = 12
+			NOT = { heir_age = 18 }
+			years_of_income = 1
+		}
+		effect = {
+			add_years_of_income = -1
+			
+			add_ruler_modifier = {
+				name = educated_heir
+				duration = 1800
+				hidden = yes
+			}
+			
+			random_list = {
+				25 = { change_heir_adm = 1 }
+				25 = { change_heir_dip = 1 }
+				25 = { change_heir_mil = 1 }
+				25 = { custom_tooltip = stupid_heir }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	abdicate_throne = {
+		potential = {
+			NOT = { has_dlc = "The Cossacks" }
+			has_regency = no
+			government = monarchy
+		}
+		allow = {
+			has_regency = no
+			stability = 1
+		}
+		effect = {
+			if = {
+				limit = { 
+					NOT = { legitimacy = 90 }
+					legitimacy = 75
+				}
+				
+				add_stability = -1
+			}
+			if = {
+				limit = { 
+					NOT = { legitimacy = 75 }
+					legitimacy = 50
+				}
+				
+				add_stability = -2
+			}
+			if = {
+				limit = { 
+					NOT = { legitimacy = 50 }
+					legitimacy = 25
+				}
+				
+				add_stability = -3
+			}
+			if = {
+				limit = { 
+					NOT = { legitimacy = 25 }
+				}
+				
+				add_stability = -4
+			}
+			
+			kill_ruler = yes
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	devote_self_to_the_faith = {
+		potential = {
+			has_regency = no
+			religion = asoiaf_faith_of_the_seven
+		}
+		allow = {
+			has_regency = no
+			religion = asoiaf_faith_of_the_seven
+			NOT = { has_country_modifier = ruler_withdrawn }
+		}
+		effect = {
+			add_prestige = -25
+			
+			add_country_modifier = {
+				name = ruler_withdrawn
+				duration = 365
+			}
+			
+			add_papal_influence = 25
+		}
+		
+		ai_will_do = {
+			factor = 0
+			
+			modifier = {
+				factor = 1
+				
+				prestige = 75
+			}
+		}
+	}
+	
+	# Free City government decisions
+	sacrifice_the_prince = {
+		major = yes
+		potential = {
+			government = free_city
+			primary_culture = pentoshi
+		}
+		allow = {
+			NOT = { republican_tradition = 25 }
+		}
+		effect = {
+			kill_ruler = yes
+			add_republican_tradition = 25
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				
+				ADM = 3
+				DIP = 3
+				MIL = 3
+			}
+		}
+	}
+}

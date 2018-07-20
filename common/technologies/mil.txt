@@ -4,24 +4,6 @@ ahead_of_time = {
 	army_tradition = 1
 }
 
-# Inf:
-#   Shock: 4
-#   Fire: 6
-
-# Cav:
-#   Shock: 6
-#   Fire: 4
-
-# Art:
-#   Shock: 2
-#   Fire: 8
-
-# Morale: 8
-# Tactics: 8
-# Width: 10
-# Flanking: 100%
-# Supply Limit: 100%
-
 technology = {
 	# Tech 0
 	year = 106
@@ -29,12 +11,12 @@ technology = {
     land_morale 		= 	2.0
     
     infantry_fire		= 	0.25
-    infantry_shock 		= 	0.25
+    infantry_shock 	= 	0.25
     
-    cavalry_fire  		= 	0.25
-    cavalry_shock  		= 	0.5
+    cavalry_fire  	= 	0.25
+    cavalry_shock  	= 	0.5
     
-    artillery_fire 		=	0.5
+    artillery_fire 	=	0.5
     artillery_shock  	= 	0.25
     
     barracks = yes
@@ -43,162 +25,166 @@ technology = {
     paved_road = yes
     motte_and_bailey = yes
     
-    enable = westerosi_archers
-    enable = westerosi_swordsmen
-    enable = westerosi_knights
-    enable = westerosi_horse_archers
+    enable = white_walker_wight
+    
+    enable = westerosi_skirmisher
+    enable = westerosi_militia
+    enable = westerosi_scout_cavalry
+    enable = westerosi_horse_archer
     enable = westerosi_ram
     enable = westerosi_trebuchet
     
-    enable = essosian_archers
-    enable = essosian_swordsmen
-    enable = essosian_knights
-    enable = essosian_horse_archers
+    enable = essosian_skirmisher
+    enable = essosian_militia
+    enable = essosian_scout_cavalry
+    enable = essosian_horse_archer
     enable = essosian_ram
     enable = essosian_trebuchet
-    
-    enable = ghiscari_archers
-    enable = ghiscari_swordsmen
-    enable = ghiscari_knights
-    enable = ghiscari_horse_archers
+
+    enable = ghiscari_skirmisher
+    enable = ghiscari_militia
+    enable = ghiscari_scout_cavalry
+    enable = ghiscari_horse_archer
     enable = ghiscari_ram
     enable = ghiscari_trebuchet
     
-    enable = quartheen_archers
-    enable = quartheen_swordsmen
-    enable = quartheen_knights
-    enable = quartheen_horse_archers
+    enable = quartheen_skirmisher
+    enable = quartheen_militia
+    enable = quartheen_scout_cavalry
+    enable = quartheen_horse_archer
     enable = quartheen_ram
     enable = quartheen_trebuchet
     
-    enable = naathi_archers
-    enable = naathi_swordsmen
-    enable = naathi_knights
-    enable = naathi_horse_archers
+    enable = naathi_skirmisher
+    enable = naathi_militia
+    enable = naathi_scout_cavalry
+    enable = naathi_horse_archer
     enable = naathi_ram
     enable = naathi_trebuchet
     
-    enable = farosi_archers
-    enable = farosi_swordsmen
-    enable = farosi_knights
-    enable = farosi_horse_archers
+    enable = farosi_skirmisher
+    enable = farosi_militia
+    enable = farosi_scout_cavalry
+    enable = farosi_horse_archer
     enable = farosi_ram
     enable = farosi_trebuchet
     
-    enable = yiti_archers
-    enable = yiti_swordsmen
-    enable = yiti_knights
-    enable = yiti_horse_archers
+    enable = yiti_skirmisher
+    enable = yiti_militia
+    enable = yiti_scout_cavalry
+    enable = yiti_horse_archer
     enable = yiti_ram
     enable = yiti_trebuchet
     
-    enable = hyrkooni_archers
-    enable = hyrkooni_swordsmen
-    enable = hyrkooni_knights
-    enable = hyrkooni_horse_archers
+    enable = hyrkooni_skirmisher
+    enable = hyrkooni_militia
+    enable = hyrkooni_scout_cavalry
+    enable = hyrkooni_horse_archer
     enable = hyrkooni_ram
     enable = hyrkooni_trebuchet
     
-    enable = nefer_archers
-    enable = nefer_swordsmen
-    enable = nefer_knights
-    enable = nefer_horse_archers
+    enable = nefer_skirmisher
+    enable = nefer_militia
+    enable = nefer_scout_cavalry
+    enable = nefer_horse_archer
     enable = nefer_ram
     enable = nefer_trebuchet
     
-    enable = stepstones_archers
-    enable = stepstones_swordsmen
-    enable = stepstones_knights
-    enable = stepstones_horse_archers
+    enable = stepstones_skirmisher
+    enable = stepstones_militia
+    enable = stepstones_scout_cavalry
+    enable = stepstones_horse_archer
     enable = stepstones_ram
     enable = stepstones_trebuchet
     
-    enable = ibbenese_archers
-    enable = ibbenese_swordsmen
-    enable = ibbenese_knights
-    enable = ibbenese_horse_archers
+    enable = ibbenese_skirmisher
+    enable = ibbenese_militia
+    enable = ibbenese_scout_cavalry
+    enable = ibbenese_horse_archer
     enable = ibbenese_ram
     enable = ibbenese_trebuchet
     
-    enable = summer_islanders_archers
-    enable = summer_islanders_swordsmen
-    enable = summer_islanders_knights
-    enable = summer_islanders_horse_archers
+    enable = summer_islanders_skirmisher
+    enable = summer_islanders_militia
+    enable = summer_islanders_scout_cavalry
+    enable = summer_islanders_horse_archer
     enable = summer_islanders_ram
     enable = summer_islanders_trebuchet
     
-    enable = white_walker_archers
-    enable = white_walker_swordsmen
-    enable = white_walker_knights
-    enable = white_walker_horse_archers
-    enable = white_walker_ram
-    enable = white_walker_trebuchet
-    
-    enable = asshai_archers
-    enable = asshai_swordsmen
-    enable = asshai_magi
-    enable = asshai_ram
-    enable = asshai_trebuchet
-    
-    enable = valyrian_archers
-    enable = valyrian_swordsmen
-    enable = valyrian_dragons
+    enable = valyrian_skirmisher
+    enable = valyrian_militia
+    enable = valyrian_scout_cavalry
+    enable = valyrian_horse_archer
     enable = valyrian_ram
     enable = valyrian_trebuchet
     
-    enable = bloodless_men_archers
-    enable = bloodless_men_swordsmen
-    enable = bloodless_men_knights
-    enable = bloodless_men_horse_archers
+    enable = asshai_skirmisher
+    enable = asshai_militia
+    enable = asshai_scout_cavalry
+    enable = asshai_horse_archer
+    enable = asshai_ram
+    enable = asshai_trebuchet
+    
+    enable = white_walker_skirmisher
+    enable = white_walker_militia
+    enable = white_walker_scout_cavalry
+    enable = white_walker_horse_archer
+    enable = white_walker_ram
+    enable = white_walker_trebuchet
+    
+    enable = bloodless_men_skirmisher
+    enable = bloodless_men_militia
+    enable = bloodless_men_scout_cavalry
+    enable = bloodless_men_horse_archer
     enable = bloodless_men_ram
     enable = bloodless_men_trebuchet
     
-    enable = dothraki_archers
-    enable = dothraki_swordsmen
-    enable = dothraki_knights
-    enable = dothraki_horse_archers
+    enable = dothraki_skirmisher
+    enable = dothraki_militia
+    enable = dothraki_scout_cavalry
+    enable = dothraki_horse_archer
     enable = dothraki_ram
     enable = dothraki_trebuchet
     
-    enable = jogos_nhai_archers
-    enable = jogos_nhai_swordsmen
-    enable = jogos_nhai_knights
-    enable = jogos_nhai_horse_archers
+    enable = jogos_nhai_skirmisher
+    enable = jogos_nhai_militia
+    enable = jogos_nhai_scout_cavalry
+    enable = jogos_nhai_horse_archer
     enable = jogos_nhai_ram
     enable = jogos_nhai_trebuchet
     
-    enable = wildling_archers
-    enable = wildling_swordsmen
-    enable = wildling_knights
-    enable = wildling_horse_archers
+    enable = wildling_skirmisher
+    enable = wildling_militia
+    enable = wildling_scout_cavalry
+    enable = wildling_horse_archer
     enable = wildling_ram
     enable = wildling_trebuchet
     
-    enable = mossovi_archers
-    enable = mossovi_swordsmen
-    enable = mossovi_knights
-    enable = mossovi_horse_archers
+    enable = mossovi_skirmisher
+    enable = mossovi_militia
+    enable = mossovi_scout_cavalry
+    enable = mossovi_horse_archer
     enable = mossovi_ram
     enable = mossovi_trebuchet
     
-    enable = sothoryosi_archers
-    enable = sothoryosi_swordsmen
-    enable = sothoryosi_knights
-    enable = sothoryosi_horse_archers
+    enable = sothoryosi_skirmisher
+    enable = sothoryosi_militia
+    enable = sothoryosi_scout_cavalry
+    enable = sothoryosi_horse_archer
     enable = sothoryosi_ram
     enable = sothoryosi_trebuchet
     
-    enable = ulthosi_archers
-    enable = ulthosi_swordsmen
-    enable = ulthosi_knights
-    enable = ulthosi_horse_archers
+    enable = ulthosi_skirmisher
+    enable = ulthosi_militia
+    enable = ulthosi_scout_cavalry
+    enable = ulthosi_horse_archer
     enable = ulthosi_ram
     enable = ulthosi_trebuchet
     
-    enable = fishfolk_archers
-    enable = fishfolk_swordsmen
-    enable = fishfolk_knights
-    enable = fishfolk_horse_archers
+    enable = fishfolk_skirmisher
+    enable = fishfolk_militia
+    enable = fishfolk_scout_cavalry
+    enable = fishfolk_horse_archer
     enable = fishfolk_ram
     enable = fishfolk_trebuchet
 
@@ -258,6 +244,171 @@ technology = {
 technology = {
 	# Tech 8
 	year = 210
+    
+    enable = asshai_magi
+    enable = valyrian_dragon_rider
+    enable = white_walker_magi
+    
+    enable = westerosi_archer
+    enable = westerosi_swordsman
+    enable = westerosi_knight
+    enable = westerosi_lancer
+    enable = westerosi_capped_ram
+    enable = westerosi_reinforced_trebuchet
+
+    enable = essosian_archer
+    enable = essosian_swordsman
+    enable = essosian_knight
+    enable = essosian_lancer
+    enable = essosian_capped_ram
+    enable = essosian_reinforced_trebuchet
+
+    enable = ghiscari_archer
+    enable = ghiscari_swordsman
+    enable = ghiscari_knight
+    enable = ghiscari_lancer
+    enable = ghiscari_capped_ram
+    enable = ghiscari_reinforced_trebuchet
+
+    enable = quartheen_archer
+    enable = quartheen_swordsman
+    enable = quartheen_knight
+    enable = quartheen_lancer
+    enable = quartheen_capped_ram
+    enable = quartheen_reinforced_trebuchet
+
+    enable = naathi_archer
+    enable = naathi_swordsman
+    enable = naathi_knight
+    enable = naathi_lancer
+    enable = naathi_capped_ram
+    enable = naathi_reinforced_trebuchet
+
+    enable = farosi_archer
+    enable = farosi_swordsman
+    enable = farosi_knight
+    enable = farosi_lancer
+    enable = farosi_capped_ram
+    enable = farosi_reinforced_trebuchet
+
+    enable = yiti_archer
+    enable = yiti_swordsman
+    enable = yiti_knight
+    enable = yiti_lancer
+    enable = yiti_capped_ram
+    enable = yiti_reinforced_trebuchet
+
+    enable = hyrkooni_archer
+    enable = hyrkooni_swordsman
+    enable = hyrkooni_knight
+    enable = hyrkooni_lancer
+    enable = hyrkooni_capped_ram
+    enable = hyrkooni_reinforced_trebuchet
+
+    enable = nefer_archer
+    enable = nefer_swordsman
+    enable = nefer_knight
+    enable = nefer_lancer
+    enable = nefer_capped_ram
+    enable = nefer_reinforced_trebuchet
+
+    enable = stepstones_archer
+    enable = stepstones_swordsman
+    enable = stepstones_knight
+    enable = stepstones_lancer
+    enable = stepstones_capped_ram
+    enable = stepstones_reinforced_trebuchet
+
+    enable = ibbenese_archer
+    enable = ibbenese_swordsman
+    enable = ibbenese_knight
+    enable = ibbenese_lancer
+    enable = ibbenese_capped_ram
+    enable = ibbenese_reinforced_trebuchet
+
+    enable = summer_islanders_archer
+    enable = summer_islanders_swordsman
+    enable = summer_islanders_knight
+    enable = summer_islanders_lancer
+    enable = summer_islanders_capped_ram
+    enable = summer_islanders_reinforced_trebuchet
+
+    enable = valyrian_archer
+    enable = valyrian_swordsman
+    enable = valyrian_knight
+    enable = valyrian_lancer
+    enable = valyrian_capped_ram
+    enable = valyrian_reinforced_trebuchet
+
+    enable = asshai_archer
+    enable = asshai_swordsman
+    enable = asshai_knight
+    enable = asshai_lancer
+    enable = asshai_capped_ram
+    enable = asshai_reinforced_trebuchet
+
+    enable = white_walker_archer
+    enable = white_walker_swordsman
+    enable = white_walker_knight
+    enable = white_walker_lancer
+    enable = white_walker_capped_ram
+    enable = white_walker_reinforced_trebuchet
+
+    enable = bloodless_men_archer
+    enable = bloodless_men_swordsman
+    enable = bloodless_men_knight
+    enable = bloodless_men_lancer
+    enable = bloodless_men_capped_ram
+    enable = bloodless_men_reinforced_trebuchet
+
+    enable = dothraki_archer
+    enable = dothraki_swordsman
+    enable = dothraki_knight
+    enable = dothraki_lancer
+    enable = dothraki_capped_ram
+    enable = dothraki_reinforced_trebuchet
+
+    enable = jogos_nhai_archer
+    enable = jogos_nhai_swordsman
+    enable = jogos_nhai_knight
+    enable = jogos_nhai_lancer
+    enable = jogos_nhai_capped_ram
+    enable = jogos_nhai_reinforced_trebuchet
+
+    enable = wildling_archer
+    enable = wildling_swordsman
+    enable = wildling_knight
+    enable = wildling_lancer
+    enable = wildling_capped_ram
+    enable = wildling_reinforced_trebuchet
+
+    enable = mossovi_archer
+    enable = mossovi_swordsman
+    enable = mossovi_knight
+    enable = mossovi_lancer
+    enable = mossovi_capped_ram
+    enable = mossovi_reinforced_trebuchet
+
+    enable = sothoryosi_archer
+    enable = sothoryosi_swordsman
+    enable = sothoryosi_knight
+    enable = sothoryosi_lancer
+    enable = sothoryosi_capped_ram
+    enable = sothoryosi_reinforced_trebuchet
+
+    enable = ulthosi_archer
+    enable = ulthosi_swordsman
+    enable = ulthosi_knight
+    enable = ulthosi_lancer
+    enable = ulthosi_capped_ram
+    enable = ulthosi_reinforced_trebuchet
+
+    enable = fishfolk_archer
+    enable = fishfolk_swordsman
+    enable = fishfolk_knight
+    enable = fishfolk_lancer
+    enable = fishfolk_capped_ram
+    enable = fishfolk_reinforced_trebuchet
     
     grand_barracks = yes
     infantry_fire		= 	0.5

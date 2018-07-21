@@ -1,2 +1,94 @@
 # braavosi
 
+braavos_trade_missions = {
+	
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		# Be Braavos
+		tag = U25
+	}
+
+	braavos_build_influence_in_essos = {
+		
+		icon = mission_early_game_buildings
+		ai = yes
+		position = 1
+	
+		trigger = {
+			
+			num_of_light_ship = 5
+			home_trade_node = {
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+			
+		}
+		
+		effect = {
+		
+			
+		
+		}
+	
+	}
+	
+	braavos_expand_influence_in_essos = {
+		
+		icon = mission_galleys_in_port
+		ai = yes
+		position = 2
+		
+		trigger = {
+			
+			AND = {
+			
+				home_trade_node = {
+					trade_share = {
+						country = ROOT
+						share = 25
+					}
+				}
+			
+				# Lorath
+				any_active_trade_node = {
+				
+					province_id = 471
+					trade_share = {
+					country = ROOT
+					share = 25
+					}
+					
+				}
+				
+				# Pentos
+				any_active_trade_node = {
+				
+					province_id = 406
+					trade_share = {
+					country = ROOT
+					share = 33
+					}
+					
+				}
+				
+				num_of_light_ship = 15
+			
+			}
+		
+		}
+		
+		effect = {
+		
+			
+		
+		}
+		
+	}
+
+}

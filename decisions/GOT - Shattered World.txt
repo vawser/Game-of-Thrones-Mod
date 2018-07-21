@@ -7,23 +7,54 @@ country_decisions = {
 		}
 		allow = {
             government = monarchy
-            prestige = 95
-            legitimacy = 95
-            treasury = 5000
+			
+			capital_scope = {
+                
+				OR = {
+					
+					# Winterfell
+					province_id = 47
+					
+					# Riverrun
+					province_id = 101
+					
+					# The Eyrie
+					province_id = 136
+					
+					# Casterly Rock
+					province_id = 182
+					
+					# Highgarden
+					province_id = 267
+					
+					# King's Landing
+					province_id = 226
+					
+					# Storm's End
+					province_id = 304
+					
+					# Sunspear
+					province_id = 352
+				}
+                
+				development = 20 #Low number just for testing.
+            }
+			
+            #prestige = 95
+            #legitimacy = 95
+            #treasury = 5000
         
-            NOT = {
-                any_country = {
-                    capital_scope = { continent = europe }
-                    total_base_tax = ROOT
-                }
-            }
-            capital_scope = {
-                province_id = 226
-                development = 50
-            }
+            #NOT = {
+                #any_country = {
+                   # capital_scope = {
+						#continent = europe 
+						#total_base_tax = ROOT					
+					#}
+                #}
+            #}
 		}
 		effect = {
-            add_treasury = -5000
+            #add_treasury = -5000 # Comment out to just make testing easier
             
 			country_event = { id = GOT_SHATTERED_WORLD.1 }
 		}

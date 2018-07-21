@@ -24,7 +24,7 @@ braavos_trade_missions = {
 			home_trade_node = {
 				trade_share = {
 					country = ROOT
-					share = 50
+					share = 33
 				}
 			}
 			
@@ -32,7 +32,14 @@ braavos_trade_missions = {
 		
 		effect = {
 		
+			add_country_modifier = {
+				name = trade_income_increase
+				duration = 3650
+			}
 			
+			ROOT = {
+				naval_forcelimit_modifier = 0.1
+			}
 		
 		}
 	
@@ -44,6 +51,10 @@ braavos_trade_missions = {
 		ai = yes
 		position = 2
 		
+		required_missions = {
+			braavos_build_influence_in_essos
+		}
+		
 		trigger = {
 			
 			AND = {
@@ -51,7 +62,7 @@ braavos_trade_missions = {
 				home_trade_node = {
 					trade_share = {
 						country = ROOT
-						share = 25
+						share = 50
 					}
 				}
 			
@@ -72,7 +83,7 @@ braavos_trade_missions = {
 					province_id = 406
 					trade_share = {
 					country = ROOT
-					share = 33
+					share = 25
 					}
 					
 				}
@@ -85,7 +96,14 @@ braavos_trade_missions = {
 		
 		effect = {
 		
-			
+			ROOT = {
+				naval_forcelimit_modifier = 0.1
+			}
+		
+			add_country_modifier = {
+				name = trade_income_increase
+				duration = 3650
+			}
 		
 		}
 		

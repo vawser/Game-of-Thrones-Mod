@@ -1,0 +1,28 @@
+name = "War for Stannis Baratheon's Claim on the Iron Throne"
+
+war_goal = {
+	type = take_capital_throne
+	casus_belli = cb_claim_throne
+	tag = A07
+}
+
+298.1.1 = {
+	# House Baratheon (Stannis), House Florent, House Valeryon
+	add_attacker = A39
+	# add_attacker = F15
+	
+	# House Lannister, House Tyrell
+	add_defender = A07
+	add_defender = A06
+	add_defender = F20
+	# add_defender = house bolton
+	# add_defender = House Frey
+}
+
+304.1.1 = {	
+	rem_attacker = A39
+	
+	rem_defender = A07
+	rem_defender = A06
+	rem_defender = F20
+}

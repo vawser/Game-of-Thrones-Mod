@@ -1,0 +1,29 @@
+name = "War for Rob Stark's Claim on the Iron Throne"
+
+war_goal = {
+	type = take_capital_throne
+	casus_belli = cb_claim_throne
+	tag = A07
+}
+
+298.1.1 = {
+	
+	#House Stark, House Tully
+	add_attacker = A01
+    add_attacker = A03
+	
+	# House Lannister, House Tyrell
+	add_defender = A07
+	add_defender = A06
+	add_defender = F20
+}
+
+304.1.1 = {
+    rem_attacker = A01
+    rem_attacker = A04
+	
+	rem_defender = A07
+	rem_defender = A06
+	rem_defender = F20
+}
+

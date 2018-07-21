@@ -33,12 +33,8 @@ braavos_trade_missions = {
 		effect = {
 		
 			add_country_modifier = {
-				name = trade_income_increase
-				duration = 3650
-			}
-			
-			ROOT = {
-				naval_forcelimit_modifier = 0.1
+				name = focus_on_trade
+				duration = -1
 			}
 		
 		}
@@ -96,13 +92,9 @@ braavos_trade_missions = {
 		
 		effect = {
 		
-			ROOT = {
-				naval_forcelimit_modifier = 0.1
-			}
-		
 			add_country_modifier = {
-				name = trade_income_increase
-				duration = 3650
+				name = expand_trading_influence
+				duration = -1
 			}
 		
 		}

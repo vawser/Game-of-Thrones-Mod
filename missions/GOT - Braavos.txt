@@ -1,6 +1,6 @@
 # braavosi
 
-braavos_trade_missions = {
+braavos_trade_essos = {
 	
 	slot = 3
 	generic = no
@@ -20,13 +20,15 @@ braavos_trade_missions = {
 	
 		trigger = {
 			
-			num_of_light_ship = 5
+			# Braavos
 			home_trade_node = {
 				trade_share = {
 					country = ROOT
 					share = 33
 				}
 			}
+			
+			num_of_light_ship = 5
 			
 		}
 		
@@ -53,40 +55,37 @@ braavos_trade_missions = {
 		
 		trigger = {
 			
-			AND = {
-			
-				home_trade_node = {
-					trade_share = {
-						country = ROOT
-						share = 50
-					}
-				}
-			
-				# Lorath
-				any_active_trade_node = {
-				
-					province_id = 471
-					trade_share = {
+			# Braavos
+			home_trade_node = {
+				trade_share = {
 					country = ROOT
-					share = 25
-					}
-					
+					share = 50
 				}
-				
-				# Pentos
-				any_active_trade_node = {
-				
-					province_id = 406
-					trade_share = {
-					country = ROOT
-					share = 25
-					}
-					
-				}
-				
-				num_of_light_ship = 15
-			
 			}
+		
+			# Lorath
+			any_active_trade_node = {
+			
+				province_id = 471
+				trade_share = {
+				country = ROOT
+				share = 25
+				}
+				
+			}
+			
+			# Pentos
+			any_active_trade_node = {
+			
+				province_id = 406
+				trade_share = {
+				country = ROOT
+				share = 25
+				}
+				
+			}
+			
+			num_of_light_ship = 15
 		
 		}
 		
@@ -100,5 +99,115 @@ braavos_trade_missions = {
 		}
 		
 	}
+	
+	braavos_dominate_western_essos = {
+	
+		icon = mission_invade_island
+		ai = yes
+		position = 3
+		
+		required_missions = {
+			braavos_expand_influence_in_essos
+		}
+		
+		trigger = {
+			
+			# Braavos
+			home_trade_node = {
+				trade_share = {
+					country = ROOT
+					share = 85
+				}
+			}
+		
+			# Lorath
+			any_active_trade_node = {
+			
+				province_id = 471
+				trade_share = {
+				country = ROOT
+				share = 50
+				}
+				
+			}
+			
+			# Pentos
+			any_active_trade_node = {
+			
+				province_id = 406
+				trade_share = {
+				country = ROOT
+				share = 50
+				}
+				
+			}
+			
+			# Myr
+			any_active_trade_node = {
+			
+				province_id = 378
+				trade_share = {
+				country = ROOT
+				share = 25
+				}
+				
+			}
+			
+			# Tyrosh
+			any_active_trade_node = {
+			
+				province_id = 367
+				trade_share = {
+				country = ROOT
+				share = 25
+				}
+				
+			}
+			
+			num_of_light_ship = 30
+			
+		}
+		
+		effect = {
+			add_country_modifier = {
+				dominating_trade
+				duration = -1
+			}
+		}
+	
+	}
 
+}
+
+braavos_trade_westeros = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		
+		# Be Braavos
+		tag = U25
+	}
+	
+	braavos_gain_foothold_in_westeros = {
+	
+		icon = mission_establish_high_seas_navy
+		ai = yes
+		position = 3
+		
+		required_missions = {
+			braavos_expand_influence_in_essos
+		}
+		
+		trigger = {
+			
+		}
+		
+		effect = {
+		
+		}
+	
+	}
 }

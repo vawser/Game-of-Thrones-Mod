@@ -2,7 +2,7 @@
 
 braavos_trade_essos = {
 	
-	slot = 3
+	slot = 4
 	generic = no
 	ai = yes
 	has_country_shield = yes
@@ -68,8 +68,8 @@ braavos_trade_essos = {
 			
 				province_id = 471
 				trade_share = {
-				country = ROOT
-				share = 25
+					country = ROOT
+					share = 25
 				}
 				
 			}
@@ -79,8 +79,8 @@ braavos_trade_essos = {
 			
 				province_id = 406
 				trade_share = {
-				country = ROOT
-				share = 25
+					country = ROOT
+					share = 25
 				}
 				
 			}
@@ -125,8 +125,8 @@ braavos_trade_essos = {
 			
 				province_id = 471
 				trade_share = {
-				country = ROOT
-				share = 50
+					country = ROOT
+					share = 50
 				}
 				
 			}
@@ -136,8 +136,8 @@ braavos_trade_essos = {
 			
 				province_id = 406
 				trade_share = {
-				country = ROOT
-				share = 50
+					country = ROOT
+					share = 50
 				}
 				
 			}
@@ -147,8 +147,8 @@ braavos_trade_essos = {
 			
 				province_id = 378
 				trade_share = {
-				country = ROOT
-				share = 25
+					country = ROOT
+					share = 25
 				}
 				
 			}
@@ -158,8 +158,8 @@ braavos_trade_essos = {
 			
 				province_id = 367
 				trade_share = {
-				country = ROOT
-				share = 25
+					country = ROOT
+					share = 25
 				}
 				
 			}
@@ -170,7 +170,7 @@ braavos_trade_essos = {
 		
 		effect = {
 			add_country_modifier = {
-				dominating_trade
+				name = dominating_trade
 				duration = -1
 			}
 		}
@@ -180,7 +180,7 @@ braavos_trade_essos = {
 }
 
 braavos_trade_westeros = {
-	slot = 4
+	slot = 5
 	generic = no
 	ai = yes
 	has_country_shield = yes
@@ -203,10 +203,32 @@ braavos_trade_westeros = {
 		
 		trigger = {
 			
+			any_active_trade_node = {
+			
+				OR = {
+					province_id = 62
+					province_id = 126
+					province_id = 149
+					province_id = 108
+					province_id = 226
+					province_id = 320
+					province_id = 352
+				}
+				trade_share = {
+					country = ROOT
+					share = 25
+				}
+				
+			}
+			
 		}
 		
 		effect = {
-		
+			add_country_modifier = {
+				name = expanding_new_continent
+				duration = -1
+			}
+			
 		}
 	
 	}

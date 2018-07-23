@@ -15,3 +15,48 @@ country_event = {
         add_faction = elephants
 	}
 }
+
+country_event = {
+
+	id = debug.2
+	title = debug.2.title
+	desc = debug.2.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+	
+		name = debug.2.option.a
+		
+		add_country_modifier = {
+		
+			name = focusing_on_trade
+			duration = -1
+		
+		}
+		
+		add_country_modifier = {
+		
+			name = expand_trading_influence
+			duration = -1
+		
+		}
+		
+		add_country_modifier = {
+		
+			name = dominating_trade
+			duration = -1
+		
+		}
+		
+		add_country_modifier = {
+		
+			name = expanding_new_continent
+			duration = -1
+		
+		}
+	
+	}
+
+}

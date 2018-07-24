@@ -247,14 +247,14 @@ braavos_trade_westeros = {
 		position = 4
 		
 		required_missions = {
-			#braavos_gain_foothold_in_westeros
+			braavos_gain_foothold_in_westeros
 		}
 		
 		provinces_to_highlight = {
 		
 			continent = westeros
 			has_port = yes
-			owned_by = ROOT
+			development = 10
 		
 		}
 		
@@ -263,35 +263,35 @@ braavos_trade_westeros = {
 			westeros = {
 				
 				owned_by = U25
+				development = 10
+				has_port = yes
 				
 			}
 		}
 		
 		effect = {
 			
-			random_owned_province = {
+			every_owned_province = {
 			
 				limit = {
 					
-					#NOT = {province_id = 121}
+					development = 10
 					has_port = yes
 					continent = westeros
 				
 				}
 				
-				save_event_target_as = trade_post_target
-			
-			}
-			
-			event_target:trade_post_target = {
-			
-				add_province_modifier = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 1
 				
+				add_province_modifier = {
+								
 					name = braavosi_trading_post
 					duration = -1
 				
 				}
-			
+
 			}
 			
 		}

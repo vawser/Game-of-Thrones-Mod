@@ -247,12 +247,20 @@ braavos_trade_westeros = {
 		position = 4
 		
 		required_missions = {
-			braavos_gain_foothold_in_westeros
+			#braavos_gain_foothold_in_westeros
+		}
+		
+		provinces_to_highlight = {
+		
+			continent = westeros
+			has_port = yes
+			owned_by = ROOT
+		
 		}
 		
 		trigger = {
 			
-			europe = {
+			westeros = {
 				
 				owned_by = U25
 				
@@ -260,6 +268,31 @@ braavos_trade_westeros = {
 		}
 		
 		effect = {
+			
+			random_owned_province = {
+			
+				limit = {
+					
+					#NOT = {province_id = 121}
+					has_port = yes
+					continent = westeros
+				
+				}
+				
+				save_event_target_as = trade_post_target
+			
+			}
+			
+			event_target:trade_post_target = {
+			
+				add_province_modifier = {
+				
+					name = braavosi_trading_post
+					duration = -1
+				
+				}
+			
+			}
 			
 		}
 		
@@ -283,9 +316,10 @@ braavos_trade_westeros = {
 		
 		effect = {
 			
-			name = focus_on_trade
-			
-			duration = -1
+			add_country_modifier = {
+				name = focusing_on_trade
+				duration = -1
+			}
 			
 		}
 		

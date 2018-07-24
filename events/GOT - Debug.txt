@@ -29,33 +29,30 @@ country_event = {
 	
 		name = debug.2.option.a
 		
-		add_country_modifier = {
+		region_vale = {
 		
-			name = focusing_on_trade
-			duration = -1
-		
-		}
-		
-		add_country_modifier = {
-		
-			name = expand_trading_influence
-			duration = -1
+			cede_province = ROOT
+			add_core = ROOT
+			add_unrest = -100
 		
 		}
-		
-		add_country_modifier = {
-		
-			name = dominating_trade
-			duration = -1
-		
-		}
-		
-		add_country_modifier = {
-		
-			name = expanding_new_continent
-			duration = -1
-		
-		}
+	
+	}
+
+}
+
+province_event = {
+
+	id = debug.3
+	title = debug.3.title
+	desc = debug.3.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+	
+		name = debug.3.option.a
 	
 	}
 

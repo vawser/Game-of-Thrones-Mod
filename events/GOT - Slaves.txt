@@ -24,8 +24,9 @@ country_event = {
         
         if = {
             limit = {
+				NOT = { tag = U25 }
                 capital_scope = {
-                    NOT = { continent = europe }
+                    NOT = { continent = westeros }
                 }
             }
             add_country_modifier = {
@@ -36,9 +37,14 @@ country_event = {
         }
         if = {
             limit = {
-                capital_scope = {
-                    continent = europe
-                }
+				OR = {
+					tag = U25
+					capital_scope = {
+						continent = westeros
+					}
+				
+				}
+				
             }
             add_country_modifier = {
                 name = slavery_prohibited

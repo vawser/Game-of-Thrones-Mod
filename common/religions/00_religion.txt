@@ -447,7 +447,7 @@ religion_essos = {
 			local_missionary_strength = -0.02
 		}
 
-		uses_church_power = yes				# Uses church power/aspect mechanics
+		uses_church_power = yes
 		aspects = {
 			vision_of_grandeur
 			vision_of_horror
@@ -1109,6 +1109,8 @@ religion_dothraki = {
 			cavalry_power = 0.1
             cavalry_flanking = 0.1
 		}
+        
+        fervor = yes
 	}
 	
 	crusade_name = RELIGIOUS_CRUSADE
@@ -1153,7 +1155,17 @@ religion_tribal = {
 			local_missionary_strength = 0.03
 		}
 		
-		can_have_secondary_religion = yes			
+		uses_anglican_power = yes
+		
+		aspects = {
+			enforce_rule_action
+            raid_local_villages_action
+            display_wealth_action
+            impress_travelers_action
+            purchase_slaves_action
+            explore_the_high_seas_action
+		}
+		aspects_name = PIRATE_ASPECTS		
 	}
 	
 	crusade_name = RELIGIOUS_CRUSADE
@@ -1179,5 +1191,17 @@ religion_mythological = {
 		province = {
 			local_missionary_strength = -0.05
 		}
+        
+        uses_church_power = yes
+		aspects = {
+			enchantment_of_might
+            enchantment_of_power
+            enchantment_of_submission
+            enchantment_of_control
+            enchantment_of_death
+            enchantment_of_ice
+            enchantment_of_endurance
+		}
+        aspects_name = WHITE_WALKER_ASPECTS
 	}
 }

@@ -1,0 +1,135 @@
+enforce_rule_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+        OR = {
+            government = pirate_haven
+            government = pirate_kingdom
+        }
+	}
+	trigger = {
+		stability = 0
+	}
+	effect = {
+		add_absolutism = 10		
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+raid_local_villages_action = {
+	sprite = "GFX_icon_raid_local_villages_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+        OR = {
+            government = pirate_haven
+            government = pirate_kingdom
+        }
+	}
+	trigger = {
+		NOT = { treasury = 100000 }
+        num_of_ports = 1
+	}
+	effect = {
+		add_years_of_income = 0.25
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+display_wealth_action = {
+	sprite = "GFX_icon_display_wealth_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+        OR = {
+            government = pirate_haven
+            government = pirate_kingdom
+        }
+	}
+	trigger = {
+		NOT = { prestige = 100 }
+	}
+	effect = {
+		add_prestige = 15
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+impress_travelers_action = {
+	sprite = "GFX_icon_impress_travelers_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+        OR = {
+            government = pirate_haven
+            government = pirate_kingdom
+        }
+	}
+	trigger = {
+		stability = 0
+        num_of_ports = 1
+	}
+	effect = {
+		add_sailors = 1000
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+purchase_slaves_action = {
+	sprite = "GFX_icon_purchase_slaves_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+        OR = {
+            government = pirate_haven
+            government = pirate_kingdom
+        }
+	}
+	trigger = {
+		stability = 0
+        num_of_ports = 1
+	}
+	effect = {
+		add_manpower = 10
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+explore_the_high_seas_action = {
+	sprite = "GFX_icon_explore_the_high_seas_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+        OR = {
+            government = pirate_haven
+            government = pirate_kingdom
+        }
+	}
+	trigger = {
+		stability = 0
+        num_of_ports = 1
+	}
+	effect = {
+		country_event = { id = GOT_LADY_OF_THE_WAVES.1 }
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

@@ -15,61 +15,44 @@ guiTypes = {
 		upsound = hre
 		downsound = ""
 	
-        guiButtonType =
-		{
+        #--------------------------------
+        # Backgrounds
+        #--------------------------------
+        guiButtonType = {
 			name ="hre_bg_button"
-			spriteType = "GFX_hre_bg_asoiaf"
+			spriteType = "GXF_startupscreen_bg"
 		}
 		
-		iconType =
-		{
+		iconType = {
 			name ="hre_bg_extended"
 			spriteType = "GFX_large_square_bg"
 			position = { x= 66 y = -9999 }
 		}
 		
-		iconType =
-		{
+		iconType = {
 			name ="hre_bg"
 			spriteType = "GFX_large_square_bg"
 			position = { x= 66 y = -9999 }
 		}		
-		
-		
-        # GFX_copts_site_title_banner - small
-        # GFX_cb_banner - diff. style - small
-        # GFX_combat_banner - red, left cutoff
         
-        # x: 66
-        # y: 18
-        iconType =
-		{
-			name ="hre_banner_members"
-			spriteType = "GFX_sk_green_banner"
-			position = { x= 190 y = 400 }
-			allwaystransparent = yes
-		}
-		
-        iconType =
-		{
-			name ="hre_banner_emperor"
-			spriteType = "GFX_sk_red_banner"
-			position = { x= 190 y = 40 }
-			allwaystransparent = yes
-		}
+        # GFX_sk_green_banner
+        # GFX_sk_red_banner
+        # GFX_sk_green_banner_small
         
-        iconType =
-		{
+        iconType = {
 			name ="iron_throne"
 			spriteType = "GFX_iron_throne"
-			position = { x= 330 y = 120 }
+			position = { x= 660 y = -9999 }
 			allwaystransparent = yes
-            scale = 0.8
+            scale = 0.5
 		}
         
+        #--------------------------------
+        # Emperor
+        #--------------------------------
 		instantTextBoxType = {
 			name = "hre_label"
-			position = { x = 160 y = 6 }
+			position = { x = 220 y = 48 }
 			format = centre
 			textureFile = ""
 			font = "vic_29"
@@ -81,194 +64,64 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "emperor_label"
-			position = { x = 310 y = 53 }
+			position = { x = 220 y = 98 }
 			textureFile = ""
 			font = "vic_29"
 			borderSize = {x = 4 y = 4}
 			text = "HRE_EMPEROR"	
-			maxWidth = 295
+			maxWidth = 584
 			maxHeight = 32	
 			format = centre
 		}
-
-		instantTextBoxType = {
-			name = "members_label"
-			position = { x = 305 y = 416 }
-			textureFile = ""
-			font = "vic_22"
-			borderSize = {x = 4 y = 4}
-			text = "HRE_HOUSES_OF_THE_SEVEN_KINGDOMS"	
-			maxWidth = 300
-			maxHeight = 32	
-			format = centre
-		}
-		
-		#### AUTHORITY
-        iconType =
-		{
-			name ="hre_banner_influence"
-			spriteType = "GFX_sk_green_banner_small"
-			position = { x= 14 y = 110 }
-			allwaystransparent = yes
-		}
-        
-		instantTextBoxType = {
-			name = "influence_label"
-			position = { x = 55 y = 120 }
-			textureFile = ""
-			font = "vic_18"
-			borderSize = {x = 4 y = 0}
-			text = "HRE_INFLUENCE"	
-			maxWidth = 256
-			maxHeight = 32	
-			format = centre
-		}
-		
-        iconType =
-		{
-			name ="influence_value_bg"
-			spriteType = "GFX_country_diplomacy_view_search"
-			position = { x= 80 y = 160 }
-			allwaystransparent = yes
-		}
-        
-        iconType =
-		{
-			name ="influence_value_bg_icon"
-			spriteType = "GFX_march_icon"
-			position = { x= 44 y = 160 }
-			allwaystransparent = yes
-		}
-        
-        iconType =
-		{
-			name ="influence_growth_bg"
-			spriteType = "GFX_country_diplomacy_view_search"
-			position = { x= 80 y = 200 }
-			allwaystransparent = yes
-		}
-        
-        iconType =
-		{
-			name ="influence_growth_bg_icon"
-			spriteType = "GFX_diplomacy_agreements"
-			position = { x= 44 y = 200 }
-			allwaystransparent = yes
-		}
-        
-		instantTextBoxType = {
-			name = "influence_value"
-			position = { x = 115 y = 160 }
-			textureFile = ""
-			font = "vic_22"
-			borderSize = {x = 4 y = 4}
-			text = ""	
-			maxWidth = 128
-			maxHeight = 32	
-			format = centre
-			hint_tag = "hint_imperialauthority"
-		}
-		
-		instantTextBoxType = {
-			name = "influence_growth"
-			position = { x = 115 y = 200 }
-			textureFile = ""
-			font = "vic_22"
-			borderSize = {x = 4 y = 4}
-			text = "+0.20"	
-			maxWidth = 128
-			maxHeight = 32	
-			format = centre
-			hint_tag = "hint_imperialauthority"
-		}
-		
-		guiButtonType = 
-		{
+               
+        guiButtonType = {
 			name ="emperor_shield"
-			quadTextureSprite = "GFX_mega_flag"
-			position = { x= 385 y = 200 }
+			quadTextureSprite = "GFX_shield_fancy"
+			position = { x= 350 y = 225 }
 			tooltip = ""
 			tooltipText =""
 			delayedTooltipText = ""
 			buttonFont = "vic_18_black"
 			hint_tag = "hint_emperor"
 		}
-			
-		iconType =
-		{
+        
+        iconType = {
 			name ="benefits_icon"
 			spriteType = "GFX_hre_emp_benefits_icon"
-			position = { x= 380 y = 315 }
+			position = { x= 310 y = 245 }
 			Orientation = "UPPER_LEFT"
 		}	
 			
-		iconType =
-		{
+		iconType = {
 			name ="diplomatic_actions_icon"
 			spriteType = "GFX_more_dip_actions_icon"
-			position = { x= 498 y = 315 }
+			position = { x= 310 y = 285 }
 			Orientation = "UPPER_LEFT"
 		}	
-			
-		#### REFORM DECISIONS
-        iconType =
-		{
-			name ="hre_banner_decisions"
+        
+        #--------------------------------
+        # List Labels
+        #--------------------------------
+        iconType = {
+			name ="members_title_bg"
 			spriteType = "GFX_sk_green_banner_small"
-			position = { x= 550 y = 110 }
+			position = { x= 90 y = 325 }
 			allwaystransparent = yes
+            scale = 1.2
+		}
+		instantTextBoxType = {
+			name = "members_label"
+			position = { x = 140 y = 331 }
+			textureFile = ""
+			font = "vic_22"
+			borderSize = {x = 4 y = 4}
+			text = "HRE_HOUSES_OF_THE_SEVEN_KINGDOMS"	
+			maxWidth = 300
+			maxHeight = 32	
+			format = left
 		}
         
-		instantTextBoxType = {
-			name = "decisions_label"
-			position = { x = 600 y = 120 }
-			textureFile = ""
-			font = "vic_18"
-			borderSize = {x = 4 y = 0}
-			text = "Royal Decrees"	
-			maxWidth = 256
-			maxHeight = 32	
-			format = centre
-		}
-			
-		listboxType =  {
-			name ="decisions_listbox"
-			position = { x = 610 y = 160 }
-			backGround=""
-			size = { x = 400 y = 400 }
-			Orientation = "UPPER_LEFT"
-			horizontal = 0
-			spacing = 1
-			scrollbartype = "standardtext_slider"
-			borderSize = {x = 10 y = 10}
-		}
-			
-
-		guiButtonType = {
-			name = "vote_button"
-			position = { x=309 y =450}
-			quadTextureSprite ="button_type_1"	
-			tooltip = ""
-			tooltipText =""
-			delayedTooltipText = ""
-			buttonText = "HRE_VOTE"
-			buttonFont = "vic_18"
-		}
-	
-		guiButtonType = {
-			name = "close_button"
-			position = { x=380 y =670}
-			quadTextureSprite ="button_type_1"	
-			tooltip = ""
-			tooltipText =""
-			delayedTooltipText = ""
-			buttonText = "HRE_CLOSE"
-			buttonFont = "vic_18"
-			clicksound = close_window
-			shortcut = "ESCAPE"
-		}
-		
-        instantTextBoxType = {
+         instantTextBoxType = {
 			name = "electors_label"
 			position = { x = 302 y =-9999 }
 			textureFile = ""
@@ -279,27 +132,168 @@ guiTypes = {
 			maxHeight = 32	
 			format = centre
 		}
-
         
+        #--------------------------------
+        # Influence
+        #--------------------------------
+       	iconType = {
+			name ="hre_influence_title_bg"
+			spriteType = "GFX_sk_green_banner_small"
+			position = { x= 90 y = 200 }
+			allwaystransparent = yes
+            scale = 1.2
+		}
+        iconType = {
+			name ="hre_bg_1"
+			spriteType = "GFX_diplomacy_chance_string_bg"
+			position = { x= 120 y = 240 }
+			allwaystransparent = yes
+            scale = 0.7
+		}
+        iconType = {
+			name ="hre_bg_2"
+			spriteType = "GFX_diplomacy_chance_string_bg"
+			position = { x= 120 y = 280 }
+			allwaystransparent = yes
+            scale = 0.7
+		}
+        
+		instantTextBoxType = {
+			name = "influence_label"
+			position = { x = 140 y = 210 }
+			textureFile = ""
+			font = "vic_22"
+			borderSize = {x = 4 y = 0}
+			text = "HRE_INFLUENCE"	
+			maxWidth = 256
+			maxHeight = 32	
+			format = left
+		}
+		
+        iconType = {
+			name ="influence_value_bg_icon"
+			spriteType = "GFX_march_icon"
+			position = { x= 44 y = -9999 }
+			allwaystransparent = yes
+		}
+        
+        iconType = {
+			name ="influence_growth_bg_icon"
+			spriteType = "GFX_diplomacy_agreements"
+			position = { x= 44 y = -9999 }
+			allwaystransparent = yes
+		}
+        
+		instantTextBoxType = {
+			name = "influence_value"
+			position = { x = 140 y = 245 }
+			textureFile = ""
+			font = "vic_22"
+			borderSize = {x = 4 y = 4}
+			text = ""	
+			maxWidth = 128
+			maxHeight = 32	
+			format = left
+			hint_tag = "hint_imperialauthority"
+		}
+		
+		instantTextBoxType = {
+			name = "influence_growth"
+			position = { x = 135 y = 285 }
+			textureFile = ""
+			font = "vic_22"
+			borderSize = {x = 4 y = 4}
+			text = "+0.20"	
+			maxWidth = 128
+			maxHeight = 32	
+			format = left
+			hint_tag = "hint_imperialauthority"
+		}
+		
+		#--------------------------------
+        # Reforms
+        #--------------------------------
+        iconType = {
+			name ="hre_reform_title_bg"
+			spriteType = "GFX_sk_green_banner_small"
+			position = { x= 530 y = 200 }
+			allwaystransparent = yes
+            scale = 1.2
+		}
+        
+		instantTextBoxType = {
+			name = "decisions_label"
+			position = { x = 580 y = 210 }
+			textureFile = ""
+			font = "vic_22"
+			borderSize = {x = 4 y = 0}
+			text = "Royal Decrees"	
+			maxWidth = 256
+			maxHeight = 32	
+			format = left
+		}
+			
+		listboxType =  {
+			name ="decisions_listbox"
+			position = { x = 550 y = 240 }
+			backGround=""
+			size = { x = 400 y = 400 }
+			Orientation = "UPPER_LEFT"
+			horizontal = 0
+			spacing = 1
+			scrollbartype = "standardtext_slider"
+			borderSize = {x = 10 y = 10}
+		}
+        
+        #--------------------------------
+        # Buttons
+        #--------------------------------
+		guiButtonType = {
+			name = "vote_button"
+			position = { x=100 y =450}
+			quadTextureSprite ="button_type_1"	
+			tooltip = ""
+			tooltipText =""
+			delayedTooltipText = ""
+			buttonText = "HRE_VOTE"
+			buttonFont = "vic_18"
+		}
+	
+		guiButtonType = {
+			name = "close_button"
+			position = { x=445 y =555}
+			quadTextureSprite ="button_type_1"	
+			tooltip = ""
+			tooltipText =""
+			delayedTooltipText = ""
+			buttonText = "HRE_CLOSE"
+			buttonFont = "vic_18"
+			clicksound = close_window
+			shortcut = "ESCAPE"
+		}
+
 		guiButtonType = {
 			name = "dismantel_button"
-			position = { x= 454 y = -9999}
+			position = { x= 270 y = 555}
 			quadTextureSprite ="button_type_1"	
-			buttonText = "HRE_DISMANTLE"
+			buttonText = "Dismantle"
 			buttonFont = "vic_18"
 		}
 		
 		guiButtonType = {
 			name = "leave_button"
-			position = { x= 454 y = -9999}
+			position = { x= 620 y = 555}
 			quadTextureSprite ="button_type_1"	
-			buttonText = "HRE_LEAVE"
+			buttonText = "Leave"
 			buttonFont = "vic_18"
 		}
         
+        #--------------------------------
+        # Leagues
+        #--------------------------------
         guiButtonType = {
 			name = "join_league_button"
-			position = { x= 35 y = -9999 }
+			position = { x= 310 y = 33 }
 			quadTextureSprite ="GFX_join_league_button"	
 			tooltip = ""
 			tooltipText =""
@@ -312,7 +306,7 @@ guiTypes = {
 		
 		guiButtonType = {
 			name = "join_heretic_league_button"
-			position = { x= 644 y = -9999 }
+			position = { x= 660 y = 33 }
 			quadTextureSprite ="GFX_join_heretic_league_button"	
 			tooltip = ""
 			tooltipText =""
@@ -323,54 +317,48 @@ guiTypes = {
 			frame = 1			
 		}	
 		
-		iconType =
-		{
+		iconType = {
 			name ="hre_religion_icon"
-			spriteType = "GFX_province_view_religion"
-			position = { x= 55 y = -9999 }
+			spriteType = "GFX_advisor_view_religion"
+			position = { x= 330 y = 51 }
 			hint_tag = "hint_religion"
 			allwaystransparent = yes
-		}	
+		}
 
-		iconType =
-		{
+		iconType = {
 			name ="hre_heretic_religion_icon"
-			spriteType = "GFX_province_view_religion"
-			position = { x= 665 y = -9999 }
+			spriteType = "GFX_advisor_view_religion"
+			position = { x= 680 y = 51 }
 			hint_tag = "hint_religion"
 			allwaystransparent = yes			
 		}			
 
-		iconType =
-		{
+		iconType = {
 			name ="hre_official_religion_icon"
 			spriteType = "GFX_join_league_button"
-			position = { x= 339 y = -9999 }
+			position = { x= 70 y = 70 }
 			hint_tag = "hint_religion"
 			frame = 3
 		}
 
-		iconType =
-		{
+		iconType = {
 			name ="hre_war_peace_icon"
-			spriteType = "GFX_hre_war_peace_strip"
-			position = { x= 346 y = -9999 }
+			spriteType = "GFX_advisor_view_religion"
+			position = { x= 330 y = 100 }
 			hint_tag = "hint_religion"
 			frame = 1
 		}	
 		
-		iconType =
-		{
+		iconType = {
 			name ="hre_religion_icon_2"
-			spriteType = "GFX_province_view_religion"
-			position = { x= 359 y = -9999 }
+			spriteType = "GFX_advisor_view_religion"
+			position = { x= 90 y = 88 }
 			hint_tag = "hint_religion"
 			allwaystransparent = yes
 		}	
 	}
     
-	guiButtonType = 
-	{
+	guiButtonType = {
 		name ="elector_shield"
 		quadTextureSprite = "GFX_shield_thin"
 		position = { x= -78 y = -84 }
@@ -381,8 +369,7 @@ guiTypes = {
 		hint_tag = "hint_elector"
 	}
 	
-	guiButtonType = 
-	{
+	guiButtonType = {
 		name ="elector_vote_shield"
 		quadTextureSprite = "GFX_shield_small"
 		position = { x= 22 y = -32 }
@@ -404,8 +391,7 @@ guiTypes = {
 		position = { x= 6 y = -16 }
 	}	
 	
-	guiButtonType =
-	{
+	guiButtonType = {
 		name ="member_shield"
 		quadTextureSprite = "GFX_shield_small"
 		position = { x= 6 y = -16 }
@@ -427,17 +413,17 @@ guiTypes = {
 
 	positionType = {
 		name = "member_shield_position"
-		position = { x = 440 y = 480 }
+		position = { x = 250 y = 370 }
 	}
 	
 	positionType = {
 		name = "league_shield_position"
-		position = { x = 55 y = -9999 }
+		position = { x = 660 y = 340 }
 	}
 
 	positionType = {
 		name = "heretic_league_shield_position"
-		position = { x = 665 y = -9999 }
+		position = { x = 665 y = 440 }
 	}		
 	
 	# Space between elector shields
@@ -504,7 +490,7 @@ guiTypes = {
 			name = "title"
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
-			maxWidth = 164
+			maxWidth = 300
 			maxHeight = 20
 			text = ""	
 			format = left
@@ -521,7 +507,7 @@ guiTypes = {
 		}			
 		guiButtonType = {
 			name = "select_button"
-			position = { x=187 y =-18}
+			position = { x=320 y =-18}
 			quadTextureSprite ="GFX_execute_decision"	
 			tooltip = ""
 			tooltipText =""

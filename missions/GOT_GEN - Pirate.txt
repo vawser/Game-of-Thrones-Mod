@@ -1,17 +1,16 @@
-rivermen_missions_generic = {
-    slot = 1                  # Which column the missions will appear in. 1 to 5.
+pirate_missions_generic = {
+    slot = 4                  # Which column the missions will appear in. 1 to 5.
     generic = no             # Whether missions within this series are considered generic.
     ai = yes                  # Whether the AI will claim missions in this series.
     has_country_shield = yes  # Whether to display the country shield on the icon.    
     
     # Determines when a series appears for a country. Country scope.
     potential = {
-	primary_culture = men_of_the_riverlands
-	NOT = { tag = A03 }
+	primary_culture = stepstones
     }
     
     # The name of the mission, used for localization
-    rivermen_mission_1 = {
+    pirate_mission_1 = {
         
 	icon = mission_mosque            # The icon to use for the mission
         #generic = yes     # Whether this mission is considered generic.
@@ -36,3 +35,4 @@ rivermen_missions_generic = {
         }
     }
 }
+

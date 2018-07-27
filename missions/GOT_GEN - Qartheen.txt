@@ -1,0 +1,39 @@
+# culture_central_essos
+qartheen_missions_generic = {
+    slot = 4                  # Which column the missions will appear in. 1 to 5.
+    generic = no             # Whether missions within this series are considered generic.
+    ai = yes                  # Whether the AI will claim missions in this series.
+    has_country_shield = yes  # Whether to display the country shield on the icon.    
+    
+    # Determines when a series appears for a country. Country scope.
+    potential = {
+		culture_group = culture_qarth
+		NOT = { tag = R41 }
+    }
+    
+    # The name of the mission, used for localization
+    qartheen_mission_1 = {
+        
+		icon = mission_mosque            # The icon to use for the mission
+        #generic = yes     # Whether this mission is considered generic.
+        ai = yes          # Whether the AI will claim this mission.
+        position = 1        # Which row the mission appears in. 1 is top.
+        
+        
+        # Determines which provinces to highlight. Acts like all_province scope. Optional.
+        provinces_to_highlight = {
+		owned_by = ROOT
+		is_capital = yes
+        }
+    
+        # Determines when the mission is completed. Country scope.
+        trigger = {
+            treasury = 1000
+        }
+        
+        # The effect executed when the mission is claimed. Country scope.
+        effect = {
+            add_treasury = 1000
+        }
+    }
+}

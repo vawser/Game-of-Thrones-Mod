@@ -2,6 +2,8 @@
 -- Ages
 --------------------------------
 NDefines.NGame.AGE_USHER_IN_TIME = 12
+NDefines.NCountry.GOLDEN_ERA_YEARS = 25
+NDefines.NCountry.SPLENDOR_ABILITY_COST = 800
 
 --------------------------------
 -- Great Powers
@@ -11,13 +13,24 @@ NDefines.NDiplomacy.NUM_OF_GREAT_POWERS = 0                 -- Great Power mecha
 --------------------------------
 -- Institutions
 --------------------------------
-NDefines.NCountry.INSTITUTION_BONUS_FROM_IMP_DEVELOPMENT = 0
+NDefines.NCountry.INSTITUTION_BONUS_FROM_IMP_DEVELOPMENT = 5
+NDefines.NCountry.INSTITUTION_CAP_IMP_DEVELOPMENT = 10
+NDefines.NCountry.INSTITUTION_BASE_IMP_DEVELOPMENT = 30
+NDefines.NCountry.EMBRACE_INSTITUTION_COST = 5
+
+--------------------------------
+-- Migration
+--------------------------------
+NDefines.NCountry.MIGRATION_BOOST = 5
+NDefines.NCountry.MIGRATION_COOLDOWN = 12
+NDefines.NCountry.MIGRATION_DEPLETION_TIME = 365
 
 --------------------------------
 -- Cores
 --------------------------------
 NDefines.NCountry.CORE_LOSE = -1							
 NDefines.NCountry.CORE_LOSE_CULTURE_GROUP = -1
+NDefines.NCountry.CORE_LOSE_PRIMARY_CULTURE_TAG = -1
 
 --------------------------------
 -- Technology
@@ -25,11 +38,12 @@ NDefines.NCountry.CORE_LOSE_CULTURE_GROUP = -1
 NDefines.NCountry.PS_BUY_IDEA = 750
 NDefines.NCountry.FREE_IDEA_GROUP_COST = 1.2
 NDefines.NCountry.PS_ADVANCE_TECH = 400
+NDefines.NCountry.MAX_IDEA_GROUPS_FROM_SAME_CATEGORY = 1.0
 
 --------------------------------
 -- Policies
 --------------------------------
-NDefines.NCountry.POLICY_COST = 2
+NDefines.NCountry.POLICY_COST = 1
 
 --------------------------------
 -- Estates
@@ -59,9 +73,14 @@ NDefines.NDiplomacy.SCALED_TRUCE_YEARS = 0                  -- Reverse truces to
 NDefines.NDiplomacy.MONTHS_BEFORE_TOTAL_OCCUPATION = 12     -- More suited to the warfare in GOT
 NDefines.NDiplomacy.DISHONORABLE_PEACE_MONTHS = 0           -- More suited to the warfar in GOT
 
-   
-
-
+--------------------------------
+-- Innovation
+--------------------------------
+NDefines.NCountry.INNOVATIVENESS_FIRST_REACHED_TECH_LEVEL = 5.0
+NDefines.NCountry.INNOVATIVENESS_FIRST_PICKED_IDEA = 5.0
+NDefines.NCountry.INNOVATIVENESS_BEHIND_IN_TECH_PENALTY = -0.1
+NDefines.NCountry.INNOVATIVENESS_AHEAD_OF_TIME_BONUS = 0.01
+NDefines.NCountry.INNOVATIVENESS_DAYS_AFTER_FIRST_PICK_VIABLE = 365
 
 
 

@@ -2,7 +2,33 @@
 -- Army
 --------------------------------
 NDefines.NCountry.STARTING_ARMY_SIZE = 0.25
-NDefines.NMilitary.NOMAD_PLAINS_SHOCK_BONUS = 0.5
+
+--------------------------------
+-- Army Professionalism
+--------------------------------
+NDefines.NMilitary.SLACKEN_AP_DROP = 0.05
+NDefines.NMilitary.SLACKEN_MANPOWER_INCREASE = 5.0
+NDefines.NMilitary.ARMY_DRILL_YEARLY_DECAY = -1
+NDefines.NMilitary.ARMY_DRILL_YEARLY_GAIN = 25.0
+
+--------------------------------
+-- Mercenaries
+--------------------------------
+NDefines.NMilitary.MERCENARY_SUPPORT_LIMIT_BASE = 5
+NDefines.NMilitary.MERCENARY_SUPPORT_LIMIT_FRACTION = 0.1
+
+--------------------------------
+-- Looting
+--------------------------------
+NDefines.NMilitary.LOOTED_DAYS = 365
+NDefines.NMilitary.LOOTED_SCALE = 2
+NDefines.NMilitary.LOOTED_MAX = 25
+NDefines.NMilitary.NOMAD_LOOT_TRADITION = 0.05
+
+--------------------------------
+-- Nomand
+--------------------------------
+NDefines.NMilitary.NOMAD_PLAINS_SHOCK_BONUS = 0.25
 NDefines.NMilitary.NOMAD_NON_PLAINS_SHOCK_PENALTY = -0.25
 
 --------------------------------
@@ -46,7 +72,7 @@ NDefines.NMilitary.TRANSPORT_SHIP_SAILORS_COST = 50
 --------------------------------
 NDefines.NCountry.CORRUPTION_FROM_BANNERS = 1
 NDefines.NMilitary.BANNER_DISCIPLINE_BONUS = 0.1
-NDefines.NMilitary.BANNER_AGE_MULTIPLIER = 0
+NDefines.NMilitary.BANNER_AGE_MULTIPLIER = 0.0
 NDefines.NMilitary.COSSACKS_SHOCK_DAMAGE_BONUS = 0.1
 NDefines.NMilitary.STRELTSY_FIRE_DAMAGE_BONUS = 0.1
 

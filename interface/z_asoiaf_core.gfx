@@ -1,0 +1,89 @@
+spriteTypes = {
+    #----------------------------------------------
+    # Factions
+    #----------------------------------------------
+    spriteType = {
+		name = "GFX_faction_bg_elephants"	
+		texturefile = "gfx//interface//faction_blue_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_elephants"	
+		texturefile = "gfx//interface//factions//elephants_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_faction_bg_tigers"	
+		texturefile = "gfx//interface//faction_blue_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_tigers"	
+		texturefile = "gfx//interface//factions//tigers_icon.dds"
+	}
+	
+    #----------------------------------------------
+	# Estates
+    #----------------------------------------------
+	spriteType = {
+		name = "GFX_estates_icons"
+		texturefile = "gfx//interface//estates_icons.dds"
+		noOfFrames = 20
+		loadType = "INGAME"
+	}
+	
+    # No longer used
+    spriteType = {
+		name = "GFX_estate_interactions"
+		texturefile = "gfx//interface//estates_icons.dds"
+		noOfFrames = 20
+		loadType = "INGAME"
+	}
+
+    #----------------------------------------------
+	# Technology
+    #----------------------------------------------
+	spriteType = {
+		name = "GFX_tech_group_strip"
+		texturefile = "gfx//interface//tech_group_strip.dds"
+		transparencecheck = yes	
+		noOfFrames = 23
+	}
+	
+    #----------------------------------------------
+	# Tradegoods
+    #----------------------------------------------
+	spriteType = {
+		name = "GFX_resource_icon"
+		texturefile = "gfx//interface//resources.tga"
+		noOfFrames = 29
+		loadType = "INGAME"
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_resource_icon_transparent"
+		texturefile = "gfx//interface//resources.tga"
+		noOfFrames = 29
+		loadType = "INGAME"
+		norefcount = yes
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_resource_icon_small"
+		texturefile = "gfx//interface//resources_small.dds"
+		noOfFrames = 29
+		loadType = "INGAME"
+	}	
+
+    #----------------------------------------------
+    # Native Icons
+    #----------------------------------------------
+    spriteType = {
+		name = "GFX_natives"
+		texturefile = "gfx//interface//natives.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+		
+	}
+}

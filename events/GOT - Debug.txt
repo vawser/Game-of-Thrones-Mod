@@ -41,7 +41,7 @@ country_event = {
 
 }
 
-province_event = {
+country_event = {
 
 	id = debug.3
 	title = debug.3.title
@@ -49,10 +49,13 @@ province_event = {
 	picture = BAD_WITH_MONARCH_eventPicture
 	
 	is_triggered_only = yes
+	hidden = yes
 	
 	option = {
 	
-		name = debug.3.option.a
+		name = debug.3.opt.a
+		
+		log = "TRIGGERED BY USER: [Root.GetName]: Income: [Root.total_income.GetValue] Percent: [Root.percent_from_trade.GetValue] Result: [Root.total_trade_income.GetValue]"
 	
 	}
 

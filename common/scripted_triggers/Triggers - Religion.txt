@@ -1,0 +1,55 @@
+has_dothraki_schools_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = has_religious_scholars_trigger_tooltip
+		OR = {
+            has_country_modifier = ovvo_modifier
+            has_country_modifier = qrakko_modifier
+            has_country_modifier = timmo_modifier
+            has_country_modifier = kovarro_modifier
+            has_country_modifier = chakko_modifier
+            has_country_modifier = zerqo_modifier
+            has_country_modifier = mosko_modifier
+        }
+	}
+}
+
+knows_of_country_capital_trigger = {
+	FROM = {
+		exists = yes
+		capital_scope = {
+			ROOT = {
+				has_discovered = PREV
+			}
+		}
+	}
+}
+
+hidden_progressive_opinion_for_schools_trigger = {
+	hidden_trigger = {
+		reverse_has_opinion = { who = FROM value = -50 }
+		reverse_has_opinion = { who = FROM value = -25 }
+		reverse_has_opinion = { who = FROM value = 0 }
+		reverse_has_opinion = { who = FROM value = 25 }
+		reverse_has_opinion = { who = FROM value = 50 }
+		reverse_has_opinion = { who = FROM value = 75 }
+		reverse_has_opinion = { who = FROM value = 100 }
+		reverse_has_opinion = { who = FROM value = 125 }
+	}
+}
+
+scholar_from_our_school_trigger = {
+	has_country_modifier = $school$_modifier
+	ROOT = {
+		religious_school = {
+			group = religion_dothraki
+			school = $school$_school
+		}
+	}
+}
+our_scholar_matches_their_school_trigger = {
+	PREV = { has_country_modifier = $school$_modifier }
+	religious_school = {
+		group = religion_dothraki
+		school = $school$_school
+	}
+}

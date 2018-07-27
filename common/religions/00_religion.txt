@@ -878,6 +878,226 @@ religion_dothraki = {
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 18 }
 	
+    religious_schools = {
+        # Ovvo
+        ovvo_school = {
+			potential_invite_scholar = {
+				knows_of_country_capital_trigger = yes
+			}
+
+			can_invite_scholar = {
+				adm_power = 50
+				reverse_has_opinion = { who = FROM value = 150 }
+				NOT = { has_country_modifier = ovvo_modifier }
+				OR = {
+					alliance_with = FROM
+					is_subject_of = FROM
+					overlord_of = FROM
+				}
+				hidden_progressive_opinion_for_schools_trigger = yes
+			}
+
+			on_invite_scholar = {
+				add_adm_power = -50
+				clear_dothraki_religion_modifiers_effect = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = ovvo_modifier duration = 7300 }
+			}
+
+			invite_scholar_modifier_display = ovvo_modifier
+
+			picture = "GFX_icon_ovvo_modifier"
+
+			army_tradition = 1
+		}
+        # Qrakko
+        qrakko_school = {
+			potential_invite_scholar = {
+				knows_of_country_capital_trigger = yes
+			}
+
+			can_invite_scholar = {
+				adm_power = 50
+				reverse_has_opinion = { who = FROM value = 150 }
+				NOT = { has_country_modifier = qrakko_modifier }
+				OR = {
+					alliance_with = FROM
+					is_subject_of = FROM
+					overlord_of = FROM
+				}
+				hidden_progressive_opinion_for_schools_trigger = yes
+			}
+
+			on_invite_scholar = {
+				add_adm_power = -50
+				clear_dothraki_religion_modifiers_effect = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = qrakko_modifier duration = 7300 }
+			}
+
+			invite_scholar_modifier_display = qrakko_modifier
+
+			picture = "GFX_icon_qrakko_modifier"
+
+			ae_impact = -0.05
+		}
+        # Timmo
+        timmo_school = {
+			potential_invite_scholar = {
+				knows_of_country_capital_trigger = yes
+			}
+
+			can_invite_scholar = {
+				adm_power = 50
+				reverse_has_opinion = { who = FROM value = 150 }
+				NOT = { has_country_modifier = timmo_modifier }
+				OR = {
+					alliance_with = FROM
+					is_subject_of = FROM
+					overlord_of = FROM
+				}
+				hidden_progressive_opinion_for_schools_trigger = yes
+			}
+
+			on_invite_scholar = {
+				add_adm_power = -50
+				clear_dothraki_religion_modifiers_effect = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = timmo_modifier duration = 7300 }
+			}
+
+			invite_scholar_modifier_display = timmo_modifier
+
+			picture = "GFX_icon_timmo_modifier"
+
+			mil_tech_cost_modifier = -0.05
+		}
+        # Kovarro
+        kovarro_school = {
+			potential_invite_scholar = {
+				knows_of_country_capital_trigger = yes
+			}
+
+			can_invite_scholar = {
+				adm_power = 50
+				reverse_has_opinion = { who = FROM value = 150 }
+				NOT = { has_country_modifier = kovarro_modifier }
+				OR = {
+					alliance_with = FROM
+					is_subject_of = FROM
+					overlord_of = FROM
+				}
+				hidden_progressive_opinion_for_schools_trigger = yes
+			}
+
+			on_invite_scholar = {
+				add_adm_power = -50
+				clear_dothraki_religion_modifiers_effect = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = kovarro_modifier duration = 7300 }
+			}
+
+			invite_scholar_modifier_display = kovarro_modifier
+
+			picture = "GFX_icon_kovarro_modifier"
+
+			yearly_corruption = -0.05
+		}
+        # Chakko
+        chakko_school = {
+			potential_invite_scholar = {
+				knows_of_country_capital_trigger = yes
+			}
+
+			can_invite_scholar = {
+				adm_power = 50
+				reverse_has_opinion = { who = FROM value = 150 }
+				NOT = { has_country_modifier = chakko_modifier }
+				OR = {
+					alliance_with = FROM
+					is_subject_of = FROM
+					overlord_of = FROM
+				}
+				hidden_progressive_opinion_for_schools_trigger = yes
+			}
+
+			on_invite_scholar = {
+				add_adm_power = -50
+				clear_dothraki_religion_modifiers_effect = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = chakko_modifier duration = 7300 }
+			}
+
+			invite_scholar_modifier_display = chakko_modifier
+
+			picture = "GFX_icon_chakko_modifier"
+
+			yearly_absolutism = 1
+		}
+        # Zerqo
+        zerqo_school = {
+			potential_invite_scholar = {
+				knows_of_country_capital_trigger = yes
+			}
+
+			can_invite_scholar = {
+				adm_power = 50
+				reverse_has_opinion = { who = FROM value = 150 }
+				NOT = { has_country_modifier = zerqo_modifier }
+				OR = {
+					alliance_with = FROM
+					is_subject_of = FROM
+					overlord_of = FROM
+				}
+				hidden_progressive_opinion_for_schools_trigger = yes
+			}
+
+			on_invite_scholar = {
+				add_adm_power = -50
+				clear_dothraki_religion_modifiers_effect = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = zerqo_modifier duration = 7300 }
+			}
+
+			invite_scholar_modifier_display = zerqo_modifier
+
+			picture = "GFX_icon_zerqo_modifier"
+
+			global_unrest = -2
+		}
+        # Mosko
+        mosko_school = {
+			potential_invite_scholar = {
+				knows_of_country_capital_trigger = yes
+			}
+
+			can_invite_scholar = {
+				adm_power = 50
+				reverse_has_opinion = { who = FROM value = 150 }
+				NOT = { has_country_modifier = mosko_modifier }
+				OR = {
+					alliance_with = FROM
+					is_subject_of = FROM
+					overlord_of = FROM
+				}
+				hidden_progressive_opinion_for_schools_trigger = yes
+			}
+
+			on_invite_scholar = {
+				add_adm_power = -50
+				clear_dothraki_religion_modifiers_effect = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = mosko_modifier duration = 7300 }
+			}
+
+			invite_scholar_modifier_display = mosko_modifier
+
+			picture = "GFX_icon_mosko_modifier"
+
+			global_missionary_strength = 0.02
+		}
+    }
+    
 	asoiaf_the_great_stallion = {
 		color = { 0.67 0.81 0.43 }
 		icon = 4
@@ -889,7 +1109,6 @@ religion_dothraki = {
 			cavalry_power = 0.1
             cavalry_flanking = 0.1
 		}
-        personal_deity = yes
 	}
 	
 	crusade_name = RELIGIOUS_CRUSADE

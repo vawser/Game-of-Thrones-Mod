@@ -1,0 +1,291 @@
+#----------------------------
+# Government Values
+#----------------------------
+# Multiplied by current Legitimacy - 50
+legitimacy = {
+	global_unrest = -4
+	tolerance_own = 2
+	tolerance_heathen = 2
+	tolerance_heretic = 2
+	diplomatic_reputation = 2
+	vassal_income = 0.1
+	monthly_militarized_society = 0.05
+	max_absolutism = 20
+}
+
+republican_tradition = {
+	global_unrest = -2
+}
+
+inverse_republican_tradition = {
+	stability_cost_modifier = 2.0
+}
+
+#Multiplied by current Horde Unity - 50
+horde_unity = {
+	global_unrest = -4
+	discipline = 0.1
+	global_manpower_modifier = 2
+}
+
+# Multiplied by current Devotion - 50
+devotion = {
+	papal_influence = 2
+	church_power_modifier = 0.25
+	prestige = 2
+	global_tax_modifier = 0.50
+}
+
+# Multiplied by current meritocracy - 50
+meritocracy = {
+	global_spy_defence = 1.0
+	advisor_cost = -0.5
+}
+
+positive_mandate = {	# 100% strength at 100 mandate, 0% at 50 mandate
+	global_unrest = -2.5
+	stability_cost_modifier = -0.1
+}
+
+negative_mandate = { # By default, starts at 50 mandate, 100% strength at 0 mandate
+	global_trade_goods_size_modifier = -0.5
+	fire_damage_received = 0.5
+	shock_damage_received = 0.5
+	global_unrest = 5
+	possible_mercenaries = -1
+}
+
+# Multiplied by Tribal Allegiance / 100
+tribal_allegiance = {
+	manpower_recovery_speed = 0.33
+	global_unrest = -3
+}
+
+#----------------------------
+# Merchant Republic
+#----------------------------
+bonus_from_merchant_republics = {
+	trade_goods_size_modifier = 0.5
+}
+
+bonus_from_merchant_republics_for_trade_league_member = {
+	trade_goods_size_modifier = 1
+}
+
+# For each province over limit
+merchant_republic_size = {
+	republican_tradition = -0.1
+}
+
+#----------------------------
+# Russian
+#----------------------------
+# 1. "This will impact Autonomy by $CHANGE|G$ in all our Provinces."
+# 2. "This will impact progress for all rebel factions by $CHANGE$."
+# 3. "This will impact war exhaustion by $CHANGE$ and raise $UNITS|Y$ Elite Regiments in our capital."
+
+streltsy_modifier = {
+	stability_cost_modifier = 1.0
+}
+
+#----------------------------
+# Iqta
+#----------------------------
+# "Taxation Focus"
+# "You will also get $AMOUNT|Y$ ducats, from the total Development of your Subjects' Provinces."
+efficient_tax_farming_modifier = {
+	global_tax_modifier = 0.15
+}
+
+# "Recruitment Focus"
+# "You will also get $AMOUNT|Y$ manpower, from the total Development of your Subjects' Provinces."
+land_acquisition_modifier = {
+	global_manpower_modifier = 0.15
+}
+
+# "Production Focus"
+lenient_taxation_modifier = {
+	production_efficiency = 0.15
+}
+
+#----------------------------
+# Mamluk
+#----------------------------
+promote_culture_in_government_modifier = {
+	same_culture_advisor_cost = -0.5
+}
+
+# 2. "You will get $AMOUNT|Y$ ducats, from your $CULTURE|Y$ Culture provinces.\n"
+# 3. "You will get $AMOUNT|Y$ manpower, from your $CULTURE|Y$ Culture provinces.\n"
+
+#----------------------------
+# Feudal Theocracy
+#----------------------------
+seize_clerical_holdings_modifier = {
+	core_creation = -0.1
+}
+
+# "$DEV|Y$ Development will be randomly distributed in your capital Area."
+invite_minorities_modifier = {
+	local_development_cost = -0.1
+}
+
+# 3. "This gives us a Claim on all neighboring Provinces currently owned by neutral or enemy heretics or heathens:\n$LIST$"
+
+#----------------------------
+# Tribal
+#----------------------------
+# 1. "You will get a new General with $TRADITION|Y$ Tradition.\n"
+
+train_horsemanship_modifier = {
+	cavalry_power = 0.15
+}
+
+# 3. Spawn Cavalry
+
+#----------------------------
+# Dutch Mechanics
+#----------------------------
+statists = {
+	caravan_power = 0.1
+	global_trade_power = 0.1
+	trade_steering = 0.1
+}
+
+orangists = {
+	development_cost = -0.1
+	army_tradition_decay = -0.01
+	advisor_cost = -0.1
+}
+
+#----------------------------
+# Militarized Society
+#----------------------------
+militarized_society = {
+	discipline = 0.10
+	manpower_recovery_speed = 0.20
+	land_maintenance_modifier = -0.20
+}
+
+#----------------------------
+# Parliament
+#----------------------------
+no_debate_in_parliament = {
+	yearly_corruption = 0.1
+}
+
+#----------------------------
+# Pasha
+#----------------------------
+pasha_state = {
+	local_defensiveness = 1.0
+    local_manpower_modifier = 1.0
+    local_tax_modifier = -0.25
+    local_production_efficiency = -0.25
+}
+
+#----------------------------
+# Government Ranks
+#----------------------------
+gov_rank_1 = {
+
+}
+
+gov_rank_2 = {
+	diplomats = 1
+	max_states = 5
+}
+
+gov_rank_3 = {
+	diplomats = 1
+	free_leader_pool = 1
+	max_states = 10
+	max_absolutism = 5
+}
+
+gov_rank_4 = {
+
+}
+
+gov_rank_5 = {
+
+}
+
+gov_rank_6 = {
+
+}
+
+gov_rank_7 = {
+
+}
+
+gov_rank_8 = {
+
+}
+
+gov_rank_9 = {
+
+}
+
+gov_rank_10 = {
+
+}
+
+
+#----------------------------
+# Shogun
+#----------------------------
+overlord_daimyo_at_peace = {
+	stability_cost_modifier = -0.02
+	legitimacy = 0.1
+}
+
+overlord_daimyo_at_peace_max = {
+	legitimacy = 1
+}
+
+overlord_daimyo_at_peace_min = {
+	stability_cost_modifier = -0.2
+}
+
+overlord_daimyo_same_isolationism = {
+	prestige = 0.1
+}
+
+overlord_daimyo_different_isolationism = { # This one gets merged into overlord_daimyo_same_isolationism in the code.
+	prestige = -0.05
+}
+
+overlord_daimyo_isolationism_max = {
+	prestige = 1
+}
+
+overlord_daimyo_isolationism_min = {
+	prestige = -1
+}
+
+overlord_sankin_kotai = {
+	diplomatic_reputation = 3
+}
+
+subject_sankin_kotai = {
+	diplomatic_upkeep = -1
+}
+
+overlord_expel_ronin = {
+	# Left for modders/future changes
+}
+
+subject_expel_ronin = {
+	liberty_desire = -5
+}
+
+overlord_sword_hunt = { # Unlike the others, this one counts per subject
+	land_forcelimit = 0.5
+	global_manpower = 0.250
+}
+
+subject_sword_hunt = {
+	land_forcelimit = -2
+	global_manpower = -1.000
+}

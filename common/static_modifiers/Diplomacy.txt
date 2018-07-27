@@ -1,0 +1,95 @@
+#----------------------------
+# Diplomatic Actions
+#----------------------------
+recruitment_sabotaged = {
+	manpower_recovery_speed = -0.2
+	sailors_recovery_speed = -0.2
+}
+
+merchants_slandered = {
+	global_trade_power = -0.1
+}
+
+discontent_sowed = {
+	global_unrest = 2
+	legitimacy = -1
+	republican_tradition = -0.2
+	devotion = -1
+	horde_unity = -1
+	meritocracy = -0.5
+}
+
+reputation_sabotaged = {
+	diplomatic_reputation = -3
+}
+
+corrupt_officials = {
+	yearly_corruption = 0.1
+}
+
+scaled_trade_league_leader = { #scaled by number of members
+	trade_steering = 0.025
+}
+
+in_trade_league = {
+	global_ship_trade_power = 0.2
+	diplomatic_upkeep = -1
+}
+
+#----------------------------
+# Subject Actions
+#----------------------------
+embargo_rivals = {
+
+}
+
+scutage = {
+
+}
+
+subsidize_armies = {
+
+}
+
+support_loyalists = {
+
+}
+
+send_officers = {
+	discipline = 0.05
+	land_morale = 0.2
+}
+
+divert_trade = {
+}
+
+#----------------------------
+# Subject Modifiers
+#----------------------------
+dothraki_tributary_land_forcelimit = {
+    land_forcelimit = 10
+}
+
+overlord_behind_tributary_state_tech_adm = {
+	adm_tech_cost_modifier = -0.05
+}
+
+overlord_behind_tributary_state_tech_dip = {
+	dip_tech_cost_modifier = -0.05
+}
+
+overlord_behind_tributary_state_tech_mil = {
+	mil_tech_cost_modifier = -0.05
+}
+
+tributary_state_behind_overlord_tech_adm = {
+	adm_tech_cost_modifier = -0.05
+}
+
+tributary_state_behind_overlord_tech_dip = {
+	dip_tech_cost_modifier = -0.05
+}
+
+tributary_state_behind_overlord_tech_mil = {
+	mil_tech_cost_modifier = -0.05
+}

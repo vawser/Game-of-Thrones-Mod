@@ -1,70 +1,3 @@
-#Do not change tags in here without changing every other reference to them.
-#If adding new forms of governemnts, make sure they are uniquely named.
-
-#Uses all 'modifiers' possible that's exported as a Modifier.
-
-# valid_for_new_country determines which governments can be converted to normally
-# allow_convert determines which governments can be force-converted to and from via CBs
-
-#ai_will_do will only check if it's valid,and won't break unions or switch to republic from monarchy, nor check to convert to something earlier in the file.
-
-# Country settings:
-# Type:
-#   monarchy = yes
-#   republic yes
-#   tribal = yes
-#   nomad = yes	
-#   religion = yes
-#   monastic = yes
-#   papacy = yes
-
-# Attributes:
-#	duration = 4
-#	min_autonomy = 50
-#	unique_government = yes
-#	valid_for_new_country
-#	valid_for_nation_designer
-#	nation_designer_cost
-#	allow_convert = no
-#	queen = no
-#   heir = no
-#   foreign_slave_rulers = yes
-#   allow_force_tributary = no
-#	republican_name = yes
-#	royal_marriage = no
-#	rulers_can_be_generals = no
-#	maintain_dynasty = yes          # Maintain Dynasty
-#	max_states = 1
-# 	different_religion_acceptance = -20
-# 	different_religion_group_acceptance = -50
-
-# Mechanics:
-#	allow_vassal_war = yes          # Shogunate
-#	allow_vassal_alliance = yes     # Shogunate
-#	allow_migration = yes           # Tribal Migration
-#	native_mechanic = yes           # Tribal Advancement
-#	has_parliament = yes            # Parliament
-# 	has_devotion = yes              # Devotion
-#   has_meritocracy = yes           # Meritocracy
-#	has_harem = yes                 # Harem
-#   has_pashas = yes                # Pasha
-#	is_elective = yes               # Elective Monarchy
-#	is_trading_city = yes           # Trading City
-#	free_city = yes                 # Free City
-#	dutch_mechanics = yes           # Dutch Republic
-#	militarised_society = yes	    # Prussian Militarization
-#	boost_income = yes              # Merchant Republic Boost
-#	can_use_trade_post = yes        # Trade Post
-#	can_form_trade_league = yes     # Trade Leagues
-#	claim_states = yes              # Claim State
-#   government_abilities
-#       russian_mechanic
-#       feudal_theocracy_mechanic
-#       tribal_federation_mechanic
-#       mamluk_mechanic
-#       iqta_mechanic
-#	faction = XXX
-
 #-----------------------------------------
 # Monarchies
 #-----------------------------------------
@@ -78,6 +11,7 @@ kingdom = {
 	nation_designer_cost = 0
 
 	maintain_dynasty = yes
+    
 	different_religion_acceptance = -15
 	different_religion_group_acceptance = -50
 	
@@ -90,7 +24,9 @@ kingdom = {
 	
 	max_states = 8
 	
-    claim_states = yes
+    government_abilities = {
+        iqta_mechanic
+    }
     
 	rank = {
 		1 = {
@@ -136,7 +72,11 @@ the_faith = {
 	}
 	ai_importance = 1
 	
-	max_states = 10
+	max_states = 5
+    
+    government_abilities = {
+        feudal_theocracy_mechanic
+    }
 	
 	rank = {
 		1 = {
@@ -163,7 +103,6 @@ free_city = {
     
 	royal_marriage = yes
 	boost_income = yes
-	#can_use_trade_post = yes
     can_form_trade_league = yes
     
 	different_religion_acceptance = -5
@@ -175,8 +114,10 @@ free_city = {
 	ai_importance = 1
 	
 	max_states = 8
-	
-    claim_states = yes
+    
+    government_abilities = {
+        iqta_mechanic
+    }
     
 	rank = {
 		1 = {
@@ -213,7 +154,7 @@ volanteane_republic = {
 	
 	dutch_mechanics = yes
 	
-	max_states = 2
+	max_states = 8
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 40
@@ -271,8 +212,12 @@ yiti_empire = {
 	}
 	ai_importance = 1
 	
-	max_states = 20
+	max_states = 12
 	
+    government_abilities = {
+        mamluk_mechanic
+    }
+    
 	rank = {
 		3 = {
 			global_tax_modifier = 0.1
@@ -309,6 +254,10 @@ pirate_haven = {
 	
 	max_states = 4
 	
+    government_abilities = {
+        iqta_mechanic
+    }
+    
 	rank = {
 		1 = {
 			naval_forcelimit = 20
@@ -345,6 +294,10 @@ pirate_kingdom = {
 	
 	max_states = 8
 	
+    government_abilities = {
+        iqta_mechanic
+    }
+    
 	rank = {
 		3 = {
 			naval_forcelimit = 50
@@ -357,6 +310,7 @@ pirate_kingdom = {
 }
 
 wildling_clan = {
+    monarchy = yes
 	tribal = yes
 
 	unique_government = yes
@@ -381,6 +335,10 @@ wildling_clan = {
 
 	max_states = 4
 
+    government_abilities = {
+        iqta_mechanic
+    }
+    
 	rank = {
 		1 = {
             infantry_power = 0.05
@@ -395,7 +353,6 @@ wildling_clan = {
 khas = {
     monarchy = yes
 	nomad = yes
-    tribal = yes
 	
     allow_migration = yes
     
@@ -416,6 +373,10 @@ khas = {
 	
 	max_states = 4
 	
+    government_abilities = {
+        tribal_federation_mechanic
+    }
+    
 	rank = {
 		1 = {
 			cav_to_inf_ratio = 0.5
@@ -444,7 +405,9 @@ ancient_city = {
 	
 	max_states = 8
 	
-    claim_states = yes
+    government_abilities = {
+        russian_mechanic
+    }
     
 	ai_will_do = {
 		factor = 0

@@ -1,0 +1,139 @@
+#----------------------------
+# Religious Unity
+#----------------------------
+religious_unity = {
+	monthly_fervor_increase = 1
+	max_absolutism = 5
+}
+
+inverse_religious_unity = {
+	stability_cost_modifier = 1.0		#more expensive to recover stability
+	global_unrest = 3
+	church_power_modifier = -1
+	devotion = -1
+	yearly_corruption = 0.1
+}
+
+#----------------------------
+# Defender of Faith
+#----------------------------
+defender_of_faith = {
+	land_morale = 0.05
+	naval_morale = 0.05
+	technology_cost = 0.05
+	war_exhaustion = -0.025					
+	papal_influence = 1
+	prestige = 1							
+	missionaries = 1
+	devotion = 0.5
+
+}
+
+#----------------------------
+# Curia Controller
+#----------------------------
+curia_controller = {
+	diplomats = 1							#1 extra diplomat as curia controller
+	prestige = 1							#1% extra prestige yearly
+	stability_cost_modifier = -0.1			#10% cheaper stability
+	advisor_pool = 2
+	advisor_cost = -0.2
+	free_leader_pool = 1
+	ae_impact = -0.2
+	technology_cost = -0.05
+}
+
+#----------------------------
+# Patriach Authority
+#----------------------------
+patriarch_state = {
+	local_state_maintenance_modifier = 0.1
+	local_monthly_devastation = -0.05
+}
+
+# Multiplied in provinces of same religion.
+patriarch_authority_local = {
+	local_unrest = -3
+	local_manpower_modifier = 0.33
+}
+
+#for the country
+patriarch_authority_global = {
+	global_missionary_strength = 0.02
+}
+
+#----------------------------
+# Piety
+#----------------------------
+positive_piety = {
+	land_morale = 0.10
+	global_missionary_strength = 0.03
+	province_warscore_cost = -0.25
+    unjustified_demands = -0.25
+}
+
+#For convenience, its multiplied by negative piety in code.
+negative_piety = {
+	ae_impact = -0.1
+	diplomatic_reputation = 2
+    improve_relation_modifier = 0.25
+}
+
+
+#----------------------------
+# Karma
+#----------------------------
+karma_just_right = {
+	diplomatic_reputation = 1
+	discipline = 0.05
+}
+
+karma_too_high = {
+	discipline = -0.05
+}
+
+karma_too_low = {
+	diplomatic_reputation = -1
+}
+
+#----------------------------
+# Harmony
+#----------------------------
+high_harmony = {
+	tolerance_own = 1
+}
+
+low_harmony = {
+	tolerance_own = -3
+	development_cost = 0.25
+	legitimacy = -1
+	meritocracy = -2
+}
+
+#----------------------------
+# Doom
+#----------------------------
+doom = {
+	technology_cost = 0.5
+	idea_cost = 0.2
+	ae_impact = -1
+}
+
+#----------------------------
+# Religious Authority
+#----------------------------
+authority = {
+	stability_cost_modifier = -0.1
+	global_unrest = -2
+}
+
+#----------------------------
+# Religious Schools
+#----------------------------
+# hanafi_scholar_modifier = {
+	# religion_sub_modifier = yes # Will make icon placed next to religion modifier
+	# religion = yes
+	# is_scholar_modifier = yes # Tells the AI and will only show the alert if country has none
+	# expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
+	# adm_tech_cost_modifier = -0.05
+# }

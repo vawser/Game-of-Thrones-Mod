@@ -1,0 +1,555 @@
+null_modifier = { }
+
+base_values = {
+	max_absolutism = 65
+	merc_maintenance_modifier = 1.5
+	merchants = 2							
+	diplomats = 2							
+	missionaries = 1						
+	army_tradition_decay = 0.05				
+	navy_tradition_decay = 0.05				
+	prestige_decay = 0.05					
+	tolerance_own = 3
+	diplomatic_upkeep = 4
+	tolerance_heathen = -3
+	tolerance_heretic = -2
+	mercenary_cost = 0.5
+	global_missionary_strength = 0.02
+	global_manpower = 10.0
+	advisor_pool = 3
+	colonist_placement_chance = 0.05
+	free_leader_pool = 2
+	republican_tradition = 1
+	monthly_fervor_increase = 1
+	vassal_income = 0.1
+    vassal_forcelimit_bonus = 1.0
+	horde_unity = -2
+	devotion = -0.5
+	meritocracy = -2
+	max_states = 5
+	num_accepted_cultures = 2
+	monthly_splendor = 1
+	artillery_bonus_vs_fort = 5
+	cav_to_inf_ratio = 0.5
+}
+
+ai_nation = {
+	diplomats = 1
+	free_leader_pool = 1
+	sailors_recovery_speed = 0.25		
+}
+
+innovativeness = {
+	all_power_cost	= -0.1
+	army_tradition_decay = -0.01
+	navy_tradition_decay = -0.01
+}
+
+war_taxes = {
+	land_maintenance_modifier = -0.20
+	naval_maintenance_modifier = -0.20
+	possible_mercenaries = 0.05
+}
+
+stability = {
+    # modifier * step 
+	global_trade_power = 0.01			
+	global_spy_defence = 0.05
+}
+
+positive_stability = {
+    # modifier * step 
+	global_unrest = -1					
+	global_tax_modifier = 0.05
+	global_missionary_strength = 0.005
+	stability_cost_modifier = 0.50
+	monthly_fervor_increase = 1
+	devotion = 0.5
+	yearly_corruption = -0.02
+	global_institution_spread = 0.05
+	yearly_harmony = 0.25
+}
+
+negative_stability = {
+    # modifier * -step 
+	global_unrest = -2
+	legitimacy = 1
+	interest = -1
+	migration_cooldown = 0.1
+	devotion = 1
+	caravan_power = 0.05
+	monthly_militarized_society = -0.05
+}
+
+cancelled_loan = {
+	
+}
+
+bank_loan = {
+	
+}
+
+inflation = {
+	build_cost = 0.01						#1% for each inflation step.
+	infantry_cost = 0.01					#1% for each inflation step
+	cavalry_cost = 0.01						#1% for each inflation step
+	artillery_cost = 0.01					#1% for each inflation step
+	heavy_ship_cost = 0.01					#1% for each inflation step
+	light_ship_cost = 0.01					#1% for each inflation step
+	galley_cost = 0.01						#1% for each inflation step
+	transport_cost = 0.01					#1% for each inflation step
+	advisor_cost = 0.01						#1% for each inflation step
+	mercenary_cost = 0.01					#1% for each inflation step
+	fort_maintenance_modifier = 0.01		#1% for each inflation step
+}
+
+bankruptcy = {
+	interest = 5
+	land_morale = -0.5
+	naval_morale = -0.5
+	reinforce_speed = -0.25					#Slower reinforce
+	manpower_recovery_speed = -1.0
+	sailors_recovery_speed = -1.0
+	advisor_cost = 0.5
+	monthly_fervor_increase = -1
+	global_colonial_growth = -200
+	global_autonomy = 0.05
+	global_institution_spread = -0.50
+	monthly_militarized_society = -0.5
+	yearly_absolutism = -2.0
+	technology_cost = 0.5
+	idea_cost = 0.5
+}
+
+war = {
+    imperial_authority = -0.01
+}
+
+peace = {
+	war_exhaustion = -0.1
+	monthly_fervor_increase = 1
+	global_autonomy = -0.1
+	global_institution_spread = 0.1
+	
+}
+
+unconditional_surrender = {
+	war_exhaustion = -0.1
+	global_autonomy = -0.1
+	global_institution_spread = 0.1
+}
+
+call_for_peace = {
+	war_exhaustion = 0.008
+}
+
+war_exhaustion = {
+	global_unrest = 1
+	global_regiment_recruit_speed = 0.02
+	global_ship_recruit_speed = 0.02
+	core_creation = 0.03
+	manpower_recovery_speed = -0.01
+	sailors_recovery_speed = -0.01
+	siege_ability = -0.01
+	global_trade_goods_size_modifier = -0.02
+}
+
+
+lost_mandate_of_heaven = {
+	discipline = -0.1
+	stability_cost_modifier = 0.5
+	global_unrest = 10
+	global_trade_goods_size_modifier = -0.5
+	fire_damage_received = 0.5
+	shock_damage_received = 0.5
+	reduced_liberty_desire = -50
+	legitimacy = -1
+	possible_mercenaries = -1
+}
+
+regency_council = {
+	legitimacy = -2
+}
+
+trade_efficiency = {
+}
+
+production_efficiency = {
+	colonist_placement_chance = 0.2			#0.2 for each 1% of PE (ie, if 100% PE, 20% bonus added.)
+}
+
+trade_refusal = {
+	trade_efficiency = -0.05
+}
+
+mercantilism = {
+	global_prov_trade_power_modifier = 0.02
+	embargo_efficiency = 0.005
+}
+
+army_tradition = {
+	recover_army_morale_speed = 0.1
+	land_morale = 0.25
+	manpower_recovery_speed = 0.1
+	siege_ability = 0.05
+	
+    free_leader_pool = 5
+}
+
+navy_tradition = {
+	recover_navy_morale_speed = 0.1
+	naval_morale = 0.25
+	trade_steering = 1.0
+	privateer_efficiency = 0.25
+	blockade_efficiency = 1
+	sailors_recovery_speed = 0.2
+    
+    free_leader_pool = 5
+}
+
+emperor = {
+	spy_offence = 0.1					#minor bonus on spies.
+	advisor_pool = 1
+	diplomatic_upkeep = 1
+	free_leader_pool = 1
+	prestige = 1
+}
+
+states_in_hre = {							#bonuses for each non-free city with capital in HRE.. as emperor
+	land_forcelimit	= 0.1					#each state increases forcelimit by 0.5
+	global_manpower = 0.1					#each gives 0.5 MP to the emperor.
+    global_tax_income = 1
+}
+
+free_cities_in_hre = {							#bonuses for each free city in the HRE.. as emperor
+    
+}
+
+free_city_in_hre = {
+    
+}
+
+member_in_hre = {
+	diplomatic_reputation = 1
+    global_tax_income = 12
+}
+
+#for each non-core if in the empire, and also a prince.
+occupied_imperial = {
+	prestige = -1
+	legitimacy = -0.5
+}
+
+num_of_marriages = {
+	legitimacy = 0.10
+	heir_chance = 0.05
+	improve_relation_modifier = 0.01
+}
+
+num_of_provinces = {
+	monthly_militarized_society = -0.015
+
+}
+
+# Multiplied by Development
+country_development = {
+	yearly_tribal_allegiance = -0.005
+}
+
+corruption = {
+	global_spy_defence = -0.25
+	spy_offence = -0.50
+	all_power_cost = 1.0
+	min_autonomy = 50
+	global_unrest = -20
+}
+
+root_out_corruption = {
+	yearly_corruption = -1.0
+}
+
+recovery_motivation = {
+	global_tax_modifier = 0.5
+	defensiveness = 0.25
+	manpower_recovery_speed = 0.5
+	army_tradition = 1
+	navy_tradition = 1
+	global_unrest = -5
+	interest = -2
+	horde_unity = 10
+}
+
+luck = {
+	#core
+	global_missionary_strength = 0.01
+	stability_cost_modifier = -0.10
+	global_institution_spread = 0.1
+	monthly_splendor = 1
+
+	#economy
+	mercenary_cost = -0.25
+	embracement_cost = -0.2
+	advisor_cost = -0.2
+	interest = -1
+
+	#military
+	manpower_recovery_speed = 0.25
+	defensiveness = 0.1
+	siege_ability = 0.05
+
+	#diplomacy
+	spy_offence = 0.1
+	improve_relation_modifier = 0.25
+
+	#government
+	global_unrest = -1
+	republican_tradition = 0.5
+	legitimacy = 1
+	ae_impact = -0.25
+
+}
+
+over_extension = {
+	global_foreign_trade_power = -1.0
+	stability_cost_modifier = 0.5
+	mercenary_cost = 0.5
+	diplomatic_reputation = -2
+	improve_relation_modifier = -0.5
+	global_unrest = 5
+	
+	yearly_corruption = 0.5
+}
+
+prestige = {
+	global_trade_power = 0.15			#+15/-15 total bonus from prestige.
+	land_morale = 0.1
+	naval_morale = 0.1
+	global_spy_defence = 0.1				#+10/-10
+	mercenary_cost = -0.33					#-33 to +33%
+	legitimacy = 1.0
+	improve_relation_modifier = 0.5
+	monthly_fervor_increase = 1
+	ae_impact = -0.10
+	embracement_cost = -0.1
+
+}
+
+absolutism = {
+	administrative_efficiency = 0.4
+	discipline = 0.05
+	core_decay_on_your_own = -0.5
+}
+
+total_occupation = {
+	war_exhaustion = 0.005					#increases exhaustion.
+}
+
+total_blockaded = {
+	war_exhaustion = 0.10					#increases exhaustion.
+}
+
+uncontested_cores = {
+	prestige = -0.1
+}
+
+num_objectives_fullfilled = {
+	monthly_splendor = 2
+}
+
+production_leader = {
+	trade_goods_size_modifier = 0.10
+}
+
+federation_leader = {
+	diplomatic_reputation = 1
+	land_morale = 0.1
+}
+
+is_great_power = {						#Only works with Rights of Man DLC enabled
+	prestige_decay = -0.01
+	embracement_cost = -0.1
+	max_absolutism = 5
+}
+
+in_golden_era = {
+	all_power_cost = -0.1
+	global_trade_goods_size_modifier = 0.1
+	land_morale = 0.1
+	naval_morale = 0.1
+	max_absolutism = 5
+}
+
+power_projection = {
+	defensiveness = 0.1
+	global_trade_power = 0.2
+	prestige = 0.5
+	land_morale = 0.1
+	naval_morale = 0.1
+	legitimacy = 0.5
+	devotion = 0.5
+	horde_unity = 0.5
+	republican_tradition = 0.2
+}
+
+power_projection_25 = {
+	free_leader_pool = 1
+}
+
+trade_company_strong = {
+	merchants = 1
+}
+
+trade_company_dominant = {
+}
+
+large_colonial_nation = {
+	merchants = 1
+	global_trade_power = 0.05
+	naval_forcelimit = 10
+	land_forcelimit = 5
+}
+
+liberty_desire = {
+
+}
+
+march_subject = {
+	land_forcelimit = 2
+}
+
+vassal_subject = {
+	land_forcelimit = 1
+}
+
+daimyo_subject = {
+
+}
+
+union_subject = {
+
+}
+
+all_nations = {
+	global_tax_income = 12
+	land_forcelimit	= 6
+	naval_forcelimit = 12
+}
+
+subject_nation = {
+	global_tax_income = -6
+	land_forcelimit	= -3
+	naval_forcelimit = -6
+}
+
+vassal_nation = {
+	development_cost = 0.5
+}
+
+primitive_nation = {
+	development_cost = 0.5
+}
+
+autonomy_increased = {
+	local_unrest = -10
+}
+
+autonomy_decreased = {
+	local_unrest = 10
+}
+
+dishonoured_alliance =  {
+	diplomatic_reputation = -1
+}
+
+revolution_target = {
+	global_manpower_modifier = 0.10
+	land_morale = 0.10
+	war_exhaustion = -0.15
+	unjustified_demands = -0.5
+	land_maintenance_modifier = -0.50
+	naval_maintenance_modifier = -0.50
+	land_forcelimit_modifier = 0.4
+	naval_forcelimit_modifier = 0.4
+	papal_influence = -100
+}
+
+native_policy_coexist = {
+	native_uprising_chance = -1.0
+}
+
+native_policy_trade = {
+	native_assimilation = 0.5
+	native_uprising_chance = -0.5
+}
+
+native_policy_hostile = {
+	global_colonial_growth = 20
+}
+
+low_army_professionalism = {
+	mercenary_cost = -0.15
+	possible_mercenaries = 0.15
+}
+
+high_army_professionalism = {
+	fire_damage = 0.1
+	shock_damage = 0.1
+	siege_ability = 0.2
+}
+
+#scales to amount of up-to-date forts compared to total development
+maintained_forts = {
+	army_tradition = 1
+}
+
+drilling_armies = { # Multiplied by percentage of forcelimit currently drilling
+	yearly_army_professionalism = 0.01
+}
+
+regiment_drill_modifier = { # Used by individual regiments
+	shock_damage = 0.1
+	fire_damage = 0.1
+	fire_damage_received = -0.1
+	shock_damage_received = -0.1
+}
+
+army_drill_modifier = { # Used by an entire army, is the average of all subunits drill
+	movement_speed = 0.2
+}
+
+supply_depot_area = {
+	supply_limit_modifier = 0.5
+}
+
+janissary_regiment = {
+	fire_damage_received = -0.1
+	shock_damage_received = -0.1
+	reinforce_cost_modifier = 1.0
+	drill_gain_modifier = 1.0
+}
+
+#----------------------------
+# System
+#----------------------------
+tutorial_colonial_range = {
+	range = 0.1
+}
+
+custom_setup = {
+	colonists = 1
+	global_tax_income = 20
+}
+
+invasion_nation = {
+	discipline = 0.5
+	manpower_recovery_speed = 1
+	sailors_recovery_speed = 1
+	global_tax_income = 600
+	land_forcelimit	= 100
+	naval_forcelimit = 100
+	global_manpower = 100.0
+	global_sailors = 10000
+	core_creation = -0.75
+	global_unrest = -10
+	land_attrition = -0.5
+}

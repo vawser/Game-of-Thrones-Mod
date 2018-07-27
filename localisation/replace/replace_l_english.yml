@@ -2,20 +2,9 @@
  #----------------------------------------------------
  # General
  #----------------------------------------------------
- western: "Westerosi"
- eastern: "Essosian"
- western_desc: "With the Westerosi technology group, technology levels are standard cost (100%)."
- eastern_desc: "With the Essosian technology group, technology levels are standard cost (100%)."
-
- europe: "Westeros"
- westeros: "Westeros"
- 
  colonial_government: "Outpost"
  colonial_government_desc: "An outpost subservient to a kingdom or republic."
 
- #MACRO_OBSOLETE_BY_TECH: "The amount of development in this province means $BUILDING|Y$ is available to build."
- #MACRO_REQUIREMENT_NOT_FULFILLED: "The amount of development in this province is not sufficient, meaning $BUILDING$ cannot be built."
- 
  WE_HAVE_GOV_NOMADS: "We are a Khas."
  WE_HAVE_GOV_TRIBAL: "We are a Clan."
  WE_HAVE_GOV_RELIGIOUS: "We are a Theocracy."
@@ -25,9 +14,6 @@
  
  PATRIARCHAL_BLESSINGS:0 "Blessings"
  RELIGIOUS_FAITH:0 "$RELIGIOUS$"
- 
- eastern_knights: "Essosian Riders"
- eastern_knightsDESCR: ""
  
  #------------------------------------------------------
  # Siberian Frontier
@@ -46,40 +32,151 @@
  IDEA_MAY_SIBERIAN_FRONTIER:0 "May Establish Essosian Frontiers"
  
  #------------------------------------------------------
+ # Jannissaries
+ #------------------------------------------------------
+ STATE_JANISSARIES_GOVERNMENT_ALLOWS:0 "Only nations with Ottoman Government can Conscript Janissaries."
+ STATE_JANISSARIES_COOLDOWN:0 "Can recruit more Janissaries at $DATE|Y$."
+ STATE_JANISSARIES_NEED_MIL_POWER:0 "You need $AMOUNT|Y$ £mil£ to Conscript Janissaries"
+ STATE_JANISSARIES_DESC:1 "§YConscript Janissaries§!\nWith §YOttoman Government§! we are capable of recruting Janissaries in heathen provinces. The more heathen development, the more Janissaries we can draw from them. This can only be done once every 5 years."
+ ONLY_JANISSARY_MODIFIER:0 "§YAffects only Janissary Regiments§!"
+ CREATE_JANISSARIES_BUTTON:1 "Conscript Janissaries"
+ CREATEJANISSARIES:1 "Conscript Janissaries"
+ JANISSARIES_REGIMENT:0 "Janissary Regiment\n$EFFECT$"
+ STATE_JANISSARIES_CREATED_REGIMENTS:0 "$NUM|Y$ Janissaries will spawn in $PROV|Y$"
+ STATE_JANISSARIES_HEATHEN_PROVINCES:1 "State needs at least $AMOUNT|Y$ development of Heathen faith fully cored and controlled by you."
+ STATE_JANISSARIES_BATTLE_OR_SIEGE:0 "You cannot conscript Janissaries in a province with an ongoing battle or siege."
+ 
+ #------------------------------------------------------
+ # Pasha
+ #------------------------------------------------------
+ ADD_PASHA_BUTTON:0 "Assign Encampment"
+ REMOVE_PASHA_BUTTON:0 "Remove Encampment"
+ ADD_PASHA_TOOLTIP:0 "§YAssign Encampment§!"
+ REMOVE_PASHA_TOOLTIP:0 "§YRemove Encampment§!"
+ ADD_PASHA_TOOLTIP_DESC:0 "Assigning a Encampment in $STATE|Y$ will give us the following effects:\n$EFFECT$"
+ REMOVE_PASHA_TOOLTIP_DESC:0 "Removing the Encampment in $STATE|Y$ will give us the following effects:\n$EFFECT$"
+ CONFIRMADDPASHA:0 "Assign Encampment"
+ CONFIRMADDPASHA_TEXT:1 "Assigning a Encampment in $STATE|Y$ will give us the following effects:\n$EFFECT$"
+ CONFIRMREMOVEPASHA:0 "Remove Encampment"
+ CONFIRMREMOVEPASHA_TEXT:1 "Removing the Encampment in $STATE|Y$ will give us the following effects:\n$EFFECT$"
+ pasha_removed_modifier:0 "Encampment Removed"
+ PASHA_MODIFIER:0 "Encampment in State"
+ pasha_state:0 "Encampment"
+ PASHA_WRONG_GOVERNMENT:0 "\n§RWe cannot Assign Encampment.§!"
+ PASHA_CORRECT_GOVERNMENT:0 "We are capable of placing Encampments in States.\n"
+ 
+ #------------------------------------------------------
  # Gov Abilities
  #------------------------------------------------------
- RUSABIL_SUBEDNIK:0 "Settle Tribal Differences"
- RUSABIL_OPRICHNINA:0 "Ease Tribal Tensions"
- RUSABIL_STRELTSY:0 "Muster Tribesmen"
- RUSABIL_SUBEDNIK_Q:0 "This will impact Autonomy by $CHANGE|G$ in all our Provinces."
+ alert_can_use_russian_ability_instant:0 "§YCan use a Government ability!§!"
+ alert_can_use_iqta_ability_instant:0 "§YCan enact a Government ability!§!"
+ alert_can_use_malmluk_ability_instant:0 "§YCan use a Government ability!§!"
+ alert_can_use_feudal_theocracy_ability_instant:0 "§YCan use a Government ability!§!"
+ alert_can_use_tribal_federation_ability_instant:0 "§YCan use a Government ability!§!"
+ 
+ # Russian 
+ russian_adm_power:0 "Administrative Progress"
+ russian_dip_power:0 "Diplomatic Progress"
+ russian_mil_power:0 "Military Progress"
+ RUSABIL_SUDEBNIK: "Consolidate Power"
+ RUSABIL_OPRICHNINA:0 "Suppress Dissent"
+ RUSABIL_STRELTSY:0 "Muster Magi"
+ RUSABIL_SUDEBNIK_Q:0 "This will impact Autonomy by $CHANGE|G$ in all our Provinces."
  RUSABIL_OPRICHNINA_Q:0 "This will impact progress for all rebel factions by $CHANGE$."
- RUSABIL_STRELTSY_Q:0 "This will impact war exhaustion by $CHANGE$ and raise $UNITS|Y$ Streltsy Regiments in our capital."
+ RUSABIL_STRELTSY_Q:0 "This will impact war exhaustion by $CHANGE$ and raise $UNITS|Y$ Banners in our capital."
  RUSABIL_NOT_ENOUGH:0 "You need $NEED|Y$ power gathered to '$NAME|Y$' but you have only gathered $CURR|Y$."
  RUSABIL_NOT_AUTONOMY:0 "There are no provinces that has at least $VAL|Y$ autonomy that can be reduced by '$NAME|Y$'."
- RUSABIL_DO_IT_SUBEDNIK:0 "By using $VAL|Y$ gathered power for '$NAME|Y$', we will impact Autonomy by $CHANGE|G$ in all our Province(s).\nThere are $PROV|Y$ Province(s) that will be affected."
+ RUSABIL_DO_IT_SUDEBNIK:0 "By using $VAL|Y$ gathered power for '$NAME|Y$', we will impact Autonomy by $CHANGE|G$ in all our Province(s).\nThere are $PROV|Y$ Province(s) that will be affected."
  RUSABIL_NO_REBELS:0 "There are no rebel factions with a progress of at least $VAL|R$, so there is no need to '$NAME|Y$'."
  RUSABIL_DO_IT_OPRI:0 "By using $VAL|Y$ gathered power for '$NAME|Y$', we will impact progress for all rebel factions by $CHANGE$."
  RUSABIL_NO_CAPITAL:0 "Your capital needs to be under your control for you to be able to '$NAME|Y$'."
- RUSABIL_DO_IT_STRELTSY:0 "By using $VAL|Y$ gathered power for '$NAME|Y$', we will impact war exhaustion by $CHANGE$ and raise $UNITS|Y$ Veteran Spearmen in our capital. "
+ RUSABIL_DO_IT_STRELTSY:0 "By using $VAL|Y$ gathered power for '$NAME|Y$', we will impact war exhaustion by $CHANGE$ and raise $UNITS|Y$ Magi in our capital. "
  RUSABIL_STRELTSY_MODIFIER:0 "This will increase our stability cost to $MODIFIER$ by relying on these regiments."
  RUSABIL_POOL:0 "We gain §G+$GAIN$§! to the pool at the start of each year, up to a maximum of $MAX|Y$\nWe currently have $CURR|R$ and using an ability costs $NEED|Y$."
+ 
+ # Iqta (Kingdom)
+ AN_IQTA_TAXATION_POLICY:0 "An Governmental Focus"
+ IQTA_TAXATION_POLICY_PERIOD:1 "During this period you can not enact another Governmental Focus."
+ 
+ efficient_tax_farming:0 "Taxation Focus"
+ efficient_tax_farming_desc:0 "You will also get $AMOUNT|Y$ ducats, from the total Development of your Subjects' Provinces."
+ land_acquisition:0 "Recruitment Focus"
+ land_acquisition_desc:0 "You will also get $AMOUNT|Y$ manpower, from the total Development of your Subjects' Provinces."
+ lenient_taxation:0 "Production Focus"
+ lenient_taxation_desc:0 ""
+ 
+ efficient_tax_farming_modifier:0 "Taxation Focus"
+ desc_efficient_tax_farming_modifier:0 ""
+ land_acquisition_modifier:0 "Recruitment Focus"
+ desc_land_acquisition_modifier:0 ""
+ lenient_taxation_modifier:0 "Production Focus"
+ desc_lenient_taxation_modifier:0 ""
+ 
+ # Mamluk 
+ promote_culture_in_government:0 "Promote Culture in Government"
+ promote_culture_in_government_desc:0 ""
+ sell_off_culture_slaves:0 "Sell Yitish Slaves"
+ sell_off_culture_slaves_desc:0 "You will get $AMOUNT|Y$ ducats, from your $CULTURE|Y$ Culture provinces.\n"
+ recruit_from_culture_lands:0 "Conscript Yitish Locals"
+ recruit_from_culture_lands_desc:0 "You will get $AMOUNT|Y$ manpower, from your $CULTURE|Y$ Culture provinces.\n"
+ 
+ mamluk_adm_power: "Administrative Progress"
+ mamluk_dip_power: "Diplomatic Progress"
+ mamluk_mil_power: "Military Progress"
+ 
+ promote_culture_in_government_modifier: "Empower Securitrons"
+ desc_promote_culture_in_government_modifier: "Mr. House has chosen to divert some of his stored power into empowering his Securitrons. This greatly improves their killing effectiveness, although empowerment cannot be sustained for long."
+ 
+ # Feudal Theocracy 
+ SANCTION_HOLY_WAR_NO_PROVINCES:0 "You already have a Claim or a Core on all valid Provinces.\n"
+ INVITE_MINORITIES_NOT_OWNED:0 "You need to own and control every Province in your capital Area to do this.\n"
+ INVITE_MINORITIES_NO_MINORITY:0 "You need to know about a foreign Province of your Religion, owned by a Heathen or Heretic, to do this.\n"
+ 
+ seize_clerical_holdings:0 "Seize Holdings"
+ seize_clerical_holdings_desc:0 ""
+ invite_minorities:0 "Invite Minorities"
+ invite_minorities_desc:0 "$DEV|Y$ Development will be randomly distributed in your capital Area."
+ sanction_holy_war:0 "Sanction Holy War"
+ sanction_holy_war_desc:0 "This gives us a Claim on all neighboring Provinces currently owned by neutral or enemy heretics or heathens:\n$LIST$"
+ 
+ seize_clerical_holdings_modifier:0 "Conducted Research"
+ desc_seize_clerical_holdings_modifier:0 "We have researched the uses and attributes of various pieces of technology we scavenged."
+ invite_minorities_modifier:0 "Conscripted External Recruits"
+ desc_invite_minorities_modifier:0 "By accepting non-familial members, we can bolster our forces quicker and be battle-ready sooner."
+ 
+ # Tribal Allegiance 
+ enlist_general:0 "Enlist Kos"
+ enlist_general_desc:0 "You will get a new General with $TRADITION|Y$ Tradition.\n"
+ train_horsemanship:0 "Train Horsemanship"
+ train_horsemanship_desc:0 ""
+ conscript_from_tribes:0 "Form Khalasar"
+ conscript_from_tribes_desc:0 ""
+ 
+ tribal_allegiance:0 "Khas Allegiance"
+ tribal_allegiance_desc:1 "By winning battles and humiliating rivals, a khal can increase the Khas Allegiance of his tribe members, whereas losing battles and being humiliated will decrease it.\n\nIt also changes by $CHANGE$ every year, due to:\n$WHY$\n"
+ tribal_allegiance_effect:0 "Effects from $VAL|Y$ Khas Allegiance:\n$EFFECTS$"
+ 
+ train_horsemanship_modifier:0 "Train Horsemanship"
+ desc_train_horsemanship_modifier:0 "Let us train budding new dothraki into elite horse riders."
  
  #------------------------------------------------------
  # Units
  #------------------------------------------------------
  REGCAT_normal:0 "Regulars"
  REGCAT_mercenary:0 "Mercenaries"
- REGCAT_banner:0 "Banners"
- REGCAT_streltsy:0 "Skilled Soldiers"
- REGCAT_cossacks:0 "Skilled Riders"
- COSSACKS_NAME:0 "$HOME$'s $NUM$$ORDER$ Skilled Riders"
- COSSACKS_REGIMENT:0 "Skilled Riders\nShock Damage Bonus: $VAL$"
- STRELTSY_NAME:0 "$HOME$'s $NUM$$ORDER$ Skilled Soldiers"
- STRELTSY_REGIMENT:0 "Skilled Warriors\nFire Damage Bonus: $VAL$"
+ 
+ REGCAT_streltsy:0 "Magi"
+ STRELTSY_NAME:0 "$HOME$'s $NUM$$ORDER$ Magi"
+ STRELTSY_REGIMENT:0 "Magi\nFire Damage Bonus: $VAL$"
+ 
+ REGCAT_cossacks:0 "Banners"
+ COSSACKS_NAME:0 "$HOME$'s $NUM$$ORDER$ Banners"
+ COSSACKS_REGIMENT:0 "Banners\nShock Damage Bonus: $VAL$"
  
  #------------------------------------------------------
  # Banners
  #------------------------------------------------------
+ REGCAT_banner:0 "Horse Riders"
  BANNERS_NOT_OURS:0 "You can raise Horse Riders here. Horse Riders cost Corruption to raise and have higher Discipline than normal troops.\n\nYou can only raise Horse Riders from states that you own. Please select a province that you are the owner of."
  BANNER_NOWHERE_TO_GO:0 "There are no provinces fully under our control in $NAME$ for us to be able to raise Horse Riders."
  BANNER_ALL_RAISED:0 "$NAME$ can not raise more Horse Riders, as there are already $CURR$ raised."
@@ -184,63 +281,6 @@
  NOT_INSTITUTION_ORIGIN:0 "Is NOT the origin of $WHICH|Y$.\n"
  INSTITUTION_ORIGIN:0 "Is the origin of $WHICH|Y$."
  ADD_INSTITUTION_EMBRACEMENT_EFFECT:0 "$DIRECTION$ $VALUE$ support for $WHICH|Y$.\n"
- 
- #----------------------------------------------------
- # Dothraki Religion
- #----------------------------------------------------
- HEADER_REFORMS: "The Great Stallion"
- SACRIFICE_RULER_DESC: "Sacrificing §Y$TITLE$ $RULER$§! of §Y$COUNTRY$§! to the Great Stallion will lower our Chaos by §G$AMT$§!, reduce relations by §R-100§! and increase the Liberty desire of all our vassals by §R$LD_INC$%§!."
- SACRIFICE_HEIR_DESC: "Sacrificing the heir of §Y$COUNTRY$§! to the Great Stallion will lower our Chaos by §G$AMT$§!, reduce relations by §R-75§! and increase the Liberty desire of all our vassals by §R$LD_INC$%§!."
- NAHUATL_REFORM_TOOLTIP: "Are you sure you want to unlock §Y$NAME$§!? Doing so will advance your Chaos by §R25§!, release all your subjects and lower your stability by §R1§!."
- doom: "Chaos"
- DOOM_FROM_PROVINCES: "Number of owned provinces: $VAL$"
- DOOM_FROM_REFORMS: "\nNumber of Gifts of the Stallion: $VAL$"
- DOOM_TOOLTIP_INSTANT: "Chaos changes by $CHANGE$ every year due to:\n"
- DOOM_TOOLTIP_MAX: "If Chaos reaches §Y100§!, the current khal will be brutally murdered, casting our nation into chaos."
- DOOM_TOOLTIP_DESC: "Our people respect only the strong. By §Ywinning battles, occupying provinces and vassalizing other states§! we can acquire wealth to give to our riders, proving our strength to the Great Stallion."
- DOOM_TOOLTIP_EFFECTS: "§YEffects from our current Chaos:§!\n"
- USES_NOT_DOOM: "§Y$COUNTRY$§! does NOT have Chaos"
- USES_DOOM: "§Y$COUNTRY$§! has Chaos"
- REFORM_RELIGION: "Gift of the Stallion"
- REFORM_RELIGION_EXPL_DET: "It is possible to reform our khalasar if we have all the gifts of the Stallion and border a Westerosi nation."
- alert_religious_reform_instant: "§YYou can now pass a gift of the Stallion.§!"
- REMOVE_RELIGIOUS_REFORMS_EFFECT: "§Y$COUNTRY$§! loses $AMOUNT$ gifts of the Stallion.\n"
- GOTTA_CATCH_THEM_ALL_REFORMS: "§R- Need all gifts of the Stallion.§!\n"
- 
- DOOMSDAY_TITLE: "CHAOS!" 
- DOOMSDAY_SETUP: "When our Chaos reaches 100"
- DOOMSDAY_HEADER: "The Khalasar acts!"
- DOOMSDAY_1: "$RULERNAME$"
- DOOMSDAY_2: "has proven themselves weak and"
- DOOMSDAY_3: "CHAOS"
- DOOMSDAY_4: "is now upon us!"
- DOOMSDAY_5: ""
- DOOMSDAY_6: "All our subject states have broken away and our nation is greatly weakened."
- DOOMSDAY_LOG: "Our khal was murdered for being weak."
- DOOMSDAY_BTN1: "OK"
- DOOMSDAY_BTN2: "OK"
- DOOMSDAY_BTN3: "Go to"
- DOOMSDAY_MAP: ""
- 
- DOOMSDAYOTHER_TITLE: "Chaos Arrives"
- DOOMSDAYOTHER_SETUP: "When another nation's Chaos reaches 100"
- DOOMSDAYOTHER_HEADER: "The Khalasar acts!"
- DOOMSDAYOTHER_1: "$COUNTRY$"
- DOOMSDAYOTHER_2: "has displayed weakness"
- DOOMSDAYOTHER_3: "CHAOS"
- DOOMSDAYOTHER_3: "CHAOS"
- DOOMSDAYOTHER_4: "is now upon them!"
- DOOMSDAYOTHER_5: "All their subject states have broken away and their nation is greatly weakened."
- DOOMSDAYOTHER_6: ""
- DOOMSDAYOTHER_LOG: "$COUNTRY$'s khal was murdered."
- DOOMSDAYOTHER_BTN1: "OK"
- DOOMSDAYOTHER_BTN2: "OK"
- DOOMSDAYOTHER_BTN3: "Go to"
- DOOMSDAYOTHER_MAP: ""
- 
- DOOMSDAY_CLOCK: "Yearly Chaos Change"
- DOOM_LESS_THAN: "Chaos is less than §Y$VAL$§!.\n"
- DOOM_AT_LEAST: "Chaos is at least §Y$VAL$§!.\n"
  
  #----------------------------------------------------
  # Technology

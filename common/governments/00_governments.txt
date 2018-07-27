@@ -30,18 +30,53 @@ kingdom = {
     
 	rank = {
 		1 = {
-			global_tax_modifier = 0.1
-            max_absolutism = 5
+			global_tax_modifier = 0.025
+            max_absolutism = 10
 		}
 		2 = {
-			global_tax_modifier = 0.15
-			global_autonomy = -0.05
-            max_absolutism = 5
+			global_tax_modifier = 0.05
+			global_autonomy = -0.02
+            max_absolutism = 10
 		}
 		3 = {
-			global_tax_modifier = 0.25
+			global_tax_modifier = 0.075
+			global_autonomy = -0.04
+            max_absolutism = 10
+		}
+		4 = {
+			global_tax_modifier = 0.1
+			global_autonomy = -0.06
+            max_absolutism = 10
+		}
+		5 = {
+			global_tax_modifier = 0.125
+			global_autonomy = -0.08
+            max_absolutism = 10
+		}
+		6 = {
+			global_tax_modifier = 0.15
 			global_autonomy = -0.1
-            max_absolutism = 5
+            max_absolutism = 10
+		}
+		7 = {
+			global_tax_modifier = 0.175
+			global_autonomy = -0.12
+            max_absolutism = 10
+		}
+		8 = {
+			global_tax_modifier = 0.2
+			global_autonomy = -0.13
+            max_absolutism = 10
+		}
+		9 = {
+			global_tax_modifier = 0.225
+			global_autonomy = -0.14
+            max_absolutism = 10
+		}
+		10 = {
+			global_tax_modifier = 0.25
+			global_autonomy = -0.15
+            max_absolutism = 10
 		}
 	}
 }
@@ -78,13 +113,57 @@ the_faith = {
         feudal_theocracy_mechanic
     }
 	
-	rank = {
+    rank = {
 		1 = {
-			missionaries = 1
-            max_absolutism = 5
+			tolerance_own = 1
+            max_absolutism = -20
+		}
+		2 = {
+			tolerance_own = 1
+			global_autonomy = -0.02
+            max_absolutism = -20
+		}
+		3 = {
+            tolerance_own = 1
+			global_autonomy = -0.04
+            max_absolutism = -20
+		}
+		4 = {
+			tolerance_own = 1
+			global_autonomy = -0.06
+            max_absolutism = -20
+		}
+		5 = {
+			tolerance_own = 1
+			global_autonomy = -0.08
+            max_absolutism = -20
+		}
+		6 = {
+			tolerance_own = 1
+			global_autonomy = -0.1
+            max_absolutism = -20
+		}
+		7 = {
+			tolerance_own = 1
+			global_autonomy = -0.12
+            max_absolutism = -20
+		}
+		8 = {
+			tolerance_own = 1
+			global_autonomy = -0.13
+            max_absolutism = -20
+		}
+		9 = {
+			tolerance_own = 1
+			global_autonomy = -0.14
+            max_absolutism = -20
+		}
+		10 = {
+			tolerance_own = 1
+			global_autonomy = -0.15
+            max_absolutism = -20
 		}
 	}
-    fixed_rank = 1
 }
 
 #-----------------------------------------
@@ -119,20 +198,45 @@ free_city = {
         iqta_mechanic
     }
     
-	rank = {
+    rank = {
 		1 = {
-			naval_forcelimit_modifier = 0.1
-            max_absolutism = -5
+			global_trade_power = 0.025
 		}
 		2 = {
-			naval_forcelimit_modifier = 0.15
-			global_autonomy = -0.05
-            max_absolutism = -5
+			global_trade_power = 0.05
+			global_autonomy = -0.02
 		}
 		3 = {
-			naval_forcelimit_modifier = 0.25
+			global_trade_power = 0.075
+			global_autonomy = -0.04
+		}
+		4 = {
+			global_trade_power = 0.1
+			global_autonomy = -0.06
+		}
+		5 = {
+			global_trade_power = 0.125
+			global_autonomy = -0.08
+		}
+		6 = {
+			global_trade_power = 0.15
 			global_autonomy = -0.1
-            max_absolutism = -5
+		}
+		7 = {
+			global_trade_power = 0.175
+			global_autonomy = -0.12
+		}
+		8 = {
+			global_trade_power = 0.2
+			global_autonomy = -0.13
+		}
+		9 = {
+			global_trade_power = 0.225
+			global_autonomy = -0.14
+		}
+		10 = {
+			global_trade_power = 0.25
+			global_autonomy = -0.15
 		}
 	}
 }
@@ -162,24 +266,65 @@ volanteane_republic = {
 		has_dlc = "Res Publica"
 	}			
 
-	rank = {
+    rank = {
 		1 = {
-			heavy_ship_power = 0.10
-			trade_efficiency = 0.10
-			global_autonomy = -0.025
-			max_absolutism = -5
+			global_trade_power = 0.025
+            global_manpower_modifier = 0.025
+            max_absolutism = 20
 		}
 		2 = {
-			heavy_ship_power = 0.10
-			trade_efficiency = 0.10
-			global_autonomy = -0.05	
-			max_absolutism = -5
+			global_trade_power = 0.05
+            global_manpower_modifier = 0.05
+			global_autonomy = -0.02
+            max_absolutism = 20
 		}
-		3 = {	
-			heavy_ship_power = 0.10
-			trade_efficiency = 0.10
-			global_autonomy = -0.075
-			max_absolutism = -5
+        3 = {
+			global_trade_power = 0.075
+            global_manpower_modifier = 0.075
+			global_autonomy = -0.04
+            max_absolutism = 20
+		}
+        4 = {
+			global_trade_power = 0.1
+            global_manpower_modifier = 0.1
+			global_autonomy = -0.06
+            max_absolutism = 20
+		}
+        5 = {
+			global_trade_power = 0.125
+            global_manpower_modifier = 0.125
+			global_autonomy = -0.08
+            max_absolutism = 20
+		}
+        6 = {
+			global_trade_power = 0.15
+            global_manpower_modifier = 0.15
+			global_autonomy = -0.1
+            max_absolutism = 20
+		}
+        7 = {
+			global_trade_power = 0.175
+            global_manpower_modifier = 0.175
+			global_autonomy = -0.12
+            max_absolutism = 20
+		}
+        8 = {
+			global_trade_power = 0.2
+            global_manpower_modifier = 0.2
+			global_autonomy = -0.13
+            max_absolutism = 20
+		}
+        9 = {
+			global_trade_power = 0.225
+            global_manpower_modifier = 0.225
+			global_autonomy = -0.14
+            max_absolutism = 20
+		}
+        10 = {
+			global_trade_power = 0.25
+            global_manpower_modifier = 0.25
+			global_autonomy = -0.15
+            max_absolutism = 20
 		}
 	}
 }
@@ -219,18 +364,74 @@ yiti_empire = {
     }
     
 	rank = {
-		3 = {
-			global_tax_modifier = 0.1
-			global_autonomy = -0.05
-            max_absolutism = 20
+		1 = {
+			development_cost = -0.025
+            global_manpower_modifier = 0.025
+            max_absolutism = 15
+		}
+		2 = {
+			development_cost = -0.05
+            global_manpower_modifier = 0.05
+			global_autonomy = -0.02
+            max_absolutism = 15
+		}
+        3 = {
+			development_cost = -0.075
+            global_manpower_modifier = 0.075
+			global_autonomy = -0.04
+            max_absolutism = 15
+		}
+        4 = {
+			development_cost = -0.1
+            global_manpower_modifier = 0.1
+			global_autonomy = -0.06
+            max_absolutism = 15
+		}
+        5 = {
+			development_cost = -0.125
+            global_manpower_modifier = 0.125
+			global_autonomy = -0.08
+            max_absolutism = 15
+		}
+        6 = {
+			development_cost = -0.15
+            global_manpower_modifier = 0.15
+			global_autonomy = -0.1
+            max_absolutism = 15
+		}
+        7 = {
+			development_cost = -0.175
+            global_manpower_modifier = 0.175
+			global_autonomy = -0.12
+            max_absolutism = 15
+		}
+        8 = {
+			development_cost = -0.2
+            global_manpower_modifier = 0.2
+			global_autonomy = -0.13
+            max_absolutism = 15
+		}
+        9 = {
+			development_cost = -0.225
+            global_manpower_modifier = 0.225
+			global_autonomy = -0.14
+            max_absolutism = 15
+		}
+        10 = {
+			development_cost = -0.25
+            global_manpower_modifier = 0.25
+			global_autonomy = -0.15
+            max_absolutism = 15
 		}
 	}
-    fixed_rank = 3
 }
 
 pirate_haven = {
 	tribal = yes
     monarchy = yes
+    
+    queen = no
+    heir = no
     
 	unique_government = yes
 	
@@ -258,15 +459,67 @@ pirate_haven = {
         iqta_mechanic
     }
     
-	rank = {
+    rank = {
 		1 = {
-			naval_forcelimit = 20
-            naval_forcelimit_modifier = 0.25
-			privateer_efficiency = 0.5
-            max_absolutism = 10
+			naval_forcelimit_modifier = 0.025
+            privateer_efficiency = 0.025
+            max_absolutism = 15
+		}
+		2 = {
+			naval_forcelimit_modifier = 0.05
+            privateer_efficiency = 0.05
+			global_autonomy = -0.02
+            max_absolutism = 15
+		}
+        3 = {
+			naval_forcelimit_modifier = 0.075
+            privateer_efficiency = 0.075
+			global_autonomy = -0.04
+            max_absolutism = 15
+		}
+        4 = {
+			naval_forcelimit_modifier = 0.1
+            privateer_efficiency = 0.1
+			global_autonomy = -0.06
+            max_absolutism = 15
+		}
+        5 = {
+			naval_forcelimit_modifier = 0.125
+            privateer_efficiency = 0.125
+			global_autonomy = -0.08
+            max_absolutism = 15
+		}
+        6 = {
+			naval_forcelimit_modifier = 0.15
+            privateer_efficiency = 0.15
+			global_autonomy = -0.1
+            max_absolutism = 15
+		}
+        7 = {
+			naval_forcelimit_modifier = 0.175
+            privateer_efficiency = 0.175
+			global_autonomy = -0.12
+            max_absolutism = 15
+		}
+        8 = {
+			naval_forcelimit_modifier = 0.2
+            privateer_efficiency = 0.2
+			global_autonomy = -0.13
+            max_absolutism = 15
+		}
+        9 = {
+			naval_forcelimit_modifier = 0.225
+            privateer_efficiency = 0.225
+			global_autonomy = -0.14
+            max_absolutism = 15
+		}
+        10 = {
+			naval_forcelimit_modifier = 0.25
+            privateer_efficiency = 0.25
+			global_autonomy = -0.15
+            max_absolutism = 15
 		}
 	}
-	fixed_rank = 1
 }
 
 pirate_kingdom = {
@@ -299,14 +552,66 @@ pirate_kingdom = {
     }
     
 	rank = {
-		3 = {
-			naval_forcelimit = 50
-            naval_forcelimit_modifier = 0.5
-			privateer_efficiency = 1.0
-            max_absolutism = 10
+		1 = {
+			naval_forcelimit_modifier = 0.025
+            privateer_efficiency = 0.025
+            max_absolutism = 20
+		}
+		2 = {
+			naval_forcelimit_modifier = 0.05
+            privateer_efficiency = 0.05
+			global_autonomy = -0.02
+            max_absolutism = 20
+		}
+        3 = {
+			naval_forcelimit_modifier = 0.075
+            privateer_efficiency = 0.075
+			global_autonomy = -0.04
+            max_absolutism = 20
+		}
+        4 = {
+			naval_forcelimit_modifier = 0.1
+            privateer_efficiency = 0.1
+			global_autonomy = -0.06
+            max_absolutism = 20
+		}
+        5 = {
+			naval_forcelimit_modifier = 0.125
+            privateer_efficiency = 0.125
+			global_autonomy = -0.08
+            max_absolutism = 20
+		}
+        6 = {
+			naval_forcelimit_modifier = 0.15
+            privateer_efficiency = 0.15
+			global_autonomy = -0.1
+            max_absolutism = 20
+		}
+        7 = {
+			naval_forcelimit_modifier = 0.175
+            privateer_efficiency = 0.175
+			global_autonomy = -0.12
+            max_absolutism = 20
+		}
+        8 = {
+			naval_forcelimit_modifier = 0.2
+            privateer_efficiency = 0.2
+			global_autonomy = -0.13
+            max_absolutism = 20
+		}
+        9 = {
+			naval_forcelimit_modifier = 0.225
+            privateer_efficiency = 0.225
+			global_autonomy = -0.14
+            max_absolutism = 20
+		}
+        10 = {
+			naval_forcelimit_modifier = 0.25
+            privateer_efficiency = 0.25
+			global_autonomy = -0.15
+            max_absolutism = 20
 		}
 	}
-	fixed_rank = 3
 }
 
 wildling_clan = {
@@ -339,21 +644,73 @@ wildling_clan = {
         iqta_mechanic
     }
     
-	rank = {
+    rank = {
 		1 = {
-            infantry_power = 0.05
-			global_manpower_modifier = 0.1
-            land_attrition = -0.1
-            max_absolutism = 10
+			infantry_power = 0.025
+            global_manpower_modifier = 0.025
+            max_absolutism = 5
+		}
+		2 = {
+			infantry_power = 0.05
+            global_manpower_modifier = 0.05
+			global_autonomy = -0.02
+            max_absolutism = 5
+		}
+        3 = {
+			infantry_power = 0.075
+            global_manpower_modifier = 0.075
+			global_autonomy = -0.04
+            max_absolutism = 5
+		}
+        4 = {
+			infantry_power = 0.1
+            global_manpower_modifier = 0.1
+			global_autonomy = -0.06
+            max_absolutism = 5
+		}
+        5 = {
+			infantry_power = 0.125
+            global_manpower_modifier = 0.125
+			global_autonomy = -0.08
+            max_absolutism = 5
+		}
+        6 = {
+			infantry_power = 0.15
+            global_manpower_modifier = 0.15
+			global_autonomy = -0.1
+            max_absolutism = 5
+		}
+        7 = {
+			infantry_power = 0.175
+            global_manpower_modifier = 0.175
+			global_autonomy = -0.12
+            max_absolutism = 5
+		}
+        8 = {
+			infantry_power = 0.2
+            global_manpower_modifier = 0.2
+			global_autonomy = -0.13
+            max_absolutism = 5
+		}
+        9 = {
+			infantry_power = 0.225
+            global_manpower_modifier = 0.225
+			global_autonomy = -0.14
+            max_absolutism = 5
+		}
+        10 = {
+			infantry_power = 0.25
+            global_manpower_modifier = 0.25
+			global_autonomy = -0.15
+            max_absolutism = 5
 		}
 	}
-	fixed_rank = 1
 }
 
 khas = {
     monarchy = yes
 	nomad = yes
-	
+
     allow_migration = yes
     
 	color = { 116 198 240 }
@@ -377,14 +734,77 @@ khas = {
         tribal_federation_mechanic
     }
     
-	rank = {
+    rank = {
 		1 = {
-			cav_to_inf_ratio = 1.0
-            cavalry_cost = -0.25
-            reinforce_cost_modifier = -0.25
+            cav_to_inf_ratio = 1.0
+			cavalry_power = 0.025
+            reinforce_cost_modifier = -0.025
+            max_absolutism = 20
+		}
+		2 = {
+            cav_to_inf_ratio = 1.0
+			cavalry_power = 0.05
+            reinforce_cost_modifier = -0.05
+			global_autonomy = -0.02
+            max_absolutism = 20
+		}
+        3 = {
+            cav_to_inf_ratio = 1.0
+			cavalry_power = 0.075
+            reinforce_cost_modifier = -0.075
+			global_autonomy = -0.04
+            max_absolutism = 20
+		}
+        4 = {
+            cav_to_inf_ratio = 1.0
+			cavalry_power = 0.1
+            reinforce_cost_modifier = -0.1
+			global_autonomy = -0.06
+            max_absolutism = 20
+		}
+        5 = {
+            cav_to_inf_ratio = 1.0
+			cavalry_power = 0.125
+            reinforce_cost_modifier = -0.125
+			global_autonomy = -0.08
+            max_absolutism = 20
+		}
+        6 = {
+            cav_to_inf_ratio = 1.0
+			cavalry_power = 0.15
+            reinforce_cost_modifier = -0.15
+			global_autonomy = -0.1
+            max_absolutism = 20
+		}
+        7 = {
+            cav_to_inf_ratio = 1.0
+			cavalry_power = 0.175
+            reinforce_cost_modifier = -0.175
+			global_autonomy = -0.12
+            max_absolutism = 20
+		}
+        8 = {
+            cav_to_inf_ratio = 1.0
+			cavalry_power = 0.2
+            reinforce_cost_modifier = -0.2
+			global_autonomy = -0.13
+            max_absolutism = 20
+		}
+        9 = {
+            cav_to_inf_ratio = 1.0
+			cavalry_power = 0.225
+            reinforce_cost_modifier = -0.225
+			global_autonomy = -0.14
+            max_absolutism = 20
+		}
+        10 = {
+            cav_to_inf_ratio = 1.0
+			cavalry_power = 0.25
+            global_manpower_modifier = -0.25
+			global_autonomy = -0.15
+            max_absolutism = 20
 		}
 	}
-	fixed_rank = 1
 }
 
 ancient_city = {
@@ -414,18 +834,75 @@ ancient_city = {
 	}
 	ai_importance = 1
 	
-	rank = {
+    rank = {
 		1 = {
-			development_cost = -0.1
+			build_cost = -0.025
+            build_time = -0.025
+            max_absolutism = 10
+		}
+		2 = {
+			build_cost = -0.05
+            build_time = -0.05
+			global_autonomy = -0.02
+            max_absolutism = 10
+		}
+        3 = {
+			build_cost = -0.075
+            build_time = -0.075
+			global_autonomy = -0.04
+            max_absolutism = 10
+		}
+        4 = {
+			build_cost = -0.1
+            build_time = -0.1
+			global_autonomy = -0.06
+            max_absolutism = 10
+		}
+        5 = {
+			build_cost = -0.125
+            build_time = -0.125
+			global_autonomy = -0.08
+            max_absolutism = 10
+		}
+        6 = {
+			build_cost = -0.15
+            build_time = -0.15
 			global_autonomy = -0.1
+            max_absolutism = 10
+		}
+        7 = {
+			build_cost = -0.175
+            build_time = -0.175
+			global_autonomy = -0.12
+            max_absolutism = 10
+		}
+        8 = {
+			build_cost = -0.2
+            build_time = -0.2
+			global_autonomy = -0.13
+            max_absolutism = 10
+		}
+        9 = {
+			build_cost = -0.225
+            build_time = -0.225
+			global_autonomy = -0.14
+            max_absolutism = 10
+		}
+        10 = {
+			build_cost = -0.25
+            build_time = -0.25
+			global_autonomy = -0.15
+            max_absolutism = 10
 		}
 	}
-	fixed_rank = 1
 }
 
 nw_government = {
 	republic = yes
 	
+    queen = no
+    heir = no
+    
 	color = { 44 130 117 }
 	
 	unique_government = yes
@@ -440,14 +917,67 @@ nw_government = {
 	
 	max_states = 8
 	
-	rank = {
+    rank = {
 		1 = {
-			enemy_core_creation = 1
-			global_manpower_modifier = 0.5
-            max_absolutism = -15
+			defensiveness = 0.025
+            reserves_organisation = 0.025
+            max_absolutism = -20
+		}
+		2 = {
+			defensiveness = 0.05
+            reserves_organisation = 0.05
+			global_autonomy = -0.02
+            max_absolutism = -20
+		}
+        3 = {
+			defensiveness = 0.075
+            reserves_organisation = 0.075
+			global_autonomy = -0.04
+            max_absolutism = -20
+		}
+        4 = {
+			defensiveness = 0.1
+            reserves_organisation = 0.1
+			global_autonomy = -0.06
+            max_absolutism = -20
+		}
+        5 = {
+			defensiveness = 0.125
+            reserves_organisation = 0.125
+			global_autonomy = -0.08
+            max_absolutism = -20
+		}
+        6 = {
+			defensiveness = 0.15
+            reserves_organisation = 0.15
+			global_autonomy = -0.1
+            max_absolutism = -20
+		}
+        7 = {
+			defensiveness = 0.175
+            reserves_organisation = 0.175
+			global_autonomy = -0.12
+            max_absolutism = -20
+		}
+        8 = {
+			defensiveness = 0.2
+            reserves_organisation = 0.2
+			global_autonomy = -0.13
+            max_absolutism = -20
+		}
+        9 = {
+			defensiveness = 0.225
+            reserves_organisation = 0.225
+			global_autonomy = -0.14
+            max_absolutism = -20
+		}
+        10 = {
+			defensiveness = 0.25
+            reserves_organisation = 0.25
+			global_autonomy = -0.15
+            max_absolutism = -20
 		}
 	}
-	fixed_rank = 1
 }
 
 colonial_government = {

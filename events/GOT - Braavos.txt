@@ -17,25 +17,27 @@ country_event = {
 	
 		name = braavos.1.opt.a
 		
-			random_province = {
+		random_province = {
+		
+			limit = {
 			
-				limit = {
+				has_port = yes 
 				
-					has_port = yes 
-					
-					OR = {
-					
-						area = areea_sheepshead_hills
-						area = area_white_harbor
-						area = area_moat_cailin
-					
-					}
-					
+				OR = {
+				
+					area = areea_sheepshead_hills
+					area = area_white_harbor
+					area = area_moat_cailin
+				
 				}
 				
-				add_core = root
-			
 			}
+			
+			add_core = root
+		
+		}
+		
+		set_global_flag = braavos_chose_expand_the_north
 		
 	}
 	
@@ -43,19 +45,21 @@ country_event = {
 	
 		name = braavos.1.opt.b
 		
-			random_province = {
+		random_province = {
+		
+			limit = {
 			
-				limit = {
+				has_port = yes 
 				
-					has_port = yes 
-					
-					region = region_vale
-					
-				}
+				region = region_vale
 				
-				add_core = root
-			
 			}
+			
+			add_core = root
+		
+		}
+		
+		set_global_flag = braavos_chose_expand_the_vale
 		
 	}
 	
@@ -63,19 +67,21 @@ country_event = {
 	
 		name = braavos.1.opt.c
 		
-			random_province = {
+		random_province = {
+		
+			limit = {
 			
-				limit = {
+				has_port = yes 
 				
-					has_port = yes 
-					
-					region = region_crownlands
-					
-				}
+				region = region_crownlands
 				
-				add_core = root
-			
 			}
+			
+			add_core = root
+		
+		}
+		
+		set_global_flag = braavos_chose_expand_the_crownlands
 		
 	}
 	
@@ -83,19 +89,21 @@ country_event = {
 	
 		name = braavos.1.opt.d
 		
-			random_province = {
+		random_province = {
+		
+			limit = {
 			
-				limit = {
+				has_port = yes 
 				
-					has_port = yes 
-					
-					region = region_stormlands
-					
-				}
+				region = region_stormlands
 				
-				add_core = root
-			
 			}
+			
+			add_core = root
+		
+		}
+		
+		set_global_flag = braavos_chose_expand_the_stormlands
 		
 	}
 	
@@ -103,19 +111,21 @@ country_event = {
 	
 		name = braavos.1.opt.e
 		
-			random_province = {
+		random_province = {
+		
+			limit = {
 			
-				limit = {
+				has_port = yes 
 				
-					has_port = yes 
-					
-					region = region_dorne
-					
-				}
+				region = region_dorne
 				
-				add_core = root
-			
 			}
+			
+			add_core = root
+		
+		}
+		
+		set_global_flag = braavos_chose_expand_dorne
 		
 	}
 

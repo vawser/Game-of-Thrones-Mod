@@ -213,7 +213,12 @@ braavos_trade_essos = {
 		
 		effect = {
 		
+			add_country_modifier = {
 			
+				name = expand_trading_influence
+				duration = -1
+			
+			}
 		
 		}
 	
@@ -247,7 +252,12 @@ braavos_trade_essos = {
 		
 		effect = {
 		
+			add_country_modifier = {
 			
+				name = naval_focus
+				duration = -1
+			
+			}
 		
 		}
 	
@@ -268,31 +278,19 @@ braavos_trade_essos = {
 		
 		trigger = {
 			
-			OR = {
-				
-				AND = {
-				
-					ai = no
-					
-					
-				
-				}
-				
-				AND = {
-				
-					ai = yes
-					total_development = 750
-				
-				}
-			
-			}
-			
+			has_highest_trade_income = yes
 		
 		}
 		
 		effect = {
 		
+			add_country_modifier = {
 			
+				name = global_influences 
+				
+				duration = -1
+			
+			}
 		
 		}
 	
@@ -399,27 +397,174 @@ braavos_trade_westeros = {
 			
 			hidden_effect = {
 			
-				every_owned_province = {
-			
-					limit = {
+				if = {
 						
-						development = 15
-						has_port = yes
-						continent = westeros
+					limit = { has_global_flag = braavos_chose_expand_the_north }
+		
+					areea_sheepshead_hills = {
+					
+						limit = {
+							development = 15
+							has_port = yes
+						}
+						
+						add_base_tax = 2
+						add_base_production = 2
+						add_base_manpower = 1
+						
+						add_province_modifier = {
+										
+							name = braavosi_trading_post
+							duration = -1
+						
+						}
 					
 					}
 					
-					add_base_tax = 2
-					add_base_production = 2
-					add_base_manpower = 1
+					area_white_harbor = {
 					
-					add_province_modifier = {
-									
-						name = braavosi_trading_post
-						duration = -1
+						limit = {
+							development = 15
+							has_port = yes
+						}
+						
+						add_base_tax = 2
+						add_base_production = 2
+						add_base_manpower = 1
+						
+						add_province_modifier = {
+										
+							name = braavosi_trading_post
+							duration = -1
+						
+						}
 					
 					}
-
+					
+					area_moat_cailin = {
+					
+						limit = {
+							development = 15
+							has_port = yes
+						}
+						
+						add_base_tax = 2
+						add_base_production = 2
+						add_base_manpower = 1
+						
+						add_province_modifier = {
+										
+							name = braavosi_trading_post
+							duration = -1
+						
+						}
+					
+					}
+						
+				}
+				
+				if = {
+				
+					limit = { has_global_flag = braavos_chose_expand_the_vale }
+					
+					region_vale = {
+					
+						limit = {
+							development = 15
+							has_port = yes
+						}
+						
+						add_base_tax = 2
+						add_base_production = 2
+						add_base_manpower = 1
+						
+						add_province_modifier = {
+										
+							name = braavosi_trading_post
+							duration = -1
+						
+						}
+					
+					}
+				
+				}
+				
+				if = {
+				
+					limit = { has_global_flag = braavos_chose_expand_the_crownlands }
+					
+					region_crownlands = {
+					
+						limit = {
+							development = 15
+							has_port = yes
+						}
+						
+						add_base_tax = 2
+						add_base_production = 2
+						add_base_manpower = 1
+						
+						add_province_modifier = {
+										
+							name = braavosi_trading_post
+							duration = -1
+						
+						}
+					
+					}
+				
+				}
+				
+				if = {
+				
+					limit = { has_global_flag = braavos_chose_expand_the_stormlands }
+					
+					region_stormlands = {
+					
+						limit = {
+							development = 15
+							has_port = yes
+						}
+						
+						add_base_tax = 2
+						add_base_production = 2
+						add_base_manpower = 1
+						
+						add_province_modifier = {
+										
+							name = braavosi_trading_post
+							duration = -1
+						
+						}
+					
+					}
+				
+				}
+				
+				if = {
+				
+					limit = { has_global_flag = braavos_chose_expand_dorne }
+					
+					region_dorne = {
+					
+						limit = {
+							development = 15
+							has_port = yes
+						}
+						
+						add_base_tax = 2
+						add_base_production = 2
+						add_base_manpower = 1
+						
+						add_province_modifier = {
+										
+							name = braavosi_trading_post
+							duration = -1
+						
+						}
+					
+					}
+				
 				}
 			
 			}

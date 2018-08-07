@@ -1,43 +1,188 @@
-northmen_missions_generic = {
+northmen_missions = {
     slot = 4                  # Which column the missions will appear in. 1 to 5.
     generic = no             # Whether missions within this series are considered generic.
     ai = yes                  # Whether the AI will claim missions in this series.
-    has_country_shield = yes  # Whether to display the country shield on the icon.    
+    #has_country_shield = yes  # Whether to display the country shield on the icon.    
     
     # Determines when a series appears for a country. Country scope.
     potential = {
-	primary_culture = men_of_the_north
-	NOT = {
 		OR = {
-			tag = A01
-			tag = A02
+			primary_culture = men_of_the_north
+			primary_culture = skagosi
+			primary_culture = crannogmen
 		}
-	}	
-}
+		NOT = {
+			OR = {
+				#tag = A01
+				#tag = A02
+			}
+		}	
+	}
     
     # The name of the mission, used for localization
-    northmen_mission_1 = {
-        
-	icon = mission_build_up_to_force_limit            # The icon to use for the mission
-        #generic = yes     # Whether this mission is considered generic.
-        ai = yes          # Whether the AI will claim this mission.
-        position = 1        # Which row the mission appears in. 1 is top.
-        
-        
-        # Determines which provinces to highlight. Acts like all_province scope. Optional.
-        provinces_to_highlight = {
-		owned_by = ROOT
-		is_capital = yes
-        }
-    
-        # Determines when the mission is completed. Country scope.
-        trigger = {
-            treasury = 1000
-        }
-        
-        # The effect executed when the mission is claimed. Country scope.
-        effect = {
-            add_treasury = 1000
-        }
-    }
+    northmen_fraternity = {
+		ai = yes
+		icon = mission_build_up_to_force_limit
+		position = 1
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = northern_fraternity_TT
+				calc_true_if = {
+					all_ally = {
+						primary_culture = men_of_the_north
+					}
+					amount = 3
+				}
+			}
+		}
+		
+		effect = {
+			every_ally = {
+				limit = {primary_culture = men_of_the_north}
+				add_opinion = {
+					who = ROOT
+					modifier = northern_fraternity_mod
+				}
+			}
+			add_country_modifier = {
+				name = northern_fraternity
+				duration = -1
+			}
+			set_country_flag = northmen_can_take_establish_dominance_mission
+		}
+	}
+	
+	northmen_establish_dominance = {
+		icon = mission_build_up_to_force_limit
+		ai = yes
+		position = 2
+		
+		required_missions = {
+			#northern_fraternity
+		}
+		
+		provinces_to_highlight = {
+			region_for_scope_province = {
+				province_id = 47
+			}
+		}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = northern_establish_dominance_trigger_TT
+				has_country_flag = northmen_won_war_against_rival
+			}
+		}
+		
+		effect = {
+			custom_tooltip = northern_establish_dominance_TT
+			hidden_effect = {	
+				every_owned_province = {
+					every_neighbor_province = {
+						limit = {
+							region = region_the_north
+							NOT = {
+								owned_by = ROOT
+								is_claim = ROOT
+								owner = {
+									OR = {
+										alliance_with = ROOT
+										vassal_of = ROOT
+									}
+								}
+							}
+						}
+						add_claim = ROOT
+					}
+				}
+			}	
+		}
+	}
+	
+	northmen_have_subjects = {
+		icon = mission_build_up_to_force_limit
+		ai = yes
+		position = 3
+		
+		required_missions = {
+			#northern_establish_dominance
+		}
+		
+		trigger = {
+			calc_true_if = {
+				all_subject_country = {
+					OR = {
+						primary_culture = men_of_the_north
+						primary_culture = skagosi
+						primary_culture = crannogmen
+					}
+				}
+				amount = 3
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = northern_overlord
+				duration = -1
+			}
+		}
+	}
+	
+	northmen_protect_old_gods = {
+		icon = mission_old_gods_flag
+		ai = yes
+		position = 4
+		
+		required_missions = {
+		
+		}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = northmen_protect_old_gods_TT
+				NOT = {
+				
+					# Limited to Westeros
+					westeros = {
+						OR = {
+							
+							# No province with The Old gods has a non Old Gods owner
+							AND = {
+								religion = asoiaf_the_old_gods
+								NOT = {
+									owner = {
+										religion = asoiaf_the_old_gods
+									}
+								}
+							}
+							
+							# Every province owned by an Old Gods owner is also Old Gods
+							AND = {
+								NOT = { religion = asoiaf_the_old_gods }
+								owner = {
+									religion = asoiaf_the_old_gods
+								}
+							}
+						}
+					}
+				}
+				
+				# 100 years have passed
+				had_global_flag = {
+					flag = duration_check
+					duration = 36500
+				}
+			}
+		}
+		
+		effect = {
+		
+		}
+	}
+	
 }
+
+
+

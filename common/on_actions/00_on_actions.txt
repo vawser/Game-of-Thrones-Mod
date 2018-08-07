@@ -56,13 +56,30 @@ on_peace_recipient = {
 # root = winning country, from = loser country
 on_war_won = {
 	events = {
-
+		
 	}
 	random_events = {
 		100 = GOT_ACCOMPLISHMENTS.1 # History is written by the victors!
 		5000 = 0
 	}
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - winner : [Root.GetName] - loser : [From.GetName] - on_war_won" }
+	
+	# Mission Flag for Northmen Mission
+	if = {
+		limit = {
+			has_country_flag = northmen_can_take_establish_dominance_mission
+			OR = {
+				primary_culture = men_of_the_north
+				primary_culture = skagosi
+				primary_culture = crannogmen
+			}
+			ROOT = {
+				is_rival = FROM
+			}
+		}
+		clr_country_flag = northmen_can_take_establish_dominance_mission
+		set_country_flag = northmen_won_war_against_rival
+	}
 }
 
 # country

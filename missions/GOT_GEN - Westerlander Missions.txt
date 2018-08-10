@@ -1,38 +1,171 @@
+# Focus on economy (Manufactories?)
+# Protect against Ironborn
+
 westerlander_missions_generic = {
-    slot = 4                  # Which column the missions will appear in. 1 to 5.
-    generic = no             # Whether missions within this series are considered generic.
-    ai = yes                  # Whether the AI will claim missions in this series.
-    has_country_shield = yes  # Whether to display the country shield on the icon.    
+    slot = 4
+    generic = no
+    ai = yes
+    #has_country_shield = yes
     
-    # Determines when a series appears for a country. Country scope.
     potential = {
 	primary_culture = men_of_the_westerlands
-	NOT = { tag = A06 }
+		#NOT = { tag = A06 }
     }
-    
-    # The name of the mission, used for localization
-    westerlander_mission_1 = {
+	
+    westerlander_extract_resources = {
         
-	icon = mission_mosque            # The icon to use for the mission
-        #generic = yes     # Whether this mission is considered generic.
-        ai = yes          # Whether the AI will claim this mission.
-        position = 1        # Which row the mission appears in. 1 is top.
-        
-        
-        # Determines which provinces to highlight. Acts like all_province scope. Optional.
+		icon = mission_mining
+        #generic = yes
+        ai = yes
+        position = 1
+		
         provinces_to_highlight = {
-		owned_by = ROOT
-		is_capital = yes
+			owned_by = ROOT
+			OR = {
+				trade_goods = gold
+				trade_goods = iron
+				trade_goods = copper
+				trade_goods = silver
+			}
+			NOT = { has_building = mine }
         }
     
-        # Determines when the mission is completed. Country scope.
         trigger = {
-            treasury = 1000
+            mine = 5
         }
         
-        # The effect executed when the mission is claimed. Country scope.
         effect = {
-            add_treasury = 1000
+            add_country_modifier = {
+				name = booming_mining_industry
+				duration = -1
+			}
         }
     }
+	
+	westerlander_dominate_metal_production = {
+		icon = mission_colonial
+		ai = yes
+		position = 2
+		
+		required_missions = {
+			westerlander_extract_resources
+		}
+		
+		trigger = {
+			mine = 10
+			blacksmiths_guild = 5
+			OR = {
+				production_leader = {
+					trade_goods = gold
+				}
+				production_leader = {
+					trade_goods = iron
+				}
+				production_leader = {
+					trade_goods = copper
+				}
+				production_leader = {
+					trade_goods = silver
+				}
+			}
+			any_owned_province = {
+				OR = {
+					trade_goods = iron
+					trade_goods = copper
+					trade_goods = gold
+					trade_goods = silver
+				}
+				development = 35
+				has_building = mine
+			}
+		}
+		
+		effect = {
+			remove_country_modifier = booming_mining_industry
+			add_country_modifier = {
+				name = first_class_mining_industry
+				duration = -1
+			}
+		}
+	}
+	
+	westerlander_defend_against_ironborn = {
+		icon = mission_establish_high_seas_navy
+		ai = yes
+		position = 3
+		
+		trigger = {
+			if = {
+				limit = {
+					any_owned_province = {
+						has_port = yes
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = westerlander_defend_against_ironborn_TT
+					NOT = {
+						any_country = {
+							primary_culture = ironborn
+							navy_size = ROOT
+						}
+					}
+				}
+			}
+			else = {
+				any_country = {
+					primary_culture = men_of_the_westerlands
+					navy_size = 30
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = protection_from_raiders
+				duration = -1
+			}
+		}
+		
+	}
+	
+	westerlander_the_gold_road = {
+		icon = mission_war_chest
+		ai = yes
+		position = 4
+		
+		provinces_to_highlight = {
+			province_group = goldroad
+		}
+		
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					province_group = goldroad
+					province_trade_power = 8
+				}
+				amount = 6
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = controls_goldroad
+				duration = -1
+			}
+			if = {
+				limit = { NOT = { has_global_flag = goldroad_exists } }
+				goldroad = {
+					add_permanent_province_modifier = {
+						name = the_goldroad
+						duration = -1
+						desc = the_goldroad_desc
+					}
+				}
+				set_global_flag = goldroad_exists
+			}
+		}
+		
+	}
+	
 }

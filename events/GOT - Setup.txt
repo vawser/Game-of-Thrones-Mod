@@ -56,8 +56,8 @@ country_event = {
             region_dorne = {
                 set_in_empire = yes
             }
-        }
-        
+        }		
+		
         # Bookmark flags
         if = {
 			limit = {
@@ -107,6 +107,22 @@ country_event = {
     }
 	
     immediate = {
+		IF = {
+			limit = {
+				primary_culture = free_folk
+			}
+			
+			every_country = {
+				limit = {
+					culture_group = culture_westeros
+				}
+				add_opinion = {
+					who = Root
+					modifier = westeros_hates_wildlings
+				}
+			}
+			
+		}
         set_country_flag = completed_country_setup
     }
     

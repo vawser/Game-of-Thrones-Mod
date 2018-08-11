@@ -40,25 +40,9 @@ country_decisions = {
 			NOT = { exists = Z01 }
 		}
 		allow = {
-            area_hardhome = {
-				type = all
-				country_or_vassal_holds = ROOT
-			}
-            area_antler_vale = {
-				type = all
-				country_or_vassal_holds = ROOT
-			}
-            area_southern_frostfangs = {
-				type = all
-				country_or_vassal_holds = ROOT
-			}
-            area_northern_frostfangs = {
-				type = all
-				country_or_vassal_holds = ROOT
-			}
-			area_the_frozen_shore = {
-				type = all
-				country_or_vassal_holds = ROOT
+            custom_trigger_tooltip = {
+				tooltip = become_king_beyond_the_wall_TT
+				has_country_flag = can_form_kingdom_beyond_the_wall
 			}
 		}
 		effect = {

@@ -1,4 +1,4 @@
-wildling_missions = {
+wildling_unification_missions = {
     slot = 4                  
     generic = no             
     ai = yes                  
@@ -8,7 +8,7 @@ wildling_missions = {
     }
     
     # Unite the Freefolk
-    unite_the_freefolk = {
+    wildling_unite_the_freefolk = {
         icon = mission_icon_I12
         ai = yes
         position = 1
@@ -26,27 +26,27 @@ wildling_missions = {
         trigger = {
             area_hardhome = {
                 type = all
-                owned_by = ROOT
+                country_or_vassal_holds = ROOT
                 is_core = ROOT
             }
             area_antler_vale = {
                 type = all
-                owned_by = ROOT
+                country_or_vassal_holds = ROOT
                 is_core = ROOT
             }
             area_southern_frostfangs = {
                 type = all
-                owned_by = ROOT
+                country_or_vassal_holds = ROOT
                 is_core = ROOT
             }
             area_northern_frostfangs = {
                 type = all
-                owned_by = ROOT
+                country_or_vassal_holds = ROOT
                 is_core = ROOT
             }
             area_the_frozen_shore = {
                 type = all
-                owned_by = ROOT
+                country_or_vassal_holds = ROOT
                 is_core = ROOT
             }
         }
@@ -55,15 +55,16 @@ wildling_missions = {
             region_nights_watch = {
                 add_permanent_claim = ROOT
             }
+			set_country_flag = can_form_kingdom_beyond_the_wall
         }
     }
     
     # Push into the South
-    push_into_the_south = {
+    wildling_push_into_the_south = {
         icon = mission_icon_A02
         ai = yes
         
-        required_missions = { unite_the_freefolk }
+        required_missions = { wildling_unite_the_freefolk }
         
         provinces_to_highlight = {
             region = region_nights_watch
@@ -72,7 +73,7 @@ wildling_missions = {
         trigger = {
             calc_true_if = {
                 region_nights_watch = {
-                    owned_by = ROOT
+                    country_or_vassal_holds = ROOT
                     is_core = ROOT
                 }
                 amount = 5
@@ -88,4 +89,50 @@ wildling_missions = {
             }
         }
     }
+}
+
+wildling_modernization_missions = {
+	slot = 5
+	generic = no
+	ai = yes
+	
+	potential = {
+		primary_culture = free_folk
+	}
+	
+	# Fur for Iron
+	wildling_fur_for_iron = {
+		icon = mission_furs_icon
+		ai = yes
+		position = 1
+		
+		trigger = {
+			OR = {
+				navy_size = A02
+				any_ally = {
+					navy_size = A02
+				}
+			}
+			any_owned_province = {
+				trade_goods = fur
+				has_building = market
+			}
+			any_country = {
+				culture_group = culture_westeros
+				has_opinion = {
+					who = ROOT
+					value = 25
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = fur_for_iron
+				duration = -1
+			}
+		}
+		
+	}
+	
 }

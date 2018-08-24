@@ -1,0 +1,27 @@
+namespace = GOT_WILDLING
+
+country_event = {
+	
+	id = GOT_WILDLING.1
+	title = GOT_WILDLING.1.title
+	desc = GOT_WILDLING.1.desc
+	picture = FEAST_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	major = yes
+	
+	immediate = {
+		every_owned_province = {
+			limit = {
+				has_climate = arctic
+			}
+			
+			add_permanent_province_modifier = {
+				name = wildling_arctic_homeland
+				duration = -1
+			}
+		}
+	}
+	
+}

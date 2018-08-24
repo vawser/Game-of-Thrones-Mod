@@ -922,6 +922,62 @@ wildling_ideas = {
 	}
 }
 
+kingdom_beyond_the_wall_ideas = {
+	
+	start = {
+		land_forcelimit_modifier = 0.25
+		may_perform_slave_raid = yes
+		global_manpower_modifier = 0.2
+	}
+	
+	bonus = {
+		leader_land_shock = 2
+	}
+	
+	trigger = {
+		tag = Z01
+	}
+	
+	free = yes
+	
+	# Accomplished the Impossible
+	kbtw_1 = {
+		prestige = 1.0
+	}
+	
+	# Knowledge of the Land
+	kbtw_2 = {
+		land_attrition = -0.33
+	}
+	
+	# Freefolk Ferocity
+	kbtw_3 = {
+		shock_damage = 0.2
+	}
+	
+	# Hard Workers
+	kbtw_4 = {
+		global_trade_goods_size_modifier = 0.2
+	}
+	
+	# Giant Builders
+	kbtw_5 = {
+		build_time = -0.25
+	}
+	
+	# Proud Faithful
+	kbtw_6 = {
+		global_missionary_strength = 0.02
+	}
+	
+	# Trusts in brethren
+	kbtw_7 = {
+		institution_spread_from_true_faith = 0.25
+	}
+	
+	
+}
+
 ghiscari_ideas = {
 	start = {
 		advisor_pool = 1

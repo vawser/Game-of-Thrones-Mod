@@ -5,6 +5,7 @@ wildling_unification_missions = {
     
     potential = {
         primary_culture = free_folk
+		NOT = { tag = Z01 }
     }
     
     # Unite the Freefolk
@@ -52,41 +53,7 @@ wildling_unification_missions = {
         }
 
         effect = {
-            region_nights_watch = {
-                add_permanent_claim = ROOT
-            }
 			set_country_flag = can_form_kingdom_beyond_the_wall
-        }
-    }
-    
-    # Push into the South
-    wildling_push_into_the_south = {
-        icon = mission_icon_A02
-        ai = yes
-        
-        required_missions = { wildling_unite_the_freefolk }
-        
-        provinces_to_highlight = {
-            region = region_nights_watch
-        }
-    
-        trigger = {
-            calc_true_if = {
-                region_nights_watch = {
-                    country_or_vassal_holds = ROOT
-                    is_core = ROOT
-                }
-                amount = 5
-            }
-        }
-
-        effect = {
-            area_arrendell = {
-                add_permanent_claim = ROOT
-            }
-            area_karhold = {
-                add_permanent_claim = ROOT
-            }
         }
     }
 }

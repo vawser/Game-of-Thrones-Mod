@@ -1,2 +1,63 @@
-# andal
+kingdom_beyond_the_wall_missions = {
+	
+	slot = 4                  
+	generic = no             
+	ai = yes     
+	
+	potential = {
+		primary_culture = free_folk
+		tag = Z01
+	}
+	
+	# Push into the South
+    kbtw_push_into_the_south = {
+        icon = mission_icon_A02
+        ai = yes
+        
+        provinces_to_highlight = {
+            NOT = { owned_by = ROOT }
+			region = region_nights_watch
+        }
+    
+        trigger = {
+            calc_true_if = {
+                region_nights_watch = {
+                    country_or_vassal_holds = ROOT
+                }
+                amount = 5
+            }
+        }
+
+        effect = {
+            region_nights_watch = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+        }
+    }
+
+	kbtw_conquer_trading_hub = {
+	
+		icon = mission_war_chest
+		ai = yes
+		
+		provinces_to_highlight = {
+			area = area_skagg
+		}
+		
+		trigger = {
+			area_skagg = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		}
+		
+		effect = {
+			
+		}		
+	}
+}
 

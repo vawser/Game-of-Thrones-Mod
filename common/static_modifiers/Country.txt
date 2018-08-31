@@ -49,6 +49,7 @@ war_taxes = {
 	land_maintenance_modifier = -0.20
 	naval_maintenance_modifier = -0.20
 	possible_mercenaries = 0.05
+	mercantile_chieftains_influence = 0.05
 }
 
 stability = {
@@ -101,6 +102,7 @@ inflation = {
 	advisor_cost = 0.01						#1% for each inflation step
 	mercenary_cost = 0.01					#1% for each inflation step
 	fort_maintenance_modifier = 0.01		#1% for each inflation step
+	mercantile_chieftains_influence = 0.002
 }
 
 bankruptcy = {
@@ -123,13 +125,17 @@ bankruptcy = {
 
 war = {
     imperial_authority = -0.01
+	warlike_chieftains_influence = 0.02
 }
 
 peace = {
+
 	war_exhaustion = -0.1
 	monthly_fervor_increase = 1
 	global_autonomy = -0.1
 	global_institution_spread = 0.1
+	sedentary_chieftains_influence = 0.03
+	mercantile_chieftains_influence = 0.01
 	
 }
 
@@ -141,6 +147,8 @@ unconditional_surrender = {
 
 call_for_peace = {
 	war_exhaustion = 0.008
+	mercantile_chieftains_influence = 0.2
+	sedentary_chieftains_influence = 0.2
 }
 
 war_exhaustion = {
@@ -152,6 +160,7 @@ war_exhaustion = {
 	sailors_recovery_speed = -0.01
 	siege_ability = -0.01
 	global_trade_goods_size_modifier = -0.02
+	sedentary_chieftains_influence = 0.02
 }
 
 
@@ -262,6 +271,7 @@ corruption = {
 	all_power_cost = 1.0
 	min_autonomy = 50
 	global_unrest = -20
+	mercantile_chieftains_influence = 0.05
 }
 
 root_out_corruption = {
@@ -350,6 +360,7 @@ total_blockaded = {
 
 uncontested_cores = {
 	prestige = -0.1
+	warlike_chieftains_influence = 0.02
 }
 
 num_objectives_fullfilled = {
@@ -393,6 +404,7 @@ power_projection = {
 
 power_projection_25 = {
 	free_leader_pool = 1
+	warlike_chieftains_influence = 0.02
 }
 
 trade_company_strong = {
@@ -439,10 +451,12 @@ subject_nation = {
 	global_tax_income = -6
 	land_forcelimit	= -3
 	naval_forcelimit = -6
+	warlike_chieftains_influence = 0.01
 }
 
 vassal_nation = {
 	development_cost = 0.5
+	warlike_chieftains_influence = 0.02
 }
 
 primitive_nation = {

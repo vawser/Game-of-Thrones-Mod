@@ -154,6 +154,23 @@ country_event = {
             add_faction = tigers
             add_faction = elephants
         }
+		if = {
+			limit = { primary_culture = free_folk}
+			add_faction = warlike_chieftains
+			add_faction = mercantile_chieftains
+			add_faction = sedentary_chieftains
+			
+			add_faction_influence = {
+				faction = sedentary_chieftains
+				influence = 40
+			}
+			
+			add_faction_influence = {
+				faction = mercantile_chieftains
+				influence = 10
+			}
+			
+		}
 	}
 }
 

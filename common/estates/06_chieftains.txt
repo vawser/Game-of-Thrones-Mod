@@ -12,7 +12,10 @@ estate_chieftains =
     
     # ----- Conditions -----
     trigger = {
-        government = wildling_clan
+		OR = {
+			government = wildling_clan
+			government = wildling_confederation
+		}
     }
     
     province_trigger = {

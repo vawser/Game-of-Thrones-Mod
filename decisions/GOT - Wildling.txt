@@ -2,12 +2,12 @@ country_decisions = {
 	commision_runestone = {
 		potential = {
 			technology_group = wildling
-			NOT = { has_country_modifier = commissioned_runestone }
+			NOT = { has_ruler_modifier = commissioned_runestone }
 		}
 		allow = {
 			technology_group = wildling
 			years_of_income = 1
-			NOT = { has_country_modifier = commissioned_runestone }
+			NOT = { has_ruler_modifier = commissioned_runestone }
 		}
 		effect = {
 			add_years_of_income = -1
@@ -67,4 +67,49 @@ country_decisions = {
 			}
 		}
 	}
+	
+	wildling_raise_clansmen = {
+		
+		potential = {
+			technology_group = wildling
+		}
+		
+		allow = {
+			manpower = 5
+		}
+		
+		effect = {
+		
+			add_manpower = -5
+			
+			add_country_modifier = {
+				name = wildling_raised_clansmen
+				duration = 365
+			}
+			capital_scope = {
+				infantry = PREV
+				infantry = PREV
+				infantry = PREV
+				artillery = PREV
+				cavalry = PREV
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.25
+				
+				army_size_percentage = 0.6
+			}
+			
+			modifier = {
+				factor = 0
+				NOT = { stability = 0 }
+			}
+		}
+		
+	}
+	
 }

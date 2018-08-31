@@ -84,7 +84,16 @@ country_event = {
     option = {
 		name = slaves.2.option.b
 		
-        add_years_of_income = 1
+		IF = {
+			limit = {
+				monthly_income = 41.66
+			}
+			add_treasury = 500
+		}
+		
+		ELSE = {
+			add_years_of_income = 1
+		}
 	}
     
     option = {

@@ -6,6 +6,12 @@ NDefines.NCountry.GOLDEN_ERA_YEARS = 25
 NDefines.NCountry.SPLENDOR_ABILITY_COST = 800
 
 --------------------------------
+-- Conversion
+--------------------------------
+NDefines.NCountry.CAN_CONVERT_TERRITORY_CULTURE = 1
+NDefines.NCountry.CAN_CONVERT_TERRITORY_RELIGION = 1
+    
+--------------------------------
 -- Great Powers
 --------------------------------
 NDefines.NDiplomacy.NUM_OF_GREAT_POWERS = 0                 -- Great Power mechanics don't make sense in GOT

@@ -3,7 +3,7 @@
 ##################################################################################################
 
 national_bank_interest = {
-	interest = -1
+	interest = -0.5
 }
 
 national_bank_inflation = {
@@ -97,7 +97,7 @@ religious_tolerance = {
 heretic_tolerance = {
 	global_missionary_strength = -0.1
 	tolerance_heretic = 4
-	tolerance_own = -2
+	tolerance_own = -3
 }
 
 forced_conversion = {
@@ -202,6 +202,10 @@ rebel_negotiation = {
 	stability_cost_modifier = 0.1
 }
 
+suppress_minority = {
+	local_manpower_modifier = -0.1
+	local_unrest = 10
+}
 
 army_reform = {
 	land_morale = 0.20
@@ -304,7 +308,7 @@ cut_government_investments = {
 }
 
 debt_funding_plan = {
-	interest = -1
+	interest = -0.5
 }
 
 tax_reform = {
@@ -758,6 +762,7 @@ the_statue_in_restraint_of_appeals = {
 	global_unrest = -1
 	prestige = 0.5
 	papal_influence = -10
+	religion = yes
 }
 
 
@@ -796,6 +801,7 @@ counter_reformation = {
 	missionaries = 2
 	technology_cost = 0.05
 	idea_cost = 0.05
+	religion = yes
 }
 
 russian_patriarchate = {
@@ -807,6 +813,7 @@ edict_de_nantes = {
 	tolerance_own = -1
 	religious_unity = 0.25
 }
+
 
 the_state_is_me = {
 	prestige = 0.5
@@ -826,6 +833,11 @@ the_provincial_system = {
 	global_unrest = 1
 }
 
+friday_prayers = {
+	tolerance_own = 1
+	monthly_piety = -0.001
+	diplomatic_reputation = -1
+}
 
 national_merchants = {
 	local_tax_modifier = -0.1
@@ -970,7 +982,9 @@ severe_trade_crisis = {
 	trade_efficiency = -0.25
 }
 
-
+minor_trade_crisis = {
+	trade_efficiency = -0.10
+}
 
 
 evangelical_system = {
@@ -1001,10 +1015,11 @@ loyalist_stronghold = {
 }
 
 the_advancement_of_true_religion_act = {
-	global_unrest = 1
-	global_missionary_strength = 0.01
+	global_institution_spread = -0.05
+	global_missionary_strength = 0.005
 	religion = yes
 }
+
 the_blasphemy_act = {
 	global_missionary_strength = 0.01
 	tolerance_heretic = -1
@@ -1013,6 +1028,7 @@ the_blasphemy_act = {
 
 the_act_of_uniformity = {
 	global_missionary_strength = 0.01
+	embracement_cost = 0.1
 	religion = yes
 }
 
@@ -1059,6 +1075,11 @@ the_popery_act = {
 
 the_sheikh_ul_islam = {
 	global_missionary_strength = 0.01
+	religion = yes
+}
+
+muslim_enforced_religion = {
+	global_heretic_missionary_strength = 0.02
 	religion = yes
 }
 
@@ -1254,6 +1275,10 @@ compromised_spy_defence = {
 	global_spy_defence = -0.25
 }
 
+smugglers_dominating = {
+	global_tax_modifier = -0.1
+	trade_efficiency = -0.1
+}
 
 kingdom_of_god = {
 	global_manpower_modifier = 0.1
@@ -1274,6 +1299,11 @@ free_shipping_through_the_sound = {
 	province_trade_power_modifier = 0.25
 }
 
+illegitimate_ruler = {
+	legitimacy = -1
+	global_unrest = 2
+	global_autonomy = 0.05
+}
 
 thalassocracy = {
 	navy_tradition = 0.25
@@ -1301,7 +1331,19 @@ cult_of_reason = {
 	stability_cost_modifier = 0.10
 }
 
+relief_from = {
+	global_unrest = -2
+	stability_cost_modifier = -0.1
+}
 
+sought_after_bachelor = {
+	prestige = 1
+}
+
+a_woman_scorned = {
+	prestige = -2
+	legitimacy = -5
+}
 
 blooming_renaissance = {
 	technology_cost = -0.05
@@ -1408,6 +1450,14 @@ rebel_sentiment = {
 }
 
 
+conversion_zeal = {
+	global_heretic_missionary_strength = 0.10
+}
+
+religious_zeal_at_conv = {
+	local_missionary_strength = -1
+}
+
 papal_sanction_for_church_taxes = {
 	global_tax_modifier = 0.15
 	religion = yes
@@ -1419,7 +1469,7 @@ papal_indulgence = {
 }
 
 usury_forgiven = {
-	interest = -1
+	interest = -0.25
 	inflation_reduction = 0.1
 	religion = yes
 }
@@ -1655,6 +1705,11 @@ quantity_modifier = {
 	global_manpower_modifier = 0.25
 }
 
+spread_of_enlightenment_ideals = {
+	global_unrest = 4
+	global_institution_spread = 0.15
+}
+
 #Special places
 stora_kopparberget_modifier = { #Great Copper Mountain
 	trade_goods_size = 5.0
@@ -1670,6 +1725,46 @@ spice_islands_modifier = { #Main entrepots of the Mollucas, point of origin for 
 
 skanemarket = { #Skånemarknaden - Biggest Herring Market in Europe
 	trade_goods_size = 1.5
+}
+
+granary_of_the_mediterranean = {
+	trade_goods_size = 2.0
+}
+
+ven_murano_glass_industry = {
+	trade_goods_size = 2.0
+	mr_guilds_influence = 0.02
+}
+
+diamond_mines_of_golconda_modifier = { #The only major source of diamonds in the world for most of the game.
+	trade_goods_size = 4.0
+}
+
+jingdezhen_kilns = {
+	trade_goods_size = 2.5
+}
+
+coffea_arabica_modifier = { #Removed by prices.32 event
+	trade_goods_size = 3.0
+}
+
+bookmarket_of_x = { #Added by prices.36 event
+	trade_goods_size = 1.0
+	local_institution_spread = 0.25
+}
+
+grand_bank_fisheries = {
+	trade_goods_size = 2.0
+}
+
+diamond_district = {
+	trade_goods_size = 0.5
+	trade_value_modifier = 0.15
+}
+
+perfume_capital = {
+	trade_value_modifier = 0.15
+	trade_goods_size = 0.5
 }
 
 comet_ore_modifier = { #RNW Comet Mine
@@ -1698,7 +1793,7 @@ important_natural_harbor = {
 	province_trade_power_value = 10
 	naval_forcelimit = 1
 	local_development_cost = -0.05
-	local_sailors_modifier = 0.50
+	local_sailors_modifier = 0.25
 	picture = "province_trade_power_value"
 }
 
@@ -1708,7 +1803,7 @@ center_of_trade_modifier = {
 	province_trade_power_value = 10
 	naval_forcelimit = 2
 	local_development_cost = -0.05
-	local_sailors_modifier = 0.25
+	local_sailors_modifier = 0.50
 	picture = "province_trade_power_value"
 }
 
@@ -1720,10 +1815,6 @@ inland_center_of_trade_modifier = {
 	picture = "province_trade_power_value"
 }
 
-religious_center = {
-	local_missionary_strength = -0.05
-}
-
 #Tradepost
 trade_post_modifier = {
 	province_trade_power_value = 10
@@ -1732,6 +1823,7 @@ trade_post_modifier = {
 }
 
 # Important river estuaries
+# If you add any be sure to update the has_river_estuary_trigger scripted trigger too.
 river_estuary_modifier = {
 	province_trade_power_value = 10
 	picture = "estuary_icon"
@@ -1872,7 +1964,7 @@ ganges_estuary_modifier = {	#One for each Ganges Mouth
 	picture = "estuary_icon"
 }
 
-djanges_estuary_modifier = {
+djanges_estuary_modifier = { #RNW
 	province_trade_power_value = 5
 	picture = "estuary_icon"
 }
@@ -1882,7 +1974,7 @@ indus_estuary_modifier = {
 	picture = "estuary_icon"
 }
 
-sindus_estuary_modifier = {
+sindus_estuary_modifier = { #RNW
 	province_trade_power_value = 10
 	picture = "estuary_icon"
 }
@@ -1892,8 +1984,8 @@ euphrates_estuary_modifier = {
 	picture = "estuary_icon"
 }
 
-nile_estuary_modifier = {
-	province_trade_power_value = 10
+nile_estuary_modifier = { #Split between Rashid and Dumyat
+	province_trade_power_value = 5
 	picture = "estuary_icon"
 }
 
@@ -1962,7 +2054,7 @@ krishna_estuary_modifier = {
 	picture = "estuary_icon"
 }
 
-chrishna_estuary_modifier = {
+chrishna_estuary_modifier = { #RNW
 	province_trade_power_value = 10
 	picture = "estuary_icon"
 }
@@ -2036,6 +2128,7 @@ lollards = {
 
 justices_of_peace = {
 	stability_cost_modifier = -0.1
+	state_maintenance_modifier = -0.1
 }
 
 the_admirality = {
@@ -2264,8 +2357,7 @@ pietism = {
 }
 
 traitorous_officers = {
-	land_morale = -0.05
-	naval_morale = -0.05
+	local_unrest = 5
 }
 
 executed_officers = {
@@ -2312,6 +2404,11 @@ the_hats_trade_restrictions = {
 local_free_trade = {
 	trade_goods_size_modifier = -0.5
 
+}
+
+dhimmi_building_restrictions = {
+	tolerance_own = 0.5
+	tolerance_heathen = -0.5
 }
 
 # Russia flavor modifiers
@@ -2516,7 +2613,7 @@ port_to_the_new_world = {
 }
 
 the_fuggers = {
-	interest = -1
+	interest = -0.25
 }
 
 concessions_to_the_peasantry = {
@@ -2637,13 +2734,13 @@ turgots_economic_reforms = {
 }
 
 necker_reforms = {
-	interest = -1
+	interest = -0.25
 }
 
 economic_reforms = {
 	global_unrest = 2
 	global_tax_modifier = 0.05
-	interest = -1
+	interest = -0.25
 }
 
 social_reforms = {
@@ -2694,7 +2791,8 @@ tur_navy_reform = {
 tur_janissaries_timer = { }
 
 tur_janissaries_salary = {
-	infantry_cost = 0.2
+	is_janissary_modifier = yes #Without CoC this part is ignored and this becomes a normal global modifier.
+	land_maintenance_modifier = 0.1
 }
 
 enderun_academy = {
@@ -2764,10 +2862,20 @@ mutinous_soldiers = {
 }
 
 janissaries_denied_reward = {
-	manpower_recovery_speed = -0.2
-	discipline = -0.1
+	is_janissary_modifier = yes
+	reinforce_cost_modifier = 0.25
+	discipline = -0.05
 }
 
+strictly_enforced_janissary_discipline = {
+	is_janissary_modifier = yes
+	discipline = 0.015
+}
+
+non_christian_janissaries = {
+	is_janissary_modifier = yes
+	reinforce_cost_modifier = -0.5
+}
 
 increased_janissary_recruitment = {
 	global_manpower_modifier = 0.25
@@ -2777,17 +2885,29 @@ increased_janissary_recruitment = {
 }
 
 janissary_landholders = {
-	global_trade_goods_size_modifier = -0.25
+	is_janissary_modifier = yes
+	discipline = -0.025
 }
 
 janissaries_upset = {
 	global_unrest = 2
 }
 
+janissaries_disciplined = {
+	is_janissary_modifier = yes
+	land_maintenance_modifier = 0.1
+}
+
+#Janissary Disaster:
+janissary_coup_pay = {
+	is_janissary_modifier = yes
+	land_maintenance_modifier = 0.15
+}
+
 tur_janissary = {
 	manpower_recovery_speed = 0.1
-	infantry_power = 0.10
-	discipline = 0.05
+	infantry_power = 0.05
+	discipline = 0.025
 }
 
 hun_black_army = {
@@ -3181,7 +3301,7 @@ mng_open_china = {
 }
 
 hol_expand_loan_market = {
-	interest = -1
+	interest = -0.25
 }
 hol_strict_control = {
 	inflation_reduction = 0.1
@@ -3414,6 +3534,53 @@ ise_grand_shrine = {
 	legitimacy = 0.5
 }
 
+restructuring_edo_safer = {
+	local_monthly_devastation = -0.05
+	local_tax_modifier = -0.35
+}
+
+restructuring_edo_charitable = {
+	local_monthly_devastation = -0.01
+	local_development_cost = -0.15
+	local_tax_modifier = -0.5
+	local_unrest = -2
+}
+
+nankai_tsunami = {
+	local_defensiveness = -0.35
+	local_tax_modifier = -0.15
+}
+
+ashes_of_mount_fuji = {
+	trade_goods_size = -0.5
+	local_development_cost = 0.1
+}
+
+chushingura = {
+	army_tradition = 0.5
+}
+
+chushingura_popular_bandits = {
+	global_unrest = 2
+}
+
+kyoto_of_the_west_modifier = {
+	prestige = 0.5
+	development_cost = -0.1
+	
+}
+
+merchant_council_of_sakai = {
+	local_tax_modifier = -0.75
+	province_trade_power_value = 10
+	trade_goods_size = 0.5
+}
+
+azuchi_castle = {
+	legitimacy = 0.25
+	defensiveness = 0.1
+}
+
 #Japan Timers
 jap_kabuki_timer = {}
 jap_ronin_timer = {}
@@ -3460,7 +3627,6 @@ hsa_military_reform = {
 hsa_adler_ship = {
 	global_ship_cost = -0.10
 	naval_morale = 0.1
-	
 }
 hsa_peter_ship = {
 	global_ship_cost = -0.10
@@ -3477,8 +3643,8 @@ ara_consulate_sea = {
 ara_book_consulate_sea = {
 	prestige = 0.25
 	dip_tech_cost_modifier = -0.05
-	trade_efficiency = 0.1
-	
+	global_trade_power = 0.1
+	trade_efficiency = 0.05
 }
 ara_monastery_maria = {
 	global_missionary_strength = 0.02
@@ -3522,7 +3688,7 @@ mch_jesuits = {
 kni_accepted_cultures = {
 	global_manpower_modifier = 0.05
 	garrison_size = 0.25
-	garrison_growth = 0.15
+	global_garrison_growth = 0.15
 }
 
 kni_martinengo = {
@@ -3715,7 +3881,7 @@ glut_of_mercs = {
 }
 
 generous_terms = {
-	interest = -1
+	interest = -0.25
 }
 
 good_advise = {
@@ -3747,7 +3913,9 @@ regimental_spirit = {
 }
 
 
-
+adopted_heir = {
+	global_unrest = 2
+}
 
 golden_age_of_timbuktu = {
 	technology_cost = -0.10
@@ -3891,16 +4059,19 @@ mor_idrisid_cult_soaring = {
 #Gujarat
 guj_walls_of_ahmedabad = {
 	local_defensiveness = 0.25
+	local_manpower_modifier = 0.15
 }
 
 guj_champaner_project = {
 	prestige = 0.5
 	global_tax_modifier = -0.05
+	local_build_cost = -0.15
 }
 
 guj_champaner = {
 	prestige = 0.5
 	local_defensiveness = 0.25
+	local_state_maintenance_modifier = -0.8
 }
 
 guj_merchants_doing_well = {
@@ -4124,7 +4295,7 @@ fortezza_di_sant_andrea = {
 }
 
 ven_monte_nuovo = {
-	interest = -2
+	interest = -0.5
 }
 
 ven_venetian_first = {
@@ -4156,46 +4327,42 @@ ven_venetian_school = {
 	prestige = 1
 }
 
-ven_murano_glass_industry = {
-	local_tax_modifier = 0.2
-	
-}
-
 ven_nobility_bought = {
 	global_tax_modifier = 0.05 #Income from sold titles
-	
+	mr_traders_influence = 0.02
 }
 
 ven_accademia_della_guidecca = {
-	republican_tradition = 0.002
+	republican_tradition = 0.2
 }
 
 ven_barnabotti = {
-	republican_tradition = -0.001
+	republican_tradition = -0.1
 	stability_cost_modifier = 0.1
-	 #Vote Buying
+	mr_traders_influence = 0.05 #Vote Buying
 }
 
 ven_expanded_council = {
-	republican_tradition = 0.001 #Bigger council is more representative and has a bigger chance to act as a counterweight to powerful doges or other institutions.
-	
+	republican_tradition = 0.1 #Bigger council is more representative and has a bigger chance to act as a counterweight to powerful doges or other institutions.
+	mr_traders_influence = 0.05
 }
 
 ven_ten_restrained = {
-	republican_tradition = 0.001 #By stopping a single institution from exercising too much power
+	republican_tradition = 0.1 #By stopping a single institution from exercising too much power
 	stability_cost_modifier = 0.1 #Inefficient Government
+	mr_aristocrats_influence = -0.05
 }
 
 ven_council_of_ten_strong = {
-	
+	mr_aristocrats_influence = 0.05
 	#global_tax_modifier = 0.1
 	global_autonomy = -0.05
-	republican_tradition = -0.01 #By giving a single institution much larger influence than any other.
+	republican_tradition = -1 #By giving a single institution much larger influence than any other.
 }
 
 #Netherlands
 ned_house_of_elzevir = {
-	local_tax_modifier = 0.2
+	trade_goods_size = 0.5
 	local_institution_spread = 0.05
 	prestige = 0.5
 }
@@ -4211,7 +4378,7 @@ ned_bank_crisis = {
 }
 
 ned_pruikentijd = {
-	interest = 1
+	interest = 0.5
 	adm_tech_cost_modifier = 0.05
 	dip_tech_cost_modifier = 0.05
 }
@@ -4469,7 +4636,7 @@ dan_bavarian_holdings = {
 }
 
 dansborg_factory = {
-	trade_goods_size_modifier = 0.1
+	trade_goods_size_modifier = 0.25
 	local_institution_spread = 0.1
 }
 
@@ -4496,6 +4663,18 @@ dan_ulfeldt_deposed = {
 	legitimacy = 0.5
 	global_tax_modifier = 0.1
 	global_unrest = 1
+}
+
+#Timurids
+
+shahrukhs_empire = {
+	reduced_liberty_desire = 50
+}
+
+# Argonese Decisions
+city_of_the_kings = {
+	local_defensiveness = 0.25
+	local_manpower_modifier = 0.1
 }
 
 ##################################################
@@ -4763,7 +4942,7 @@ first_bank_usa = {
 
 us_mint = {
 	global_tax_modifier = 0.1
-	interest = -1
+	interest = -0.25
 }
 
 cotton_gin = {
@@ -4917,10 +5096,10 @@ penal_colony = {
 }
 
 quarantined_influenza = {
-	province_trade_power_modifier = -1.0
- 	local_manpower_modifier = -0.5
-	local_tax_modifier = -0.5
-	trade_goods_size = -0.5
+	province_trade_power_modifier = -0.25
+ 	local_manpower_modifier = -0.25
+	local_tax_modifier = -0.25
+	trade_goods_size = -0.25
 }
 
 influenza = {
@@ -5106,7 +5285,8 @@ guru_har_rai = {
 }
 
 guru_har_krishan = {
-	diplomatic_upkeep = -1
+	tolerance_own = 2
+	diplomatic_reputation = -1
 	religion = yes
 }
 
@@ -5118,6 +5298,18 @@ guru_tegh_bahadur = {
 guru_gobind_singh = {
 	discipline = 0.05
 	religious_unity = 0.2
+	religion = yes
+}
+
+guru_granth_sahib_spread = {
+	missionaries = 1
+	state_maintenance_modifier = -0.15
+	religion = yes
+}
+
+guru_granth_sahib_military = {
+	drill_gain_modifier = 0.5
+	drill_decay_modifier = -0.25
 	religion = yes
 }
 
@@ -5331,6 +5523,11 @@ sermons_for_princes = {
 	religion = yes
 }
 
+sermons_for_princes_monarchist = {
+	tolerance_heretic = -3
+	religion = yes
+}
+
 no_sermons_for_princes = {
 	global_missionary_strength = -0.02
 	religion = yes
@@ -5349,11 +5546,25 @@ act_of_seclusion = {
 	republican_tradition = 0.5
 }
 
+act_of_seclusion_monarchists = {
+	prestige = -0.5
+	republican_tradition = 0.5
+}
+
 distrust_among_nobles = {
 	discipline = -0.05
 }
 
+distrust_among_nobles_monarchists = {
+	discipline = -0.05
+}
+
 orangists_rally_against_rival = {
+	land_morale = 0.05
+	naval_morale = 0.05
+}
+
+monarchists_rally_against_rival = {
 	land_morale = 0.05
 	naval_morale = 0.05
 }
@@ -5807,59 +6018,45 @@ sce_search_saguenay = {
 sce_search_quivira = {
 	prestige = 0.25
 }
-sce_lake_guatavita = {
-	global_tax_income = 5
+el_dorado_mod = {
+	trade_goods_size_modifier = 0.5
+	cs_only_local_development_cost = -0.2
+	local_unrest = -3
 }
 sce_life_water = {
-	prestige = 0.5
+	local_build_cost = -0.5
+	local_colonial_growth = 30
+	local_unrest = -3
+	local_tax_modifier = 0.25
 }
 sce_cibola_silver = {
 	global_tax_income = 5
 }
 sce_sierradelaplata_quartz = {
-	global_tax_income = 5
-}
-sce_citycaesars_quartz = {
-	global_tax_income = 5
+	local_tax_modifier = 0.5
+	local_institution_spread = 1
+	cs_only_local_development_cost = -0.2
 }
 sce_golden_cups = {
-	global_tax_income = 5
+	local_production_efficiency = 0.25
+	local_tax_modifier = 0.25
+	local_build_cost = -0.5
+	cs_only_local_development_cost = -0.2
 }
 sce_norumbega_abandoned = {
-	trade_efficiency = 0.05
+	cs_only_local_development_cost = -0.2
+	province_trade_power_modifier = 0.5
+	trade_goods_size_modifier = 0.5
 }
 sce_saguenay_abandoned = {
-	trade_efficiency = 0.05
-}
-
-sce_el_dorado = {
-	global_unrest = -1
-	global_tax_income = 10
-}
-sce_fountain_youth = {
-	prestige = 0.5
-	global_trade_power = 0.1
-}
-sce_cibola_gold = {
-	prestige = 0.5
-	global_tax_income = 10
+	trade_goods_size_modifier = 0.25
+	province_trade_power_modifier = 0.25
+	cs_only_local_development_cost = -0.2
 }
 sce_city_of_caesars = {
-	legitimacy = 0.5
-	republican_tradition = 0.3
-	global_tax_income = 10
-}
-sce_sierra_dela_plata = {
-	global_tax_income = 10
-	improve_relation_modifier = 0.2
-}
-sce_norumbega = {
-	global_trade_power = 0.1
-	ship_durability = 0.05
-}
-sce_saguenay = {
-	global_trade_power = 0.1
-	trade_efficiency = 0.1
+	province_trade_power_modifier = 1
+	trade_goods_size_modifier = 0.5
+	cs_only_local_development_cost = -0.2
 }
 sce_quivira = {
 	prestige = 0.5
@@ -6117,7 +6314,28 @@ only_noble_officers = {
 	army_tradition = -1
 }
 
+amir_dominance = {
+	legitimacy = -0.5
+	global_autonomy = 0.03
+	infantry_cost = 0.1
+	cavalry_cost = 0.25	
+}
+
+mamluk_amir_dominance = {
+	legitimacy = -0.5
+	global_autonomy = 0.03
+	infantry_cost = 0.1
+	cavalry_cost = 0.25
+}
+
 noble_power_elective_monarchy = {
+	legitimacy = -0.5
+	global_autonomy = 0.03
+	infantry_cost = 0.1
+	cavalry_cost = 0.25
+}
+
+noble_power_monarchy = {
 	legitimacy = -0.5
 	global_autonomy = 0.03
 	infantry_cost = 0.1
@@ -7338,7 +7556,7 @@ merchant_society = {
 }
 
 impressed_financial_sector = {
-	interest = -1
+	interest = -0.25
 	trade_efficiency = 0.1
 }
 
@@ -7369,29 +7587,12 @@ legitimacy_defended = {
 	legitimacy = 0.5
 }
 
-succesful_bid_for_imperial_crown = {
-	prestige = 1
-	diplomatic_reputation = 1
-}
-
 baltic_ambition = {
 	trade_efficiency = 0.1
 }
 
 russian_ambition_modifier = {
 	global_autonomy = -0.05
-}
-
-mediterranean_ambition = {
-	trade_efficiency = 0.15
-}
-
-indian_ocean_ambition = {
-	trade_efficiency = 0.1
-}
-
-black_sea_ambition = {
-	trade_efficiency = 0.1
 }
 
 indian_ambition = {
@@ -7407,11 +7608,6 @@ british_ambition = {
 completing_the_reconquista = {
 	land_morale = 0.15
 	manpower_recovery_speed = 0.15
-}
-
-polish_partitions = {
-	diplomatic_reputation = 1
-	trade_efficiency = 0.1
 }
 
 death_of_lithuania = {
@@ -7438,19 +7634,6 @@ bavarian_ambition = {
 	prestige = 1
 }
 
-#BYZ:
-
-byzantium_resurgent = {
-	legitimacy = 1
-	ae_impact = -0.05
-}
-
-#PRU:
-
-prussian_ambition = {
-	global_autonomy = -0.05
-}
-
 #NED:
 
 defended_the_lowlands = {
@@ -7458,26 +7641,6 @@ defended_the_lowlands = {
 	legitimacy = 1 #for monarchies
 	republican_tradition = 0.5 #for republics
 	war_exhaustion = -0.02
-}
-
-#TUR:
-defeated_byzantine_empire = {
-	legitimacy = 1
-}
-
-#HAB:
-austria_reunited = {
-	legitimacy = 1
-}
-
-drove_back_the_turk = {
-	tolerance_own = 1
-	tolerance_heretic = 1
-}
-
-protected_austrian_low_countries = {
-	local_defensiveness = 0.25
-	local_autonomy = -0.05
 }
 
 #BOH:
@@ -7547,10 +7710,6 @@ conquest_of_persia = {
 	trade_efficiency = 0.1
 }
 
-controlling_the_steppes = {
-	tolerance_own = 2
-}
-
 #LIT
 
 lithuanian_russian_ambition = {
@@ -7578,6 +7737,22 @@ swahili_ports_under_portuguese_thumb = {
 sea_route_to_india = {
 	range = 0.2
 	global_colonial_growth = 25
+}
+
+por_conquest_of_hormuz = {
+	trade_efficiency = 0.15
+	global_trade_power = 0.03
+}
+
+#OMA
+sultan_of_muscat = {
+	trade_efficiency = 0.15
+	land_morale = 0.1
+}
+
+omani_ambition = {
+	naval_maintenance_modifier = -0.15
+	legitimacy = 1
 }
 
 #TUS
@@ -7844,7 +8019,7 @@ military_perfectionism = {
 }
 
 renegotiated_loans = {
-	interest = -1
+	interest = -0.25
 }
 
 cruel_overlord = {
@@ -8482,7 +8657,10 @@ china_gifted_official = {
 	trade_goods_size = 0.25
 }
 
-
+resistance_to_cultural_changes = {
+	local_unrest = 8
+	local_autonomy = 0.1
+}
 
 ##################################################
 # Tributary Related Modifiers
@@ -8512,7 +8690,7 @@ tributary_diffusion_of_knowledge = {
 
 tributary_overlord_trading_port = {
 	province_trade_power_value = 5
-	development_cost = -0.1
+	local_development_cost = -0.1
 	picture = "province_trade_power_value"
 }
 
@@ -9410,7 +9588,7 @@ cairo_slums = {
 }
 
 cairo_al_ahzar = {
-	monthly_piety = 0.02
+	monthly_piety = 0.002
 	technology_cost = -0.05
 	local_tax_modifier = -0.5
 	local_production_efficiency = -0.5
@@ -9475,6 +9653,9 @@ furusiyya = {
 
 #Agent Culture/Religion Events
 
+cabinet_of_curiosities = {
+	prestige = 1
+}
 
 #Mission:
 new_colony = {
@@ -9493,6 +9674,408 @@ trading_post_modifier = {
 rise_of_the_ayyubids = {
 	years_of_nationalism = -5
 	prestige = 1
+}
+
+# Anglican Church event modifiers
+
+political_recusancy = {
+	spy_offence = 0.2
+}
+
+commons_decide_doctrine = {
+	prestige = -1
+}
+
+prayer_book_rebels_appeased = {
+	local_missionary_strength = -0.05
+}
+
+prayers_to_saints_banned = {
+	local_missionary_strength = 0.02
+}
+
+prayers_to_saints_allowed = {
+	local_unrest = -5
+}
+
+feast_days_abolished = {
+	global_unrest = 3
+}
+
+anglican_feast_days = {
+	church_power_modifier = -0.5
+}
+
+puritan_colonists = {
+	global_colonial_growth = 10
+}
+
+puritan_settlement = {
+	local_missionary_strength = -1
+	local_colonial_growth = 20
+}
+
+priest_hunters = {
+	global_spy_defence = 0.25
+}
+
+anglican_evangelism = {
+	diplomatic_reputation = -3
+}
+
+ignore_marprelate = {
+	global_missionary_strength = -0.01
+}
+
+respond_marprelate = {
+	prestige = -0.5
+}
+
+imprison_marprelate = {
+	global_unrest = 1
+}
+
+fancy_vestments = {
+	prestige = 1
+}
+
+anglican_iconoclasm = {
+	local_unrest = 10
+}
+
+nonconformist_anglican_monarch = {
+	church_power_modifier = -1
+	tolerance_own = -2
+}
+
+angry_nonconformists = {
+	tolerance_heretic = -2
+}
+
+# Indian Estates
+look_up_purbias = {
+	is_rajput_modifier = yes
+	discipline = 0.05
+	fire_damage = 0.1
+}
+
+jain_temples_built = {
+	local_development_cost = -0.1
+}
+
+marathi_poet_saint = {
+	local_unrest = -3
+}
+
+marathi_poet_saint_suppressed = {
+	local_unrest = 8
+}
+
+bargi_giri = {
+	cavalry_power = 0.15
+	movement_speed = 0.15
+}
+
+marathi_expensive_horses = {
+	cavalry_cost = 0.25
+}
+
+maratha_stopped_militarizing = {
+	local_manpower_modifier = -0.33
+	local_unrest = 5
+}
+
+muslim_brahmin_legitimacy = {
+	religious_unity = 0.2
+	tolerance_heathen = 1
+}
+
+popular_palkhis = {
+	local_unrest = -3
+	local_monthly_devastation = -0.03
+	local_development_cost = -0.05
+}
+
+organized_palkhis = {
+	tolerance_own = 1
+}
+
+organized_palkhis_nonhindu = {
+	tolerance_heathen = 1
+	tolerance_heretic = 1
+}
+
+brahmin_peshwa = {
+	religion = yes
+	global_missionary_strength = 0.01
+	stability_cost_modifier = -0.05
+	tolerance_own = 1
+	tolerance_heretic = -1
+	tolerance_heathen = -1
+}
+
+brahmin_peshwa_nonhindu = {
+	religion = yes
+	religious_unity = 0.2
+	stability_cost_modifier = -0.05
+	tolerance_own = -1
+	tolerance_heathen = 1
+}
+
+brahmins_alienating_merchants = {
+	province_trade_power_modifier = -0.33
+	local_development_cost = 0.1
+}
+
+brahmins_stopped_alienating_merchants = {
+	province_trade_power_modifier = 0.33
+	local_development_cost = -0.1
+}
+
+brahmin_orthodoxy_enforced = {
+	local_unrest = 5
+	local_autonomy = -0.05
+}
+
+nonbrahmin_movements = {
+	local_unrest = -5
+	local_autonomy = 0.05
+}
+
+brahmin_fort = {
+	local_defensiveness = -0.2
+	local_unrest = -3
+}
+
+nobles_retain_fort = {
+	local_defensiveness = 0.2
+	local_unrest = 3
+}
+
+social_banditry_modiifer = {
+	province_trade_power_modifier = -0.33
+}
+
+addressing_social_banditry = {
+	local_autonomy = 0.5
+	local_tax_modifier = -0.33
+	local_production_efficiency = -0.33
+}
+
+vaisya_manufactories = {
+	local_production_efficiency = 0.25
+	local_development_cost = -0.15
+}
+
+vaisya_gem_production = {
+	local_production_efficiency = 0.2
+}
+
+vaisya_spices_trade = {
+	province_trade_power_modifier = 0.2
+}
+
+vaisya_silk_goods = {
+	trade_goods_size_modifier = 0.2
+}
+
+vaisya_caste_system_enforced = {
+	stability_cost_modifier = -0.1
+}
+
+drylands_frontier_development = {
+	local_development_cost = -0.2
+	local_tax_modifier = -0.15
+}
+
+drylands_stagnation = {
+	local_tax_modifier = -0.2
+	local_production_efficiency = -0.2
+	local_manpower_modifier = -0.2
+	province_trade_power_modifier = -0.2
+}
+
+jain_resistance = {
+	interest = 2
+	yearly_corruption = 0.02
+}
+
+passive_resistance = {
+	local_tax_modifier = -0.33
+	local_production_efficiency = -0.33
+	province_trade_power_modifier = -0.33
+}
+
+preferred_jain_bankers = {
+	interest = -0.5
+}
+
+preferred_brahmin_bankers = {
+	stability_cost_modifier = -0.1
+}
+
+jain_administration = {
+	interest = -0.5
+	yearly_corruption = -0.02
+}
+
+paryushana = {
+	local_unrest = -3
+	local_state_maintenance_modifier = -0.2
+}
+
+suppressed_jain_festivals = {
+	local_unrest = 3
+}
+
+vaisya_merchant_debt = {
+	production_efficiency = -0.1
+}
+
+jain_debt_forgiven = {
+	interest = 1
+}
+
+jain_theological_debates = {
+	tolerance_heathen = 1
+}
+
+jains_denounced_as_khafirs = {
+	tolerance_own = 1
+}
+
+jain_religious_concessions = {
+	tolerance_own = -1
+	tolerance_heathen = -1
+}
+
+jain_peshwa = {
+	land_maintenance_modifier = -0.1
+	global_tax_modifier = 0.1
+	development_cost = -0.05
+}
+
+rajput_marriage_alliances = {
+	diplomatic_upkeep = -1
+}
+
+rajput_scion_province_modifier = {
+	local_development_cost = -0.15
+}
+
+rajput_dharma = {
+	is_rajput_modifier = yes
+	reinforce_cost_modifier = -0.25
+	land_morale = 0.05
+}
+
+rajput_connections = {
+	diplomatic_reputation = 1
+}
+
+rajput_claims_modifier = {
+	fabricate_claims_cost = -0.25
+}
+
+rajputs_curtailed_modifier = {
+	is_rajput_modifier = yes
+	land_morale = -0.1
+}
+
+maratha_benign_neglect = {
+	local_manpower_modifier = 0.25
+}
+
+# Investment events
+
+sepoys_modifier = {
+	local_regiment_cost = -0.2
+	regiment_recruit_speed = -0.25
+}
+
+fair_land_negotiations = {
+	diplomatic_reputation = 1
+}
+
+opium_modifier = {
+	trade_goods_size_modifier = 0.5
+	province_trade_power_modifier = 0.25
+}
+
+trade_company_rule = {
+	trade_efficiency = 0.15
+}
+
+restricted_company_missionaries = {
+	tolerance_heathen = 1
+}
+
+approprioated_currency = {
+	inflation_reduction = 0.02
+}
+
+company_and_personal_interests = {
+	province_trade_power_modifier = 0.25
+	local_production_efficiency = 0.15
+	local_unrest = -3
+}
+
+honorable_company = {
+	yearly_corruption = -0.05
+}
+
+company_missionary_activity = {
+	local_unrest = 10
+}
+
+company_mint = {
+	trade_value_modifier = 0.25
+}
+
+developing_company_settlement = {
+	local_build_cost = -0.33
+}
+
+monopoly_enforced = {
+	province_trade_power_modifier = 0.25
+}
+
+rogue_traders_prosecuted = {
+	global_ship_trade_power = 0.2
+}
+
+province_rogue_traders_prosecuted = {
+	trade_value_modifier = 0.25
+}
+
+company_interference = {
+	spy_offence = 0.2
+}
+
+# Monsoon
+
+failed_monsoon = {
+	local_tax_modifier = -0.2
+	local_monthly_devastation = 0.5
+}
+
+good_monsoon_modifier = {
+	local_tax_modifier = 0.2
+}
+
+company_drought = {
+	local_tax_modifier = -0.2
+	trade_goods_size_modifier = -0.2
+	local_development_cost = 0.25
+}
+
+plum_rains = {
+	local_production_efficiency = 0.2
+}
+
+
+revoked_estate_modifier = {
+	local_unrest = 5
 }
 
 ##################################################
@@ -9530,3 +10113,25 @@ tutorial_negative_modifier = {
 
 
 hints_timer = { }
+
+## RB Oxbridge events
+
+rb_eng_passage_spheres = {
+	global_institution_spread = 0.15
+}
+
+rb_eng_theory_warfare = {
+	army_tradition = 0.5
+}
+
+rb_eng_philosophy_royalty = {
+	legitimacy = 0.5
+}
+
+rb_eng_divine_common = {
+	global_unrest = -1
+}
+
+rb_eng_national_economy = {
+	global_tax_modifier = 0.05
+}

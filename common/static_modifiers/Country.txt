@@ -330,6 +330,30 @@ over_extension = {
 	yearly_corruption = 0.5
 }
 
+territory_very_easy_difficulty = { # Penalties for territories on very easy difficulty
+
+}
+
+territory_easy_difficulty = { # Penalties for territories on easy difficulty
+	yearly_corruption = 0.01
+}
+
+territory_normal_difficulty = { # Penalties for territories on normal difficulty
+	yearly_corruption = 0.02
+}
+
+territory_hard_difficulty = { # Penalties for territories on hard difficulty
+	yearly_corruption = 0.02
+}
+
+territory_very_hard_difficulty = { # Penalties for territories on very hard difficulty
+	yearly_corruption = 0.02
+}
+
+territory_ai_difficulty = { #Penalties for territories owned by AI regardless of difficulty.
+	yearly_corruption = 0.02
+}
+
 prestige = {
 	global_trade_power = 0.15			#+15/-15 total bonus from prestige.
 	land_morale = 0.1
@@ -540,6 +564,24 @@ janissary_regiment = {
 	shock_damage_received = -0.1
 	reinforce_cost_modifier = 1.0
 	drill_gain_modifier = 1.0
+}
+
+rajput_regiment = {
+	drill_decay_modifier = -0.25
+	discipline = 0.05
+}
+
+raiding_parties_modifier = {
+	hostile_attrition = 1
+	movement_speed = 0.1
+}
+
+serfs_recieved_by_cossacks = {
+	global_tax_modifier = -0.1
+}
+
+cossacks_modifier = {
+	stability_cost_modifier = 1.0
 }
 
 #----------------------------

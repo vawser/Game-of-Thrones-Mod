@@ -12,7 +12,7 @@ estate_khalasar =
     
     # ----- Conditions -----
     trigger = {
-        government = khas
+        is_nomadic_government = yes
     }
     
     province_trigger = {
@@ -117,7 +117,7 @@ estate_khalasar =
     loyalty_modifier = {
         desc = EST_VAL_HORDE_UNITY
         trigger = {
-            government = khas
+            is_nomadic_government = yes
             horde_unity = 75
         }
         loyalty = 10
@@ -126,7 +126,7 @@ estate_khalasar =
     loyalty_modifier = {
         desc = EST_VAL_HORDE_UNITY
         trigger = {
-            government = khas
+            is_nomadic_government = yes
             NOT = { horde_unity = 50 }
         }
         loyalty = -10
@@ -136,7 +136,7 @@ estate_khalasar =
         desc = EST_VAL_NOT_NOMADIC
         
         trigger = {
-            government = khas
+            is_nomadic_government = yes
             num_of_owned_provinces_with = {
                 value = 2
                 is_core = ROOT

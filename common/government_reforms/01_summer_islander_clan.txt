@@ -1,0 +1,45 @@
+#------------------------------------------------------------
+# Reforms
+#------------------------------------------------------------
+summer_islander_clan_mechanic = {
+    basic_reform = yes
+    
+    valid_for_nation_designer = no
+    
+	monarchy = yes
+    tribal = yes
+    
+	heir = yes
+	queen = yes
+    
+    native_mechanic = yes
+}
+
+summer_islander_clan_reform = {
+	icon = "castle"
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = summer_islander_clan_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+}
+
+#------------------------------------------------------------
+# Legacy
+#------------------------------------------------------------
+summer_islander_clan_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = yes
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    monarchy = yes
+    tribal = yes
+    
+	ai = { factor = 1 }
+}

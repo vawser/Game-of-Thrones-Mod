@@ -1,0 +1,42 @@
+#------------------------------------------------------------
+# Reforms
+#------------------------------------------------------------
+lys_city_mechanic = {
+    basic_reform = yes
+    
+    valid_for_nation_designer = no
+    
+	republic = yes
+    
+	heir = no
+	queen = no
+}
+
+lys_city_reform = {
+	icon = "castle"
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = lys_city_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+}
+
+#------------------------------------------------------------
+# Legacy
+#------------------------------------------------------------
+lys_city_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = yes
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    republic = yes
+    
+	ai = { factor = 1 }
+}
+

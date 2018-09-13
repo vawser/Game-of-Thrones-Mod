@@ -1,0 +1,70 @@
+#------------------------------------------------------------
+# Reforms
+#------------------------------------------------------------
+westeros_monarchy_mechanic = {
+    basic_reform = yes
+    
+    valid_for_nation_designer = no
+    
+	monarchy = yes
+    
+	heir = yes
+	queen = yes
+}
+
+noble_house_reform = {
+	icon = "castle"
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = noble_house_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+}
+
+royal_house_reform = {
+	icon = "castle"
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = royal_house_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    fixed_rank = 3
+}
+
+#------------------------------------------------------------
+# Legacy
+#------------------------------------------------------------
+noble_house_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = yes
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    monarchy = yes
+    
+	ai = { factor = 1 }
+}
+
+royal_house_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = yes
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    monarchy = yes
+    
+    fixed_rank = 3
+    
+	ai = { factor = 1 }
+}

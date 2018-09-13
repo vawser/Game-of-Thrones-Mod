@@ -1,4 +1,77 @@
-is_dutch_government = {
-    government = volanteane_republic
+# Governments
+is_monarchy_government = {
+    OR = {
+        government = westeros_monarchy
+        government = qarth_city
+        government = yiti_city
+        government = nefer_city
+        government = hyrkoon_city
+        government = valyria_city
+        government = meereen_city
+        government = yunkai_city
+        government = astapor_city
+        government = ghis_city
+    }
 }
 
+is_republic_government = {
+    OR = {
+        government = tyrosh_city
+        government = myr_city
+        government = lys_city
+        government = volantis_city
+        government = pentos_city
+        government = braavos_city
+        government = lorath_city
+        government = qohor_city
+        government = norvos_city
+        government = saath_city
+        government = trader_city
+        government = andal_city
+        government = nights_watch
+    }
+}
+
+is_theocracy_government = {
+    OR = {
+        government = asshai_cult
+        government = bloodless_cult
+        government = white_walker_cult
+    }
+}
+
+is_tribal_government = {
+    OR = {
+        government = pirate_clan
+        government = wildling_clan
+        government = lhazar_clan
+        government = ibben_clan
+        government = omber_clan
+        government = faros_clan
+        government = naath_clan
+        government = summer_islander_clan
+    }
+}
+
+is_nomadic_government = {
+    OR = {
+        government = khalasar
+        government = jhattar
+    }
+}
+
+is_free_city_government = {
+    OR = {
+        government = tyrosh_city
+        government = myr_city
+        government = lys_city
+        government = volantis_city
+        government = pentos_city
+        government = braavos_city
+        government = lorath_city
+        government = qohor_city
+        government = norvos_city
+        government = saath_city
+        government = andal_city
+    }
+}

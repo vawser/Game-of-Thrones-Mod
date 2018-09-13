@@ -1,0 +1,44 @@
+#------------------------------------------------------------
+# Reforms
+#------------------------------------------------------------
+asshai_cult_mechanic = {
+    basic_reform = yes
+    
+    valid_for_nation_designer = no
+    
+	religion = yes
+    
+	heir = yes
+	queen = no
+    
+    different_religion_acceptance = -50
+    different_religion_group_acceptance = -50
+}
+
+asshai_cult_reform = {
+	icon = "castle"
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = asshai_cult_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+}
+
+#------------------------------------------------------------
+# Legacy
+#------------------------------------------------------------
+asshai_cult_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = yes
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    religion = yes
+    
+	ai = { factor = 1 }
+}

@@ -4,10 +4,7 @@ enforce_rule_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        OR = {
-            government = pirate_haven
-            government = pirate_kingdom
-        }
+        government = pirate_clan
 	}
 	trigger = {
 		stability = 0
@@ -26,10 +23,7 @@ raid_local_villages_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        OR = {
-            government = pirate_haven
-            government = pirate_kingdom
-        }
+        government = pirate_clan
 	}
 	trigger = {
 		NOT = { treasury = 100000 }
@@ -49,10 +43,7 @@ display_wealth_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        OR = {
-            government = pirate_haven
-            government = pirate_kingdom
-        }
+        government = pirate_clan
 	}
 	trigger = {
 		NOT = { prestige = 100 }
@@ -71,10 +62,7 @@ impress_travelers_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        OR = {
-            government = pirate_haven
-            government = pirate_kingdom
-        }
+        government = pirate_clan
 	}
 	trigger = {
 		stability = 0
@@ -94,10 +82,7 @@ purchase_slaves_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        OR = {
-            government = pirate_haven
-            government = pirate_kingdom
-        }
+        government = pirate_clan
 	}
 	trigger = {
 		stability = 0
@@ -117,10 +102,7 @@ explore_the_high_seas_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        OR = {
-            government = pirate_haven
-            government = pirate_kingdom
-        }
+        government = pirate_clan
 	}
 	trigger = {
 		stability = 0

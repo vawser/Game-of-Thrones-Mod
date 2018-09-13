@@ -13,7 +13,7 @@ country_event = {
         is_emperor = yes
         
         all_country = {
-            government = kingdom
+            government = westeros_monarchy
             government_rank = 2
             NOT = { is_emperor = yes }
             is_part_of_hre = yes
@@ -44,7 +44,7 @@ country_event = {
         is_emperor = yes
         
         any_country = {
-            government = kingdom
+            government = westeros_monarchy
             government_rank = 2
             NOT = { is_emperor = yes }
             is_part_of_hre = yes
@@ -141,7 +141,7 @@ country_event = {
     trigger = {
         is_emperor = yes
         any_country = {
-            government = kingdom
+            government = westeros_monarchy
             NOT = { is_emperor = yes }
             is_part_of_hre = yes
             army_strength = {

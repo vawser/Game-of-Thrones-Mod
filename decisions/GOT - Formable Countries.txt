@@ -3,7 +3,7 @@ country_decisions = {
     form_the_kingdom_of_the_stepstones = {
 		major = yes
 		potential = {
-			government = pirate_haven
+            government = pirate_clan
 			NOT = { exists = J23 }
 		}
 		allow = {
@@ -26,8 +26,9 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = pirate_kingdom
-			set_government_rank = 3
+			set_government_rank = 5
+            change_government = pirate_clan
+            add_government_reform = pirate_clan_reform
 		}
 		
 		ai_will_do = {
@@ -53,9 +54,10 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = wildling_confederation
-			set_government_rank = 2
+			set_government_rank = 5
             set_primitive = no
+            change_government = wildling_clan
+            add_government_reform = wildling_clan_reform
 			hidden_effect = {
 				country_event = {
 					id = GOT_WILDLING.1
@@ -87,7 +89,9 @@ country_decisions = {
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
 			swap_free_idea_group = yes
-			
+			change_government = saath_city
+            add_government_reform = saath_city_reform
+            set_government_rank = 5
             hidden_effect = {
                 546 = {
                     change_province_name = "Sarys"
@@ -108,9 +112,8 @@ country_decisions = {
                     change_province_name = "Sathar"
                 }
 			}
-            
-			change_government = kingdom
-			set_government_rank = 2
+
+			set_government_rank = 5
 		}
 		
 		ai_will_do = {
@@ -136,8 +139,9 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = kingdom
-			set_government_rank = 2
+			set_government_rank = 5
+            change_government = summer_islander_clan
+            add_government_reform = summer_islander_clan_reform
 		}
 		
 		ai_will_do = {
@@ -163,8 +167,9 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = kingdom
-			set_government_rank = 3
+			set_government_rank = 5
+            change_government = ghis_city
+            add_government_reform = ghis_city_reform
 		}
 		
 		ai_will_do = {
@@ -190,8 +195,9 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = kingdom
-			set_government_rank = 3
+			set_government_rank = 5
+            change_government = ghis_city
+            add_government_reform = ghis_city_reform
 		}
 		
 		ai_will_do = {
@@ -227,7 +233,9 @@ country_decisions = {
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
             country_event = { id = GOT_VALYRIA.1 }
-            
+            change_government = valyria_city
+            add_government_reform = valyria_city_reform
+            set_government_rank = 5
             hidden_effect = {
                 every_owned_province = {    
                     limit = {
@@ -238,9 +246,6 @@ country_decisions = {
                     add_base_manpower = 3
                 }
 			}
-            
-			change_government = kingdom
-			set_government_rank = 2
 		}
 		
 		ai_will_do = {
@@ -268,7 +273,8 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = kingdom
+			change_government = westeros_monarchy
+            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		
@@ -309,7 +315,8 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = kingdom
+			change_government = westeros_monarchy
+            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		
@@ -337,7 +344,8 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = kingdom
+			change_government = westeros_monarchy
+            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		
@@ -369,7 +377,8 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = kingdom
+			change_government = westeros_monarchy
+            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		
@@ -397,7 +406,8 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = kingdom
+			change_government = westeros_monarchy
+            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		
@@ -429,7 +439,8 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = kingdom
+			change_government = westeros_monarchy
+            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		
@@ -457,7 +468,8 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = kingdom
+			change_government = westeros_monarchy
+            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		

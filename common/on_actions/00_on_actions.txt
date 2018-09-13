@@ -494,7 +494,7 @@ on_government_change = {
     
 	if = {
 		limit = {
-			NOT = { government = monarchy }
+			NOT = { is_monarchy_government = yes }
 			any_owned_province = {
 				has_province_modifier = domain_of_spouses_family
 			}
@@ -506,7 +506,7 @@ on_government_change = {
 	}
 	if = {
 		limit = {
-			NOT = { government = monarchy }
+			NOT = { is_monarchy_government = yes }
 			any_owned_province = {
 				has_province_modifier = home_of_consort
 			}
@@ -555,7 +555,7 @@ on_chinese_empire_dismantled = {
 on_mandate_of_heaven_gained = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - old emperor: [From.GetName] - new emperor: [Root.GetName] - on_mandate_of_heaven_gained" }
     
-	change_government = yiti_empire
+    set_government_rank = 10
 	set_mandate = 60
 	region_yi_ti = {
 		limit = {
@@ -580,8 +580,7 @@ on_mandate_of_heaven_gained = {
 # FROM = New Emperor, ROOT = Old Emperor
 on_mandate_of_heaven_lost = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - old emperor: [Root.GetName] - new emperor: [From.GetName] - on_mandate_of_heaven_lost" }
-    
-    change_government = kingdom
+
 	set_government_rank = 2
 	add_country_modifier = {
 		name = lost_mandate_of_heaven

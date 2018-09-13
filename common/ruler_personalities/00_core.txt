@@ -142,8 +142,8 @@ righteous_personality = {
 	
 	allow = {
 		OR = {
-			government = republic
-			government = monarchy
+			is_republic_government = yes
+			is_monarchy_government = yes
 		}
 	}
 	
@@ -639,8 +639,7 @@ fertile_personality = {
 		}
 	}
 	allow = {
-		government = monarchy
-		NOT = { government = ottoman_government }
+		is_monarchy_government = yes
 	}
 	
 	chance = {
@@ -834,7 +833,7 @@ pious_personality = {
 	}
 
 	allow = {
-		government = theocracy
+		is_theocracy_government = yes
 	}
 	
 	chance = {
@@ -1184,7 +1183,6 @@ entrepreneur_personality = {
 	chance = {
 		modifier = {
 			factor = 1
-			government = merchant_republic
 		}
 	}
 	
@@ -1228,7 +1226,6 @@ industrious_personality = {
 	chance = {
 		modifier = {
 			factor = 1
-			government = merchant_republic
 		}
 	}
 	
@@ -2161,8 +2158,7 @@ infertile_personality = {
 	}
 
 	allow = {
-		NOT = { government = ottoman_government }
-		government = monarchy
+		is_monarchy_government = yes
 	}
 	
 	chance = {

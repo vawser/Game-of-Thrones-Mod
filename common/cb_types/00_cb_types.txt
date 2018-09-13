@@ -21,7 +21,7 @@ cb_restore_personal_union = {
 	months = 120
 	
 	prerequisites = {
-		NOT = { government = republic }
+		NOT = { is_republic_government = yes }
 		is_revolution_target = no
 	}
 	
@@ -386,30 +386,14 @@ cb_trade_war = {
 				NOT = { FROM = { trade_embargo_by = ROOT } }
 			}
 			AND = {
-				OR = {
-					government = pentoshi_city
-					government = braavosi_city
-					government = lysene_city
-					government = qohor_city
-					government = norvos_city
-					government = myr_city
-					government = tyrosh_city
-					government = lorath_city
-					government = volanteane_republic
-					government = pirate_haven
+				OR = { 
+                    is_free_city_government = yes
+                    government = pirate_clan
 				}
 				FROM = { 
 					OR = {
-						government = pentoshi_city
-						government = braavosi_city
-						government = lysene_city
-						government = qohor_city
-						government = norvos_city
-						government = myr_city
-						government = tyrosh_city
-						government = lorath_city
-						government = volanteane_republic
-						government = pirate_haven
+						is_free_city_government = yes
+                        government = pirate_clan
 					}
 				}
 			}
@@ -531,12 +515,12 @@ cb_horde_vs_civ = {
 	prerequisites = {
 		is_neighbor_of = FROM
 		FROM = {
-			NOT = { government = wildling_clan }
-			NOT = { government = khas }
+			NOT = { is_nomadic_government = yes }
+            NOT = { government = wildling_clan }
 		}
 		OR = {
-			government = wildling_clan
-			government = khas
+			is_nomadic_government = yes
+            government = wildling_clan
 		}
 		is_revolution_target = no
 	}
@@ -550,13 +534,13 @@ cb_tribal_feud = {
 
 	prerequisites = {
 		OR = {
-			government = wildling_clan
-			government = khas
+			is_nomadic_government = yes
+            government = wildling_clan
 		}
 		FROM = {
 			OR = {
-				government = wildling_clan
-				government = khas
+				is_nomadic_government = yes
+                government = wildling_clan
 			}
 		}
 		is_neighbor_of = FROM
@@ -692,7 +676,7 @@ cb_force_tributary = {
 	prerequisites = {
 		has_dlc = "Mandate of Heaven"
         OR = {
-            government = khas
+            is_nomadic_government = yes
             is_emperor_of_china = yes
         }
 		FROM = { is_subject = no }

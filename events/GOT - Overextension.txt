@@ -289,7 +289,7 @@ country_event = {
 	
 	trigger = {
 		legitimacy_or_horde_unity = 15
-		government = monarchy
+		is_monarchy_government = yes
 		is_lesser_in_union = no
 	}
 
@@ -300,11 +300,11 @@ country_event = {
 	option = {
 		name = got_overextension.8.option.a
 		if = {
-			limit = { NOT = { government = khas } }
+			limit = { NOT = { is_nomadic_government = yes } }
 			add_legitimacy = -15
 		}
 		if = {
-			limit = { government = khas }
+			limit = { is_nomadic_government = yes }
 			add_horde_unity = -15
 		}
 		

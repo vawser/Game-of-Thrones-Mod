@@ -11,65 +11,6 @@ country_event = {
 	option = {
 		name = debug.1.option.a
 		
-		add_faction = tigers
-        add_faction = elephants
 	}
 }
 
-country_event = {
-
-	id = debug.2
-	title = debug.2.title
-	desc = debug.2.desc
-	picture = BAD_WITH_MONARCH_eventPicture
-	
-	is_triggered_only = yes
-	
-	option = {
-	
-		name = debug.2.option.a
-		
-		region_beyond_the_wall = {
-			limit = { NOT = { province_id = 1 } }
-			cede_province = ROOT
-			add_core = ROOT
-			add_unrest = -100
-		
-		}
-	
-	}
-
-}
-
-country_event = {
-
-	id = debug.3
-	title = debug.3.title
-	desc = debug.3.desc
-	picture = BAD_WITH_MONARCH_eventPicture
-	
-	is_triggered_only = yes
-	hidden = yes
-	
-	immediate = {
-		
-	}
-	
-	option = {
-	
-		name = debug.3.opt.a
-		log = "TRIGGERED_OPTION: [This.GetName]"
-		
-		
-			change_tag = Z01
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			swap_non_generic_missions = yes
-			#change_government = kingdom
-			set_government_rank = 2
-            set_primitive = no
-		
-	}
-
-}

@@ -18,12 +18,12 @@ cb_iron_throne_rebellion = {
     
     prerequisites = {
 		is_part_of_hre = yes
-		government = kingdom
+        government = westeros_monarchy
         government_rank = 2
         FROM = { 
             is_emperor = yes 
             is_part_of_hre = yes
-            government = kingdom
+            government = westeros_monarchy
         }
         OR = { 
             ai = no
@@ -47,12 +47,12 @@ cb_royal_domain = {
     
     prerequisites = {
 		is_part_of_hre = yes
-		government = kingdom
+		government = westeros_monarchy
         government_rank = 3
         
         FROM = {
             is_part_of_hre = yes
-            government = kingdom
+            government = westeros_monarchy
             NOT = { government_rank = 3 }
             OR = {
                 AND = { 
@@ -77,12 +77,12 @@ cb_great_lord_feud = {
     
     prerequisites = {
 		is_part_of_hre = yes
-		government = kingdom
+        government = westeros_monarchy
         government_rank = 2
         
         FROM = {
             is_part_of_hre = yes
-            government = kingdom
+            government = westeros_monarchy
             OR = {
                 government_rank = 2
                 government_rank = 3
@@ -110,12 +110,12 @@ cb_lordly_feud = {
     
     prerequisites = {
 		is_part_of_hre = yes
-		government = kingdom
+		government = westeros_monarchy
         is_subject = yes
 
         FROM = {
             is_part_of_hre = yes
-            government = kingdom
+            government = westeros_monarchy
             is_subject = yes
             OR = {
                 AND = { 
@@ -153,10 +153,7 @@ cb_wildling_assault = {
     valid_for_subject = no
     
     prerequisites = {
-		OR = {
-			government = wildling_clan
-			government = wildling_confederation
-		}
+		government = wildling_clan
         
         FROM = {
             NOT = { government = wildling_clan }
@@ -170,10 +167,7 @@ cb_wildling_feud = {
     valid_for_subject = no
     
     prerequisites = {
-		OR = {
-			government = wildling_clan
-			government = wildling_confederation
-		}
+		government = wildling_clan
         
         FROM = {
             government = wildling_clan

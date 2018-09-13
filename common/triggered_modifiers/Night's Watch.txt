@@ -3,14 +3,14 @@
 the_nights_watch_supported = {
 	potential = {
 		tag = A02
-		government = nw_government
+		government = nights_watch
         NOT = { total_development = 1000 }
 	}
 	
 	trigger = {
         any_country = {
             culture_group = culture_westeros
-            government = kingdom
+            government = westeros_monarchy
             has_opinion = {
                 who = ROOT
                 value = 175
@@ -27,14 +27,14 @@ the_nights_watch_supported = {
 the_nights_watch = {
 	potential = {
 		tag = A02
-		government = nw_government
+		government = nights_watch
         NOT = { total_development = 1000 }
 	}
 	
 	trigger = {
         any_country = {
             culture_group = culture_westeros
-            government = kingdom
+            government = westeros_monarchy
             has_opinion = {
                 who = ROOT
                 value = 25
@@ -58,14 +58,14 @@ the_nights_watch = {
 the_nights_watch_abandoned = {
 	potential = {
 		tag = A02
-		government = nw_government
+		government = nights_watch
         NOT = { total_development = 1000 }
 	}
 	
 	trigger = {
         NOT = {
             any_country = {
-                government = kingdom
+                government = westeros_monarchy
                 culture_group = culture_westeros
                 has_opinion = {
                     who = ROOT

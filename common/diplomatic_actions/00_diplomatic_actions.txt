@@ -95,29 +95,6 @@ declarewar = {
 			}
 		}
 	}
-    
-    # Block AI from attacking/expanding the Faith
-    condition = {
-		potential = {
-			tag = FAT
-			ai = yes
-            FROM = { ai = yes }
-		}
-		allow = {
-			always = no
-		}
-	}
-    
-    condition = {
-		potential = {
-			FROM = { tag = FAT }
-			ai = yes
-            FROM = { ai = yes }
-		}
-		allow = {
-			always = no
-		}
-	}
 }
 
 royal_marriage = {

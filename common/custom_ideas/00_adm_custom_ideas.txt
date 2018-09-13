@@ -81,7 +81,7 @@ adm_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { government = monarchy }
+				NOT = { is_monarchy_government = yes }
 			}
 		}		
 	}
@@ -95,7 +95,7 @@ adm_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { government = khas }
+				NOT = { is_nomadic_government = yes }
 			}
 		}		
 	}
@@ -109,7 +109,7 @@ adm_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { government = theocracy }
+				NOT = { is_theocracy_government = yes }
 			}
 		}		
 	}
@@ -124,7 +124,7 @@ adm_idea_modifiers = {
 			factor = 0.1
 			modifier = {
 				factor = 0
-				NOT = { government = republic }
+				NOT = { is_republic_government = yes }
 			}
 		}		
 	}		

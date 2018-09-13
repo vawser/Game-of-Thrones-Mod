@@ -13,7 +13,10 @@ estate_magi =
     # ----- Conditions -----
 	trigger = {
         OR = {
-            government = ancient_city
+            OR = {
+                has_reform = qartheen_city_reform
+                has_reform = qartheen_city_legacy
+            }
             religion = asoiaf_magic
         }
 	}

@@ -20,7 +20,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { is_dutch_government = yes }
+		NOT = { government = volantis_city }
 	}
 
 	option = {
@@ -54,10 +54,10 @@ country_event = {
 		change_mil = 1
 		if = {
 			limit = {
-				government = republic
+				is_republic_government = yes
 				NOT = { republican_tradition = 20 }
 			}
-			change_government = kingdom
+			add_stability = -1
 		}	
 		add_scaled_republican_tradition = -10
 		random_list = {
@@ -118,7 +118,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { is_dutch_government = yes }
+		NOT = { government = volantis_city }
 	}
 	
 	option = {
@@ -213,21 +213,21 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		is_dutch_government = yes
+		government = volantis_city
 	}
 	
 	option = {
 		name = GOT_ELECTIONS.4.option.a
 		define_ruler = {
 		}
-		change_statists_vs_orangists = 0.33
+		change_statists_vs_monarchists = 0.33
 	
 	}
 	option = {
 		name = GOT_ELECTIONS.4.option.b
 		define_ruler = {
 		}
-		change_statists_vs_orangists = -0.33
+		change_statists_vs_monarchists = -0.33
 	}
 }
 
@@ -240,20 +240,20 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		is_dutch_government = yes
+		government = volantis_city
 	}
 	
 	option = {
 		name = GOT_ELECTIONS.5.option.a
 		define_ruler = {
 		}
-		change_statists_vs_orangists = 0.33
+		change_statists_vs_monarchists = 0.33
 	
 	}
 	option = {
 		name = GOT_ELECTIONS.5.option.a
 		define_ruler = {
 		}
-		change_statists_vs_orangists = -0.33
+		change_statists_vs_monarchists = -0.33
 	}
 }

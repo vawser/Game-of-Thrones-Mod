@@ -1,9 +1,6 @@
 leading_by_example = {
 	potential = {
-		OR = {
-			government = khas_city
-			government = khas
-		}
+		is_nomadic_government = yes
 	}
 	
 	trigger = {
@@ -35,10 +32,7 @@ daenerys_the_unburnt = {
 nomadic_people = {
     potential = {
         ai = no
-		OR = {
-			government = khas_city
-			government = khas
-		}
+		is_nomadic_government = yes
 	}
 	
 	trigger = {
@@ -53,10 +47,7 @@ nomadic_people = {
 nomadic_people_ai = {
     potential = {
         ai = yes
-		OR = {
-			government = khas_city
-			government = khas
-		}
+		is_nomadic_government = yes
 	}
 	
 	trigger = {

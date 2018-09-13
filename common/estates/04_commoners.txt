@@ -13,15 +13,14 @@ estate_commoners =
     custom_name = {
 		desc = estate_rangers
 		trigger = {
-			government = nw_government
+			government = nights_watch
 		}
 	}
     
     # ----- Conditions -----
 	trigger = {
-        NOT = { government = khas }
-		NOT = { government = wildling_clan }
-		NOT = { government = wildling_confederation }
+        NOT = { government = wildling_clan }
+        NOT = { is_nomadic_government = yes }
 	}
 	
 	province_trigger = {

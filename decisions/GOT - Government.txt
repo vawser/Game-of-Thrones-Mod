@@ -4,7 +4,7 @@ country_decisions = {
             NOT = { has_dlc = "The Cossacks" }
 			NOT = { has_ruler_modifier = educated_heir }
 			has_heir = yes
-			government = monarchy
+			is_monarchy_government = yes
 		}
 		allow = {
 			NOT = { has_ruler_modifier = educated_heir }
@@ -39,7 +39,7 @@ country_decisions = {
 		potential = {
 			NOT = { has_dlc = "The Cossacks" }
 			has_regency = no
-			government = monarchy
+			is_monarchy_government = yes
 		}
 		allow = {
 			has_regency = no
@@ -122,7 +122,7 @@ country_decisions = {
 	sacrifice_the_prince = {
 		major = yes
 		potential = {
-			government = free_city
+			is_free_city_government = yes
 			primary_culture = pentoshi
 		}
 		allow = {

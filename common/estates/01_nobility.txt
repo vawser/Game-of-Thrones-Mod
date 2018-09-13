@@ -13,15 +13,14 @@ estate_nobles =
     custom_name = {
 		desc = estate_stewards
 		trigger = {
-			government = nw_government
+			government = nights_watch
 		}
 	}
     
     # ----- Conditions -----
 	trigger = {
-		NOT = { government = khas }
-		NOT = { government = wildling_clan }
-		NOT = { government = wildling_confederation }
+        NOT = { government = wildling_clan }
+        NOT = { is_nomadic_government = yes }
 	}
 	
 	province_trigger = {
@@ -114,7 +113,7 @@ estate_nobles =
 	influence_modifier = {
 		desc = EST_VAL_REPUBLIC
 		trigger = {
-			NOT = { government = monarchy }
+			NOT = { is_monarchy_government = yes }
 		}
 		influence = -10
 	}
@@ -138,7 +137,7 @@ estate_nobles =
 	loyalty_modifier = {
 		desc = EST_VAL_LEGITIMACY
 		trigger = {
-			government = monarchy
+			is_monarchy_government = yes
 			NOT = { legitimacy = 0 }
 			legitimacy = -50
 		}
@@ -148,7 +147,7 @@ estate_nobles =
 	loyalty_modifier = {
 		desc = EST_VAL_LEGITIMACY
 		trigger = {
-			government = monarchy
+			is_monarchy_government = yes
 			NOT = { legitimacy = -50 }
 		}
 		loyalty = -10

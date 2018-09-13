@@ -40,7 +40,7 @@ country_event = {
 		has_consort = no
 		is_lesser_in_union = no
 		num_of_cities = 2
-		government = monarchy
+		is_monarchy_government = yes
 		num_of_royal_marriages = 4
 		NOT = { has_ruler_flag = approached_by_leading_families_of_the_realm }
 		OR = {
@@ -695,9 +695,7 @@ country_event = {
 		has_consort = no
 		has_regency = no
 		num_of_cities = 2
-		government = monarchy
-		NOT = { government = iqta }
-		NOT = { government = elective_monarchy }
+		is_monarchy_government = yes
 		NOT = { has_ruler_flag = turned_down_marriage_offer_for_love }
 	}
 
@@ -790,7 +788,6 @@ country_event = {
 	desc = {
 		trigger = {
 			can_heir_be_child_of_consort = yes
-			NOT = { government = elective_monarchy }
 		}
 		desc = consort_events.51.da # The heir is spitting image of consort
 	}
@@ -799,7 +796,6 @@ country_event = {
 			OR = {
 				has_heir = no
 				can_heir_be_child_of_consort = no
-				government = elective_monarchy
 			}
 		}
 		desc = consort_events.51.db # They have a great time
@@ -2179,7 +2175,6 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
-		NOT = { government = elective_monarchy }
 		has_heir = yes
 		has_consort = yes
 		is_lesser_in_union = no
@@ -2332,7 +2327,6 @@ country_event = {
 	trigger = {
 		is_lesser_in_union = no
 		has_dlc = "Rights of Man"
-		NOT = { government = elective_monarchy }
 		NOT = { has_consort_flag = favorite_played }
 		has_heir = yes
 		has_consort = yes
@@ -2674,7 +2668,6 @@ country_event = {
 	trigger = {
 		has_dlc = "Rights of Man"
 		is_lesser_in_union = no
-		NOT = { government = elective_monarchy }
 		has_consort = yes
 		has_consort_regency = no
 		ruler_consort_marriage_length = 3
@@ -2776,7 +2769,6 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
-		NOT = { government = elective_monarchy }
 		is_lesser_in_union = no
 		has_consort = yes 
 		has_heir = yes

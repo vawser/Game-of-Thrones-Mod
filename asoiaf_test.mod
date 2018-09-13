@@ -31,6 +31,7 @@ replace_path="common/factions"
 replace_path="common/government_names"
 replace_path="common/governments"
 replace_path="common/government_reforms"
+replace_path="common/government_ranks"
 replace_path="common/great_projects"
 replace_path="common/ideas"
 replace_path="common/native_advancement"
@@ -80,4 +81,4 @@ tags={
 	"Expansion"
 }
 picture="image.jpg"
-supported_version="1.25.*.*"
+supported_version="1.26.*.*"

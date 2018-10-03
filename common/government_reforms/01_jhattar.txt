@@ -1,4 +1,23 @@
 #------------------------------------------------------------
+# Legacy
+#------------------------------------------------------------
+jhattar_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = yes
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    tribal = yes
+    nomad = yes
+    
+	ai = { factor = 1 }
+}
+
+#------------------------------------------------------------
 # Reforms
 #------------------------------------------------------------
 jhattar_mechanic = {
@@ -24,21 +43,3 @@ jhattar_reform = {
 	nation_designer_cost = 0
 }
 
-#------------------------------------------------------------
-# Legacy
-#------------------------------------------------------------
-jhattar_legacy = {
-	icon = "crown"
-    
-    allow_normal_conversion = yes
-	legacy_government = yes
-    
-	valid_for_new_country = yes
-	valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    tribal = yes
-    nomad = yes
-    
-	ai = { factor = 1 }
-}

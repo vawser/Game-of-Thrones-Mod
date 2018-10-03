@@ -2262,7 +2262,223 @@ guiTypes = {
 			extra_shortcut = "ESCAPE"
 			buttonFont = "vic_18"
 		}	
-	}		
+	}
+
+	eu3dialogtype = {
+		name = "SendInsultDiplomacyDialog"
+		backGround=""
+		position = { x=290 y=-15 }	
+		size = { x=520 y=476 }
+		moveable = 0
+		dontRender = ""
+		horizontalBorder= ""
+		verticalBorder= ""
+		fullScreen = no
+
+		iconType =
+		{
+			name ="Background"
+			spriteType = "GFX_court_view_select_advisor_bg"
+			position = { x= -7 y = -9 }
+			Orientation = "UPPER_LEFT"		
+		}
+		
+		instantTextBoxType = {
+				name = "Title"
+				position = { x = 117 y = 138 }
+				textureFile = ""
+				font = "vic_22s"
+				borderSize = {x = 0 y = 0}
+				text = ""	
+				maxWidth = 316
+				maxHeight = 40
+				format = centre
+			}
+		
+		instantTextBoxType = {
+				name = "Description"
+				position = { x = 45 y = 220 }
+				textureFile = ""
+				font = "vic_18"
+				borderSize = {x = 0 y = 0}
+				text = ""	
+				maxWidth = 440
+				maxHeight = 270
+				scrollbartype = "standardlistbox_slider"
+				format = left
+			}
+
+		iconType =
+		{
+			name ="diplo_chance_reasons"
+			spriteType = "GFX_diploreasons_bar"
+			position = { x = 105 y = 425 }
+		}
+		
+		iconType =
+		{
+			name ="diplo_chance_frame"
+			spriteType = "GFX_diplomacy_view_diplochance_bar_frame"
+			position = { x = 90 y = 420 }
+		}
+		
+		iconType =
+		{
+			name ="diplo_chance_threshold"
+			spriteType = "GFX_diploreasons_bar_threshold"
+			position = { x = 100 y = 410 }
+		}
+			
+		iconType =
+		{
+			name ="chance_string_bg"
+			spriteType = "GFX_diplomacy_chance_string_bg"
+			position = { x= 140 y = 450 }
+			Orientation = "UPPER_LEFT"		
+		}			
+			
+		instantTextBoxType = {
+			name = "chance_string"
+			position = { x = 117 y = 470 }
+			textureFile = ""
+			font = "vic_22"
+			borderSize = {x = 0 y = 0}
+			text = ""	
+			maxWidth = 315
+			maxHeight = 40	
+
+			format = centre
+		}
+
+		checkboxType = {
+			name = "scornful"
+			position = { x= 50 y = 475 }
+			quadTextureSprite = "GFX_checkbox_gold_32"
+		}
+
+		instantTextBoxType = {
+			name = "scornful_button_text"
+			position = { x = 85 y = 485 }
+			textureFile = ""
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			text = "SCORNFUL"	
+			maxWidth = 300
+			maxHeight = 24
+			format = left
+			scrollbartype = "standardtext_slider"
+			fixedsize = yes
+		}
+
+		instantTextBoxType = {
+			name = "scornful_text"
+			position = { x = 45 y = 300 }
+			textureFile = ""
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			text = "SCORNFUL"	
+			maxWidth = 440
+			maxHeight = 100
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "scornful_effect_text"
+			position = { x = 55 y = 425 }
+			textureFile = ""
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			text = "SCORNFUL_DESC"	
+			maxWidth = 440
+			maxHeight = 50
+			format = left
+		}
+
+		instantTextBoxType = {
+			name = "scornful_enemies_text"
+			position = { x = 300 y = 455 }
+			textureFile = ""
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			text = "SCORNFUL_ENEMIES_DESC"	
+			maxWidth = 440
+			maxHeight = 100
+			format = left
+		}
+
+		listboxType = {
+			name = "scornful_enemies"
+			position = { x = 300 y = 475 }
+			size = { x=800 y=800 }
+			backGround=""
+			Orientation = "UPPER_LEFT"
+			horizontal = 1
+			spacing = 1
+			borderSize = {x = 0 y = 0}
+		}
+
+		guiButtonType = {
+			name = "scornful_random"
+			position = { x=250 y =475}
+			quadTextureSprite ="GFX_nation_designer_random_button"
+			tooltip = ""
+			tooltipText =""
+			delayedTooltipText = ""
+			buttonText = ""
+			buttonFont = "vic_18"
+		}
+
+		guiButtonType = {
+			name = "scornful_back"
+			position = { x=220 y =475}
+			quadTextureSprite ="GFX_nation_designer_backwards_random_button"
+			tooltip = ""
+			tooltipText = ""
+			delayedTooltipText = ""
+			buttonText = ""
+			buttonFont = "vic_18"
+		}
+		
+		shieldtype = 
+		{
+			name ="LeftShield"
+			spriteType = "standarddialogshield"
+			position = { x= 32 y = 120 }
+		}
+		
+		shieldtype = 
+		{
+			name ="RightShield"
+			spriteType = "standarddialogshield"
+			position = { x= 426 y = 120 }
+		}		
+		
+		guiButtonType = {
+			name = "AgreeButton"
+			position = { x=280 y =525}
+			quadTextureSprite ="button_type_4"
+			tooltip = ""
+			tooltipText =""
+			delayedTooltipText = ""
+			shortcut = "c"
+			extra_shortcut = "RETURN"
+			buttonText = "SEND"
+			buttonFont = "vic_18"
+		}
+
+		guiButtonType = {
+			name = "DeclineButton"
+			position = { x=50 y =525}
+			quadTextureSprite ="button_type_4"
+			tooltip = ""
+			tooltipText =""
+			delayedTooltipText = ""
+			buttonText = "CANCEL_OFFER"
+			shortcut = "z"			
+			extra_shortcut = "ESCAPE"
+			buttonFont = "vic_18"
+		}	
+	}	
 	
 	eu3dialogtype = {
 		name = "VassalCreationDialog"

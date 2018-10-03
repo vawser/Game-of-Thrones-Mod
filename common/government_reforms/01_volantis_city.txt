@@ -1,4 +1,22 @@
 #------------------------------------------------------------
+# Legacy
+#------------------------------------------------------------
+volantis_city_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = yes
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    republic = yes
+    
+	ai = { factor = 1 }
+}
+
+#------------------------------------------------------------
 # Reforms
 #------------------------------------------------------------
 volantis_city_mechanic = {
@@ -22,23 +40,5 @@ volantis_city_reform = {
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
-}
-
-#------------------------------------------------------------
-# Legacy
-#------------------------------------------------------------
-volantis_city_legacy = {
-	icon = "crown"
-    
-    allow_normal_conversion = yes
-	legacy_government = yes
-    
-	valid_for_new_country = yes
-	valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    republic = yes
-    
-	ai = { factor = 1 }
 }
 

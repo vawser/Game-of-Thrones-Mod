@@ -1,7 +1,4 @@
 ﻿l_english:
- # Types
- nomadic_name: "Nomadic"
-
  # Names
  PRINCE: "Prince"
  PRINCESS: "Princess"
@@ -44,21 +41,15 @@
  BLOODSWORN: "Bloodsworn"
  
  # Titles
- ROYAL_HOUSE: "Royal House"
- GREAT_HOUSE: "Great House"
  NOBLE_HOUSE: "Noble House"
- KNIGHTLY_HOUSE: "Knightly House"
- FREE_CITY: "Free City"
+ ROYAL_HOUSE: "Royal House"
  VOLANTEANE_REPUBLIC: "Volanteane Republic"
  WILDLING_CLAN: "Wildling Clan"
  WILDLING_CONFEDERATION: "Wildling Confederation"
- KHAS_CITY: "Vaes Dothrak"
  KHAS: "Khalasar"
- HORDE_KHAS: "Horde"
  KINGDOM: "Kingdom"
  QARTH: "Qarth"
  EMPIRE: "Empire"
- HOLDING: "Holding"
  COUNCIL: "Council"
  PENTOSHI_CITY: "Pentoshi City"
  BRAAVOSI_CITY: "Braavosi City"
@@ -68,7 +59,7 @@
  MYR_CITY: "Myrman City"
  TYROSHI_CITY: "Tyroshi City"
  LORATHI_CITY: "Lorathi City"
- YITI_DOMAIN: "Yitish Domain"
+ YITI_CITY: "Yitish City"
  YITI_EMPIRE: "Yitish Empire"
  VALYRIAN_CITY: "Valyrian City"
  GHIS_CITY: "Ghis City"
@@ -84,8 +75,55 @@
  CLAN: "Clan"
  CONFEDERATION: "Confederation"
  JHATTAR: "Jhattar"
-
- # Reforms
+ HYRKOON_CITY: "Hyrkooni City"
+ NEFER_CITY: "Neferi City"
+ 
+ # Government Types
+ westeros_monarchy_name: "Westerosi Monarchy"
+ qarth_city_name: "Qartheen City"
+ yiti_city_name: "Yitish City"
+ nefer_city_name: "Neferi City"
+ hyrkoon_city_name: "Hyrkooni City"
+ valyria_city_name: "Valyrian City"
+ meereen_city_name: "Meereenese City"
+ yunkai_city_name: "Yunkai City"
+ astapor_city_name: "Astapori City"
+ ghis_city_name: "Ghiscari City"
+ 
+ tyrosh_city_name: "Tyroshi City"
+ myr_city_name: "Myrish City"
+ lys_city_name: "Lysene City"
+ volantis_city_name: "Triarchy"
+ pentos_city_name: "Pentosi City"
+ braavos_city_name: "Braavosi City"
+ lorath_city_name: "Lorathi City"
+ qohor_city_name: "Qohorik City"
+ norvos_city_name: "Norvosi City"
+ saath_city_name: "Saathi City"
+ trader_city_name: "Trader City"
+ andal_city_name: "Andal Citys"
+ nights_watch_name: "Night's Watch"
+ 
+ asshai_cult_name: "Asshai Cult"
+ bloodless_cult_name: "Bloodless Cult"
+ white_walker_cult_name: "White Walker Cult"
+ 
+ pirate_clan_name: "Pirate Clan"
+ wildling_clan_name: "Wildling Clan"
+ lhazar_clan_name: "Lhazar Tribe"
+ ibben_clan_name: "Ibben Clan"
+ omber_clan_name: "Omber Clan"
+ faros_clan_name: "Faros Tribe"
+ naath_clan_name: "Naath Tribe"
+ summer_islander_clan_name: "Summer Islander Tribe"
+ 
+ khalasar_name: "Khalasar"
+ jhattar_name: "Jhattar"
+ 
+ # Monarchy Reforms
+ westeros_monarchy_mechanic: "Westerosi Monarchy"
+ westeros_monarchy_mechanic_desc: ""
+ 
  noble_house_reform: "Noble House"
  noble_house_reform_desc: "A noble lord whom reports directly to their respective Great House. Normally controls an estate of considerable size, and may have minor houses under their vassalage."
  noble_house_legacy: "Noble House"
@@ -96,121 +134,294 @@
  royal_house_legacy: "Royal House"
  royal_house_legacy_desc: "The royal house of Westeros. Normally situated in King's Landing, ever since the War of Conquest."
  
- qartheen_city_reform: "City of Qarth"
- qartheen_city_reform_desc: "The ancient city of Qarth is home to warlocks and merchant princes, ruled over by the Pureborn."
- qartheen_city_legacy: "City of Qarth"
- qartheen_city_legacy_desc: "The ancient city of Qarth is home to warlocks and merchant princes, ruled over by the Pureborn."
+ qarth_city_mechanic: "Qartheen City"
+ qarth_city_mechanic_desc: ""
+ 
+ qarth_city_reform: "City of Qarth"
+ qarth_city_reform_desc: "The ancient city of Qarth is home to warlocks and merchant princes, ruled over by the Pureborn."
+ qarth_city_legacy: "City of Qarth"
+ qarth_city_legacy_desc: "The ancient city of Qarth is home to warlocks and merchant princes, ruled over by the Pureborn."
 
- yiti_domain_reform: "Yitish Domain"
- yiti_domain_reform_desc: "The local lord of a region of the Yi Ti lands, ruled over by the Yi Ti Emperor."
- yiti_domain_legacy: "Yitish Domain"
- yiti_domain_legacy_desc: "The local lord of a region of the Yi Ti lands, ruled over by the Yi Ti Emperor."
+ yiti_city_mechanic: "Yitish City"
+ yiti_city_mechanic_desc: ""
+ 
+ yiti_city_reform: "Yitish City"
+ yiti_city_reform_desc: "The local lord of a region of the Yi Ti lands, ruled over by the Yi Ti Emperor."
+ yiti_city_legacy: "Yitish City"
+ yiti_city_legacy_desc: "The local lord of a region of the Yi Ti lands, ruled over by the Yi Ti Emperor."
+ 
+ yiti_empire_reform: "Yitish Empire"
+ yiti_empire_reform_desc: ""
+ yiti_empire_legacy: "Yitish Empire"
+ yiti_empire_legacy_desc: ""
+ 
+ nefer_city_mechanic: "Neferi City"
+ nefer_city_mechanic_desc: ""
+ 
+ nefer_city_reform: "Neferi City"
+ nefer_city_reform_desc: ""
+ nefer_city_legacy: "Neferi City"
+ nefer_city_legacy_desc: ""
+ 
+ hyrkoon_city_mechanic: "Hyrkooni City"
+ hyrkoon_city_mechanic_desc: ""
+ 
+ hyrkoon_city_reform: "Hyrkooni City"
+ hyrkoon_city_reform_desc: ""
+ hyrkoon_city_legacy: "Hyrkooni City"
+ hyrkoon_city_legacy_desc: ""
+ 
+ valyria_city_mechanic: "Valyrian City"
+ valyria_city_mechanic_desc: ""
  
  valyria_city_reform: "Valyrian City"
  valyria_city_reform_desc: "A city in the Slaver's Bay region."
  valyria_city_legacy: "Valyrian City"
  valyria_city_legacy_desc: "A city in the Slaver's Bay region."
  
+ meereen_city_mechanic: "Meereenese City"
+ meereen_city_mechanic_desc: ""
+ 
  meereen_city_reform: "Meereenese City"
  meereen_city_reform_desc: "A city in the Slaver's Bay region."
  meereen_city_legacy: "Meereenese City"
  meereen_city_legacy_desc: "A city in the Slaver's Bay region."
+ 
+ yunkai_city_mechanic: "Yunkai City"
+ yunkai_city_mechanic_desc: ""
  
  yunkai_city_reform: "Yunkai City"
  yunkai_city_reform_desc: "A city in the Slaver's Bay region."
  yunkai_city_legacy: "Yunkai City"
  yunkai_city_legacy_desc: "A city in the Slaver's Bay region."
  
+ astapor_city_mechanic: "Astapori City"
+ astapor_city_mechanic_desc: ""
+ 
  astapor_city_reform: "Astapori City"
  astapor_city_reform_desc: "A city in the Slaver's Bay region."
  astapor_city_legacy: "Astapori City"
  astapor_city_legacy_desc: "A city in the Slaver's Bay region."
+ 
+ ghis_city_mechanic: "Ghiscari City"
+ ghis_city_mechanic_desc: ""
  
  ghis_city_reform: "Ghiscari City"
  ghis_city_reform_desc: "A city in the Slaver's Bay region."
  ghis_city_legacy: "Ghiscari City"
  ghis_city_legacy_desc: "A city in the Slaver's Bay region."
  
- stepstone_clan_reform: "Pirate Clan"
- stepstone_clan_reform_desc: "A band of pirates whom are particularly wealthy and influential."
- stepstone_clan_legacy: "Pirate Clan"
- stepstone_clan_legacy_desc: "A band of pirates whom are particularly wealthy and influential."
+ # Republic Reforms
+ tyrosh_city_mechanic: "Tyroshi City"
+ tyrosh_city_mechanic_desc: ""
  
  tyrosh_city_reform: "Tyrosi City"
  tyrosh_city_reform_desc: "A free city of Essos. The free cities practise a form of democracy where the lord is elected by the realm's most important men and women."
  tyrosh_city_legacy: "Tyrosi City"
  tyrosh_city_legacy_desc: "A free city of Essos. The free cities practise a form of democracy where the lord is elected by the realm's most important men and women."
  
+ myr_city_mechanic: "Myrish City"
+ myr_city_mechanic_desc: ""
+ 
  myr_city_reform: "Myrish City"
- myr_city_reform_desc: "A free city of Essos. The free cities practise a form of democracy where the lord is elected by the realm's most important men and women."
+ myr_city_reform_desc: "The origin of Myr is murky, with certain maesters connecting Myrmen and the Rhoynar."
  myr_city_legacy: "Myrish City"
- myr_city_legacy_desc: "A free city of Essos. The free cities practise a form of democracy where the lord is elected by the realm's most important men and women."
+ myr_city_legacy_desc: "The origin of Myr is murky, with certain maesters connecting Myrmen and the Rhoynar."
  
+ lys_city_mechanic: "Lysene City"
+ lys_city_mechanic_desc: ""
  
- free_city: "Free City"
- free_city_desc: "A free city of Western Essos. The free cities practise a form of democracy where the lord is elected by the realm's most 
- important men and women."
+ lys_city_reform: "Lysene City"
+ lys_city_reform_desc: "Lys, or Lys the Lovely is known for the alchemists who work in the city, making various poisons."
+ lys_city_legacy: "Lysene City"
+ lys_city_legacy_desc: "Lys, or Lys the Lovely is known for the alchemists who work in the city, making various poisons."
  
- pirate_haven: "Pirate Haven"
- pirate_haven_desc: "A band of pirates whom are particularly wealthy and influential."
+ volantis_city_mechanic: "Triarchy"
+ volantis_city_mechanic_desc: ""
  
- pirate_kingdom: "Pirate Kingdom"
- pirate_kingdom_desc: "A unified group of pirate clans lead by a central figurehead."
+ volantis_city_reform: "Triarchy"
+ volantis_city_reform_desc: "Volantis is ruled over by three triarchs, each of whom rules for a year. Each year the freeborn landholders of Volantis can elect a new triarch or reelect a current one. There are precious few voters west of the river Rhoyne. The elections are ten days of madness, with much campaigning and bribery."
+ volantis_city_legacy: "Tirarchy"
+ volantis_city_legacy_desc: "Volantis is ruled over by three triarchs, each of whom rules for a year. Each year the freeborn landholders of Volantis can elect a new triarch or reelect a current one. There are precious few voters west of the river Rhoyne. The elections are ten days of madness, with much campaigning and bribery."
  
- wildling_clan: "Clan"
- wildling_clan_desc: "A clan of men and women from north of the Wall."
+ pentos_city_mechanic: "Pentosi City"
+ pentos_city_mechanic_desc: ""
  
- wildling_confederation: "Wildling Confederation"
- wildling_confederation_desc: "A confederation of wildling tribes loosely ruled over by a High Chieftain."
+ pentos_city_reform: "Pentosi City"
+ pentos_city_reform_desc: "Wealth equals power in Pentos. The Prince of Pentos is chosen by a council of magisters. whom are the considered the power behind the throne."
+ pentos_city_legacy: "Pentosi City"
+ pentos_city_legacy_desc: "Wealth equals power in Pentos. The Prince of Pentos is chosen by a council of magisters. whom are the considered the power behind the throne."
  
- khas_city: "Vaes Dothrak"
- khas_city_desc: "The city of Vaes Dothrak is the only city of the Dothraki people."
+ braavos_city_mechanic: "Braavosi City"
+ braavos_city_mechanic_desc: ""
  
- khas: "Khalasar"
- khas_desc: "A group of nomadic men and women whom follow their khal across grasslands."
+ braavos_city_reform: "Braavosi City"
+ braavos_city_reform_desc: "The office of Sealord is not hereditary, so when the Sealord dies a new one is chosen by popular opinion. This tends to lead to fights."
+ braavos_city_legacy: "Braavosi City"
+ braavos_city_legacy_desc: "The office of Sealord is not hereditary, so when the Sealord dies a new one is chosen by popular opinion. This tends to lead to fights."
  
- kingdom: "Kingdom"
- kingdom_desc: "A small, despotic kingdom, in which the ruler mantains their power with might and fear."
+ lorath_city_mechanic: "Lorathi City"
+ lorath_city_mechanic_desc: ""
  
+ lorath_city_reform: "Lorathi City"
+ lorath_city_reform_desc: "Lorath is one of the poorest of the Free Cities, and after the Century of Blood, weak magisters now administer the city."
+ lorath_city_legacy: "Lorathi City"
+ lorath_city_legacy_desc: "Lorath is one of the poorest of the Free Cities, and after the Century of Blood, weak magisters now administer the city."
  
+ qohor_city_mechanic: "Qohorik City"
+ qohor_city_mechanic_desc: ""
  
- empire: "Empire"
- empire_desc: "A grand empire, ruled by a despotic ruler whom mantains power with might and fear."
+ qohor_city_reform: "Qohorik City"
+ qohor_city_reform_desc: "Known as the City of Sorcerers in folklore, Qohor was founded by religious dissidents who abandoned Valyria to practice the worship of their god, the Black Goat of Qohor."
+ qohor_city_legacy: "Qohorik City"
+ qohor_city_legacy_desc: "Known as the City of Sorcerers in folklore, Qohor was founded by religious dissidents who abandoned Valyria to practice the worship of their god, the Black Goat of Qohor."
  
- nw_government: "Council"
- nw_government_desc: "The council of the Night's Watch, led by their Lord Commander."
+ norvos_city_mechanic: "Norvosi City"
+ norvos_city_mechanic_desc: ""
  
- pentoshi_city: "Pentosi City"
- pentoshi_city_desc: "Wealth equals power in Pentos. The Prince of Pentos is chosen by a council of magisters. whom are the considered the power behind the throne."
+ norvos_city_reform: "Norvosi City"
+ norvos_city_reform_desc: "The city of Norvos is ruled over by a High Magister, who in advised by a council of religious protectors. These are chosen by the bearded priests."
+ norvos_city_legacy: "Norvosi City"
+ norvos_city_legacy_desc: "The city of Norvos is ruled over by a High Magister, who in advised by a council of religious protectors. These are chosen by the bearded priests."
  
- braavosi_city: "Braavosi City"
- braavosi_city_desc: "The office of Sealord is not hereditary, so when the Sealord dies a new one is chosen by popular opinion. This tends to lead to fights."
+ saath_city_mechanic: "Saathi City"
+ saath_city_mechanic_desc: ""
  
- lysene_city: "Lysene City"
- lysene_city_desc: "Lys, or Lys the Lovely is known for the alchemists who work in the city, making various poisons."
+ saath_city_reform: "Saathi City"
+ saath_city_reform_desc: ""
+ saath_city_legacy: "Saathi City"
+ saath_city_legacy_desc: ""
  
- qohor_city: "Qohorik City"
- qohor_city_desc: "Known as the City of Sorcerers in folklore, Qohor was founded by religious dissidents who abandoned Valyria to practice the worship of their god, the Black Goat of Qohor."
+ trader_city_mechanic: "Trader City"
+ trader_city_mechanic_desc: ""
  
- norvos_city: "Norvosi City"
- norvos_city_desc: "The city of Norvos is ruled over by a High Magister, who in advised by a council of religious protectors. These are chosen by the bearded priests."
+ trader_city_reform: "Trader City"
+ trader_city_reform_desc: ""
+ trader_city_legacy: "Trader City"
+ trader_city_legacy_desc: ""
  
- myr_city: "Myrman City"
- myr_city_desc: "The origin of Myr is murky, with certain maesters connecting Myrmen and the Rhoynar."
+ andal_city_mechanic: "Andal City"
+ andal_city_mechanic_desc: ""
  
+ andal_city_reform: "Andal City"
+ andal_city_reform_desc: ""
+ andal_city_legacy: "Andal City"
+ andal_city_legacy_desc: ""
  
+ nights_watch_mechanic: "Night's Watch"
+ nights_watch_mechanic_desc: ""
  
- lorath_city: "Lorathi City"
- lorath_city_desc: "Lorath is one of the poorest of the Free Cities, and after the Century of Blood, weak magisters now administer the city."
+ nights_watch_reform: "Night's Watch"
+ nights_watch_reform_desc: "The council of the Night's Watch, led by their Lord Commander."
+ nights_watch_legacy: "Night's Watch"
+ nights_watch_legacy_desc: "The council of the Night's Watch, led by their Lord Commander."
  
- the_faith: "The Faith"
- the_faith_desc: "The seat of religious power in Westeros. The Great Sept of Baelor in the center of religious worship across Westeros, and is controlled by the High Septon."
+ # Theocracy Reforms
+ asshai_cult_mechanic: "Asshai Cult"
+ asshai_cult_mechanic_desc: ""
  
- yiti_empire: "Empire of Yi Ti"
- yiti_empire_desc: "The empire of the Yitish people, ruled over by an emperor."
+ asshai_cult_reform: "Asshai Cult"
+ asshai_cult_reform_desc: ""
+ asshai_cult_legacy: "Asshai Cult"
+ asshai_cult_legacy_desc: ""
  
- volanteane_republic: "Triarchy"
- volanteane_republic_desc: "Volantis is ruled over by three triarchs, each of whom rules for a year. Each year the freeborn landholders of Volantis can elect a new triarch or reelect a current one. There are precious few voters west of the river Rhoyne. The elections are ten days of madness, with much campaigning and bribery."
+ bloodless_cult_mechanic: "Bloodless Cult"
+ bloodless_cult_mechanic_desc: ""
+ 
+ bloodless_cult_reform: "Bloodless Cult"
+ bloodless_cult_reform_desc: ""
+ bloodless_cult_legacy: "Bloodless Cult"
+ bloodless_cult_legacy_desc: ""
+ 
+ white_walker_cult_mechanic: "White Walker Cult"
+ white_walker_cult_mechanic_desc: ""
+ 
+ white_walker_cult_reform: "White Walker Cult"
+ white_walker_cult_reform_desc: ""
+ white_walker_cult_legacy: "White Walker Cult"
+ white_walker_cult_legacy_desc: ""
+ 
+ # Tribal Reforms
+ pirate_clan_mechanic: "Pirate Clan"
+ pirate_clan_mechanic_desc: ""
+ 
+ pirate_clan_reform: "Pirate Clan"
+ pirate_clan_reform_desc: "A band of pirates whom are particularly wealthy and influential."
+ pirate_clan_legacy: "Pirate Clan"
+ pirate_clan_legacy_desc: "A band of pirates whom are particularly wealthy and influential."
+ 
+ wildling_clan_mechanic: "Wildling Clan"
+ wildling_clan_mechanic_desc: ""
+ 
+ wildling_clan_reform: "Wildling Clan"
+ wildling_clan_reform_desc: "A clan of men and women from north of the Wall."
+ wildling_clan_legacy: "Wildling Clan"
+ wildling_clan_legacy_desc: "A clan of men and women from north of the Wall."
+ 
+ lhazar_clan_mechanic: "Lhazar Clan"
+ lhazar_clan_mechanic_desc: ""
+ 
+ lhazar_clan_reform: "Lhazar Clan"
+ lhazar_clan_reform_desc: ""
+ lhazar_clan_legacy: "Lhazar Clan"
+ lhazar_clan_legacy_desc: ""
+ 
+ ibben_clan_mechanic: "Ibben Clan"
+ ibben_clan_mechanic_desc: ""
+ 
+ ibben_clan_reform: "Ibben Clan"
+ ibben_clan_reform_desc: ""
+ ibben_clan_legacy: "Ibben Clan"
+ ibben_clan_legacy_desc: ""
+ 
+ omber_clan_mechanic: "Omber Clan"
+ omber_clan_mechanic_desc: ""
+ 
+ omber_clan_reform: "Omber Clan"
+ omber_clan_reform_desc: ""
+ omber_clan_legacy: "Omber Clan"
+ omber_clan_legacy_desc: ""
+ 
+ faros_clan_mechanic: "Faros Clan"
+ faros_clan_mechanic_desc: ""
+ 
+ faros_clan_reform: "Faros Clan"
+ faros_clan_reform_desc: ""
+ faros_clan_legacy: "Faros Clan"
+ faros_clan_legacy_desc: ""
+ 
+ naath_clan_mechanic: "Naath Clan"
+ naath_clan_mechanic_desc: ""
+ 
+ naath_clan_reform: "Naath Clan"
+ naath_clan_reform_desc: ""
+ naath_clan_legacy: "Naath Clan"
+ naath_clan_legacy_desc: ""
+ 
+ summer_islander_clan_mechanic: "Summer Islander Clan"
+ summer_islander_clan_mechanic_desc: ""
+ 
+ summer_islander_clan_reform: "Summer Islander Clan"
+ summer_islander_clan_reform_desc: ""
+ summer_islander_clan_legacy: "Summer Islander Clan"
+ summer_islander_clan_legacy_desc: ""
+ 
+ # Nomadic Reforms
+ khalasar_mechanic: "Khalasar"
+ khalasar_mechanic_desc: ""
+ 
+ khalasar_reform: "Khalasar"
+ khalasar_reform_desc: "A group of nomadic men and women whom follow their khal across grasslands."
+ khalasar_legacy: "Khalasar"
+ khalasar_legacy_desc: "A group of nomadic men and women whom follow their khal across grasslands."
+ 
+ jhattar_mechanic: "Jhattar"
+ jhattar_mechanic_desc: ""
+ 
+ jhattar_reform: "Jhattar"
+ jhattar_reform_desc: "A group of nomadic men and women whom follow their khal across grasslands."
+ jhattar_legacy: "Jhattar"
+ jhattar_legacy_desc: "A group of nomadic men and women whom follow their khal across grasslands."
  
  # Ranks
  RANK_4: "Level 4"

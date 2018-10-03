@@ -1,4 +1,23 @@
 #------------------------------------------------------------
+# Legacy
+#------------------------------------------------------------
+wildling_clan_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = yes
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    monarchy = yes
+    tribal = yes
+    
+	ai = { factor = 1 }
+}
+
+#------------------------------------------------------------
 # Reforms
 #------------------------------------------------------------
 wildling_clan_mechanic = {
@@ -25,21 +44,3 @@ wildling_clan_reform = {
 	nation_designer_cost = 0
 }
 
-#------------------------------------------------------------
-# Legacy
-#------------------------------------------------------------
-wildling_clan_legacy = {
-	icon = "crown"
-    
-    allow_normal_conversion = yes
-	legacy_government = yes
-    
-	valid_for_new_country = yes
-	valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    monarchy = yes
-    tribal = yes
-    
-	ai = { factor = 1 }
-}

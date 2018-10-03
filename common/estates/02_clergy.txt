@@ -16,10 +16,7 @@ estate_clergy =
         NOT = { is_nomadic_government = yes }
         NOT = {
             OR = {
-                OR = {
-                    has_reform = qartheen_city_reform
-                    has_reform = qartheen_city_legacy
-                }
+                government = qarth_city
                 religion = asoiaf_magic
             }
         }

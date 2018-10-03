@@ -197,16 +197,16 @@ gov_qarth_city = {
 
 gov_yiti_city = {
 	rank = {
-		1 = YITI_DOMAIN
-        2 = YITI_DOMAIN
-        3 = YITI_DOMAIN
-		4 = YITI_DOMAIN
-        5 = YITI_DOMAIN
-        6 = YITI_DOMAIN
-        7 = YITI_DOMAIN
-		8 = YITI_DOMAIN
-        9 = YITI_DOMAIN
-        10 = YITI_DOMAIN
+		1 = YITI_CITY
+        2 = YITI_CITY
+        3 = YITI_CITY
+		4 = YITI_CITY
+        5 = YITI_CITY
+        6 = YITI_CITY
+        7 = YITI_CITY
+		8 = YITI_CITY
+        9 = YITI_CITY
+        10 = YITI_CITY
 	}
 	
 	ruler_male = {
@@ -528,41 +528,41 @@ gov_ghis_city = {
 gov_hyrkoon_clan = {
 	rank = {
 		1 = HYRKOON_CITY
-		2 = CLAN
-		3 = CLAN
-        4 = CLAN
-        5 = CLAN
-        6 = CLAN
-        7 = CLAN
-        8 = CLAN
-        9 = CLAN
-        10 = CLAN
+		2 = HYRKOON_CITY
+		3 = HYRKOON_CITY
+        4 = HYRKOON_CITY
+        5 = HYRKOON_CITY
+        6 = HYRKOON_CITY
+        7 = HYRKOON_CITY
+        8 = HYRKOON_CITY
+        9 = HYRKOON_CITY
+        10 = HYRKOON_CITY
 	}
 	
 	ruler_male = {
-		1 = CHIEF
-        2 = CHIEF
-        3 = CHIEF
-        4 = CHIEF
-        5 = CHIEF
-        6 = CHIEF
-        7 = CHIEF
-        8 = CHIEF
-        9 = CHIEF
-        10 = CHIEF
+		1 = LORD
+        2 = LORD
+        3 = LORD
+		4 = LORD
+        5 = LORD
+        6 = LORD
+        7 = LORD
+		8 = LORD
+        9 = LORD
+        10 = LORD
 	}
 	
 	ruler_female = {
-		1 = CHIEFTESS
-        2 = CHIEFTESS
-        3 = CHIEFTESS
-        4 = CHIEFTESS
-        5 = CHIEFTESS
-        6 = CHIEFTESS
-        7 = CHIEFTESS
-        8 = CHIEFTESS
-        9 = CHIEFTESS
-        10 = CHIEFTESS
+		1 = LADY
+        2 = LADY
+        3 = LADY
+		4 = LADY	
+        5 = LADY	
+        6 = LADY	
+        7 = LADY	
+		8 = LADY
+        9 = LADY
+        10 = LADY
 	}
 	
 	trigger = {
@@ -572,48 +572,45 @@ gov_hyrkoon_clan = {
 
 gov_nefer_clan = {
 	rank = {
-		1 = CLAN
-		2 = CLAN
-		3 = CLAN
-        4 = CLAN
-        5 = CLAN
-        6 = CLAN
-        7 = CLAN
-        8 = CLAN
-        9 = CLAN
-        10 = CLAN
+		1 = NEFER_CITY
+		2 = NEFER_CITY
+		3 = NEFER_CITY
+        4 = NEFER_CITY
+        5 = NEFER_CITY
+        6 = NEFER_CITY
+        7 = NEFER_CITY
+        8 = NEFER_CITY
+        9 = NEFER_CITY
+        10 = NEFER_CITY
 	}
 	
 	ruler_male = {
-		1 = CHIEF
-        2 = CHIEF
-        3 = CHIEF
-        4 = CHIEF
-        5 = CHIEF
-        6 = CHIEF
-        7 = CHIEF
-        8 = CHIEF
-        9 = CHIEF
-        10 = CHIEF
+		1 = LORD
+        2 = LORD
+        3 = LORD
+		4 = LORD
+        5 = LORD
+        6 = LORD
+        7 = LORD
+		8 = LORD
+        9 = LORD
+        10 = LORD
 	}
 	
 	ruler_female = {
-		1 = CHIEFTESS
-        2 = CHIEFTESS
-        3 = CHIEFTESS
-        4 = CHIEFTESS
-        5 = CHIEFTESS
-        6 = CHIEFTESS
-        7 = CHIEFTESS
-        8 = CHIEFTESS
-        9 = CHIEFTESS
-        10 = CHIEFTESS
+		1 = LADY
+        2 = LADY
+        3 = LADY
+		4 = LADY	
+        5 = LADY	
+        6 = LADY	
+        7 = LADY	
+		8 = LADY
+        9 = LADY
+        10 = LADY
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = nefer_clan_reform
-            has_reform = nefer_clan_legacy
-        }
+        government = nefer_city
 	}
 }

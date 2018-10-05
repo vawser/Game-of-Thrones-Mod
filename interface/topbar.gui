@@ -64,6 +64,14 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 
 		}
+		
+		iconType = {
+			name = "government_reforms_button_base"
+			quadTextureSprite ="GFX_government_reforms_button_base"
+			position = { x= 93 y = 104 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
 
 		guiButtonType = {
 			name = "player_shield"
@@ -106,6 +114,22 @@ guiTypes = {
 			clicksound = macro_build
 			hint_tag = "hint_macrobuild"
 			shortcut = "b"
+		}
+		
+		iconType = {
+			name = "government_reforms_progress"
+			position = { x = 100 y = 110 }
+			quadTextureSprite ="GFX_government_reforms_progress"
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+		
+		guiButtonType = {
+			name = "government_reforms_button"
+			position = { x = 100 y = 110 }
+			quadTextureSprite ="GFX_government_reforms_button"
+			buttonFont = "Main_14_black"
+			clicksound = macro_build
 		}
 		
 		guiButtonType = {

@@ -1,17 +1,35 @@
+# Note: modifier or attribute changes here need to be replicated in legacy versions.
 #------------------------------------------------------------
 # Monarchy
 #------------------------------------------------------------
 noble_house_reform = {
 	icon = "castle"
     
+    potential = {
+        culture_group = culture_westeros
+        is_emperor = no
+    }
+    
     allow_normal_conversion = yes
     legacy_equivalent = noble_house_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+        max_states = 1
+		global_unrest = -1
+		unjustified_demands = -0.1
+		max_absolutism = 5
+    }
 }
 royal_house_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_westeros
+        is_emperor = yes
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = royal_house_legacy
@@ -19,97 +37,212 @@ royal_house_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
-    fixed_rank = 3
+    fixed_rank = 10
+    
+    modifiers = {
+        max_states = 5
+		global_unrest = -2
+		unjustified_demands = -0.2
+		max_absolutism = 20
+    }
 }
 yiti_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_yi_ti
+        is_emperor_of_china = no
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = yiti_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    has_meritocracy = yes
+    
+    modifiers = {
+		max_states = 2
+		global_manpower_modifier = 0.1
+	}
 }
 yiti_empire_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_yi_ti
+        is_emperor_of_china = yes
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = yiti_empire_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    has_meritocracy = yes
+    
+    modifiers = {
+		max_states = 5
+		global_manpower_modifier = 0.25
+		vassal_income = 0.25
+        max_absolutism = 20
+	}
 }
 qarth_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_qarth
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = qarth_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		production_efficiency = 0.1
+		global_tax_modifier = 0.05
+		global_autonomy = -0.025
+	}
 }
 nefer_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_nefer
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = nefer_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		global_garrison_growth = 0.15
+	}
 }
 hyrkoon_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_hyrkoon
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = hyrkoon_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 2
+		siege_ability = 0.1
+	}
 }
 valyria_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_valyrian
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = valyria_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		recover_army_morale_speed = 0.05
+	}
 }
 meereen_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = meereen
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = meereen_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		global_manpower_modifier = 0.15
+        global_autonomy = -0.025
+        max_absolutism = 10
+	}
 }
 yunkai_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = yunkai
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = yunkai_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		global_manpower_modifier = 0.15
+        global_autonomy = -0.025
+        max_absolutism = 10
+	}
 }
 astapor_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = astapor
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = astapor_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		global_manpower_modifier = 0.15
+        global_autonomy = -0.025
+        max_absolutism = 10
+	}
 }
 ghis_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = ghis
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = ghis_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		global_manpower_modifier = 0.15
+        global_autonomy = -0.025
+        max_absolutism = 10
+	}
 }
 #------------------------------------------------------------
 # Republic
@@ -117,32 +250,69 @@ ghis_city_reform = {
 tyrosh_city_reform = {
 	icon = "castle"
     
+    potential = {
+        primary_culture = tyroshi
+    }
+    
     allow_normal_conversion = yes
     legacy_equivalent = tyrosh_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		navy_tradition = 1
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
 }
 myr_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = myrish
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = myr_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		province_warscore_cost = -0.1
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
 }
 lys_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = lysene
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = lys_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		ae_impact = -0.1
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
 }
 volantis_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = volantene
+    }
     
     duration = 3
     
@@ -151,87 +321,189 @@ volantis_city_reform = {
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 5
+		trade_efficiency = 0.1
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
 }
 pentos_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = pentoshi
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = pentos_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		global_trade_power = 0.1
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
 }
 braavos_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = braavosi
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = braavos_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		global_ship_trade_power = 0.15
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
 }
 lorath_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = lorathi
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = lorath_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		tolerance_own = 1
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
 }
 qohor_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = qohorik
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = qohor_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		years_of_nationalism = -5
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
 }
 norvos_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = norvosi
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = norvos_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		yearly_corruption = -0.05
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
 }
 saath_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = saathi
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = saath_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 2
+		defensiveness = 0.25
+        max_absolutism = -10
+	}
 }
 trader_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_trader_town
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = trader_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		colonists = 1
+        max_absolutism = -10
+	}
 }
 andal_city_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = andal
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = andal_city_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		global_missionary_strength = 0.03
+        max_absolutism = -20
+	}
 }
 nights_watch_reform = {
 	icon = "castle"
+    
+    potential = {
+        tag = A02
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = nights_watch_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		advisor_cost = -0.15
+        max_absolutism = -40
+	}
 }
 #------------------------------------------------------------
 # Theocracy
@@ -239,29 +511,60 @@ nights_watch_reform = {
 asshai_cult_reform = {
 	icon = "castle"
     
+    potential = {
+        primary_culture = asshai
+    }
+    
     allow_normal_conversion = yes
     legacy_equivalent = asshai_cult_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		technology_cost = -0.05
+        max_absolutism = 20
+	}
 }
 bloodless_cult_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_bloodless_men
+        NOT = { primary_culture = asshai }
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = bloodless_cult_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 3
+		discipline = 0.05
+        max_absolutism = 20
+	}
 }
 white_walker_cult_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_ancient
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = white_walker_cult_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 10
+		land_morale = 0.1
+        max_absolutism = 100
+	}
 }
 #------------------------------------------------------------
 # Tribal
@@ -269,74 +572,146 @@ white_walker_cult_reform = {
 pirate_clan_reform = {
 	icon = "castle"
     
+    potential = {
+        primary_culture = stepstones
+    }
+    
     allow_normal_conversion = yes
     legacy_equivalent = pirate_clan_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		global_sailors_modifier = 0.25
+	}
 }
 wildling_clan_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_free_folk
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = wildling_clan_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		global_regiment_cost = -0.15
+	}
 }
 lhazar_clan_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = lhazar
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = lhazar_clan_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		global_regiment_recruit_speed = -0.1
+	}
 }
 ibben_clan_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_ibben
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = ibben_clan_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		global_ship_cost = -0.1
+	}
 }
 omber_clan_reform = {
 	icon = "castle"
+    
+    potential = {
+        primary_culture = omber
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = omber_clan_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		build_cost = -0.1
+	}
 }
 faros_clan_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_faros
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = faros_clan_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		global_trade_goods_size_modifier = 0.1
+	}
 }
 naath_clan_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_naathi
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = naath_clan_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		shock_damage = 0.05
+	}
 }
 summer_islander_clan_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_summer_isles
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = summer_islander_clan_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 2
+		ship_durability = 0.05
+	}
 }
 #------------------------------------------------------------
 # Nomadic
@@ -344,20 +719,40 @@ summer_islander_clan_reform = {
 khalasar_reform = {
 	icon = "castle"
     
+    potential = {
+        culture_group = culture_dothraki
+    }
+    
     allow_normal_conversion = yes
     legacy_equivalent = khalasar_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		cavalry_power = 0.25
+        cavalry_cost = -0.15
+	}
 }
 jhattar_reform = {
 	icon = "castle"
+    
+    potential = {
+        culture_group = culture_jogos_nhai
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = jhattar_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		cavalry_power = 0.15
+        cavalry_cost = -0.25
+	}
 }
 
 

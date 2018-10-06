@@ -1,4 +1,7 @@
 ﻿l_english:
+ #---------------------------------------------
+ # Government Names
+ #---------------------------------------------
  monarchy: "Monarchy"
  monarchy_desc: ""
  republic: "Republic"
@@ -10,9 +13,18 @@
  nomadic: "Nomadic"
  nomadic_desc: ""
  
+ #---------------------------------------------
+ # Government Types
+ #---------------------------------------------
+ monarchy_name: "Monarchy"
+ republic_name: "Republic"
+ theocracy_name: "Theocracy"
+ tribal_name: "Tribal"
  nomadic_name: "Nomadic"
- 
+
+ #---------------------------------------------
  # Ranks
+ #---------------------------------------------
  RANK_4: "Level 4"
  RANK_5: "Level 5"
  RANK_6: "Level 6"
@@ -21,7 +33,9 @@
  RANK_9: "Level 9"
  RANK_10: "Level 10"
  
- # Names
+ #---------------------------------------------
+ # Ruler Titles
+ #---------------------------------------------
  PRINCE: "Prince"
  PRINCESS: "Princess"
  LORD: "Lord"
@@ -62,7 +76,9 @@
  ARCHMAGI: "Archmagi"
  BLOODSWORN: "Bloodsworn"
  
- # Titles
+ #---------------------------------------------
+ # Government Titles
+ #---------------------------------------------
  NOBLE_HOUSE: "Noble House"
  ROYAL_HOUSE: "Royal House"
  VOLANTEANE_REPUBLIC: "Volanteane Republic"
@@ -100,52 +116,36 @@
  HYRKOON_CITY: "Hyrkooni City"
  NEFER_CITY: "Neferi City"
  
- # Government Types
- westeros_monarchy_name: "Westerosi Monarchy"
- qarth_city_name: "Qartheen City"
- yiti_city_name: "Yitish City"
- nefer_city_name: "Neferi City"
- hyrkoon_city_name: "Hyrkooni City"
- valyria_city_name: "Valyrian City"
- meereen_city_name: "Meereenese City"
- yunkai_city_name: "Yunkai City"
- astapor_city_name: "Astapori City"
- ghis_city_name: "Ghiscari City"
+ #---------------------------------------------
+ # Tiers
+ #---------------------------------------------
+ government_form_monarchy: "Government Form"
+ government_form_republic: "Government Form"
+ government_form_theocracy: "Government Form"
+ government_form_tribal: "Government Form"
+ government_form_nomadic: "Government Form"
  
- tyrosh_city_name: "Tyroshi City"
- myr_city_name: "Myrish City"
- lys_city_name: "Lysene City"
- volantis_city_name: "Triarchy"
- pentos_city_name: "Pentosi City"
- braavos_city_name: "Braavosi City"
- lorath_city_name: "Lorathi City"
- qohor_city_name: "Qohorik City"
- norvos_city_name: "Norvosi City"
- saath_city_name: "Saathi City"
- trader_city_name: "Trader City"
- andal_city_name: "Andal Citys"
- nights_watch_name: "Night's Watch"
- 
- asshai_cult_name: "Asshai Cult"
- bloodless_cult_name: "Bloodless Cult"
- white_walker_cult_name: "White Walker Cult"
- 
- pirate_clan_name: "Pirate Clan"
- wildling_clan_name: "Wildling Clan"
- lhazar_clan_name: "Lhazar Tribe"
- ibben_clan_name: "Ibben Clan"
- omber_clan_name: "Omber Clan"
- faros_clan_name: "Faros Tribe"
- naath_clan_name: "Naath Tribe"
- summer_islander_clan_name: "Summer Islander Tribe"
- 
- khalasar_name: "Khalasar"
- jhattar_name: "Jhattar"
- 
- # Monarchy Reforms
+ #---------------------------------------------
+ # Mechanics
+ #---------------------------------------------
  monarchy_mechanic: "Monarchy"
  monarchy_mechanic_desc: "This is a Monarchy government."
  
+ republic_mechanic: "Republic"
+ republic_mechanic_desc: "This is a Republic government."
+ 
+ theocracy_mechanic: "Theocracy"
+ theocracy_mechanic_desc: "This is a Theocratic government."
+ 
+ tribal_mechanic: "Tribal"
+ tribal_mechanic_desc: "This is a Tribal government."
+ 
+ nomadic_mechanic: "Nomadic"
+ nomadic_mechanic_desc: "This is a Nomadic government."
+ 
+ #---------------------------------------------
+ # Government Form (Monarchy)
+ #---------------------------------------------
  noble_house_reform: "Noble House"
  noble_house_reform_desc: "A noble lord whom reports directly to their respective Great House. Normally controls an estate of considerable size, and may have minor houses under their vassalage."
  noble_house_legacy: "Noble House"
@@ -206,10 +206,9 @@
  ghis_city_legacy: "Ghiscari City"
  ghis_city_legacy_desc: "A city in the Slaver's Bay region."
  
- # Republic Reforms
- republic_mechanic: "Republic"
- republic_mechanic_desc: "This is a Republic government."
- 
+ #---------------------------------------------
+ # Government Form (Republic)
+ #---------------------------------------------
  tyrosh_city_reform: "Tyrosi City"
  tyrosh_city_reform_desc: "A free city of Essos. The free cities practise a form of democracy where the lord is elected by the realm's most important men and women."
  tyrosh_city_legacy: "Tyrosi City"
@@ -275,10 +274,9 @@
  nights_watch_legacy: "Night's Watch"
  nights_watch_legacy_desc: "The council of the Night's Watch, led by their Lord Commander."
  
- # Theocracy Reforms
- theocracy_mechanic: "Theocracy"
- theocracy_mechanic_desc: "This is a Theocratic government."
- 
+ #---------------------------------------------
+ # Government Form (Theocracy)
+ #---------------------------------------------
  asshai_cult_reform: "Asshai Cult"
  asshai_cult_reform_desc: ""
  asshai_cult_legacy: "Asshai Cult"
@@ -294,10 +292,9 @@
  white_walker_cult_legacy: "White Walker Cult"
  white_walker_cult_legacy_desc: ""
  
- # Tribal Reforms
- tribal_mechanic: "Tribal"
- tribal_mechanic_desc: "This is a Tribal government."
- 
+ #---------------------------------------------
+ # Government Form (Tribal)
+ #---------------------------------------------
  pirate_clan_reform: "Pirate Clan"
  pirate_clan_reform_desc: "A band of pirates whom are particularly wealthy and influential."
  pirate_clan_legacy: "Pirate Clan"
@@ -338,10 +335,9 @@
  summer_islander_clan_legacy: "Summer Islander Clan"
  summer_islander_clan_legacy_desc: ""
  
- # Nomadic Reforms
- nomadic_mechanic: "Nomadic"
- nomadic_mechanic_desc: "This is a Nomadic government."
- 
+ #---------------------------------------------
+ # Government Form (Nomadic)
+ #---------------------------------------------
  khalasar_reform: "Khalasar"
  khalasar_reform_desc: "A group of nomadic men and women whom follow their khal across grasslands."
  khalasar_legacy: "Khalasar"
@@ -351,6 +347,4 @@
  jhattar_reform_desc: "A group of nomadic men and women whom follow their khal across grasslands."
  jhattar_legacy: "Jhattar"
  jhattar_legacy_desc: "A group of nomadic men and women whom follow their khal across grasslands."
- 
- # Other Reforms
  

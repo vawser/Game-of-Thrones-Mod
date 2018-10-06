@@ -13,6 +13,13 @@ noble_house_legacy = {
     
     monarchy = yes
     
+    modifiers = {
+        max_states = 1
+		global_unrest = -1
+		unjustified_demands = -0.1
+		max_absolutism = 5
+    }
+    
 	ai = { factor = 1 }
 }
 royal_house_legacy = {
@@ -27,7 +34,14 @@ royal_house_legacy = {
     
     monarchy = yes
     
-    fixed_rank = 3
+    fixed_rank = 10
+    
+    modifiers = {
+        max_states = 5
+		global_unrest = -2
+		unjustified_demands = -0.2
+		max_absolutism = 20
+    }
     
 	ai = { factor = 1 }
 }
@@ -42,6 +56,12 @@ yiti_city_legacy = {
 	nation_designer_cost = 0
     
     monarchy = yes
+    has_meritocracy = yes
+    
+    modifiers = {
+		max_states = 2
+		global_manpower_modifier = 0.1
+	}
     
 	ai = { factor = 1 }
 }
@@ -56,6 +76,14 @@ yiti_empire_legacy = {
 	nation_designer_cost = 0
     
     monarchy = yes
+    has_meritocracy = yes
+    
+    modifiers = {
+		max_states = 5
+		global_manpower_modifier = 0.25
+		vassal_income = 0.25
+        max_absolutism = 20
+	}
     
 	ai = { factor = 1 }
 }
@@ -71,6 +99,13 @@ qarth_city_legacy = {
     
     monarchy = yes
     
+    modifiers = {
+    	max_states = 3
+		production_efficiency = 0.1
+		global_tax_modifier = 0.05
+		global_autonomy = -0.025
+	}
+    
 	ai = { factor = 1 }
 }
 nefer_city_legacy = {
@@ -84,6 +119,11 @@ nefer_city_legacy = {
 	nation_designer_cost = 0
     
     monarchy = yes
+    
+    modifiers = {
+    	max_states = 1
+		global_garrison_growth = 0.15
+	}
     
 	ai = { factor = 1 }
 }
@@ -99,6 +139,11 @@ hyrkoon_city_legacy = {
     
     monarchy = yes
     
+    modifiers = {
+    	max_states = 2
+		siege_ability = 0.1
+	}
+    
 	ai = { factor = 1 }
 }
 valyria_city_legacy = {
@@ -112,6 +157,11 @@ valyria_city_legacy = {
 	nation_designer_cost = 0
     
     monarchy = yes
+
+    modifiers = {
+    	max_states = 1
+		recover_army_morale_speed = 0.05
+	}
     
 	ai = { factor = 1 }
 }
@@ -127,6 +177,13 @@ meereen_city_legacy = {
     
     monarchy = yes
     
+    modifiers = {
+    	max_states = 3
+		global_manpower_modifier = 0.15
+        global_autonomy = -0.025
+        max_absolutism = 10
+	}
+    
 	ai = { factor = 1 }
 }
 yunkai_city_legacy = {
@@ -140,6 +197,13 @@ yunkai_city_legacy = {
 	nation_designer_cost = 0
     
     monarchy = yes
+    
+    modifiers = {
+    	max_states = 3
+		global_manpower_modifier = 0.15
+        global_autonomy = -0.025
+        max_absolutism = 10
+	}
     
 	ai = { factor = 1 }
 }
@@ -155,6 +219,13 @@ astapor_city_legacy = {
     
     monarchy = yes
     
+    modifiers = {
+    	max_states = 3
+		global_manpower_modifier = 0.15
+        global_autonomy = -0.025
+        max_absolutism = 10
+	}
+    
 	ai = { factor = 1 }
 }
 ghis_city_legacy = {
@@ -168,6 +239,13 @@ ghis_city_legacy = {
 	nation_designer_cost = 0
     
     monarchy = yes
+    
+    modifiers = {
+    	max_states = 3
+		global_manpower_modifier = 0.15
+        global_autonomy = -0.025
+        max_absolutism = 10
+	}
     
 	ai = { factor = 1 }
 }
@@ -186,6 +264,13 @@ tyrosh_city_legacy = {
     
     republic = yes
     
+    modifiers = {
+    	max_states = 3
+		navy_tradition = 1
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
+    
 	ai = { factor = 1 }
 }
 myr_city_legacy = {
@@ -200,6 +285,13 @@ myr_city_legacy = {
     
     republic = yes
     
+    modifiers = {
+    	max_states = 3
+		province_warscore_cost = -0.1
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
+    
 	ai = { factor = 1 }
 }
 lys_city_legacy = {
@@ -213,6 +305,13 @@ lys_city_legacy = {
 	nation_designer_cost = 0
     
     republic = yes
+    
+    modifiers = {
+    	max_states = 3
+		ae_impact = -0.1
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
     
 	ai = { factor = 1 }
 }
@@ -230,6 +329,13 @@ volantis_city_legacy = {
     
     duration = 3
     
+    modifiers = {
+    	max_states = 5
+		trade_efficiency = 0.1
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
+    
 	ai = { factor = 1 }
 }
 pentos_city_legacy = {
@@ -243,6 +349,13 @@ pentos_city_legacy = {
 	nation_designer_cost = 0
     
     republic = yes
+    
+    modifiers = {
+    	max_states = 3
+		global_trade_power = 0.1
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
     
 	ai = { factor = 1 }
 }
@@ -258,6 +371,13 @@ braavos_city_legacy = {
     
     republic = yes
     
+    modifiers = {
+    	max_states = 3
+		global_ship_trade_power = 0.15
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
+    
 	ai = { factor = 1 }
 }
 lorath_city_legacy = {
@@ -271,6 +391,13 @@ lorath_city_legacy = {
 	nation_designer_cost = 0
     
     republic = yes
+    
+    modifiers = {
+    	max_states = 3
+		tolerance_own = 1
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
     
 	ai = { factor = 1 }
 }
@@ -286,6 +413,13 @@ qohor_city_legacy = {
     
     republic = yes
     
+    modifiers = {
+    	max_states = 3
+		years_of_nationalism = -5
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
+    
 	ai = { factor = 1 }
 }
 norvos_city_legacy = {
@@ -299,6 +433,13 @@ norvos_city_legacy = {
 	nation_designer_cost = 0
     
     republic = yes
+    
+    modifiers = {
+    	max_states = 3
+		yearly_corruption = -0.05
+        global_autonomy = -0.025
+        max_absolutism = -10
+	}
     
 	ai = { factor = 1 }
 }
@@ -314,6 +455,12 @@ saath_city_legacy = {
     
     republic = yes
     
+    modifiers = {
+    	max_states = 2
+		defensiveness = 0.25
+        max_absolutism = -10
+	}
+    
 	ai = { factor = 1 }
 }
 trader_city_legacy = {
@@ -327,6 +474,12 @@ trader_city_legacy = {
 	nation_designer_cost = 0
     
     republic = yes
+    
+    modifiers = {
+    	max_states = 1
+		colonists = 1
+        max_absolutism = -10
+	}
     
 	ai = { factor = 1 }
 }
@@ -342,6 +495,12 @@ andal_city_legacy = {
     
     republic = yes
     
+    modifiers = {
+    	max_states = 1
+		global_missionary_strength = 0.03
+        max_absolutism = -20
+	}
+    
 	ai = { factor = 1 }
 }
 nights_watch_legacy = {
@@ -355,6 +514,12 @@ nights_watch_legacy = {
 	nation_designer_cost = 0
     
     republic = yes
+    
+    modifiers = {
+    	max_states = 1
+		advisor_cost = -0.15
+        max_absolutism = -40
+	}
     
 	ai = { factor = 1 }
 }
@@ -373,6 +538,12 @@ asshai_cult_legacy = {
     
     religion = yes
     
+    modifiers = {
+    	max_states = 3
+		technology_cost = -0.05
+        max_absolutism = 20
+	}
+    
 	ai = { factor = 1 }
 }
 bloodless_cult_legacy = {
@@ -387,6 +558,12 @@ bloodless_cult_legacy = {
     
     religion = yes
     
+    modifiers = {
+    	max_states = 3
+		discipline = 0.05
+        max_absolutism = 20
+	}
+    
 	ai = { factor = 1 }
 }
 white_walker_cult_legacy = {
@@ -395,11 +572,21 @@ white_walker_cult_legacy = {
     allow_normal_conversion = yes
 	legacy_government = yes
     
+    potential = {
+        culture_group = culture_ancient
+    }
+    
 	valid_for_new_country = yes
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
     religion = yes
+    
+    modifiers = {
+    	max_states = 10
+		land_morale = 0.1
+        max_absolutism = 100
+	}
     
 	ai = { factor = 1 }
 }
@@ -419,6 +606,11 @@ pirate_clan_legacy = {
     monarchy = yes
     tribal = yes
     
+    modifiers = {
+    	max_states = 1
+		global_sailors_modifier = 0.25
+	}
+    
 	ai = { factor = 1 }
 }
 wildling_clan_legacy = {
@@ -433,6 +625,11 @@ wildling_clan_legacy = {
     
     monarchy = yes
     tribal = yes
+    
+    modifiers = {
+    	max_states = 1
+		global_regiment_cost = -0.15
+	}
     
 	ai = { factor = 1 }
 }
@@ -449,6 +646,11 @@ lhazar_clan_legacy = {
     monarchy = yes
     tribal = yes
     
+    modifiers = {
+    	max_states = 1
+		global_regiment_recruit_speed = -0.1
+	}
+    
 	ai = { factor = 1 }
 }
 ibben_clan_legacy = {
@@ -463,6 +665,11 @@ ibben_clan_legacy = {
     
     monarchy = yes
     tribal = yes
+    
+    modifiers = {
+    	max_states = 1
+		global_ship_cost = -0.1
+	}
     
 	ai = { factor = 1 }
 }
@@ -479,6 +686,11 @@ omber_clan_legacy = {
     monarchy = yes
     tribal = yes
     
+    modifiers = {
+    	max_states = 1
+		build_cost = -0.1
+	}
+    
 	ai = { factor = 1 }
 }
 faros_clan_legacy = {
@@ -493,6 +705,11 @@ faros_clan_legacy = {
     
     monarchy = yes
     tribal = yes
+    
+    modifiers = {
+    	max_states = 1
+		global_trade_goods_size_modifier = 0.1
+	}
     
 	ai = { factor = 1 }
 }
@@ -509,6 +726,11 @@ naath_clan_legacy = {
     monarchy = yes
     tribal = yes
     
+    modifiers = {
+    	max_states = 1
+		shock_damage = 0.05
+	}
+    
 	ai = { factor = 1 }
 }
 summer_islander_clan_legacy = {
@@ -523,6 +745,11 @@ summer_islander_clan_legacy = {
     
     monarchy = yes
     tribal = yes
+    
+    modifiers = {
+    	max_states = 2
+		ship_durability = 0.05
+	}
     
 	ai = { factor = 1 }
 }
@@ -542,6 +769,12 @@ khalasar_legacy = {
     tribal = yes
     nomad = yes
     
+    modifiers = {
+    	max_states = 1
+		cavalry_power = 0.25
+        cavalry_cost = -0.15
+	}
+    
 	ai = { factor = 1 }
 }
 jhattar_legacy = {
@@ -556,6 +789,12 @@ jhattar_legacy = {
     
     tribal = yes
     nomad = yes
+    
+    modifiers = {
+    	max_states = 1
+		cavalry_power = 0.15
+        cavalry_cost = -0.25
+	}
     
 	ai = { factor = 1 }
 }

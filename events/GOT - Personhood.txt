@@ -1171,7 +1171,7 @@ country_event = {
 					}
 					random_owned_province = {
 						limit = {
-							owner = { is_monarchy_government = yes }
+							owner = { government = monarchy }
 							is_state = yes
 							OR = {
 								has_owner_culture = yes
@@ -3399,7 +3399,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_monarchy_government = yes
+		government = monarchy
 		has_heir = yes
 		heir_age = 15
 		NOT = { heir_religion = ROOT }
@@ -3479,7 +3479,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_monarchy_government = yes
+		government = monarchy
 		has_heir = yes
 		heir_age = 15
 		NOT = { heir_religion = ROOT }
@@ -3553,7 +3553,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_monarchy_government = yes
+		government = monarchy
 		has_regency = no
 		has_heir = no
 		NOT = { has_government_mechanic = mamluk_mechanic }
@@ -3640,7 +3640,7 @@ country_event = {
 
 	trigger = {
 		NOT = { has_ruler_flag = faith_question }
-		is_monarchy_government = yes
+		government = monarchy
 		NOT = { ruler_religion = ROOT }
 		legitimacy = 90
 		stability = 2
@@ -3706,7 +3706,7 @@ country_event = {
 
 	trigger = {
 		NOT = { has_ruler_flag = culture_question }
-		is_monarchy_government = yes
+		government = monarchy
 		NOT = { ruler_culture = ROOT }
 		heir_culture = new_variable:ruler_culture
 		legitimacy = 90
@@ -3783,7 +3783,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_monarchy_government = yes
+		government = monarchy
 		NOT = { ruler_culture = ROOT }
 		heir_culture = new_variable:ruler_culture
 		legitimacy = 90

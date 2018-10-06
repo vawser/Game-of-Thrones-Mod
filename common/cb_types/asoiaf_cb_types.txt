@@ -18,12 +18,12 @@ cb_iron_throne_rebellion = {
     
     prerequisites = {
 		is_part_of_hre = yes
-        government = westeros_monarchy
+        government = monarchy
         government_rank = 2
         FROM = { 
             is_emperor = yes 
             is_part_of_hre = yes
-            government = westeros_monarchy
+            government = monarchy
         }
         OR = { 
             ai = no
@@ -47,12 +47,12 @@ cb_royal_domain = {
     
     prerequisites = {
 		is_part_of_hre = yes
-		government = westeros_monarchy
+		government = monarchy
         government_rank = 3
         
         FROM = {
             is_part_of_hre = yes
-            government = westeros_monarchy
+            government = monarchy
             NOT = { government_rank = 3 }
             OR = {
                 AND = { 
@@ -77,12 +77,12 @@ cb_great_lord_feud = {
     
     prerequisites = {
 		is_part_of_hre = yes
-        government = westeros_monarchy
+        government = monarchy
         government_rank = 2
         
         FROM = {
             is_part_of_hre = yes
-            government = westeros_monarchy
+            government = monarchy
             OR = {
                 government_rank = 2
                 government_rank = 3
@@ -110,12 +110,12 @@ cb_lordly_feud = {
     
     prerequisites = {
 		is_part_of_hre = yes
-		government = westeros_monarchy
+		government = monarchy
         is_subject = yes
 
         FROM = {
             is_part_of_hre = yes
-            government = westeros_monarchy
+            government = monarchy
             is_subject = yes
             OR = {
                 AND = { 
@@ -142,7 +142,7 @@ cb_defend_the_wall = {
 		tag = A02
         
         FROM = {
-            government = wildling_clan
+            has_reform = wildling_clan_reform
         }
 	}
     
@@ -153,10 +153,10 @@ cb_wildling_assault = {
     valid_for_subject = no
     
     prerequisites = {
-		government = wildling_clan
+		has_reform = wildling_clan_reform
         
         FROM = {
-            NOT = { government = wildling_clan }
+            NOT = { has_reform = wildling_clan_reform }
         }
 	}
     
@@ -167,10 +167,10 @@ cb_wildling_feud = {
     valid_for_subject = no
     
     prerequisites = {
-		government = wildling_clan
+		has_reform = wildling_clan_reform
         
         FROM = {
-            government = wildling_clan
+            has_reform = wildling_clan_reform
         }
 	}
     

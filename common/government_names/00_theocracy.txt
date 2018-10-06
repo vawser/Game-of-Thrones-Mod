@@ -39,10 +39,12 @@
     }
 	
 	trigger = {
-        government = asshai_cult
+        OR = {
+            has_reform = asshai_cult_reform
+            has_reform = asshai_cult_legacy
+        }
 	}
 }
-
 gov_bloodless_cult = {
 	rank = {
 		1 = CULT
@@ -84,10 +86,12 @@ gov_bloodless_cult = {
     }
 	
 	trigger = {
-        government = bloodless_cult
+        OR = {
+            has_reform = bloodless_cult_reform
+            has_reform = bloodless_cult_legacy
+        }
 	}
 }
-
 gov_white_walker_cult = {
 	rank = {
 		1 = CULT
@@ -129,6 +133,9 @@ gov_white_walker_cult = {
 	}
 	
 	trigger = {
-        government = white_walker_cult
+        OR = {
+            has_reform = white_walker_cult_reform
+            has_reform = white_walker_cult_legacy
+        }
 	}
 }

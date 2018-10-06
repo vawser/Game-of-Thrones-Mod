@@ -21,7 +21,7 @@ cb_restore_personal_union = {
 	months = 120
 	
 	prerequisites = {
-		NOT = { is_republic_government = yes }
+		NOT = { government = republic }
 		is_revolution_target = no
 	}
 	
@@ -387,13 +387,13 @@ cb_trade_war = {
 			}
 			AND = {
 				OR = { 
-                    is_free_city_government = yes
-                    government = pirate_clan
+                    government = republic
+                    has_reform = pirate_clan_reform
 				}
 				FROM = { 
 					OR = {
-						is_free_city_government = yes
-                        government = pirate_clan
+						government = republic
+                        has_reform = pirate_clan_reform
 					}
 				}
 			}
@@ -515,12 +515,12 @@ cb_horde_vs_civ = {
 	prerequisites = {
 		is_neighbor_of = FROM
 		FROM = {
-			NOT = { is_nomadic_government = yes }
-            NOT = { government = wildling_clan }
+			NOT = { government = nomadic }
+            NOT = { has_reform = wildling_clan_reform }
 		}
 		OR = {
-			is_nomadic_government = yes
-            government = wildling_clan
+			government = nomadic
+            has_reform = wildling_clan_reform
 		}
 		is_revolution_target = no
 	}
@@ -534,13 +534,13 @@ cb_tribal_feud = {
 
 	prerequisites = {
 		OR = {
-			is_nomadic_government = yes
-            government = wildling_clan
+			government = nomadic
+            has_reform = wildling_clan_reform
 		}
 		FROM = {
 			OR = {
-				is_nomadic_government = yes
-                government = wildling_clan
+				government = nomadic
+                has_reform = wildling_clan_reform
 			}
 		}
 		is_neighbor_of = FROM
@@ -676,7 +676,7 @@ cb_force_tributary = {
 	prerequisites = {
 		has_dlc = "Mandate of Heaven"
         OR = {
-            is_nomadic_government = yes
+            government = nomadic
             is_emperor_of_china = yes
         }
 		FROM = { is_subject = no }

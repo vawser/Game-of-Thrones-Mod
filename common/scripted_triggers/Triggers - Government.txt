@@ -1,77 +1,38 @@
 # Governments
-is_monarchy_government = {
+is_primitive_government = {
     OR = {
-        government = westeros_monarchy
-        government = qarth_city
-        government = yiti_city
-        government = nefer_city
-        government = hyrkoon_city
-        government = valyria_city
-        government = meereen_city
-        government = yunkai_city
-        government = astapor_city
-        government = ghis_city
-    }
-}
-
-is_republic_government = {
-    OR = {
-        government = tyrosh_city
-        government = myr_city
-        government = lys_city
-        government = volantis_city
-        government = pentos_city
-        government = braavos_city
-        government = lorath_city
-        government = qohor_city
-        government = norvos_city
-        government = saath_city
-        government = trader_city
-        government = andal_city
-        government = nights_watch
-    }
-}
-
-is_theocracy_government = {
-    OR = {
-        government = asshai_cult
-        government = bloodless_cult
-        government = white_walker_cult
-    }
-}
-
-is_tribal_government = {
-    OR = {
-        government = pirate_clan
-        government = wildling_clan
-        government = lhazar_clan
-        government = ibben_clan
-        government = omber_clan
-        government = faros_clan
-        government = naath_clan
-        government = summer_islander_clan
-    }
-}
-
-is_nomadic_government = {
-    OR = {
-        government = khalasar
-        government = jhattar
+        government = nomadic
+        has_reform = pirate_clan_reform
+        has_reform = wildling_clan_reform
     }
 }
 
 is_free_city_government = {
     OR = {
-        government = tyrosh_city
-        government = myr_city
-        government = lys_city
-        government = volantis_city
-        government = pentos_city
-        government = braavos_city
-        government = lorath_city
-        government = qohor_city
-        government = norvos_city
-        government = saath_city
-        government = andal_city
+        has_reform = tyrosh_city_reform
+		has_reform = myr_city_reform
+		has_reform = lys_city_reform
+		has_reform = volantis_city_reform
+		has_reform = pentos_city_reform
+		has_reform = braavos_city_reform
+		has_reform = lorath_city_reform
+		has_reform = qohor_city_reform
+		has_reform = norvos_city_reform
+		has_reform = saath_city_reform
+		has_reform = andal_city_reform
+    }
+}
+
+is_westerosi_government = {
+    OR = {
+        has_reform = noble_house_reform
+        has_reform = royal_house_reform
+    }
+}
+
+is_yiti_government = {
+    OR = {
+        has_reform = yiti_city_reform
+        has_reform = yiti_empire_reform
     }
 }

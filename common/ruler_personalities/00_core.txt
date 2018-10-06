@@ -142,8 +142,8 @@ righteous_personality = {
 	
 	allow = {
 		OR = {
-			is_republic_government = yes
-			is_monarchy_government = yes
+			government = republic
+			government = monarchy
 		}
 	}
 	
@@ -639,7 +639,7 @@ fertile_personality = {
 		}
 	}
 	allow = {
-		is_monarchy_government = yes
+		government = monarchy
 	}
 	
 	chance = {
@@ -833,7 +833,7 @@ pious_personality = {
 	}
 
 	allow = {
-		is_theocracy_government = yes
+		government = theocracy
 	}
 	
 	chance = {
@@ -2158,7 +2158,7 @@ infertile_personality = {
 	}
 
 	allow = {
-		is_monarchy_government = yes
+		government = monarchy
 	}
 	
 	chance = {

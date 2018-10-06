@@ -1,4 +1,51 @@
-﻿gov_wildling_clan = {
+﻿gov_pirate_clan = {
+	rank = {
+        1 = PIRATE_CLAN
+        2 = PIRATE_CLAN
+        3 = PIRATE_CLAN
+        4 = PIRATE_CLAN
+        5 = PIRATE_CLAN
+        6 = PIRATE_CLAN
+        7 = PIRATE_CLAN
+        8 = PIRATE_CLAN
+        9 = PIRATE_CLAN
+        10 = PIRATE_CLAN
+	}
+	
+	ruler_male = {
+		1 = LORD
+        2 = LORD
+        3 = LORD
+        4 = LORD
+        5 = LORD
+        6 = LORD
+        7 = LORD
+        8 = LORD
+        9 = LORD
+        10 = LORD
+	}
+	
+	ruler_female = {
+		1 = LADY
+        2 = LADY
+        3 = LADY
+        4 = LADY
+        5 = LADY
+        6 = LADY
+        7 = LADY
+        8 = LADY
+        9 = LADY
+        10 = LADY
+	}
+	
+	trigger = {
+		OR = {
+            has_reform = pirate_clan_reform
+            has_reform = pirate_clan_legacy
+        }
+	}
+}
+gov_wildling_clan = {
 	rank = {
 		1 = CLAN
 		2 = CLAN
@@ -39,10 +86,12 @@
 	}
 	
 	trigger = {
-        government = wildling_clan
+        OR = {
+            has_reform = wildling_clan_reform
+            has_reform = wildling_clan_legacy
+        }
 	}
 }
-
 gov_wildling_confederation = {
 	rank = {
 		1 = CONFEDERATION
@@ -84,11 +133,13 @@ gov_wildling_confederation = {
 	}
 	
 	trigger = {
-        government = wildling_clan
+        OR = {
+            has_reform = wildling_clan_reform
+            has_reform = wildling_clan_legacy
+        }
         government_rank = 5
 	}
 }
-
 gov_lhazar_clan = {
 	rank = {
 		1 = CLAN
@@ -130,10 +181,12 @@ gov_lhazar_clan = {
 	}
 	
 	trigger = {
-        government = lhazar_clan
+        OR = {
+            has_reform = lhazar_clan_reform
+            has_reform = lhazar_clan_legacy
+        }
 	}
 }
-
 gov_ibben_clan = {
 	rank = {
 		1 = CLAN
@@ -175,10 +228,12 @@ gov_ibben_clan = {
 	}
 	
 	trigger = {
-        government = ibben_clan
+        OR = {
+            has_reform = ibben_clan_reform
+            has_reform = ibben_clan_legacy
+        }
 	}
 }
-
 gov_omber_clan = {
 	rank = {
 		1 = CLAN
@@ -220,10 +275,12 @@ gov_omber_clan = {
 	}
 	
 	trigger = {
-        government = omber_clan
+        OR = {
+            has_reform = omber_clan_reform
+            has_reform = omber_clan_legacy
+        }
 	}
 }
-
 gov_faros_clan = {
 	rank = {
 		1 = CLAN
@@ -265,10 +322,12 @@ gov_faros_clan = {
 	}
 	
 	trigger = {
-        government = faros_clan
+        OR = {
+            has_reform = faros_clan_reform
+            has_reform = faros_clan_legacy
+        }
 	}
 }
-
 gov_naath_clan = {
 	rank = {
 		1 = CLAN
@@ -310,10 +369,12 @@ gov_naath_clan = {
 	}
 	
 	trigger = {
-        government = naath_clan
+        OR = {
+            has_reform = naath_clan_reform
+            has_reform = naath_clan_legacy
+        }
 	}
 }
-
 gov_summer_islander_clan = {
 	rank = {
 		1 = CLAN
@@ -355,52 +416,11 @@ gov_summer_islander_clan = {
 	}
 	
 	trigger = {
-        government = summer_islander_clan
+        OR = {
+            has_reform = summer_islander_clan_reform
+            has_reform = summer_islander_clan_legacy
+        }
 	}
 }
 
 
-gov_pirate_clan = {
-	rank = {
-        1 = PIRATE_CLAN
-        2 = PIRATE_CLAN
-        3 = PIRATE_CLAN
-        4 = PIRATE_CLAN
-        5 = PIRATE_CLAN
-        6 = PIRATE_CLAN
-        7 = PIRATE_CLAN
-        8 = PIRATE_CLAN
-        9 = PIRATE_CLAN
-        10 = PIRATE_CLAN
-	}
-	
-	ruler_male = {
-		1 = LORD
-        2 = LORD
-        3 = LORD
-        4 = LORD
-        5 = LORD
-        6 = LORD
-        7 = LORD
-        8 = LORD
-        9 = LORD
-        10 = LORD
-	}
-	
-	ruler_female = {
-		1 = LADY
-        2 = LADY
-        3 = LADY
-        4 = LADY
-        5 = LADY
-        6 = LADY
-        7 = LADY
-        8 = LADY
-        9 = LADY
-        10 = LADY
-	}
-	
-	trigger = {
-		government = pirate_clan
-	}
-}

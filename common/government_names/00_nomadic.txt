@@ -39,7 +39,10 @@
 	}
 	
 	trigger = {
-        government = khalasar
+        OR = {
+            has_reform = khalasar_reform
+            has_reform = khalasar_legacy
+        }
 	}
 }
 
@@ -84,7 +87,10 @@ gov_jhattar = {
 	}
 	
 	trigger = {
-        government = jhattar
+        OR = {
+            has_reform = jhattar_reform
+            has_reform = jhattar_legacy
+        }
 	}
 }
 

@@ -2,9 +2,7 @@ country_decisions = {
 	negotiate_with_the_iron_bank = {
 		potential = {
 			NOT = { has_ruler_modifier = iron_bank_agreement }
-			NOT = { is_nomadic_government = yes }
-			NOT = { government = wildling_clan }
-            NOT = { government = pirate_clan }
+			NOT = { is_primitive_government = yes } 
 		}
 		allow = {
 			NOT = { has_ruler_modifier = iron_bank_agreement }
@@ -57,8 +55,7 @@ country_decisions = {
 		potential = {
 			NOT = { has_country_modifier = hire_privateers }
 			num_of_ports = 1
-			NOT = { is_nomadic_government = yes }
-			NOT = { government = wildling_clan }
+			NOT = { is_primitive_government = yes }
 		}
 		allow = {
 			navy_size_percentage = 0.5

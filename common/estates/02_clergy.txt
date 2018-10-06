@@ -12,11 +12,11 @@ estate_clergy =
     
     # ----- Conditions -----
 	trigger = {
-		NOT = { government = wildling_clan }
-        NOT = { is_nomadic_government = yes }
+		NOT = { has_reform = wildling_clan_reform }
+        NOT = { government = nomadic }
         NOT = {
             OR = {
-                government = qarth_city
+                has_reform = qarth_city_reform
                 religion = asoiaf_magic
             }
         }

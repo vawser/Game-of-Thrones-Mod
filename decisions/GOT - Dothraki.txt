@@ -1,7 +1,7 @@
 country_decisions = {
     amass_host = {
 		potential = {
-			is_nomadic_government = yes
+			government = nomadic
 		}
 		allow = {
             NOT = { has_country_modifier = amassed_host }
@@ -36,11 +36,10 @@ country_decisions = {
 	reform_khalasar = {
 		major = yes
 		potential = {
-			is_nomadic_government = yes
+			government = nomadic
             primitives = yes 
 		}
 		allow = {
-			is_nomadic_government = yes
 			total_development = 300
 			stability = 3
 		}

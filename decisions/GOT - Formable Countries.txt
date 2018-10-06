@@ -3,7 +3,7 @@ country_decisions = {
     form_the_kingdom_of_the_stepstones = {
 		major = yes
 		potential = {
-            government = pirate_clan
+            has_reform = pirate_clan_reform
 			NOT = { exists = J23 }
 		}
 		allow = {
@@ -27,8 +27,6 @@ country_decisions = {
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
 			set_government_rank = 5
-            change_government = pirate_clan
-            add_government_reform = pirate_clan_reform
 		}
 		
 		ai_will_do = {
@@ -39,6 +37,7 @@ country_decisions = {
 	become_king_beyond_the_wall = {
 		major = yes
 		potential = {
+            has_reform = wildling_clan_reform
 			technology_group = wildling
 			NOT = { exists = Z01 }
 		}
@@ -55,9 +54,6 @@ country_decisions = {
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
 			set_government_rank = 5
-            #set_primitive = no
-            change_government = wildling_clan
-            add_government_reform = wildling_clan_reform
 			hidden_effect = {
 				country_event = {
 					id = GOT_WILDLING.1
@@ -73,6 +69,7 @@ country_decisions = {
 	form_the_kingdom_of_sarnor = {
 		major = yes
 		potential = {
+            has_reform = saath_city_reform
 			primary_culture = saathi
 			NOT = { exists = J22 }
 		}
@@ -89,8 +86,6 @@ country_decisions = {
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
 			swap_free_idea_group = yes
-			change_government = saath_city
-            add_government_reform = saath_city_reform
             set_government_rank = 5
             hidden_effect = {
                 546 = {
@@ -124,6 +119,7 @@ country_decisions = {
 	form_the_summer_islands = {
 		major = yes
 		potential = {
+            has_reform = summer_islander_clan_reform
 			culture_group = culture_summer_isles
 			NOT = { exists = J14 }
 		}
@@ -140,8 +136,6 @@ country_decisions = {
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
 			set_government_rank = 5
-            change_government = summer_islander_clan
-            add_government_reform = summer_islander_clan_reform
 		}
 		
 		ai_will_do = {
@@ -152,6 +146,7 @@ country_decisions = {
 	form_the_ghiscari_empire = {
 		major = yes
 		potential = {
+            has_reform = ghis_city_reform
 			culture_group = culture_central_essos
 			NOT = { exists = J15 }
 		}
@@ -168,8 +163,6 @@ country_decisions = {
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
 			set_government_rank = 5
-            change_government = ghis_city
-            add_government_reform = ghis_city_reform
 		}
 		
 		ai_will_do = {
@@ -180,6 +173,7 @@ country_decisions = {
 	form_the_patrimony_of_hyrkoon = {
 		major = yes
 		potential = {
+            has_reform = ghis_city_reform
 			culture_group = culture_hyrkoon
 			NOT = { exists = J16 }
 		}
@@ -196,8 +190,6 @@ country_decisions = {
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
 			set_government_rank = 5
-            change_government = ghis_city
-            add_government_reform = ghis_city_reform
 		}
 		
 		ai_will_do = {
@@ -208,6 +200,7 @@ country_decisions = {
 	form_new_valyria = {
 		major = yes
 		potential = {
+            has_reform = valyria_city_reform
 			culture_group = culture_valyrian
 			NOT = { exists = J17 }
 		}
@@ -233,8 +226,6 @@ country_decisions = {
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
             country_event = { id = GOT_VALYRIA.1 }
-            change_government = valyria_city
-            add_government_reform = valyria_city_reform
             set_government_rank = 5
             hidden_effect = {
                 every_owned_province = {    
@@ -257,6 +248,7 @@ country_decisions = {
 	form_the_kingdom_of_the_north = {
 		major = yes
 		potential = {
+            has_reform = noble_house_reform
 			has_global_flag = shattered_world
 			primary_culture = men_of_the_north
 			NOT = { exists = J07 }
@@ -273,8 +265,6 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = westeros_monarchy
-            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		
@@ -286,6 +276,7 @@ country_decisions = {
 	form_the_kingdom_of_the_isles_and_rivers = {
 		major = yes
 		potential = {
+            has_reform = noble_house_reform
 			has_global_flag = shattered_world
 			OR = {
 				primary_culture = ironborn
@@ -315,8 +306,6 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = westeros_monarchy
-            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		
@@ -328,6 +317,7 @@ country_decisions = {
 	form_the_kingdom_of_the_rock = {
 		major = yes
 		potential = {
+            has_reform = noble_house_reform
 			has_global_flag = shattered_world
 			primary_culture = men_of_the_westerlands
 			NOT = { exists = J09 }
@@ -344,8 +334,6 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = westeros_monarchy
-            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		
@@ -357,6 +345,7 @@ country_decisions = {
 	form_the_kingdom_of_the_stormlands = {
 		major = yes
 		potential = {
+            has_reform = noble_house_reform
 			has_global_flag = shattered_world
 			OR = {
 				primary_culture = men_of_the_stormlands
@@ -377,8 +366,6 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = westeros_monarchy
-            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		
@@ -390,6 +377,7 @@ country_decisions = {
 	form_the_kingdom_of_the_mountain_and_the_vale = {
 		major = yes
 		potential = {
+            has_reform = noble_house_reform
 			has_global_flag = shattered_world
 			primary_culture = men_of_the_vale
 			NOT = { exists = J11 }
@@ -406,8 +394,6 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = westeros_monarchy
-            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		
@@ -419,6 +405,7 @@ country_decisions = {
 	form_the_principality_of_dorne = {
 		major = yes
 		potential = {
+            has_reform = noble_house_reform
 			has_global_flag = shattered_world
 			OR = {
 				primary_culture = sand_dornish
@@ -439,8 +426,6 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = westeros_monarchy
-            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		
@@ -452,6 +437,7 @@ country_decisions = {
 	form_the_kingdom_of_the_reach = {
 		major = yes
 		potential = {
+            has_reform = noble_house_reform
 			has_global_flag = shattered_world
 			primary_culture = men_of_the_reach
 			NOT = { exists = J13 }
@@ -468,8 +454,6 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
-			change_government = westeros_monarchy
-            add_government_reform = noble_house_reform
 			set_government_rank = 3
 		}
 		

@@ -6,7 +6,7 @@ pretender_rebels = {
 	color = { 179 51 51 }
 	
 	area = nation
-	is_monarchy_government = yes
+	government = monarchy
 	defection = none
 	independence = none
 	unit_transfer = yes
@@ -60,14 +60,14 @@ pretender_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = {
-				is_republic_government = yes
+				government = republic
 				NOT = { republican_tradition = 40 }
 			}
 		}	
 		modifier = {
 			factor = 30
 			owner = {
-				is_monarchy_government = yes
+				government = monarchy
 				has_regency = yes
 				has_heir = no
 			}
@@ -75,7 +75,7 @@ pretender_rebels = {
 		modifier = {
 			factor = 5
 			owner = {
-				is_monarchy_government = yes
+				government = monarchy
 				has_regency = yes
 				has_heir = yes
 				NOT = { heir_claim = 33 }
@@ -84,7 +84,7 @@ pretender_rebels = {
 		modifier = {
 			factor = 5
 			owner = {
-				is_monarchy_government = yes
+				government = monarchy
 				has_regency = yes
 				has_heir = yes
 				NOT = { heir_claim = 66 }
@@ -93,7 +93,7 @@ pretender_rebels = {
 		modifier = {
 			factor = 2
 			owner = {
-				is_monarchy_government = yes
+				government = monarchy
 				has_regency = yes
 				has_heir = yes
 				NOT = { heir_claim = 85 }
@@ -142,14 +142,14 @@ pretender_rebels = {
 		modifier = {
 			factor = 0.75
 			owner = {
-				is_monarchy_government = yes
+				government = monarchy
 				legitimacy = 66
 			}
 		}
 		modifier = {
 			factor = 0.5
 			owner = {
-				is_monarchy_government = yes
+				government = monarchy
 				legitimacy = 75
 			}
 		}
@@ -217,7 +217,7 @@ pretender_rebels = {
 		if = {
 			limit = {
 				NOT = {
-					is_nomadic_government = yes
+					government = nomadic
 				}
 			}
 			change_government = REB

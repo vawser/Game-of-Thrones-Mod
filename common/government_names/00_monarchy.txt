@@ -39,7 +39,6 @@
 	}
 	
 	trigger = {
-        government = westeros_monarchy
         OR = {
             has_reform = noble_house_reform
             has_reform = noble_house_legacy
@@ -88,7 +87,6 @@ gov_noble_house_dornish = {
 	}
 	
 	trigger = {
-        government = westeros_monarchy
         OR = {
             has_reform = noble_house_reform
             has_reform = noble_house_legacy
@@ -142,7 +140,6 @@ gov_royal_house = {
 	}
 	
 	trigger = {
-        government = westeros_monarchy
         OR = {
             has_reform = royal_house_reform
             has_reform = royal_house_legacy
@@ -191,7 +188,10 @@ gov_qarth_city = {
 	}
 	
 	trigger = {
-        government = qarth_city
+        OR = {
+            has_reform = qarth_city_reform
+            has_reform = qarth_city_legacy
+        }
 	}
 }
 
@@ -236,7 +236,6 @@ gov_yiti_city = {
 	}
 	
 	trigger = {
-        government = yiti_city
         OR = {
             has_reform = yiti_city_reform
             has_reform = yiti_city_legacy
@@ -285,7 +284,6 @@ gov_yiti_empire = {
 	}
 	
 	trigger = {
-        government = yiti_city
         OR = {
             has_reform = yiti_empire_reform
             has_reform = yiti_empire_legacy
@@ -341,7 +339,10 @@ gov_valyria_city = {
 	}
 	
 	trigger = {
-        government = valyria_city
+        OR = {
+            has_reform = valyria_city_reform
+            has_reform = valyria_city_legacy
+        }
 	}
 }
 
@@ -386,7 +387,10 @@ gov_meereen_city = {
 	}
 	
 	trigger = {
-		government = meereen_city
+		OR = {
+            has_reform = meereen_city_reform
+            has_reform = meereen_city_legacy
+        }
 	}
 }
 
@@ -431,7 +435,10 @@ gov_yunkai_city = {
 	}
 	
 	trigger = {
-        government = yunkai_city
+        OR = {
+            has_reform = yunkai_city_reform
+            has_reform = yunkai_city_legacy
+        }
     }
 }
 
@@ -476,7 +483,10 @@ gov_astapor_city = {
 	}
 	
 	trigger = {
-		government = astapor_city
+		OR = {
+            has_reform = astapor_city_reform
+            has_reform = astapor_city_legacy
+        }
 	}
 }
 
@@ -521,7 +531,10 @@ gov_ghis_city = {
 	}
 	
 	trigger = {
-        government = ghis_city
+        OR = {
+            has_reform = ghis_city_reform
+            has_reform = ghis_city_legacy
+        }
 	}
 }
 
@@ -566,7 +579,10 @@ gov_hyrkoon_clan = {
 	}
 	
 	trigger = {
-        government = hyrkoon_city
+        OR = {
+            has_reform = hyrkoon_city_reform
+            has_reform = hyrkoon_city_legacy
+        }
 	}
 }
 
@@ -611,6 +627,9 @@ gov_nefer_clan = {
 	}
 	
 	trigger = {
-        government = nefer_city
+        OR = {
+            has_reform = nefer_city_reform
+            has_reform = nefer_city_legacy
+        }
 	}
 }

@@ -1,30 +1,3 @@
 country_decisions = {
-	become_civilized = {
-        major = yes
-		potential = {
-			NOT = { government = wildling_clan }
-            NOT = { is_nomadic_government = yes }
-            primitives = yes
-		}
-		allow = {
-			total_development = 500
-            prestige = 50
-            stability = 3
-            adm_power = 100
-            dip_power = 100
-            mil_power = 100
-		}
-		effect = {
-			add_adm_power = -100
-            add_dip_power = -100
-            add_mil_power = -100
-            add_stability = -3
-            
-            #set_primitive = no
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
+	
 }

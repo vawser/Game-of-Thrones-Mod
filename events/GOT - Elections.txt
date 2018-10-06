@@ -20,7 +20,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { government = volantis_city }
+		NOT = { has_reform = volantis_city_reform }
 	}
 
 	option = {
@@ -54,7 +54,7 @@ country_event = {
 		change_mil = 1
 		if = {
 			limit = {
-				is_republic_government = yes
+				government = republic
 				NOT = { republican_tradition = 20 }
 			}
 			add_stability = -1
@@ -118,7 +118,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { government = volantis_city }
+		NOT = { has_reform = volantis_city_reform }
 	}
 	
 	option = {
@@ -213,7 +213,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		government = volantis_city
+		has_reform = volantis_city_reform
 	}
 	
 	option = {
@@ -240,7 +240,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		government = volantis_city
+		has_reform = volantis_city_reform
 	}
 	
 	option = {

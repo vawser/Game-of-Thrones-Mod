@@ -39,10 +39,12 @@
     }
 	
 	trigger = {
-        government = tyrosh_city
+        OR = {
+            has_reform = tyrosh_city_reform
+            has_reform = tyrosh_city_legacy
+        }
 	}
 }
-
 gov_myr_city = {
 	rank = {
 		1 = MYR_CITY
@@ -84,10 +86,12 @@ gov_myr_city = {
 	}
 	
 	trigger = {
-        government = myr_city
+        OR = {
+            has_reform = myr_city_reform
+            has_reform = myr_city_legacy
+        }
 	}
 }
-
 gov_lys_city = {
 	rank = {
 		1 = LYSENE_CITY
@@ -129,10 +133,12 @@ gov_lys_city = {
 	}
 	
 	trigger = {
-        government = lys_city
+        OR = {
+            has_reform = lys_city_reform
+            has_reform = lys_city_legacy
+        }
 	}
 }
-
 gov_volantis_city = {
 	rank = {
 		1 = VOLANTEANE_REPUBLIC
@@ -174,10 +180,12 @@ gov_volantis_city = {
 	}
 	
 	trigger = {
-        government = volantis_city
+        OR = {
+            has_reform = volantis_city_reform
+            has_reform = volantis_city_legacy
+        }
 	}
 }
-
 gov_pentos_city = {
 	rank = {
 		1 = PENTOSHI_CITY
@@ -219,10 +227,12 @@ gov_pentos_city = {
 	}
 	
 	trigger = {
-        government = pentos_city
+        OR = {
+            has_reform = pentos_city_reform
+            has_reform = pentos_city_legacy
+        }
 	}
 }
-
 gov_braavos_city = {
 	rank = {
 		1 = BRAAVOSI_CITY
@@ -264,10 +274,12 @@ gov_braavos_city = {
 	}
 	
 	trigger = {
-        government = braavos_city
+        OR = {
+            has_reform = braavos_city_reform
+            has_reform = braavos_city_legacy
+        }
 	}
 }
-
 gov_lorath_city = {
 	rank = {
 		1 = LORATHI_CITY
@@ -309,10 +321,12 @@ gov_lorath_city = {
 	}
 	
 	trigger = {
-        government = lorath_city
+        OR = {
+            has_reform = lorath_city_reform
+            has_reform = lorath_city_legacy
+        }
 	}
 }
-
 gov_qohor_city = {
 	rank = {
 		1 = QOHORIK_CITY
@@ -354,190 +368,12 @@ gov_qohor_city = {
 	}
 	
 	trigger = {
-        government = qohor_city
+        OR = {
+            has_reform = qohor_city_reform
+            has_reform = qohor_city_legacy
+        }
 	}
 }
-
-gov_saath_city = {
-	rank = {
-		1 = SAATH_CITY
-		2 = SAATH_CITY
-		3 = SAATH_CITY
-        4 = SAATH_CITY
-        5 = SAATH_CITY
-        6 = SAATH_CITY
-        7 = SAATH_CITY
-        8 = SAATH_CITY
-        9 = SAATH_CITY
-        10 = SAATH_CITY
-    }
-	
-	ruler_male = {
-		1 = GRAND_MAGISTER
-		2 = GRAND_MAGISTER
-		3 = GRAND_MAGISTER
-        4 = GRAND_MAGISTER
-        5 = GRAND_MAGISTER
-        6 = GRAND_MAGISTER
-        7 = GRAND_MAGISTER
-        8 = GRAND_MAGISTER
-        9 = GRAND_MAGISTER
-        10 = GRAND_MAGISTER
-	}
-	
-	ruler_female = {
-		1 = GRAND_MAGISTER
-		2 = GRAND_MAGISTER
-		3 = GRAND_MAGISTER
-        4 = GRAND_MAGISTER
-        5 = GRAND_MAGISTER
-        6 = GRAND_MAGISTER
-        7 = GRAND_MAGISTER
-        8 = GRAND_MAGISTER
-        9 = GRAND_MAGISTER
-        10 = GRAND_MAGISTER
-	}
-	
-	trigger = {
-        government = saath_city
-	}
-}
-
-gov_trader_city = {
-	rank = {
-		1 = TRADER_CITY
-		2 = TRADER_CITY
-		3 = TRADER_CITY
-        4 = TRADER_CITY
-        5 = TRADER_CITY
-        6 = TRADER_CITY
-        7 = TRADER_CITY
-        8 = TRADER_CITY
-        9 = TRADER_CITY
-        10 = TRADER_CITY
-	}
-	
-	ruler_male = {
-		1 = TRADER
-		2 = TRADER
-		3 = TRADER
-        4 = TRADER
-        5 = TRADER
-        6 = TRADER
-        7 = TRADER
-        8 = TRADER
-        9 = TRADER
-        10 = TRADER
-	}
-	
-	ruler_female = {
-		1 = TRADER
-		2 = TRADER
-		3 = TRADER
-        4 = TRADER
-        5 = TRADER
-        6 = TRADER
-        7 = TRADER
-        8 = TRADER
-        9 = TRADER
-        10 = TRADER
-    }
-	
-	trigger = {
-        government = trader_city
-	}
-}
-
-gov_nights_watch = {
-	rank = {
-		1 = NIGHTS_WATCH
-		2 = NIGHTS_WATCH
-		3 = NIGHTS_WATCH
-        4 = NIGHTS_WATCH
-        5 = NIGHTS_WATCH
-        6 = NIGHTS_WATCH
-        7 = NIGHTS_WATCH
-        8 = NIGHTS_WATCH
-        9 = NIGHTS_WATCH
-        10 = NIGHTS_WATCH
-	}
-	
-	ruler_male = {
-		1 = LORD_COMMANDER
-        2 = LORD_COMMANDER
-        3 = LORD_COMMANDER
-        4 = LORD_COMMANDER
-        5 = LORD_COMMANDER
-        6 = LORD_COMMANDER
-        7 = LORD_COMMANDER
-        8 = LORD_COMMANDER
-        9 = LORD_COMMANDER
-        10 = LORD_COMMANDER
-    }
-	
-	ruler_female = {
-		1 = LORD_COMMANDER
-        2 = LORD_COMMANDER
-        3 = LORD_COMMANDER
-        4 = LORD_COMMANDER
-        5 = LORD_COMMANDER
-        6 = LORD_COMMANDER
-        7 = LORD_COMMANDER
-        8 = LORD_COMMANDER
-        9 = LORD_COMMANDER
-        10 = LORD_COMMANDER
-	}
-	
-	trigger = {
-        government = nights_watch
-	}
-}
-
-gov_andal_city = {
-	rank = {
-		1 = ANDAL_CITY
-		2 = ANDAL_CITY
-		3 = ANDAL_CITY
-        4 = ANDAL_CITY
-        5 = ANDAL_CITY
-        6 = ANDAL_CITY
-        7 = ANDAL_CITY
-        8 = ANDAL_CITY
-        9 = ANDAL_CITY
-        10 = ANDAL_CITY
-	}
-	
-	ruler_male = {
-		1 = ELDER
-		2 = ELDER
-		3 = ELDER
-        4 = ELDER
-        5 = ELDER
-        6 = ELDER
-        7 = ELDER
-        8 = ELDER
-        9 = ELDER
-        10 = ELDER
-	}
-	
-	ruler_female = {
-		1 = ELDER
-		2 = ELDER
-		3 = ELDER
-        4 = ELDER
-        5 = ELDER
-        6 = ELDER
-        7 = ELDER
-        8 = ELDER
-        9 = ELDER
-        10 = ELDER
-    }
-	
-	trigger = {
-        government = andal_city
-	}
-}
-
 gov_norvos_city = {
 	rank = {
 		1 = NORVOS_CITY
@@ -579,6 +415,198 @@ gov_norvos_city = {
 	}
 	
 	trigger = {
-        government = norvos_city
+        OR = {
+            has_reform = norvos_city_reform
+            has_reform = norvos_city_legacy
+        }
 	}
 }
+gov_saath_city = {
+	rank = {
+		1 = SAATH_CITY
+		2 = SAATH_CITY
+		3 = SAATH_CITY
+        4 = SAATH_CITY
+        5 = SAATH_CITY
+        6 = SAATH_CITY
+        7 = SAATH_CITY
+        8 = SAATH_CITY
+        9 = SAATH_CITY
+        10 = SAATH_CITY
+    }
+	
+	ruler_male = {
+		1 = GRAND_MAGISTER
+		2 = GRAND_MAGISTER
+		3 = GRAND_MAGISTER
+        4 = GRAND_MAGISTER
+        5 = GRAND_MAGISTER
+        6 = GRAND_MAGISTER
+        7 = GRAND_MAGISTER
+        8 = GRAND_MAGISTER
+        9 = GRAND_MAGISTER
+        10 = GRAND_MAGISTER
+	}
+	
+	ruler_female = {
+		1 = GRAND_MAGISTER
+		2 = GRAND_MAGISTER
+		3 = GRAND_MAGISTER
+        4 = GRAND_MAGISTER
+        5 = GRAND_MAGISTER
+        6 = GRAND_MAGISTER
+        7 = GRAND_MAGISTER
+        8 = GRAND_MAGISTER
+        9 = GRAND_MAGISTER
+        10 = GRAND_MAGISTER
+	}
+	
+	trigger = {
+        OR = {
+            has_reform = saath_city_reform
+            has_reform = saath_city_legacy
+        }
+	}
+}
+gov_trader_city = {
+	rank = {
+		1 = TRADER_CITY
+		2 = TRADER_CITY
+		3 = TRADER_CITY
+        4 = TRADER_CITY
+        5 = TRADER_CITY
+        6 = TRADER_CITY
+        7 = TRADER_CITY
+        8 = TRADER_CITY
+        9 = TRADER_CITY
+        10 = TRADER_CITY
+	}
+	
+	ruler_male = {
+		1 = TRADER
+		2 = TRADER
+		3 = TRADER
+        4 = TRADER
+        5 = TRADER
+        6 = TRADER
+        7 = TRADER
+        8 = TRADER
+        9 = TRADER
+        10 = TRADER
+	}
+	
+	ruler_female = {
+		1 = TRADER
+		2 = TRADER
+		3 = TRADER
+        4 = TRADER
+        5 = TRADER
+        6 = TRADER
+        7 = TRADER
+        8 = TRADER
+        9 = TRADER
+        10 = TRADER
+    }
+	
+	trigger = {
+        OR = {
+            has_reform = trader_city_reform
+            has_reform = trader_city_legacy
+        }
+	}
+}
+gov_andal_city = {
+	rank = {
+		1 = ANDAL_CITY
+		2 = ANDAL_CITY
+		3 = ANDAL_CITY
+        4 = ANDAL_CITY
+        5 = ANDAL_CITY
+        6 = ANDAL_CITY
+        7 = ANDAL_CITY
+        8 = ANDAL_CITY
+        9 = ANDAL_CITY
+        10 = ANDAL_CITY
+	}
+	
+	ruler_male = {
+		1 = ELDER
+		2 = ELDER
+		3 = ELDER
+        4 = ELDER
+        5 = ELDER
+        6 = ELDER
+        7 = ELDER
+        8 = ELDER
+        9 = ELDER
+        10 = ELDER
+	}
+	
+	ruler_female = {
+		1 = ELDER
+		2 = ELDER
+		3 = ELDER
+        4 = ELDER
+        5 = ELDER
+        6 = ELDER
+        7 = ELDER
+        8 = ELDER
+        9 = ELDER
+        10 = ELDER
+    }
+	
+	trigger = {
+        OR = {
+            has_reform = andal_city_reform
+            has_reform = andal_city_legacy
+        }
+	}
+}
+gov_nights_watch = {
+	rank = {
+		1 = NIGHTS_WATCH
+		2 = NIGHTS_WATCH
+		3 = NIGHTS_WATCH
+        4 = NIGHTS_WATCH
+        5 = NIGHTS_WATCH
+        6 = NIGHTS_WATCH
+        7 = NIGHTS_WATCH
+        8 = NIGHTS_WATCH
+        9 = NIGHTS_WATCH
+        10 = NIGHTS_WATCH
+	}
+	
+	ruler_male = {
+		1 = LORD_COMMANDER
+        2 = LORD_COMMANDER
+        3 = LORD_COMMANDER
+        4 = LORD_COMMANDER
+        5 = LORD_COMMANDER
+        6 = LORD_COMMANDER
+        7 = LORD_COMMANDER
+        8 = LORD_COMMANDER
+        9 = LORD_COMMANDER
+        10 = LORD_COMMANDER
+    }
+	
+	ruler_female = {
+		1 = LORD_COMMANDER
+        2 = LORD_COMMANDER
+        3 = LORD_COMMANDER
+        4 = LORD_COMMANDER
+        5 = LORD_COMMANDER
+        6 = LORD_COMMANDER
+        7 = LORD_COMMANDER
+        8 = LORD_COMMANDER
+        9 = LORD_COMMANDER
+        10 = LORD_COMMANDER
+	}
+	
+	trigger = {
+        OR = {
+            has_reform = nights_watch_reform
+            has_reform = nights_watch_legacy
+        }
+	}
+}
+

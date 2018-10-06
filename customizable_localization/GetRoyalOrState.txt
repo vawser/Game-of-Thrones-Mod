@@ -4,13 +4,13 @@ defined_text = {
 	text = {
 		localisation_key = string_royal
 		trigger = {
-			NOT = { is_republic_government = yes }
+			NOT = { government = republic }
 		}
 	}
 	text = {
 		localisation_key = string_state
 		trigger = {
-			is_republic_government = yes
+			government = republic
 		}
 	}
 }

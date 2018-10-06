@@ -22,6 +22,13 @@ production_reform = {
 		production_efficiency = 0.15
 	}
 }
+trade_reform = {
+	icon = "merchant"
+    
+    modifiers = {
+		trade_efficiency = 0.15
+	}
+}
 
 #-------------------------------
 # Court
@@ -40,28 +47,96 @@ exotic_advisors_reform = {
 		advisor_pool = 1
 	}
 }
+vetted_advisors_reform = {
+    icon = "paper_with_seal"
+    
+    modifiers = {
+		yearly_corruption = -0.05
+	}
+}
+famous_advisors_reform = {
+    icon = "crown"
+    
+    modifiers = {
+		prestige = 1
+	}
+}
 
 #-------------------------------
 # Rule of Law
 #-------------------------------
+absolute_authority_reform = {
+	icon = "fist_in_air"
+    
+    modifiers = {
+		global_autonomy = -0.1
+        global_unrest = 3
+	}
+}
 central_authority_reform = {
-	icon = "crown"
+	icon = "parliament"
     
     modifiers = {
 		global_autonomy = -0.05
 	}
 }
 regional_authority_reform = {
-	icon = "crown"
+	icon = "free_city"
     
     modifiers = {
+        global_autonomy = 0.05
 		stability_cost_modifier = -0.25
 	}
 }
 local_authority_reform = {
-	icon = "free_city"
+	icon = "man_on_podium"
 
     modifiers = {
-		global_unrest = -5
+        global_autonomy = 0.1
+		global_unrest = -3
+	}
+}
+
+#-------------------------------
+# Justice
+#-------------------------------
+court_justice_reform = {
+	icon = "judge"
+    
+    modifiers = {
+		diplomatic_reputation = 1
+	}
+}
+community_justice_reform = {
+	icon = "peasants"
+    
+    modifiers = {
+		ae_impact = -0.05
+	}
+}
+torture_justice_reform = {
+	icon = "fist_in_air"
+    
+    modifiers = {
+		unjustified_demands = -0.1 
+	}
+}
+enslavement_justice_reform = {
+	icon = "tribal_council"
+    
+    potential = {
+        has_country_modifier = slavery_permitted
+    }
+    
+    modifiers = {
+		global_manpower_modifier = 0.1
+	}
+}
+death_justice_reform = {
+	icon = "soldiers_4"
+    
+    modifiers = {
+        ae_impact = 0.1
+		core_creation = -0.1
 	}
 }

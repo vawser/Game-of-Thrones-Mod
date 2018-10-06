@@ -1,0 +1,198 @@
+insult_default = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_default3 = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_default4 = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_default5 = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_default6 = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_default7 = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_default8 = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_default9 = {
+	trigger = {
+		NOT = { primary_culture = FROM }
+	}
+}
+
+insult_default10 = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_default11 = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_default12 = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_default13 = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_default14 = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_default15 = {
+	trigger = {
+		always = yes
+	}
+}
+
+insult_no_army = {
+	trigger = {
+		NOT = { army_size = 1 }
+	}
+}
+
+insult_bookkeeping = {
+	trigger = {
+		FROM = {
+			trade_income_percentage = 0.33
+		}
+		NOT  = { trade_income_percentage = 0.33 }
+	}
+}
+
+insult_heir_hunter = {
+	trigger = {
+		has_regency = no
+		has_heir = yes
+		OR = {
+			heir_adm = 4
+			heir_mil = 4
+			heir_dip = 4
+		}
+	}
+}
+
+insult_monarchy = {
+	trigger = {
+		government = monarchy
+		has_regency = no
+		FROM = {
+			government = monarchy
+		}
+	}
+}
+
+insult_low_dipadm = {
+	trigger = {
+		has_regency = no
+		OR = {
+			NOT = { ADM = 2 }
+			NOT = { DIP = 2 }
+		}
+	}
+}
+
+insult_pvp = {
+	trigger = {
+		ai = no
+		FROM = { ai = no }
+	}
+}
+
+insult_pvp2 = {
+	trigger = {
+		ai = no
+		FROM = { ai = no }
+	}
+}
+
+insult_monarchy_rank = {
+	trigger = {
+		FROM = {
+			government = monarchy
+			government_rank = 2
+		}
+		government_rank = 1
+		has_regency = no
+	}
+}
+
+insult_low_adm = {
+	trigger = {
+		NOT = {
+			ADM = 2
+		}
+	}
+}
+
+insult_against_craven = {
+	trigger = {
+		ruler_has_personality = craven_personality
+	}
+}
+
+insult_against_sinner = {
+	trigger = {
+		ruler_has_personality = sinner_personality
+		has_consort = yes
+	}
+}
+
+insult_loans = {
+	trigger = {
+		OR = {
+			num_of_loans = 5
+			is_bankrupt = yes
+		}
+	}
+}
+
+insult_rebels = {
+	trigger = {
+		num_of_rebel_armies = 1
+	}
+}
+
+insult_low_mil_tech = {
+	trigger = {
+		NOT = { mil_tech = FROM }
+	}
+}
+

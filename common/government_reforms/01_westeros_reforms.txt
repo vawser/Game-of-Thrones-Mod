@@ -1,0 +1,119 @@
+# noble_house_reform
+# royal_house_reform
+
+#-------------------------------
+# Bureaucracy 
+#-------------------------------
+taxation_reform = {
+	icon = "castle"
+    allow_normal_conversion = yes
+    
+    potential = {
+        OR = {
+            has_reform = noble_house_reform
+            has_reform = royal_house_reform
+        }
+    }
+    
+    modifiers = {
+		global_tax_modifier = 0.15
+	}
+}
+manpower_reform = {
+	icon = "castle"
+    allow_normal_conversion = yes
+    
+    potential = {
+        OR = {
+            has_reform = noble_house_reform
+            has_reform = royal_house_reform
+        }
+    }
+    
+    modifiers = {
+		global_manpower_modifier = 0.15
+	}
+}
+production_reform = {
+	icon = "castle"
+    allow_normal_conversion = yes
+    
+    potential = {
+        OR = {
+            has_reform = noble_house_reform
+            has_reform = royal_house_reform
+        }
+    }
+    
+    modifiers = {
+		production_efficiency = 0.15
+	}
+}
+
+#-------------------------------
+# Court
+#-------------------------------
+local_advisors_reform = {
+	icon = "castle"
+    allow_normal_conversion = yes
+    
+    potential = {
+        OR = {
+            has_reform = noble_house_reform
+            has_reform = royal_house_reform
+        }
+    }
+    
+    modifiers = {
+		advisor_cost = -0.1
+	}
+}
+exotic_advisors_reform = {
+	icon = "castle"
+    allow_normal_conversion = yes
+    
+    potential = {
+        OR = {
+            has_reform = noble_house_reform
+            has_reform = royal_house_reform
+        }
+    }
+    
+    modifiers = {
+		advisor_pool = 1
+	}
+}
+
+#-------------------------------
+# Rule of Law
+#-------------------------------
+centralization_reform = {
+	icon = "castle"
+    allow_normal_conversion = yes
+    
+    potential = {
+        OR = {
+            has_reform = noble_house_reform
+            has_reform = royal_house_reform
+        }
+    }
+    
+    modifiers = {
+		global_autonomy = -0.05
+	}
+}
+decentralization_reform = {
+	icon = "castle"
+    allow_normal_conversion = yes
+    
+    potential = {
+        OR = {
+            has_reform = noble_house_reform
+            has_reform = royal_house_reform
+        }
+    }
+    
+    modifiers = {
+		global_unrest = -2
+	}
+}

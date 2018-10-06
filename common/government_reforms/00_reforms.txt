@@ -6,8 +6,7 @@ noble_house_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_westeros
-        is_emperor = no
+        has_reform = noble_house_reform
     }
     
     allow_normal_conversion = yes
@@ -22,13 +21,16 @@ noble_house_reform = {
 		unjustified_demands = -0.1
 		max_absolutism = 5
     }
+    
+    government_abilities = { 
+        iqta_mechanic
+    }
 }
 royal_house_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_westeros
-        is_emperor = yes
+        has_reform = royal_house_reform
     }
     
     allow_normal_conversion = yes
@@ -45,13 +47,18 @@ royal_house_reform = {
 		unjustified_demands = -0.2
 		max_absolutism = 20
     }
+    
+    government_abilities = { 
+        iqta_mechanic
+    }
+    
+    #has_parliament = yes
 }
 yiti_city_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_yi_ti
-        is_emperor_of_china = no
+        has_reform = yiti_city_reform
     }
     
     allow_normal_conversion = yes
@@ -66,13 +73,16 @@ yiti_city_reform = {
 		max_states = 2
 		global_manpower_modifier = 0.1
 	}
+    
+    government_abilities = { 
+        mamluk_mechanic
+    }
 }
 yiti_empire_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_yi_ti
-        is_emperor_of_china = yes
+        has_reform = yiti_empire_reform
     }
     
     allow_normal_conversion = yes
@@ -89,12 +99,18 @@ yiti_empire_reform = {
 		vassal_income = 0.25
         max_absolutism = 20
 	}
+    
+    government_abilities = { 
+        mamluk_mechanic
+    }
+    
+    claim_states = yes
 }
 qarth_city_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_qarth
+        has_reform = qarth_city_reform
     }
     
     allow_normal_conversion = yes
@@ -109,12 +125,69 @@ qarth_city_reform = {
 		global_tax_modifier = 0.05
 		global_autonomy = -0.025
 	}
+    
+    assimilation_cultures = {
+        culture_westeros = {
+            global_manpower_modifier = 0.2
+        }
+        culture_free_folk = {
+            land_morale = 0.1
+        }
+        culture_west_essos = {
+            advisor_cost = -0.15
+        }
+        culture_valyrian = {
+            prestige = 1
+        }
+        culture_dothraki = {
+            cavalry_power = 0.15
+        }
+        culture_central_essos = {
+            diplomatic_upkeep = 2
+        }
+        culture_hyrkoon = {
+            land_attrition = -0.15
+        }
+        culture_yi_ti = {
+            global_tax_modifier = 0.25
+        }
+        culture_trader_town = {
+            merchants = 1
+        }
+        culture_jogos_nhai = {
+            cavalry_cost = -0.15
+        }
+        culture_nefer = {
+            defensiveness = 0.33
+        }
+        culture_bloodless_men = {
+            shock_damage = 0.15
+        }
+        culture_ibben = {
+            heavy_ship_cost = -0.25
+        }
+        culture_faros = {
+            global_regiment_recruit_speed = -0.2
+        }
+        culture_naathi = {
+            war_exhaustion = -0.1
+        }
+        culture_tribal = {
+            land_forcelimit_modifier = 0.25
+        }
+        culture_summer_isles = {
+            navy_tradition = 1
+        }
+        culture_ancient = {
+            discipline = 0.2
+        }
+    }
 }
 nefer_city_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_nefer
+        has_reform = nefer_city_reform
     }
     
     allow_normal_conversion = yes
@@ -132,7 +205,7 @@ hyrkoon_city_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_hyrkoon
+        has_reform = hyrkoon_city_reform
     }
     
     allow_normal_conversion = yes
@@ -145,12 +218,23 @@ hyrkoon_city_reform = {
     	max_states = 2
 		siege_ability = 0.1
 	}
+    
+    states_general_mechanic = {
+        vanguard = {
+            technology_cost = -0.05
+            idea_cost = -0.05
+        }
+        old_guard = {
+            advisor_cost = -0.1
+            core_creation = -0.1
+        }
+    }
 }
 valyria_city_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_valyrian
+        has_reform = valyria_city_reform
     }
     
     allow_normal_conversion = yes
@@ -163,12 +247,23 @@ valyria_city_reform = {
     	max_states = 1
 		recover_army_morale_speed = 0.05
 	}
+    
+    states_general_mechanic = {
+        vanguard = {
+            technology_cost = -0.05
+            idea_cost = -0.05
+        }
+        old_guard = {
+            advisor_cost = -0.1
+            core_creation = -0.1
+        }
+    }
 }
 meereen_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = meereen
+        has_reform = meereen_city_reform
     }
     
     allow_normal_conversion = yes
@@ -183,12 +278,14 @@ meereen_city_reform = {
         global_autonomy = -0.025
         max_absolutism = 10
 	}
+    
+    militarised_society = yes
 }
 yunkai_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = yunkai
+        has_reform = yunkai_city_reform
     }
     
     allow_normal_conversion = yes
@@ -203,12 +300,14 @@ yunkai_city_reform = {
         global_autonomy = -0.025
         max_absolutism = 10
 	}
+    
+    militarised_society = yes
 }
 astapor_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = astapor
+        has_reform = astapor_city_reform
     }
     
     allow_normal_conversion = yes
@@ -223,12 +322,14 @@ astapor_city_reform = {
         global_autonomy = -0.025
         max_absolutism = 10
 	}
+    
+    militarised_society = yes
 }
 ghis_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = ghis
+        has_reform = ghis_city_reform
     }
     
     allow_normal_conversion = yes
@@ -243,6 +344,8 @@ ghis_city_reform = {
         global_autonomy = -0.025
         max_absolutism = 10
 	}
+    
+    militarised_society = yes
 }
 #------------------------------------------------------------
 # Republic
@@ -251,7 +354,7 @@ tyrosh_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = tyroshi
+        has_reform = tyrosh_city_reform
     }
     
     allow_normal_conversion = yes
@@ -271,7 +374,7 @@ myr_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = myrish
+        has_reform = myr_city_reform
     }
     
     allow_normal_conversion = yes
@@ -291,7 +394,7 @@ lys_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = lysene
+        has_reform = lys_city_reform
     }
     
     allow_normal_conversion = yes
@@ -311,10 +414,10 @@ volantis_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = volantene
+        has_reform = volantis_city_reform
     }
     
-    duration = 3
+    duration = 1
     
     allow_normal_conversion = yes
     legacy_equivalent = volantis_city_legacy
@@ -328,12 +431,23 @@ volantis_city_reform = {
         global_autonomy = -0.025
         max_absolutism = -10
 	}
+    
+    states_general_mechanic = {
+        tigers = {
+            army_tradition = 1
+            infantry_power = 0.1
+        }
+        elephants = {
+            global_trade_power = 0.1
+            trade_efficiency = 0.1
+        }
+    }
 }
 pentos_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = pentoshi
+        has_reform = pentos_city_reform
     }
     
     allow_normal_conversion = yes
@@ -353,7 +467,7 @@ braavos_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = braavosi
+        has_reform = braavos_city_reform
     }
     
     allow_normal_conversion = yes
@@ -373,7 +487,7 @@ lorath_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = lorathi
+        has_reform = lorath_city_reform
     }
     
     allow_normal_conversion = yes
@@ -393,7 +507,7 @@ qohor_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = qohorik
+        has_reform = qohor_city_reform
     }
     
     allow_normal_conversion = yes
@@ -413,7 +527,7 @@ norvos_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = norvosi
+        has_reform = norvos_city_reform
     }
     
     allow_normal_conversion = yes
@@ -433,7 +547,7 @@ saath_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = saathi
+        has_reform = saath_city_reform
     }
     
     allow_normal_conversion = yes
@@ -452,7 +566,7 @@ trader_city_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_trader_town
+        has_reform = trader_city_reform
     }
     
     allow_normal_conversion = yes
@@ -471,7 +585,7 @@ andal_city_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = andal
+        has_reform = andal_city_reform
     }
     
     allow_normal_conversion = yes
@@ -490,7 +604,7 @@ nights_watch_reform = {
 	icon = "castle"
     
     potential = {
-        tag = A02
+        has_reform = nights_watch_reform
     }
     
     allow_normal_conversion = yes
@@ -512,7 +626,7 @@ asshai_cult_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = asshai
+        has_reform = asshai_cult_reform
     }
     
     allow_normal_conversion = yes
@@ -521,18 +635,23 @@ asshai_cult_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    has_devotion = yes
+    
     modifiers = {
     	max_states = 3
 		technology_cost = -0.05
         max_absolutism = 20
 	}
+    
+    government_abilities = { 
+        russian_mechanic
+    }
 }
 bloodless_cult_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_bloodless_men
-        NOT = { primary_culture = asshai }
+        has_reform = bloodless_cult_reform
     }
     
     allow_normal_conversion = yes
@@ -541,17 +660,23 @@ bloodless_cult_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    has_devotion = yes
+    
     modifiers = {
     	max_states = 3
 		discipline = 0.05
         max_absolutism = 20
 	}
+    
+    government_abilities = { 
+        russian_mechanic
+    }
 }
 white_walker_cult_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_ancient
+        has_reform = white_walker_cult_reform
     }
     
     allow_normal_conversion = yes
@@ -573,7 +698,7 @@ pirate_clan_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = stepstones
+        has_reform = pirate_clan_reform
     }
     
     allow_normal_conversion = yes
@@ -591,7 +716,7 @@ wildling_clan_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_free_folk
+        has_reform = wildling_clan_reform
     }
     
     allow_normal_conversion = yes
@@ -609,7 +734,7 @@ lhazar_clan_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = lhazar
+        has_reform = lhazar_clan_reform
     }
     
     allow_normal_conversion = yes
@@ -627,7 +752,7 @@ ibben_clan_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_ibben
+        has_reform = ibben_clan_reform
     }
     
     allow_normal_conversion = yes
@@ -645,7 +770,7 @@ omber_clan_reform = {
 	icon = "castle"
     
     potential = {
-        primary_culture = omber
+        has_reform = omber_clan_reform
     }
     
     allow_normal_conversion = yes
@@ -663,7 +788,7 @@ faros_clan_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_faros
+        has_reform = faros_clan_reform
     }
     
     allow_normal_conversion = yes
@@ -681,7 +806,7 @@ naath_clan_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_naathi
+        has_reform = naath_clan_reform
     }
     
     allow_normal_conversion = yes
@@ -699,7 +824,7 @@ summer_islander_clan_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_summer_isles
+        has_reform = summer_islander_clan_reform
     }
     
     allow_normal_conversion = yes
@@ -720,7 +845,7 @@ khalasar_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_dothraki
+        has_reform = khalasar_reform
     }
     
     allow_normal_conversion = yes
@@ -729,17 +854,24 @@ khalasar_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    has_harem = yes
+    has_pashas = yes
+
     modifiers = {
     	max_states = 1
 		cavalry_power = 0.25
         cavalry_cost = -0.15
 	}
+    
+    government_abilities = { 
+        tribal_federation_mechanic
+    }
 }
 jhattar_reform = {
 	icon = "castle"
     
     potential = {
-        culture_group = culture_jogos_nhai
+        has_reform = jhattar_reform
     }
     
     allow_normal_conversion = yes
@@ -748,11 +880,18 @@ jhattar_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    has_harem = yes
+    has_pashas = yes
+    
     modifiers = {
     	max_states = 1
 		cavalry_power = 0.15
         cavalry_cost = -0.25
 	}
+    
+    government_abilities = { 
+        tribal_federation_mechanic
+    }
 }
 
 

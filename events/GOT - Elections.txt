@@ -20,7 +20,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_reform = volantis_city_reform }
+		has_states_general_mechanic = no
 	}
 
 	option = {
@@ -118,7 +118,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_reform = volantis_city_reform }
+		has_states_general_mechanic = no
 	}
 	
 	option = {
@@ -203,7 +203,7 @@ country_event = {
 	}
 }
 
-# Dutch Republic
+# States General
 country_event = {
 	id = GOT_ELECTIONS.4
 	title = GOT_ELECTIONS.4.title
@@ -213,7 +213,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_reform = volantis_city_reform
+		has_states_general_mechanic = yes
 	}
 	
 	option = {
@@ -221,7 +221,14 @@ country_event = {
 		define_ruler = {
 		}
 		change_statists_vs_monarchists = 0.33
-	
+        
+        if = {
+            limit = {
+                has_reform = volantis_city_reform
+            }
+            clr_country_flag = appointed_tiger_candidate
+            set_country_flag = appointed_tiger_candidate
+        }
 	}
 	option = {
 		name = GOT_ELECTIONS.4.option.b
@@ -240,7 +247,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_reform = volantis_city_reform
+		has_states_general_mechanic = yes
 	}
 	
 	option = {
@@ -249,11 +256,55 @@ country_event = {
 		}
 		change_statists_vs_monarchists = 0.33
 	
+        if = {
+            limit = {
+                has_reform = volantis_city_reform
+            }
+            clr_country_flag = appointed_tiger_candidate
+            set_country_flag = appointed_tiger_candidate
+        }
 	}
 	option = {
 		name = GOT_ELECTIONS.5.option.a
 		define_ruler = {
 		}
 		change_statists_vs_monarchists = -0.33
+	}
+}
+
+country_event = {
+	id = GOT_ELECTIONS.6
+	title = GOT_ELECTIONS.6.title
+	desc = GOT_ELECTIONS.6.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+    
+    trigger = {
+        has_country_flag = {
+            flag = appointed_tiger_candidate
+            days = 365
+        }
+	}
+	
+    mean_time_to_happen = {
+		months = 120
+        
+        modifier = {
+            factor = 0.5
+            
+            has_country_flag = {
+                flag = appointed_tiger_candidate
+                days = 720
+            }
+        }
+	}
+    
+	option = {
+		name = GOT_ELECTIONS.6.option.a
+		
+        hidden_effect = { clr_country_flag = appointed_tiger_candidate }
+        
+        change_statists_vs_monarchists = -0.5
+        define_ruler = {
+		}
 	}
 }

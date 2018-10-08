@@ -2,7 +2,7 @@
 # Monarchy
 #--------------------------------------------
 monarchy = {
-    color = { 179 25 25 }
+    color = { 66 134 244 }
     
     basic_reform = monarchy_mechanic
     
@@ -123,7 +123,7 @@ monarchy = {
 # Republic
 #--------------------------------------------
 republic = {
-    color = { 140 25 25 }
+    color = { 66 244 113 }
     
     basic_reform = republic_mechanic
     
@@ -142,7 +142,6 @@ republic = {
                 saath_city_reform
                 trader_city_reform
                 andal_city_reform
-                nights_watch_reform
 			}
 		}
         bureaucracy_republic = {
@@ -205,7 +204,6 @@ republic = {
         saath_city_legacy
         trader_city_legacy
         andal_city_legacy
-        nights_watch_legacy
     }
     
     exclusive_reforms = {
@@ -221,7 +219,6 @@ republic = {
 		saath_city_reform
 		trader_city_reform
 		andal_city_reform
-		nights_watch_reform
     }
 }
 
@@ -229,7 +226,7 @@ republic = {
 # Theocracy
 #--------------------------------------------
 theocracy = {
-    color = { 179 25 25 }
+    color = { 244 203 66 }
     
     basic_reform = theocracy_mechanic
     
@@ -305,7 +302,7 @@ theocracy = {
 # Tribal
 #--------------------------------------------
 tribal = {
-    color = { 179 25 25 }
+    color = { 244 69 66 }
     
     basic_reform = tribal_mechanic
     
@@ -396,7 +393,7 @@ tribal = {
 # Nomadic
 #--------------------------------------------
 nomadic = {
-    color = { 179 25 25 }
+    color = { 122 140 92 }
     
     basic_reform = nomadic_mechanic
     
@@ -465,3 +462,68 @@ nomadic = {
     }
 }
 
+#--------------------------------------------
+# Night's Watch
+#--------------------------------------------
+nights_watch = {
+    color = { 92 106 140 }
+    
+    basic_reform = nights_watch_mechanic
+    
+    reform_levels = {
+        government_form_nights_watch = {
+			reforms = {
+                nights_watch_reform
+			}
+		}
+        bureaucracy_nights_watch = {
+            reforms = {
+                taxation_reform
+                manpower_reform
+                production_reform
+                trade_reform
+            }
+        }
+        court_nights_watch = {
+            reforms = {
+                local_advisors_reform
+                exotic_advisors_reform
+                vetted_advisors_reform
+                famous_advisors_reform
+            }
+        }
+        rule_of_law_nights_watch = {
+            reforms = {
+                absolute_authority_reform
+                central_authority_reform
+                regional_authority_reform
+                local_authority_reform
+            }
+        }
+        justice_nights_watch = {
+            reforms = {
+                court_justice_reform
+                community_justice_reform
+                torture_justice_reform
+                enslavement_justice_reform
+                death_justice_reform
+            }
+        }
+        ambitions_nights_watch = {
+            reforms = {
+                disciplined_army_reform
+                peerless_navy_reform
+                beloved_diplomats_reform
+                keen_minds_reform
+                inquistorial_fury_reform
+                burning_scrutiny_reform
+                fed_and_plump_reform
+                mercantile_infamy_reform
+            }
+        }
+    }
+    
+    legacy_government = {
+        nights_watch_legacy
+    }
+}

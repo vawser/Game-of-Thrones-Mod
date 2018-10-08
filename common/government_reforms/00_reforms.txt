@@ -600,25 +600,6 @@ andal_city_reform = {
         max_absolutism = -20
 	}
 }
-nights_watch_reform = {
-	icon = "castle"
-    
-    potential = {
-        has_reform = nights_watch_reform
-    }
-    
-    allow_normal_conversion = yes
-    legacy_equivalent = nights_watch_legacy
-    
-    valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    modifiers = {
-    	max_states = 1
-		advisor_cost = -0.15
-        max_absolutism = -40
-	}
-}
 #------------------------------------------------------------
 # Theocracy
 #------------------------------------------------------------
@@ -893,7 +874,28 @@ jhattar_reform = {
         tribal_federation_mechanic
     }
 }
-
+#------------------------------------------------------------
+# Night's Watch
+#------------------------------------------------------------
+nights_watch_reform = {
+	icon = "castle"
+    
+    potential = {
+        has_reform = nights_watch_reform
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = nights_watch_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		advisor_cost = -0.15
+        max_absolutism = -40
+	}
+}
 
 
 

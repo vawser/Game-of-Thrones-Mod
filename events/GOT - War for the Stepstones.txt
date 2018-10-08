@@ -1,0 +1,164 @@
+namespace = got_war_for_the_stepstones
+
+# War for the Stepstones
+country_event = {
+	id = got_war_for_the_stepstones.1
+	title = got_war_for_the_stepstones.1.title
+	desc = got_war_for_the_stepstones.1.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+    fire_only_once = yes
+    
+	trigger = {
+        tag = A10
+        is_year = 106
+        NOT = { is_year = 108 }
+        exists = X01
+        X01 = {
+            num_of_cities = 2
+        }
+    }
+	
+    mean_time_to_happen = {
+		months = 1
+    }
+    
+    immediate = {
+        hidden_effect = {
+            X01 = {
+                random_owned_province = {
+                    limit = { is_capital = no }
+                    save_event_target_as = assaulted_province
+                }
+            }
+        }
+    }
+    
+	option = {
+		name = got_war_for_the_stepstones.1.option.a
+
+        event_target:assaulted_province = {
+            cede_province = AB2
+            add_core = AB2
+        }
+        
+        release = A43
+        
+        AB2 = {
+            vassalize = A43
+        }
+        
+        hidden_effect = {
+            A10 = {
+                country_event = { id = got_war_for_the_stepstones.2 days = 1 }
+            }
+            
+            AB2 = {
+                country_event = { id = got_war_for_the_stepstones.3 days = 1 }
+            }
+        }
+	}
+}
+
+# House Blackfyre
+# Daemon Targaryen has made headway into the Stepstones, having begun his assault against the Triarchy.
+# Let me see his progress...
+# O, fools will be fools.
+country_event = {
+	id = got_war_for_the_stepstones.2
+	title = got_war_for_the_stepstones.2.title
+	desc = got_war_for_the_stepstones.2.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+    trigger = {
+        ai = no
+    }
+    
+    is_triggered_only = yes
+
+	option = {
+		name = got_war_for_the_stepstones.2.option.a
+
+        switch_tag = AB2
+	}
+    
+    option = {
+		name = got_war_for_the_stepstones.2.option.b
+
+        add_prestige = 10
+	}
+}
+
+# Setup House Blackfyre
+country_event = {
+	id = got_war_for_the_stepstones.3
+	title = got_war_for_the_stepstones.3.title
+	desc = got_war_for_the_stepstones.3.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+    is_triggered_only = yes
+    hidden = yes
+    
+	option = {
+		name = got_war_for_the_stepstones.3.option.a
+
+        #-----------------
+        # House Blackfyre
+        #-----------------
+        define_ruler = {
+            name = "Daemon"
+            dynasty = "Blackfyre"
+            age = 25
+            adm = 4
+            dip = 4
+            mil = 6
+        }
+        
+        capital_scope = {
+            infantry = ROOT
+            infantry = ROOT
+            infantry = ROOT
+            infantry = ROOT
+            infantry = ROOT
+            infantry = ROOT
+            infantry = ROOT
+            infantry = ROOT
+            cavalry = ROOT
+            cavalry = ROOT
+            
+            heavy_ship = ROOT
+            heavy_ship = ROOT
+            heavy_ship = ROOT
+            heavy_ship = ROOT
+            heavy_ship = ROOT
+            
+            transport = ROOT
+            transport = ROOT
+            transport = ROOT
+            transport = ROOT
+            transport = ROOT
+        }
+        
+        region_stepstones = {
+            add_claim = ROOT
+        }
+        region_tyrosh = {
+            add_claim = ROOT
+        }
+
+        add_country_modifier = {
+            name = war_for_the_stepstones
+            duration = 3650
+        }
+
+        if = {
+            limit = {
+                exists = X01
+            }
+            declare_war_with_cb = {
+                who = X01
+                casus_belli = cb_annex
+            }
+        }
+	}
+}

@@ -1,55 +1,67 @@
 defaults_reform = {
-	valid_for_new_country = yes
+    valid_for_new_country = yes
+    allow_normal_conversion = yes
 	allow_convert = yes
-	rulers_can_be_generals = yes
-	heirs_can_be_generals = yes
-	fixed_rank = 0
-	republican_name = no
-	militarised_society = no
-	government_abilities = { }
-	claim_states = no
-	religion = no
-	republic = no
+    
+    nation_designer_trigger = { }
+	nation_designer_cost = 0
+    valid_for_nation_designer = yes
+    
+    monarchy = no
+    republic = no
+    religion = no
+    tribal = no
+    nomad = no
+	monastic = no
+    papacy = no
 	dictatorship = no
-	is_elective = no
-	queen = no
-	heir = no
-	has_parliament = no
-	has_devotion = no
+    is_elective = no
+    free_city = no
+    
+    has_devotion = no
 	has_meritocracy = no
-	allow_force_tributary = yes
-	duration = 0
-	election_on_death = no
-	monarchy = no
-	tribal = no
+    
+    queen = no
+	heir = no
+    republican_name = no
+    royal_marriage = yes
+    maintain_dynasty = no
+    
 	different_religion_acceptance = 0
 	different_religion_group_acceptance = 0
-	boost_income = no
-	monastic = no
-	can_use_trade_post = no
-	native_mechanic = no
-	can_form_trade_league = no
-	free_city = no
-	is_trading_city = no
-	trade_city_reform = ""
-	maintain_dynasty = no
-	allow_migration = no
-	nation_designer_trigger = { }
-	nation_designer_cost = 0
-	papacy = no
+    
+	rulers_can_be_generals = yes
+	heirs_can_be_generals = yes
+	
+    duration = 0
+	election_on_death = no
+    has_term_election = no
+    
+    fixed_rank = 0
+    min_autonomy = 0
+    start_territory_to_estates = 0.8
+    
+    native_mechanic = no
+    allow_migration = no
+    
+	militarised_society = no
+	claim_states = no
+	has_parliament = no
+	allow_force_tributary = yes
 	has_harem = no
 	has_pashas = no
+	foreign_slave_rulers = no
 	allow_vassal_war = no
 	allow_vassal_alliance = no
-	min_autonomy = 0
-	factions = { }
-	foreign_slave_rulers = no
-	royal_marriage = yes
-	nomad = no
+
+	boost_income = no
+	can_use_trade_post = no
+	can_form_trade_league = no
+	is_trading_city = no
+	trade_city_reform = ""
+
+    factions = { }
 	assimilation_cultures = { }
 	states_general_mechanic = { }
-	valid_for_nation_designer = yes
-	allow_normal_conversion = yes
-	start_territory_to_estates = 0.8
-	has_term_election = no
+    government_abilities = { }
 }

@@ -118,7 +118,12 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_states_general_mechanic = no
+	
+		# Not sure what this trigger does, but it lets this event trigger alongside GOT_GOVERNMENT.1 which is a better fit when playing free cities.
+		# has_states_general_mechanic = no
+		
+		is_free_city_government = no
+		
 	}
 	
 	option = {

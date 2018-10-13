@@ -216,20 +216,6 @@ failed_to_restore_the_faith = {
     yearly_decay = 5
 }
 
-permits_slavery = {
-	opinion = -50
-	months = 120
-    yearly_decay = 5
-	max = -50
-}
-
-prohibits_slavery = {
-	opinion = -50
-	months = 120
-    yearly_decay = 5
-	max = -50
-}
-
 is_house_subject = {
 	opinion = 25
 }
@@ -240,4 +226,19 @@ northern_fraternity_mod = {
 
 westeros_hates_wildlings = {
 	opinion = -33
+}
+
+# ---- Slavery ----
+permits_slavery = {
+	opinion = -50
+	months = 120
+    yearly_decay = 5
+	min = -50
+}
+
+prohibits_slavery = {
+	opinion = -50
+	months = 120
+    yearly_decay = 5
+	min = -50
 }

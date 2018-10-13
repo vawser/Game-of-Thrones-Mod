@@ -1,4 +1,22 @@
 country_decisions = {
+    got_debug = {
+		potential = {
+			ai = no
+		}
+		allow = {
+			has_reform = khalasar_reform
+            government = monarchy
+            has_reform = khalasar_legacy
+		}
+		effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	negotiate_with_the_iron_bank = {
 		potential = {
 			NOT = { has_ruler_modifier = iron_bank_agreement }

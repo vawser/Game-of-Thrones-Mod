@@ -21,7 +21,10 @@ cb_restore_personal_union = {
 	months = 120
 	
 	prerequisites = {
-		NOT = { government = republic }
+		OR = {
+            has_reform = noble_house_reform
+            has_reform = royal_house_reform
+        }
 		is_revolution_target = no
 	}
 	
@@ -387,12 +390,12 @@ cb_trade_war = {
 			}
 			AND = {
 				OR = { 
-                    government = republic
+                    is_free_city_government = yes
                     has_reform = pirate_clan_reform
 				}
 				FROM = { 
 					OR = {
-						government = republic
+						is_free_city_government = yes
                         has_reform = pirate_clan_reform
 					}
 				}
@@ -515,11 +518,13 @@ cb_horde_vs_civ = {
 	prerequisites = {
 		is_neighbor_of = FROM
 		FROM = {
-			NOT = { government = nomadic }
+			NOT = { has_reform = khalasar_reform }
+            NOT = { has_reform = jhattar_reform }
             NOT = { has_reform = wildling_clan_reform }
 		}
 		OR = {
-			government = nomadic
+            has_reform = khalasar_reform
+            has_reform = jhattar_reform
             has_reform = wildling_clan_reform
 		}
 		is_revolution_target = no
@@ -534,14 +539,16 @@ cb_tribal_feud = {
 
 	prerequisites = {
 		OR = {
-			government = nomadic
+            has_reform = khalasar_reform
+            has_reform = jhattar_reform
             has_reform = wildling_clan_reform
 		}
 		FROM = {
 			OR = {
-				government = nomadic
+                has_reform = khalasar_reform
+                has_reform = jhattar_reform
                 has_reform = wildling_clan_reform
-			}
+            }
 		}
 		is_neighbor_of = FROM
 		is_revolution_target = no

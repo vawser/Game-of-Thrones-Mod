@@ -20,7 +20,8 @@ estate_nobles =
     # ----- Conditions -----
 	trigger = {
         NOT = { has_reform = wildling_clan_reform }
-        NOT = { government = nomadic }
+        NOT = { has_reform = khalasar_reform }
+        NOT = { has_reform = jhattar_reform }
 	}
 	
 	province_trigger = {
@@ -113,7 +114,7 @@ estate_nobles =
 	influence_modifier = {
 		desc = EST_VAL_REPUBLIC
 		trigger = {
-			NOT = { government = monarchy }
+			is_free_city_government = yes
 		}
 		influence = -10
 	}
@@ -137,7 +138,7 @@ estate_nobles =
 	loyalty_modifier = {
 		desc = EST_VAL_LEGITIMACY
 		trigger = {
-			government = monarchy
+			is_monarchy_government = yes
 			NOT = { legitimacy = 0 }
 			legitimacy = -50
 		}
@@ -147,7 +148,7 @@ estate_nobles =
 	loyalty_modifier = {
 		desc = EST_VAL_LEGITIMACY
 		trigger = {
-			government = monarchy
+			is_monarchy_government = yes
 			NOT = { legitimacy = -50 }
 		}
 		loyalty = -10

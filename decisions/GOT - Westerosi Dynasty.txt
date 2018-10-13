@@ -5,7 +5,10 @@ country_decisions = {
 	stark_reassert_dynasty = {
 		potential = {
 			NOT = { dynasty = "Stark" }
-			government = monarchy
+			OR = {
+                has_reform = noble_house_reform
+                has_reform = royal_house_reform
+            }
             OR = {
                 tag = A01
                 tag = J07
@@ -43,7 +46,10 @@ country_decisions = {
 	tully_reassert_dynasty = {
 		potential = {
 			NOT = { dynasty = "Tully" }
-			government = monarchy
+			OR = {
+                has_reform = noble_house_reform
+                has_reform = royal_house_reform
+            }
 			OR = {
                 tag = A03
                 tag = J08
@@ -81,7 +87,10 @@ country_decisions = {
 	arryn_reassert_dynasty = {
 		potential = {
 			NOT = { dynasty = "Arryn" }
-			government = monarchy
+			OR = {
+                has_reform = noble_house_reform
+                has_reform = royal_house_reform
+            }
             OR = {
                 tag = A04
                 tag = J11
@@ -119,7 +128,10 @@ country_decisions = {
 	baratheon_reassert_dynasty = {
 		potential = {
 			NOT = { dynasty = "Baratheon" }
-			government = monarchy
+			OR = {
+                has_reform = noble_house_reform
+                has_reform = royal_house_reform
+            }
             OR = {
                 tag = A07
                 tag = J10
@@ -157,7 +169,10 @@ country_decisions = {
 	targaryen_reassert_dynasty = {
 		potential = {
 			NOT = { dynasty = "Targaryen" }
-			government = monarchy
+			OR = {
+                has_reform = noble_house_reform
+                has_reform = royal_house_reform
+            }
 			tag = A10
 		}
 		allow = {
@@ -192,7 +207,10 @@ country_decisions = {
 	tyrell_reassert_dynasty = {
 		potential = {
 			NOT = { dynasty = "Tyrell" }
-			government = monarchy
+			OR = {
+                has_reform = noble_house_reform
+                has_reform = royal_house_reform
+            }
             OR = {
                 tag = F20
                 tag = J13
@@ -230,7 +248,10 @@ country_decisions = {
 	martell_reassert_dynasty = {
 		potential = {
 			NOT = { dynasty = "Martell" }
-			government = monarchy
+            OR = {
+                has_reform = noble_house_reform
+                has_reform = royal_house_reform
+            }
             OR = {
                 tag = A09
                 tag = J12
@@ -268,7 +289,10 @@ country_decisions = {
 	greyjoy_reassert_dynasty = {
 		potential = {
 			NOT = { dynasty = "Greyjoy" }
-			government = monarchy
+			OR = {
+                has_reform = noble_house_reform
+                has_reform = royal_house_reform
+            }
 			tag = M09
 		}
 		allow = {
@@ -304,7 +328,10 @@ country_decisions = {
 	lannister_reassert_dynasty = {
 		potential = {
 			NOT = { dynasty = "Lannister" }
-			government = monarchy
+			OR = {
+                has_reform = noble_house_reform
+                has_reform = royal_house_reform
+            }
             OR = {
                 tag = A06
                 tag = J09

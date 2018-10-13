@@ -1,7 +1,7 @@
 country_decisions = {
     amass_host = {
 		potential = {
-			government = nomadic
+			has_reform = khalasar_reform
 		}
 		allow = {
             NOT = { has_country_modifier = amassed_host }
@@ -30,32 +30,6 @@ country_decisions = {
 		
 		ai_will_do = {
 			factor = 1
-		}
-	}
-    
-	reform_khalasar = {
-		major = yes
-		potential = {
-			government = nomadic
-            primitives = yes 
-		}
-		allow = {
-			total_development = 300
-			stability = 3
-		}
-		effect = {
-			add_stability = -6
-			change_technology_group = essosian
-			
-			capital_scope = {
-				pretender_rebels = 10
-			}
-			
-            #set_primitive = no
-		}
-		
-		ai_will_do = {
-			factor = 0
 		}
 	}
 }

@@ -10,7 +10,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		government = nomadic
+		has_reform = khalasar_reform
         NOT = { has_country_flag = dothraki_daenerys }
 		NOT = { has_country_flag = no_new_succession_crisis_if_pretender_rebels }
 		num_of_cities = 4
@@ -90,7 +90,7 @@ country_event = {
 	picture = NEW_HEIR_eventPicture
 	
 	trigger = {
-		government = nomadic
+		has_reform = khalasar_reform
 		has_ruler_modifier = dothraki_succession_crisis
 		NOT = {
 			has_spawned_rebels = pretender_rebels
@@ -118,7 +118,7 @@ country_event = {
 	picture = PRAYING_eventPicture
 
 	trigger = {
-		government = nomadic
+		has_reform = khalasar_reform
         stability = 0
 	}
 	
@@ -179,7 +179,7 @@ country_event = {
 	picture = PRAYING_eventPicture
 	
 	trigger = {
-		government = nomadic
+		has_reform = khalasar_reform
         stability = 0
 	}
 	
@@ -225,7 +225,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		government = nomadic
+		has_reform = khalasar_reform
         NOT = { has_country_flag = dothraki_daenerys }
 	}
 	
@@ -308,7 +308,7 @@ country_event = {
     hidden = yes
     
 	trigger = {
-        government = nomadic
+        has_reform = khalasar_reform
         is_subject_of = R05
 		NOT = { has_country_modifier = vaes_dothrak_ld }
 	}
@@ -332,7 +332,7 @@ country_event = {
     hidden = yes
     
 	trigger = {
-        government = nomadic
+        has_reform = khalasar_reform
         OR = {
             NOT = { is_subject_of = R05 }
             NOT = { is_subject_of_type = tributary_state }

@@ -38,7 +38,10 @@ country_decisions = {
 		potential = {
 			NOT = { has_dlc = "The Cossacks" }
 			has_regency = no
-            government = monarchy
+            OR = {
+                has_reform = noble_house_reform
+                has_reform = royal_house_reform
+            }
 		}
 		allow = {
 			has_regency = no

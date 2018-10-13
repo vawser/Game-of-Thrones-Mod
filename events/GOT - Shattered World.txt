@@ -9,6 +9,10 @@ country_event = {
 	is_triggered_only = yes
 	hidden = yes
     
+    trigger = {
+        always = no
+    }
+    
 	option = {
 		name = GOT_SHATTERED_WORLD.1.option.a
 
@@ -40,7 +44,7 @@ country_event = {
         
         inherit = SEC
         
-        # Remove ownership of Super Secret Ladn
+        # Remove ownership of Super Secret Land
         125 = {
             cede_province = "---"
             set_in_empire = no

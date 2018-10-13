@@ -1,0 +1,75 @@
+namespace = GOT_SLAVERY
+
+# Civilized People
+country_event = {
+	id = GOT_SLAVERY.1
+	title = GOT_SLAVERY.1.title
+	desc = GOT_SLAVERY.1.desc
+	picture = FEAST_eventPicture
+	
+	is_triggered_only = yes
+    
+    trigger = {
+        has_country_modifier = slavery_prohibited
+    }
+    
+	option = {
+		name = GOT_SLAVERY.1.option.a
+	
+        add_stability = 1
+	}
+}
+
+# Humanity before Profit
+country_event = {
+	id = GOT_SLAVERY.2
+	title = GOT_SLAVERY.2.title
+	desc = GOT_SLAVERY.2.desc
+	picture = FEAST_eventPicture
+	
+	is_triggered_only = yes
+    
+    trigger = {
+        has_country_modifier = slavery_prohibited
+    }
+    
+	option = {
+		name = GOT_SLAVERY.2.option.a
+	
+        add_prestige = 25
+	}
+}
+
+# Exotic Maesters
+country_event = {
+	id = GOT_SLAVERY.3
+	title = GOT_SLAVERY.3.title
+	desc = GOT_SLAVERY.3.desc
+	picture = DIET_eventPicture
+	
+	is_triggered_only = yes
+    
+    trigger = {
+        has_country_modifier = slavery_prohibited
+    }
+    
+	option = {
+		name = GOT_SLAVERY.3.option.a
+	
+        add_adm_tech = 1
+	}
+    option = {
+		name = GOT_SLAVERY.3.option.b
+	
+        add_dip_tech = 1
+	}
+    option = {
+		name = GOT_SLAVERY.3.option.c
+	
+        add_mil_tech = 1
+        
+        ai_chance = {
+            factor = 100
+        }
+	}
+}

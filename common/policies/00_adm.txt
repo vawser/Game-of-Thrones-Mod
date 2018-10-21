@@ -1,3 +1,5 @@
+# dummy_ideas is so the new policies interface doesn't crash on hover
+
 # Administration Organisation
 innovation_surge = {
 	monarch_power = ADM
@@ -6,7 +8,10 @@ innovation_surge = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = administrative_organisation_ideas
+        OR = {
+            full_idea_group = administrative_organisation_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	idea_cost = -0.05
@@ -24,7 +29,10 @@ currency_reorganisation = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = banking_ideas
+        OR = {
+            full_idea_group = banking_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	inflation_reduction = 0.05
@@ -42,7 +50,10 @@ entreat_advisors = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = advisor_ideas
+        OR = {
+            full_idea_group = advisor_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	yearly_corruption = -0.025
@@ -60,7 +71,10 @@ administrative_reform = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = administration_ideas
+        OR = {
+            full_idea_group = administration_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	development_cost = -0.05
@@ -79,7 +93,10 @@ religious_decree = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = religion_ideas
+        OR = {
+            full_idea_group = religion_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	global_missionary_strength = 0.01
@@ -97,7 +114,10 @@ tolerance_movement = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = tolerance_ideas
+        OR = {
+            full_idea_group = tolerance_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	tolerance_heathen = 1
@@ -116,7 +136,10 @@ trusted_lords = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = stability_ideas
+        OR = {
+            full_idea_group = stability_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	global_autonomy = -0.025
@@ -134,7 +157,10 @@ deep_infiltration = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = espionage_ideas
+        OR = {
+            full_idea_group = espionage_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	spy_offence = 0.25
@@ -152,7 +178,10 @@ establish_legitimacy = {
 		government = monarchy
 	}
 	allow = {
-		full_idea_group = monarchy_ideas
+        OR = {
+            full_idea_group = monarchy_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	legitimacy = 0.5
@@ -169,8 +198,11 @@ establish_rule = {
 	potential = {
 		is_free_city_government = yes
 	}
-	allow = {
-		full_idea_group = free_city_ideas
+	allow = {   
+        OR = {
+            full_idea_group = free_city_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	republican_tradition = 0.5
@@ -187,7 +219,10 @@ establish_strength = {
 		government = nomadic
 	}
 	allow = {
-		full_idea_group = khas_ideas
+        OR = {
+            full_idea_group = khas_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	horde_unity = 0.5

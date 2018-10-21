@@ -5,8 +5,11 @@ exploration_surge = {
 	potential = {
 		always = yes
 	}
-	allow = {
-		full_idea_group = exploration_ideas
+	allow = {   
+        OR = {
+            full_idea_group = exploration_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	colonists = 1
@@ -24,7 +27,10 @@ distant_trade_negotiations = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = foreign_trade_ideas
+        OR = {
+            full_idea_group = foreign_trade_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	global_foreign_trade_power = 0.1
@@ -42,7 +48,10 @@ domestic_trade_negotiations = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = domestic_trade_ideas
+        OR = {
+            full_idea_group = domestic_trade_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	global_own_trade_power = 0.1
@@ -60,7 +69,10 @@ establish_manufactories = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = manufacturing_ideas
+        OR = {
+            full_idea_group = manufacturing_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	global_trade_goods_size_modifier = 0.1
@@ -78,7 +90,10 @@ increased_intergration = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = aggressive_diplomacy_ideas
+        OR = {
+            full_idea_group = aggressive_diplomacy_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	diplomatic_annexation_cost = -0.1
@@ -96,7 +111,10 @@ diplomatic_initiative = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = peaceful_diplomacy_ideas
+        OR = {
+            full_idea_group = peaceful_diplomacy_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	ae_impact = -0.075
@@ -114,7 +132,10 @@ expand_civic_service = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = civil_organisation_ideas
+        OR = {
+            full_idea_group = civil_organisation_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	diplomats = 1
@@ -132,7 +153,10 @@ harbour_restoration = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = naval_trade_ideas
+        OR = {
+            full_idea_group = naval_trade_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	global_ship_trade_power = 0.125
@@ -156,7 +180,10 @@ increase_raids = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = raiding_ideas
+        OR = {
+            full_idea_group = raiding_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	privateer_efficiency = 0.25
@@ -180,7 +207,10 @@ inspire_sailors = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = navy_combat_ideas
+        OR = {
+            full_idea_group = navy_combat_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	naval_morale = 0.1
@@ -204,7 +234,10 @@ step_up_sailor_recruitment = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = navy_recruitment_ideas
+        OR = {
+            full_idea_group = navy_recruitment_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	global_sailors_modifier = 0.25
@@ -229,7 +262,10 @@ ensure_citrus_stocks = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = navy_organisation_ideas
+        OR = {
+            full_idea_group = navy_organisation_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	naval_attrition = -0.1
@@ -253,7 +289,10 @@ expand_admirality = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = navy_leadership_ideas
+        OR = {
+            full_idea_group = navy_leadership_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
 	free_leader_pool = 1

@@ -5,8 +5,11 @@ inspire_bannermen = {
 	potential = {
 		always = yes
 	}
-	allow = {
-		full_idea_group = infantry_ideas
+	allow = {   
+        OR = {
+            full_idea_group = infantry_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
     infantry_power = 0.025
@@ -24,7 +27,10 @@ honour_knights = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = cavalry_ideas
+        OR = {
+            full_idea_group = cavalry_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
     cavalry_power = 0.025
@@ -42,7 +48,10 @@ increase_siegeworks_production = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = siege_ideas
+        OR = {
+            full_idea_group = siege_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
     artillery_cost = -0.1
@@ -60,7 +69,10 @@ rally_garrisons = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = fortification_ideas
+        OR = {
+            full_idea_group = fortification_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
     garrison_size = 0.5
@@ -78,7 +90,10 @@ inspire_lords = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = army_leadership_ideas
+        OR = {
+            full_idea_group = army_leadership_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
     land_morale = 0.05
@@ -96,7 +111,10 @@ increase_foraging = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = army_organisation_ideas
+        OR = {
+            full_idea_group = army_organisation_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
     land_attrition = -0.1
@@ -114,7 +132,10 @@ enforce_conscription = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = army_recruitment_ideas
+        OR = {
+            full_idea_group = army_recruitment_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
     global_manpower_modifier = 0.25
@@ -132,7 +153,10 @@ rally_troops = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = army_infrastructure_ideas
+        OR = {
+            full_idea_group = army_infrastructure_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
     recover_army_morale_speed = 0.05
@@ -150,7 +174,10 @@ swindle_mercenaries = {
 		always = yes
 	}
 	allow = {
-		full_idea_group = merc_ideas
+        OR = {
+            full_idea_group = merc_ideas
+            full_idea_group = dummy_ideas
+        }
 	}
 	
     mercenary_cost = -0.1

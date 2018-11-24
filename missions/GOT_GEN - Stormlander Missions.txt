@@ -1,38 +1,46 @@
 stormlander_missions_generic = {
-    slot = 4                  # Which column the missions will appear in. 1 to 5.
-    generic = no             # Whether missions within this series are considered generic.
-    ai = yes                  # Whether the AI will claim missions in this series.
-    has_country_shield = yes  # Whether to display the country shield on the icon.    
+    slot = 4
+    generic = no
+    ai = yes
+    has_country_shield = yes
     
-    # Determines when a series appears for a country. Country scope.
     potential = {
 	primary_culture = men_of_the_stormlands
 	NOT = { tag = A07 }
     }
-    
-    # The name of the mission, used for localization
-    stormlander_mission_1 = {
+	
+    stormlander_dornish_marches = {
         
-	icon = mission_mosque            # The icon to use for the mission
-        #generic = yes     # Whether this mission is considered generic.
-        ai = yes          # Whether the AI will claim this mission.
-        position = 1        # Which row the mission appears in. 1 is top.
+	icon = mission_dornish_marches
+        generic = yes
+        ai = yes
+        position = 1
         
-        
-        # Determines which provinces to highlight. Acts like all_province scope. Optional.
         provinces_to_highlight = {
-		owned_by = ROOT
-		is_capital = yes
+			OR = {
+				province_id = 306
+				province_id = 310
+				province_id = 311
+			}
         }
-    
-        # Determines when the mission is completed. Country scope.
+		
         trigger = {
-            treasury = 1000
+            any_owned_province = {
+				OR = {
+					province_id = 306
+					province_id = 310
+					province_id = 311
+				}
+				fort_level = 4
+			}
         }
-        
-        # The effect executed when the mission is claimed. Country scope.
+		
         effect = {
-            add_treasury = 1000
+            add_prestige = 20
+			add_country_modifier = {
+				name = dornish_marches
+				duration = -1
+			}
         }
     }
 }

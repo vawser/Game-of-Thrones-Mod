@@ -6020,7 +6020,7 @@ sce_search_quivira = {
 }
 el_dorado_mod = {
 	trade_goods_size_modifier = 0.5
-	local_development_cost = -0.2
+	cs_only_local_development_cost = -0.2
 	local_unrest = -3
 }
 sce_life_water = {
@@ -6035,28 +6035,28 @@ sce_cibola_silver = {
 sce_sierradelaplata_quartz = {
 	local_tax_modifier = 0.5
 	local_institution_spread = 1
-	local_development_cost = -0.2
+	cs_only_local_development_cost = -0.2
 }
 sce_golden_cups = {
 	local_production_efficiency = 0.25
 	local_tax_modifier = 0.25
 	local_build_cost = -0.5
-	local_development_cost = -0.2
+	cs_only_local_development_cost = -0.2
 }
 sce_norumbega_abandoned = {
-	local_development_cost = -0.2
+	cs_only_local_development_cost = -0.2
 	province_trade_power_modifier = 0.5
 	trade_goods_size_modifier = 0.5
 }
 sce_saguenay_abandoned = {
 	trade_goods_size_modifier = 0.25
 	province_trade_power_modifier = 0.25
-	local_development_cost = -0.2
+	cs_only_local_development_cost = -0.2
 }
 sce_city_of_caesars = {
 	province_trade_power_modifier = 1
 	trade_goods_size_modifier = 0.5
-	local_development_cost = -0.2
+	cs_only_local_development_cost = -0.2
 }
 sce_quivira = {
 	prestige = 0.5
@@ -10078,27 +10078,6 @@ revoked_estate_modifier = {
 	local_unrest = 5
 }
 
-pru_confederation_curtailed_modifier = {
-	global_unrest = -1
-}
-
-mayan_dinosaur_cavalry = {
-	cavalry_power = 0.5
-}
-
-mayan_ufo_support = {
-	fire_damage = 0.33
-}
-
-swiss_guard_last_stand = {
-	discipline = 0.1
-}
-
-expelled_minority = {
-	local_missionary_strength = -1
-	local_culture_conversion_cost = 1
-}
-
 ##################################################
 # High American missions
 ##################################################
@@ -10155,55 +10134,4 @@ rb_eng_divine_common = {
 
 rb_eng_national_economy = {
 	global_tax_modifier = 0.05
-}
-
-## Tortoise Easter Egg Modifier
-delicious_tortoises = {
-	trade_value_modifier = 1
-}
-
-# Pirate modifiers
-
-thorough_careening = {
-	ship_durability = 0.1
-}
-
-relaxed_careening = {
-	naval_morale = 0.05
-	ship_durability = -0.05
-}
-
-smugglers_struggling = {
-	trade_efficiency = -0.05
-}
-
-blacklisted_crew = {
-	stability_cost_modifier = 0.1
-}
-
-# Misc for GC
-
-sublimis_deus = {
-	establish_order_cost = -0.2
-}
-
-sublimis_deus_not_enforced = {
-	global_trade_goods_size_modifier = 0.05
-}
-
-merino_wool = {
-	local_production_efficiency = 0.2
-	local_development_cost = 0.1
-}
-
-mesta_privileged_revoked = {
-	local_development_cost = -0.2
-}
-
-mor_looks_outward = {
-	diplomatic_annexation_cost = -0.2
-}
-
-mor_looks_inward = {
-	local_development_cost = -0.2
 }

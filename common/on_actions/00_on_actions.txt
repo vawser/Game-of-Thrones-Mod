@@ -810,6 +810,17 @@ on_thri_yearly_pulse = {
 
 on_thri_yearly_pulse_2 = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_thri_yearly_pulse_2" }
+    
+    random_events = {
+        # Dragon Eggs
+        100 = GOT_TARGARYEN.2
+		100 = GOT_TARGARYEN.3
+        100 = GOT_TARGARYEN.4
+        100 = GOT_TARGARYEN.5
+        100 = GOT_TARGARYEN.6
+        100 = GOT_TARGARYEN.7
+        100 = GOT_TARGARYEN.10
+    }
 }
 
 on_thri_yearly_pulse_3 = {

@@ -1,0 +1,24 @@
+country_decisions = {
+	hatch_dragon_eggs = {
+		potential = {
+			has_country_modifier = dragon_eggs
+		}
+		allow =  {
+            years_of_income = 1
+		}
+	  	effect = {
+            add_years_of_income = -1
+            
+            remove_country_modifier = dragon_eggs
+            
+			add_country_modifier = {
+                name = revival_of_the_dragons
+                duration = -1
+            }
+            custom_tooltip = ENABLE_DRAGON_TT
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

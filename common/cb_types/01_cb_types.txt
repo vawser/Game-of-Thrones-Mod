@@ -34,23 +34,13 @@ cb_royal_domain = {
 		is_part_of_hre = yes
 		is_monarchy_government = yes
         government_rank = 3
+        NOT = { has_opinion = { who = FROM value = 0 } }
         
         FROM = {
             is_part_of_hre = yes
             is_monarchy_government = yes
             NOT = { government_rank = 3 }
-            OR = {
-                AND = { 
-                    ROOT = { ai = yes }
-                    NOT = {
-                        has_opinion = {
-                            who = ROOT
-                            value = 0
-                        }
-                    }
-                }
-                ROOT = { ai = no }
-            }
+            NOT = { has_opinion = { who = ROOT value = 0 } }
         }
 	}
     
@@ -64,6 +54,7 @@ cb_great_lord_feud = {
         is_monarchy_government = yes
         government_rank = 2
         is_part_of_hre = yes
+        NOT = { has_opinion = { who = FROM value = 0 } }
         
         FROM = {
             is_monarchy_government = yes
@@ -72,6 +63,7 @@ cb_great_lord_feud = {
                 government_rank = 3
             }
             is_part_of_hre = yes
+            NOT = { has_opinion = { who = ROOT value = 0 } }
         }
 	}
     
@@ -88,7 +80,8 @@ cb_lordly_feud = {
             is_subject = yes
             has_global_flag = shattered_world
         }
-
+        NOT = { has_opinion = { who = FROM value = 0 } }
+        
         FROM = {
             is_monarchy_government = yes
             is_part_of_hre = yes
@@ -96,6 +89,7 @@ cb_lordly_feud = {
                 is_subject = yes
                 has_global_flag = shattered_world
             }
+            NOT = { has_opinion = { who = ROOT value = 0 } }
         }
 	}
     

@@ -1,11 +1,6 @@
 namespace = GOT_GOVERNMENT
 
-#title: Grand Magister of [Root.GetName]
-#desc: The previous [Root.Monarch.GetTitle] has passed away, so it is time for [Root.GetName] to pick a new [Root.Monarch.GetTitle]. However, if the people think ill of the chosen [Root.Monarch.GetTitle], there is likely to be pretenders to the position.
-#1: An administrative [Root.Monarch.GetTitle]
-#2: A diplomatic [Root.Monarch.GetTitle]
-#3: A militaristic [Root.Monarch.GetTitle]
-
+# On Death election
 country_event = {
 	id = GOT_GOVERNMENT.1
 	title = GOT_GOVERNMENT.1.title
@@ -15,8 +10,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_free_city_government = yes
-		NOT = { primary_culture = volantene }
+		government = republic
+		NOT = { has_reform = volantis_city_reform }
 	}
 	
 	option = {
@@ -26,7 +21,7 @@ country_event = {
 			adm = 4
 			dip = 1
 			mil = 1
-			dynasty = ROOT
+			hide_skills = yes
 		}
 		
 		if = {
@@ -38,6 +33,8 @@ country_event = {
 			}
 		}
 		
+        hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
+        
 		ai_chance = {
 			factor = 100
 		}
@@ -50,7 +47,7 @@ country_event = {
 			adm = 1
 			dip = 4
 			mil = 1
-			dynasty = ROOT
+			hide_skills = yes
 		}
 
 		if = {
@@ -62,6 +59,8 @@ country_event = {
 			}
 		}
 		
+        hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
+        
 		ai_chance = {
 			factor = 100
 		}
@@ -74,7 +73,7 @@ country_event = {
 			adm = 1
 			dip = 1
 			mil = 4
-			dynasty = ROOT
+			hide_skills = yes
 		}
 		
 		if = {
@@ -86,231 +85,174 @@ country_event = {
 			}
 		}
 		
+        country_event = { id = GOT_EDUCATION.2 days = 1 }
+        
 		ai_chance = {
 			factor = 100
 		}
 	}
 }
 
-#title: [Root.Monarch.GetTitle] of [Root.GetName]
-#desc: The previous [Root.Monarch.GetTitle] has passed away, so it is time for [Root.GetName] to pick a new [Root.Monarch.GetTitle]. However, if the people think ill of the chosen [Root.Monarch.GetTitle], there is likely to be pretenders to the position.
-#1: A candidate from the Tiger Party
-#2: A candidate from the Elephant Party
-#3: Re-elect [Root.Monarch.GetName]
+# On Term Election
 country_event = {
 	id = GOT_GOVERNMENT.2
 	title = GOT_GOVERNMENT.2.title
-	desc = GOT_GOVERNMENT.2.desc
-	picture = IMPORTANT_STATUE_eventPicture
+    desc = GOT_GOVERNMENT.2.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
 	
 	is_triggered_only = yes
-
-	trigger = {
-		is_free_city_government = yes
-		primary_culture = volantene
-	}
 	
-	# Tiger
+	trigger = {
+		government = republic
+        NOT = { has_reform = volantis_city_reform }
+	}
+
 	option = {
 		name = GOT_GOVERNMENT.2.option.a
-
-		clr_country_flag = has_tiger_ruler
-		clr_country_flag = has_elephant_ruler
-		
+		ai_chance = { factor = 20 }
+        
 		define_ruler = {
-			adm = 3
+			adm = 4
 			dip = 1
-			mil = 4
-			fixed = yes
+			mil = 1
+			hide_skills = yes
 		}
-		
-		add_estate_loyalty = {
-			estate = estate_elephants
-			loyalty = -5
-		}
-		
-		set_country_flag = has_tiger_ruler
-		
-		ai_chance = {
-			factor = 100
-		}
+        
+        hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
 	}
-	
-	# Elephant
 	option = {
 		name = GOT_GOVERNMENT.2.option.b
-		
-		clr_country_flag = has_tiger_ruler
-		clr_country_flag = has_elephant_ruler
-		
+		ai_chance = { factor = 20 }
+        
 		define_ruler = {
-			adm = 3
+			adm = 1
 			dip = 4
 			mil = 1
-			fixed = yes
+			hide_skills = yes
 		}
-		
-		add_estate_loyalty = {
-			estate = estate_tigers
-			loyalty = -5
-		}
-		
-		set_country_flag = has_elephant_ruler
-		
-		ai_chance = {
-			factor = 100
-		}
+
+        hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
 	}
-	
-	# Re-elect
 	option = {
 		name = GOT_GOVERNMENT.2.option.c
-		
+		ai_chance = { factor = 20 }
+        
+		define_ruler = {
+			adm = 1
+			dip = 1
+			mil = 4
+			hide_skills = yes
+		}
+        
+        hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
+	}
+    option = {
+		name = GOT_GOVERNMENT.2.option.d
+        
 		trigger = {
-			OR = {
-				has_country_flag = has_tiger_ruler
-				has_country_flag = has_elephant_ruler
-			}
+			has_regency = no
 		}
-		
+		ai_chance = { 
+			factor = 60
+			modifier = {
+				factor = 0
+				NOT = { republican_tradition = 25 }
+			}	
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 50 }
+			}				
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 75 }
+			}	
+			modifier = {
+				factor = 2.0
+				republican_tradition = 90
+			}		
+		}
+		custom_tooltip = remains_ruler_tt
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
+        
+		if = {
+			limit = {
+				is_free_city_government = yes
+				NOT = { republican_tradition = 20 }
+			}
+			add_stability = -1
+		}	
+        
+		add_scaled_republican_tradition = -10
+        
 		random_list = {
-			40 = {
-			
+			10 = {
+				add_adm_power = 50
 			}
-			20 = {
-				change_adm = 1
+			10 = {
+				add_dip_power = 50
 			}
-			20 = {
-				change_dip = 1
-			}
-			20 = {
-				change_mil = 1
+			10 = {
+				add_mil_power = 50
 			}
 		}
-		
-		add_republican_tradition = -2
-		
-		custom_tooltip = RE_ELECTION_TOOLTIP
-		
-		ai_chance = {
-			factor = 50
-		}
+		add_karma = -5
 	}
 }
 
-#t: The Education of [Root.Monarch.GetName]
-#d: Whilst preparing to rule, [Root.Monarch.GetName] was taught the lessons of administration, diplomacy, and military organisation. However, [Root.Monarch.GetSheHe] was far more adept at...
-#1: Administration!
-#2: Diplomacy!
-#3: Military Organisation!
+# On Replace Governor
 country_event = {
-	id = GOT_GOVERNMENT.4
-	title = GOT_GOVERNMENT.4.title
-	desc = GOT_GOVERNMENT.4.desc
-	picture = COMET_SIGHTED_eventPicture
+	id = GOT_GOVERNMENT.3
+	title = GOT_GOVERNMENT.3.title
+	desc = GOT_GOVERNMENT.3.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
 	
 	is_triggered_only = yes
-		
-	option = {
-		name = GOT_GOVERNMENT.4.option.a
-		
-		random_list = {
-			33 = {
-				add_ruler_modifier = {
-					name = ruler_education_adm_1
-					duration = -1
-				}
-			}
-			33 = {
-				add_ruler_modifier = {
-					name = ruler_education_adm_2
-					duration = -1
-				}
-			}
-			33 = {
-				add_ruler_modifier = {
-					name = ruler_education_adm_3
-					duration = -1
-				}
-			}
-		}
-		
-		if = {
-			limit = { has_estate = estate_commoners }
-				
-			add_estate_loyalty = {
-				estate = estate_commoners
-				loyalty = 5
-			}
-		}
-	}
-
-	option = {
-		name = GOT_GOVERNMENT.4.option.b
-		
-		random_list = {
-			33 = {
-				add_ruler_modifier = {
-					name = ruler_education_dip_1
-					duration = -1
-				}
-			}
-			33 = {
-				add_ruler_modifier = {
-					name = ruler_education_dip_2
-					duration = -1
-				}
-			}
-			33 = {
-				add_ruler_modifier = {
-					name = ruler_education_dip_3
-					duration = -1
-				}
-			}
-		}
-		
-		if = {
-			limit = { has_estate = estate_merchants }
-				
-			add_estate_loyalty = {
-				estate = estate_merchants
-				loyalty = 5
-			}
-		}
-	}
 	
 	option = {
-		name = GOT_GOVERNMENT.4.option.c
-		
-		random_list = {
-			33 = {
-				add_ruler_modifier = {
-					name = ruler_education_mil_1
-					duration = -1
-				}
-			}
-			33 = {
-				add_ruler_modifier = {
-					name = ruler_education_mil_2
-					duration = -1
-				}
-			}
-			33 = {
-				add_ruler_modifier = {
-					name = ruler_education_mil_3
-					duration = -1
-				}
-			}
+		name = GOT_GOVERNMENT.3.option.a
+		ai_chance = { factor = 20 }
+		FROM = {
+			define_ruler = {
+                adm = 4
+                dip = 1
+                mil = 1
+                hide_skills = yes
+            }
+			set_ruler_flag = appointed_by_overlord
+            
+            hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
 		}
-		
-		if = {
-			limit = { has_estate = estate_nobles }
-				
-			add_estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 5
-			}
+	}
+	option = {
+		name = GOT_GOVERNMENT.3.option.b
+		ai_chance = { factor = 20 }
+		FROM = {
+			define_ruler = {
+                adm = 1
+                dip = 4
+                mil = 1
+                hide_skills = yes
+            }
+			set_ruler_flag = appointed_by_overlord
+            
+            hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
+		}
+	}
+	option = {
+		name = GOT_GOVERNMENT.3.option.c
+		ai_chance = { factor = 20 }
+		FROM = {
+			define_ruler = {
+                adm = 1
+                dip = 1
+                mil = 4
+                hide_skills = yes
+            }
+			set_ruler_flag = appointed_by_overlord
+            
+            hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
 		}
 	}
 }
-

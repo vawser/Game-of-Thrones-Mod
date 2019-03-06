@@ -1,0 +1,193 @@
+cb_iron_throne_rebellion = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		is_part_of_hre = yes
+        is_monarchy_government = yes
+        government_rank = 2
+        FROM = { 
+            is_emperor = yes 
+            is_part_of_hre = yes
+            is_monarchy_government = yes
+        }
+        OR = { 
+            ai = no
+            AND = {
+                ai = yes
+                NOT = {
+                    has_opinion = {
+                        who = FROM
+                        value = -50
+                    }
+                }
+            }
+        }
+	}
+    
+    war_goal = take_capital_throne
+}
+
+cb_royal_domain = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		is_part_of_hre = yes
+		is_monarchy_government = yes
+        government_rank = 3
+        
+        FROM = {
+            is_part_of_hre = yes
+            is_monarchy_government = yes
+            NOT = { government_rank = 3 }
+            OR = {
+                AND = { 
+                    ROOT = { ai = yes }
+                    NOT = {
+                        has_opinion = {
+                            who = ROOT
+                            value = 0
+                        }
+                    }
+                }
+                ROOT = { ai = no }
+            }
+        }
+	}
+    
+    war_goal = take_land
+}
+
+cb_great_lord_feud = {
+    valid_for_subject = no
+    
+    prerequisites = {
+        is_monarchy_government = yes
+        government_rank = 2
+        is_part_of_hre = yes
+        
+        FROM = {
+            is_monarchy_government = yes
+            OR = {
+                government_rank = 2
+                government_rank = 3
+            }
+            is_part_of_hre = yes
+        }
+	}
+    
+    war_goal = take_land
+}
+
+cb_lordly_feud = {
+    valid_for_subject = yes
+    
+    prerequisites = {
+		is_monarchy_government = yes
+        is_part_of_hre = yes
+        OR = {
+            is_subject = yes
+            has_global_flag = shattered_world
+        }
+
+        FROM = {
+            is_monarchy_government = yes
+            is_part_of_hre = yes
+            OR = {
+                is_subject = yes
+                has_global_flag = shattered_world
+            }
+        }
+	}
+    
+    war_goal = take_land
+}
+
+cb_defend_the_wall = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		has_reform = nights_watch_reform
+        
+        FROM = {
+            has_reform = wildling_clan_reform
+        }
+	}
+    
+    war_goal = take_land
+}
+
+cb_wildling_assault = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		has_reform = wildling_clan_reform
+        
+        FROM = {
+            NOT = { has_reform = wildling_clan_reform }
+        }
+	}
+    
+    war_goal = take_land_as_wildling
+}
+
+cb_wildling_feud = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		has_reform = wildling_clan_reform
+        
+        FROM = {
+            has_reform = wildling_clan_reform
+        }
+	}
+    
+    war_goal = take_land
+}
+
+cb_unification_of_yiti = {
+	valid_for_subject = no
+
+	prerequisites = {
+		is_free_or_tributary_trigger = yes
+		OR = {
+			AND = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+			}
+			AND = {
+				NOT = { has_dlc = "Mandate of Heaven" }
+				culture_group = culture_yi_ti
+			}
+		}
+		
+		FROM = {
+			NOT = { is_subject_of = ROOT }
+			OR = {
+				has_dlc = "Mandate of Heaven"
+				culture_group = culture_yi_ti
+			}
+			any_owned_province = {
+				region = region_yi_ti
+			}
+			is_emperor_of_china = no
+		}
+		is_neighbor_of = FROM
+	}
+
+	war_goal = superiority_yitish_unification
+}
+
+# Take the Mandate of Heaven
+cb_take_mandate_yiti = {
+	valid_for_subject = no
+
+	prerequisites = {
+		has_dlc = "Mandate of Heaven"
+		is_subject = no
+		is_neighbor_of = FROM
+		FROM = { is_emperor_of_china = yes }
+	}
+
+	war_goal = take_capital_yiti_take_mandate
+}
+

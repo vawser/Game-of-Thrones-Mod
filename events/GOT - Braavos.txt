@@ -1,132 +1,87 @@
 namespace = braavos
 
 country_event = {
-
 	id = braavos.1
-	
 	title = braavos.1.t
 	desc = braavos.1.d
-	
 	picture = HARBOUR_eventPicture
 	
 	is_triggered_only = yes
-	
 	fire_only_once = yes
 	
 	option = {
-	
 		name = braavos.1.opt.a
 		
 		random_province = {
-		
 			limit = {
-			
 				has_port = yes 
-				
 				OR = {
-				
 					area = areea_sheepshead_hills
 					area = area_white_harbor
 					area = area_moat_cailin
-				
 				}
-				
 			}
-			
-			add_core = root
-		
+			add_core = ROOT
 		}
 		
 		set_country_flag = braavos_chose_expand_the_north
-		
 	}
 	
 	option = {
-	
 		name = braavos.1.opt.b
 		
 		random_province = {
-		
 			limit = {
-			
 				has_port = yes 
-				
 				region = region_vale
-				
 			}
-			
-			add_core = root
-		
+			add_core = ROOT
 		}
 		
 		set_country_flag = braavos_chose_expand_the_vale
-		
 	}
 	
 	option = {
-	
 		name = braavos.1.opt.c
 		
 		random_province = {
-		
 			limit = {
-			
 				has_port = yes 
-				
 				region = region_crownlands
-				
 			}
-			
-			add_core = root
-		
+			add_core = ROOT
 		}
 		
 		set_country_flag = braavos_chose_expand_the_crownlands
-		
 	}
 	
 	option = {
-	
 		name = braavos.1.opt.d
 		
 		random_province = {
-		
 			limit = {
-			
 				has_port = yes 
-				
 				region = region_stormlands
-				
 			}
-			
-			add_core = root
-		
+			add_core = ROOT
 		}
-		
+        
 		set_country_flag = braavos_chose_expand_the_stormlands
 		
 	}
 	
 	option = {
-	
 		name = braavos.1.opt.e
 		
 		random_province = {
-		
 			limit = {
-			
 				has_port = yes 
-				
 				region = region_dorne
-				
 			}
 			
-			add_core = root
-		
+			add_core = ROOT
 		}
 		
 		set_country_flag = braavos_chose_expand_dorne
-		
 	}
-
 }

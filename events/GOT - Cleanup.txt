@@ -23,7 +23,7 @@ country_event = {
 	}
 }
 
-# Decision: Alchemist Guild - Cleanup
+# Switch released monarchies of Westerosi people to Noble Houses
 country_event = {
 	id = GOT_CLEANUP.2
 	title = "GOT_CLEANUP.2.title"
@@ -33,16 +33,15 @@ country_event = {
 	hidden = yes
 	
 	trigger = {
-		had_country_flag = {
-			flag = consulted_the_alchemists_guild
-			days = 1600
-		}
+		has_reform = kingdom_reform
+        culture_group = culture_westeros
 	}
 	
 	option = {
 		name = "GOT_CLEANUP.2.option.1"
 		
-		clr_country_flag = consulted_the_alchemists_guild
+		change_government = monarchy
+        add_government_reform = noble_house_reform
 	}
 }
 

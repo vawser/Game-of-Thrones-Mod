@@ -204,7 +204,7 @@ on_new_monarch = {
     succession_culture_religion_effect = yes
     
 	events = {
-		GOT_GOVERNMENT.4    # The Education of [Root.Monarch.GetName]
+		GOT_EDUCATION.1     
 		GOT_DOTHRAKI.1      # Dothraki Succession
         GOT_DAENERYS.100
         GOT_YITI_EMPIRE.3
@@ -255,10 +255,8 @@ on_regent = {
 on_new_term_election = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_new_term_election" }
 	events = {
-        GOT_ELECTIONS.1
-        GOT_ELECTIONS.4
-		GOT_GOVERNMENT.1 # Grand Magister of [Root.GetName]
-		GOT_GOVERNMENT.2 # [Root.Monarch.GetTitle] of [Root.GetName]
+		GOT_GOVERNMENT.2    # On Term Election
+		GOT_VOLANTIS.2      # On Term Election for Volantis
 	}
 }
 
@@ -266,10 +264,8 @@ on_new_term_election = {
 on_death_election = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_death_election" }
 	events = {
-        GOT_ELECTIONS.2
-        GOT_ELECTIONS.5
-		GOT_GOVERNMENT.1 # Grand Magister of [Root.GetName]
-		GOT_GOVERNMENT.2 # [Root.Monarch.GetTitle] of [Root.GetName]
+		GOT_GOVERNMENT.1    # On Death Election
+		GOT_VOLANTIS.1      # On Death Election for Volantis
 	}
 }
 
@@ -277,7 +273,7 @@ on_death_election = {
 on_replace_governor = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_replace_governor" }
 	events = {
-		GOT_ELECTIONS.3
+		GOT_GOVERNMENT.3    # On Replace Governor
 	}
 }
 
@@ -955,6 +951,9 @@ on_five_year_pulse_3 = {
 	random_events = {
 		500 = GOT_NIGHTS_WATCH.1 # The Night's Watch demands men!
 		500 = GOT_ACCOMPLISHMENTS.18 # A Noble Fool
+        
+        500 = GOT_VOLANTIS.10 # A Volantene Honor
+        
 		10000 = 0
 	}
 }

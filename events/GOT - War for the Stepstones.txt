@@ -114,7 +114,7 @@ country_event = {
             mil = 6
         }
         
-        capital_scope = {
+        random_owned_province = {
             infantry = ROOT
             infantry = ROOT
             infantry = ROOT
@@ -126,17 +126,26 @@ country_event = {
             cavalry = ROOT
             cavalry = ROOT
             
-            heavy_ship = ROOT
-            heavy_ship = ROOT
-            heavy_ship = ROOT
-            heavy_ship = ROOT
-            heavy_ship = ROOT
-            
-            transport = ROOT
-            transport = ROOT
-            transport = ROOT
-            transport = ROOT
-            transport = ROOT
+            IF = {
+			
+				limit = {
+					has_port = yes
+				}
+			
+				
+				heavy_ship = ROOT
+				heavy_ship = ROOT
+				heavy_ship = ROOT
+				heavy_ship = ROOT
+				heavy_ship = ROOT
+				
+				transport = ROOT
+				transport = ROOT
+				transport = ROOT
+				transport = ROOT
+				transport = ROOT
+				
+			}
         }
         
         region_stepstones = {

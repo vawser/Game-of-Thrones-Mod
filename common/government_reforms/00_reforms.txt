@@ -2,6 +2,37 @@
 #------------------------------------------------------------
 # Monarchy
 #------------------------------------------------------------
+kingdom_reform = {
+	icon = "castle"
+    
+    potential = {
+        NOT = { has_reform = noble_house_reform }
+        NOT = { has_reform = royal_house_reform }
+        NOT = { has_reform = yiti_city_reform }
+        NOT = { has_reform = yiti_empire_reform }
+        NOT = { has_reform = qarth_city_reform }
+        NOT = { has_reform = nefer_city_reform }
+        NOT = { has_reform = hyrkoon_city_reform }
+        NOT = { has_reform = valyria_city_reform }
+        NOT = { has_reform = meereen_city_reform }
+        NOT = { has_reform = yunkai_city_reform }
+        NOT = { has_reform = astapor_city_reform }
+        NOT = { has_reform = ghis_city_reform }
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = kingdom_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    modifiers = {
+        max_states = 1
+		global_unrest = -1
+		unjustified_demands = -0.1
+		max_absolutism = 5
+    }
+}
 noble_house_reform = {
 	icon = "castle"
     
@@ -350,6 +381,37 @@ ghis_city_reform = {
 #------------------------------------------------------------
 # Republic
 #------------------------------------------------------------
+republic_reform = {
+	icon = "castle"
+    
+    potential = {
+        NOT = { has_reform = tyrosh_city_reform }
+        NOT = { has_reform = myr_city_reform }
+        NOT = { has_reform = lys_city_reform }
+        NOT = { has_reform = volantis_city_reform }
+        NOT = { has_reform = pentos_city_reform }
+        NOT = { has_reform = braavos_city_reform }
+        NOT = { has_reform = lorath_city_reform }
+        NOT = { has_reform = qohor_city_reform }
+        NOT = { has_reform = norvos_city_reform }
+        NOT = { has_reform = saath_city_reform }
+        NOT = { has_reform = trader_city_reform }
+        NOT = { has_reform = andal_city_reform }
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = republic_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    modifiers = {
+        max_states = 1
+		global_unrest = -1
+		unjustified_demands = -0.1
+		max_absolutism = -10
+    }
+}
 tyrosh_city_reform = {
 	icon = "castle"
     
@@ -362,6 +424,8 @@ tyrosh_city_reform = {
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    duration = 10
     
     modifiers = {
     	max_states = 3
@@ -383,6 +447,8 @@ myr_city_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    has_term_election = no
+    
     modifiers = {
     	max_states = 3
 		province_warscore_cost = -0.1
@@ -403,6 +469,8 @@ lys_city_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    has_term_election = no
+    
     modifiers = {
     	max_states = 3
 		ae_impact = -0.1
@@ -417,7 +485,7 @@ volantis_city_reform = {
         has_reform = volantis_city_reform
     }
     
-    duration = 1
+    duration = 5
     
     allow_normal_conversion = yes
     legacy_equivalent = volantis_city_legacy
@@ -431,17 +499,6 @@ volantis_city_reform = {
         global_autonomy = -0.025
         max_absolutism = -10
 	}
-    
-    states_general_mechanic = {
-        tigers = {
-            army_tradition = 1
-            infantry_power = 0.1
-        }
-        elephants = {
-            global_trade_power = 0.1
-            trade_efficiency = 0.1
-        }
-    }
 }
 pentos_city_reform = {
 	icon = "castle"
@@ -455,6 +512,8 @@ pentos_city_reform = {
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    has_term_election = no
     
     modifiers = {
     	max_states = 3
@@ -476,6 +535,8 @@ braavos_city_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    has_term_election = no
+    
     modifiers = {
     	max_states = 3
 		global_ship_trade_power = 0.15
@@ -495,6 +556,8 @@ lorath_city_reform = {
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    has_term_election = no
     
     modifiers = {
     	max_states = 3
@@ -516,6 +579,8 @@ qohor_city_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    has_term_election = no
+    
     modifiers = {
     	max_states = 3
 		years_of_nationalism = -5
@@ -535,6 +600,8 @@ norvos_city_reform = {
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    has_term_election = no
     
     modifiers = {
     	max_states = 3
@@ -556,6 +623,8 @@ saath_city_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    has_term_election = no
+    
     modifiers = {
     	max_states = 2
 		defensiveness = 0.25
@@ -574,6 +643,8 @@ trader_city_reform = {
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
+    duration = 10
     
     modifiers = {
     	max_states = 1
@@ -594,6 +665,8 @@ andal_city_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    has_term_election = no
+    
     modifiers = {
     	max_states = 1
 		global_missionary_strength = 0.03
@@ -603,6 +676,28 @@ andal_city_reform = {
 #------------------------------------------------------------
 # Theocracy
 #------------------------------------------------------------
+theocracy_reform = {
+	icon = "castle"
+    
+    potential = {
+        NOT = { has_reform = asshai_cult_reform }
+        NOT = { has_reform = bloodless_cult_reform }
+        NOT = { has_reform = white_walker_cult_reform }
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = theocracy_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    modifiers = {
+        max_states = 1
+		global_unrest = -1
+		unjustified_demands = -0.1
+		max_absolutism = 10
+    }
+}
 asshai_cult_reform = {
 	icon = "castle"
     
@@ -675,6 +770,32 @@ white_walker_cult_reform = {
 #------------------------------------------------------------
 # Tribal
 #------------------------------------------------------------
+tribe_reform = {
+	icon = "castle"
+    
+    potential = {
+        NOT = { has_reform = pirate_clan_reform }
+        NOT = { has_reform = wildling_clan_reform }
+        NOT = { has_reform = lhazar_clan_reform }
+        NOT = { has_reform = ibben_clan_reform }
+        NOT = { has_reform = omber_clan_reform }
+        NOT = { has_reform = faros_clan_reform }
+        NOT = { has_reform = naath_clan_reform }
+        NOT = { has_reform = summer_islander_clan_reform }
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = tribe_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    modifiers = {
+        max_states = 1
+		global_unrest = -1
+		unjustified_demands = -0.1
+    }
+}
 pirate_clan_reform = {
 	icon = "castle"
     
@@ -824,6 +945,26 @@ summer_islander_clan_reform = {
 #------------------------------------------------------------
 # Nomadic
 #------------------------------------------------------------
+warband_reform = {
+	icon = "castle"
+    
+    potential = {
+        NOT = { has_reform = khalasar_reform }
+        NOT = { has_reform = jhattar_reform }
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = warband_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    modifiers = {
+        max_states = 1
+		global_unrest = -1
+		unjustified_demands = -0.1
+    }
+}
 khalasar_reform = {
 	icon = "castle"
     
@@ -882,10 +1023,6 @@ jhattar_reform = {
 #------------------------------------------------------------
 nights_watch_reform = {
 	icon = "castle"
-    
-    potential = {
-        has_reform = nights_watch_reform
-    }
     
     allow_normal_conversion = yes
     legacy_equivalent = nights_watch_legacy

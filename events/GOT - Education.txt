@@ -1,0 +1,233 @@
+namespace = GOT_EDUCATION
+
+# The Education of [Root.Monarch.GetName]
+country_event = {
+	id = GOT_EDUCATION.1
+	title = GOT_EDUCATION.1.title
+	desc = GOT_EDUCATION.1.desc
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+		
+    trigger = {
+        NOT = { government = republic }
+    }
+        
+	option = {
+		name = GOT_EDUCATION.1.option.a
+		
+		random_list = {
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_adm_1
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_adm_2
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_adm_3
+					duration = -1
+				}
+			}
+		}
+		
+		if = {
+			limit = { has_estate = estate_commoners }
+				
+			add_estate_loyalty = {
+				estate = estate_commoners
+				loyalty = 5
+			}
+		}
+	}
+
+	option = {
+		name = GOT_EDUCATION.1.option.b
+		
+		random_list = {
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_dip_1
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_dip_2
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_dip_3
+					duration = -1
+				}
+			}
+		}
+		
+		if = {
+			limit = { has_estate = estate_merchants }
+				
+			add_estate_loyalty = {
+				estate = estate_merchants
+				loyalty = 5
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_EDUCATION.1.option.c
+		
+		random_list = {
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_mil_1
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_mil_2
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_mil_3
+					duration = -1
+				}
+			}
+		}
+		
+		if = {
+			limit = { has_estate = estate_nobles }
+				
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 5
+			}
+		}
+	}
+}
+
+# The Education of [Root.Monarch.GetName] - For Republics
+country_event = {
+	id = GOT_EDUCATION.2
+	title = GOT_EDUCATION.1.title
+	desc = GOT_EDUCATION.1.desc
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+		
+    trigger = {
+        government = republic
+    }
+        
+	option = {
+		name = GOT_EDUCATION.1.option.a
+		
+		random_list = {
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_adm_1
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_adm_2
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_adm_3
+					duration = -1
+				}
+			}
+		}
+		
+		if = {
+			limit = { has_estate = estate_commoners }
+				
+			add_estate_loyalty = {
+				estate = estate_commoners
+				loyalty = 5
+			}
+		}
+	}
+
+	option = {
+		name = GOT_EDUCATION.1.option.b
+		
+		random_list = {
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_dip_1
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_dip_2
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_dip_3
+					duration = -1
+				}
+			}
+		}
+		
+		if = {
+			limit = { has_estate = estate_merchants }
+				
+			add_estate_loyalty = {
+				estate = estate_merchants
+				loyalty = 5
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_EDUCATION.1.option.c
+		
+		random_list = {
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_mil_1
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_mil_2
+					duration = -1
+				}
+			}
+			33 = {
+				add_ruler_modifier = {
+					name = ruler_education_mil_3
+					duration = -1
+				}
+			}
+		}
+		
+		if = {
+			limit = { has_estate = estate_nobles }
+				
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 5
+			}
+		}
+	}
+}

@@ -30,7 +30,7 @@ country_event = {
         set_hre_religion = asoiaf_faith_of_the_seven
         
         if = {
-            limit = { is_year = 101 } 
+            limit = { is_year = 100 } 
     
             region_the_north = {
                 set_in_empire = yes
@@ -61,6 +61,12 @@ country_event = {
         # Bookmark flags
         if = {
 			limit = {
+				NOT = { is_year = 106 }
+			}
+			set_global_flag = shattered_world
+		}
+        if = {
+			limit = {
 				is_year = 106
 				NOT = { is_year = 106 }
 			}
@@ -81,14 +87,6 @@ country_event = {
 				NOT = { is_year = 282 }
 			}
 			set_global_flag = roberts_rebellion
-		}
-		
-		if = {
-			limit = {
-				is_year = 900
-				NOT = { is_year = 900 }
-			}
-			set_global_flag = shattered_world
 		}
 	}
 }

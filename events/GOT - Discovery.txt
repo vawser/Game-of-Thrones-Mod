@@ -23,10 +23,8 @@ country_event = {
 		# Westeros
         if = {
             limit = {
-                OR = {
-                    discovery_nights_watch_trigger = yes
-					discovery_westeros_trigger = yes
-					discovery_wildling_trigger = yes
+                capital_scope = {
+                    superregion = westeros_superregion
                 }
             }
             westeros_superregion = {
@@ -71,8 +69,8 @@ country_event = {
 		# Free Cities
         if = {
             limit = {
-                OR = {
-                    discovery_free_cities_trigger = yes
+                capital_scope = {
+                    superregion = west_essos_superregion
                 }
             }
 			westeros_superregion = {
@@ -122,49 +120,12 @@ country_event = {
                 discover_country = ROOT
             }
         } 
-        
-		# Free Cities
+
+		# Central Essos
         if = {
             limit = {
-                OR = {
-                    discovery_slavers_cities_trigger = yes
-					discovery_valyrian_remnants_trigger = yes
-					discovery_dothraki_trigger = yes
-                }
-            }
-			
-			west_essos_superregion = {
-                discover_country = ROOT
-            }
-			central_essos_superregion = {
-                discover_country = ROOT
-            }
-			essos_central_wastelands = {
-                discover_country = ROOT
-            }
-			essos_west_wastelands = {
-                discover_country = ROOT
-            }
-            3005 = {
-                discover_country = ROOT
-            }
-            3006 = {
-                discover_country = ROOT
-            }
-            3007 = {
-                discover_country = ROOT
-            }
-            1076 = {
-                discover_country = ROOT
-            }
-		}
-		
-		# Qarth/Faros
-        if = {
-            limit = {
-                OR = {
-                    discovery_qarth_trigger = yes
-					discovery_faros_trigger = yes
+                capital_scope = {
+                    superregion = central_essos_superregion
                 }
             }
 			
@@ -203,15 +164,11 @@ country_event = {
             }
 		}
 		
-		# Far East
+		# Far Essos
         if = {
             limit = {
-                OR = {
-                    discovery_yiti_trigger = yes
-                    discovery_hyrkoon_trigger = yes
-					discovery_jogos_trigger = yes
-					discovery_asshai_trigger = yes
-                    discovery_mythical_cities_trigger = yes
+                capital_scope = {
+                    superregion = far_essos_superregion
                 }
             }
             far_essos_superregion = {
@@ -240,9 +197,14 @@ country_event = {
 		# Asshai and the Mythicals
 		if = {
             limit = {
-                OR = {
-					discovery_asshai_trigger = yes
-                    discovery_mythical_cities_trigger = yes
+                capital_scope = {
+                    OR = {
+                        region = region_shadowlands
+                        region = region_bloodlands
+                        region = region_mossovy
+                        region = region_thousand_islands
+                        region = region_dry_bones
+                    }
                 }
             }
             far_essos_superregion = {
@@ -283,9 +245,11 @@ country_event = {
 		# Summer Islands and Stepstones
         if = {
             limit = {
-                OR = {
-                    discovery_summer_islands_trigger = yes
-                    discovery_pirate_trigger = yes
+                capital_scope = {
+                    OR = {
+                        region = region_summer_islands
+                        region = region_stepstones
+                    }
                 }
             }
             region_summer_islands = {
@@ -322,7 +286,9 @@ country_event = {
         
         if = {
             limit = {
-                discovery_ibben_trigger = yes
+                capital_scope = {
+                    region = region_ibben
+                }
             }
             central_essos_superregion = {
                 discover_country = ROOT

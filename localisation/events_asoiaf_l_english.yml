@@ -317,7 +317,7 @@
  GOT_COUNCIL.1.option.a: "I will go to war with a neighbour"
  GOT_COUNCIL.1.option.b: "I will ensure our realm's prosperity"
  GOT_COUNCIL.1.option.c: "I will protect a neighbouring realm"
- GOT_COUNCIL.1.option.desc: "I will forge an alliance with a neighbouring realm"
+ GOT_COUNCIL.1.option.d: "I will forge an alliance with a neighbouring realm"
  GOT_COUNCIL.1.option.e: "I will support an royal marriage with a neighbouring realm"
  GOT_COUNCIL.1.option.g: "I will ignore their requests"
  
@@ -620,79 +620,46 @@
  GOT_GOVERNMENT.1.option.c: "A militaristic [Root.Monarch.GetTitle]"
  
  GOT_GOVERNMENT.2.title: "[Root.Monarch.GetTitle] of [Root.GetName]"
- GOT_GOVERNMENT.2.desc: "The previous [Root.Monarch.GetTitle] has passed away, so it is time for [Root.GetName] to pick a new [Root.Monarch.GetTitle]. However, if the people think ill of the chosen [Root.Monarch.GetTitle], there is likely to be pretenders to the position."
- GOT_GOVERNMENT.2.option.a: "A candidate from the Tiger Party"
- GOT_GOVERNMENT.2.option.b: "A candidate from the Elephant Party"
- GOT_GOVERNMENT.2.option.c: "Re-elect [Root.Monarch.GetName]" 
+ GOT_GOVERNMENT.2.desc: "The previous [Root.Monarch.GetTitle] has finished their term, so it is time for [Root.GetName] to pick a new [Root.Monarch.GetTitle]. However, if the people think ill of the chosen [Root.Monarch.GetTitle], there is likely to be pretenders to the position."
+ GOT_GOVERNMENT.2.option.a: "An administrative [Root.Monarch.GetTitle]"
+ GOT_GOVERNMENT.2.option.b: "An diplomatic [Root.Monarch.GetTitle]"
+ GOT_GOVERNMENT.2.option.c: "A militaristic [Root.Monarch.GetTitle]"
+ GOT_GOVERNMENT.2.option.d: "Re-elect [Root.Monarch.GetTitle] [Root.Monarch.GetName]"
  
- GOT_GOVERNMENT.3.title: "[Root.Monarch.GetTitle] [Root.Monarch.GetName] died!"
- GOT_GOVERNMENT.3.desc: "The mighty [Root.Monarch.GetTitle] [Root.Monarch.GetName] has died! [Root.Monarch.GetSheHeCap] led [Root.Monarch.GetHerHis] realm through many challenges and forged it into the empire it is today, making us all stronger. [Root.Monarch.GetSheHeCap] will not be forgotten."
- GOT_GOVERNMENT.3.option.a: "Death comes for all..."
+ GOT_GOVERNMENT.3.title: "New [From.Monarch.GetTitle] in [From.GetName]"
+ GOT_GOVERNMENT.3.desc: "We have chosen to replace [From.Monarch.GetName] as Governor of [From.GetName]. Whom shall we appoint in [From.Monarch.GetHerHis] place?"
+ GOT_GOVERNMENT.3.option.a: "Bureaucrat Candidate"
+ GOT_GOVERNMENT.3.option.b: "Diplomat Candidate"
+ GOT_GOVERNMENT.3.option.c: "Military Candidate"
  
- GOT_GOVERNMENT.4.title: "The Education of [Root.Monarch.GetName]"
- GOT_GOVERNMENT.4.desc: "Whilst preparing to rule, [Root.Monarch.GetName] was taught the lessons of administration, diplomacy, and military organisation. However, [Root.Monarch.GetSheHe] was far more adept at..."
- GOT_GOVERNMENT.4.option.a: "Administration"
- GOT_GOVERNMENT.4.option.b: "Diplomacy"
- GOT_GOVERNMENT.4.option.c: "Military Organisation"
+ #----------------------------------------------------------------------
+ # Volantis
+ #----------------------------------------------------------------------
+ GOT_VOLANTIS.1.title: "[Root.Monarch.GetTitle] of [Root.GetName]"
+ GOT_VOLANTIS.1.desc: "The previous [Root.Monarch.GetTitle] has passed away, so it is time for [Root.GetName] to pick a new [Root.Monarch.GetTitle]. However, if the people think ill of the chosen [Root.Monarch.GetTitle], there is likely to be pretenders to the position."
+ GOT_VOLANTIS.1.option.a: "A candidate from the Tiger Party"
+ GOT_VOLANTIS.1.option.b: "A candidate from the Elephant Party"
+ GOT_VOLANTIS.1.option.c: "Re-elect [Root.Monarch.GetName]" 
  
- GOT_GOVERNMENT.5.title: "[Root.Monarch.GetName] dies!"
- GOT_GOVERNMENT.5.desc: "[Root.Monarch.GetTitle] [Root.GetName] has finally passed away after an exceptionally long reign."
- GOT_GOVERNMENT.5.option.a: "A true legend..."
+ GOT_VOLANTIS.2.title: "[Root.Monarch.GetTitle] of [Root.GetName]"
+ GOT_VOLANTIS.2.desc: "The previous [Root.Monarch.GetTitle] has finished their term, so it is time for [Root.GetName] to pick a new [Root.Monarch.GetTitle]. However, if the people think ill of the chosen [Root.Monarch.GetTitle], there is likely to be pretenders to the position."
+ GOT_VOLANTIS.2.option.a:  "A candidate from the Tiger Party"
+ GOT_VOLANTIS.2.option.b: "A candidate from the Elephant Party"
+ GOT_VOLANTIS.2.option.c: "Re-elect [Root.Monarch.GetTitle] [Root.Monarch.GetName]"
  
- GOT_GOVERNMENT.6.title: "Eyes of the Khalasar"
- GOT_GOVERNMENT.6.desc: "A khalasar has many scouts, whom travel the length and breath of the Dothraki Sea, informing us of any opportunities for battle that occur in the neighbouring cities."
- GOT_GOVERNMENT.6.option.a: "Sight is vital"
+ GOT_VOLANTIS.10.title: "A Volantene Honor"
+ GOT_VOLANTIS.10.desc: "[Root.Monarch.GetTitle] [Root.Monarch.GetName] wandered the market. After a few minutes [Root.Monarch.GetSheHe] came across a volantene honor laying on the cobbled road. Picking it up, [Root.Monarch.GetSheHe] contemplates how [Root.Monarch.GetSheHe] will spend this trinket."
+ GOT_VOLANTIS.10.option.a: "Perhaps a new mace is in order"
+ GOT_VOLANTIS.10.option.b: "Sweet beets are always lovely at this time of year"
  
- # Nobles
- GOT_GOVERNMENT.7.title: "Consolidation of Power"
- GOT_GOVERNMENT.7.desc: ""
- GOT_GOVERNMENT.7.option.a: "Support the Nobility"
- GOT_GOVERNMENT.7.option.b: "Support the Merchants"
- 
- GOT_GOVERNMENT.8.title: "Feuding Bureaucrats"
- GOT_GOVERNMENT.8.desc: ""
- GOT_GOVERNMENT.8.option.a: ""
- 
- GOT_GOVERNMENT.9.title: "Nobles Respected"
- GOT_GOVERNMENT.9.desc: ""
- GOT_GOVERNMENT.9.option.a: ""
- 
- GOT_GOVERNMENT.10.title: "Promotion of Nobility"
- GOT_GOVERNMENT.10.desc: ""
- GOT_GOVERNMENT.10.option.a: ""
- 
- GOT_GOVERNMENT.11.title: "No Taxes for Tyrants"
- GOT_GOVERNMENT.11.desc: ""
- GOT_GOVERNMENT.11.option.a: ""
- 
- GOT_GOVERNMENT.12.title: "Ideals Betrayed"
- GOT_GOVERNMENT.12.desc: ""
- GOT_GOVERNMENT.12.option.a: ""
- 
- # Merchants
- GOT_GOVERNMENT.13.title: "Unbreakable Bonds"
- GOT_GOVERNMENT.13.desc: ""
- GOT_GOVERNMENT.13.option.a: ""
- 
- GOT_GOVERNMENT.14.title: "Free Trade"
- GOT_GOVERNMENT.14.desc: ""
- GOT_GOVERNMENT.14.option.a: ""
- 
- GOT_GOVERNMENT.15.title: "Maxims of Trade"
- GOT_GOVERNMENT.15.desc: ""
- GOT_GOVERNMENT.15.option.a: ""
- 
- GOT_GOVERNMENT.16.title: "Administration Doubted"
- GOT_GOVERNMENT.16.desc: ""
- GOT_GOVERNMENT.16.option.a: ""
- 
- GOT_GOVERNMENT.17.title: "The Coup"
- GOT_GOVERNMENT.17.desc: ""
- GOT_GOVERNMENT.17.option.a: ""
- 
- GOT_GOVERNMENT.18.title: "Generals Demand Control"
- GOT_GOVERNMENT.18.desc: ""
- GOT_GOVERNMENT.18.option.a: ""
+ #----------------------------------------------------------------------
+ # Education
+ #----------------------------------------------------------------------
+ GOT_EDUCATION.1.title: "The Education of [Root.Monarch.GetName]"
+ GOT_EDUCATION.1.desc: "Whilst preparing to rule, [Root.Monarch.GetName] was taught the lessons of administration, diplomacy, and military organisation. However, [Root.Monarch.GetSheHe] was far more adept at..."
+ GOT_EDUCATION.1.option.a: "Administration"
+ GOT_EDUCATION.1.option.b: "Diplomacy"
+ GOT_EDUCATION.1.option.c: "Military Organisation"
  
  #----------------------------------------------------------------------
  # Mercantilism
@@ -713,19 +680,19 @@
  #----------------------------------------------------------------------
  # Old Gods
  #----------------------------------------------------------------------
- GOT_OLD_GODS..title: "Preserve the weirwood in $PROVINCENAME$"
- GOT_OLD_GODS..desc: "The weirwood in $PROVINCENAME$ has come under threat from various merchants wanting to sell it's lumber. If we grant them access to the wood, it would be a great offence to the gods."
+ GOT_OLD_GODS.title: "Preserve the weirwood in $PROVINCENAME$"
+ GOT_OLD_GODS.desc: "The weirwood in $PROVINCENAME$ has come under threat from various merchants wanting to sell it's lumber. If we grant them access to the wood, it would be a great offence to the gods."
  GOT_OLD_GODS.1a: "It is our duty to preserve the weirwoods."
  GOT_OLD_GODS.1b: "Money makes beasts of us all."
  
- GOT_OLD_GODS..title: "A warg has been spotted in $PROVINCENAME$"
- GOT_OLD_GODS..desc: "A young man has been spotted warging in $PROVINCENAME$. An ancient form of magic, it can sow fear and dissidence in our realm."
+ GOT_OLD_GODS.title: "A warg has been spotted in $PROVINCENAME$"
+ GOT_OLD_GODS.desc: "A young man has been spotted warging in $PROVINCENAME$. An ancient form of magic, it can sow fear and dissidence in our realm."
  GOT_OLD_GODS.2a: "Arrange a 'vist' with our executioner."
  GOT_OLD_GODS.2b: "Ignore him."
  GOT_OLD_GODS.2c: "Bring him to our maesters."
  
- GOT_OLD_GODS..title: "Weirwood in $PROVINCENAME$ attacked!"
- GOT_OLD_GODS..desc: "A ruttish gang of men have 'attacked' the weirwood in $PROVINCENAME$. If we don't set an example, more of these disgraceful acts will be committed."
+ GOT_OLD_GODS.title: "Weirwood in $PROVINCENAME$ attacked!"
+ GOT_OLD_GODS.desc: "A ruttish gang of men have 'attacked' the weirwood in $PROVINCENAME$. If we don't set an example, more of these disgraceful acts will be committed."
  GOT_OLD_GODS.3a: "Execute them yourself."
  GOT_OLD_GODS.3b: "Tell the master-at-arms to execute them."
  GOT_OLD_GODS.3c: "Let them go."
@@ -1730,21 +1697,21 @@
  GOT_ELECTIONS.2.option.b: "Diplomat Candidate"
  GOT_ELECTIONS.2.option.c: "Military Candidate"
  
- GOT_ELECTIONS.3.title:0 "New [From.Monarch.GetTitle] in [From.GetName]"
- GOT_ELECTIONS.3.desc:0 "We have chosen to replace [From.Monarch.GetName] as Governor of [From.GetName]. Whom shall we appoint in [From.Monarch.GetHerHis] place?"
- GOT_ELECTIONS.3.option.a:0 "Bureaucrat Candidate"
- GOT_ELECTIONS.3.option.b:0 "Diplomat Candidate"
- GOT_ELECTIONS.3.option.c:0 "Military Candidate"
+ GOT_ELECTIONS.3.title: "New [From.Monarch.GetTitle] in [From.GetName]"
+ GOT_ELECTIONS.3.desc: "We have chosen to replace [From.Monarch.GetName] as Governor of [From.GetName]. Whom shall we appoint in [From.Monarch.GetHerHis] place?"
+ GOT_ELECTIONS.3.option.a: "Bureaucrat Candidate"
+ GOT_ELECTIONS.3.option.b: "Diplomat Candidate"
+ GOT_ELECTIONS.3.option.c: "Military Candidate"
  
- GOT_ELECTIONS.4.title:0 "Election!"
- GOT_ELECTIONS.4.desc:0 "The strengthening of the [Root.GetOldGuardCandidatePlural] has forced $MONARCH$ to accept the election of a new [Root.Monarch.GetTitle]. Both the [Root.GetOldGuardCandidatePlural] and the [Root.GetVanguardCandidatePlural] have put forward a new candidate."
- GOT_ELECTIONS.4.option.a:0 "A [Root.GetOldGuardCandidate] Candidate"
- GOT_ELECTIONS.4.option.b:0 "A [Root.GetVanguardCandidate] Candidate"
+ GOT_ELECTIONS.4.title: "Election!"
+ GOT_ELECTIONS.4.desc: "The strengthening of the [Root.GetOldGuardCandidatePlural] has forced $MONARCH$ to accept the election of a new [Root.Monarch.GetTitle]. Both the [Root.GetOldGuardCandidatePlural] and the [Root.GetVanguardCandidatePlural] have put forward a new candidate."
+ GOT_ELECTIONS.4.option.a: "A [Root.GetOldGuardCandidate] Candidate"
+ GOT_ELECTIONS.4.option.b: "A [Root.GetVanguardCandidate] Candidate"
  
- GOT_ELECTIONS.5.title:0 "Election!"
- GOT_ELECTIONS.5.desc:0 "The unfortunate passing of $MONARCH$ forces us to hold a premature election. Both the [Root.GetOldGuardCandidatePlural] and the [Root.GetVanguardCandidatePlural] have put forward a new candidate."
- GOT_ELECTIONS.5.option.a:0 "A [Root.GetOldGuardCandidate] Candidate"
- GOT_ELECTIONS.5.option.b:0 "A [Root.GetVanguardCandidate] Candidate"
+ GOT_ELECTIONS.5.title: "Election!"
+ GOT_ELECTIONS.5.desc: "The unfortunate passing of $MONARCH$ forces us to hold a premature election. Both the [Root.GetOldGuardCandidatePlural] and the [Root.GetVanguardCandidatePlural] have put forward a new candidate."
+ GOT_ELECTIONS.5.option.a: "A [Root.GetOldGuardCandidate] Candidate"
+ GOT_ELECTIONS.5.option.b: "A [Root.GetVanguardCandidate] Candidate"
  
  GOT_ELECTIONS.6.title: "[Root.Monarch.GetTitle] [Root.Monarch.GetName] ousted!"
  GOT_ELECTIONS.6.desc: "[Root.Monarch.GetTitle] [Root.Monarch.GetName] has long outstayed their welcome as the head of Volantis, and has been ousted from the position of Triarch."
@@ -1753,13 +1720,13 @@
  #----------------------------------------------------------------------
  # Braavos
  #----------------------------------------------------------------------
- braavos.1.t:0 "Lay groundwork for Trading Post"
- braavos.1.d:0 "We must pick a region of Westeros in which we desire to build up a presence. Choose wisely, as an opportunity such as this will almost certainly never arise again."
- braavos.1.opt.a:0 "The North"
- braavos.1.opt.b:0 "The Vale"
- braavos.1.opt.c:0 "The Crownlands"
- braavos.1.opt.d:0 "The Stormlands"
- braavos.1.opt.e:0 "Dorne"
+ braavos.1.t: "Lay groundwork for Trading Post"
+ braavos.1.d: "We must pick a region of Westeros in which we desire to build up a presence. Choose wisely, as an opportunity such as this will almost certainly never arise again."
+ braavos.1.opt.a: "The North"
+ braavos.1.opt.b: "The Vale"
+ braavos.1.opt.c: "The Crownlands"
+ braavos.1.opt.d: "The Stormlands"
+ braavos.1.opt.e: "Dorne"
  
  #----------------------------------------------------------------------
  # War for the Stepstones

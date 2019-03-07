@@ -1,8 +1,3 @@
-#
-# remember to add graphics for relevant ones when you add to this
-#
-# if a modifier is scaled, its multiplied with development in the province.
-
 # Westerosi
 westerosi_practices = {
     penalty = 0.05
@@ -13,10 +8,10 @@ westerosi_practices = {
 
 	history = {
         owner = {
-            OR = {
-                technology_group = westerosi
-                technology_group = esssosian
+            capital_scope = {
+                superregion = westeros_superregion
             }
+            technology_group = westerosi
         }
 	}
 	
@@ -114,9 +109,12 @@ essosian_practices = {
 
 	history = {
         owner = {
+            capital_scope = {
+                superregion = west_essos_superregion
+            }
             OR = {
-                technology_group = westerosi
-                technology_group = esssosian
+                technology_group = stepstones
+                technology_group = essosian
             }
         }
 	}
@@ -217,9 +215,12 @@ ghiscari_practices = {
 
 	history = {
         owner = {
+            capital_scope = {
+                superregion = central_essos_superregion
+            }
             OR = {
+                technology_group = valyrian
                 technology_group = ghiscari
-                technology_group = quartheen
             }
         }
 	}
@@ -319,7 +320,16 @@ yitish_practices = {
 	}
 
 	history = {
-        owner = { technology_group = yiti }
+        owner = { 
+            capital_scope = {
+                superregion = far_essos_superregion
+            }
+            OR = {  
+                technology_group = hyrkooni
+                technology_group = nefer
+                technology_group = yiti
+            }
+        }
 	}
 	
 	can_embrace = {
@@ -418,10 +428,10 @@ quartheen_practices = {
 
 	history = {
         owner = { 
-            OR = {
-                technology_group = ghiscari
-                technology_group = quartheen
+            capital_scope = {
+                superregion = central_essos_superregion
             }
+            technology_group = quartheen
         }
 	}
 	
@@ -521,7 +531,11 @@ islander_practices = {
     
     history = {
         owner = { 
-            technology_group = summer_islanders
+            OR = {
+                technology_group = naathi
+                technology_group = farosi
+                technology_group = summer_islanders
+            }
         }
 	}
     
@@ -620,7 +634,10 @@ magical_practices = {
     
     history = {
         owner = {
-            is_magical_nation = yes
+            OR = {
+                technology_group = asshai
+                technology_group = bloodless_men
+            }
         }
 	}
     

@@ -1,7 +1,6 @@
 namespace = GOT_REPEATING
 
 country_event = {
-
 	id = GOT_REPEATING.1
 	title = GOT_REPEATING.1.t
 	desc = GOT_REPEATING.1.d
@@ -11,64 +10,40 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		
 		export_to_variable = {
-		
 			which = total_income
 			value = monthly_income
-		
 		}
-		
 		export_to_variable = {
-		
 			which = percent_from_trade
 			value = trade_income_percentage
-		
 		}
-		
 		set_variable = {
-		
 			which = modified_total
 			which = total_income
-		
 		}
-		
 		multiply_variable = {
-		
 			which = modified_total
 			which = percent_from_trade
-		
 		}
-		
 		set_variable = {
-		
 			which = total_trade_income
 			which = modified_total
-		
 		}
-		
 		if = {
-		
 			limit = { ai = no }
 			
 			log = "[Root.GetName]: Income: [Root.total_income.GetValue] Percent: [Root.percent_from_trade.GetValue] Result: [Root.total_trade_income.GetValue]"
-		
 		}
 		
 		country_event = {
-		
 			id = GOT_REPEATING.1
 			days = 30
-		
 		}
-	
 	}
 	
 	
 	option = {
-	
 		name = GOT_REPEATING.1.opt.a
-		
 	}
-
 }

@@ -373,3 +373,51 @@ country_event = {
 		}
 	}
 }
+
+# Add Wall building if removed
+country_event = {
+	id = GOT_CLEANUP.4
+	title = "GOT_CLEANUP.4.title"
+	desc = "GOT_CLEANUP.4.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	hidden = yes
+	
+	trigger = {
+		OR = {
+            1590 = { NOT = { has_building = the_wall } }
+            1591 = { NOT = { has_building = the_wall } }
+            1592 = { NOT = { has_building = the_wall } }
+        }
+	}
+	
+	option = {
+		name = "GOT_CLEANUP.2.option.1"
+		
+		if = {
+            limit = { 
+                1590 = { NOT = { has_building = the_wall } }
+            }
+            1590 = { 
+                add_building = the_wall
+            }
+        }
+        if = {
+            limit = { 
+                1591 = { NOT = { has_building = the_wall } }
+            }
+            1591 = { 
+                add_building = the_wall
+            }
+        }
+        if = {
+            limit = { 
+                1592 = { NOT = { has_building = the_wall } }
+            }
+            1592 = { 
+                add_building = the_wall
+            }
+        }
+        
+	}
+}

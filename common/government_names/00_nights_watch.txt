@@ -45,3 +45,51 @@
         }
 	}
 }
+
+gov_outpost = {
+	rank = {
+		1 = OUTPOST
+		2 = OUTPOST
+		3 = OUTPOST
+        4 = OUTPOST
+        5 = OUTPOST
+        6 = OUTPOST
+        7 = OUTPOST
+        8 = OUTPOST
+        9 = OUTPOST
+        10 = OUTPOST
+	}
+	
+	ruler_male = {
+		1 = COMMANDER
+        2 = COMMANDER
+        3 = COMMANDER
+        4 = COMMANDER
+        5 = COMMANDER
+        6 = COMMANDER
+        7 = COMMANDER
+        8 = COMMANDER
+        9 = COMMANDER
+        10 = COMMANDER
+    }
+	
+	ruler_female = {
+		1 = COMMANDER
+        2 = COMMANDER
+        3 = COMMANDER
+        4 = COMMANDER
+        5 = COMMANDER
+        6 = COMMANDER
+        7 = COMMANDER
+        8 = COMMANDER
+        9 = COMMANDER
+        10 = COMMANDER
+	}
+	
+	trigger = {
+        OR = {
+            has_reform = outpost_reform
+            has_reform = outpost_legacy
+        }
+	}
+}

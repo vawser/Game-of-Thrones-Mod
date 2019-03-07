@@ -1021,8 +1021,28 @@ jhattar_reform = {
 #------------------------------------------------------------
 # Night's Watch
 #------------------------------------------------------------
+outpost_reform = {
+	icon = "castle"
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = outpost_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    modifiers = {
+    	max_states = 1
+		advisor_cost = -0.1
+        max_absolutism = -20
+	}
+}
+
 nights_watch_reform = {
 	icon = "castle"
+    
+    potential = {
+        has_reform = nights_watch_reform
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = nights_watch_legacy
@@ -1036,6 +1056,7 @@ nights_watch_reform = {
         max_absolutism = -40
 	}
 }
+
 
 
 

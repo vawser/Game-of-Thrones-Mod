@@ -40,6 +40,7 @@ is_yiti_government = {
 
 is_monarchy_government = {
     OR = {
+        has_reform = kingdom_reform
         has_reform = noble_house_reform
         has_reform = royal_house_reform
         has_reform = yiti_city_reform
@@ -69,19 +70,27 @@ is_republic_government = {
         has_reform = saath_city_reform
         has_reform = trader_city_reform
         has_reform = andal_city_reform
+        has_reform = expeditionary_company_reform
+        has_reform = trading_outpost_reform
+        has_reform = merchant_republic_reform
+        has_reform = republic_reform
     }
 }
 
 is_theocracy_government = {
     OR = {
+        has_reform = theocracy_reform
         has_reform = asshai_cult_reform
-        has_reform = bloodless_cult_reform
+        has_reform = bloodsworn_cult_reform
+        has_reform = winged_dominion_reform
         has_reform = white_walker_cult_reform
+        has_reform = the_faith_reform
     }
 }
 
 is_tribal_government = {
     OR = {
+        has_reform = tribe_reform
         has_reform = pirate_clan_reform
         has_reform = wildling_clan_reform
         has_reform = lhazar_clan_reform
@@ -95,6 +104,7 @@ is_tribal_government = {
 
 is_nomadic_government = {
     OR = {
+        has_reform = warband_reform
         has_reform = khalasar_reform
         has_reform = jhattar_reform
     }

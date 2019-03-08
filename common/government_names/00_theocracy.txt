@@ -139,3 +139,50 @@ gov_white_walker_cult = {
         }
 	}
 }
+gov_the_faith = {
+	rank = {
+		1 = THE_FAITH
+		2 = THE_FAITH
+		3 = THE_FAITH
+        4 = THE_FAITH
+        5 = THE_FAITH
+        6 = THE_FAITH
+        7 = THE_FAITH
+        8 = THE_FAITH
+        9 = THE_FAITH
+        10 = THE_FAITH
+	}
+	
+	ruler_male = {
+		1 = HIGH_SEPTON
+		2 = HIGH_SEPTON
+		3 = HIGH_SEPTON
+        4 = HIGH_SEPTON
+        5 = HIGH_SEPTON
+        6 = HIGH_SEPTON
+        7 = HIGH_SEPTON
+        8 = HIGH_SEPTON
+        9 = HIGH_SEPTON
+        10 = HIGH_SEPTON
+	}
+	
+	ruler_female = {
+		1 = HIGH_SEPTA
+		2 = HIGH_SEPTA
+		3 = HIGH_SEPTA
+        4 = HIGH_SEPTA
+        5 = HIGH_SEPTA
+        6 = HIGH_SEPTA
+        7 = HIGH_SEPTA
+        8 = HIGH_SEPTA
+        9 = HIGH_SEPTA
+        10 = HIGH_SEPTA
+	}
+	
+	trigger = {
+        OR = {
+            has_reform = the_faith_reform
+            has_reform = the_faith_legacy
+        }
+	}
+}

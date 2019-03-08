@@ -1,0 +1,100 @@
+banking = {
+    penalty = 0.02
+    
+    bonus = {
+        global_tax_modifier = 0.1
+	}
+
+	history = {
+        OR = {
+            province_id = 470
+            province_id = 226
+            province_id = 286
+            province_id = 182
+            province_id = 389
+            province_id = 417
+            province_id = 606
+            province_id = 610
+            province_id = 613
+            province_id = 663
+            province_id = 1150
+            province_id = 1149
+            province_id = 1148
+            province_id = 1147
+            province_id = 847
+            province_id = 765
+        }
+	}
+	
+	can_embrace = {
+		always = yes
+	}
+    
+    embracement_speed = {
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_friendly_border_banking
+                
+                any_friendly_coast_border_province = {
+                    banking = 100
+                }
+            }
+        }
+        modifier = {
+			factor = 0.5
+			scale = yes
+            
+            custom_trigger_tooltip = {
+				tooltip = tt_high_relations_banking
+                
+                owner = {
+                    any_known_country = {
+                        capital_scope = { banking = 100 }
+                        has_opinion = { who = PREV value = 150 }
+                    }
+                }
+            }
+        }
+        modifier = {
+			factor = 2
+			scale = yes
+            
+            potential = {
+				owner = { has_institution = banking }
+			}
+			custom_trigger_tooltip = {
+				tooltip = tt_embraced_banking
+                owner = { has_institution = banking }
+			}
+        }
+    }
+    
+    ai_will_do = {
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+

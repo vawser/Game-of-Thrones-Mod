@@ -249,17 +249,6 @@ hyrkoon_city_reform = {
     	max_states = 2
 		siege_ability = 0.1
 	}
-    
-    states_general_mechanic = {
-        vanguard = {
-            technology_cost = -0.05
-            idea_cost = -0.05
-        }
-        old_guard = {
-            advisor_cost = -0.1
-            core_creation = -0.1
-        }
-    }
 }
 valyria_city_reform = {
 	icon = "castle"
@@ -278,17 +267,6 @@ valyria_city_reform = {
     	max_states = 1
 		recover_army_morale_speed = 0.05
 	}
-    
-    states_general_mechanic = {
-        vanguard = {
-            technology_cost = -0.05
-            idea_cost = -0.05
-        }
-        old_guard = {
-            advisor_cost = -0.1
-            core_creation = -0.1
-        }
-    }
 }
 meereen_city_reform = {
 	icon = "castle"
@@ -378,6 +356,7 @@ ghis_city_reform = {
     
     militarised_society = yes
 }
+
 #------------------------------------------------------------
 # Republic
 #------------------------------------------------------------
@@ -385,6 +364,7 @@ republic_reform = {
 	icon = "castle"
     
     potential = {
+        NOT = { has_reform = merchant_republic_reform }
         NOT = { has_reform = tyrosh_city_reform }
         NOT = { has_reform = myr_city_reform }
         NOT = { has_reform = lys_city_reform }
@@ -397,6 +377,7 @@ republic_reform = {
         NOT = { has_reform = saath_city_reform }
         NOT = { has_reform = trader_city_reform }
         NOT = { has_reform = andal_city_reform }
+        NOT = { has_reform = expeditionary_company_reform }
     }
     
     allow_normal_conversion = yes
@@ -411,6 +392,52 @@ republic_reform = {
 		unjustified_demands = -0.1
 		max_absolutism = -10
     }
+}
+merchant_republic_reform = {
+	icon = "castle"
+    
+    potential = {
+        has_reform = merchant_republic_reform
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = merchant_republic_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    modifiers = {
+        merchants = 1
+		max_absolutism = -30
+    }
+    
+    conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	custom_attributes = {
+		is_merchant_republic = yes
+	}
 }
 tyrosh_city_reform = {
 	icon = "castle"
@@ -432,6 +459,34 @@ tyrosh_city_reform = {
 		navy_tradition = 1
         global_autonomy = -0.025
         max_absolutism = -10
+	}
+    
+    conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	custom_attributes = {
+		is_merchant_republic = yes
 	}
 }
 myr_city_reform = {
@@ -455,6 +510,34 @@ myr_city_reform = {
         global_autonomy = -0.025
         max_absolutism = -10
 	}
+    
+    conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	custom_attributes = {
+		is_merchant_republic = yes
+	}
 }
 lys_city_reform = {
 	icon = "castle"
@@ -476,6 +559,34 @@ lys_city_reform = {
 		ae_impact = -0.1
         global_autonomy = -0.025
         max_absolutism = -10
+	}
+    
+    conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	custom_attributes = {
+		is_merchant_republic = yes
 	}
 }
 volantis_city_reform = {
@@ -499,6 +610,39 @@ volantis_city_reform = {
         global_autonomy = -0.025
         max_absolutism = -10
 	}
+    
+    conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	custom_attributes = {
+		is_merchant_republic = yes
+	}
+    
+    factions = {
+        tigers
+        elephants
+    }
 }
 pentos_city_reform = {
 	icon = "castle"
@@ -521,6 +665,34 @@ pentos_city_reform = {
         global_autonomy = -0.025
         max_absolutism = -10
 	}
+    
+    conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	custom_attributes = {
+		is_merchant_republic = yes
+	}
 }
 braavos_city_reform = {
 	icon = "castle"
@@ -542,6 +714,34 @@ braavos_city_reform = {
 		global_ship_trade_power = 0.15
         global_autonomy = -0.025
         max_absolutism = -10
+	}
+    
+    conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	custom_attributes = {
+		is_merchant_republic = yes
 	}
 }
 lorath_city_reform = {
@@ -651,6 +851,34 @@ trader_city_reform = {
 		colonists = 1
         max_absolutism = -10
 	}
+    
+    conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_reform
+	}
+	custom_attributes = {
+		is_merchant_republic = yes
+	}
 }
 andal_city_reform = {
 	icon = "castle"
@@ -673,6 +901,86 @@ andal_city_reform = {
         max_absolutism = -20
 	}
 }
+trading_outpost_reform = {
+	icon = "trading_city"
+    
+    potential = {
+        has_reform = trading_outpost_reform
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = trading_outpost_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+	boost_income = yes
+    
+	lock_level_when_selected = yes
+	is_trading_city = yes
+    
+	modifiers = {
+        global_trade_power = 0.1
+		max_absolutism = -20
+	}
+
+	custom_attributes = {
+        locked_government_type = yes
+	}
+
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = merchant_republic_reform
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = merchant_republic_reform
+	}
+}
+expeditionary_company_reform = {
+	icon = "castle"
+    
+    potential = {
+        is_colonial_nation = yes
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = expeditionary_company_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    fixed_rank = 1
+    lock_level_when_selected = yes
+    
+    modifiers = {
+        global_autonomy = -0.05
+		recover_army_morale_speed = 0.02
+		embracement_cost = -0.1
+		max_states = 2
+    }
+    
+    custom_attributes = {
+		locked_government_type = yes
+	}
+}
+
 #------------------------------------------------------------
 # Theocracy
 #------------------------------------------------------------
@@ -767,6 +1075,34 @@ white_walker_cult_reform = {
         max_absolutism = 100
 	}
 }
+the_faith_reform = {
+	icon = "castle"
+	
+    potential = {
+        has_reform = the_faith_reform
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = the_faith_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    lock_level_when_selected = yes
+    free_city = yes
+    fixed_rank = 1
+    
+    modifiers = {
+		global_missionary_strength = 0.05
+		development_cost = -0.1
+		max_absolutism = -20
+	}
+    
+    custom_attributes = {
+		locked_government_type = yes
+	}
+}
+
 #------------------------------------------------------------
 # Tribal
 #------------------------------------------------------------
@@ -827,12 +1163,16 @@ wildling_clan_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
-    native_mechanic = yes
-    
     modifiers = {
     	max_states = 1
 		global_regiment_cost = -0.15
 	}
+    
+    factions = {
+        warlike_chieftains
+        mercantile_chieftains
+        sedentary_chieftains
+    }
 }
 lhazar_clan_reform = {
 	icon = "castle"
@@ -1023,6 +1363,10 @@ jhattar_reform = {
 #------------------------------------------------------------
 outpost_reform = {
 	icon = "castle"
+    
+    potential = {
+        NOT = { has_reform = nights_watch_reform }
+    }
     
     allow_normal_conversion = yes
     legacy_equivalent = outpost_legacy

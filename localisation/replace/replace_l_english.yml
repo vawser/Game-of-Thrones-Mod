@@ -2,9 +2,6 @@
  #----------------------------------------------------
  # General
  #----------------------------------------------------
- colonial_government: "Outpost"
- colonial_government_desc: "An outpost subservient to a kingdom or republic."
-
  WE_HAVE_GOV_NOMADS: "We are a Khas."
  WE_HAVE_GOV_TRIBAL: "We are a Clan."
  WE_HAVE_GOV_RELIGIOUS: "We are a Theocracy."
@@ -15,6 +12,8 @@
  PATRIARCHAL_BLESSINGS:0 "Blessings"
  RELIGIOUS_FAITH:0 "$RELIGIOUS$"
 
+ GOVERNMENT_EFFECTS_DUE_TO_DUCHY_RANK:0 "Government Rank §Y1§! gives no benefits."
+ 
  #------------------------------------------------------
  # Siberian Frontier
  #------------------------------------------------------
@@ -92,7 +91,7 @@
  RUSABIL_NO_CAPITAL:0 "Your capital needs to be under your control for you to be able to '$NAME|Y$'."
  RUSABIL_DO_IT_STRELTSY:0 "By using $VAL|Y$ gathered power for '$NAME|Y$', we will impact war exhaustion by $CHANGE$ and raise $UNITS|Y$ Magi in our capital. "
  RUSABIL_STRELTSY_MODIFIER:0 "This will increase our stability cost to $MODIFIER$ by relying on these regiments."
- RUSABIL_POOL:0 "We gain §G+$GAIN$§! to the pool at the start of each year, up to a maximum of $MAX|Y$\nWe currently have $CURR|R$ and using an ability costs $NEED|Y$."
+ RUSABIL_POOL:0 "\nWe gain §G+$GAIN$§! to the pool at the start of each year, up to a maximum of $MAX|Y$\nWe currently have $CURR|R$ and using an ability costs $NEED|Y$."
  
  # Iqta (Kingdom)
  AN_IQTA_TAXATION_POLICY:0 "An Governmental Focus"
@@ -209,66 +208,66 @@
  #----------------------------------------------------
  # Institutions
  #----------------------------------------------------
- EXPENSE_TECHNOLOGY:0 "Embracing Practices"
- INSTI_PRIMITIVE_CANNOT_EMBRACE_RELIGION:0 "Primitive countries must reform their religion before embracing Practices."
- INSTI_PRIMITIVE_CANNOT_EMBRACE_GOVERNMENT:0 "Primitive countries must reform their Government before embracing Practices."
- INSTI_NOT_ENOUGH_HOLD:0 "The practices of $NAME|Y$ has not a big enough hold of our realm for us to fully embrace it.  It needs to be embraced in at least $NEED|Y$ percent of our autonomy modified development, but it is only embraced in $CURR|Y$ percent."
- PLAYER_AI_PREFS_OPTION_TITLE_embrace_institutions:0 "Embrace Practices"
- PLAYER_AI_PREFS_OPTION_DESC_embrace_institutions:0 "Controls whether the AI may Embrace Practices"
- alert_can_embrace_instant:0 "§YYou can embrace a Practice§!"
+ EXPENSE_TECHNOLOGY:0 "Embracing Masteries"
+ INSTI_PRIMITIVE_CANNOT_EMBRACE_RELIGION:0 "Primitive countries must reform their religion before embracing Masteries."
+ INSTI_PRIMITIVE_CANNOT_EMBRACE_GOVERNMENT:0 "Primitive countries must reform their Government before embracing Masteries."
+ INSTI_NOT_ENOUGH_HOLD:0 "The mastery of $NAME|Y$ has not a big enough hold of our realm for us to fully embrace it.  It needs to be embraced in at least $NEED|Y$ percent of our autonomy modified development, but it is only embraced in $CURR|Y$ percent."
+ PLAYER_AI_PREFS_OPTION_TITLE_embrace_institutions:0 "Embrace Masteries"
+ PLAYER_AI_PREFS_OPTION_DESC_embrace_institutions:0 "Controls whether the AI may Embrace Masteries"
+ alert_can_embrace_instant:0 "§YYou can embrace a Mastery§!"
  
  HAS_EMBRACED:0 "Has embraced $INSTITUTION|Y$"
- TOTAL_TECH_PENALTY:0 "Practices Tech Penalty"
- INSTITUTIONS:0 "Practices"
- SHOW_INSTITUTIONS:0 "Show Practices"
- WILL_LOSE_POWER_AT_EMBRACE:0 "After embracing this practice, you will lose $LOSS$ due to a lowered maximum storage of monarch power."
- INSTRI_GROWS_BY_LOCAL:0 "Spread of Practices is modified by:\n"
- NO_MODIFIER_ON_INSTIGROW:0 "There is currently nothing modifying the spread of practices."
+ TOTAL_TECH_PENALTY:0 "Masteries Tech Penalty"
+ INSTITUTIONS:0 "Masteries"
+ SHOW_INSTITUTIONS:0 "Show Masteries"
+ WILL_LOSE_POWER_AT_EMBRACE:0 "After embracing this mastery, you will lose $LOSS$ due to a lowered maximum storage of monarch power."
+ INSTRI_GROWS_BY_LOCAL:0 "Spread of Masteries is modified by:\n"
+ NO_MODIFIER_ON_INSTIGROW:0 "There is currently nothing modifying the spread of masteries."
  
- INSTITUTIONS_HEADER:0 "§YPractices§!"
- INSTITUTION_CURRENTLY_GROWING:0 "The Practices of $NAME$ is currently growing in this province."
- INSTITUTION_JUST_ONE_GROWING:0 "Only one Practice can grow in a province at a time."
+ INSTITUTIONS_HEADER:0 "§YMasteries§!"
+ INSTITUTION_CURRENTLY_GROWING:0 "The Masteries of $NAME$ is currently growing in this province."
+ INSTITUTION_JUST_ONE_GROWING:0 "Only one Mastery can grow in a province at a time."
  
  BIRTHPLACE_OF_INSTITUTION:0 "$PROV$ is a prolific source of §Y$NAME$§!"
  INSTITUTION_PENALTY_INFO:0 "The penalty for not having $NAME$ is now $CURR$, but will grow up to $MAX$ by §Y+1%§! each year when active."
  INSTITUTION_PENALTY_INFO_FULL:0 "The penalty for not having $NAME$ is $CURR$."
  
- INSTI_NOT_YET:0 "This practice has not yet been created in the world."
- INSTITUTION_SPREAD_HELP:0 "Practices spread between provinces over time. You can also increase the development to directly spread a practice."
- MAPMODE_INSTITUTIONS:0 "Practices"
- MAPMODE_INSTITUTIONS_DESC:0 "Colors the provinces depending if they have embraced all practices created. Green means they have embraced them all, yellow means they are currently on the way, and red means they have not."
+ INSTI_NOT_YET:0 "This mastery has not yet been created in the world."
+ INSTITUTION_SPREAD_HELP:0 "Masteries spread between provinces over time. You can also increase the development to directly spread a mastery."
+ MAPMODE_INSTITUTIONS:0 "Masteries"
+ MAPMODE_INSTITUTIONS_DESC:0 "Colors the provinces depending if they have embraced all masteries created. Green means they have embraced them all, yellow means they are currently on the way, and red means they have not."
  
- OPEN_CLOSE_INSTITUTIONS:0 "Open/Close Practices"
- HEADER_PRESENT_INSTITUTIONS:0 "§YPresent Practices:§!"
- HEADER_GROWING_INSTITUTIONS:0 "§YGrowing Practices:§!"
+ OPEN_CLOSE_INSTITUTIONS:0 "Open/Close Masteries"
+ HEADER_PRESENT_INSTITUTIONS:0 "§YPresent Masteries:§!"
+ HEADER_GROWING_INSTITUTIONS:0 "§YGrowing Masteries:§!"
  
- EMBRACEINST_OTHER_TITLE:0 "Embraced Practice"
- EMBRACEINST_OTHER_SETUP:0 "When another nation embrace a practice."
+ EMBRACEINST_OTHER_TITLE:0 "Embraced Mastery"
+ EMBRACEINST_OTHER_SETUP:0 "When another nation embrace a mastery."
  EMBRACEINST_OTHER_HEADER:0 "$INSTITUTION$"
  EMBRACEINST_OTHER_3:0 "have embraced $INSTITUTION$, speeding up their technological development"
  EMBRACEINST_OTHER_LOG:0 "$COUNTRY$ have embraced $INSTITUTION$."
  
- EMBRACEINST_TITLE:0 "Embraced Practice"
- EMBRACEINST_SETUP:0 "When you embrace a practice."
+ EMBRACEINST_TITLE:0 "Embraced Mastery"
+ EMBRACEINST_SETUP:0 "When you embrace a mastery."
  EMBRACEINST_HEADER:0 "$INSTITUTION$"
  EMBRACEINST_1:0 "We have embraced $INSTITUTION$."
  EMBRACEINST_LOG:0 "We have embraced $INSTITUTION$."
  
- MODIFIER_EMBRACEMENT_COST:0 "Practice Embracement Cost"
- MODIFIER_LOCAL_INSTITUTION_SPREAD:0 "Practice Spread"
- MODIFIER_GLOBAL_INSTITUTION_SPREAD:0 "Practice Spread"
+ MODIFIER_EMBRACEMENT_COST:0 "Mastery Embracement Cost"
+ MODIFIER_LOCAL_INSTITUTION_SPREAD:0 "Mastery Spread"
+ MODIFIER_GLOBAL_INSTITUTION_SPREAD:0 "Mastery Spread"
  
- AI_RULER_SPEND_UNLOCK_INSTIT:0 "Spend more to unlock Practices."
+ AI_RULER_SPEND_UNLOCK_INSTIT:0 "Spend more to unlock Masteries."
  NO_CURRENT_INSTI_TECH_PENALTIES:0 "No current penalties to tech."
  PROV_VIEW_EMBRACED_INSTITUTION:0 "$WHO$ has Embraced $NAME$, accelerating its spread in $ADJ$ provinces."
  PROV_VIEW_EMBRACED_INSTITUTION_2:0 "$WHO$ has Embraced $NAME$ and it has spread to all $ADJ$ provinces."
  
- ND_TECH_GROUP_DESC:0 "This cost is calculated from the number of practices you will receive at the start relative to your surroundings."
+ ND_TECH_GROUP_DESC:0 "This cost is calculated from the number of masteries you will receive at the start relative to your surroundings."
  
- INSTITUTION_DIFF_LOWER_THAN:0 "§Y$WHO$§!'s number of embraced practices compared to §Y$TARGET$§! is lower than §Y$VAL$§!."
- INSTITUTION_DIFF_AT_LEAST:0 "§Y$WHO$§!'s number of embraced practices compared to §Y$TARGET$§! is at least §Y$VAL$§!."
- INSTITUTION_DIFF_LOWER_THAN_ALT:0 "Number of embraced practices of §Y$TARGET$§! is lower than §Y$VAL$§!."
- INSTITUTION_DIFF_AT_LEAST_ALT:0 "Number of embraced practices of §Y$TARGET$§! is at least §Y$VAL$§!."
+ INSTITUTION_DIFF_LOWER_THAN:0 "§Y$WHO$§!'s number of embraced masteries compared to §Y$TARGET$§! is lower than §Y$VAL$§!."
+ INSTITUTION_DIFF_AT_LEAST:0 "§Y$WHO$§!'s number of embraced masteries compared to §Y$TARGET$§! is at least §Y$VAL$§!."
+ INSTITUTION_DIFF_LOWER_THAN_ALT:0 "Number of embraced masteries of §Y$TARGET$§! is lower than §Y$VAL$§!."
+ INSTITUTION_DIFF_AT_LEAST_ALT:0 "Number of embraced masteries of §Y$TARGET$§! is at least §Y$VAL$§!."
  
  NOT_HAS_INSTITUTION_IN_COUNTRY:0 "$COUNTRY$ has NOT embraced $WHICH|Y$\n"
  HAS_INSTITUTION_IN_COUNTRY:0 "$COUNTRY$ has embraced $WHICH|Y$\n"

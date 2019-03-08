@@ -149,29 +149,6 @@ country_event = {
 		name = GOT_SETUP.2.option.a
 		
         if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - GOT_SETUP.2.option.a" }
-        
-        if = {
-            limit = { tag = U87 }
-            add_faction = tigers
-            add_faction = elephants
-        }
-		if = {
-			limit = { primary_culture = free_folk}
-			add_faction = warlike_chieftains
-			add_faction = mercantile_chieftains
-			add_faction = sedentary_chieftains
-			
-			add_faction_influence = {
-				faction = sedentary_chieftains
-				influence = 40
-			}
-			
-			add_faction_influence = {
-				faction = mercantile_chieftains
-				influence = 10
-			}
-			
-		}
 	}
 }
 

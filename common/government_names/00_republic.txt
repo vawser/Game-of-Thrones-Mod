@@ -562,3 +562,144 @@ gov_andal_city = {
         }
 	}
 }
+gov_merchant_republic = {
+	rank = {
+		1 = MERCHANT_REPUBLIC
+		2 = MERCHANT_REPUBLIC
+		3 = MERCHANT_REPUBLIC
+        4 = MERCHANT_REPUBLIC
+        5 = MERCHANT_REPUBLIC
+        6 = MERCHANT_REPUBLIC
+        7 = MERCHANT_REPUBLIC
+        8 = MERCHANT_REPUBLIC
+        9 = MERCHANT_REPUBLIC
+        10 = MERCHANT_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = PRINCE
+		2 = PRINCE
+		3 = PRINCE
+        4 = PRINCE
+        5 = PRINCE
+        6 = PRINCE
+        7 = PRINCE
+        8 = PRINCE
+        9 = PRINCE
+        10 = PRINCE
+	}
+	
+	ruler_female = {
+		1 = PRINCESS
+		2 = PRINCESS
+		3 = PRINCESS
+        4 = PRINCESS
+        5 = PRINCESS
+        6 = PRINCESS
+        7 = PRINCESS
+        8 = PRINCESS
+        9 = PRINCESS
+        10 = PRINCESS
+    }
+	
+	trigger = {
+        OR = {
+            has_reform = merchant_republic_reform
+            has_reform = merchant_republic_legacy
+        }
+	}
+}
+gov_trading_outpost = {
+	rank = {
+		1 = TRADING_OUTPOST
+		2 = TRADING_OUTPOST
+		3 = TRADING_OUTPOST
+        4 = TRADING_OUTPOST
+        5 = TRADING_OUTPOST
+        6 = TRADING_OUTPOST
+        7 = TRADING_OUTPOST
+        8 = TRADING_OUTPOST
+        9 = TRADING_OUTPOST
+        10 = TRADING_OUTPOST
+	}
+	
+	ruler_male = {
+		1 = GOVERNOR
+		2 = GOVERNOR
+		3 = GOVERNOR
+        4 = GOVERNOR
+        5 = GOVERNOR
+        6 = GOVERNOR
+        7 = GOVERNOR
+        8 = GOVERNOR
+        9 = GOVERNOR
+        10 = GOVERNOR
+	}
+	
+	ruler_female = {
+		1 = GOVERNOR
+		2 = GOVERNOR
+		3 = GOVERNOR
+        4 = GOVERNOR
+        5 = GOVERNOR
+        6 = GOVERNOR
+        7 = GOVERNOR
+        8 = GOVERNOR
+        9 = GOVERNOR
+        10 = GOVERNOR
+    }
+	
+	trigger = {
+        OR = {
+            has_reform = trading_outpost_reform
+            has_reform = trading_outpost_legacy
+        }
+	}
+}
+gov_expeditionary_company = {
+	rank = {
+		1 = EXPEDITIONARY_COMPANY
+		2 = EXPEDITIONARY_COMPANY
+		3 = EXPEDITIONARY_COMPANY
+        4 = EXPEDITIONARY_COMPANY
+        5 = EXPEDITIONARY_COMPANY
+        6 = EXPEDITIONARY_COMPANY
+        7 = EXPEDITIONARY_COMPANY
+        8 = EXPEDITIONARY_COMPANY
+        9 = EXPEDITIONARY_COMPANY
+        10 = EXPEDITIONARY_COMPANY
+	}
+	
+	ruler_male = {
+		1 = GOVERNOR
+		2 = GOVERNOR
+		3 = GOVERNOR
+        4 = GOVERNOR
+        5 = GOVERNOR
+        6 = GOVERNOR
+        7 = GOVERNOR
+        8 = GOVERNOR
+        9 = GOVERNOR
+        10 = GOVERNOR
+	}
+	
+	ruler_female = {
+		1 = GOVERNOR
+		2 = GOVERNOR
+		3 = GOVERNOR
+        4 = GOVERNOR
+        5 = GOVERNOR
+        6 = GOVERNOR
+        7 = GOVERNOR
+        8 = GOVERNOR
+        9 = GOVERNOR
+        10 = GOVERNOR
+    }
+	
+	trigger = {
+        OR = {
+            has_reform = expeditionary_company_reform
+            has_reform = expeditionary_company_legacy
+        }
+	}
+}

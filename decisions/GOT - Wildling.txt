@@ -29,47 +29,7 @@ country_decisions = {
 		}
 	}
     
-    construct_canoes = {
-		potential = {
-			technology_group = wildling
-		}
-		allow = {
-			treasury = 100
-            NOT = { navy_size_percentage = 1 }
-            any_owned_province = {
-                has_port = yes
-            }
-		}
-		effect = {
-			add_treasury = -100
-            
-            random_owned_province = {
-                limit = {
-                    has_port = yes
-                }
-                
-                add_unit_construction = {
-                    type = transport
-                    amount = 5
-                    speed = 0.25
-                    cost = 0
-                }
-            }
-		}
-		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 0
-				
-				navy_size_percentage = 0.5
-			}
-		}
-	}
-	
 	wildling_raise_clansmen = {
-		
 		potential = {
 			technology_group = wildling
 		}
@@ -79,7 +39,6 @@ country_decisions = {
 		}
 		
 		effect = {
-		
 			add_manpower = -5
 			
 			add_country_modifier = {

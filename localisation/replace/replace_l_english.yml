@@ -33,17 +33,17 @@
  #------------------------------------------------------
  # Jannissaries
  #------------------------------------------------------
- STATE_JANISSARIES_GOVERNMENT_ALLOWS:0 "Only nations with Ottoman Government can Conscript Janissaries."
- STATE_JANISSARIES_COOLDOWN:0 "Can recruit more Janissaries at $DATE|Y$."
- STATE_JANISSARIES_NEED_MIL_POWER:0 "You need $AMOUNT|Y$ £mil£ to Conscript Janissaries"
- STATE_JANISSARIES_DESC:1 "§YConscript Janissaries§!\nWith §YOttoman Government§! we are capable of recruting Janissaries in heathen provinces. The more heathen development, the more Janissaries we can draw from them. This can only be done once every 5 years."
- ONLY_JANISSARY_MODIFIER:0 "§YAffects only Janissary Regiments§!"
- CREATE_JANISSARIES_BUTTON:1 "Conscript Janissaries"
- CREATEJANISSARIES:1 "Conscript Janissaries"
- JANISSARIES_REGIMENT:0 "Janissary Regiment\n$EFFECT$"
- STATE_JANISSARIES_CREATED_REGIMENTS:0 "$NUM|Y$ Janissaries will spawn in $PROV|Y$"
+ STATE_JANISSARIES_GOVERNMENT_ALLOWS:0 "You cannot Conscript Slaves."
+ STATE_JANISSARIES_COOLDOWN:0 "Can recruit more Slaves at $DATE|Y$."
+ STATE_JANISSARIES_NEED_MIL_POWER:0 "You need $AMOUNT|Y$ £mil£ to Conscript Slaves"
+ STATE_JANISSARIES_DESC:1 "§YConscript Slaves§!\nWe are capable of recruting Slaves in heathen provinces. The more heathen development, the more Slaves we can draw from them. This can only be done once every 5 years."
+ ONLY_JANISSARY_MODIFIER:0 "§YAffects only Slave Regiments§!"
+ CREATE_JANISSARIES_BUTTON:1 "Conscript Slaves"
+ CREATEJANISSARIES:1 "Conscript Slaves"
+ JANISSARIES_REGIMENT:0 "Slave Regiment\n$EFFECT$"
+ STATE_JANISSARIES_CREATED_REGIMENTS:0 "$NUM|Y$ Slaves will spawn in $PROV|Y$"
  STATE_JANISSARIES_HEATHEN_PROVINCES:1 "State needs at least $AMOUNT|Y$ development of Heathen faith fully cored and controlled by you."
- STATE_JANISSARIES_BATTLE_OR_SIEGE:0 "You cannot conscript Janissaries in a province with an ongoing battle or siege."
+ STATE_JANISSARIES_BATTLE_OR_SIEGE:0 "You cannot conscript Slaves in a province with an ongoing battle or siege."
  
  #------------------------------------------------------
  # Pasha
@@ -175,26 +175,24 @@
  #------------------------------------------------------
  # Banners
  #------------------------------------------------------
- REGCAT_banner:0 "Horse Riders"
- BANNERS_NOT_OURS:0 "You can raise Horse Riders here. Horse Riders cost Corruption to raise and have higher Discipline than normal troops.\n\nYou can only raise Horse Riders from states that you own. Please select a province that you are the owner of."
- BANNER_NOWHERE_TO_GO:0 "There are no provinces fully under our control in $NAME$ for us to be able to raise Horse Riders."
- BANNER_ALL_RAISED:0 "$NAME$ can not raise more Horse Riders, as there are already $CURR$ raised."
- RAISE_MANCHU_BANNERS:0 "Raise Horse Riders"
- BANNERS_FROM_TT:0 "You can raise Horse Riders here. Horse Riders cost Corruption to raise and have higher Discipline than normal troops.\n\n$NAME$ can raise a total of $AMOUNT|Y$ Horse Riders due to:\n"
- STATE_CORRUPTION_INC:0 "Raising $RAISED|Y$ regiments as Horse Riders will increase corruption by $INC$."
+ REGCAT_banner:0 "Champion"
+ BANNERS_NOT_OURS:0 "You can raise Champions here. Champions cost Corruption to raise and have higher Discipline than normal troops.\n\nYou can only raise Champions from states that you own. Please select a province that you are the owner of."
+ BANNER_NOWHERE_TO_GO:0 "There are no provinces fully under our control in $NAME$ for us to be able to raise Champions."
+ BANNER_ALL_RAISED:0 "$NAME$ can not raise more Champions, as there are already $CURR$ raised."
+ RAISE_MANCHU_BANNERS:0 "Raise Champions"
+ BANNERS_FROM_TT:0 "You can raise Champions here. Champions cost Corruption to raise and have higher Discipline than normal troops.\n\n$NAME$ can raise a total of $AMOUNT|Y$ Champions due to:\n"
+ STATE_CORRUPTION_INC:0 "Raising $RAISED|Y$ regiments as Champions will increase corruption by $INC$."
  
- MODIFIER_AMOUNT_OF_BANNERS:0 "Possible Horse Riders"
- MODIFIER_LOCAL_AMOUNT_OF_BANNERS:0 "Possible Horse Riders"
- MODIFIER_HAS_BANNERS:0 "Has Horse Riders"
+ MODIFIER_AMOUNT_OF_BANNERS:0 "Possible Champions"
+ MODIFIER_LOCAL_AMOUNT_OF_BANNERS:0 "Possible Champions"
+ MODIFIER_HAS_BANNERS:0 "Has Champions"
  
- HAVE_LESS_BANNERS_THAN:0 "Have less Horse Riders than §Y$VALUE$§!.\n"
- HAVE_AT_LEAST_BANNERS_THAN:0 "Have at least §Y$VALUE$§! Horse Riders.\n"
+ HAVE_LESS_BANNERS_THAN:0 "Have less Champions than §Y$VALUE$§!.\n"
+ HAVE_AT_LEAST_BANNERS_THAN:0 "Have at least §Y$VALUE$§! Champions.\n"
  
- CONFIRRAISEBANNER:0 "Confirm Raise Horse Riders"
- 
- BANNER_REGIMENT:0 "Horse Rider\nDiscipline Bonus: $DISC$"
- 
- BANNER_NONE_AVAIL:0 "There are not enough People in $NAME$ for us to be able to raise a single horse rider."
+ CONFIRRAISEBANNER:0 "Confirm Raise Champions"
+ BANNER_REGIMENT:0 "Champion\nDiscipline Bonus: $DISC$"
+ BANNER_NONE_AVAIL:0 "There are not enough People in $NAME$ for us to be able to raise a single Champion."
  
  #----------------------------------------------------
  # Subject

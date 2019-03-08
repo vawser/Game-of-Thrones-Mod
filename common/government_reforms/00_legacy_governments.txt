@@ -19,6 +19,16 @@ kingdom_legacy = {
 		unjustified_demands = -0.1
 		max_absolutism = 5
     }
+    
+    conditional = {
+        allow = {
+            has_dlc = "Cradle of Civilization"
+        }
+        government_abilities = { 
+            iqta_mechanic
+        }
+    }
+    
 	ai = { factor = 1 }
 }
 noble_house_legacy = {
@@ -80,12 +90,11 @@ royal_house_legacy = {
             iqta_mechanic
         }
     }
-    
     conditional = {
         allow = {
-            has_dlc = "Common Sense"
+            has_dlc = "Mandate of Heaven"
         }
-        #has_parliament = yes
+        allow_banners = yes
     }
     
 	ai = { factor = 1 }
@@ -317,9 +326,10 @@ meereen_city_legacy = {
     
     conditional = {
         allow = {
-            has_dlc = "Rights of Man" 
+            has_dlc = "Cradle of Civilization"
         }
-        militarised_society = yes
+        has_harem = yes
+        has_pashas = yes
     }
     
 	ai = { factor = 1 }
@@ -345,9 +355,10 @@ yunkai_city_legacy = {
     
     conditional = {
         allow = {
-            has_dlc = "Rights of Man" 
+            has_dlc = "Cradle of Civilization"
         }
-        militarised_society = yes
+        has_harem = yes
+        has_pashas = yes
     }
     
 	ai = { factor = 1 }
@@ -373,9 +384,10 @@ astapor_city_legacy = {
     
     conditional = {
         allow = {
-            has_dlc = "Rights of Man" 
+            has_dlc = "Cradle of Civilization"
         }
-        militarised_society = yes
+        has_harem = yes
+        has_pashas = yes
     }
     
 	ai = { factor = 1 }
@@ -401,9 +413,10 @@ ghis_city_legacy = {
     
     conditional = {
         allow = {
-            has_dlc = "Rights of Man" 
+            has_dlc = "Cradle of Civilization"
         }
-        militarised_society = yes
+        has_harem = yes
+        has_pashas = yes
     }
     
 	ai = { factor = 1 }
@@ -1057,7 +1070,7 @@ asshai_cult_legacy = {
     
 	ai = { factor = 1 }
 }
-bloodless_cult_legacy = {
+bloodsworn_cult_legacy = {
 	icon = "crown"
     
     allow_normal_conversion = no
@@ -1074,15 +1087,33 @@ bloodless_cult_legacy = {
 		discipline = 0.05
         max_absolutism = 20
 	}
-    
+
     conditional = {
         allow = {
-            has_dlc = "Third Rome"
+            has_dlc = "Common Sense"
         }
-        government_abilities = { 
-            russian_mechanic
-        }
+        has_devotion = yes
     }
+    
+	ai = { factor = 1 }
+}
+winged_dominion_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = no
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    religion = yes
+    
+    modifiers = {
+    	max_states = 3
+		movement_speed = 0.2
+        max_absolutism = 20
+	}
     
     conditional = {
         allow = {

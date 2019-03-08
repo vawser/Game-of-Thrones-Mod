@@ -45,18 +45,18 @@
         }
 	}
 }
-gov_bloodless_cult = {
+gov_bloodsworn_cult = {
 	rank = {
-		1 = CULT
-		2 = CULT
-		3 = CULT
-        4 = CULT
-        5 = CULT
-        6 = CULT
-        7 = CULT
-        8 = CULT
-        9 = CULT
-        10 = CULT
+		1 = BLOODSWORN_CULT
+		2 = BLOODSWORN_CULT
+		3 = BLOODSWORN_CULT
+        4 = BLOODSWORN_CULT
+        5 = BLOODSWORN_CULT
+        6 = BLOODSWORN_CULT
+        7 = BLOODSWORN_CULT
+        8 = BLOODSWORN_CULT
+        9 = BLOODSWORN_CULT
+        10 = BLOODSWORN_CULT
 	}
 	
 	ruler_male = {
@@ -87,8 +87,55 @@ gov_bloodless_cult = {
 	
 	trigger = {
         OR = {
-            has_reform = bloodless_cult_reform
-            has_reform = bloodless_cult_legacy
+            has_reform = bloodsworn_cult_reform
+            has_reform = bloodsworn_cult_legacy
+        }
+	}
+}
+gov_winged_dominion = {
+	rank = {
+		1 = WINGED_DOMINION
+		2 = WINGED_DOMINION
+		3 = WINGED_DOMINION
+        4 = WINGED_DOMINION
+        5 = WINGED_DOMINION
+        6 = WINGED_DOMINION
+        7 = WINGED_DOMINION
+        8 = WINGED_DOMINION
+        9 = WINGED_DOMINION
+        10 = WINGED_DOMINION
+	}
+	
+	ruler_male = {
+		1 = WINGED_KING
+		2 = WINGED_KING
+		3 = WINGED_KING
+        4 = WINGED_KING
+        5 = WINGED_KING
+        6 = WINGED_KING
+        7 = WINGED_KING
+        8 = WINGED_KING
+        9 = WINGED_KING
+        10 = WINGED_KING
+	}
+	
+	ruler_female = {
+		1 = WINGED_QUEEN
+		2 = WINGED_QUEEN
+		3 = WINGED_QUEEN
+        4 = WINGED_QUEEN
+        5 = WINGED_QUEEN
+        6 = WINGED_QUEEN
+        7 = WINGED_QUEEN
+        8 = WINGED_QUEEN
+        9 = WINGED_QUEEN
+        10 = WINGED_QUEEN
+    }
+	
+	trigger = {
+        OR = {
+            has_reform = winged_dominion_reform
+            has_reform = winged_dominion_legacy
         }
 	}
 }

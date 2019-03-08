@@ -32,6 +32,10 @@ kingdom_reform = {
 		unjustified_demands = -0.1
 		max_absolutism = 5
     }
+    
+    government_abilities = { 
+        iqta_mechanic
+    }
 }
 noble_house_reform = {
 	icon = "castle"
@@ -83,7 +87,7 @@ royal_house_reform = {
         iqta_mechanic
     }
     
-    #has_parliament = yes
+    allow_banners = yes
 }
 yiti_city_reform = {
 	icon = "castle"
@@ -288,7 +292,8 @@ meereen_city_reform = {
         max_absolutism = 10
 	}
     
-    militarised_society = yes
+    has_harem = yes
+    has_pashas = yes
 }
 yunkai_city_reform = {
 	icon = "castle"
@@ -310,7 +315,8 @@ yunkai_city_reform = {
         max_absolutism = 10
 	}
     
-    militarised_society = yes
+    has_harem = yes
+    has_pashas = yes
 }
 astapor_city_reform = {
 	icon = "castle"
@@ -332,7 +338,8 @@ astapor_city_reform = {
         max_absolutism = 10
 	}
     
-    militarised_society = yes
+    has_harem = yes
+    has_pashas = yes
 }
 ghis_city_reform = {
 	icon = "castle"
@@ -354,7 +361,8 @@ ghis_city_reform = {
         max_absolutism = 10
 	}
     
-    militarised_society = yes
+    has_harem = yes
+    has_pashas = yes
 }
 
 #------------------------------------------------------------
@@ -989,7 +997,7 @@ theocracy_reform = {
     
     potential = {
         NOT = { has_reform = asshai_cult_reform }
-        NOT = { has_reform = bloodless_cult_reform }
+        NOT = { has_reform = bloodsworn_cult_reform }
         NOT = { has_reform = white_walker_cult_reform }
     }
     
@@ -1031,15 +1039,15 @@ asshai_cult_reform = {
         russian_mechanic
     }
 }
-bloodless_cult_reform = {
+bloodsworn_cult_reform = {
 	icon = "castle"
     
     potential = {
-        has_reform = bloodless_cult_reform
+        has_reform = bloodsworn_cult_reform
     }
     
     allow_normal_conversion = yes
-    legacy_equivalent = bloodless_cult_legacy
+    legacy_equivalent = bloodsworn_cult_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1051,10 +1059,27 @@ bloodless_cult_reform = {
 		discipline = 0.05
         max_absolutism = 20
 	}
+}
+winged_dominion_reform = {
+	icon = "castle"
     
-    government_abilities = { 
-        russian_mechanic
+    potential = {
+        has_reform = winged_dominion_reform
     }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = winged_dominion_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    has_devotion = yes
+    
+    modifiers = {
+    	max_states = 3
+		movement_speed = 0.2
+        max_absolutism = 20
+	}
 }
 white_walker_cult_reform = {
 	icon = "castle"
@@ -1298,6 +1323,7 @@ warband_reform = {
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    
     
     modifiers = {
         max_states = 1

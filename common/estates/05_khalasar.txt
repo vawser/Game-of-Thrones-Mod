@@ -476,4 +476,62 @@ estate_khalasar = {
             }          
         }
     }
+    
+    # Rally Warriors
+    interaction = {
+        name = "RALLY_WARRIORS"
+        icon = 1
+        
+        years_between_use = 5
+        
+        potential = { }
+        
+        trigger = {
+            estate_loyalty = {
+                estate = estate_khalasar
+                loyalty = 30
+            }
+            estate_influence = {
+                estate = estate_khalasar
+                influence = 40
+            }
+        }
+        
+        effect = {
+            capital_scope = {
+                cavalry = THIS
+                cavalry = THIS
+                cavalry = THIS
+                cavalry = THIS
+                cavalry = THIS
+                cavalry = THIS
+                cavalry = THIS
+                cavalry = THIS
+                cavalry = THIS
+                cavalry = THIS
+            }
+            
+            add_estate_influence_modifier = {
+                estate = estate_khalasar
+                desc = EST_VAL_RALLIED_WARRIORS
+                influence = 20
+                duration = 3650
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_khalasar
+                    influence = 60
+                }  
+            }
+            modifier = {
+                factor = 0
+                army_size_percentage = 0.5
+            }          
+        }
+    }
 }

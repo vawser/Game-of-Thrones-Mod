@@ -558,14 +558,72 @@ estate_nobles = {
         }
     }
     
+    # Cultivate Sand Steeds
     interaction = {
-		name = "MUSTER_SKILLED_RIDERS"
+        name = "CULTIVATE_SAND_STEEDS"
+        icon = 1
+        
+        years_between_use = 15
+        
+        potential = {
+            OR = {
+				primary_culture = sand_dornish 
+				primary_culture = salt_dornish
+				primary_culture = stone_dornish
+			}
+        }
+        
+        trigger = {
+            years_of_income = 1
+            NOT = { has_country_modifier = cultivating_sand_steeds }
+            
+            estate_loyalty = {
+                estate = estate_nobles
+                loyalty = 30
+            }
+            estate_influence = {
+                estate = estate_nobles
+                influence = 40
+            }
+        }
+        
+        effect = {
+            add_years_of_income = -1
+            
+            add_ruler_modifier = {
+				name = cultivating_sand_steeds
+				duration = 3650
+			}
+            
+            add_estate_influence_modifier = {
+				estate = estate_nobles
+				desc = EST_CULTIVATE_SAND_STEEDS
+				influence = 15
+				duration = 3650
+			}
+        }
+        
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_nobles
+                    influence = 50
+                }
+            }     
+        }
+    }
+
+    # Raise Elite Soldiers
+    interaction = {
+		name = "RAISE_ELITE_SOLDIERS"
 		icon = 1
 		
 		years_between_use = 10
 		
         potential = { 
-            has_dlc = "Third Rome"
+            has_dlc = "Dharma"
         }
         
 		trigger = {
@@ -580,15 +638,15 @@ estate_nobles = {
         }
 		
 		effect = {
-            custom_tooltip = SKILLED_RIDER_RECRUITMENT
+            custom_tooltip = ELITE_WARRIOR_RECRUITMENT
             hidden_effect = {
                 capital_scope = {
                     ROOT = {
-                        cossack_cavalry = PREV
-                        cossack_cavalry = PREV
-                        cossack_cavalry = PREV
-                        cossack_cavalry = PREV
-                        cossack_cavalry = PREV
+                        rajput_infantry = PREV
+                        rajput_infantry = PREV
+                        rajput_infantry = PREV
+                        rajput_infantry = PREV
+                        rajput_infantry = PREV
                     }
                 }
             }
@@ -597,7 +655,7 @@ estate_nobles = {
             
             add_estate_influence_modifier = {
 				estate = estate_nobles
-				desc = EST_VAL_MUSTERED_ELITE_TROOPS
+				desc = EST_VAL_MUSTERED_ELITE_SOLDIERS
 				influence = 20
 				duration = 3650
 			}
@@ -616,8 +674,9 @@ estate_nobles = {
 		}
 	}
     
+    # Raise Elite Cavalry
     interaction = {
-		name = "MUSTER_SKILLED_SOLDIERS"
+		name = "RAISE_ELITE_CAVALRY"
 		icon = 1
 		
 		years_between_use = 10
@@ -638,15 +697,15 @@ estate_nobles = {
         }
 		
 		effect = {
-            custom_tooltip = SKILLED_WARRIOR_RECRUITMENT
+            custom_tooltip = ELITE_CAVALRY_RECRUITMENT
             hidden_effect = {
                 capital_scope = {
                     ROOT = {
-                        streltsy_infantry = PREV
-                        streltsy_infantry = PREV
-                        streltsy_infantry = PREV
-                        streltsy_infantry = PREV
-                        streltsy_infantry = PREV
+                        cossack_cavalry = PREV
+                        cossack_cavalry = PREV
+                        cossack_cavalry = PREV
+                        cossack_cavalry = PREV
+                        cossack_cavalry = PREV
                     }
                 }
             }
@@ -655,7 +714,7 @@ estate_nobles = {
             
             add_estate_influence_modifier = {
 				estate = estate_nobles
-				desc = EST_VAL_MUSTERED_ELITE_TROOPS
+				desc = EST_VAL_MUSTERED_ELITE_CAVALRY
 				influence = 20
 				duration = 3650
 			}
@@ -670,6 +729,49 @@ estate_nobles = {
                     estate = estate_nobles
                     influence = 50
                 }	
+            }
+		}
+	}
+    
+    # Sacrifice the Prince
+    interaction = {
+		name = "SACRIFICE_THE_PRINCE"
+		icon = 1
+		
+		years_between_use = 25
+		
+        potential = { 
+            NOT = { republican_tradition = 25 }
+        }
+        
+		trigger = {
+            estate_loyalty = {
+                estate = estate_nobles
+                loyalty = 30
+            }
+            estate_influence = {
+                estate = estate_nobles
+                influence = 40
+            }
+        }
+		
+		effect = {
+            kill_ruler = yes
+            
+            add_scaled_republic_tradition = { ESTATE = estate_nobles }
+            
+            add_estate_loyalty = {
+                estate = estate_nobles
+                loyalty = 20
+            }
+		}
+		
+		ai_will_do = {
+			factor = 1
+            
+            modifier = {   
+                factor = 0
+                republican_tradition = 15	
             }
 		}
 	}

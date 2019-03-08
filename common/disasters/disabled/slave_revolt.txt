@@ -1,11 +1,11 @@
 slave_revolt = {
 	potential = {	
-		has_country_modifier = permits_slavery
+		has_country_modifier = slavery_permitted
 	}
 	
 	can_start = {
 		has_any_disaster = no
-		has_country_modifier = permits_slavery
+		has_country_modifier = slavery_permitted
 		NOT = { manpower_percentage = 0.25 }
 	}
 	progress = {

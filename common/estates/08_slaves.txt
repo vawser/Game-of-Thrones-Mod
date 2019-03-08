@@ -1,0 +1,566 @@
+estate_slaves = {
+	icon = 8
+	
+	color = { 200 120 120 }
+	
+	keep_on_conquest = no
+	always_remove_on_religious_conquest = yes 		
+			
+	min_autonomy = 25
+    autonomy_does_not_affect = local_manpower_modifier
+    
+    custom_name = {
+		desc = estate_freemen
+		trigger = {
+			 has_country_modifier = slavery_prohibited
+		}
+	}
+    
+    # ----- Conditions -----
+	trigger = {
+        always = yes
+	}
+	
+	province_trigger = {
+		always = yes
+	}
+
+	# ----- Country -----
+	country_modifier_happy = {
+		global_manpower_modifier = 0.2
+		land_forcelimit_modifier = 0.2
+	}
+	country_modifier_neutral = {
+		global_manpower_modifier = 0.1
+	}	
+	country_modifier_angry = {
+		global_manpower_modifier = -0.2
+		land_forcelimit_modifier = -0.2
+        global_unrest = 10
+	}	
+	
+	# ----- Province -----
+	province_modifier_happy = {
+		local_manpower_modifier = 0.5
+		local_unrest = -5
+	}
+	province_modifier_neutral = {
+		local_manpower_modifier = 0.25
+		local_unrest = -1
+	}	
+	province_modifier_angry = {
+		local_manpower_modifier = -0.5
+		local_unrest = 10
+	}	
+	
+    ai_grant_province = {
+        factor = 1
+        
+        modifier = {
+            factor = 2
+            NOT = { development = 5 }
+        }
+        modifier = {
+            factor = 0.5
+            development = 10
+        }
+        modifier = {
+            factor = 0.5
+            development = 20
+        }
+        modifier = {
+            factor = 0.75
+            has_owner_culture = yes
+        }
+        modifier = {
+            factor = 0.75
+            province_trade_power = 10
+        }
+        modifier = {
+            factor = 4
+            local_autonomy = 25
+        }
+        modifier = {
+            factor = 0.25
+            NOT = { local_autonomy = 25 }
+        }
+    }
+    
+    # ----- Territory -----
+    min_territory = 0
+    min_provinces_to_want_territory = 0
+    
+	# ----- Influence -----
+	base_influence = 30
+	
+	influence_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER
+		trigger = {
+			OR = {
+                has_country_flag = clergy_estate_in_power
+                has_country_flag = merchants_estate_in_power
+                has_country_flag = commoner_estate_in_power
+                has_country_flag = kos_estate_in_power
+                has_country_flag = chieftains_estate_in_power
+                has_country_flag = magi_estate_in_power
+			}
+		}
+		influence = -40
+	}
+	influence_modifier = {
+		desc = EST_VAL_FREEMEN
+		trigger = {
+			has_country_modifier = slavery_prohibited
+		}
+		influence = -100
+	}
+    
+	# ----- Loyalty -----
+	loyalty_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
+		trigger = {
+			OR = {
+                has_country_flag = clergy_estate_in_power
+                has_country_flag = merchants_estate_in_power
+                has_country_flag = commoner_estate_in_power
+                has_country_flag = kos_estate_in_power
+                has_country_flag = chieftains_estate_in_power
+                has_country_flag = magi_estate_in_power
+			}
+		}
+		loyalty = -40
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_POSITIVE_STABILITY
+		trigger = {
+			stability = 1 
+		}
+		loyalty = 5
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_POSITIVE_STABILITY
+		trigger = {
+			stability = 2
+		}
+		loyalty = 10
+	}
+    loyalty_modifier = {
+		desc = EST_VAL_POSITIVE_STABILITY
+		trigger = {
+			stability = 3
+		}
+		loyalty = 15
+	}
+    loyalty_modifier = {
+		desc = EST_VAL_NEGATIVE_STABILITY
+		trigger = {
+			NOT = { stability = 0 }
+		}
+		loyalty = -5
+	}
+    loyalty_modifier = {
+		desc = EST_VAL_NEGATIVE_STABILITY
+		trigger = {
+			NOT = { stability = -1 }
+		}
+		loyalty = -10
+	}
+    loyalty_modifier = {
+		desc = EST_VAL_NEGATIVE_STABILITY
+		trigger = {
+			NOT = { stability = -2 }
+		}
+		loyalty = -15
+	}
+    
+	# ----- Interactions -----
+	# Permit Slavery
+	interaction = {
+		name = "PERMIT_SLAVERY"
+		icon = 1
+		
+		years_between_use = 50
+
+        potential = { 
+            NOT = { has_country_modifier = slavery_permitted }
+        }
+        
+		trigger = {        
+            NOT = { has_country_modifier = slavery_permitted }
+            stability = 3
+        }
+		
+		effect = {
+			add_stability = -3
+            custom_tooltip = SLAVERY_NOW_PERMITTED
+            
+            add_prestige = -50
+            
+            hidden_effect = {
+                remove_country_modifier = slavery_prohibited
+                add_country_modifier = {
+                    name = slavery_permitted
+                    duration = -1
+                    hidden = yes
+                }
+                every_known_country = {
+                    limit = {
+                        has_country_modifier = slavery_prohibited
+                    }
+                    add_opinion = { who = ROOT modifier = permits_slavery }
+                    reverse_add_opinion = { who = ROOT modifier = prohibits_slavery }
+                }
+            } 
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+    # Prohibit Slavery
+    interaction = {
+		name = "PROHIBIT_SLAVERY"
+		icon = 1
+		
+		years_between_use = 50
+
+        potential = { 
+            NOT = { has_country_modifier = slavery_prohibited }
+        }
+        
+		trigger = {        
+            NOT = { has_country_modifier = slavery_prohibited }
+            stability = 3
+        }
+		
+		effect = {
+			add_stability = -3
+            custom_tooltip = SLAVERY_NOW_PROHIBITED
+            
+            add_prestige = 50
+            
+            hidden_effect = {
+                remove_country_modifier = slavery_permitted
+                add_country_modifier = {
+                    name = slavery_prohibited
+                    duration = -1
+                    hidden = yes
+                }
+                every_known_country = {
+                    limit = {
+                        has_country_modifier = slavery_permitted
+                    }
+                    add_opinion = { who = ROOT modifier = prohibits_slavery }
+                    reverse_add_opinion = { who = ROOT modifier = permits_slavery }
+                }
+            }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Fund Slavers
+    interaction = {
+        name = "FUND_SLAVERS"
+        icon = 1
+        
+        years_between_use = 10
+        
+        potential = { 
+            has_country_modifier = slavery_permitted
+        }
+        
+        trigger = {
+            always = yes
+        }
+        
+        effect = {
+            add_years_of_income = -0.5
+            
+            add_estate_loyalty = {
+                estate = estate_slaves
+                loyalty = 15
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = { years_of_income = 0.5 }                
+            }
+            modifier = {
+                factor = 0
+                estate_loyalty = {
+                    estate = estate_slaves
+                    loyalty = 60
+                }
+            }            
+        }        
+    }
+    
+    # Seek Support of Slavers
+    interaction = {
+        name = "SEEK_SUPPORT_OF_SLAVERS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            has_country_modifier = slavery_permitted
+        }
+        
+        trigger = {
+            always = yes
+        }
+        
+        effect = {
+            add_estate_loyalty = {
+                estate = estate_slaves
+                loyalty = 10
+            }
+            add_estate_influence_modifier = {
+                estate = estate_slaves
+                desc = EST_VAL_SUPPORT_OF_SLAVERS
+                influence = 10
+                duration = 7300
+            }
+        }
+    
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                estate_loyalty = {
+                    estate = estate_slaves
+                    loyalty = 30
+                }                        
+            }
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_slaves
+                    influence = 60
+                }                        
+            }            
+        }
+    }
+    
+    # Hasten Construction Projects
+    interaction = {
+        name = "HASTEN_CONSTRUCTION_PROJECTS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            has_country_modifier = slavery_permitted
+        }
+        
+        trigger = {        
+            NOT = { has_country_modifier = slavery_construction }
+            
+            estate_loyalty = {
+                estate = estate_slaves
+                loyalty = 50
+            }           
+        }
+        
+        effect = {
+            add_country_modifier = {
+                name = slavery_construction
+                duration = 3650
+            }
+            
+            add_estate_loyalty = {
+                estate = estate_slaves
+                loyalty = -20
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_slaves
+                        loyalty = 50
+                    }   
+                }
+            } 
+        }
+    }
+    
+    # Employ Slave Labour
+    interaction = {
+        name = "EMPLOY_SLAVE_LABOUR"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            has_country_modifier = slavery_permitted
+        }
+        
+        trigger = {        
+            NOT = { has_country_modifier = slavery_production }
+            
+            estate_loyalty = {
+                estate = estate_slaves
+                loyalty = 50
+            }           
+        }
+        
+        effect = {
+            add_country_modifier = {
+                name = slavery_production
+                duration = 3650
+            }
+            
+            add_estate_loyalty = {
+                estate = estate_slaves
+                loyalty = -20
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_slaves
+                        loyalty = 50
+                    }   
+                }
+            } 
+        }
+    }
+    
+    # Subjugate Slave Labour
+    interaction = {
+        name = "SUBJUGATE_REBELLIOUS_SLAVES"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            has_country_modifier = slavery_permitted
+        }
+        
+        trigger = {
+            estate_loyalty = {
+                estate = estate_slaves
+                loyalty = 50
+            }           
+        }
+        
+        effect = {
+            add_scaled_absolutism = { ESTATE = estate_slaves }
+            
+            add_estate_loyalty = {
+                estate = estate_slaves
+                loyalty = -20
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_slaves
+                        loyalty = 50
+                    }   
+                }
+            } 
+        }
+    }
+    
+    # Sell Slaves to Nobility
+    interaction = {
+        name = "SELL_SLAVES_TO_NOBILITY"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            has_country_modifier = slavery_permitted
+        }
+        
+        trigger = {
+            estate_loyalty = {
+                estate = estate_slaves
+                loyalty = 50
+            }           
+        }
+        
+        effect = {
+            remove_scaled_corruption = { ESTATE = estate_slaves }
+            
+            add_estate_loyalty = {
+                estate = estate_slaves
+                loyalty = -20
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_slaves
+                        loyalty = 50
+                    }   
+                }
+            } 
+        }
+    }
+    
+    # Utilise Slave Soldiers
+    interaction = {
+        name = "UTILISE_SLAVE_SOLDIERS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            has_country_modifier = slavery_permitted
+        }
+        
+        trigger = {
+            estate_loyalty = {
+                estate = estate_slaves
+                loyalty = 50
+            }           
+        }
+        
+        effect = {
+            add_scaled_yearly_manpower = { ESTATE = estate_slaves }
+            
+            add_estate_loyalty = {
+                estate = estate_slaves
+                loyalty = -20
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_slaves
+                        loyalty = 50
+                    }   
+                }
+            } 
+        }
+    }
+}

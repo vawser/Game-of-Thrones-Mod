@@ -14,6 +14,9 @@
  estate_commoners: "Commoners"
  estate_commoners_desc: "The common folk. A wide and unorganised group, commoners will rare want for much and are often satisfied if the status quo is not distrubed. However, if times get particularly tough, they will resent their overseers and plot rebellion."
  
+ estate_wizards: "Wizards"
+ estate_wizards_desc: "Individuals said to exert control over magical forces. Their legitimacy is often suspect, although there have been occasions of brilliance."
+ 
  # nw_government
  estate_builders: "Builders"
  estate_builders_desc: ""
@@ -26,6 +29,9 @@
  estate_chieftains: "Chieftains"
  estate_chieftains_desc: "The leaders of the disparate clans beyond the wall make up our nation. Whether or not they cooperate is up to us."
  
+ estate_skinchangers: "Skinchangers"
+ estate_skinchangers_desc: "Individuals said to enter the mind of animals and control its actions. Known as wargs if they can enter the mind of a wolf or dog."
+ 
  # khas
  estate_khalasar: "Kos"
  estate_khalasar_desc: "Kos are the captains within a khal's khalasar, loyal only to him. They will fight to their death to protect the khal, but only if he is worthy of such protection."
@@ -36,6 +42,13 @@
  estate_bloodmages: "Bloodmages"
  estate_magi: "Magi"
  estate_magi_desc: "The magic wielders of our realm."
+ 
+ # Slavers
+ estate_slaves: "Slaves"
+ estate_slaves_desc: "The destitute and downtrodden are often forced into slavery. Although there is much use to slave labour, it is frowned upon in Westeros and the risk of revolt is always high."
+ 
+ estate_freemen: "Freemen"
+ estate_freemen_desc: "Slaves, if they exist within our realm, are now considered freemen."
  
  #-----------------------------------------
  # Loyalty Modifiers
@@ -84,6 +97,12 @@
  
  # Chieftains - Interactions
  
+ # Slaves - Passive
+ EST_VAL_POSITIVE_STABILITY: "Positive Stability: §Y$VAL$§!"
+ EST_VAL_NEGATIVE_STABILITY: "Negative Stability: §Y$VAL$§!"
+ 
+ # Slaves - Interactions
+ 
  #-----------------------------------------
  # Influence Modifiers
  #-----------------------------------------
@@ -105,8 +124,10 @@
  # Nobles - Interactions
  EST_VAL_SUPPORT_OF_NOBILITY: "Support of Nobility: §Y$VAL$%§!"
  EST_VAL_TUTORED_HEIR: "Tutored Heir: §Y$VAL$%§!"
- EST_VAL_MUSTERED_ELITE_TROOPS: "Mustered Elite Troops: §Y$VAL$%§!"
-
+ EST_VAL_MUSTERED_ELITE_SOLDIERS: "Raised Elite Soldiers: §Y$VAL$%§!"
+ EST_VAL_MUSTERED_ELITE_CAVALRY: "Raised Elite Cavalry: §Y$VAL$%§!"
+ EST_CULTIVATE_SAND_STEEDS: "Cultivated Sand Steeds: §Y$VAL$%§!"
+ 
  # Clergy - Passive
  EST_VAL_THE_FAITH: "The Faith: §Y$VAL$%§!"
  
@@ -139,6 +160,7 @@
  # Kos - Interactions
  EST_VAL_MOBILIZED_KHALASAR: "Mobilized Khalasar: §Y$VAL$%§!"
  EST_VAL_ASSEMBLED_BLOODRIDERS: "Assembled Bloodriders: §Y$VAL$%§!"
+ EST_VAL_RALLIED_WARRIORS: "Rallied Warriors: §Y$VAL$%§!"
 
  # Magi - Passive
  
@@ -148,6 +170,7 @@
  EST_VAL_EXPLOITED_LOCAL_MAGI: "Exploited Local Magi: §Y$VAL$%§!"
  EST_VAL_CORRUPT_OFFICIALS: "Corrupt Officials: §Y$VAL$%§!"
  EST_VAL_SUBJUGATE_CONQUESTS: "Subjugate Conquests: §Y$VAL$%§!"
+ EST_VAL_PRODUCED_WILDFIRE: "Produced Wildfire: §Y$VAL$%§!"
  
  # Chieftains - Passive
  
@@ -155,7 +178,13 @@
  EST_VAL_ASSEMBLED_CLANS: "Assembled Clans: §Y$VAL$%§!"
  EST_VAL_MOBILIZED_CLANS: "Mobilized Clans: §Y$VAL$%§!"
  EST_VAL_SAILED_THE_WALL: "Sailed the Wall: §Y$VAL$%§!"
-
+ 
+ # Slaves - Passive
+ EST_VAL_FREEMEN: "Freemen: §Y$VAL$%§!"
+ 
+ # Slaves - Interactions
+ EST_VAL_SUPPORT_OF_SLAVERS: "Support of Slavers: §Y$VAL$%§!"
+ 
  #-----------------------------------------
  # Territory Modifiers
  #-----------------------------------------
@@ -178,9 +207,11 @@
  APPOINT_CAPTAIN: "Appoint Captain"
  TUTOR_HEIR: "Tutor Heir"
  RALLY_BANNERMEN: "Rally Bannermen"
- MUSTER_SKILLED_SOLDIERS: "Muster Skilled Soldiers"
- MUSTER_SKILLED_RIDERS: "Muster Skilled Riders"
-
+ RAISE_ELITE_SOLDIERS: "Raise Elite Soldiers"
+ RAISE_ELITE_CAVALRY: "Raise Elite Cavalry"
+ CULTIVATE_SAND_STEEDS: "Cultivate Sand Steeds"
+ SACRIFICE_THE_PRINCE: "Sacrifice the Prince"
+ 
  # Clergy
  DICTATE_RELIGIOUS_TEXTS: "Dictate Religious Texts"
  FURNISH_RELIGIOUS_BUILDINGS: "Furnish Religious Buildings"
@@ -191,6 +222,8 @@
  INCITE_RELIGIOUS_FERVOR: "Incite Religious Fervor"
  DISPLAY_RELIGIOUS_GLORY: "Display Religious Glory"
  OUST_CORRUPTED_CLERGY: "Oust Corrupted Clergy"
+ WITHDRAW_IN_SECLUSION: "Withdraw in Seclusion"
+ DISGRACE_PRIEST: "Disgrace Priest"
  
  # Merchants
  FAVOUR_CHOSEN_MERCHANTS: "Favour Chosen Merchants"
@@ -226,6 +259,7 @@
  APPOINT_KOS: "Appoint Kos"
  RALLY_ARAKHS: "Rally Arakhs"
  MOBILIZE_KHALASAR: "Mobilize Khalasar"
+ RALLY_WARRIORS: "Rally Warriors"
  
  # Magi
  SEIZE_MAGICAL_ARTEFACTS: "Sieze Magical Artefacts"
@@ -238,6 +272,7 @@
  EXPLOIT_LOCAL_MAGI: "Exploit Local Magi"
  CORRUPT_OFFICIALS: "Corrupt Officials"
  SUBJUGATE_CONQUESTS: "Subjugate Conquests"
+ PRODUCE_WILDFIRE: "Produce Wildfire"
  
  # Chieftains
  THROW_FEAST: "Throw Feast"
@@ -248,7 +283,15 @@
  RALLY_MEN: "Rally Men"
  MOBILIZE_CLANS: "Mobilize Clans"
  SAIL_THE_WALL: "Sail the Wall"
- 
- 
- 
+
+ # Slaves
+ PERMIT_SLAVERY: "Permit Slavery"
+ PROHIBIT_SLAVERY: "Prohibit Slavery"
+ FUND_SLAVERS: "Fund Slavers"
+ SEEK_SUPPORT_OF_SLAVERS: "Seek Support of Slavers"
+ HASTEN_CONSTRUCTION_PROJECTS: "Hasten Construction Projects" 
+ EMPLOY_SLAVE_LABOUR: "Employ Slave Labour"
+ SUBJUGATE_REBELLIOUS_SLAVES: "Subjugate Rebellious Slaves" 
+ SELL_SLAVES_TO_NOBILITY: "Sell Slaves to Nobility"
+ UTILISE_SLAVE_SOLDIERS: "Utilise Slave Soldiers"
  

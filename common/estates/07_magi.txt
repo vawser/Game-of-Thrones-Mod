@@ -9,12 +9,24 @@ estate_magi = {
 	min_autonomy = 25								
     autonomy_does_not_affect = local_tax_modifier
     
+    custom_name = {
+		desc = estate_wizards
+		trigger = {
+			technology_group = westerosi
+		}
+	}
+    
+    custom_name = {
+		desc = estate_skinchangers
+		trigger = {
+			technology_group = wildling
+		}
+	}
+    
     # ----- Conditions -----
 	trigger = {
-        OR = {
-            has_reform = qarth_city_reform
-            religion = asoiaf_magic
-        }
+        NOT = { has_reform = khalasar_reform }
+        NOT = { has_reform = jhattar_reform }
 	}
 	
 	province_trigger = {
@@ -511,6 +523,56 @@ estate_magi = {
                 estate = estate_magi
                 desc = EST_VAL_SUBJUGATE_CONQUESTS
                 influence = 20
+                duration = 7200
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_magi
+                    influence = 60
+                }
+            }
+        }
+    }
+    
+    # Produce Wildfire
+    interaction = {
+        name = "PRODUCE_WILDFIRE"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            technology_group = westerosi
+        }
+        
+        trigger = {
+            has_institution = alchemy
+            estate_loyalty = {
+                estate = estate_magi
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_magi
+                influence = 40
+            }            
+        }
+        
+        effect = {
+            add_country_modifier = {
+                name = alchemists_fire
+                duration = 3650
+            }
+            
+            add_estate_influence_modifier = {
+                estate = estate_magi
+                desc = EST_VAL_PRODUCED_WILDFIRE
+                influence = 15
                 duration = 7200
             }
         }

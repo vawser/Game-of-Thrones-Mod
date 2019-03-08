@@ -55,7 +55,7 @@ NDefines.NCountry.POLICY_COST = 1
 -- Estates
 --------------------------------
 NDefines.NCountry.ALLOW_ESTATE_AND_PARLIAMENT_SEAT_IN_PROVINCE = 1
-NDefines.NCountry.ALLOW_ESTATE_IN_CAPITAL = 0
+NDefines.NCountry.ALLOW_ESTATE_IN_CAPITAL = 1
 
 --------------------------------
 -- Subjects

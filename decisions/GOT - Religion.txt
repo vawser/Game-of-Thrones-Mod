@@ -1,112 +1,4 @@
 country_decisions = {
-	promote_worship = {
-		potential = {
-			OR = { 
-				uses_karma = yes
-                uses_patriarch_authority = yes
-                uses_piety = yes
-                uses_fervor = yes
-                uses_papacy = yes
-                uses_church_aspects = yes
-			}
-		}
-		allow = {
-			years_of_income = 1
-		}
-		effect = {
-			add_years_of_income = -1
-		
-			if = {
-				limit = {
-					uses_fervor = yes
-				}
-				
-				add_fervor = 10
-			}
-			
-			if = {
-				limit = {
-					uses_karma = yes
-				}
-				add_karma = 10
-			}
-			
-			if = {
-				limit = {
-					uses_papacy = yes
-				}
-				
-				add_papal_influence = 10
-			}
-			
-			if = {
-				limit = {
-					uses_patriarch_authority = yes
-				}
-				add_patriarch_authority = 0.1
-			}
-			
-			if = {
-				limit = {
-					uses_piety = yes
-				}
-				add_piety = 0.1
-			}
-			
-			if = {
-				limit = {
-					uses_church_aspects = yes
-				}
-				add_church_power = 15
-			}
-		}
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	
-	restrict_worship = {
-		potential = {
-			OR = { 
-				uses_karma = yes
-                uses_patriarch_authority = yes
-                uses_piety = yes
-			}
-		}
-		allow = {
-			years_of_income = 1
-		}
-		effect = {
-			add_years_of_income = -1
-
-			if = {
-				limit = {
-					uses_karma = yes
-				}
-				add_karma = -10
-			}
-			
-			if = {
-				limit = {
-					uses_patriarch_authority = yes
-				}
-				add_patriarch_authority = -0.1
-			}
-            
-            if = {
-				limit = {
-					uses_piety = yes
-				}
-				add_piety = -0.1
-			}
-		}
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	
 	promote_sept_attendance = {
 		potential = {
 			NOT = { has_country_modifier = promoted_sept_attendance }
@@ -114,14 +6,14 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = promoted_sept_attendance }
-			years_of_income = 1
+			years_of_income = 5
 		}
 		effect = {
-			add_years_of_income = -1
+			add_years_of_income = -5
 			
 			add_country_modifier = {
 				name = promoted_sept_attendance
-				duration = 3650
+				duration = -1
 			}
 		}
 		
@@ -141,14 +33,14 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = promoted_weirwood_attendance }
-			years_of_income = 1
+			years_of_income = 5
 		}
 		effect = {
-			add_years_of_income = -1
+			add_years_of_income = -5
 			
 			add_country_modifier = {
 				name = promoted_weirwood_attendance
-				duration = 3650
+				duration = -1
 			}
 		}
 		
@@ -168,14 +60,14 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = promoted_drowning }
-			years_of_income = 1
+			years_of_income = 5
 		}
 		effect = {
-			add_years_of_income = -1
+			add_years_of_income = -5
 			
 			add_country_modifier = {
 				name = promoted_drowning
-				duration = 3650
+				duration = -1
 			}
 		}
 		
@@ -195,14 +87,14 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = promoted_the_great_stallion }
-			years_of_income = 1
+			years_of_income = 5
 		}
 		effect = {
-			add_years_of_income = -1
+			add_years_of_income = -5
 			
 			add_country_modifier = {
 				name = promoted_the_great_stallion
-				duration = 3650
+				duration = -1
 			}
 		}
 		
@@ -242,14 +134,14 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = promoted_temple_attendance }
-			years_of_income = 1
+			years_of_income = 5
 		}
 		effect = {
-			add_years_of_income = -1
+			add_years_of_income = -5
 			
 			add_country_modifier = {
 				name = promoted_temple_attendance
-				duration = 3650
+				duration = -1
 			}
 		}
 		

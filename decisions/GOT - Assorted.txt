@@ -1,35 +1,4 @@
 country_decisions = {
-	negotiate_with_the_iron_bank = {
-		potential = {
-			NOT = { has_ruler_modifier = iron_bank_agreement }
-			NOT = { is_primitive_government = yes } 
-		}
-		allow = {
-			NOT = { has_ruler_modifier = iron_bank_agreement }
-			OR = {
-				any_known_country = {  
-					primary_culture = braavosi
-				}
-				primary_culture = braavosi
-			}
-		}
-		effect = {
-			country_event = { id = GOT_DECISION.1 }
-			
-			add_ruler_modifier = {
-				name = iron_bank_agreement
-				duration = -1
-				hidden = yes
-			}
-			set_country_flag = iron_bank_agreement
-			#loan_size = 120
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
 	employ_more_spies = {
 		potential = {
 			has_idea_group = espionage_ideas

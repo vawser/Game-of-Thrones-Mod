@@ -406,6 +406,75 @@ estate_clergy = {
         }
     }
     
+    # Disgrace Priest
+    interaction = {
+        name = "DISGRACE_PRIEST"
+        icon = 1
+        
+        years_between_use = 10
+        
+        potential = { 
+            OR = {
+                uses_karma = yes
+                uses_patriarch_authority = yes
+                uses_piety = yes
+            }
+        }
+        
+        trigger = {
+            estate_loyalty = {
+                estate = estate_clergy
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_clergy
+                influence = 40
+            }            
+        }
+        
+        effect = {
+            if = {
+				limit = {
+					uses_karma = yes
+				}
+				add_karma = -10
+			}
+			
+			if = {
+				limit = {
+					uses_patriarch_authority = yes
+				}
+				add_patriarch_authority = -0.1
+			}
+            
+            if = {
+				limit = {
+					uses_piety = yes
+				}
+				add_piety = -0.1
+			}
+            
+            add_estate_loyalty = {
+                estate = estate_clergy
+                loyalty = -15
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_clergy
+                        loyalty = 60
+                    } 
+                }
+            }
+        }
+    }
+    
     # Incite Religious Fervor
     interaction = {
         name = "INCITE_RELIGIOUS_FERVOR"
@@ -561,4 +630,54 @@ estate_clergy = {
         }
     }
     
+    interaction = {
+        name = "WITHDRAW_IN_SECLUSION"
+        icon = 1
+        
+        years_between_use = 10
+        
+        potential = { 
+            religion = asoiaf_faith_of_the_seven
+            prestige = 0
+        }
+        
+        trigger = {
+            estate_loyalty = {
+                estate = estate_clergy
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_clergy
+                influence = 40
+            }            
+        }
+        
+        effect = {
+            add_scaled_papal_influence = { ESTATE = estate_clergy }
+
+            add_estate_loyalty = {
+                estate = estate_clergy
+                loyalty = 20
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                papal_influence = 50
+            }
+            
+            modifier = {
+                factor = 0
+                
+                estate_loyalty = {
+                    estate = estate_clergy
+                    loyalty = 70
+                }                        
+            }
+        }
+    }
 }

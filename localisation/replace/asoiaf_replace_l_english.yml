@@ -31,21 +31,6 @@
  IDEA_MAY_SIBERIAN_FRONTIER:0 "May Establish Essosian Frontiers"
  
  #------------------------------------------------------
- # Jannissaries
- #------------------------------------------------------
- STATE_JANISSARIES_GOVERNMENT_ALLOWS:0 "You cannot Conscript Slaves."
- STATE_JANISSARIES_COOLDOWN:0 "Can recruit more Slaves at $DATE|Y$."
- STATE_JANISSARIES_NEED_MIL_POWER:0 "You need $AMOUNT|Y$ £mil£ to Conscript Slaves"
- STATE_JANISSARIES_DESC:1 "§YConscript Slaves§!\nWe are capable of recruting Slaves in heathen provinces. The more heathen development, the more Slaves we can draw from them. This can only be done once every 5 years."
- ONLY_JANISSARY_MODIFIER:0 "§YAffects only Slave Regiments§!"
- CREATE_JANISSARIES_BUTTON:1 "Conscript Slaves"
- CREATEJANISSARIES:1 "Conscript Slaves"
- JANISSARIES_REGIMENT:0 "Slave Regiment\n$EFFECT$"
- STATE_JANISSARIES_CREATED_REGIMENTS:0 "$NUM|Y$ Slaves will spawn in $PROV|Y$"
- STATE_JANISSARIES_HEATHEN_PROVINCES:1 "State needs at least $AMOUNT|Y$ development of Heathen faith fully cored and controlled by you."
- STATE_JANISSARIES_BATTLE_OR_SIEGE:0 "You cannot conscript Slaves in a province with an ongoing battle or siege."
- 
- #------------------------------------------------------
  # Pasha
  #------------------------------------------------------
  ADD_PASHA_BUTTON:0 "Assign Encampment"
@@ -164,17 +149,39 @@
  REGCAT_normal:0 "Regulars"
  REGCAT_mercenary:0 "Mercenaries"
  
+ # Streltsy - Magi
  REGCAT_streltsy:0 "Magi"
  STRELTSY_NAME:0 "$HOME$'s $NUM$$ORDER$ Magi"
  STRELTSY_REGIMENT:0 "Magi\nFire Damage Bonus: $VAL$"
+ ADD_STRELTSY_SUB_UNIT_EFFECT:0 "Get '§GVeteran§!' $UNIT$ in §Y$WHERE$§!."
+ streltsy_modifier:0 "Reliance on Veterans"
  
- REGCAT_cossacks:0 "Banners"
- COSSACKS_NAME:0 "$HOME$'s $NUM$$ORDER$ Banners"
- COSSACKS_REGIMENT:0 "Banners\nShock Damage Bonus: $VAL$"
+ # Cossacks - Elite Cavalry
+ REGCAT_cossacks:0 "Elite Cavalry"
+ COSSACKS_NAME:0 "$HOME$'s $NUM$$ORDER$ Elite Cavalry"
+ COSSACKS_REGIMENT:0 "Elite Cavalry\nShock Damage Bonus: $VAL$"
+ ADD_COSSACKS_SUB_UNIT_EFFECT:0 "Get '§GElite Cavalry§!' $UNIT$ in $WHERE|Y$."
+ cossacks_modifier:0 "Reliance on Elite Cavalry"
  
- #------------------------------------------------------
- # Banners
- #------------------------------------------------------
+ # Janissaries - Slaves
+ REGCAT_janissaries: "Slaves"
+ STATE_JANISSARIES_GOVERNMENT_ALLOWS:0 "You cannot Conscript Slaves."
+ STATE_JANISSARIES_COOLDOWN:0 "Can recruit more Slaves at $DATE|Y$."
+ STATE_JANISSARIES_NEED_MIL_POWER:0 "You need $AMOUNT|Y$ £mil£ to Conscript Slaves"
+ STATE_JANISSARIES_DESC:1 "§YConscript Slaves§!\nWe are capable of recruting Slaves in heathen provinces. The more heathen development, the more Slaves we can draw from them. This can only be done once every 5 years."
+ ONLY_JANISSARY_MODIFIER:0 "§YAffects only Slave Regiments§!"
+ CREATE_JANISSARIES_BUTTON:1 "Conscript Slaves"
+ CREATEJANISSARIES:1 "Conscript Slaves"
+ JANISSARIES_REGIMENT:0 "Slave Regiment\n$EFFECT$"
+ STATE_JANISSARIES_CREATED_REGIMENTS:0 "$NUM|Y$ Slaves will spawn in $PROV|Y$"
+ STATE_JANISSARIES_HEATHEN_PROVINCES:1 "State needs at least $AMOUNT|Y$ development of Heathen faith fully cored and controlled by you."
+ STATE_JANISSARIES_BATTLE_OR_SIEGE:0 "You cannot conscript Slaves in a province with an ongoing battle or siege."
+ HAVE_LESS_JANISSARIES_THAN_PERC:0 "Less than $PERC|%|Y$ of the army is Slave Regiments ($SHIPS|Y$)"
+ HAVE_MORE_JANISSARIES_THAN_PERC:0 "More than $PERC|%|Y$ of the army is Slave Regiments ($SHIPS|Y$)"
+ HAVE_LESS_JANISSARIES_THAN:0 "Have less Slave Regiments than $VALUE|Y$.\n"
+ HAVE_AT_LEAST_JANISSARIES_THAN:0 "Have at least $VALUE|Y$ Slave Regiments.\n"
+ 
+ # Banner - Champion
  REGCAT_banner:0 "Champion"
  BANNERS_NOT_OURS:0 "You can raise Champions here. Champions cost Corruption to raise and have higher Discipline than normal troops.\n\nYou can only raise Champions from states that you own. Please select a province that you are the owner of."
  BANNER_NOWHERE_TO_GO:0 "There are no provinces fully under our control in $NAME$ for us to be able to raise Champions."
@@ -193,6 +200,15 @@
  CONFIRRAISEBANNER:0 "Confirm Raise Champions"
  BANNER_REGIMENT:0 "Champion\nDiscipline Bonus: $DISC$"
  BANNER_NONE_AVAIL:0 "There are not enough People in $NAME$ for us to be able to raise a single Champion."
+ 
+ # Rajput - Elite Soldiers
+ REGCAT_rajput:0 "Elite Soldiers"
+ RAJPUT_NAME:0 "$HOME$'s $NUM$$ORDER$ Elite Soldiers"
+ RAJPUT_REGIMENT:0 "Elite Soldier Regiment\n$EFFECT$"
+ ONLY_RAJPUT_MODIFIER:0 "§YAffects only Elite Soldier Regiments§!"
+ ADD_RAJPUT_SUB_UNIT_EFFECT:0 "Get '§GElite Soldiers§!' $UNIT$ in $WHERE|Y$."
+ HAVE_LESS_RAJPUT_THAN:0 "Have less Elite Soldier Regiments than $VALUE|Y$.\n"
+ HAVE_AT_LEAST_RAJPUT_THAN:0 "Have at least $VALUE|Y$ Elite Soldier Regiments.\n"
  
  #----------------------------------------------------
  # Subject

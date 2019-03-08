@@ -1,24 +1,223 @@
-namespace = GOT_DISCOVERY
+namespace = GOT_SYSTEM
 
-# Handle Discovery
 country_event = {
-	id = GOT_DISCOVERY.1
-	title = GOT_DISCOVERY.1.title
-	desc = GOT_DISCOVERY.1.desc
+	id = GOT_SYSTEM.1
+	title = GOT_SYSTEM.1.title
+	desc = GOT_SYSTEM.1.desc
+	picture = SPY_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+    
+    trigger = {
+        NOT = { has_global_flag = completed_global_setup }
+    }
+	
+    immediate = {
+        set_global_flag = completed_global_setup
+    }
+    
+	option = {
+		name = GOT_SYSTEM.1.option.a
+		
+        #set_global_flag = enable_onaction_logging
+        #set_global_flag = enable_event_logging
+        
+        if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - GOT_SYSTEM.1.option.a" }
+        
+        # Set processor
+        random_country = {
+            limit = { ai = yes }
+            set_country_flag = processor
+        }
+        
+        hre_inheritable = yes
+        set_allow_female_emperor = yes
+        set_hre_religion = asoiaf_faith_of_the_seven
+        
+        if = {
+            limit = { is_year = 100 } 
+    
+            region_the_north = {
+                set_in_empire = yes
+            }
+            region_riverlands = {
+                set_in_empire = yes
+            }
+            region_crownlands = {
+                set_in_empire = yes
+            }
+            region_stormlands = {
+                set_in_empire = yes
+            }
+            region_iron_islands = {
+                set_in_empire = yes
+            }
+            region_reach = {
+                set_in_empire = yes
+            }
+            region_westerlands = {
+                set_in_empire = yes
+            }
+            region_dorne = {
+                set_in_empire = yes
+            }
+            region_vale = {
+                set_in_empire = yes
+            }
+        }		
+		
+        # Bookmark flags
+        if = {
+			limit = {
+				NOT = { is_year = 106 }
+			}
+			set_global_flag = shattered_world
+		}
+        if = {
+			limit = {
+				is_year = 106
+				NOT = { is_year = 106 }
+			}
+			set_global_flag = war_for_the_stepstones
+		}
+		
+		if = {
+			limit = {
+				is_year = 129
+				NOT = { is_year = 129 }
+			}
+			set_global_flag = the_dance_of_dragons
+		}
+		
+		if = {
+			limit = {
+				is_year = 282
+				NOT = { is_year = 282 }
+			}
+			set_global_flag = roberts_rebellion
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SYSTEM.2
+	title = GOT_SYSTEM.2.title
+	desc = GOT_SYSTEM.2.desc
+	picture = SPY_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+    
+    trigger = {
+        NOT = { has_country_flag = completed_country_setup }
+    }
+	
+    immediate = {
+        country_event = { id = GOT_SYSTEM.3 }
+        country_event = { id = GOT_SYSTEM.4 }
+        
+		if = {
+			limit = {
+				primary_culture = free_folk
+			}
+			
+			every_country = {
+				limit = {
+					culture_group = culture_westeros
+				}
+				add_opinion = {
+					who = Root
+					modifier = westeros_hates_wildlings
+				}
+			}
+			
+		}
+		
+		if = {
+			limit = {
+				tag = Z01
+			}
+			#set_primitive = no
+			every_owned_province = {
+				limit = {
+					has_climate = arctic
+				}
+				
+				add_permanent_province_modifier = {
+					name = wildling_arctic_homeland
+					duration = -1
+				}
+			}
+		}
+		
+        set_country_flag = completed_country_setup
+    }
+    
+	option = {
+		name = GOT_SYSTEM.2.option.a
+
+        if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - GOT_SYSTEM.2.option.a" }
+	}
+}
+
+# Setup Slavery Stance
+country_event = {
+	id = GOT_SYSTEM.3
+	title = GOT_SYSTEM.3.title
+	desc = GOT_SYSTEM.3.desc
+	picture = FEAST_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+    
+    immediate = {   
+        if = {
+            limit = {
+				NOT = { tag = U25 }
+                capital_scope = {
+                    NOT = { continent = westeros }
+                }
+            }
+            add_country_modifier = {
+                name = slavery_permitted
+                duration = -1
+                hidden = yes
+            }
+        }
+        if = {
+            limit = {
+				OR = {
+					tag = U25
+					capital_scope = {
+						continent = westeros
+					}
+				}
+            }
+            add_country_modifier = {
+                name = slavery_prohibited
+                duration = -1
+                hidden = yes
+            }
+        }
+    }
+    
+	option = {
+		name = GOT_SYSTEM.3.option.a
+	}
+}
+
+country_event = {
+	id = GOT_SYSTEM.4
+	title = GOT_SYSTEM.4.title
+	desc = GOT_SYSTEM.4.desc
 	picture = ASSASSINATION_eventPicture
 	
     hidden = yes
+    is_triggered_only = yes
     
-	trigger = {
-        NOT = { has_country_flag = revealed_map }
-	}
-	
-	immediate = {   
-        set_country_flag = revealed_map
-    }
-	
 	option = {
-		name = GOT_DISCOVERY.1.option.a
+		name = GOT_SYSTEM.4.option.a
 		  
 		# Westeros
         if = {
@@ -316,5 +515,36 @@ country_event = {
             }
         }  
     }
+}
+
+# If processor dies, designate another
+country_event = {
+	id = GOT_SYSTEM.5
+	title = GOT_SYSTEM.5.title
+	desc = GOT_SYSTEM.5.desc
+	picture = ASSASSINATION_eventPicture
+	
+    hidden = yes
+
+    trigger = {
+        NOT = {
+            any_country = {
+                has_country_flag = processor
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+    
+    option = {
+        name = GOT_SYSTEM.5.option.a
+
+        random_country = {
+            limit = { ai = yes }
+            set_country_flag = processor
+        }
+    }  
 }
 

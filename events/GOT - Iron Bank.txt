@@ -1,4 +1,4 @@
-namespace = GOT_DECISION
+namespace = GOT_IRON_BANK
 
 # The Iron Bank
 # The Iron Bank in Braavos is one of the largest banks in both Westeros and Essos. They're the priemer moneylenders, and it is only with that we can hope to borrow large amounts.
@@ -6,25 +6,45 @@ namespace = GOT_DECISION
 # Take a neutral approach
 # Take a defensive approach
 country_event = {
-	id = GOT_DECISION.1
-	title = GOT_DECISION.1.title
-	desc = GOT_DECISION.1.desc
+	id = GOT_IRON_BANK.1
+	title = GOT_IRON_BANK.1.title
+	desc = GOT_IRON_BANK.1.desc
 	picture = TRADEGOODS_eventPicture
 	
-	is_triggered_only = yes
+	trigger = {
+        NOT = { is_primitive_government = yes } 
+        NOT = { has_ruler_modifier = iron_bank_agreement }
+        OR = {
+            any_known_country = {  
+                primary_culture = braavosi
+            }
+            primary_culture = braavosi
+        }
+    }
+    
+    immediate = {
+        hidden_effect = {
+            add_ruler_modifier = {
+                name = iron_bank_agreement
+                duration = -1
+                hidden = yes
+            }
+            set_country_flag = iron_bank_agreement
+        }
+    }
 
 	option = {
-		name = GOT_DECISION.1.option.a
+		name = GOT_IRON_BANK.1.option.a
 		
 		random_list = {
 			33 = {
-				country_event = { id = GOT_DECISION.2 }
+				country_event = { id = GOT_IRON_BANK.2 }
 			}
 			33 = {
-				country_event = { id = GOT_DECISION.3 }
+				country_event = { id = GOT_IRON_BANK.3 }
 			}
 			33 = {
-				country_event = { id = GOT_DECISION.4 }
+				country_event = { id = GOT_IRON_BANK.4 }
 			}
 		}
 		
@@ -34,17 +54,17 @@ country_event = {
 	}
 	
 	option = {
-		name = GOT_DECISION.1.option.b
+		name = GOT_IRON_BANK.1.option.b
 		
 		random_list = {
 			10 = {
-				country_event = { id = GOT_DECISION.2 }
+				country_event = { id = GOT_IRON_BANK.2 }
 			}
 			80 = {
-				country_event = { id = GOT_DECISION.3 }
+				country_event = { id = GOT_IRON_BANK.3 }
 			}
 			10 = {
-				country_event = { id = GOT_DECISION.4 }
+				country_event = { id = GOT_IRON_BANK.4 }
 			}
 		}
 		
@@ -54,14 +74,14 @@ country_event = {
 	}
 	
 	option = {
-		name = GOT_DECISION.1.option.c
+		name = GOT_IRON_BANK.1.option.c
 		
 		random_list = {
 			90 = {
-				country_event = { id = GOT_DECISION.3 }
+				country_event = { id = GOT_IRON_BANK.3 }
 			}
 			10 = {
-				country_event = { id = GOT_DECISION.4 }
+				country_event = { id = GOT_IRON_BANK.4 }
 			}
 		}
 		
@@ -73,15 +93,15 @@ country_event = {
 
 # Iron Bank Angered
 country_event = {
-	id = GOT_DECISION.2
-	title = GOT_DECISION.2.title
-	desc = GOT_DECISION.2.desc
+	id = GOT_IRON_BANK.2
+	title = GOT_IRON_BANK.2.title
+	desc = GOT_IRON_BANK.2.desc
 	picture = TRADEGOODS_eventPicture
 	
 	is_triggered_only = yes
 
 	option = {
-		name = GOT_DECISION.2.option.a
+		name = GOT_IRON_BANK.2.option.a
 		
 		loan_size = 3
 		
@@ -91,7 +111,7 @@ country_event = {
 	}
 	
 	option = {
-		name = GOT_DECISION.2.option.b
+		name = GOT_IRON_BANK.2.option.b
 		
 		add_dip_power = -100
 		loan_size = 12
@@ -104,15 +124,15 @@ country_event = {
 
 # Iron Bank Satisified
 country_event = {
-	id = GOT_DECISION.3
-	title = GOT_DECISION.3.title
-	desc = GOT_DECISION.3.desc
+	id = GOT_IRON_BANK.3
+	title = GOT_IRON_BANK.3.title
+	desc = GOT_IRON_BANK.3.desc
 	picture = TRADEGOODS_eventPicture
 	
 	is_triggered_only = yes
 
 	option = {
-		name = GOT_DECISION.3.option.a
+		name = GOT_IRON_BANK.3.option.a
 		
 		loan_size = 24
 		
@@ -122,7 +142,7 @@ country_event = {
 	}
 	
 	option = {
-		name = GOT_DECISION.3.option.b
+		name = GOT_IRON_BANK.3.option.b
 		
 		add_dip_power = -100
 		loan_size = 36
@@ -135,15 +155,15 @@ country_event = {
 
 # Iron Bank Thrilled
 country_event = {
-	id = GOT_DECISION.4
-	title = GOT_DECISION.4.title
-	desc = GOT_DECISION.4.desc
+	id = GOT_IRON_BANK.4
+	title = GOT_IRON_BANK.4.title
+	desc = GOT_IRON_BANK.4.desc
 	picture = TRADEGOODS_eventPicture
 	
 	is_triggered_only = yes
 
 	option = {
-		name = GOT_DECISION.4.option.a
+		name = GOT_IRON_BANK.4.option.a
 		
 		loan_size = 48
 		
@@ -153,7 +173,7 @@ country_event = {
 	}
 	
 	option = {
-		name = GOT_DECISION.4.option.b
+		name = GOT_IRON_BANK.4.option.b
 		
 		add_dip_power = -100
 		loan_size = 60 
@@ -166,9 +186,9 @@ country_event = {
 
 # Re-negotiation Needed
 country_event = {
-	id = GOT_DECISION.5
-	title = GOT_DECISION.5.title
-	desc = GOT_DECISION.5.desc
+	id = GOT_IRON_BANK.5
+	title = GOT_IRON_BANK.5.title
+	desc = GOT_IRON_BANK.5.desc
 	picture = TRADEGOODS_eventPicture
 	
 	trigger = {
@@ -181,7 +201,7 @@ country_event = {
 	}
 	
 	option = {
-		name = GOT_DECISION.5.option.a
+		name = GOT_IRON_BANK.5.option.a
 		
 		loan_size = 6
 	}

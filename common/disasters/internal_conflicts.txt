@@ -2,16 +2,17 @@ internal_conflicts = {
 	potential = {
 		num_of_cities = 10
 		uses_doom = no
-		NOT = {
-			has_country_flag = had_internal_conflicts
-		}
+		NOT = { has_country_flag = had_internal_conflicts }
 	}
-
 
 	can_start = {
 		has_any_disaster = no
 		unrest = 1
 		NOT = { stability = 0 }
+        estate_influence = {
+            estate = estate_nobles
+            influence = 40
+        }
 	}
 	
 	can_stop = {

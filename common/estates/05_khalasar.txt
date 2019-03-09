@@ -92,6 +92,7 @@ estate_khalasar = {
                 has_country_flag = commoner_estate_in_power
                 has_country_flag = chieftains_estate_in_power
                 has_country_flag = magi_estate_in_power
+                has_country_flag = slaves_estate_in_power
             }
         }
         influence = -40
@@ -108,6 +109,7 @@ estate_khalasar = {
                 has_country_flag = commoner_estate_in_power
                 has_country_flag = chieftains_estate_in_power
                 has_country_flag = magi_estate_in_power
+                has_country_flag = slaves_estate_in_power
             }
         }
         loyalty = -40
@@ -146,6 +148,37 @@ estate_khalasar = {
     }
 
     # ----- Interactions -----
+    # Curtail the Kos
+    interaction = {
+		name = "CURTAIL_THE_KOS"
+		icon = 1
+		
+        potential = { 
+            has_country_flag = kos_estate_in_power
+        }
+        
+		trigger = {        
+            stability = 1
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }			
+			NOT = {
+				estate_influence = {
+					estate = estate_khalasar
+					influence = 60
+				}				
+			}           
+        }
+		
+		effect = {
+			add_stability = -3
+			add_prestige = -25
+			clr_country_flag = kos_estate_in_power
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
     
     # Exhort Strength
     interaction = {
@@ -154,7 +187,9 @@ estate_khalasar = {
         
         years_between_use = 20
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = kos_estate_in_power }
+        }
         
         trigger = {        
             estate_loyalty = {
@@ -188,7 +223,9 @@ estate_khalasar = {
         
         years_between_use = 10
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = kos_estate_in_power }
+        }
         
         trigger = {
             always = yes
@@ -225,6 +262,10 @@ estate_khalasar = {
         icon = 1
         
         years_between_use = 20
+        
+        potential = {
+            NOT = { has_country_flag = kos_estate_in_power }
+        }
         
         trigger = {
             always = yes
@@ -267,7 +308,9 @@ estate_khalasar = {
         name = "RECRUIT_COMMANDANT"
         icon = 1
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = kos_estate_in_power }
+        }
         
         years_between_use = 30
         
@@ -303,7 +346,9 @@ estate_khalasar = {
         name = "RECRUIT_ARMY_REFORMER"
         icon = 1
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = kos_estate_in_power }
+        }
         
         years_between_use = 30
         
@@ -342,7 +387,9 @@ estate_khalasar = {
         
         years_between_use = 10
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = kos_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -379,7 +426,7 @@ estate_khalasar = {
         years_between_use = 15
         
         potential = {
-
+            NOT = { has_country_flag = kos_estate_in_power }
         }
         
         trigger = {
@@ -431,7 +478,9 @@ estate_khalasar = {
         
         years_between_use = 25
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = kos_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -484,7 +533,9 @@ estate_khalasar = {
         
         years_between_use = 5
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = kos_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {

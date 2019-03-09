@@ -1582,11 +1582,11 @@ ibben_ideas = {
 white_walker_ideas = {
 	start = {
 		reinforce_cost_modifier = -1
-		land_attrition = -0.25
+		manpower_recovery_speed = 1
 	}
 	
 	bonus = {
-		manpower_recovery_speed = 1
+		land_attrition = -0.25
 	}
 	
 	trigger = {
@@ -1594,24 +1594,24 @@ white_walker_ideas = {
 	}
 	free = yes
 	
-	# Mythological Creatures
+	# Undying Loyalty
 	white_walker_1 = {
-		ae_impact = -0.25
+		army_tradition = 1
 	}
 
-	# The Long Night
+	# Frenzied Undead
 	white_walker_2 = {
-		may_explore = yes
+		infantry_power = 0.1
 	}
 
-	# War of the Dawn
+	# Relentless Marchs
 	white_walker_3 = {
-		recover_army_morale_speed = 0.1
+		movement_speed = 0.2
 	}
 
 	# Horrifying Visage
 	white_walker_4 = {
-		infantry_power = 0.15
+		siege_ability = 0.1
 	}
 
 	# Oathkeepers
@@ -1619,15 +1619,14 @@ white_walker_ideas = {
 		free_leader_pool = 1
 	}
 
-	# Ice Magic
+	# Reanimation of the Dead
 	white_walker_6 = {
-		siege_ability = 0.33
+		global_regiment_recruit_speed = -0.33
 	}
 	
-	# The Night's King
+	# The Night King
 	white_walker_7 = {
-		legitimacy = 1
-		prestige = 1
+		all_power_cost = -0.25
 	}
 }
 

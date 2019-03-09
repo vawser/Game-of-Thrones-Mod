@@ -1,0 +1,117 @@
+host_fighting_pits_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        create_general = {
+            tradition = 50
+        }
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+vision_of_a_green_grace_action = {
+	sprite = "GFX_icon_raid_local_villages_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        custom_tooltip = VISION_OF_A_GREEN_GRACE_TT
+		hidden_effect = {
+            random_list = {
+                33 = { add_adm_power = 100 }
+                33 = { add_dip_power = 100 }
+                33 = { add_mil_power = 100 }
+            }
+        }
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+garner_legitimacy_action = {
+	sprite = "GFX_icon_display_wealth_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+		add_legitimacy = 25
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+echo_of_ghis_action = {
+	sprite = "GFX_icon_impress_travelers_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		war_exhaustion = 0.01
+	}
+	effect = {
+        add_war_exhaustion = -5
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+cull_unruly_slaves_action = {
+	sprite = "GFX_icon_purchase_slaves_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+        has_country_modifier = slavery_permitted
+	}
+	trigger = {
+        NOT = { stability = 3 }
+	}
+	effect = {
+		add_stability = 1
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+conscript_orphans_action = {
+	sprite = "GFX_icon_explore_the_high_seas_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+		add_yearly_manpower = 5
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

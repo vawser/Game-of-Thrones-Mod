@@ -1,0 +1,122 @@
+# Riders of the Stallion
+riders_of_the_stallion_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        custom_tooltip = RIDERS_OF_THE_STALLION_TT
+        hidden_effect = {
+            capital_scope = {
+                cavalry = ROOT
+                cavalry = ROOT
+                cavalry = ROOT
+                cavalry = ROOT
+                cavalry = ROOT
+            }
+        }
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Ready the Khalasar
+ready_the_khalasar_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        add_mil_power = 200
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Crack the Whip
+crack_the_whip_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        add_absolutism = 10
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Offerings to the Stallion
+offerings_to_the_stallion_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        add_horde_unity = 25
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Cull the Sickly
+cull_the_sickly_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        add_war_exhaustion = -5
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Cultivate Discipline
+cultivate_discipline_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        add_army_tradition = 15
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

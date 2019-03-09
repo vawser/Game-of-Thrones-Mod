@@ -1,0 +1,138 @@
+blessing_of_strength = {
+    cost = 100
+	modifier = {
+        discipline = 0.05
+	}
+	ai_will_do = {
+		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            is_at_war = no
+        }
+	}
+}
+
+blessing_of_courage = {
+    cost = 100
+	modifier = {
+        land_morale = 0.1
+	}
+	ai_will_do = {
+		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            is_at_war = no
+        }
+	}
+}
+
+blessing_of_fortitude = {
+    cost = 100
+	modifier = {
+        recover_army_morale_speed = 0.1
+	}
+	ai_will_do = {
+		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            is_at_war = no
+        }
+	}
+}
+
+blessing_of_valor = {
+    cost = 100
+	modifier = {
+        prestige_from_land = 1.0
+	}
+	ai_will_do = {
+		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            is_at_war = no
+        }
+	}
+}
+
+blessing_of_alacrity = {
+    cost = 100
+	modifier = {
+        movement_speed = 0.15
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+blessing_of_endurance = {
+    cost = 100
+	modifier = {
+        ship_durability = 0.1
+	}
+	ai_will_do = {
+		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { navy_size_percentage = 0.5 }
+        }
+	}
+}
+
+blessing_of_bounty = {
+    cost = 100
+	modifier = {
+        production_efficiency = 0.15
+	}
+	ai_will_do = {
+		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { production_income_percentage = 0.1 }
+        }
+	}
+}
+
+blessing_of_charisma = {
+    cost = 100
+	modifier = {
+        diplomatic_reputation = 2
+	}
+	ai_will_do = {
+		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            is_at_war = yes
+        }
+	}
+}
+
+blessing_of_gallantry = {
+    cost = 100
+	modifier = {
+        naval_morale = 0.1
+	}
+	ai_will_do = {
+		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { navy_size_percentage = 0.5 }
+        }
+	}
+}
+

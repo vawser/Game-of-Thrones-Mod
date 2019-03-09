@@ -18,6 +18,7 @@ estate_nobles = {
     
     # ----- Conditions -----
 	trigger = {
+        NOT = { has_reform = white_walker_cult_reform }
         NOT = { has_reform = wildling_clan_reform }
         NOT = { has_reform = khalasar_reform }
         NOT = { has_reform = jhattar_reform }
@@ -105,6 +106,7 @@ estate_nobles = {
                 has_country_flag = kos_estate_in_power
                 has_country_flag = chieftains_estate_in_power
                 has_country_flag = magi_estate_in_power
+                has_country_flag = slaves_estate_in_power
 			}
 		}
 		influence = -40
@@ -129,6 +131,7 @@ estate_nobles = {
                 has_country_flag = kos_estate_in_power
                 has_country_flag = chieftains_estate_in_power
                 has_country_flag = magi_estate_in_power
+                has_country_flag = slaves_estate_in_power
 			}
 		}
 		loyalty = -40
@@ -170,6 +173,37 @@ estate_nobles = {
 	}
 
 	# ----- Interactions -----
+    # Curtail the Nobility
+    interaction = {
+		name = "CURTAIL_THE_NOBILITY"
+		icon = 1
+		
+        potential = { 
+            has_country_flag = noble_estate_in_power
+        }
+        
+		trigger = {        
+            stability = 1
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }			
+			NOT = {
+				estate_influence = {
+					estate = estate_nobles
+					influence = 60
+				}				
+			}           
+        }
+		
+		effect = {
+			add_stability = -3
+			add_prestige = -25
+			clr_country_flag = noble_estate_in_power
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
     
 	# Assemble Council
 	interaction = {
@@ -178,7 +212,9 @@ estate_nobles = {
 		
 		years_between_use = 20
 
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = noble_estate_in_power }
+        }
         
 		trigger = {        
             estate_loyalty = {
@@ -208,7 +244,9 @@ estate_nobles = {
         
         years_between_use = 20
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = noble_estate_in_power }
+        }
         
         trigger = {        
             estate_loyalty = {
@@ -242,7 +280,9 @@ estate_nobles = {
         
         years_between_use = 10
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = noble_estate_in_power }
+        }
         
         trigger = {
             always = yes
@@ -279,6 +319,10 @@ estate_nobles = {
         icon = 1
         
         years_between_use = 20
+        
+        potential = {
+            NOT = { has_country_flag = noble_estate_in_power }
+        }
         
         trigger = {
             always = yes
@@ -321,7 +365,9 @@ estate_nobles = {
         name = "RECRUIT_MASTER_OF_MINT"
         icon = 1
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = noble_estate_in_power }
+        }
         
         years_between_use = 30
         
@@ -357,7 +403,9 @@ estate_nobles = {
         name = "RECRUIT_STATESMAN"
         icon = 1
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = noble_estate_in_power }
+        }
         
         years_between_use = 30
         
@@ -395,7 +443,9 @@ estate_nobles = {
         
         years_between_use = 10
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = noble_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -431,7 +481,9 @@ estate_nobles = {
         
         years_between_use = 10
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = noble_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -468,6 +520,7 @@ estate_nobles = {
 		years_between_use = 25
 		
         potential = { 
+            NOT = { has_country_flag = noble_estate_in_power }
             has_heir = yes
 			heir_age = 12
             NOT = { heir_age = 18 }
@@ -513,7 +566,7 @@ estate_nobles = {
         years_between_use = 15
         
         potential = {
-
+            NOT = { has_country_flag = noble_estate_in_power }
         }
         
         trigger = {
@@ -566,6 +619,7 @@ estate_nobles = {
         years_between_use = 15
         
         potential = {
+            NOT = { has_country_flag = noble_estate_in_power }
             OR = {
 				primary_culture = sand_dornish 
 				primary_culture = salt_dornish
@@ -624,6 +678,7 @@ estate_nobles = {
 		
         potential = { 
             has_dlc = "Dharma"
+            NOT = { has_country_flag = noble_estate_in_power }
         }
         
 		trigger = {
@@ -683,6 +738,7 @@ estate_nobles = {
 		
         potential = { 
             has_dlc = "Third Rome"
+            NOT = { has_country_flag = noble_estate_in_power }
         }
         
 		trigger = {
@@ -741,6 +797,7 @@ estate_nobles = {
 		years_between_use = 25
 		
         potential = { 
+            NOT = { has_country_flag = noble_estate_in_power }
             NOT = { republican_tradition = 25 }
         }
         

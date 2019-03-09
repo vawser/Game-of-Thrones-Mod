@@ -97,6 +97,13 @@ country_event = {
 			}
 			set_global_flag = roberts_rebellion
 		}
+        
+        if = {
+			limit = {
+				is_year = 301
+			}
+			set_global_flag = the_night_king
+		}
 	}
 }
 
@@ -117,6 +124,17 @@ country_event = {
         country_event = { id = GOT_SYSTEM.3 }
         country_event = { id = GOT_SYSTEM.4 }
         
+        add_opinion = {
+            who = WIT
+            modifier = white_walkers
+        }
+        WIT = {
+            add_opinion = {
+                who = ROOT
+                modifier = white_walkers
+            }
+        }
+        
 		if = {
 			limit = {
 				primary_culture = free_folk
@@ -127,7 +145,7 @@ country_event = {
 					culture_group = culture_westeros
 				}
 				add_opinion = {
-					who = Root
+					who = ROOT
 					modifier = westeros_hates_wildlings
 				}
 			}

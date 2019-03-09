@@ -99,24 +99,38 @@ guiTypes = {
 		iconType = {
 			name = "great_power_button_base"
 			quadTextureSprite ="GFX_close_gold2"
-			position = { x= 910 y = 5 }
+			position = { x= 910 y = -9999 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}		
-		
 		guiButtonType = {
 			name = "open_build_interface_button"
-			position = { x = 917 y = 12 }
-			quadTextureSprite ="GFX_open_build_interface"
-			tooltip = ""
-			tooltipText =""
-			delayedTooltipText = ""
-			buttonFont = "Main_14_black"
+			position = { x = 722 y = 32 }
+			quadTextureSprite ="GFX_age_button"
 			clicksound = macro_build
 			hint_tag = "hint_macrobuild"
 			shortcut = "b"
 		}
-		
+        iconType = {
+			name = "button_base_alt"
+			spriteType ="GFX_age_frame_addon"
+			position = { x= 690 y = 30 }
+			alwaystransparent = yes
+		}	
+        
+		instantTextBoxType = {
+			name = "build_interface_text"
+			position = { x = 758 y = 53 }
+			textureFile = ""
+			font = "vic_18"
+			borderSize = {x = 4 y = 4}
+			text = "Production Interface"
+			maxWidth = 160
+			maxHeight = 32
+			format = left
+			alwaystransparent = yes
+		}
+        
 		iconType = {
 			name = "government_reforms_progress"
 			position = { x = 100 y = -9999 }
@@ -639,7 +653,7 @@ guiTypes = {
 		
 		guiButtonType = {
 			name = "current_age_button"
-			position = { x = 722 y = 32 }
+			position = { x = 722 y = -9999 }
 			quadTextureSprite ="GFX_age_button"
 			clicksound = macro_build
 		}
@@ -653,7 +667,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "age_title"
-			position = { x = 740 y = 52 }
+			position = { x = 740 y = -9999 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 4 y = 4}
@@ -675,7 +689,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "PlayerNationText"
-			position = { x = 148 y = 50 }
+			position = { x = 140 y = 50 }
 			textureFile = ""
 			font = "vic_22"
 			borderSize = {x = 4 y = 4}

@@ -11,6 +11,8 @@ country_event = {
 	desc = GOT_IRON_BANK.1.desc
 	picture = TRADEGOODS_eventPicture
 	
+    is_triggered_only = yes
+    
 	trigger = {
         NOT = { is_primitive_government = yes } 
         NOT = { has_ruler_modifier = iron_bank_agreement }

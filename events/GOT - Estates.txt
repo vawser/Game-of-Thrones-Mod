@@ -787,7 +787,42 @@ country_event = {
 	}
 }
 
+# Slaves
+country_event = {
+	id = GOT_ESTATES.64
+	title = GOT_ESTATES.64.title
+	desc = GOT_ESTATES.64.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = slaves_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATES.64.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_SLAVES_DISASTER_EVENT
+	}
+}
 
+country_event = {
+	id = GOT_ESTATES.65
+	title = GOT_ESTATES.65.title
+	desc = GOT_ESTATES.65.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATES.65.option.a
+	}
+}
 
 
 

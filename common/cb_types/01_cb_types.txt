@@ -182,3 +182,17 @@ cb_take_mandate_yiti = {
 	war_goal = take_capital_yiti_take_mandate
 }
 
+cb_undead_conquest = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		has_reform = white_walker_cult_reform
+        is_neighbor_of = FROM
+        
+        FROM = {
+            NOT = { has_reform = white_walker_cult_reform }
+        }
+	}
+    
+    war_goal = take_land
+}

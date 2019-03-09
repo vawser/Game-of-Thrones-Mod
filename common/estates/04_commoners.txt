@@ -18,6 +18,7 @@ estate_commoners = {
     
     # ----- Conditions -----
 	trigger = {
+        NOT = { has_reform = white_walker_cult_reform }
         NOT = { has_reform = wildling_clan_reform }
         NOT = { has_reform = khalasar_reform }
         NOT = { has_reform = jhattar_reform }
@@ -94,6 +95,7 @@ estate_commoners = {
                 has_country_flag = kos_estate_in_power
                 has_country_flag = chieftains_estate_in_power
                 has_country_flag = magi_estate_in_power
+                has_country_flag = slaves_estate_in_power
 			}
 		}
 		influence = -40
@@ -110,12 +112,44 @@ estate_commoners = {
                 has_country_flag = kos_estate_in_power
                 has_country_flag = chieftains_estate_in_power
                 has_country_flag = magi_estate_in_power
+                has_country_flag = slaves_estate_in_power
 			}
 		}
 		loyalty = -40
 	}
 
 	# ----- Interactions -----
+    # Curtail the Peasantry
+    interaction = {
+		name = "CURTAIL_THE_NOBILITY"
+		icon = 1
+		
+        potential = { 
+            has_country_flag = commoners_estate_in_power
+        }
+        
+		trigger = {        
+            stability = 1
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }			
+			NOT = {
+				estate_influence = {
+					estate = estate_commoners
+					influence = 60
+				}				
+			}           
+        }
+		
+		effect = {
+			add_stability = -3
+			add_prestige = -25
+			clr_country_flag = commoners_estate_in_power
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
     
     # Enforce Martial Law
     interaction = {
@@ -124,7 +158,9 @@ estate_commoners = {
         
         years_between_use = 20
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = commoners_estate_in_power }
+        }
         
         trigger = {        
             estate_loyalty = {
@@ -158,7 +194,9 @@ estate_commoners = {
         
         years_between_use = 10
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = commoners_estate_in_power }
+        }
         
         trigger = {
             always = yes
@@ -195,6 +233,10 @@ estate_commoners = {
         icon = 1
         
         years_between_use = 20
+        
+        potential = {
+            NOT = { has_country_flag = commoners_estate_in_power }
+        }
         
         trigger = {
             always = yes
@@ -237,7 +279,9 @@ estate_commoners = {
         name = "RECRUIT_PHILOSOPHER"
         icon = 1
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = commoners_estate_in_power }
+        }
         
         years_between_use = 30
         
@@ -273,7 +317,9 @@ estate_commoners = {
         name = "RECRUIT_ARTIST"
         icon = 1
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = commoners_estate_in_power }
+        }
         
         years_between_use = 30
         
@@ -311,7 +357,9 @@ estate_commoners = {
         
         years_between_use = 30
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = commoners_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -362,7 +410,7 @@ estate_commoners = {
         years_between_use = 20
         
         potential = { 
-            has_dlc = "Mandate of Heaven"
+            NOT = { has_country_flag = commoners_estate_in_power }
         }
         
         trigger = {
@@ -377,7 +425,7 @@ estate_commoners = {
         }
         
         effect = {
-            add_scaled_splendor = { ESTATE = estate_commoners }
+            add_scaled_prestige = { ESTATE = estate_commoners }
             
             add_estate_influence_modifier = {
                 estate = estate_commoners
@@ -407,7 +455,9 @@ estate_commoners = {
         
         years_between_use = 20
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = commoners_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -454,7 +504,9 @@ estate_commoners = {
         
         years_between_use = 20
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = commoners_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -501,7 +553,9 @@ estate_commoners = {
         
         years_between_use = 20
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = commoners_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {

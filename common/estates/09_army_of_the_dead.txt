@@ -1,0 +1,269 @@
+estate_undead = {
+	icon = 9
+	
+	color = { 95 180 200 }
+	
+	keep_on_conquest = no 							
+	always_remove_on_religious_conquest = yes 		
+			
+	min_autonomy = 25
+    autonomy_does_not_affect = local_manpower_modifier
+    
+    # ----- Conditions -----
+	trigger = {
+        has_reform = white_walker_cult_reform
+	}
+	
+	province_trigger = {
+		always = yes
+	}
+
+	# ----- Country -----
+	country_modifier_happy = {
+		global_manpower_modifier = 0.25
+		land_forcelimit_modifier = 0.25
+        army_tradition = 1
+	}
+	country_modifier_neutral = {
+		land_forcelimit_modifier = 0.1
+	}	
+	country_modifier_angry = {
+		global_manpower_modifier = -0.25
+		land_forcelimit_modifier = -0.25
+        army_tradition = -1
+	}	
+	
+	# ----- Province -----
+	province_modifier_happy = {
+		local_manpower_modifier = 0.5
+		local_unrest = -5
+	}
+	province_modifier_neutral = {
+		local_manpower_modifier = 0.25
+		local_unrest = -1
+	}	
+	province_modifier_angry = {
+		local_manpower_modifier = -0.5
+		local_unrest = 5
+	}	
+	
+    ai_grant_province = {
+        factor = 1    
+        modifier = {
+            factor = 0.5
+            development = 20
+        }
+        modifier = {
+            factor = 2
+            NOT = { development = 10 }
+        }                
+        modifier = {
+            factor = 0.75
+            has_owner_culture = yes
+        }
+        modifier = {
+            factor = 0.75
+            province_trade_power = 5
+        }            
+        modifier = {
+            factor = 0.75
+            province_trade_power = 10
+        }
+        modifier = {
+            factor = 4
+            local_autonomy = 25
+        }
+        modifier = {
+            factor = 0.25
+            NOT = { local_autonomy = 25 }
+        }
+    }
+    
+    # ----- Territory -----
+    min_territory = 0
+    min_provinces_to_want_territory = 0
+    
+	# ----- Influence -----
+	base_influence = 30
+
+	# ----- Loyalty -----
+    
+	# ----- Interactions -----
+	# Consult Lieutenants
+    interaction = {
+        name = "CONSULT_LIEUTENANTS"
+        icon = 1
+        
+        years_between_use = 10
+        
+        potential = { 
+            
+        }
+        
+        trigger = {
+            mil_power = 100
+        }
+        
+        effect = {
+            add_mil_power = -100
+            
+            add_estate_loyalty = {
+                estate = estate_undead
+                loyalty = 15
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = { mil_power = 400 }                
+            }
+            modifier = {
+                factor = 0
+                estate_loyalty = {
+                    estate = estate_undead
+                    loyalty = 40
+                }
+            }            
+        }        
+    }
+    
+    # Seek Support of Lieutenants
+    interaction = {
+        name = "SEEK_SUPPORT_OF_LIEUTENANTS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = {
+            
+        }
+        
+        trigger = {
+            always = yes
+        }
+        
+        effect = {
+            add_estate_loyalty = {
+                estate = estate_undead
+                loyalty = 10
+            }
+            add_estate_influence_modifier = {
+                estate = estate_undead
+                desc = EST_VAL_SUPPORT_OF_LIEUTENANTS
+                influence = 10
+                duration = 7300
+            }
+        }
+    
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                estate_loyalty = {
+                    estate = estate_undead
+                    loyalty = 30
+                }                        
+            }
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_undead
+                    influence = 60
+                }                        
+            }            
+        }
+    }
+    
+    # Raise Champion
+    interaction = {
+        name = "RAISE_CHAMPION"
+        icon = 1
+        
+        years_between_use = 10
+        
+        potential = { 
+            
+        }
+        
+        trigger = {
+            estate_loyalty = {
+                estate = estate_undead
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_undead
+                influence = 40
+            }            
+        }
+        
+        effect = {
+            add_scaled_general = { ESTATE = estate_undead }
+            
+            add_estate_influence_modifier = {
+                estate = estate_undead
+                desc = EST_VAL_RECRUITED_LEADER
+                influence = 20
+                duration = 3650
+            }
+        }
+        
+        ai_will_do = {
+            factor = 0
+        }
+    }
+    
+    # Raise Wights
+	interaction = {
+		name = "RAISE_UNDEAD"
+		icon = 1
+		
+		years_between_use = 20
+
+        potential = { 
+        
+        }
+        
+		trigger = {        
+            estate_loyalty = {
+                estate = estate_undead
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_undead
+                influence = 25
+            }            
+        }
+		
+		effect = {
+            capital_scope = {
+                infantry = THIS
+                infantry = THIS
+                infantry = THIS
+                infantry = THIS
+                infantry = THIS
+                infantry = THIS
+                infantry = THIS
+                infantry = THIS
+                infantry = THIS
+                infantry = THIS
+            }
+            add_estate_influence_modifier = {
+                estate = estate_nobles
+                desc = EST_VAL_RAISED_UNDEAD
+                influence = 15
+                duration = 7300
+            }
+		}
+		
+		ai_will_do = {
+			factor = 1
+            
+            modifier = {
+                factor = 0
+                army_size_percentage = 0.75
+            }
+		}
+	}
+}

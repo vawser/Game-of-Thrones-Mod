@@ -5,6 +5,12 @@ enchantment_of_might = {
 	}
 	ai_will_do = {
 		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            is_at_war = no
+        }
 	}
 }
 enchantment_of_power = {
@@ -14,6 +20,12 @@ enchantment_of_power = {
 	}
 	ai_will_do = {
 		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            is_at_war = no
+        }
 	}
 }
 enchantment_of_submission = {
@@ -23,6 +35,12 @@ enchantment_of_submission = {
 	}
 	ai_will_do = {
 		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            army_size_percentage = 0.75
+        }
 	}
 }
 enchantment_of_control = {
@@ -32,6 +50,12 @@ enchantment_of_control = {
 	}
 	ai_will_do = {
 		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            manpower = 50
+        }
 	}
 }
 enchantment_of_death = {
@@ -41,6 +65,12 @@ enchantment_of_death = {
 	}
 	ai_will_do = {
 		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            is_at_war = no
+        }
 	}
 }
 enchantment_of_ice = {
@@ -50,6 +80,12 @@ enchantment_of_ice = {
 	}
 	ai_will_do = {
 		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            is_at_war = no
+        }
 	}
 }
 enchantment_of_endurance = {
@@ -59,5 +95,11 @@ enchantment_of_endurance = {
 	}
 	ai_will_do = {
 		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { war_exhaustion = 2 }
+        }
 	}
 }

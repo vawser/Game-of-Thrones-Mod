@@ -1,0 +1,128 @@
+# Occult Inspiration
+occult_inspiration_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        custom_tooltip = OCCULT_INSPIRATION_TT
+        hidden_effect = {
+            random_list = {
+                33 = { add_adm_tech = 1 }
+                33 = { add_dip_tech = 1 }
+                33 = { add_mil_tech = 1 }
+            }
+        }
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Devotion to the Occult
+devotion_to_the_occult_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        add_devotion = 25
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Conjure Gold
+conjure_gold_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        add_years_of_income = 5
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Dazzle the Masses
+dazzle_the_masses_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        add_prestige = 25
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Purge the Feeble
+purge_the_feeble_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        add_corruption = -10
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+# Look upon the Forbidden
+# change_adm
+look_upon_the_forbidden_action = {
+	sprite = "GFX_icon_enforce_rule_action"
+	cost = 100
+    
+	potential = {
+		has_dlc = "Rights of Man"
+	}
+	trigger = {
+		always = yes
+	}
+	effect = {
+        custom_tooltip = LOOK_UPON_THE_FORBIDDEN_TT
+        hidden_effect = {
+            random_list = {
+                33 = { change_adm = 1 }
+                33 = { change_dip = 1 }
+                33 = { change_mil = 1 }
+            }
+        }
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

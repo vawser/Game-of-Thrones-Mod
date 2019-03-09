@@ -11,6 +11,7 @@ estate_clergy = {
     
     # ----- Conditions -----
 	trigger = {
+        NOT = { has_reform = white_walker_cult_reform }
 		NOT = { has_reform = wildling_clan_reform }
         NOT = { has_reform = khalasar_reform }
         NOT = { has_reform = jhattar_reform }
@@ -105,6 +106,7 @@ estate_clergy = {
                 has_country_flag = kos_estate_in_power
                 has_country_flag = chieftains_estate_in_power
                 has_country_flag = magi_estate_in_power
+                has_country_flag = slaves_estate_in_power
 			}
 		}
 		influence = -40
@@ -129,6 +131,7 @@ estate_clergy = {
                 has_country_flag = kos_estate_in_power
                 has_country_flag = chieftains_estate_in_power
                 has_country_flag = magi_estate_in_power
+                has_country_flag = slaves_estate_in_power
 			}
 		}
 		loyalty = -40
@@ -161,6 +164,38 @@ estate_clergy = {
 	}
 	
     # ----- Interactions -----
+    # Curtail the Clergy
+    interaction = {
+		name = "CURTAIL_THE_CLERGY"
+		icon = 1
+		
+        potential = { 
+            has_country_flag = clergy_estate_in_power
+        }
+        
+		trigger = {        
+            stability = 1
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }			
+			NOT = {
+				estate_influence = {
+					estate = estate_clergy
+					influence = 60
+				}				
+			}           
+        }
+		
+		effect = {
+			add_stability = -3
+			add_prestige = -25
+			clr_country_flag = clergy_estate_in_power
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
     # Dictate Religious Texts
     interaction = {
         name = "DICTATE_RELIGIOUS_TEXTS"
@@ -168,7 +203,9 @@ estate_clergy = {
         
         years_between_use = 20
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = clergy_estate_in_power }
+        }
         
         trigger = {        
             estate_loyalty = {
@@ -202,7 +239,9 @@ estate_clergy = {
         
         years_between_use = 10
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = clergy_estate_in_power }
+        }
         
         trigger = {
             always = yes
@@ -239,6 +278,10 @@ estate_clergy = {
         icon = 1
         
         years_between_use = 20
+        
+        potential = {
+            NOT = { has_country_flag = clergy_estate_in_power }
+        }
         
         trigger = {
             always = yes
@@ -281,7 +324,9 @@ estate_clergy = {
         name = "RECRUIT_INQUISITOR"
         icon = 1
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = clergy_estate_in_power }
+        }
         
         years_between_use = 30
         
@@ -317,7 +362,9 @@ estate_clergy = {
         name = "RECRUIT_THEOLOGIAN"
         icon = 1
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = clergy_estate_in_power }
+        }
         
         years_between_use = 30
         
@@ -356,6 +403,7 @@ estate_clergy = {
         years_between_use = 10
         
         potential = { 
+            NOT = { has_country_flag = clergy_estate_in_power }
             OR = {
                 uses_fervor = yes
                 uses_karma = yes
@@ -414,6 +462,7 @@ estate_clergy = {
         years_between_use = 10
         
         potential = { 
+            NOT = { has_country_flag = clergy_estate_in_power }
             OR = {
                 uses_karma = yes
                 uses_patriarch_authority = yes
@@ -483,6 +532,7 @@ estate_clergy = {
         years_between_use = 10
         
         potential = { 
+            NOT = { has_country_flag = clergy_estate_in_power }
             dominant_religion = ROOT
         }
         
@@ -537,7 +587,9 @@ estate_clergy = {
         
         years_between_use = 15
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = clergy_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -587,7 +639,9 @@ estate_clergy = {
         
         years_between_use = 20
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = clergy_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -637,11 +691,12 @@ estate_clergy = {
         years_between_use = 10
         
         potential = { 
+            NOT = { has_country_flag = clergy_estate_in_power }
             religion = asoiaf_faith_of_the_seven
-            prestige = 0
         }
         
         trigger = {
+            prestige = 0
             estate_loyalty = {
                 estate = estate_clergy
                 loyalty = 30

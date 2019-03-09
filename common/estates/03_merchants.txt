@@ -18,6 +18,7 @@ estate_merchants = {
     
     # ----- Conditions -----
 	trigger = {
+        NOT = { has_reform = white_walker_cult_reform }
 		NOT = { has_reform = wildling_clan_reform }
         NOT = { has_reform = khalasar_reform }
         NOT = { has_reform = jhattar_reform }
@@ -102,6 +103,7 @@ estate_merchants = {
                 has_country_flag = kos_estate_in_power
                 has_country_flag = chieftains_estate_in_power
                 has_country_flag = magi_estate_in_power
+                has_country_flag = slaves_estate_in_power
 			}
 		}
 		influence = -40
@@ -135,6 +137,7 @@ estate_merchants = {
                 has_country_flag = kos_estate_in_power
                 has_country_flag = chieftains_estate_in_power
                 has_country_flag = magi_estate_in_power
+                has_country_flag = slaves_estate_in_power
 			}
 		}
 		loyalty = -40
@@ -170,6 +173,38 @@ estate_merchants = {
 	}
     
 	# ----- Interactions -----
+    # Curtail the Merchants
+    interaction = {
+		name = "CURTAIL_THE_MERCHANTS"
+		icon = 1
+		
+        potential = { 
+            has_country_flag = merchants_estate_in_power
+        }
+        
+		trigger = {        
+            stability = 1
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }			
+			NOT = {
+				estate_influence = {
+					estate = estate_merchants
+					influence = 60
+				}				
+			}           
+        }
+		
+		effect = {
+			add_stability = -3
+			add_prestige = -25
+			clr_country_flag = merchants_estate_in_power
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
     # Favour Chosen Merchants
     interaction = {
         name = "FAVOUR_CHOSEN_MERCHANTS"
@@ -177,7 +212,9 @@ estate_merchants = {
         
         years_between_use = 20
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = merchants_estate_in_power }
+        }
         
         trigger = {        
             estate_loyalty = {
@@ -211,7 +248,9 @@ estate_merchants = {
         
         years_between_use = 10
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = merchants_estate_in_power }
+        }
         
         trigger = {
             always = yes
@@ -248,6 +287,10 @@ estate_merchants = {
         icon = 1
         
         years_between_use = 20
+        
+        potential = {
+            NOT = { has_country_flag = merchants_estate_in_power }
+        }
         
         trigger = {
             always = yes
@@ -290,7 +333,9 @@ estate_merchants = {
         name = "RECRUIT_TRADER"
         icon = 1
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = merchants_estate_in_power }
+        }
         
         years_between_use = 30
         
@@ -326,7 +371,9 @@ estate_merchants = {
         name = "RECRUIT_SPYMASTER"
         icon = 1
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = merchants_estate_in_power }
+        }
         
         years_between_use = 30
         
@@ -364,7 +411,9 @@ estate_merchants = {
         
         years_between_use = 10
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = merchants_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -408,7 +457,9 @@ estate_merchants = {
         
         years_between_use = 10
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = merchants_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -444,7 +495,9 @@ estate_merchants = {
         
         years_between_use = 10
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = merchants_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -480,7 +533,9 @@ estate_merchants = {
         
         years_between_use = 20
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = merchants_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -525,7 +580,9 @@ estate_merchants = {
         
         years_between_use = 20
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = merchants_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {
@@ -576,7 +633,9 @@ estate_merchants = {
         
         years_between_use = 15
         
-        potential = { }
+        potential = { 
+            NOT = { has_country_flag = merchants_estate_in_power }
+        }
         
         trigger = {
             estate_loyalty = {

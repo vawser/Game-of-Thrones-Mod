@@ -5,6 +5,12 @@ vision_of_grandeur = {
 	}
 	ai_will_do = {
 		factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { years_of_income = 1 }
+        }
 	}
 }
 
@@ -81,7 +87,7 @@ vision_of_faith = {
 vision_of_war = {
     cost = 100
 	modifier = {
-		discipline = 0.025
+		discipline = 0.05
 	}
 	ai_will_do = {
 		factor = 1

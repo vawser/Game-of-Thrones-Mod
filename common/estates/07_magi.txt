@@ -36,17 +36,17 @@ estate_magi = {
 
 	# ----- Country -----
 	country_modifier_happy = {
-		technology_cost = -0.15
+		technology_cost = -0.1
         idea_cost = -0.1
-        advisor_cost = -0.25
+        advisor_cost = -0.1
 	}
 	country_modifier_neutral = {
 		technology_cost = -0.05
 	}	
 	country_modifier_angry = {
-		technology_cost = 0.15
+		technology_cost = 0.1
         idea_cost = 0.1
-        advisor_cost = 0.25
+        advisor_cost = 0.1
 	}	
 	
 	# ----- Province -----
@@ -283,7 +283,7 @@ estate_magi = {
     
     # Recruit Treasurer
     interaction = {
-        name = "RECRUIT_TREASURER"
+        name = "RECRUIT_WIZARD"
         icon = 1
         
         potential = { 
@@ -302,7 +302,7 @@ estate_magi = {
         effect = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_magi 
-                ADVISOR = treasurer
+                ADVISOR = wizard
             }
             
             add_estate_influence_modifier = {
@@ -321,7 +321,7 @@ estate_magi = {
     
     # Recruit Diplomat
     interaction = {
-        name = "RECRUIT_DIPLOMAT"
+        name = "RECRUIT_BOOKBINDER"
         icon = 1
         
         potential = { 
@@ -340,7 +340,7 @@ estate_magi = {
         effect = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_magi 
-                ADVISOR = diplomat
+                ADVISOR = bookbinder
             }
             
             add_estate_influence_modifier = {

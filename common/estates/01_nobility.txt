@@ -362,7 +362,7 @@ estate_nobles = {
     
     # Recruit Master of Mint
     interaction = {
-        name = "RECRUIT_MASTER_OF_MINT"
+        name = "RECRUIT_TREASURER"
         icon = 1
         
         potential = { 
@@ -381,7 +381,7 @@ estate_nobles = {
         effect = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_nobles 
-                ADVISOR = master_of_mint
+                ADVISOR = treasurer
             }
             
             add_estate_influence_modifier = {
@@ -400,7 +400,7 @@ estate_nobles = {
     
     # Recruit Statesman
     interaction = {
-        name = "RECRUIT_STATESMAN"
+        name = "RECRUIT_STEWARD"
         icon = 1
         
         potential = { 
@@ -419,7 +419,7 @@ estate_nobles = {
         effect = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_nobles 
-                ADVISOR = statesman
+                ADVISOR = steward
             }
             
             add_estate_influence_modifier = {

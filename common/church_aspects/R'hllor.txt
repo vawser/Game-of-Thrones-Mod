@@ -37,7 +37,7 @@ vision_of_strength = {
 vision_of_wealth = {
     cost = 100
 	modifier = {
-		global_tax_modifier = 0.15
+		global_tax_modifier = 0.1
 	}
 	ai_will_do = {
 		factor = 1
@@ -47,7 +47,7 @@ vision_of_wealth = {
 vision_of_revenge = {
     cost = 100
 	modifier = {
-		rebel_support_efficiency = 0.5
+		hostile_attrition = 1
 	}
 	ai_will_do = {
 		factor = 1
@@ -87,7 +87,7 @@ vision_of_faith = {
 vision_of_war = {
     cost = 100
 	modifier = {
-		discipline = 0.05
+		infantry_power = 0.1
 	}
 	ai_will_do = {
 		factor = 1
@@ -97,7 +97,7 @@ vision_of_war = {
 vision_of_ambition = {
     cost = 100
 	modifier = {
-		advisor_cost = -0.15
+		advisor_cost = -0.1
 	}
 	ai_will_do = {
 		factor = 1
@@ -108,7 +108,7 @@ vision_of_legitimacy = {
     cost = 100
 	modifier = {
 		legitimacy = 1
-		republican_tradition = 0.01
+		republican_tradition = 1
 	}
 	ai_will_do = {
 		factor = 1
@@ -118,7 +118,7 @@ vision_of_legitimacy = {
 vision_of_cruelty = {
     cost = 100
 	modifier = {
-		land_morale = 0.1
+		land_maintenance_modifier = -0.1
 	}
 	ai_will_do = {
 		factor = 1

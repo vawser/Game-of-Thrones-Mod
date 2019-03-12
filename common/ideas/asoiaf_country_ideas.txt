@@ -22,11 +22,11 @@ northmen_ideas = {
 	
 	# Harsh Living
 	northmen_1 = {
-		land_attrition = -0.15
+		land_attrition = -0.1
 	}
 	# Mountain Clans
 	northmen_2 = {	
-		land_forcelimit_modifier = 0.15
+		land_forcelimit_modifier = 0.1
 	}
 	# The Old Gods
 	northmen_3 = {
@@ -34,30 +34,30 @@ northmen_ideas = {
 	}
 	# The Kingsroad
 	northmen_4 = {
-		global_own_trade_power = 0.15
+		global_own_trade_power = 0.1
 	}
 	# Stark Legacy
 	northmen_5 = {
-		core_creation = -0.15
+		core_creation = -0.1
 	}
 	# Rivalry of the Boltons
 	northmen_6 = { 
-		discipline = 0.05
+		infantry_power = 0.1
 	}
 	# Winter is Coming
 	northmen_7 = {
-		ae_impact = -0.15
+		ae_impact = -0.1
 	}
 }
 
 ironborn_ideas = {
 	start = {
 		may_perform_slave_raid = yes
-		galley_power = 0.2
+		galley_power = 0.1
 	}
 	
 	bonus = {
-		privateer_efficiency = 0.25
+		sailor_maintenance_modifer = -0.2
 	}
 	
 	trigger = {
@@ -67,47 +67,43 @@ ironborn_ideas = {
 	
 	# The Old Way
 	ironborn_1 = {
-		galley_cost = -0.33
 		navy_tradition = 1
 	}
 	# The Drowned God
 	ironborn_2 = {	
-		free_leader_pool = 1
-		global_ship_recruit_speed = -0.25
+		global_sailors_modifier = 0.2
 	}
 	# Raid the Scum
 	ironborn_3 = {
-		infantry_power = 0.1
-		blockade_efficiency = 0.33
+		naval_tradition_from_battle = 1.0
 	}
 	# Subdue the Weak
 	ironborn_4 = {
-		leader_naval_shock = 1
-		leader_naval_fire = 1
+		capture_ship_chance = 0.2
 	}
 	# The Iron Fleet
 	ironborn_5 = {
-		naval_morale = 0.2
-		ship_durability = 0.2
+		naval_morale = 0.1
+		ship_durability = 0.1
 	}
 	# A Game of Finger Dance
 	ironborn_6 = {
-		naval_forcelimit_modifier = 0.33
+		naval_forcelimit_modifier = 0.2
 	}
 	# The Iron Price
 	ironborn_7 = {
-		naval_maintenance_modifier = -0.5
+		naval_maintenance_modifier = -0.2
 	}
 }
 
 valeman_ideas = {
 	start = {
-		global_trade_goods_size_modifier = 0.15
+		global_trade_goods_size_modifier = 0.1
 		global_unrest = -1
 	}
 	
 	bonus = {
-		discipline = 0.05
+		fort_maintenance_modifier = -0.2
 	}
 	
 	trigger = {
@@ -125,14 +121,14 @@ valeman_ideas = {
 		free_leader_pool = 1
 	}
 	valeman_4 = {
-		land_morale = 0.15
+		land_morale = 0.1
 	}
 	valeman_5 = {
-		trade_efficiency = 0.1
-		global_trade_power = 0.1
+		trade_efficiency = 0.15
+		global_trade_power = 0.15
 	}
 	valeman_6 = {
-		stability_cost_modifier = -0.15
+		stability_cost_modifier = -0.2
 	}
 	valeman_7 = {
 		legitimacy = 1
@@ -141,8 +137,8 @@ valeman_ideas = {
 
 reachman_ideas = {
 	start = {
-		global_tax_modifier = 0.15
-		idea_cost = -0.05
+		production_efficiency = 0.1
+		global_institution_spread = 0.1
 	}
 	
 	bonus = {
@@ -161,16 +157,16 @@ reachman_ideas = {
 		heir_chance = 1.0
 	}
 	reachman_3 = {
-		land_morale = 0.15
+		land_morale = 0.1
 	}
 	reachman_4 = {
 		global_heretic_missionary_strength = 0.02
 	}
 	reachman_5 = {
-		improve_relation_modifier = 0.25
+		improve_relation_modifier = 0.2
 	}
 	reachman_6 = {
-		global_regiment_cost = -0.15
+		global_regiment_cost = -0.2
 	}
 	reachman_7 = {
 		legitimacy = 1
@@ -179,8 +175,8 @@ reachman_ideas = {
 
 dornish_ideas = {
 	start = {
-		infantry_power = 0.05
-		army_tradition_decay = -0.01
+		land_maintenance_modifier = -0.2
+		army_tradition = 1
 	}
 	
 	bonus = {
@@ -197,13 +193,13 @@ dornish_ideas = {
 	free = yes
 	
 	dornish_1 = {
-		global_manpower_modifier = 0.15
+		global_manpower_modifier = 0.2
 	}
 	dornish_2 = {
-		hostile_attrition = 1
+		hostile_attrition = 2
 	}
 	dornish_3 = {
-		land_attrition = -0.15
+		land_attrition = -0.1
 	}
 	dornish_4 = {
 		cavalry_power = 0.1
@@ -216,17 +212,18 @@ dornish_ideas = {
 	}
 	dornish_7 = {
 		diplomatic_upkeep = 1
+        diplomatic_reputation = 1
 	}
 }
 
 stormlander_ideas = {
 	start = {
-		build_cost = -0.1
-		development_cost = -0.05
+		build_cost = -0.2
+		build_time = -0.2
 	}
 	
 	bonus = {
-		global_tax_modifier = 0.15
+		garrison_size = 1.0
 	}
 	
 	trigger = {
@@ -235,13 +232,13 @@ stormlander_ideas = {
 	free = yes
 	
 	stormlander_1 = {
-		defensiveness = 0.25
+		defensiveness = 0.33
 	}
 	stormlander_2 = {
 		army_tradition = 1
 	}
 	stormlander_3 = {
-		unjustified_demands = -0.25
+		unjustified_demands = -0.2
 	}
 	stormlander_4 = {
 		navy_tradition = 1
@@ -250,21 +247,21 @@ stormlander_ideas = {
 		global_prov_trade_power_modifier = 0.2
 	}
 	stormlander_6 = {
-		war_exhaustion_cost = -0.2
+		war_exhaustion = -0.05
 	}
 	stormlander_7 = {
-		ae_impact = -0.15
+		ae_impact = -0.2
 	}
 }
 
 crownlander_ideas = {
 	start = {
-		idea_cost = -0.05
+		global_tax_modifier = 0.1
 		production_efficiency = 0.1
 	}
 	
 	bonus = {
-		development_cost = -0.1
+		development_cost = -0.2
 	}
 	
 	trigger = {
@@ -274,7 +271,7 @@ crownlander_ideas = {
 	
 	crownlander_1 = {
 		num_accepted_cultures = 1
-		stability_cost_modifier = -0.15
+		stability_cost_modifier = -0.2
 	}
 	crownlander_2 = {
 		dip_tech_cost_modifier = -0.1
@@ -283,7 +280,7 @@ crownlander_ideas = {
 		global_missionary_strength = 0.02
 	}
 	crownlander_4 = {
-		recover_army_morale_speed = 0.05
+		recover_army_morale_speed = 0.1
 	}
 	crownlander_5 = {
 		prestige = 1
@@ -292,18 +289,18 @@ crownlander_ideas = {
 		siege_ability = 0.1
 	}
 	crownlander_7 = {
-		ae_impact = -0.15
+		ae_impact = -0.1
 	}
 }
 
 westerman_ideas = {
 	start = {
-		caravan_power = 0.15
-		improve_relation_modifier = 0.25
+		land_morale = 0.1
+		improve_relation_modifier = 0.1
 	}
 	
 	bonus = {
-		diplomats = 1
+		global_manpower_modifier = 0.2
 	}
 	
 	trigger = {
@@ -318,30 +315,30 @@ westerman_ideas = {
 		diplomatic_reputation = 2
 	}
 	westerman_3 = {
-		diplomatic_upkeep = 1
+		diplomatic_upkeep = 2
 	}
 	westerman_4 = {
-		trade_efficiency = 0.1
+		trade_efficiency = 0.2
 	}
 	westerman_5 = {
-		global_trade_goods_size_modifier = 0.15
+		global_trade_goods_size_modifier = 0.1
 	}
 	westerman_6 = {
-		improve_relation_modifier = 0.15
+		improve_relation_modifier = 0.2
 	}
 	westerman_7 = {
-		core_creation = -0.15
+		core_creation = -0.1
 	}
 }
 
 crackclaw_ideas = {
 	start = {
-		hostile_attrition = 1
-		global_spy_defence = 0.25
+		hostile_attrition = 2
+		fort_maintenance_modifier = -0.1
 	}
 	
 	bonus = {
-		land_maintenance_modifier = -0.33
+		land_maintenance_modifier = -0.2
 	}
 	
 	trigger = {
@@ -350,36 +347,36 @@ crackclaw_ideas = {
 	free = yes
 	
 	crackclaw_1 = {
-		infantry_power = 0.1
+		global_supply_limit_modifier = 0.1
 	}
 	crackclaw_2 = {
-		land_attrition = -0.15
+		land_attrition = -0.1
 	}
 	crackclaw_3 = {
-		land_morale = 0.15
+		recover_army_morale_speed = 0.1
 	}
 	crackclaw_4 = {
-		defensiveness = 0.25
+		defensiveness = 0.33
 	}
 	crackclaw_5 = {
-		discipline = 0.05
+		infantry_power = 0.1
 	}
 	crackclaw_6 = {
-		siege_ability = 0.15
+		siege_ability = 0.1
 	}
 	crackclaw_7 = {
-		global_manpower_modifier = 0.25
+		global_manpower_modifier = 0.2
 	}
 }
 
 riverlands_ideas = {
 	start = {
-		trade_steering = 0.15
+		land_forcelimit_modifier = 0.1
 		caravan_power = 0.1
 	}
 	
 	bonus = {
-		years_of_nationalism = -5
+		land_maintenance_modifier = -0.1
 	}
 	
 	trigger = {
@@ -388,7 +385,7 @@ riverlands_ideas = {
 	free = yes
 	
 	riverlands_1 = {
-		global_trade_goods_size_modifier = 0.15
+		global_trade_goods_size_modifier = 0.2
 	}
 	riverlands_2 = {
 		war_exhaustion = -0.1
@@ -398,27 +395,27 @@ riverlands_ideas = {
 		num_accepted_cultures = 1
 	}
 	riverlands_4 = {
-		trade_range_modifier = 0.25
+		trade_range_modifier = 0.2
 	}
 	riverlands_5 = {
 		global_own_trade_power = 0.1
 	}
 	riverlands_6 = {
-		naval_forcelimit_modifier = 0.25
+		naval_forcelimit_modifier = 0.15
 	}
 	riverlands_7 = {
-		stability_cost_modifier = -0.1
+		stability_cost_modifier = -0.2
 	}
 }
 
 tyroshi_ideas = {
 	start = {
 		navy_tradition_decay = -0.01
-		embargo_efficiency = 0.2
+		global_ship_recruit_speed = -0.2
 	}
 	
 	bonus = {
-		naval_morale = 0.15
+		naval_morale = 0.1
 	}
 	
 	trigger = {
@@ -428,11 +425,11 @@ tyroshi_ideas = {
 	
 	# Tyroshi Greed
 	tyroshi_1 = {
-		caravan_power = 0.2
+		caravan_power = 0.1
 	}
 	# Fountain of the Drunked God
 	tyroshi_2 = {
-		global_spy_defence = 0.5
+		global_sailors_modifier = 0.2
 	}
 	# Stepstones Ambitions
 	tyroshi_3 = {
@@ -444,28 +441,26 @@ tyroshi_ideas = {
 	}
 	# Traditions of Trade
 	tyroshi_5 = {
-		light_ship_cost = -0.2
-		light_ship_power = 0.2
+		light_ship_cost = -0.33
 	}
 	# Disputed Lands
 	tyroshi_6 = {
-		mercenary_cost = -0.25
-		possible_mercenaries = 0.5
+		mercenary_cost = -0.33
 	}
 	# Tyroshi Fashion
 	tyroshi_7 = {
-		prestige = 1
+		advisor_cost = -0.2
 	}
 }
 
 lysene_ideas = {
 	start = {
-		discovered_relations_impact = -0.25
-		culture_conversion_cost = -0.25
+		embracement_cost = -0.2
+		culture_conversion_cost = -0.2
 	}
 	
 	bonus = {
-		stability_cost_modifier = -0.15
+		all_power_cost = -0.1
 	}
 	
 	trigger = {
@@ -480,11 +475,11 @@ lysene_ideas = {
 	}
 	# Lysene Alchemists
 	lysene_2 = {
-		may_study_technology = yes
+        siege_ability = 0.1
 	}
 	# Weeping Lady of Lys
 	lysene_3 = {
-		global_missionary_strength = 0.01
+		global_missionary_strength = 0.03
 	}
 	# Lysene Coins
 	lysene_4 = {
@@ -492,16 +487,15 @@ lysene_ideas = {
 	}
 	# Tears of Lys
 	lysene_5 = {
-		global_spy_defence = 0.5
+		unjustified_demands = -0.2
 	}
 	# Booming Population
 	lysene_6 = {
-		years_of_nationalism = -10
+		province_warscore_cost = -0.2
 	}
 	# Ambitions over the Disputed Lands
 	lysene_7 = {
-		mercenary_cost = -0.15
-		merc_maintenance_modifier = -0.15
+		merc_maintenance_modifier = -0.2
 	}
 }
 
@@ -512,7 +506,7 @@ myrish_ideas = {
 	}
 	
 	bonus = {
-		build_cost = -0.2
+		global_manpower_modifier = 0.2
 	}
 	
 	trigger = {
@@ -522,7 +516,7 @@ myrish_ideas = {
 	
 	# Valyrian Technology
 	myrish_1 = {
-		embracement_cost = -0.05
+		embracement_cost = -0.1
 	}
 	# Craftsmen of Myr
 	myrish_2 = {
@@ -530,7 +524,7 @@ myrish_ideas = {
 	}
 	# Myrish Glass
 	myrish_3 = {
-		production_efficiency = 0.2
+		production_efficiency = 0.15
 	}
 	# Trade through the Myrth
 	myrish_4 = {
@@ -546,7 +540,7 @@ myrish_ideas = {
 	}
 	# Myrish Architecture
 	myrish_7 = {
-		development_cost = -0.15
+		development_cost = -0.2
 	}
 }
 
@@ -558,7 +552,7 @@ pentoshi_ideas = {
 	}
 	
 	bonus = {
-		global_prov_trade_power_modifier = 0.15
+		global_prov_trade_power_modifier = 0.2
 	}
 	
 	trigger = {
@@ -580,30 +574,30 @@ pentoshi_ideas = {
 	}
 	# Sunrise Gate
 	pentoshi_4 = {
-		land_attrition = -0.15
+		defensiveness = 0.33
 	}
 	# Wealth equals Power
 	pentoshi_5 = {
-		army_tradition_decay = -0.01
+		yearly_corruption = -0.05
 	}
 	# Slaves in all but Name
 	pentoshi_6 = {
-		global_manpower_modifier = 0.15
+		global_manpower_modifier = 0.2
 	}
 	# Braavosi Influence
 	pentoshi_7 = {
-		global_foreign_trade_power = 0.15
+		prestige = 1
 	}
 }
 
 braavosi_ideas = {
 	start = {
-		global_spy_defence = 0.25
+		idea_cost = -0.1
 		num_accepted_cultures = 1
 	}
 	
 	bonus = {
-		global_trade_power = 0.25
+		global_trade_power = 0.2
 	}
 	
 	trigger = {
@@ -613,7 +607,7 @@ braavosi_ideas = {
 	
 	# Refugees from Valyria
 	braavosi_1 = {
-		ae_impact = -0.15
+		ae_impact = -0.1
 	}
 	# A Secret City
 	braavosi_2 = {
@@ -621,7 +615,7 @@ braavosi_ideas = {
 	}
 	# The Drowned Town
 	braavosi_3 = {
-		build_cost = -0.15
+		build_cost = -0.33
 	}
 	# The Titan of Braavos
 	braavosi_4 = {
@@ -648,7 +642,7 @@ pirate_ideas = {
 	}
 	
 	bonus = {
-		galley_power = 0.25
+		galley_power = 0.2
 	}
 	
 	trigger = {
@@ -663,12 +657,13 @@ pirate_ideas = {
 	}
 	# Pirate Dens
 	pirate_2 = {
-		global_ship_cost = -0.25
-		global_ship_repair = 0.25
+		global_ship_cost = -0.2
+		global_ship_repair = 0.2
 	}
 	# Essosian Claimants
 	pirate_3 = {
 		prestige_from_naval = 1
+        naval_tradition_from_battle = 1
 	}
 	# Lady of the Waves
 	pirate_4 = {
@@ -682,22 +677,22 @@ pirate_ideas = {
 	}
 	# Rule of the Stepstones
 	pirate_6 = {
-		naval_forcelimit_modifier = 0.33
+		naval_forcelimit_modifier = 0.2
 	}
 	# Veteran Pirates
 	pirate_7 = {
-		ship_durability = 0.2
+		ship_durability = 0.1
 	}
 }
 
 northern_essosian_ideas = {
 	start = {
-		discipline = 0.05
+		global_manpower_modifier = 0.1
 		hostile_attrition = 2
 	}
 	
 	bonus = {
-		land_forcelimit_modifier = 0.25
+		land_forcelimit_modifier = 0.2
 	}
 	
 	trigger = {
@@ -707,7 +702,7 @@ northern_essosian_ideas = {
 	
 	# Breakers of Volantis
 	northern_essosian_1 = {
-		fabricate_claims_cost = -0.25
+		core_creation = -0.1
 	}
 	# Qohorik Craftsmen
 	northern_essosian_2 = {
@@ -719,19 +714,19 @@ northern_essosian_ideas = {
 	}
 	# Ancient Valyrian Roads
 	northern_essosian_4 = {
-		land_forcelimit_modifier = 0.1
+		land_forcelimit_modifier = 0.15
 	}
 	# Order of the Bearded Priests
 	northern_essosian_5 = {
-		land_morale = 0.2
+		land_morale = 0.1
 	}
 	# Repulsion of the Dothraki
 	northern_essosian_6 = {
-		defensiveness = 0.33
+		garrison_size = 1.0
 	}
 	# Lorathi Velvet
 	northern_essosian_7 = {
-		army_tradition_decay = -0.02
+		diplomatic_reputation = 1
 	}
 }
 
@@ -757,7 +752,7 @@ volantene_ideas = {
 	}
 	# The Black Wall
 	volantene_2 = {
-		defensiveness = 0.25
+		fort_maintenance_modifier = -0.2
 	}
 	# The Merchant's House
 	volantene_3 = {
@@ -773,7 +768,7 @@ volantene_ideas = {
 	}
 	# Valyrian Freehold
 	volantene_6 = {
-		dip_tech_cost_modifier = -0.1
+		army_tradition = 1
 	}
 	# The Harbor
 	volantene_7 = {
@@ -786,11 +781,11 @@ volantene_ideas = {
 summer_islander_ideas = {
 	start = {
 		may_perform_slave_raid = yes
-		core_creation = -0.1
+		naval_attrition = -0.1
 	}
 	
 	bonus = {
-		privateer_efficiency = 0.33
+		heavy_ship_power = 0.1
 	}
 	
 	trigger = {
@@ -800,7 +795,7 @@ summer_islander_ideas = {
 	
 	# Deposition of Jalabhar Xho
 	summer_islander_1 = {
-		land_morale = 0.15
+		land_morale = 0.1
 	}
 	# The Smiling Sea
 	summer_islander_2 = {
@@ -833,12 +828,12 @@ summer_islander_ideas = {
 
 naathi_ideas = {
 	start = {
-		may_perform_slave_raid = yes
+		tolerance_own = 3
 		global_unrest = -1
 	}
 	
 	bonus = {
-		years_of_nationalism = -5
+		global_ship_cost = -0.2
 	}
 	
 	trigger = {
@@ -848,24 +843,25 @@ naathi_ideas = {
 	
 	# Lovers, not Fighters
 	naathi_1 = {
-		diplomatic_upkeep = 1
+		diplomatic_reputation = 3
+        improve_relation_modifier = 0.2
 	}
 	# Lord of Harmony
 	naathi_2 = {
-		global_missionary_strength = 0.05
+		global_missionary_strength = 0.03
 	}
 	# Butterfly Spirits
 	naathi_3 = {
-		tolerance_own = 3
+        hostile_attrition = 10
 	}
 	# Naathi Explorers
 	naathi_4 = {
 		colonists = 1
-		global_colonial_growth = 20
+		global_colonial_growth = 10
 	}
 	# Aura of Naath
 	naathi_5 = {
-		diplomatic_reputation = 1
+		ae_impact = -0.1
 	}
 	# Peace through Tolerance
 	naathi_6 = {
@@ -873,18 +869,18 @@ naathi_ideas = {
 	}
 	# Love conquers all
 	naathi_7 = {
-		global_spy_defence = 1
+		global_spy_defence = 0.33
 	}
 }
 
 wildling_ideas = {
 	start = {
-		land_forcelimit_modifier = 0.25
+		global_regiment_cost = -0.33
 		may_perform_slave_raid = yes
 	}
 	
 	bonus = {
-		discipline = 0.05
+		land_forcelimit_modifier = 0.2 
 	}
 	
 	trigger = {
@@ -895,11 +891,11 @@ wildling_ideas = {
 	
 	# The Wall
 	wildling_1 = {
-		leader_land_manuever = 1
+		land_attrition = -0.1
 	}
 	# Freefolk Spirit
 	wildling_2 = {
-		land_morale = 0.2
+		land_morale = 0.1
 	}
 	# Hatred of Crows
 	wildling_3 = {
@@ -907,86 +903,30 @@ wildling_ideas = {
 	}
 	# Spearwives
 	wildling_4 = {
-		global_regiment_cost = -0.25
+		global_manpower_modifier = 0.2
 	}
 	# Raids on the North
 	wildling_5 = {
-		land_attrition = -0.15
+		loot_amount = 0.25
 	}
 	# Employ of Giants
 	wildling_6 = {
-		artillery_power = 0.1
+		infantry_power = 0.1
 	}
 	# Traditions of the First Men
 	wildling_7 = {
-		army_tradition = 1
+		infantry_shock = 1
 	}
-}
-
-kingdom_beyond_the_wall_ideas = {
-	
-	start = {
-		land_forcelimit_modifier = 0.25
-		may_perform_slave_raid = yes
-		global_manpower_modifier = 0.2
-	}
-	
-	bonus = {
-		leader_land_shock = 2
-	}
-	
-	trigger = {
-		tag = Z01
-	}
-	
-	free = yes
-	
-	# Accomplished the Impossible
-	kbtw_1 = {
-		prestige = 1.0
-	}
-	
-	# Knowledge of the Land
-	kbtw_2 = {
-		land_attrition = -0.33
-	}
-	
-	# Freefolk Ferocity
-	kbtw_3 = {
-		shock_damage = 0.2
-	}
-	
-	# Hard Workers
-	kbtw_4 = {
-		global_trade_goods_size_modifier = 0.2
-	}
-	
-	# Giant Builders
-	kbtw_5 = {
-		build_time = -0.25
-	}
-	
-	# Proud Faithful
-	kbtw_6 = {
-		global_missionary_strength = 0.02
-	}
-	
-	# Trusts in brethren
-	kbtw_7 = {
-		institution_spread_from_true_faith = 0.25
-	}
-	
-	
 }
 
 ghiscari_ideas = {
 	start = {
-		advisor_pool = 1
+		possible_mercenaries = 0.33
 		may_perform_slave_raid = yes
 	}
 	
 	bonus = {
-		global_tax_modifier = 0.15
+		merc_maintenance_modifier = -0.2
 	}
 	
 	trigger = {
@@ -996,7 +936,7 @@ ghiscari_ideas = {
 	
 	# The Death of the Ghiscari 
 	ghiscari_1 = {
-		culture_conversion_cost = -0.2
+		defensiveness = 0.33
 	}
 	# Tactics from Old Ghis
 	ghiscari_2 = {
@@ -1012,7 +952,7 @@ ghiscari_ideas = {
 	}
 	# The Harpy
 	ghiscari_5 = {
-		spy_offence = 0.5
+		missionary_maintenance_cost = -0.15
 	}
 	# Tokars
 	ghiscari_6 = {
@@ -1027,12 +967,12 @@ ghiscari_ideas = {
 
 dothraki_ideas = {
 	start = {
-        loot_amount = 0.5
-        war_exhaustion = -0.1
+        cavalry_cost = -0.2
+        cavalry_power = 0.1
 	}
 	
 	bonus = {
-		army_tradition_decay = -0.01
+		cavalry_flanking = 0.2
 	}
 	
 	trigger = {
@@ -1047,15 +987,15 @@ dothraki_ideas = {
 	}
 	# Mother of Mountains
 	dothraki_2 = {
-		discipline = 0.05
+		recover_army_morale_speed = 0.1
 	}
 	# Bloodriders
 	dothraki_3 = {
-		cavalry_power = 0.15
+		cavalry_shock = 1
 	}
 	# Taming the Dothraki Sea
 	dothraki_4 = {
-		land_forcelimit_modifier = 0.2
+		land_forcelimit_modifier = 0.15
 	}
 	# Crush the Maegi
 	dothraki_5 = {
@@ -1063,23 +1003,23 @@ dothraki_ideas = {
 	}
 	# Braided Topknots
 	dothraki_6 = {
-		raze_power_gain = 0.25
+		raze_power_gain = 0.33
 	}
 	# Horselords
 	dothraki_7 = {
-		general_cost = -0.25
+		movement_speed = 0.2
 	}
 }
 
 
 quartheen_ideas = {
 	start = {
-		diplomats = 1
-		diplomatic_upkeep = 1
+		interest = -2
+		diplomatic_upkeep = 2
 	}
 	
 	bonus = {
-		improve_relation_modifier = 0.33
+		improve_relation_modifier = 0.2
 	}
 	
 	trigger = {
@@ -1089,11 +1029,11 @@ quartheen_ideas = {
 	
 	# Wealth beyond Imagination
 	quartheen_1 = {
-		global_tax_modifier = 0.25
+		global_tax_modifier = 0.2
 	}
 	# The Jade Gateway
 	quartheen_2 = {
-		advisor_pool = 1
+		global_trade_power = 0.2
 	}
 	# The Pureborn
 	quartheen_3 = {
@@ -1102,30 +1042,30 @@ quartheen_ideas = {
 	}
 	# House of the Undying
 	quartheen_4 = {
-		embracement_cost = -0.05
+		embracement_cost = -0.1
 	}
 	# Port of Qarth
 	quartheen_5 = {
-		trade_efficiency = 0.25
+		trade_efficiency = 0.2
 	}
 	# A Warlock's Lies
 	quartheen_6 = {
-		stability_cost_modifier = -0.15
+		stability_cost_modifier = -0.2
 	}
 	# The Hall of a Thousand Thrones
 	quartheen_7 = {
-		diplomatic_annexation_cost = -0.2
+		land_morale = 0.1
 	}
 }
 
 farosi_ideas = {
 	start = {
-		galley_cost = -0.25
+		galley_cost = -0.33
 		may_perform_slave_raid = yes
 	}
 	
 	bonus = {
-		leader_naval_shock = 1
+		naval_forcelimit_modifier = 0.2
 	}
 	
 	trigger = {
@@ -1139,7 +1079,7 @@ farosi_ideas = {
 	}
 	# Tropical Climate
 	farosi_2 = {
-		hostile_attrition = 1
+		hostile_attrition = 2
 	}
 	# Trade through the Jade Sea
 	farosi_3 = {
@@ -1165,12 +1105,12 @@ farosi_ideas = {
 
 yi_ti_ideas = {
 	start = {
-		army_tradition = 1
+		core_creation = -0.1
 		diplomatic_upkeep = 1
 	}
 	
 	bonus = {
-		embracement_cost = -0.05
+		army_tradition = 1
 	}
 	
 	trigger = {
@@ -1184,15 +1124,15 @@ yi_ti_ideas = {
 	}
 	# Verdant Rainforests and Vast Farmlands
 	yi_ti_2 = {
-		global_regiment_cost = -0.3
+		production_efficiency = 0.2
 	}
 	# Roaming Basilisks
 	yi_ti_3 = {
-		province_warscore_cost = -0.15
+		movement_speed = 0.15
 	}
 	# The Grand City of Yin
 	yi_ti_4 = {
-		stability_cost_modifier = -0.15
+		prestige = 1
 	}
 	# Yitish Princes
 	yi_ti_5 = {
@@ -1205,19 +1145,18 @@ yi_ti_ideas = {
 	}
 	# The Five Forts
 	yi_ti_7 = {
-		defensiveness = 0.25
-		global_garrison_growth = 0.25
+		fort_maintenance_modifier = -0.2
 	}
 }
 
 hyrkoon_ideas = {
 	start = {
-		army_tradition = 1
-		infantry_power = 0.1
+		fort_maintenance_modifier = -0.1
+        garrison_size = 1.0
 	}
 	
 	bonus = {
-		discipline = 0.05
+		global_garrison_growth = 1.0
 	}
 	
 	trigger = {
@@ -1237,27 +1176,27 @@ hyrkoon_ideas = {
 
 	# The Great Sand Sea
 	hyrkoon_2 = {
-		hostile_attrition = 1
+		hostile_attrition = 3
 	}
 
 	# The Steel Road
 	hyrkoon_3 = {
-		caravan_power = 0.15
+		caravan_power = 0.2
 	}
 
 	# Warrior Women of Kayakayanaya
 	hyrkoon_4 = {
-		land_morale = 0.2
+		land_morale = 0.1
 	}
 
 	# Lost People of Yinishar
 	hyrkoon_5 = {
-		infantry_cost = -0.15
+		infantry_cost = -0.2
 	}
 
 	# The Bone Mountains
 	hyrkoon_6 = {
-		land_attrition = -0.2
+		land_attrition = -0.1
 	}
 
 	# Trade with Qarth
@@ -1274,7 +1213,7 @@ trader_town_ideas = {
 	}
 	
 	bonus = {
-		trade_efficiency = 0.1
+		merchants = 1
 	}
 	
 	trigger = {
@@ -1289,12 +1228,12 @@ trader_town_ideas = {
 
 	# Hyrkoon Allegiance
 	trader_town_2 = {
-		global_own_trade_power = 0.1
+		diplomatic_reputation = 1
 	}
 
 	# Hyrkoon Mercenaries
 	trader_town_3 = {
-		merc_maintenance_modifier = -0.33
+		merc_maintenance_modifier = -0.2
 	}
 
 	# The Disaster of the Sand Sea
@@ -1321,13 +1260,11 @@ trader_town_ideas = {
 
 nefer_ideas = {
 	start = {
-		may_perform_slave_raid = yes
-		leader_naval_shock = 1
+		technology_cost = -0.1
 	}
 	
 	bonus = {
-		leader_naval_fire = 1
-		leader_naval_manuever = 1	
+		idea_cost = -0.1
 	}
 	
 	trigger = {
@@ -1352,12 +1289,12 @@ nefer_ideas = {
 
 	# Relations to the Jogos Nhai
 	nefer_4 = {
-		cavalry_cost = -0.1
+		cavalry_cost = -0.2
 	}
 
 	# Timber Galore
 	nefer_5 = {
-		global_regiment_cost = -0.15
+		global_regiment_cost = -0.33
 	}
 
 	# Trade through the Cannibal Sands	
@@ -1367,18 +1304,18 @@ nefer_ideas = {
 
 	# Hardy People
 	nefer_7 = {
-		land_attrition = -0.15
+		land_attrition = -0.2
 	}
 }
 
 jogos_nhai_ideas = {
 	start = {
-		cavalry_cost = -0.25
-		cavalry_power = 0.25
+		cavalry_cost = -0.2
+		cavalry_power = 0.2
 	}
 	
 	bonus = {
-		leader_land_shock = 1
+		cavalry_flanking = 0.2
 	}
 	
 	trigger = {
@@ -1389,7 +1326,6 @@ jogos_nhai_ideas = {
 	# Plains of Jogos Nhai
 	jogos_nhai_1 = {
 		prestige_from_land = 1
-        reinforce_cost_modifier = -0.75
 	}
 
 	# Trade Links with the Nefer
@@ -1399,38 +1335,37 @@ jogos_nhai_ideas = {
 
 	# Moonsinger Influence
 	jogos_nhai_3 = {
-		religious_unity = 0.25
+		religious_unity = 0.33
 	}
 
 	# Nomadic People
 	jogos_nhai_4 = {
-		land_maintenance_modifier = -0.15
+		land_maintenance_modifier = -0.2
 	}
 
 	# Zebra Cavalry
 	jogos_nhai_5 = {
-		discipline = 0.05
+		cavalry_shock = 2
 	}
 
 	# Honour Bound
 	jogos_nhai_6 = {
-		land_morale = 0.2
+		land_morale = 0.1
 	}
 
 	# Survival Instinct
 	jogos_nhai_7 = {
-		reinforce_speed = 0.25
+		reinforce_speed = 0.2
 	}
 }
 
 bloodless_men_ideas = {
 	start = {
-		army_tradition = 1
-		discipline = 0.05
+		technology_cost = -0.1
 	}
 	
 	bonus = {
-		land_forcelimit_modifier = 0.2
+		all_power_cost = -0.1
 	}
 	
 	trigger = {
@@ -1440,48 +1375,47 @@ bloodless_men_ideas = {
 	
 	# The Pale and the Dead
 	bloodless_men_1 = {
-		recover_army_morale_speed = 0.05
+		recover_army_morale_speed = 0.1
 	}
 
 	# The Dry Deep
 	bloodless_men_2 = {
-		leader_land_manuever = 1
+		movement_speed = 0.1
 	}
 
 	# Magic and Mysticism
 	bloodless_men_3 = {
-		artillery_power = 0.1
+		siege_ability = 0.1
 	}
 
 	# Without Blood
 	bloodless_men_4 = {
-		global_manpower_modifier = 0.25
+		global_manpower_modifier = 0.2
 	}
 
 	# Mysterious Folk
 	bloodless_men_5 = {
-		land_morale = 0.15
+		land_morale = 0.1
 	}
 
 	# Explosive Magic
 	bloodless_men_6 = {
-		siege_ability = 0.1
+		infantry_power = 0.1
 	}
 
 	# The Bloodless
 	bloodless_men_7 = {
-		province_warscore_cost = -0.25
+		reinforce_cost_modifier = -0.2
 	}
 }
 
 asshai_ideas = {
 	start = {
-		reduced_stab_impacts = yes
-		enemy_core_creation = 2.0
+		all_power_cost = -0.5
 	}
 	
 	bonus = {
-		embracement_cost = -0.1
+		discipline = 0.1
 	}
 	
 	trigger = {
@@ -1491,32 +1425,32 @@ asshai_ideas = {
 	
 	# The City of Black Stone
 	asshai_1 = {
-		development_cost = -0.15
+		development_cost = -0.2
 	}
 
-	# asshai, the City of Trade
+	# Asshai, the City of Trade
 	asshai_2 = {
 		merchants = 1
 	}
 
 	# Magical Lands
 	asshai_3 = {
-		prestige = 1
+		infantry_fire = 2
 	}
 
 	# Esoteric Knowledge
 	asshai_4 = {
-		idea_cost = -0.1
+		idea_cost = -0.2
 	}
 
 	# Ominous Reputation
 	asshai_5 = {
-		diplomatic_annexation_cost = -0.2
+		unjustified_demands = -0.2
 	}
 
 	# Witchcraft of asshai
 	asshai_6 = {
-		discipline = 0.05
+		shock_damage = 0.1
 	}
 
 	# The Ash River
@@ -1528,12 +1462,12 @@ asshai_ideas = {
 
 ibben_ideas = {
 	start = {
-		heavy_ship_power = 0.1
-		sea_repair = yes
+		naval_forcelimit_modifier = 0.2
+        global_sailors_modifier = 0.2
 	}
 	
 	bonus = {
-		naval_forcelimit_modifier = 0.33
+		naval_maintenance_modifier = -0.2
 	}
 	
 	trigger = {
@@ -1543,8 +1477,7 @@ ibben_ideas = {
 	
 	# Whalers
 	ibben_1 = {
-		transport_cost = -0.25
-		transport_power = 0.25
+		heavy_ship_power = 0.2
 	}
 
 	# Hairy Men
@@ -1554,12 +1487,12 @@ ibben_ideas = {
 
 	# Ibben
 	ibben_3 = {
-		naval_morale = 0.3
+		naval_morale = 0.1
 	}
 
 	# Neandethal Remenants
 	ibben_4 = {
-		free_leader_pool = 1
+		sailor_maintenance_modifer = -0.2
 	}
 
 	# Ibben Council
@@ -1569,13 +1502,12 @@ ibben_ideas = {
 
 	# Ships of Ibben
 	ibben_6 = {
-		galley_cost = -0.25
-		galley_power = 0.15
+		global_ship_cost = -0.2
 	}
 	
 	# Expert Sailors
 	ibben_7 = {
-		ship_durability = 0.25
+		ship_durability = 0.1
 	}
 }
 
@@ -1632,14 +1564,14 @@ white_walker_ideas = {
 
 freefolk_ideas = {
 	start = {
+		global_regiment_cost = -0.33
 		may_perform_slave_raid = yes
-		infantry_power = 0.15
 	}
 	
 	bonus = {
-		discipline = 0.1
+		land_forcelimit_modifier = 0.2 
 	}
-	
+    
 	trigger = {
 		tag = Z01
 	}
@@ -1647,12 +1579,12 @@ freefolk_ideas = {
 	
 	# Under One Banner
 	freefolk_1 = {
-		land_morale = 0.2
+		prestige = 1
 	}
 	
 	# Freefolk Spirit
 	freefolk_2 = {
-		global_manpower_modifier = 0.25
+		global_manpower_modifier = 0.2
 	}
 	
 	# Fire of the North
@@ -1667,17 +1599,17 @@ freefolk_ideas = {
 	
 	# Friends of the Giants
 	freefolk_5 = {
-		siege_ability = 0.15
+		build_time = -0.33
 	}
 	
 	# Expert Raiders
 	freefolk_6 = {
-		army_tradition_decay = -0.02
+		army_tradition = 1
 	}
 	
 	# Traditions of the First Men
 	freefolk_7 = {
-		loot_amount = 0.5
+		infantry_shock = 2
 	}
 }
 
@@ -1685,11 +1617,11 @@ freefolk_ideas = {
 valyrian_ideas = {
 	start = {
 		development_cost = -0.2
-		embracement_cost = -0.05
+		embracement_cost = -0.1
 	}
 	
 	bonus = {
-		global_tax_modifier = 0.25
+		global_tax_modifier = 0.2
 	}
 	
 	trigger = {
@@ -1719,7 +1651,7 @@ valyrian_ideas = {
 	
 	# Resilient Breed
 	valyrian_5 = {
-		defensiveness = 0.25
+		defensiveness = 0.33
 	}
 	
 	# Dragonlords
@@ -1729,19 +1661,19 @@ valyrian_ideas = {
 	
 	# Valyrian Imperialism
 	valyrian_7 = {
-		unjustified_demands = -0.33
+		unjustified_demands = -0.2
 	}
 }
 
 # K'Dath Ideas
 kdath_ideas = {
 	start = {
-		war_exhaustion_cost = -0.15
+		war_exhaustion_cost = -0.1
 		global_unrest = -1
 	}
 	
 	bonus = {
-		core_creation = -0.25
+		core_creation = -0.1
 	}
 	
 	trigger = {
@@ -1754,11 +1686,11 @@ kdath_ideas = {
 	}
 
 	kdath_2 = {
-		advisor_cost = -0.25
+		advisor_cost = -0.2
 	}
 	
 	kdath_3 = {
-		global_garrison_growth = 0.5
+		global_garrison_growth = 1
 	}
 	
 	kdath_4 = {
@@ -1766,7 +1698,7 @@ kdath_ideas = {
 	}
 	
 	kdath_5 = {
-		global_manpower_modifier = 0.25
+		global_manpower_modifier = 0.2
 	}
 	
 	kdath_6 = {
@@ -1781,8 +1713,7 @@ kdath_ideas = {
 # Bonetown Ideas
 bonetown_ideas = {
 	start = {
-		stability_cost_modifier = -0.15
-		discovered_relations_impact = -0.25
+		stability_cost_modifier = -0.33
 	}
 	
 	bonus = {
@@ -1803,7 +1734,7 @@ bonetown_ideas = {
 	}
 	
 	bonetown_3 = {
-		culture_conversion_cost = -0.15
+		culture_conversion_cost = -0.2
 	}
 	
 	bonetown_4 = {
@@ -1811,27 +1742,27 @@ bonetown_ideas = {
 	}
 	
 	bonetown_5 = {
-		caravan_power = 0.15
+		caravan_power = 0.2
 	}
 	
 	bonetown_6 = {
-		global_own_trade_power = 0.15
+		global_own_trade_power = 0.2
 	}
 	
 	bonetown_7 = {
-		global_foreign_trade_power = 0.15
+		global_foreign_trade_power = 0.2
 	}
 }
 
 # Winged Men Ideas
 winged_men_ideas = {
 	start = {
-		embracement_cost = -0.1
-		build_cost = -0.1
+		movement_speed = 0.33
+        reinforce_speed = 0.33
 	}
 	
 	bonus = {
-		fabricate_claims_cost = -0.25
+		global_supply_limit_modifier = 0.2
 	}
 	
 	trigger = {
@@ -1844,15 +1775,15 @@ winged_men_ideas = {
 	}
 
 	winged_men_2 = {
-		global_tax_income = 24
+		global_tax_modifier = 0.2
 	}
 	
 	winged_men_3 = {
-		core_creation = -0.15
+		core_creation = -0.1
 	}
 	
 	winged_men_4 = {
-		land_morale = 0.15
+		land_morale = 0.1
 	}
 	
 	winged_men_5 = {
@@ -1860,23 +1791,23 @@ winged_men_ideas = {
 	}
 	
 	winged_men_6 = {
-		development_cost = -0.15
+		development_cost = -0.1
 	}
 	
 	winged_men_7 = {
-		province_warscore_cost = -0.15
+		province_warscore_cost = -0.2
 	}
 }
 
 # Carcosa Ideas
 carcosa_ideas = {
 	start = {
-		global_manpower_modifier = 0.15
+		global_manpower_modifier = 0.2
 		land_maintenance_modifier = -0.1
 	}
 	
 	bonus = {
-		manpower_recovery_speed = 0.15
+		manpower_recovery_speed = 0.2
 	}
 	
 	trigger = {
@@ -1893,7 +1824,7 @@ carcosa_ideas = {
 	}
 	
 	carcosa_3 = {
-		global_garrison_growth = 0.5
+		global_garrison_growth = 1
 	}
 	
 	carcosa_4 = {
@@ -1905,22 +1836,22 @@ carcosa_ideas = {
 	}
 	
 	carcosa_6 = {
-		land_attrition = -0.15
+		land_attrition = -0.2
 	}
 	
 	carcosa_7 = {
-		reinforce_speed = 0.33
+		reinforce_speed = 0.2
 	}
 }
 
 lengii_ideas = {
 	start = {
-		production_efficiency = 0.15
-		advisor_pool = 1
+		production_efficiency = 0.1
+		advisor_pool = 2
 	}
 	
 	bonus = {
-		advisor_cost = -0.33
+		advisor_cost = -0.2
 	}
 	
 	trigger = {
@@ -1933,7 +1864,7 @@ lengii_ideas = {
 	}
 
 	lengii_2 = {
-		province_warscore_cost = -0.1
+		province_warscore_cost = -0.15
 	}
 	
 	lengii_3 = {
@@ -1945,22 +1876,23 @@ lengii_ideas = {
 	}
 	
 	lengii_5 = {
-		diplomatic_annexation_cost = -0.15
+		diplomatic_annexation_cost = -0.2
 	}
 	
 	lengii_6 = {
-		unjustified_demands = -0.25
+		unjustified_demands = -0.2
 	}
 	
 	lengii_7 = {
-		adm_tech_cost_modifier = -0.15
+		adm_tech_cost_modifier = -0.2
 	}
 }
 
+# CONTINUE HERE
 lhazareen_ideas = {
 	start = {
-		caravan_power = 0.2
-		global_trade_power = 0.1
+		caravan_power = 0.1
+		production_efficiency = 0.1
 	}
 	
 	bonus = {
@@ -1977,7 +1909,7 @@ lhazareen_ideas = {
 	}
 
 	lhazareen_2 = {
-		global_prov_trade_power_modifier = 0.15
+		global_prov_trade_power_modifier = 0.2
 	}
 	
 	lhazareen_3 = {
@@ -1993,22 +1925,22 @@ lhazareen_ideas = {
 	}
 	
 	lhazareen_6 = {
-		stability_cost_modifier = -0.15
+		stability_cost_modifier = -0.25
 	}
 	
 	lhazareen_7 = {
-		global_trade_goods_size_modifier = 0.15
+		global_trade_goods_size_modifier = 0.2
 	}
 }
 
 mereenese_ideas = {
 	start = {
-		stability_cost_modifier = -0.1
+		global_manpower_modifier = 0.1
 		may_perform_slave_raid = yes
 	}
 	
 	bonus = {
-		merc_maintenance_modifier = -0.25
+		global_regiment_cost = -0.25
 	}
 	
 	trigger = {
@@ -2021,11 +1953,11 @@ mereenese_ideas = {
 	}
 
 	mereenese_2 = {
-		global_missionary_strength = 0.01
+		global_missionary_strength = 0.02
 	}
 	
 	mereenese_3 = {
-		possible_mercenaries = 0.5
+		possible_mercenaries = 1
 	}
 	
 	mereenese_4 = {
@@ -2033,26 +1965,26 @@ mereenese_ideas = {
 	}
 	
 	mereenese_5 = {
-		global_regiment_cost = -0.2
+		merc_maintenance_modifier = -0.1
 	}
 	
 	mereenese_6 = {
-		free_leader_pool = 1
+		manpower_recovery_speed = 0.1
 	}
 	
 	mereenese_7 = {
-		mercenary_cost = -0.25
+		mercenary_cost = -0.2
 	}
 }
 
 yunkai_ideas = {
 	start = {
-		global_spy_defence = 0.33
+		global_spy_defence = 0.25
 		may_perform_slave_raid = yes
 	}
 	
 	bonus = {
-		rebel_support_efficiency = 0.5
+		recover_army_morale_speed = 0.1
 	}
 	
 	trigger = {
@@ -2061,15 +1993,15 @@ yunkai_ideas = {
 	free = yes
 	
 	yunkai_1 = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 
 	yunkai_2 = {
-		global_manpower_modifier = 0.15
+		global_manpower_modifier = 0.2
 	}
 	
 	yunkai_3 = {
-		advisor_cost = -0.15
+		land_maintenance_modifier = -0.1
 	}
 	
 	yunkai_4 = {
@@ -2081,22 +2013,22 @@ yunkai_ideas = {
 	}
 	
 	yunkai_6 = {
-		land_forcelimit_modifier = 0.15
+		land_forcelimit_modifier = 0.2
 	}
 	
 	yunkai_7 = {
-		spy_offence = 0.33
+		spy_offence = 0.25
 	}
 }
 
 astapori_ideas = {
 	start = {
 		may_perform_slave_raid = yes
-		recover_army_morale_speed = 0.05
+		admiral_cost = -0.25
 	}
 	
 	bonus = {
-		land_forcelimit_modifier = 0.25
+		naval_forcelimit_modifier = 0.25
 	}
 	
 	trigger = {
@@ -2106,41 +2038,42 @@ astapori_ideas = {
 	
 	astapori_1 = {
 		army_tradition = 0.5
+        navy_tradition = 0.5
 	}
 
 	astapori_2 = {
-		global_manpower_modifier = 0.15
+		global_manpower_modifier = 0.1
 	}
 	
 	astapori_3 = {
-		land_morale = 0.15
-	}
-	
-	astapori_4 = {
 		infantry_power = 0.1
 	}
 	
+	astapori_4 = {
+		recover_army_morale_speed = 0.1
+	}
+	
 	astapori_5 = {
-		land_maintenance_modifier = -0.15
+		land_maintenance_modifier = -0.2
 	}
 	
 	astapori_6 = {
-		discipline = 0.1
+		discipline = 0.05
 	}
 	
 	astapori_7 = {
-		core_creation = -0.1
+		unjustified_demands = -0.2
 	}
 }
 
 valyrian_remnants_ideas = {
 	start = {
-		legitimacy = 0.5
+		legitimacy = 1
 		may_perform_slave_raid = yes
 	}
 	
 	bonus = {
-		global_colonial_growth = 15
+		all_power_cost = -0.1
 	}
 	
 	trigger = {
@@ -2154,7 +2087,7 @@ valyrian_remnants_ideas = {
 	}
 
 	valyrian_remnants_2 = {
-		naval_forcelimit_modifier = 0.5
+		naval_forcelimit_modifier = 0.2
 	}
 	
 	valyrian_remnants_3 = {
@@ -2166,11 +2099,11 @@ valyrian_remnants_ideas = {
 	}
 	
 	valyrian_remnants_5 = {
-		embracement_cost = -0.05
+		embracement_cost = -0.2
 	}
 	
 	valyrian_remnants_6 = {
-		build_cost = -0.15
+		build_cost = -0.2
 	}
 	
 	valyrian_remnants_7 = {
@@ -2180,12 +2113,12 @@ valyrian_remnants_ideas = {
 
 omber_ideas = {
 	start = {
-		naval_morale = 0.15
+		naval_morale = 0.1
 		navy_tradition = 1
 	}
 	
 	bonus = {
-		heavy_ship_power = 0.2
+		heavy_ship_power = 0.1
 	}
 	
 	trigger = {
@@ -2194,11 +2127,11 @@ omber_ideas = {
 	free = yes
 	
 	omber_1 = {
-		ship_durability = 0.1
+		ship_durability = 0.05
 	}
 
 	omber_2 = {
-		global_ship_cost = -0.25
+		global_ship_cost = -0.2
 	}
 	
 	omber_3 = {
@@ -2206,11 +2139,11 @@ omber_ideas = {
 	}
 	
 	omber_4 = {
-		trade_range_modifier = 0.25
+		trade_range_modifier = 0.2
 	}
 	
 	omber_5 = {
-		defensiveness = 0.2
+		garrison_size = 1.0
 	}
 	
 	omber_6 = {
@@ -2218,14 +2151,14 @@ omber_ideas = {
 	}
 	
 	omber_7 = {
-		heavy_ship_cost = -0.2
+		heavy_ship_cost = -0.33
 	}
 }
 
 sarnor_ideas = {
 	start = {
 		infantry_cost = -0.2
-		global_garrison_growth = 0.5
+		defensiveness = 0.2
 	}
 	
 	bonus = {
@@ -2257,7 +2190,7 @@ sarnor_ideas = {
 	}
 	
 	sarnor_5 = {
-		land_morale = 0.15
+		land_morale = 0.1
 	}
 	
 	sarnor_6 = {
@@ -2311,18 +2244,18 @@ qohori_ideas = {
 	}
 	
 	qohori_7 = {
-		leader_land_manuever = 1
+		infantry_fire = 1
 	}
 }
 
 norvosi_ideas = {
 	start = {
-		unjustified_demands = -0.25
-		improve_relation_modifier = 0.25
+		unjustified_demands = -0.2
+		improve_relation_modifier = 0.2
 	}
 	
 	bonus = {
-		diplomatic_annexation_cost = -0.25
+		diplomatic_annexation_cost = -0.2
 	}
 	
 	trigger = {
@@ -2331,7 +2264,7 @@ norvosi_ideas = {
 	free = yes
 	
 	norvosi_1 = {
-		build_cost = -0.2
+		prestige = 1
 	}
 
 	norvosi_2 = {
@@ -2339,7 +2272,7 @@ norvosi_ideas = {
 	}
 	
 	norvosi_3 = {
-		global_missionary_strength = 0.02
+		global_missionary_strength = 0.03
 		missionaries = 1
 	}
 	
@@ -2348,26 +2281,26 @@ norvosi_ideas = {
 	}
 	
 	norvosi_5 = {
-		devotion = 1
+		missionary_maintenance_cost = -0.33
 	}
 	
 	norvosi_6 = {
-		diplomats = 1
+		leader_cost = -0.25
 	}
 	
 	norvosi_7 = {
-		ae_impact = -0.15
+		ae_impact = -0.1
 	}
 }
 
 nights_watch_ideas = {
 	start = {
-		land_forcelimit_modifier = 0.15
-		fort_maintenance_modifier = -0.25
+		land_forcelimit_modifier = 0.1
+		fort_maintenance_modifier = -0.2
 	}
 	
 	bonus = {
-		garrison_size = 0.5
+		garrison_size = 1
 	}
 	
 	trigger = {
@@ -2380,7 +2313,7 @@ nights_watch_ideas = {
 	}
 
 	nights_watch_2 = {
-		discipline = 0.05
+		infantry_fire = 1
 	}
 	
 	nights_watch_3 = {
@@ -2388,18 +2321,18 @@ nights_watch_ideas = {
 	}
 	
 	nights_watch_4 = {
-		development_cost = -0.15
+		development_cost = -0.1
 	}
 	
 	nights_watch_5 = {
-		build_cost = -0.15
+		build_cost = -0.2
 	}
 	
 	nights_watch_6 = {
-		global_manpower_modifier = 0.15
+		global_manpower_modifier = 0.2
 	}
 	
 	nights_watch_7 = {
-		land_maintenance_modifier = -0.33
+		land_maintenance_modifier = -0.2
 	}
 }

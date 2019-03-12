@@ -10,7 +10,6 @@ leading_by_example = {
 	army_tradition = 1
 }
 
-
 daenerys_the_unburnt = {
     potential = {
 		tag = S23
@@ -21,41 +20,8 @@ daenerys_the_unburnt = {
         # add dragon checks here eventually
 	}
     
-    discipline = 0.1
-    land_morale = 0.1
-    siege_ability = 0.33
+    discipline = 0.05
+    land_morale = 0.05
+    artillery_fire = 5
 }
-
-# Used to discourage the player from just conquering immediately.
-# Rather, they can migrate and establish tributaries and gather gold
-# Or take and raze provinces, returning them to keep the bonus here
-nomadic_people = {
-    potential = {
-        ai = no
-		government = nomadic
-	}
-	
-	trigger = {
-		NOT = { num_of_states = 2 }
-	}
-    
-    land_maintenance_modifier = -0.75
-    land_forcelimit = 30
-}
-
-# A more lenient version for the AI
-nomadic_people_ai = {
-    potential = {
-        ai = yes
-		government = nomadic
-	}
-	
-	trigger = {
-		NOT = { num_of_states = 5 }
-	}
-    
-    land_maintenance_modifier = -0.75
-    land_forcelimit = 30
-}
-
 

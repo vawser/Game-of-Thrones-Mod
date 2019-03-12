@@ -20,14 +20,15 @@ estate_chieftains = {
     
     # ----- Country -----
     country_modifier_happy = {
-        land_forcelimit = 20
+        land_forcelimit_modifier = 0.25
         global_regiment_cost = -0.25
         land_maintenance_modifier = -0.2
     }
     country_modifier_neutral = {
-        land_forcelimit = 10
+        land_forcelimit_modifier = 0.1
     }    
     country_modifier_angry = {
+        land_forcelimit_modifier = -0.25
         global_regiment_cost = 0.25
         land_maintenance_modifier = 0.2
     }    
@@ -276,7 +277,7 @@ estate_chieftains = {
     
     # Recruit Quartermaster
     interaction = {
-        name = "RECRUIT_QUARTERMASTER"
+        name = "RECRUIT_HERBALIST"
         icon = 1
         
         potential = { 
@@ -295,7 +296,7 @@ estate_chieftains = {
         effect = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_chieftains 
-                ADVISOR = quartermaster
+                ADVISOR = herbalist
             }
             
             add_estate_influence_modifier = {
@@ -314,7 +315,7 @@ estate_chieftains = {
     
     # Recruit Army Organiser
     interaction = {
-        name = "RECRUIT_ARMY_ORGANISER"
+        name = "RECRUIT_WATCHMAN"
         icon = 1
         
         potential = { 
@@ -333,7 +334,7 @@ estate_chieftains = {
         effect = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_chieftains 
-                ADVISOR = army_organiser
+                ADVISOR = watchman
             }
             
             add_estate_influence_modifier = {

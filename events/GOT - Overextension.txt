@@ -368,9 +368,9 @@ country_event = {
 	trigger = {
 		OR = {
 			advisor = philosopher
-			advisor = natural_scientist
+			advisor = maester
 			advisor = artist
-			advisor = statesman
+			advisor = herald
 		}
 	}
 
@@ -388,9 +388,9 @@ country_event = {
 		}
 		if = {
 			limit = {
-				advisor = natural_scientist
+				advisor = maester
 			}
-			remove_advisor = natural_scientist
+			remove_advisor = maester
 		}
 		if = {
 			limit = {
@@ -400,9 +400,9 @@ country_event = {
 		}
 		if = {
 			limit = {
-				advisor = statesman
+				advisor = herald
 			}
-			remove_advisor = statesman
+			remove_advisor = herald
 		}
 		
 		if = {

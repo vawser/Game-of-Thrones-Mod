@@ -439,7 +439,7 @@ country_event = {
 						monthly_income = 35
 					}
 					define_advisor = {
-						type = recruitmaster
+						type = master_at_arms
 						skill = 3
 						discount = yes
 					}
@@ -447,7 +447,7 @@ country_event = {
 				if = {
 					limit = { NOT = { monthly_income = 35 } }
 					define_advisor = {
-						type = recruitmaster
+						type = master_at_arms
 						skill = 2
 						discount = yes
 					}
@@ -506,7 +506,7 @@ country_event = {
 						monthly_income = 35
 					}
 					define_advisor = {
-						type = natural_scientist
+						type = maester
 						skill = 3
 						discount = yes
 					}
@@ -514,7 +514,7 @@ country_event = {
 				if = {
 					limit = { NOT = { monthly_income = 35 } }
 					define_advisor = {
-						type = natural_scientist
+						type = maester
 						skill = 2
 						discount = yes
 					}
@@ -940,48 +940,7 @@ country_event = {
 		custom_tooltip = consort_events.53.a.tt
 		add_adm_power = -35
 
-		if = {
-			limit = {
-				advisor = army_organiser
-			}
-			remove_advisor = army_organiser
-		}
-		if = {
-			limit = {
-				advisor = army_reformer
-			}
-			remove_advisor = army_reformer
-		}
-		if = {
-			limit = {
-				advisor = commandant
-			}
-			remove_advisor = commandant
-		}
-		if = {
-			limit = {
-				advisor = grand_captain
-			}
-			remove_advisor = grand_captain
-		}
-		if = {
-			limit = {
-				advisor = recruitmaster
-			}
-			remove_advisor = recruitmaster
-		}
-		if = {
-			limit = {
-				advisor = fortification_expert
-			}
-			remove_advisor = fortification_expert
-		}
-		if = {
-			limit = {
-				advisor = quartermaster
-			}
-			remove_advisor = quartermaster
-		}
+		remove_advisor_by_category = MIL
 	}
 
 	option = {
@@ -2568,7 +2527,7 @@ country_event = {
 					female = no
 					name = Adam
 					skill = 3
-					type = commandant
+					type = hunter
 					discount = yes
 				}
 			}
@@ -2580,7 +2539,7 @@ country_event = {
 					female = no
 					name = Adam
 					skill = 3
-					type = theologian
+					type = playwright
 					discount = yes
 				}
 			}
@@ -2592,7 +2551,7 @@ country_event = {
 					female = no
 					name = Adam
 					skill = 3
-					type = statesman
+					type = diplomat
 					discount = yes
 				}
 			}
@@ -2608,7 +2567,7 @@ country_event = {
 					female = yes
 					name = Miriam
 					skill = 3
-					type = commandant
+					type = hunter
 					discount = yes
 				}
 			}
@@ -2620,7 +2579,7 @@ country_event = {
 					female = yes
 					name = Miriam
 					skill = 3
-					type = theologian
+					type = playwright
 					discount = yes
 				}
 			}
@@ -2632,7 +2591,7 @@ country_event = {
 					female = yes
 					name = Miriam
 					skill = 3
-					type = statesman
+					type = diplomat
 					discount = yes
 				}
 			}
@@ -4367,7 +4326,7 @@ country_event = {
 					monthly_income = 25
 				}
 				define_advisor = {
-					type = natural_scientist
+					type = maester
 					skill = 3
 					discount = yes
 					female = yes
@@ -4376,7 +4335,7 @@ country_event = {
 			if = {
 				limit = { NOT = { monthly_income = 25 } }
 				define_advisor = {
-					type = natural_scientist
+					type = maester
 					skill = 2
 					discount = yes
 					female = yes
@@ -4391,7 +4350,7 @@ country_event = {
 					monthly_income = 25
 				}
 				define_advisor = {
-					type = statesman
+					type = herald
 					skill = 3
 					discount = yes
 				}
@@ -4399,7 +4358,7 @@ country_event = {
 			if = {
 				limit = { NOT = { monthly_income = 25 } }
 				define_advisor = {
-					type = statesman
+					type = herald
 					skill = 2
 					discount = yes
 				}
@@ -4542,11 +4501,11 @@ country_event = {
 					}
 					employed_advisor = {
 						is_female = yes
-						type = master_of_mint
+						type = moneylender
 					}
 					employed_advisor = {
 						is_female = yes
-						type = natural_scientist
+						type = maester
 					}
 				}
 			}
@@ -4568,11 +4527,11 @@ country_event = {
 					}
 					employed_advisor = {
 						is_male = yes
-						type = master_of_mint
+						type = moneylender
 					}
 					employed_advisor = {
 						is_male = yes
-						type = natural_scientist
+						type = maester
 					}
 				}
 			}
@@ -4643,12 +4602,12 @@ country_event = {
 				remove_advisor = artist
 			}
 			if = {
-				limit = { advisor = master_of_mint }
-				remove_advisor = master_of_mint
+				limit = { advisor = moneylender }
+				remove_advisor = moneylender
 			}
 			if = {
-				limit = { advisor = natural_scientist }
-				remove_advisor = natural_scientist
+				limit = { advisor = maester }
+				remove_advisor = maester
 			}
 		}
 
@@ -4691,12 +4650,12 @@ country_event = {
 				kill_advisor = artist
 			}
 			if = {
-				limit = { advisor = master_of_mint }
-				kill_advisor = master_of_mint
+				limit = { advisor = moneylender }
+				kill_advisor = moneylender
 			}
 			if = {
-				limit = { advisor = natural_scientist }
-				kill_advisor = natural_scientist
+				limit = { advisor = maester }
+				kill_advisor = maester
 			}
 		}
 

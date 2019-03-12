@@ -7,7 +7,7 @@ enforce_rule_action = {
         has_reform = pirate_clan_reform
 	}
 	trigger = {
-		stability = 0
+		always = yes
 	}
 	effect = {
 		add_absolutism = 10		
@@ -26,8 +26,7 @@ raid_local_villages_action = {
         has_reform = pirate_clan_reform
 	}
 	trigger = {
-		NOT = { treasury = 100000 }
-        num_of_ports = 1
+        always = yes
 	}
 	effect = {
 		add_years_of_income = 1
@@ -46,7 +45,7 @@ display_wealth_action = {
         has_reform = pirate_clan_reform
 	}
 	trigger = {
-		NOT = { prestige = 100 }
+		always = yes
 	}
 	effect = {
 		add_prestige = 25
@@ -65,7 +64,6 @@ impress_travelers_action = {
         has_reform = pirate_clan_reform
 	}
 	trigger = {
-		stability = 0
         num_of_ports = 1
 	}
 	effect = {
@@ -85,8 +83,7 @@ purchase_slaves_action = {
         has_reform = pirate_clan_reform
 	}
 	trigger = {
-		stability = 0
-        num_of_ports = 1
+        always = yes
 	}
 	effect = {
 		add_yearly_manpower = 5
@@ -105,7 +102,6 @@ explore_the_high_seas_action = {
         has_reform = pirate_clan_reform
 	}
 	trigger = {
-		stability = 0
         num_of_ports = 1
 	}
 	effect = {

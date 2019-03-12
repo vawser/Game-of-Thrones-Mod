@@ -1,12 +1,138 @@
-
+- Adjusted graphical cultures.
+- Changed advisor interface.
+- Changed advisortypes, expanding options but removing obvious picks (i.e. discipline, land_morale, etc)
+- Fixed election issue with Trading Outpost government
+- Fixed bugged localization for GOT_OLD_GODS events
+- Fixed the AI using the Place Relative on Throne in House Subjects (wiping out the original dynasties).
+- Added other legitimacy types to Grand Palace building
+- Increased cost to 200 for Divine Inspiration action
+- Increased cost to 200 for Occult Inspiration action
+- Increased cost to 200 for Look upon the Forbidden action.
+- Increaed army tradition gain from Ritual Drilling action
+- Increased legitimacy modifier gain from Legitimize Government blessing
+- Increased manpower_recovery_speed gain from Encourage Warriors of the Faith blessing
+- Increased global_missionary_strength from Proselytize Lords blessing
+- Increased war_exhaustion removal from Echo of Ghis action
+- Reduced reinforce_speed to 0.15 for Chant of Preservation aspect
+- Reduced shock_damage to 0.05 for Chant of Acrimony aspect
+- Reduced fire_damage to 0.05 for Chant of Enmity aspect
+- Reduced movement_speed to 0.1 for Chant of Flight aspect
+- Increased war_exhaustion removal from Cull the Sickly action
+- Increaed army tradition gain from Cultivate Discipline action
+- Reduced production_efficiency to 0.1 from Boon of the Earth aspect
+- Reduced global_institution_spread to 0.15 from Boon of the Wind aspect
+- Reduced global_naval_engagement_modifier to 0.1 from Boon of th Sea aspect
+- Reduced naval_forcelimit_modifier to 0.1 from Boon of the Plains aspect
+- Eased up the triggers for the Lady of the Waves actions
+- Reduced idea_cost to -0.05 from Gift of Intelligence aspect
+- Reduced improve_relation_modifier to 0.2 from Gift of Faith aspect
+- Reduced global_tax_modifier to 0.1 from Vision of Wealth aspect
+- Changed Vision of Revenge aspect to hostile_attrition = 1
+- Changed Vision of War aspect to infantry_power = 0.1
+- Reduced advisor_cost to 0.1 from Vision of Ambition aspect
+- Increased republican_tradition to 1 from Vision of Legitimacy aspect
+- Changed Vision of Cruelty to land_maintenance_modifier = -0.1
+- Changed Blessing of Strength to infantry_power = 0.1
+- Changed Blessing of Courage to recover_army_morale_speed = 0.1
+- Changed Blessing of Fortitude to manpower_recovery_speed = 0.1
+- Reduced movement_speed to 0.1 from Blessing of Alacrity
+- Reduced production_efficiency to 0.1 from Blessing of Bounty
+- Removed banners from Dothraki and Jogos Nhai culture.
+- Enabled AI fort maintenance cheat.
+- Reduced PS_BUY_IDEA to 500
+- Increased PS_ADVANCE_TECH to 500
+- Changed advisor estate actions to new types.
+- Reduced modifier gain from Magi estate.
+- Changed land_forcelimit to land_forcelimit_modifier in Cheiftains estate.
+- Changed discipline to infantry_power in Tigers faction
+- Changed Nefer City government modifier to idea_cost = 0.05
+- Adjusted modifier balance in the ideagroups.
+- Adjusted modifier balance in National Ideas.
+- Adjusted modifier balance in Seven Kingdoms reforms
+- Adjusted modifier balance in Yi Ti Empire reforms
+- Added additional leader personalities.
+- Adjusted modifier balance in leader personalities.
+- Changed Free Oarsmen naval doctrine to sailor_maintenance_modifer
+- Adjusted modifier balance in policies.
+- Removed loss of power projection when missing a rival.
+- Anti-Tax rebels now reduce absolutism.
+- Noble rebels now reduce absolutism.
+- Adjusted modifier balance in Religions.
+- Adjusted modifier balance in Trade Goods.
+- Increased base merc_maintenance_modifier to 2
+- Reduced base army_tradition_decay to 0.03
+- Reduced base navy_tradition_decay to 0.03
+- Reduced base prestige_decay to 0.03
+- Increased base advisor_pool to 5
+- Increased base diplomatic_upkeep to 4
+- Increased base mercenary_cost to 1.0
+- Increased base free_leader_pool to 5
+- Added base yearly republican_tradition to 1
+- Reduced base yearly horde_unity to -1
+- Increased base yearly devotion to -1
+- Reduced base yearly meritocracy to -1
+- Added base yearly_absolutism of -1
+- Added base yearly_army_professionalism of -0.01
+- Removed possible_mercenaries = 0.05 from war taxes.
+- Army Tradition (at max) grants discipline = 0.1, land_morale = 0.1 and siege_ability = 0.1 (+ others)
+- Removed free_leader_pool from Army Tradition
+- Navy Tradition (at max) grants naval_morale = 0.1, ship_durability = 0.1, sailors_recovery_speed = 0.1, privateer_efficiency = 1 (+ others)
+- Removed free_leader_pool from Navy Tradition
+- Emperor now gets spy_offence = 0.25, advisor_pool = 3, diplomatic_upkeep = 2, prestige = 1
+- Removed Revanchism bonuses.
+- Removed yearly_corruption due to territories.
+- Absolutism now grants administrative_efficiency = 0.5 and global_unrest = 5
+- Production Leader now grants trade_goods_size_modifier = 0.25
+- Low Army Professionalism now grants mercenary_cost = -0.2, possible_mercenaries = 0.2
+- High Army Professionalism now grants discipline = 0.2, land_morale = 0.2, siege_ability = 0.2
+- Drilling 100% of forcelimit now grants yearly_army_professionalism = 0.05 (5%)
+- Army Drill at 100% grants land_attrition = -0.2 to units
+- Increased Supply Depot modifier to supply_limit_modifier = 1.0
+- Sabotage Recruitment now applies manpower_recovery_speed = -0.5, sailors_recovery_speed = -0.5
+- Slander Merchants now applies global_trade_power = -0.5
+- Sow Discontent now applies global_unrest = 10
+- Sabotage Reputation now applies diplomatic_reputation = -5
+- Corrupt Officials now applies yearly_corruption = 0.2
+- Send Officers subject action now applies land_maintenance_modifier = -0.2
+- Positive Republican Tradition now grants yearly_corruption = -0.05, reform_progress_growth = 0.1
+- Negative Republican Tradition now grants global_unrest = 10
+- Horde Unity now grants global_unrest = -2, global_manpower_modifier = 1, reinforce_cost_modifier = -1 (inverse if below 50)
+- Devotion now grants church_power_modifier = 0.5, prestige = 1, papal_influence = 1 (inverse if below 50)
+- Meritocracy now grants prestige = 1, advisor_cost = -0.25 (inverse if below 50)
+- Positive Mandate now grants development_cost = -0.25, global_unrest = -5
+- Negative Mandate now grants development_cost = 0.25, global_unrest = 5
+- Reduced Taxation Focus to global_tax_modifier = 0.1
+- Reduced Production Focus to production_efficiency = 0.1
+- Reduced Recruitment Focus to global_manpower_modifier = 0.1
+- Reduced Train Horsemanship to cavalry_power = 0.1
+- Government Ranks from 2 onwards give additional states.
+- Increased maximum attrition in a province to 10
+- Increased hostile attrition in general.
+- Increased reductions for non-accepted cultures.
+- Removed reductions for cultures in the same group.
+- Increased devestation from occupation and sieging.
+- Increased bonuses gained from Prosperity.
+- Tolerance now grants local_unrest = -2 per point
+- Intolerance now grants local_unrest = 2 per point
+- Unrest no longer increases unit recruitment times.
+- Nationalism now only applies 0.1 local_unrest per point, not 0.5
+- Active Missionaries now only applie local_unrest = 3
+- Removed Resource Depleted modifier.
+- Trade Company provinces no longer reduce missionary strength.
+- Scorched Earth now applies local_hostile_attrition = 10, local_hostile_movement_speed = -0.25
+- Religious Unity (0%) now applies global_unrest = 5
+- Defender of the Faith no longer increases technology cost.
+- Removed nomadic_people and nomadic_people_ai triggered modifiers 
 
 #-----------------------------
 # TODO
 #-----------------------------
+# Add Storm's End as a building
+# Change dothraki starts, add more and expand over land
+
 # Add descriptions to National Ideas + other localization missing it
 # Change advisor types
 # Convert graphical cultures to custom setup
 # Add trading companies
 # Consolidate government ranks back into 3 ranks: Duchy, Kingdom, Empire
 
-# Play some games to get a feel for gameplay weaknesses

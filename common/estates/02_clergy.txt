@@ -359,7 +359,7 @@ estate_clergy = {
     
     # Recruit Theologian
     interaction = {
-        name = "RECRUIT_THEOLOGIAN"
+        name = "RECRUIT_EVANGELIST"
         icon = 1
         
         potential = { 
@@ -378,7 +378,7 @@ estate_clergy = {
         effect = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_clergy 
-                ADVISOR = theologian
+                ADVISOR = evangelist
             }
             
             add_estate_influence_modifier = {

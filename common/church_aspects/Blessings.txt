@@ -5,10 +5,11 @@ legitimize_government = {
 	is_blessing = yes
 
 	modifier = {
-		legitimacy = 0.5
-		horde_unity = 0.5
-		republican_tradition = 0.2
-		devotion = 0.5
+		legitimacy = 1
+		horde_unity = 1
+		republican_tradition = 1
+		devotion = 1
+        meritocracy = 1
 	}
 	ai_will_do = {
 		factor = 10
@@ -29,7 +30,7 @@ encourage_warriors_of_the_faith = {
 	is_blessing = yes
 
 	modifier = {
-		manpower_recovery_speed = 0.1
+		manpower_recovery_speed = 0.2
 	}
 	ai_will_do = {
 		factor = 10
@@ -46,7 +47,7 @@ proselytize_lords = {
 	is_blessing = yes
 
 	modifier = {
-		global_missionary_strength = 0.015
+		global_missionary_strength = 0.03
 	}
 	ai_will_do = {
 		factor = 10
@@ -94,65 +95,7 @@ will_of_the_martyrs = {
 	is_blessing = yes
 
 	modifier = {
-		discipline = 0.025
-	}
-	ai_will_do = {
-		factor = 15
-	}
-}
-
-#-------------------------------
-# Ghiscari
-#-------------------------------
-fighting_pits = {    
-    is_blessing = yes
-    
-    modifier = {
 		infantry_power = 0.1
-	}
-	ai_will_do = {
-		factor = 15
-	}
-}
-
-cat_o_nine_tails = {    
-    is_blessing = yes
-    
-    modifier = {
-		recover_army_morale_speed = 0.1
-	}
-	ai_will_do = {
-		factor = 15
-	}
-}
-
-desert_adaptation = {    
-    is_blessing = yes
-    
-    modifier = {
-		land_attrition = -0.2
-	}
-	ai_will_do = {
-		factor = 15
-	}
-}
-
-slave_raiding = {    
-    is_blessing = yes
-    
-    modifier = {
-		global_regiment_cost = -0.25
-	}
-	ai_will_do = {
-		factor = 15
-	}
-}
-
-diplomatic_quagmires = {    
-    is_blessing = yes
-    
-    modifier = {
-		diplomatic_upkeep = 1
 	}
 	ai_will_do = {
 		factor = 15

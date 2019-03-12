@@ -123,7 +123,7 @@ country_event = {
 		add_adm_power = -50
 		define_advisor = {
 			name = capital_noble
-			type = statesman
+			type = herald
 			skill = 2
 			discount = yes
 		}
@@ -359,7 +359,7 @@ country_event = {
 				else_if = {
 					limit = { monthly_income = 30 }
 					define_advisor = {
-						type = recruitmaster
+						type = master_at_arms
 						skill = 3
 						discount = yes
 						culture = variable:new_ruler_culture
@@ -367,7 +367,7 @@ country_event = {
 				}
 				else = {
 					define_advisor = {
-						type = recruitmaster
+						type = master_at_arms
 						skill = 2
 						discount = yes
 						culture = variable:new_ruler_culture
@@ -410,7 +410,7 @@ country_event = {
 				else_if = {
 					limit = { monthly_income = 30 }
 					define_advisor = {
-						type = recruitmaster
+						type = master_at_arms
 						skill = 2
 						discount = yes
 						culture = variable:new_ruler_culture
@@ -418,7 +418,7 @@ country_event = {
 				}
 				else = {
 					define_advisor = {
-						type = recruitmaster
+						type = master_at_arms
 						skill = 1
 						discount = yes
 						culture = variable:new_ruler_culture
@@ -461,7 +461,7 @@ country_event = {
 				else_if = {
 					limit = { monthly_income = 30 }
 					define_advisor = {
-						type = grand_captain
+						type = captain
 						skill = 3
 						discount = yes
 						culture = variable:new_ruler_culture
@@ -469,7 +469,7 @@ country_event = {
 				}
 				else = {
 					define_advisor = {
-						type = grand_captain
+						type = captain
 						skill = 2
 						discount = yes
 						culture = variable:new_ruler_culture
@@ -527,7 +527,7 @@ country_event = {
 				if = {
 					limit = { monthly_income = 30 }
 					define_advisor = {
-						type = theologian
+						type = evangelist
 						skill = 3
 						discount = yes
 						religion = variable:new_ruler_religion
@@ -535,7 +535,7 @@ country_event = {
 				}
 				else = {
 					define_advisor = {
-						type = theologian
+						type = evangelist
 						skill = 2
 						discount = yes
 						religion = variable:new_ruler_religion
@@ -588,7 +588,7 @@ country_event = {
 				if = {
 					limit = { monthly_income = 30 }
 					define_advisor = {
-						type = theologian
+						type = evangelist
 						skill = 3
 						discount = yes
 						religion = variable:new_ruler_religion
@@ -596,7 +596,7 @@ country_event = {
 				}
 				else = {
 					define_advisor = {
-						type = theologian
+						type = evangelist
 						skill = 2
 						discount = yes
 						religion = variable:new_ruler_religion
@@ -649,7 +649,7 @@ country_event = {
 				if = {
 					limit = { monthly_income = 30 }
 					define_advisor = {
-						type = theologian
+						type = evangelist
 						skill = 2
 						discount = yes
 						religion = variable:new_ruler_religion
@@ -657,7 +657,7 @@ country_event = {
 				}
 				else = {
 					define_advisor = {
-						type = theologian
+						type = evangelist
 						skill = 1
 						discount = yes
 						religion = variable:new_ruler_religion
@@ -756,7 +756,7 @@ country_event = {
 				if = {
 					limit = { monthly_income = 30 }
 					define_advisor = {
-						type = theologian
+						type = evangelist
 						skill = 3
 						discount = yes
 						religion = variable:new_ruler_religion
@@ -764,7 +764,7 @@ country_event = {
 				}
 				else = {
 					define_advisor = {
-						type = theologian
+						type = evangelist
 						skill = 2
 						discount = yes
 						religion = variable:new_ruler_religion
@@ -807,7 +807,7 @@ country_event = {
 				if = {
 					limit = { monthly_income = 30 }
 					define_advisor = {
-						type = theologian
+						type = evangelist
 						skill = 3
 						discount = yes
 						religion = variable:new_ruler_religion
@@ -815,7 +815,7 @@ country_event = {
 				}
 				else = {
 					define_advisor = {
-						type = theologian
+						type = evangelist
 						skill = 2
 						discount = yes
 						religion = variable:new_ruler_religion
@@ -858,7 +858,7 @@ country_event = {
 				if = {
 					limit = { monthly_income = 30 }
 					define_advisor = {
-						type = theologian
+						type = evangelist
 						skill = 2
 						discount = yes
 						religion = variable:new_ruler_religion
@@ -866,7 +866,7 @@ country_event = {
 				}
 				else = {
 					define_advisor = {
-						type = theologian
+						type = evangelist
 						skill = 1
 						discount = yes
 						religion = variable:new_ruler_religion
@@ -1619,8 +1619,8 @@ country_event = {
 			}
 			random_list = {
 				33 = { set_country_flag = philosopher_flag }
-				33 = { set_country_flag = master_of_mint_flag }
-				33 = { set_country_flag = recruitmaster_flag }
+				33 = { set_country_flag = moneylender_flag }
+				33 = { set_country_flag = master_at_arms_flag }
 			}
 		}
 	}
@@ -1652,13 +1652,13 @@ country_event = {
 					}
 				}
 			}
-			master_of_mint_flag = {
+			moneylender_flag = {
 				if = {
 					limit = {
 						NOT = { monthly_income = 30 }
 					}
 					define_advisor = {
-						type = master_of_mint
+						type = moneylender
 						name = advisor_attracted_by_ruler
 						religion = new_variable:ruler_religion
 						skill = 2
@@ -1667,7 +1667,7 @@ country_event = {
 				}
 				else = {
 					define_advisor = {
-						type = master_of_mint
+						type = moneylender
 						name = advisor_attracted_by_ruler
 						religion = new_variable:ruler_religion
 						skill = 3
@@ -1675,13 +1675,13 @@ country_event = {
 					}
 				}
 			}
-			recruitmaster_flag = {
+			master_at_arms_flag = {
 				if = {
 					limit = {
 						NOT = { monthly_income = 30 }
 					}
 					define_advisor = {
-						type = recruitmaster
+						type = master_at_arms
 						name = advisor_attracted_by_ruler
 						religion = new_variable:ruler_religion
 						skill = 2
@@ -1690,7 +1690,7 @@ country_event = {
 				}
 				else = {
 					define_advisor = {
-						type = recruitmaster
+						type = master_at_arms
 						name = advisor_attracted_by_ruler
 						religion = new_variable:ruler_religion
 						skill = 3
@@ -1721,7 +1721,7 @@ country_event = {
 					add_base_tax = 1
 				}
 			}
-			master_of_mint_flag = {
+			moneylender_flag = {
 				random_owned_province = {
 					limit = {
 						religion = new_variable:From:ruler_religion
@@ -1731,7 +1731,7 @@ country_event = {
 					add_base_production = 1
 				}
 			}
-			recruitmaster_flag = {
+			master_at_arms_flag = {
 				random_owned_province = {
 					limit = {
 						religion = new_variable:From:ruler_religion
@@ -1750,11 +1750,11 @@ country_event = {
 			philosopher_flag = {
 				clr_country_flag = philosopher_flag
 			}
-			master_of_mint_flag = {
-				clr_country_flag = master_of_mint_flag
+			moneylender_flag = {
+				clr_country_flag = moneylender_flag
 			}
-			recruitmaster_flag = {
-				clr_country_flag = recruitmaster_flag
+			master_at_arms_flag = {
+				clr_country_flag = master_at_arms_flag
 			}
 		}
 		set_variable = {
@@ -2198,7 +2198,7 @@ country_event = {
 			remove_advisor_by_category = DIP
 			add_dip_power = -50
 			define_advisor = {
-				type = naval_reformer
+				type = seafarer
 				name = prominent_noble
 				culture = ROOT
 				skill = 2
@@ -2208,7 +2208,7 @@ country_event = {
 			remove_advisor_by_category = MIL
 			add_mil_power = -50
 			define_advisor = {
-				type = quartermaster
+				type = knight
 				name = prominent_noble
 				culture = ROOT
 				skill = 2
@@ -3076,7 +3076,7 @@ country_event = {
 			define_advisor = {
 				name = foreign_leader
 				skill = 2
-				type = statesman
+				type = herald
 				discount = yes
 				culture = event_target:foreign_culture_province
 				religion = event_target:foreign_culture_province
@@ -3086,7 +3086,7 @@ country_event = {
 			define_advisor = {
 				name = foreign_leader
 				skill = 3
-				type = statesman
+				type = herald
 				discount = yes
 				culture = event_target:foreign_culture_province
 				religion = event_target:foreign_culture_province
@@ -3154,7 +3154,7 @@ country_event = {
 			random_list = {
 				25 = { set_country_flag = trader_flag }
 				25 = { set_country_flag = spymaster_flag }
-				25 = { set_country_flag = recruitmaster_flag }
+				25 = { set_country_flag = master_at_arms_flag }
 				25 = { set_country_flag = treasurer_flag }
 			}
 		}
@@ -3207,13 +3207,13 @@ country_event = {
 					}
 				}
 			}
-			recruitmaster_flag = {
+			master_at_arms_flag = {
 				if = {
 					limit = { NOT = { monthly_income = 30 } }
 					define_advisor = {
 						name = rising_star_advisor
 						skill = 2
-						type = recruitmaster
+						type = master_at_arms
 						discount = yes
 						religion = event_target:wrong_religion_province
 					}
@@ -3222,7 +3222,7 @@ country_event = {
 					define_advisor = {
 						name = rising_star_advisor
 						skill = 3
-						type = recruitmaster
+						type = master_at_arms
 						discount = yes
 						religion = event_target:wrong_religion_province
 					}
@@ -3265,8 +3265,8 @@ country_event = {
 			spymaster_flag = {
 				clr_country_flag = spymaster_flag
 			}
-			recruitmaster_flag = {
-				clr_country_flag = recruitmaster_flag
+			master_at_arms_flag = {
+				clr_country_flag = master_at_arms_flag
 			}
 			treasurer_flag = {
 				clr_country_flag = treasurer_flag

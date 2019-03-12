@@ -214,7 +214,7 @@ qarth_city_reform = {
             navy_tradition = 1
         }
         culture_ancient = {
-            discipline = 0.2
+            discipline = 0.05
         }
     }
 }
@@ -233,7 +233,7 @@ nefer_city_reform = {
     
     modifiers = {
     	max_states = 1
-		global_garrison_growth = 0.15
+		idea_cost = -0.05
 	}
 }
 hyrkoon_city_reform = {
@@ -926,6 +926,9 @@ trading_outpost_reform = {
     
 	lock_level_when_selected = yes
 	is_trading_city = yes
+    
+    duration = 10
+    has_term_election = no
     
 	modifiers = {
         global_trade_power = 0.1

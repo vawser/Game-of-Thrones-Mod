@@ -14,45 +14,44 @@ legitimacy = {
 }
 
 republican_tradition = {
-	global_unrest = -2
+    yearly_corruption = -0.05
+	reform_progress_growth = 0.1
 }
 
 inverse_republican_tradition = {
-	stability_cost_modifier = 2.0
+	global_unrest = 10
 }
 
 #Multiplied by current Horde Unity - 50
 horde_unity = {
 	global_unrest = -4
-	discipline = 0.1
 	global_manpower_modifier = 2
+    reinforce_cost_modifier = -2
 }
 
 # Multiplied by current Devotion - 50
 devotion = {
 	papal_influence = 2
-	church_power_modifier = 0.25
+	church_power_modifier = 1
 	prestige = 2
-	global_tax_modifier = 0.50
 }
 
 # Multiplied by current meritocracy - 50
 meritocracy = {
-	global_spy_defence = 1.0
+	prestige = 2
 	advisor_cost = -0.5
 }
 
-positive_mandate = {	# 100% strength at 100 mandate, 0% at 50 mandate
-	global_unrest = -2.5
-	stability_cost_modifier = -0.1
+# 100% strength at 100 mandate, 0% at 50 mandate
+positive_mandate = {	
+    development_cost = -0.25
+	global_unrest = -5
 }
 
-negative_mandate = { # By default, starts at 50 mandate, 100% strength at 0 mandate
-	global_trade_goods_size_modifier = -0.5
-	fire_damage_received = 0.5
-	shock_damage_received = 0.5
+# By default, starts at 50 mandate, 100% strength at 0 mandate
+negative_mandate = {
+    development_cost = 0.25
 	global_unrest = 5
-	possible_mercenaries = -1
 }
 
 # Multiplied by Tribal Allegiance / 100
@@ -85,7 +84,7 @@ merchant_republic_size = {
 # 3. "This will impact war exhaustion by $CHANGE$ and raise $UNITS|Y$ Elite Regiments in our capital."
 
 streltsy_modifier = {
-	stability_cost_modifier = 1.0
+    
 }
 
 #----------------------------
@@ -94,18 +93,18 @@ streltsy_modifier = {
 # "Taxation Focus"
 # "You will also get $AMOUNT|Y$ ducats, from the total Development of your Subjects' Provinces."
 efficient_tax_farming_modifier = {
-	global_tax_modifier = 0.15
+	global_tax_modifier = 0.1
 }
 
 # "Recruitment Focus"
 # "You will also get $AMOUNT|Y$ manpower, from the total Development of your Subjects' Provinces."
 land_acquisition_modifier = {
-	global_manpower_modifier = 0.15
+	global_manpower_modifier = 0.1
 }
 
 # "Production Focus"
 lenient_taxation_modifier = {
-	production_efficiency = 0.15
+	production_efficiency = 0.1
 }
 
 #----------------------------
@@ -138,7 +137,7 @@ invite_minorities_modifier = {
 # 1. "You will get a new General with $TRADITION|Y$ Tradition.\n"
 
 train_horsemanship_modifier = {
-	cavalry_power = 0.15
+	cavalry_power = 0.1
 }
 
 # 3. Spawn Cavalry
@@ -188,43 +187,43 @@ pasha_state = {
 # Government Ranks
 #----------------------------
 gov_rank_1 = {
-
+    
 }
 
 gov_rank_2 = {
-	
+	max_states = 2
 }
 
 gov_rank_3 = {
-
+    max_states = 4
 }
 
 gov_rank_4 = {
-
+    max_states = 6
 }
 
 gov_rank_5 = {
-
+    max_states = 8
 }
 
 gov_rank_6 = {
-
+    max_states = 10
 }
 
 gov_rank_7 = {
-
+    max_states = 12
 }
 
 gov_rank_8 = {
-
+    max_states = 14
 }
 
 gov_rank_9 = {
-
+    max_states = 16
 }
 
 gov_rank_10 = {
-
+    max_states = 18
 }
 
 

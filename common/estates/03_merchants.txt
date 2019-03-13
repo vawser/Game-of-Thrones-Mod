@@ -182,7 +182,8 @@ estate_merchants = {
             has_country_flag = merchants_estate_in_power
         }
         
-		trigger = {        
+		trigger = {      
+            hidden_trigger = { has_country_flag = merchants_estate_in_power } # AI seems to ignore the potential check
             stability = 1
 			NOT = { num_of_rebel_armies = 1 }
 			NOT = { num_of_rebel_controlled_provinces = 1 }			

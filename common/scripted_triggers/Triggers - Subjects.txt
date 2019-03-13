@@ -1,14 +1,12 @@
 is_subject_other_than_tributary_trigger = { #Ie Tags that cannot conduct independent diplomacy
 	is_subject = yes
 	NOT = { is_subject_of_type = tributary_state }
-    NOT = { is_subject_of_type = dothraki_tributary }
 }
 
 is_free_or_tributary_trigger = { #I.e. Tags that can conduct independent diplomacy
 	OR = {
 		is_subject = no
 		is_subject_of_type = tributary_state
-        is_subject_of_type = dothraki_tributary
 	}
 }
 

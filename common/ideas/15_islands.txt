@@ -1,0 +1,153 @@
+#---------------------------------------
+# Summer Islands
+#---------------------------------------
+summer_islander_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		naval_attrition = -0.1
+	}
+	
+	bonus = {
+		heavy_ship_power = 0.1
+	}
+	
+	trigger = {
+		culture_group = culture_summer_isles
+	}
+	free = yes
+	
+	# Deposition of Jalabhar Xho
+	summer_islander_1 = {
+		land_morale = 0.1
+	}
+	# The Smiling Sea
+	summer_islander_2 = {
+		global_ship_recruit_speed = -0.25
+		global_ship_repair = 0.25
+	}
+	# Trade through Lotus Port
+	summer_islander_3 = {
+		global_foreign_trade_power = 0.1
+	}
+	# The Holy Art of Lovemaking
+	summer_islander_4 = {
+		heir_chance = 0.5
+	}
+	# Respect of Elders
+	summer_islander_5 = {
+		advisor_cost = -0.15
+	}
+	# Origin of the Swan Ship
+	summer_islander_6 = {
+		navy_tradition = 1
+	}
+	# Expert Archers
+	summer_islander_7 = {
+		leader_naval_fire = 1
+		leader_land_fire = 1
+	}
+}
+
+#---------------------------------------
+# Naath
+#---------------------------------------
+naathi_ideas = {
+	start = {
+		tolerance_own = 3
+		global_unrest = -1
+	}
+	
+	bonus = {
+		global_ship_cost = -0.2
+	}
+	
+	trigger = {
+		primary_culture = naathi
+	}
+	free = yes
+	
+	# Lovers, not Fighters
+	naathi_1 = {
+		diplomatic_reputation = 3
+        improve_relation_modifier = 0.2
+	}
+	# Lord of Harmony
+	naathi_2 = {
+		global_missionary_strength = 0.03
+	}
+	# Butterfly Spirits
+	naathi_3 = {
+        hostile_attrition = 10
+	}
+	# Naathi Explorers
+	naathi_4 = {
+		colonists = 1
+		global_colonial_growth = 10
+	}
+	# Aura of Naath
+	naathi_5 = {
+		ae_impact = -0.1
+	}
+	# Peace through Tolerance
+	naathi_6 = {
+		num_accepted_cultures = 1
+	}
+	# Love conquers all
+	naathi_7 = {
+		global_spy_defence = 0.33
+	}
+}
+
+#---------------------------------------
+# Ibben
+#---------------------------------------
+ibben_ideas = {
+	start = {
+		naval_forcelimit_modifier = 0.2
+        global_sailors_modifier = 0.2
+	}
+	
+	bonus = {
+		naval_maintenance_modifier = -0.2
+	}
+	
+	trigger = {
+		primary_culture = ibbenese
+	}
+	free = yes
+	
+	# Whalers
+	ibben_1 = {
+		heavy_ship_power = 0.2
+	}
+
+	# Hairy Men
+	ibben_2 = {
+		navy_tradition = 1
+	}
+
+	# Ibben
+	ibben_3 = {
+		naval_morale = 0.1
+	}
+
+	# Neandethal Remenants
+	ibben_4 = {
+		sailor_maintenance_modifer = -0.2
+	}
+
+	# Ibben Council
+	ibben_5 = {
+		legitimacy = 1
+	}
+
+	# Ships of Ibben
+	ibben_6 = {
+		global_ship_cost = -0.2
+	}
+	
+	# Expert Sailors
+	ibben_7 = {
+		ship_durability = 0.1
+	}
+}

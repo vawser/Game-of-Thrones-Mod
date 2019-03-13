@@ -1,0 +1,585 @@
+#---------------------------------------
+# Pirate
+#---------------------------------------
+pirate_ideas = {
+	start = {
+		navy_tradition = 1
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		galley_power = 0.2
+	}
+	
+	trigger = {
+		has_reform = pirate_clan_reform
+	}
+	free = yes
+	
+	# Arm of Dorne
+	pirate_1 = {
+		blockade_efficiency = 0.33
+		privateer_efficiency = 0.33
+	}
+	# Pirate Dens
+	pirate_2 = {
+		global_ship_cost = -0.2
+		global_ship_repair = 0.2
+	}
+	# Essosian Claimants
+	pirate_3 = {
+		prestige_from_naval = 1
+        naval_tradition_from_battle = 1
+	}
+	# Lady of the Waves
+	pirate_4 = {
+		global_ship_cost = -0.33
+	}
+	# Pirate Kings
+	pirate_5 = {
+		leader_naval_fire = 1
+		leader_naval_manuever = 1
+		leader_naval_shock = 1
+	}
+	# Rule of the Stepstones
+	pirate_6 = {
+		naval_forcelimit_modifier = 0.2
+	}
+	# Veteran Pirates
+	pirate_7 = {
+		ship_durability = 0.1
+	}
+}
+
+#---------------------------------------
+# Tyrosh
+#---------------------------------------
+tyroshi_ideas = {
+	start = {
+		navy_tradition_decay = -0.01
+		global_ship_recruit_speed = -0.2
+	}
+	
+	bonus = {
+		naval_morale = 0.1
+	}
+	
+	trigger = {
+		primary_culture = tyroshi
+	}
+	free = yes
+	
+	# Tyroshi Greed
+	tyroshi_1 = {
+		caravan_power = 0.1
+	}
+	# Fountain of the Drunked God
+	tyroshi_2 = {
+		global_sailors_modifier = 0.2
+	}
+	# Stepstones Ambitions
+	tyroshi_3 = {
+		naval_forcelimit_modifier = 0.2
+	}
+	# Valyrian Spirit
+	tyroshi_4 = {
+		infantry_power = 0.1
+	}
+	# Traditions of Trade
+	tyroshi_5 = {
+		light_ship_cost = -0.33
+	}
+	# Disputed Lands
+	tyroshi_6 = {
+		mercenary_cost = -0.33
+	}
+	# Tyroshi Fashion
+	tyroshi_7 = {
+		advisor_cost = -0.2
+	}
+}
+
+#---------------------------------------
+# Lys
+#---------------------------------------
+lysene_ideas = {
+	start = {
+		embracement_cost = -0.2
+		culture_conversion_cost = -0.2
+	}
+	
+	bonus = {
+		all_power_cost = -0.1
+	}
+	
+	trigger = {
+		primary_culture = lysene
+	}
+	free = yes
+	
+	# Blood of the Freehold
+	lysene_1 = {
+		spy_offence = 0.33
+		rebel_support_efficiency = 0.25
+	}
+	# Lysene Alchemists
+	lysene_2 = {
+        siege_ability = 0.1
+	}
+	# Weeping Lady of Lys
+	lysene_3 = {
+		global_missionary_strength = 0.03
+	}
+	# Lysene Coins
+	lysene_4 = {
+		advisor_cost = -0.15
+	}
+	# Tears of Lys
+	lysene_5 = {
+		unjustified_demands = -0.2
+	}
+	# Booming Population
+	lysene_6 = {
+		province_warscore_cost = -0.2
+	}
+	# Ambitions over the Disputed Lands
+	lysene_7 = {
+		merc_maintenance_modifier = -0.2
+	}
+}
+
+#---------------------------------------
+# Myr
+#---------------------------------------
+myrish_ideas = {
+	start = {
+		ae_impact = -0.1
+		improve_relation_modifier = 0.15
+	}
+	
+	bonus = {
+		global_manpower_modifier = 0.2
+	}
+	
+	trigger = {
+		primary_culture = myrish
+	}
+	free = yes
+	
+	# Valyrian Technology
+	myrish_1 = {
+		embracement_cost = -0.1
+	}
+	# Craftsmen of Myr
+	myrish_2 = {
+		global_tax_modifier = 0.15
+	}
+	# Myrish Glass
+	myrish_3 = {
+		production_efficiency = 0.15
+	}
+	# Trade through the Myrth
+	myrish_4 = {
+		trade_steering = 0.15
+	}
+	# Far-Eyes from Myr
+	myrish_5 = {
+		prestige = 1
+	}
+	# Supporters of Blackfyre
+	myrish_6 = {
+		diplomatic_upkeep = 1
+	}
+	# Myrish Architecture
+	myrish_7 = {
+		development_cost = -0.2
+	}
+}
+
+#---------------------------------------
+# Pentos
+#---------------------------------------
+pentoshi_ideas = {
+	start = {
+		global_own_trade_power = 0.15
+		trade_range_modifier = 0.15
+	}
+	
+	bonus = {
+		global_prov_trade_power_modifier = 0.2
+	}
+	
+	trigger = {
+		primary_culture = pentoshi
+	}
+	free = yes
+	
+	# Bay of Pentos
+	pentoshi_1 = {
+		merchants = 1
+	}
+	# Booming Population
+	pentoshi_2 = {
+		num_accepted_cultures = 1
+	}
+	# Dominance of Spice Traders
+	pentoshi_3 = {
+		global_trade_power = 0.2
+	}
+	# Sunrise Gate
+	pentoshi_4 = {
+		defensiveness = 0.33
+	}
+	# Wealth equals Power
+	pentoshi_5 = {
+		yearly_corruption = -0.05
+	}
+	# Slaves in all but Name
+	pentoshi_6 = {
+		global_manpower_modifier = 0.2
+	}
+	# Braavosi Influence
+	pentoshi_7 = {
+		prestige = 1
+	}
+}
+
+#---------------------------------------
+# Braavos
+#---------------------------------------
+braavosi_ideas = {
+	start = {
+		idea_cost = -0.1
+		num_accepted_cultures = 1
+	}
+	
+	bonus = {
+		global_trade_power = 0.2
+	}
+	
+	trigger = {
+		primary_culture = braavosi
+	}
+	free = yes
+	
+	# Refugees from Valyria
+	braavosi_1 = {
+		ae_impact = -0.1
+	}
+	# A Secret City
+	braavosi_2 = {
+		improve_relation_modifier = 0.2
+	}
+	# The Drowned Town
+	braavosi_3 = {
+		build_cost = -0.33
+	}
+	# The Titan of Braavos
+	braavosi_4 = {
+		defensiveness = 0.33
+	}
+	# Traditions of the Sealords
+	braavosi_5 = {
+		navy_tradition = 1
+	}
+	# House of Black and White
+	braavosi_6 = {
+		infantry_power = 0.1
+	}
+	# Temple of the Moonsingers
+	braavosi_7 = {
+		religious_unity = 0.2
+	}
+}
+
+#---------------------------------------
+# Lorath
+#---------------------------------------
+northern_essosian_ideas = {
+	start = {
+		global_manpower_modifier = 0.1
+		hostile_attrition = 2
+	}
+	
+	bonus = {
+		land_forcelimit_modifier = 0.2
+	}
+	
+	trigger = {
+		primary_culture = lorathi
+	}
+	free = yes
+	
+	# Breakers of Volantis
+	northern_essosian_1 = {
+		core_creation = -0.1
+	}
+	# Qohorik Craftsmen
+	northern_essosian_2 = {
+		production_efficiency = 0.2
+	}
+	# Wood from Qohor
+	northern_essosian_3 = {
+		ship_durability = 0.1
+	}
+	# Ancient Valyrian Roads
+	northern_essosian_4 = {
+		land_forcelimit_modifier = 0.15
+	}
+	# Order of the Bearded Priests
+	northern_essosian_5 = {
+		land_morale = 0.1
+	}
+	# Repulsion of the Dothraki
+	northern_essosian_6 = {
+		garrison_size = 1.0
+	}
+	# Lorathi Velvet
+	northern_essosian_7 = {
+		diplomatic_reputation = 1
+	}
+}
+
+#---------------------------------------
+# Volantis
+#---------------------------------------
+volantene_ideas = {
+	start = {
+		global_tax_modifier = 0.1
+		build_cost = -0.1
+	}
+	
+	bonus = {
+		development_cost = -0.15
+	}
+	
+	trigger = {
+		primary_culture = volantene
+	}
+	free = yes
+	
+	# The Temple of the Lord of Light
+	volantene_1 = {
+		global_missionary_strength = 0.03
+		missionaries = 1
+	}
+	# The Black Wall
+	volantene_2 = {
+		fort_maintenance_modifier = -0.2
+	}
+	# The Merchant's House
+	volantene_3 = {
+		merchants = 1
+	}
+	# Slavers
+	volantene_4 = {
+		global_manpower_modifier = 0.2
+	}
+	# Volantene Honors
+	volantene_5 = {
+		global_own_trade_power = 0.15
+	}
+	# Valyrian Freehold
+	volantene_6 = {
+		army_tradition = 1
+	}
+	# The Harbor
+	volantene_7 = {
+		light_ship_cost = -0.15
+		light_ship_power = 0.15
+	}
+}
+
+#---------------------------------------
+# Omber
+#---------------------------------------
+omber_ideas = {
+	start = {
+		naval_morale = 0.1
+		navy_tradition = 1
+	}
+	
+	bonus = {
+		heavy_ship_power = 0.1
+	}
+	
+	trigger = {
+		primary_culture = omber
+	}
+	free = yes
+	
+	omber_1 = {
+		ship_durability = 0.05
+	}
+
+	omber_2 = {
+		global_ship_cost = -0.2
+	}
+	
+	omber_3 = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	
+	omber_4 = {
+		trade_range_modifier = 0.2
+	}
+	
+	omber_5 = {
+		garrison_size = 1.0
+	}
+	
+	omber_6 = {
+		stability_cost_modifier = -0.1
+	}
+	
+	omber_7 = {
+		heavy_ship_cost = -0.33
+	}
+}
+
+#---------------------------------------
+# Saath
+#---------------------------------------
+sarnor_ideas = {
+	start = {
+		infantry_cost = -0.2
+		defensiveness = 0.2
+	}
+	
+	bonus = {
+		global_regiment_recruit_speed = -0.25
+	}
+	
+	trigger = {
+		primary_culture = saathi
+	}
+	free = yes
+	
+	sarnor_1 = {
+		auto_explore_adjacent_to_colony = yes
+		colonists = 1
+	}
+
+	sarnor_2 = {
+		global_foreign_trade_power = 0.15
+	}
+	
+	sarnor_3 = {
+		global_colonial_growth = 10
+		native_assimilation = 0.5
+	}
+	
+	sarnor_4 = {
+		cavalry_cost = -0.1
+		cavalry_power = 0.1
+	}
+	
+	sarnor_5 = {
+		land_morale = 0.1
+	}
+	
+	sarnor_6 = {
+		prestige = 1
+	}
+	
+	sarnor_7 = {
+		global_unrest = -1
+	}
+}
+
+#---------------------------------------
+# Qohor
+#---------------------------------------
+qohori_ideas = {
+	start = {
+		diplomatic_reputation = 1
+		ae_impact = -0.1
+	}
+	
+	bonus = {
+		leader_land_shock = 1
+	}
+	
+	trigger = {
+		primary_culture = qohorik
+	}
+	free = yes
+	
+	qohori_1 = {
+		native_assimilation = 0.25
+		global_colonial_growth = 10
+	}
+
+	qohori_2 = {
+		galley_cost = -0.1
+		galley_power = 0.1
+	}
+	
+	qohori_3 = {
+		tolerance_own = 2
+	}
+	
+	qohori_4 = {
+		infantry_power = 0.1
+	}
+	
+	qohori_5 = {
+		land_attrition = -0.15
+	}
+	
+	qohori_6 = {
+		global_trade_goods_size_modifier = 0.15
+	}
+	
+	qohori_7 = {
+		infantry_fire = 1
+	}
+}
+
+#---------------------------------------
+# Norvos
+#---------------------------------------
+norvosi_ideas = {
+	start = {
+		unjustified_demands = -0.2
+		improve_relation_modifier = 0.2
+	}
+	
+	bonus = {
+		diplomatic_annexation_cost = -0.2
+	}
+	
+	trigger = {
+		primary_culture = norvosi
+	}
+	free = yes
+	
+	norvosi_1 = {
+		prestige = 1
+	}
+
+	norvosi_2 = {
+		development_cost = -0.1
+	}
+	
+	norvosi_3 = {
+		global_missionary_strength = 0.03
+		missionaries = 1
+	}
+	
+	norvosi_4 = {
+		global_unrest = -1
+	}
+	
+	norvosi_5 = {
+		missionary_maintenance_cost = -0.33
+	}
+	
+	norvosi_6 = {
+		leader_cost = -0.25
+	}
+	
+	norvosi_7 = {
+		ae_impact = -0.1
+	}
+}

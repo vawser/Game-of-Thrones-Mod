@@ -1,0 +1,372 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+# ai_will do is only used to determine which idea group is picked if AI_USES_HISTORICAL_IDEA_GROUPS define is 0, OR start is custom/random
+# ai never picks an idea that resolves to ai_will_do = 0, even if AI_USES_HISTORICAL_IDEA_GROUPS = 1
+# ROOT = country picking the idea
+# groups set to colonial=yes will be higher prioritized by the AI when spending power
+
+#---------------------------------------
+# Administrative Organisation
+#---------------------------------------
+administrative_organisation_ideas = {
+    category = ADM
+    # development_cost
+    # global_tax_modifier
+    # idea_cost
+    # adm_tech_cost_modifier
+    
+    bonus = {
+        adm_tech_cost_modifier = -0.1
+    }
+    
+    administrative_organisation_ideas_1 = {
+        development_cost = -0.2
+    }
+    
+    administrative_organisation_ideas_2 = {
+        global_tax_modifier = 0.2
+    }
+    
+    administrative_organisation_ideas_3 = {
+        idea_cost = -0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Banking
+#---------------------------------------
+banking_ideas = {
+    category = ADM
+    # inflation_action_cost
+    # inflation_reduction
+    # interest
+    # global_tax_income
+    
+    bonus = {
+        global_tax_income = 24
+    }
+    
+    banking_ideas_1 = {
+        inflation_action_cost = -0.33
+    }
+    
+    banking_ideas_2 = {
+        inflation_reduction = 0.1
+    }
+    
+    banking_ideas_3 = {
+        interest = -1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 10
+            
+            num_of_loans = 5
+        }
+        
+        modifier = {
+            factor = 1.1
+            NOT = { monthly_income = 5 }
+        }
+    }
+}
+
+#---------------------------------------
+# Advisor
+#---------------------------------------
+advisor_ideas = {
+    category = ADM
+    # advisor_pool
+    # advisor_cost
+    # yearly_corruption
+    # prestige_decay
+    
+    bonus = {
+        prestige_decay = -0.02
+    }
+    
+    advisor_ideas_1 = {
+        advisor_pool = 3
+    }
+    
+    advisor_ideas_2 = {
+        advisor_cost = -0.33
+    }
+    
+    advisor_ideas_3 = {
+        yearly_corruption = -0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Administration
+#---------------------------------------
+administration_ideas = {
+    category = ADM
+    # envoy_travel_time
+    # state_maintenance_modifier
+    # core_creation
+    # max_states
+    
+    bonus = {
+        max_states = 5
+    }
+    
+    administration_ideas_1 = {
+        envoy_travel_time = -0.5
+    }
+    
+    administration_ideas_2 = {
+        state_maintenance_modifier = -0.33
+    }
+    
+    administration_ideas_3 = {
+        core_creation = -0.2
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Religion
+#---------------------------------------
+religion_ideas = {
+    category = ADM
+    # missionaries
+    # global_missionary_strength
+    # tolerance_own
+    # cb_on_religious_enemies
+    
+    bonus = {
+        cb_on_religious_enemies = yes
+    }
+    
+    religion_ideas_1 = {
+        missionaries = 2
+    }
+    
+    religion_ideas_2 = {
+        global_missionary_strength = 0.03
+    }
+    
+    religion_ideas_3 = {
+        tolerance_own = 2
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Tolerance
+#---------------------------------------
+tolerance_ideas = {
+    category = ADM
+    # tolerance_heretic
+    # tolerance_heathen
+    # num_accepted_cultures
+    # no_religion_penalty
+    
+    bonus = {
+        no_religion_penalty = yes
+    }
+    
+    tolerance_ideas_1 = {
+        tolerance_heretic = 2
+    }
+    
+    tolerance_ideas_2 = {
+        tolerance_heathen = 2
+    }
+    
+    tolerance_ideas_3 = {
+        num_accepted_cultures = 2
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Stability
+#---------------------------------------
+stability_ideas = {
+    category = ADM
+    # global_unrest
+    # stability_cost_modifier
+    # years_of_nationalism
+    # global_autonomy
+    
+    bonus = {
+        global_autonomy = -0.1
+    }
+    
+    stability_ideas_1 = {
+        global_unrest = -3
+    }
+    
+    stability_ideas_2 = {
+        stability_cost_modifier = -0.5
+    }
+    
+    stability_ideas_3 = {
+        years_of_nationalism = -5
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Espionage
+#---------------------------------------
+espionage_ideas = {
+    category = ADM
+    # spy_offence
+    # discovered_relations_impact
+    # global_spy_defence
+    # rebel_support_efficiency
+    
+    bonus = {
+        rebel_support_efficiency = 1.0
+    }
+    
+    espionage_ideas_1 = {
+        spy_offence = 0.5
+    }
+    
+    espionage_ideas_2 = {
+        discovered_relations_impact = -0.5
+    }
+    
+    espionage_ideas_3 = {
+        global_spy_defence = 0.5
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Monarchy
+#---------------------------------------
+monarchy_ideas = {
+    category = ADM
+    # heir_chance
+    # advisor_pool
+    # prestige
+    # legitimacy
+    
+    trigger = {
+        government = monarchy
+    }
+    
+    bonus = {
+        advisor_pool = 1
+    }
+    
+    monarchy_ideas_1 = {
+        heir_chance = 1
+    }
+    
+    monarchy_ideas_2 = {
+        legitimacy = 1
+    }
+    
+    monarchy_ideas_3 = {
+        prestige = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Free City
+#---------------------------------------
+free_city_ideas = {
+    category = ADM
+    # embracement_cost
+    # advisor_pool
+    # war_exhaustion_cost
+    # republican_tradition
+    
+    trigger = {
+        is_free_city_government = yes
+    }
+    
+    bonus = {
+        advisor_pool = 1
+    }
+    
+    free_city_ideas_1 = {
+        embracement_cost = -0.33
+    }
+    
+    free_city_ideas_2 = {
+        republican_tradition = 1
+    }
+    
+    free_city_ideas_3 = {
+        war_exhaustion_cost = -0.33
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Nomadic
+#---------------------------------------
+khas_ideas = {
+    category = ADM
+    # horde_unity
+    # monthly_militarized_society
+    # core_creation
+    # cavalry_power
+    
+    trigger = {
+        government = nomadic
+    }
+    
+    bonus = {
+        core_creation = -0.1
+    }
+    
+    khas_ideas_1 = {
+        horde_unity = 1
+    }
+    
+    khas_ideas_2 = {
+        raze_power_gain = 0.33
+    }
+    
+    khas_ideas_3 = {
+        cavalry_power = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}

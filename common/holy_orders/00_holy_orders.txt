@@ -1,25 +1,25 @@
-dummy_order = {
-    icon = GFX_holy_order_jesuits
-    trigger = {
-        always = no
-    }
-    cost = 50
-    cost_type = adm_power
-    per_province_effect = {
-        add_base_tax = 1
-    }
-    per_province_abandon_effect = {
-        add_base_tax = -1
-    }
-    modifier = {
-        local_missionary_strength = 0.015
-        local_build_cost = -0.1
-    }
-    ai_priority = {
-        factor = 2
-        modifier = {
-            factor = 2.0
-            NOT = { religion = ROOT }
-        }
-    }
-}
+# dummy_order = {
+    # icon = GFX_holy_order_jesuits
+    # trigger = {
+        # always = no
+    # }
+    # cost = 50
+    # cost_type = adm_power
+    # per_province_effect = {
+        # add_base_tax = 1
+    # }
+    # per_province_abandon_effect = {
+        # add_base_tax = -1
+    # }
+    # modifier = {
+        # local_missionary_strength = 0.015
+        # local_build_cost = -0.1
+    # }
+    # ai_priority = {
+        # factor = 2
+        # modifier = {
+            # factor = 2.0
+            # NOT = { religion = ROOT }
+        # }
+    # }
+# }

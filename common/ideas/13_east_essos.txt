@@ -1,0 +1,413 @@
+#---------------------------------------
+# Qarth
+#---------------------------------------
+quartheen_ideas = {
+	start = {
+		interest = -2
+		diplomatic_upkeep = 2
+	}
+	
+	bonus = {
+		improve_relation_modifier = 0.2
+	}
+	
+	trigger = {
+		technology_group = quartheen
+	}
+	free = yes
+	
+	# Wealth beyond Imagination
+	quartheen_1 = {
+		global_tax_modifier = 0.2
+	}
+	# The Jade Gateway
+	quartheen_2 = {
+		global_trade_power = 0.2
+	}
+	# The Pureborn
+	quartheen_3 = {
+		legitimacy = 1
+		prestige = 1
+	}
+	# House of the Undying
+	quartheen_4 = {
+		embracement_cost = -0.1
+	}
+	# Port of Qarth
+	quartheen_5 = {
+		trade_efficiency = 0.2
+	}
+	# A Warlock's Lies
+	quartheen_6 = {
+		stability_cost_modifier = -0.2
+	}
+	# The Hall of a Thousand Thrones
+	quartheen_7 = {
+		land_morale = 0.1
+	}
+}
+
+#---------------------------------------
+# Faros
+#---------------------------------------
+farosi_ideas = {
+	start = {
+		galley_cost = -0.33
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		naval_forcelimit_modifier = 0.2
+	}
+	
+	trigger = {
+		technology_group = farosi
+	}
+	free = yes
+	
+	# The Stone Cow of Faros
+	farosi_1 = {
+		religious_unity = 0.33
+	}
+	# Tropical Climate
+	farosi_2 = {
+		hostile_attrition = 2
+	}
+	# Trade through the Jade Sea
+	farosi_3 = {
+		global_trade_power = 0.2
+	}
+	# Yi Ti Influences
+	farosi_4 = {
+		army_tradition = 1
+	}
+	# Farosi Galleys
+	farosi_5 = {
+		galley_power = 0.2
+	}
+	# Cinnamon Straits
+	farosi_6 = {
+		trade_steering = 0.2
+	}
+	# Port Moraq
+	farosi_7 = {
+		merchants = 1
+	}
+}
+
+#---------------------------------------
+# Yi Ti
+#---------------------------------------
+yi_ti_ideas = {
+	start = {
+		core_creation = -0.1
+		diplomatic_upkeep = 1
+	}
+	
+	bonus = {
+		army_tradition = 1
+	}
+	
+	trigger = {
+		primary_culture = yitish
+	}
+	free = yes
+	
+	# Golden Empire of Yi Ti
+	yi_ti_1 = {
+		legitimacy = 1
+	}
+	# Verdant Rainforests and Vast Farmlands
+	yi_ti_2 = {
+		production_efficiency = 0.2
+	}
+	# Roaming Basilisks
+	yi_ti_3 = {
+		movement_speed = 0.15
+	}
+	# The Grand City of Yin
+	yi_ti_4 = {
+		prestige = 1
+	}
+	# Yitish Princes
+	yi_ti_5 = {
+		land_forcelimit_modifier = 0.2
+	}
+	# Golden Saffron
+	yi_ti_6 = {
+		global_trade_power = 0.1
+		trade_steering = 0.1
+	}
+	# The Five Forts
+	yi_ti_7 = {
+		fort_maintenance_modifier = -0.2
+	}
+}
+
+#---------------------------------------
+# Hyrkoon
+#---------------------------------------
+hyrkoon_ideas = {
+	start = {
+		fort_maintenance_modifier = -0.1
+        garrison_size = 1.0
+	}
+	
+	bonus = {
+		global_garrison_growth = 1.0
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = bayasabhad
+			primary_culture = samyriana
+			primary_culture = kayakayanaya
+			primary_culture = asabhad
+		}
+	}
+	free = yes
+	
+	# Legacy of Hyrkoon
+	hyrkoon_1 = {
+		legitimacy = 1
+	}
+
+	# The Great Sand Sea
+	hyrkoon_2 = {
+		hostile_attrition = 3
+	}
+
+	# The Steel Road
+	hyrkoon_3 = {
+		caravan_power = 0.2
+	}
+
+	# Warrior Women of Kayakayanaya
+	hyrkoon_4 = {
+		land_morale = 0.1
+	}
+
+	# Lost People of Yinishar
+	hyrkoon_5 = {
+		infantry_cost = -0.2
+	}
+
+	# The Bone Mountains
+	hyrkoon_6 = {
+		land_attrition = -0.1
+	}
+
+	# Trade with Qarth
+	hyrkoon_7 = {
+		merchants = 1
+		global_trade_power = 0.1
+	}
+}
+
+#---------------------------------------
+# Trader Town
+#---------------------------------------
+trader_town_ideas = {
+	start = {
+		merchants = 1
+		global_trade_power = 0.1
+	}
+	
+	bonus = {
+		merchants = 1
+	}
+	
+	trigger = {
+		primary_culture = trader_town
+	}
+	free = yes
+	
+	# Trade is Blood
+	trader_town_1 = {
+		caravan_power = 0.2
+	}
+
+	# Hyrkoon Allegiance
+	trader_town_2 = {
+		diplomatic_reputation = 1
+	}
+
+	# Hyrkoon Mercenaries
+	trader_town_3 = {
+		merc_maintenance_modifier = -0.2
+	}
+
+	# The Disaster of the Sand Sea
+	trader_town_4 = {
+		trade_range_modifier = 0.25
+	}
+
+	# Links to the Yi Ti
+	trader_town_5 = {
+		trade_steering = 0.25
+	}
+
+	# Trade with the Five Forts
+	trader_town_6 = {
+		global_prov_trade_power_modifier = 0.1
+	}
+
+	# Bloodless Men and their Gold
+	trader_town_7 = {
+		trade_efficiency = 0.1
+	}
+}
+
+#---------------------------------------
+# Nefer
+#---------------------------------------
+nefer_ideas = {
+	start = {
+		technology_cost = -0.1
+	}
+	
+	bonus = {
+		idea_cost = -0.1
+	}
+	
+	trigger = {
+		primary_culture = nefer
+	}
+	free = yes
+	
+	# The Last Capital of N'Ghai
+	nefer_1 = {
+		legitimacy = 1
+	}
+
+	# The Thousand Islands
+	nefer_2 = {
+		navy_tradition = 1
+	}
+
+	# Mystical Taint
+	nefer_3 = {
+		prestige = 1
+	}
+
+	# Relations to the Jogos Nhai
+	nefer_4 = {
+		cavalry_cost = -0.2
+	}
+
+	# Timber Galore
+	nefer_5 = {
+		global_regiment_cost = -0.33
+	}
+
+	# Trade through the Cannibal Sands	
+	nefer_6 = {
+		global_trade_power = 0.1
+	}
+
+	# Hardy People
+	nefer_7 = {
+		land_attrition = -0.2
+	}
+}
+
+#---------------------------------------
+# Leng
+#---------------------------------------
+lengii_ideas = {
+	start = {
+		production_efficiency = 0.1
+		advisor_pool = 2
+	}
+	
+	bonus = {
+		advisor_cost = -0.2
+	}
+	
+	trigger = {
+		primary_culture = lengii
+	}
+	free = yes
+	
+	lengii_1 = {
+		ae_impact = -0.1
+	}
+
+	lengii_2 = {
+		province_warscore_cost = -0.15
+	}
+	
+	lengii_3 = {
+		diplomatic_reputation = 1
+	}
+	
+	lengii_4 = {
+		diplomatic_upkeep = 1
+	}
+	
+	lengii_5 = {
+		diplomatic_annexation_cost = -0.2
+	}
+	
+	lengii_6 = {
+		unjustified_demands = -0.2
+	}
+	
+	lengii_7 = {
+		adm_tech_cost_modifier = -0.2
+	}
+}
+
+#---------------------------------------
+# Jogos Nhai
+#---------------------------------------
+jogos_nhai_ideas = {
+	start = {
+		cavalry_cost = -0.2
+		cavalry_power = 0.2
+	}
+	
+	bonus = {
+		cavalry_flanking = 0.2
+	}
+	
+	trigger = {
+		primary_culture = jogos_nhai
+	}
+	free = yes
+	
+	# Plains of Jogos Nhai
+	jogos_nhai_1 = {
+		prestige_from_land = 1
+	}
+
+	# Trade Links with the Nefer
+	jogos_nhai_2 = {
+		merchants = 1
+	}
+
+	# Moonsinger Influence
+	jogos_nhai_3 = {
+		religious_unity = 0.33
+	}
+
+	# Nomadic People
+	jogos_nhai_4 = {
+		land_maintenance_modifier = -0.2
+	}
+
+	# Zebra Cavalry
+	jogos_nhai_5 = {
+		cavalry_shock = 2
+	}
+
+	# Honour Bound
+	jogos_nhai_6 = {
+		land_morale = 0.1
+	}
+
+	# Survival Instinct
+	jogos_nhai_7 = {
+		reinforce_speed = 0.2
+	}
+}

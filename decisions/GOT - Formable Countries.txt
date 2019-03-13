@@ -461,4 +461,43 @@ country_decisions = {
 			factor = 1
 		}
 	}
+    
+    unite_the_jogos_nhai = {
+		major = yes
+		potential = {
+            has_reform = jhattar_reform
+			primary_culture = jogos_nhai
+			NOT = { exists = J03 }
+		}
+		allow = {
+			owns_core_province = 851 
+            owns_core_province = 876
+            owns_core_province = 860
+            owns_core_province = 859
+            owns_core_province = 838
+            owns_core_province = 850
+            owns_core_province = 837
+            owns_core_province = 853
+            owns_core_province = 852
+            owns_core_province = 854
+            owns_core_province = 855
+            owns_core_province = 862
+            owns_core_province = 856
+            owns_core_province = 863
+            owns_core_province = 857
+            owns_core_province = 864
+		}
+		effect = {
+			change_tag = J03
+			add_prestige = 200
+			add_stability = 6
+			swap_free_idea_group = yes
+			swap_non_generic_missions = yes
+			set_government_rank = 5
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

@@ -67,7 +67,7 @@ default = {
 	overlord_can_be_subject = no
 	can_have_subjects_of_other_types = no
 	can_be_annexed = no
-	takes_diplo_slot = yes
+	takes_diplo_slot = no
 	has_power_projection = yes
 	can_release_in_peace = yes
 	uses_military_focus = yes
@@ -573,248 +573,162 @@ tributary_state = {
 }
 
 # Completely scripted subject type (no code used). Add any number of these. Check common/new_diplomatic_actions for how to make visible in game.
-dummy =
-{
+dummy = {
 	copy_from = default
 }
 
-house_subject = {
-	copy_from = vassal
-	count = vassal
+#--------------------------------------
+# Royal Subject
+#--------------------------------------
+royal_subject = {
+	copy_from = default
+	
+	# Graphics:
+	sprite = GFX_icon_vassal
+	diplomacy_overlord_sprite = GFX_diplomacy_leadvassal
+	diplomacy_subject_sprite = GFX_diplomacy_amvassal
 	
 	# Properties:
     can_be_annexed = no
     can_be_integrated = no
-    
     transfer_trade_power = no
     joins_overlords_wars = no
-    
     overlord_can_attack = yes
     overlord_can_be_subject = no
     can_have_subjects_of_other_types = yes
-    
 	takes_diplo_slot = no
 	has_power_projection = yes
     can_release_in_peace = yes
-    
     counts_for_borders = no
     can_use_claims = no
-    
     share_rebel_popup = no
-    
-	gives_daimyo_bonuses = no
 	gets_help_with_rebels = no
-    
 	allows_taking_land_without_independence = yes
 
+    # Attributes:
 	trust_on_start = 50
-	
-    max_government_rank = 2
-    
+    max_government_rank = 5
 	base_liberty_desire = -25.0
-    liberty_desire_negative_prestige = 0.0
-	liberty_desire_development_ratio = 0.0
+    liberty_desire_negative_prestige = 0.05
+	liberty_desire_development_ratio = 0.05
+    liberty_desire_same_dynasty = -10.0
     
     pays_overlord = 0.25
     forcelimit_bonus = 0.25
-    
-	military_focus = 1.2
+    forcelimit_to_overlord = 0.1
 
 	relative_power_class = 2
 
+    # States:
 	can_fight = {
 		independent_nations = yes
-		same_overlord = house_subject
+		same_overlord = royal_subject
 		other_overlord = all
 	}
 	can_rival = {
 		independent_nations = yes
-		same_overlord = house_subject
+		same_overlord = royal_subject
 		other_overlord = all
 	}
 	can_ally = {
 		independent_nations = yes
-		same_overlord = house_subject
+		same_overlord = royal_subject
 		other_overlord = all
 	}
 	can_marry = {
 		independent_nations = yes
-		same_overlord = house_subject
+		same_overlord = royal_subject
 		other_overlord = all
 	}
 	
-	# Subject Interactions
-	#(disable)
-	embargo_rivals = no
-	support_loyalists = yes
-	subsidize_armies = no
-	scutage = no
-	send_officers = no
-	divert_trade= no
-	# (immediate)
-	placate_rulers = no
-	place_relative_on_throne = no
-	enforce_religion = yes
-	customize_subject = no
-	replace_governor = no
-	grant_province = yes
-	enforce_culture = no
-	siphon_income = yes
-	fortify_march = yes
-	seize_territory = yes
-	start_colonial_war = no
-	grant_core_claim = yes
-	sacrifice_ruler = no
-	sacrifice_heir = no
-	increase_tariffs = no
-	decrease_tariffs = no
-	takeondebt = yes
-	bestow_gifts = yes
-	send_additional_troops = yes
-	demand_artifacts = no
-	demand_additional_tribute = no
-	force_seppuku = no
-	contribute_to_capital = no
-	force_isolation = no
-	return_land = no
-	conscript_general = yes
-	# (special)
-	sword_hunt = no
-	sankin_kotai = no
-	expel_ronin = no
+	# Subject Interactions:
+    support_loyalists = yes
+    send_officers = yes
+    placate_rulers = yes
+    conscript_general = yes
     
-	# Modifiers
-	modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
-	modifier_subject = clear #Ditto
-	modifier_subject = {
-		modifier = house_subject_nation
-	}
-	modifier_overlord = {
-		modifier = house_subject_overlord
-	}
+	# Modifiers:
+    modifier_subject = clear
 	
-	overlord_opinion_modifier = is_house_subject
-	subject_opinion_modifier = is_house_subject
+	overlord_opinion_modifier = is_royal_overlord
+	subject_opinion_modifier = is_royal_subject
 }
 
-dothraki_tributary = {
-	#If similar subject added check if it needs to be added to these scripted triggers:
-	#is_subject_except_tributary_trigger
-	#is_free_or_tributary_trigger
+#--------------------------------------
+# Nomadic Subject
+#--------------------------------------
+nomadic_subject = {
 	copy_from = default
-
-	# Triggers:
-	is_potential_overlord = {
-		has_dlc = "Mandate of Heaven"
-        OR = {
-            has_reform = khalasar_reform
-            has_reform = khalasar_legacy
-            has_reform = jhattar_reform
-            has_reform = jhattar_legacy
-        }
-		NOT = { 
-			is_subject_of_type = dothraki_tributary
-		}
-	}
 	
 	# Graphics:
 	sprite = GFX_subject_tributary_state
 	diplomacy_overlord_sprite = GFX_diplomacy_leadtributary
 	diplomacy_subject_sprite = GFX_diplomacy_amtributary
-
+	
 	# Properties:
-	transfer_trade_power = no
-	can_fight_independence_war = no
-	joins_overlords_wars = no
-	joins_colonial_wars = no
-	is_voluntary = yes
-	overlord_can_attack = yes
+    is_voluntary = yes
+    can_be_annexed = no
+    can_be_integrated = no
+    transfer_trade_power = no
+    joins_overlords_wars = no
+    overlord_can_attack = yes
+    overlord_can_be_subject = no
+    can_have_subjects_of_other_types = yes
 	takes_diplo_slot = no
-	base_liberty_desire = -10
-	relative_power_class = 1
-	can_send_tribute = yes
-	can_have_subjects_of_other_types = yes
-	uses_military_focus = no
-	overlord_protects_external = no
-	counts_for_borders = no
-	can_use_claims = no
-	share_rebel_popup = no
-	can_transfer_in_peace = no
-	can_set_mil_focus = no
-	
-	liberty_desire_development_ratio = 0.1
+	has_power_projection = yes
+    can_release_in_peace = yes
+    counts_for_borders = no
+    can_use_claims = no
+    share_rebel_popup = no
+	gets_help_with_rebels = no
+	allows_taking_land_without_independence = yes
+
+    # Attributes:
 	trust_on_start = 0
-	
-	overlord_opinion_modifier = is_tributary
-	subject_opinion_modifier = is_tributary
-	
+	liberty_desire_development_ratio = 0.175
+    
+    pays_overlord = 0.25
+    forcelimit_bonus = 0.25
+    forcelimit_to_overlord = 0.1
+
+	relative_power_class = 1
+
+    # States:
 	can_fight = {
 		independent_nations = yes
-		same_overlord = dothraki_tributary
+		same_overlord = nomadic_subject
 		other_overlord = all
 	}
 	can_rival = {
 		independent_nations = yes
-		same_overlord = dothraki_tributary
+		same_overlord = nomadic_subject
 		other_overlord = all
 	}
 	can_ally = {
 		independent_nations = yes
-		same_overlord = dothraki_tributary
+		same_overlord = nomadic_subject
 		other_overlord = all
 	}
 	can_marry = {
 		independent_nations = yes
-		same_overlord = dothraki_tributary
+		same_overlord = nomadic_subject
 		other_overlord = all
 	}
-
+	
 	# Subject Interactions:
-	# (immediate)
-	enforce_religion = no
-	grant_core_claim = no
-	bestow_gifts = yes
-	send_additional_troops = yes
-	demand_artifacts = yes
+    embargo_rivals = no
+    placate_rulers = yes
+    bestow_gifts = yes
+    demand_artifacts = yes
 	demand_additional_tribute = yes
-	placate_rulers = no
-	# (continuous)
-	embargo_rivals = no
-
+    knowledge_sharing = no
+    
 	# Modifiers:
-	modifier_subject = clear # Tributaries don't get the ordinary subject_nation penalty 
-    
-    # Technology
-	modifier_subject = {
-		modifier = overlord_behind_tributary_state_tech_adm
-		trigger = {
-			FROM = {
-				NOT = { adm_tech = ROOT }
-			}
-		}
+    modifier_subject = clear
+    modifier_overlord = {
+		modifier = nomadic_subject_forcelimit_boost
 	}
-	modifier_subject = {
-		modifier = overlord_behind_tributary_state_tech_dip
-		trigger = {
-			FROM = {
-				NOT = { dip_tech = ROOT }
-			}
-		}
-	}
-	modifier_subject = {
-		modifier = overlord_behind_tributary_state_tech_mil
-		trigger = {
-			FROM = {
-				NOT = { mil_tech = ROOT }
-			}
-		}
-	}
-    
-    # Land Forcelimit
-    modifier_subject = {
-		modifier = dothraki_tributary_land_forcelimit
-		trigger = {
-			always = yes
-		}
-	}
+	
+	overlord_opinion_modifier = is_nomadic_overlord
+	subject_opinion_modifier = is_nomadic_subject
 }

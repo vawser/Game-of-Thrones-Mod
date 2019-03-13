@@ -17,7 +17,7 @@ republic_mechanic = {
 	heir = yes
 	queen = yes
     
-    duration = 0
+    duration = 10
     
     has_term_election = yes
     election_on_death = yes
@@ -49,9 +49,7 @@ tribal_mechanic = {
     
 	heir = yes
 	queen = no
-    native_mechanic = no
-	allow_migration = yes
-    
+
 	valid_for_nation_designer = no
 }
 
@@ -63,8 +61,6 @@ nomadic_mechanic = {
     
 	heir = yes
 	queen = yes
-    native_mechanic = no
-	allow_migration = yes
     
 	valid_for_nation_designer = no
 }
@@ -76,7 +72,10 @@ nights_watch_mechanic = {
     
 	heir = no
 	queen = no
-
+    royal_marriage = no
+    
+    duration = 10
+    has_term_election = no
     election_on_death = yes
     
 	valid_for_nation_designer = no

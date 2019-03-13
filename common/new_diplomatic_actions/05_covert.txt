@@ -34,13 +34,24 @@ establish_cult = {
                 change_religion = ROOT
             }
         }
+        hidden_effect = {
+            add_country_modifier = {
+                name = ai_espionage_cooldown
+                duration = 3650
+            }
+        }
 	}
-	on_decline =
-	{
+	on_decline = {
         add_spy_network_in = { who = FROM value = -50 }
         FROM = {
             random_owned_province = {
                 change_religion = ROOT
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = ai_espionage_cooldown
+                duration = 3650
             }
         }
 	}
@@ -52,7 +63,7 @@ establish_cult = {
 		}
 	}
 	ai_will_do = {
-		always = yes
+		NOT = { has_country_modifier = ai_espionage_cooldown }
 	}
 }
 
@@ -69,19 +80,22 @@ assassinate_leader = {
 	
 	is_visible = {
 		is_neighbor_of = FROM
-        FROM = { has_regency = no }
-        NOT = {
-            any_country = {
-                has_country_flag = sent_assassin
-            }
-        }
 	}
     
 	is_allowed = {
+        FROM = { has_regency = no }
         is_neighbor_of = FROM
         has_spy_network_in = {
             who = FROM
             value = 100
+        }
+        custom_trigger_tooltip = {
+            tooltip = ALREADY_SENT_ASSASSIN_TT
+            NOT = {
+                any_country = {
+                    has_country_flag = sent_assassin
+                }
+            }
         }
 	}
 	on_accept = {
@@ -98,6 +112,12 @@ assassinate_leader = {
         # Allow the event to be triggered for the assassination
         set_country_flag = sent_assassin
         FROM = { set_country_flag = got_assassin }
+        hidden_effect = {
+            add_country_modifier = {
+                name = ai_espionage_cooldown
+                duration = 3650
+            }
+        }
 	}
 	on_decline =
 	{
@@ -113,6 +133,12 @@ assassinate_leader = {
         # Allow the event to be triggered for the assassination
         set_country_flag = sent_assassin
         FROM = { set_country_flag = got_assassin }
+        hidden_effect = {
+            add_country_modifier = {
+                name = ai_espionage_cooldown
+                duration = 3650
+            }
+        }
 	}
 	
 	ai_acceptance = {
@@ -122,87 +148,10 @@ assassinate_leader = {
 		}
 	}
 	ai_will_do = {
-		always = yes
+		NOT = { has_country_modifier = ai_espionage_cooldown }
+        prestige = 0
 	}
 }
-
-#---------------------------------------
-# Conduct Slave Raid
-#---------------------------------------
-conduct_slave_raid = {
-	category = covert
-	
-	alert_index = 40
-	alert_tooltip = conduct_slave_raid_tooltip
-	
-	require_acceptance = no
-	
-	is_visible = {
-		is_neighbor_of = FROM
-        has_country_modifier = slavery_permitted
-        FROM = {
-            any_owned_province = {
-                NOT = { has_province_modifier = slave_raid }
-            }
-        }
-        NOT = {
-            any_country = {
-                has_country_flag = sent_slave_raid
-            }
-        }
-	}
-    
-	is_allowed = {
-        is_neighbor_of = FROM
-        has_spy_network_in = {
-            who = FROM
-            value = 50
-        }
-	}
-	on_accept = {
-        log = "Conduct Slave Raid used by [Root.GetName]"
-        add_spy_network_in = { who = FROM value = -50 }
-        
-        # Prevent overlay if different countries use the action at the same time.
-        every_country = {
-            clr_country_flag = sent_slave_raid
-            clr_country_flag = got_slave_raid
-        }
-        
-        # Allow the event to be triggered
-        set_country_flag = sent_slave_raid
-        FROM = { set_country_flag = got_slave_raid }
-	}
-	on_decline =
-	{
-        add_spy_network_in = { who = FROM value = -50 }
-        
-        # Prevent overlay if different countries use the action at the same time.
-        every_country = {
-            clr_country_flag = sent_slave_raid
-            clr_country_flag = got_slave_raid
-        }
-        
-        # Allow the event to be triggered
-        set_country_flag = sent_slave_raid
-        FROM = { set_country_flag = got_slave_raid }
-	}
-	
-	ai_acceptance = {
-        add_entry = {
-			name = BASE
-			set_variable = { which = ai_value value = 1000 }
-		}
-	}
-	ai_will_do = {
-		always = yes
-	}
-}
-
-
-
-
-
 
 
 

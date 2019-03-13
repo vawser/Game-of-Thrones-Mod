@@ -1,0 +1,523 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+# ai_will do is only used to determine which idea group is picked if AI_USES_HISTORICAL_IDEA_GROUPS define is 0, OR start is custom/random
+# ai never picks an idea that resolves to ai_will_do = 0, even if AI_USES_HISTORICAL_IDEA_GROUPS = 1
+# ROOT = country picking the idea
+# groups set to colonial=yes will be higher prioritized by the AI when spending power
+
+#---------------------------------------
+# Exploration
+#---------------------------------------
+exploration_ideas = {
+    category = DIP
+    # may_explore
+    # colonists
+    # auto_explore_adjacent_to_colony
+    # range
+    
+    bonus = {
+        range = 0.25
+    }
+    
+    exploration_ideas_1 = {
+        may_explore = yes
+    }
+    
+    exploration_ideas_2 = {
+        colonists = 1
+    }
+    
+    exploration_ideas_3 = {
+        auto_explore_adjacent_to_colony = yes
+        may_establish_frontier = yes
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+#---------------------------------------
+# Foreign Trade
+#---------------------------------------
+foreign_trade_ideas = {
+    category = DIP
+    # global_foreign_trade_power
+    # trade_range_modifier
+    # global_tariffs
+    # merchants
+    
+    bonus = {
+        global_tariffs = 0.5
+    }
+    
+    foreign_trade_ideas_1 = {
+        global_foreign_trade_power = 0.2
+    }
+    
+    foreign_trade_ideas_2 = {
+        trade_range_modifier = 0.33
+    }
+    
+    foreign_trade_ideas_3 = {
+        merchants = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Domestic Trade
+#---------------------------------------
+domestic_trade_ideas = {
+    category = DIP
+    # global_own_trade_power
+    # trade_steering
+    # trade_efficiency
+    # merchants
+    
+    bonus = {
+        trade_efficiency = 0.2
+    }
+    
+    domestic_trade_ideas_1 = {
+        global_own_trade_power = 0.2
+    }
+    
+    domestic_trade_ideas_2 = {
+        trade_steering = 0.33
+    }
+    
+    domestic_trade_ideas_3 = {
+        merchants = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Manufacturing 
+#---------------------------------------
+manufacturing_ideas = {
+    category = DIP
+    # production_efficiency
+    # build_cost
+    # global_trade_goods_size_modifier
+    # build_time
+    
+    bonus = {
+        global_trade_goods_size_modifier = 0.25
+    }
+    
+    manufacturing_ideas_1 = {
+        production_efficiency = 0.2
+    }
+    
+    manufacturing_ideas_2 = {
+        build_cost = -0.33
+    }
+    
+    manufacturing_ideas_3 = {
+        build_time = -0.33
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Warmongerer
+#---------------------------------------
+aggressive_diplomacy_ideas = {
+    category = DIP
+    # fabricate_claims_time
+    # province_warscore_cost
+    # unjustified_demands
+    # diplomatic_annexation_cost
+    
+    bonus = {
+        diplomatic_annexation_cost = -0.25
+    }
+    
+    aggressive_diplomacy_ideas_1 = {
+        idea_claim_colonies = yes
+    }
+    
+    aggressive_diplomacy_ideas_2 = {
+        province_warscore_cost = -0.33
+    }
+    
+    aggressive_diplomacy_ideas_3 = {
+        unjustified_demands = -0.33
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Peacemaker
+#---------------------------------------
+peaceful_diplomacy_ideas = {
+    category = DIP
+    # ae_impact 
+    # diplomatic_reputation
+    # diplomatic_upkeep
+    # improve_relation_modifier
+    
+    bonus = {
+        diplomatic_upkeep = 2
+    }
+    
+    peaceful_diplomacy_ideas_1 = {
+        ae_impact = -0.2
+    }
+    
+    peaceful_diplomacy_ideas_2 = {
+        diplomatic_reputation = 2
+    }
+    
+    peaceful_diplomacy_ideas_3 = {
+        improve_relation_modifier = 0.2
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Civil Organisation
+#---------------------------------------
+civil_organisation_ideas = {
+    category = DIP
+    # diplomats
+    # vassal_income
+    # vassal_forcelimit_bonus
+    # dip_tech_cost_modifier
+    
+    bonus = {
+        dip_tech_cost_modifier = -0.1
+    }
+    
+    civil_organisation_ideas_1 = {
+        diplomats = 1
+    }
+    
+    civil_organisation_ideas_2 = {
+        vassal_income = 0.5
+    }
+    
+    civil_organisation_ideas_3 = {
+        vassal_forcelimit_bonus = 0.5
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Naval Trade
+#---------------------------------------
+naval_trade_ideas = {
+    category = DIP
+    # blockade_efficiency
+    # global_trade_power
+    # embargo_efficiency
+    # global_ship_trade_power
+    
+    bonus = {
+        embargo_efficiency = 0.5
+    }
+    
+    naval_trade_ideas_1 = {
+        global_trade_power = 0.2
+    }
+    
+    naval_trade_ideas_2 = {
+        global_ship_trade_power = 0.33
+    }
+    
+    naval_trade_ideas_3 = {
+        blockade_efficiency = 0.5
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+#---------------------------------------
+# Raiding
+#---------------------------------------
+raiding_ideas = {
+    category = DIP
+    # privateer_efficiency
+    # capture_ship_chance
+    # sunk_ship_morale_hit_recieved
+    # may_perform_slave_raid
+    
+    bonus = {
+        sunk_ship_morale_hit_recieved = -0.2
+    }
+    
+    raiding_ideas_1 = {
+        privateer_efficiency = 0.33
+    }
+    
+    raiding_ideas_2 = {
+        capture_ship_chance = 0.25
+    }
+    
+    raiding_ideas_3 = {
+        may_perform_slave_raid = yes
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 4
+            
+            OR = {
+                technology_group = stepstones
+                technology_group = ghiscari
+            }
+        }
+        
+        modifier = {
+            factor = 2
+            
+            primary_culture = ironborn
+        }
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+#---------------------------------------
+# Naval Combat
+#---------------------------------------
+navy_combat_ideas = {
+    category = DIP
+    # naval_morale
+    # galley_power
+    # heavy_ship_power
+    # ship_durability
+    
+    bonus = {
+        ship_durability = 0.1
+    }
+    
+    navy_combat_ideas_1 = {
+        naval_morale = 0.1
+    }
+    
+    navy_combat_ideas_2 = {
+        galley_power = 0.15
+    }
+    
+    navy_combat_ideas_3 = {
+        heavy_ship_power = 0.15
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 2
+            
+            OR = {
+                technology_group = stepstones
+                technology_group = ghiscari
+            }
+        }
+        
+        modifier = {
+            factor = 2
+            
+            primary_culture = ironborn
+        }
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+#---------------------------------------
+# Naval Recruitment
+#---------------------------------------
+navy_recruitment_ideas = {
+    category = DIP
+    # global_sailors_modifier
+    # global_ship_recruit_speed
+    # naval_maintenance_modifier
+    # naval_forcelimit_modifier
+    
+    bonus = {
+        global_sailors_modifier = 0.5
+    }
+    
+    navy_recruitment_ideas_1 = {
+        global_ship_recruit_speed = -0.33
+    }
+    
+    navy_recruitment_ideas_2 = {
+        naval_forcelimit_modifier = 0.5
+    }
+    
+    navy_recruitment_ideas_3 = {
+        naval_maintenance_modifier = -0.2
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 2
+            
+            OR = {
+                technology_group = stepstones
+                technology_group = ghiscari
+            }
+        }
+        
+        modifier = {
+            factor = 2
+            
+            primary_culture = ironborn
+        }
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+#---------------------------------------
+# Naval Organisation
+#---------------------------------------
+navy_organisation_ideas = {
+    category = DIP
+    # naval_attrition
+    # navy_tradition
+    # recover_navy_morale_speed
+    # sea_repair
+    
+    bonus = {
+        navy_tradition = 1
+    }
+    
+    navy_organisation_ideas_1 = {
+        naval_attrition = -0.2
+    }
+    
+    navy_organisation_ideas_2 = {
+        sea_repair = yes
+    }
+    
+    navy_organisation_ideas_3 = {
+        recover_navy_morale_speed = 0.2
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 2
+            
+            OR = {
+                technology_group = stepstones
+                technology_group = ghiscari
+            }
+        }
+        
+        modifier = {
+            factor = 2
+            
+            primary_culture = ironborn
+        }
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+#---------------------------------------
+# Naval Leadership
+#---------------------------------------
+navy_leadership_ideas = {   
+    category = DIP
+    # leader_naval_fire
+    # leader_naval_shock
+    # leader_naval_manuever
+    # free_leader_pool
+    
+    bonus = {
+        free_leader_pool = 1
+    }
+    
+    navy_leadership_ideas_1 = {
+        leader_naval_fire = 1
+    }
+    
+    navy_leadership_ideas_2 = {
+        leader_naval_shock = 1
+    }
+    
+    navy_leadership_ideas_3 = {
+        leader_naval_manuever = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 2
+            
+            OR = {
+                technology_group = stepstones
+                technology_group = ghiscari
+            }
+        }
+        
+        modifier = {
+            factor = 2
+            
+            primary_culture = ironborn
+        }
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}

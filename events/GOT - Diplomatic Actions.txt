@@ -153,7 +153,7 @@ country_event = {
 	option = {
 		name = diplomatic_actions.3.option.a
  
-        add_prestige = -50
+        add_prestige = -25
 	}
 }
 
@@ -197,7 +197,7 @@ country_event = {
 	option = {
 		name = diplomatic_actions.7.option.a
  
-        add_prestige = -50
+        add_prestige = -25
 	}
 }
 
@@ -226,118 +226,3 @@ country_event = {
 	}
 }
 
-# Slave Raid 
-country_event = {
-	id = diplomatic_actions.9
-	title = diplomatic_actions.9.title
-	desc = diplomatic_actions.9.desc
-    picture = SPY_eventPicture
-
-    hidden = yes
-
-    trigger = {
-        has_country_flag = sent_slave_raid
-    }
-    
-    immediate = {
-        hidden_effect = {
-            if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - diplomatic_actions.9" }
-        }
-    }
-    
-	option = {
-		name = diplomatic_actions.9.option.a
- 
-        clear_global_event_target = slave_raider
-        save_global_event_target_as = slave_raider
-
-        every_country = {
-            limit = {
-                has_country_flag = got_slave_raid
-            }
-            
-            clear_global_event_target = slaver_target
-            save_global_event_target_as = slaver_target
-            
-            random_list = {
-                # Known
-                50 = {
-                    country_event = { id = diplomatic_actions.10 }
-                    ROOT = { country_event = { id = diplomatic_actions.11 } }
-                }
-                # Unknown
-                50 = {
-                    # victim doesn't know
-                    ROOT = { country_event = { id = diplomatic_actions.11 } }
-                }
-            }
-        }
-        
-        # Tidy up
-        every_country = {
-            clr_country_flag = sent_slave_raid
-            clr_country_flag = got_slave_raid
-        }
-	}
-}
-
-
-# Slave Raid Known (victim)
-country_event = {
-	id = diplomatic_actions.10
-	title = diplomatic_actions.10.title
-	desc = diplomatic_actions.10.desc
-    picture = SPY_eventPicture
-
-    is_triggered_only = yes
-    
-    immediate = {
-        hidden_effect = {
-            if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - diplomatic_actions.10" }
-        }
-    }
-    
-	option = {
-		name = diplomatic_actions.10.option.a
- 
-        add_opinion = {
-            who = event_target:slaver_target
-            modifier = slaver
-        }
-	}
-}
-
-# Slave Raid (raider)
-country_event = {
-	id = diplomatic_actions.11
-	title = diplomatic_actions.11.title
-	desc = diplomatic_actions.11.desc
-    picture = SPY_eventPicture
-
-    is_triggered_only = yes
-    
-    immediate = {
-        hidden_effect = {
-            if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - diplomatic_actions.11" }
-        }
-    }
-    
-	option = {
-		name = diplomatic_actions.11.option.a
- 
-        random_list = {
-            25 = {
-                add_slaves_250 = yes
-            }
-            25 = {
-                add_slaves_500 = yes
-            }
-            25 = {
-                add_slaves_750 = yes
-            }
-            25 = {
-                add_slaves_1000 = yes
-            }
-        }
-	}
-}

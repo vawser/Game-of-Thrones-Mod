@@ -188,3 +188,127 @@ add_loot_from_rich_province_general_effect = {
 		}
 	}
 }
+
+estate_land_revoked_effect = {
+    if = {
+		limit = {
+			has_estate = estate_clergy
+			has_owner_religion = yes
+			owner = {
+				NOT = {
+					estate_loyalty = {
+						estate = estate_clergy
+						loyalty = 30
+					}
+				}
+			}
+		}
+		spawn_rebels = {
+			type = religious_rebels
+			size = 1
+		}
+	}
+	if = {
+		limit = {
+			has_estate = estate_magi
+			has_owner_religion = no
+			owner = {
+				NOT = {
+					estate_loyalty = {
+						estate = estate_magi
+						loyalty = 30
+					}
+				}
+			}
+		}
+		spawn_rebels = {
+			type = particularist_rebels
+			size = 1
+		}
+	}
+	if = {
+		limit = {
+			has_estate = estate_nobles
+			owner = {
+				NOT = {
+					estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 30
+					}
+				}
+			}
+		}
+		spawn_rebels = {
+			type = noble_rebels
+			size = 1
+		}
+	}
+	if = {
+		limit = {
+			has_estate = estate_merchants
+			owner = {
+				NOT = {
+					estate_loyalty = {
+						estate = estate_merchants
+						loyalty = 30
+					}
+				}
+			}
+		}
+		spawn_rebels = {
+			type = particularist_rebels
+			size = 1
+		}
+	}
+	if = {
+		limit = {
+			has_estate = estate_commoners
+			owner = {
+				NOT = {
+					estate_loyalty = {
+						estate = estate_commoners
+						loyalty = 30
+					}
+				}
+			}
+		}
+		spawn_rebels = {
+			type = anti_tax_rebels
+			size = 1
+		}
+	}
+	if = {
+		limit = {
+			has_estate = estate_khalasar
+			owner = {
+				NOT = {
+					estate_loyalty = {
+						estate = estate_khalasar
+						loyalty = 30
+					}
+				}
+			}
+		}
+		spawn_rebels = {
+			type = pretender
+			size = 1
+		}
+	}
+	if = {
+		limit = {
+			has_estate = estate_cheiftains
+			owner = {
+				NOT = {
+					estate_loyalty = {
+						estate = estate_cheiftains
+						loyalty = 30
+					}
+				}
+			}
+		}
+		spawn_rebels = {
+			type = pretender
+			size = 1
+		}
+	}
+}

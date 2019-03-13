@@ -20,7 +20,7 @@ country_event = {
 	option = {
 		name = GOT_SYSTEM.1.option.a
 		
-        #set_global_flag = enable_onaction_logging
+        set_global_flag = enable_onaction_logging
         #set_global_flag = enable_event_logging
         
         if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - GOT_SYSTEM.1.option.a" }
@@ -341,11 +341,17 @@ country_event = {
 		# Central Essos
         if = {
             limit = {
-                capital_scope = {
-                    superregion = central_essos_superregion
+                OR = {
+                    technology_group = dothraki
+                    capital_scope = {
+                        superregion = central_essos_superregion
+                    }
                 }
             }
 			
+            west_essos_superregion = {
+                discover_country = ROOT
+            }
 			central_essos_superregion = {
                 discover_country = ROOT
             }
@@ -379,6 +385,34 @@ country_event = {
 			east_sothoryos_sea_area = {
                 discover_country = ROOT
             }
+            # Lakes
+            3005 = {
+                discover_country = ROOT
+            }
+            3006 = {
+                discover_country = ROOT
+            }
+            3007 = {
+                discover_country = ROOT
+            }
+            1076 = {
+                discover_country = ROOT
+            }
+            3008 = {
+                discover_country = ROOT
+            }
+            3009 = {
+                discover_country = ROOT
+            }
+            1077 = {
+                discover_country = ROOT
+            }
+            1078 = {
+                discover_country = ROOT
+            }
+            1129 = {
+                discover_country = ROOT
+            }
 		}
 		
 		# Far Essos
@@ -409,6 +443,16 @@ country_event = {
 			east_sothoryos_sea_area = {
                 discover_country = ROOT
             }
+            1129 = {
+                discover_country = ROOT
+            }
+            1128 = {
+                discover_country = ROOT
+            }
+            1127 = {
+                discover_country = ROOT
+            }
+            
         } 
 
 		# Asshai and the Mythicals
@@ -457,6 +501,16 @@ country_event = {
 			east_sothoryos_sea_area = {
                 discover_country = ROOT
             }
+            1129 = {
+                discover_country = ROOT
+            }
+            1128 = {
+                discover_country = ROOT
+            }
+            1127 = {
+                discover_country = ROOT
+            }
+            
         } 
 		
 		# Summer Islands and Stepstones

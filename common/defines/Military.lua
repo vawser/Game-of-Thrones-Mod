@@ -74,5 +74,5 @@ NDefines.NCountry.CORRUPTION_FROM_BANNERS = 1
 NDefines.NMilitary.BANNER_DISCIPLINE_BONUS = 0.1
 NDefines.NMilitary.BANNER_AGE_MULTIPLIER = 0.0
 NDefines.NMilitary.COSSACKS_SHOCK_DAMAGE_BONUS = 0.1    -- Elite Cavalry
-NDefines.NMilitary.STRELTSY_FIRE_DAMAGE_BONUS = 0.1     -- Maji
+NDefines.NMilitary.STRELTSY_FIRE_DAMAGE_BONUS = 0.1     -- Magi
 

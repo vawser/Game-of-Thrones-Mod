@@ -1,0 +1,387 @@
+#---------------------------------------
+# Dothraki
+#---------------------------------------
+dothraki_ideas = {
+	start = {
+        cavalry_cost = -0.2
+        cavalry_power = 0.1
+	}
+	
+	bonus = {
+		cavalry_flanking = 0.2
+	}
+	
+	trigger = {
+		technology_group = dothraki
+		NOT = { primary_culture = jogos_nhai }
+	}
+	free = yes
+	
+	# Nomadic Life
+	dothraki_1 = {
+		land_attrition = -0.1
+	}
+	# Mother of Mountains
+	dothraki_2 = {
+		recover_army_morale_speed = 0.1
+	}
+	# Bloodriders
+	dothraki_3 = {
+		cavalry_shock = 1
+	}
+	# Taming the Dothraki Sea
+	dothraki_4 = {
+		land_forcelimit_modifier = 0.15
+	}
+	# Crush the Maegi
+	dothraki_5 = {
+		global_regiment_recruit_speed = -0.2
+	}
+	# Braided Topknots
+	dothraki_6 = {
+		raze_power_gain = 0.33
+	}
+	# Horselords
+	dothraki_7 = {
+		movement_speed = 0.2
+	}
+}
+
+#---------------------------------------
+# Ghis
+#---------------------------------------
+ghiscari_ideas = {
+	start = {
+		possible_mercenaries = 0.33
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		merc_maintenance_modifier = -0.2
+	}
+	
+	trigger = {
+		primary_culture = ghis
+	}
+	free = yes
+	
+	# The Death of the Ghiscari 
+	ghiscari_1 = {
+		defensiveness = 0.33
+	}
+	# Tactics from Old Ghis
+	ghiscari_2 = {
+		infantry_power = 0.1
+	}
+	# The Slave Traders
+	ghiscari_3 = {
+		global_manpower_modifier = 0.33
+	}
+	# The Unsullied
+	ghiscari_4 = {
+		discipline = 0.05
+	}
+	# The Harpy
+	ghiscari_5 = {
+		missionary_maintenance_cost = -0.15
+	}
+	# Tokars
+	ghiscari_6 = {
+		prestige = 1
+	}
+	# Legacy of Grazdan the Great
+	ghiscari_7 = {
+		legitimacy = 1
+	}
+}
+
+#---------------------------------------
+# Valyria
+#---------------------------------------
+valyrian_ideas = {
+	start = {
+		development_cost = -0.2
+		embracement_cost = -0.1
+	}
+	
+	bonus = {
+		global_tax_modifier = 0.2
+	}
+	
+	trigger = {
+		tag = J17
+	}
+	free = yes
+	
+	# The Valyrian Legacy
+	valyrian_1 = {
+		prestige = 1
+	}
+
+	# Valyrian Blades
+	valyrian_2 = {
+		discipline = 0.1
+	}
+	
+	# Masters of Magic
+	valyrian_3 = {
+		leader_land_shock = 1
+	}
+	
+	# The Doom
+	valyrian_4 = {
+		idea_cost = -0.1
+	}
+	
+	# Resilient Breed
+	valyrian_5 = {
+		defensiveness = 0.33
+	}
+	
+	# Dragonlords
+	valyrian_6 = {
+		free_leader_pool = 1
+	}
+	
+	# Valyrian Imperialism
+	valyrian_7 = {
+		unjustified_demands = -0.2
+	}
+}
+
+#---------------------------------------
+# Lhazar
+#---------------------------------------
+lhazareen_ideas = {
+	start = {
+		caravan_power = 0.1
+		production_efficiency = 0.1
+	}
+	
+	bonus = {
+		trade_efficiency = 0.2
+	}
+	
+	trigger = {
+		primary_culture = lhazar
+	}
+	free = yes
+	
+	lhazareen_1 = {
+		global_unrest = -2
+	}
+
+	lhazareen_2 = {
+		global_prov_trade_power_modifier = 0.2
+	}
+	
+	lhazareen_3 = {
+		years_of_nationalism = -5
+	}
+	
+	lhazareen_4 = {
+		defensiveness = 0.25
+	}
+	
+	lhazareen_5 = {
+		hostile_attrition = 1
+	}
+	
+	lhazareen_6 = {
+		stability_cost_modifier = -0.25
+	}
+	
+	lhazareen_7 = {
+		global_trade_goods_size_modifier = 0.2
+	}
+}
+
+#---------------------------------------
+# Meereen
+#---------------------------------------
+mereenese_ideas = {
+	start = {
+		global_manpower_modifier = 0.1
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		global_regiment_cost = -0.25
+	}
+	
+	trigger = {
+		primary_culture = meereen
+	}
+	free = yes
+	
+	mereenese_1 = {
+		free_leader_pool = 1
+	}
+
+	mereenese_2 = {
+		global_missionary_strength = 0.02
+	}
+	
+	mereenese_3 = {
+		possible_mercenaries = 1
+	}
+	
+	mereenese_4 = {
+		war_exhaustion = -0.05
+	}
+	
+	mereenese_5 = {
+		merc_maintenance_modifier = -0.1
+	}
+	
+	mereenese_6 = {
+		manpower_recovery_speed = 0.1
+	}
+	
+	mereenese_7 = {
+		mercenary_cost = -0.2
+	}
+}
+
+#---------------------------------------
+# Yunkai
+#---------------------------------------
+yunkai_ideas = {
+	start = {
+		global_spy_defence = 0.25
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		recover_army_morale_speed = 0.1
+	}
+	
+	trigger = {
+		primary_culture = yunkai
+	}
+	free = yes
+	
+	yunkai_1 = {
+		global_unrest = -2
+	}
+
+	yunkai_2 = {
+		global_manpower_modifier = 0.2
+	}
+	
+	yunkai_3 = {
+		land_maintenance_modifier = -0.1
+	}
+	
+	yunkai_4 = {
+		advisor_pool = 1
+	}
+	
+	yunkai_5 = {
+		prestige = 1
+	}
+	
+	yunkai_6 = {
+		land_forcelimit_modifier = 0.2
+	}
+	
+	yunkai_7 = {
+		spy_offence = 0.25
+	}
+}
+
+#---------------------------------------
+# Astapor
+#---------------------------------------
+astapori_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		admiral_cost = -0.25
+	}
+	
+	bonus = {
+		naval_forcelimit_modifier = 0.25
+	}
+	
+	trigger = {
+		primary_culture = astapor
+	}
+	free = yes
+	
+	astapori_1 = {
+		army_tradition = 0.5
+        navy_tradition = 0.5
+	}
+
+	astapori_2 = {
+		global_manpower_modifier = 0.1
+	}
+	
+	astapori_3 = {
+		infantry_power = 0.1
+	}
+	
+	astapori_4 = {
+		recover_army_morale_speed = 0.1
+	}
+	
+	astapori_5 = {
+		land_maintenance_modifier = -0.2
+	}
+	
+	astapori_6 = {
+		discipline = 0.05
+	}
+	
+	astapori_7 = {
+		unjustified_demands = -0.2
+	}
+}
+
+#---------------------------------------
+# Valyrian Remnants
+#---------------------------------------
+valyrian_remnants_ideas = {
+	start = {
+		legitimacy = 1
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		all_power_cost = -0.1
+	}
+	
+	trigger = {
+		culture_group = culture_valyrian
+	}
+	free = yes
+	
+	valyrian_remnants_1 = {
+		auto_explore_adjacent_to_colony = yes
+		colonists = 1
+	}
+
+	valyrian_remnants_2 = {
+		naval_forcelimit_modifier = 0.2
+	}
+	
+	valyrian_remnants_3 = {
+		development_cost = -0.1
+	}
+	
+	valyrian_remnants_4 = {
+		global_tax_modifier = 0.15
+	}
+	
+	valyrian_remnants_5 = {
+		embracement_cost = -0.2
+	}
+	
+	valyrian_remnants_6 = {
+		build_cost = -0.2
+	}
+	
+	valyrian_remnants_7 = {
+		discipline = 0.05
+	}
+}

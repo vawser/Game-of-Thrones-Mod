@@ -80,6 +80,7 @@ negative_stability = {
     # modifier * -step 
 	global_unrest = -2
 	legitimacy = 1
+    republican_tradition = 1
 	interest = -1
 	migration_cooldown = 0.1
 	devotion = 1
@@ -266,11 +267,18 @@ country_development = {
 }
 
 corruption = {
+    legitimacy = -10
+    republican_tradition = -10
+    devotion = -10
+    horde_unity = -10
+    meritocracy = -10
+    
 	global_spy_defence = -0.25
 	spy_offence = -0.50
-	all_power_cost = 1.0
+    
 	min_autonomy = 50
 	global_unrest = -20
+    
 	mercantile_chieftains_influence = 0.05
 }
 
@@ -353,6 +361,7 @@ prestige = {
 	global_spy_defence = 0.1				#+10/-10
 	mercenary_cost = -0.33					#-33 to +33%
 	legitimacy = 1.0
+    republican_tradition = 1.0
 	improve_relation_modifier = 0.5
 	monthly_fervor_increase = 1
 	ae_impact = -0.10
@@ -413,7 +422,7 @@ power_projection = {
 	legitimacy = 0.5
 	devotion = 0.5
 	horde_unity = 0.5
-	republican_tradition = 0.2
+	republican_tradition = 0.5
 }
 
 power_projection_25 = {

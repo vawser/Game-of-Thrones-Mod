@@ -12,6 +12,12 @@ NDefines.NMilitary.ARMY_DRILL_YEARLY_DECAY = -1
 NDefines.NMilitary.ARMY_DRILL_YEARLY_GAIN = 25.0
 
 --------------------------------
+-- Forts
+--------------------------------
+NDefines.NMilitary.FORTRESS_COST = 0.05         -- Reduce cost of forts
+NDefines.NMilitary.FORT_PER_DEV_RATIO = 50
+
+--------------------------------
 -- Mercenaries
 --------------------------------
 NDefines.NMilitary.MERCENARY_SUPPORT_LIMIT_BASE = 5

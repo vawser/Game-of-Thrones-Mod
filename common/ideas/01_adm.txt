@@ -7,258 +7,497 @@
 # ROOT = country picking the idea
 # groups set to colonial=yes will be higher prioritized by the AI when spending power
 
-#---------------------------------------
-# Administrative Organisation
-#---------------------------------------
-administrative_organisation_ideas = {
+# Innovation
+got_innovation_ideas = {
     category = ADM
-    # development_cost
-    # global_tax_modifier
-    # idea_cost
-    # adm_tech_cost_modifier
-    
-    bonus = {
-        adm_tech_cost_modifier = -0.1
-    }
-    
-    administrative_organisation_ideas_1 = {
-        development_cost = -0.2
-    }
-    
-    administrative_organisation_ideas_2 = {
-        global_tax_modifier = 0.2
-    }
-    
-    administrative_organisation_ideas_3 = {
-        idea_cost = -0.1
-    }
-    
-    ai_will_do = {
-        factor = 1
-    }
-}
 
-#---------------------------------------
-# Banking
-#---------------------------------------
-banking_ideas = {
-    category = ADM
-    # inflation_action_cost
-    # inflation_reduction
-    # interest
-    # global_tax_income
-    
     bonus = {
-        global_tax_income = 24
-    }
-    
-    banking_ideas_1 = {
-        inflation_action_cost = -0.33
-    }
-    
-    banking_ideas_2 = {
-        inflation_reduction = 0.1
-    }
-    
-    banking_ideas_3 = {
-        interest = -1
-    }
-    
-    ai_will_do = {
-        factor = 1
-        
-        modifier = {
-            factor = 10
-            
-            num_of_loans = 5
-        }
-        
-        modifier = {
-            factor = 1.1
-            NOT = { monthly_income = 5 }
-        }
-    }
-}
-
-#---------------------------------------
-# Advisor
-#---------------------------------------
-advisor_ideas = {
-    category = ADM
-    # advisor_pool
-    # advisor_cost
-    # yearly_corruption
-    # prestige_decay
-    
-    bonus = {
-        prestige_decay = -0.02
-    }
-    
-    advisor_ideas_1 = {
-        advisor_pool = 3
-    }
-    
-    advisor_ideas_2 = {
         advisor_cost = -0.33
     }
     
-    advisor_ideas_3 = {
-        yearly_corruption = -0.1
+    # Scientific Progress
+    got_innovation_ideas_1 = {
+        reform_progress_growth = 0.33
+		innovativeness_gain = 0.15
+    }
+    # Astute Accounting
+    got_innovation_ideas_2 = {
+        inflation_action_cost = -0.25
+    }
+    # Patron of the Arts
+    got_innovation_ideas_3 = {
+       prestige_decay = -0.01
+    }
+    # Popular Court
+    got_innovation_ideas_4 = {
+        advisor_pool = 1
+    }
+    # Pragmatism
+    got_innovation_ideas_5 = {
+        mercenary_cost = -0.25
+    }
+    # Hope for the Future
+    got_innovation_ideas_6 = {
+        war_exhaustion = -0.05
+    }
+    # Military Education
+    got_innovation_ideas_7 = {
+        free_leader_pool = 1
     }
     
     ai_will_do = {
         factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_capitalist 
+		}
+        
+		modifier = {
+			factor = 2
+			personality = ai_militarist 
+		}
     }
 }
 
-#---------------------------------------
-# Administration
-#---------------------------------------
-administration_ideas = {
+# Religious
+got_religious_ideas = {
     category = ADM
-    # envoy_travel_time
-    # state_maintenance_modifier
-    # core_creation
-    # max_states
+
+    bonus = {
+        culture_conversion_cost = -0.25
+    }
     
+    # Deus Vult
+    got_religious_ideas_1 = {
+        cb_on_religious_enemies = yes
+    }
+    # Religious Fervor
+    got_religious_ideas_2 = {
+        missionaries = 1
+    }
+    # Attendance Duty
+    got_religious_ideas_3 = {
+        stability_cost_modifier = -0.25
+    }
+    # Divine Supremacy
+    got_religious_ideas_4 = {
+        global_missionary_strength = 0.03
+    }
+    # Devotion
+    got_religious_ideas_5 = {
+        tolerance_own = 1
+		papal_influence = 2
+		devotion = 0.5
+		monthly_fervor_increase = 0.25
+		church_power_modifier = 0.1
+    }
+    # Religious Traditions
+    got_religious_ideas_6 = {
+        prestige = 1
+    }
+    # Inqusitorial Practices
+    got_religious_ideas_7 = {
+        missionary_maintenance_cost = -0.5
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			NOT = { religious_unity = 0.9 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { religious_unity = 0.8 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { religious_unity = 0.7 }
+		}
+        modifier = {
+			factor = 2
+			personality = ai_capitalist 
+		}
+    }
+}
+
+# Economic
+got_economic_ideas = {
+    category = ADM
+
+    bonus = {
+        development_cost = -0.2
+    }
+    
+    # Bureaucracy
+    got_economic_ideas_1 = {
+        global_tax_modifier = 0.1
+    }
+    # Organised Construction
+    got_economic_ideas_2 = {
+        build_cost = -0.1
+		build_time = -0.25
+    }
+    # Royal Bank
+    got_economic_ideas_3 = {
+        inflation_reduction = 0.1
+    }
+    # Debt and Loans
+    got_economic_ideas_4 = {
+        interest = -1
+    }
+    # Centralization
+    got_economic_ideas_5 = {
+        global_autonomy = -0.05
+    }
+    # War Enthusiasm
+    got_economic_ideas_6 = {
+        land_maintenance_modifier = -0.10
+    }
+    # Crop Rotation
+    got_economic_ideas_7 = {
+        production_efficiency = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_capitalist 
+		}
+    }
+}
+
+# Expansion
+got_expansion_ideas = {
+    category = ADM
+
+    bonus = {
+        merchants = 1
+		global_trade_power = 0.2
+    }
+    # Additional Colonists
+    got_expansion_ideas_1 = {
+        colonists = 1
+    }
+    # Overseas Conquests
+    got_expansion_ideas_2 = {
+        cb_on_overseas = yes
+    }
+    # Surge of Growth
+    got_expansion_ideas_3 = {
+        global_colonial_growth = 20
+    }
+    # Colonial Recruitment
+    got_expansion_ideas_4 = {
+        global_manpower_modifier = 0.1
+    }
+    # Regional Governors
+    got_expansion_ideas_5 = {
+        core_creation = -0.1
+    }
+    # Global Territories
+    got_expansion_ideas_6 = {
+        max_states = 5
+    }
+    # Local Policing
+    got_expansion_ideas_7 = {
+        harsh_treatment_cost = -0.75
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 0
+			NOT = { has_idea_group = got_exploration_ideas }
+			NOT = {
+                any_owned_province = {
+                    has_empty_adjacent_province = yes
+                }
+            }
+		}
+        
+        modifier = {
+			factor = 2
+			has_idea_group = got_exploration_ideas
+		}
+    }
+}
+
+# Administrative
+got_administrative_ideas = {
+    category = ADM
+
     bonus = {
         max_states = 5
     }
-    
-    administration_ideas_1 = {
-        envoy_travel_time = -0.5
+    # Organised Mercenary Payments
+    got_administrative_ideas_1 = {
+        mercenary_cost = -0.25
     }
-    
-    administration_ideas_2 = {
-        state_maintenance_modifier = -0.33
+    # Adaptability
+    got_administrative_ideas_2 = {
+        core_creation = -0.25
     }
-    
-    administration_ideas_3 = {
-        core_creation = -0.2
+    # Consistent Recordkeeping
+    got_administrative_ideas_3 = {
+        global_institution_spread = 0.1
     }
-    
-    ai_will_do = {
-        factor = 1
+    # Bookkeeping
+    got_administrative_ideas_4 = {
+        interest = -1
     }
-}
-
-#---------------------------------------
-# Religion
-#---------------------------------------
-religion_ideas = {
-    category = ADM
-    # missionaries
-    # global_missionary_strength
-    # tolerance_own
-    # cb_on_religious_enemies
-    
-    bonus = {
-        cb_on_religious_enemies = yes
+    # Loyal Servants
+    got_administrative_ideas_5 = {
+        free_policy = 1
     }
-    
-    religion_ideas_1 = {
-        missionaries = 2
+    # Administrative Efficiency
+    got_administrative_ideas_6 = {
+        administrative_efficiency = 0.1
     }
-    
-    religion_ideas_2 = {
-        global_missionary_strength = 0.03
-    }
-    
-    religion_ideas_3 = {
-        tolerance_own = 2
+    # Links to the Citadel
+    got_administrative_ideas_7 = {
+        adm_tech_cost_modifier = -0.1
     }
     
     ai_will_do = {
         factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_capitalist 
+		}
     }
 }
 
-#---------------------------------------
-# Tolerance
-#---------------------------------------
-tolerance_ideas = {
+# Harmony
+got_harmony_ideas = {
     category = ADM
-    # tolerance_heretic
-    # tolerance_heathen
-    # num_accepted_cultures
-    # no_religion_penalty
-    
+
     bonus = {
-        no_religion_penalty = yes
+        idea_cost = -0.1
+		yearly_harmony = 0.25
     }
     
-    tolerance_ideas_1 = {
-        tolerance_heretic = 2
+    # Religious Unity
+    got_harmony_ideas_1 = {
+        religious_unity = 0.25
     }
-    
-    tolerance_ideas_2 = {
-        tolerance_heathen = 2
+    # Local Traditions
+    got_harmony_ideas_2 = {
+        global_unrest = -2
     }
-    
-    tolerance_ideas_3 = {
+    # Love Thy Neighbour
+    got_harmony_ideas_3 = {
+        tolerance_heretic = 3
+    }
+    # Indirect Rule
+    got_harmony_ideas_4 = {
+        years_of_nationalism = -10
+    }
+    # Cultural Ties
+    got_harmony_ideas_5 = {
         num_accepted_cultures = 2
     }
+    # Benevolence
+    got_harmony_ideas_6 = {
+        improve_relation_modifier = 0.15
+    }
+    # Entertain the Exotic
+    got_harmony_ideas_7 = {
+        tolerance_heathen = 3
+    }
     
     ai_will_do = {
         factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_diplomat
+		}
+        modifier = {
+			factor = 1.33
+			NOT = { religious_unity = 0.9 }
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { religious_unity = 0.8 }
+		}
+		modifier = {
+			factor = 1.5
+			num_of_cities = 15
+			NOT = { religious_unity = 1.0 }
+		}
+		modifier = {
+			factor = 1.5
+			num_of_cities = 20
+			NOT = { religious_unity = 1.0 }
+		}
+		modifier = {
+			factor = 1.5
+			num_of_cities = 25
+			NOT = { religious_unity = 1.0 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { num_of_cities = 4 }
+		}
+		modifier = {
+			factor = 2.25
+			NOT = { religious_unity = 0.7 }
+		}
+		modifier = {
+			factor = 2.25
+			NOT = { religious_unity = 0.6 }
+		}
+		modifier = {
+			factor = 0.5
+			religious_unity = 1.0
+		}
     }
 }
 
-#---------------------------------------
-# Stability
-#---------------------------------------
-stability_ideas = {
+# Law
+got_law_ideas = {
     category = ADM
-    # global_unrest
-    # stability_cost_modifier
-    # years_of_nationalism
-    # global_autonomy
-    
+
     bonus = {
-        global_autonomy = -0.1
+        
     }
-    
-    stability_ideas_1 = {
-        global_unrest = -3
+    # Collection of Laws
+    got_law_ideas_1 = {
+        legitimacy = 1
+		republican_tradition = 1
+		horde_unity = 1
+		devotion = 1
+		meritocracy = 1
     }
-    
-    stability_ideas_2 = {
-        stability_cost_modifier = -0.5
+    # Trial by Combat
+    got_law_ideas_2 = {
+        yearly_corruption = -0.1
     }
-    
-    stability_ideas_3 = {
-        years_of_nationalism = -5
+    # Ministerial Traditions
+    got_law_ideas_3 = {
+        idea_cost = -0.05
+		imperial_authority = 0.1
+    }
+    # Sealed Contracts
+    got_law_ideas_4 = {
+        trade_efficiency = 0.1
+    }
+    # Persuit of Usury
+    got_law_ideas_5 = {
+        interest = -1
+    }
+    # Noble Consensus
+    got_law_ideas_6 = {
+        core_creation = -0.1
+		diplomatic_annexation_cost = -0.1
+    }
+    # Minority Rights
+    got_law_ideas_7 = {
+        tolerance_heathen = 1
+		tolerance_heretic = 1
     }
     
     ai_will_do = {
         factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_capitalist 
+		}
     }
 }
 
-#---------------------------------------
-# Espionage
-#---------------------------------------
-espionage_ideas = {
+# Development
+got_development_ideas = {
     category = ADM
-    # spy_offence
-    # discovered_relations_impact
-    # global_spy_defence
-    # rebel_support_efficiency
-    
+
     bonus = {
-        rebel_support_efficiency = 1.0
+        state_maintenance_modifier = -0.2
+    }
+    # Local Development
+    got_development_ideas_1 = {
+        development_cost = -0.2
+    }
+    # Regional Standards
+    got_development_ideas_2 = {
+        production_efficiency = 0.1
+    }
+    # Tax Collectors
+    got_development_ideas_3 = {
+        global_tax_modifier = 0.1
+    }
+    # Mercantile Consensus
+    got_development_ideas_4 = {
+        trade_efficiency = 0.1
+    }
+    # Cooperative Lords
+    got_development_ideas_5 = {
+        global_autonomy = -0.05
+    }
+    # Local Building Materials
+    got_development_ideas_6 = {
+        build_cost = -0.15
+    }
+    # Monetary Policy
+    got_development_ideas_7 = {
+        inflation_reduction = 0.05
     }
     
-    espionage_ideas_1 = {
-        spy_offence = 0.5
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_capitalist 
+		}
+        modifier = {
+			factor = 2
+			inflation = 5
+		}
     }
-    
-    espionage_ideas_2 = {
-        discovered_relations_impact = -0.5
+}
+
+# Absolutism
+got_absolutism_ideas = {
+    category = ADM
+
+    bonus = {
+        max_absolutism = 20
     }
-    
-    espionage_ideas_3 = {
-        global_spy_defence = 0.5
+    # Ruling with an Iron Fist
+    got_absolutism_ideas_1 = {
+       global_autonomy = -0.05
+    }
+    # Autocratic Favours
+    got_absolutism_ideas_2 = {
+        diplomatic_reputation = 1
+    }
+    # Surpressed People
+    got_absolutism_ideas_3 = {
+        global_unrest = -2
+    }
+    # Might is Right
+    got_absolutism_ideas_4 = {
+        war_exhaustion_cost = -0.2
+    }
+    # Religious Conviction
+    got_absolutism_ideas_5 = {
+        global_heretic_missionary_strength = 0.03
+    }
+    # Uncompromising Vision
+    got_absolutism_ideas_6 = {
+        reform_progress_growth = 0.1
+    }
+    # Autarchs
+    got_absolutism_ideas_7 = {
+        yearly_absolutism = 1
     }
     
     ai_will_do = {
@@ -266,33 +505,355 @@ espionage_ideas = {
     }
 }
 
-#---------------------------------------
-# Monarchy
-#---------------------------------------
-monarchy_ideas = {
+# Autonomy
+got_autonomy_ideas = {
     category = ADM
-    # heir_chance
-    # advisor_pool
-    # prestige
-    # legitimacy
+
+    bonus = {
+        reduced_liberty_desire = 10
+    }
+    # Local Rule
+    got_autonomy_ideas_1 = {
+        state_maintenance_modifier = -0.5
+    }
+    # Farming Techniques
+    got_autonomy_ideas_2 = {
+        production_efficiency = 0.1
+    }
+    # Provincial Traditions
+    got_autonomy_ideas_3 = {
+        promote_culture_cost = -0.5
+    }
+    # Collobrative Communities
+    got_autonomy_ideas_4 = {
+        development_cost = -0.1
+    }
+    # Streetside Stories
+    got_autonomy_ideas_5 = {
+        prestige_decay = -0.01
+    }
+    # Folklore
+    got_autonomy_ideas_6 = {
+        stability_cost_modifier = -0.15
+    }
+    # Power to the People
+    got_autonomy_ideas_7 = {
+        years_of_nationalism = -10
+    }
     
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Cyromancy (asoiaf_white_walker)
+got_cryomancy_ideas = {
+    category = ADM
+
     trigger = {
-        government = monarchy
+        religion = asoiaf_white_walker
     }
     
     bonus = {
-        advisor_pool = 1
+        fire_damage = 0.1
+    }
+    # Ressurection of the Dead
+    got_cryomancy_ideas_1 = {
+        global_manpower_modifier = 0.25
+    }
+    # Necromantic Arts
+    got_cryomancy_ideas_2 = {
+        global_regiment_recruit_speed = -0.33
+    }
+    # Ancient Horror
+    got_cryomancy_ideas_3 = {
+        province_warscore_cost = -0.2
+    }
+    # Bonds of Ice
+    got_cryomancy_ideas_4 = {
+        yearly_corruption = -0.05
+    }
+    # Absolute Loyalty
+    got_cryomancy_ideas_5 = {
+        advisor_cost = -0.2
+    }
+    # Mythos of the Night King
+    got_cryomancy_ideas_6 = {
+        global_missionary_strength = 0.03
+    }
+    # Unbreakable Will
+    got_cryomancy_ideas_7 = {
+        land_maintenance_modifier = -0.1
     }
     
-    monarchy_ideas_1 = {
-        heir_chance = 1
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# The Old Gods (asoiaf_the_old_gods)
+got_old_gods_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_the_old_gods
     }
     
-    monarchy_ideas_2 = {
+    bonus = {
+        missionary_maintenance_cost = -0.25
+    }
+    # Kinship with the Old Gods
+    got_old_gods_ideas_1 = {
+        global_missionary_strength = 0.02
+    }
+    # Godswoods
+    got_old_gods_ideas_2 = {
+        church_power_modifier = 0.1
+    }
+    # Natural Order
+    got_old_gods_ideas_3 = {
+        global_unrest = -2
+    }
+    # Legacy of the Children
+    got_old_gods_ideas_4 = {
+        tolerance_own = 1
+    }
+    # Laws of Hospitality
+    got_old_gods_ideas_5 = {
+        tolerance_heathen = 1
+        tolerance_heretic = 1
+    }
+    # Bonds of the Heart Tree
+    got_old_gods_ideas_6 = {
+        heir_chance = 0.5
+    }
+    # Greenseers
+    got_old_gods_ideas_7 = {
+        missionaries = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Faith of the Seven (asoiaf_faith_of_the_seven)
+got_faith_of_the_seven_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_faith_of_the_seven
+    }
+    
+    bonus = {
+        missionary_maintenance_cost = -0.33
+    }
+    # The Father
+    got_faith_of_the_seven_ideas_1 = {
+        yearly_corruption = -0.1
+    }
+    # The Mother
+    got_faith_of_the_seven_ideas_2 = {
+        global_missionary_strength = 0.02
+    }
+    # The Warrior
+    got_faith_of_the_seven_ideas_3 = {
+        recover_army_morale_speed = 0.1
+    }
+    # The Smith
+    got_faith_of_the_seven_ideas_4 = {
+        reinforce_cost_modifier = -0.2
+    }
+    # The Maiden
+    got_faith_of_the_seven_ideas_5 = {
+        heir_chance = 0.5
+    }
+    # The Crone
+    got_faith_of_the_seven_ideas_6 = {
+        technology_cost = -0.05
+    }
+    # The Stranger
+    got_faith_of_the_seven_ideas_7 = {
+        missionaries = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# The Drowned God (asoiaf_the_drowned_god)
+got_drowned_god_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_the_drowned_god
+    }
+    
+    bonus = {
+        naval_morale = 0.1
+    }
+    # Ironborn Dogma
+    got_drowned_god_ideas_1 = {
+        missionary_maintenance_cost = -0.25
+    }
+    # Drowned Priests
+    got_drowned_god_ideas_2 = {
+        global_heretic_missionary_strength = 0.03
+    }
+    # The Seastone Chair
+    got_drowned_god_ideas_3 = {
         legitimacy = 1
     }
+    # Kiss of Life
+    got_drowned_god_ideas_4 = {
+        manpower_recovery_speed = 0.1
+    }
+    # Blessing of the Drowned God
+    got_drowned_god_ideas_5 = {
+        naval_maintenance_modifier = -0.1
+    }
+    # Sea Sacrifices
+    got_drowned_god_ideas_6 = {
+        sailor_maintenance_modifer = -0.1
+    }
+    # Blood of the Ironborn
+    got_drowned_god_ideas_7 = {
+        naval_forcelimit_modifier = 0.25
+    }
     
-    monarchy_ideas_3 = {
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Mother Rhoyne (asoiaf_mother_rhoyne)
+got_mother_rhoyne_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_mother_rhoyne
+    }
+    
+    bonus = {
+        global_heretic_missionary_strength = 0.02
+    }
+    # Nourishment of the Rhoynar
+    got_mother_rhoyne_ideas_1 = {
+        navy_tradition = 1
+    }
+    # River Raiders
+    got_mother_rhoyne_ideas_2 = {
+        privateer_efficiency = 0.33
+    }
+    # Old Men of the River
+    got_mother_rhoyne_ideas_3 = {
+        missionary_maintenance_cost = -0.1
+    }
+    # Natural Sailors
+    got_mother_rhoyne_ideas_4 = {
+        global_sailors_modifier = 0.25
+    }
+    # Boarding Planks
+    got_mother_rhoyne_ideas_5 = {
+        capture_ship_chance = 0.1
+    }
+    # Cleansing Waters
+    got_mother_rhoyne_ideas_6 = {
+        sailors_recovery_speed = 0.1
+    }
+    # Legacy of the Rhoyne
+    got_mother_rhoyne_ideas_7 = {
+        own_coast_naval_combat_bonus = 1.0
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Lion of the Night (asoiaf_lion_of_the_night)
+got_lion_of_the_night_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_lion_of_the_night
+    }
+    
+    bonus = {
+        land_forcelimit_modifier = 0.1
+    }
+    # Legacy of the Dawn
+    got_lion_of_the_night_ideas_1 = {
+        global_manpower_modifier = 0.1
+    }
+    # The Long Night
+    got_lion_of_the_night_ideas_2 = {
+        missionaries = 1
+    }
+    # The Five Forts
+    got_lion_of_the_night_ideas_3 = {
+        defensiveness = 0.33
+    }
+    # Endless Vigil
+    got_lion_of_the_night_ideas_4 = {
+        missionary_maintenance_cost = -0.2
+    }
+    # Yitish Devotion
+    got_lion_of_the_night_ideas_5 = {
+        tolerance_own = 2
+    }
+    # Fear of the Darkness
+    got_lion_of_the_night_ideas_6 = {
+        global_missionary_strength = 0.03
+    }
+    # The Blood Betrayal
+    got_lion_of_the_night_ideas_7 = {
+        prestige_per_development_from_conversion = 0.25 
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# The Great Stallion (asoiaf_the_great_stallion)
+got_great_stallion_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_the_great_stallion
+    }
+    
+    bonus = {
+        movement_speed = 0.15
+    }
+    # The Stallion who mounts the World
+    got_great_stallion_ideas_1 = {
+        tolerance_own = 1
+    }
+    # Horse Kinship
+    got_great_stallion_ideas_2 = {
+        cavalry_cost = -0.15
+    }
+    # Riders of the Dothraki Sea
+    got_great_stallion_ideas_3 = {
+        cavalry_power = 0.1
+    }
+    # Blood for the Horse God
+    got_great_stallion_ideas_4 = {
+        missionary_maintenance_cost = -0.33
+    }
+    # No Quarters
+    got_great_stallion_ideas_5 = {
+        global_missionary_strength = 0.03
+    }
+    # Vaes Dothrak
+    got_great_stallion_ideas_6 = {
+        church_power_modifier = 0.15
+    }
+    # Glory to the Stallion
+    got_great_stallion_ideas_7 = {
         prestige = 1
     }
     
@@ -301,34 +862,44 @@ monarchy_ideas = {
     }
 }
 
-#---------------------------------------
-# Free City
-#---------------------------------------
-free_city_ideas = {
+# R'hllor (asoiaf_rhllor)
+got_rhllor_ideas = {
     category = ADM
-    # embracement_cost
-    # advisor_pool
-    # war_exhaustion_cost
-    # republican_tradition
-    
+
     trigger = {
-        is_free_city_government = yes
+        religion = asoiaf_rhllor
     }
     
     bonus = {
-        advisor_pool = 1
+        all_power_cost = -0.05
     }
-    
-    free_city_ideas_1 = {
-        embracement_cost = -0.33
+    # R'hllor, the God of Light
+    got_rhllor_ideas_1 = {
+        prestige = 1
     }
-    
-    free_city_ideas_2 = {
-        republican_tradition = 1
+    # The Great Other, the God of Death
+    got_rhllor_ideas_2 = {
+        yearly_corruption = -0.05
     }
-    
-    free_city_ideas_3 = {
-        war_exhaustion_cost = -0.33
+    # Fervor of the Red Priest
+    got_rhllor_ideas_3 = {
+        global_missionary_strength = 0.03
+    }
+    # Temple Prostitutes
+    got_rhllor_ideas_4 = {
+        church_power_modifier = 0.15 
+    }
+    # The Fiery Hand
+    got_rhllor_ideas_5 = {
+        infantry_power = 0.1
+    }
+    # Daily Prayers
+    got_rhllor_ideas_6 = {
+        missionary_maintenance_cost = -0.33
+    }
+    # The Last Kiss
+    got_rhllor_ideas_7 = {
+        tolerance_own = 1
     }
     
     ai_will_do = {
@@ -336,37 +907,888 @@ free_city_ideas = {
     }
 }
 
-#---------------------------------------
-# Nomadic
-#---------------------------------------
-khas_ideas = {
+# Trios (asoiaf_trios)
+got_trios_ideas = {
     category = ADM
-    # horde_unity
-    # monthly_militarized_society
-    # core_creation
-    # cavalry_power
-    
+
     trigger = {
-        government = nomadic
+        religion = asoiaf_trios
     }
     
     bonus = {
-        core_creation = -0.1
+        
     }
-    
-    khas_ideas_1 = {
-        horde_unity = 1
+    got_trios_ideas_1 = {
+        
     }
-    
-    khas_ideas_2 = {
-        raze_power_gain = 0.33
+    got_trios_ideas_2 = {
+        
     }
-    
-    khas_ideas_3 = {
-        cavalry_power = 0.1
+    got_trios_ideas_3 = {
+        
+    }
+    got_trios_ideas_4 = {
+        
+    }
+    got_trios_ideas_5 = {
+        
+    }
+    got_trios_ideas_6 = {
+        
+    }
+    got_trios_ideas_7 = {
+        
     }
     
     ai_will_do = {
         factor = 1
     }
 }
+
+# Bearded Priests (asoiaf_bearded_priests)
+got_bearded_priests_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_bearded_priests
+    }
+    
+    bonus = {
+        
+    }
+    got_bearded_priests_ideas_1 = {
+        
+    }
+    got_bearded_priests_ideas_2 = {
+        
+    }
+    got_bearded_priests_ideas_3 = {
+        
+    }
+    got_bearded_priests_ideas_4 = {
+        
+    }
+    got_bearded_priests_ideas_5 = {
+        
+    }
+    got_bearded_priests_ideas_6 = {
+        
+    }
+    got_bearded_priests_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Remnants of Boash (asoiaf_gods_of_lorath)
+got_remnants_of_boash_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_gods_of_lorath
+    }
+    
+    bonus = {
+        
+    }
+    got_remnants_of_boash_ideas_1 = {
+        
+    }
+    got_remnants_of_boash_ideas_2 = {
+        
+    }
+    got_remnants_of_boash_ideas_3 = {
+        
+    }
+    got_remnants_of_boash_ideas_4 = {
+        
+    }
+    got_remnants_of_boash_ideas_5 = {
+        
+    }
+    got_remnants_of_boash_ideas_6 = {
+        
+    }
+    got_remnants_of_boash_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Black Goat (asoiaf_black_goat_of_qohor)
+got_black_goat_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_black_goat_of_qohor
+    }
+    
+    bonus = {
+        
+    }
+    got_black_goat_ideas_1 = {
+        
+    }
+    got_black_goat_ideas_2 = {
+        
+    }
+    got_black_goat_ideas_3 = {
+        
+    }
+    got_black_goat_ideas_4 = {
+        
+    }
+    got_black_goat_ideas_5 = {
+        
+    }
+    got_black_goat_ideas_6 = {
+        
+    }
+    got_black_goat_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Gods of Hyrkoon (asoiaf_gods_of_hyrkoon)
+got_gods_of_hyrkoon_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_gods_of_hyrkoon
+    }
+    
+    bonus = {
+        
+    }
+    got_gods_of_hyrkoon_ideas_1 = {
+        
+    }
+    got_gods_of_hyrkoon_ideas_2 = {
+        
+    }
+    got_gods_of_hyrkoon_ideas_3 = {
+        
+    }
+    got_gods_of_hyrkoon_ideas_4 = {
+        
+    }
+    got_gods_of_hyrkoon_ideas_5 = {
+        
+    }
+    got_gods_of_hyrkoon_ideas_6 = {
+        
+    }
+    got_gods_of_hyrkoon_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Moonsingers (asoiaf_moonsingers)
+got_moonsingers_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_moonsingers
+    }
+    
+    bonus = {
+        
+    }
+    got_moonsingers_ideas_1 = {
+        
+    }
+    got_moonsingers_ideas_2 = {
+        
+    }
+    got_moonsingers_ideas_3 = {
+        
+    }
+    got_moonsingers_ideas_4 = {
+        
+    }
+    got_moonsingers_ideas_5 = {
+        
+    }
+    got_moonsingers_ideas_6 = {
+        
+    }
+    got_moonsingers_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Lady of the Waves (asoiaf_lady_of_the_waves)
+got_lady_of_the_waves_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_lady_of_the_waves
+    }
+    
+    bonus = {
+        
+    }
+    got_lady_of_the_waves_ideas_1 = {
+        
+    }
+    got_lady_of_the_waves_ideas_2 = {
+        
+    }
+    got_lady_of_the_waves_ideas_3 = {
+        
+    }
+    got_lady_of_the_waves_ideas_4 = {
+        
+    }
+    got_lady_of_the_waves_ideas_5 = {
+        
+    }
+    got_lady_of_the_waves_ideas_6 = {
+        
+    }
+    got_lady_of_the_waves_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# The Sun God (asoiaf_summer_gods)
+got_sun_god_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_summer_gods
+    }
+    
+    bonus = {
+        
+    }
+    got_sun_god_ideas_1 = {
+        
+    }
+    got_sun_god_ideas_2 = {
+        
+    }
+    got_sun_god_ideas_3 = {
+        
+    }
+    got_sun_god_ideas_4 = {
+        
+    }
+    got_sun_god_ideas_5 = {
+        
+    }
+    got_sun_god_ideas_6 = {
+        
+    }
+    got_sun_god_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Idol Worship (asoiaf_tribal)
+got_idol_worship_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_tribal
+    }
+    
+    bonus = {
+        
+    }
+    got_idol_worship_ideas_1 = {
+        
+    }
+    got_idol_worship_ideas_2 = {
+        
+    }
+    got_idol_worship_ideas_3 = {
+        
+    }
+    got_idol_worship_ideas_4 = {
+        
+    }
+    got_idol_worship_ideas_5 = {
+        
+    }
+    got_idol_worship_ideas_6 = {
+        
+    }
+    got_idol_worship_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Occult (asoiaf_magic)
+got_occult_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_magic
+    }
+    
+    bonus = {
+        
+    }
+    got_occult_ideas_1 = {
+        
+    }
+    got_occult_ideas_2 = {
+        
+    }
+    got_occult_ideas_3 = {
+        
+    }
+    got_occult_ideas_4 = {
+        
+    }
+    got_occult_ideas_5 = {
+        
+    }
+    got_occult_ideas_6 = {
+        
+    }
+    got_occult_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Stone Cow of Faros (asoiaf_stone_cow_of_faros)
+got_stone_cow_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_stone_cow_of_faros
+    }
+    
+    bonus = {
+        
+    }
+    got_stone_cow_ideas_1 = {
+        
+    }
+    got_stone_cow_ideas_2 = {
+        
+    }
+    got_stone_cow_ideas_3 = {
+        
+    }
+    got_stone_cow_ideas_4 = {
+        
+    }
+    got_stone_cow_ideas_5 = {
+        
+    }
+    got_stone_cow_ideas_6 = {
+        
+    }
+    got_stone_cow_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Great Shepherd (asoiaf_great_shepherd)
+got_great_shepherd_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_great_shepherd
+    }
+    
+    bonus = {
+        
+    }
+    got_great_shepherd_ideas_1 = {
+        
+    }
+    got_great_shepherd_ideas_2 = {
+        
+    }
+    got_great_shepherd_ideas_3 = {
+        
+    }
+    got_great_shepherd_ideas_4 = {
+        
+    }
+    got_great_shepherd_ideas_5 = {
+        
+    }
+    got_great_shepherd_ideas_6 = {
+        
+    }
+    got_great_shepherd_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Ib (asoiaf_gods_of_ibben)
+got_ib_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_gods_of_ibben
+    }
+    
+    bonus = {
+        
+    }
+    got_ib_ideas_1 = {
+        
+    }
+    got_ib_ideas_2 = {
+        
+    }
+    got_ib_ideas_3 = {
+        
+    }
+    got_ib_ideas_4 = {
+        
+    }
+    got_ib_ideas_5 = {
+        
+    }
+    got_ib_ideas_6 = {
+        
+    }
+    got_ib_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Ghiscari Pantheon (asoiaf_graces)
+got_ghsicari_pantheon_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_graces
+    }
+    
+    bonus = {
+        
+    }
+    got_ghsicari_pantheon_ideas_1 = {
+        
+    }
+    got_ghsicari_pantheon_ideas_2 = {
+        
+    }
+    got_ghsicari_pantheon_ideas_3 = {
+        
+    }
+    got_ghsicari_pantheon_ideas_4 = {
+        
+    }
+    got_ghsicari_pantheon_ideas_5 = {
+        
+    }
+    got_ghsicari_pantheon_ideas_6 = {
+        
+    }
+    got_ghsicari_pantheon_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Hooded Wayfarer (asoiaf_gods_of_sarnor)
+got_hooded_wayfarer_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_gods_of_sarnor
+    }
+    
+    bonus = {
+        
+    }
+    got_hooded_wayfarer_ideas_1 = {
+        
+    }
+    got_hooded_wayfarer_ideas_2 = {
+        
+    }
+    got_hooded_wayfarer_ideas_3 = {
+        
+    }
+    got_hooded_wayfarer_ideas_4 = {
+        
+    }
+    got_hooded_wayfarer_ideas_5 = {
+        
+    }
+    got_hooded_wayfarer_ideas_6 = {
+        
+    }
+    got_hooded_wayfarer_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Lord of Harmony (asoiaf_god_of_harmony)
+got_lord_of_harmony_ideas = {
+    category = ADM
+
+    trigger = {
+        religion = asoiaf_god_of_harmony
+    }
+    
+    bonus = {
+        
+    }
+    got_lord_of_harmony_ideas_1 = {
+        
+    }
+    got_lord_of_harmony_ideas_2 = {
+        
+    }
+    got_lord_of_harmony_ideas_3 = {
+        
+    }
+    got_lord_of_harmony_ideas_4 = {
+        
+    }
+    got_lord_of_harmony_ideas_5 = {
+        
+    }
+    got_lord_of_harmony_ideas_6 = {
+        
+    }
+    got_lord_of_harmony_ideas_7 = {
+        
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Monarchy (monarchy + nights_watch)
+got_monarchy_ideas = {
+    category = ADM
+
+    trigger = {
+        government = monarchy
+    }
+    
+    bonus = {
+        cav_to_inf_ratio = 0.25
+    }
+    # Familial Ties
+    got_monarchy_ideas_1 = {
+        legitimacy = 2
+    }
+    # Dynastic Stock
+    got_monarchy_ideas_2 = {
+        heir_chance = 0.5
+    }
+    # Local Nobility
+    got_monarchy_ideas_3 = {
+        global_unrest = -1
+    }
+    # Jousting Tournaments
+    got_monarchy_ideas_4 = {
+        cavalry_power = 0.1
+    }
+    # Crown Authority
+    got_monarchy_ideas_5 = {
+        yearly_absolutism = 1
+    }
+    # Respected Families
+    got_monarchy_ideas_6 = {
+        ae_impact = -0.1
+    }
+    # United in Arms
+    got_monarchy_ideas_7 = {
+        global_manpower_modifier = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_capitalist 
+		}
+		modifier = {
+			factor = 2
+			personality = ai_militarist 
+		}
+    }
+}
+
+# Republic (republic)
+got_republic_ideas = {
+    category = ADM
+
+    trigger = {
+        OR = {
+            government = republic
+            government = nights_watch
+        }
+    }
+    
+    bonus = {
+        manpower_recovery_speed = 0.1
+    }
+    
+    # Diplomatic Links
+    got_republic_ideas_1 = {
+        diplomatic_upkeep = 2
+    }
+    # Freemen
+    got_republic_ideas_2 = {
+        land_morale = 0.1
+    }
+    # Trusted Politicians
+    got_republic_ideas_3 = {
+        reelection_cost = -0.25
+    }
+    # Melting Pot
+    got_republic_ideas_4 = {
+        promote_culture_cost = -1
+    }
+    # Republican Traditions
+    got_republic_ideas_5 = {
+        reform_progress_growth = 0.1
+		republican_tradition = 0.5
+    }
+    # Essosian Goods
+    got_republic_ideas_6 = {
+        global_trade_goods_size_modifier = 0.1
+    }
+    # Respected Pedigree
+    got_republic_ideas_7 = {
+        candidate_random_bonus = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_capitalist 
+		}
+		modifier = {
+			factor = 2
+			personality = ai_militarist 
+		}
+    }
+}
+
+# Theocracy (theocracy)
+got_theocracy_ideas = {
+    category = ADM
+
+    trigger = {
+        government = theocracy
+    }
+    
+    bonus = {
+        war_exhaustion = -0.05
+    }
+    
+    # Absolute Devotion
+    got_theocracy_ideas_1 = {
+        devotion = 1
+    }
+    # Divine Assault
+    got_theocracy_ideas_2 = {
+        shock_damage = 0.1
+    }
+    # Religious Supremacy
+    got_theocracy_ideas_3 = {
+        missionaries = 1
+		enforce_religion_cost = -0.25
+    }
+    # Religious Law
+    got_theocracy_ideas_4 = {
+        missionary_maintenance_cost = -0.15
+    }
+    # Enduring Faith
+    got_theocracy_ideas_5 = {
+        manpower_recovery_speed = 0.1
+    }
+    # Holy Wars
+    got_theocracy_ideas_6 = {
+        warscore_cost_vs_other_religion = -0.2
+    }
+    # Divine Vindication
+    got_theocracy_ideas_7 = {
+        unjustified_demands = -0.2
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_capitalist 
+		}
+		modifier = {
+			factor = 2
+			personality = ai_militarist 
+		}
+    }
+}
+
+# Tribal (tribal)
+got_tribal_ideas = {
+    category = ADM
+
+    trigger = {
+        government = tribal
+    }
+    
+    bonus = {
+        yearly_absolutism = 1
+    }
+    # Patriarchal Traditions
+    got_tribal_ideas_1 = {
+        legitimacy = 1
+    }
+    # Nightly Raids
+    got_tribal_ideas_2 = {
+        shock_damage = 0.1
+    }
+    # Tribal Moot
+    got_tribal_ideas_3 = {
+        stability_cost_modifier = -0.2
+    }
+    # Makeshift Weaponry
+    got_tribal_ideas_4 = {
+        land_maintenance_modifier = -0.15
+    }
+    # Tribal Law
+    got_tribal_ideas_5 = {
+        global_unrest = -2
+    }
+    # Primitive Diplomacy
+    got_tribal_ideas_6 = {
+        province_warscore_cost = -0.15
+    }
+    # Fury of the Fearless
+    got_tribal_ideas_7 = {
+        land_morale = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_capitalist 
+		}
+		modifier = {
+			factor = 2
+			personality = ai_militarist 
+		}
+    }
+}
+
+# Nomadic (nomadic)
+got_nomadic_ideas = {
+    category = ADM
+
+    trigger = {
+        government = nomadic
+    }
+    
+    bonus = {
+        movement_speed = 0.2
+    }
+    # Scorch the Earth
+    got_nomadic_ideas_1 = {
+        raze_power_gain = 0.25
+    }
+    # Horse Breeding
+    got_nomadic_ideas_2 = {
+        cavalry_cost = -0.2	
+    }
+    # Feared by Others
+    got_nomadic_ideas_3 = {
+        claim_duration = 0.5
+    }
+    # Riding Tradition
+    got_nomadic_ideas_4 = {
+        cavalry_power = 0.1
+    }
+    # United by Blood
+    got_nomadic_ideas_5 = {
+        horde_unity = 1
+    }
+    # Nomad Territory
+    got_nomadic_ideas_6 = {
+        max_states = 5
+    }
+    # Supplicant Tributaries
+    got_nomadic_ideas_7 = {
+        reduced_liberty_desire = 10
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_capitalist 
+		}
+		modifier = {
+			factor = 2
+			personality = ai_militarist 
+		}
+    }
+}
+

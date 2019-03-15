@@ -22,8 +22,8 @@
 #--------------------------------------
 # Town Hall
 town_hall = {
-	cost = 100
-	time = 12
+	cost = 50
+	time = 36
 
 	modifier = {
         local_development_cost = -0.20
@@ -37,7 +37,7 @@ town_hall = {
 
 # Tavern
 tavern = {
-	cost = 100
+	cost = 50
 	time = 12
 
 	modifier = {
@@ -52,8 +52,8 @@ tavern = {
 
 # Market
 market = {
-	cost = 100
-	time = 12
+	cost = 50
+	time = 24
 
 	modifier = {
         province_trade_power_modifier = 0.5
@@ -66,7 +66,7 @@ market = {
 
 # Farm
 farm = {
-	cost = 100
+	cost = 50
 	time = 12
 
 	modifier = {
@@ -80,7 +80,7 @@ farm = {
 
 # Mine
 mine = {
-	cost = 100
+	cost = 50
 	time = 12
 
 	modifier = {
@@ -94,8 +94,8 @@ mine = {
 
 # Church / Temple
 temple = {
-	cost = 100
-	time = 12
+	cost = 50
+	time = 36
 
 	modifier = {
         local_missionary_strength = 0.03
@@ -109,8 +109,8 @@ temple = {
 
 # Dock
 dock = {
-	cost = 100
-	time = 12
+	cost = 50
+	time = 48
 
     trigger = {
 		has_port = yes
@@ -132,8 +132,8 @@ dock = {
 
 # Shipyard
 shipyard = {
-	cost = 100
-	time = 12
+	cost = 50
+	time = 48
 
     trigger = {
 		has_port = yes
@@ -157,8 +157,8 @@ shipyard = {
 
 # Barracks
 barracks = {
-	cost = 100
-	time = 12
+	cost = 50
+	time = 48
 
 	modifier = {
         local_manpower_modifier = 0.5
@@ -171,8 +171,8 @@ barracks = {
 
 # Drill Square
 drill_square = {
-	cost = 100
-	time = 12
+	cost = 50
+	time = 48
 
 	modifier = {
         land_forcelimit = 2
@@ -186,7 +186,7 @@ drill_square = {
 
 # Paved Road
 paved_road = {
-	cost = 100
+	cost = 50
 	time = 12
 
 	modifier = {
@@ -200,8 +200,8 @@ paved_road = {
 
 # Supply Depot
 supply_depot = {
-	cost = 100
-	time = 12
+	cost = 50
+	time = 60
 
 	modifier = {
         supply_limit_modifier = 0.25
@@ -217,27 +217,9 @@ supply_depot = {
 #--------------------------------------
 # Motte and Bailey
 motte_and_bailey = {
-	cost = 100
-	time = 12
+	cost = 50
+	time = 60
 
-    onmap = yes
-	influencing_fort = yes
-    
-	modifier = {
-        fort_level = 1
-	}
-	
-	ai_will_do = {
-		factor = 1
-	}
-}
-
-# Castle
-castle = {
-	cost = 250
-	time = 12
-    make_obsolete = motte_and_bailey
-    
     onmap = yes
 	influencing_fort = yes
     
@@ -250,17 +232,54 @@ castle = {
 	}
 }
 
+# Castle
+castle = {
+	cost = 75
+	time = 90
+    make_obsolete = motte_and_bailey
+    
+    onmap = yes
+	influencing_fort = yes
+    
+	modifier = {
+        fort_level = 4
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
 # Fortress
 fortress = {
-	cost = 500
-	time = 12
+	cost = 100
+	time = 120
     make_obsolete = castle
     
     onmap = yes
 	influencing_fort = yes
     
 	modifier = {
-        fort_level = 3
+        fort_level = 6
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+
+# Citadel
+citadel = {
+	cost = 200
+	time = 150
+    make_obsolete = fortress
+    
+    onmap = yes
+    influencing_fort = yes
+    
+	modifier = {
+        fort_level = 8
 	}
 	
 	ai_will_do = {
@@ -378,8 +397,8 @@ slavers_guild = {
 #--------------------------------------
 # Royal Palace
 grand_palace = {
-	cost = 2000
-	time = 120
+	cost = 1000
+	time = 150
     one_per_country = yes
     
 	modifier = {
@@ -397,8 +416,8 @@ grand_palace = {
 
 # Merchant's Quarter
 merchants_quarter = {
-	cost = 2000
-	time = 120
+	cost = 1000
+	time = 150
     one_per_country = yes
     
 	modifier = {
@@ -410,27 +429,10 @@ merchants_quarter = {
 	}
 }
 
-# Citadel
-citadel = {
-	cost = 2000
-	time = 120
-    one_per_country = yes
-    make_obsolete = fortress
-    
-	modifier = {
-        fort_level = 4
-        defensiveness = 0.5
-	}
-	
-	ai_will_do = {
-		factor = 1
-	}
-}
-
 # Cathedral / Grand Temple
 grand_temple = {
-	cost = 2000
-	time = 120
+	cost = 1000
+	time = 150
     one_per_country = yes
     
 	modifier = {
@@ -445,8 +447,8 @@ grand_temple = {
 
 # Tourney Grounds
 tourney_grounds = {
-	cost = 2000
-	time = 120
+	cost = 1000
+	time = 150
     one_per_country = yes
     
 	modifier = {
@@ -461,8 +463,8 @@ tourney_grounds = {
 
 # Military Academy
 military_academy = {
-	cost = 2000
-	time = 120
+	cost = 1000
+	time = 150
     one_per_country = yes
     
 	modifier = {
@@ -477,8 +479,8 @@ military_academy = {
 
 # Naval Academy
 naval_academy = {
-	cost = 2000
-	time = 120
+	cost = 1000
+	time = 150
     one_per_country = yes
     
 	modifier = {

@@ -64,7 +64,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "unique_ideas_idea_title"
-			position = { x = 100 y = 128 }
+			position = { x = 85 y = 128 }
 			textureFile = ""
 			font = "vic_22"
 			borderSize = {x = 4 y = 4}	
@@ -258,8 +258,8 @@ guiTypes = {
 			listboxType = {
 				name = "adm_ideaunlockgroups_listbox"
 				backGround = ""
-				position = { x=70 y=100 }
-				size = { x=230 y=430 }
+				position = { x=26 y=63 }
+				size = { x=313 y=525 }
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1.5
@@ -269,8 +269,8 @@ guiTypes = {
 			listboxType = {
 				name = "dip_ideaunlockgroups_listbox"
 				backGround = ""
-				position = { x=390 y=100 }
-				size = { x=230 y=430 }
+				position = { x=344 y=63 }
+				size = { x=313 y=525 }
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1.5
@@ -280,8 +280,8 @@ guiTypes = {
 			listboxType = {
 				name = "mil_ideaunlockgroups_listbox"
 				backGround = ""
-				position = { x=710 y=100 }
-				size = { x=230 y=430 }
+				position = { x=663 y=63 }
+				size = { x=313 y=525 }
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1.5
@@ -376,7 +376,7 @@ guiTypes = {
 		{
 			name ="ideas_category"
 			spriteType = "GFX_idea_empty"
-			position = { x= 0 y = -9999 }
+			position = { x= 0 y = 19 }
 			Orientation = "UPPER_LEFT"
 		}	
 		
@@ -406,7 +406,7 @@ guiTypes = {
 		{
 			name ="ideas_bonus_icon"
 			spriteType = "GFX_ideas_bonus_strip"
-			position = { x = 184 y = 28 }
+			position = { x = 225 y = 3 }
 			Orientation = "UPPER_LEFT"
 
 		}	
@@ -415,14 +415,14 @@ guiTypes = {
 		{
 			name ="abandon_idea_button"
 			quadTextureSprite= "GFX_abandon_idea"
-			position = { x= 228 y = 5 }
+			position = { x= 203 y = 5 }
 			Orientation = "UPPER_LEFT"
 			hint_tag = "hint_ideas"
 		}
 		
 		OverlappingElementsBoxType = {
 				name = "ideas"
-				position = { x = 87 y = 50 }
+				position = { x = 54 y = 50 }
 				size = { x = 200 y = 80 }
 				Orientation = "UPPER_LEFT"
 				format = left
@@ -433,7 +433,7 @@ guiTypes = {
 		{
 			name ="idea_progress"
 			spriteType = "GFX_ideaView_progressbar"
-			position = { x= 46 y = 62 }
+			position = { x= 66 y = 62 }
 			Orientation = "UPPER_LEFT"
 		}	
 
@@ -441,7 +441,7 @@ guiTypes = {
 		{
 			name ="progress_frame_army"
 			spriteType = "GFX_ideaView_progress_frame_long"
-			position = { x = 36 y = 58 }
+			position = { x = 56 y = 58 }
 		}	
 	}
 	
@@ -638,7 +638,7 @@ guiTypes = {
 		guiButtonType =
 		{
 			name ="ideagroup_background"
-			quadTextureSprite= "GFX_ideas_view_unlockideabg_3_box"
+			quadTextureSprite= "GFX_ideas_view_unlockideabg"
 			position = { x= 0 y = 0 }
 			Orientation = "UPPER_LEFT"
 			clicksound = click #DOESNT WORK
@@ -648,7 +648,7 @@ guiTypes = {
 		{
 			name ="ideas_category"
 			spriteType = "GFX_idea_empty"
-			position = { x= 9 y =-9999 }
+			position = { x= 9 y = 11 }
 			Orientation = "UPPER_LEFT"
 
 		}		
@@ -657,18 +657,18 @@ guiTypes = {
 		{
 			name ="ideas_cost"
 			spriteType = "GFX_icon_powers_administrative"
-			position = { x= 190 y = 4 }
+			position = { x= 75 y = 4 }
 			Orientation = "UPPER_LEFT"
 		}				
 
 		instantTextBoxType = {
 			name = "ideas_idea_title"
-			position = { x = 30 y = 8 }
+			position = { x = 45 y = 8 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 4 y = 4}	
 			text = ""	
-			maxWidth = 140
+			maxWidth = 280
 			maxHeight = 32
 			format = centre
 		}	
@@ -677,14 +677,14 @@ guiTypes = {
 		{
 			name ="ideas_bonus_icon"
 			spriteType = "GFX_ideas_bonus_strip"
-			position = { x = 152 y = 32 }
+			position = { x = 278 y = 3 }
 			Orientation = "UPPER_LEFT"
 			frame = 1
 		}		
 		
 		OverlappingElementsBoxType = {
 				name = "ideas"
-				position = { x = 88 y = 65 }
+				position = { x = 114 y = 65 }
 				size = { x = 240 y = 80 }
 				Orientation = "UPPER_LEFT"
 				format = left

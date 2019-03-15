@@ -46,7 +46,6 @@
 - Changed land_forcelimit to land_forcelimit_modifier in Cheiftains estate.
 - Changed discipline to infantry_power in Tigers faction
 - Changed Nefer City government modifier to idea_cost = 0.05
-- Adjusted modifier balance in the ideagroups.
 - Adjusted modifier balance in National Ideas.
 - Adjusted modifier balance in Seven Kingdoms reforms
 - Adjusted modifier balance in Yi Ti Empire reforms
@@ -136,13 +135,23 @@
 - Added new Jogos Nhai nations.
 - Added Unite the Jogos Nhai formable decision.
 - Fixed bug that caused the AI to lose stability and prestige constantly.
+- Advisors can now be promoted to +10
+- Advisor promotion now costs (10 * (monthly cost * 12))
+- Buildings cost less to build in general.
+- Buildings take longer to building general.
+- Corruption now reduces legitimacy modifiers rather than increase power costs.
+- Republican Tradition is affected by prestige
+- Republican Tradition is affected by negative stability
 
 #-----------------------------
 # TODO
 #-----------------------------
 # Additions:
 - Redo ideagroup system + policies (use Idea Variation as inspiration)
-- Go over legitimacy modifier decay balance
+- Go over ideagroup modifiers
+- Add side stuff for ideagroups (i.e. decisions/estate actions)
+
+- Convert Seven Kingdoms into Mandate system (maybe Yi Ti stuff into HRE system)
 
 - Add Rhoynar
 - Add pirate nations in Rhoyne region

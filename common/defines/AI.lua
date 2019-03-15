@@ -11,3 +11,5 @@ NDefines.NAI.MAX_SAVINGS = 120                      -- Increase long-term saving
 NDefines.NAI.DEVELOPMENT_CAP_BASE = 20              -- Increase AI development of low development provinces
 NDefines.NAI.PEACE_INCONCLUSIVE_THRESHOLD = 0       -- Allow peace terms below 10% warscore
 NDefines.NAI.PEACE_DESPERATION_FACTOR = 80          -- Increase effect on occupying homeland provinces
+NDefines.NAI.PEACE_TIME_MONTHS = 12
+NDefines.NAI.PEACE_TIME_MAX_MONTHS = 120

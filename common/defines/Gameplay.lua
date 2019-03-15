@@ -6,6 +6,17 @@ NDefines.NCountry.GOLDEN_ERA_YEARS = 25
 NDefines.NCountry.SPLENDOR_ABILITY_COST = 800
 
 --------------------------------
+-- Advisors
+--------------------------------
+NDefines.NCountry.MAXIMUM_ADVISOR_SKILL = 10 
+NDefines.NCountry.PROMOTE_COST_MONTHS_ADVISOR_SALARY = 120
+
+--------------------------------
+-- Buildings
+--------------------------------
+NDefines.NEconomy.MAX_BUILDING_SLOTS = 12
+
+--------------------------------
 -- Conversion
 --------------------------------
 NDefines.NCountry.CAN_CONVERT_TERRITORY_CULTURE = 1

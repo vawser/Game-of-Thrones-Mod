@@ -18,10 +18,7 @@ estate_commoners = {
     
     # ----- Conditions -----
 	trigger = {
-        NOT = { has_reform = white_walker_cult_reform }
-        NOT = { has_reform = wildling_clan_reform }
-        NOT = { has_reform = khalasar_reform }
-        NOT = { has_reform = jhattar_reform }
+        always = yes
 	}
 	
 	province_trigger = {

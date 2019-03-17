@@ -13,3 +13,4 @@ NDefines.NAI.PEACE_INCONCLUSIVE_THRESHOLD = 0       -- Allow peace terms below 1
 NDefines.NAI.PEACE_DESPERATION_FACTOR = 80          -- Increase effect on occupying homeland provinces
 NDefines.NAI.PEACE_TIME_MONTHS = 12
 NDefines.NAI.PEACE_TIME_MAX_MONTHS = 120
+NDefines.NAI.DIPLOMATIC_ACTION_OFFER_CONDOTTIERI_BASE_MULT = 10 -- Reduce AI offering

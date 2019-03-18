@@ -1,0 +1,34 @@
+country_decisions = {
+    # Economic - Debt and Loans
+	negotiate_with_the_iron_bank = {
+		potential = {
+			NOT = { is_primitive_government = yes } 
+            NOT = { has_ruler_modifier = iron_bank_agreement }
+            OR = {
+                any_known_country = {  
+                    primary_culture = braavosi
+                }
+                primary_culture = braavosi
+            }
+            has_idea = got_economic_ideas_4
+            NOT = { has_country_flag = iron_bank_event }
+		}
+		allow = {
+			NOT = { has_ruler_modifier = iron_bank_agreement }
+            stability = 0
+            adm_power = 100
+		}
+		effect = {
+            add_adm_power = -100
+            tooltip = { country_event = { id = GOT_IRON_BANK.1 days = 1 } }
+			hidden_effect = { set_country_flag = iron_bank_event }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # 
+}
+

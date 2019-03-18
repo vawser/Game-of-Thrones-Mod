@@ -20,9 +20,9 @@ got_espionage_ideas = {
     got_espionage_ideas_1 = {
         spy_offence = 0.5	
     }
-    # Turncoats
+    # Covert Missionaries
     got_espionage_ideas_2 = {
-        global_manpower_modifier = 0.1
+        rebel_support_efficiency = 0.5
     }
     # Vetting
     got_espionage_ideas_3 = {
@@ -225,6 +225,7 @@ got_exploration_ideas = {
 
     bonus = {
         colonist_placement_chance = 0.05
+        auto_explore_adjacent_to_colony = yes
     }
     
     # Colonial Ventures
@@ -483,6 +484,7 @@ got_propaganda_ideas = {
 
     bonus = {
         global_manpower_modifier = 0.1
+        can_fabricate_for_vassals = yes
     }
     
     # War Propaganda
@@ -585,7 +587,9 @@ got_naval_skirmish_ideas = {
 	}
     
     bonus = {
-        naval_forcelimit_modifier = 0.25
+        naval_forcelimit_modifier = 0.1
+        may_perform_slave_raid = yes
+        may_perform_slave_raid_on_same_religion = yes
     }
     # Sea Skirmishers
     got_naval_skirmish_ideas_1 = {
@@ -687,7 +691,7 @@ got_naval_organisation_ideas = {
 	}
     
     bonus = {
-        recover_navy_morale_speed = 0.2
+        sea_repair = yes
     }
     # Press Gangs
     got_naval_organisation_ideas_1 = {

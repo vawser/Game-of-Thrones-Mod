@@ -20,6 +20,7 @@ establish_cult = {
 	}
     
 	is_allowed = {
+        has_idea = got_espionage_ideas_2
         is_neighbor_of = FROM
         has_spy_network_in = {
             who = FROM
@@ -83,6 +84,7 @@ assassinate_leader = {
 	}
     
 	is_allowed = {
+        has_idea = got_espionage_ideas_3
         FROM = { has_regency = no }
         is_neighbor_of = FROM
         has_spy_network_in = {

@@ -493,3 +493,33 @@ country_event = {
 		}
 	}
 }
+
+# Septon Ousted in X
+province_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.13
+	title = GOT_FAITH_OF_THE_SEVEN.13.title
+	desc = GOT_FAITH_OF_THE_SEVEN.13.desc
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		has_cardinal = yes
+        unrest = 2
+	}
+	
+    is_mtth_scaled_to_size = 1
+    
+	mean_time_to_happen = {
+		months = 6400
+	}
+	
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.13.option.a
+		
+        remove_cardinal = yes
+	}
+    option = {
+		name = GOT_FAITH_OF_THE_SEVEN.13.option.b
+		
+        anti_tax_rebels = 2
+	}
+}

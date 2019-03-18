@@ -1,0 +1,316 @@
+namespace = GOT_IDEAGROUPS
+
+# Loyal Administration in X
+province_event = {
+	id = GOT_IDEAGROUPS.1
+	title = GOT_IDEAGROUPS.1.title
+	desc = GOT_IDEAGROUPS.1.desc
+	picture = CULTURE_eventPicture
+	
+	trigger = {
+		owner = { has_idea = got_administrative_ideas_6 }
+        NOT = { is_core = owner }
+	}
+	
+    is_mtth_scaled_to_size = 1
+    
+	mean_time_to_happen = {
+		months = 6400
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.1.option.a
+		
+        add_core = owner
+	}
+}
+
+# Prosperity in X
+province_event = {
+	id = GOT_IDEAGROUPS.2
+	title = GOT_IDEAGROUPS.2.title
+	desc = GOT_IDEAGROUPS.2.desc
+	picture = CULTURE_eventPicture
+	
+	trigger = {
+        owner = { has_dlc = "Mandate of Heaven" }
+		owner = { has_idea = got_harmony_ideas_6 }
+	}
+	
+    is_mtth_scaled_to_size = 1
+    
+	mean_time_to_happen = {
+		months = 3200
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.2.option.a
+		
+        add_prosperity = 25
+	}
+}
+
+# Recovery in X
+province_event = {
+	id = GOT_IDEAGROUPS.3
+	title = GOT_IDEAGROUPS.3.title
+	desc = GOT_IDEAGROUPS.3.desc
+	picture = CULTURE_eventPicture
+	
+	trigger = {
+		owner = { has_idea = got_harmony_ideas_3 }
+        devastation = 0
+	}
+	
+    is_mtth_scaled_to_size = 1
+    
+	mean_time_to_happen = {
+		months = 3200
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.3.option.a
+		
+        add_devastation = -25
+	}
+}
+
+# Law and Order in X
+province_event = {
+	id = GOT_IDEAGROUPS.4
+	title = GOT_IDEAGROUPS.4.title
+	desc = GOT_IDEAGROUPS.4.desc
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+		owner = { has_idea = got_law_ideas_1 }
+        nationalism = 0
+	}
+	
+    is_mtth_scaled_to_size = 1
+    
+	mean_time_to_happen = {
+		months = 3200
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.4.option.a
+		
+        add_province_modifier = {
+            name = law_and_order
+            duration = 7200
+        }
+	}
+}
+
+# Population Growth in X
+province_event = {
+	id = GOT_IDEAGROUPS.5
+	title = GOT_IDEAGROUPS.5.title
+	desc = GOT_IDEAGROUPS.5.desc
+	picture = FEAST_eventPicture
+	
+	trigger = {
+		owner = { has_idea = got_development_ideas_1 }
+	}
+	
+    is_mtth_scaled_to_size = 1
+    
+	mean_time_to_happen = {
+		months = 6400
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.5.option.a
+		
+        add_base_tax = 1
+	}
+}
+
+# Manufacturing Growth in X
+province_event = {
+	id = GOT_IDEAGROUPS.6
+	title = GOT_IDEAGROUPS.6.title
+	desc = GOT_IDEAGROUPS.6.desc
+	picture = FEAST_eventPicture
+	
+	trigger = {
+		owner = { has_idea = got_development_ideas_1 }
+	}
+	
+    is_mtth_scaled_to_size = 1
+    
+	mean_time_to_happen = {
+		months = 6400
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.6.option.a
+		
+        add_base_production = 1
+	}
+}
+
+# Manpower Growth in X
+province_event = {
+	id = GOT_IDEAGROUPS.7
+	title = GOT_IDEAGROUPS.7.title
+	desc = GOT_IDEAGROUPS.7.desc
+	picture = FEAST_eventPicture
+	
+	trigger = {
+		owner = { has_idea = got_development_ideas_1 }
+	}
+	
+    is_mtth_scaled_to_size = 1
+    
+	mean_time_to_happen = {
+		months = 6400
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.7.option.a
+		
+        add_base_manpower = 1
+	}
+}
+
+# Centralization in X
+province_event = {
+	id = GOT_IDEAGROUPS.8
+	title = GOT_IDEAGROUPS.8.title
+	desc = GOT_IDEAGROUPS.8.desc
+	picture = FEAST_eventPicture
+	
+	trigger = {
+		owner = { has_idea = got_absolutism_ideas_1 }
+        local_autonomy_above_min = 1 # Only affect provinces that can actually have autonomy lowered
+	}
+	
+    is_mtth_scaled_to_size = 1
+    
+	mean_time_to_happen = {
+		months = 3200
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.8.option.a
+		
+        add_local_autonomy = -25
+	}
+}
+
+# Integration of Royalty
+country_event = {
+	id = GOT_IDEAGROUPS.9
+	title = GOT_IDEAGROUPS.9.title
+	desc = GOT_IDEAGROUPS.9.desc
+	picture = CULTURE_eventPicture
+	
+	trigger = {
+        has_idea = got_influence_ideas_3
+		any_subject_country = {
+            junior_union_with = ROOT
+        }
+	}
+	
+	mean_time_to_happen = {
+		months = 1200
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.9.option.a
+		
+        hidden_effect = {
+            random_subject_country = {
+                limit = { junior_union_with = ROOT }
+                
+                save_event_target_as = chosen_subject
+            }
+        }
+        
+        inherit = event_target:chosen_subject
+	}
+}
+
+# Integration of Vassal
+country_event = {
+	id = GOT_IDEAGROUPS.10
+	title = GOT_IDEAGROUPS.10.title
+	desc = GOT_IDEAGROUPS.10.desc
+	picture = CULTURE_eventPicture
+	
+	trigger = {
+        has_idea = got_influence_ideas_3
+		any_subject_country = {
+            vassal_of = ROOT
+        }
+	}
+	
+	mean_time_to_happen = {
+		months = 1200
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.10.option.a
+		
+        hidden_effect = {
+            random_subject_country = {
+                limit = { vassal_of = ROOT }
+                
+                save_event_target_as = chosen_subject
+            }
+        }
+        
+        inherit = event_target:chosen_subject
+	}
+}
+
+# Assimilation of X
+province_event = {
+	id = GOT_IDEAGROUPS.11
+	title = GOT_IDEAGROUPS.11.title
+	desc = GOT_IDEAGROUPS.11.desc
+	picture = CULTURE_eventPicture
+	
+	trigger = {
+		owner = { has_idea = got_assimilation_ideas_1 }
+        NOT = { culture = owner }
+	}
+	
+    is_mtth_scaled_to_size = 1
+    
+	mean_time_to_happen = {
+		months = 3200
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.11.option.a
+		
+        change_culture = owner
+	}
+}
+
+# Wartime Communities
+country_event = {
+	id = GOT_IDEAGROUPS.12
+	title = GOT_IDEAGROUPS.12.title
+	desc = GOT_IDEAGROUPS.12.desc
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+        has_idea = got_society_ideas_1
+        is_at_war = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.12.option.a
+		
+        add_war_exhaustion = -10
+	}
+}
+

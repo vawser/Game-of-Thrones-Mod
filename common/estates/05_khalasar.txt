@@ -204,8 +204,26 @@ estate_khalasar = {
         }
         
         effect = {
-            add_scaled_mil_power = { ESTATE = estate_khalasar }
-            
+            if = {
+                limit = { has_idea = got_nomadic_ideas_3 }
+                add_scaled_mil_power = { 
+                    ESTATE = estate_khalasar
+                    LOW = 100
+                    MED = 150
+                    HIGH = 200
+                    MAX = 250
+                }
+            }
+            else = {
+                add_scaled_mil_power = { 
+                    ESTATE = estate_khalasar
+                    LOW = 50
+                    MED = 100
+                    HIGH = 150
+                    MAX = 200
+                }
+            }
+
             add_estate_loyalty = {
                 estate = estate_khalasar
                 loyalty = -20
@@ -326,6 +344,8 @@ estate_khalasar = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_khalasar 
                 ADVISOR = furrier
+                HIGH = 20
+                MED = 10
             }
             
             add_estate_influence_modifier = {
@@ -364,6 +384,8 @@ estate_khalasar = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_khalasar 
                 ADVISOR = stablemaster
+                HIGH = 20
+                MED = 10
             }
             
             add_estate_influence_modifier = {
@@ -404,7 +426,25 @@ estate_khalasar = {
         }
         
         effect = {
-            add_scaled_general = { ESTATE = estate_khalasar }
+            if = {
+                limit = { has_idea = got_nomadic_ideas_5 }
+                add_scaled_general = { 
+                    ESTATE = estate_khalasar
+                    LOW = 50
+                    MED = 75
+                    HIGH = 100
+                    MAX = 100
+                }
+            }
+            else = {
+                add_scaled_general = { 
+                    ESTATE = estate_khalasar
+                    LOW = 25
+                    MED = 50
+                    HIGH = 75
+                    MAX = 100
+                }
+            }
             
             add_estate_influence_modifier = {
                 estate = estate_khalasar
@@ -442,8 +482,26 @@ estate_khalasar = {
         }
         
         effect = {
-            add_scaled_yearly_manpower = { ESTATE = estate_khalasar }
-            
+            if = {
+                limit = { has_idea = got_nomadic_ideas_4 }
+                add_scaled_yearly_manpower = { 
+                    ESTATE = estate_khalasar
+                    LOW = 0.5
+                    MED = 0.75
+                    HIGH = 1.0
+                    MAX = 1.25
+                }
+            }
+            else = {
+                add_scaled_yearly_manpower = { 
+                    ESTATE = estate_khalasar
+                    LOW = 0.25
+                    MED = 0.5
+                    HIGH = 0.75
+                    MAX = 1.0
+                }
+            }
+
             add_estate_loyalty = {
                 estate = estate_khalasar
                 loyalty = -15
@@ -495,8 +553,26 @@ estate_khalasar = {
         }
         
         effect = {
-            remove_scaled_war_exhaustion = { ESTATE = estate_khalasar }
-            
+            if = {
+                limit = { has_idea = got_nomadic_ideas_1 }
+                add_scaled_war_exhaustion = { 
+                    ESTATE = estate_khalasar
+                    LOW = -4
+                    MED = -6
+                    HIGH = -8
+                    MAX = -10
+                }
+            }
+            else = {
+                add_scaled_war_exhaustion = { 
+                    ESTATE = estate_khalasar
+                    LOW = -2
+                    MED = -4
+                    HIGH = -6
+                    MAX = -8
+                }
+            }
+
             add_estate_loyalty = {
                 estate = estate_khalasar
                 loyalty = -10

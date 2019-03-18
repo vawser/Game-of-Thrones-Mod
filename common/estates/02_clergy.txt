@@ -220,7 +220,26 @@ estate_clergy = {
         }
         
         effect = {
-            add_scaled_adm_power = { ESTATE = estate_clergy }
+            if = {
+                limit = { has_idea = got_religious_ideas_5 }
+                
+                add_scaled_adm_power = { 
+                    ESTATE = estate_clergy
+                    LOW = 100
+                    MED = 150
+                    HIGH = 200
+                    MAX = 250
+                }
+            }
+            else = {
+                add_scaled_adm_power = { 
+                    ESTATE = estate_clergy
+                    LOW = 50
+                    MED = 100
+                    HIGH = 150
+                    MAX = 200
+                }
+            }
             
             add_estate_loyalty = {
                 estate = estate_clergy
@@ -342,6 +361,8 @@ estate_clergy = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_clergy 
                 ADVISOR = inquisitor
+                HIGH = 20
+                MED = 10
             }
             
             add_estate_influence_modifier = {
@@ -380,6 +401,8 @@ estate_clergy = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_clergy 
                 ADVISOR = evangelist
+                HIGH = 20
+                MED = 10
             }
             
             add_estate_influence_modifier = {
@@ -427,12 +450,96 @@ estate_clergy = {
         }
         
         effect = {
-            add_scaled_fervor = { ESTATE = estate_clergy }
-            add_scaled_karma = { ESTATE = estate_clergy }
-            add_scaled_church_power = { ESTATE = estate_clergy }
-            add_scaled_papal_influence = { ESTATE = estate_clergy }
-            add_scaled_patriarch_authority = { ESTATE = estate_clergy }
-            add_scaled_piety = { ESTATE = estate_clergy }
+            if = {
+                limit = { has_idea = got_religious_ideas_5 }
+                
+                add_scaled_fervor = { 
+                    ESTATE = estate_clergy
+                    LOW = 10
+                    MED = 15
+                    HIGH = 20
+                    MAX = 25
+                }
+                add_scaled_karma = { 
+                    ESTATE = estate_clergy
+                    LOW = 10
+                    MED = 15
+                    HIGH = 20
+                    MAX = 25
+                }
+                add_scaled_church_power = { 
+                    ESTATE = estate_clergy
+                    LOW = 10
+                    MED = 15
+                    HIGH = 20
+                    MAX = 25
+                }
+                add_scaled_papal_influence = { 
+                    ESTATE = estate_clergy
+                    LOW = 10
+                    MED = 15
+                    HIGH = 20
+                    MAX = 25
+                }
+                add_scaled_patriarch_authority = { 
+                    ESTATE = estate_clergy
+                    LOW = 0.1
+                    MED = 0.15
+                    HIGH = 0.2
+                    MAX = 0.25
+                }
+                add_scaled_piety = { 
+                    ESTATE = estate_clergy
+                    LOW = 0.1
+                    MED = 0.15
+                    HIGH = 0.2
+                    MAX = 0.25
+                }
+            }
+            else = {
+                add_scaled_fervor = { 
+                    ESTATE = estate_clergy
+                    LOW = 5
+                    MED = 10
+                    HIGH = 15
+                    MAX = 20
+                }
+                add_scaled_karma = { 
+                    ESTATE = estate_clergy
+                    LOW = 5
+                    MED = 10
+                    HIGH = 15
+                    MAX = 20
+                }
+                add_scaled_church_power = { 
+                    ESTATE = estate_clergy
+                    LOW = 5
+                    MED = 10
+                    HIGH = 15
+                    MAX = 20
+                }
+                add_scaled_papal_influence = { 
+                    ESTATE = estate_clergy
+                    LOW = 5
+                    MED = 10
+                    HIGH = 15
+                    MAX = 20
+                }
+                add_scaled_patriarch_authority = { 
+                    ESTATE = estate_clergy
+                    LOW = 0.05
+                    MED = 0.1
+                    HIGH = 0.15
+                    MAX = 0.2
+                }
+                add_scaled_piety = { 
+                    ESTATE = estate_clergy
+                    LOW = 0.05
+                    MED = 0.1
+                    HIGH = 0.15
+                    MAX = 0.2
+                }
+            }
             
             add_estate_influence_modifier = {
                 estate = estate_clergy
@@ -484,25 +591,53 @@ estate_clergy = {
         
         effect = {
             if = {
-				limit = {
-					uses_karma = yes
-				}
-				add_karma = -10
-			}
-			
-			if = {
-				limit = {
-					uses_patriarch_authority = yes
-				}
-				add_patriarch_authority = -0.1
-			}
-            
-            if = {
-				limit = {
-					uses_piety = yes
-				}
-				add_piety = -0.1
-			}
+                limit = { has_idea = got_religious_ideas_5 }
+                
+                add_scaled_karma = { 
+                    ESTATE = estate_clergy
+                    LOW = -10
+                    MED = -15
+                    HIGH = -20
+                    MAX = -25
+                }
+                add_scaled_patriarch_authority = { 
+                    ESTATE = estate_clergy
+                    LOW = -0.1
+                    MED = -0.15
+                    HIGH = -0.2
+                    MAX = -0.25
+                }
+                add_scaled_piety = { 
+                    ESTATE = estate_clergy
+                    LOW = -0.1
+                    MED = -0.15
+                    HIGH = -0.2
+                    MAX = -0.25
+                }
+            }
+            else = {
+                add_scaled_karma = { 
+                    ESTATE = estate_clergy
+                    LOW = -5
+                    MED = -10
+                    HIGH = -15
+                    MAX = -20
+                }
+                add_scaled_patriarch_authority = { 
+                    ESTATE = estate_clergy
+                    LOW = -0.05
+                    MED = -0.1
+                    HIGH = -0.15
+                    MAX = -0.2
+                }
+                add_scaled_piety = { 
+                    ESTATE = estate_clergy
+                    LOW = -0.05
+                    MED = -0.1
+                    HIGH = -0.15
+                    MAX = -0.2
+                }
+            }
             
             add_estate_loyalty = {
                 estate = estate_clergy
@@ -604,8 +739,27 @@ estate_clergy = {
         }
         
         effect = {
-            add_scaled_prestige = { ESTATE = estate_clergy }
-            
+            if = {
+                limit = { has_idea = got_religious_ideas_6 }
+                
+                add_scaled_prestige = { 
+                    ESTATE = estate_clergy
+                    LOW = 15
+                    MED = 20
+                    HIGH = 25
+                    MAX = 30
+                }
+            }
+            else = {
+                add_scaled_prestige = { 
+                    ESTATE = estate_clergy
+                    LOW = 10
+                    MED = 15
+                    HIGH = 20
+                    MAX = 25
+                }
+            }
+
             add_estate_influence_modifier = {
                 estate = estate_clergy
                 desc = EST_VAL_RELIGIOUS_GLORY
@@ -656,7 +810,26 @@ estate_clergy = {
         }
         
         effect = {
-            remove_scaled_corruption = { ESTATE = estate_clergy }
+            if = {
+                limit = { has_idea = got_religious_ideas_7 }
+                
+                add_scaled_corruption = { 
+                    ESTATE = estate_clergy
+                    LOW = -4
+                    MED = -6
+                    HIGH = -8
+                    MAX = -10
+                }
+            }
+            else = {
+                add_scaled_corruption = { 
+                    ESTATE = estate_clergy
+                    LOW = -2
+                    MED = -4
+                    HIGH = -6
+                    MAX = -8
+                }
+            }
             
             add_estate_influence_modifier = {
                 estate = estate_clergy
@@ -709,8 +882,27 @@ estate_clergy = {
         }
         
         effect = {
-            add_scaled_papal_influence = { ESTATE = estate_clergy }
-
+            if = {
+                limit = { has_idea = got_religious_ideas_6 }
+                
+                add_scaled_papal_influence = { 
+                    ESTATE = estate_clergy
+                    LOW = 10
+                    MED = 15
+                    HIGH = 20
+                    MAX = 25
+                }
+            }
+            else = {
+                add_scaled_papal_influence = { 
+                    ESTATE = estate_clergy
+                    LOW = 5
+                    MED = 10
+                    HIGH = 15
+                    MAX = 20
+                }
+            }
+            
             add_estate_loyalty = {
                 estate = estate_clergy
                 loyalty = 20

@@ -11,17 +11,8 @@ country_event = {
 	desc = GOT_IRON_BANK.1.desc
 	picture = TRADEGOODS_eventPicture
 	
-    is_triggered_only = yes
-    
 	trigger = {
-        NOT = { is_primitive_government = yes } 
-        NOT = { has_ruler_modifier = iron_bank_agreement }
-        OR = {
-            any_known_country = {  
-                primary_culture = braavosi
-            }
-            primary_culture = braavosi
-        }
+        has_country_flag = iron_bank_event
     }
     
     immediate = {
@@ -32,9 +23,14 @@ country_event = {
                 hidden = yes
             }
             set_country_flag = iron_bank_agreement
+            clr_country_flag = iron_bank_event
         }
     }
 
+    mean_time_to_happen = {
+		days = 1
+    }
+    
 	option = {
 		name = GOT_IRON_BANK.1.option.a
 		

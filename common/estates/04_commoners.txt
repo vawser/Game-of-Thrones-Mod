@@ -172,8 +172,25 @@ estate_commoners = {
         }
         
         effect = {
-            add_scaled_absolutism = { ESTATE = estate_commoners }
-            
+            if = {
+                limit = { has_idea = got_absolutism_ideas_3 }
+                add_scaled_absolutism = { 
+                    ESTATE = estate_commoners
+                    LOW = 4
+                    MED = 6
+                    HIGH = 8
+                    MAX = 10
+                }
+            }
+            else = {
+                add_scaled_absolutism = { 
+                    ESTATE = estate_commoners
+                    LOW = 2
+                    MED = 4
+                    HIGH = 6
+                    MAX = 8
+                }
+            }
             add_estate_loyalty = {
                 estate = estate_commoners
                 loyalty = -20
@@ -294,6 +311,8 @@ estate_commoners = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_commoners 
                 ADVISOR = philosopher
+                HIGH = 20
+                MED = 10
             }
             
             add_estate_influence_modifier = {
@@ -332,6 +351,8 @@ estate_commoners = {
             add_scaled_estate_advisor = { 
                 ESTATE = estate_commoners 
                 ADVISOR = artist
+                HIGH = 20
+                MED = 10
             }
             
             add_estate_influence_modifier = {
@@ -371,7 +392,13 @@ estate_commoners = {
         }
         
         effect = {
-            add_stability = 1
+            if = {
+                limit = { has_idea = got_harmony_ideas_2 }
+                add_stability = 2
+            }
+            else = {
+                add_stability = 1
+            }
             
             add_estate_influence_modifier = {
                 estate = estate_commoners
@@ -423,7 +450,25 @@ estate_commoners = {
         }
         
         effect = {
-            add_scaled_prestige = { ESTATE = estate_commoners }
+            if = {
+                limit = { has_idea = got_autonomy_ideas_3 }
+                add_scaled_prestige = { 
+                    ESTATE = estate_commoners
+                    LOW = 10
+                    MED = 15
+                    HIGH = 20
+                    MAX = 25
+                }
+            }
+            else = {
+                add_scaled_prestige = { 
+                    ESTATE = estate_commoners
+                    LOW = 5
+                    MED = 10
+                    HIGH = 15
+                    MAX = 20
+                }
+            }
             
             add_estate_influence_modifier = {
                 estate = estate_commoners

@@ -502,7 +502,13 @@ estate_slaves = {
         }
         
         effect = {
-            add_scaled_absolutism = { ESTATE = estate_slaves }
+            add_scaled_absolutism = { 
+                ESTATE = estate_slaves
+                LOW = 2
+                MED = 4
+                HIGH = 6
+                MAX = 8
+            }
             
             add_estate_loyalty = {
                 estate = estate_slaves
@@ -544,7 +550,13 @@ estate_slaves = {
         }
         
         effect = {
-            remove_scaled_corruption = { ESTATE = estate_slaves }
+            add_scaled_corruption = { 
+                ESTATE = estate_slaves
+                LOW = -2
+                MED = -4
+                HIGH = -6
+                MAX = -8
+            }
             
             add_estate_loyalty = {
                 estate = estate_slaves
@@ -586,7 +598,13 @@ estate_slaves = {
         }
         
         effect = {
-            add_scaled_yearly_manpower = { ESTATE = estate_slaves }
+            add_scaled_yearly_manpower = { 
+                ESTATE = estate_slaves
+                LOW = 0.25
+                MED = 0.5
+                HIGH = 0.75
+                MAX = 1.0
+            }
             
             add_estate_loyalty = {
                 estate = estate_slaves

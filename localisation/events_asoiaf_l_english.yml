@@ -370,7 +370,7 @@
  GOT_IRON_BANK.1.desc: "The Iron Bank in Braavos is one of the largest banks in both Westeros and Essos. If we wish to borrow large sums of gold, we must negotiate with the Iron Bank. How we approach them will determine what loan size they may offer."
  GOT_IRON_BANK.1.option.a: "Take an aggressive approach"
  GOT_IRON_BANK.1.option.b: "Take a neutral approach"
- GOT_IRON_BANK.1.option.c: "Take a defensive approach"
+ GOT_IRON_BANK.1.option.c: "Take a coy approach"
  
  GOT_IRON_BANK.2.title: "Iron Bank Angered"
  GOT_IRON_BANK.2.desc: "Our approach has angered the Iron Bank, and they threaten to lower our loan size unless we make amends."
@@ -501,6 +501,27 @@
  GOT_ESTATES.65.desc: "We have managed to subjugate the $ESTATE_MAGI$. $ESTATE_MAGI$ privileges have been revoked and their lands removed. The $ESTATE_MAGI$ themselves have been forced to submit that the $MONARCHTITLE$ is the undisputable leader of this country."
  GOT_ESTATES.65.option.a: "The $MONARCHTITLE$ is back in control."
  
+ # Estate actions
+ GOT_ESTATES.100.title: "Tuition of [Root.Heir.GetName]"
+ GOT_ESTATES.100.desc: "A trusted noble has tutored our heir, [Root.Heir.GetTitle] [Root.Heir.GetName]. Let us see how well [Root.Heir.GetName] has learnt the material..."
+ GOT_ESTATES.100.option.a: "..."
+ 
+ GOT_ESTATES.101.title: "Administrative Lessons"
+ GOT_ESTATES.101.desc: "[Root.Heir.GetTitle] [Root.Heir.GetName] has taken well to [Root.Heir.GetHerHis] administration lessons. It seems that [Root.Heir.GetName] will be adept at administration once [Root.Heir.GetSheHe] is of age."
+ GOT_ESTATES.101.option.a: "Wonderful"
+ 
+ GOT_ESTATES.102.title: "Diplomacy Lessons"
+ GOT_ESTATES.102.desc: "[Root.Heir.GetTitle] [Root.Heir.GetName] has taken well to [Root.Heir.GetHerHis] diplomacy lessons. It seems that [Root.Heir.GetName] will be adept at diplomacy once [Root.Heir.GetSheHe] is of age."
+ GOT_ESTATES.102.option.a: "Wonderful"
+ 
+ GOT_ESTATES.103.title: "Military Lessons"
+ GOT_ESTATES.103.desc: "[Root.Heir.GetTitle] [Root.Heir.GetName] has taken well to [Root.Heir.GetHerHis] military lessons. It seems that [Root.Heir.GetName] will be adept at military matters once [Root.Heir.GetSheHe] is of age."
+ GOT_ESTATES.103.option.a: "Wonderful"
+ 
+ GOT_ESTATES.104.title: "Inept Heir"
+ GOT_ESTATES.104.desc: "[Root.Heir.GetTitle] [Root.Heir.GetName] has refused to engage in [Root.Heir.GetHerHis] lessons, preferring to slack off."
+ GOT_ESTATES.104.option.a: "..."
+ 
  #----------------------------------------------------------------------
  # Exploration
  #----------------------------------------------------------------------
@@ -604,6 +625,11 @@
  GOT_FAITH_OF_THE_SEVEN.12.title: "The Song of the Seven"
  GOT_FAITH_OF_THE_SEVEN.12.desc: "Today is a day of worship, and the Song of the Seven can be heard from the local sept, and [Root.Monarch.GetTitle] [Root.Monarch.GetName] feels the light of the Seven upon [Root.Monarch.GetHerHis] skin."
  GOT_FAITH_OF_THE_SEVEN.12.option.a: "The warmth of the light enlightens me."
+ 
+ GOT_FAITH_OF_THE_SEVEN.13.title: "Septon ousted in [Root.GetName]"
+ GOT_FAITH_OF_THE_SEVEN.13.desc: "The people of [Root.GetName] have become rebellious, and are seeking to pin their grievances upon their local septon. If he remains, there is a good chance he will be tarred and feathered by this unruly mob."
+ GOT_FAITH_OF_THE_SEVEN.13.option.a: "Return him to the Great Sept"
+ GOT_FAITH_OF_THE_SEVEN.13.option.b: "Crush these heretics!"
  
  #----------------------------------------------------------------------
  # Government
@@ -1797,3 +1823,54 @@
  GOT_TARGARYEN.10.title: "Dragon Eggs Discovered!"
  GOT_TARGARYEN.10.desc: "Our expeditionary company has finally succeeded in located the rumoured dragon eggs, and are set to return them promptly."
  GOT_TARGARYEN.10.option.a: "Hurrah!"
+ 
+ #----------------------------------------------------------------------
+ # Ideagroups
+ #----------------------------------------------------------------------
+ GOT_IDEAGROUPS.1.title: "Loyal Administration in [Root.GetName]"
+ GOT_IDEAGROUPS.1.desc: "The people of [Root.GetName] are loyal to [Root.Owner.GetName] without question. This is great news for the administrators of our realm."
+ GOT_IDEAGROUPS.1.option.a: "Great"
+ 
+ GOT_IDEAGROUPS.2.title: "Prosperity in [Root.GetName]"
+ GOT_IDEAGROUPS.2.desc: "The harmonious policies of [Root.Owner.GetName] have resulted in prosperity in [Root.GetName]. There is a sense of community in [Root.GetName] that is unmatched elsewhere."
+ GOT_IDEAGROUPS.2.option.a: "Wonderful"
+ 
+ GOT_IDEAGROUPS.3.title: "Recovery in [Root.GetName]"
+ GOT_IDEAGROUPS.3.desc: "The harmonious policies of [Root.Owner.GetName] have resulted in a quick recovery in [Root.GetName], which was once devastated. There is a sense of community in [Root.GetName] that is unmatched elsewhere."
+ GOT_IDEAGROUPS.3.option.a: "Wonderful"
+ 
+ GOT_IDEAGROUPS.4.title: "Law and Order in [Root.GetName]"
+ GOT_IDEAGROUPS.4.desc: "The laws in [Root.Owner.GetName] call for strict enforcement, and as such newly integrated peoples are watched more closely than those we know are loyal."
+ GOT_IDEAGROUPS.4.option.a: "Perfect"
+ 
+ GOT_IDEAGROUPS.5.title: "Population Growth in [Root.GetName]"
+ GOT_IDEAGROUPS.5.desc: "The development policies laid out by [Root.Owner.GetName] support local development. This has resulted in tremendous population growth in [Root.GetName]."
+ GOT_IDEAGROUPS.5.option.a: "Perfect"
+ 
+ GOT_IDEAGROUPS.6.title: "Manufacturing Growth in [Root.GetName]"
+ GOT_IDEAGROUPS.6.desc: "The development policies laid out by [Root.Owner.GetName] support local development. This has resulted in tremendous manufacturing growth in [Root.GetName]."
+ GOT_IDEAGROUPS.6.option.a: "Perfect"
+ 
+ GOT_IDEAGROUPS.7.title: "Manpower Growth in [Root.GetName]"
+ GOT_IDEAGROUPS.7.desc: "The development policies laid out by [Root.Owner.GetName] support local development. This has resulted in tremendous manpower growth in [Root.GetName]."
+ GOT_IDEAGROUPS.7.option.a: "Perfect"
+ 
+ GOT_IDEAGROUPS.8.title: "Centralization in [Root.GetName]"
+ GOT_IDEAGROUPS.8.desc: "The absolutism practised by [Root.Owner.GetName] means the people of [Root.GetName] must toe the line. To fail to do so is to risk severe punishment."
+ GOT_IDEAGROUPS.8.option.a: "As planned"
+ 
+ GOT_IDEAGROUPS.9.title: "Integration of Royalty"
+ GOT_IDEAGROUPS.9.desc: "The royalty of our junior partner have become integrated into ours. This will greatly speed up the integration of their people into our realm."
+ GOT_IDEAGROUPS.9.option.a: "Perfect"
+ 
+ GOT_IDEAGROUPS.10.title: "Integration of Vassal"
+ GOT_IDEAGROUPS.10.desc: "The nobility of one of our vassals have become integrated into ours. This will greatly speed up the integration of their people into our realm."
+ GOT_IDEAGROUPS.10.option.a: "Perfect"
+ 
+ GOT_IDEAGROUPS.11.title: "Assimilation of [Root.GetName]"
+ GOT_IDEAGROUPS.11.desc: "The people of [Root.GetName] have adopted the customs of [Root.Owner.GetName] and have become almost indistinguishable from the natives of [Root.Owner.GetName]."
+ GOT_IDEAGROUPS.11.option.a: "Great"
+ 
+ GOT_IDEAGROUPS.12.title: "Wartime Communities"
+ GOT_IDEAGROUPS.12.desc: "The people of our realm are hardened to the realities of war, and continue to thrive even whilst battles are raging."
+ GOT_IDEAGROUPS.12.option.a: "Hurrah!"

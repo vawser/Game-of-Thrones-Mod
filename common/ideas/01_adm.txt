@@ -279,8 +279,7 @@ got_harmony_ideas = {
     category = ADM
 
     bonus = {
-        idea_cost = -0.1
-		yearly_harmony = 0.25
+        no_religion_penalty = yes
     }
     
     # Religious Unity
@@ -514,7 +513,7 @@ got_autonomy_ideas = {
     }
     # Local Rule
     got_autonomy_ideas_1 = {
-        state_maintenance_modifier = -0.5
+        state_maintenance_modifier = -0.33
     }
     # Farming Techniques
     got_autonomy_ideas_2 = {
@@ -916,35 +915,35 @@ got_trios_ideas = {
     }
     
     bonus = {
-        
+        global_unrest = -2
     }
     # The Three-Headed God
     got_trios_ideas_1 = {
-        
+        monthly_fervor_increase = 1
     }
     # Essosian Trade
     got_trios_ideas_2 = {
-        
+        global_trade_power = 0.1
     }
     # Religious Ardor
     got_trios_ideas_3 = {
-        
+        missionaries = 1 
     }
     # Guardians of Tyrosh
     got_trios_ideas_4 = {
-        
+        defensiveness = 0.33
     }
     # The Cycle of Life
     got_trios_ideas_5 = {
-        
+        advisor_pool = 1
     }
     # Daily Rituals
     got_trios_ideas_6 = {
-        
+        missionary_maintenance_cost = -0.2
     }
     # Doctrinal Zeal
     got_trios_ideas_7 = {
-        
+        global_missionary_strength = 0.02
     }
     
     ai_will_do = {
@@ -961,35 +960,35 @@ got_bearded_priests_ideas = {
     }
     
     bonus = {
-        
+        land_maintenance_modifier = -0.1
     }
     # Ritual Flagellation
     got_bearded_priests_ideas_1 = {
-        
+        recover_army_morale_speed = 0.1
     }
     # The Hairy Men
     got_bearded_priests_ideas_2 = {
-        
+        missionaries = 1 
     }
     # Serve, Obey, Protect
     got_bearded_priests_ideas_3 = {
-        
+        missionary_maintenance_cost = -0.33
     }
     # Mysterious Sect
     got_bearded_priests_ideas_4 = {
-        
+        church_power_modifier = 0.25
     }
     # Sacred Axes
     got_bearded_priests_ideas_5 = {
-        
+        infantry_power = 0.1
     }
     # Theological Absolutism
     got_bearded_priests_ideas_6 = {
-        
+        tolerance_own = 3
     }
     # Zealous Worship
     got_bearded_priests_ideas_7 = {
-        
+        global_missionary_strength = 0.03
     }
     
     ai_will_do = {
@@ -1006,35 +1005,36 @@ got_remnants_of_boash_ideas = {
     }
     
     bonus = {
-        
+        tolerance_heathen = 1
+        tolerance_heretic = 1
     }
     # The Blind God
     got_remnants_of_boash_ideas_1 = {
-        
+        technology_cost = -0.1
     }
     # Abnegation of Self
     got_remnants_of_boash_ideas_2 = {
-        
+        religious_unity = 0.33
     }
     # The Higher Truths
     got_remnants_of_boash_ideas_3 = {
-        
+        global_heretic_missionary_strength = 0.02
     }
     # Sincerity of Faith
     got_remnants_of_boash_ideas_4 = {
-        
+        missionary_maintenance_cost = -0.25
     }
     # Equality for All
     got_remnants_of_boash_ideas_5 = {
-        
+        stability_cost_modifier = -0.25
     }
     # Mazemakers
     got_remnants_of_boash_ideas_6 = {
-        
+        monthly_fervor_increase = 1
     }
     # The Third Eye
     got_remnants_of_boash_ideas_7 = {
-        
+        embracement_cost = -0.2
     }
     
     ai_will_do = {
@@ -1051,35 +1051,35 @@ got_black_goat_ideas = {
     }
     
     bonus = {
-        
+        yearly_corruption = -0.05
     }
     # Blood Sacrifices
     got_black_goat_ideas_1 = {
-        
+        missionary_maintenance_cost = -0.33
     }
     # The Black Goat
     got_black_goat_ideas_2 = {
-        
+        tolerance_own = 2
     }
     # Repulsion of the Dothraki
     got_black_goat_ideas_3 = {
-        
+        fire_damage = 0.1
     }
     # Walls of Stone
     got_black_goat_ideas_4 = {
-        
+        fort_maintenance_modifier = -0.2
     }
     # Religious Piety
     got_black_goat_ideas_5 = {
-        
+        global_missionary_strength = 0.03
     }
     # Qohorik Customs
     got_black_goat_ideas_6 = {
-        
+        diplomatic_reputation = 1
     }
     # Cowled Priests
     got_black_goat_ideas_7 = {
-        
+        missionaries = 1
     }
     
     ai_will_do = {
@@ -1096,35 +1096,35 @@ got_gods_of_hyrkoon_ideas = {
     }
     
     bonus = {
-        
+        global_manpower_modifier = 0.1
     }
     # The Bone Mountains
     got_gods_of_hyrkoon_ideas_1 = {
-        
+        hostile_attrition = 2
     }
     # Fertile Crescent
     got_gods_of_hyrkoon_ideas_2 = {
-        
+        global_supply_limit_modifier = 0.1
     }
     # Patriarchs of Hyrkoon
     got_gods_of_hyrkoon_ideas_3 = {
-        
+        missionaries = 1
     }
     # Fortress Cities
     got_gods_of_hyrkoon_ideas_4 = {
-        
+        defensiveness = 0.33
     }
     # Religious Liturgy
     got_gods_of_hyrkoon_ideas_5 = {
-        
+        global_missionary_strength = 0.02
     }
     # Daily Observance
     got_gods_of_hyrkoon_ideas_6 = {
-        
+        missionary_maintenance_cost = -0.2
     }
     # Warrior Women
     got_gods_of_hyrkoon_ideas_7 = {
-        
+        infantry_power = 0.1
     }
     
     ai_will_do = {
@@ -1186,35 +1186,35 @@ got_lady_of_the_waves_ideas = {
     }
     
     bonus = {
-        
+        naval_forcelimit_modifier = 0.2
     }
     # Ride the Waves
     got_lady_of_the_waves_ideas_1 = {
-        
+        naval_maintenance_modifier = -0.2
     }
     # Blessing of the Lady
     got_lady_of_the_waves_ideas_2 = {
-        
+        naval_morale = 0.1
     }
     # Sea Shanties
     got_lady_of_the_waves_ideas_3 = {
-        
+        missionary_maintenance_cost = -0.15
     }
     # Marauders of the Stepstones
     got_lady_of_the_waves_ideas_4 = {
-        
+        global_sailors_modifier = 0.2
     }
     # Omen of Death
     got_lady_of_the_waves_ideas_5 = {
-        
+        own_coast_naval_combat_bonus = 1.0
     }
     # Kiss of the Ocean
     got_lady_of_the_waves_ideas_6 = {
-        
+        global_heretic_missionary_strength = 0.02
     }
     # Pirate's Booty
     got_lady_of_the_waves_ideas_7 = {
-        
+        loot_amount = 1.0
     }
     
     ai_will_do = {
@@ -1231,35 +1231,35 @@ got_sun_god_ideas = {
     }
     
     bonus = {
-        
+        missionaries = 1
     }
     # The Act of Lovemaking
     got_sun_god_ideas_1 = {
-        
+        church_power_modifier = 0.2
     }
     # Sellsails
     got_sun_god_ideas_2 = {
-        
+        merc_maintenance_modifier = -0.2
     }
     # Isles of Plenty
     got_sun_god_ideas_3 = {
-        
+        production_efficiency = 0.1
     }
     # Ritualized Procreation
     got_sun_god_ideas_4 = {
-        
+        global_missionary_strength = 0.03
     }
     # Offerings to the Sun God
     got_sun_god_ideas_5 = {
-        
+        global_unrest = -2
     }
     # Summer Islander Fashion
     got_sun_god_ideas_6 = {
-        
+        prestige = 1
     }
     # Celebration of the Dead
     got_sun_god_ideas_7 = {
-        
+        missionary_maintenance_cost = -0.15
     }
     
     ai_will_do = {
@@ -1276,35 +1276,36 @@ got_idol_worship_ideas = {
     }
     
     bonus = {
-        
+        core_creation = -0.1
     }
     # Totemic Idols
     got_idol_worship_ideas_1 = {
-        
+        missionary_maintenance_cost = -0.15
     }
     # Omens of Fairskins
     got_idol_worship_ideas_2 = {
-        
+        infantry_shock = 1
     }
     # Jungle Dances
     got_idol_worship_ideas_3 = {
-        
+        global_missionary_strength = 0.02
     }
     # Rainmakers
     got_idol_worship_ideas_4 = {
-        
+        missionaries = 1
     }
     # Idol Rituals
     got_idol_worship_ideas_5 = {
-        
+        movement_speed = 0.1
     }
     # War Notches
     got_idol_worship_ideas_6 = {
-        
+        land_morale = 0.1
     }
     # Primitive Craftsmen
     got_idol_worship_ideas_7 = {
-        
+        build_cost = -0.25
+        build_time = -0.25
     }
     
     ai_will_do = {
@@ -1321,35 +1322,35 @@ got_occult_ideas = {
     }
     
     bonus = {
-        
+        missionary_maintenance_cost = -0.33
     }
     # Shadowbinders
     got_occult_ideas_1 = {
-        
+        global_missionary_strength = 0.03
     }
     # Stygai, the City of Corpses
     got_occult_ideas_2 = {
-        
+        missionaries = 1
     }
     # The Art of Necromancy
     got_occult_ideas_3 = {
-        
+        global_manpower_modifier = 0.15
     }
     # Occult Knowledge
     got_occult_ideas_4 = {
-        
+        technology_cost = -0.1
     }
     # Witches and Wizards
     got_occult_ideas_5 = {
-        
+        global_institution_spread = 0.25
     }
     # Dragonlore
     got_occult_ideas_6 = {
-        
+        embracement_cost = -0.25
     }
     # Waters of the Ash
     got_occult_ideas_7 = {
-        
+        hostile_attrition = 2
     }
     
     ai_will_do = {
@@ -1366,35 +1367,36 @@ got_stone_cow_ideas = {
     }
     
     bonus = {
-        
+        global_unrest = -2
     }
     # The Holy Cow
     got_stone_cow_ideas_1 = {
-        
+        stability_cost_modifier = -0.2
     }
     # Stone Effigies
     got_stone_cow_ideas_2 = {
-        
+        tolerance_own = 1
     }
     # Moraqi Rituals
     got_stone_cow_ideas_3 = {
-        
+        global_missionary_strength = 0.02
     }
     # Spiritual Pilgrimages
     got_stone_cow_ideas_4 = {
-        
+        tolerance_heathen = 1
+        tolerance_heretic = 1
     }
     # Devout Worship
     got_stone_cow_ideas_5 = {
-        
+        missionary_maintenance_cost = -0.2
     }
     # Sacred Texts
     got_stone_cow_ideas_6 = {
-        
+        monthly_fervor_increase = 1
     }
     # Temple of the Stone Cow
     got_stone_cow_ideas_7 = {
-        
+        religious_unity = 0.5
     }
     
     ai_will_do = {
@@ -1411,35 +1413,36 @@ got_great_shepherd_ideas = {
     }
     
     bonus = {
-        
+        global_own_trade_power = 0.1
     }
     # The Lamb God
     got_great_shepherd_ideas_1 = {
-        
+        tolerance_heathen = 2
+        tolerance_heretic = 2
     }
     # One Flock
     got_great_shepherd_ideas_2 = {
-        
+        religious_unity = 0.5
     }
     # Strength in Numbers
     got_great_shepherd_ideas_3 = {
-        
+        state_maintenance_modifier = -0.2
     }
     # Sheep Herding
     got_great_shepherd_ideas_4 = {
-        
+        global_trade_goods_size_modifier = 0.1
     }
     # Arable Land
     got_great_shepherd_ideas_5 = {
-        
+        production_efficiency = 0.1
     }
     # Unity of the Lhazareen
     got_great_shepherd_ideas_6 = {
-        
+        stability_cost_modifier = -0.2
     }
     # Sheepish Omens
     got_great_shepherd_ideas_7 = {
-        
+        church_power_modifier = 0.2
     }
     
     ai_will_do = {
@@ -1456,35 +1459,35 @@ got_ib_ideas = {
     }
     
     bonus = {
-        
+        global_sailors_modifier = 0.2
     }
     # Legacy of the God-Kings
     got_ib_ideas_1 = {
-        
+        church_power_modifier = 0.2
     }
     # Ritual Mutilations
     got_ib_ideas_2 = {
-        
+        global_missionary_strength = 0.03
     }
     # Whalers
     got_ib_ideas_3 = {
-        
+        naval_forcelimit_modifier = 0.15
     }
     # Mother Ib
     got_ib_ideas_4 = {
-        
+        navy_tradition = 1
     }
     # Tenacity of the Sea
     got_ib_ideas_5 = {
-        
+        ship_durability = 0.1
     }
     # Dried Fish Offerings
     got_ib_ideas_6 = {
-        
+        missionary_maintenance_cost = -0.15
     }
     # The Thousand
     got_ib_ideas_7 = {
-        
+        yearly_corruption = -0.05
     }
     
     ai_will_do = {
@@ -1501,35 +1504,35 @@ got_ghsicari_pantheon_ideas = {
     }
     
     bonus = {
-        
+        land_morale = 0.1
     }
     # Legacy of Old Ghis
     got_ghsicari_pantheon_ideas_1 = {
-        
+        church_power_modifier = 0.2
     }
     # The Harpies
     got_ghsicari_pantheon_ideas_2 = {
-        
+        missionary_maintenance_cost = -0.2
     }
     # The Graces
     got_ghsicari_pantheon_ideas_3 = {
-        
+        missionaries = 1
     }
     # Language of the Ghis
     got_ghsicari_pantheon_ideas_4 = {
-        
+        trade_efficiency = 0.1
     }
     # Ghiscari Heritage
     got_ghsicari_pantheon_ideas_5 = {
-        
+        tolerance_own = 1
     }
     # Ferverous Preachers
     got_ghsicari_pantheon_ideas_6 = {
-        
+        global_missionary_strength = 0.02
     }
     # The Fighting Pits
     got_ghsicari_pantheon_ideas_7 = {
-        
+        army_tradition = 1
     }
     
     ai_will_do = {
@@ -1546,35 +1549,35 @@ got_hooded_wayfarer_ideas = {
     }
     
     bonus = {
-        
+        ae_impact = -0.1
     }
     # Friend to the Poor
     got_hooded_wayfarer_ideas_1 = {
-        
+        global_autonomy = -0.05
     }
-    # Begger's Luck
+    # Beggar's Luck
     got_hooded_wayfarer_ideas_2 = {
-        
+        spy_offence = 0.25
     }
     # Remnants of Sarnor
     got_hooded_wayfarer_ideas_3 = {
-        
+        defensiveness = 0.33
     }
     # A Desperate Plea
     got_hooded_wayfarer_ideas_4 = {
-        
+        global_missionary_strength = 0.02
     }
     # Hooded Priests
     got_hooded_wayfarer_ideas_5 = {
-        
+        missionaries = 1
     }
     # Commonalities
     got_hooded_wayfarer_ideas_6 = {
-        
+        diplomatic_reputation = 1
     }
     # Sarnori Rituals
     got_hooded_wayfarer_ideas_7 = {
-        
+        missionary_maintenance_cost = -0.2
     }
     
     ai_will_do = {
@@ -1591,35 +1594,35 @@ got_lord_of_harmony_ideas = {
     }
     
     bonus = {
-        
+        culture_conversion_cost = -0.25
     }
     # The Laughing Giant
     got_lord_of_harmony_ideas_1 = {
-        
+        tolerance_own = 3
     }
     # Butterfly Women
     got_lord_of_harmony_ideas_2 = {
-        
+        global_missionary_strength = 0.03
     }
     # Butterfly Fever
     got_lord_of_harmony_ideas_3 = {
-        
+        hostile_attrition = 4
     }
     # Peaceful Naathi
     got_lord_of_harmony_ideas_4 = {
-        
+        global_unrest = -2
     }
     # Sacred Butterfly Spirits
     got_lord_of_harmony_ideas_5 = {
-        
+        monthly_fervor_increase = 1
     }
     # Ritual of the Butterfly
     got_lord_of_harmony_ideas_6 = {
-        
+        warscore_cost_vs_other_religion = -0.2
     }
     # One True God
     got_lord_of_harmony_ideas_7 = {
-        
+        missionaries = 1
     }
     
     ai_will_do = {

@@ -524,3 +524,133 @@ got_militarization_ideas = {
         factor = 1
     }
 }
+
+# Subjugation
+got_subjugation_ideas = {
+    category = MIL
+
+    bonus = {
+        land_maintenance_modifier = -0.1
+    }
+    # Conquest
+    got_subjugation_ideas_1 = {
+        province_warscore_cost = -0.25
+    }
+    # Intimidation
+    got_subjugation_ideas_2 = {
+        unjustified_demands = -0.2
+    }
+    # Incorrigible Disputes
+    got_subjugation_ideas_3 = {
+        fabricate_claims_cost = -0.5
+    }
+    # Military Envoys
+    got_subjugation_ideas_4 = {
+        free_leader_pool = 1
+    }
+    # Military Vassals
+    got_subjugation_ideas_5 = {
+        vassal_forcelimit_bonus = 1.0
+    }
+    # Make Haste
+    got_subjugation_ideas_6 = {
+        envoy_travel_time = -0.5
+    }
+    # Squeeze Them Dry
+    got_subjugation_ideas_7 = {
+        vassal_income = 0.2
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Tyranny
+got_tyranny_ideas = {
+    category = MIL
+
+    bonus = {
+        #cb_on_government_enemies = yes
+        global_autonomy = -0.05
+    }
+    # Tyranny of the Weak
+    got_tyranny_ideas_1 = {
+        max_absolutism = 20
+    }
+    # Enforced Legitimacy
+    got_tyranny_ideas_2 = {
+        legitimacy = 1
+        republican_tradition = 1
+        devotion = 1
+        horde_unity = 1
+        meritocracy = 1
+    }
+    # Military Parades
+    got_tyranny_ideas_3 = {
+        prestige = 1
+    }
+    # Labour Camps
+    got_tyranny_ideas_4 = {
+        build_time = -0.33
+    }
+    # Military Executions
+    got_tyranny_ideas_5 = {
+        yearly_corruption = -0.05
+    }
+    # Hammer the Nail
+    got_tyranny_ideas_6 = {
+        years_of_nationalism = -5
+    }
+    # Absolute Rule
+    got_tyranny_ideas_7 = {
+        yearly_absolutism = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Imperialism
+got_imperialism_ideas = {
+    category = MIL
+
+    bonus = {
+        treasure_fleet_income = 1.0
+        colonist_placement_chance = 0.05
+    }
+    # Imperial Frontiers
+    got_imperialism_ideas_1 = {
+        may_establish_frontier = yes
+        may_explore = yes
+    }
+    # Loyal Colonists
+    got_imperialism_ideas_2 = {
+        colonists = 1
+    }
+    # Enforced Migration
+    got_imperialism_ideas_3 = {
+        global_colonial_growth = 20
+    }
+    # Cut and Burn
+    got_imperialism_ideas_4 = {
+        native_uprising_chance = -0.5
+    }
+    # Exploit the Natives
+    got_imperialism_ideas_5 = {
+        native_assimilation = 1.0
+    }
+    # Protected Shipping Routes
+    got_imperialism_ideas_6 = {
+        global_tariffs = 0.2
+    }
+    # Distant Colonies
+    got_imperialism_ideas_7 = {
+        range = 0.5
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}

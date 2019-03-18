@@ -1,13 +1,6 @@
-# A province can belong to several regions.
-random_new_world_region = {
-
-}
-
-######################################
-# Land Regions
-######################################
-
+#--------------------------------------
 # Westeros
+#--------------------------------------
 region_beyond_the_wall = {
 	areas = {
 		area_hardhome
@@ -184,6 +177,9 @@ region_dorne = {
 	}
 }
 
+#--------------------------------------
+# West Essos
+#--------------------------------------
 region_stepstones = {
 	areas = {
 		upper_stepstones_area
@@ -292,6 +288,9 @@ region_sarnor = {
 	}
 }
 
+#--------------------------------------
+# Dothraki Sea
+#--------------------------------------
 region_dothraki_sea = {
 	areas = {
 		vaes_jimma_area
@@ -309,6 +308,9 @@ region_dothraki_sea = {
 	}
 }
 
+#--------------------------------------
+# Central Essos
+#--------------------------------------
 region_valyria = {
 	areas = {
 		mantarys_area
@@ -342,16 +344,6 @@ region_slavers_bay = {
 	}
 }
 
-region_ibben = {
-	areas = {
-		ibben_islands_area
-		far_ib_area
-		ibben_mainland_area
-		tuskbay_area
-		ib_oss_area
-	}
-}
-
 region_qarth = {
 	areas = {
 		qarth_area
@@ -366,6 +358,22 @@ region_qarth = {
 	}
 }
 
+#--------------------------------------
+# Ibben
+#--------------------------------------
+region_ibben = {
+	areas = {
+		ibben_islands_area
+		far_ib_area
+		ibben_mainland_area
+		tuskbay_area
+		ib_oss_area
+	}
+}
+
+#--------------------------------------
+# Faros
+#--------------------------------------
 region_faros = {
 	areas = {
 		guuan_area
@@ -385,6 +393,9 @@ region_faros = {
 	}
 }
 
+#--------------------------------------
+# East Essos
+#--------------------------------------
 region_leng = {
 	areas = {
 		jade_isle_area
@@ -437,6 +448,9 @@ region_dry_bones = {
 	}
 }
 
+#--------------------------------------
+# Thousand Islands
+#--------------------------------------
 region_thousand_islands = {
 	areas = {
 		southern_thousand_islands_area
@@ -446,6 +460,9 @@ region_thousand_islands = {
 	}
 }
 
+#--------------------------------------
+# Distant Essos
+#--------------------------------------
 region_cannibal_sands = {
 	areas = {
 		cannibal_sands_area
@@ -492,6 +509,9 @@ region_shadowlands = {
 	}
 }
 
+#--------------------------------------
+# Summer Islands
+#--------------------------------------
 region_summer_islands = {
 	areas = {
 		stone_head_area
@@ -515,6 +535,9 @@ region_summer_islands = {
 	}
 }
 
+#--------------------------------------
+# Sothoryos
+#--------------------------------------
 region_sothoryos = {
 	areas = {
 		hallpi_area
@@ -552,6 +575,9 @@ region_sothoryos = {
 	}
 }
 
+#--------------------------------------
+# Ulthos
+#--------------------------------------
 region_ulthos = {
 	areas = {
 		ulthos_isle_area
@@ -584,9 +610,9 @@ region_gemstone_islands = {
 	}
 }
 
-######################################
+#--------------------------------------
 # Sea Regions
-######################################
+#--------------------------------------
 summer_sea_region = {
 	areas = {
 		north_summer_sea_area
@@ -677,8 +703,15 @@ ulthos_sea_region = {
 	}
 }
 
+#--------------------------------------
+# Other
+#--------------------------------------
 super_secret_region = {
     areas = {
         super_secret_land_area
     }
+}
+
+random_new_world_region = {
+
 }

@@ -199,7 +199,13 @@ estate_undead = {
         }
         
         effect = {
-            add_scaled_general = { ESTATE = estate_undead }
+            add_scaled_general = { 
+                ESTATE = estate_undead
+                LOW = 25
+                MED = 50
+                HIGH = 75
+                MAX = 100
+            }
             
             add_estate_influence_modifier = {
                 estate = estate_undead

@@ -429,6 +429,7 @@ tyrosh_city_reform = {
 	nation_designer_cost = 0
     
     duration = 10
+    has_term_election = yes
     
     modifiers = {
     	max_states = 3
@@ -572,6 +573,7 @@ volantis_city_reform = {
     }
     
     duration = 5
+    has_term_election = yes
     
     allow_normal_conversion = yes
     legacy_equivalent = volantis_city_legacy
@@ -779,6 +781,7 @@ trader_city_reform = {
 	nation_designer_cost = 0
     
     duration = 10
+    has_term_election = yes
     
     modifiers = {
     	max_states = 1
@@ -855,9 +858,6 @@ trading_outpost_reform = {
     
 	lock_level_when_selected = yes
 	is_trading_city = yes
-    
-    duration = 10
-    has_term_election = no
     
 	modifiers = {
         global_trade_power = 0.1

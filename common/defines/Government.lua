@@ -18,6 +18,19 @@ NDefines.NCountry.ADDITIONAL_MIN_DEVELOPMENT_FOR_GOV_RANK_X = 250
 NDefines.NCountry.NAT_FOCUS_YEARS_RANK = 2
 
 --------------------------------
+-- Government Reforms
+--------------------------------
+NDefines.NGovernment.LEGACY_NATIVES_REFORM_REPUBLIC_SPONSOR = "republic_reform"
+NDefines.NGovernment.LEGACY_NATIVES_REFORM_MONARCHY_SPONSOR = "kingdom_reform"
+NDefines.NGovernment.LEGACY_NATIVES_REFORM_THEOCRACY_SPONSOR = "theocracy_reform"
+NDefines.NGovernment.GOVERNMENT_REFORM_BASE_COST = 100.0
+NDefines.NGovernment.GOVERNMENT_REFORM_COST_INCREASE = 100.0 -- Disable
+NDefines.NGovernment.GOVERNMENT_REFORM_CHANGE_CORRUPTION = 0.0 -- Disable
+NDefines.NGovernment.GOVERNMENT_REFORM_CHANGE_MAX_CORRUPTION = 200.0 -- Disable
+NDefines.NGovernment.GOVERNMENT_REFORM_YEARLY_BASE_PROGRESS = 1.0
+NDefines.NGovernment.GOVERNMENT_REFORM_HISTORIC_AUTONOMY = 0.0
+
+--------------------------------
 -- Abilities
 --------------------------------
 NDefines.NGovernment.RUSSIAN_ABILITY_COST = 100

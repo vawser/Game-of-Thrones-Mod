@@ -7,7 +7,7 @@ monarchy = {
     basic_reform = monarchy_mechanic
     
     reform_levels = {
-        government_form_monarchy = {
+        government_form = {
 			reforms = {
                 kingdom_reform
                 noble_house_reform
@@ -24,7 +24,14 @@ monarchy = {
                 ghis_city_reform
 			}
 		}
-        bureaucracy_monarchy = {
+        traditions = {
+            reforms = {
+                just_rule_reform
+                absolute_rule_reform
+                militarized_rule_reform
+            }
+        }
+        bureaucracy = {
             reforms = {
                 taxation_reform
                 manpower_reform
@@ -32,7 +39,7 @@ monarchy = {
                 trade_reform
             }
         }
-        court_monarchy = {
+        court = {
             reforms = {
                 local_advisors_reform
                 exotic_advisors_reform
@@ -40,7 +47,7 @@ monarchy = {
                 famous_advisors_reform
             }
         }
-        rule_of_law_monarchy = {
+        rule_of_law = {
             reforms = {
                 absolute_authority_reform
                 central_authority_reform
@@ -48,7 +55,7 @@ monarchy = {
                 local_authority_reform
             }
         }
-        justice_monarchy = {
+        justice = {
             reforms = {
                 court_justice_reform
                 community_justice_reform
@@ -57,9 +64,8 @@ monarchy = {
                 death_justice_reform
             }
         }
-        ambitions_monarchy = {
+        ambitions = {
             reforms = {
-                # Westeros
                 disciplined_army_reform
                 peerless_navy_reform
                 beloved_diplomats_reform
@@ -68,16 +74,6 @@ monarchy = {
                 burning_scrutiny_reform
                 fed_and_plump_reform
                 mercantile_infamy_reform
-                
-                # Yiti
-                jungle_affinity_reform
-                yitish_mercenaries_reform
-                yitish_navy_reform
-                jewels_of_yi_ti_reform
-                yitish_conquest_reform
-                indulgent_lords_reform
-                expansive_court_reform
-                fanatics_of_the_night_reform
             }
         }
     }
@@ -124,7 +120,7 @@ republic = {
     basic_reform = republic_mechanic
     
     reform_levels = {
-        government_form_republic = {
+        government_form = {
 			reforms = {
                 republic_reform
                 merchant_republic_reform
@@ -136,15 +132,22 @@ republic = {
                 pentos_city_reform
                 braavos_city_reform
                 lorath_city_reform
-                qohor_city_reform
-                norvos_city_reform
                 saath_city_reform
                 trader_city_reform
                 andal_city_reform
                 expeditionary_company_reform
 			}
 		}
-        bureaucracy_republic = {
+        traditions = {
+            reforms = {
+                traditional_values_reform
+                populist_values_reform
+                progressive_values_reform
+                despotic_rule_reform
+                democratic_rule_reform
+            }
+        }
+        bureaucracy = {
             reforms = {
                 taxation_reform
                 manpower_reform
@@ -152,7 +155,7 @@ republic = {
                 trade_reform
             }
         }
-        court_republic = {
+        court = {
             reforms = {
                 local_advisors_reform
                 exotic_advisors_reform
@@ -160,7 +163,7 @@ republic = {
                 famous_advisors_reform
             }
         }
-        rule_of_law_republic = {
+        rule_of_law = {
             reforms = {
                 absolute_authority_reform
                 central_authority_reform
@@ -168,7 +171,7 @@ republic = {
                 local_authority_reform
             }
         }
-        justice_republic = {
+        justice = {
             reforms = {
                 court_justice_reform
                 community_justice_reform
@@ -177,7 +180,7 @@ republic = {
                 death_justice_reform
             }
         }
-        ambitions_republic = {
+        ambitions = {
             reforms = {
                 disciplined_army_reform
                 peerless_navy_reform
@@ -221,8 +224,6 @@ republic = {
 		pentos_city_reform
 		braavos_city_reform
 		lorath_city_reform
-		qohor_city_reform
-		norvos_city_reform
 		saath_city_reform
 		trader_city_reform
 		andal_city_reform
@@ -239,7 +240,7 @@ theocracy = {
     basic_reform = theocracy_mechanic
     
     reform_levels = {
-        government_form_theocracy = {
+        government_form = {
 			reforms = {
                 theocracy_reform
                 asshai_cult_reform
@@ -247,9 +248,18 @@ theocracy = {
                 winged_dominion_reform
                 white_walker_cult_reform
                 the_faith_reform
+                qohor_city_reform
+                norvos_city_reform
 			}
 		}
-        bureaucracy_theocracy = {
+        traditions = {
+            reforms = {
+                devout_rule_reform
+                inquisitorial_rule_reform
+                zealous_rule_reform
+            }
+        }
+        bureaucracy = {
             reforms = {
                 taxation_reform
                 manpower_reform
@@ -257,7 +267,7 @@ theocracy = {
                 trade_reform
             }
         }
-        court_theocracy = {
+        court = {
             reforms = {
                 local_advisors_reform
                 exotic_advisors_reform
@@ -265,7 +275,7 @@ theocracy = {
                 famous_advisors_reform
             }
         }
-        rule_of_law_theocracy = {
+        rule_of_law = {
             reforms = {
                 absolute_authority_reform
                 central_authority_reform
@@ -273,7 +283,7 @@ theocracy = {
                 local_authority_reform
             }
         }
-        justice_theocracy = {
+        justice = {
             reforms = {
                 court_justice_reform
                 community_justice_reform
@@ -282,7 +292,7 @@ theocracy = {
                 death_justice_reform
             }
         }
-        ambitions_theocracy = {
+        ambitions = {
             reforms = {
                 disciplined_army_reform
                 peerless_navy_reform
@@ -303,6 +313,8 @@ theocracy = {
         winged_dominion_legacy
         white_walker_cult_legacy
         the_faith_legacy
+        qohor_city_reform
+		norvos_city_reform
     }
     
     exclusive_reforms = {
@@ -312,6 +324,8 @@ theocracy = {
         winged_dominion_reform
         white_walker_cult_reform
         the_faith_reform
+        qohor_city_reform
+        norvos_city_reform
     }
 }
 
@@ -324,7 +338,7 @@ tribal = {
     basic_reform = tribal_mechanic
     
     reform_levels = {
-        government_form_tribal = {
+        government_form = {
 			reforms = {
                 tribe_reform
                 pirate_clan_reform
@@ -337,7 +351,14 @@ tribal = {
                 summer_islander_clan_reform
 			}
 		}
-        bureaucracy_tribal = {
+        traditions = {
+            reforms = {
+                warmongerers_reform
+                traders_reform
+                homesteaders_reform
+            }
+        }
+        bureaucracy = {
             reforms = {
                 taxation_reform
                 manpower_reform
@@ -345,7 +366,7 @@ tribal = {
                 trade_reform
             }
         }
-        court_tribal = {
+        court = {
             reforms = {
                 local_advisors_reform
                 exotic_advisors_reform
@@ -353,7 +374,7 @@ tribal = {
                 famous_advisors_reform
             }
         }
-        rule_of_law_tribal = {
+        rule_of_law = {
             reforms = {
                 absolute_authority_reform
                 central_authority_reform
@@ -361,7 +382,7 @@ tribal = {
                 local_authority_reform
             }
         }
-        justice_tribal = {
+        justice = {
             reforms = {
                 court_justice_reform
                 community_justice_reform
@@ -370,7 +391,7 @@ tribal = {
                 death_justice_reform
             }
         }
-        ambitions_tribal = {
+        ambitions = {
             reforms = {
                 disciplined_army_reform
                 peerless_navy_reform
@@ -418,14 +439,21 @@ nomadic = {
     basic_reform = nomadic_mechanic
     
     reform_levels = {
-        government_form_nomadic = {
+        government_form = {
 			reforms = {
                 warband_reform
                 khalasar_reform
                 jhattar_reform
 			}
 		}
-        bureaucracy_nomadic = {
+        traditions = {
+            reforms = {
+                conquerors_reform
+                looters_reform
+                raiders_reform
+            }
+        }
+        bureaucracy = {
             reforms = {
                 taxation_reform
                 manpower_reform
@@ -433,7 +461,7 @@ nomadic = {
                 trade_reform
             }
         }
-        court_nomadic = {
+        court = {
             reforms = {
                 local_advisors_reform
                 exotic_advisors_reform
@@ -441,7 +469,7 @@ nomadic = {
                 famous_advisors_reform
             }
         }
-        rule_of_law_nomadic = {
+        rule_of_law = {
             reforms = {
                 absolute_authority_reform
                 central_authority_reform
@@ -449,7 +477,7 @@ nomadic = {
                 local_authority_reform
             }
         }
-        justice_nomadic = {
+        justice = {
             reforms = {
                 court_justice_reform
                 community_justice_reform
@@ -458,16 +486,16 @@ nomadic = {
                 death_justice_reform
             }
         }
-        ambitions_nomadic = {
+        ambitions = {
             reforms = {
-                disciplined_might_reform
-                rider_of_dread_reform
-                fearless_fury_reform
-                unstoppable_force_reform
-                fire_and_brimstone_reform
-                peerless_endurance_reform
-                lord_of_the_grasslands_reform
-                absolute_rule_reform
+                disciplined_army_reform
+                peerless_navy_reform
+                beloved_diplomats_reform
+                keen_minds_reform
+                inquistorial_fury_reform
+                burning_scrutiny_reform
+                fed_and_plump_reform
+                mercantile_infamy_reform
             }
         }
     }
@@ -494,13 +522,18 @@ nights_watch = {
     basic_reform = nights_watch_mechanic
     
     reform_levels = {
-        government_form_nights_watch = {
+        government_form = {
 			reforms = {
                 nights_watch_reform
                 outpost_reform
 			}
 		}
-        bureaucracy_nights_watch = {
+        traditions = {
+            reforms = {
+            
+            }
+        }
+        bureaucracy = {
             reforms = {
                 taxation_reform
                 manpower_reform
@@ -508,7 +541,7 @@ nights_watch = {
                 trade_reform
             }
         }
-        court_nights_watch = {
+        court = {
             reforms = {
                 local_advisors_reform
                 exotic_advisors_reform
@@ -516,7 +549,7 @@ nights_watch = {
                 famous_advisors_reform
             }
         }
-        rule_of_law_nights_watch = {
+        rule_of_law = {
             reforms = {
                 absolute_authority_reform
                 central_authority_reform
@@ -524,7 +557,7 @@ nights_watch = {
                 local_authority_reform
             }
         }
-        justice_nights_watch = {
+        justice = {
             reforms = {
                 court_justice_reform
                 community_justice_reform
@@ -533,7 +566,7 @@ nights_watch = {
                 death_justice_reform
             }
         }
-        ambitions_nights_watch = {
+        ambitions = {
             reforms = {
                 disciplined_army_reform
                 peerless_navy_reform

@@ -242,12 +242,25 @@ guiTypes = {
 				name = "estates_listbox"
 				backGround = ""
 				position = { x=30 y=140 }
-				size = { x=500 y=80 }
+				
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1.5
 				scrollbartype = "standardlistbox_slider"
 				borderSize = {x = 0 y = 0}
+                if_resolution = {
+                    max_height = 867
+                    size = { x=500 y=80 }
+                }
+                if_resolution = {
+                    min_height = 868
+                    max_height = 1047
+                    size = { x=500 y=200 }
+                }
+                if_resolution = {
+                    min_height = 1048
+                    size = { x=500 y=300 }
+                }	
 			}
 	
 		guiButtonType = {

@@ -59,3 +59,63 @@
 		# }
 	# }
 # }
+
+# Claim the Iron Throne
+claim_the_iron_throne = {
+    category = 6
+    power_cost_base = 1.0
+    prestige_base = 1.0
+    ae_base = 1.0
+    requires_is_allowed = yes
+    
+    warscore_cost = {
+        no_provinces = 80.0
+    }
+    
+    is_visible = {
+        has_reform = noble_house_reform
+        FROM = { has_reform = royal_house_reform }
+    }
+    is_allowed = {
+        has_reform = noble_house_reform
+        FROM = { has_reform = royal_house_reform }
+    }
+    effect = {
+        # Cleanup
+        FROM = {
+            remove_government_reform = royal_house_reform
+            add_government_reform = noble_house_reform
+        }
+        ROOT = {
+            grant_independence = yes
+            remove_government_reform = noble_house_reform
+            add_government_reform = royal_house_reform
+        }
+        FROM = {
+            every_subject_country = {
+                limit = { is_subject_of_type = royal_subject }
+                grant_independence = yes
+                
+                ROOT = {
+                    create_subject = {
+                        subject_type = royal_subject
+                        subject = PREV
+                    }
+                }
+            }
+        }
+        ROOT = {
+            create_subject = {
+                subject_type = royal_subject
+                subject = FROM
+            }
+        }
+    }
+    ai_weight = {
+        export_to_variable = {
+            variable_name = ai_value
+            value = 100
+        }
+    }
+}
+

@@ -1,30 +1,12 @@
+#----------------------------------------
+# Player
+#----------------------------------------
 difficulty_very_easy_player = {
-	global_manpower_modifier = 0.5
-	manpower_recovery_speed = 0.50
-	land_forcelimit_modifier = 0.5
-	naval_forcelimit_modifier = 0.5
-	global_regiment_cost = -0.33
-	global_ship_cost = -0.33
-	inflation_reduction = 0.05
-	global_unrest = -5
-	war_exhaustion = -0.05
-	core_creation = -0.25
-	advisor_pool = 1
-	diplomatic_upkeep = 1
-	free_leader_pool = 1
-	diplomatic_reputation = 2
-	interest = -2
-	improve_relation_modifier = 0.10
-	ae_impact = -0.33
-	yearly_corruption = -1.0
+	
 }
 
 difficulty_easy_player = {
-	manpower_recovery_speed = 0.50
-	global_unrest = -5
-	interest = -2
-	ae_impact = -0.33
-	yearly_corruption = -1.0
+	
 }
 
 difficulty_normal_player = {
@@ -36,39 +18,95 @@ difficulty_hard_player = {
 difficulty_very_hard_player = {
 }
 
+#----------------------------------------
+# AI
+#----------------------------------------
 difficulty_very_easy_ai = {
 }
 
 difficulty_easy_ai = {
+    global_tax_income = 32
+    free_leader_pool = 1
 }
 
 difficulty_normal_ai = {
+    global_tax_income = 64
+    free_leader_pool = 2
 }
 
 difficulty_hard_ai = {
-	manpower_recovery_speed = 0.50
-	global_unrest = -1
-	war_exhaustion = -0.05
-	interest = -1
-	ae_impact = -0.33
+    global_tax_income = 96
+    global_manpower = 10
+    land_forcelimit = 10
+    global_sailors = 10000
+    naval_forcelimit = 10
+    
+	army_tradition = 1
+    free_leader_pool = 4
+    leader_land_fire = 1
+    leader_land_manuever = 1
+    leader_land_shock = 1
+    leader_siege = 1
+    yearly_army_professionalism = 1
+    war_exhaustion = -0.1
+
+    navy_tradition = 1
+    leader_naval_fire = 1
+    leader_naval_manuever = 1
+    leader_naval_shock = 1
+    
+    diplomats = 1
+    diplomatic_upkeep = 1
+    inflation_reduction = 0.1
+    global_institution_spread = 0.25
+    
+    prestige = 1
+    advisor_pool = 1
+    monarch_admin_power = 1
+    monarch_diplomatic_power = 1
+    monarch_military_power = 1
+    yearly_absolutism = 1
+    reduced_liberty_desire = 10
+    
+    missionaries = 1
+    merchants = 1
 }
 
 difficulty_very_hard_ai = {
-	manpower_recovery_speed = 0.50
-	global_manpower_modifier = 0.5
-	land_forcelimit_modifier = 0.5
-	naval_forcelimit_modifier = 0.5
-	global_regiment_cost = -0.33
-	global_ship_cost = -0.33
-	inflation_reduction = 0.05
-	global_unrest = -2
-	war_exhaustion = -0.05
-	core_creation = -0.25
-	idea_cost = -0.25
-	interest = -1
-	improve_relation_modifier = 0.5
-	development_cost = -0.2
-	build_cost = -0.25
-	ae_impact = -0.33
+    global_tax_income = 120
+    global_manpower = 20
+    land_forcelimit = 20
+    global_sailors = 20000
+    naval_forcelimit = 20
+    
+	army_tradition = 2
+    free_leader_pool = 6
+    leader_land_fire = 2
+    leader_land_manuever = 2
+    leader_land_shock = 2
+    leader_siege = 2
+    yearly_army_professionalism = 2
+    war_exhaustion = -0.2
+    
+    navy_tradition = 2
+    leader_naval_fire = 2
+    leader_naval_manuever = 2
+    leader_naval_shock = 2
+    
+    diplomats = 2
+    diplomatic_upkeep = 2
+    inflation_reduction = 0.2
+    global_institution_spread = 0.5
+    
+    prestige = 2
+    advisor_pool = 2
+    monarch_admin_power = 2
+    monarch_diplomatic_power = 2
+    monarch_military_power = 2
+    yearly_absolutism = 2
+    reduced_liberty_desire = 20
+    
+    missionaries = 2
+    merchants = 2
 }
 

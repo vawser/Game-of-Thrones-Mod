@@ -38,29 +38,30 @@ base_values = {
     
 	artillery_bonus_vs_fort = 5
 	cav_to_inf_ratio = 0.5
+    
+    monthly_militarized_society = -1
 }
 
 ai_nation = {
 	diplomats = 1
-	global_tax_income = 64
 }
 
 innovativeness = {
-	all_power_cost	= -0.1
-	army_tradition_decay = -0.01
-	navy_tradition_decay = -0.01
+	all_power_cost	= -0.25
 }
 
 war_taxes = {
 	land_maintenance_modifier = -0.20
 	naval_maintenance_modifier = -0.20
 	mercantile_chieftains_influence = 0.05
+    monthly_militarized_society = 0.1
 }
 
 stability = {
     # modifier * step 
 	global_trade_power = 0.01
 	global_spy_defence = 0.05
+    reform_progress_growth = 0.25
 }
 
 positive_stability = {
@@ -74,6 +75,7 @@ positive_stability = {
 	yearly_corruption = -0.02
 	global_institution_spread = 0.05
 	yearly_harmony = 0.25
+    
 }
 
 negative_stability = {
@@ -85,7 +87,6 @@ negative_stability = {
 	migration_cooldown = 0.1
 	devotion = 1
 	caravan_power = 0.05
-	monthly_militarized_society = -0.05
 }
 
 cancelled_loan = {
@@ -123,7 +124,6 @@ bankruptcy = {
 	global_colonial_growth = -200
 	global_autonomy = 0.05
 	global_institution_spread = -0.50
-	monthly_militarized_society = -0.5
 	yearly_absolutism = -2.0
 	technology_cost = 0.5
 	idea_cost = 0.5
@@ -206,6 +206,7 @@ army_tradition = {
     siege_ability = 0.1
 	recover_army_morale_speed = 0.1
 	manpower_recovery_speed = 0.1
+    monthly_militarized_society = 0.5
 }
 
 navy_tradition = {
@@ -257,8 +258,7 @@ num_of_marriages = {
 }
 
 num_of_provinces = {
-	monthly_militarized_society = -0.015
-
+	
 }
 
 # Multiplied by Development

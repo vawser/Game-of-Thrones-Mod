@@ -1,66 +1,26 @@
+#---------------------------------------------
 cb_iron_throne_rebellion = {
-    valid_for_subject = no
+	valid_for_subject = yes
     
     prerequisites = {
-		is_part_of_hre = yes
-        is_monarchy_government = yes
-        government_rank = 2
+		has_reform = noble_house_reform
         FROM = { 
-            is_emperor = yes 
-            is_part_of_hre = yes
-            is_monarchy_government = yes
-        }
-        OR = { 
-            ai = no
-            AND = {
-                ai = yes
-                NOT = {
-                    has_opinion = {
-                        who = FROM
-                        value = -50
-                    }
-                }
-            }
+            has_reform = royal_house_reform
+            NOT = { has_opinion = { who = ROOT value = 0 } }
         }
 	}
     
-    war_goal = take_capital_throne
+    war_goal = take_the_iron_throne
 }
 
 cb_royal_domain = {
     valid_for_subject = no
     
     prerequisites = {
-		is_part_of_hre = yes
-		is_monarchy_government = yes
-        government_rank = 3
+		has_reform = royal_house_reform
         
         FROM = {
-            is_part_of_hre = yes
-            is_monarchy_government = yes
-            NOT = { government_rank = 3 }
-            NOT = { has_opinion = { who = ROOT value = 0 } }
-        }
-	}
-    
-    war_goal = take_land
-}
-
-cb_great_lord_feud = {
-    valid_for_subject = no
-    
-    prerequisites = {
-        is_monarchy_government = yes
-        government_rank = 2
-        is_part_of_hre = yes
-        
-        FROM = {
-            is_monarchy_government = yes
-            OR = {
-                government_rank = 2
-                government_rank = 3
-            }
-            is_part_of_hre = yes
+            has_reform = noble_house_reform
             NOT = { has_opinion = { who = ROOT value = 0 } }
         }
 	}
@@ -72,20 +32,10 @@ cb_lordly_feud = {
     valid_for_subject = yes
     
     prerequisites = {
-		is_monarchy_government = yes
-        is_part_of_hre = yes
-        OR = {
-            is_subject = yes
-            has_global_flag = shattered_world
-        }
+		has_reform = noble_house_reform
         
         FROM = {
-            is_monarchy_government = yes
-            is_part_of_hre = yes
-            OR = {
-                is_subject = yes
-                has_global_flag = shattered_world
-            }
+            has_reform = noble_house_reform
             NOT = { has_opinion = { who = ROOT value = 0 } }
         }
 	}

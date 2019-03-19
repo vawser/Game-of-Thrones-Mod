@@ -2678,8 +2678,8 @@ guiTypes = {
 			listboxType = {
 				name = "provinces_listbox"
 				backGround = ""
-				position = { x= 20 y = 250 }
-				size = { x=220 y=250 }
+				position = { x= 20 y = 230 }
+				size = { x=460 y=180 }
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				scrollbartype = "standardlistbox_slider"
@@ -6033,13 +6033,13 @@ guiTypes = {
 		iconType = {
 			name ="core_status"
 			spriteType = "GFX_core_icon"
-			position = { x = -1 y = 1 }
+			position = { x = -1 y = 21 }
 		}
 
 
 		instantTextBoxType = {
 			name = "name"
-			position = { x = 31 y = 6 }
+			position = { x = 31 y = 26 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 2 y = 2}
@@ -6047,12 +6047,14 @@ guiTypes = {
 			maxWidth = 114
 			maxHeight = 20
 			format = left
+            truncate = yes
+            fixedsize = yes
 		}
 
 		guiButtonType =
 		{
 			name ="owner"
-			position = { x= 147 y = 0 }
+			position = { x= 147 y = 20 }
 			quadTextureSprite = "GFX_shield_small"
 			tooltip = ""
 			tooltipText =""
@@ -6065,13 +6067,13 @@ guiTypes = {
 		{
 			name ="trade_company_icon"
 			spriteType = "GFX_subject_trade_company_icon"
-			position = { x= 160 y = 15 }
+			position = { x= 160 y = 35 }
 			scale = 0.75
 		}
 
 		instantTextBoxType = {
 			name = "development"
-			position = { x = 180 y = 6 }
+			position = { x = 180 y = 26 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 2 y = 2}
@@ -6085,12 +6087,12 @@ guiTypes = {
 		{
 			name ="religion"
 			spriteType = "GFX_icon_religion_small"
-			position = { x= 216 y = 5 }
+			position = { x= 216 y = 25 }
 		}
 
 		instantTextBoxType = {
 			name = "culture"
-			position = { x = 246 y = 6 }
+			position = { x = 246 y = 26 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 2 y = 2}
@@ -6103,7 +6105,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "sp_unrest"
-			position = { x = 338 y = 8 }
+			position = { x = 338 y = 28 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
@@ -6115,7 +6117,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "fort_level"
-			position = { x = 395 y = 6 }
+			position = { x = 395 y = 26 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 2 y = 2}
@@ -6127,7 +6129,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "sp_devastation"
-			position = { x = 430 y = 8 }
+			position = { x = 430 y = 28 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}

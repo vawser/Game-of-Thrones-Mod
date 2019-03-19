@@ -92,7 +92,7 @@
 - Sabotage Reputation now applies diplomatic_reputation = -5
 - Corrupt Officials now applies yearly_corruption = 0.2
 - Send Officers subject action now applies land_maintenance_modifier = -0.2
-- Positive Republican Tradition now grants yearly_corruption = -0.05, reform_progress_growth = 0.1
+- Positive Republican Tradition now grants yearly_corruption = -0.1
 - Negative Republican Tradition now grants global_unrest = 10
 - Horde Unity now grants global_unrest = -2, global_manpower_modifier = 1, reinforce_cost_modifier = -1 (inverse if below 50)
 - Devotion now grants church_power_modifier = 0.5, prestige = 1, papal_influence = 1 (inverse if below 50)
@@ -114,14 +114,14 @@
 - Intolerance now grants local_unrest = 2 per point
 - Unrest no longer increases unit recruitment times.
 - Nationalism now only applies 0.1 local_unrest per point, not 0.5
-- Active Missionaries now only applie local_unrest = 3
+- Active Missionaries now only applies local_unrest = 3
 - Removed Resource Depleted modifier.
 - Trade Company provinces no longer reduce missionary strength.
 - Scorched Earth now applies local_hostile_attrition = 10, local_hostile_movement_speed = -0.25
 - Religious Unity (0%) now applies global_unrest = 5
 - Defender of the Faith no longer increases technology cost.
 - Removed nomadic_people and nomadic_people_ai triggered modifiers 
-- AI now gets a base global_tax_income = 64
+- Innovativeness now grants -25% Power Costs at 100
 - Reduced the mercenary_discipline modifiers from the Employing the X decisions.
 - Removed Conduct Slave Raid diplomatic action
 - Added 10 year ai cooldown on using covert diplomatic actions.
@@ -148,6 +148,22 @@
 - Added "Septon ousted in X" event
 - Added trade company regions
 - Changed continents for new trade company region setup.
+- Fixed states with more than 5 provinces messing up the state view province list.
+- Fixed long province names messing up the state view province list, now they are truncated.
+- Removed the mission tree system and tab. 
+- Adjusted government form mechanics.
+- HRE system used for the Seven Kingdoms removed.
+- Added "Claim the Iron Throne" CB, that allows a Royal Subject to attack the current Royal House. If they win and use the "Claim the Iron Throne" peace term, they will become the new Royal House and receive all the other royal subjects under them, and make the old King a royal subject too.
+- Fixed the religion view not truncating long religion names in the conversion view.
+- Fixed the estate view so it actually gets bigger with larger resolutions.
+- Changed AI bonuses from difficulty. 
+- Added differing tech levels at start.
+- Adjusted monarch point costs for various actions.
+- Added "Traditions" government reform tier.
+- Added stability hit to taking/switching government reforms.
+- Removed corruption hit from switching government reforms.
+- Rebalanced government reform growth values, to make growth slower by default.
+- Increased potency of government reform modifiers.
 
 #-----------------------------
 # TODO
@@ -204,9 +220,9 @@ got_tyranny_ideas
 got_imperialism_ideas
 15
 
-
-
-- Convert Seven Kingdoms into Mandate system (maybe Yi Ti stuff into HRE system)
+- Add Estate mission system
+- Add Storm's End as a building
+- Add Centers of Trade to certain provinces/states
 - Add Rhoynar
 - Add pirate nations in Rhoyne region
 - Add Cannibal nations
@@ -214,6 +230,5 @@ got_imperialism_ideas
 - Add Bloodsworn nations
 - Add Shadowsworn nations
 - Add Fishfolk nation
-- Add Storm's End as a building
 
 

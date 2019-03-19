@@ -1,0 +1,113 @@
+#------------------------------------
+# Form Coalition
+#------------------------------------
+form_coalition = {
+	condition = {
+		tooltip = MINAGGRESSIVEEXPANSION
+		potential = {	
+		}
+		allow = {
+			has_opinion_modifier = {
+				modifier = aggressive_expansion
+				who = FROM
+			}		
+			NOT = {
+				has_opinion_modifier = {
+					modifier = aggressive_expansion
+					who = FROM
+					value = -50
+				}
+			}
+		}
+	}
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+#------------------------------------
+# Offer Alliance
+#------------------------------------
+allianceaction = {
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+#------------------------------------
+# Call Alliance
+#------------------------------------
+callaction = {
+
+}
+
+#------------------------------------
+# Support Independence
+#------------------------------------
+support_independence_action = {
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+#------------------------------------
+# Offer Condottieri
+#------------------------------------
+condottieri_action = {
+    
+}
+
+#------------------------------------
+# Invite to Trade League
+#------------------------------------
+invite_to_trade_league = {
+
+}
+
+#------------------------------------
+# Request to join Trade League
+#------------------------------------
+request_to_join_trade_league = {
+
+}
+
+#------------------------------------
+# Request to Join Federation
+#------------------------------------
+request_to_join_federation = {
+
+}
+
+#------------------------------------
+# Invite to Federation
+#------------------------------------
+invite_to_federation = {
+
+}

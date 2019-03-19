@@ -19,7 +19,7 @@
  mechanic_has_devotion_yes: "Has Devotion: §GYes§!"
  mechanic_has_harem_yes: ""
  mechanic_has_pashas_yes: "Has Dothraki State Actions: §GYes§!"
- mechanic_allow_banners_yes: "Can Raise Champions: §GYes§!"
+ mechanic_allow_banners_yes: "Can Raise Bannermen: §GYes§!"
  
  mechanic_monarchy_yes: "Is Monarchy: §GYes§!"
  mechanic_republic_yes: "Is Republic: §GYes§!"
@@ -31,11 +31,11 @@
  mechanic_dictatorship_yes:  "Is Dictatorship: §GYes§!"
  mechanic_free_city_yes:  "The Faith: §GYes§!"
  
- mechanic_enables_monarchy_ideagroup_yes: "Enables Monarchy ideagroup: §GYes§!"
- mechanic_enables_republic_ideagroup_yes: "Enables Republic ideagroup: §GYes§!"
- mechanic_enables_theocracy_ideagroup_yes: "Enables Theocracy ideagroup: §GYes§!"
- mechanic_enables_tribal_ideagroup_yes: "Enables Tribal ideagroup: §GYes§!"
- mechanic_enables_nomadic_ideagroup_yes: "Enables Nomadic ideagroup: §GYes§!"
+ mechanic_enables_monarchy_ideagroup_yes: "Enables Monarchy Ideagroup: §GYes§!"
+ mechanic_enables_republic_ideagroup_yes: "Enables Republic Ideagroup: §GYes§!"
+ mechanic_enables_theocracy_ideagroup_yes: "Enables Theocracy Ideagroup: §GYes§!"
+ mechanic_enables_tribal_ideagroup_yes: "Enables Tribal Ideagroup: §GYes§!"
+ mechanic_enables_nomadic_ideagroup_yes: "Enables Nomadic Ideagroup: §GYes§!"
  
  ability_mamluk_mechanic: "Yitish Governance"
  ability_iqta_mechanic: "Westerosi Governance"
@@ -180,53 +180,6 @@
  ARMY_OF_THE_DEAD: "Army of the Dead"
  SHADOW_COUNCIL: "Shadow Council"
 
- 
- #---------------------------------------------
- # Tiers
- #---------------------------------------------
- government_form_monarchy: "Government Form"
- government_form_republic: "Government Form"
- government_form_theocracy: "Government Form"
- government_form_tribal: "Government Form"
- government_form_nomadic: "Government Form"
- government_form_nights_watch: "Government Form"
- 
- bureaucracy_monarchy: "Bureaucracy"
- court_monarchy: "Court"
- rule_of_law_monarchy: "Rule of Law"
- justice_monarchy: "Justice"
- ambitions_monarchy: "Ambitions"
- 
- bureaucracy_republic: "Bureaucracy"
- court_republic: "Court"
- rule_of_law_republic: "Rule of Law"
- justice_republic: "Justice"
- ambitions_republic: "Ambitions"
- 
- bureaucracy_theocracy: "Bureaucracy"
- court_theocracy: "Court"
- rule_of_law_theocracy: "Rule of Law"
- justice_theocracy: "Justice"
- ambitions_theocracy: "Ambitions"
- 
- bureaucracy_tribal: "Bureaucracy"
- court_tribal: "Court"
- rule_of_law_tribal: "Rule of Law"
- justice_tribal: "Justice"
- ambitions_tribal: "Ambitions"
- 
- bureaucracy_nomadic: "Bureaucracy"
- court_nomadic: "Court"
- rule_of_law_nomadic: "Rule of Law"
- justice_nomadic: "Justice"
- ambitions_nomadic: "Ambitions"
- 
- bureaucracy_nights_watch: "Bureaucracy"
- court_nights_watch: "Court"
- rule_of_law_nights_watch: "Rule of Law"
- justice_nights_watch: "Justice"
- ambitions_nights_watch: "Ambitions"
- 
  #---------------------------------------------
  # Mechanics
  #---------------------------------------------
@@ -512,18 +465,27 @@
  nights_watch_legacy_desc: "The council of the Night's Watch, led by their Lord Commander."
  
  #---------------------------------------------
+ # Tiers
+ #---------------------------------------------
+ government_form: "Government Form"
+ bureaucracy: "Bureaucracy"
+ court: "Court"
+ rule_of_law: "Rule of Law"
+ justice: "Justice"
+ ambitions: "Ambitions"
+ traditions: "Customs"
+ 
+ #---------------------------------------------
  # Reforms
  #---------------------------------------------
  # Limit of 8 per tier
- 
- # Shared
- taxation_reform: "Taxation Reform"
+ taxation_reform: "Taxation Efficiencies"
  taxation_reform_desc: ""
- manpower_reform: "Militia Reform"
+ manpower_reform: "Recruitment Efficiencies"
  manpower_reform_desc: ""
- production_reform: "Manufactory Reform"
+ production_reform: "Production Efficiencies"
  production_reform_desc: ""
- trade_reform: "Goods Reform"
+ trade_reform: "Mercantile Efficiencies"
  trade_reform_desc: ""
  
  local_advisors_reform: "Local Court"
@@ -555,7 +517,7 @@
  death_justice_reform: "Death"
  death_justice_reform_desc: ""
  
- # Monarchy Ambitions
+ # Ambitions
  disciplined_army_reform: "Disciplined Army"
  disciplined_army_reform_desc: ""
  peerless_navy_reform: "Peerless Navy"
@@ -573,48 +535,45 @@
  mercantile_infamy_reform: "Mercantile Infamy"
  mercantile_infamy_reform_desc: ""
  
- jungle_affinity_reform: "Jungle Affinity"
- jungle_affinity_reform_desc: ""
- yitish_mercenaries_reform: "Yitish Mercenaries"
- yitish_mercenaries_reform_desc: ""
- yitish_navy_reform: "Yitish Navy"
- yitish_navy_reform_desc: ""
- jewels_of_yi_ti_reform: "Jewels of Yi Ti"
- jewels_of_yi_ti_reform_desc: ""
- yitish_conquest_reform: "Yitish Demands"
- yitish_conquest_reform_desc: ""
- indulgent_lords_reform: "Indulgent Lords"
- indulgent_lords_reform_desc: ""
- expansive_court_reform: "Expansive Court"
- expansive_court_reform_desc: ""
- fanatics_of_the_night_reform: "Fanatics of the Night"
- fanatics_of_the_night_reform_desc: ""
- 
- # Republic Ambitions
- 
- # Theocracy Ambitions
- 
- # Tribal Ambitions
- 
- # Nomadic Ambitions
- disciplined_might_reform: "Disciplined Might"
- disciplined_might_reform_desc: ""
- rider_of_dread_reform: "Riders of Dread"
- rider_of_dread_reform_desc: ""
- fearless_fury_reform: "Fearless Fury"
- fearless_fury_reform_desc: ""
- unstoppable_force_reform: "Unstoppable Force"
- unstoppable_force_reform_desc: ""
- fire_and_brimstone_reform: "Fire and Brimstone"
- fire_and_brimstone_reform_desc: ""
- peerless_endurance_reform: "Peerless Endurance"
- peerless_endurance_reform_desc: ""
- lord_of_the_grasslands_reform: "Lord of the Grasslands"
- lord_of_the_grasslands_reform_desc: ""
- absolute_rule_reform: "Absolute Rule"
+ # Traditions
+ just_rule_reform: "Legitimacy"
+ just_rule_reform_desc: ""
+ absolute_rule_reform: "Absolutism"
  absolute_rule_reform_desc: ""
+ militarized_rule_reform: "Militarization"
+ militarized_rule_reform_desc: ""
  
+ traditional_values_reform: "Traditionalism"
+ traditional_values_reform_desc: ""
+ populist_values_reform: "Populism"
+ populist_values_reform_desc: ""
+ progressive_values_reform: "Progressivism"
+ progressive_values_reform_desc: ""
+ despotic_rule_reform: "Despotism"
+ despotic_rule_reform_desc: ""
+ democratic_rule_reform: "Democracy"
+ democratic_rule_reform_desc: ""
  
+ devout_rule_reform: "Devotionalism"
+ devout_rule_reform_desc: ""
+ inquisitorial_rule_reform: "Inquisitorial"
+ inquisitorial_rule_reform_desc: ""
+ zealous_rule_reform: "Zealous"
+ zealous_rule_reform_desc: ""
+ 
+ warmongerers_reform: "Warmongerery"
+ warmongerers_reform_desc: ""
+ traders_reform: "Mercantile"
+ traders_reform_desc: ""
+ homesteaders_reform: "Communal"
+ homesteaders_reform_desc: ""
+ 
+ conquerors_reform: "Conquest"
+ conquerors_reform_desc: ""
+ looters_reform: "Looting"
+ looters_reform_desc: ""
+ raiders_reform: "Marauding"
+ raiders_reform_desc: ""
  
  #---------------------------------------------
  # States General

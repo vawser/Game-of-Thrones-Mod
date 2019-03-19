@@ -8,7 +8,7 @@ efficient_tax_collectors = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -28,7 +28,7 @@ improved_fertilizers = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -48,7 +48,7 @@ efficienct_regional_administrators = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -68,7 +68,7 @@ structured_loans = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -88,7 +88,7 @@ development_rush = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -108,7 +108,7 @@ reliable_borrowing = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -128,7 +128,7 @@ efficient_architects = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -148,7 +148,7 @@ cheap_labour = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -168,7 +168,7 @@ expert_administrators = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -188,7 +188,7 @@ obfuscated_documents = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -208,7 +208,7 @@ masterful_administration = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -228,7 +228,7 @@ masterful_diplomacy = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -248,7 +248,7 @@ masterful_strategists = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -268,7 +268,7 @@ innovation_rush = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -288,7 +288,7 @@ academic_philosophies = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -308,7 +308,7 @@ religious_philosophies = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -328,7 +328,7 @@ prestigious_nobility = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -348,7 +348,7 @@ honest_advisors = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -368,7 +368,7 @@ loyal_advisors = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -388,7 +388,7 @@ natural_administrators = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -408,7 +408,7 @@ natural_diplomats = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -428,7 +428,7 @@ natural_generals = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -441,21 +441,21 @@ natural_generals = {
 		factor = 1
 	}
 }
-government_reforms = {
+popular_magisters = {
 	monarch_power = ADM
 
 	potential = {
-		always = yes
+		has_government_attribute = enables_republic_ideagroup
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
 	}
 	
 	# Modifier
-    reform_progress_growth = 0.2
+    reelection_cost = -0.25
     
 	ai_will_do = {
 		factor = 1
@@ -468,7 +468,7 @@ trusted_magisters = {
 		has_government_attribute = enables_republic_ideagroup
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -488,7 +488,7 @@ expansive_bureaucracy = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -508,7 +508,7 @@ law_and_order = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -528,7 +528,7 @@ centralization = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -548,7 +548,7 @@ zealous_missionaries = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -568,7 +568,7 @@ religious_tolerance = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -588,7 +588,7 @@ religious_doctrine = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -612,7 +612,7 @@ naval_customs = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -632,7 +632,7 @@ heavy_naval_bombardments = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -652,7 +652,7 @@ swift_naval_skirmishers = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -673,7 +673,7 @@ efficient_shipwrights = {
 		always = yes
 	}
 	allow = {
-        OR = {
+        AND = {
             full_idea_group = x
             full_idea_group = x
         }
@@ -686,15 +686,186 @@ efficient_shipwrights = {
 		factor = 1
 	}
 }
-# global_ship_recruit_speed
-# global_ship_repair
-# naval_forcelimit_modifier
-# naval_maintenance_modifier
-# global_sailors_modifier
-# sailor_maintenance_modifer
-# naval_morale
-# naval_attrition
-# ship_durability
+locally_sourced_timber = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    global_ship_recruit_speed = -0.33
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+efficient_shipyards = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    global_ship_repair = 0.25
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+massed_shipyards = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    naval_forcelimit_modifier = 0.2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+natural_seafarers = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    naval_maintenance_modifier = -0.1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+natural_sailors = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    global_sailors_modifier = 0.2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+sailor_incentives = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    sailor_maintenance_modifer = -0.1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+scourge_of_the_sea = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    naval_morale = 0.1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+nautical_maps = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    naval_attrition = -0.2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+reinforced_hulls = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    ship_durability = 0.1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
 # own_coast_naval_combat_bonus
 # diplomatic_reputation
 # improve_relation_modifier

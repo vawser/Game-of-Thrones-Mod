@@ -9,17 +9,18 @@ legitimacy = {
 	tolerance_heretic = 2
 	diplomatic_reputation = 2
 	vassal_income = 0.1
-	monthly_militarized_society = 0.05
 	max_absolutism = 20
+    reform_progress_growth = 2
 }
 
 republican_tradition = {
-    yearly_corruption = -0.05
-	reform_progress_growth = 0.1
+    yearly_corruption = -0.1
+    reform_progress_growth = 1
 }
 
 inverse_republican_tradition = {
 	global_unrest = 10
+    reform_progress_growth = -1
 }
 
 #Multiplied by current Horde Unity - 50
@@ -27,6 +28,7 @@ horde_unity = {
 	global_unrest = -4
 	global_manpower_modifier = 2
     reinforce_cost_modifier = -2
+    reform_progress_growth = 2
 }
 
 # Multiplied by current Devotion - 50
@@ -34,12 +36,14 @@ devotion = {
 	papal_influence = 2
 	church_power_modifier = 1
 	prestige = 2
+    reform_progress_growth = 2
 }
 
 # Multiplied by current meritocracy - 50
 meritocracy = {
 	prestige = 2
 	advisor_cost = -0.5
+    reform_progress_growth = 2
 }
 
 # 100% strength at 100 mandate, 0% at 50 mandate
@@ -90,19 +94,17 @@ streltsy_modifier = {
 #----------------------------
 # Iqta
 #----------------------------
-# "Taxation Focus"
-# "You will also get $AMOUNT|Y$ ducats, from the total Development of your Subjects' Provinces."
+# Efficient Tax Collectors
 efficient_tax_farming_modifier = {
-	global_tax_modifier = 0.1
+	global_tax_modifier = 0.15
 }
 
-# "Recruitment Focus"
-# "You will also get $AMOUNT|Y$ manpower, from the total Development of your Subjects' Provinces."
+# Land Acquisition
 land_acquisition_modifier = {
-	global_manpower_modifier = 0.1
+	core_creation = -0.1
 }
 
-# "Production Focus"
+# Lenient Taxation
 lenient_taxation_modifier = {
 	production_efficiency = 0.1
 }

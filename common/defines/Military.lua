@@ -2,6 +2,8 @@
 -- Army
 --------------------------------
 NDefines.NCountry.STARTING_ARMY_SIZE = 0.25
+NDefines.NMilitary.WAR_LENGTH_DAMAGE_MODIFIER = 0.02
+NDefines.NMilitary.WARSCORE_MAX_FROM_BATTLES = 60
 
 --------------------------------
 -- Army Professionalism
@@ -10,6 +12,7 @@ NDefines.NMilitary.SLACKEN_AP_DROP = 0.05
 NDefines.NMilitary.SLACKEN_MANPOWER_INCREASE = 5.0
 NDefines.NMilitary.ARMY_DRILL_YEARLY_DECAY = -1
 NDefines.NMilitary.ARMY_DRILL_YEARLY_GAIN = 25.0
+NDefines.NMilitary.ARMY_DRILL_SKILL_MONTHS = 24
 
 --------------------------------
 -- Forts
@@ -22,12 +25,14 @@ NDefines.NMilitary.FORT_PER_DEV_RATIO = 50
 --------------------------------
 NDefines.NMilitary.MERCENARY_SUPPORT_LIMIT_BASE = 5
 NDefines.NMilitary.MERCENARY_SUPPORT_LIMIT_FRACTION = 0.1
+NDefines.NMilitary.MERCENARY_REINFORCE_COST_MULTIPLIER = 2.0
+NDefines.NMilitary.MERCENARY_BASE_COST = 20
 
 --------------------------------
 -- Looting
 --------------------------------
 NDefines.NMilitary.LOOTED_DAYS = 365
-NDefines.NMilitary.LOOTED_SCALE = 2
+NDefines.NMilitary.LOOTED_SCALE = 3
 NDefines.NMilitary.LOOTED_MAX = 25
 NDefines.NMilitary.NOMAD_LOOT_TRADITION = 0.05
 
@@ -52,6 +57,7 @@ NDefines.NMilitary.ARTILLERY_TIME = 120
 NDefines.NMilitary.INF_REGIMENT_MANPOWER_COST = 1.0
 NDefines.NMilitary.CAV_REGIMENT_MANPOWER_COST = 1.0
 NDefines.NMilitary.ART_REGIMENT_MANPOWER_COST = 1.0
+NDefines.NMilitary.MOVE_LOCK_PERCENTAGE = 1.0 -- Disable
 
 --------------------------------
 -- Ship Units

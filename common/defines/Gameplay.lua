@@ -5,6 +5,40 @@ NDefines.NGame.AGE_USHER_IN_TIME = 12
 NDefines.NCountry.GOLDEN_ERA_YEARS = 25
 NDefines.NCountry.SPLENDOR_ABILITY_COST = 800
 
+NDefines.NCountry.LEGITIMACY_DYNASTY_CHANGE = 50
+NDefines.NCountry.STRENGTHEN_GOVERNMENT_REPUBLICAN_TRADITION = 10
+
+NDefines.NCountry.PS_BUY_GENERAL = 100
+NDefines.NCountry.PS_BUY_ADMIRAL = 100
+NDefines.NCountry.PS_BUY_CONQUISTADOR = 100
+NDefines.NCountry.PS_BUY_EXPLORER = 100
+NDefines.NCountry.PS_ARTILLERY_BARRAGE = 100
+NDefines.NCountry.PS_NAVAL_BARRAGE = 100
+NDefines.NCountry.PS_FORCE_MARCH = 5
+NDefines.NCountry.PS_REDUCE_INFLATION = 100
+NDefines.NCountry.PS_MOVE_CAPITAL = 100
+NDefines.NCountry.PS_MOVE_CAPITAL_EXTRA = 0
+NDefines.NCountry.PS_MOVE_TRADE_PORT = 100
+NDefines.NCountry.PS_REPLACE_RIVAL = 0
+NDefines.NCountry.PS_SEIZE_COLONY = 100
+NDefines.NCountry.PS_BURN_COLONY = 50
+NDefines.NCountry.PS_ATTACK_NATIVES = 25
+NDefines.NCountry.PS_SCORCH_EARTH = 25
+NDefines.NCountry.PS_REDUCE_WAREXHAUSTION = 100
+NDefines.NCountry.PS_FACTION_BOOST = 25
+NDefines.NCountry.PS_RAISE_TARIFFS = 100
+NDefines.NCountry.PS_LOWER_TARIFFS = 50
+NDefines.NCountry.PS_RAISE_WAR_TAXES = 100
+NDefines.NCountry.PS_CREATE_TRADE_POST = 100
+NDefines.NCountry.PS_ESTABLISH_SIBERIAN_FRONTIER = 100
+
+NDefines.NCountry.LAGGINGTECH_CORRUPTION = 0 -- Disable
+NDefines.NCountry.LAGGINGTECH_CORRUPTION_MAX = 0 -- Disable
+
+NDefines.NCountry.BASE_TARIFF = 0.25
+
+NDefines.NCountry.RAZE_TECH_POWER_DECREASE = 0.01
+
 --------------------------------
 -- Advisors
 --------------------------------
@@ -53,9 +87,12 @@ NDefines.NCountry.CORE_LOSE_PRIMARY_CULTURE_TAG = -1
 -- Technology
 --------------------------------
 NDefines.NCountry.PS_BUY_IDEA = 500
+NDefines.NCountry.PS_ADVANCE_TECH = 600
+
 NDefines.NCountry.FREE_IDEA_GROUP_COST = 3
-NDefines.NCountry.PS_ADVANCE_TECH = 500
 NDefines.NCountry.MAX_IDEA_GROUPS_FROM_SAME_CATEGORY = 1.0
+NDefines.NCountry.TECH_TIME_COST = 0.0
+NDefines.NCountry.TECH_AHEAD_OF_TIME = 0.01
 
 --------------------------------
 -- Policies
@@ -67,6 +104,7 @@ NDefines.NCountry.POLICY_COST = 1
 --------------------------------
 NDefines.NCountry.ALLOW_ESTATE_AND_PARLIAMENT_SEAT_IN_PROVINCE = 1
 NDefines.NCountry.ALLOW_ESTATE_IN_CAPITAL = 1
+NDefines.NCountry.ESTATE_DANGER_THRESHOLD = 80
 
 --------------------------------
 -- Subjects

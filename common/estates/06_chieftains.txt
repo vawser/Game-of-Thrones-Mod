@@ -101,6 +101,22 @@ estate_chieftains = {
         influence = -40
     }
     
+    influence_modifier = {
+		desc = EST_VAL_CHIEFTAIN_COUNSEL
+		trigger = {
+			has_reform = chieftain_counsel_reform
+		}
+		influence = 10
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_TRIBAL_IDEAGROUP
+		trigger = {
+			full_idea_group = got_tribal_ideas
+		}
+		influence = 10
+	}
+    
     # ----- Loyalty -----
     loyalty_modifier = {
         desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
@@ -118,6 +134,22 @@ estate_chieftains = {
         loyalty = -40
     }
 
+    loyalty_modifier = {
+		desc = EST_VAL_CHIEFTAIN_COUNSEL
+		trigger = {
+			has_reform = chieftain_counsel_reform
+		}
+		loyalty = 20
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_TRIBAL_IDEAGROUP
+		trigger = {
+			full_idea_group = got_tribal_ideas
+		}
+		loyalty = 10
+	}
+    
     # ----- Interactions -----
     # Curtail the Chieftains
     interaction = {

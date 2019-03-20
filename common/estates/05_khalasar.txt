@@ -98,6 +98,22 @@ estate_khalasar = {
         influence = -40
     }
     
+    influence_modifier = {
+		desc = EST_VAL_KO_COUNSEL
+		trigger = {
+			has_reform = ko_counsel_reform
+		}
+		influence = 10
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_NOMADIC_IDEAGROUP
+		trigger = {
+			full_idea_group = got_nomadic_ideas
+		}
+		influence = 10
+	}
+    
     # ----- Loyalty -----
     loyalty_modifier = {
         desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
@@ -132,21 +148,23 @@ estate_khalasar = {
         }
         loyalty = -10
     }
+
+    loyalty_modifier = {
+		desc = EST_VAL_KO_COUNSEL
+		trigger = {
+			has_reform = ko_counsel_reform
+		}
+		loyalty = 20
+	}
     
     loyalty_modifier = {
-        desc = EST_VAL_NOT_NOMADIC
-        
-        trigger = {
-            has_reform = khalasar_reform
-            num_of_owned_provinces_with = {
-                value = 2
-                is_core = ROOT
-            }
-        }
-        
-        loyalty = -20
-    }
-
+		desc = EST_VAL_NOMADIC_IDEAGROUP
+		trigger = {
+			full_idea_group = got_nomadic_ideas
+		}
+		loyalty = 10
+	}
+    
     # ----- Interactions -----
     # Curtail the Kos
     interaction = {

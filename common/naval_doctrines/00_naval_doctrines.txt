@@ -1,64 +1,132 @@
-fleet_in_being =
-{
+assault_tactics = {
 	can_select = {
-		is_primitive = no
+		has_idea = got_offensive_ideas_4
 	}
 	
 	country_modifier = {
-		naval_maintenance_modifier = -0.15
+		movement_speed = 0.1
 	}
 	
 	button_gfx = 1
 }
-
-free_oarsmen =
-{
+delay_tactics = {
 	can_select = {
-		is_primitive = no
+        has_idea = got_army_organisation_ideas_4
 	}
-
+	
 	country_modifier = {
-		sailor_maintenance_modifer = -0.15
+		recover_army_morale_speed = 0.1
 	}
 	
 	button_gfx = 2
 }
-
-merchant_navy =
-{
+encirclement_tactics = {
 	can_select = {
-		is_primitive = no
+		has_idea = got_professional_army_ideas_6
 	}
-
+	
 	country_modifier = {
-		global_ship_trade_power = 0.33
+		backrow_artillery_damage = 0.1
 	}
 	
 	button_gfx = 3
 }
-
-ship_boarding =
-{
+mass_charge_tactics = {
 	can_select = {
-		is_primitive = no
+		has_idea = got_quantity_ideas_1
 	}
-
+	
 	country_modifier = {
-		capture_ship_chance = 0.33
+		shock_damage = 0.1
 	}
 	
 	button_gfx = 4
 }
-
-wooden_wall =
-{
+blitz_tactics = {
 	can_select = {
-		is_primitive = no
+        has_idea = got_army_leadership_ideas_2
 	}
-
+	
 	country_modifier = {
-		own_coast_naval_combat_bonus = 1.0
+		reinforce_speed = 0.1
 	}
-
+	
 	button_gfx = 5
+}
+ambush_tactics = {
+	can_select = {
+		has_idea = got_mercenary_army_ideas_5
+	}
+	
+	country_modifier = {
+		hostile_attrition = 1
+	}
+	
+	button_gfx = 6
+}
+tactical_withdrawal_tactics = {
+	can_select = {
+		has_idea = got_army_leadership_ideas_7
+	}
+	
+	country_modifier = {
+		manpower_recovery_speed = 0.1
+	}
+	
+	button_gfx = 7
+}
+planned_attack_tactics = {
+	can_select = {
+		has_idea = got_army_tactics_ideas_1
+	}
+	
+	country_modifier = {
+		discipline = 0.025
+	}
+	
+	button_gfx = 8
+}
+counterattack_tactics = {
+	can_select = {
+		has_idea = got_army_tactics_ideas_5
+	}
+	
+	country_modifier = {
+		cavalry_flanking = 0.2
+	}
+	
+	button_gfx = 9
+}
+suppressive_barrage_tactics = {
+	can_select = {
+		has_idea = got_quality_ideas_7
+	}
+	
+	country_modifier = {
+		fire_damage = 0.1
+	}
+	
+	button_gfx = 10
+}
+defend_tactics = {
+	can_select = {
+		has_idea = got_defensive_ideas_5
+	}
+	
+	country_modifier = {
+		defensiveness = 0.25
+	}
+	
+	button_gfx = 11
+}
+relentless_assault_tactics = {
+	can_select = {
+		has_idea = got_professional_army_ideas_1
+	}
+	
+	country_modifier = {
+		land_morale = 0.05
+	}
+	
+	button_gfx = 12
 }

@@ -49,48 +49,125 @@ trade_reform = {
 #-------------------------------
 # Court
 #-------------------------------
-local_advisors_reform = {
+noble_counsel_reform = {
 	icon = "nobleman"
+
+    potential = {
+        has_estate = estate_nobles
+    }
     
     effect = {
         add_stability = -1
     }
     
     modifiers = {
-		advisor_cost = -0.2
+		prestige_decay = -0.01
 	}
 }
-exotic_advisors_reform = {
-	icon = "noble_indian"
+religious_counsel_reform = {
+	icon = "clergyman"
+
+    potential = {
+        has_estate = estate_clergy
+    }
     
     effect = {
         add_stability = -1
     }
     
     modifiers = {
-		advisor_pool = 2
+		missionary_maintenance_cost = -0.1
 	}
 }
-vetted_advisors_reform = {
-    icon = "paper_with_seal"
+merchant_counsel_reform = {
+	icon = "merchant"
+    
+    potential = {
+        has_estate = estate_merchants
+    }
     
     effect = {
         add_stability = -1
     }
     
     modifiers = {
-		yearly_corruption = -0.1
+		global_trade_power = 0.1
 	}
 }
-famous_advisors_reform = {
-    icon = "crown"
+common_counsel_reform = {
+	icon = "peasants"
+    
+    potential = {
+        has_estate = estate_commoners
+    }
     
     effect = {
         add_stability = -1
     }
     
     modifiers = {
-		prestige = 1
+		stability_cost_modifier = -0.15
+	}
+}
+ko_counsel_reform = {
+	icon = "mamluk_government"
+    
+    potential = {
+        has_estate = estate_khalasar
+    }
+    
+    effect = {
+        add_stability = -1
+    }
+    
+    modifiers = {
+        cavalry_shock = 1
+	}
+}
+chieftain_counsel_reform = {
+	icon = "chieftain"
+    
+    potential = {
+        has_estate = estate_chieftains
+    }
+    
+    effect = {
+        add_stability = -1
+    }
+    
+    modifiers = {
+        land_forcelimit_modifier = 0.1
+	}
+}
+magi_counsel_reform = {
+	icon = "articles_of_agreement"
+    
+    potential = {
+        has_estate = estate_magi
+    }
+    
+    effect = {
+        add_stability = -1
+    }
+    
+    modifiers = {
+        idea_cost = -0.05
+	}
+}
+slave_counsel_reform = {
+	icon = "tribal_civil_society"
+    
+    potential = {
+        has_estate = estate_slaves
+        NOT = { has_country_modifier = slavery_prohibited }
+    }
+    
+    effect = {
+        add_stability = -1
+    }
+    
+    modifiers = {
+        global_manpower_modifier = 0.1
 	}
 }
 

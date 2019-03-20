@@ -112,12 +112,44 @@ estate_nobles = {
 		influence = -40
 	}
 	
-	influence_modifier = {
-		desc = EST_VAL_REPUBLIC
+    influence_modifier = {
+		desc = EST_VAL_NOBLE_COUNSEL
 		trigger = {
-			is_free_city_government = yes
+			has_reform = noble_counsel_reform
 		}
-		influence = -10
+		influence = 10
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_MONARCHY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_monarchy_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_AUTONOMY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_autonomy_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_DYNASTIC_IDEAGROUP
+		trigger = {
+			full_idea_group = got_dynastic_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_INFLUENCE_IDEAGROUP
+		trigger = {
+			full_idea_group = got_influence_ideas
+		}
+		influence = 5
 	}
     
 	# ----- Loyalty -----
@@ -137,41 +169,70 @@ estate_nobles = {
 		loyalty = -40
 	}
 	
-	loyalty_modifier = {
-		desc = EST_VAL_LEGITIMACY
-		trigger = {
-			is_monarchy_government = yes
-			NOT = { legitimacy = 0 }
-			legitimacy = -50
-		}
-		loyalty = -5
-	}
-	
-	loyalty_modifier = {
-		desc = EST_VAL_LEGITIMACY
-		trigger = {
-			is_monarchy_government = yes
-			NOT = { legitimacy = -50 }
-		}
-		loyalty = -10
-	}
-
     loyalty_modifier = {
-		desc = EST_VAL_FULL_NAVAL_LEADERSHIP
+		desc = EST_VAL_NOBLE_COUNSEL
 		trigger = {
-			full_idea_group = navy_leadership_ideas
+			has_reform = noble_counsel_reform
 		}
-		loyalty = 5
+		loyalty = 20
 	}
     
     loyalty_modifier = {
-		desc = EST_VAL_FULL_ARMY_LEADERSHIP
+		desc = EST_VAL_MONARCHY_IDEAGROUP
 		trigger = {
-			full_idea_group = army_leadership_ideas
+			full_idea_group = got_monarchy_ideas
 		}
-		loyalty = 5
+		loyalty = 10
 	}
-
+    
+    loyalty_modifier = {
+		desc = EST_VAL_AUTONOMY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_autonomy_ideas
+		}
+		loyalty = 10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_DYNASTIC_IDEAGROUP
+		trigger = {
+			full_idea_group = got_dynastic_ideas
+		}
+		loyalty = 10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_HARMONY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_harmony_ideas
+		}
+		loyalty = -10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_RELIGIOUS_IDEAGROUP
+		trigger = {
+			full_idea_group = got_religious_ideas
+		}
+		loyalty = -10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_INNOVATION_IDEAGROUP
+		trigger = {
+			full_idea_group = got_innovation_ideas
+		}
+		loyalty = -10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_TRADE_IDEAGROUP
+		trigger = {
+			full_idea_group = got_trade_ideas
+		}
+		loyalty = -10
+	}
+    
 	# ----- Interactions -----
     # Curtail the Nobility
     interaction = {

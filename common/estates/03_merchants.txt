@@ -109,23 +109,54 @@ estate_merchants = {
 		influence = -40
 	}
 	
-	# Trade Income
-	influence_modifier = {
-		desc = EST_VAL_TRADE_INCOME
+    influence_modifier = {
+		desc = EST_VAL_MERCHANT_COUNSEL
 		trigger = {
-			num_of_owned_provinces_with = {
-                value = 5
-                OR = {
-                    has_province_modifier = important_natural_harbor
-                    has_province_modifier = center_of_trade_modifier
-                    has_province_modifier = inland_center_of_trade_modifier
-                    has_province_modifier = trade_post_modifier
-                }
-            }
+			has_reform = merchant_counsel_reform
 		}
 		influence = 10
 	}
-
+    
+    influence_modifier = {
+		desc = EST_VAL_REPUBLIC_IDEAGROUP
+		trigger = {
+			full_idea_group = got_republic_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_TRADE_IDEAGROUP
+		trigger = {
+			full_idea_group = got_trade_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_EXPLORATION_IDEAGROUP
+		trigger = {
+			full_idea_group = got_exploration_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_NAVAL_TRADE_IDEAGROUP
+		trigger = {
+			full_idea_group = got_naval_trade_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_EXPANSION_IDEAGROUP
+		trigger = {
+			full_idea_group = got_expansion_ideas
+		}
+		influence = 5
+	}
+    
 	# ----- Loyalty -----
 	loyalty_modifier = {
 		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
@@ -142,34 +173,86 @@ estate_merchants = {
 		}
 		loyalty = -40
 	}
-	
-	loyalty_modifier = {
-		desc = EST_VAL_MERCANTILISM
+    
+    loyalty_modifier = {
+		desc = EST_VAL_MERCHANT_COUNSEL
         
 		trigger = {
-			mercantilism = 25
-            NOT = { mercantilism = 50 }
+			has_reform = merchant_counsel_reform
 		}
-		loyalty = 5
+		loyalty = 20
 	}
     
     loyalty_modifier = {
-		desc = EST_VAL_MERCANTILISM
+		desc = EST_VAL_REPUBLIC_IDEAGROUP
         
 		trigger = {
-			mercantilism = 50
-            NOT = { mercantilism = 75 }
+			full_idea_group = got_republic_ideas
 		}
 		loyalty = 10
 	}
     
     loyalty_modifier = {
-		desc = EST_VAL_MERCANTILISM
+		desc = EST_VAL_TRADE_IDEAGROUP
         
 		trigger = {
-			mercantilism = 75
+			full_idea_group = got_trade_ideas
 		}
-		loyalty = 15
+		loyalty = 10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_EXPLORATION_IDEAGROUP
+        
+		trigger = {
+			full_idea_group = got_exploration_ideas
+		}
+		loyalty = 10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_NAVAL_TRADE_IDEAGROUP
+        
+		trigger = {
+			full_idea_group = got_naval_trade_ideas
+		}
+		loyalty = 10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_EXPANSION_IDEAGROUP
+        
+		trigger = {
+			full_idea_group = got_expansion_ideas
+		}
+		loyalty = 10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_ABSOLUTISM_IDEAGROUP
+        
+		trigger = {
+			full_idea_group = got_absolutism_ideas
+		}
+		loyalty = -10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_DYNASTIC_IDEAGROUP
+        
+		trigger = {
+			full_idea_group = got_dynastic_ideas
+		}
+		loyalty = -10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_RELIGIOUS_IDEAGROUP
+        
+		trigger = {
+			full_idea_group = got_religious_ideas
+		}
+		loyalty = -10
 	}
     
 	# ----- Interactions -----

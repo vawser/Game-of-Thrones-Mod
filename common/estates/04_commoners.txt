@@ -98,6 +98,46 @@ estate_commoners = {
 		influence = -40
 	}
     
+    influence_modifier = {
+		desc = EST_VAL_COMMON_COUNSEL
+		trigger = {
+			has_reform = common_counsel_reform
+		}
+		influence = 10
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_TRIBAL_IDEAGROUP
+		trigger = {
+			full_idea_group = got_tribal_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_HARMONY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_harmony_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_AUTONOMY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_autonomy_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_SOCIETY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_society_ideas
+		}
+		influence = 5
+	}
+    
 	# ----- Loyalty -----
 	loyalty_modifier = {
 		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
@@ -115,10 +155,74 @@ estate_commoners = {
 		loyalty = -40
 	}
 
+    loyalty_modifier = {
+		desc = EST_VAL_COMMON_COUNSEL
+		trigger = {
+			has_reform = common_counsel_reform
+		}
+		loyalty = 20
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_TRIBAL_IDEAGROUP
+		trigger = {
+			full_idea_group = got_tribal_ideas
+		}
+		loyalty = 10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_HARMONY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_harmony_ideas
+		}
+		loyalty = 10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_AUTONOMY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_autonomy_ideas
+		}
+		loyalty = 10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_SOCIETY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_society_ideas
+		}
+		loyalty = 10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_ABSOLUTISM_IDEAGROUP
+		trigger = {
+			full_idea_group = got_absolutism_ideas
+		}
+		loyalty = -10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_ASSIMILATION_IDEAGROUP
+		trigger = {
+			full_idea_group = got_assimilation_ideas
+		}
+		loyalty = -10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_PROPAGANDA_IDEAGROUP
+		trigger = {
+			full_idea_group = got_propaganda_ideas
+		}
+		loyalty = -10
+	}
+    
 	# ----- Interactions -----
     # Curtail the Peasantry
     interaction = {
-		name = "CURTAIL_THE_NOBILITY"
+		name = "CURTAIL_THE_PEASANTRY"
 		icon = 1
 		
         potential = { 

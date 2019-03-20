@@ -113,13 +113,29 @@ estate_clergy = {
 	}
     
     influence_modifier = {
-		desc = EST_VAL_THE_FAITH
+		desc = EST_VAL_RELIGIOUS_COUNSL
 		trigger = {
-			tag = FAT
+			has_reform = religious_counsel_reform
 		}
 		influence = 10
 	}
 
+    influence_modifier = {
+		desc = EST_VAL_THEOCRACY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_theocracy_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_RELIGIOUS_IDEAGROUP
+		trigger = {
+			full_idea_group = got_religious_ideas
+		}
+		influence = 5
+	}
+    
 	# ----- Loyalty -----
 	loyalty_modifier = {
 		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
@@ -162,7 +178,47 @@ estate_clergy = {
 		}
 		loyalty = -15
 	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_RELIGIOUS_COUNSL
+		trigger = {
+			has_reform = religious_counsel_reform
+		}
+		loyalty = 20
+	}
 	
+    loyalty_modifier = {
+		desc = EST_VAL_RELIGIOUS_IDEAGROUP
+		trigger = {
+			full_idea_group = got_religious_ideas
+		}
+		loyalty = 10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_THEOCRACY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_theocracy_ideas
+		}
+		loyalty = 10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_INNOVATION_IDEAGROUP
+		trigger = {
+			full_idea_group = got_innovation_ideas
+		}
+		loyalty = -10
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_HARMONY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_harmony_ideas
+		}
+		loyalty = -10
+	}
+    
     # ----- Interactions -----
     # Curtail the Clergy
     interaction = {

@@ -866,35 +866,510 @@ reinforced_hulls = {
 		factor = 1
 	}
 }
-# own_coast_naval_combat_bonus
-# diplomatic_reputation
-# improve_relation_modifier
-# vassal_forcelimit_bonus
-# ae_impact
-# province_warscore_cost
-# unjustified_demands
-# culture_conversion_cost
-# spy_offence
-# global_colonial_growth
-# global_tariffs
-# global_trade_power
-# trade_efficiency
-# global_ship_trade_power
-# trade_steering
-# global_trade_goods_size_modifier
-# range
+home_advantage = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    own_coast_naval_combat_bonus = 1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+charismatic_diplomats = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    diplomatic_reputation = 2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+noble_connections = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    improve_relation_modifier = 0.25
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+militarized_subjects = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    vassal_forcelimit_bonus = 1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+peaceful_negotiations = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    ae_impact = -0.2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+relentless_negotiations = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    province_warscore_cost = -0.2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+underhanded_sabotage = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    unjustified_demands = -0.25
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+cultural_hegemony = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    culture_conversion_cost = -0.25
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+veteran_spies = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    spy_offence = 0.33
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+colonial_incentives = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    global_colonial_growth = 20
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+colonial_absolutism = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    global_tariffs = 0.25
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+mercantile_hegemony = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    global_trade_power = 0.2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+mercantile_efficiency = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    trade_efficiency = 0.2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+mapped_routes = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    global_ship_trade_power = 0.2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+integrated_merchants = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    trade_steering = 0.2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+fertilized_fields = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    global_trade_goods_size_modifier = 0.2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+keen_adventurers = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    range = 0.25
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
 
 #---------------------------------------------------------
 # MIL
 #---------------------------------------------------------
-# army_tradition
-# yearly_army_professionalism
-# free_leader_pool
-# infantry_power
-# cavalry_power
-# artillery_power
-# discipline
-# land_morale
+military_traditions = {
+	monarch_power = MIL
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    army_tradition = 1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+professional_soldiers = {
+	monarch_power = MIL
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    yearly_army_professionalism = 1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+extensive_military_operations = {
+	monarch_power = MIL
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    free_leader_pool = 1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+drilled_infantry = {
+	monarch_power = MIL
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    infantry_power = 0.1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+drilled_cavalry = {
+	monarch_power = MIL
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    cavalry_power = 0.1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+drilled_artillery = {
+	monarch_power = MIL
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    artillery_power = 0.1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+disciplined_troops = {
+	monarch_power = MIL
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    discipline = 0.05
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+unbreakable_spirits = {
+	monarch_power = MIL
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = x
+            full_idea_group = x
+        }
+	}
+	
+	# Modifier
+    land_morale = 0.1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
 # mercenary_discipline
 # movement_speed
 # siege_ability

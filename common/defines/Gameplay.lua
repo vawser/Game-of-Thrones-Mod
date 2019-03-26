@@ -7,7 +7,20 @@ NDefines.NCountry.SPLENDOR_ABILITY_COST = 800
 
 NDefines.NCountry.LEGITIMACY_DYNASTY_CHANGE = 50
 NDefines.NCountry.STRENGTHEN_GOVERNMENT_REPUBLICAN_TRADITION = 10
+NDefines.NCountry.BASE_TARIFF = 0.25
+NDefines.NCountry.RAZE_TECH_POWER_DECREASE = 0.01
 
+--------------------------------
+-- Power
+--------------------------------
+NDefines.NCountry.POWER_MAX = 10000
+NDefines.NCountry.BASE_POWER_INCREASE = 3
+NDefines.NCountry.MONARCH_MIN_SKILL = 0
+NDefines.NCountry.MONARCH_MAX_SKILL = 6
+
+--------------------------------
+-- Power Costs
+--------------------------------
 NDefines.NCountry.PS_BUY_GENERAL = 100
 NDefines.NCountry.PS_BUY_ADMIRAL = 100
 NDefines.NCountry.PS_BUY_CONQUISTADOR = 100
@@ -32,12 +45,11 @@ NDefines.NCountry.PS_RAISE_WAR_TAXES = 100
 NDefines.NCountry.PS_CREATE_TRADE_POST = 100
 NDefines.NCountry.PS_ESTABLISH_SIBERIAN_FRONTIER = 100
 
+--------------------------------
+-- Corruption
+--------------------------------
 NDefines.NCountry.LAGGINGTECH_CORRUPTION = 0 -- Disable
 NDefines.NCountry.LAGGINGTECH_CORRUPTION_MAX = 0 -- Disable
-
-NDefines.NCountry.BASE_TARIFF = 0.25
-
-NDefines.NCountry.RAZE_TECH_POWER_DECREASE = 0.01
 
 --------------------------------
 -- Advisors
@@ -84,15 +96,18 @@ NDefines.NCountry.CORE_LOSE_CULTURE_GROUP = -1
 NDefines.NCountry.CORE_LOSE_PRIMARY_CULTURE_TAG = -1
 
 --------------------------------
--- Technology
+-- Ideas
 --------------------------------
 NDefines.NCountry.PS_BUY_IDEA = 500
-NDefines.NCountry.PS_ADVANCE_TECH = 600
-
 NDefines.NCountry.FREE_IDEA_GROUP_COST = 3
 NDefines.NCountry.MAX_IDEA_GROUPS_FROM_SAME_CATEGORY = 1.0
+
+--------------------------------
+-- Technology
+--------------------------------
+NDefines.NCountry.PS_ADVANCE_TECH = 2000
 NDefines.NCountry.TECH_TIME_COST = 0.0
-NDefines.NCountry.TECH_AHEAD_OF_TIME = 0.01
+NDefines.NCountry.TECH_AHEAD_OF_TIME = 0.00
 
 --------------------------------
 -- Policies

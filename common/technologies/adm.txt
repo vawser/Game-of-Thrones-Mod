@@ -1,15 +1,11 @@
 monarch_power = ADM
 
-ahead_of_time = {
-	yearly_corruption = -0.05
-    reform_progress_growth = 1.0
-}
-
+# 0
 technology = {
-	# Tech 0
-	year = 50
+	year = 100
     
     may_support_rebels = yes
+    may_force_march = yes
     
     noble_house_legacy = yes
     royal_house_legacy = yes
@@ -63,304 +59,124 @@ technology = {
     tavern = yes
     farm = yes
     temple = yes
-}
-technology = {
-	# Tech 1
-	year = 60
+    grand_palace = yes
+    grand_temple = yes
     
-    max_states = 5
+    max_states = 0
+    production_efficiency = 0.0
+    allowed_idea_groups = 0
+    administrative_efficiency = 0.0
+    development_efficiency = 0.0
 }
+
+# 1
 technology = {
-	# Tech 2
-	year = 70
-    
-    production_efficiency =	0.05
-}
-technology = {
-	# Tech 3
-	year = 80
-    
-    production_efficiency =	0.05
-}
-technology = {
-	# Tech 4
-	year = 90
-    
-    max_states = 5
-}
-technology = {
-	# Tech 5
 	year = 100
     
-    allowed_idea_groups = 1
 }
+# 2
 technology = {
-	# Tech 6
-	year = 110
-    
-    production_efficiency =	0.05
-}
-technology = {
-	# Tech 7
-	year = 120
-    
-    production_efficiency =	0.05
-}
-technology = {
-	# Tech 8
-	year = 130
-    
-    max_states = 5
-}
-technology = {
-	# Tech 9
-	year = 140
-    
-    production_efficiency =	0.05
-}
-technology = {
-	# Tech 10
-	year = 150
-    
-    allowed_idea_groups = 2
-}
-technology = {
-	# Tech 11
-	year = 160
-    
-    grand_palace = yes
-    production_efficiency =	0.05
-}
-technology = {
-	# Tech 12
-	year = 170
-    
-    max_states = 15
-}
-technology = {
-	# Tech 13
-	year = 180
-    
-    grand_temple = yes
-}
-technology = {
-	# Tech 14
-	year = 190
-    
-    allowed_idea_groups = 3
-}
-technology = {
-	# Tech 15
-	year = 200
-    
-    max_states = 10
-}
-technology = {
-	# Tech 16
-	year = 210
-    
-    max_states = 10
-}
-technology = {
-	# Tech 17
-	year = 220
-    
-    production_efficiency =	0.1
-}
-technology = {
-	# Tech 18
-	year = 230
-    
-    allowed_idea_groups = 4
-}
-technology = {
-	# Tech 19
-	year = 240
-    
-    max_states = 10
-}
-technology = {
-	# Tech 20
-	year = 250
-    
-    max_states = 10
-}
-technology = {
-	# Tech 21
-	year = 260
-
-    max_states = 15
-}
-technology = {
-	# Tech 22
-	year = 270
-    
-    allowed_idea_groups = 5
-}
-technology = {
-	# Tech 23
-	year = 280
-    
-    max_states = 20
-}
-technology = {
-	# Tech 24
-	year = 290
-    
-    production_efficiency =	0.1
-}
-technology = {
-	# Tech 25
-	year = 300
-    
-    may_force_march = yes
-
-}
-technology = {
-	# Tech 26
-	year = 310
-    
-    allowed_idea_groups = 6
-}
-technology = {
-	# Tech 27
-	year = 320
-    
-    max_states = 35
-    administrative_efficiency = 0.1
-}
-technology = {
-	# Tech 28
-	year = 330
-    
-    production_efficiency =	0.1
-}
-technology = {
-	# Tech 29
-	year = 340
-    
-    development_efficiency = 0.1
-}
-technology = {
-	# Tech 30
-	year = 350
-    
-    allowed_idea_groups = 7
-}
-technology = {
-	# Tech 31
-	year = 360
-    
-    administrative_efficiency = 0.1
-}
-technology = {
-	# Tech 32
-	year = 370
-    
-    production_efficiency =	0.1
-}
-technology = {
-	# Tech 33
-	year = 380
-    
-    max_states = 40
-    development_efficiency = 0.1
-}
-technology = {
-	# Tech 34
-	year = 390
-
-    allowed_idea_groups = 8
-}
-technology = {
-	# Tech 35
 	year = 400
     
-    administrative_efficiency = 0.1
+    max_states = 2
+    production_efficiency = 0.1
+    allowed_idea_groups = 1
+    administrative_efficiency = 0.05
+    development_efficiency = 0.05
 }
+# 3
 technology = {
-	# Tech 36
-	year = 410
-    
-    production_efficiency =	0.1
-}
-technology = {
-	# Tech 37
-	year = 420
-    
-    development_efficiency = 0.1
-}
-technology = {
-	# Tech 38
-	year = 430
-    
-    max_states = 45
-    #allowed_idea_groups = 9
-}
-technology = {
-	# Tech 39
-	year = 440
-    
-    administrative_efficiency = 0.1
-}
-technology = {
-	# Tech 40
-	year = 450
-    
-    production_efficiency =	0.1
-}
-technology = {
-	# Tech 41
-	year = 460
-    
-    development_efficiency = 0.1
-}
-technology = {
-	# Tech 42
-	year = 470
-    
-    max_states = 50
-    #allowed_idea_groups = 10
-}
-technology = {
-	# Tech 43
-	year = 480
-    
-    administrative_efficiency = 0.1
-}
-technology = {
-	# Tech 44
-	year = 490
-    
-    development_efficiency = 0.1
-}
-technology = {
-	# Tech 45
 	year = 500
     
-    production_efficiency =	0.1
+    max_states = 2
+    production_efficiency = 0.1
+    allowed_idea_groups = 2
+    administrative_efficiency = 0.05
+    development_efficiency = 0.05
 }
+# 4
 technology = {
-	# Tech 46
-	year = 510
+	year = 600
     
-    administrative_efficiency = 0.1
+    max_states = 2
+    production_efficiency = 0.1
+    allowed_idea_groups = 3
+    administrative_efficiency = 0.05
+    development_efficiency = 0.05
 }
+# 5
 technology = {
-	# Tech 47
-	year = 520
+	year = 700
     
-    development_efficiency = 0.1
+    max_states = 2
+    production_efficiency = 0.1
+    allowed_idea_groups = 4
+    administrative_efficiency = 0.05
+    development_efficiency = 0.05
 }
+# 6
 technology = {
-	# Tech 48
-	year = 530
+	year = 800
     
-    administrative_efficiency = 0.15
+    max_states = 2
+    production_efficiency = 0.1
+    allowed_idea_groups = 5
+    administrative_efficiency = 0.05
+    development_efficiency = 0.05
 }
+# 7
 technology = {
-	# Tech 49
-	year = 540
+	year = 900
     
-    development_efficiency = 0.15
+    max_states = 2
+    production_efficiency = 0.1
+    allowed_idea_groups = 6
+    administrative_efficiency = 0.05
+    development_efficiency = 0.05
+}
+# 8
+technology = {
+	year = 1000
+    
+    max_states = 2
+    production_efficiency = 0.1
+    allowed_idea_groups = 7
+    administrative_efficiency = 0.05
+    development_efficiency = 0.05
+}
+# 9
+technology = {
+	year = 1100
+    
+    max_states = 2
+    production_efficiency = 0.1
+    allowed_idea_groups = 8
+    administrative_efficiency = 0.05
+    development_efficiency = 0.05
+}
+# 10
+technology = {
+	year = 1200
+    
+    max_states = 2
+    production_efficiency = 0.1
+    administrative_efficiency = 0.05
+    development_efficiency = 0.05
+}
+# 11
+technology = {
+	year = 1300
+    
+    max_states = 2
+    production_efficiency = 0.1
+    administrative_efficiency = 0.05
+    development_efficiency = 0.05
+}
+# 12
+technology = {
+	year = 1400
+    
+    max_states = 10
+    administrative_efficiency = 0.25
+    development_efficiency = 0.25
 }

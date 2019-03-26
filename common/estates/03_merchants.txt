@@ -6,6 +6,8 @@ estate_merchants = {
 	keep_on_conquest = no 							
 	always_remove_on_religious_conquest = yes 	
 		
+    start_territory_weight = 10
+    
 	min_autonomy = 25							
     autonomy_does_not_affect = province_trade_power_modifier
     
@@ -47,14 +49,17 @@ estate_merchants = {
 	# ----- Province -----
 	province_modifier_happy = {
 		province_trade_power_modifier = 0.5
+        trade_goods_size_modifier = 0.5
 		local_unrest = -5
 	}
 	province_modifier_neutral = {
 		province_trade_power_modifier = 0.25
+        trade_goods_size_modifier = 0.25
 		local_unrest = -1
 	}	
 	province_modifier_angry = {
 		province_trade_power_modifier = -0.5
+        trade_goods_size_modifier = -0.5
 		local_unrest = 5
 	}	
 	
@@ -88,7 +93,7 @@ estate_merchants = {
     
     # ----- Territory -----
     min_territory = 15
-    min_provinces_to_want_territory = 10
+    min_provinces_to_want_territory = 5
     
 	# ----- Influence -----
 	base_influence = 20
@@ -289,6 +294,54 @@ estate_merchants = {
 		}
 	}
     
+    # Punish the Merchants
+    interaction = {
+        name = "PUNISH_THE_MERCHANTS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = merchants_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = merchants_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_merchants
+                loyalty = 50
+            }              
+        }
+        
+        effect = {
+            add_estate_loyalty = {
+                estate = estate_merchants
+                loyalty = -30
+            }
+            add_estate_influence_modifier = {
+                estate = estate_merchants
+                desc = EST_VAL_PUNISHED
+                influence = -20
+                duration = 7300
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                NOT = {
+                    estate_influence = {
+                        estate = estate_merchants
+                        influence = 60
+                    }
+                }
+            }
+        }
+    }
+    
     # Favour Chosen Merchants
     interaction = {
         name = "FAVOUR_CHOSEN_MERCHANTS"
@@ -301,6 +354,7 @@ estate_merchants = {
         }
         
         trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = merchants_estate_in_power } }
             estate_loyalty = {
                 estate = estate_merchants
                 loyalty = 30
@@ -355,7 +409,7 @@ estate_merchants = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = merchants_estate_in_power } }
         }
         
         effect = {
@@ -395,7 +449,7 @@ estate_merchants = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = merchants_estate_in_power } }
         }
         
         effect = {
@@ -442,6 +496,7 @@ estate_merchants = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = merchants_estate_in_power } }
             estate_influence = {
                 estate = estate_merchants
                 influence = 40
@@ -482,6 +537,7 @@ estate_merchants = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = merchants_estate_in_power } }
             estate_influence = {
                 estate = estate_merchants
                 influence = 40
@@ -522,6 +578,7 @@ estate_merchants = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = merchants_estate_in_power } }
             estate_loyalty = {
                 estate = estate_merchants
                 loyalty = 30
@@ -585,6 +642,7 @@ estate_merchants = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = merchants_estate_in_power } }
             estate_loyalty = {
                 estate = estate_merchants
                 loyalty = 30
@@ -646,6 +704,7 @@ estate_merchants = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = merchants_estate_in_power } }
             estate_loyalty = {
                 estate = estate_merchants
                 loyalty = 30
@@ -707,6 +766,7 @@ estate_merchants = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = merchants_estate_in_power } }
             estate_loyalty = {
                 estate = estate_merchants
                 loyalty = 30
@@ -771,6 +831,7 @@ estate_merchants = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = merchants_estate_in_power } }
             estate_loyalty = {
                 estate = estate_merchants
                 loyalty = 30
@@ -841,6 +902,7 @@ estate_merchants = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = merchants_estate_in_power } }
             estate_loyalty = {
                 estate = estate_merchants
                 loyalty = 30

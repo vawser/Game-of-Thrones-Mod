@@ -1,0 +1,34 @@
+namespace = GOT_ROBERTS_REBELLION
+
+# Robert's Rebellion
+# Westeros is on the brink of Civil War. Rhaegar Targaryen, the heir to the Iron Throne, has kidnapped Lyana Stark - the betrothed of the Lord Paramount of the Stormlands, and Daughter of the Lord Paramount of the North. Brandon Stark, her elder brother, and heir to the North, charges south demanding vengeance. The mad King - Aerys, outraged by Brandon's demands had him and his father executed, and calls for Eddard's head as well. Jon Arryn, in response to Aerys, has risen his banners in revolt.
+# Down with King Aerys!
+country_event = {
+	id = GOT_ROBERTS_REBELLION.1
+	title = GOT_ROBERTS_REBELLION.1.title
+	desc = GOT_ROBERTS_REBELLION.1.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+    major = yes
+    
+	trigger = {
+        tag = A04
+        NOT = { is_year = 283 }
+        is_year = 282
+        NOT = { has_global_flag = roberts_rebellion }
+        NOT = { has_global_flag = shattered_world }
+    }
+
+    mean_time_to_happen = {
+		days = 1
+	}
+    
+    immediate = {
+        hidden_effect = { set_global_flag = roberts_rebellion }
+    }
+    
+	option = {
+		name = GOT_ROBERTS_REBELLION.1.option.a
+	}
+}
+

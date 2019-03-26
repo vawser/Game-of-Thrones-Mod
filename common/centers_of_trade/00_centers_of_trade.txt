@@ -1,4 +1,7 @@
-staple_port = {
+#----------------------------------
+# Coastal
+#----------------------------------
+coastal_cot_1 = {
     level = 1
     type = coastal
     province_modifiers = {
@@ -6,9 +9,9 @@ staple_port = {
     }
 }
 
-entrepot = {
+coastal_cot_2 = {
     level = 2
-    cost = 200
+    cost = 500
     type = coastal
     province_modifiers = {
         province_trade_power_value = 10
@@ -17,7 +20,7 @@ entrepot = {
     }
 }
 
-world_port = {
+coastal_cot_3 = {
     level = 3
     cost = 1000
     type = coastal
@@ -35,7 +38,10 @@ world_port = {
     }
 }
 
-emporium = {
+#----------------------------------
+# Inland
+#----------------------------------
+inland_cot_1 = {
     level = 1
     type = inland
     province_modifiers = {
@@ -43,9 +49,9 @@ emporium = {
     }
 }
 
-market_town = {
+inland_cot_2 = {
     level = 2
-    cost = 200
+    cost = 500
     type = inland
     province_modifiers = {
         province_trade_power_value = 10
@@ -53,7 +59,7 @@ market_town = {
     }
 }
 
-world_trade_center = {
+inland_cot_3 = {
     level = 3
     cost = 1000
     type = inland

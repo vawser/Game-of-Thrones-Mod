@@ -6,6 +6,8 @@ estate_clergy = {
 	keep_on_conquest = no 							
 	always_remove_on_religious_conquest = yes 		
 
+    start_territory_weight = 25
+    
 	min_autonomy = 25							
     autonomy_does_not_affect = local_tax_modifier
     
@@ -91,7 +93,7 @@ estate_clergy = {
     
     # ----- Territory -----
     min_territory = 15
-    min_provinces_to_want_territory = 10
+    min_provinces_to_want_territory = 5
     
 	# ----- Influence -----
 	base_influence = 30
@@ -253,6 +255,54 @@ estate_clergy = {
 		}
 	}
     
+    # Punish the Clergy
+    interaction = {
+        name = "PUNISH_THE_CLERGY"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = clergy_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = clergy_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_clergy
+                loyalty = 50
+            }              
+        }
+        
+        effect = {
+            add_estate_loyalty = {
+                estate = estate_clergy
+                loyalty = -30
+            }
+            add_estate_influence_modifier = {
+                estate = estate_clergy
+                desc = EST_VAL_PUNISHED
+                influence = -20
+                duration = 7300
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                NOT = {
+                    estate_influence = {
+                        estate = estate_clergy
+                        influence = 60
+                    }
+                }
+            }
+        }
+    }
+    
     # Dictate Religious Texts
     interaction = {
         name = "DICTATE_RELIGIOUS_TEXTS"
@@ -265,6 +315,7 @@ estate_clergy = {
         }
         
         trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = clergy_estate_in_power } }
             estate_loyalty = {
                 estate = estate_clergy
                 loyalty = 30
@@ -320,7 +371,7 @@ estate_clergy = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = clergy_estate_in_power } }
         }
         
         effect = {
@@ -360,7 +411,7 @@ estate_clergy = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = clergy_estate_in_power } }
         }
         
         effect = {
@@ -407,6 +458,7 @@ estate_clergy = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = clergy_estate_in_power } }
             estate_influence = {
                 estate = estate_clergy
                 influence = 40
@@ -447,6 +499,7 @@ estate_clergy = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = clergy_estate_in_power } }
             estate_influence = {
                 estate = estate_clergy
                 influence = 40
@@ -495,6 +548,7 @@ estate_clergy = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = clergy_estate_in_power } }
             estate_loyalty = {
                 estate = estate_clergy
                 loyalty = 30
@@ -635,6 +689,12 @@ estate_clergy = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = clergy_estate_in_power } }
+            OR = {
+                uses_karma = yes
+                uses_patriarch_authority = yes
+                uses_piety = yes
+            }
             estate_loyalty = {
                 estate = estate_clergy
                 loyalty = 30
@@ -729,6 +789,8 @@ estate_clergy = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = clergy_estate_in_power } }
+            dominant_religion = ROOT
             estate_loyalty = {
                 estate = estate_clergy
                 loyalty = 30
@@ -784,6 +846,7 @@ estate_clergy = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = clergy_estate_in_power } }
             estate_loyalty = {
                 estate = estate_clergy
                 loyalty = 30
@@ -855,6 +918,7 @@ estate_clergy = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = clergy_estate_in_power } }
             estate_loyalty = {
                 estate = estate_clergy
                 loyalty = 30
@@ -926,6 +990,8 @@ estate_clergy = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = clergy_estate_in_power } }
+            religion = asoiaf_faith_of_the_seven
             prestige = 0
             estate_loyalty = {
                 estate = estate_clergy

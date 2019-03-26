@@ -127,8 +127,7 @@ blockaded = {
 	ship_recruit_speed = 0.2
 	trade_goods_size_modifier = -0.5
 	province_trade_power_modifier = -0.75
-	local_monthly_devastation = 0.1
-
+	local_monthly_devastation = 0.25
 }
 
 no_adjacent_controlled = {
@@ -144,15 +143,15 @@ provincial_production_size = {
 	ship_recruit_speed = -0.01
 }
 
-knowledge_sharing = {
-	institution_growth = 12
-}
-
 manpower = {
-	garrison_growth = 0.01					#1% increase from manpower.
+	garrison_growth = 0.01
 }
 
 sailors = {
+}
+
+knowledge_sharing = {
+	institution_growth = 12
 }
 
 # Caps at 600
@@ -165,14 +164,15 @@ province_razed = {
 }
 
 development = {
-	allowed_num_of_buildings = 0.1
-	supply_limit_modifier = 0.02
+	allowed_num_of_buildings = 0.25
+	supply_limit_modifier = 0.05
 	local_missionary_strength = -0.001
-	land_forcelimit	= 0.1			# special case, affected by autonomy
-	naval_forcelimit = 0.1			# special case, affected by autonomy & set to 0 by code if not port
-	local_sailors = 30			    # special case, affected by autonomy & set to 0 by code if not port
 	province_trade_power_value = 0.2
 	local_amount_of_banners = 0.1
+    
+    land_forcelimit	= 0.1			# special case, affected by autonomy
+	naval_forcelimit = 0.1			# special case, affected by autonomy & set to 0 by code if not port
+	local_sailors = 30			    # special case, affected by autonomy & set to 0 by code if not port
 }
 
 development_scaled = {
@@ -180,7 +180,7 @@ development_scaled = {
 }
 
 capital_city = {
-	fort_level = 1
+	fort_level = 2
 }
 
 colony_level = {
@@ -260,14 +260,20 @@ under_siege = {
 
 
 devastation = {
+    local_tax_modifier = -1
+    local_production_efficiency = -1
 	trade_goods_size_modifier = -1
-	supply_limit_modifier = -0.5
+	supply_limit_modifier = -1.0
 	local_institution_spread = -1.0
-	local_development_cost = 0.1
+	local_development_cost = 1.0
 	local_manpower_modifier = -1.0
 	local_sailors_modifier = -1.0
-	local_hostile_movement_speed = -0.25
-	local_friendly_movement_speed = -0.25
+	local_hostile_movement_speed = -0.5
+	local_friendly_movement_speed = -0.5
+    local_defensiveness = -1.0
+    local_colonial_growth = -100
+    province_trade_power_modifier  = -1
+    local_missionary_strength = -0.1
 }
 
 prosperity = {

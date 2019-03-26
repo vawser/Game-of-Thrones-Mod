@@ -1071,6 +1071,31 @@ on_minority_expelled = {
 # Country - ROOT = Raiding country, FROM = Sea province
 on_raid_coast = {
 	if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_raid_coast" }
+    
+    # Give Pirates CB to targets of Raid Coast
+    FROM = {
+        every_neighbor_province = {
+            limit = { is_sea = no }
+            owner = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_casus_belli = {
+                                type = cb_pirates
+                                target = ROOT
+                            }
+                        }
+                    }
+                    
+                    add_casus_belli = {
+                        target = ROOT
+                        type = cb_pirates
+                        months = 120
+                    }
+                }
+            }
+        }
+    }
 }
 
 # Country - ROOT = Winner, FROM = Loser

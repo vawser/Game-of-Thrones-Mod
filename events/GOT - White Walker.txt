@@ -101,9 +101,6 @@ country_event = {
             1 = {
                 cede_province = WIT
                 add_core = WIT
-                add_base_tax = 9
-                add_base_production = 9
-                add_base_manpower = 9
             }
             westeros = {
                 add_claim = WIT
@@ -124,6 +121,8 @@ country_event = {
                     fixed = yes
                 }
             }
+            
+            set_global_flag = winter_has_fired
         }
     }
 
@@ -139,27 +138,3 @@ country_event = {
 	}
 }
 
-# Summer begins!
-country_event = {
-	id = GOT_WHITE_WALKER.3
-	title = GOT_WHITE_WALKER.3.title
-	desc = GOT_WHITE_WALKER.3.desc
-	picture = FEAST_eventPicture
-	
-	major = yes
-    
-    trigger = {
-        ai = no
-        has_global_flag = winter_active
-        NOT = { exists = WIT }
-    }
-    
-	option = {
-		name = GOT_WHITE_WALKER.3.option.a
-	
-        hidden_effect = {
-            clr_global_flag = winter_active
-            set_variable = { which = winter_power value = 0 }
-        }
-	}
-}

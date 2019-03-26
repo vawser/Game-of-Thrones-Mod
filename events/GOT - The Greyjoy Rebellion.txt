@@ -1,0 +1,40 @@
+namespace = GOT_THE_GREYJOY_REBELLION
+
+# The Greyjoy Rebellion
+# Believing King Robert's rule to be insecure, Lord Balon Greyjoy of Pyke has proclaimed himself King of the Iron Islands and is in rebellion against the Iron Throne. He has been crowned beneath Nagga's Ribs, by the priest Tarle the Thrice-Drowned with a driftwood crown, and is trying to secure independence for the Iron Islands and restore their traditions of old, lost almost three hundred years before, during the War of Conquest...
+# King Robert shall fall
+country_event = {
+	id = GOT_THE_GREYJOY_REBELLION.1
+	title = GOT_THE_GREYJOY_REBELLION.1.title
+	desc = GOT_THE_GREYJOY_REBELLION.1.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+    major = yes
+    
+	trigger = {
+        tag = M09
+        is_subject_of = A10
+        NOT = { is_year = 289 }
+        is_year = 290
+        NOT = { has_global_flag = greyjoy_rebellion }
+        NOT = { has_global_flag = shattered_world }
+    }
+
+    mean_time_to_happen = {
+		days = 1
+	}
+    
+    immediate = {
+        hidden_effect = { set_global_flag = greyjoy_rebellion }
+    }
+    
+	option = {
+		name = GOT_THE_GREYJOY_REBELLION.1.option.a
+		
+        declare_war_with_cb = {
+            who = A07
+            casus_belli = cb_independence_war
+        }
+	}
+}
+

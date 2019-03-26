@@ -6,8 +6,20 @@ estate_khalasar = {
     keep_on_conquest = no                             
     always_remove_on_religious_conquest = yes         
 
+    start_territory_weight = 100
+    territory_power_modifier = 2.0
+    
     min_autonomy = 50                                
+    autonomy_does_not_affect = local_tax_modifier
+    autonomy_does_not_affect = local_production_efficiency
     autonomy_does_not_affect = local_manpower_modifier
+    
+    independence_government = nomadic
+	starting_reform = khalasar_reform
+	independence_tech_group = dothraki
+	independence_trigger = {
+		has_estate = estate_khalasar
+	}
     
     # ----- Conditions -----
     trigger = {
@@ -20,26 +32,33 @@ estate_khalasar = {
     
     # ----- Country -----
     country_modifier_happy = {
-        army_tradition = 1
-        raze_power_gain = 1
+        land_maintenance_modifier = -0.5
+        land_forcelimit_modifier = 0.5
     }
     country_modifier_neutral = {
-        raze_power_gain = 0.5
+        land_maintenance_modifier = -0.25
+        land_forcelimit_modifier = 0.25
     }    
     country_modifier_angry = {
-        army_tradition = -1
-        raze_power_gain = -1
+        land_maintenance_modifier = 0.5
+        land_forcelimit_modifier = -0.5
     }    
     
     # ----- Province -----
     province_modifier_happy = {
+        local_tax_modifier = 0.5
+        local_production_efficiency = 0.5
         local_manpower_modifier = 0.5
     }
     province_modifier_neutral = {
+        local_tax_modifier = 0.25
+        local_production_efficiency = 0.25
         local_manpower_modifier = 0.25
     }
     
     province_modifier_angry = {
+        local_tax_modifier = -0.5
+        local_production_efficiency = -0.5
         local_manpower_modifier = -0.5
     }    
     
@@ -76,8 +95,15 @@ estate_khalasar = {
     }   
     
     # ----- Territory -----
-    min_territory = 0                                 
+    min_territory = 50
     min_provinces_to_want_territory = 5        
+    
+    ai_territory_modifier = {
+		trigger = {
+			always = yes
+		}	
+		value = 100
+	}
     
     # ----- Influence -----
     base_influence = 30
@@ -199,6 +225,54 @@ estate_khalasar = {
 		}
 	}
     
+    # Punish the Kos
+    interaction = {
+        name = "PUNISH_THE_KOS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = kos_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = kos_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_khalasar
+                loyalty = 50
+            }              
+        }
+        
+        effect = {
+            add_estate_loyalty = {
+                estate = estate_khalasar
+                loyalty = -30
+            }
+            add_estate_influence_modifier = {
+                estate = estate_khalasar
+                desc = EST_VAL_PUNISHED
+                influence = -20
+                duration = 7300
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                NOT = {
+                    estate_influence = {
+                        estate = estate_khalasar
+                        influence = 60
+                    }
+                }
+            }
+        }
+    }
+    
     # Exhort Strength
     interaction = {
         name = "EXHORT_STRENGTH"
@@ -211,6 +285,7 @@ estate_khalasar = {
         }
         
         trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = kos_estate_in_power } }
             estate_loyalty = {
                 estate = estate_khalasar
                 loyalty = 30
@@ -265,7 +340,7 @@ estate_khalasar = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = kos_estate_in_power } }
         }
         
         effect = {
@@ -305,7 +380,7 @@ estate_khalasar = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = kos_estate_in_power } }
         }
         
         effect = {
@@ -352,6 +427,7 @@ estate_khalasar = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = kos_estate_in_power } }
             estate_influence = {
                 estate = estate_khalasar
                 influence = 40
@@ -392,6 +468,7 @@ estate_khalasar = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = kos_estate_in_power } }
             estate_influence = {
                 estate = estate_khalasar
                 influence = 40
@@ -433,6 +510,7 @@ estate_khalasar = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = kos_estate_in_power } }
             estate_loyalty = {
                 estate = estate_khalasar
                 loyalty = 30
@@ -489,6 +567,7 @@ estate_khalasar = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = kos_estate_in_power } }
             estate_loyalty = {
                 estate = estate_khalasar
                 loyalty = 30
@@ -560,6 +639,7 @@ estate_khalasar = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = kos_estate_in_power } }
             estate_loyalty = {
                 estate = estate_khalasar
                 loyalty = 30
@@ -633,6 +713,7 @@ estate_khalasar = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = kos_estate_in_power } }
             estate_loyalty = {
                 estate = estate_khalasar
                 loyalty = 30

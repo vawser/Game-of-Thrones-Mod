@@ -1,0 +1,34 @@
+namespace = GOT_DANCE_OF_DRAGONS
+
+# Assault on Harrenhal
+# Prince Daemon has led the attack on Harrenhal, which was conquered without bloodshed. The castellan, Ser Simon Strong, yielded when Caraxes landed on Kingspyre Tower. This conquest will help solidify Rhaenyra's revolt.
+# Damn her!
+country_event = {
+	id = GOT_DANCE_OF_DRAGONS.1
+	title = GOT_DANCE_OF_DRAGONS.1.title
+	desc = GOT_DANCE_OF_DRAGONS.1.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+    major = yes
+    
+	trigger = {
+        tag = A10
+        is_year = 129
+        NOT = { is_year = 130 }
+        NOT = { has_global_flag = dance_of_dragons }
+        NOT = { has_global_flag = shattered_world }
+    }
+
+    mean_time_to_happen = {
+		days = 1
+	}
+    
+    immediate = {
+        hidden_effect = { set_global_flag = dance_of_dragons }
+    }
+    
+	option = {
+		name = GOT_DANCE_OF_DRAGONS.1.option.a
+	}
+}
+

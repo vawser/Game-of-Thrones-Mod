@@ -1,0 +1,110 @@
+#---------------------------------------------------------
+# Economic
+#---------------------------------------------------------
+thorough_tax_collection = {
+	monarch_power = ADM
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = got_economic_ideas 
+            OR  = {
+                full_idea_group = got_innovation_ideas 
+                full_idea_group = got_religious_ideas          
+                full_idea_group = got_expansion_ideas
+                full_idea_group = got_administrative_ideas
+                full_idea_group = got_harmony_ideas
+                full_idea_group = got_law_ideas
+                full_idea_group = got_development_ideas
+                full_idea_group = got_absolutism_ideas
+                full_idea_group = got_autonomy_ideas
+                full_idea_group = got_monarchy_ideas
+                full_idea_group = got_republic_ideas
+                full_idea_group = got_theocracy_ideas
+                full_idea_group = got_tribal_ideas
+                full_idea_group = got_nomadic_ideas
+            }
+        }
+	}
+	
+	# Modifier
+    global_tax_modifier = 0.2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+secured_borrowing = {
+	monarch_power = DIP
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = got_economic_ideas 
+            OR  = {
+                full_idea_group = got_espionage_ideas
+                full_idea_group = got_dynastic_ideas
+                full_idea_group = got_influence_ideas
+                full_idea_group = got_trade_ideas
+                full_idea_group = got_exploration_ideas
+                full_idea_group = got_maritime_ideas
+                full_idea_group = got_assimilation_ideas
+                full_idea_group = got_society_ideas 
+                full_idea_group = got_propaganda_ideas
+                full_idea_group = got_naval_bombardment_ideas
+                full_idea_group = got_naval_skirmish_ideas
+                full_idea_group = got_naval_trade_ideas
+                full_idea_group = got_naval_organisation_ideas
+                full_idea_group = got_naval_leadership_ideas
+                full_idea_group = got_naval_tactics_ideas
+            }
+        }
+	}
+	
+	# Modifier
+    inflation_reduction = 0.1
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+favourable_terms = {
+	monarch_power = MIL
+
+	potential = {
+		always = yes
+	}
+	allow = {
+        AND = {
+            full_idea_group = got_economic_ideas 
+            OR  = {
+                full_idea_group = got_offensive_ideas
+                full_idea_group = got_defensive_ideas
+                full_idea_group = got_quality_ideas
+                full_idea_group = got_quantity_ideas
+                full_idea_group = got_professional_army_ideas 
+                full_idea_group = got_mercenary_army_ideas
+                full_idea_group = got_army_organisation_ideas
+                full_idea_group = got_army_leadership_ideas
+                full_idea_group = got_army_tactics_ideas
+                full_idea_group = got_armaments_ideas
+                full_idea_group = got_fortification_ideas
+                full_idea_group = got_militarization_ideas
+                full_idea_group = got_subjugation_ideas
+                full_idea_group = got_tyranny_ideas
+                full_idea_group = got_imperialism_ideas
+            }
+        }
+	}
+	
+	# Modifier
+    interest = -2
+    
+	ai_will_do = {
+		factor = 1
+	}
+}

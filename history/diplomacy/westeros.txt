@@ -1,12 +1,16 @@
-# Targaryen
+#--------------------------------
+# Base
+#--------------------------------
+# Stark -> House Magnar
 dependency = {
-	subject_type = "royal_subject"
+	subject_type = "vassal"
 	first = A01
 	second = Q01
 	start_date = 106.1.1
 	end_date = 899.1.1
 }
 
+# Targaryen -> Baratheon
 dependency = {
 	subject_type = "royal_subject"
 	first = A10
@@ -15,14 +19,7 @@ dependency = {
 	end_date = 281.1.1
 }
 
-dependency = {
-	subject_type = "royal_subject"
-	first = A10
-	second = A09
-	start_date = 106.1.1
-	end_date = 281.1.1
-}
-
+# Targaryen -> Tyrell
 dependency = {
 	subject_type = "royal_subject"
 	first = A10
@@ -31,6 +28,7 @@ dependency = {
 	end_date = 281.1.1
 }
 
+# Targaryen -> Lannister
 dependency = {
 	subject_type = "royal_subject"
 	first = A10
@@ -39,6 +37,7 @@ dependency = {
 	end_date = 281.1.1
 }
 
+# Targaryen -> Tully
 dependency = {
 	subject_type = "royal_subject"
 	first = A10
@@ -47,6 +46,7 @@ dependency = {
 	end_date = 281.1.1
 }
 
+# Targaryen -> Arryn
 dependency = {
 	subject_type = "royal_subject"
 	first = A10
@@ -55,6 +55,7 @@ dependency = {
 	end_date = 281.1.1
 }
 
+# Targaryen -> Greyjoy
 dependency = {
 	subject_type = "royal_subject"
 	first = A10
@@ -63,6 +64,7 @@ dependency = {
 	end_date = 281.1.1
 }
 
+# Targaryen -> Stark
 dependency = {
 	subject_type = "royal_subject"
 	first = A10
@@ -71,3 +73,143 @@ dependency = {
 	end_date = 281.1.1
 }
 
+#--------------------------------
+# Conquest of Dorne
+#--------------------------------
+# Targaryen -> Martell
+dependency = {
+	subject_type = "royal_subject"
+	first = A10
+	second = A09
+	start_date = 157.1.1
+	end_date = 281.1.1
+}
+
+#--------------------------------
+# Robert's Rebellion
+#--------------------------------
+# Targaryen -> Tyrell
+dependency = {
+	subject_type = "royal_subject"
+	first = A10
+	second = F20
+	start_date = 281.1.1
+	end_date = 289.1.1
+}
+
+# Targaryen -> Martell
+dependency = {
+	subject_type = "royal_subject"
+	first = A10
+	second = A09
+	start_date = 281.1.1
+	end_date = 289.1.1
+}
+
+# Baratheon -> Stark
+alliance = {
+	first = A07
+	second = A01
+	start_date = 281.1.1
+	end_date = 289.1.1
+}
+
+# Arryn -> Stark
+alliance = {
+	first = A04
+	second = A01
+	start_date = 281.1.1
+	end_date = 289.1.1
+}
+
+# Arryn -> Baratheon
+alliance = {
+	first = A04
+	second = A07
+	start_date = 281.1.1
+	end_date = 289.1.1
+}
+
+# Arryn -> Tully
+alliance = {
+	first = A04
+	second = A03
+	start_date = 281.1.1
+	end_date = 289.1.1
+}
+
+# After Trident
+# Greyjoy
+# Lannister
+
+#--------------------------------
+# Robert's Rebellion Aftermath
+#--------------------------------
+# Baratheon -> Stark
+dependency = {
+	subject_type = "royal_subject"
+	first = A07
+	second = A01
+	start_date = 282.1.1
+	end_date = 298.1.1
+}
+# Baratheon -> Lannister
+dependency = {
+	subject_type = "royal_subject"
+	first = A07
+	second = A06
+	start_date = 282.1.1
+	end_date = 298.1.1
+}
+# Baratheon -> Tully
+dependency = {
+	subject_type = "royal_subject"
+	first = A07
+	second = A03
+	start_date = 282.1.1
+	end_date = 298.1.1
+}
+# Baratheon -> Arryn
+dependency = {
+	subject_type = "royal_subject"
+	first = A07
+	second = A04
+	start_date = 282.1.1
+	end_date = 298.1.1
+}
+# Baratheon -> Greyjoy
+dependency = {
+	subject_type = "royal_subject"
+	first = A07
+	second = M09
+	start_date = 282.1.1
+	end_date = 298.1.1
+}
+# Baratheon -> Dorne
+dependency = {
+	subject_type = "royal_subject"
+	first = A07
+	second = A09
+	start_date = 282.1.1
+	end_date = 298.1.1
+}
+# Baratheon -> Tyrell
+dependency = {
+	subject_type = "royal_subject"
+	first = A07
+	second = F20
+	start_date = 282.1.1
+	end_date = 298.1.1
+}
+
+#--------------------------------
+# The Night King
+#--------------------------------
+# Queen Cersei joining both Baratheon and Lannister houses after Tywin dies
+dependency = {
+	subject_type = "personal_union"
+	first = A07
+	second = A06
+	start_date = 304.1.1
+	end_date = 999.1.1
+}

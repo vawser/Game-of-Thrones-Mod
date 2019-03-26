@@ -5,9 +5,18 @@ estate_nobles = {
 	
 	keep_on_conquest = no 							
 	always_remove_on_religious_conquest = yes 		
-			
+
+    start_territory_weight = 25
+    
 	min_autonomy = 25								
     autonomy_does_not_affect = local_manpower_modifier
+    
+    independence_government = monarchy
+	starting_reform = kingdom_reform
+	independence_tech_group = westerosi
+	independence_trigger = {
+		has_estate = estate_nobles
+	}
     
     custom_name = {
 		desc = estate_stewards
@@ -90,8 +99,8 @@ estate_nobles = {
     }
     
     # ----- Territory -----
-    min_territory = 15
-    min_provinces_to_want_territory = 10
+    min_territory = 20
+    min_provinces_to_want_territory = 5
     
 	# ----- Influence -----
 	base_influence = 30
@@ -239,12 +248,13 @@ estate_nobles = {
 		name = "CURTAIL_THE_NOBILITY"
 		icon = 1
 		
+        # AI seems to ignore potential checks here
         potential = { 
             has_country_flag = noble_estate_in_power
         }
         
 		trigger = {        
-            hidden_trigger = { has_country_flag = noble_estate_in_power } # AI seems to ignore the potential check
+            hidden_trigger = { has_country_flag = noble_estate_in_power } 
             stability = 1
 			NOT = { num_of_rebel_armies = 1 }
 			NOT = { num_of_rebel_controlled_provinces = 1 }			
@@ -267,38 +277,54 @@ estate_nobles = {
 		}
 	}
     
-	# Assemble Council
-	interaction = {
-		name = "ASSEMBLE_COUNCIL"
-		icon = 1
-		
-		years_between_use = 20
-
+    # Punish the Nobility
+    interaction = {
+        name = "PUNISH_THE_NOBILITY"
+        icon = 1
+        
+        years_between_use = 20
+        
         potential = { 
             NOT = { has_country_flag = noble_estate_in_power }
         }
         
-		trigger = {        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
             estate_loyalty = {
                 estate = estate_nobles
-                loyalty = 30
-            }    
-            estate_influence = {
-                estate = estate_nobles
-                influence = 25
-            }            
+                loyalty = 50
+            }              
         }
-		
-		effect = {
-			country_event = { id = GOT_COUNCIL.1 }
-			custom_tooltip = COUNCIL_GOAL_NOTICE
-		}
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	
+        
+        effect = {
+            add_estate_loyalty = {
+                estate = estate_nobles
+                loyalty = -30
+            }
+            add_estate_influence_modifier = {
+                estate = estate_nobles
+                desc = EST_VAL_PUNISHED
+                influence = -20
+                duration = 7300
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                NOT = {
+                    estate_influence = {
+                        estate = estate_nobles
+                        influence = 60
+                    }
+                }
+            }
+        }
+    }
+    
     # Seize Holdfasts
     interaction = {
         name = "SEIZE_HOLDFASTS"
@@ -311,6 +337,7 @@ estate_nobles = {
         }
         
         trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
             estate_loyalty = {
                 estate = estate_nobles
                 loyalty = 30
@@ -366,7 +393,7 @@ estate_nobles = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
         }
         
         effect = {
@@ -406,7 +433,7 @@ estate_nobles = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
         }
         
         effect = {
@@ -453,6 +480,7 @@ estate_nobles = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
             estate_influence = {
                 estate = estate_nobles
                 influence = 40
@@ -493,6 +521,7 @@ estate_nobles = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
             estate_influence = {
                 estate = estate_nobles
                 influence = 40
@@ -533,6 +562,7 @@ estate_nobles = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
             estate_loyalty = {
                 estate = estate_nobles
                 loyalty = 30
@@ -589,6 +619,7 @@ estate_nobles = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
             estate_loyalty = {
                 estate = estate_nobles
                 loyalty = 30
@@ -648,6 +679,11 @@ estate_nobles = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
+            has_heir = yes
+			heir_age = 8
+            NOT = { heir_age = 18 }
+            
             estate_loyalty = {
                 estate = estate_nobles
                 loyalty = 30
@@ -689,6 +725,7 @@ estate_nobles = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
             estate_loyalty = {
                 estate = estate_nobles
                 loyalty = 30
@@ -764,6 +801,12 @@ estate_nobles = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
+            OR = {
+				primary_culture = sand_dornish 
+				primary_culture = salt_dornish
+				primary_culture = stone_dornish
+			}
             years_of_income = 1
             NOT = { has_country_modifier = cultivating_sand_steeds }
             
@@ -818,6 +861,8 @@ estate_nobles = {
         }
         
 		trigger = {
+            hidden_trigger = { has_dlc = "Dharma" }
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
             estate_loyalty = {
                 estate = estate_nobles
                 loyalty = 30
@@ -878,6 +923,8 @@ estate_nobles = {
         }
         
 		trigger = {
+            hidden_trigger = { has_dlc = "Third Rome" }
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
             estate_loyalty = {
                 estate = estate_nobles
                 loyalty = 30
@@ -933,11 +980,13 @@ estate_nobles = {
 		years_between_use = 25
 		
         potential = { 
-            primary_culture = pentoshi
             NOT = { has_country_flag = noble_estate_in_power }
+            primary_culture = pentoshi
         }
         
 		trigger = {
+            hidden_trigger = { NOT = { has_country_flag = noble_estate_in_power } }
+            primary_culture = pentoshi
             estate_loyalty = {
                 estate = estate_nobles
                 loyalty = 30

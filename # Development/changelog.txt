@@ -1,3 +1,40 @@
+#-----------------------------
+# DLC Usage
+#-----------------------------
+These are features changed in the mod that require DLC:
+
+- Dharma:
+ - Government Reforms
+ - Rajput infantry
+ 
+- Rule Britannia
+ - Anglicanism religion mechanic
+ 
+- Cradle of Civilization
+ - Army Professionalism
+ 
+- Third Rome
+ - Orthodox religion mechanic
+ - Siberian Frontier
+ 
+- Mandate of Heaven
+ - Chinese Empire
+ - Tributaries
+ 
+- The Cossacks
+ - Cossack cavalry
+ - Horde Unity 
+ - Razing
+ 
+- Common Sense
+ - Protestant religion mechanic
+ 
+- Wealth of Nations
+ - Fervor
+ 
+#-----------------------------
+# Changelog
+#-----------------------------
 - Adjusted graphical cultures.
 - Changed advisor interface.
 - Changed advisortypes, expanding options but removing obvious picks (i.e. discipline, land_morale, etc)
@@ -121,7 +158,6 @@
 - Religious Unity (0%) now applies global_unrest = 5
 - Defender of the Faith no longer increases technology cost.
 - Removed nomadic_people and nomadic_people_ai triggered modifiers 
-- Innovativeness now grants -25% Power Costs at 100
 - Reduced the mercenary_discipline modifiers from the Employing the X decisions.
 - Removed Conduct Slave Raid diplomatic action
 - Added 10 year ai cooldown on using covert diplomatic actions.
@@ -150,7 +186,7 @@
 - Changed continents for new trade company region setup.
 - Fixed states with more than 5 provinces messing up the state view province list.
 - Fixed long province names messing up the state view province list, now they are truncated.
-- Removed the mission tree system and tab. 
+- Removed Mission Trees feature.
 - Adjusted government form mechanics.
 - HRE system used for the Seven Kingdoms removed.
 - Added "Claim the Iron Throne" CB, that allows a Royal Subject to attack the current Royal House. If they win and use the "Claim the Iron Throne" peace term, they will become the new Royal House and receive all the other royal subjects under them, and make the old King a royal subject too.
@@ -164,66 +200,36 @@
 - Rebalanced government reform growth values, to make growth slower by default.
 - Increased potency of government reform modifiers.
 - Changed "Court" tier reforms to relate to estates instead.
-- Changed Naval Doctrines into Military Tactics. They are unlocked via specific military ideagroups.
+- Added Urbanization triggered modifiers. These reward high average development nations with bonuses.
+- Added policies for new ideagroups.
+- Added a casus belli against nations that use Raid Coast against a nation.
+- Increased the effect of a blockade: local_monthly_devastation = 0.25
+- Increased the effect of devastation on a province.
+- Removed Naval Doctrines feature.
+- Removed Innovativeness feature.
+- Adjusted history for bookmarks.
+- Removed Great Sept of Baelor province.
+- Removed Super Secret Nation provinces.
+- Added Centers of Trade.
+- Changed Bankruptcy to: interest = 10, global_tax_modifier = -1, production_efficiency = -1, all_power_cost = 1.0, advisor_cost = 1.0, global_institution_spread = -1
+- Reduced inflation from Gold mines to 0.1
+- Reduced inflation from Treasure Fleets to 0.1
+- Increased inflation from loans to 0.5
+- Reduced development cap for missionary maintenance cost to 20 (from 100), reducing max cost.
+- Removed the "Council of X" estate action for Nobility
+- Added "Punish the X" estate action for each estate, trading loyalty for influence reduction
 
 #-----------------------------
 # TODO
 #-----------------------------
-# Add policies
-got_innovation_ideas 
-got_religious_ideas 
-got_economic_ideas
-got_expansion_ideas
-got_administrative_ideas
-got_harmony_ideas
-got_law_ideas
-got_development_ideas
-got_absolutism_ideas
-got_autonomy_ideas
-got_monarchy_ideas
-got_republic_ideas
-got_theocracy_ideas
-got_tribal_ideas
-got_nomadic_ideas
-15
 
-got_espionage_ideas
-got_dynastic_ideas
-got_influence_ideas
-got_trade_ideas
-got_exploration_ideas
-got_maritime_ideas
-got_assimilation_ideas
-got_society_ideas 
-got_propaganda_ideas
-got_naval_bombardment_ideas
-got_naval_skirmish_ideas
-got_naval_trade_ideas
-got_naval_organisation_ideas
-got_naval_leadership_ideas
-got_naval_tactics_ideas
-15
-
-got_offensive_ideas
-got_defensive_ideas
-got_quality_ideas
-got_quantity_ideas
-got_professional_army_ideas 
-got_mercenary_army_ideas
-got_army_organisation_ideas
-got_army_leadership_ideas
-got_army_tactics_ideas
-got_armaments_ideas
-got_fortification_ideas
-got_militarization_ideas
-got_subjugation_ideas
-got_tyranny_ideas
-got_imperialism_ideas
-15
-
+- Add ideagroup events (3+ 3-)
+- Add names to sea provinces
+- Add Ruler Health system
 - Add Estate mission system
 - Add Storm's End as a building
-- Add Centers of Trade to certain provinces/states
+- Look at technology seperation
+
 - Add Rhoynar
 - Add pirate nations in Rhoyne region
 - Add Cannibal nations
@@ -231,5 +237,4 @@ got_imperialism_ideas
 - Add Bloodsworn nations
 - Add Shadowsworn nations
 - Add Fishfolk nation
-
 

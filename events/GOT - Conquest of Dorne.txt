@@ -1,0 +1,40 @@
+namespace = GOT_CONQUEST_OF_DORNE
+
+# The Dornish Rebellion
+# Prince Daeron's conquest of Dorne was swift and merciless, winning little favour from the native Dornish. Now, with Lord Tyrell as their ruler, the people of Dorne threaten to overthrow his rule and strike back at Prince Daeron and House Targaryen for their hubris.
+# They will pay!
+country_event = {
+	id = GOT_CONQUEST_OF_DORNE.1
+	title = GOT_CONQUEST_OF_DORNE.1.title
+	desc = GOT_CONQUEST_OF_DORNE.1.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+    major = yes
+    
+	trigger = {
+        tag = A09
+        is_subject_of = A10
+        NOT = { is_year = 160 }
+        is_year = 157
+        NOT = { has_global_flag = dornish_rebellion }
+        NOT = { has_global_flag = shattered_world }
+    }
+
+    mean_time_to_happen = {
+		days = 1
+	}
+    
+    immediate = {
+        hidden_effect = { set_global_flag = dornish_rebellion }
+    }
+    
+	option = {
+		name = GOT_CONQUEST_OF_DORNE.1.option.a
+		
+        declare_war_with_cb = {
+            who = A10
+            casus_belli = cb_independence_war
+        }
+	}
+}
+

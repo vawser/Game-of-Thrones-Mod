@@ -14,10 +14,8 @@ kingdom_legacy = {
     monarchy = yes
     
     modifiers = {
-        max_states = 1
-		global_unrest = -1
+        global_unrest = -1
 		unjustified_demands = -0.1
-		max_absolutism = 5
     }
     
     custom_attributes = {
@@ -39,19 +37,10 @@ noble_house_legacy = {
     monarchy = yes
     
     modifiers = {
-        max_states = 1
-		global_unrest = -1
-		unjustified_demands = -0.1
-		max_absolutism = 5
+        prestige = 0.5
+		diplomatic_upkeep = 1
     }
-    
-    conditional = {
-        allow = {
-            has_dlc = "Mandate of Heaven"
-        }
-        allow_banners = yes
-    }
-    
+
     custom_attributes = {
 		enables_monarchy_ideagroup = yes
 	}
@@ -73,17 +62,9 @@ royal_house_legacy = {
     fixed_rank = 10
     
     modifiers = {
-        max_states = 5
-		global_unrest = -2
-		unjustified_demands = -0.2
-		max_absolutism = 20
-    }
-    
-    conditional = {
-        allow = {
-            has_dlc = "Mandate of Heaven"
-        }
-        allow_banners = yes
+        prestige = 1
+		diplomatic_upkeep = 2
+		max_absolutism = 10
     }
     
     custom_attributes = {
@@ -106,8 +87,8 @@ yiti_city_legacy = {
     has_meritocracy = yes
     
     modifiers = {
-		max_states = 2
-		global_manpower_modifier = 0.1
+		improve_relation_modifier = 0.1
+        diplomatic_upkeep = 1
 	}
     
     custom_attributes = {
@@ -130,10 +111,9 @@ yiti_empire_legacy = {
     has_meritocracy = yes
     
     modifiers = {
-		max_states = 5
-		global_manpower_modifier = 0.25
-		vassal_income = 0.25
-        max_absolutism = 20
+		improve_relation_modifier = 0.25
+        diplomatic_upkeep = 2
+        max_absolutism = 10
 	}
     
     conditional = {
@@ -162,10 +142,7 @@ qarth_city_legacy = {
     monarchy = yes
     
     modifiers = {
-    	max_states = 3
-		production_efficiency = 0.1
-		global_tax_modifier = 0.05
-		global_autonomy = -0.025
+    	global_trade_goods_size_modifier = 0.2
 	}
 
     custom_attributes = {
@@ -187,8 +164,7 @@ nefer_city_legacy = {
     monarchy = yes
     
     modifiers = {
-    	max_states = 1
-		idea_cost = -0.05
+    	idea_cost = -0.1
 	}
     
     custom_attributes = {
@@ -210,8 +186,8 @@ hyrkoon_city_legacy = {
     monarchy = yes
     
     modifiers = {
-    	max_states = 2
-		siege_ability = 0.1
+    	defensiveness = 0.33
+        fort_maintenance_modifier = -0.1
 	}
     
     custom_attributes = {
@@ -233,8 +209,8 @@ valyria_city_legacy = {
     monarchy = yes
 
     modifiers = {
-    	max_states = 1
-		recover_army_morale_speed = 0.05
+    	discipline = 0.05
+        hostile_attrition = 1
 	}
     
     custom_attributes = {
@@ -256,9 +232,8 @@ meereen_city_legacy = {
     monarchy = yes
     
     modifiers = {
-    	max_states = 3
-		global_manpower_modifier = 0.15
-        global_autonomy = -0.025
+    	global_manpower_modifier = 0.1
+        land_forcelimit_modifier = 0.1
         max_absolutism = 10
 	}
     
@@ -281,9 +256,8 @@ yunkai_city_legacy = {
     monarchy = yes
     
     modifiers = {
-    	max_states = 3
-		global_manpower_modifier = 0.15
-        global_autonomy = -0.025
+    	global_manpower_modifier = 0.1
+        heir_chance = 0.5
         max_absolutism = 10
 	}
     
@@ -306,9 +280,8 @@ astapor_city_legacy = {
     monarchy = yes
     
     modifiers = {
-    	max_states = 3
-		global_manpower_modifier = 0.15
-        global_autonomy = -0.025
+    	global_manpower_modifier = 0.1
+        discipline = 0.05
         max_absolutism = 10
 	}
 
@@ -331,9 +304,8 @@ ghis_city_legacy = {
     monarchy = yes
     
     modifiers = {
-    	max_states = 3
-		global_manpower_modifier = 0.15
-        global_autonomy = -0.025
+    	global_manpower_modifier = 0.1
+        core_creation = -0.1
         max_absolutism = 10
 	}
     
@@ -362,10 +334,7 @@ republic_legacy = {
     has_term_election = no
     
     modifiers = {
-        max_states = 1
-		global_unrest = -1
-		unjustified_demands = -0.1
-		max_absolutism = -10
+       global_unrest = -2
     }
     
     custom_attributes = {
@@ -390,7 +359,6 @@ merchant_republic_legacy = {
     
     modifiers = {
         merchants = 1
-		max_absolutism = -30
     }
     
     conditional = {
@@ -439,10 +407,8 @@ tyrosh_city_legacy = {
     has_term_election = no
     
     modifiers = {
-    	max_states = 3
-		navy_tradition = 1
-        global_autonomy = -0.025
-        max_absolutism = -10
+    	navy_tradition = 1
+        global_ship_trade_power = 0.1
 	}
     
     conditional = {
@@ -491,10 +457,8 @@ myr_city_legacy = {
     has_term_election = no
     
     modifiers = {
-    	max_states = 3
-		province_warscore_cost = -0.1
-        global_autonomy = -0.025
-        max_absolutism = -10
+    	global_regiment_cost = -0.1
+    	province_warscore_cost = -0.1
 	}
     
     conditional = {
@@ -544,10 +508,8 @@ lys_city_legacy = {
     has_term_election = no
     
     modifiers = {
-    	max_states = 3
-		ae_impact = -0.1
-        global_autonomy = -0.025
-        max_absolutism = -10
+    	ae_impact = -0.1
+        spy_offence = 0.2
 	}
     
     conditional = {
@@ -597,10 +559,8 @@ volantis_city_legacy = {
     duration = 5
     
     modifiers = {
-    	max_states = 5
-		trade_efficiency = 0.1
-        global_autonomy = -0.025
-        max_absolutism = -10
+    	infantry_power = 0.05
+        global_trade_power = 0.1
 	}
     
     conditional = {
@@ -654,10 +614,8 @@ pentos_city_legacy = {
     has_term_election = no
     
     modifiers = {
-    	max_states = 3
-		global_trade_power = 0.1
-        global_autonomy = -0.025
-        max_absolutism = -10
+    	global_manpower_modifier = 0.1
+    	reinforce_cost_modifier = -0.1
 	}
     
     conditional = {
@@ -707,10 +665,8 @@ braavos_city_legacy = {
     has_term_election = no
     
     modifiers = {
-    	max_states = 3
-		global_ship_trade_power = 0.15
-        global_autonomy = -0.025
-        max_absolutism = -10
+    	religious_unity = 0.33
+        global_ship_cost = -0.1
 	}
     
     conditional = {
@@ -760,10 +716,8 @@ lorath_city_legacy = {
     has_term_election = no
     
     modifiers = {
-    	max_states = 3
-		tolerance_own = 1
-        global_autonomy = -0.025
-        max_absolutism = -10
+    	stability_cost_modifier = -0.15
+        hostile_attrition = 1
 	}
     
     custom_attributes = {
@@ -787,9 +741,8 @@ saath_city_legacy = {
     has_term_election = no
     
     modifiers = {
-    	max_states = 2
-		defensiveness = 0.25
-        max_absolutism = -10
+    	defensiveness = 0.33
+        fort_maintenance_modifier = -0.1
 	}
     
     custom_attributes = {
@@ -813,9 +766,8 @@ trader_city_legacy = {
     has_term_election = no
     
     modifiers = {
-    	max_states = 1
-		colonists = 1
-        max_absolutism = -10
+    	trade_steering = 0.15
+        merchants = 1
 	}
     
     conditional = {
@@ -864,9 +816,7 @@ andal_city_legacy = {
     has_term_election = no
     
     modifiers = {
-    	max_states = 1
-		global_missionary_strength = 0.03
-        max_absolutism = -20
+    	global_unrest = -2
 	}
     
     custom_attributes = {
@@ -897,7 +847,6 @@ trading_outpost_legacy = {
     
 	modifiers = {
 		global_trade_power = 0.1
-		max_absolutism = -20
 	}
 
 	conditional = {
@@ -950,10 +899,8 @@ expeditionary_company_legacy = {
     has_term_election = no
     
     modifiers = {
-        global_autonomy = -0.05
-		recover_army_morale_speed = 0.02
-		embracement_cost = -0.1
-		max_states = 2
+        colonist_placement_chance = 0.05
+        range = 0.1
     }
     
     custom_attributes = {
@@ -978,10 +925,8 @@ theocracy_legacy = {
     religion = yes
     
     modifiers = {
-        max_states = 1
-		global_unrest = -1
-		unjustified_demands = -0.1
-		max_absolutism = 5
+        tolerance_own = 1
+        missionaries = 1
     }
     
     custom_attributes = {
@@ -1003,9 +948,8 @@ asshai_cult_legacy = {
     religion = yes
     
     modifiers = {
-    	max_states = 3
-		technology_cost = -0.05
-        max_absolutism = 20
+    	technology_cost = -0.1
+        max_absolutism = 10
 	}
     
     conditional = {
@@ -1034,9 +978,8 @@ bloodsworn_cult_legacy = {
     religion = yes
     
     modifiers = {
-    	max_states = 3
-		discipline = 0.05
-        max_absolutism = 20
+    	land_morale = 0.1
+        max_absolutism = 10
 	}
 
     conditional = {
@@ -1065,9 +1008,8 @@ winged_dominion_legacy = {
     religion = yes
     
     modifiers = {
-    	max_states = 3
-		movement_speed = 0.2
-        max_absolutism = 20
+    	movement_speed = 0.2
+        max_absolutism = 10
 	}
     
     conditional = {
@@ -1096,9 +1038,8 @@ white_walker_cult_legacy = {
     religion = yes
     
     modifiers = {
-    	max_states = 20
-		core_creation = -0.5
-        max_absolutism = 100
+    	core_creation = -0.5
+        max_absolutism = 10
 	}
     
     custom_attributes = {
@@ -1131,9 +1072,8 @@ the_faith_legacy = {
     }
     
     modifiers = {
-		global_missionary_strength = 0.05
-		development_cost = -0.1
-		max_absolutism = -20
+		tolerance_own = 1
+        missionaries = 1
 	}
     
     custom_attributes = {
@@ -1163,10 +1103,9 @@ qohor_city_legacy = {
     }
     
     modifiers = {
-    	max_states = 3
-		years_of_nationalism = -5
-        global_autonomy = -0.025
-        max_absolutism = -10
+    	tolerance_own = 1
+        missionary_maintenance_cost = -0.1
+        max_absolutism = 10
 	}
     
     custom_attributes = {
@@ -1195,10 +1134,9 @@ norvos_city_legacy = {
     }
     
     modifiers = {
-    	max_states = 3
-		yearly_corruption = -0.05
-        global_autonomy = -0.025
-        max_absolutism = -10
+    	tolerance_own = 1
+        infantry_power = 0.1
+        max_absolutism = 10
 	}
     
     custom_attributes = {
@@ -1225,9 +1163,7 @@ tribe_legacy = {
     tribal = yes
     
     modifiers = {
-        max_states = 1
-		global_unrest = -1
-		unjustified_demands = -0.1
+        stability_cost_modifier = -0.25
     }
     
     custom_attributes = {
@@ -1250,8 +1186,8 @@ pirate_clan_legacy = {
     tribal = yes
     
     modifiers = {
-    	max_states = 1
-		global_sailors_modifier = 0.25
+    	naval_forcelimit_modifier = 0.15
+		global_sailors_modifier = 0.15
 	}
     
     custom_attributes = {
@@ -1274,8 +1210,8 @@ wildling_clan_legacy = {
     tribal = yes
     
     modifiers = {
-    	max_states = 1
-		global_regiment_cost = -0.15
+    	army_tradition = 1
+        global_regiment_recruit_speed = -0.15
 	}
     
     factions = {
@@ -1304,8 +1240,8 @@ lhazar_clan_legacy = {
     tribal = yes
     
     modifiers = {
-    	max_states = 1
-		global_regiment_recruit_speed = -0.1
+    	production_efficiency = 0.15
+        state_maintenance_modifier = -0.1
 	}
     
     custom_attributes = {
@@ -1328,8 +1264,8 @@ ibben_clan_legacy = {
     tribal = yes
     
     modifiers = {
-    	max_states = 1
-		global_ship_cost = -0.1
+    	naval_morale = 0.1
+        naval_maintenance_modifier = -0.1
 	}
     
     custom_attributes = {
@@ -1352,8 +1288,8 @@ omber_clan_legacy = {
     tribal = yes
     
     modifiers = {
-    	max_states = 1
-		build_cost = -0.1
+    	build_cost = -0.15
+        build_time = -0.15
 	}
     
     custom_attributes = {
@@ -1376,8 +1312,8 @@ faros_clan_legacy = {
     tribal = yes
     
     modifiers = {
-    	max_states = 1
-		global_trade_goods_size_modifier = 0.1
+    	global_regiment_cost = -0.15
+        global_regiment_recruit_speed = -0.15
 	}
     
     custom_attributes = {
@@ -1400,8 +1336,7 @@ naath_clan_legacy = {
     tribal = yes
     
     modifiers = {
-    	max_states = 1
-		shock_damage = 0.05
+    	tolerance_own = 3
 	}
     
     custom_attributes = {
@@ -1424,8 +1359,8 @@ summer_islander_clan_legacy = {
     tribal = yes
     
     modifiers = {
-    	max_states = 2
-		ship_durability = 0.05
+    	naval_forcelimit_modifier = 0.15
+        sailor_maintenance_modifer = -0.1
 	}
     
     custom_attributes = {
@@ -1451,9 +1386,9 @@ warband_legacy = {
     nomad = yes
     
     modifiers = {
-        max_states = 1
-		global_unrest = -1
-		unjustified_demands = -0.1
+        land_attrition = -0.1
+        reinforce_cost_modifier = -0.1
+        max_absolutism = 10
     }
     
     custom_attributes = {
@@ -1477,8 +1412,8 @@ khalasar_legacy = {
     
     modifiers = {
 		cavalry_power = 0.1
-        cavalry_cost = -0.2
         cav_to_inf_ratio = 0.5
+        max_absolutism = 10
 	}
 
     custom_attributes = {
@@ -1502,8 +1437,8 @@ jhattar_legacy = {
     
     modifiers = {
 		cavalry_power = 0.1
-        cavalry_cost = -0.2
         cav_to_inf_ratio = 0.5
+        max_absolutism = 10
 	}
     
     custom_attributes = {
@@ -1531,9 +1466,7 @@ nights_watch_legacy = {
     has_term_election = no
     
     modifiers = {
-    	max_states = 1
-		advisor_cost = -0.15
-        max_absolutism = -40
+    	global_regiment_cost = -0.33
 	}
     
     custom_attributes = {
@@ -1558,9 +1491,7 @@ outpost_legacy = {
     has_term_election = no
     
     modifiers = {
-    	max_states = 1
-		advisor_cost = -0.15
-        max_absolutism = -40
+    	global_regiment_cost = -0.33
 	}
     
     custom_attributes = {

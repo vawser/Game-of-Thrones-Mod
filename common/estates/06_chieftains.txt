@@ -6,8 +6,20 @@ estate_chieftains = {
     keep_on_conquest = no                             
     always_remove_on_religious_conquest = yes         
 
+    start_territory_weight = 100
+    territory_power_modifier = 2.0
+    
     min_autonomy = 50                                
+    autonomy_does_not_affect = local_tax_modifier
+    autonomy_does_not_affect = local_production_efficiency
     autonomy_does_not_affect = local_manpower_modifier
+    
+    independence_government = tribal
+	starting_reform = wildling_clan_reform
+	independence_tech_group = wildling
+	independence_trigger = {
+		has_estate = estate_chieftains
+	}
     
     # ----- Conditions -----
     trigger = {
@@ -35,13 +47,19 @@ estate_chieftains = {
     
     # ----- Province -----
     province_modifier_happy = {
+        local_tax_modifier = 0.5
+        local_production_efficiency = 0.5
         local_manpower_modifier = 0.5
     }
     province_modifier_neutral = {
+        local_tax_modifier = 0.25
+        local_production_efficiency = 0.25
         local_manpower_modifier = 0.25
     }
     
     province_modifier_angry = {
+        local_tax_modifier = -0.5
+        local_production_efficiency = -0.5
         local_manpower_modifier = -0.5
     }    
     
@@ -78,8 +96,15 @@ estate_chieftains = {
     }   
     
     # ----- Territory -----
-    min_territory = 0                                 
-    min_provinces_to_want_territory = 5        
+    min_territory = 50
+    min_provinces_to_want_territory = 5
+    
+    ai_territory_modifier = {
+		trigger = {
+			always = yes
+		}	
+		value = 100
+	}
     
     # ----- Influence -----
     base_influence = 30
@@ -184,6 +209,54 @@ estate_chieftains = {
 		}
 	}
     
+    # Punish the Chieftains
+    interaction = {
+        name = "PUNISH_THE_CHIEFTAINS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = chieftains_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = chieftains_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_chieftains
+                loyalty = 50
+            }              
+        }
+        
+        effect = {
+            add_estate_loyalty = {
+                estate = estate_chieftains
+                loyalty = -30
+            }
+            add_estate_influence_modifier = {
+                estate = estate_chieftains
+                desc = EST_VAL_PUNISHED
+                influence = -20
+                duration = 7300
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                NOT = {
+                    estate_influence = {
+                        estate = estate_chieftains
+                        influence = 60
+                    }
+                }
+            }
+        }
+    }
+    
     # Exhort Strength
     interaction = {
         name = "EXHORT_STRENGTH"
@@ -196,6 +269,7 @@ estate_chieftains = {
         }
         
         trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = chieftains_estate_in_power } }
             estate_loyalty = {
                 estate = estate_chieftains
                 loyalty = 30
@@ -250,7 +324,7 @@ estate_chieftains = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = chieftains_estate_in_power } }
         }
         
         effect = {
@@ -290,7 +364,7 @@ estate_chieftains = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = chieftains_estate_in_power } }
         }
         
         effect = {
@@ -338,6 +412,7 @@ estate_chieftains = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = chieftains_estate_in_power } }
             estate_influence = {
                 estate = estate_chieftains
                 influence = 40
@@ -378,6 +453,7 @@ estate_chieftains = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = chieftains_estate_in_power } }
             estate_influence = {
                 estate = estate_chieftains
                 influence = 40
@@ -419,6 +495,7 @@ estate_chieftains = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = chieftains_estate_in_power } }
             estate_loyalty = {
                 estate = estate_chieftains
                 loyalty = 30
@@ -475,6 +552,7 @@ estate_chieftains = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = chieftains_estate_in_power } }
             estate_loyalty = {
                 estate = estate_chieftains
                 loyalty = 30
@@ -546,6 +624,7 @@ estate_chieftains = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = chieftains_estate_in_power } }
             estate_loyalty = {
                 estate = estate_chieftains
                 loyalty = 30
@@ -616,13 +695,12 @@ estate_chieftains = {
         
         potential = { 
             NOT = { has_country_flag = chieftains_estate_in_power }
-            
-            any_owned_province = {
-                has_port = yes
-            }
+            num_of_ports = 1
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = chieftains_estate_in_power } }
+            num_of_ports = 1
             estate_loyalty = {
                 estate = estate_chieftains
                 loyalty = 30

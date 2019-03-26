@@ -6,10 +6,15 @@ NDefines.NMilitary.WAR_LENGTH_DAMAGE_MODIFIER = 0.02
 NDefines.NMilitary.WARSCORE_MAX_FROM_BATTLES = 60
 
 --------------------------------
+-- Supply
+--------------------------------
+NDefines.NMilitary.SUPPLYLIMIT_BASE_MULTIPLIER = 10.0
+
+--------------------------------
 -- Doctrine
 --------------------------------
 NDefines.NMilitary.NAVAL_DOCTRINE_SAILORS_COST = 0.0
-NDefines.NMilitary.NAVAL_DOCTRINE_MIN_FORCE_LIMIT = 0.0
+NDefines.NMilitary.NAVAL_DOCTRINE_MIN_FORCE_LIMIT = 9999.0
 
 --------------------------------
 -- Army Professionalism

@@ -77,7 +77,7 @@ country_event = {
         if = {
 			limit = {
 				is_year = 106
-				NOT = { is_year = 106 }
+				NOT = { is_year = 107 }
 			}
 			set_global_flag = war_for_the_stepstones
 		}
@@ -85,7 +85,7 @@ country_event = {
 		if = {
 			limit = {
 				is_year = 129
-				NOT = { is_year = 129 }
+				NOT = { is_year = 130 }
 			}
 			set_global_flag = the_dance_of_dragons
 		}
@@ -93,14 +93,14 @@ country_event = {
 		if = {
 			limit = {
 				is_year = 282
-				NOT = { is_year = 282 }
+				NOT = { is_year = 283 }
 			}
 			set_global_flag = roberts_rebellion
 		}
         
         if = {
 			limit = {
-				is_year = 301
+				is_year = 304
 			}
 			set_global_flag = the_night_king
 		}
@@ -619,6 +619,53 @@ country_event = {
         random_country = {
             limit = { ai = yes }
             set_country_flag = processor
+        }
+    }  
+}
+
+country_event = {
+	id = GOT_SYSTEM.6
+	title = GOT_SYSTEM.6.title
+	desc = GOT_SYSTEM.6.desc
+	picture = ASSASSINATION_eventPicture
+	
+    hidden = yes
+    
+    trigger = {
+        has_country_flag = processor
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+    
+    option = {
+        name = GOT_SYSTEM.6.option.a
+
+        every_country = {
+            limit = { 
+                total_development = 1
+                num_of_cities = 1 
+            }
+            
+            export_to_variable = { 
+                which = current_average_development	
+                value = total_development 
+            }
+            export_to_variable = { 
+                which = province_count	
+                value = num_of_cities 
+            }
+            
+            divide_variable = { 
+                which = current_average_development 
+                which = province_count 
+            }
+
+            set_variable = { 
+                which = average_development 
+                which = current_average_development
+            }
         }
     }  
 }

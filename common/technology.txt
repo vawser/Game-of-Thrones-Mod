@@ -94,7 +94,12 @@ groups = {
 }
 
 tables = {
-	adm_tech = "technologies/adm.txt"
-	dip_tech = "technologies/dip.txt"
-	mil_tech = "technologies/mil.txt"
+    # These are simulated through decisions for the AI (due to AI not researching them + missing add_x_tech command)
+    test_tech   = "technologies/test.txt"
+    test_tech2   = "technologies/test.txt"
+    
+    # AI will research these
+    adm_tech    = "technologies/adm.txt"
+	dip_tech    = "technologies/dip.txt"
+	mil_tech    = "technologies/mil.txt"
 }

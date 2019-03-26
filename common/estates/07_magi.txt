@@ -5,7 +5,9 @@ estate_magi = {
 	
 	keep_on_conquest = no 							
 	always_remove_on_religious_conquest = yes 		
-			
+    
+    start_territory_weight = 5
+    
 	min_autonomy = 25								
     autonomy_does_not_affect = local_tax_modifier
     
@@ -84,8 +86,8 @@ estate_magi = {
     }
     
     # ----- Territory -----
-    min_territory = 0
-    min_provinces_to_want_territory = 0
+    min_territory = 5
+    min_provinces_to_want_territory = 5
     
 	# ----- Influence -----
 	base_influence = 20
@@ -205,6 +207,54 @@ estate_magi = {
 		}
 	}
     
+    # Punish the Magi
+    interaction = {
+        name = "PUNISH_THE_MAGI"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = magi_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = magi_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_magi
+                loyalty = 50
+            }              
+        }
+        
+        effect = {
+            add_estate_loyalty = {
+                estate = estate_magi
+                loyalty = -30
+            }
+            add_estate_influence_modifier = {
+                estate = estate_magi
+                desc = EST_VAL_PUNISHED
+                influence = -20
+                duration = 7300
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                NOT = {
+                    estate_influence = {
+                        estate = estate_magi
+                        influence = 60
+                    }
+                }
+            }
+        }
+    }
+    
     # Seize Magical Artefacts
     interaction = {
         name = "SEIZE_MAGICAL_ARTEFACTS"
@@ -216,7 +266,8 @@ estate_magi = {
             NOT = { has_country_flag = magi_estate_in_power }
         }
         
-        trigger = {        
+        trigger = {     
+            hidden_trigger = { NOT = { has_country_flag = magi_estate_in_power } }
             estate_loyalty = {
                 estate = estate_magi
                 loyalty = 30
@@ -299,7 +350,7 @@ estate_magi = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = magi_estate_in_power } }
         }
         
         effect = {
@@ -339,7 +390,7 @@ estate_magi = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = magi_estate_in_power } }
         }
         
         effect = {
@@ -386,6 +437,7 @@ estate_magi = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = magi_estate_in_power } }
             estate_influence = {
                 estate = estate_magi
                 influence = 40
@@ -426,6 +478,7 @@ estate_magi = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = magi_estate_in_power } }
             estate_influence = {
                 estate = estate_magi
                 influence = 40
@@ -466,6 +519,7 @@ estate_magi = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = magi_estate_in_power } }
             estate_loyalty = {
                 estate = estate_magi
                 loyalty = 30
@@ -526,6 +580,7 @@ estate_magi = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = magi_estate_in_power } }
             estate_loyalty = {
                 estate = estate_magi
                 loyalty = 30
@@ -590,6 +645,7 @@ estate_magi = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = magi_estate_in_power } }
             estate_loyalty = {
                 estate = estate_magi
                 loyalty = 30
@@ -639,6 +695,7 @@ estate_magi = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = magi_estate_in_power } }
             estate_loyalty = {
                 estate = estate_magi
                 loyalty = 30
@@ -688,6 +745,7 @@ estate_magi = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = magi_estate_in_power } }
             estate_loyalty = {
                 estate = estate_magi
                 loyalty = 30
@@ -738,6 +796,8 @@ estate_magi = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = magi_estate_in_power } }
+            technology_group = westerosi
             has_institution = alchemy
             estate_loyalty = {
                 estate = estate_magi

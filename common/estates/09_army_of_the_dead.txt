@@ -5,7 +5,9 @@ estate_undead = {
 	
 	keep_on_conquest = no 							
 	always_remove_on_religious_conquest = yes 		
-			
+    
+    start_territory_weight = 25
+    
 	min_autonomy = 25
     autonomy_does_not_affect = local_manpower_modifier
     
@@ -80,8 +82,8 @@ estate_undead = {
     }
     
     # ----- Territory -----
-    min_territory = 0
-    min_provinces_to_want_territory = 0
+    min_territory = 15
+    min_provinces_to_want_territory = 5
     
 	# ----- Influence -----
 	base_influence = 30

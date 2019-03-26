@@ -5,7 +5,9 @@ estate_slaves = {
 	
 	keep_on_conquest = no
 	always_remove_on_religious_conquest = yes 		
-			
+	
+    start_territory_weight = 5
+    
 	min_autonomy = 25
     autonomy_does_not_affect = local_manpower_modifier
     
@@ -199,6 +201,7 @@ estate_slaves = {
         }
         
 		trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = slaves_estate_in_power } }
             NOT = { has_country_modifier = slavery_permitted }
             stability = 3
         }
@@ -244,6 +247,7 @@ estate_slaves = {
         }
         
 		trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = slaves_estate_in_power } }
             NOT = { has_country_modifier = slavery_prohibited }
             stability = 3
         }
@@ -276,6 +280,54 @@ estate_slaves = {
 		}
 	}
     
+    # Punish the Slaves
+    interaction = {
+        name = "PUNISH_THE_SLAVES"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = slaves_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = slaves_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_slaves
+                loyalty = 50
+            }              
+        }
+        
+        effect = {
+            add_estate_loyalty = {
+                estate = estate_slaves
+                loyalty = -30
+            }
+            add_estate_influence_modifier = {
+                estate = estate_slaves
+                desc = EST_VAL_PUNISHED
+                influence = -20
+                duration = 7300
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                NOT = {
+                    estate_influence = {
+                        estate = estate_slaves
+                        influence = 60
+                    }
+                }
+            }
+        }
+    }
+    
     # Fund Slavers
     interaction = {
         name = "FUND_SLAVERS"
@@ -289,7 +341,8 @@ estate_slaves = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = slaves_estate_in_power } }
+            has_country_modifier = slavery_permitted
         }
         
         effect = {
@@ -330,7 +383,8 @@ estate_slaves = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = slaves_estate_in_power } }
+            has_country_modifier = slavery_permitted
         }
         
         effect = {
@@ -378,6 +432,8 @@ estate_slaves = {
         }
         
         trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = slaves_estate_in_power } }
+            has_country_modifier = slavery_permitted
             NOT = { has_country_modifier = slavery_construction }
             
             estate_loyalty = {
@@ -425,6 +481,8 @@ estate_slaves = {
         }
         
         trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = slaves_estate_in_power } }
+            has_country_modifier = slavery_permitted
             NOT = { has_country_modifier = slavery_production }
             
             estate_loyalty = {
@@ -472,6 +530,8 @@ estate_slaves = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = slaves_estate_in_power } }
+            has_country_modifier = slavery_permitted
             estate_loyalty = {
                 estate = estate_slaves
                 loyalty = 50
@@ -520,6 +580,8 @@ estate_slaves = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = slaves_estate_in_power } }
+            has_country_modifier = slavery_permitted
             estate_loyalty = {
                 estate = estate_slaves
                 loyalty = 50
@@ -568,6 +630,8 @@ estate_slaves = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = slaves_estate_in_power } }
+            has_country_modifier = slavery_permitted
             estate_loyalty = {
                 estate = estate_slaves
                 loyalty = 50

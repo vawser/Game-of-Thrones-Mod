@@ -6,7 +6,10 @@ estate_commoners = {
 	keep_on_conquest = no 							
 	always_remove_on_religious_conquest = yes 		
 
-	min_autonomy = 25								
+    start_territory_weight = 25
+    territory_power_modifier = 0.5
+    
+	min_autonomy = 25
     autonomy_does_not_affect = local_production_efficiency
     
     custom_name = {
@@ -18,7 +21,10 @@ estate_commoners = {
     
     # ----- Conditions -----
 	trigger = {
-        always = yes
+        NOT = { has_reform = white_walker_cult_reform }
+		NOT = { has_reform = wildling_clan_reform }
+        NOT = { has_reform = khalasar_reform }
+        NOT = { has_reform = jhattar_reform }
 	}
 	
 	province_trigger = {
@@ -76,8 +82,8 @@ estate_commoners = {
     }
     
 	# ----- Territory -----
-    min_territory = 15
-    min_provinces_to_want_territory = 10
+    min_territory = 20
+    min_provinces_to_want_territory = 5
     
 	# ----- Influence -----
 	base_influence = 30
@@ -253,6 +259,54 @@ estate_commoners = {
 		}
 	}
     
+    # Punish the Commoners
+    interaction = {
+        name = "PUNISH_THE_COMMONERS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = commoners_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = commoners_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_commoners
+                loyalty = 50
+            }              
+        }
+        
+        effect = {
+            add_estate_loyalty = {
+                estate = estate_commoners
+                loyalty = -30
+            }
+            add_estate_influence_modifier = {
+                estate = estate_commoners
+                desc = EST_VAL_PUNISHED
+                influence = -20
+                duration = 7300
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                NOT = {
+                    estate_influence = {
+                        estate = estate_commoners
+                        influence = 60
+                    }
+                }
+            }
+        }
+    }
+    
     # Enforce Martial Law
     interaction = {
         name = "ENFORCE_MARTIAL_LAW"
@@ -264,7 +318,8 @@ estate_commoners = {
             NOT = { has_country_flag = commoners_estate_in_power }
         }
         
-        trigger = {        
+        trigger = {         
+            hidden_trigger = { NOT = { has_country_flag = commoners_estate_in_power } }
             estate_loyalty = {
                 estate = estate_commoners
                 loyalty = 30
@@ -318,7 +373,7 @@ estate_commoners = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = commoners_estate_in_power } }
         }
         
         effect = {
@@ -358,7 +413,7 @@ estate_commoners = {
         }
         
         trigger = {
-            always = yes
+            hidden_trigger = { NOT = { has_country_flag = commoners_estate_in_power } }
         }
         
         effect = {
@@ -405,6 +460,7 @@ estate_commoners = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = commoners_estate_in_power } }
             estate_influence = {
                 estate = estate_commoners
                 influence = 40
@@ -445,6 +501,7 @@ estate_commoners = {
         years_between_use = 30
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = commoners_estate_in_power } }
             estate_influence = {
                 estate = estate_commoners
                 influence = 40
@@ -485,6 +542,7 @@ estate_commoners = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = commoners_estate_in_power } }
             estate_loyalty = {
                 estate = estate_commoners
                 loyalty = 30
@@ -543,6 +601,7 @@ estate_commoners = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = commoners_estate_in_power } }
             estate_loyalty = {
                 estate = estate_commoners
                 loyalty = 30
@@ -607,6 +666,7 @@ estate_commoners = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = commoners_estate_in_power } }
             estate_loyalty = {
                 estate = estate_commoners
                 loyalty = 30
@@ -656,6 +716,7 @@ estate_commoners = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = commoners_estate_in_power } }
             estate_loyalty = {
                 estate = estate_commoners
                 loyalty = 30
@@ -705,6 +766,7 @@ estate_commoners = {
         }
         
         trigger = {
+            hidden_trigger = { NOT = { has_country_flag = commoners_estate_in_power } }
             estate_loyalty = {
                 estate = estate_commoners
                 loyalty = 30

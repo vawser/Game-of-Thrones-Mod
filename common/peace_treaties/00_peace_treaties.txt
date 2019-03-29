@@ -91,25 +91,7 @@ claim_the_iron_throne = {
             remove_government_reform = noble_house_reform
             add_government_reform = royal_house_reform
         }
-        FROM = {
-            every_subject_country = {
-                limit = { is_subject_of_type = royal_subject }
-                grant_independence = yes
-                
-                ROOT = {
-                    create_subject = {
-                        subject_type = royal_subject
-                        subject = PREV
-                    }
-                }
-            }
-        }
-        ROOT = {
-            create_subject = {
-                subject_type = royal_subject
-                subject = FROM
-            }
-        }
+        hidden_effect = { set_global_flag = update_royal_subjects } # Updates royal subjects
     }
     ai_weight = {
         export_to_variable = {

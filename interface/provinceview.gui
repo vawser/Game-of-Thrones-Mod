@@ -5717,18 +5717,34 @@ guiTypes = {
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 120
 			maxHeight = 18
-			text = "Manufactories"
+			text = "Commerce"
 		}	
         
         checkboxType = {
 			name = "build_manufactory"
-			position = { x = 165 y = 216 }
+			position = { x = 135 y = 216 }
 			quadTextureSprite = "GFX_courthouse_muslimgfx"
 		}
 
 		instantTextBoxType={
 			name = "manufactory_cost"
-			position = {x = 165 y = 266 }
+			position = {x = 135 y = 266 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}	
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"	
+		}
+        
+        checkboxType = {
+			name = "build_cot"
+			position = { x = 195 y = 216 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx"
+		}
+
+		instantTextBoxType={
+			name = "cot_cost"
+			position = {x = 195 y = 266 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128

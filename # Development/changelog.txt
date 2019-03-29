@@ -28,6 +28,7 @@ These are features changed in the mod that require DLC:
  
 - Common Sense
  - Protestant religion mechanic
+ - Devotion
  
 - Wealth of Nations
  - Fervor
@@ -103,9 +104,11 @@ These are features changed in the mod that require DLC:
 - Increased base diplomatic_upkeep to 1
 - Increased base mercenary_cost to 1.0
 - Increased base free_leader_pool to 5
-- Reduced base yearly horde_unity to -1
-- Increased base yearly devotion to -1
-- Reduced base yearly meritocracy to -1
+- Legitimacy decays by -1 each year
+- Republican Tradition decays by -1 each year
+- Devotion decays by -1 each year
+- Horde Unity decays by -1 each year
+- Meritocracy decays by -1 each year
 - Added base yearly_absolutism of -1
 - Added base yearly_army_professionalism of -0.01
 - Removed possible_mercenaries = 0.05 from war taxes.
@@ -115,8 +118,7 @@ These are features changed in the mod that require DLC:
 - Removed free_leader_pool from Navy Tradition
 - Emperor now gets spy_offence = 0.25, advisor_pool = 3, diplomatic_upkeep = 2, prestige = 1
 - Removed Revanchism bonuses.
-- Removed yearly_corruption due to territories.
-- Absolutism now grants administrative_efficiency = 0.5 and global_unrest = 5
+- Absolutism now grants (at 100): 2 Army/Navy Tradition and 2 Legitimacy/Devotion/Horde Unity/Meritocracy per year
 - Production Leader now grants trade_goods_size_modifier = 0.25
 - Low Army Professionalism now grants mercenary_cost = -0.2, possible_mercenaries = 0.2
 - High Army Professionalism now grants discipline = 0.2, land_morale = 0.2, siege_ability = 0.2
@@ -175,7 +177,6 @@ These are features changed in the mod that require DLC:
 - Advisor promotion now costs (10 * (monthly cost * 12))
 - Buildings cost less to build in general.
 - Buildings take longer to building general.
-- Corruption now reduces legitimacy modifiers rather than increase power costs.
 - Republican Tradition is affected by prestige
 - Republican Tradition is affected by negative stability
 - Implemented new ideagroups (67 in total, 45 excluding religion-specific groups)
@@ -218,12 +219,15 @@ These are features changed in the mod that require DLC:
 - Reduced development cap for missionary maintenance cost to 20 (from 100), reducing max cost.
 - Removed the "Council of X" estate action for Nobility
 - Added "Punish the X" estate action for each estate, trading loyalty for influence reduction
-- Monarch Power Max is now 10,000
+- Monarch Power Max is now 5,000
 - Changed technology tables. Technology starts at 1 for all bookmarks. The base cost for technology is now 2000, but each technology now gives a big boost and isn't gated by time anymore. There are 10 main technologies and 1 end technology that grants a big boost for finishing the technology group.
 - Buildings are now always unlocked.
 - Spy diplomatic actions are now always unlocked.
 - Cost of forts increased.
 - Cost of unique buildings increased.
+- Added religious_center triggered province modifiers.
+- Added unique religion triggered province modifiers.
+- Added "Center of Trade" building, allowing you to create new Centers of Trade in states. Your placement of the COT is not changable once built.
 
 #-----------------------------
 # TODO

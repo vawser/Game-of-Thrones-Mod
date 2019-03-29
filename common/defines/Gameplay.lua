@@ -10,10 +10,13 @@ NDefines.NCountry.STRENGTHEN_GOVERNMENT_REPUBLICAN_TRADITION = 10
 NDefines.NCountry.BASE_TARIFF = 0.25
 NDefines.NCountry.RAZE_TECH_POWER_DECREASE = 0.01
 
+NDefines.NDiplomacy.CHARTER_COMPANY_BASE_COST = 5000
+NDefines.NDiplomacy.CHARTER_COMPANY_MINIMUM_COST = 1000
+
 --------------------------------
 -- Power
 --------------------------------
-NDefines.NCountry.POWER_MAX = 10000
+NDefines.NCountry.POWER_MAX = 5000
 NDefines.NCountry.BASE_POWER_INCREASE = 3
 NDefines.NCountry.MONARCH_MIN_SKILL = 0
 NDefines.NCountry.MONARCH_MAX_SKILL = 6

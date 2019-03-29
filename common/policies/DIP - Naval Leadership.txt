@@ -1,7 +1,7 @@
 #---------------------------------------------------------
 # Naval Leadership
 #---------------------------------------------------------
-adm_entry = {
+spirit_of_leadership = {
 	monarch_power = ADM
 
 	potential = {
@@ -31,13 +31,14 @@ adm_entry = {
 	}
 	
 	# Modifier
-    
+    admiral_cost = -0.5
+    admiral_skill_gain_modifier = 0.25
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-dip_entry = {
+spirit_of_exploration = {
 	monarch_power = DIP
 
 	potential = {
@@ -66,13 +67,13 @@ dip_entry = {
 	}
 	
 	# Modifier
-    
+    leader_naval_manuever = 1
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-mil_entry = {
+spirit_of_war = {
 	monarch_power = MIL
 
 	potential = {
@@ -86,7 +87,7 @@ mil_entry = {
                 full_idea_group = got_defensive_ideas
                 full_idea_group = got_quality_ideas
                 full_idea_group = got_quantity_ideas
-                full_idea_group = got_professional_army_ideas 
+                full_idea_group = got_professional_army_ideas  
                 full_idea_group = got_mercenary_army_ideas
                 full_idea_group = got_army_organisation_ideas
                 full_idea_group = got_army_leadership_ideas
@@ -102,7 +103,7 @@ mil_entry = {
 	}
 	
 	# Modifier
-    
+    navy_tradition = 1
     
 	ai_will_do = {
 		factor = 1

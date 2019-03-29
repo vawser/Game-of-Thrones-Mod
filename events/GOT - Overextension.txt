@@ -300,18 +300,8 @@ country_event = {
 	option = {
 		name = got_overextension.8.option.a
 
-		if = {
-			limit = { 
-                OR = {
-                    has_reform = khalasar_reform
-                    has_reform = jhattar_reform
-                }
-            }
-			add_horde_unity = -15
-		}
-		else = {
-            add_legitimacy = -15
-        }
+		add_legitimacy = -15
+        add_horde_unity = -15
         
 		if = {
 			limit = { has_estate = estate_nobles }

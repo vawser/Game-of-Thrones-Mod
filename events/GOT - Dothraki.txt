@@ -78,6 +78,7 @@ country_event = {
 			dynasty = ROOT #Uncles, or other relatives were by far the most likely coup-makers
 		}
 		kill_heir = yes
+        add_legitimacy = -25
 		add_horde_unity = -25
 	}
 }
@@ -107,6 +108,7 @@ country_event = {
 		remove_country_modifier = dothraki_succession_crisis
 		add_stability_or_adm_power = yes
 		add_horde_unity = 25
+        add_legitimacy = 25
 	}
 }
 
@@ -159,7 +161,8 @@ country_event = {
 		
 		add_mil_power = 200
 		add_horde_unity = -25
-		
+		add_legitimacy = -25
+        
 		if = {
 			limit = { has_estate = estate_khalasar }
 			

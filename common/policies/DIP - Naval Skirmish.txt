@@ -1,7 +1,7 @@
 #---------------------------------------------------------
 # Naval Skirmish
 #---------------------------------------------------------
-adm_entry = {
+flanking_maneuvers = {
 	monarch_power = ADM
 
 	potential = {
@@ -31,13 +31,13 @@ adm_entry = {
 	}
 	
 	# Modifier
-    
+    recover_navy_morale_speed = 0.1
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-dip_entry = {
+converted_ships = {
 	monarch_power = DIP
 
 	potential = {
@@ -66,13 +66,13 @@ dip_entry = {
 	}
 	
 	# Modifier
-    
+    galley_cost = -0.2
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-mil_entry = {
+galley_swarms = {
 	monarch_power = MIL
 
 	potential = {
@@ -86,7 +86,7 @@ mil_entry = {
                 full_idea_group = got_defensive_ideas
                 full_idea_group = got_quality_ideas
                 full_idea_group = got_quantity_ideas
-                full_idea_group = got_professional_army_ideas 
+                full_idea_group = got_professional_army_ideas  
                 full_idea_group = got_mercenary_army_ideas
                 full_idea_group = got_army_organisation_ideas
                 full_idea_group = got_army_leadership_ideas
@@ -102,7 +102,7 @@ mil_entry = {
 	}
 	
 	# Modifier
-    
+    galley_power = 0.1
     
 	ai_will_do = {
 		factor = 1

@@ -1,0 +1,16 @@
+# Added so Professional Army ideagroup grants yearly_army_professionalism.
+# Users lacking Cradle of Civilization have the modifier converted into Land Morale when in the ideagroup, giving them a 1000% boost, which is broken. 
+# Unfortunately Paradox is stupid and hardcodes the conversion of modifiers between DLC and non-DLC, so this is a workaround.
+professional_army_bonus = {
+	potential = {
+		full_idea_group = got_professional_army_ideas
+        has_dlc = "Cradle of Civilization"
+	}
+	
+	trigger = {
+		full_idea_group = got_professional_army_ideas
+	}
+	
+	yearly_army_professionalism = 0.05
+}
+

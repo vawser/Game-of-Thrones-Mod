@@ -288,8 +288,40 @@ citadel = {
 }
 
 #--------------------------------------
-# Manufactories
+# Trade
 #--------------------------------------
+cot = {
+	cost = 1000
+	time = 60
+    
+	trigger = {
+        NOT = {
+            any_province_in_state = {
+                province_has_center_of_trade_of_level = 1
+            }
+        }
+        NOT = {
+            any_province_in_state = {
+                has_construction = building 
+            }
+        }
+        NOT = {
+            any_province_in_state = {
+                has_building = cot
+            }
+        }
+    }
+    
+    on_built = {
+        center_of_trade = 1
+        hidden_effect = { remove_building = cot }
+    }
+    
+	ai_will_do = {
+		factor = 1
+	}
+}
+
 manufactory = {
 	cost = 500
 	time = 60

@@ -609,7 +609,7 @@ royal_subject = {
     # Attributes:
 	trust_on_start = 50
     max_government_rank = 5
-	base_liberty_desire = -25.0
+	base_liberty_desire = -50.0
     liberty_desire_negative_prestige = 0.05
 	liberty_desire_development_ratio = 0.05
     liberty_desire_same_dynasty = -10.0
@@ -623,22 +623,22 @@ royal_subject = {
     # States:
 	can_fight = {
 		independent_nations = yes
-		same_overlord = royal_subject
+		same_overlord = all
 		other_overlord = all
 	}
 	can_rival = {
 		independent_nations = yes
-		same_overlord = royal_subject
+		same_overlord = all
 		other_overlord = all
 	}
 	can_ally = {
 		independent_nations = yes
-		same_overlord = royal_subject
+		same_overlord = all
 		other_overlord = all
 	}
 	can_marry = {
 		independent_nations = yes
-		same_overlord = royal_subject
+		same_overlord = all
 		other_overlord = all
 	}
 	

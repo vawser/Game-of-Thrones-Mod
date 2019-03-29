@@ -1,0 +1,110 @@
+namespace = GOT_WAR_OF_THE_FIVE_KINGS
+
+# War of the Five Kings
+country_event = {
+	id = GOT_WAR_OF_THE_FIVE_KINGS.1
+	title = GOT_WAR_OF_THE_FIVE_KINGS.1.title
+	desc = GOT_WAR_OF_THE_FIVE_KINGS.1.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+    major = yes
+    
+	trigger = {
+        tag = A07
+        start_date = 298.1.1
+        NOT = { has_global_flag = war_of_the_five_kings }
+        NOT = { has_global_flag = shattered_world }
+    }
+
+    mean_time_to_happen = {
+		days = 1
+	}
+    
+    immediate = {
+        hidden_effect = { set_global_flag = war_of_the_five_kings }
+    }
+    
+	option = {
+		name = GOT_WAR_OF_THE_FIVE_KINGS.1.option.a
+        
+        A01 = {
+            declare_war_with_cb = {
+                who = A07
+                casus_belli = cb_independence_war
+            }
+        }
+        M09 = {
+            declare_war_with_cb = {
+                who = A01
+                casus_belli = cb_lordly_feud
+            }
+        }
+        B01 = {
+            declare_war_with_cb = {
+                who = A07
+                casus_belli = cb_independence_war
+            }
+        }
+        A39 = {
+            declare_war_with_cb = {
+                who = A07
+                casus_belli = cb_independence_war
+            }
+        }
+	}
+}
+
+# A Clash of Kings
+# Won't occur if "War of the Five Kings" event has occured
+country_event = {
+	id = GOT_WAR_OF_THE_FIVE_KINGS.2
+	title = GOT_WAR_OF_THE_FIVE_KINGS.2.title
+	desc = GOT_WAR_OF_THE_FIVE_KINGS.2.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+    major = yes
+    
+	trigger = {
+        tag = A07
+        start_date = 299.1.1
+        NOT = { has_global_flag = war_of_the_five_kings } 
+        NOT = { has_global_flag = shattered_world }
+    }
+
+    mean_time_to_happen = {
+		days = 1
+	}
+    
+    immediate = {
+        hidden_effect = { set_global_flag = war_of_the_five_kings }
+    }
+    
+	option = {
+		name = GOT_WAR_OF_THE_FIVE_KINGS.2.option.a
+        
+        A01 = {
+            declare_war_with_cb = {
+                who = A07
+                casus_belli = cb_independence_war
+            }
+        }
+        M09 = {
+            declare_war_with_cb = {
+                who = A01
+                casus_belli = cb_lordly_feud
+            }
+        }
+        B01 = {
+            declare_war_with_cb = {
+                who = A07
+                casus_belli = cb_independence_war
+            }
+        }
+        A39 = {
+            declare_war_with_cb = {
+                who = A07
+                casus_belli = cb_independence_war
+            }
+        }
+	}
+}

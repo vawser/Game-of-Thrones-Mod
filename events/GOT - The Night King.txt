@@ -1,0 +1,31 @@
+namespace = GOT_THE_NIGHT_KING
+
+# The Night King
+country_event = {
+	id = GOT_THE_NIGHT_KING.1
+	title = GOT_THE_NIGHT_KING.1.title
+	desc = GOT_THE_NIGHT_KING.1.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+    major = yes
+    
+	trigger = {
+        tag = WIT
+        start_date = 304.1.1
+        NOT = { has_global_flag = the_night_king }
+        NOT = { has_global_flag = shattered_world }
+    }
+
+    mean_time_to_happen = {
+		days = 1
+	}
+    
+    immediate = {
+        hidden_effect = { set_global_flag = the_night_king }
+    }
+    
+	option = {
+		name = GOT_THE_NIGHT_KING.1.option.a
+	}
+}
+

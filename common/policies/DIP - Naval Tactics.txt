@@ -1,7 +1,7 @@
 #---------------------------------------------------------
 # Naval Tactics
 #---------------------------------------------------------
-adm_entry = {
+wide_fleet_engagements = {
 	monarch_power = ADM
 
 	potential = {
@@ -31,13 +31,13 @@ adm_entry = {
 	}
 	
 	# Modifier
-    
+    global_naval_engagement_modifier = 0.1
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-dip_entry = {
+sea_shanties = {
 	monarch_power = DIP
 
 	potential = {
@@ -66,13 +66,13 @@ dip_entry = {
 	}
 	
 	# Modifier
-    
+    recover_navy_morale_speed = 0.1
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-mil_entry = {
+fearless_sailors = {
 	monarch_power = MIL
 
 	potential = {
@@ -86,7 +86,7 @@ mil_entry = {
                 full_idea_group = got_defensive_ideas
                 full_idea_group = got_quality_ideas
                 full_idea_group = got_quantity_ideas
-                full_idea_group = got_professional_army_ideas 
+                full_idea_group = got_professional_army_ideas  
                 full_idea_group = got_mercenary_army_ideas
                 full_idea_group = got_army_organisation_ideas
                 full_idea_group = got_army_leadership_ideas
@@ -102,7 +102,7 @@ mil_entry = {
 	}
 	
 	# Modifier
-    
+    sunk_ship_morale_hit_recieved = -0.1
     
 	ai_will_do = {
 		factor = 1

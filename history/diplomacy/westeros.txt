@@ -1,5 +1,5 @@
 #--------------------------------
-# Base
+# Westeros Vassals
 #--------------------------------
 # Stark -> House Magnar
 dependency = {
@@ -10,13 +10,26 @@ dependency = {
 	end_date = 899.1.1
 }
 
+#--------------------------------
+# Westeros Marriages
+#--------------------------------
+royal_marriage = {
+	first = A09
+	second = U44
+	start_date = 281.1.1
+	end_date = 290.1.1
+}
+
+#--------------------------------
+# Targaryen Royal Subjects
+#--------------------------------
 # Targaryen -> Baratheon
 dependency = {
 	subject_type = "royal_subject"
 	first = A10
 	second = A07
 	start_date = 106.1.1
-	end_date = 281.1.1
+	end_date = 283.1.1
 }
 
 # Targaryen -> Tyrell
@@ -25,7 +38,7 @@ dependency = {
 	first = A10
 	second = F20
 	start_date = 106.1.1
-	end_date = 281.1.1
+	end_date = 283.1.1
 }
 
 # Targaryen -> Lannister
@@ -34,7 +47,7 @@ dependency = {
 	first = A10
 	second = A06
 	start_date = 106.1.1
-	end_date = 281.1.1
+	end_date = 283.1.1
 }
 
 # Targaryen -> Tully
@@ -43,7 +56,7 @@ dependency = {
 	first = A10
 	second = A03
 	start_date = 106.1.1
-	end_date = 281.1.1
+	end_date = 283.1.1
 }
 
 # Targaryen -> Arryn
@@ -52,7 +65,7 @@ dependency = {
 	first = A10
 	second = A04
 	start_date = 106.1.1
-	end_date = 281.1.1
+	end_date = 283.1.1
 }
 
 # Targaryen -> Greyjoy
@@ -61,7 +74,7 @@ dependency = {
 	first = A10
 	second = M09
 	start_date = 106.1.1
-	end_date = 281.1.1
+	end_date = 283.1.1
 }
 
 # Targaryen -> Stark
@@ -70,31 +83,7 @@ dependency = {
 	first = A10
 	second = A01
 	start_date = 106.1.1
-	end_date = 281.1.1
-}
-
-#--------------------------------
-# Conquest of Dorne
-#--------------------------------
-# Targaryen -> Martell
-dependency = {
-	subject_type = "royal_subject"
-	first = A10
-	second = A09
-	start_date = 157.1.1
-	end_date = 281.1.1
-}
-
-#--------------------------------
-# Robert's Rebellion
-#--------------------------------
-# Targaryen -> Tyrell
-dependency = {
-	subject_type = "royal_subject"
-	first = A10
-	second = F20
-	start_date = 281.1.1
-	end_date = 289.1.1
+	end_date = 283.1.1
 }
 
 # Targaryen -> Martell
@@ -102,10 +91,13 @@ dependency = {
 	subject_type = "royal_subject"
 	first = A10
 	second = A09
-	start_date = 281.1.1
-	end_date = 289.1.1
+	start_date = 157.1.1 # Conquest of Dorne
+	end_date = 283.1.1
 }
 
+#--------------------------------
+# Baratheon Alliances (Robert's Rebellion)
+#--------------------------------
 # Baratheon -> Stark
 alliance = {
 	first = A07
@@ -138,68 +130,103 @@ alliance = {
 	end_date = 289.1.1
 }
 
+# Targaryen -> Tyrell
+alliance = {
+	first = A10
+	second = F20
+	start_date = 281.1.1
+	end_date = 289.1.1
+}
+
+# Targaryen -> Martell
+alliance = {
+	first = A10
+	second = A09
+	start_date = 281.1.1
+	end_date = 289.1.1
+}
+
 # After Trident
 # Greyjoy
 # Lannister
 
 #--------------------------------
-# Robert's Rebellion Aftermath
+# Baratheon Royal Subjects
 #--------------------------------
 # Baratheon -> Stark
 dependency = {
 	subject_type = "royal_subject"
 	first = A07
 	second = A01
-	start_date = 282.1.1
-	end_date = 298.1.1
+	start_date = 283.1.1
+	end_date = 999.1.1
 }
 # Baratheon -> Lannister
 dependency = {
 	subject_type = "royal_subject"
 	first = A07
 	second = A06
-	start_date = 282.1.1
-	end_date = 298.1.1
+	start_date = 283.1.1
+	end_date = 999.1.1
 }
 # Baratheon -> Tully
 dependency = {
 	subject_type = "royal_subject"
 	first = A07
 	second = A03
-	start_date = 282.1.1
-	end_date = 298.1.1
+	start_date = 283.1.1
+	end_date = 999.1.1
 }
 # Baratheon -> Arryn
 dependency = {
 	subject_type = "royal_subject"
 	first = A07
 	second = A04
-	start_date = 282.1.1
-	end_date = 298.1.1
+	start_date = 283.1.1
+	end_date = 999.1.1
 }
 # Baratheon -> Greyjoy
 dependency = {
 	subject_type = "royal_subject"
 	first = A07
 	second = M09
-	start_date = 282.1.1
-	end_date = 298.1.1
+	start_date = 283.1.1
+	end_date = 298.1.1 # Declares independance at the start of War of the Five Kings
 }
 # Baratheon -> Dorne
 dependency = {
 	subject_type = "royal_subject"
 	first = A07
 	second = A09
-	start_date = 282.1.1
-	end_date = 298.1.1
+	start_date = 283.1.1
+	end_date = 999.1.1
 }
 # Baratheon -> Tyrell
 dependency = {
 	subject_type = "royal_subject"
 	first = A07
 	second = F20
-	start_date = 282.1.1
-	end_date = 298.1.1
+	start_date = 283.1.1
+	end_date = 999.1.1
+}
+
+#--------------------------------
+# Alliances (War of the Five Kings)
+#--------------------------------
+# Renly -> Tyrell
+alliance = {
+	first = B01
+	second = F20
+	start_date = 298.1.1
+	end_date = 999.1.1
+}
+
+# Stark -> Tully
+alliance = {
+	first = A01
+	second = A03
+	start_date = 299.1.1
+	end_date = 999.1.1
 }
 
 #--------------------------------

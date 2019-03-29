@@ -74,36 +74,6 @@ country_event = {
 			}
 			set_global_flag = shattered_world
 		}
-        if = {
-			limit = {
-				is_year = 106
-				NOT = { is_year = 107 }
-			}
-			set_global_flag = war_for_the_stepstones
-		}
-		
-		if = {
-			limit = {
-				is_year = 129
-				NOT = { is_year = 130 }
-			}
-			set_global_flag = the_dance_of_dragons
-		}
-		
-		if = {
-			limit = {
-				is_year = 282
-				NOT = { is_year = 283 }
-			}
-			set_global_flag = roberts_rebellion
-		}
-        
-        if = {
-			limit = {
-				is_year = 304
-			}
-			set_global_flag = the_night_king
-		}
 	}
 }
 
@@ -670,3 +640,86 @@ country_event = {
     }  
 }
 
+# Update Royal House Subjects
+country_event = {
+	id = GOT_SYSTEM.7
+	title = GOT_SYSTEM.7.title
+	desc = GOT_SYSTEM.7.desc
+	picture = ASSASSINATION_eventPicture
+	
+    hidden = yes
+    
+    trigger = {
+        has_country_flag = processor
+        has_global_flag = update_royal_subjects
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_SYSTEM.7.option.a
+
+        clr_global_flag = update_royal_subjects
+        
+        # Release old royal subjects
+        every_country = {
+            limit = { 
+                has_reform = noble_house_reform
+                OR = {
+                    is_subject_of_type = royal_subject
+                    is_subject = no
+                }
+            }
+            
+            log = "[This.GetName]"
+
+            # Clear old relations
+            every_subject_country = {
+                limit = {
+                    is_subject_of_type = royal_subject
+                }
+                grant_independence = yes
+            }
+        }
+        
+        country_event = { id = GOT_SYSTEM.8 days = 1 }
+    }  
+}
+
+country_event = {
+	id = GOT_SYSTEM.8
+	title = GOT_SYSTEM.8.title
+	desc = GOT_SYSTEM.8.desc
+	picture = ASSASSINATION_eventPicture
+	
+    hidden = yes
+    is_triggered_only = yes
+    
+    option = {
+        name = GOT_SYSTEM.8.option.a
+
+        clr_global_flag = update_royal_subjects
+        
+        # Release old royal subjects
+        every_country = {
+            limit = { 
+                has_reform = noble_house_reform
+                OR = {
+                    is_subject_of_type = royal_subject
+                    is_subject = no
+                }
+            }
+
+            # Add all Noble Houses as subjects to new Royal House
+            every_country = {
+                limit = { has_reform = royal_house_reform }
+                create_subject = {
+                    subject_type = royal_subject
+                    subject = PREV
+                }
+            }
+        }
+    }  
+}

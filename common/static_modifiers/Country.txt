@@ -25,6 +25,8 @@ base_values = {
 	vassal_income = 0.1
     vassal_forcelimit_bonus = 1.0
     
+    legitimacy = -1
+    republican_tradition = -1
 	horde_unity = -1
 	devotion = -1
 	meritocracy = -1
@@ -271,19 +273,11 @@ country_development = {
 }
 
 corruption = {
-    legitimacy = -10
-    republican_tradition = -10
-    devotion = -10
-    horde_unity = -10
-    meritocracy = -10
-    
-	global_spy_defence = -0.25
-	spy_offence = -0.50
-    
+    all_power_cost = 1.0
+	global_spy_defence = -1
+	spy_offence = -1
 	min_autonomy = 50
 	global_unrest = -20
-    
-	mercantile_chieftains_influence = 0.05
 }
 
 root_out_corruption = {
@@ -335,27 +329,27 @@ over_extension = {
 }
 
 territory_very_easy_difficulty = { # Penalties for territories on very easy difficulty
-
+    yearly_corruption = 0.02
 }
 
 territory_easy_difficulty = { # Penalties for territories on easy difficulty
-    
+    yearly_corruption = 0.02
 }
 
 territory_normal_difficulty = { # Penalties for territories on normal difficulty
-    
+    yearly_corruption = 0.02
 }
 
 territory_hard_difficulty = { # Penalties for territories on hard difficulty
-    
+    yearly_corruption = 0.02
 }
 
 territory_very_hard_difficulty = { # Penalties for territories on very hard difficulty
-    
+    yearly_corruption = 0.02
 }
 
 territory_ai_difficulty = { #Penalties for territories owned by AI regardless of difficulty.
-    
+    yearly_corruption = 0.02
 }
 
 prestige = {
@@ -374,8 +368,12 @@ prestige = {
 }
 
 absolutism = {
-	administrative_efficiency = 0.2
-    discipline = 0.1
+	army_tradition = 2
+    navy_tradition = 2
+    legitimacy = 2
+    devotion = 2
+    horde_unity = 2
+    meritocracy = 2
 }
 
 total_occupation = {

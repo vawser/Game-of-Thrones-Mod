@@ -36,7 +36,7 @@ base_values = {
     
 	monthly_splendor = 1
     yearly_absolutism = -1
-    yearly_army_professionalism = -0.01
+    #yearly_army_professionalism = -0.01
     
 	artillery_bonus_vs_fort = 5
 	cav_to_inf_ratio = 0.5
@@ -525,14 +525,14 @@ native_policy_hostile = {
 }
 
 low_army_professionalism = {
-	mercenary_cost = -0.2
-	possible_mercenaries = 0.2
+	#mercenary_cost = -0.2
+	#possible_mercenaries = 0.2
 }
 
 high_army_professionalism = {
-	discipline = 0.2
-    land_morale = 0.2
-	siege_ability = 0.2
+	#discipline = 0.2
+    #land_morale = 0.2
+	#siege_ability = 0.2
 }
 
 #scales to amount of up-to-date forts compared to total development
@@ -541,7 +541,7 @@ maintained_forts = {
 }
 
 drilling_armies = { # Multiplied by percentage of forcelimit currently drilling
-	yearly_army_professionalism = 0.05
+	army_tradition = 1
 }
 
 regiment_drill_modifier = { # Used by individual regiments

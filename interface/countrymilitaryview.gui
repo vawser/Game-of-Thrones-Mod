@@ -246,16 +246,16 @@ guiTypes = {
 			name ="CoCbackground"
 			if_resolution = {
             max_height = 867
-			spriteType = "GFX_country_military_view_bg_ap"
+			spriteType = "GFX_country_military_view_bg"
             }
             if_resolution = {
 			min_height = 868
 			max_height = 1047
-			spriteType = "GFX_country_military_view_bg_ap_large"
+			spriteType = "GFX_country_military_view_bg_large"
             }
             if_resolution = {
 			min_height = 1048
-			spriteType = "GFX_country_military_view_bg_ap_huge"
+			spriteType = "GFX_country_military_view_bg_huge"
 			}
 			position = { x= -7 y = -10 }
 			Orientation = "UPPER_LEFT"
@@ -1662,16 +1662,16 @@ guiTypes = {
 
 			if_resolution = {
             max_height = 867
-			position = { x=157 y =507 }
+			position = { x=157 y =-9999 }
             }
             if_resolution = {
 			min_height = 868
 			max_height = 1047
-			position = { x=105 y =511 }
+			position = { x=105 y =-9999 }
             }
             if_resolution = {
 			min_height = 1048
-			position = { x=105 y =511 }
+			position = { x=105 y =-9999 }
 			}
 			
 		}
@@ -1738,8 +1738,8 @@ guiTypes = {
 		windowType = {
 			name = "army_professionalism"
 			backGround =""
-			position = { x=32 y=96 }	
-			size = { x=280 y=16 } # Most of the rest of the military view will move down by the vertical size of this window if Cradle is enabled
+			position = { x=32 y=-9999 }	
+			size = { x=280 y=0 } # Most of the rest of the military view will move down by the vertical size of this window if Cradle is enabled
 			moveable = 0
 			dontRender = ""
 			horizontalBorder = ""

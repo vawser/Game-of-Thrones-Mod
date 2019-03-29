@@ -110,7 +110,6 @@ These are features changed in the mod that require DLC:
 - Horde Unity decays by -1 each year
 - Meritocracy decays by -1 each year
 - Added base yearly_absolutism of -1
-- Added base yearly_army_professionalism of -0.01
 - Removed possible_mercenaries = 0.05 from war taxes.
 - Army Tradition (at max) grants discipline = 0.1, land_morale = 0.1 and siege_ability = 0.1 (+ others)
 - Removed free_leader_pool from Army Tradition
@@ -120,10 +119,7 @@ These are features changed in the mod that require DLC:
 - Removed Revanchism bonuses.
 - Absolutism now grants (at 100): 2 Army/Navy Tradition and 2 Legitimacy/Devotion/Horde Unity/Meritocracy per year
 - Production Leader now grants trade_goods_size_modifier = 0.25
-- Low Army Professionalism now grants mercenary_cost = -0.2, possible_mercenaries = 0.2
-- High Army Professionalism now grants discipline = 0.2, land_morale = 0.2, siege_ability = 0.2
-- Drilling 100% of forcelimit now grants yearly_army_professionalism = 0.05 (5%)
-- Army Drill at 100% grants land_attrition = -0.2 to units
+- Drilling 100% of forcelimit now grants 1 Army Tradition per year
 - Increased Supply Depot modifier to supply_limit_modifier = 1.0
 - Sabotage Recruitment now applies manpower_recovery_speed = -0.5, sailors_recovery_speed = -0.5
 - Slander Merchants now applies global_trade_power = -0.5
@@ -211,7 +207,7 @@ These are features changed in the mod that require DLC:
 - Adjusted history for bookmarks.
 - Removed Great Sept of Baelor province.
 - Removed Super Secret Nation provinces.
-- Added Centers of Trade.
+- Added Centers of Trade to provinces.
 - Changed Bankruptcy to: interest = 10, global_tax_modifier = -1, production_efficiency = -1, all_power_cost = 1.0, advisor_cost = 1.0, global_institution_spread = -1
 - Reduced inflation from Gold mines to 0.1
 - Reduced inflation from Treasure Fleets to 0.1
@@ -228,6 +224,10 @@ These are features changed in the mod that require DLC:
 - Added religious_center triggered province modifiers.
 - Added unique religion triggered province modifiers.
 - Added "Center of Trade" building, allowing you to create new Centers of Trade in states. Your placement of the COT is not changable once built.
+- Army Professionalism has been removed as a value, rather the special actions (i.e. manpower on disband) are baseline, and drilling gives Army Tradition instead.
+- Recruiting Mercenaries now reduces Army Tradition by 0.1
+- Removed the Slacken Recruiting Standards button (due to Army Professionalism removal).
+- Army Professionalism events no longer require Cradle of Civilization and use Army Tradition instead of Army Professionalism.
 
 #-----------------------------
 # TODO

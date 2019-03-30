@@ -1,7 +1,7 @@
 #---------------------------------------------------------
 # Trade
 #---------------------------------------------------------
-adm_entry = {
+foreign_trade_hubs = {
 	monarch_power = ADM
 
 	potential = {
@@ -31,13 +31,13 @@ adm_entry = {
 	}
 	
 	# Modifier
-    
+    trade_range_modifier = 0.2
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-dip_entry = {
+merchant_incentives = {
 	monarch_power = DIP
 
 	potential = {
@@ -66,13 +66,13 @@ dip_entry = {
 	}
 	
 	# Modifier
-    
+    merchants = 1
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-mil_entry = {
+forced_trading = {
 	monarch_power = MIL
 
 	potential = {
@@ -102,7 +102,7 @@ mil_entry = {
 	}
 	
 	# Modifier
-    
+    trade_steering = 0.15
     
 	ai_will_do = {
 		factor = 1

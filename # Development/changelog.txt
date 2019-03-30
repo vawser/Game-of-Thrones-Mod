@@ -97,8 +97,6 @@ These are features changed in the mod that require DLC:
 - Adjusted modifier balance in Religions.
 - Adjusted modifier balance in Trade Goods.
 - Increased base merc_maintenance_modifier to 2
-- Reduced base army_tradition_decay to 0.03
-- Reduced base navy_tradition_decay to 0.03
 - Reduced base prestige_decay to 0.1
 - Increased base advisor_pool to 5
 - Increased base diplomatic_upkeep to 1
@@ -139,7 +137,7 @@ These are features changed in the mod that require DLC:
 - Reduced Recruitment Focus to global_manpower_modifier = 0.1
 - Reduced Train Horsemanship to cavalry_power = 0.1
 - Government Ranks from 2 onwards give additional states.
-- Increased maximum attrition in a province to 10
+- Increased maximum attrition in a province to 20
 - Increased hostile attrition in general.
 - Increased reductions for non-accepted cultures.
 - Removed reductions for cultures in the same group.
@@ -228,13 +226,21 @@ These are features changed in the mod that require DLC:
 - Recruiting Mercenaries now reduces Army Tradition by 0.1
 - Removed the Slacken Recruiting Standards button (due to Army Professionalism removal).
 - Army Professionalism events no longer require Cradle of Civilization and use Army Tradition instead of Army Professionalism.
+- Removed Trading policies.
+- Reverted Fort system back to original style, where each province has a fort level and building forts just increases their fort level.
+- Removed Capital State maintenance reduction.
+- Manpower development now increases Regiment recruitment speed.
+- Tax development now increases Institution Spread and reduces monthly Devastation.
+- Re-implemented ruler history for non-major nations to fit new bookmark dates
+- Added new namelists and updated country namelists to match culture namelists.
 
 #-----------------------------
 # TODO
 #-----------------------------
+- Add names to sea provinces
+- Split colonial regions into more managable sizes
 
 - Add ideagroup events (3+ 3-)
-- Add names to sea provinces
 - Add Ruler Health system
 - Add Estate mission system
 - Add Storm's End as a building

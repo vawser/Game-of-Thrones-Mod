@@ -1,4 +1,9 @@
 --------------------------------
+-- General
+--------------------------------
+NDefines.NDiplomacy.DEFENDER_OF_FAITH_COST = 1000
+
+--------------------------------
 -- Peity
 --------------------------------
 NDefines.NCountry.PIETY_PERCENTAGE_AT_NEW_RULER = 0.0

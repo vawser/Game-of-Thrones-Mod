@@ -221,10 +221,11 @@ motte_and_bailey = {
 	time = 60
 
     onmap = yes
-	influencing_fort = yes
+	#influencing_fort = yes
     
 	modifier = {
-        fort_level = 2
+        fort_level = 1
+        local_hostile_attrition = 1
 	}
 	
 	ai_will_do = {
@@ -239,10 +240,11 @@ castle = {
     make_obsolete = motte_and_bailey
     
     onmap = yes
-	influencing_fort = yes
+	#influencing_fort = yes
     
 	modifier = {
-        fort_level = 4
+        fort_level = 2
+        local_hostile_attrition = 2
 	}
 	
 	ai_will_do = {
@@ -257,10 +259,11 @@ fortress = {
     make_obsolete = castle
     
     onmap = yes
-	influencing_fort = yes
+	#influencing_fort = yes
     
 	modifier = {
-        fort_level = 6
+        fort_level = 3
+        local_hostile_attrition = 3
 	}
 	
 	ai_will_do = {
@@ -276,10 +279,11 @@ citadel = {
     make_obsolete = fortress
     
     onmap = yes
-    influencing_fort = yes
+    #influencing_fort = yes
     
 	modifier = {
-        fort_level = 8
+        fort_level = 4
+        local_hostile_attrition = 4
 	}
 	
 	ai_will_do = {

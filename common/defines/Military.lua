@@ -19,17 +19,22 @@ NDefines.NMilitary.NAVAL_DOCTRINE_MIN_FORCE_LIMIT = 9999.0
 --------------------------------
 -- Army Professionalism
 --------------------------------
-NDefines.NMilitary.SLACKEN_AP_DROP = 0.05
-NDefines.NMilitary.SLACKEN_MANPOWER_INCREASE = 5.0
 NDefines.NMilitary.ARMY_DRILL_YEARLY_DECAY = -1
 NDefines.NMilitary.ARMY_DRILL_YEARLY_GAIN = 25.0
 NDefines.NMilitary.ARMY_DRILL_SKILL_MONTHS = 24
+NDefines.NMilitary.SUPPLY_DEPOT_DURATION_MONTHS = 60
+NDefines.NMilitary.SUPPLY_DEPOT_MIL_COST = 10
+NDefines.NCountry.PS_GARRISON_SORTIES = 10
 
 --------------------------------
 -- Forts
 --------------------------------
-NDefines.NMilitary.FORTRESS_COST = 0.05         -- Reduce cost of forts
+NDefines.NMilitary.FORTRESS_COST = 0.0
 NDefines.NMilitary.FORT_PER_DEV_RATIO = 50
+NDefines.NMilitary.FORT_DEVASTATION_IMPACT = 0  -- Remove fort devastation reduction
+NDefines.NMilitary.GARRISON_SIZE = 500
+NDefines.NMilitary.SIEGE_FORCE_NEEDED_MULTIPLIER = 2
+NDefines.NMilitary.SIEGE_GARRISON_SURRENDER = 50
 
 --------------------------------
 -- Mercenaries

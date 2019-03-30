@@ -2,7 +2,7 @@
 # Westeros
 #--------------------------------------------------
 religion_westeros = {
-	defender_of_faith = no
+	defender_of_faith = yes
 	can_form_personal_unions = yes
 	
 	center_of_religion = 27
@@ -356,7 +356,7 @@ religion_westeros = {
 # West Essos
 #--------------------------------------------------
 religion_essos = {
-	defender_of_faith = no
+	defender_of_faith = yes
 	can_form_personal_unions = yes
 	
 	flags_with_emblem_percentage = 33 # default == 0
@@ -537,7 +537,7 @@ religion_essos = {
 # Central Essos
 #--------------------------------------------------
 religion_middle_essos = {
-	defender_of_faith = no
+	defender_of_faith = yes
 	can_form_personal_unions = yes
 
 	flags_with_emblem_percentage = 33 # default == 0
@@ -638,7 +638,7 @@ religion_middle_essos = {
 # East Essos
 #--------------------------------------------------
 religion_distant_essos = {
-	defender_of_faith = no
+	defender_of_faith = yes
 	can_form_personal_unions = yes
 
 	flags_with_emblem_percentage = 33 # default == 0
@@ -750,11 +750,11 @@ religion_distant_essos = {
 		icon = 19
 		country = {
 			hostile_attrition = 1
-            fort_maintenance_modifier = -0.2
+            global_garrison_growth = 0.25
 		}
 		country_as_secondary = {
 			hostile_attrition = 1
-            fort_maintenance_modifier = -0.2
+            global_garrison_growth = 0.25
 		}
         
         has_patriarchs = yes
@@ -882,7 +882,7 @@ religion_distant_essos = {
 # Summer Islands
 #--------------------------------------------------
 religion_summer = {
-	defender_of_faith = no
+	defender_of_faith = yes
 	can_form_personal_unions = yes
 	
 	flags_with_emblem_percentage = 33 # default == 0
@@ -941,7 +941,7 @@ religion_summer = {
 # Dothraki Sea
 #--------------------------------------------------
 religion_dothraki = {
-	defender_of_faith = no
+	defender_of_faith = yes
 	can_form_personal_unions = no
 	
 	flags_with_emblem_percentage = 33 # default == 0
@@ -981,7 +981,7 @@ religion_dothraki = {
 # Tribal
 #--------------------------------------------------
 religion_tribal = {
-	defender_of_faith = no
+	defender_of_faith = yes
 	can_form_personal_unions = no
 	
 	flags_with_emblem_percentage = 33 # default == 0
@@ -1045,7 +1045,7 @@ religion_tribal = {
 # Ancient
 #--------------------------------------------------
 religion_mythological = {
-	defender_of_faith = no
+	defender_of_faith = yes
 	can_form_personal_unions = no
 	
 	flags_with_emblem_percentage = 33 # default == 0

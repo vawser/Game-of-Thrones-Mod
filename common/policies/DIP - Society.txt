@@ -1,7 +1,7 @@
 #---------------------------------------------------------
 # Society
 #---------------------------------------------------------
-adm_entry = {
+favoured_advisors = {
 	monarch_power = ADM
 
 	potential = {
@@ -31,13 +31,13 @@ adm_entry = {
 	}
 	
 	# Modifier
-    
+    advisor_cost = -0.1
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-dip_entry = {
+local_spies = {
 	monarch_power = DIP
 
 	potential = {
@@ -66,13 +66,13 @@ dip_entry = {
 	}
 	
 	# Modifier
-    
+    spy_offence = 0.15
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-mil_entry = {
+war_morale = {
 	monarch_power = MIL
 
 	potential = {
@@ -102,7 +102,7 @@ mil_entry = {
 	}
 	
 	# Modifier
-    
+    land_morale = 0.1
     
 	ai_will_do = {
 		factor = 1

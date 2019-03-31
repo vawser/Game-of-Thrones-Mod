@@ -1,7 +1,7 @@
 #---------------------------------------------------------
 # Mercenary Army
 #---------------------------------------------------------
-adm_entry = {
+monetary_incentives = {
 	monarch_power = ADM
 
 	potential = {
@@ -31,13 +31,13 @@ adm_entry = {
 	}
 	
 	# Modifier
-    
+    possible_mercenaries = 0.5
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-dip_entry = {
+loot_and_pillage = {
 	monarch_power = DIP
 
 	potential = {
@@ -67,13 +67,13 @@ dip_entry = {
 	}
 	
 	# Modifier
-    
+    loot_amount = 0.25
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-mil_entry = {
+veteran_mercenaries = {
 	monarch_power = MIL
 
 	potential = {
@@ -102,7 +102,7 @@ mil_entry = {
 	}
 	
 	# Modifier
-    
+    mercenary_discipline = 0.05
     
 	ai_will_do = {
 		factor = 1

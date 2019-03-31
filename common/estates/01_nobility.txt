@@ -871,24 +871,197 @@ estate_nobles = {
                 estate = estate_nobles
                 influence = 40
             }
+            
+            custom_trigger_tooltip = {
+				tooltip = TT_OWN_NOBILITY_PROVINCE
+				any_owned_province = {
+					has_estate = estate_nobles
+				}
+			}
+            compare_regiments_to_province_of_estate = { 
+				regiment = rajput_regiment
+				estate = estate_nobles 
+				compare = less
+			}
         }
 		
 		effect = {
-            custom_tooltip = ELITE_WARRIOR_RECRUITMENT
+            custom_tooltip = TT_ELITE_SOLDIERS
             hidden_effect = {
-                capital_scope = {
-                    ROOT = {
-                        rajput_infantry = PREV
-                        rajput_infantry = PREV
-                        rajput_infantry = PREV
-                        rajput_infantry = PREV
-                        rajput_infantry = PREV
-                    }
-                }
+				capital_scope = {
+					rajput_infantry = ROOT
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 2
+									has_estate = estate_nobles
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = rajput_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						rajput_infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 3
+									has_estate = estate_nobles
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = rajput_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						rajput_infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 4
+									has_estate = estate_nobles
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = rajput_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						rajput_infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 5
+									has_estate = estate_nobles
+                                }
+								compare_regiments_to_province_of_estate = { 
+									regiment = rajput_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						rajput_infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 6
+									has_estate = estate_nobles
+								}
+								estate_influence = {
+									estate = estate_nobles
+									influence = 60
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = rajput_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						
+						}
+						rajput_infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 7
+									has_estate = estate_nobles
+								}
+								estate_influence = {
+									estate = estate_nobles
+									influence = 60
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = rajput_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						rajput_infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 8
+									has_estate = estate_nobles
+								}
+								estate_influence = {
+									estate = estate_nobles
+									influence = 60
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = rajput_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						rajput_infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 9
+									has_estate = estate_nobles
+								}
+								estate_influence = {
+									estate = estate_nobles
+									influence = 60
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = rajput_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						rajput_infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 10
+									has_estate = estate_nobles
+								}
+								estate_influence = {
+									estate = estate_nobles
+									influence = 60
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = rajput_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						rajput_infantry = ROOT
+					}
+				}
             }
             
-            add_years_of_income = -1
-            
+            add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -10
+			}
             add_estate_influence_modifier = {
 				estate = estate_nobles
 				desc = EST_VAL_MUSTERED_ELITE_SOLDIERS
@@ -933,28 +1106,202 @@ estate_nobles = {
                 estate = estate_nobles
                 influence = 40
             }
+            
+            custom_trigger_tooltip = {
+				tooltip = TT_OWN_NOBILITY_PROVINCE
+				any_owned_province = {
+					has_estate = estate_nobles
+				}
+			}
+            compare_regiments_to_province_of_estate = { 
+				regiment = cossacks_regiment
+				estate = estate_nobles 
+				compare = less
+			}
         }
 		
 		effect = {
-            custom_tooltip = ELITE_CAVALRY_RECRUITMENT
+            custom_tooltip = TT_ELITE_CAVALRY
             hidden_effect = {
-                capital_scope = {
-                    ROOT = {
-                        cossack_cavalry = PREV
-                        cossack_cavalry = PREV
-                        cossack_cavalry = PREV
-                        cossack_cavalry = PREV
-                        cossack_cavalry = PREV
-                    }
-                }
+				capital_scope = {
+					cossack_cavalry = ROOT
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 2
+									has_estate = estate_nobles
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = cossacks_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						cossack_cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 3
+									has_estate = estate_nobles
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = cossacks_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						cossack_cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 4
+									has_estate = estate_nobles
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = cossacks_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						cossack_cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 5
+									has_estate = estate_nobles
+                                }
+								compare_regiments_to_province_of_estate = { 
+									regiment = cossacks_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						cossack_cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 6
+									has_estate = estate_nobles
+								}
+								estate_influence = {
+									estate = estate_nobles
+									influence = 60
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = cossacks_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						
+						}
+						cossack_cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 7
+									has_estate = estate_nobles
+								}
+								estate_influence = {
+									estate = estate_nobles
+									influence = 60
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = cossacks_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						cossack_cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 8
+									has_estate = estate_nobles
+								}
+								estate_influence = {
+									estate = estate_nobles
+									influence = 60
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = cossacks_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						cossack_cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 9
+									has_estate = estate_nobles
+								}
+								estate_influence = {
+									estate = estate_nobles
+									influence = 60
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = cossacks_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						cossack_cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 10
+									has_estate = estate_nobles
+								}
+								estate_influence = {
+									estate = estate_nobles
+									influence = 60
+								}
+								compare_regiments_to_province_of_estate = { 
+									regiment = cossacks_regiment 
+									estate = estate_nobles 
+									compare = less
+								}
+							}
+						}
+						cossack_cavalry = ROOT
+					}
+				}
             }
             
-            add_years_of_income = -1
+            add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -10
+			}
             
             add_estate_influence_modifier = {
 				estate = estate_nobles
 				desc = EST_VAL_MUSTERED_ELITE_CAVALRY
-				influence = 20
+				influence = 10
 				duration = 3650
 			}
 		}

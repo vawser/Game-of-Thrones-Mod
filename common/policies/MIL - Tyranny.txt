@@ -1,7 +1,7 @@
 #---------------------------------------------------------
 # Tyranny
 #---------------------------------------------------------
-adm_entry = {
+provincial_legitimacy = {
 	monarch_power = ADM
 
 	potential = {
@@ -31,13 +31,17 @@ adm_entry = {
 	}
 	
 	# Modifier
-    
+    legitimacy = 0.5
+    republican_tradition = 0.5
+    devotion = 0.5
+    horde_unity = 0.5
+    meritocracy = 0.5
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-dip_entry = {
+terrorized_nobility = {
 	monarch_power = DIP
 
 	potential = {
@@ -67,13 +71,13 @@ dip_entry = {
 	}
 	
 	# Modifier
-    
+    yearly_corruption = -0.05
     
 	ai_will_do = {
 		factor = 1
 	}
 }
-mil_entry = {
+tyranny_of_the_weak = {
 	monarch_power = MIL
 
 	potential = {
@@ -102,7 +106,7 @@ mil_entry = {
 	}
 	
 	# Modifier
-    
+    max_absolutism = 10
     
 	ai_will_do = {
 		factor = 1

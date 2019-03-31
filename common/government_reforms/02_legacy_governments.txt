@@ -965,7 +965,7 @@ asshai_cult_legacy = {
     
 	ai = { factor = 1 }
 }
-bloodsworn_cult_legacy = {
+bloodless_cult_legacy = {
 	icon = "crown"
     
     allow_normal_conversion = no
@@ -1138,6 +1138,65 @@ norvos_city_legacy = {
         infantry_power = 0.1
         max_absolutism = 10
 	}
+    
+    custom_attributes = {
+		enables_theocracy_ideagroup = yes
+	}
+    
+	ai = { factor = 1 }
+}
+shadow_cult_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = no
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    religion = yes
+    
+    modifiers = {
+    	hostile_attrition = 2
+        max_absolutism = 10
+	}
+
+    conditional = {
+        allow = {
+            has_dlc = "Common Sense"
+        }
+        has_devotion = yes
+    }
+    
+    custom_attributes = {
+		enables_theocracy_ideagroup = yes
+	}
+    
+	ai = { factor = 1 }
+}
+cult_of_madness_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = no
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    religion = yes
+    
+    modifiers = {
+    	all_power_cost = -0.1
+	}
+
+    conditional = {
+        allow = {
+            has_dlc = "Common Sense"
+        }
+        has_devotion = yes
+    }
     
     custom_attributes = {
 		enables_theocracy_ideagroup = yes

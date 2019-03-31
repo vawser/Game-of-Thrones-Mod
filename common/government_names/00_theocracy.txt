@@ -45,50 +45,50 @@
         }
 	}
 }
-gov_bloodsworn_cult = {
+gov_bloodless_cult = {
 	rank = {
-		1 = BLOODSWORN_CULT
-		2 = BLOODSWORN_CULT
-		3 = BLOODSWORN_CULT
-        4 = BLOODSWORN_CULT
-        5 = BLOODSWORN_CULT
-        6 = BLOODSWORN_CULT
-        7 = BLOODSWORN_CULT
-        8 = BLOODSWORN_CULT
-        9 = BLOODSWORN_CULT
-        10 = BLOODSWORN_CULT
+		1 = BLOODLESS_CULT
+		2 = BLOODLESS_CULT
+		3 = BLOODLESS_CULT
+        4 = BLOODLESS_CULT
+        5 = BLOODLESS_CULT
+        6 = BLOODLESS_CULT
+        7 = BLOODLESS_CULT
+        8 = BLOODLESS_CULT
+        9 = BLOODLESS_CULT
+        10 = BLOODLESS_CULT
 	}
 	
 	ruler_male = {
-		1 = BLOODSWORN
-		2 = BLOODSWORN
-		3 = BLOODSWORN
-        4 = BLOODSWORN
-        5 = BLOODSWORN
-        6 = BLOODSWORN
-        7 = BLOODSWORN
-        8 = BLOODSWORN
-        9 = BLOODSWORN
-        10 = BLOODSWORN
+		1 = BLOODLESS
+		2 = BLOODLESS
+		3 = BLOODLESS
+        4 = BLOODLESS
+        5 = BLOODLESS
+        6 = BLOODLESS
+        7 = BLOODLESS
+        8 = BLOODLESS
+        9 = BLOODLESS
+        10 = BLOODLESS
 	}
 	
 	ruler_female = {
-		1 = BLOODSWORN
-		2 = BLOODSWORN
-		3 = BLOODSWORN
-        4 = BLOODSWORN
-        5 = BLOODSWORN
-        6 = BLOODSWORN
-        7 = BLOODSWORN
-        8 = BLOODSWORN
-        9 = BLOODSWORN
-        10 = BLOODSWORN
+		1 = BLOODLESS
+		2 = BLOODLESS
+		3 = BLOODLESS
+        4 = BLOODLESS
+        5 = BLOODLESS
+        6 = BLOODLESS
+        7 = BLOODLESS
+        8 = BLOODLESS
+        9 = BLOODLESS
+        10 = BLOODLESS
     }
 	
 	trigger = {
         OR = {
-            has_reform = bloodsworn_cult_reform
-            has_reform = bloodsworn_cult_legacy
+            has_reform = bloodless_cult_reform
+            has_reform = bloodless_cult_legacy
         }
 	}
 }
@@ -107,29 +107,29 @@ gov_winged_dominion = {
 	}
 	
 	ruler_male = {
-		1 = WINGED_KING
-		2 = WINGED_KING
-		3 = WINGED_KING
-        4 = WINGED_KING
-        5 = WINGED_KING
-        6 = WINGED_KING
-        7 = WINGED_KING
-        8 = WINGED_KING
-        9 = WINGED_KING
-        10 = WINGED_KING
+		1 = SORCERER_LORD
+		2 = SORCERER_LORD
+		3 = SORCERER_LORD
+        4 = SORCERER_LORD
+        5 = SORCERER_LORD
+        6 = SORCERER_LORD
+        7 = SORCERER_LORD
+        8 = SORCERER_LORD
+        9 = SORCERER_LORD
+        10 = SORCERER_LORD
 	}
 	
 	ruler_female = {
-		1 = WINGED_QUEEN
-		2 = WINGED_QUEEN
-		3 = WINGED_QUEEN
-        4 = WINGED_QUEEN
-        5 = WINGED_QUEEN
-        6 = WINGED_QUEEN
-        7 = WINGED_QUEEN
-        8 = WINGED_QUEEN
-        9 = WINGED_QUEEN
-        10 = WINGED_QUEEN
+		1 = SORCERER_LORD
+		2 = SORCERER_LORD
+		3 = SORCERER_LORD
+        4 = SORCERER_LORD
+        5 = SORCERER_LORD
+        6 = SORCERER_LORD
+        7 = SORCERER_LORD
+        8 = SORCERER_LORD
+        9 = SORCERER_LORD
+        10 = SORCERER_LORD
     }
 	
 	trigger = {
@@ -230,6 +230,100 @@ gov_the_faith = {
         OR = {
             has_reform = the_faith_reform
             has_reform = the_faith_legacy
+        }
+	}
+}
+gov_shadow_cult = {
+	rank = {
+		1 = SHADOW_CULT
+		2 = SHADOW_CULT
+		3 = SHADOW_CULT
+        4 = SHADOW_CULT
+        5 = SHADOW_CULT
+        6 = SHADOW_CULT
+        7 = SHADOW_CULT
+        8 = SHADOW_CULT
+        9 = SHADOW_CULT
+        10 = SHADOW_CULT
+	}
+	
+	ruler_male = {
+		1 = SHADOWMASTER
+		2 = SHADOWMASTER
+		3 = SHADOWMASTER
+        4 = SHADOWMASTER
+        5 = SHADOWMASTER
+        6 = SHADOWMASTER
+        7 = SHADOWMASTER
+        8 = SHADOWMASTER
+        9 = SHADOWMASTER
+        10 = SHADOWMASTER
+	}
+	
+	ruler_female = {
+		1 = SHADOWMASTER
+		2 = SHADOWMASTER
+		3 = SHADOWMASTER
+        4 = SHADOWMASTER
+        5 = SHADOWMASTER
+        6 = SHADOWMASTER
+        7 = SHADOWMASTER
+        8 = SHADOWMASTER
+        9 = SHADOWMASTER
+        10 = SHADOWMASTER
+	}
+	
+	trigger = {
+        OR = {
+            has_reform = shadow_cult_reform
+            has_reform = shadow_cult_legacy
+        }
+	}
+}
+gov_cult_of_madness = {
+	rank = {
+		1 = CULT_OF_MADNESS
+		2 = CULT_OF_MADNESS
+		3 = CULT_OF_MADNESS
+        4 = CULT_OF_MADNESS
+        5 = CULT_OF_MADNESS
+        6 = CULT_OF_MADNESS
+        7 = CULT_OF_MADNESS
+        8 = CULT_OF_MADNESS
+        9 = CULT_OF_MADNESS
+        10 = CULT_OF_MADNESS
+	}
+	
+	ruler_male = {
+		1 = WHISPERER
+		2 = WHISPERER
+		3 = WHISPERER
+        4 = WHISPERER
+        5 = WHISPERER
+        6 = WHISPERER
+        7 = WHISPERER
+        8 = WHISPERER
+        9 = WHISPERER
+        10 = WHISPERER
+	}
+	
+	ruler_female = {
+		1 = WHISPERER
+		2 = WHISPERER
+		3 = WHISPERER
+        4 = WHISPERER
+        5 = WHISPERER
+        6 = WHISPERER
+        7 = WHISPERER
+        8 = WHISPERER
+        9 = WHISPERER
+        10 = WHISPERER
+	}
+	
+	trigger = {
+        OR = {
+            has_reform = cult_of_madness_reform
+            has_reform = cult_of_madness_legacy
         }
 	}
 }

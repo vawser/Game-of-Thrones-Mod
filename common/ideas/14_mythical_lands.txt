@@ -1,62 +1,9 @@
 #---------------------------------------
-# Bloodsworn
-#---------------------------------------
-bloodless_men_ideas = {
-	start = {
-		technology_cost = -0.1
-	}
-	
-	bonus = {
-		all_power_cost = -0.1
-	}
-	
-	trigger = {
-		primary_culture = bloodless_men
-	}
-	free = yes
-	
-	# The Pale and the Dead
-	bloodless_men_1 = {
-		recover_army_morale_speed = 0.1
-	}
-
-	# The Dry Deep
-	bloodless_men_2 = {
-		movement_speed = 0.1
-	}
-
-	# Magic and Mysticism
-	bloodless_men_3 = {
-		siege_ability = 0.1
-	}
-
-	# Without Blood
-	bloodless_men_4 = {
-		global_manpower_modifier = 0.2
-	}
-
-	# Mysterious Folk
-	bloodless_men_5 = {
-		land_morale = 0.1
-	}
-
-	# Explosive Magic
-	bloodless_men_6 = {
-		infantry_power = 0.1
-	}
-
-	# The Bloodless
-	bloodless_men_7 = {
-		reinforce_cost_modifier = -0.2
-	}
-}
-
-#---------------------------------------
 # Asshai
 #---------------------------------------
 asshai_ideas = {
 	start = {
-		all_power_cost = -0.5
+		all_power_cost = -0.1
 	}
 	
 	bonus = {
@@ -70,37 +17,78 @@ asshai_ideas = {
 	
 	# The City of Black Stone
 	asshai_1 = {
-		development_cost = -0.2
+		development_cost = -0.1
 	}
-
-	# Asshai, the City of Trade
+	# Asshai, the Occult City
 	asshai_2 = {
-		merchants = 1
+		technology_cost = -0.1
 	}
-
-	# Magical Lands
+	# Necromantic Arts
 	asshai_3 = {
-		infantry_fire = 2
+		land_morale = 0.1
 	}
-
 	# Esoteric Knowledge
 	asshai_4 = {
-		idea_cost = -0.2
+		idea_cost = -0.1
 	}
-
 	# Ominous Reputation
 	asshai_5 = {
 		unjustified_demands = -0.2
 	}
-
 	# Witchcraft of asshai
 	asshai_6 = {
 		shock_damage = 0.1
 	}
-
 	# The Ash River
 	asshai_7 = {
 		hostile_attrition = 2
+	}
+}
+
+#---------------------------------------
+# Bloodless
+#---------------------------------------
+bloodless_ideas = {
+	start = {
+		technology_cost = -0.1
+	}
+	
+	bonus = {
+		all_power_cost = -0.1
+	}
+	
+	trigger = {
+		primary_culture = bloodless
+	}
+	free = yes
+	
+	# The Pale and the Dead
+	bloodless_1 = {
+		recover_army_morale_speed = 0.1
+	}
+	# The Bloodless Arts
+	bloodless_2 = {
+		movement_speed = 0.1
+	}
+	# Rumours of Dread
+	bloodless_3 = {
+		siege_ability = 0.1
+	}
+	# The Faces of Pallor
+	bloodless_4 = {
+		global_manpower_modifier = 0.2
+	}
+	# Palefolk
+	bloodless_5 = {
+		land_morale = 0.1
+	}
+	# Occult Magic
+	bloodless_6 = {
+		infantry_power = 0.1
+	}
+	# People of Myth
+	bloodless_7 = {
+		reinforce_cost_modifier = -0.2
 	}
 }
 
@@ -122,125 +110,33 @@ kdath_ideas = {
 	}
 	free = yes
 	
+    # "Cult of Madness"
 	kdath_1 = {
 		prestige = 1
 	}
-
+    # "Ancient Proclaimers"
 	kdath_2 = {
 		advisor_cost = -0.2
 	}
-	
+	# "Fortified and Fortuitus"
 	kdath_3 = {
 		global_garrison_growth = 1
 	}
-	
+	# "Eastern Trade"
 	kdath_4 = {
 		trade_efficiency = 0.1
 	}
-	
+	# "Necromancy"
 	kdath_5 = {
 		global_manpower_modifier = 0.2
 	}
-	
+	# "The Grey Waste"
 	kdath_6 = {
 		hostile_attrition = 1
 	}
-	
+	# "Shryke-killers"
 	kdath_7 = {
 		infantry_power = 0.1
-	}
-}
-
-#---------------------------------------
-# Bonetown
-#---------------------------------------
-bonetown_ideas = {
-	start = {
-		stability_cost_modifier = -0.33
-	}
-	
-	bonus = {
-		merchants = 1
-	}
-	
-	trigger = {
-		tag = J20
-	}
-	free = yes
-	
-	bonetown_1 = {
-		global_trade_goods_size_modifier = 0.15
-	}
-
-	bonetown_2 = {
-		global_spy_defence = 0.33
-	}
-	
-	bonetown_3 = {
-		culture_conversion_cost = -0.2
-	}
-	
-	bonetown_4 = {
-		diplomatic_reputation = 1
-	}
-	
-	bonetown_5 = {
-		caravan_power = 0.2
-	}
-	
-	bonetown_6 = {
-		global_own_trade_power = 0.2
-	}
-	
-	bonetown_7 = {
-		global_foreign_trade_power = 0.2
-	}
-}
-
-#---------------------------------------
-# Winged Men
-#---------------------------------------
-winged_men_ideas = {
-	start = {
-		movement_speed = 0.33
-        reinforce_speed = 0.33
-	}
-	
-	bonus = {
-		global_supply_limit_modifier = 0.2
-	}
-	
-	trigger = {
-		tag = J19
-	}
-	free = yes
-	
-	winged_men_1 = {
-		legitimacy = 1
-	}
-
-	winged_men_2 = {
-		global_tax_modifier = 0.2
-	}
-	
-	winged_men_3 = {
-		core_creation = -0.1
-	}
-	
-	winged_men_4 = {
-		land_morale = 0.1
-	}
-	
-	winged_men_5 = {
-		prestige = 1
-	}
-	
-	winged_men_6 = {
-		development_cost = -0.1
-	}
-	
-	winged_men_7 = {
-		province_warscore_cost = -0.2
 	}
 }
 
@@ -258,35 +154,266 @@ carcosa_ideas = {
 	}
 	
 	trigger = {
-		tag = J21
+        primary_culture = carcosan
 	}
 	free = yes
 	
+    # "Once of Yi Ti"
 	carcosa_1 = {
 		diplomatic_reputation = 1
 	}
-
+    # "The Lost Emperor"
 	carcosa_2 = {
 		unjustified_demands = -0.2
 	}
-	
+	# "Vaulted Halls"
 	carcosa_3 = {
 		global_garrison_growth = 1
 	}
-	
+	#  "Mountains of the Morn"
 	carcosa_4 = {
 		defensiveness = 0.33
 	}
-	
+	# "Hidden City"
 	carcosa_5 = {
 		hostile_attrition = 2
 	}
-	
+	# "Secret Tunnels"
 	carcosa_6 = {
 		land_attrition = -0.2
 	}
-	
+	# "Sorcerer Lords"
 	carcosa_7 = {
 		reinforce_speed = 0.2
+	}
+}
+
+#---------------------------------------
+# Shadowfolk
+#---------------------------------------
+shadowfolk_ideas = {
+	start = {
+		
+	}
+	
+	bonus = {
+		
+	}
+	
+	trigger = {
+        primary_culture = shadowfolk
+	}
+	free = yes
+	
+    # From the Shadows
+	shadowfolk_1 = {
+		
+	}
+    # Necromantic Arts
+	shadowfolk_2 = {
+		
+	}
+	# Soul Essence
+	shadowfolk_3 = {
+		
+	}
+	# Mortal Fear
+	shadowfolk_4 = {
+		
+	}
+	# Unfathomable Forms
+	shadowfolk_5 = {
+    
+	}
+	# Waters of the Ash
+	shadowfolk_6 = {
+    
+	}
+	# Stygai, City of the Night
+	shadowfolk_7 = {
+	}
+}
+
+#---------------------------------------
+# Mossovy
+#---------------------------------------
+mossovy_ideas = {
+	start = {
+		
+	}
+	
+	bonus = {
+		
+	}
+	
+	trigger = {
+        primary_culture = mossovi
+	}
+	free = yes
+	
+    #
+	mossovy_1 = {
+		
+	}
+    # 
+	mossovy_2 = {
+		
+	}
+	# 
+	mossovy_3 = {
+		
+	}
+	# 
+	mossovy_4 = {
+		
+	}
+	# 
+	mossovy_5 = {
+    
+	}
+	# 
+	mossovy_6 = {
+    
+	}
+	# 
+	mossovy_7 = {
+	}
+}
+
+#---------------------------------------
+# Cannibal
+#---------------------------------------
+cannibal_ideas = {
+	start = {
+		
+	}
+	
+	bonus = {
+		
+	}
+	
+	trigger = {
+        primary_culture = cannibal
+	}
+	free = yes
+	
+    #
+	cannibal_1 = {
+		
+	}
+    # 
+	cannibal_2 = {
+		
+	}
+	# 
+	cannibal_3 = {
+		
+	}
+	# 
+	cannibal_4 = {
+		
+	}
+	# 
+	cannibal_5 = {
+    
+	}
+	# 
+	cannibal_6 = {
+    
+	}
+	# 
+	cannibal_7 = {
+	}
+}
+
+#---------------------------------------
+# Fiskfolk
+#---------------------------------------
+fishfolk_ideas = {
+	start = {
+		
+	}
+	
+	bonus = {
+		
+	}
+	
+	trigger = {
+        primary_culture = fishfolk
+	}
+	free = yes
+	
+    #
+	fishfolk_1 = {
+		
+	}
+    # 
+	fishfolk_2 = {
+		
+	}
+	# 
+	fishfolk_3 = {
+		
+	}
+	# 
+	fishfolk_4 = {
+		
+	}
+	# 
+	fishfolk_5 = {
+    
+	}
+	# 
+	fishfolk_6 = {
+    
+	}
+	# 
+	fishfolk_7 = {
+	}
+}
+
+#---------------------------------------
+# Stonemen
+#---------------------------------------
+stonemen_ideas = {
+	start = {
+		
+	}
+	
+	bonus = {
+		
+	}
+	
+	trigger = {
+        primary_culture = stonemen
+	}
+	free = yes
+	
+    #
+	stonemen_1 = {
+		
+	}
+    # 
+	stonemen_2 = {
+		
+	}
+	# 
+	stonemen_3 = {
+		
+	}
+	# 
+	stonemen_4 = {
+		
+	}
+	# 
+	stonemen_5 = {
+    
+	}
+	# 
+	stonemen_6 = {
+    
+	}
+	# 
+	stonemen_7 = {
 	}
 }

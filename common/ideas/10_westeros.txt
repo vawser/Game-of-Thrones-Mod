@@ -4,11 +4,11 @@
 northmen_ideas = {
 	start = {
 		hostile_attrition = 1
-		global_manpower_modifier = 0.1
+		defensiveness = 0.33
 	}
 	
 	bonus = {
-		diplomatic_reputation = 1
+		army_tradition = 1
 	}
 	
 	trigger = {
@@ -27,23 +27,23 @@ northmen_ideas = {
 	}
 	# Mountain Clans
 	northmen_2 = {	
-		land_forcelimit_modifier = 0.1
+		global_manpower_modifier = 0.15
 	}
 	# The Old Gods
 	northmen_3 = {
-		global_spy_defence = 0.33
+		tolerance_own = 1
 	}
 	# The Kingsroad
 	northmen_4 = {
-		global_own_trade_power = 0.1
+		movement_speed = 0.1
 	}
 	# Stark Legacy
 	northmen_5 = {
-		core_creation = -0.1
+		legitimacy = 1
 	}
 	# Rivalry of the Boltons
 	northmen_6 = { 
-		infantry_power = 0.1
+		land_morale = 0.2
 	}
 	# Winter is Coming
 	northmen_7 = {
@@ -57,11 +57,11 @@ northmen_ideas = {
 ironborn_ideas = {
 	start = {
 		may_perform_slave_raid = yes
-		galley_power = 0.1
+		global_ship_cost = -0.33
 	}
 	
 	bonus = {
-		sailor_maintenance_modifer = -0.2
+		naval_forcelimit_modifier = 0.2
 	}
 	
 	trigger = {
@@ -75,28 +75,29 @@ ironborn_ideas = {
 	}
 	# The Drowned God
 	ironborn_2 = {	
-		global_sailors_modifier = 0.2
+		global_sailors_modifier = 0.15
 	}
 	# Raid the Scum
 	ironborn_3 = {
-		naval_tradition_from_battle = 1.0
+		naval_tradition_from_battle = 0.5
+        admiral_skill_gain_modifier = 0.5
 	}
 	# Subdue the Weak
 	ironborn_4 = {
-		capture_ship_chance = 0.2
+		capture_ship_chance = 0.1
 	}
 	# The Iron Fleet
 	ironborn_5 = {
-		naval_morale = 0.1
-		ship_durability = 0.1
+		naval_morale = 0.2
+		ship_durability = 0.2
 	}
 	# A Game of Finger Dance
 	ironborn_6 = {
-		naval_forcelimit_modifier = 0.2
+		sailor_maintenance_modifer = -0.1
 	}
 	# The Iron Price
 	ironborn_7 = {
-		naval_maintenance_modifier = -0.2
+		naval_maintenance_modifier = -0.1
 	}
 }
 
@@ -105,12 +106,12 @@ ironborn_ideas = {
 #---------------------------------------
 valeman_ideas = {
 	start = {
-		global_trade_goods_size_modifier = 0.1
-		global_unrest = -1
+		global_trade_goods_size_modifier = 0.2
+        global_supply_limit_modifier = 0.1
 	}
 	
 	bonus = {
-		hostile_attrition = 2
+		free_leader_pool = 1
 	}
 	
 	trigger = {
@@ -118,25 +119,33 @@ valeman_ideas = {
 	}
 	free = yes
 	
+    # "The Eyrie"
 	valeman_1 = {
-		defensiveness = 0.5
+		defensiveness = 1.0
+        garrison_size = 1.0
 	}
+    # "Keen Diplomats"
 	valeman_2 = {	
 		diplomatic_upkeep = 2
 	}
+    # "Vale Independence"
 	valeman_3 = {
-		free_leader_pool = 1
+		hostile_attrition = 2
 	}
+    # "Loyal Soldiers"
 	valeman_4 = {
-		land_morale = 0.1
+		army_tradition = 1
 	}
+    # "Gulltown Merchants"
 	valeman_5 = {
-		trade_efficiency = 0.15
-		global_trade_power = 0.15
+		trade_efficiency = 0.1
+		global_trade_power = 0.1
 	}
+    # "Beloved Vale, Secluded Vale"
 	valeman_6 = {
-		stability_cost_modifier = -0.2
+		stability_cost_modifier = -0.25
 	}
+    # "Blood of the Falcon Lords"
 	valeman_7 = {
 		legitimacy = 1
 	}
@@ -147,12 +156,12 @@ valeman_ideas = {
 #---------------------------------------
 reachman_ideas = {
 	start = {
-		production_efficiency = 0.1
-		global_institution_spread = 0.1
+		heir_chance = 0.25
+        diplomatic_upkeep = 1
 	}
 	
 	bonus = {
-		advisor_pool = 1
+		diplomatic_reputation = 2
 	}
 	
 	trigger = {
@@ -160,24 +169,31 @@ reachman_ideas = {
 	}
 	free = yes
 	
+    # "Home of Chivarly"
 	reachman_1 = {
 		prestige = 1
 	}
+    # "Land of Growth"
 	reachman_2 = {	
-		heir_chance = 1.0
+		production_efficiency = 0.3
 	}
+    # "Defenders of the Marches"
 	reachman_3 = {
-		land_morale = 0.1
+		infantry_power = 0.1
 	}
+    # "Oldtown"
 	reachman_4 = {
-		global_heretic_missionary_strength = 0.02
+		technology_cost = -0.1
 	}
+    # "Submission to the Targaryens"
 	reachman_5 = {
 		improve_relation_modifier = 0.2
 	}
+    # "Blackfyre Rebellion"
 	reachman_6 = {
-		global_regiment_cost = -0.2
+		global_regiment_cost = -0.15
 	}
+    # "Legacy of Garth Greenhand"
 	reachman_7 = {
 		legitimacy = 1
 	}
@@ -188,12 +204,12 @@ reachman_ideas = {
 #---------------------------------------
 dornish_ideas = {
 	start = {
-		land_maintenance_modifier = -0.2
-		army_tradition = 1
+		global_sailors_modifier = 0.1
+        global_manpower_modifier = 0.1
 	}
 	
 	bonus = {
-		recover_army_morale_speed = 0.1
+		global_ship_trade_power = 0.1
 	}
 	
 	trigger = {	
@@ -205,24 +221,31 @@ dornish_ideas = {
 	}
 	free = yes
 	
+    # "Rhoynish Settlers"
 	dornish_1 = {
-		global_manpower_modifier = 0.2
+		global_manpower_modifier = 0.1
 	}
+    # "Heat of Dorne"
 	dornish_2 = {
 		hostile_attrition = 2
 	}
+    # "The Red Mountains"
 	dornish_3 = {
 		land_attrition = -0.1
 	}
+    # "Sand Steeds"
 	dornish_4 = {
-		cavalry_power = 0.1
+        cavalry_flanking = 0.2
 	}
+    # "Dornish Tactics"
 	dornish_5 = {
-		leader_land_shock = 1
+		shock_damage = 0.2
 	}
+    # "Exotic Tradegoods"
 	dornish_6 = {
-		trade_efficiency = 0.15
+		global_trade_goods_size_modifier = 0.1
 	}
+    # "Legacy of the Triarchy"
 	dornish_7 = {
 		diplomatic_upkeep = 1
         diplomatic_reputation = 1
@@ -234,12 +257,12 @@ dornish_ideas = {
 #---------------------------------------
 stormlander_ideas = {
 	start = {
-		build_cost = -0.2
-		build_time = -0.2
+		build_cost = -0.15
+		build_time = -0.15
 	}
 	
 	bonus = {
-		garrison_size = 1.0
+		land_attrition = -0.1
 	}
 	
 	trigger = {
@@ -247,26 +270,34 @@ stormlander_ideas = {
 	}
 	free = yes
 	
+    # "Storm's End"
 	stormlander_1 = {
-		defensiveness = 0.33
+		defensiveness = 0.5
+        garrison_size = 0.5
 	}
+    # "Culture of War"
 	stormlander_2 = {
 		army_tradition = 1
 	}
+    # "The Bleeding Years"
 	stormlander_3 = {
 		unjustified_demands = -0.2
 	}
+    # "Shipbreaker Bay"
 	stormlander_4 = {
 		navy_tradition = 1
 	}
+    # "Verdant Lands"
 	stormlander_5 = {
 		global_prov_trade_power_modifier = 0.2
 	}
+    # "Ours is Fury"
 	stormlander_6 = {
-		war_exhaustion = -0.05
+		discipline = 0.1
 	}
+    # "The Storm King's Legacy"
 	stormlander_7 = {
-		ae_impact = -0.2
+		ae_impact = -0.15
 	}
 }
 
@@ -275,12 +306,12 @@ stormlander_ideas = {
 #---------------------------------------
 crownlander_ideas = {
 	start = {
-		global_tax_modifier = 0.1
-		production_efficiency = 0.1
+		development_cost = -0.2
+        diplomatic_upkeep = 1
 	}
 	
 	bonus = {
-		development_cost = -0.2
+		reduced_liberty_desire = 10
 	}
 	
 	trigger = {
@@ -288,27 +319,35 @@ crownlander_ideas = {
 	}
 	free = yes
 	
+    # "Melting Pot"
 	crownlander_1 = {
 		num_accepted_cultures = 1
 		stability_cost_modifier = -0.2
 	}
+    # "Legacy of Darklyn"
 	crownlander_2 = {
-		dip_tech_cost_modifier = -0.1
+		dip_tech_cost_modifier = -0.15
 	}
+    # "Great Sept of Baelor"
 	crownlander_3 = {
 		global_missionary_strength = 0.02
+        missionary_maintenance_cost = -0.1
 	}
+    # "The Red Keep"
 	crownlander_4 = {
-		recover_army_morale_speed = 0.1
+		discipline = 0.05
 	}
+    # "King's Landing"
 	crownlander_5 = {
 		prestige = 1
 	}
+    # "The Kingsguard"
 	crownlander_6 = {
-		siege_ability = 0.1
+		infantry_power = 0.1
 	}
+    # "Home of the Iron Throne"
 	crownlander_7 = {
-		ae_impact = -0.1
+		diplomatic_reputation = 2
 	}
 }
 
@@ -317,12 +356,12 @@ crownlander_ideas = {
 #---------------------------------------
 westerman_ideas = {
 	start = {
-		land_morale = 0.1
+		diplomatic_upkeep = 1
 		improve_relation_modifier = 0.1
 	}
 	
 	bonus = {
-		global_manpower_modifier = 0.2
+		diplomatic_reputation = 2
 	}
 	
 	trigger = {
@@ -330,26 +369,33 @@ westerman_ideas = {
 	}
 	free = yes
 	
+    # "Kingdom of the Rock"
 	westerman_1 = {
-		years_of_nationalism = -5
+		development_cost = -0.1
 	}
+    # "The Golden Tooth"
 	westerman_2 = {
-		diplomatic_reputation = 2
+		production_efficiency = 0.2
 	}
+    # "Casterly Rock"
 	westerman_3 = {
-		diplomatic_upkeep = 2
+		defensiveness = 0.5
 	}
+    # "Lannisport"
 	westerman_4 = {
-		trade_efficiency = 0.2
+		trade_steering = 0.2
 	}
+    # "Mountains of Gold"
 	westerman_5 = {
-		global_trade_goods_size_modifier = 0.1
+		global_trade_goods_size_modifier = 0.2
 	}
+    # "Targaryen Resistance"
 	westerman_6 = {
 		improve_relation_modifier = 0.2
 	}
+    # "Reyne-Tarbeck Rebellion"
 	westerman_7 = {
-		core_creation = -0.1
+		global_unrest = -1
 	}
 }
 
@@ -371,25 +417,32 @@ riverlands_ideas = {
 	}
 	free = yes
 	
+    # "Land of the Trident"
 	riverlands_1 = {
 		global_trade_goods_size_modifier = 0.2
 	}
+    # "Battleground of Westeros"
 	riverlands_2 = {
 		war_exhaustion = -0.1
 		global_garrison_growth = 0.5
 	}
+    # "Populous and Fertile"
 	riverlands_3 = {
 		num_accepted_cultures = 1
 	}
+    # "River Trade"
 	riverlands_4 = {
 		trade_range_modifier = 0.2
 	}
+    # "God's Eye"
 	riverlands_5 = {
 		global_own_trade_power = 0.1
 	}
+    # "Ironborn Rivalry"
 	riverlands_6 = {
 		naval_forcelimit_modifier = 0.15
 	}
+    # "Ruins of Oldstones"
 	riverlands_7 = {
 		stability_cost_modifier = -0.2
 	}
@@ -400,12 +453,12 @@ riverlands_ideas = {
 #---------------------------------------
 crackclaw_ideas = {
 	start = {
-		hostile_attrition = 2
+		global_manpower_modifier = 0.1
         global_garrison_growth = 0.25
 	}
 	
 	bonus = {
-		land_maintenance_modifier = -0.2
+		reinforce_cost_modifier = -0.2
 	}
 	
 	trigger = {
@@ -413,26 +466,33 @@ crackclaw_ideas = {
 	}
 	free = yes
 	
+    # "Stubborn Folk"
 	crackclaw_1 = {
-		global_supply_limit_modifier = 0.1
+		hostile_attrition = 2
 	}
+    # "Traversal of the Pines"
 	crackclaw_2 = {
-		land_attrition = -0.1
+		movement_speed = 0.2
 	}
+    # "Legend of the Squishers"
 	crackclaw_3 = {
-		recover_army_morale_speed = 0.1
+		infantry_power = 0.2
 	}
+    # "Distrust of Outsiders"
 	crackclaw_4 = {
-		defensiveness = 0.33
+		yearly_corruption = -0.1
 	}
+    # "Blood of the First Men"
 	crackclaw_5 = {
-		infantry_power = 0.1
+		land_morale = 0.1
 	}
+    # "Loyalty to the Dragon"
 	crackclaw_6 = {
-		siege_ability = 0.1
+		improve_relation_modifier = 0.15
 	}
+    # "Warforged"
 	crackclaw_7 = {
-		global_manpower_modifier = 0.2
+		reinforce_speed = 0.1
 	}
 }
 
@@ -441,12 +501,12 @@ crackclaw_ideas = {
 #---------------------------------------
 wildling_ideas = {
 	start = {
-		global_regiment_cost = -0.33
-		may_perform_slave_raid = yes
+		global_regiment_cost = -0.15
+		reinforce_cost_modifier = -0.25
 	}
 	
 	bonus = {
-		land_forcelimit_modifier = 0.2 
+		land_forcelimit_modifier = 0.25 
 	}
 	
 	trigger = {
@@ -457,15 +517,15 @@ wildling_ideas = {
 	
 	# The Wall
 	wildling_1 = {
-		land_attrition = -0.1
+		land_attrition = -0.2
 	}
 	# Freefolk Spirit
 	wildling_2 = {
-		land_morale = 0.1
+		prestige_decay = -0.01
 	}
 	# Hatred of Crows
 	wildling_3 = {
-		recover_army_morale_speed = 0.1
+		recover_army_morale_speed = 0.2
 	}
 	# Spearwives
 	wildling_4 = {
@@ -473,15 +533,15 @@ wildling_ideas = {
 	}
 	# Raids on the North
 	wildling_5 = {
-		loot_amount = 0.25
+		loot_amount = 0.33
 	}
 	# Employ of Giants
 	wildling_6 = {
-		infantry_power = 0.1
+		infantry_shock = 1
 	}
 	# Traditions of the First Men
 	wildling_7 = {
-		infantry_shock = 1
+		army_tradition = 1
 	}
 }
 
@@ -490,12 +550,12 @@ wildling_ideas = {
 #---------------------------------------
 freefolk_ideas = {
 	start = {
-		global_regiment_cost = -0.33
-		may_perform_slave_raid = yes
+		global_regiment_cost = -0.15
+		reinforce_cost_modifier = -0.25
 	}
 	
 	bonus = {
-		land_forcelimit_modifier = 0.2 
+		land_forcelimit_modifier = 0.5 
 	}
     
 	trigger = {
@@ -505,37 +565,31 @@ freefolk_ideas = {
 	
 	# Under One Banner
 	freefolk_1 = {
-		prestige = 1
+		land_morale = 0.2
 	}
-	
 	# Freefolk Spirit
 	freefolk_2 = {
-		global_manpower_modifier = 0.2
+		prestige_decay = -0.01
 	}
-	
 	# Fire of the North
 	freefolk_3 = {
-		recover_army_morale_speed = 0.1
+		infantry_power = 0.1
 	}
-	
 	# Spearwives
 	freefolk_4 = {
-		manpower_recovery_speed = 0.15
+		global_manpower_modifier = 0.2
 	}
-	
 	# Friends of the Giants
 	freefolk_5 = {
-		build_time = -0.33
+		infantry_shock = 2
 	}
-	
 	# Expert Raiders
 	freefolk_6 = {
-		army_tradition = 1
+		leader_land_manuever = 1
 	}
-	
 	# Traditions of the First Men
 	freefolk_7 = {
-		infantry_shock = 2
+		army_tradition = 1
 	}
 }
 
@@ -545,11 +599,11 @@ freefolk_ideas = {
 white_walker_ideas = {
 	start = {
 		reinforce_cost_modifier = -1
-		manpower_recovery_speed = 1
+        war_exhaustion = -0.1
 	}
 	
 	bonus = {
-		land_attrition = -0.25
+		siege_ability = 0.2
 	}
 	
 	trigger = {
@@ -561,35 +615,30 @@ white_walker_ideas = {
 	white_walker_1 = {
 		army_tradition = 1
 	}
-
 	# Frenzied Undead
 	white_walker_2 = {
-		infantry_power = 0.1
+		infantry_power = 0.2
 	}
-
 	# Relentless Marchs
 	white_walker_3 = {
 		movement_speed = 0.2
 	}
-
 	# Horrifying Visage
 	white_walker_4 = {
-		siege_ability = 0.1
+		fire_damage_received = -0.1
+        shock_damage_received = -0.1
 	}
-
 	# Oathkeepers
 	white_walker_5 = {
-		free_leader_pool = 1
+		all_power_cost = -0.2
 	}
-
 	# Reanimation of the Dead
 	white_walker_6 = {
-		global_regiment_recruit_speed = -0.33
+		land_morale = 0.2
 	}
-	
 	# The Night King
 	white_walker_7 = {
-		all_power_cost = -0.25
+		discipline = 0.2
 	}
 }
 
@@ -598,12 +647,12 @@ white_walker_ideas = {
 #---------------------------------------
 nights_watch_ideas = {
 	start = {
-		land_forcelimit_modifier = 0.1
-		global_supply_limit_modifier = 0.1
+		global_regiment_cost = -0.25
+        global_regiment_recruit_speed = -0.25
 	}
 	
 	bonus = {
-		garrison_size = 1
+		garrison_size = 1.0
 	}
 	
 	trigger = {
@@ -621,31 +670,32 @@ nights_watch_ideas = {
 	}
 	free = yes
 	
+    # "Guardsmen of the Wall"
 	nights_watch_1 = {
-		defensiveness = 0.5
+		defensiveness = 1.0
 	}
-
+    # "Enemies of the Wildlings"
 	nights_watch_2 = {
-		infantry_fire = 1
+        infantry_power = 0.1
 	}
-	
+	# "The Rangers"
 	nights_watch_3 = {
-		infantry_cost = -0.15
+		discipline = 0.05
 	}
-	
+	# "The Stewards"
 	nights_watch_4 = {
-		development_cost = -0.1
+		development_cost = -0.2
 	}
-	
+	# "The Builders"
 	nights_watch_5 = {
-		build_cost = -0.2
+		build_cost = -0.33
 	}
-	
+	# "Outcasts and Runaways"
 	nights_watch_6 = {
-		global_manpower_modifier = 0.2
+		manpower_recovery_speed = 0.1
 	}
-	
+	# "Sworn to Serve"
 	nights_watch_7 = {
-		land_maintenance_modifier = -0.2
+		land_maintenance_modifier = -0.1
 	}
 }

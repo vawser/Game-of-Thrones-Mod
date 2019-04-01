@@ -181,3 +181,14 @@ NDefines.NEconomy.TREASURE_FLEET_INFLATION = 0.1
 NDefines.NEconomy.INFLATION_FROM_LOAN = 0.5
 
 NDefines.NEconomy.MISSIONARY_MAINTENANCE_DEVELOPMENT_CAP = 20
+
+--------------------------------
+-- Diplomacy
+--------------------------------
+NDefines.NDiplomacy.OFFENSIVE_WAR_COOLDOWN = 1
+
+NDefines.NDiplomacy.INCREASE_TRUST_COST = 1
+NDefines.NDiplomacy.INCREASE_TRUST_AMOUNT = 1
+NDefines.NDiplomacy.PREPARE_FOR_WAR_COST = 1
+NDefines.NDiplomacy.PREPARE_FOR_WAR_MONTHS = 60
+NDefines.NDiplomacy.CALL_TO_ARMS_COST = 1

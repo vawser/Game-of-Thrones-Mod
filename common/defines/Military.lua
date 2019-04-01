@@ -4,6 +4,8 @@
 NDefines.NCountry.STARTING_ARMY_SIZE = 0.25
 NDefines.NMilitary.WAR_LENGTH_DAMAGE_MODIFIER = 0.02
 NDefines.NMilitary.WARSCORE_MAX_FROM_BATTLES = 60
+NDefines.NMilitary.TRADITION_GAIN_LAND = 50
+NDefines.NMilitary.TRADITION_GAIN_NAVAL = 50
 
 --------------------------------
 -- Supply

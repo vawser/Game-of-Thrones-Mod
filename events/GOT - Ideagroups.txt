@@ -314,3 +314,38 @@ country_event = {
 	}
 }
 
+# Trusted Realm
+country_event = {
+	id = GOT_IDEAGROUPS.13
+	title = GOT_IDEAGROUPS.13.title
+	desc = GOT_IDEAGROUPS.13.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+        has_dlc = "The Cossacks"
+        has_idea = got_influence_ideas_5
+	}
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = GOT_IDEAGROUPS.13.option.a
+		
+        every_country = {
+            limit = { 
+                OR = {
+                    alliance_with = ROOT
+                    marriage_with = ROOT
+                    is_subject_of = ROOT
+                }
+            }
+            add_trust = {
+                who = ROOT
+                value = 25
+                mutual = yes
+            }
+        }
+	}
+}

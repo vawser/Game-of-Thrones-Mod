@@ -21,6 +21,15 @@ can_harsh_treatment = {
 }
 
 can_reduce_war_exhaustion = {
+    condition = {
+		tooltip = "TT_WAR_EXHAUSTION_AT_WAR"
+		potential = {
+        
+		}
+		allow = {
+			is_at_war = no
+		}
+	}
 }
 
 can_reduce_inflation = {

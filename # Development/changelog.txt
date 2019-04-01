@@ -137,7 +137,7 @@ These are features changed in the mod that require DLC:
 - Reduced Recruitment Focus to global_manpower_modifier = 0.1
 - Reduced Train Horsemanship to cavalry_power = 0.1
 - Government Ranks from 2 onwards give additional states.
-- Increased maximum attrition in a province to 20
+- Increased maximum attrition in a province to 100%
 - Increased hostile attrition in general.
 - Increased reductions for non-accepted cultures.
 - Removed reductions for cultures in the same group.
@@ -195,7 +195,6 @@ These are features changed in the mod that require DLC:
 - Rebalanced government reform growth values, to make growth slower by default.
 - Increased potency of government reform modifiers.
 - Changed "Court" tier reforms to relate to estates instead.
-- Added Urbanization triggered modifiers. These reward high average development nations with bonuses.
 - Added policies for new ideagroups.
 - Added a casus belli against nations that use Raid Coast against a nation.
 - Increased the effect of a blockade: local_monthly_devastation = 0.25
@@ -241,6 +240,14 @@ These are features changed in the mod that require DLC:
 - Added "Trusted Realm" event for Influence ideagroup.
 - Increased Army Tradition gain from battles.
 - Increased Navy Tradition gain from battles.
+- Reduce War Exhaustion can only be used whilst in peace.
+- Reduce Corruption now maxs at -2 per year.
+- Coalition CB changed to Take Capital rather than Superiority wargoal.
+- Overhauled tradenodes to follow regions more closely and to reduce needless complexity.
+- Increased the max Tolerance of Heretics and Heathens to 10
+- Increased monarch point refund from abandoning ideagroups to 75%
+- Adjusted numerous opinion modifiers.
+- Added religion shift decisions. If your capital is in a province with a different religion to your national religion, you can shift your national religion to the religion of your capital. 
 
 #-----------------------------
 # TODO
@@ -255,6 +262,5 @@ These are features changed in the mod that require DLC:
 - Add Shadowfolk nations
 
 - Add names to sea provinces
-
 - Add ideagroup events (3+ 3-)
-
+- Add religion shift decisions

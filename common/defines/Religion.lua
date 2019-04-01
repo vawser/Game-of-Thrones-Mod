@@ -2,6 +2,8 @@
 -- General
 --------------------------------
 NDefines.NDiplomacy.DEFENDER_OF_FAITH_COST = 1000
+NDefines.NCountry.MAX_TOLERANCE_HERETIC = 10
+NDefines.NCountry.MAX_TOLERANCE_HEATHEN = 10
 
 --------------------------------
 -- Peity

@@ -7,6 +7,8 @@ NDefines.NMilitary.WARSCORE_MAX_FROM_BATTLES = 60
 NDefines.NMilitary.TRADITION_GAIN_LAND = 50
 NDefines.NMilitary.TRADITION_GAIN_NAVAL = 50
 
+NDefines.NMilitary.BASE_MP_TO_MANPOWER = 1.0
+
 --------------------------------
 -- Supply
 --------------------------------

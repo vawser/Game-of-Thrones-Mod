@@ -11,20 +11,20 @@
 ##############
 
 rival = {
-	opinion = -100
+	opinion = -25
 }
 
 enemy = {
-	opinion = -50
+	opinion = -25
 }
 
 allied_to_rival = {
-	opinion = -25
+	opinion = -5
 }
 
 enemy_of_my_enemy = {
 	opinion = 1
-	max = 20
+	max = 25
 }
 
 opinion_invasion = {
@@ -33,7 +33,7 @@ opinion_invasion = {
 }
 
 republic_same_religion = {
-	opinion = 10
+	opinion = 5
 }
 
 republic_different_religions_group = {
@@ -41,15 +41,15 @@ republic_different_religions_group = {
 }
 
 republic_different_religion_same_group = {
-	opinion = -10
+	opinion = -5
 }
 
 republic_different_religions_group_border = {
-	opinion = -10
+	opinion = -5
 }
 
 republic_different_religion_same_group_border = {
-	opinion = -20
+	opinion = -5
 }
 
 republic_misguided_heretic = {
@@ -61,54 +61,55 @@ republic_misguided_heretic_border = {
 }
 
 defender_of_faith = {
-	opinion = 10
+	opinion = 5
 }
 
 same_religion = {
-	opinion = 25
+	opinion = 5
 }
 
 same_secondary_religion = {
-	opinion = 10
+	opinion = 5
 }
 
 different_religions_group = {
-	opinion = -10
+	opinion = -25
 }
 
 different_religions_group_border = {
-	opinion = -20
+	opinion = -25
 }
 
 different_religion_same_group = {
-	opinion = -20
+	opinion = -25
 }
 
 different_religion_same_group_border = {
-	opinion = -40
+	opinion = -25
 }
 
 misguided_heretic = {
-	opinion = -10
+	opinion = -5
 }
 
 misguided_heretic_border = {
-	opinion = -20
+	opinion = -5
 }
 
 at_war = {
-	opinion = -20
+	opinion = -25
 }
 
 same_dynasty = {
-	opinion = 15
+	opinion = 50
 }
+
 royal_marriage = {
-	opinion = 25
+	opinion = 50
 }
 
 guaranteed = {
-	opinion = 10
+	opinion = 25
 }
 
 alliance = {
@@ -120,40 +121,40 @@ in_war_together = {
 }
 
 have_core = {
-	opinion = -20
+	opinion = -5
 }
 
 have_claim = {
-	opinion = -10
+	opinion = -5
 }
 
 getting_subsidies = {
 	opinion = 1
-	max = 15
+	max = 50
 }
 
 has_cb = {
-	opinion = -15
+	opinion = -5
 }
 
 creating_claim = {
-	opinion = -15
+	opinion = -5
 }
 
 is_vassal = {
 	opinion = 50
 }
+
 in_union = {
-	opinion = 10
+	opinion = 50
 }
 
 colonial_relation = {
 	opinion = 50
 }
 
-
 excommunicated = {
-	opinion = -50
+	opinion = -200
 }
 
 excommunicated_theocracy = {
@@ -161,23 +162,23 @@ excommunicated_theocracy = {
 }
 
 transfers_trade_power = {
-	opinion = 20
+	opinion = 25
 }
 
 getting_trade_power = {
-	opinion = 20
+	opinion = 25
 }
 
 in_same_trade_league = {
-	opinion = 20
+	opinion = 25
 }
 
 consort_marriage_ties = {
-	opinion = 5
+	opinion = 25
 }
 
 consort_regent_marriage_ties = { # Goes under consort_marriage_ties in interface
-	opinion = 15
+	opinion = 25
 }
 
 religious_school_relation = {
@@ -185,34 +186,33 @@ religious_school_relation = {
 }
 
 same_religious_school_relation = {
-	opinion = 10
+	opinion = 25
 }
 
 ##################################
 # Strategy
 ##################################
-
 want_your_provinces = {
-	opinion = -15
-	min = -200
+	opinion = -10
+	min = -50
 }
 
 want_subject_provinces = {
-	opinion = -15
-	min = -200
+	opinion = -10
+	min = -50
 }
 
 border_friction = {
 	opinion = -1
-	min = -200
+	min = -50
 }
 
 historical_friend = {
-	opinion = 25
+	opinion = 5
 }
 
 historical_rival = {
-	opinion = -25
+	opinion = -5
 }
 
 weak_overlord = {
@@ -220,7 +220,7 @@ weak_overlord = {
 }
 
 competing_superpower = {
-	opinion = -25
+	opinion = -5
 }
 
 religious_friend = {
@@ -228,15 +228,15 @@ religious_friend = {
 }
 
 embargo = {
-	opinion = -15
+	opinion = -10
 }
 
 opinion_military_access = {
-	opinion = 10
+	opinion = 5
 }
 
 opinion_fleet_access = {
-	opinion = 10
+	opinion = 5
 }
 
 ##############
@@ -245,28 +245,27 @@ opinion_fleet_access = {
 
 pirated_us = {
 	opinion = -5
-	min = -100
+	min = -50
 	yearly_decay = 5
 }
 
 converted_our_culture = {
-	opinion = -30
+	opinion = -25
 	yearly_decay = 1
 }
 
 forced_other_to_give_up_claim_on_us = {
-	opinion = 15
-	max = 15
+	opinion = 25
+	max = 25
 	yearly_decay = 1
 }
 
 released_vassal = {
-	opinion = 300
+	opinion = 200
 	yearly_decay = 5
 }
 
-helped_support_rebels = 
-{
+helped_support_rebels = {
 	opinion = 100
 	yearly_decay = 5
 }
@@ -337,8 +336,7 @@ claimed_throne_on_us = {
 	min = -100
 }
 
-claimed_throne_other_rm = 
-{
+claimed_throne_other_rm = {
 	opinion = -50
 	yearly_decay = 3
 	min = -50
@@ -382,12 +380,12 @@ vassal_abandoned = {
 
 they_force_vassalized_us = {
 	opinion = -100
-	yearly_decay = 2
+	yearly_decay = 5
 }
 
 they_force_unioned_us = {
 	opinion = -100
-	yearly_decay = 2
+	yearly_decay = 5
 }
 
 
@@ -490,18 +488,18 @@ honored_alliance = {
 
 break_alliance = {
 	opinion = -50
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 break_marriage = {
-	opinion = -75
-	yearly_decay = 3
+	opinion = -50
+	yearly_decay = 5
 }
 
 
 break_alliance_war = {
 	opinion = -50
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 dishonoured_alliance = {
@@ -510,87 +508,87 @@ dishonoured_alliance = {
 }
 
 declared_war_on_us = {
-	opinion = -25
-	yearly_decay = 1
+	opinion = -50
+	yearly_decay = 5
 }
 
 had_war_with_us = {
-	opinion = -15
-	yearly_decay = 1
+	opinion = -50
+	yearly_decay = 5
 }
 
 declared_war_on_neighbor = {
-	opinion = -10
+	opinion = -25
 	months = 120
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 violated_truce_us = {
 	opinion = -100
 	months = 1200
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 violated_truce_neighbor = {
 	opinion = -25
 	months = 300
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 separate_peace = {
-	opinion = -30
+	opinion = -25
 	months = 360
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 fought_to_the_end = {
-	opinion = 10
+	opinion = 100
 	months = 120
-	yearly_decay = 1
-	max = 20
+	yearly_decay = 5
+	max = 100
 }
 
 razed_province = {
 	opinion = -25
-	min = -200
-	yearly_decay = 2
+	min = -100
+	yearly_decay = 5
 }
 
 conquered_province_no_claim = {
 	opinion = -5
 	months = 60
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 conquered_province_same_religion_group = {
 	opinion = -10
 	months = 0
-	yearly_decay = 1
+	yearly_decay = 5
 	min = -10
 }
 
 conquered_province_us = {
 	opinion = -25
 	months = 0
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 conquered_rival_province = {
 	opinion = 15
 	months = 0
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 gave_province_in_peace = {
 	opinion = 10
 	months = 0
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 declared_war_on_enemy = {
 	opinion = 10
 	months = 0
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 discovery_of_evil = {
@@ -603,13 +601,13 @@ discovery_of_evil = {
 warned = {
 	opinion = -10
 	months = 0
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 improved_relation = {
 	opinion = 0
 	months = 0
-	yearly_decay = 3
+	yearly_decay = 5
 	max = 100
 	max_vassal = 200
 	max_in_other_direction = 50
@@ -622,20 +620,20 @@ sabotage_reputation = {
 aggressive_expansion = {
 	opinion = -1
 	months = 0
-	yearly_decay = 2	
+	yearly_decay = 10
 	min = -1000
 }
 
 enforced_peace_against = {
-	opinion = -10
+	opinion = -50
 	months = 0
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 enforced_peace_for = {
-	opinion = 10
+	opinion = 50
 	months = 0
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 improved_imperial_relations = {
@@ -645,13 +643,13 @@ improved_imperial_relations = {
 }
 
 returned_core_to_me = {
-	opinion = 40
-	yearly_decay = 1
+	opinion = 50
+	yearly_decay = 5
 }
 
 released_in_peace = {
 	opinion = 100
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 hre_province_left = {
@@ -666,7 +664,7 @@ hre_country_left = {
 
 released_us_freely = {
 	opinion = 100
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 fightinginside_realm = {
@@ -676,18 +674,18 @@ fightinginside_realm = {
 
 broke_transfer_trade_power = {
 	opinion = -20
-	yearly_decay = 2
+	yearly_decay = 5
 }
 
 broke_march = {
 	opinion = -50
-	yearly_decay = 3
+	yearly_decay = 5
 }
 
 
 violated_tordesillas = {
 	opinion = -50
-	yearly_decay = 1
+	yearly_decay = 5
 }
 
 ##############
@@ -1880,9 +1878,9 @@ opinion_denying_the_holy_mother = {
 }
 
 sent_gift = {
-	opinion = 25
+	opinion = 50
 	months = 60
-	max = 25
+	max = 50
 }
 
 opinion_enforced_scandinavian_constitution = {
@@ -2117,7 +2115,7 @@ opinion_sword_hunt = {
 
 border_friction_from_event = {
 	opinion = -50
-	yearly_decay = 2	
+	yearly_decay = 5
 }
 
 broke_free_from_us = {
@@ -3313,7 +3311,7 @@ share_advanced_neighbor = {
 #Mare Nostrum
 slaves_raided = {
 	opinion = -25
-	yearly_decay = 1
+	yearly_decay = 5
 	min = -100
 }
 
@@ -3395,7 +3393,7 @@ zealot_reputation_opinion = {
 took_on_debt = {
 	opinion = 10
 	max = 200
-	yearly_decay = 2
+	yearly_decay = 5
 }
 
 great_power_influence = {

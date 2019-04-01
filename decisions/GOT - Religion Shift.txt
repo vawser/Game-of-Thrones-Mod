@@ -1,0 +1,795 @@
+country_decisions = {
+    
+    # Faith of the Seven
+	adopt_faith_of_the_seven = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_faith_of_the_seven }
+            capital_scope = {
+                religion = asoiaf_faith_of_the_seven
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_faith_of_the_seven }
+            capital_scope = {
+                religion = asoiaf_faith_of_the_seven
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_faith_of_the_seven
+
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # The Drowned God
+    adopt_the_drowned_god = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_the_drowned_god }
+            capital_scope = {
+                religion = asoiaf_the_drowned_god
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_the_drowned_god }
+            capital_scope = {
+                religion = asoiaf_the_drowned_god
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_the_drowned_god
+
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # The Old Gods
+    adopt_the_old_gods = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_the_old_gods }
+            capital_scope = {
+                religion = asoiaf_the_old_gods
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_the_old_gods }
+            capital_scope = {
+                religion = asoiaf_the_old_gods
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_faith_of_the_seven
+
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # R'hllor
+    adopt_rhllor = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_rhllor }
+            capital_scope = {
+                religion = asoiaf_rhllor
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_rhllor }
+            capital_scope = {
+                religion = asoiaf_rhllor
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_rhllor
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Mother Rhoyne
+    adopt_mother_rhoyne = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_mother_rhoyne }
+            capital_scope = {
+                religion = asoiaf_mother_rhoyne
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_mother_rhoyne }
+            capital_scope = {
+                religion = asoiaf_mother_rhoyne
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_mother_rhoyne
+
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Trios
+    adopt_trios = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_trios }
+            capital_scope = {
+                religion = asoiaf_trios
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_trios }
+            capital_scope = {
+                religion = asoiaf_trios
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_trios
+
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # The Bearded Priests
+    adopt_the_bearded_priests = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_bearded_priests }
+            capital_scope = {
+                religion = asoiaf_bearded_priests
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_bearded_priests }
+            capital_scope = {
+                religion = asoiaf_bearded_priests
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_bearded_priests
+
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Remnants of Boash
+    adopt_remnants_of_boash = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_gods_of_lorath }
+            capital_scope = {
+                religion = asoiaf_gods_of_lorath
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_gods_of_lorath }
+            capital_scope = {
+                religion = asoiaf_gods_of_lorath
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_gods_of_lorath
+
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Black Goat
+    adopt_the_black_goat = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_black_goat_of_qohor }
+            capital_scope = {
+                religion = asoiaf_black_goat_of_qohor
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_black_goat_of_qohor }
+            capital_scope = {
+                religion = asoiaf_black_goat_of_qohor
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_black_goat_of_qohor
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Hooded Wayfarer
+    adopt_hooded_wayfarer = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_gods_of_sarnor }
+            capital_scope = {
+                religion = asoiaf_gods_of_sarnor
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_gods_of_sarnor }
+            capital_scope = {
+                religion = asoiaf_gods_of_sarnor
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_gods_of_sarnor
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Ghiscari Pantheon
+    adopt_ghiscari_pantheon = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_graces }
+            capital_scope = {
+                religion = asoiaf_graces
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_graces }
+            capital_scope = {
+                religion = asoiaf_graces
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_graces
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # The Great Shepherd
+    adopt_the_great_shepherd = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_great_shepherd }
+            capital_scope = {
+                religion = asoiaf_great_shepherd
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_great_shepherd }
+            capital_scope = {
+                religion = asoiaf_great_shepherd
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_great_shepherd
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Ib
+    adopt_ib = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_gods_of_ibben }
+            capital_scope = {
+                religion = asoiaf_gods_of_ibben
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_gods_of_ibben }
+            capital_scope = {
+                religion = asoiaf_gods_of_ibben
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_gods_of_ibben
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Lion of the Night
+    adopt_the_lion_of_the_night = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_lion_of_the_night }
+            capital_scope = {
+                religion = asoiaf_lion_of_the_night
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_lion_of_the_night }
+            capital_scope = {
+                religion = asoiaf_lion_of_the_night
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_lion_of_the_night
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Stone Cow of Faros
+    adopt_the_stone_cow = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_stone_cow_of_faros }
+            capital_scope = {
+                religion = asoiaf_stone_cow_of_faros
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_stone_cow_of_faros }
+            capital_scope = {
+                religion = asoiaf_stone_cow_of_faros
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_stone_cow_of_faros
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Gods of Hyrkoon
+    adopt_gods_of_hyrkoon = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_gods_of_hyrkoon }
+            capital_scope = {
+                religion = asoiaf_gods_of_hyrkoon
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_gods_of_hyrkoon }
+            capital_scope = {
+                religion = asoiaf_gods_of_hyrkoon
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_gods_of_hyrkoon
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Moonsingers
+    adopt_the_moonsingers = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_moonsingers }
+            capital_scope = {
+                religion = asoiaf_moonsingers
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_moonsingers }
+            capital_scope = {
+                religion = asoiaf_moonsingers
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_moonsingers
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Occult
+    adopt_the_occult = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_magic }
+            capital_scope = {
+                religion = asoiaf_magic
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_magic }
+            capital_scope = {
+                religion = asoiaf_magic
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_magic
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # The Summer Gods
+    adopt_the_summer_gods = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_summer_gods }
+            capital_scope = {
+                religion = asoiaf_summer_gods
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_summer_gods }
+            capital_scope = {
+                religion = asoiaf_summer_gods
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_summer_gods
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Lord of Harmony
+    adopt_the_lord_of_harmony = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_god_of_harmony }
+            capital_scope = {
+                religion = asoiaf_god_of_harmony
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_god_of_harmony }
+            capital_scope = {
+                religion = asoiaf_god_of_harmony
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_god_of_harmony
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # The Great Stallion
+    adopt_the_great_stallion = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_the_great_stallion }
+            capital_scope = {
+                religion = asoiaf_the_great_stallion
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_the_great_stallion }
+            capital_scope = {
+                religion = asoiaf_the_great_stallion
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_the_great_stallion
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Idol Worship
+    adopt_idol_worship = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_tribal }
+            capital_scope = {
+                religion = asoiaf_tribal
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_tribal }
+            capital_scope = {
+                religion = asoiaf_tribal
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_tribal
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Lady of the Waves
+    adopt_the_lady_of_the_waves = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_lady_of_the_waves }
+            capital_scope = {
+                religion = asoiaf_lady_of_the_waves
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_lady_of_the_waves }
+            capital_scope = {
+                religion = asoiaf_lady_of_the_waves
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_lady_of_the_waves
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    # Cyromancy
+    adopt_cyromancy = {
+		major = yes
+		potential = {
+            NOT = { has_country_modifier = conversion_zeal }
+			NOT = { religion = asoiaf_white_walker }
+            capital_scope = {
+                religion = asoiaf_white_walker
+            }
+		}
+		allow = {
+			NOT = { religion = asoiaf_white_walker }
+            capital_scope = {
+                religion = asoiaf_white_walker
+            }
+            stability = 3
+		}
+		effect = {
+			add_stability = -6
+			
+            change_religion = asoiaf_white_walker
+            
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+

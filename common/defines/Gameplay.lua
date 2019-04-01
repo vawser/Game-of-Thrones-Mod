@@ -109,7 +109,7 @@ NDefines.NCountry.ABANDON_IDEAGROUP_REFUND = 0.75
 --------------------------------
 -- Technology
 --------------------------------
-NDefines.NCountry.PS_ADVANCE_TECH = 2000
+NDefines.NCountry.PS_ADVANCE_TECH = 1000
 NDefines.NCountry.TECH_TIME_COST = 0.0
 NDefines.NCountry.TECH_AHEAD_OF_TIME = 0.00
 

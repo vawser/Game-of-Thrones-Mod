@@ -87,17 +87,20 @@ NDefines.NMilitary.LIGHT_SHIP_SPEED = 10.0
 NDefines.NMilitary.GALLEY_SPEED = 4.0 
 NDefines.NMilitary.TRANSPORT_SPEED = 6.0 
 NDefines.NMilitary.HEAVY_SHIP_COST = 50.0 
-NDefines.NMilitary.LIGHT_SHIP_COST = 20.0 
-NDefines.NMilitary.GALLEY_COST = 10.0 
-NDefines.NMilitary.TRANSPORT_COST = 12.0 
-NDefines.NMilitary.HEAVY_SHIP_TIME = 730
+NDefines.NMilitary.LIGHT_SHIP_COST = 25.0 
+NDefines.NMilitary.GALLEY_COST = 25.0 
+NDefines.NMilitary.TRANSPORT_COST = 10.0 
+NDefines.NMilitary.HEAVY_SHIP_TIME = 365
 NDefines.NMilitary.LIGHT_SHIP_TIME = 365
 NDefines.NMilitary.GALLEY_TIME = 365	
 NDefines.NMilitary.TRANSPORT_TIME = 365	
-NDefines.NMilitary.HEAVY_SHIP_SAILORS_COST = 200
-NDefines.NMilitary.LIGHT_SHIP_SAILORS_COST = 50
-NDefines.NMilitary.GALLEY_SHIP_SAILORS_COST = 100
-NDefines.NMilitary.TRANSPORT_SHIP_SAILORS_COST = 50
+NDefines.NMilitary.HEAVY_SHIP_SAILORS_COST = 1000
+NDefines.NMilitary.LIGHT_SHIP_SAILORS_COST = 500
+NDefines.NMilitary.GALLEY_SHIP_SAILORS_COST = 750
+NDefines.NMilitary.TRANSPORT_SHIP_SAILORS_COST = 250
+
+NDefines.NMilitary.FLAGSHIP_REQUIRED_NAVY_SIZE_IN_SAILORS = 15000
+NDefines.NMilitary.FLAGSHIP_COST_SAILORS = 3000
 
 --------------------------------
 -- Special Units
@@ -105,6 +108,6 @@ NDefines.NMilitary.TRANSPORT_SHIP_SAILORS_COST = 50
 NDefines.NCountry.CORRUPTION_FROM_BANNERS = 1
 NDefines.NMilitary.BANNER_DISCIPLINE_BONUS = 0.1
 NDefines.NMilitary.BANNER_AGE_MULTIPLIER = 0.0
-NDefines.NMilitary.COSSACKS_SHOCK_DAMAGE_BONUS = 0.1    -- Elite Cavalry
-NDefines.NMilitary.STRELTSY_FIRE_DAMAGE_BONUS = 0.1     -- Magi
+NDefines.NMilitary.COSSACKS_SHOCK_DAMAGE_BONUS = 0.1    
+NDefines.NMilitary.STRELTSY_FIRE_DAMAGE_BONUS = 0.1     
 

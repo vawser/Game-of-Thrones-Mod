@@ -8,8 +8,7 @@ estate_undead = {
     
     start_territory_weight = 25
     
-	min_autonomy = 25
-    autonomy_does_not_affect = local_manpower_modifier
+	min_autonomy = 0
     
     # ----- Conditions -----
 	trigger = {
@@ -22,32 +21,35 @@ estate_undead = {
 
 	# ----- Country -----
 	country_modifier_happy = {
-		global_manpower_modifier = 0.25
-		land_forcelimit_modifier = 0.25
-        army_tradition = 1
+        reinforce_cost_modifier = -0.5
+		global_regiment_recruit_speed = -0.5
+        global_manpower_modifier = 0.5
 	}
 	country_modifier_neutral = {
-		land_forcelimit_modifier = 0.1
+		reinforce_cost_modifier = -0.25
+		global_regiment_recruit_speed = -0.25
+        global_manpower_modifier = 0.25
 	}	
 	country_modifier_angry = {
-		global_manpower_modifier = -0.25
-		land_forcelimit_modifier = -0.25
-        army_tradition = -1
-	}	
+		reinforce_cost_modifier = 0.5
+		global_regiment_recruit_speed = 0.5
+        global_manpower_modifier = -0.5
+	}		
 	
 	# ----- Province -----
 	province_modifier_happy = {
-		local_manpower_modifier = 0.5
-		local_unrest = -5
-	}
-	province_modifier_neutral = {
-		local_manpower_modifier = 0.25
-		local_unrest = -1
-	}	
-	province_modifier_angry = {
-		local_manpower_modifier = -0.5
-		local_unrest = 5
-	}	
+        local_manpower_modifier = 1.0
+        local_regiment_cost = -0.5
+    }
+    province_modifier_neutral = {
+        local_manpower_modifier = 0.5
+        local_regiment_cost = -0.25
+    }
+    province_modifier_angry = {
+        local_manpower_modifier = -1.0
+        local_regiment_cost = 0.5
+        local_unrest = 5
+    }
 	
     ai_grant_province = {
         factor = 1    
@@ -218,7 +220,15 @@ estate_undead = {
         }
         
         ai_will_do = {
-            factor = 0
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_undead
+                    influence = 60
+                }                        
+            }
         }
     }
     

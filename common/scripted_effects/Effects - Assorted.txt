@@ -198,13 +198,13 @@ estate_land_revoked_effect = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_clergy
-						loyalty = 30
+						loyalty = 50
 					}
 				}
 			}
 		}
 		spawn_rebels = {
-			type = religious_rebels
+			type = pretender_rebels
 			size = 1
 		}
 	}
@@ -216,13 +216,13 @@ estate_land_revoked_effect = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_magi
-						loyalty = 30
+						loyalty = 50
 					}
 				}
 			}
 		}
 		spawn_rebels = {
-			type = particularist_rebels
+			type = pretender_rebels
 			size = 1
 		}
 	}
@@ -233,13 +233,13 @@ estate_land_revoked_effect = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_nobles
-						loyalty = 30
+						loyalty = 50
 					}
 				}
 			}
 		}
 		spawn_rebels = {
-			type = noble_rebels
+			type = pretender_rebels
 			size = 1
 		}
 	}
@@ -250,13 +250,13 @@ estate_land_revoked_effect = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_merchants
-						loyalty = 30
+						loyalty = 50
 					}
 				}
 			}
 		}
 		spawn_rebels = {
-			type = particularist_rebels
+			type = pretender_rebels
 			size = 1
 		}
 	}
@@ -267,13 +267,13 @@ estate_land_revoked_effect = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_commoners
-						loyalty = 30
+						loyalty = 50
 					}
 				}
 			}
 		}
 		spawn_rebels = {
-			type = anti_tax_rebels
+			type = pretender_rebels
 			size = 1
 		}
 	}
@@ -284,13 +284,13 @@ estate_land_revoked_effect = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_khalasar
-						loyalty = 30
+						loyalty = 50
 					}
 				}
 			}
 		}
 		spawn_rebels = {
-			type = pretender
+			type = pretender_rebels
 			size = 1
 		}
 	}
@@ -301,13 +301,47 @@ estate_land_revoked_effect = {
 				NOT = {
 					estate_loyalty = {
 						estate = estate_cheiftains
-						loyalty = 30
+						loyalty = 50
 					}
 				}
 			}
 		}
 		spawn_rebels = {
-			type = pretender
+			type = pretender_rebels
+			size = 1
+		}
+	}
+    if = {
+		limit = {
+			has_estate = estate_slaves
+			owner = {
+				NOT = {
+					estate_loyalty = {
+						estate = estate_slaves
+						loyalty = 50
+					}
+				}
+			}
+		}
+		spawn_rebels = {
+			type = pretender_rebels
+			size = 1
+		}
+	}
+    if = {
+		limit = {
+			has_estate = estate_undead
+			owner = {
+				NOT = {
+					estate_loyalty = {
+						estate = estate_undead
+						loyalty = 50
+					}
+				}
+			}
+		}
+		spawn_rebels = {
+			type = pretender_rebels
 			size = 1
 		}
 	}

@@ -1,0 +1,120 @@
+country_decisions = {
+	edict_standardize_currency = {
+        major = yes
+		potential = {
+			NOT = { has_global_flag = edict_standardize_currency }
+            has_reform = royal_house_reform
+		}
+		allow =  {
+			check_variable = { which = royal_influence value = 600 }
+		}
+	  	effect = {
+            custom_tooltip = TT_EDICT_STANDARDIZE_CURRENCY
+			hidden_effect = { 
+                set_global_flag = edict_standardize_currency
+                subtract_variable = { which = royal_influence value = 600 }
+            }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    edict_forbid_the_first_night_custom = {
+        major = yes
+		potential = {
+			NOT = { has_global_flag = edict_forbid_the_first_night_custom }
+            has_reform = royal_house_reform
+		}
+		allow =  {
+			check_variable = { which = royal_influence value = 600 }
+		}
+	  	effect = {
+            custom_tooltip = TT_EDICT_FORBID_FIRST_NIGHT
+			hidden_effect = { 
+                set_global_flag = edict_forbid_the_first_night_custom
+                subtract_variable = { which = royal_influence value = 600 }
+            }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    edict_establish_kingsguard = {
+        major = yes
+		potential = {
+			NOT = { has_global_flag = edict_establish_kingsguard }
+            has_reform = royal_house_reform
+		}
+		allow =  {
+			check_variable = { which = royal_influence value = 600 }
+		}
+	  	effect = {
+            custom_tooltip = TT_EDICT_ESTABLISH_KINGSGUARD
+			hidden_effect = { 
+                set_global_flag = edict_establish_kingsguard
+                subtract_variable = { which = royal_influence value = 600 }
+            }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    edict_recover_valyrian_blades = {
+        major = yes
+		potential = {
+			NOT = { has_global_flag = edict_recover_valyrian_blades }
+            has_reform = royal_house_reform
+		}
+		allow =  {
+			check_variable = { which = royal_influence value = 600 }
+		}
+	  	effect = {
+            custom_tooltip = TT_EDICT_RECOVER_VALYRIAN_BLADES
+			hidden_effect = { 
+                set_global_flag = edict_recover_valyrian_blades
+                subtract_variable = { which = royal_influence value = 600 }
+            }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    edict_unite_the_seven_kingdoms = {
+        major = yes
+		potential = {
+            NOT = { has_global_flag = edict_unite_the_seven_kingdoms }
+            has_reform = royal_house_reform
+		}
+		allow =  {
+            custom_trigger_tooltip = {
+                tooltip = TT_EDICT_PASSED_ALL_EDICTS
+                
+                has_global_flag = edict_recover_valyrian_blades
+                has_global_flag = edict_establish_kingsguard
+                has_global_flag = edict_standardize_currency
+                has_global_flag = edict_forbid_the_first_night_custom
+            }
+			check_variable = { which = royal_influence value = 600 }
+		}
+	  	effect = {
+            custom_tooltip = TT_UNITE_THE_SEVEN_KINGDOMS
+			hidden_effect = { 
+                set_global_flag = edict_unite_the_seven_kingdoms
+                subtract_variable = { which = royal_influence value = 600 }
+                every_subject_country = {
+                    limit = { is_subject_of_type = royal_subject }
+                    ROOT = {
+                        inherit = PREV
+                    }
+                }
+            }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

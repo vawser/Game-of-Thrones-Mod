@@ -9,10 +9,7 @@ estate_chieftains = {
     start_territory_weight = 100
     territory_power_modifier = 2.0
     
-    min_autonomy = 50                                
-    autonomy_does_not_affect = local_tax_modifier
-    autonomy_does_not_affect = local_production_efficiency
-    autonomy_does_not_affect = local_manpower_modifier
+    min_autonomy = 0
     
     independence_government = tribal
 	starting_reform = wildling_clan_reform
@@ -31,37 +28,36 @@ estate_chieftains = {
     }
     
     # ----- Country -----
-    country_modifier_happy = {
-        land_forcelimit_modifier = 0.25
-        global_regiment_cost = -0.25
+    country_modifier_happy = {  
+        army_tradition = 1
+        land_forcelimit_modifier = 0.2
         land_maintenance_modifier = -0.2
     }
     country_modifier_neutral = {
+        army_tradition = 0.5
         land_forcelimit_modifier = 0.1
+        land_maintenance_modifier = -0.1
     }    
     country_modifier_angry = {
-        land_forcelimit_modifier = -0.25
-        global_regiment_cost = 0.25
+        army_tradition = -1
+        land_forcelimit_modifier = -0.2
         land_maintenance_modifier = 0.2
     }    
     
     # ----- Province -----
     province_modifier_happy = {
-        local_tax_modifier = 0.5
-        local_production_efficiency = 0.5
-        local_manpower_modifier = 0.5
+        local_manpower_modifier = 1.0
+        local_regiment_cost = -0.5
     }
     province_modifier_neutral = {
-        local_tax_modifier = 0.25
-        local_production_efficiency = 0.25
-        local_manpower_modifier = 0.25
+        local_manpower_modifier = 0.5
+        local_regiment_cost = -0.25
     }
-    
     province_modifier_angry = {
-        local_tax_modifier = -0.5
-        local_production_efficiency = -0.5
-        local_manpower_modifier = -0.5
-    }    
+        local_manpower_modifier = -1.0
+        local_regiment_cost = 0.5
+        local_unrest = 5
+    }  
     
     ai_grant_province = {
         factor = 1    
@@ -242,18 +238,7 @@ estate_chieftains = {
         }
         
         ai_will_do = {
-            factor = 1
-            
-            modifier = {
-                factor = 0
-                
-                NOT = {
-                    estate_influence = {
-                        estate = estate_chieftains
-                        influence = 60
-                    }
-                }
-            }
+            factor = 0
         }
     }
     
@@ -308,7 +293,18 @@ estate_chieftains = {
         }
         
         ai_will_do = {
-            factor = 0        
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_chieftains
+                        loyalty = 50
+                    }
+                }
+            }
         }
     }
     
@@ -338,15 +334,18 @@ estate_chieftains = {
         
         ai_will_do = {
             factor = 1
+            
             modifier = {
                 factor = 0
-                NOT = { years_of_income = 0.5 }                
+                NOT = { years_of_income = 1 }                
             }
+            
             modifier = {
                 factor = 0
+                
                 estate_loyalty = {
                     estate = estate_chieftains
-                    loyalty = 40
+                    loyalty = 50
                 }
             }            
         }        
@@ -383,13 +382,15 @@ estate_chieftains = {
     
         ai_will_do = {
             factor = 1
+            
             modifier = {
                 factor = 0
                 estate_loyalty = {
                     estate = estate_chieftains
-                    loyalty = 30
+                    loyalty = 50
                 }                        
             }
+            
             modifier = {
                 factor = 0
                 estate_influence = {
@@ -437,7 +438,15 @@ estate_chieftains = {
         
         
         ai_will_do = {
-            factor = 0            
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_chieftains
+                    influence = 60
+                }                        
+            } 
         }
     }
     
@@ -478,7 +487,15 @@ estate_chieftains = {
         
         
         ai_will_do = {
-            factor = 0            
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_chieftains
+                    influence = 60
+                }                        
+            } 
         }
     }
     
@@ -536,7 +553,15 @@ estate_chieftains = {
         }
         
         ai_will_do = {
-            factor = 0
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_chieftains
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -592,6 +617,7 @@ estate_chieftains = {
         
         ai_will_do = {
             factor = 1
+            
             modifier = {
                 factor = 0
                 NOT = {
@@ -601,14 +627,11 @@ estate_chieftains = {
                     }    
                 }
             }
+            
             modifier = {
                 factor = 0
-                manpower_percentage = 0.25                
-            }
-            modifier = {
-                factor = 0
-                is_at_war = no
-            }            
+                manpower_percentage = 0.75
+            }         
         }
     }
     

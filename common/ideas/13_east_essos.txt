@@ -1,97 +1,96 @@
 #---------------------------------------
 # Qarth
 #---------------------------------------
-quartheen_ideas = {
+qarth_ideas = {
 	start = {
-		interest = -2
-		diplomatic_upkeep = 2
+		trade_steering = 0.1
+		merchants = 1
 	}
 	
 	bonus = {
-		improve_relation_modifier = 0.2
+		trade_efficiency = 0.2
 	}
 	
 	trigger = {
-		technology_group = quartheen
+        primary_culture = qartheen
 	}
 	free = yes
 	
 	# Wealth beyond Imagination
-	quartheen_1 = {
-		global_tax_modifier = 0.2
+	qarth_1 = {
+		global_trade_goods_size_modifier = 0.2
 	}
 	# The Jade Gateway
-	quartheen_2 = {
-		global_trade_power = 0.2
+	qarth_2 = {
+		global_own_trade_power = 0.15
 	}
 	# The Pureborn
-	quartheen_3 = {
-		legitimacy = 1
+	qarth_3 = {
 		prestige = 1
 	}
 	# House of the Undying
-	quartheen_4 = {
-		embracement_cost = -0.1
+	qarth_4 = {
+		technology_cost = -0.1
 	}
 	# Port of Qarth
-	quartheen_5 = {
-		trade_efficiency = 0.2
+	qarth_5 = {
+		naval_forcelimit_modifier = 0.1
 	}
 	# A Warlock's Lies
-	quartheen_6 = {
+	qarth_6 = {
 		stability_cost_modifier = -0.2
 	}
 	# The Hall of a Thousand Thrones
-	quartheen_7 = {
-		land_morale = 0.1
+	qarth_7 = {
+		discipline = 0.05
 	}
 }
 
 #---------------------------------------
 # Faros
 #---------------------------------------
-farosi_ideas = {
+faros_ideas = {
 	start = {
-		galley_cost = -0.33
-		may_perform_slave_raid = yes
+		global_sailors_modifier = 0.15
+        naval_forcelimit_modifier = 0.15
 	}
 	
 	bonus = {
-		naval_forcelimit_modifier = 0.2
+		ship_durability = 0.1
 	}
 	
 	trigger = {
-		technology_group = farosi
+		culture_group = culture_faros
 	}
 	free = yes
 	
 	# The Stone Cow of Faros
-	farosi_1 = {
-		religious_unity = 0.33
+	faros_1 = {
+		religious_unity = 0.5
 	}
 	# Tropical Climate
-	farosi_2 = {
+	faros_2 = {
 		hostile_attrition = 2
 	}
 	# Trade through the Jade Sea
-	farosi_3 = {
-		global_trade_power = 0.2
+	faros_3 = {
+		global_trade_power = 0.1
 	}
 	# Yi Ti Influences
-	farosi_4 = {
+	faros_4 = {
 		army_tradition = 1
 	}
-	# Farosi Galleys
-	farosi_5 = {
+	# faros Galleys
+	faros_5 = {
 		galley_power = 0.2
 	}
 	# Cinnamon Straits
-	farosi_6 = {
+	faros_6 = {
 		trade_steering = 0.2
 	}
 	# Port Moraq
-	farosi_7 = {
-		merchants = 1
+	faros_7 = {
+		sailor_maintenance_modifer = -0.2
 	}
 }
 
@@ -100,12 +99,12 @@ farosi_ideas = {
 #---------------------------------------
 yi_ti_ideas = {
 	start = {
-		core_creation = -0.1
-		diplomatic_upkeep = 1
+		prestige = 1
+		diplomatic_upkeep = 2
 	}
 	
 	bonus = {
-		army_tradition = 1
+		diplomatic_reputation = 2
 	}
 	
 	trigger = {
@@ -115,23 +114,23 @@ yi_ti_ideas = {
 	
 	# Golden Empire of Yi Ti
 	yi_ti_1 = {
-		legitimacy = 1
+		prestige = 1
 	}
 	# Verdant Rainforests and Vast Farmlands
 	yi_ti_2 = {
-		production_efficiency = 0.2
+		global_supply_limit_modifier = 0.2
 	}
 	# Roaming Basilisks
 	yi_ti_3 = {
-		movement_speed = 0.15
+		hostile_attrition = 1
 	}
 	# The Grand City of Yin
 	yi_ti_4 = {
-		prestige = 1
+		advisor_cost = -0.33
 	}
 	# Yitish Princes
 	yi_ti_5 = {
-		land_forcelimit_modifier = 0.2
+		yearly_corruption = -0.05
 	}
 	# Golden Saffron
 	yi_ti_6 = {
@@ -140,7 +139,7 @@ yi_ti_ideas = {
 	}
 	# The Five Forts
 	yi_ti_7 = {
-		garrison_size = 0.5
+		defensiveness = 0.33
 	}
 }
 
@@ -149,58 +148,46 @@ yi_ti_ideas = {
 #---------------------------------------
 hyrkoon_ideas = {
 	start = {
-		global_supply_limit_modifier = 0.1
+		backrow_artillery_damage = 0.2
         garrison_size = 1.0
 	}
 	
 	bonus = {
-		global_garrison_growth = 1.0
+		global_supply_limit_modifier = 0.33
 	}
 	
 	trigger = {
-		OR = {
-			primary_culture = bayasabhad
-			primary_culture = samyriana
-			primary_culture = kayakayanaya
-			primary_culture = asabhad
-		}
+		culture_group = culture_hyrkoon
 	}
 	free = yes
 	
 	# Legacy of Hyrkoon
 	hyrkoon_1 = {
-		legitimacy = 1
+		defensiveness = 0.33
 	}
-
 	# The Great Sand Sea
 	hyrkoon_2 = {
-		hostile_attrition = 3
+		hostile_attrition = 2
 	}
-
 	# The Steel Road
 	hyrkoon_3 = {
-		caravan_power = 0.2
+		merchants = 1
 	}
-
 	# Warrior Women of Kayakayanaya
 	hyrkoon_4 = {
 		land_morale = 0.1
 	}
-
 	# Lost People of Yinishar
 	hyrkoon_5 = {
-		infantry_cost = -0.2
+		global_garrison_growth = 1.0
 	}
-
 	# The Bone Mountains
 	hyrkoon_6 = {
-		land_attrition = -0.1
+		fire_damage = 0.1
 	}
-
 	# Trade with Qarth
 	hyrkoon_7 = {
-		merchants = 1
-		global_trade_power = 0.1
+		global_trade_power = 0.2
 	}
 }
 
@@ -209,12 +196,12 @@ hyrkoon_ideas = {
 #---------------------------------------
 trader_town_ideas = {
 	start = {
+		placed_merchant_power = 0.33
 		merchants = 1
-		global_trade_power = 0.1
 	}
 	
 	bonus = {
-		merchants = 1
+		trade_efficiency = 0.2
 	}
 	
 	trigger = {
@@ -224,37 +211,31 @@ trader_town_ideas = {
 	
 	# Trade is Blood
 	trader_town_1 = {
-		caravan_power = 0.2
+		trade_steering = 0.2
 	}
-
 	# Hyrkoon Allegiance
 	trader_town_2 = {
 		diplomatic_reputation = 1
 	}
-
 	# Hyrkoon Mercenaries
 	trader_town_3 = {
-		merc_maintenance_modifier = -0.2
+		merc_maintenance_modifier = -0.33
 	}
-
 	# The Disaster of the Sand Sea
 	trader_town_4 = {
-		trade_range_modifier = 0.25
+		caravan_power = 0.2
 	}
-
 	# Links to the Yi Ti
 	trader_town_5 = {
-		trade_steering = 0.25
+		global_prov_trade_power_modifier = 0.2
 	}
-
 	# Trade with the Five Forts
 	trader_town_6 = {
-		global_prov_trade_power_modifier = 0.1
+		global_trade_power = 0.2
 	}
-
 	# Bloodless Men and their Gold
 	trader_town_7 = {
-		trade_efficiency = 0.1
+		trade_range_modifier = 0.33
 	}
 }
 
@@ -263,11 +244,12 @@ trader_town_ideas = {
 #---------------------------------------
 nefer_ideas = {
 	start = {
-		technology_cost = -0.1
+		advisor_cost = -0.1
+        advisor_pool = 1
 	}
 	
 	bonus = {
-		idea_cost = -0.1
+		prestige = 1
 	}
 	
 	trigger = {
@@ -277,34 +259,28 @@ nefer_ideas = {
 	
 	# The Last Capital of N'Ghai
 	nefer_1 = {
-		legitimacy = 1
+		monarch_military_power = 1
 	}
-
 	# The Thousand Islands
 	nefer_2 = {
 		navy_tradition = 1
 	}
-
 	# Mystical Taint
 	nefer_3 = {
-		prestige = 1
+		siege_ability = 0.1
 	}
-
 	# Relations to the Jogos Nhai
 	nefer_4 = {
-		cavalry_cost = -0.2
+		cavalry_cost = -0.15
 	}
-
 	# Timber Galore
 	nefer_5 = {
-		global_regiment_cost = -0.33
+		build_cost = -0.25
 	}
-
 	# Trade through the Cannibal Sands	
 	nefer_6 = {
 		global_trade_power = 0.1
 	}
-
 	# Hardy People
 	nefer_7 = {
 		land_attrition = -0.2
@@ -314,14 +290,14 @@ nefer_ideas = {
 #---------------------------------------
 # Leng
 #---------------------------------------
-lengii_ideas = {
+leng_ideas = {
 	start = {
-		production_efficiency = 0.1
-		advisor_pool = 2
+		navy_tradition = 1
+		advisor_pool = 1
 	}
 	
 	bonus = {
-		advisor_cost = -0.2
+		naval_forcelimit_modifier = 0.2
 	}
 	
 	trigger = {
@@ -329,32 +305,33 @@ lengii_ideas = {
 	}
 	free = yes
 	
-	lengii_1 = {
-		ae_impact = -0.1
+    # God Empresses
+	leng_1 = {
+		prestige = 1
 	}
-
-	lengii_2 = {
+    # Freaks of Nature
+	leng_2 = {
 		province_warscore_cost = -0.15
 	}
-	
-	lengii_3 = {
+	# Jade Mines
+	leng_3 = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	# Yitish Influence
+	leng_4 = {
 		diplomatic_reputation = 1
 	}
-	
-	lengii_4 = {
-		diplomatic_upkeep = 1
+	# The Jade Compendium
+	leng_5 = {
+		diplomatic_annexation_cost = -0.25
 	}
-	
-	lengii_5 = {
-		diplomatic_annexation_cost = -0.2
+	# Xenophobic
+	leng_6 = {
+		years_of_nationalism = -5
 	}
-	
-	lengii_6 = {
-		unjustified_demands = -0.2
-	}
-	
-	lengii_7 = {
-		adm_tech_cost_modifier = -0.2
+	# The City of Leng Yi
+	leng_7 = {
+		technology_cost = -0.1
 	}
 }
 
@@ -363,12 +340,12 @@ lengii_ideas = {
 #---------------------------------------
 jogos_nhai_ideas = {
 	start = {
-		cavalry_cost = -0.2
-		cavalry_power = 0.2
+		army_tradition = 1
+		loot_amount = 0.25
 	}
 	
 	bonus = {
-		cavalry_flanking = 0.2
+		discipline = 0.05
 	}
 	
 	trigger = {
@@ -378,36 +355,30 @@ jogos_nhai_ideas = {
 	
 	# Plains of Jogos Nhai
 	jogos_nhai_1 = {
-		prestige_from_land = 1
+		cavalry_cost = -0.33
 	}
-
 	# Trade Links with the Nefer
 	jogos_nhai_2 = {
 		merchants = 1
 	}
-
 	# Moonsinger Influence
 	jogos_nhai_3 = {
 		religious_unity = 0.33
 	}
-
 	# Nomadic People
 	jogos_nhai_4 = {
-		land_maintenance_modifier = -0.2
+		land_attrition = -0.25
 	}
-
 	# Zebra Cavalry
 	jogos_nhai_5 = {
-		cavalry_shock = 2
+		cavalry_power = 0.15
 	}
-
 	# Honour Bound
 	jogos_nhai_6 = {
 		land_morale = 0.1
 	}
-
 	# Survival Instinct
 	jogos_nhai_7 = {
-		reinforce_speed = 0.2
+		global_supply_limit_modifier = 0.15
 	}
 }

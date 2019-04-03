@@ -3,12 +3,12 @@
 #---------------------------------------
 summer_islander_ideas = {
 	start = {
-		may_perform_slave_raid = yes
-		naval_attrition = -0.1
+		navy_tradition = 1
+		naval_attrition = -0.2
 	}
 	
 	bonus = {
-		heavy_ship_power = 0.1
+		heavy_ship_power = 0.2
 	}
 	
 	trigger = {
@@ -18,16 +18,16 @@ summer_islander_ideas = {
 	
 	# Deposition of Jalabhar Xho
 	summer_islander_1 = {
-		land_morale = 0.1
+		admiral_cost = -0.25
+        admiral_skill_gain_modifier = 0.25
 	}
 	# The Smiling Sea
 	summer_islander_2 = {
-		global_ship_recruit_speed = -0.25
-		global_ship_repair = 0.25
+		global_sailors_modifier = 0.33
 	}
 	# Trade through Lotus Port
 	summer_islander_3 = {
-		global_foreign_trade_power = 0.1
+		global_trade_power = 0.15
 	}
 	# The Holy Art of Lovemaking
 	summer_islander_4 = {
@@ -39,12 +39,11 @@ summer_islander_ideas = {
 	}
 	# Origin of the Swan Ship
 	summer_islander_6 = {
-		navy_tradition = 1
+		heavy_ship_cost = -0.33
 	}
 	# Expert Archers
 	summer_islander_7 = {
-		leader_naval_fire = 1
-		leader_land_fire = 1
+		fire_damage = 0.2
 	}
 }
 
@@ -53,8 +52,8 @@ summer_islander_ideas = {
 #---------------------------------------
 naathi_ideas = {
 	start = {
-		tolerance_own = 3
-		global_unrest = -1
+		tolerance_own = 1
+		global_unrest = -2
 	}
 	
 	bonus = {
@@ -68,16 +67,16 @@ naathi_ideas = {
 	
 	# Lovers, not Fighters
 	naathi_1 = {
-		diplomatic_reputation = 3
+		diplomatic_reputation = 2
         improve_relation_modifier = 0.2
 	}
 	# Lord of Harmony
 	naathi_2 = {
-		global_missionary_strength = 0.03
+		global_missionary_strength = 0.02
 	}
 	# Butterfly Spirits
 	naathi_3 = {
-        hostile_attrition = 10
+        hostile_attrition = 2
 	}
 	# Naathi Explorers
 	naathi_4 = {
@@ -90,11 +89,11 @@ naathi_ideas = {
 	}
 	# Peace through Tolerance
 	naathi_6 = {
-		num_accepted_cultures = 1
+		stability_cost_modifier = -0.33
 	}
 	# Love conquers all
 	naathi_7 = {
-		global_spy_defence = 0.33
+		global_spy_defence = 0.25
 	}
 }
 
@@ -120,32 +119,26 @@ ibben_ideas = {
 	ibben_1 = {
 		heavy_ship_power = 0.2
 	}
-
 	# Hairy Men
 	ibben_2 = {
 		navy_tradition = 1
 	}
-
-	# Ibben
+	# Ib
 	ibben_3 = {
 		naval_morale = 0.1
 	}
-
 	# Neandethal Remenants
 	ibben_4 = {
 		sailor_maintenance_modifer = -0.2
 	}
-
-	# Ibben Council
+	# The Shadow Council
 	ibben_5 = {
-		legitimacy = 1
+		global_unrest = -2
 	}
-
 	# Ships of Ibben
 	ibben_6 = {
-		global_ship_cost = -0.2
+		global_ship_cost = -0.33
 	}
-	
 	# Expert Sailors
 	ibben_7 = {
 		ship_durability = 0.1

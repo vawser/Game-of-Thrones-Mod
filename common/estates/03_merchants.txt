@@ -8,8 +8,7 @@ estate_merchants = {
 		
     start_territory_weight = 10
     
-	min_autonomy = 25							
-    autonomy_does_not_affect = province_trade_power_modifier
+	min_autonomy = 0
     
     custom_name = {
 		desc = estate_builders
@@ -33,33 +32,30 @@ estate_merchants = {
 	# ----- Country -----
 	# These scale with loyalty & power
 	country_modifier_happy = {
-		global_trade_power = 0.1
-		global_trade_goods_size_modifier = 0.1
-		trade_efficiency = 0.1
+        trade_steering = 0.2
+		global_trade_power = 0.2
+		trade_efficiency = 0.2
 	}
 	country_modifier_neutral = {
-		trade_efficiency = 0.05
+		trade_steering = 0.1
+		global_trade_power = 0.1
+		trade_efficiency = 0.1
 	}	
 	country_modifier_angry = {
-		global_trade_power = -0.1
-		global_trade_goods_size_modifier = -0.1
-		trade_efficiency = -0.1
+        trade_steering = -0.2
+		global_trade_power = -0.2
+		trade_efficiency = -0.2
 	}	
 	
 	# ----- Province -----
 	province_modifier_happy = {
-		province_trade_power_modifier = 0.5
-        trade_goods_size_modifier = 0.5
-		local_unrest = -5
+		province_trade_power_modifier = 1
 	}
 	province_modifier_neutral = {
-		province_trade_power_modifier = 0.25
-        trade_goods_size_modifier = 0.25
-		local_unrest = -1
+		province_trade_power_modifier = 0.5
 	}	
 	province_modifier_angry = {
-		province_trade_power_modifier = -0.5
-        trade_goods_size_modifier = -0.5
+		province_trade_power_modifier = -1
 		local_unrest = 5
 	}	
 	
@@ -113,7 +109,7 @@ estate_merchants = {
 		}
 		influence = -40
 	}
-	
+    
     influence_modifier = {
 		desc = EST_VAL_MERCHANT_COUNSEL
 		trigger = {
@@ -327,18 +323,7 @@ estate_merchants = {
         }
         
         ai_will_do = {
-            factor = 1
-            
-            modifier = {
-                factor = 0
-                
-                NOT = {
-                    estate_influence = {
-                        estate = estate_merchants
-                        influence = 60
-                    }
-                }
-            }
+            factor = 0
         }
     }
     
@@ -393,7 +378,17 @@ estate_merchants = {
         }
         
         ai_will_do = {
-            factor = 0        
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_merchants
+                        loyalty = 50
+                    }
+                }
+            } 
         }
     }
     
@@ -425,13 +420,13 @@ estate_merchants = {
             factor = 1
             modifier = {
                 factor = 0
-                NOT = { years_of_income = 0.5 }                
+                NOT = { years_of_income = 1 }                
             }
             modifier = {
                 factor = 0
                 estate_loyalty = {
                     estate = estate_merchants
-                    loyalty = 40
+                    loyalty = 50
                 }
             }            
         }        
@@ -471,7 +466,7 @@ estate_merchants = {
                 factor = 0
                 estate_loyalty = {
                     estate = estate_merchants
-                    loyalty = 30
+                    loyalty = 50
                 }                        
             }
             modifier = {
@@ -521,7 +516,15 @@ estate_merchants = {
         
         
         ai_will_do = {
-            factor = 0            
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_merchants
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -562,7 +565,15 @@ estate_merchants = {
         
         
         ai_will_do = {
-            factor = 0            
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_merchants
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -624,7 +635,7 @@ estate_merchants = {
                 factor = 0
                 estate_influence = {
                     estate = estate_merchants
-                    influence = 40
+                    influence = 60
                 }                        
             }
         }
@@ -688,7 +699,15 @@ estate_merchants = {
         }
         
         ai_will_do = {
-            factor = 0
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_merchants
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -750,7 +769,15 @@ estate_merchants = {
         }
         
         ai_will_do = {
-            factor = 0
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_merchants
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -952,12 +979,8 @@ estate_merchants = {
             }
             modifier = {
                 factor = 0
-                sailors_percentage = 0.25                
-            }
-            modifier = {
-                factor = 0
-                is_at_war = no
-            }            
+                sailors_percentage = 0.75
+            }         
         }
     }
 }

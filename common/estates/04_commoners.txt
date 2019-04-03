@@ -9,8 +9,7 @@ estate_commoners = {
     start_territory_weight = 25
     territory_power_modifier = 0.5
     
-	min_autonomy = 25
-    autonomy_does_not_affect = local_production_efficiency
+	min_autonomy = 0
     
     custom_name = {
 		desc = estate_rangers
@@ -34,29 +33,29 @@ estate_commoners = {
 	# ----- Country -----
 	country_modifier_happy = {
 		global_unrest = -2
-		development_cost = -0.1
-		production_efficiency = 0.1
+		development_cost = -0.2
+		production_efficiency = 0.2
 	}
 	country_modifier_neutral = {
 		global_unrest = -1
+		development_cost = -0.1
+		production_efficiency = 0.1
 	}	
 	country_modifier_angry = {
 		global_unrest = 2
-		development_cost = 0.1
-		production_efficiency = -0.1
+		development_cost = 0.2
+		production_efficiency = -0.2
 	}	
 	
 	# ----- Province -----
 	province_modifier_happy = {
-		local_production_efficiency = 0.5
-		local_unrest = -5
+		local_production_efficiency = 1
 	}
 	province_modifier_neutral = {
-		local_production_efficiency = 0.25
-		local_unrest = -1
+		local_production_efficiency = 0.5
 	}	
 	province_modifier_angry = {
-		local_production_efficiency = -0.5
+		local_production_efficiency = -1
 		local_unrest = 5
 	}	
 	
@@ -103,7 +102,7 @@ estate_commoners = {
 		}
 		influence = -40
 	}
-    
+
     influence_modifier = {
 		desc = EST_VAL_COMMON_COUNSEL
 		trigger = {
@@ -292,18 +291,7 @@ estate_commoners = {
         }
         
         ai_will_do = {
-            factor = 1
-            
-            modifier = {
-                factor = 0
-                
-                NOT = {
-                    estate_influence = {
-                        estate = estate_commoners
-                        influence = 60
-                    }
-                }
-            }
+            factor = 0
         }
     }
     
@@ -357,7 +345,17 @@ estate_commoners = {
         }
         
         ai_will_do = {
-            factor = 0        
+            factor = 1
+
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_commoners
+                        loyalty = 50
+                    }
+                }
+            }
         }
     }
     
@@ -389,7 +387,7 @@ estate_commoners = {
             factor = 1
             modifier = {
                 factor = 0
-                NOT = { years_of_income = 0.5 }                
+                NOT = { years_of_income = 1 }                
             }
             modifier = {
                 factor = 0
@@ -435,7 +433,7 @@ estate_commoners = {
                 factor = 0
                 estate_loyalty = {
                     estate = estate_commoners
-                    loyalty = 30
+                    loyalty = 50
                 }                        
             }
             modifier = {
@@ -485,7 +483,15 @@ estate_commoners = {
         
         
         ai_will_do = {
-            factor = 0            
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_commoners
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -526,7 +532,15 @@ estate_commoners = {
         
         
         ai_will_do = {
-            factor = 0            
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_commoners
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -576,14 +590,15 @@ estate_commoners = {
             modifier = {
                 factor = 0
                 
-                stability = 0
+                stability = 3
             }
             
             modifier = {   
                 factor = 0
+                
                 estate_influence = {
                     estate = estate_commoners
-                    influence = 40
+                    influence = 60
                 }	
             }
         }
@@ -648,7 +663,7 @@ estate_commoners = {
                 factor = 0
                 estate_influence = {
                     estate = estate_commoners
-                    influence = 40
+                    influence = 60
                 }	
             }
         }

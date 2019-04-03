@@ -59,6 +59,8 @@ NDefines.NCountry.LAGGINGTECH_CORRUPTION_MAX = 0 -- Disable
 --------------------------------
 NDefines.NCountry.MAXIMUM_ADVISOR_SKILL = 10 
 NDefines.NCountry.PROMOTE_COST_MONTHS_ADVISOR_SALARY = 120
+NDefines.NCountry.ADVISOR_COST_INCREASE_PER_YEAR = 0.0 -- Disable yearly increase.
+NDefines.NEconomy.ADVISOR_COST = 1.0
 
 --------------------------------
 -- Buildings
@@ -117,28 +119,6 @@ NDefines.NCountry.TECH_AHEAD_OF_TIME = 0.00
 -- Policies
 --------------------------------
 NDefines.NCountry.POLICY_COST = 1
-
---------------------------------
--- Estates
---------------------------------
-NDefines.NCountry.ALLOW_ESTATE_AND_PARLIAMENT_SEAT_IN_PROVINCE = 1
-NDefines.NCountry.ALLOW_ESTATE_IN_CAPITAL = 1
-
-NDefines.NCountry.ESTATE_ANGRY_THRESHOLD = 40
-NDefines.NCountry.ESTATE_HAPPY_THRESHOLD = 60
-NDefines.NCountry.ESTATE_LOYALTY_DECAY_BASE_MIN = 1
-NDefines.NCountry.ESTATE_LOYALTY_DECAY_BASE_MAX = 2
-NDefines.NCountry.ESTATE_INFLUENCE_LEVEL_1 = 20
-NDefines.NCountry.ESTATE_INFLUENCE_LEVEL_2 = 40
-NDefines.NCountry.ESTATE_INFLUENCE_LEVEL_3 = 60
-NDefines.NCountry.ESTATE_PROVINCE_HAPPINESS_INCREASE = 1.0 -- %
-NDefines.NCountry.ESTATE_PROVINCE_HAPPINESS_DECREASE = 5.0 -- %
-NDefines.NCountry.ESTATE_PROVINCE_HAPPINESS_CHANGE_MAX_POS = 20 -- %
-NDefines.NCountry.ESTATE_PROVINCE_HAPPINESS_CHANGE_MAX_NEG = 30 -- %
-NDefines.NCountry.ESTATE_PROVINCE_POWER = 1.5
-NDefines.NCountry.ESTATE_PROVINCE_POWER_MAX = 50
-NDefines.NCountry.ESTATE_DANGER_THRESHOLD = 80
-NDefines.NCountry.ESTATE_GRANT_PROVINCE_COOLDOWN = 1.0
 
 --------------------------------
 -- Subjects

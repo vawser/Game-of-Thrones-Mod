@@ -8,8 +8,7 @@ estate_nobles = {
 
     start_territory_weight = 25
     
-	min_autonomy = 25								
-    autonomy_does_not_affect = local_manpower_modifier
+	min_autonomy = 0
     
     independence_government = monarchy
 	starting_reform = kingdom_reform
@@ -40,29 +39,29 @@ estate_nobles = {
 	# ----- Country -----
 	country_modifier_happy = {
 		global_manpower_modifier = 0.1
-		land_forcelimit_modifier = 0.1
         army_tradition = 1
+        leader_cost = -0.5
 	}
 	country_modifier_neutral = {
 		global_manpower_modifier = 0.05
+        army_tradition = 0.5
+        leader_cost = -0.25
 	}	
 	country_modifier_angry = {
 		global_manpower_modifier = -0.1
-		land_forcelimit_modifier = -0.1
         army_tradition = -1
+        leader_cost = 0.5
 	}	
 	
 	# ----- Province -----
 	province_modifier_happy = {
-		local_manpower_modifier = 0.5
-		local_unrest = -5
+		local_manpower_modifier = 1.0
 	}
 	province_modifier_neutral = {
-		local_manpower_modifier = 0.25
-		local_unrest = -1
+		local_manpower_modifier = 0.5
 	}	
 	province_modifier_angry = {
-		local_manpower_modifier = -0.5
+		local_manpower_modifier = -1.0
 		local_unrest = 5
 	}	
 	
@@ -120,7 +119,7 @@ estate_nobles = {
 		}
 		influence = -40
 	}
-	
+    
     influence_modifier = {
 		desc = EST_VAL_NOBLE_COUNSEL
 		trigger = {
@@ -310,18 +309,7 @@ estate_nobles = {
         }
         
         ai_will_do = {
-            factor = 1
-            
-            modifier = {
-                factor = 0
-                
-                NOT = {
-                    estate_influence = {
-                        estate = estate_nobles
-                        influence = 60
-                    }
-                }
-            }
+            factor = 0
         }
     }
     
@@ -377,7 +365,17 @@ estate_nobles = {
         }
         
         ai_will_do = {
-            factor = 0        
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 50
+                    }
+                }
+            } 
         }
     }
     
@@ -409,13 +407,13 @@ estate_nobles = {
             factor = 1
             modifier = {
                 factor = 0
-                NOT = { years_of_income = 0.5 }                
+                NOT = { years_of_income = 1 }                
             }
             modifier = {
                 factor = 0
                 estate_loyalty = {
                     estate = estate_nobles
-                    loyalty = 40
+                    loyalty = 50
                 }
             }            
         }        
@@ -455,7 +453,7 @@ estate_nobles = {
                 factor = 0
                 estate_loyalty = {
                     estate = estate_nobles
-                    loyalty = 30
+                    loyalty = 50
                 }                        
             }
             modifier = {
@@ -505,7 +503,15 @@ estate_nobles = {
         
         
         ai_will_do = {
-            factor = 0            
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_nobles
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -546,7 +552,15 @@ estate_nobles = {
         
         
         ai_will_do = {
-            factor = 0            
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_nobles
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -603,7 +617,15 @@ estate_nobles = {
         }
         
         ai_will_do = {
-            factor = 0
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_nobles
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -660,7 +682,15 @@ estate_nobles = {
         }
         
         ai_will_do = {
-            factor = 0
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_nobles
+                    influence = 60
+                }                        
+            }
         }
     }
 	
@@ -710,6 +740,14 @@ estate_nobles = {
 		
 		ai_will_do = {
 			factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_nobles
+                    influence = 60
+                }                        
+            }
 		}
 	}
 
@@ -775,12 +813,8 @@ estate_nobles = {
             }
             modifier = {
                 factor = 0
-                manpower_percentage = 0.25                
-            }
-            modifier = {
-                factor = 0
-                is_at_war = no
-            }            
+                manpower_percentage = 0.75
+            }         
         }
     }
     
@@ -838,11 +872,12 @@ estate_nobles = {
         
         ai_will_do = {
             factor = 1
+            
             modifier = {
                 factor = 0
                 estate_influence = {
                     estate = estate_nobles
-                    influence = 50
+                    influence = 60
                 }
             }     
         }
@@ -1077,7 +1112,7 @@ estate_nobles = {
                 factor = 0
                 estate_influence = {
                     estate = estate_nobles
-                    influence = 50
+                    influence = 60
                 }	
             }
 		}
@@ -1313,7 +1348,7 @@ estate_nobles = {
                 factor = 0
                 estate_influence = {
                     estate = estate_nobles
-                    influence = 50
+                    influence = 60
                 }	
             }
 		}
@@ -1367,7 +1402,7 @@ estate_nobles = {
             
             modifier = {   
                 factor = 0
-                republican_tradition = 15	
+                republican_tradition = 50
             }
 		}
 	}

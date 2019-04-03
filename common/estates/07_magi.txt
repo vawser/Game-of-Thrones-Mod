@@ -8,8 +8,7 @@ estate_magi = {
     
     start_territory_weight = 5
     
-	min_autonomy = 25								
-    autonomy_does_not_affect = local_tax_modifier
+	min_autonomy = 0
     
     custom_name = {
 		desc = estate_wizards
@@ -39,29 +38,32 @@ estate_magi = {
 	# ----- Country -----
 	country_modifier_happy = {
 		technology_cost = -0.1
-        idea_cost = -0.1
-        advisor_cost = -0.1
+        global_institution_spread = 0.5
+        global_trade_goods_size_modifier = 0.1
 	}
 	country_modifier_neutral = {
 		technology_cost = -0.05
+        global_institution_spread = 0.25
+        global_trade_goods_size_modifier = 0.05
 	}	
 	country_modifier_angry = {
 		technology_cost = 0.1
-        idea_cost = 0.1
-        advisor_cost = 0.1
+        global_institution_spread = -0.5
+        global_trade_goods_size_modifier = -0.1
 	}	
 	
 	# ----- Province -----
 	province_modifier_happy = {
-		local_tax_modifier = 0.5
-		local_unrest = -5
+		trade_goods_size_modifier = 1
+        local_institution_spread = 1
 	}
 	province_modifier_neutral = {
-		local_tax_modifier = 0.25
-		local_unrest = -1
+		trade_goods_size_modifier = 0.5
+        local_institution_spread = 0.5
 	}	
 	province_modifier_angry = {
-		local_tax_modifier = -0.5
+		trade_goods_size_modifier = -1
+        local_institution_spread = -1
 		local_unrest = 5
 	}	
 	
@@ -240,18 +242,7 @@ estate_magi = {
         }
         
         ai_will_do = {
-            factor = 1
-            
-            modifier = {
-                factor = 0
-                
-                NOT = {
-                    estate_influence = {
-                        estate = estate_magi
-                        influence = 60
-                    }
-                }
-            }
+            factor = 0
         }
     }
     
@@ -334,7 +325,18 @@ estate_magi = {
         }
         
         ai_will_do = {
-            factor = 0        
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_magi
+                        loyalty = 50
+                    }  
+                }
+            }
         }
     }
     
@@ -364,15 +366,17 @@ estate_magi = {
         
         ai_will_do = {
             factor = 1
+            
             modifier = {
                 factor = 0
-                NOT = { years_of_income = 0.5 }                
+                NOT = { years_of_income = 1 }                
             }
+            
             modifier = {
                 factor = 0
                 estate_loyalty = {
                     estate = estate_magi
-                    loyalty = 40
+                    loyalty = 50
                 }
             }            
         }        
@@ -408,15 +412,19 @@ estate_magi = {
     
         ai_will_do = {
             factor = 1
+            
             modifier = {
                 factor = 0
+                
                 estate_loyalty = {
                     estate = estate_magi
-                    loyalty = 30
+                    loyalty = 50
                 }                        
             }
+            
             modifier = {
                 factor = 0
+                
                 estate_influence = {
                     estate = estate_magi
                     influence = 60
@@ -462,7 +470,16 @@ estate_magi = {
         
         
         ai_will_do = {
-            factor = 0            
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                estate_influence = {
+                    estate = estate_magi
+                    influence = 60
+                }                        
+            } 
         }
     }
     
@@ -503,7 +520,16 @@ estate_magi = {
         
         
         ai_will_do = {
-            factor = 0            
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                estate_influence = {
+                    estate = estate_magi
+                    influence = 60
+                }                        
+            } 
         }
     }
     
@@ -564,6 +590,17 @@ estate_magi = {
                 factor = 0
                 
                 years_of_income = 2
+            }
+            
+            modifier = {
+                factor = 0
+                
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_magi
+                        loyalty = 50
+                    }  
+                }
             }
         }
     }

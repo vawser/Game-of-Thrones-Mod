@@ -8,8 +8,7 @@ estate_slaves = {
 	
     start_territory_weight = 5
     
-	min_autonomy = 25
-    autonomy_does_not_affect = local_manpower_modifier
+	min_autonomy = 0
     
     custom_name = {
 		desc = estate_freemen
@@ -29,31 +28,35 @@ estate_slaves = {
 
 	# ----- Country -----
 	country_modifier_happy = {
-		global_manpower_modifier = 0.2
-		land_forcelimit_modifier = 0.2
+        reinforce_cost_modifier = -0.5
+		global_regiment_recruit_speed = -0.5
+        global_manpower_modifier = 0.5
 	}
 	country_modifier_neutral = {
-		global_manpower_modifier = 0.1
+		reinforce_cost_modifier = -0.25
+		global_regiment_recruit_speed = -0.25
+        global_manpower_modifier = 0.25
 	}	
 	country_modifier_angry = {
-		global_manpower_modifier = -0.2
-		land_forcelimit_modifier = -0.2
-        global_unrest = 10
+		reinforce_cost_modifier = 0.5
+		global_regiment_recruit_speed = 0.5
+        global_manpower_modifier = -0.5
 	}	
 	
 	# ----- Province -----
 	province_modifier_happy = {
-		local_manpower_modifier = 0.5
-		local_unrest = -5
-	}
-	province_modifier_neutral = {
-		local_manpower_modifier = 0.25
-		local_unrest = -1
-	}	
-	province_modifier_angry = {
-		local_manpower_modifier = -0.5
-		local_unrest = 10
-	}	
+        local_manpower_modifier = 1.0
+        local_regiment_cost = -0.5
+    }
+    province_modifier_neutral = {
+        local_manpower_modifier = 0.5
+        local_regiment_cost = -0.25
+    }
+    province_modifier_angry = {
+        local_manpower_modifier = -1.0
+        local_regiment_cost = 0.5
+        local_unrest = 5
+    }
 	
     ai_grant_province = {
         factor = 1
@@ -313,18 +316,7 @@ estate_slaves = {
         }
         
         ai_will_do = {
-            factor = 1
-            
-            modifier = {
-                factor = 0
-                
-                NOT = {
-                    estate_influence = {
-                        estate = estate_slaves
-                        influence = 60
-                    }
-                }
-            }
+            factor = 0
         }
     }
     
@@ -356,15 +348,17 @@ estate_slaves = {
         
         ai_will_do = {
             factor = 1
+            
             modifier = {
                 factor = 0
-                NOT = { years_of_income = 0.5 }                
+                NOT = { years_of_income = 1 }                
             }
             modifier = {
                 factor = 0
+                
                 estate_loyalty = {
                     estate = estate_slaves
-                    loyalty = 60
+                    loyalty = 50
                 }
             }            
         }        
@@ -402,18 +396,20 @@ estate_slaves = {
     
         ai_will_do = {
             factor = 1
+            
             modifier = {
                 factor = 0
                 estate_loyalty = {
                     estate = estate_slaves
-                    loyalty = 30
+                    loyalty = 50
                 }                        
             }
+            
             modifier = {
                 factor = 0
                 estate_influence = {
                     estate = estate_slaves
-                    influence = 60
+                    influence = 50
                 }                        
             }            
         }
@@ -456,6 +452,7 @@ estate_slaves = {
         
         ai_will_do = {
             factor = 1
+            
             modifier = {
                 factor = 0
                 NOT = {

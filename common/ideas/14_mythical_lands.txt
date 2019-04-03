@@ -7,7 +7,7 @@ asshai_ideas = {
 	}
 	
 	bonus = {
-		discipline = 0.1
+		discipline = 0.05
 	}
 	
 	trigger = {
@@ -29,15 +29,15 @@ asshai_ideas = {
 	}
 	# Esoteric Knowledge
 	asshai_4 = {
-		idea_cost = -0.1
+		monarch_admin_power = 1
 	}
 	# Ominous Reputation
 	asshai_5 = {
-		unjustified_demands = -0.2
+		unjustified_demands = -0.1
 	}
-	# Witchcraft of asshai
+	# Witchcraft of Asshai
 	asshai_6 = {
-		shock_damage = 0.1
+		monarch_military_power = 1
 	}
 	# The Ash River
 	asshai_7 = {
@@ -50,11 +50,12 @@ asshai_ideas = {
 #---------------------------------------
 bloodless_ideas = {
 	start = {
-		technology_cost = -0.1
+		global_manpower_modifier = 0.15
+        global_regiment_recruit_speed = -0.1
 	}
 	
 	bonus = {
-		all_power_cost = -0.1
+		reinforce_cost_modifier = -0.2
 	}
 	
 	trigger = {
@@ -64,11 +65,11 @@ bloodless_ideas = {
 	
 	# The Pale and the Dead
 	bloodless_1 = {
-		recover_army_morale_speed = 0.1
+		land_maintenance_modifier = -0.1
 	}
 	# The Bloodless Arts
 	bloodless_2 = {
-		movement_speed = 0.1
+		fire_damage_received = -0.1
 	}
 	# Rumours of Dread
 	bloodless_3 = {
@@ -76,19 +77,19 @@ bloodless_ideas = {
 	}
 	# The Faces of Pallor
 	bloodless_4 = {
-		global_manpower_modifier = 0.2
+		land_morale = 0.1
 	}
 	# Palefolk
 	bloodless_5 = {
-		land_morale = 0.1
+		hostile_attrition = 1
 	}
 	# Occult Magic
 	bloodless_6 = {
-		infantry_power = 0.1
+		technology_cost = -0.1
 	}
 	# People of Myth
 	bloodless_7 = {
-		reinforce_cost_modifier = -0.2
+		prestige = 1
 	}
 }
 
@@ -120,19 +121,19 @@ kdath_ideas = {
 	}
 	# "Fortified and Fortuitus"
 	kdath_3 = {
-		global_garrison_growth = 1
+		defensiveness = 0.33
 	}
 	# "Eastern Trade"
 	kdath_4 = {
-		trade_efficiency = 0.1
+		global_trade_goods_size_modifier = 0.1
 	}
 	# "Necromancy"
 	kdath_5 = {
-		global_manpower_modifier = 0.2
+		global_regiment_cost = -0.2
 	}
 	# "The Grey Waste"
 	kdath_6 = {
-		hostile_attrition = 1
+		hostile_attrition = 2
 	}
 	# "Shryke-killers"
 	kdath_7 = {
@@ -145,12 +146,12 @@ kdath_ideas = {
 #---------------------------------------
 carcosa_ideas = {
 	start = {
-		global_manpower_modifier = 0.2
-		land_maintenance_modifier = -0.1
+		army_tradition = 1
+        navy_tradition = 1
 	}
 	
 	bonus = {
-		manpower_recovery_speed = 0.2
+		ae_impact = -0.2
 	}
 	
 	trigger = {
@@ -160,31 +161,33 @@ carcosa_ideas = {
 	
     # "Once of Yi Ti"
 	carcosa_1 = {
-		diplomatic_reputation = 1
+		diplomatic_reputation = 2
 	}
     # "The Lost Emperor"
 	carcosa_2 = {
-		unjustified_demands = -0.2
+		prestige = 1
 	}
 	# "Vaulted Halls"
 	carcosa_3 = {
-		global_garrison_growth = 1
+		state_maintenance_modifier = -0.1
 	}
 	#  "Mountains of the Morn"
 	carcosa_4 = {
-		defensiveness = 0.33
+		defensiveness = 0.5
 	}
 	# "Hidden City"
 	carcosa_5 = {
-		hostile_attrition = 2
+		hostile_attrition = 1
 	}
 	# "Secret Tunnels"
 	carcosa_6 = {
-		land_attrition = -0.2
+		movement_speed = 0.1
 	}
 	# "Sorcerer Lords"
 	carcosa_7 = {
-		reinforce_speed = 0.2
+		monarch_admin_power = 1
+        monarch_diplomatic_power = 1
+        monarch_military_power = 1
 	}
 }
 
@@ -193,11 +196,12 @@ carcosa_ideas = {
 #---------------------------------------
 shadowfolk_ideas = {
 	start = {
-		
+		technology_cost = -0.1
+        global_unrest = -2
 	}
 	
 	bonus = {
-		
+		discipline = 0.05
 	}
 	
 	trigger = {
@@ -207,30 +211,31 @@ shadowfolk_ideas = {
 	
     # From the Shadows
 	shadowfolk_1 = {
-		
+		reinforce_speed = 0.2
 	}
     # Necromantic Arts
 	shadowfolk_2 = {
-		
+		manpower_recovery_speed = 0.2
 	}
 	# Soul Essence
 	shadowfolk_3 = {
-		
+		global_supply_limit_modifier = 0.15
 	}
 	# Mortal Fear
 	shadowfolk_4 = {
-		
+		land_morale = 0.1
 	}
 	# Unfathomable Forms
 	shadowfolk_5 = {
-    
+        movement_speed = 0.1
 	}
 	# Waters of the Ash
 	shadowfolk_6 = {
-    
+        yearly_corruption = -0.05
 	}
 	# Stygai, City of the Night
 	shadowfolk_7 = {
+        core_creation = -0.1
 	}
 }
 
@@ -239,11 +244,12 @@ shadowfolk_ideas = {
 #---------------------------------------
 mossovy_ideas = {
 	start = {
-		
+		development_cost = -0.15
+        global_unrest = -2
 	}
 	
 	bonus = {
-		
+		core_creation = -0.1
 	}
 	
 	trigger = {
@@ -251,32 +257,33 @@ mossovy_ideas = {
 	}
 	free = yes
 	
-    # 
+    # Forests of Mossovy
 	mossovy_1 = {
-		
+		build_cost = -0.33
 	}
-    # 
+    # Woodcrafts
 	mossovy_2 = {
-		
+		build_time = -0.33
 	}
-	# 
+	# Forest Darkness
 	mossovy_3 = {
-		
+		hostile_attrition = 1
 	}
-	# 
+	# Lurking Shapechangers
 	mossovy_4 = {
-		
+		infantry_power = 0.1
 	}
-	# 
+	# Thorny Roots
 	mossovy_5 = {
-    
+        defensiveness = 0.33
 	}
-	# 
+	# Sticky Sap
 	mossovy_6 = {
-    
+        shock_damage = 0.1
 	}
-	# 
+	# Northpoint, the Grey City
 	mossovy_7 = {
+        state_maintenance_modifier = -0.2
 	}
 }
 
@@ -285,11 +292,12 @@ mossovy_ideas = {
 #---------------------------------------
 cannibal_ideas = {
 	start = {
-		
+		free_leader_pool = 2
+        reinforce_cost_modifier = -0.1
 	}
 	
 	bonus = {
-		
+		global_manpower_modifier = 0.15
 	}
 	
 	trigger = {
@@ -297,32 +305,33 @@ cannibal_ideas = {
 	}
 	free = yes
 	
-    #
+    # Sand Cannibals
 	cannibal_1 = {
-		
+		shock_damage = 0.1
 	}
-    # 
+    # Bonechewing
 	cannibal_2 = {
-		
+		shock_damage_received = -0.1
 	}
-	# 
+	# Bone Darts
 	cannibal_3 = {
-		
+		infantry_power = 0.1
 	}
-	# 
+	# Abhorrent Behaviours
 	cannibal_4 = {
-		
+		land_morale = 0.1
 	}
-	# 
+	# Thirst for Blood
 	cannibal_5 = {
-    
+        movement_speed = 0.1
 	}
-	# 
+	# Sandstorms
 	cannibal_6 = {
-    
+        hostile_attrition = 1
 	}
-	# 
+	# Flayed Skins
 	cannibal_7 = {
+        army_tradition = 1
 	}
 }
 
@@ -331,11 +340,12 @@ cannibal_ideas = {
 #---------------------------------------
 fishfolk_ideas = {
 	start = {
-		
+		stability_cost_modifier = -0.2
+        global_spy_defence = 0.25
 	}
 	
 	bonus = {
-		
+		yearly_corruption = -0.05
 	}
 	
 	trigger = {
@@ -343,32 +353,34 @@ fishfolk_ideas = {
 	}
 	free = yes
 	
-    #
+    # Thalassophobia
 	fishfolk_1 = {
-		
+		development_cost = -0.1
 	}
-    # 
+    # Fish Broth
 	fishfolk_2 = {
-		
+		production_efficiency = 0.1
 	}
-	# 
+	# Ritual of the Fish
 	fishfolk_3 = {
-		
+		global_unrest = -2
 	}
-	# 
+	# Razor Teeth
 	fishfolk_4 = {
-		
+		infantry_shock = 1
 	}
-	# 
+	# Fish-headed Gods
 	fishfolk_5 = {
-    
+        tolerance_own = 1
 	}
-	# 
+	# Ibbenese Remnants
 	fishfolk_6 = {
-    
+        range = 0.25
+        trade_range_modifier = 0.25
 	}
-	# 
+	# The Thousand Islands 
 	fishfolk_7 = {
+        core_creation = -0.1
 	}
 }
 
@@ -377,11 +389,12 @@ fishfolk_ideas = {
 #---------------------------------------
 stonemen_ideas = {
 	start = {
-		
+		years_of_nationalism = -10
+        global_spy_defence = 0.25
 	}
 	
 	bonus = {
-		
+		global_trade_goods_size_modifier = 0.1
 	}
 	
 	trigger = {
@@ -389,31 +402,33 @@ stonemen_ideas = {
 	}
 	free = yes
 	
-    #
+    # Curse of Greyscale
 	stonemen_1 = {
-		
+		siege_ability = 0.1
 	}
-    # 
+    # Witless and Lumbering
 	stonemen_2 = {
-		
+		fire_damage_received = -0.1
+        shock_damage_received = -0.1
 	}
-	# 
+	# Greyscale Madness
 	stonemen_3 = {
-		
+		reinforce_speed = 0.1
 	}
-	# 
+	# Virulent Disease
 	stonemen_4 = {
-		
+		hostile_attrition = 2
 	}
-	# 
+	# Volanteane Provisions
 	stonemen_5 = {
-    
+        global_supply_limit_modifier = 0.1
 	}
-	# 
+	# Home of the Afflicted
 	stonemen_6 = {
-    
+        prestige = 1
 	}
-	# 
+	# The Shrouded Lord
 	stonemen_7 = {
+        monarch_admin_power = 1
 	}
 }

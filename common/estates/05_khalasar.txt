@@ -9,10 +9,7 @@ estate_khalasar = {
     start_territory_weight = 100
     territory_power_modifier = 2.0
     
-    min_autonomy = 50                                
-    autonomy_does_not_affect = local_tax_modifier
-    autonomy_does_not_affect = local_production_efficiency
-    autonomy_does_not_affect = local_manpower_modifier
+    min_autonomy = 0
     
     independence_government = nomadic
 	starting_reform = khalasar_reform
@@ -32,34 +29,34 @@ estate_khalasar = {
     
     # ----- Country -----
     country_modifier_happy = {
+        cavalry_power = 0.2
         land_maintenance_modifier = -0.5
         land_forcelimit_modifier = 0.5
     }
     country_modifier_neutral = {
+        cavalry_power = 0.1
         land_maintenance_modifier = -0.25
         land_forcelimit_modifier = 0.25
     }    
     country_modifier_angry = {
+        cavalry_power = -0.2
         land_maintenance_modifier = 0.5
         land_forcelimit_modifier = -0.5
-    }    
+    }
     
     # ----- Province -----
     province_modifier_happy = {
-        local_tax_modifier = 0.5
-        local_production_efficiency = 0.5
-        local_manpower_modifier = 0.5
+        local_manpower_modifier = 1.0
+        local_regiment_cost = -0.5
     }
     province_modifier_neutral = {
-        local_tax_modifier = 0.25
-        local_production_efficiency = 0.25
-        local_manpower_modifier = 0.25
+        local_manpower_modifier = 0.5
+        local_regiment_cost = -0.25
     }
-    
     province_modifier_angry = {
-        local_tax_modifier = -0.5
-        local_production_efficiency = -0.5
-        local_manpower_modifier = -0.5
+        local_manpower_modifier = -1.0
+        local_regiment_cost = 0.5
+        local_unrest = 5
     }    
     
     ai_grant_province = {
@@ -258,18 +255,7 @@ estate_khalasar = {
         }
         
         ai_will_do = {
-            factor = 1
-            
-            modifier = {
-                factor = 0
-                
-                NOT = {
-                    estate_influence = {
-                        estate = estate_khalasar
-                        influence = 60
-                    }
-                }
-            }
+            factor = 0
         }
     }
     
@@ -324,7 +310,17 @@ estate_khalasar = {
         }
         
         ai_will_do = {
-            factor = 0        
+            factor = 1
+
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_khalasar
+                        loyalty = 50
+                    }
+                }
+            }
         }
     }
     
@@ -354,15 +350,17 @@ estate_khalasar = {
         
         ai_will_do = {
             factor = 1
+            
             modifier = {
                 factor = 0
-                NOT = { years_of_income = 0.5 }                
+                NOT = { years_of_income = 1 }                
             }
+            
             modifier = {
                 factor = 0
                 estate_loyalty = {
                     estate = estate_khalasar
-                    loyalty = 40
+                    loyalty = 50
                 }
             }            
         }        
@@ -398,13 +396,15 @@ estate_khalasar = {
     
         ai_will_do = {
             factor = 1
+            
             modifier = {
                 factor = 0
                 estate_loyalty = {
                     estate = estate_khalasar
-                    loyalty = 30
+                    loyalty = 50
                 }                        
             }
+            
             modifier = {
                 factor = 0
                 estate_influence = {
@@ -452,7 +452,15 @@ estate_khalasar = {
         
         
         ai_will_do = {
-            factor = 0            
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_khalasar
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -493,7 +501,15 @@ estate_khalasar = {
         
         
         ai_will_do = {
-            factor = 0            
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_khalasar
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -551,7 +567,15 @@ estate_khalasar = {
         }
         
         ai_will_do = {
-            factor = 0
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_khalasar
+                    influence = 60
+                }                        
+            }
         }
     }
     
@@ -618,12 +642,8 @@ estate_khalasar = {
             }
             modifier = {
                 factor = 0
-                manpower_percentage = 0.25                
-            }
-            modifier = {
-                factor = 0
-                is_at_war = no
-            }            
+                manpower_percentage = 0.75                
+            }         
         }
     }
     
@@ -757,7 +777,7 @@ estate_khalasar = {
             }
             modifier = {
                 factor = 0
-                army_size_percentage = 0.5
+                army_size_percentage = 0.75
             }          
         }
     }

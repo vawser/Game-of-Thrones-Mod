@@ -47,6 +47,171 @@
 # remove_scaled_inflation = { ESTATE = X }
 # remove_scaled_war_exhaustion = { ESTATE = X }
 
+add_scaled_estate_advisor = {
+    if = {
+        limit = {
+            NOT = {
+                estate_influence = {
+                    estate = $ESTATE$
+                    influence = 50
+                }    
+            }
+        }
+        add_scaled_estate_advisor_internal = { 
+            COST = 0.5
+            ESTATE = $ESTATE$ 
+            ADVISOR = $ADVISOR$ 
+            HIGH = $HIGH$ 
+            MED = $MED$
+        }
+    }
+    if = {
+        limit = {
+            estate_influence = {
+                estate = $ESTATE$
+                influence = 50
+            }
+            NOT = {
+                estate_influence = {
+                    estate = $ESTATE$
+                    influence = 75
+                }    
+            }
+        }
+        add_scaled_estate_advisor_internal = { 
+            COST = 0.4
+            ESTATE = $ESTATE$ 
+            ADVISOR = $ADVISOR$ 
+            HIGH = $HIGH$ 
+            MED = $MED$
+        }
+    }
+    if = {
+        limit = {
+            estate_influence = {
+                estate = $ESTATE$
+                influence = 75
+            }
+            NOT = {
+                estate_influence = {
+                    estate = $ESTATE$
+                    influence = 100
+                }    
+            }
+        }
+        add_scaled_estate_advisor_internal = { 
+            COST = 0.3
+            ESTATE = $ESTATE$ 
+            ADVISOR = $ADVISOR$ 
+            HIGH = $HIGH$ 
+            MED = $MED$
+        }
+    }
+    if = {
+        limit = {
+            estate_influence = {
+                estate = $ESTATE$
+                influence = 100
+            }
+        }
+        add_scaled_estate_advisor_internal = { 
+            COST = 0.2
+            ESTATE = $ESTATE$ 
+            ADVISOR = $ADVISOR$ 
+            HIGH = $HIGH$ 
+            MED = $MED$
+        }
+    }   
+}
+
+add_scaled_estate_advisor_internal = {
+    hidden_effect = {
+        random_owned_province = {
+            limit = {
+                has_estate = $ESTATE$
+            }
+            save_event_target_as = estate_target_province
+        }
+    }
+    if = {
+        limit = {
+            monthly_income = $HIGH$
+            has_saved_event_target = estate_target_province
+        }
+        define_advisor = {
+            type = $ADVISOR$
+            skill = 3
+            culture = event_target:estate_target_province
+            religion = event_target:estate_target_province
+            location = event_target:estate_target_province
+            cost_multiplier = $COST$
+        }
+    }
+    else_if = {
+        limit = {
+            monthly_income = $HIGH$
+            NOT = { has_saved_event_target = estate_target_province }
+        }
+        define_advisor = {
+            type = $ADVISOR$
+            skill = 3
+            cost_multiplier = $COST$
+        }
+    }
+    else_if = {
+        limit = {
+            NOT = { monthly_income = $HIGH$ }
+            monthly_income = $MED$
+            has_saved_event_target = estate_target_province
+        }
+        define_advisor = {
+            type = $ADVISOR$
+            skill = 2
+            cost_multiplier = $COST$
+            culture = event_target:estate_target_province
+            religion = event_target:estate_target_province
+            location = event_target:estate_target_province
+        }
+    }
+    else_if = {
+        limit = {
+            NOT = { monthly_income = $HIGH$ }
+            monthly_income = $MED$
+            NOT = { has_saved_event_target = estate_target_province }
+        }
+        define_advisor = {
+            type = $ADVISOR$
+            skill = 2
+            cost_multiplier = $COST$
+        }
+    }
+    else_if = {
+        limit = {
+            NOT = { monthly_income = $MED$ }
+            has_saved_event_target = estate_target_province
+        }
+        define_advisor = {
+            type = $ADVISOR$
+            skill = 1
+            cost_multiplier = $COST$
+            culture = event_target:estate_target_province
+            religion = event_target:estate_target_province
+            location = event_target:estate_target_province
+        }
+    }
+    else_if = {
+        limit = {
+            NOT = { monthly_income = $MED$ }
+            NOT = { has_saved_event_target = estate_target_province }
+        }
+        define_advisor = {
+            type = $ADVISOR$
+            skill = 1
+            cost_multiplier = $COST$
+        }
+    }
+}
+
 add_scaled_adm_power = {
     if = {
         limit = {
@@ -839,94 +1004,6 @@ add_mamluk_government_power = {
 
 add_iqta_government_power = {
     add_scaled_government_power = { MECHANIC = iqta_mechanic TYPE = $TYPE$ ESTATE = $ESTATE$ LOW = $LOW$ MED = $MED$ HIGH = $HIGH$ MAX = $MAX$ }
-}
-
-add_scaled_estate_advisor = {
-    hidden_effect = {
-        random_owned_province = {
-            limit = {
-                has_estate = $ESTATE$
-            }
-            save_event_target_as = estate_target_province
-        }
-    }
-    if = {
-        limit = {
-            monthly_income = $HIGH$
-            has_saved_event_target = estate_target_province
-        }
-        define_advisor = {
-            type = $ADVISOR$
-            skill = 3
-            culture = event_target:estate_target_province
-            religion = event_target:estate_target_province
-            location = event_target:estate_target_province
-            discount = yes
-        }
-    }
-    else_if = {
-        limit = {
-            monthly_income = $HIGH$
-            NOT = { has_saved_event_target = estate_target_province }
-        }
-        define_advisor = {
-            type = $ADVISOR$
-            skill = 3
-            discount = yes
-        }
-    }
-    else_if = {
-        limit = {
-            NOT = { monthly_income = $HIGH$ }
-            monthly_income = $MED$
-            has_saved_event_target = estate_target_province
-        }
-        define_advisor = {
-            type = $ADVISOR$
-            skill = 2
-            discount = yes
-            culture = event_target:estate_target_province
-            religion = event_target:estate_target_province
-            location = event_target:estate_target_province
-        }
-    }
-    else_if = {
-        limit = {
-            NOT = { monthly_income = $HIGH$ }
-            monthly_income = $MED$
-            NOT = { has_saved_event_target = estate_target_province }
-        }
-        define_advisor = {
-            type = $ADVISOR$
-            skill = 2
-            discount = yes
-        }
-    }
-    else_if = {
-        limit = {
-            NOT = { monthly_income = $MED$ }
-            has_saved_event_target = estate_target_province
-        }
-        define_advisor = {
-            type = $ADVISOR$
-            skill = 1
-            discount = yes
-            culture = event_target:estate_target_province
-            religion = event_target:estate_target_province
-            location = event_target:estate_target_province
-        }
-    }
-    else_if = {
-        limit = {
-            NOT = { monthly_income = $MED$ }
-            NOT = { has_saved_event_target = estate_target_province }
-        }
-        define_advisor = {
-            type = $ADVISOR$
-            skill = 1
-            discount = yes
-        }
-    }
 }
 
 add_scaled_general = { 

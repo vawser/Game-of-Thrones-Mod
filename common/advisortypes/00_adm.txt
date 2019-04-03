@@ -16,7 +16,10 @@ wizard = {
 	# Bonus
     all_power_cost = -0.03
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        all_power_cost = -0.003
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -26,7 +29,10 @@ maester = {
 	# Bonus
     technology_cost = -0.05
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        technology_cost = -0.005
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -36,7 +42,10 @@ architect = {
 	# Bonus
     build_cost = -0.2
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        build_cost = -0.02
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -46,7 +55,10 @@ artist = {
 	# Bonus
     prestige = 1
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        prestige = 0.1
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -60,7 +72,14 @@ astrologer = {
     horde_unity = 1
     meritocracy = 1
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        legitimacy = 0.1
+        republican_tradition = 0.1
+        devotion = 0.1
+        horde_unity = 0.1
+        meritocracy = 0.1
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -70,7 +89,10 @@ bookbinder = {
 	# Bonus
     state_maintenance_modifier = -0.2
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        state_maintenance_modifier = -0.02
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -80,7 +102,10 @@ brewer = {
 	# Bonus
     idea_cost = -0.05
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        idea_cost = -0.005
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -90,7 +115,10 @@ engraver = {
 	# Bonus
     yearly_corruption = -0.03
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        yearly_corruption = -0.003
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -98,9 +126,12 @@ oracle = {
 	monarch_power = ADM
 	
 	# Bonus
-    stability_cost_modifier = -0.2
+    stability_cost_modifier = -0.25
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        stability_cost_modifier = -0.025
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -110,7 +141,10 @@ gardener = {
 	# Bonus
     advisor_cost = -0.15
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        advisor_cost = -0.015
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -120,7 +154,10 @@ painter = {
 	# Bonus
     prestige_decay = -0.02
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        prestige_decay = -0.002
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -130,7 +167,10 @@ playwright = {
 	# Bonus
     embracement_cost = -0.1
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        embracement_cost = -0.01
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -148,9 +188,12 @@ scribe = {
 	monarch_power = ADM
 	
 	# Bonus
-    global_institution_spread = 0.1
+    global_institution_spread = 0.25
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        global_institution_spread = 0.025
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -180,7 +223,10 @@ philosopher = {
 	# Bonus
     development_cost = -0.1
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        development_cost = -0.01
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -190,7 +236,10 @@ treasurer = {
 	# Bonus
     global_tax_modifier = 0.1
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        global_tax_modifier = 0.01
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -208,9 +257,12 @@ evangelist = {
 	monarch_power = ADM
 	
 	# Bonus
-    missionary_maintenance_cost = -0.25
+    missionary_maintenance_cost = -0.2
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        missionary_maintenance_cost = -0.02
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -218,9 +270,12 @@ inquisitor = {
 	monarch_power = ADM
 	
 	# Bonus
-    global_missionary_strength = 0.03
+    global_missionary_strength = 0.02
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        global_missionary_strength = 0.002
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -230,7 +285,10 @@ sculptor = {
 	# Bonus
     build_time = -0.2
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        build_time = -0.02
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -240,7 +298,10 @@ courtesan = {
 	# Bonus
     heir_chance = 0.5
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        heir_chance = 0.05
+    }
 	chance = { 
         factor = 1
         
@@ -258,7 +319,10 @@ catchpole = {
 	# Bonus
     global_unrest = -2
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        global_unrest = -0.2
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -266,9 +330,12 @@ steward = {
 	monarch_power = ADM
 	
 	# Bonus
-    global_autonomy = -0.025
+    global_autonomy = -0.05
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        global_autonomy = -0.005
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -276,9 +343,12 @@ marshal = {
 	monarch_power = ADM
 	
 	# Bonus
-    harsh_treatment_cost = -0.5
+    harsh_treatment_cost = -0.25
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        harsh_treatment_cost = -0.025
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -286,9 +356,12 @@ pilgrim = {
 	monarch_power = ADM
 	
 	# Bonus
-    religious_unity = 0.2
+    religious_unity = 0.25
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        religious_unity = 0.025
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -298,7 +371,10 @@ moneylender = {
 	# Bonus
     interest = -2
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        interest = -0.2
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }

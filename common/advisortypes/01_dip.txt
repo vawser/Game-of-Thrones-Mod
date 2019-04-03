@@ -16,7 +16,10 @@ cartographer = {
 	# Bonus
     range = 0.25
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        range = 0.025
+    }
 	chance = { 
         factor = 1
         
@@ -33,7 +36,10 @@ clothier = {
 	# Bonus
     global_own_trade_power = 0.15
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        global_own_trade_power = 0.015
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -43,7 +49,10 @@ cook = {
 	# Bonus
     diplomatic_reputation = 2
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        diplomatic_reputation = 0.2
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -63,7 +72,10 @@ herald = {
 	# Bonus
     improve_relation_modifier = 0.2
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        improve_relation_modifier = 0.02
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -71,9 +83,12 @@ interpreter = {
 	monarch_power = DIP
 	
 	# Bonus
-    native_uprising_chance = -0.2
+    native_uprising_chance = -0.25
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        native_uprising_chance = -0.025
+    }
 	chance = { 
         factor = 1
         
@@ -90,7 +105,10 @@ jester = {
 	# Bonus
     ae_impact = -0.1
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        ae_impact = -0.01
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -100,7 +118,10 @@ jeweler = {
 	# Bonus
     reduced_liberty_desire = 10
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        reduced_liberty_desire = 1
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -110,7 +131,10 @@ messenger = {
 	# Bonus
     diplomatic_annexation_cost = -0.2
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        diplomatic_annexation_cost = -0.02
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -128,9 +152,12 @@ navigator = {
 	monarch_power = DIP
 	
 	# Bonus
-    naval_attrition = -0.1
+    naval_attrition = -0.2
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        naval_attrition = -0.02
+    }
 	chance = { 
         factor = 1
         
@@ -145,9 +172,12 @@ trader = {
 	monarch_power = DIP
 	
 	# Bonus
-    caravan_power = 0.1
+    caravan_power = 0.15
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        caravan_power = 0.015
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -155,9 +185,12 @@ forger = {
 	monarch_power = DIP
 	
 	# Bonus
-    trade_steering = 0.1
+    trade_steering = 0.15
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        trade_steering = 0.015
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -165,9 +198,12 @@ poisoner = {
 	monarch_power = DIP
 	
 	# Bonus
-    global_spy_defence = 0.2
+    global_spy_defence = 0.25
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        global_spy_defence = 0.025
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -175,9 +211,12 @@ spicer = {
 	monarch_power = DIP
 	
 	# Bonus
-    global_prov_trade_power_modifier = 0.1
+    global_prov_trade_power_modifier = 0.15
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        global_prov_trade_power_modifier = 0.015
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -187,7 +226,10 @@ wayfarer = {
 	# Bonus
     colonist_placement_chance = 0.05
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        colonist_placement_chance = 0.005
+    }
 	chance = { 
         factor = 1
         
@@ -204,7 +246,10 @@ shipwright = {
 	# Bonus
     global_ship_cost = -0.2
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        global_ship_cost = -0.02
+    }
 	chance = { 
         factor = 1
         
@@ -219,9 +264,12 @@ mariner = {
 	monarch_power = DIP
 	
 	# Bonus
-    sailor_maintenance_modifer = -0.1
+    sailor_maintenance_modifer = -0.2
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        sailor_maintenance_modifer = -0.02
+    }
 	chance = { 
         factor = 1
         
@@ -236,9 +284,12 @@ governor = {
 	monarch_power = DIP
 	
 	# Bonus
-    global_colonial_growth = 15
+    global_colonial_growth = 10
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        global_colonial_growth = 1
+    }
 	chance = { 
         factor = 1
         
@@ -253,9 +304,12 @@ merchant = {
 	monarch_power = DIP
 	
 	# Bonus
-    trade_efficiency = 0.1
+    trade_efficiency = 0.15
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        trade_efficiency = 0.015
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -265,7 +319,10 @@ broker = {
 	# Bonus
     global_trade_goods_size_modifier = 0.1
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        global_trade_goods_size_modifier = 0.01
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -273,9 +330,12 @@ spymaster = {
 	monarch_power = DIP
 	
 	# Bonus
-    spy_offence = 0.2
+    spy_offence = 0.25
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        spy_offence = 0.025
+    }
 	chance = { factor = 1 }
 	ai_will_do = { factor = 1 }
 }
@@ -285,7 +345,10 @@ swab = {
 	# Bonus
     global_sailors_modifier = 0.15
 
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        global_sailors_modifier = 0.015
+    }
 	chance = { 
         factor = 1
         
@@ -302,7 +365,10 @@ seafarer = {
 	# Bonus
     navy_tradition = 1
     
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        navy_tradition = 0.1
+    }
 	chance = { 
         factor = 1
         
@@ -319,7 +385,10 @@ sea_dog = {
 	# Bonus
     naval_maintenance_modifier = -0.1 
 
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        naval_maintenance_modifier = -0.01
+    }
 	chance = { 
         factor = 1
         
@@ -336,7 +405,10 @@ mate = {
 	# Bonus
     naval_forcelimit_modifier = 0.15
 
-	skill_scaled_modifier = { meritocracy = 0.5 }
+	skill_scaled_modifier = { 
+        meritocracy = 0.5
+        naval_forcelimit_modifier = 0.015
+    }
 	chance = { 
         factor = 1
         

@@ -908,6 +908,57 @@ expeditionary_company_legacy = {
 		locked_government_type = yes
 	}
 }
+rhoynar_city_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = no
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    republic = yes
+    duration = 10
+    has_term_election = no
+    
+    modifiers = {
+    	trade_steering = 0.1
+        naval_morale = 0.1
+	}
+    
+    conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_legacy
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_outpost_legacy
+	}
+    
+	custom_attributes = {
+		enables_republic_ideagroup = yes
+		is_merchant_republic = yes
+	}
+    
+	ai = { factor = 1 }
+}
 
 #------------------------------------------------------------
 # Theocracy

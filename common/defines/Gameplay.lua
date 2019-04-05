@@ -14,6 +14,12 @@ NDefines.NDiplomacy.CHARTER_COMPANY_BASE_COST = 5000
 NDefines.NDiplomacy.CHARTER_COMPANY_MINIMUM_COST = 1000
 
 --------------------------------
+-- Trade
+--------------------------------
+NDefines.NEconomy.TRADE_NON_CAPITAL_OFFICE = -0.1 -- Collection in non-home node
+NDefines.NEconomy.TRADE_MERCHANT_PRESENT = 0.1 -- Merchant Present Bonus
+
+--------------------------------
 -- Power
 --------------------------------
 NDefines.NCountry.POWER_MAX = 5000

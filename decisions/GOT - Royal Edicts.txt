@@ -6,13 +6,13 @@ country_decisions = {
             has_reform = royal_house_reform
 		}
 		allow =  {
-			check_variable = { which = royal_influence value = 600 }
+			check_variable = { which = royal_influence value = 1000 }
 		}
 	  	effect = {
             custom_tooltip = TT_EDICT_STANDARDIZE_CURRENCY
 			hidden_effect = { 
                 set_global_flag = edict_standardize_currency
-                subtract_variable = { which = royal_influence value = 600 }
+                subtract_variable = { which = royal_influence value = 1000 }
             }
 		}
 		ai_will_do = {
@@ -27,13 +27,13 @@ country_decisions = {
             has_reform = royal_house_reform
 		}
 		allow =  {
-			check_variable = { which = royal_influence value = 600 }
+			check_variable = { which = royal_influence value = 1000 }
 		}
 	  	effect = {
             custom_tooltip = TT_EDICT_FORBID_FIRST_NIGHT
 			hidden_effect = { 
                 set_global_flag = edict_forbid_the_first_night_custom
-                subtract_variable = { which = royal_influence value = 600 }
+                subtract_variable = { which = royal_influence value = 1000 }
             }
 		}
 		ai_will_do = {
@@ -48,13 +48,13 @@ country_decisions = {
             has_reform = royal_house_reform
 		}
 		allow =  {
-			check_variable = { which = royal_influence value = 600 }
+			check_variable = { which = royal_influence value = 1000 }
 		}
 	  	effect = {
             custom_tooltip = TT_EDICT_ESTABLISH_KINGSGUARD
 			hidden_effect = { 
                 set_global_flag = edict_establish_kingsguard
-                subtract_variable = { which = royal_influence value = 600 }
+                subtract_variable = { which = royal_influence value = 1000 }
             }
 		}
 		ai_will_do = {
@@ -69,13 +69,13 @@ country_decisions = {
             has_reform = royal_house_reform
 		}
 		allow =  {
-			check_variable = { which = royal_influence value = 600 }
+			check_variable = { which = royal_influence value = 1000 }
 		}
 	  	effect = {
             custom_tooltip = TT_EDICT_RECOVER_VALYRIAN_BLADES
 			hidden_effect = { 
                 set_global_flag = edict_recover_valyrian_blades
-                subtract_variable = { which = royal_influence value = 600 }
+                subtract_variable = { which = royal_influence value = 1000 }
             }
 		}
 		ai_will_do = {
@@ -98,13 +98,13 @@ country_decisions = {
                 has_global_flag = edict_standardize_currency
                 has_global_flag = edict_forbid_the_first_night_custom
             }
-			check_variable = { which = royal_influence value = 600 }
+			check_variable = { which = royal_influence value = 1000 }
 		}
 	  	effect = {
             custom_tooltip = TT_UNITE_THE_SEVEN_KINGDOMS
 			hidden_effect = { 
                 set_global_flag = edict_unite_the_seven_kingdoms
-                subtract_variable = { which = royal_influence value = 600 }
+                subtract_variable = { which = royal_influence value = 1000 }
                 every_subject_country = {
                     limit = { is_subject_of_type = royal_subject }
                     ROOT = {

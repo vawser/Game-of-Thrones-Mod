@@ -59,23 +59,6 @@ on_war_won = {
 		100 = GOT_ACCOMPLISHMENTS.1 # History is written by the victors!
 		5000 = 0
 	}
-    
-	# Mission Flag for Northmen Mission
-	if = {
-		limit = {
-			has_country_flag = northmen_can_take_establish_dominance_mission
-			OR = {
-				primary_culture = men_of_the_north
-				primary_culture = skagosi
-				primary_culture = crannogmen
-			}
-			ROOT = {
-				is_rival = FROM
-			}
-		}
-		clr_country_flag = northmen_can_take_establish_dominance_mission
-		set_country_flag = northmen_won_war_against_rival
-	}
 }
 
 # Country - ROOT = loser country, FROM = winner country
@@ -90,6 +73,12 @@ on_war_lost = {
 # Country - ROOT = winning country, FROM = loser country
 on_battle_won_country = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - winner : [Root.GetName] - loser : [From.GetName] - on_battle_won_country" }
+    
+    random_events = {
+        1000 = GOT_RULER_IMPROVEMENT.1
+        1000 = GOT_RULER_IMPROVEMENT.10
+        100000 = 0
+    }
 }
 
 # Country - ROOT = loser country, FROM = winner country
@@ -246,6 +235,12 @@ on_diplomatic_annex = {
 		GOT_SUBJECTS.100 
         GOT_SUBJECTS.1
 	}
+    
+    random_events = {
+        1000 = GOT_RULER_IMPROVEMENT.2
+        1000 = GOT_RULER_IMPROVEMENT.11
+        10000 = 0
+    }
 }
 
 # Country
@@ -414,16 +409,34 @@ on_hre_religion_white_peace = {
 # Province
 on_adm_development = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_adm_development" }
+    
+    random_events = {
+        1000 = GOT_RULER_IMPROVEMENT.3
+        1000 = GOT_RULER_IMPROVEMENT.12
+        100000 = 0
+    }
 }
 
 # Province
 on_dip_development = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_dip_development" }
+    
+    random_events = {
+        1000 = GOT_RULER_IMPROVEMENT.3
+        1000 = GOT_RULER_IMPROVEMENT.12
+        100000 = 0
+    }
 }
 
 # Province
 on_mil_development = {  
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_mil_development" }
+    
+    random_events = {
+        1000 = GOT_RULER_IMPROVEMENT.3
+        1000 = GOT_RULER_IMPROVEMENT.12
+        100000 = 0
+    }
 }
 
 # Country
@@ -699,35 +712,6 @@ on_four_year_pulse_2 = {
 # Country
 on_four_year_pulse_3 = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_four_year_pulse_3" }
-    
-	random_events = {
-		100 = GOT_TRADEGOODS.1 
-		100 = GOT_TRADEGOODS.2
-		100 = GOT_TRADEGOODS.3 
-		100 = GOT_TRADEGOODS.4 
-		100 = GOT_TRADEGOODS.5 
-		100 = GOT_TRADEGOODS.6 
-		100 = GOT_TRADEGOODS.7 
-		100 = GOT_TRADEGOODS.8 
-		100 = GOT_TRADEGOODS.9 
-		100 = GOT_TRADEGOODS.10 
-		100 = GOT_TRADEGOODS.11
-		100 = GOT_TRADEGOODS.12
-		100 = GOT_TRADEGOODS.13
-		100 = GOT_TRADEGOODS.14
-		100 = GOT_TRADEGOODS.15
-		100 = GOT_TRADEGOODS.16
-		100 = GOT_TRADEGOODS.17
-		100 = GOT_TRADEGOODS.18
-		100 = GOT_TRADEGOODS.19
-		100 = GOT_TRADEGOODS.20
-		100 = GOT_TRADEGOODS.21 
-		100 = GOT_TRADEGOODS.22
-		100 = GOT_TRADEGOODS.23
-		100 = GOT_TRADEGOODS.24
-		100 = GOT_TRADEGOODS.25
-		100000 = 0
-	}
 }
 
 # Country
@@ -918,6 +902,12 @@ on_province_religion_converted = {
 # Province
 on_province_culture_converted = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_province_culture_converted" }
+    
+    random_events = {
+        1000 = GOT_RULER_IMPROVEMENT.4
+        1000 = GOT_RULER_IMPROVEMENT.13
+        100000 = 0
+    }
 }
 
 # Province - ROOT = current owner, FROM = old owner

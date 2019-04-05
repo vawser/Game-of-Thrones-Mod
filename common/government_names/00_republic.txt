@@ -703,3 +703,50 @@ gov_expeditionary_company = {
         }
 	}
 }
+gov_rhoynish_city = {
+	rank = {
+		1 = RHOYNISH_CITY
+		2 = RHOYNISH_CITY
+		3 = RHOYNISH_CITY
+        4 = RHOYNISH_CITY
+        5 = RHOYNISH_CITY
+        6 = RHOYNISH_CITY
+        7 = RHOYNISH_CITY
+        8 = RHOYNISH_CITY
+        9 = RHOYNISH_CITY
+        10 = RHOYNISH_CITY
+    }
+	
+	ruler_male = {
+		1 = PRINCE
+		2 = PRINCE
+		3 = PRINCE
+        4 = PRINCE
+        5 = PRINCE
+        6 = PRINCE
+        7 = PRINCE
+        8 = PRINCE
+        9 = PRINCE
+        10 = PRINCE
+	}
+	
+	ruler_female = {
+		1 = PRINCESS
+		2 = PRINCESS
+		3 = PRINCESS
+        4 = PRINCESS
+        5 = PRINCESS
+        6 = PRINCESS
+        7 = PRINCESS
+        8 = PRINCESS
+        9 = PRINCESS
+        10 = PRINCESS
+	}
+	
+	trigger = {
+        OR = {
+            has_reform = rhoynar_city_reform
+            has_reform = rhoynar_city_legacy
+        }
+	}
+}

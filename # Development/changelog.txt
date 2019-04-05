@@ -102,11 +102,11 @@ These are features changed in the mod that require DLC:
 - Increased base diplomatic_upkeep to 1
 - Increased base mercenary_cost to 1.0
 - Increased base free_leader_pool to 5
-- Legitimacy decays by -1 each year
-- Republican Tradition decays by -1 each year
-- Devotion decays by -1 each year
-- Horde Unity decays by -1 each year
-- Meritocracy decays by -1 each year
+- Legitimacy decays by -2 each year
+- Republican Tradition decays by -2 each year
+- Devotion decays by -2 each year
+- Horde Unity decays by -2 each year
+- Meritocracy decays by -2 each year
 - Added base yearly_absolutism of -1
 - Removed possible_mercenaries = 0.05 from war taxes.
 - Army Tradition (at max) grants discipline = 0.1, land_morale = 0.1 and siege_ability = 0.1 (+ others)
@@ -256,21 +256,59 @@ These are features changed in the mod that require DLC:
 - Adjusted estate country and province modifiers.
 - Estate advisor discount now scales with influence, from 50% to 80%
 - Estates will now revolt when revoked from provinces when loyalty is below 50.
-- Advisor modifiers now scale with advisor skill. The resulting value is the base modifier amount (i.e. global_tax_modifier = 0.1) plus the scaling amount (i.e. level 3 advisor, global_tax_modifier = 0.03). This means a level 10 advisor will double the modifier value. Advisors with discrete modifiers do not scale.
 - Added Royal Edicts feature.
+- Advisors now grant 0.2 legitimacy (of any type) per level.
+- Increased price increase from Trade Goods events, and reduced their frequency.
+- Split big culture groups into seperate cultural groups.
+- Added Rhoynar
+- Added Spirekeep
+- Added Crimsoncut
+- Added Scalebound
+- Added Riverblood
+- Added Swamprig
+- Added Chroyane
+- Added Skolam
+- Added Chissar
+- Added Issma
+- Added Xvarik
+- Added Volar
+- Added Medrike
+- Added Pallor
+- Added Akezel
+- Added Grel
+- Added Jabox
+- Added Rukhan
+- Added Skoria
+- Added Maxus
+- Added Vakosh
+- Added Ikzeruk
+- Added Xul
+- Added Arzac
+- Added Izzet
+- Added Tokkar
+- Added Veltor
+- Added Jokovy
+- Added Brogovy
+- Added Voxcovy
+- Added Bokcovy
+- Added Hertovy
+- Added Skacovy
+- Added Bonechewers
+- Added Greyskulls
+- Added Razorfin
+- Added Torngill
+- Added Marrowtooth
+- Added Bonescale
+- Added Chillmaw 
+- Reduced the penalty to trade power when collecting with a merchant in a non-home tradenode to -10%.
 
 #-----------------------------
 # TODO
 #----------------------------- 
-- Add Rhoynar
-- Add pirate nations in Rhoyne region
-- Add Cannibal nations
-- Add Mossovi nations
-- Add Bloodless nations
-- Add Fishfolk nations
-- Add Stoneman nation
-- Add Shadowfolk nations
-
 - Add names to sea provinces
 - Add ideagroup events (3+ 3-)
 - Seats of Power feature (Ages)
+- Move Danaerys for the Night King bookmark
+- Add Westeros regional tags
+
+- Represent noble houses via estates

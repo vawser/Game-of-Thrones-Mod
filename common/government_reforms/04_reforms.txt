@@ -368,27 +368,102 @@ assimilation_reform = {
     }
     
     assimilation_cultures = {
-        culture_westeros = {
-            diplomatic_reputation = 2
+        # Westeros
+        culture_ancient = {
+            discipline = 0.05
+        }
+        culture_dornish = {
+            cavalry_cost = -0.2
+        }
+        culture_crownlands = {
+            diplomatic_reputation = 1
+        }
+        culture_stormlands = {
+            defensiveness = 0.25
+        }
+        culture_westerlands = {
+            global_trade_goods_size_modifier = 0.1
+        }
+        culture_riverlands = {
+            ae_impact = -0.1
+        }
+        culture_the_reach = {
+            production_efficiency = 0.1
+        }
+        culture_the_vale = {
+            global_supply_limit_modifier = 0.1
+        }
+        culture_the_north = {
+            land_forcelimit_modifier = 0.1
+        }
+        culture_iron_islands = {
+            naval_morale = 0.1
+        }
+        culture_first_men = {
+            land_morale = 0.1
         }
         culture_free_folk = {
-            global_regiment_cost = -0.15
+            global_regiment_cost = -0.2
         }
+        
+        # West Essos
         culture_west_essos = {
             navy_tradition = 1
         }
-        culture_valyrian = {
-            army_tradition = 1
+        culture_north_essos = {
+            navy_tradition_decay = -0.01
         }
+        culture_east_essos = {
+            global_garrison_growth = 0.33
+        }
+        culture_south_essos = {
+            trade_steering = 0.1
+        }
+        culture_rhoynar = {
+            sunk_ship_morale_hit_recieved = -0.1
+        }
+        culture_pirates = {
+            capture_ship_chance = 0.1
+        }
+        culture_omber = {
+            global_manpower_modifier = 0.1
+        }
+        culture_ifeqevron = {
+            war_exhaustion = -0.1
+        }
+        culture_andal = {
+            prestige = 1
+        }
+        
+        # Central Essos
+        culture_valyrian = {
+            discipline = 0.05
+        }
+        culture_valyrian_remnants = {
+            land_maintenance_modifier = -0.1
+        }
+        culture_lhazar = {
+            development_cost = -0.1
+        }
+        culture_ghiscari = {
+            core_creation = -0.1
+        }
+        culture_qarth = {
+            global_tax_modifier = 0.2
+        }
+        culture_faros = {
+            colonist_placement_chance = 0.03
+        }
+        
+        # Nomadic
         culture_dothraki = {
             cavalry_power = 0.1
         }
-        culture_central_essos = {
-            global_manpower_modifier = 0.15
+        culture_jogos_nhai = {
+            cavalry_flanking = 0.2
         }
-        culture_qarth = {
-            global_tax_modifier = 0.15
-        }
+        
+        # East Essos
         culture_hyrkoon = {
             siege_ability = 0.1
         }
@@ -398,32 +473,53 @@ assimilation_reform = {
         culture_trader_town = {
             global_trade_power = 0.15
         }
-        culture_jogos_nhai = {
-            cavalry_flanking = 0.2
-        }
         culture_nefer = {
-            technology_cost = -0.1
+            technology_cost = -0.05
         }
-        culture_mythical = {
-            all_power_cost = -0.1
-        }
+        
+        # Islands
         culture_ibben = {
             naval_morale = 0.1
-        }
-        culture_faros = {
-            global_colonial_growth = 15
         }
         culture_naathi = {
             global_unrest = -2
         }
-        culture_tribal = {
-            native_assimilation = 1.0
-        }
         culture_summer_isles = {
             naval_maintenance_modifier = -0.1
         }
-        culture_ancient = {
-            discipline = 0.05
+        culture_thousand_islands = {
+            global_colonial_growth = 10
+        }
+        
+        # Tribal
+        culture_sothoryos = {
+            native_assimilation = 0.25
+        }
+        culture_ulthos = {
+            native_uprising_chance = -0.25
+        }
+
+        # Far Essos
+        culture_asshai = {
+            all_power_cost = -0.05
+        }
+        culture_carcosa = {
+            yearly_absolutism = 1
+        }
+        culture_bloodless = {
+            advisor_cost = -0.2
+        }
+        culture_kdath = {
+            yearly_corruption = -0.05
+        }
+        culture_shadowfolk = {
+            shock_damage = 0.1
+        }
+        culture_mossovy = {
+            build_time = -0.2
+        }
+        culture_cannibal_sands = {
+            hostile_attrition = 1
         }
     }
 }

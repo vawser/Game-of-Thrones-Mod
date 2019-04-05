@@ -1,0 +1,203 @@
+namespace = GOT_RULER_IMPROVEMENT
+
+# Ruler - on_battle_won_country
+country_event = {
+	id = GOT_RULER_IMPROVEMENT.1
+	title = GOT_RULER_IMPROVEMENT.1.title
+	desc = GOT_RULER_IMPROVEMENT.1.desc
+	picture = BATTLE_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        is_monarch_leader = yes
+        NOT = { mil = 6 }
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_RULER_IMPROVEMENT.1.option.a
+
+        change_mil = 1
+    }  
+}
+
+# Ruler - on_diplomatic_annex
+country_event = {
+	id = GOT_RULER_IMPROVEMENT.2
+	title = GOT_RULER_IMPROVEMENT.2.title
+	desc = GOT_RULER_IMPROVEMENT.2.desc
+	picture = DIPLOMACY_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        NOT = { dip = 6 }
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_RULER_IMPROVEMENT.2.option.a
+
+        change_dip = 1
+    }  
+}
+
+# Ruler - on_x_development
+province_event = {
+	id = GOT_RULER_IMPROVEMENT.3
+	title = GOT_RULER_IMPROVEMENT.3.title
+	desc = GOT_RULER_IMPROVEMENT.3.desc
+	picture = CULTURE_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        owner = { NOT = { adm = 6 } }
+        owner = { is_subject = no } # Exclude overlord developing in subject
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_RULER_IMPROVEMENT.3.option.a
+
+        owner = { change_adm = 1 }
+    }  
+}
+
+# Ruler - on_province_culture_converted
+province_event = {
+	id = GOT_RULER_IMPROVEMENT.4
+	title = GOT_RULER_IMPROVEMENT.4.title
+	desc = GOT_RULER_IMPROVEMENT.4.desc
+	picture = CULTURE_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        owner = { NOT = { dip = 6 } }
+        owner = { is_subject = no } # Exclude overlord developing in subject
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_RULER_IMPROVEMENT.4.option.a
+
+        owner = { change_dip = 1 }
+    }  
+}
+
+# Heir - on_battle_won_country
+country_event = {
+	id = GOT_RULER_IMPROVEMENT.10
+	title = GOT_RULER_IMPROVEMENT.10.title
+	desc = GOT_RULER_IMPROVEMENT.10.desc
+	picture = BATTLE_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        has_heir = yes
+        is_heir_leader = yes
+        NOT = { heir_mil = 6 }
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_RULER_IMPROVEMENT.10.option.a
+
+        change_heir_mil = 1
+    }  
+}
+
+# Ruler - on_diplomatic_annex
+country_event = {
+	id = GOT_RULER_IMPROVEMENT.11
+	title = GOT_RULER_IMPROVEMENT.11.title
+	desc = GOT_RULER_IMPROVEMENT.11.desc
+	picture = DIPLOMACY_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        has_heir = yes
+        NOT = { heir_dip = 6 }
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_RULER_IMPROVEMENT.11.option.a
+
+        change_heir_dip = 1
+    }  
+}
+
+# Heir - on_x_development
+province_event = {
+	id = GOT_RULER_IMPROVEMENT.12
+	title = GOT_RULER_IMPROVEMENT.12.title
+	desc = GOT_RULER_IMPROVEMENT.12.desc
+	picture = CULTURE_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        owner = { has_heir = yes }
+        owner = { NOT = { heir_adm = 6 } }
+        owner = { is_subject = no } # Exclude overlord developing in subject
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_RULER_IMPROVEMENT.12.option.a
+
+        owner = { change_heir_adm = 1 }
+    }  
+}
+
+# Heir - on_province_culture_converted
+province_event = {
+	id = GOT_RULER_IMPROVEMENT.13
+	title = GOT_RULER_IMPROVEMENT.13.title
+	desc = GOT_RULER_IMPROVEMENT.13.desc
+	picture = CULTURE_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        owner = { has_heir = yes }
+        owner = { NOT = { heir_dip = 6 } }
+        owner = { is_subject = no } # Exclude overlord developing in subject
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_RULER_IMPROVEMENT.13.option.a
+
+        owner = { change_heir_dip  = 1 }
+    }  
+}

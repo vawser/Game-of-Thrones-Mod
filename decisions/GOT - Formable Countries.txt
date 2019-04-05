@@ -147,7 +147,7 @@ country_decisions = {
 		major = yes
 		potential = {
             has_reform = ghis_city_reform
-			culture_group = culture_central_essos
+			culture_group = culture_ghiscari
 			NOT = { exists = J15 }
 		}
 		allow = {
@@ -201,7 +201,10 @@ country_decisions = {
 		major = yes
 		potential = {
             has_reform = valyria_city_reform
-			culture_group = culture_valyrian
+            OR = {
+                culture_group = culture_valyrian_remnants
+                culture_group = culture_valyrian
+            }
 			NOT = { exists = J17 }
 		}
 		allow = {

@@ -30,42 +30,10 @@ country_event = {
             limit = { ai = yes }
             set_country_flag = processor
         }
-        
-       # hre_inheritable = yes
-       # set_allow_female_emperor = yes
-       # set_hre_religion = asoiaf_faith_of_the_seven
-        
-        # if = {
-            # limit = { is_year = 100 } 
-    
-            # region_the_north = {
-                # set_in_empire = yes
-            # }
-            # region_riverlands = {
-                # set_in_empire = yes
-            # }
-            # region_crownlands = {
-                # set_in_empire = yes
-            # }
-            # region_stormlands = {
-                # set_in_empire = yes
-            # }
-            # region_iron_islands = {
-                # set_in_empire = yes
-            # }
-            # region_reach = {
-                # set_in_empire = yes
-            # }
-            # region_westerlands = {
-                # set_in_empire = yes
-            # }
-            # region_dorne = {
-                # set_in_empire = yes
-            # }
-            # region_vale = {
-                # set_in_empire = yes
-            # }
-        # }		
+     
+        every_province = {
+            set_in_empire = no
+        }
 		
         # Bookmark flags
         if = {
@@ -112,7 +80,7 @@ country_event = {
 			
 			every_country = {
 				limit = {
-					culture_group = culture_westeros
+					is_westeros_culture = yes
 				}
 				add_opinion = {
 					who = ROOT
@@ -438,6 +406,8 @@ country_event = {
                         region = region_mossovy
                         region = region_thousand_islands
                         region = region_dry_bones
+                        region = region_carcosa
+                        region = region_cannibal_sands
                     }
                 }
             }
@@ -474,6 +444,9 @@ country_event = {
 			east_sothoryos_sea_area = {
                 discover_country = ROOT
             }
+            bloodless_coast_area = {
+                discover_country = ROOT
+            }
             1129 = {
                 discover_country = ROOT
             }
@@ -483,7 +456,21 @@ country_event = {
             1127 = {
                 discover_country = ROOT
             }
-            
+            1600 = {
+                discover_country = ROOT
+            }
+            1443 = {
+                discover_country = ROOT
+            }
+            1113 = {
+                discover_country = ROOT
+            }
+            1112 = {
+                discover_country = ROOT
+            }
+            1098 = {
+                discover_country = ROOT
+            }
         } 
 		
 		# Summer Islands and Stepstones
@@ -676,3 +663,4 @@ country_event = {
         }
     }  
 }
+

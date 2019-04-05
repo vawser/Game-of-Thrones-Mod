@@ -1,5 +1,30 @@
 namespace = GOT_TRADEGOODS
 
+# Trade Good Cooldown
+country_event = {
+	id = GOT_TRADEGOODS.100
+	title = GOT_TRADEGOODS.100.title
+	desc = GOT_TRADEGOODS.100.desc
+	picture = ASSASSINATION_eventPicture
+	
+    hidden = yes
+
+    trigger = {
+        has_country_flag = processor
+        has_global_flag = tradegood_price_event_cooldown
+    }
+
+    mean_time_to_happen = {
+        months = 600
+    }
+    
+    option = {
+        name = GOT_SYSTEM.9.option.a
+
+        clr_global_flag = tradegood_price_event_cooldown
+    }  
+}
+
 # Bountiful Harvest
 # Our fields have been blessed, and our harvest is bountiful this year. Grain will be especially valuable this year.
 # Wonderful
@@ -10,29 +35,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		grain = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = grain_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = grain_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -41,8 +57,8 @@ country_event = {
 		change_price = {
 			trade_goods = grain
 			key = got_grain_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -57,29 +73,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		wine = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = wine_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = wine_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -88,8 +95,8 @@ country_event = {
 		change_price = {
 			trade_goods = wine
 			key = got_wine_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -102,29 +109,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		wool = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = wool_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = wool_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -133,8 +131,8 @@ country_event = {
 		change_price = {
 			trade_goods = wool
 			key = got_wool_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -147,29 +145,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		cloth = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = cloth_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = cloth_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -178,8 +167,8 @@ country_event = {
 		change_price = {
 			trade_goods = cloth
 			key = got_cloth_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -192,29 +181,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		fish = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = fish_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = fish_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -223,8 +203,8 @@ country_event = {
 		change_price = {
 			trade_goods = fish
 			key = got_fish_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -237,29 +217,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		fur = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = fur_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = fur_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -268,8 +239,8 @@ country_event = {
 		change_price = {
 			trade_goods = fur
 			key = got_fur_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -282,29 +253,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		salt = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = salt_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = salt_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -313,8 +275,8 @@ country_event = {
 		change_price = {
 			trade_goods = salt
 			key = got_salt_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -327,29 +289,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		naval_supplies = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = naval_supplies_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = naval_supplies_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -358,8 +311,8 @@ country_event = {
 		change_price = {
 			trade_goods = naval_supplies
 			key = got_naval_supplies_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -372,29 +325,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		copper = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = copper_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = copper_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -403,8 +347,8 @@ country_event = {
 		change_price = {
 			trade_goods = copper
 			key = got_copper_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -417,29 +361,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		iron = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = iron_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = iron_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -448,8 +383,8 @@ country_event = {
 		change_price = {
 			trade_goods = iron
 			key = got_iron_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -462,29 +397,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		slaves = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = slaves_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = slaves_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -493,8 +419,8 @@ country_event = {
 		change_price = {
 			trade_goods = slaves
 			key = got_slaves_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -507,29 +433,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		ivory = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = ivory_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = ivory_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -538,8 +455,8 @@ country_event = {
 		change_price = {
 			trade_goods = ivory
 			key = got_ivory_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -552,29 +469,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		tea = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = tea_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = tea_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -583,8 +491,8 @@ country_event = {
 		change_price = {
 			trade_goods = tea
 			key = got_tea_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -597,29 +505,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		spices = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = spices_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = spices_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -628,8 +527,8 @@ country_event = {
 		change_price = {
 			trade_goods = spices
 			key = got_spices_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -642,29 +541,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		coffee = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = coffee_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = coffee_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -673,8 +563,8 @@ country_event = {
 		change_price = {
 			trade_goods = coffee
 			key = got_coffee_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -687,29 +577,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		cotton = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = cotton_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = cotton_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -718,8 +599,8 @@ country_event = {
 		change_price = {
 			trade_goods = cotton
 			key = got_cotton_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -732,29 +613,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		sugar = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = sugar_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = sugar_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -763,8 +635,8 @@ country_event = {
 		change_price = {
 			trade_goods = sugar
 			key = got_sugar_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -777,29 +649,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		tobacco = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = tobacco_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = tobacco_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -808,8 +671,8 @@ country_event = {
 		change_price = {
 			trade_goods = tobacco
 			key = got_tobacco_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -822,29 +685,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		cocoa = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = cocoa_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = cocoa_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -853,8 +707,8 @@ country_event = {
 		change_price = {
 			trade_goods = cocoa
 			key = got_cocoa_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -867,29 +721,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		silk = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = silk_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = silk_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -898,8 +743,8 @@ country_event = {
 		change_price = {
 			trade_goods = silk
 			key = got_silk_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -912,29 +757,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
-	
+
 	trigger = {
-		dyes = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = dyes_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = dyes_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -943,8 +779,8 @@ country_event = {
 		change_price = {
 			trade_goods = dyes
 			key = got_dyes_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -957,29 +793,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		tropical_wood = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = tropical_wood_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = tropical_wood_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -988,8 +815,8 @@ country_event = {
 		change_price = {
 			trade_goods = tropical_wood
 			key = got_tropical_wood_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -1002,29 +829,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		ironwood = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = ironwood_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = ironwood_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -1033,8 +851,8 @@ country_event = {
 		change_price = {
 			trade_goods = ironwood
 			key = got_ironwood_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -1047,29 +865,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		candles = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = candles_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = candles_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -1078,8 +887,8 @@ country_event = {
 		change_price = {
 			trade_goods = candles
 			key = got_candles_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
@@ -1092,29 +901,20 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 	
 	major = yes
-	is_triggered_only = yes
 
 	trigger = {
-		fruit = 1
-		NOT = {
-			any_country = {
-				has_country_modifier = fruit_timer
-			}
-		}
+		has_country_flag = processor
+        NOT = { has_global_flag = tradegood_price_event_cooldown }
 	}
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = fruit_timer
-				duration = 1825
-				hidden = yes
-			}
+			set_global_flag = tradegood_price_event_cooldown
 		}
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 600
 	}
 	
 	option = {
@@ -1123,12 +923,9 @@ country_event = {
 		change_price = {
 			trade_goods = fruit
 			key = got_fruit_boost
-			value = 0.25
-			duration = 1825
+			value = 1.0
+			duration = 9125
 		}
 	}
 }
 
-# Flipping Events
-
-# Negative Events

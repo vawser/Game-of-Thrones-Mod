@@ -165,7 +165,7 @@ NDefines.NCountry.INNOVATIVENESS_MAX = 0.0
 --------------------------------
 NDefines.NEconomy.GOLD_INFLATION = 0.1
 NDefines.NEconomy.TREASURE_FLEET_INFLATION = 0.1
-NDefines.NEconomy.INFLATION_FROM_LOAN = 0.5
+NDefines.NEconomy.INFLATION_FROM_LOAN = 0.1
 
 NDefines.NEconomy.MISSIONARY_MAINTENANCE_DEVELOPMENT_CAP = 20
 

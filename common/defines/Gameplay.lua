@@ -3,7 +3,7 @@
 --------------------------------
 NDefines.NGame.AGE_USHER_IN_TIME = 12
 NDefines.NCountry.GOLDEN_ERA_YEARS = 25
-NDefines.NCountry.SPLENDOR_ABILITY_COST = 800
+NDefines.NCountry.SPLENDOR_ABILITY_COST = 2500
 
 NDefines.NCountry.LEGITIMACY_DYNASTY_CHANGE = 50
 NDefines.NCountry.STRENGTHEN_GOVERNMENT_REPUBLICAN_TRADITION = 10

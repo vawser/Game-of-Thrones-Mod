@@ -37,7 +37,6 @@ base_values = {
 	max_states = 10
 	num_accepted_cultures = 2
     
-	monthly_splendor = 1
     yearly_absolutism = -1
     #yearly_army_professionalism = -0.01
     
@@ -82,6 +81,16 @@ custom_setup = {
 # Caps at 600
 horde_development = {
 	horde_unity = -4
+}
+
+in_golden_era = { 
+    all_power_cost = -0.2
+    land_morale = 0.2
+    naval_morale = 0.2
+}
+
+num_objectives_fullfilled = { 
+    monthly_splendor = 1
 }
 
 #----------------------------------------
@@ -1069,9 +1078,7 @@ authority = {
 #----------------------------------------
 innovativeness = { }
 recovery_motivation = { }
-num_objectives_fullfilled = { }
 is_great_power = { }
-in_golden_era = { }
 low_army_professionalism = { }
 high_army_professionalism = { }
 raiding_parties_modifier = { }

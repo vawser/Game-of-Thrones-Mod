@@ -10,7 +10,7 @@ country_event = {
     major = yes
     
 	trigger = {
-        tag = A07
+        tag = CRW
         start_date = 298.1.1
         NOT = { has_global_flag = war_of_the_five_kings }
         NOT = { has_global_flag = shattered_world }
@@ -27,27 +27,29 @@ country_event = {
 	option = {
 		name = GOT_WAR_OF_THE_FIVE_KINGS.1.option.a
         
-        A01 = {
+        kill_ruler = yes # Kill Robert
+        
+        NOR = {
             declare_war_with_cb = {
-                who = A07
+                who = CRW
                 casus_belli = cb_independence_war
             }
         }
-        M09 = {
+        STM = {
+            declare_war_with_cb = {
+                who = CRW
+                casus_belli = cb_independence_war
+            }
+        }
+        IRI = {
             declare_war_with_cb = {
                 who = A01
                 casus_belli = cb_lordly_feud
             }
         }
-        B01 = {
-            declare_war_with_cb = {
-                who = A07
-                casus_belli = cb_independence_war
-            }
-        }
         A39 = {
             declare_war_with_cb = {
-                who = A07
+                who = CRW
                 casus_belli = cb_independence_war
             }
         }
@@ -65,7 +67,7 @@ country_event = {
     major = yes
     
 	trigger = {
-        tag = A07
+        tag = CRW
         start_date = 299.1.1
         NOT = { has_global_flag = war_of_the_five_kings } 
         NOT = { has_global_flag = shattered_world }
@@ -82,27 +84,27 @@ country_event = {
 	option = {
 		name = GOT_WAR_OF_THE_FIVE_KINGS.2.option.a
         
-        A01 = {
+        NOR = {
             declare_war_with_cb = {
-                who = A07
+                who = CRW
                 casus_belli = cb_independence_war
             }
         }
-        M09 = {
+        IRI = {
             declare_war_with_cb = {
                 who = A01
                 casus_belli = cb_lordly_feud
             }
         }
-        B01 = {
+        STM = {
             declare_war_with_cb = {
-                who = A07
+                who = CRW
                 casus_belli = cb_independence_war
             }
         }
         A39 = {
             declare_war_with_cb = {
-                who = A07
+                who = CRW
                 casus_belli = cb_independence_war
             }
         }

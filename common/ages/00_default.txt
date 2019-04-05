@@ -1,8 +1,5 @@
-#-----------------------------------------
-# The Seven Kingdoms
-#-----------------------------------------
-the_seven_kingdoms = {
-	start = 106
+supremacy = {
+	start = 100
 	
 	can_start = {
 		always = yes
@@ -23,14 +20,121 @@ the_seven_kingdoms = {
 		war_exhaustion = -1
 	}
     
+    #------------------------
+    # Objectives
+    #------------------------
 	objectives = {
-        obj_1 = {
-            always = no
-        }
-    }   
+        obj_kings_landing   = { owns_or_subject_of = 226 }
+        obj_storms_end      = { owns_or_subject_of = 304 }
+        obj_sunspear        = { owns_or_subject_of = 352 }
+        obj_highgarden      = { owns_or_subject_of = 267 }
+        obj_casterly_rock   = { owns_or_subject_of = 182 }
+        obj_riverrun        = { owns_or_subject_of = 101 }
+        obj_pyke            = { owns_or_subject_of = 162 }
+        obj_the_eyrie       = { owns_or_subject_of = 136 }
+        obj_winterfell      = { owns_or_subject_of = 47 }
+        obj_tyrosh          = { owns_or_subject_of = 367 }
+        obj_lys             = { owns_or_subject_of = 368 }
+        obj_myr             = { owns_or_subject_of = 378 }
+        obj_volantis        = { owns_or_subject_of = 417 }
+        obj_pentos          = { owns_or_subject_of = 406 }
+        obj_braavos         = { owns_or_subject_of = 470 }
+        obj_lorath          = { owns_or_subject_of = 471 }
+        obj_norvos          = { owns_or_subject_of = 433 }
+        obj_qohor           = { owns_or_subject_of = 476 }
+        obj_meereen         = { owns_or_subject_of = 606 }
+        obj_yunkai          = { owns_or_subject_of = 610 }
+        obj_astapor         = { owns_or_subject_of = 613 }
+        obj_ghis            = { owns_or_subject_of = 619 }
+        obj_qarth           = { owns_or_subject_of = 663 }
+        obj_yin             = { owns_or_subject_of = 765 }
+        obj_asshai          = { owns_or_subject_of = 795 }
+        obj_carcosa         = { owns_or_subject_of = 808 }
+        obj_pallor          = { owns_or_subject_of = 814 }
+        obj_trader_town     = { owns_or_subject_of = 847 }
+        obj_leng_ma         = { owns_or_subject_of = 791 }
+        obj_tall_trees_town = { owns_or_subject_of = 500 }
+        obj_valyria         = { owns_or_subject_of = 597 }
+        obj_vaes_dothrak    = { owns_or_subject_of = 709 }
+        obj_spearhold       = { owns_or_subject_of = 586 }  
+    }
 	
+    #------------------------
+    # Abilities
+    #------------------------
 	abilities = {
-	
+        ab_home_turf_advantage = {
+            ai_will_do = { factor = 1 }
+			rule = {
+                attack_bonus_in_capital_terrain = yes
+            }
+		}
+        ab_integrated_spies = {
+            ai_will_do = { factor = 1 }
+			rule = {
+                can_chain_claim = yes
+                can_transfer_vassal_wargoal = yes
+            }
+		}
+        ab_colonial_incentives = {
+            ai_will_do = { factor = 1 }
+			rule = {
+                can_colony_boost_development = yes
+                free_maintenance_on_expl_conq = yes
+            }
+		}
+        ab_unrestricted_conquest = {
+            ai_will_do = { factor = 1 }
+			rule = {
+                ignore_coring_distance = yes
+            }
+		}
+        ab_force_march = {
+            ai_will_do = { factor = 1 }
+			rule = {
+                force_march_free = yes
+            }
+		}
+        ab_trusted_merchants = {
+            ai_will_do = { factor = 1 }
+			modifier = {
+                merchants = 1
+            }
+		}
+        ab_trusted_diplomats = {
+            ai_will_do = { factor = 1 }
+			modifier = {
+                diplomats = 1
+            }
+		}
+        ab_administrative_genius = {
+            ai_will_do = { factor = 1 }
+			modifier = {
+                monarch_admin_power = 1
+            }
+		}
+        ab_diplomatic_genius = {
+            ai_will_do = { factor = 1 }
+			modifier = {
+                monarch_diplomatic_power = 1
+            }
+		}
+        ab_military_genius = {
+            ai_will_do = { factor = 1 }
+			modifier = {
+                monarch_military_power = 1
+            }
+		}
+        ab_unquestioned_legitimacy = {
+            ai_will_do = { factor = 1 }
+			modifier = {
+                legitimacy = 1
+                republican_tradition = 1
+                devotion = 1
+                horde_unity = 1
+                meritocracy = 1
+            }
+		}
     }
 }
 

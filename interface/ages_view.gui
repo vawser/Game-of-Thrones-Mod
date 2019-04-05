@@ -2,7 +2,7 @@ guiTypes = {
 	windowType = {
 		name = "ages_view"
 		backGround=""	
-		position = { x = -290 y = -9999 }	
+		position = { x = -290 y = -280 }	
 		size = { x = 512 y = 512 }
 		moveable = 0
 		dontRender = ""
@@ -28,7 +28,7 @@ guiTypes = {
 		}
 		
 		WindowType = {
-			name = "the_seven_kingdoms"
+			name = "supremacy"
 			position = { x= 35 y = -29}
 			upsound = age_of_discovery
 		}			
@@ -78,7 +78,7 @@ guiTypes = {
 		guiButtonType = {
 			name = "golden_age"
 			quadTextureSprite ="GFX_age_golden_age_button"
-			position = { x = 148 y = 140 }
+			position = { x = 170 y = 175 }
 			buttonText = "START_GOLDEN_AGE"
 			buttonFont = "vic_18"
 		}
@@ -86,20 +86,20 @@ guiTypes = {
 		iconType = {
 			name = "in_golden_age_banner"
 			spriteType = "GFX_golden_age_banner"
-			position = { x = 74 y = 130 }
+			position = { x = 120 y = 175 }
 			alwaystransparent = yes 
 		}
 
 		iconType = {
 			name = "after_golden_age_banner"
 			spriteType = "GFX_golden_age_banner_tattered"
-			position = { x = 74 y = 130 }
+			position = { x = 120 y = 175 }
 			alwaystransparent = yes 
 		}
 
 		instantTextBoxType = {
 			name = "in_or_after_golden_age_text"
-			position = { x = 124 y =134 }
+			position = { x = 160 y = 180 }
 			font = "vic_22s"
 			borderSize = {x = 4 y = 4}
 			text = ""
@@ -139,21 +139,16 @@ guiTypes = {
 			shortcut = "ESCAPE"
 		}
 		
-		listboxType = 
-		{
+		listboxType = {
 			name ="objectives"
 			position = { x = 10 y = 280 }
 			backGround=""
-			size = { x=700 y =560}
+			size = { x=550 y =340}
 			Orientation = "UPPER_LEFT"
-			spacing = 2
 			scrollbartype = "standardlistbox_slider"
 			borderSize = {x = 0 y = 0}
 		}
-
-
-		listboxType = 
-		{
+		listboxType = {
 			name ="abilities"
 			position = { x = 4 y = 244 }
 			backGround=""
@@ -165,36 +160,21 @@ guiTypes = {
 			horizontal = 1
 			alwaystransparent = yes
 		}
-
-
 	}
-	
-	
-	
-	
-	
+
 	
 	###### OBJECTIVES ENTRY
 	windowType = {
 		name = "age_objectives_entry"
 		backGround=""
 		position = { x=0 y=0 }	
-		size = { x=600 y= 54 }
+		size = { x=600 y= 24 }
 		moveable = 0
 		dontRender = ""
 		horizontalBorder= ""
 		verticalBorder= ""
 		fullScreen = no
-		
-		#remove
-#		iconType =
-#		{
-#			name ="_entry_bg"
-#			spriteType = "GFX_achievement_entry_bg"
-#			position = { x=-2 y = -4 }
-#			Orientation = "UPPER_LEFT"
-#		}
-		
+        
 		iconType =
 		{
 			name ="icon"
@@ -205,7 +185,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "name"
-			position = { x = 8 y = 2 }
+			position = { x = 16 y = 6 }
 			font = "vic_22"
 			borderSize = {x = 0 y = 0}
 			text = "name"	
@@ -217,7 +197,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "desc"
-			position = { x = 8 y = 21 }
+			position = { x = 8 y = -9999 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
 			text = "desc"	
@@ -231,7 +211,7 @@ guiTypes = {
 		{
 			name ="progress"
 			spriteType = "achievement_progress"
-			position = { x= 469 y = 34 }
+			position = { x= 469 y = -9999 }
 			Orientation = "UPPER_LEFT"
 			
 		}
@@ -240,7 +220,7 @@ guiTypes = {
 		{
 			name ="progress_overlay"
 			spriteType = "GFX_achievement_progress_frame"
-			position = { x= 454 y = 29 }
+			position = { x= 454 y = -9999 }
 			Orientation = "UPPER_LEFT"
 			
 		}
@@ -248,7 +228,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "progress_text"
-			position = { x = 470 y = 8 }
+			position = { x = 490 y = 8 }
 			font = "vic_22"
 			borderSize = {x = 0 y = 0}
 			text = "7/14"	

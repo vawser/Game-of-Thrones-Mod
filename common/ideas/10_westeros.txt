@@ -699,3 +699,53 @@ nights_watch_ideas = {
 		land_maintenance_modifier = -0.1
 	}
 }
+
+#---------------------------------------
+# Followers of Daenerys
+#---------------------------------------
+dragon_ideas = {
+	start = {
+		army_tradition = 1
+        discipline = 0.1
+	}
+	
+	bonus = {
+		leader_siege = 1
+	}
+	
+	trigger = {
+        tag = DAE
+	}
+	free = yes
+	
+    # The Unburnt
+	dragon_1 = {
+		fire_damage_received = -0.2
+        shock_damage_received = -0.2
+	}
+    # Breaker of Chains
+	dragon_2 = {
+        global_manpower_modifier = 0.2
+	}
+	# Khaleesi of the Great Grass Sea
+	dragon_3 = {
+		cavalry_cost = -0.1
+        cavalry_power = 0.15
+	}
+	# Enemy of the Others
+	dragon_4 = {
+		movement_speed = 0.2
+	}
+	# Indomitable Spirit
+	dragon_5 = {
+		land_morale = 0.2
+	}
+	# Might of the Dragons
+	dragon_6 = {
+		shock_damage = 0.25
+	}
+	# Mother of Dragons
+	dragon_7 = {
+		prestige = 2
+	}
+}

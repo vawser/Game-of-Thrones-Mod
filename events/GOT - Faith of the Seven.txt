@@ -523,3 +523,37 @@ province_event = {
         anti_tax_rebels = 2
 	}
 }
+
+# Septon in [Root.GetName]
+province_event = {
+	id = GOT_FAITH_OF_THE_SEVEN.14
+	title = GOT_FAITH_OF_THE_SEVEN.14.title
+	desc = GOT_FAITH_OF_THE_SEVEN.14.desc
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+        continent = westeros
+        owner = { religion = asoiaf_faith_of_the_seven }
+        owner = { NOT = { total_number_of_cardinals = 49 } }
+        owner = { NOT = { num_of_cardinals = 7 } }
+		has_cardinal = no
+	}
+	
+    is_mtth_scaled_to_size = 1
+    
+	mean_time_to_happen = {
+		months = 1200
+        
+        modifier = {
+            factor = 0.1
+            
+            owner = { NOT = { num_of_cardinals = 1 } }
+        }
+	}
+	
+	option = {
+		name = GOT_FAITH_OF_THE_SEVEN.14.option.a
+		
+        add_cardinal = yes
+	}
+}

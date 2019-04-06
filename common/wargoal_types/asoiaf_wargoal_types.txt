@@ -47,51 +47,182 @@
 #	- blockade_ports
 #
 # --------------------------------------------------------------
-
-take_the_iron_throne = {
+#--------------------------------------
+# Superiority
+#--------------------------------------
+superiority_undead_conquest = {
 	type = superiority
 	
-	badboy_factor = 1
-	prestige_factor = 1
-	peace_cost_factor = 1
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 0.5
 	
-	allowed_provinces = {
-		always = no
+		peace_options = {
+			po_demand_provinces
+		}
 	}
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 1	
 	
-    peace_options = {
-        claim_the_iron_throne
+		peace_options = {
+			po_demand_provinces
+		}
 	}
     
+	war_name = UNDEAD_CONQUEST_NAME
+}
+
+superiority_iron_throne = {
+	type = superiority
+	
+    attacker = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 1
+	
+		peace_options = {
+			claim_the_iron_throne
+		}
+	}
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1
+		peace_cost_factor = 0.5
+        
+        peace_options = {
+			po_demand_provinces
+		}
+	}
+
 	war_name = TAKE_THE_IRON_THRONE
 }
 
-take_land = {
-	type = take_province
+superiority_royal_conquest = {
+	type = superiority
 	
-	badboy_factor = 1
-	prestige_factor = 1
-	peace_cost_factor = 1.0	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 1
 	
-	peace_options = {
-        po_demand_provinces
-    }
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1
+		peace_cost_factor = 0.5
+        
+        peace_options = {
+			po_demand_provinces
+		}
+	}
 	
-	war_name = INSULT_WAR_NAME
+	war_name = ROYAL_CONQUEST_NAME
 }
 
-take_land_as_wildling = {
-	type = take_province
+superiority_lordly_feud = {
+	type = superiority
 	
-	badboy_factor = 1
-	prestige_factor = 2
-	peace_cost_factor = 1.0	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 1
 	
-	peace_options = {
-        po_demand_provinces
-    }
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1
+		peace_cost_factor = 0.5
+        
+        peace_options = {
+			po_demand_provinces
+		}
+	}
 	
-	war_name = INSULT_WAR_NAME
+	war_name = LORDLY_FEUD_NAME
+}
+
+superiority_defend_the_wall = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 1
+	
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1
+		peace_cost_factor = 0.5
+        
+        peace_options = {
+			po_demand_provinces
+		}
+	}
+	
+	war_name = DEFEND_THE_WALL_NAME
+}
+
+superiority_wildling_assault = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 1
+	
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1
+		peace_cost_factor = 0.5
+        
+        peace_options = {
+			po_demand_provinces
+		}
+	}
+	
+	war_name = WILDLING_ASSAULT_NAME
+}
+
+superiority_wildling_feud = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 1
+	
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1
+		peace_cost_factor = 0.5
+        
+        peace_options = {
+			po_demand_provinces
+		}
+	}
+	
+	war_name = WILDLING_FEUD_NAME
 }
 
 superiority_yitish_unification = {
@@ -137,6 +268,9 @@ superiority_yitish_unification = {
 	war_name = YITISH_UNIFICATION_WAR_NAME	
 }
 
+#--------------------------------------
+# Take Capital
+#--------------------------------------
 take_capital_yiti_take_mandate = {
 	type = take_capital
 	

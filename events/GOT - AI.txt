@@ -1,0 +1,55 @@
+namespace = GOT_AI
+
+# Forces the AI Royal Subjects to fight one another occasionally. 
+# The AI doesn't like to declare, so this forces a war when the player isn't directly involved.
+country_event = {
+	id = GOT_AI.1
+	title = GOT_AI.1.title
+	desc = GOT_AI.1.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+        is_subject_of_type = royal_subject
+        ai = yes
+        is_at_war = no
+        any_country = {
+            ai = yes
+            has_casus_belli_against = ROOT
+            is_subject_of_type = royal_subject
+            is_at_war = no
+            NOT = { 
+                has_opinion = {
+                    who = ROOT
+                    value = 0
+                }
+            }
+        }
+    }
+    hidden = yes
+	
+    mean_time_to_happen = {
+		months = 1200
+    }
+    
+	option = {
+		name = GOT_AI.1.option.a
+
+        random_country = {
+            limit = {
+                ai = yes
+                has_casus_belli_against = ROOT
+                is_subject_of_type = royal_subject
+                NOT = {
+                    has_opinion = {
+                        who = ROOT
+                        value = 0
+                    }
+                }
+            }
+            declare_war_with_cb = {
+                who = ROOT
+                casus_belli = cb_lordly_feud
+            }
+        }
+	}
+}

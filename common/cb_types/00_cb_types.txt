@@ -516,12 +516,10 @@ cb_horde_vs_civ = {
 		FROM = {
 			NOT = { has_reform = khalasar_reform }
             NOT = { has_reform = jhattar_reform }
-            NOT = { has_reform = wildling_clan_reform }
 		}
 		OR = {
             has_reform = khalasar_reform
             has_reform = jhattar_reform
-            has_reform = wildling_clan_reform
 		}
 		is_revolution_target = no
 	}
@@ -537,13 +535,11 @@ cb_tribal_feud = {
 		OR = {
             has_reform = khalasar_reform
             has_reform = jhattar_reform
-            has_reform = wildling_clan_reform
 		}
 		FROM = {
 			OR = {
                 has_reform = khalasar_reform
                 has_reform = jhattar_reform
-                has_reform = wildling_clan_reform
             }
 		}
 		is_neighbor_of = FROM

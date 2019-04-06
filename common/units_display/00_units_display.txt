@@ -3,6 +3,13 @@ infantry = {
 }
 cavalry = {
     factor = 1
+    modifier = {
+        factor = 5
+        OR = {
+            technology_group = dothraki
+            technology_group = jogos_nhai
+        }
+    }
 }
 artillery = {
     factor = 1

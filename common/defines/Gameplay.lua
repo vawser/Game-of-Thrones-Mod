@@ -53,6 +53,8 @@ NDefines.NCountry.PS_LOWER_TARIFFS = 50
 NDefines.NCountry.PS_RAISE_WAR_TAXES = 100
 NDefines.NCountry.PS_CREATE_TRADE_POST = 100
 NDefines.NCountry.PS_ESTABLISH_SIBERIAN_FRONTIER = 100
+NDefines.NCountry.PS_IMPROVE_PROVINCE_BASE = 100
+NDefines.NCountry.PS_MAKE_PROVINCE_CORE = 20
 
 --------------------------------
 -- Corruption
@@ -112,7 +114,7 @@ NDefines.NCountry.CORE_LOSE_PRIMARY_CULTURE_TAG = -1
 NDefines.NCountry.PS_BUY_IDEA = 500
 NDefines.NCountry.FREE_IDEA_GROUP_COST = 3
 NDefines.NCountry.MAX_IDEA_GROUPS_FROM_SAME_CATEGORY = 1.0
-NDefines.NCountry.ABANDON_IDEAGROUP_REFUND = 0.75
+NDefines.NCountry.ABANDON_IDEAGROUP_REFUND = 0.1
 
 --------------------------------
 -- Technology

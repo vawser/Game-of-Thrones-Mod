@@ -276,7 +276,7 @@ estate_clergy = {
         effect = {
             add_estate_loyalty = {
                 estate = estate_clergy
-                loyalty = -30
+                loyalty = -20
             }
             add_estate_influence_modifier = {
                 estate = estate_clergy
@@ -668,7 +668,7 @@ estate_clergy = {
             add_estate_influence_modifier = {
                 estate = estate_clergy
                 desc = EST_VAL_GRANTED_PRIESTHOOD
-                influence = 15
+                influence = 10
                 duration = 3650
             }
         }
@@ -814,7 +814,7 @@ estate_clergy = {
             add_estate_influence_modifier = {
                 estate = estate_clergy
                 desc = EST_VAL_RELIGIOUS_FERVOR
-                influence = 20
+                influence = 10
                 duration = 3650
             }
         }
@@ -880,7 +880,7 @@ estate_clergy = {
             add_estate_influence_modifier = {
                 estate = estate_clergy
                 desc = EST_VAL_RELIGIOUS_GLORY
-                influence = 15
+                influence = 10
                 duration = 3650
             }
         }
@@ -949,10 +949,14 @@ estate_clergy = {
                 }
             }
             
+            add_estate_loyalty = {
+                estate = estate_clergy
+                loyalty = -10
+            }
             add_estate_influence_modifier = {
                 estate = estate_clergy
                 desc = EST_VAL_OUSTED_CORRUPTED_CLERGY
-                influence = 15
+                influence = -10
                 duration = 7300
             }
         }

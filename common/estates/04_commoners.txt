@@ -280,7 +280,7 @@ estate_commoners = {
         effect = {
             add_estate_loyalty = {
                 estate = estate_commoners
-                loyalty = -30
+                loyalty = -20
             }
             add_estate_influence_modifier = {
                 estate = estate_commoners
@@ -340,7 +340,7 @@ estate_commoners = {
             }
             add_estate_loyalty = {
                 estate = estate_commoners
-                loyalty = -20
+                loyalty = -15
             }
         }
         
@@ -549,7 +549,7 @@ estate_commoners = {
         name = "SOOTHE_PEASANTRY"
         icon = 1
         
-        years_between_use = 30
+        years_between_use = 20
         
         potential = { 
             NOT = { has_country_flag = commoners_estate_in_power }
@@ -579,8 +579,8 @@ estate_commoners = {
             add_estate_influence_modifier = {
                 estate = estate_commoners
                 desc = EST_VAL_SOOTHED_PEASANTRY
-                influence = 20
-                duration = 10950
+                influence = 10
+                duration = 7300
             }
         }
         
@@ -609,7 +609,7 @@ estate_commoners = {
         name = "CELEBRATE_ACHIEVEMENTS"
         icon = 1
         
-        years_between_use = 20
+        years_between_use = 10
         
         potential = { 
             NOT = { has_country_flag = commoners_estate_in_power }
@@ -651,8 +651,8 @@ estate_commoners = {
             add_estate_influence_modifier = {
                 estate = estate_commoners
                 desc = EST_VAL_CELEBRATIONS
-                influence = 20
-                duration = 7300
+                influence = 10
+                duration = 3650
             }
         }
         
@@ -701,7 +701,7 @@ estate_commoners = {
             add_estate_influence_modifier = {
                 estate = estate_commoners
                 desc = EST_VAL_LOCAL_MAYORS
-                influence = 15
+                influence = 10
                 duration = 7300
             }
         }

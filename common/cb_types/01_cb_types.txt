@@ -1,5 +1,21 @@
 #---------------------------------------------
-# Used for free Noble Houses
+# Casus Belli
+#---------------------------------------------
+cb_undead_conquest = {
+    valid_for_subject = no
+    
+    prerequisites = {
+		has_reform = white_walker_cult_reform
+        is_neighbor_of = FROM
+        
+        FROM = {
+            NOT = { has_reform = white_walker_cult_reform }
+        }
+	}
+    
+    war_goal = superiority_undead_conquest
+}
+
 cb_iron_throne_rebellion = {
 	valid_for_subject = no
     
@@ -11,10 +27,10 @@ cb_iron_throne_rebellion = {
         }
 	}
     
-    war_goal = take_the_iron_throne
+    war_goal = superiority_iron_throne
 }
 
-cb_royal_domain = {
+cb_royal_conquest = {
     valid_for_subject = no
     
     prerequisites = {
@@ -26,7 +42,7 @@ cb_royal_domain = {
         }
 	}
     
-    war_goal = take_land
+    war_goal = superiority_royal_conquest
 }
 
 cb_lordly_feud = {
@@ -41,7 +57,7 @@ cb_lordly_feud = {
         }
 	}
     
-    war_goal = take_land
+    war_goal = superiority_lordly_feud
 }
 
 cb_defend_the_wall = {
@@ -55,7 +71,7 @@ cb_defend_the_wall = {
         }
 	}
     
-    war_goal = take_land
+    war_goal = superiority_defend_the_wall
 }
 
 cb_wildling_assault = {
@@ -69,7 +85,7 @@ cb_wildling_assault = {
         }
 	}
     
-    war_goal = take_land_as_wildling
+    war_goal = superiority_wildling_assault
 }
 
 cb_wildling_feud = {
@@ -83,7 +99,7 @@ cb_wildling_feud = {
         }
 	}
     
-    war_goal = take_land
+    war_goal = superiority_wildling_feud
 }
 
 cb_unification_of_yiti = {
@@ -131,21 +147,6 @@ cb_take_mandate_yiti = {
 	}
 
 	war_goal = take_capital_yiti_take_mandate
-}
-
-cb_undead_conquest = {
-    valid_for_subject = no
-    
-    prerequisites = {
-		has_reform = white_walker_cult_reform
-        is_neighbor_of = FROM
-        
-        FROM = {
-            NOT = { has_reform = white_walker_cult_reform }
-        }
-	}
-    
-    war_goal = take_land
 }
 
 cb_pirates = {

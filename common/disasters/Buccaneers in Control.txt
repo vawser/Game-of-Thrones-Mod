@@ -1,9 +1,9 @@
-estate_clergy_disaster = {
+buccaneer_control_disaster = {
 	potential = {
         ai = no
-		has_estate = estate_clergy
+		has_estate = estate_buccaneers
 		estate_influence = {
-			estate = estate_clergy
+			estate = estate_buccaneers
 			influence = 60
 		}
 	}
@@ -12,7 +12,7 @@ estate_clergy_disaster = {
 	can_start = {
 		has_any_disaster = no
 		estate_influence = {
-			estate = estate_clergy
+			estate = estate_buccaneers
 			influence = 80
 		}
 	}
@@ -20,7 +20,7 @@ estate_clergy_disaster = {
 	can_stop = {
 		NOT = {
 			estate_influence = {
-				estate = estate_clergy
+				estate = estate_buccaneers
 				influence = 80
 			}		
 		}
@@ -34,13 +34,13 @@ estate_clergy_disaster = {
 		modifier = {
 			factor = 1
 			estate_influence = {
-				estate = estate_clergy
+				estate = estate_buccaneers
 				influence = 80
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_clergy
+						estate = estate_buccaneers
 						influence = 85
 					}			
 				}			
@@ -49,13 +49,13 @@ estate_clergy_disaster = {
 		modifier = {
 			factor = 2
 			estate_influence = {
-				estate = estate_clergy
+				estate = estate_buccaneers
 				influence = 85
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_clergy
+						estate = estate_buccaneers
 						influence = 90
 					}			
 				}			
@@ -64,13 +64,13 @@ estate_clergy_disaster = {
 		modifier = {
 			factor = 3
 			estate_influence = {
-				estate = estate_clergy
+				estate = estate_buccaneers
 				influence = 90
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_clergy
+						estate = estate_buccaneers
 						influence = 95
 					}			
 				}			
@@ -79,13 +79,13 @@ estate_clergy_disaster = {
 		modifier = {
 			factor = 4
 			estate_influence = {
-				estate = estate_clergy
+				estate = estate_buccaneers
 				influence = 95
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_clergy
+						estate = estate_buccaneers
 						influence = 100
 					}			
 				}			
@@ -94,7 +94,7 @@ estate_clergy_disaster = {
 		modifier = {
 			factor = 5
 			estate_influence = {
-				estate = estate_clergy
+				estate = estate_buccaneers
 				influence = 100
 			}
 		}		
@@ -102,23 +102,23 @@ estate_clergy_disaster = {
 	
 	can_end = {
 		custom_trigger_tooltip = {
-			tooltip = EST_CRUSHED_CLERGY
+			tooltip = EST_CRUSHED_BUCCANEERS
 			
-            NOT = { has_country_flag = clergy_estate_in_power }					
+            NOT = { has_country_flag = buccaneer_estate_in_power }					
 		}
 	}
 	
 	modifier = {	
-		discipline = -0.1
-		recover_army_morale_speed = -0.25
-		global_tax_modifier = -0.25
-		global_unrest = 2
+		naval_forcelimit_modifier = -0.5
+		global_unrest = 5
 	}
 
-	on_start = GOT_ESTATES.52
-	on_end = GOT_ESTATES.53
+	on_start = GOT_ESTATE_CONTROL.100
+	on_end = GOT_ESTATE_CONTROL.101
 	
 	on_monthly = {
+        1000 = GOT_ESTATE_CONTROL.1
+        50000 = 0
 	}
 }
 

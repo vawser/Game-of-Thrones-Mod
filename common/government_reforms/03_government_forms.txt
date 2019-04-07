@@ -1477,8 +1477,11 @@ outpost_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    min_autonomy = 50
+    
     modifiers = {
-    	global_regiment_cost = -0.33
+    	global_regiment_cost = -0.1
+        global_unrest = -1
 	}
     
     custom_attributes = {
@@ -1499,8 +1502,11 @@ nights_watch_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    min_autonomy = 50
+    
     modifiers = {
-    	global_regiment_cost = -0.33
+    	global_regiment_cost = -0.1
+        global_unrest = -1
 	}
     
     custom_attributes = {

@@ -1,7 +1,7 @@
 estate_magi = {
-	icon = 15
+	icon = 6
 	
-	color = { 15 32 56 }
+	color = { 156 117 170 }
 	
 	keep_on_conquest = no 							
 	always_remove_on_religious_conquest = yes 		
@@ -17,18 +17,13 @@ estate_magi = {
 		}
 	}
     
-    custom_name = {
-		desc = estate_skinchangers
-		trigger = {
-			technology_group = wildling
-		}
-	}
-    
     # ----- Conditions -----
 	trigger = {
         NOT = { has_reform = white_walker_cult_reform }
         NOT = { has_reform = khalasar_reform }
         NOT = { has_reform = jhattar_reform }
+        NOT = { has_reform = pirate_clan_reform }
+        NOT = { has_reform = nights_watch_reform }
 	}
 	
 	province_trigger = {

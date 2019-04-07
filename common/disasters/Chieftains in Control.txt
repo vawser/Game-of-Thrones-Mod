@@ -1,9 +1,9 @@
-estate_merchants_disaster = {
+chieftain_control_disaster = {
 	potential = {
         ai = no
-		has_estate = estate_merchants
+		has_estate = estate_chieftains
 		estate_influence = {
-			estate = estate_merchants
+			estate = estate_chieftains
 			influence = 60
 		}
 	}
@@ -12,7 +12,7 @@ estate_merchants_disaster = {
 	can_start = {
 		has_any_disaster = no
 		estate_influence = {
-			estate = estate_merchants
+			estate = estate_chieftains
 			influence = 80
 		}
 	}
@@ -20,7 +20,7 @@ estate_merchants_disaster = {
 	can_stop = {
 		NOT = {
 			estate_influence = {
-				estate = estate_merchants
+				estate = estate_chieftains
 				influence = 80
 			}		
 		}
@@ -34,13 +34,13 @@ estate_merchants_disaster = {
 		modifier = {
 			factor = 1
 			estate_influence = {
-				estate = estate_merchants
+				estate = estate_chieftains
 				influence = 80
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_merchants
+						estate = estate_chieftains
 						influence = 85
 					}			
 				}			
@@ -49,13 +49,13 @@ estate_merchants_disaster = {
 		modifier = {
 			factor = 2
 			estate_influence = {
-				estate = estate_merchants
+				estate = estate_chieftains
 				influence = 85
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_merchants
+						estate = estate_chieftains
 						influence = 90
 					}			
 				}			
@@ -64,13 +64,13 @@ estate_merchants_disaster = {
 		modifier = {
 			factor = 3
 			estate_influence = {
-				estate = estate_merchants
+				estate = estate_chieftains
 				influence = 90
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_merchants
+						estate = estate_chieftains
 						influence = 95
 					}			
 				}			
@@ -79,13 +79,13 @@ estate_merchants_disaster = {
 		modifier = {
 			factor = 4
 			estate_influence = {
-				estate = estate_merchants
+				estate = estate_chieftains
 				influence = 95
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_merchants
+						estate = estate_chieftains
 						influence = 100
 					}			
 				}			
@@ -94,7 +94,7 @@ estate_merchants_disaster = {
 		modifier = {
 			factor = 5
 			estate_influence = {
-				estate = estate_merchants
+				estate = estate_chieftains
 				influence = 100
 			}
 		}		
@@ -102,22 +102,23 @@ estate_merchants_disaster = {
 	
 	can_end = {
 		custom_trigger_tooltip = {
-			tooltip = EST_CRUSHED_MERCHANTS
+			tooltip = EST_CRUSHED_CHIEFTAINS
 			
-            NOT = { has_country_flag = merchants_estate_in_power }					
+            NOT = { has_country_flag = chieftains_estate_in_power }					
 		}
 	}
 	
 	modifier = {	
-		global_trade_power = -0.2
-        trade_efficiency = -0.2
-        global_trade_goods_size_modifier = -0.25
+		global_manpower_modifier = -0.5
+		global_unrest = 5
 	}
 
-	on_start = GOT_ESTATES.54
-	on_end = GOT_ESTATES.55
+	on_start = GOT_ESTATE_CONTROL.60
+	on_end = GOT_ESTATE_CONTROL.61
 	
 	on_monthly = {
+        1000 = GOT_ESTATE_CONTROL.1
+        50000 = 0
 	}
 }
 

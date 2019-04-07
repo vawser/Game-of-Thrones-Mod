@@ -1,0 +1,283 @@
+estate_stewards = {
+    icon = 4
+    
+    color = { 72 132 66 }
+    
+    keep_on_conquest = no                             
+    always_remove_on_religious_conquest = yes         
+
+    start_territory_weight = 50
+    territory_power_modifier = 1.0
+    
+    min_autonomy = 0
+    
+    independence_government = nights_watch
+	starting_reform = nights_watch_reform
+	independence_tech_group = westerosi
+	independence_trigger = {
+		has_estate = estate_stewards
+	}
+    
+    # ----- Conditions -----
+    trigger = {
+        has_reform = nights_watch_reform
+    }
+    
+    province_trigger = {
+        always = yes
+    }
+    
+    # ----- Country -----
+    country_modifier_happy = {
+        
+    }
+    country_modifier_neutral = {
+        
+    }    
+    country_modifier_angry = {
+        
+    }
+    
+    # ----- Province -----
+    province_modifier_happy = {
+        
+    }
+    province_modifier_neutral = {
+        
+    }
+    province_modifier_angry = {
+        
+        local_unrest = 5
+    }    
+    
+    ai_grant_province = {
+        factor = 1    
+        modifier = {
+            factor = 0.5
+            development = 20
+        }
+        modifier = {
+            factor = 2
+            NOT = { development = 10 }
+        }                
+        modifier = {
+            factor = 0.75
+            has_owner_culture = yes
+        }
+        modifier = {
+            factor = 0.75
+            province_trade_power = 5
+        }            
+        modifier = {
+            factor = 0.75
+            province_trade_power = 10
+        }
+        modifier = {
+            factor = 4
+            local_autonomy = 25
+        }
+        modifier = {
+            factor = 0.25
+            NOT = { local_autonomy = 25 }
+        }
+    }   
+    
+    # ----- Territory -----
+    min_territory = 20
+    min_provinces_to_want_territory = 5        
+    
+    ai_territory_modifier = {
+		trigger = {
+			always = yes
+		}	
+		value = 100
+	}
+    
+    # ----- Influence -----
+    base_influence = 30
+
+    influence_modifier = {
+        desc = EST_VAL_OTHER_ESTATE_IN_POWER
+        trigger = {
+            OR = {
+                has_country_flag = builder_estate_in_power
+                has_country_flag = ranger_estate_in_power
+            }
+        }
+        influence = -40
+    }
+    
+    # ----- Loyalty -----
+    loyalty_modifier = {
+        desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
+        trigger = {
+            OR = {
+                has_country_flag = builder_estate_in_power
+                has_country_flag = ranger_estate_in_power
+            }
+        }
+        loyalty = -40
+    }
+    
+    # ----- Interactions -----
+    # Curtail the Stewards
+    interaction = {
+		name = "CURTAIL_THE_STEWARDS"
+		icon = 1
+		
+        potential = { 
+            has_country_flag = steward_estate_in_power
+        }
+        
+		trigger = {      
+            hidden_trigger = { has_country_flag = steward_estate_in_power } # AI seems to ignore the potential check
+            stability = 1
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }			
+			NOT = {
+				estate_influence = {
+					estate = estate_stewards
+					influence = 60
+				}				
+			}           
+        }
+		
+		effect = {
+			add_stability = -3
+			add_prestige = -25
+			clr_country_flag = steward_estate_in_power
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    # Punish the Stewards
+    interaction = {
+        name = "PUNISH_THE_STEWARDS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = steward_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = steward_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_stewards
+                loyalty = 50
+            }              
+        }
+        
+        effect = {
+            add_estate_loyalty = {
+                estate = estate_stewards
+                loyalty = -20
+            }
+            add_estate_influence_modifier = {
+                estate = estate_stewards
+                desc = EST_VAL_PUNISHED
+                influence = -20
+                duration = 7300
+            }
+        }
+        
+        ai_will_do = {
+            factor = 0
+        }
+    }
+    
+    # Bribe the Stewards
+    interaction = {
+        name = "INVEST_IN_THE_STEWARDS"
+        icon = 1
+        
+        years_between_use = 10
+        
+        potential = { 
+            NOT = { has_country_flag = steward_estate_in_power }
+        }
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = steward_estate_in_power } }
+        }
+        
+        effect = {
+            add_years_of_income = -0.5
+            
+            add_estate_loyalty = {
+                estate = estate_stewards
+                loyalty = 15
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                NOT = { years_of_income = 1 }                
+            }
+            
+            modifier = {
+                factor = 0
+                estate_loyalty = {
+                    estate = estate_stewards
+                    loyalty = 50
+                }
+            }            
+        }        
+    }
+    
+    # Gain Support of the Stewards
+    interaction = {
+        name = "GAIN_SUPPORT_OF_THE_STEWARDS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = {
+            NOT = { has_country_flag = steward_estate_in_power }
+        }
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = steward_estate_in_power } }
+        }
+        
+        effect = {
+            add_estate_loyalty = {
+                estate = estate_stewards
+                loyalty = 10
+            }
+            add_estate_influence_modifier = {
+                estate = estate_stewards
+                desc = EST_VAL_SUPPORT_OF_THE_STEWARDS
+                influence = 10
+                duration = 7300
+            }
+        }
+    
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_loyalty = {
+                    estate = estate_stewards
+                    loyalty = 50
+                }                        
+            }
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_stewards
+                    influence = 60
+                }                        
+            }            
+        }
+    }
+}

@@ -1,0 +1,172 @@
+namespace = GOT_ESTATES
+
+#-------------------------------------------------------
+# Estate Actions
+#-------------------------------------------------------
+country_event = {
+	id = GOT_ESTATES.100
+	title = GOT_ESTATES.100.title
+	desc = GOT_ESTATES.100.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+        has_country_flag = tutor_heir_flag
+    }
+	
+    immediate = {
+        clr_country_flag = tutor_heir_flag
+    }
+    
+    mean_time_to_happen = {
+		days = 1
+	}
+    
+	option = {
+		name = GOT_ESTATES.100.option.a
+        
+        random_list = {
+            25 = { country_event = { id = GOT_ESTATES.101 } }
+            25 = { country_event = { id = GOT_ESTATES.102 } }
+            25 = { country_event = { id = GOT_ESTATES.103 } }
+            25 = { country_event = { id = GOT_ESTATES.104 } }
+        }
+	}
+}
+
+country_event = {
+	id = GOT_ESTATES.101
+	title = GOT_ESTATES.101.title
+	desc = GOT_ESTATES.101.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+    
+	option = {
+		name = GOT_ESTATES.101.option.a
+        
+        if = {
+            limit = { has_idea = got_dynastic_ideas_7 }
+            change_heir_adm = 2
+        }
+        else = {
+            change_heir_adm = 1
+        }
+	}
+}
+
+country_event = {
+	id = GOT_ESTATES.102
+	title = GOT_ESTATES.102.title
+	desc = GOT_ESTATES.102.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+    
+	option = {
+		name = GOT_ESTATES.102.option.a
+        
+        if = {
+            limit = { has_idea = got_dynastic_ideas_7 }
+            change_heir_dip = 2
+        }
+        else = {
+            change_heir_dip = 1
+        }
+	}
+}
+
+country_event = {
+	id = GOT_ESTATES.103
+	title = GOT_ESTATES.103.title
+	desc = GOT_ESTATES.103.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+    
+	option = {
+		name = GOT_ESTATES.103.option.a
+        
+        if = {
+            limit = { has_idea = got_dynastic_ideas_7 }
+            change_heir_mil = 2
+        }
+        else = {
+            change_heir_mil = 1
+        }
+	}
+}
+
+country_event = {
+	id = GOT_ESTATES.104
+	title = GOT_ESTATES.104.title
+	desc = GOT_ESTATES.104.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+    
+	option = {
+		name = GOT_ESTATES.104.option.a
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

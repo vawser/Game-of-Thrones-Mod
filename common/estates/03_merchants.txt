@@ -1,7 +1,7 @@
 estate_merchants = {
 	icon = 3
 	
-	color = { 133 235 113 }
+	color = { 226 229 61 }
 	
 	keep_on_conquest = no 							
 	always_remove_on_religious_conquest = yes 	
@@ -10,19 +10,14 @@ estate_merchants = {
     
 	min_autonomy = 0
     
-    custom_name = {
-		desc = estate_builders
-		trigger = {
-            has_reform = nights_watch_reform
-		}
-	}
-    
     # ----- Conditions -----
 	trigger = {
         NOT = { has_reform = white_walker_cult_reform }
-		NOT = { has_reform = wildling_clan_reform }
+        NOT = { has_reform = wildling_clan_reform }
         NOT = { has_reform = khalasar_reform }
         NOT = { has_reform = jhattar_reform }
+        NOT = { has_reform = pirate_clan_reform }
+        NOT = { has_reform = nights_watch_reform }
 	}
 	
 	province_trigger = {

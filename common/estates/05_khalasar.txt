@@ -1,7 +1,7 @@
 estate_khalasar = {
     icon = 5
     
-    color = { 10 60 70 }
+    color = { 183 142 38 }
     
     keep_on_conquest = no                             
     always_remove_on_religious_conquest = yes         
@@ -24,7 +24,7 @@ estate_khalasar = {
     }
     
     province_trigger = {
-        is_overseas = no
+        always = yes
     }
     
     # ----- Country -----
@@ -108,15 +108,7 @@ estate_khalasar = {
     influence_modifier = {
         desc = EST_VAL_OTHER_ESTATE_IN_POWER
         trigger = {
-            OR = {
-                has_country_flag = noble_estate_in_power
-                has_country_flag = clergy_estate_in_power
-                has_country_flag = merchants_estate_in_power
-                has_country_flag = commoner_estate_in_power
-                has_country_flag = chieftains_estate_in_power
-                has_country_flag = magi_estate_in_power
-                has_country_flag = slaves_estate_in_power
-            }
+            has_country_flag = slaves_estate_in_power
         }
         influence = -40
     }
@@ -141,15 +133,7 @@ estate_khalasar = {
     loyalty_modifier = {
         desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
         trigger = {
-            OR = {
-                has_country_flag = noble_estate_in_power
-                has_country_flag = clergy_estate_in_power
-                has_country_flag = merchants_estate_in_power
-                has_country_flag = commoner_estate_in_power
-                has_country_flag = chieftains_estate_in_power
-                has_country_flag = magi_estate_in_power
-                has_country_flag = slaves_estate_in_power
-            }
+            has_country_flag = slaves_estate_in_power
         }
         loyalty = -40
     }
@@ -721,18 +705,18 @@ estate_khalasar = {
         }
     }
     
-    # Rally Warriors
+    # Muster Cavalry
     interaction = {
-        name = "RALLY_WARRIORS"
-        icon = 1
-        
-        years_between_use = 5
-        
+		name = "MUSTER_CAVALRY"
+		icon = 1
+		
+		years_between_use = 10
+		
         potential = { 
             NOT = { has_country_flag = kos_estate_in_power }
         }
         
-        trigger = {
+		trigger = {
             hidden_trigger = { NOT = { has_country_flag = kos_estate_in_power } }
             estate_loyalty = {
                 estate = estate_khalasar
@@ -742,43 +726,167 @@ estate_khalasar = {
                 estate = estate_khalasar
                 influence = 40
             }
+            
+            custom_trigger_tooltip = {
+				tooltip = TT_OWN_KOS_PROVINCE
+				any_owned_province = {
+					has_estate = estate_khalasar
+				}
+			}
         }
-        
-        effect = {
-            capital_scope = {
-                cavalry = THIS
-                cavalry = THIS
-                cavalry = THIS
-                cavalry = THIS
-                cavalry = THIS
-                cavalry = THIS
-                cavalry = THIS
-                cavalry = THIS
-                cavalry = THIS
-                cavalry = THIS
+		
+		effect = {
+            custom_tooltip = TT_SPAWN_KOS_CAVALRY
+            
+            hidden_effect = {
+				capital_scope = {
+					cavalry = ROOT
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 2
+									has_estate = estate_khalasar
+								}
+							}
+						}
+						cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 3
+									has_estate = estate_khalasar
+								}
+							}
+						}
+						cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 4
+									has_estate = estate_khalasar
+								}
+							}
+						}
+						cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 5
+									has_estate = estate_khalasar
+                                }
+							}
+						}
+						cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 6
+									has_estate = estate_khalasar
+								}
+								estate_influence = {
+									estate = estate_khalasar
+									influence = 60
+								}
+							}
+						
+						}
+						cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 7
+									has_estate = estate_khalasar
+								}
+								estate_influence = {
+									estate = estate_khalasar
+									influence = 60
+								}
+							}
+						}
+						cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 8
+									has_estate = estate_khalasar
+								}
+								estate_influence = {
+									estate = estate_khalasar
+									influence = 60
+								}
+							}
+						}
+						cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 9
+									has_estate = estate_khalasar
+								}
+								estate_influence = {
+									estate = estate_khalasar
+									influence = 60
+								}
+							}
+						}
+						cavalry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 10
+									has_estate = estate_khalasar
+								}
+								estate_influence = {
+									estate = estate_khalasar
+									influence = 60
+								}
+							}
+						}
+						cavalry = ROOT
+					}
+				}
             }
             
+            add_estate_loyalty = {
+				estate = estate_khalasar
+				loyalty = -10
+			}
+            
             add_estate_influence_modifier = {
-                estate = estate_khalasar
-                desc = EST_VAL_RALLIED_WARRIORS
-                influence = 10
-                duration = 3650
-            }
-        }
-        
-        ai_will_do = {
-            factor = 1
-            modifier = {
+				estate = estate_khalasar
+				desc = EST_VAL_MUSTERED_CAVALRY
+				influence = 10
+				duration = 3650
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+            
+            modifier = {   
                 factor = 0
                 estate_influence = {
                     estate = estate_khalasar
                     influence = 60
-                }  
+                }	
             }
-            modifier = {
-                factor = 0
-                army_size_percentage = 0.75
-            }          
-        }
-    }
+		}
+	}
 }

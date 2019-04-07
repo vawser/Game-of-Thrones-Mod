@@ -1,0 +1,124 @@
+steward_control_disaster = {
+	potential = {
+        ai = no
+		has_estate = estate_stewards
+		estate_influence = {
+			estate = estate_stewards
+			influence = 60
+		}
+	}
+
+
+	can_start = {
+		has_any_disaster = no
+		estate_influence = {
+			estate = estate_stewards
+			influence = 80
+		}
+	}
+	
+	can_stop = {
+		NOT = {
+			estate_influence = {
+				estate = estate_stewards
+				influence = 80
+			}		
+		}
+	}
+	
+	down_progress = {
+		factor = 1
+	}
+	
+	progress = {
+		modifier = {
+			factor = 1
+			estate_influence = {
+				estate = estate_stewards
+				influence = 80
+			}
+			hidden_trigger = {
+				NOT = {
+					estate_influence = {
+						estate = estate_stewards
+						influence = 85
+					}			
+				}			
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_influence = {
+				estate = estate_stewards
+				influence = 85
+			}
+			hidden_trigger = {
+				NOT = {
+					estate_influence = {
+						estate = estate_stewards
+						influence = 90
+					}			
+				}			
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_influence = {
+				estate = estate_stewards
+				influence = 90
+			}
+			hidden_trigger = {
+				NOT = {
+					estate_influence = {
+						estate = estate_stewards
+						influence = 95
+					}			
+				}			
+			}
+		}	
+		modifier = {
+			factor = 4
+			estate_influence = {
+				estate = estate_stewards
+				influence = 95
+			}
+			hidden_trigger = {
+				NOT = {
+					estate_influence = {
+						estate = estate_stewards
+						influence = 100
+					}			
+				}			
+			}
+		}	
+		modifier = {
+			factor = 5
+			estate_influence = {
+				estate = estate_stewards
+				influence = 100
+			}
+		}		
+	}
+	
+	can_end = {
+		custom_trigger_tooltip = {
+			tooltip = EST_CRUSHED_STEWARDS
+			
+            NOT = { has_country_flag = steward_estate_in_power }					
+		}
+	}
+	
+	modifier = {	
+		global_tax_modifier = -0.5
+		global_unrest = 5
+	}
+
+	on_start = GOT_ESTATE_CONTROL.130
+	on_end = GOT_ESTATE_CONTROL.131
+	
+	on_monthly = {
+        1000 = GOT_ESTATE_CONTROL.1
+        50000 = 0
+	}
+}
+

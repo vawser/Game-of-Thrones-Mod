@@ -1,9 +1,9 @@
-estate_slaves_disaster = {
+kos_control_disaster = {
 	potential = {
         ai = no
-		has_estate = estate_slaves
+		has_estate = estate_khalasar
 		estate_influence = {
-			estate = estate_slaves
+			estate = estate_khalasar
 			influence = 60
 		}
 	}
@@ -12,7 +12,7 @@ estate_slaves_disaster = {
 	can_start = {
 		has_any_disaster = no
 		estate_influence = {
-			estate = estate_slaves
+			estate = estate_khalasar
 			influence = 80
 		}
 	}
@@ -20,7 +20,7 @@ estate_slaves_disaster = {
 	can_stop = {
 		NOT = {
 			estate_influence = {
-				estate = estate_slaves
+				estate = estate_khalasar
 				influence = 80
 			}		
 		}
@@ -34,13 +34,13 @@ estate_slaves_disaster = {
 		modifier = {
 			factor = 1
 			estate_influence = {
-				estate = estate_slaves
+				estate = estate_khalasar
 				influence = 80
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_slaves
+						estate = estate_khalasar
 						influence = 85
 					}			
 				}			
@@ -49,13 +49,13 @@ estate_slaves_disaster = {
 		modifier = {
 			factor = 2
 			estate_influence = {
-				estate = estate_slaves
+				estate = estate_khalasar
 				influence = 85
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_slaves
+						estate = estate_khalasar
 						influence = 90
 					}			
 				}			
@@ -64,13 +64,13 @@ estate_slaves_disaster = {
 		modifier = {
 			factor = 3
 			estate_influence = {
-				estate = estate_slaves
+				estate = estate_khalasar
 				influence = 90
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_slaves
+						estate = estate_khalasar
 						influence = 95
 					}			
 				}			
@@ -79,13 +79,13 @@ estate_slaves_disaster = {
 		modifier = {
 			factor = 4
 			estate_influence = {
-				estate = estate_slaves
+				estate = estate_khalasar
 				influence = 95
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_slaves
+						estate = estate_khalasar
 						influence = 100
 					}			
 				}			
@@ -94,7 +94,7 @@ estate_slaves_disaster = {
 		modifier = {
 			factor = 5
 			estate_influence = {
-				estate = estate_slaves
+				estate = estate_khalasar
 				influence = 100
 			}
 		}		
@@ -102,21 +102,23 @@ estate_slaves_disaster = {
 	
 	can_end = {
 		custom_trigger_tooltip = {
-			tooltip = EST_CRUSHED_SLAVES
+			tooltip = EST_CRUSHED_KOS
 			
-            NOT = { has_country_flag = slaves_estate_in_power }					
+            NOT = { has_country_flag = kos_estate_in_power }					
 		}
 	}
 	
 	modifier = {	
-		global_manpower_modifier = -0.5
-		global_unrest = 20
+		land_morale = -0.5
+        global_unrest = 5
 	}
 
-	on_start = GOT_ESTATES.64
-	on_end = GOT_ESTATES.65
+	on_start = GOT_ESTATE_CONTROL.50
+	on_end = GOT_ESTATE_CONTROL.51
 	
 	on_monthly = {
+        1000 = GOT_ESTATE_CONTROL.1
+        50000 = 0
 	}
 }
 

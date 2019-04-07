@@ -691,6 +691,14 @@ on_four_year_pulse = {
 		100 = GOT_RANDOM_COUNTRY.24 # Grand Tournament
 		100 = GOT_RANDOM_COUNTRY.25 # [Root.Heir.GetName] adores whores!
 		100 = GOT_RANDOM_COUNTRY.26 # War calls!
+        
+        100 = GOT_CULTURAL.1 # Deserters from the Wall
+		100 = GOT_CULTURAL.2 # Mountain Clan Turmoil
+		100 = GOT_CULTURAL.3 # The Old Way
+		100 = GOT_CULTURAL.4 # A Silken Lover...
+        
+		100 = GOT_MERCANTILISM.1
+        
 		10000 = 0
 	}
 }
@@ -699,14 +707,6 @@ on_four_year_pulse = {
 on_four_year_pulse_2 = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_four_year_pulse_2" }
     
-	random_events = {
-		100 = GOT_CULTURAL.1 # Deserters from the Wall
-		100 = GOT_CULTURAL.2 # Mountain Clan Turmoil
-		100 = GOT_CULTURAL.3 # The Old Way
-		100 = GOT_CULTURAL.4 # A Silken Lover...
-		100 = GOT_MERCANTILISM.1
-		5000 = 0
-	}
 }
 
 # Country
@@ -718,17 +718,6 @@ on_four_year_pulse_3 = {
 on_four_year_pulse_4 = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_four_year_pulse_4" }
     
-    random_events = {
-        100 = GOT_ESTATES.1 # A Noble Predicament
-		100 = GOT_ESTATES.2 # A Holy Predicament
-		100 = GOT_ESTATES.3 # A Trade Predicament
-		100 = GOT_ESTATES.4 # A Land Predicament
-        100 = GOT_ESTATES.5 # Chieftains Quarrel
-        100 = GOT_ESTATES.6 # Feuding Magi
-        100 = GOT_ESTATES.7 # Troublesome Bloodriders
-        
-        10000 = 0
-    }
 }
 
 # Country
@@ -736,16 +725,8 @@ on_five_year_pulse = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_five_year_pulse" }
 
 	random_events = {
-        900 = GOT_WHITE_WALKER.1 # Summer fades
-        10000 = 0
-	}
-}
-
-# Country
-on_five_year_pulse_2 = {
-    if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_five_year_pulse_2" }
-    
-	random_events = {
+        500 = GOT_WHITE_WALKER.1 # Summer fades
+        
 		100 = GOT_FAITH_OF_THE_SEVEN.2 # A warrior demands representation!
 		100 = GOT_FAITH_OF_THE_SEVEN.4 # Our Faith Rewarded!
 		100 = GOT_FAITH_OF_THE_SEVEN.5 # Hand of the Father
@@ -756,28 +737,11 @@ on_five_year_pulse_2 = {
 		100 = GOT_FAITH_OF_THE_SEVEN.10 # Whispers of the Crone
 		100 = GOT_FAITH_OF_THE_SEVEN.11 # Presence of the Stranger
 		100 = GOT_FAITH_OF_THE_SEVEN.12 # The Song of the Seven
-		10000 = 0
-	}
-}
-
-# Country
-on_five_year_pulse_3 = {
-    if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_five_year_pulse_3" }
-    
-	random_events = {
-		500 = GOT_NIGHTS_WATCH.1        # The Night's Watch demands men!
+        
+        500 = GOT_NIGHTS_WATCH.1        # The Night's Watch demands men!
 		500 = GOT_ACCOMPLISHMENTS.18    # A Noble Fool
         500 = GOT_VOLANTIS.10           # A Volantene Honor
         
-		10000 = 0
-	}
-}
-
-# Country
-on_five_year_pulse_4 = {
-    if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_five_year_pulse_4" }
-    
-	random_events = {
         200 = got_absolutism.1
         200 = got_absolutism.2
         200 = got_absolutism.3
@@ -788,6 +752,44 @@ on_five_year_pulse_4 = {
         
 		10000 = 0
 	}
+}
+
+# Country
+on_five_year_pulse_2 = {
+    if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_five_year_pulse_2" }
+    
+	random_events = {
+        100 = GOT_ESTATE_NOBILITY.1
+        100 = GOT_ESTATE_CLERGY.1
+        100 = GOT_ESTATE_MERCHANTS.1
+        100 = GOT_ESTATE_COMMONERS.1
+        100 = GOT_ESTATE_CHIEFTAINS.1
+		100 = GOT_ESTATE_KOS.1
+        100 = GOT_ESTATE_MAGI.1
+        100 = GOT_ESTATE_SLAVES.1
+        100 = GOT_ESTATE_JHATS.1
+        100 = GOT_ESTATE_BUCCANEERS.1
+        100 = GOT_ESTATE_SMUGGLERS.1
+        100 = GOT_ESTATE_CAPTAINS.1
+        100 = GOT_ESTATE_STEWARDS.1
+        100 = GOT_ESTATE_BUILDERS.1
+        100 = GOT_ESTATE_RANGERS.1
+        10000 = 0
+    }
+}
+
+# Country
+on_five_year_pulse_3 = {
+    if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_five_year_pulse_3" }
+    
+    
+}
+
+# Country
+on_five_year_pulse_4 = {
+    if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_five_year_pulse_4" }
+    
+    
 }
 
 # Province

@@ -1,9 +1,9 @@
-estate_magi_disaster = {
+commoner_control_disaster = {
 	potential = {
         ai = no
-		has_estate = estate_magi
+		has_estate = estate_commoners
 		estate_influence = {
-			estate = estate_magi
+			estate = estate_commoners
 			influence = 60
 		}
 	}
@@ -12,7 +12,7 @@ estate_magi_disaster = {
 	can_start = {
 		has_any_disaster = no
 		estate_influence = {
-			estate = estate_magi
+			estate = estate_commoners
 			influence = 80
 		}
 	}
@@ -20,7 +20,7 @@ estate_magi_disaster = {
 	can_stop = {
 		NOT = {
 			estate_influence = {
-				estate = estate_magi
+				estate = estate_commoners
 				influence = 80
 			}		
 		}
@@ -34,13 +34,13 @@ estate_magi_disaster = {
 		modifier = {
 			factor = 1
 			estate_influence = {
-				estate = estate_magi
+				estate = estate_commoners
 				influence = 80
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_magi
+						estate = estate_commoners
 						influence = 85
 					}			
 				}			
@@ -49,13 +49,13 @@ estate_magi_disaster = {
 		modifier = {
 			factor = 2
 			estate_influence = {
-				estate = estate_magi
+				estate = estate_commoners
 				influence = 85
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_magi
+						estate = estate_commoners
 						influence = 90
 					}			
 				}			
@@ -64,13 +64,13 @@ estate_magi_disaster = {
 		modifier = {
 			factor = 3
 			estate_influence = {
-				estate = estate_magi
+				estate = estate_commoners
 				influence = 90
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_magi
+						estate = estate_commoners
 						influence = 95
 					}			
 				}			
@@ -79,13 +79,13 @@ estate_magi_disaster = {
 		modifier = {
 			factor = 4
 			estate_influence = {
-				estate = estate_magi
+				estate = estate_commoners
 				influence = 95
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_magi
+						estate = estate_commoners
 						influence = 100
 					}			
 				}			
@@ -94,7 +94,7 @@ estate_magi_disaster = {
 		modifier = {
 			factor = 5
 			estate_influence = {
-				estate = estate_magi
+				estate = estate_commoners
 				influence = 100
 			}
 		}		
@@ -102,22 +102,23 @@ estate_magi_disaster = {
 	
 	can_end = {
 		custom_trigger_tooltip = {
-			tooltip = EST_CRUSHED_MAGI
+			tooltip = EST_CRUSHED_COMMONERS
 			
-            NOT = { has_country_flag = magi_estate_in_power }					
+            NOT = { has_country_flag = commoners_estate_in_power }					
 		}
 	}
 	
-	modifier = {	
-		all_power_cost = 0.2
-        yearly_corruption = 0.1
-        advisor_cost = 0.2
+	modifier = {
+        stability_cost_modifier = 2
+        global_unrest = 5
 	}
 
-	on_start = GOT_ESTATES.62
-	on_end = GOT_ESTATES.63
+	on_start = GOT_ESTATE_CONTROL.40
+	on_end = GOT_ESTATE_CONTROL.41
 	
 	on_monthly = {
+        1000 = GOT_ESTATE_CONTROL.1
+        50000 = 0
 	}
 }
 

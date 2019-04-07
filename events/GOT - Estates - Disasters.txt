@@ -1,0 +1,617 @@
+namespace = GOT_ESTATE_CONTROL
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.1
+	title = GOT_ESTATE_CONTROL.1.title
+	desc = GOT_ESTATE_CONTROL.1.desc
+	picture = OVEREXTENSION_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        NOT = { num_of_rebel_armies = 3 }
+        any_owned_province = {
+            NOT = { controlled_by = REB }
+        }
+    }
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.1.option.a
+        
+		random_owned_province = {
+            limit = {
+                NOT = { controlled_by = REB }
+            }
+            spawn_rebels = {
+                size = 3
+                type = pretender_rebels
+                win = yes
+            }
+        }
+	}
+}
+
+#----------------------------------------------
+# Nobility
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.10
+	title = GOT_ESTATE_CONTROL.10.title
+	desc = GOT_ESTATE_CONTROL.10.desc
+	picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = noble_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.10.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_NOBLES_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.11
+	title = GOT_ESTATE_CONTROL.11.title
+	desc = GOT_ESTATE_CONTROL.11.desc
+	picture = NOBLE_ESTATE_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.11.option.a
+	}
+}
+
+#----------------------------------------------
+# Clergy
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.20
+	title = GOT_ESTATE_CONTROL.20.title
+	desc = GOT_ESTATE_CONTROL.20.desc
+	picture = CLERGY_ESTATE_TAKE_OVER_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = clergy_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.20.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_CLERGY_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.21
+	title = GOT_ESTATE_CONTROL.21.title
+	desc = GOT_ESTATE_CONTROL.21.desc
+	picture = CLERGY_ESTATE_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.21.option.a
+	}
+}
+
+#----------------------------------------------
+# Merchants
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.30
+	title = GOT_ESTATE_CONTROL.30.title
+	desc = GOT_ESTATE_CONTROL.30.desc
+	picture = BURGHERS_ESTATE_TAKE_OVER_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = merchants_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.30.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_MERCHANTS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.31
+	title = GOT_ESTATE_CONTROL.31.title
+	desc = GOT_ESTATE_CONTROL.31.desc
+	picture = BURGHERS_ESTATE_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.31.option.a
+	}
+}
+
+#----------------------------------------------
+# Commoners
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.40
+	title = GOT_ESTATE_CONTROL.40.title
+	desc = GOT_ESTATE_CONTROL.40.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = commoners_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.40.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_COMMONERS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.41
+	title = GOT_ESTATE_CONTROL.41.title
+	desc = GOT_ESTATE_CONTROL.41.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.41.option.a
+	}
+}
+
+#----------------------------------------------
+# Kos
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.50
+	title = GOT_ESTATE_CONTROL.50.title
+	desc = GOT_ESTATE_CONTROL.50.desc
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = kos_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.50.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_KOS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.51
+	title = GOT_ESTATE_CONTROL.51.title
+	desc = GOT_ESTATE_CONTROL.51.desc
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.51.option.a
+	}
+}
+
+#----------------------------------------------
+# Chieftains
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.60
+	title = GOT_ESTATE_CONTROL.60.title
+	desc = GOT_ESTATE_CONTROL.60.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = chieftains_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.60.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_CHIEFTAINS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.61
+	title = GOT_ESTATE_CONTROL.61.title
+	desc = GOT_ESTATE_CONTROL.61.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.61.option.a
+	}
+}
+
+#----------------------------------------------
+# Magi
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.70
+	title = GOT_ESTATE_CONTROL.70.title
+	desc = GOT_ESTATE_CONTROL.70.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = magi_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.70.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_MAGI_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.71
+	title = GOT_ESTATE_CONTROL.71.title
+	desc = GOT_ESTATE_CONTROL.71.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.71.option.a
+	}
+}
+
+#----------------------------------------------
+# Slaves
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.80
+	title = GOT_ESTATE_CONTROL.80.title
+	desc = GOT_ESTATE_CONTROL.80.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = slaves_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.80.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_SLAVES_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.81
+	title = GOT_ESTATE_CONTROL.81.title
+	desc = GOT_ESTATE_CONTROL.81.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.81.option.a
+	}
+}
+
+#----------------------------------------------
+# Jhats
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.90
+	title = GOT_ESTATE_CONTROL.90.title
+	desc = GOT_ESTATE_CONTROL.90.desc
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = jhat_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.90.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_JHATS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.91
+	title = GOT_ESTATE_CONTROL.91.title
+	desc = GOT_ESTATE_CONTROL.91.desc
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.91.option.a
+	}
+}
+
+#----------------------------------------------
+# Buccaneers
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.100
+	title = GOT_ESTATE_CONTROL.100.title
+	desc = GOT_ESTATE_CONTROL.100.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = buccaneer_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.100.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_BUCCANEERS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.101
+	title = GOT_ESTATE_CONTROL.101.title
+	desc = GOT_ESTATE_CONTROL.101.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.101.option.a
+	}
+}
+
+#----------------------------------------------
+# Smugglers
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.110
+	title = GOT_ESTATE_CONTROL.110.title
+	desc = GOT_ESTATE_CONTROL.110.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = smuggler_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.110.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_SMUGGLERS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.111
+	title = GOT_ESTATE_CONTROL.111.title
+	desc = GOT_ESTATE_CONTROL.111.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.111.option.a
+	}
+}
+
+#----------------------------------------------
+# Captains
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.120
+	title = GOT_ESTATE_CONTROL.120.title
+	desc = GOT_ESTATE_CONTROL.120.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = captain_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.120.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_CAPTAINS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.121
+	title = GOT_ESTATE_CONTROL.121.title
+	desc = GOT_ESTATE_CONTROL.121.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.121.option.a
+	}
+}
+
+#----------------------------------------------
+# Stewards
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.130
+	title = GOT_ESTATE_CONTROL.130.title
+	desc = GOT_ESTATE_CONTROL.130.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = steward_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.130.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_STEWARDS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.131
+	title = GOT_ESTATE_CONTROL.131.title
+	desc = GOT_ESTATE_CONTROL.131.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.131.option.a
+	}
+}
+
+#----------------------------------------------
+# Builders
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.140
+	title = GOT_ESTATE_CONTROL.140.title
+	desc = GOT_ESTATE_CONTROL.140.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = builder_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.140.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_BUILDERS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.141
+	title = GOT_ESTATE_CONTROL.141.title
+	desc = GOT_ESTATE_CONTROL.141.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.141.option.a
+	}
+}
+
+#----------------------------------------------
+# Rangers
+#----------------------------------------------
+country_event = {
+	id = GOT_ESTATE_CONTROL.150
+	title = GOT_ESTATE_CONTROL.150.title
+	desc = GOT_ESTATE_CONTROL.150.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = ranger_estate_in_power
+	}
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.150.option.a
+        
+		add_stability = -1
+        
+		custom_tooltip = TT_ESTATE_RANGERS_DISASTER_EVENT
+	}
+}
+
+country_event = {
+	id = GOT_ESTATE_CONTROL.151
+	title = GOT_ESTATE_CONTROL.151.title
+	desc = GOT_ESTATE_CONTROL.151.desc
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ESTATE_CONTROL.151.option.a
+	}
+}

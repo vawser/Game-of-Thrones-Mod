@@ -1,9 +1,9 @@
-estate_khalasar_disaster = {
+noblility_control_disaster = {
 	potential = {
         ai = no
-		has_estate = estate_khalasar
+		has_estate = estate_nobles
 		estate_influence = {
-			estate = estate_khalasar
+			estate = estate_nobles
 			influence = 60
 		}
 	}
@@ -12,7 +12,7 @@ estate_khalasar_disaster = {
 	can_start = {
 		has_any_disaster = no
 		estate_influence = {
-			estate = estate_khalasar
+			estate = estate_nobles
 			influence = 80
 		}
 	}
@@ -20,7 +20,7 @@ estate_khalasar_disaster = {
 	can_stop = {
 		NOT = {
 			estate_influence = {
-				estate = estate_khalasar
+				estate = estate_nobles
 				influence = 80
 			}		
 		}
@@ -34,13 +34,13 @@ estate_khalasar_disaster = {
 		modifier = {
 			factor = 1
 			estate_influence = {
-				estate = estate_khalasar
+				estate = estate_nobles
 				influence = 80
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_khalasar
+						estate = estate_nobles
 						influence = 85
 					}			
 				}			
@@ -49,13 +49,13 @@ estate_khalasar_disaster = {
 		modifier = {
 			factor = 2
 			estate_influence = {
-				estate = estate_khalasar
+				estate = estate_nobles
 				influence = 85
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_khalasar
+						estate = estate_nobles
 						influence = 90
 					}			
 				}			
@@ -64,13 +64,13 @@ estate_khalasar_disaster = {
 		modifier = {
 			factor = 3
 			estate_influence = {
-				estate = estate_khalasar
+				estate = estate_nobles
 				influence = 90
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_khalasar
+						estate = estate_nobles
 						influence = 95
 					}			
 				}			
@@ -79,13 +79,13 @@ estate_khalasar_disaster = {
 		modifier = {
 			factor = 4
 			estate_influence = {
-				estate = estate_khalasar
+				estate = estate_nobles
 				influence = 95
 			}
 			hidden_trigger = {
 				NOT = {
 					estate_influence = {
-						estate = estate_khalasar
+						estate = estate_nobles
 						influence = 100
 					}			
 				}			
@@ -94,7 +94,7 @@ estate_khalasar_disaster = {
 		modifier = {
 			factor = 5
 			estate_influence = {
-				estate = estate_khalasar
+				estate = estate_nobles
 				influence = 100
 			}
 		}		
@@ -102,22 +102,23 @@ estate_khalasar_disaster = {
 	
 	can_end = {
 		custom_trigger_tooltip = {
-			tooltip = EST_CRUSHED_KOS
+			tooltip = EST_CRUSHED_NOBLES
 			
-            NOT = { has_country_flag = kos_estate_in_power }					
+            NOT = { has_country_flag = noble_estate_in_power }					
 		}
 	}
 	
 	modifier = {	
-		cavalry_cost = 0.5
-        cavalry_flanking = -0.25
-        cavalry_power = -0.1
+		global_manpower_modifier = -0.5
+		global_unrest = 5
 	}
 
-	on_start = GOT_ESTATES.58
-	on_end = GOT_ESTATES.59
+	on_start = GOT_ESTATE_CONTROL.10
+	on_end = GOT_ESTATE_CONTROL.11
 	
 	on_monthly = {
+        1000 = GOT_ESTATE_CONTROL.1
+        50000 = 0
 	}
 }
 

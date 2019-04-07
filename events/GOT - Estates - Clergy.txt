@@ -1,0 +1,75 @@
+namespace = GOT_ESTATE_CLERGY
+
+# A Holy Predicament
+country_event = {
+	id = GOT_ESTATE_CLERGY.1
+	title = GOT_ESTATE_CLERGY.1.title
+	desc = GOT_ESTATE_CLERGY.1.desc
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_estate = estate_clergy
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_clergy
+                modifier = EST_VAL_RESOLVED_PREDICAMENT
+            }
+        }
+        NOT = {
+            has_estate_influence_modifier = {
+                estate = estate_clergy
+                modifier = EST_VAL_PREDICAMENT_INFLUENCE
+            }
+        }
+	}
+	
+	option = {
+		name = GOT_ESTATE_CLERGY.1.option.a
+		
+		add_estate_loyalty = {
+			estate = estate_clergy
+			loyalty = 15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_clergy
+			desc = EST_VAL_RESOLVED_PREDICAMENT
+			influence = 15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				
+				estate_influence = {
+					estate = estate_clergy
+					influence = 60
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_ESTATE_CLERGY.1.option.b
+		
+		add_estate_loyalty = {
+			estate = estate_clergy
+			loyalty = -15
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_clergy
+			desc = EST_VAL_PREDICAMENT_INFLUENCE
+			influence = -15
+			duration = 7200
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}

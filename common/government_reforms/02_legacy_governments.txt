@@ -1575,8 +1575,11 @@ nights_watch_legacy = {
     duration = 10
     has_term_election = no
     
+    min_autonomy = 50
+    
     modifiers = {
-    	global_regiment_cost = -0.33
+    	global_regiment_cost = -0.1
+        global_unrest = -1
 	}
     
     custom_attributes = {
@@ -1601,8 +1604,11 @@ outpost_legacy = {
     has_term_election = no
     
     modifiers = {
-    	global_regiment_cost = -0.33
+    	global_regiment_cost = -0.1
+        global_unrest = -1
 	}
+    
+    min_autonomy = 50
     
     custom_attributes = {
 		enables_republic_ideagroup = yes

@@ -12,18 +12,19 @@ country_event = {
 
 	trigger = {
         NOT = { has_country_flag = looking_for_dragon_eggs }
-        OR = {
-            tag = S23
-            tag = CRW
-            AND = {
-                is_playing_custom_nation = yes
-                culture_group = culture_valyrian
-            }
-        }
 	}
 	
 	mean_time_to_happen = {
-		months = 7200
+		months = 6000
+        
+        modifier = {
+            factor = 0.1
+            
+            OR = {
+                tag = CRW
+                tag = A10
+            }
+        }
 	}
 	
 	option = {

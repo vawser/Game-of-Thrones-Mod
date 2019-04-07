@@ -49,7 +49,7 @@ country_event = {
     }  
 }
 
-# Ruler - on_x_development
+# Ruler - on_adm_development
 province_event = {
 	id = GOT_RULER_IMPROVEMENT.3
 	title = GOT_RULER_IMPROVEMENT.3.title
@@ -96,6 +96,56 @@ province_event = {
         name = GOT_RULER_IMPROVEMENT.4.option.a
 
         owner = { change_dip = 1 }
+    }  
+}
+
+# Ruler - on_dip_development
+province_event = {
+	id = GOT_RULER_IMPROVEMENT.5
+	title = GOT_RULER_IMPROVEMENT.3.title
+	desc = GOT_RULER_IMPROVEMENT.3.desc
+	picture = CULTURE_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        owner = { NOT = { dip = 6 } }
+        owner = { is_subject = no } # Exclude overlord developing in subject
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_RULER_IMPROVEMENT.3.option.a
+
+        owner = { change_dip = 1 }
+    }  
+}
+
+# Ruler - on_mil_development
+province_event = {
+	id = GOT_RULER_IMPROVEMENT.6
+	title = GOT_RULER_IMPROVEMENT.3.title
+	desc = GOT_RULER_IMPROVEMENT.3.desc
+	picture = CULTURE_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        owner = { NOT = { mil = 6 } }
+        owner = { is_subject = no } # Exclude overlord developing in subject
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_RULER_IMPROVEMENT.3.option.a
+
+        owner = { change_mil = 1 }
     }  
 }
 
@@ -150,7 +200,7 @@ country_event = {
     }  
 }
 
-# Heir - on_x_development
+# Heir - on_adm_development
 province_event = {
 	id = GOT_RULER_IMPROVEMENT.12
 	title = GOT_RULER_IMPROVEMENT.12.title
@@ -199,5 +249,57 @@ province_event = {
         name = GOT_RULER_IMPROVEMENT.13.option.a
 
         owner = { change_heir_dip  = 1 }
+    }  
+}
+
+# Heir - on_dip_development
+province_event = {
+	id = GOT_RULER_IMPROVEMENT.14
+	title = GOT_RULER_IMPROVEMENT.12.title
+	desc = GOT_RULER_IMPROVEMENT.12.desc
+	picture = CULTURE_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        owner = { has_heir = yes }
+        owner = { NOT = { heir_dip = 6 } }
+        owner = { is_subject = no } # Exclude overlord developing in subject
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_RULER_IMPROVEMENT.12.option.a
+
+        owner = { change_heir_dip = 1 }
+    }  
+}
+
+# Heir - on_mil_development
+province_event = {
+	id = GOT_RULER_IMPROVEMENT.15
+	title = GOT_RULER_IMPROVEMENT.12.title
+	desc = GOT_RULER_IMPROVEMENT.12.desc
+	picture = CULTURE_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        owner = { has_heir = yes }
+        owner = { NOT = { heir_mil = 6 } }
+        owner = { is_subject = no } # Exclude overlord developing in subject
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = GOT_RULER_IMPROVEMENT.12.option.a
+
+        owner = { change_heir_mil = 1 }
     }  
 }

@@ -169,8 +169,12 @@ NDefines.NEconomy.GOLD_INFLATION = 0.1
 NDefines.NEconomy.TREASURE_FLEET_INFLATION = 0.1
 NDefines.NEconomy.INFLATION_FROM_LOAN = 0.1
 
-NDefines.NEconomy.MISSIONARY_MAINTENANCE_DEVELOPMENT_CAP = 20
-
+NDefines.NEconomy.MISSIONARY_MAINTENANCE_FACTOR = 0.0				-- How much a missionary costs in itself
+NDefines.NEconomy.MISSIONARY_MAINTENANCE_DEVELOPMENT_FACTOR = 5.0	-- How much this is ncreased from development
+NDefines.NEconomy.MISSIONARY_MAINTENANCE_AUTONOMY_FACTOR = 0.0		-- How much this is ncreased from local autonomy
+NDefines.NEconomy.MISSIONARY_MAINTENANCE_AUTONOMY_BASE = 0.0	    -- The local autonomy is added to this base in the formula.
+NDefines.NEconomy.MISSIONARY_MAINTENANCE_DEVELOPMENT_CAP = 100
+    
 --------------------------------
 -- Diplomacy
 --------------------------------

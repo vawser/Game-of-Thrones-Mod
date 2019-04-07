@@ -11,40 +11,47 @@ country_event = {
     
     trigger = {
         NOT = { has_global_flag = edict_unite_the_seven_kingdoms }
-        has_country_flag = processor
+        has_reform = royal_house_reform
+        NOT = { has_country_modifier = royal_influence_timer }
     }
 
     mean_time_to_happen = {
-        days = 30
+        days = 1
+    }
+    
+    immediate = {
+        hidden_effect = { 
+            add_country_modifier = {
+                name = royal_influence_timer
+                duration = 335
+                hidden = yes
+            }
+        }
     }
     
     option = {
-        name = GOT_ROYAL_EDICTS.7.option.a
+        name = GOT_ROYAL_EDICTS.1.option.a
 
-        every_country = {
-            limit = { has_reform = royal_house_reform }
+        # Base
+        change_variable = { which = royal_influence value = 1 }
             
-            # Base
+        if = {
+            limit = {
+                has_idea = got_law_ideas_6
+            }
             change_variable = { which = royal_influence value = 1 }
-            
-            if = {
-                limit = {
-                    has_idea = got_law_ideas_6
-                }
-                change_variable = { which = royal_influence value = 1 }
+        }
+        if = {
+            limit = {
+                has_idea = got_dynastic_ideas_3
             }
-            if = {
-                limit = {
-                    has_idea = got_dynastic_ideas_3
-                }
-                change_variable = { which = royal_influence value = 1 }
+            change_variable = { which = royal_influence value = 1 }
+        }
+        if = {
+            limit = {
+                has_idea = got_subjugation_ideas_2
             }
-            if = {
-                limit = {
-                    has_idea = got_subjugation_ideas_2
-                }
-                change_variable = { which = royal_influence value = 1 }
-            }
+            change_variable = { which = royal_influence value = 1 }
         }
     }  
 }
@@ -66,7 +73,7 @@ country_event = {
     option = {
         name = GOT_ROYAL_EDICTS.2.option.a
 
-        change_variable = { which = royal_influence value = 50 }
+        change_variable = { which = royal_influence value = 10 }
     }  
 }
 
@@ -89,9 +96,9 @@ country_event = {
 
         if = {
             limit = {
-                check_variable = { which = royal_influence value = 50 }
+                check_variable = { which = royal_influence value = 10 }
             }
-            subtract_variable = { which = royal_influence value = -50 }
+            subtract_variable = { which = royal_influence value = -10 }
         }
         else = {
             set_variable = { which = royal_influence value = 0 }
@@ -125,7 +132,7 @@ country_event = {
     option = {
         name = GOT_ROYAL_EDICTS.4.option.a
 
-        change_variable = { which = royal_influence value = 20 }
+        change_variable = { which = royal_influence value = 5 }
     }  
 }
 
@@ -149,9 +156,9 @@ country_event = {
 
         if = {
             limit = {
-                check_variable = { which = royal_influence value = 20 }
+                check_variable = { which = royal_influence value = 5 }
             }
-            subtract_variable = { which = royal_influence value = -20 }
+            subtract_variable = { which = royal_influence value = -5 }
         }
         else = {
             set_variable = { which = royal_influence value = 0 }
@@ -180,7 +187,7 @@ country_event = {
     option = {
         name = GOT_ROYAL_EDICTS.6.option.a
 
-        change_variable = { which = royal_influence value = 40 }
+        change_variable = { which = royal_influence value = 10 }
     }  
 }
 
@@ -196,13 +203,13 @@ country_event = {
     trigger = {
         NOT = { has_global_flag = edict_unite_the_seven_kingdoms }
         has_reform = royal_house_reform
-        check_variable = { which = royal_influence value = 50 }
+        check_variable = { which = royal_influence value = 10 }
     }
     
     option = {
         name = GOT_ROYAL_EDICTS.10.option.a
 
-        subtract_variable = { which = royal_influence value = -50 }
+        subtract_variable = { which = royal_influence value = -10 }
     } 
     option = {
         name = GOT_ROYAL_EDICTS.10.option.b
@@ -223,13 +230,13 @@ country_event = {
     trigger = {
         NOT = { has_global_flag = edict_unite_the_seven_kingdoms }
         has_reform = royal_house_reform
-        check_variable = { which = royal_influence value = 50 }
+        check_variable = { which = royal_influence value = 10 }
     }
     
     option = {
         name = GOT_ROYAL_EDICTS.11.option.a
 
-        subtract_variable = { which = royal_influence value = -50 }
+        subtract_variable = { which = royal_influence value = -10 }
     } 
     option = {
         name = GOT_ROYAL_EDICTS.11.option.a
@@ -250,13 +257,13 @@ country_event = {
     trigger = {
         NOT = { has_global_flag = edict_unite_the_seven_kingdoms }
         has_reform = royal_house_reform
-        check_variable = { which = royal_influence value = 50 }
+        check_variable = { which = royal_influence value = 10 }
     }
     
     option = {
         name = GOT_ROYAL_EDICTS.12.option.a
 
-        subtract_variable = { which = royal_influence value = -50 }
+        subtract_variable = { which = royal_influence value = -10 }
     } 
     option = {
         name = GOT_ROYAL_EDICTS.12.option.a

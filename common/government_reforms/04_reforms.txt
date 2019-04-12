@@ -4,10 +4,6 @@
 taxation_reform = {
 	icon = "paper_money_map"
 
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		global_tax_modifier = 0.2
 	}
@@ -15,10 +11,6 @@ taxation_reform = {
 manpower_reform = {
 	icon = "soldiers"
 
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		global_manpower_modifier = 0.2
 	}
@@ -26,20 +18,12 @@ manpower_reform = {
 production_reform = {
 	icon = "dutch_flag"
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		production_efficiency = 0.2
 	}
 }
 trade_reform = {
 	icon = "merchant"
-    
-    effect = {
-        add_stability = -1
-    }
     
     modifiers = {
 		trade_efficiency = 0.2
@@ -56,10 +40,6 @@ noble_counsel_reform = {
         has_estate = estate_nobles
     }
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		prestige_decay = -0.01
 	}
@@ -69,10 +49,6 @@ religious_counsel_reform = {
 
     potential = {
         has_estate = estate_clergy
-    }
-    
-    effect = {
-        add_stability = -1
     }
     
     modifiers = {
@@ -86,10 +62,6 @@ merchant_counsel_reform = {
         has_estate = estate_merchants
     }
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		global_trade_power = 0.1
 	}
@@ -99,10 +71,6 @@ common_counsel_reform = {
     
     potential = {
         has_estate = estate_commoners
-    }
-    
-    effect = {
-        add_stability = -1
     }
     
     modifiers = {
@@ -116,10 +84,6 @@ ko_counsel_reform = {
         has_estate = estate_khalasar
     }
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
         cavalry_shock = 1
 	}
@@ -129,10 +93,6 @@ jhat_counsel_reform = {
     
     potential = {
         has_estate = estate_jhats
-    }
-    
-    effect = {
-        add_stability = -1
     }
     
     modifiers = {
@@ -146,10 +106,6 @@ chieftain_counsel_reform = {
         has_estate = estate_chieftains
     }
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
         land_forcelimit_modifier = 0.1
 	}
@@ -159,10 +115,6 @@ magi_counsel_reform = {
     
     potential = {
         has_estate = estate_magi
-    }
-    
-    effect = {
-        add_stability = -1
     }
     
     modifiers = {
@@ -177,10 +129,6 @@ slave_counsel_reform = {
         NOT = { has_country_modifier = slavery_prohibited }
     }
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
         global_manpower_modifier = 0.1
 	}
@@ -192,20 +140,12 @@ slave_counsel_reform = {
 absolute_authority_reform = {
 	icon = "fist_in_air"
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		global_autonomy = -0.1
 	}
 }
 central_authority_reform = {
 	icon = "parliament"
-    
-    effect = {
-        add_stability = -1
-    }
     
     modifiers = {
 		autonomy_change_time = -0.5
@@ -214,10 +154,6 @@ central_authority_reform = {
 regional_authority_reform = {
 	icon = "free_city"
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		stability_cost_modifier = -0.25
 	}
@@ -225,10 +161,6 @@ regional_authority_reform = {
 local_authority_reform = {
 	icon = "man_on_podium"
 
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		global_unrest = -3
 	}
@@ -240,10 +172,6 @@ local_authority_reform = {
 court_justice_reform = {
 	icon = "judge"
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		diplomatic_reputation = 2
 	}
@@ -251,20 +179,12 @@ court_justice_reform = {
 community_justice_reform = {
 	icon = "peasants"
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		ae_impact = -0.15
 	}
 }
 torture_justice_reform = {
 	icon = "fist_in_air"
-    
-    effect = {
-        add_stability = -1
-    }
     
     modifiers = {
 		unjustified_demands = -0.25
@@ -277,20 +197,12 @@ enslavement_justice_reform = {
         has_country_modifier = slavery_permitted
     }
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		global_manpower_modifier = 0.15
 	}
 }
 death_justice_reform = {
 	icon = "soldiers_4"
-    
-    effect = {
-        add_stability = -1
-    }
     
     modifiers = {
 		core_creation = -0.1
@@ -303,20 +215,12 @@ death_justice_reform = {
 excellent_administrators_reform = {
 	icon = "judge"
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
         monarch_admin_power = 1 
 	}
 }
 charismatic_family_reform = {
 	icon = "nobleman"
-    
-    effect = {
-        add_stability = -1
-    }
     
     modifiers = {
         monarch_diplomatic_power = 1 
@@ -325,20 +229,12 @@ charismatic_family_reform = {
 warminded_leaders_reform = {
 	icon = "soldiers"
     
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
         monarch_military_power = 1 
 	}
 }
 populist_demagogues_reform = {
 	icon = "man_on_podium"
-    
-    effect = {
-        add_stability = -1
-    }
     
     modifiers = {
         reelection_cost = -0.25
@@ -351,10 +247,6 @@ militarized_rulers_reform = {
         has_dlc = "Rights of Man"
     }
     
-    effect = {
-        add_stability = -1
-    }
-    
     militarised_society = yes
 }
 rule_by_council_reform = {
@@ -365,10 +257,6 @@ rule_by_council_reform = {
         always = no # Add Parliament stuff first
     }
     
-    effect = {
-        add_stability = -1
-    }
-    
     has_parliament = yes
 }
 assimilation_reform = {
@@ -376,10 +264,6 @@ assimilation_reform = {
     
     potential = {
         has_dlc = "Dharma"
-    }
-    
-    effect = {
-        add_stability = -1
     }
     
     assimilation_cultures = {
@@ -545,10 +429,6 @@ assimilation_reform = {
 disciplined_army_reform = {
 	icon = "soldiers"
 
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		army_tradition = 1
 	}
@@ -556,10 +436,6 @@ disciplined_army_reform = {
 peerless_navy_reform = {
 	icon = "map"
 
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		navy_tradition = 1
 	}
@@ -567,10 +443,6 @@ peerless_navy_reform = {
 beloved_diplomats_reform = {
 	icon = "queen"
 
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		diplomatic_reputation = 3
 	}
@@ -578,20 +450,12 @@ beloved_diplomats_reform = {
 keen_minds_reform = {
 	icon = "constitution"
 
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		technology_cost = -0.1
 	}
 }
 inquistorial_fury_reform = {
 	icon = "papacy"
-    
-    effect = {
-        add_stability = -1
-    }
     
     modifiers = {
 		global_missionary_strength = 0.03
@@ -600,10 +464,6 @@ inquistorial_fury_reform = {
 burning_scrutiny_reform = {
 	icon = "paper_with_seal"
 
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		yearly_corruption = -0.1
 	}
@@ -611,20 +471,12 @@ burning_scrutiny_reform = {
 fed_and_plump_reform = {
 	icon = "peasants"
    
-    effect = {
-        add_stability = -1
-    }
-    
     modifiers = {
 		years_of_nationalism = -10
 	}
 }
 mercantile_infamy_reform = {
 	icon = "merchant"
-    
-    effect = {
-        add_stability = -1
-    }
     
     modifiers = {
 		global_trade_power = 0.25

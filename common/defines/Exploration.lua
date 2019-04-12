@@ -2,6 +2,7 @@
 -- Exploration
 --------------------------------
 NDefines.NCountry.EXPLORE_COAST_EVENT_CHANCE = 10
+NDefines.MIN_TECH_FOR_CIRCUMNAVIGATE = 20
 NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_1 = 887
 NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_2 = 1045
 NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_3 = 1019

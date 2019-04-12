@@ -111,7 +111,7 @@ NDefines.NCountry.CORE_LOSE_PRIMARY_CULTURE_TAG = -1
 --------------------------------
 -- Ideas
 --------------------------------
-NDefines.NCountry.PS_BUY_IDEA = 500
+NDefines.NCountry.PS_BUY_IDEA = 400
 NDefines.NCountry.FREE_IDEA_GROUP_COST = 3
 NDefines.NCountry.MAX_IDEA_GROUPS_FROM_SAME_CATEGORY = 1.0
 NDefines.NCountry.ABANDON_IDEAGROUP_REFUND = 0.1
@@ -119,9 +119,9 @@ NDefines.NCountry.ABANDON_IDEAGROUP_REFUND = 0.1
 --------------------------------
 -- Technology
 --------------------------------
-NDefines.NCountry.PS_ADVANCE_TECH = 1000
+NDefines.NCountry.PS_ADVANCE_TECH = 600
 NDefines.NCountry.TECH_TIME_COST = 0.0
-NDefines.NCountry.TECH_AHEAD_OF_TIME = 0.00
+NDefines.NCountry.TECH_AHEAD_OF_TIME = 0.0
 
 --------------------------------
 -- Policies

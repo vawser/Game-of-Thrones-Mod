@@ -6,13 +6,17 @@ technology = {
     sprite_level = 1
     
     land_morale 		= 2.0
-
-    infantry_fire		= 0.5
-    infantry_shock 	    = 0.5
-    cavalry_fire  	    = 0.5
-    cavalry_shock   	= 1
-    artillery_fire 	    = 1
-    artillery_shock  	= 0.5
+    military_tactics    = 0.0
+    combat_width        = 0.0
+    supply_limit        = 0.0
+    maneuver_value      = 0.0
+    
+    infantry_fire		= 0.0
+    infantry_shock 	    = 0.0
+    cavalry_fire  	    = 0.0
+    cavalry_shock   	= 0.0
+    artillery_fire 	    = 0.0
+    artillery_shock  	= 0.0
     
     barracks = yes
     drill_square = yes
@@ -216,7 +220,6 @@ technology = {
     enable = kdathi_ram
     enable = kdathi_trebuchet
 }
-
 # 1
 technology = {
 	year = 100
@@ -225,88 +228,136 @@ technology = {
 }
 # 2
 technology = {
-	year = 400
+	year = 10000
     
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
+    land_morale = 0.2
     combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
 }
 # 3
 technology = {
-	year = 500
+	year = 10001
     
-    land_morale = 0.1
-    military_tactics = 0.1
+    military_tactics = 0.2
     supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
 }
 # 4
 technology = {
-	year = 600
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
+	year = 10002
     
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
+    infantry_fire = 0.1
+    infantry_shock = 0.1
 }
 # 5
 technology = {
-	year = 700
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
+	year = 10003
     
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
+    cavalry_fire = 0.1
+    cavalry_shock = 0.2
+    maneuver_value = 0.1
 }
 # 6
 technology = {
-	year = 800
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
+	year = 10004
     
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
+    artillery_fire = 0.2
+    artillery_shock = 0.1
+}
+# 7
+technology = {
+	year = 10005
+    
+    land_morale = 0.2
+    combat_width = 1
+}
+# 8
+technology = {
+	year = 10006
+    
+    military_tactics = 0.2
+    supply_limit = 0.1
+}
+# 9
+technology = {
+	year = 10007
+    
+    infantry_fire = 0.1
+    infantry_shock = 0.1
+}
+# 10
+technology = {
+	year = 10008
+    
+    cavalry_fire = 0.1
+    cavalry_shock = 0.2
+    maneuver_value = 0.1
+}
+# 11
+technology = {
+	year = 10009
+    
+    artillery_fire = 0.2
+    artillery_shock = 0.1
+}
+# 12
+technology = {
+	year = 10010
+    
+    land_morale = 0.4
+    combat_width = 2
+}
+# 13
+technology = {
+	year = 10011
+    
+    military_tactics = 0.4
+    supply_limit = 0.2
+}
+# 14
+technology = {
+	year = 10012
+    
+    infantry_fire = 0.2
+    infantry_shock = 0.2
+}
+# 15
+technology = {
+	year = 10013
+    
+    cavalry_fire = 0.2
+    cavalry_shock = 0.4
+    maneuver_value = 0.2
+}
+# 16
+technology = {
+	year = 10014
+    
+    artillery_fire = 0.4
+    artillery_shock = 0.2
+}
+# 17
+technology = {
+	year = 10015
+    
+    land_morale = 0.4
+    combat_width = 2
+}
+# 18
+technology = {
+	year = 10016
+    
+    military_tactics = 0.4
+    supply_limit = 0.2
+}
+# 19
+technology = {
+	year = 10017
+    
+    infantry_fire = 0.2
+    infantry_shock = 0.2
+}
+# 20
+technology = {
+	year = 10018
     
     enable = asshai_magi
     enable = valyrian_dragon_rider
@@ -500,277 +551,159 @@ technology = {
     enable = kdathi_lancer
     enable = kdathi_capped_ram
     enable = kdathi_reinforced_trebuchet
-}
-# 7
-technology = {
-	year = 900
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
     
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 8
-technology = {
-	year = 1000
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 9
-technology = {
-	year = 1100
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 10
-technology = {
-	year = 1200
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 11
-technology = {
-	year = 1300
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 12
-technology = {
-	year = 1400
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 13
-technology = {
-	year = 1500
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 14
-technology = {
-	year = 1600
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 15
-technology = {
-	year = 1700
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 16
-technology = {
-	year = 1800
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 17
-technology = {
-	year = 1900
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 18
-technology = {
-	year = 2000
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 19
-technology = {
-	year = 2100
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
-}
-# 20
-technology = {
-	year = 2200
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
-    
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
+    cavalry_fire = 0.2
+    cavalry_shock = 0.4
+    maneuver_value = 0.2
 }
 # 21
 technology = {
-	year = 2300
-
-    land_morale = 0.1
-    military_tactics = 0.1
-    supply_limit = 0.1
-    combat_width = 1
+	year = 10019
     
-    infantry_fire = 0.25
-    infantry_shock = 0.25
-    cavalry_fire = 0.25
-    cavalry_shock = 0.5
-    artillery_fire = 0.5
-    artillery_shock = 0.25
-    maneuver_value = 0.125
+    artillery_fire = 0.4
+    artillery_shock = 0.2
 }
 # 22
 technology = {
-	year = 2400
-
-    land_morale = 1
-    military_tactics = 0.5
-    supply_limit = 1
-    maneuver_value = 0.5
+	year = 10020
     
-    infantry_fire = 0.5
-    infantry_shock = 0.5
-    cavalry_fire = 0.5
-    cavalry_shock = 1
-    artillery_fire = 1
-    artillery_shock = 0.5
+    land_morale = 0.6
+    combat_width = 3
 }
-
-
+# 23
+technology = {
+	year = 10021
+    
+    military_tactics = 0.6
+    supply_limit = 0.3
+}
+# 24
+technology = {
+	year = 10022
+    
+    infantry_fire = 0.3
+    infantry_shock = 0.3
+}
+# 25
+technology = {
+	year = 10023
+    
+    cavalry_fire = 0.3
+    cavalry_shock = 0.6
+    maneuver_value = 0.3
+}
+# 26
+technology = {
+	year = 10024
+    
+    artillery_fire = 0.6
+    artillery_shock = 0.3
+}
+# 27
+technology = {
+	year = 10025
+    
+    land_morale = 0.6
+    combat_width = 3
+}
+# 28
+technology = {
+	year = 10026
+    
+    military_tactics = 0.6
+    supply_limit = 0.3
+}
+# 29
+technology = {
+	year = 10027
+    
+    infantry_fire = 0.3
+    infantry_shock = 0.3
+}
+# 30
+technology = {
+	year = 10028
+    
+    cavalry_fire = 0.3
+    cavalry_shock = 0.6
+    maneuver_value = 0.3
+}
+# 31
+technology = {
+	year = 10029
+    
+    artillery_fire = 0.6
+    artillery_shock = 0.3
+}
+# 32
+technology = {
+	year = 10030
+    
+    land_morale = 0.8
+    combat_width = 4
+}
+# 33
+technology = {
+	year = 10031
+    
+    military_tactics = 0.8
+    supply_limit = 0.4
+}
+# 34
+technology = {
+	year = 10032
+    
+    infantry_fire = 0.4
+    infantry_shock = 0.4
+}
+# 35
+technology = {
+	year = 10033
+    
+    cavalry_fire = 0.4
+    cavalry_shock = 0.8
+    maneuver_value = 0.4
+}
+# 36
+technology = {
+	year = 10034
+    
+    artillery_fire = 0.8
+    artillery_shock = 0.4
+}
+# 37
+technology = {
+	year = 10035
+    
+    land_morale = 0.8
+    combat_width = 4
+}
+# 38
+technology = {
+	year = 10036
+    
+    military_tactics = 0.8
+    supply_limit = 0.4
+}
+# 39
+technology = {
+	year = 10037
+    
+    infantry_fire = 0.4
+    infantry_shock = 0.4
+}
+# 40
+technology = {
+	year = 10038
+    
+    cavalry_fire = 0.4
+    cavalry_shock = 0.8
+    maneuver_value = 0.4
+}
+# 41
+technology = {
+	year = 10039
+    
+    artillery_fire = 0.8
+    artillery_shock = 0.4
+}

@@ -7,7 +7,7 @@ NDefines.NMilitary.WARSCORE_MAX_FROM_BATTLES = 60
 NDefines.NMilitary.TRADITION_GAIN_LAND = 50
 NDefines.NMilitary.TRADITION_GAIN_NAVAL = 50
 
-NDefines.NMilitary.BASE_MP_TO_MANPOWER = 1.0
+NDefines.NMilitary.BASE_MP_TO_MANPOWER = 0.25
 
 --------------------------------
 -- Supply
@@ -91,16 +91,16 @@ NDefines.NMilitary.LIGHT_SHIP_COST = 25.0
 NDefines.NMilitary.GALLEY_COST = 25.0 
 NDefines.NMilitary.TRANSPORT_COST = 10.0 
 NDefines.NMilitary.HEAVY_SHIP_TIME = 365
-NDefines.NMilitary.LIGHT_SHIP_TIME = 365
-NDefines.NMilitary.GALLEY_TIME = 365	
-NDefines.NMilitary.TRANSPORT_TIME = 365	
-NDefines.NMilitary.HEAVY_SHIP_SAILORS_COST = 1000
-NDefines.NMilitary.LIGHT_SHIP_SAILORS_COST = 500
-NDefines.NMilitary.GALLEY_SHIP_SAILORS_COST = 750
-NDefines.NMilitary.TRANSPORT_SHIP_SAILORS_COST = 250
+NDefines.NMilitary.LIGHT_SHIP_TIME = 180
+NDefines.NMilitary.GALLEY_TIME = 180	
+NDefines.NMilitary.TRANSPORT_TIME = 90	
+NDefines.NMilitary.HEAVY_SHIP_SAILORS_COST = 100
+NDefines.NMilitary.LIGHT_SHIP_SAILORS_COST = 50
+NDefines.NMilitary.GALLEY_SHIP_SAILORS_COST = 75
+NDefines.NMilitary.TRANSPORT_SHIP_SAILORS_COST = 25
 
-NDefines.NMilitary.FLAGSHIP_REQUIRED_NAVY_SIZE_IN_SAILORS = 15000
-NDefines.NMilitary.FLAGSHIP_COST_SAILORS = 3000
+NDefines.NMilitary.FLAGSHIP_REQUIRED_NAVY_SIZE_IN_SAILORS = 1000
+NDefines.NMilitary.FLAGSHIP_COST_SAILORS = 250
 
 --------------------------------
 -- Special Units

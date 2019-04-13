@@ -29,24 +29,30 @@ estate_buccaneers = {
     
     # ----- Country -----
     country_modifier_happy = {
-        
+        sailor_maintenance_modifer = -0.1
+        sunk_ship_morale_hit_recieved = -0.1
+        global_sailors_modifier = 0.1
     }
     country_modifier_neutral = {
-        
+        sailor_maintenance_modifer = -0.05
+        sunk_ship_morale_hit_recieved = -0.05
+        global_sailors_modifier = 0.05
     }    
     country_modifier_angry = {
-        
+        sailor_maintenance_modifer = 0.1
+        sunk_ship_morale_hit_recieved = 0.1
+        global_sailors_modifier = -0.1
     }
     
     # ----- Province -----
     province_modifier_happy = {
-        
+        local_sailors_modifier = 1.0
     }
     province_modifier_neutral = {
-        
+        local_sailors_modifier = 0.5
     }
     province_modifier_angry = {
-        
+        local_sailors_modifier = -1.0
         local_unrest = 5
     }    
     
@@ -190,6 +196,59 @@ estate_buccaneers = {
         }
     }
     
+    # Arm Favoured Buccaneers
+    interaction = {
+        name = "ARM_FAVOURED_BUCCANEERS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = buccaneer_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = buccaneer_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_buccaneers
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_buccaneers
+                influence = 25
+            }            
+        }
+        
+        effect = {
+            add_scaled_mil_power = { 
+                ESTATE = estate_buccaneers
+                LOW = 50
+                MED = 100
+                HIGH = 150
+                MAX = 200
+            }
+            
+            add_estate_loyalty = {
+                estate = estate_buccaneers
+                loyalty = -20
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_buccaneers
+                        loyalty = 50
+                    }
+                }
+            } 
+        }
+    }
+    
     # Bribe the Buccaneers
     interaction = {
         name = "BRIBE_THE_BUCCANEERS"
@@ -280,4 +339,455 @@ estate_buccaneers = {
             }            
         }
     }
+    
+    # Recruit Mate
+    interaction = {
+        name = "RECRUIT_MATE"
+        icon = 1
+        
+        potential = { 
+            NOT = { has_country_flag = buccaneer_estate_in_power }
+        }
+        
+        years_between_use = 30
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = buccaneer_estate_in_power } }
+            estate_influence = {
+                estate = estate_buccaneers
+                influence = 40
+            }
+        }
+        
+        effect = {
+            add_scaled_estate_advisor = { 
+                ESTATE = estate_buccaneers 
+                ADVISOR = mate
+                HIGH = 20
+                MED = 10
+            }
+            
+            add_estate_influence_modifier = {
+                estate = estate_buccaneers
+                desc = EST_VAL_RECRUITED_ADVISOR
+                influence = 15
+                duration = 10950
+            }
+        }
+        
+        
+        ai_will_do = {
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_buccaneers
+                    influence = 60
+                }                        
+            }
+        }
+    }
+    
+    # Recruit Swab
+    interaction = {
+        name = "RECRUIT_SWAB"
+        icon = 1
+        
+        potential = { 
+            NOT = { has_country_flag = buccaneer_estate_in_power }
+        }
+        
+        years_between_use = 30
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = buccaneer_estate_in_power } }
+            estate_influence = {
+                estate = estate_buccaneers
+                influence = 40
+            }
+        }
+        
+        effect = {
+            add_scaled_estate_advisor = { 
+                ESTATE = estate_buccaneers 
+                ADVISOR = swab
+                HIGH = 20
+                MED = 10
+            }
+            
+            add_estate_influence_modifier = {
+                estate = estate_buccaneers
+                desc = EST_VAL_RECRUITED_ADVISOR
+                influence = 15
+                duration = 10950
+            }
+        }
+        
+        
+        ai_will_do = {
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_buccaneers
+                    influence = 60
+                }                        
+            }
+        }
+    }
+    
+    # Prepare for War
+    interaction = {
+        name = "PREPARE_FOR_WAR"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = buccaneer_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = buccaneer_estate_in_power } }
+            is_at_war = yes
+            estate_loyalty = {
+                estate = estate_buccaneers
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_buccaneers
+                influence = 25
+            }            
+        }
+        
+        effect = {
+            raise_war_taxes = yes
+            
+            add_estate_loyalty = {
+                estate = estate_buccaneers
+                loyalty = -10
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_buccaneers
+                        loyalty = 50
+                    }
+                }
+            } 
+        }
+    }
+    
+    # Exalt Piracy
+    interaction = {
+        name = "EXALT_PIRACY"
+        icon = 1
+        
+        years_between_use = 15
+        
+        potential = { 
+            NOT = { has_country_flag = buccaneer_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = buccaneer_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_buccaneers
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_buccaneers
+                influence = 40
+            }           
+        }
+        
+        effect = {
+            add_scaled_prestige = { 
+                ESTATE = estate_buccaneers
+                LOW = 10
+                MED = 15
+                HIGH = 20
+                MAX = 25
+            }
+            
+            add_estate_influence_modifier = {
+                estate = estate_buccaneers
+                desc = EST_VAL_EXALT_PIRACY
+                influence = 10
+                duration = 3650
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                prestige = 100
+            }
+            
+            modifier = {
+                factor = 0
+                
+                estate_influence = {
+                    estate = estate_buccaneers
+                    influence = 60
+                }                        
+            }
+        }
+    }
+    
+    # Press Sailors
+    interaction = {
+        name = "PRESS_SAILORS"
+        icon = 1
+        
+        years_between_use = 15
+        
+        potential = {
+            NOT = { has_country_flag = buccaneer_estate_in_power }
+        }
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = buccaneer_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_buccaneers
+                loyalty = 30
+            }
+            estate_influence = {
+                estate = estate_buccaneers
+                influence = 40
+            }
+        }
+        
+        effect = {
+            add_scaled_yearly_sailors = { 
+                ESTATE = estate_buccaneers
+                LOW = 0.25
+                MED = 0.5
+                HIGH = 0.75
+                MAX = 1.0
+            }
+            add_estate_loyalty = {
+                estate = estate_buccaneers
+                loyalty = -15
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_buccaneers
+                        loyalty = 50
+                    }    
+                }
+            }
+            modifier = {
+                factor = 0
+                sailors_percentage = 0.75
+            }         
+        }
+    }
+    
+    # Construct Ships
+    interaction = {
+		name = "CONSTRUCT_SHIPS"
+		icon = 1
+		
+		years_between_use = 20
+		
+        potential = { 
+            NOT = { has_country_flag = buccaneer_estate_in_power }
+        }
+        
+		trigger = {
+            hidden_trigger = { NOT = { has_country_flag = buccaneer_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_buccaneers
+                loyalty = 30
+            }
+            estate_influence = {
+                estate = estate_buccaneers
+                influence = 40
+            }
+            
+            custom_trigger_tooltip = {
+				tooltip = TT_OWN_BUCCANEER_PROVINCE
+				any_owned_province = {
+					has_estate = estate_buccaneers
+                    has_port = yes
+				}
+			}
+        }
+		
+		effect = {
+            custom_tooltip = TT_SPAWN_BUCCANEER_SHIPS
+            
+            hidden_effect = {
+				random_owned_province = {
+                    limit = {
+                        has_estate = estate_buccaneers
+                        has_port = yes
+                    }
+					galley = ROOT
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 2
+									has_estate = estate_buccaneers
+								}
+							}
+						}
+						galley = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 3
+									has_estate = estate_buccaneers
+								}
+							}
+						}
+						galley = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 4
+									has_estate = estate_buccaneers
+								}
+							}
+						}
+						galley = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 5
+									has_estate = estate_buccaneers
+                                }
+							}
+						}
+						galley = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 6
+									has_estate = estate_buccaneers
+								}
+								estate_influence = {
+									estate = estate_buccaneers
+									influence = 60
+								}
+							}
+						
+						}
+						galley = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 7
+									has_estate = estate_buccaneers
+								}
+								estate_influence = {
+									estate = estate_buccaneers
+									influence = 60
+								}
+							}
+						}
+						galley = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 8
+									has_estate = estate_buccaneers
+								}
+								estate_influence = {
+									estate = estate_buccaneers
+									influence = 60
+								}
+							}
+						}
+						galley = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 9
+									has_estate = estate_buccaneers
+								}
+								estate_influence = {
+									estate = estate_buccaneers
+									influence = 60
+								}
+							}
+						}
+						galley = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 10
+									has_estate = estate_buccaneers
+								}
+								estate_influence = {
+									estate = estate_buccaneers
+									influence = 60
+								}
+							}
+						}
+						galley = ROOT
+					}
+				}
+            }
+            
+            add_estate_loyalty = {
+				estate = estate_buccaneers
+				loyalty = -10
+			}
+            
+            add_estate_influence_modifier = {
+				estate = estate_buccaneers
+				desc = EST_VAL_CONSTRUCTED_SHIPS
+				influence = 10
+				duration = 3650
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+            
+            modifier = {   
+                factor = 0
+                estate_influence = {
+                    estate = estate_buccaneers
+                    influence = 60
+                }	
+            }
+		}
+	}
 }

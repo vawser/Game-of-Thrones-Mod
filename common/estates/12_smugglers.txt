@@ -29,24 +29,30 @@ estate_smugglers = {
     
     # ----- Country -----
     country_modifier_happy = {
-        
+        global_ship_cost = -0.2
+        blockade_efficiency = 0.5
+        privateer_efficiency = 0.5
     }
     country_modifier_neutral = {
-        
+        global_ship_cost = -0.1
+        blockade_efficiency = 0.25
+        privateer_efficiency = 0.25
     }    
     country_modifier_angry = {
-        
+        global_ship_cost = 0.2
+        blockade_efficiency = -0.5
+        privateer_efficiency = -0.5
     }
     
     # ----- Province -----
     province_modifier_happy = {
-        
+        trade_goods_size_modifier = 1.0
     }
     province_modifier_neutral = {
-        
+        trade_goods_size_modifier = 0.5
     }
     province_modifier_angry = {
-        
+        trade_goods_size_modifier = -1.0
         local_unrest = 5
     }    
     
@@ -190,6 +196,59 @@ estate_smugglers = {
         }
     }
     
+    # Support Favoured Smugglers
+    interaction = {
+        name = "SUPPORT_FAVOURED_SMUGGLERS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = smuggler_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = smuggler_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_smugglers
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_smugglers
+                influence = 25
+            }            
+        }
+        
+        effect = {
+            add_scaled_mil_power = { 
+                ESTATE = estate_smugglers
+                LOW = 50
+                MED = 100
+                HIGH = 150
+                MAX = 200
+            }
+            
+            add_estate_loyalty = {
+                estate = estate_smugglers
+                loyalty = -20
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_smugglers
+                        loyalty = 50
+                    }
+                }
+            } 
+        }
+    }
+    
     # Bribe the Smugglers
     interaction = {
         name = "BRIBE_THE_SMUGGLERS"
@@ -280,4 +339,449 @@ estate_smugglers = {
             }            
         }
     }
+    
+    # Recruit Mariner
+    interaction = {
+        name = "RECRUIT_MARINER"
+        icon = 1
+        
+        potential = { 
+            NOT = { has_country_flag = smuggler_estate_in_power }
+        }
+        
+        years_between_use = 30
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = smuggler_estate_in_power } }
+            estate_influence = {
+                estate = estate_smugglers
+                influence = 40
+            }
+        }
+        
+        effect = {
+            add_scaled_estate_advisor = { 
+                ESTATE = estate_smugglers 
+                ADVISOR = mariner
+                HIGH = 20
+                MED = 10
+            }
+            
+            add_estate_influence_modifier = {
+                estate = estate_smugglers
+                desc = EST_VAL_RECRUITED_ADVISOR
+                influence = 15
+                duration = 10950
+            }
+        }
+        
+        
+        ai_will_do = {
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_smugglers
+                    influence = 60
+                }                        
+            }
+        }
+    }
+    
+    # Recruit Shipwright
+    interaction = {
+        name = "RECRUIT_SHIPWRIGHT"
+        icon = 1
+        
+        potential = { 
+            NOT = { has_country_flag = smuggler_estate_in_power }
+        }
+        
+        years_between_use = 30
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = smuggler_estate_in_power } }
+            estate_influence = {
+                estate = estate_smugglers
+                influence = 40
+            }
+        }
+        
+        effect = {
+            add_scaled_estate_advisor = { 
+                ESTATE = estate_smugglers 
+                ADVISOR = shipwright
+                HIGH = 20
+                MED = 10
+            }
+            
+            add_estate_influence_modifier = {
+                estate = estate_smugglers
+                desc = EST_VAL_RECRUITED_ADVISOR
+                influence = 15
+                duration = 10950
+            }
+        }
+        
+        
+        ai_will_do = {
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_smugglers
+                    influence = 60
+                }                        
+            }
+        }
+    }
+    
+    # Smuggle Valuables
+    interaction = {
+        name = "SMUGGLE_VALUABLES"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = {
+            NOT = { has_country_flag = smuggler_estate_in_power }
+        }
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = smuggler_estate_in_power } }
+        }
+        
+        effect = {
+            add_scaled_yearly_gold = { 
+                ESTATE = estate_smugglers
+                LOW = 0.25
+                MED = 0.5
+                HIGH = 0.75
+                MAX = 1.0
+            }
+        
+            add_estate_loyalty = {
+                estate = estate_smugglers
+                loyalty = -15
+            }
+        }
+    
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_loyalty = {
+                    estate = estate_smugglers
+                    loyalty = 50
+                }                        
+            }
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_smugglers
+                    influence = 60
+                }                        
+            }            
+        }
+    }
+    
+    # Harass Trading Vessels
+    interaction = {
+        name = "HARASS_TRADING_VESSELS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = {
+            NOT = { has_country_flag = smuggler_estate_in_power }
+        }
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = smuggler_estate_in_power } }
+        }
+        
+        effect = {
+            add_scaled_mercantilism = { 
+                ESTATE = estate_smugglers
+                LOW = 2
+                MED = 4
+                HIGH = 6
+                MAX = 8
+            }
+        
+            add_estate_loyalty = {
+                estate = estate_smugglers
+                loyalty = -15
+            }
+        }
+    
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_loyalty = {
+                    estate = estate_smugglers
+                    loyalty = 50
+                }                        
+            }
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_smugglers
+                    influence = 60
+                }                        
+            }            
+        }
+    }
+    
+    # Press Sailors
+    interaction = {
+        name = "PRESS_SAILORS"
+        icon = 1
+        
+        years_between_use = 15
+        
+        potential = {
+            NOT = { has_country_flag = smuggler_estate_in_power }
+        }
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = smuggler_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_smugglers
+                loyalty = 30
+            }
+            estate_influence = {
+                estate = estate_smugglers
+                influence = 40
+            }
+        }
+        
+        effect = {
+            add_scaled_yearly_sailors = { 
+                ESTATE = estate_smugglers
+                LOW = 0.25
+                MED = 0.5
+                HIGH = 0.75
+                MAX = 1.0
+            }
+            add_estate_loyalty = {
+                estate = estate_smugglers
+                loyalty = -15
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_smugglers
+                        loyalty = 50
+                    }    
+                }
+            }
+            modifier = {
+                factor = 0
+                sailors_percentage = 0.75
+            }         
+        }
+    }
+    
+    # Construct Ships
+    interaction = {
+		name = "CONSTRUCT_SHIPS"
+		icon = 1
+		
+		years_between_use = 20
+		
+        potential = { 
+            NOT = { has_country_flag = smuggler_estate_in_power }
+        }
+        
+		trigger = {
+            hidden_trigger = { NOT = { has_country_flag = smuggler_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_smugglers
+                loyalty = 30
+            }
+            estate_influence = {
+                estate = estate_smugglers
+                influence = 40
+            }
+            
+            custom_trigger_tooltip = {
+				tooltip = TT_OWN_SMUGGLER_PROVINCE
+				any_owned_province = {
+					has_estate = estate_smugglers
+                    has_port = yes
+				}
+			}
+        }
+		
+		effect = {
+            custom_tooltip = TT_SPAWN_SMUGGLER_SHIPS
+            
+            hidden_effect = {
+				random_owned_province = {
+                    limit = {
+                        has_estate = estate_smugglers
+                        has_port = yes
+                    }
+					light_ship = ROOT
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 2
+									has_estate = estate_smugglers
+								}
+							}
+						}
+						light_ship = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 3
+									has_estate = estate_smugglers
+								}
+							}
+						}
+						light_ship = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 4
+									has_estate = estate_smugglers
+								}
+							}
+						}
+						light_ship = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 5
+									has_estate = estate_smugglers
+                                }
+							}
+						}
+						light_ship = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 6
+									has_estate = estate_smugglers
+								}
+								estate_influence = {
+									estate = estate_smugglers
+									influence = 60
+								}
+							}
+						
+						}
+						light_ship = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 7
+									has_estate = estate_smugglers
+								}
+								estate_influence = {
+									estate = estate_smugglers
+									influence = 60
+								}
+							}
+						}
+						light_ship = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 8
+									has_estate = estate_smugglers
+								}
+								estate_influence = {
+									estate = estate_smugglers
+									influence = 60
+								}
+							}
+						}
+						light_ship = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 9
+									has_estate = estate_smugglers
+								}
+								estate_influence = {
+									estate = estate_smugglers
+									influence = 60
+								}
+							}
+						}
+						light_ship = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 10
+									has_estate = estate_smugglers
+								}
+								estate_influence = {
+									estate = estate_smugglers
+									influence = 60
+								}
+							}
+						}
+						light_ship = ROOT
+					}
+				}
+            }
+            
+            add_estate_loyalty = {
+				estate = estate_smugglers
+				loyalty = -10
+			}
+            
+            add_estate_influence_modifier = {
+				estate = estate_smugglers
+				desc = EST_VAL_CONSTRUCTED_SHIPS
+				influence = 10
+				duration = 3650
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+            
+            modifier = {   
+                factor = 0
+                estate_influence = {
+                    estate = estate_smugglers
+                    influence = 60
+                }	
+            }
+		}
+	}
 }

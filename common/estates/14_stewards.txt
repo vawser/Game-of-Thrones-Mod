@@ -29,24 +29,30 @@ estate_stewards = {
     
     # ----- Country -----
     country_modifier_happy = {
-        
+        global_tax_modifier = 0.2
+        core_creation = -0.1
+        development_cost = -0.1
     }
     country_modifier_neutral = {
-        
+        global_tax_modifier = 0.1
+        core_creation = -0.05
+        development_cost = -0.05
     }    
     country_modifier_angry = {
-        
+        global_tax_modifier = -0.2
+        core_creation = 0.1
+        development_cost = 0.1
     }
     
     # ----- Province -----
     province_modifier_happy = {
-        
+        local_tax_modifier = 1.0
     }
     province_modifier_neutral = {
-        
+        local_tax_modifier = 0.5
     }
     province_modifier_angry = {
-        
+        local_tax_modifier = -1.0
         local_unrest = 5
     }    
     
@@ -190,6 +196,59 @@ estate_stewards = {
         }
     }
     
+    # Exploit the Stewards
+    interaction = {
+        name = "EXPLOIT_THE_STEWARDS"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = steward_estate_in_power }
+        }
+        
+        trigger = {        
+            hidden_trigger = { NOT = { has_country_flag = steward_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_stewards
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_stewards
+                influence = 25
+            }            
+        }
+        
+        effect = {
+            add_scaled_adm_power = { 
+                ESTATE = estate_stewards
+                LOW = 50
+                MED = 100
+                HIGH = 150
+                MAX = 200
+            }
+            
+            add_estate_loyalty = {
+                estate = estate_stewards
+                loyalty = -20
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                NOT = {
+                    estate_loyalty = {
+                        estate = estate_stewards
+                        loyalty = 50
+                    }
+                }
+            } 
+        }
+    }
+    
     # Bribe the Stewards
     interaction = {
         name = "INVEST_IN_THE_STEWARDS"
@@ -278,6 +337,286 @@ estate_stewards = {
                     influence = 60
                 }                        
             }            
+        }
+    }
+    
+    # Recruit Steward
+    interaction = {
+        name = "RECRUIT_STEWARD"
+        icon = 1
+        
+        potential = { 
+            NOT = { has_country_flag = steward_estate_in_power }
+        }
+        
+        years_between_use = 30
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = steward_estate_in_power } }
+            estate_influence = {
+                estate = estate_stewards
+                influence = 40
+            }
+        }
+        
+        effect = {
+            add_scaled_estate_advisor = { 
+                ESTATE = estate_stewards 
+                ADVISOR = steward
+                HIGH = 20
+                MED = 10
+            }
+            
+            add_estate_influence_modifier = {
+                estate = estate_stewards
+                desc = EST_VAL_RECRUITED_ADVISOR
+                influence = 15
+                duration = 10950
+            }
+        }
+        
+        
+        ai_will_do = {
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_stewards
+                    influence = 60
+                }                        
+            }
+        }
+    }
+    
+    # Recruit Maester
+    interaction = {
+        name = "RECRUIT_MAESTER"
+        icon = 1
+        
+        potential = { 
+            NOT = { has_country_flag = steward_estate_in_power }
+        }
+        
+        years_between_use = 30
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = steward_estate_in_power } }
+            estate_influence = {
+                estate = estate_stewards
+                influence = 40
+            }
+        }
+        
+        effect = {
+            add_scaled_estate_advisor = { 
+                ESTATE = estate_stewards 
+                ADVISOR = maester
+                HIGH = 20
+                MED = 10
+            }
+            
+            add_estate_influence_modifier = {
+                estate = estate_stewards
+                desc = EST_VAL_RECRUITED_ADVISOR
+                influence = 15
+                duration = 10950
+            }
+        }
+        
+        
+        ai_will_do = {
+            factor = 1
+
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_stewards
+                    influence = 60
+                }                        
+            }
+        }
+    }
+    
+    # Purge Corruption
+    interaction = {
+        name = "PURGE_CORRUPTION"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = steward_estate_in_power }
+        }
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = steward_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_stewards
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_stewards
+                influence = 40
+            }            
+        }
+        
+        effect = {
+            add_scaled_corruption = { 
+                ESTATE = estate_stewards
+                LOW = -2
+                MED = -4
+                HIGH = -6
+                MAX = -8
+            }
+            
+            add_estate_loyalty = {
+                estate = estate_stewards
+                loyalty = -20
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                NOT = { corruption = 10 }
+            }
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_stewards
+                    influence = 60
+                }                        
+            }
+        }
+    }
+    
+    # Grant Legitimacy
+    interaction = {
+        name = "GRANT_LEGITIMACY"
+        icon = 1
+        
+        years_between_use = 15
+        
+        potential = { 
+            NOT = { has_country_flag = steward_estate_in_power }
+        }
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = steward_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_stewards
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_stewards
+                influence = 40
+            }            
+        }
+        
+        effect = {
+            if = {
+                limit = { has_idea = got_propaganda_ideas_4 }
+                add_scaled_legitimacy_value = { 
+                    ESTATE = estate_stewards
+                    LOW = 10
+                    MED = 15
+                    HIGH = 20
+                    MAX = 25
+                }
+            }
+            else = {
+                add_scaled_legitimacy_value = { 
+                    ESTATE = estate_stewards
+                    LOW = 5
+                    MED = 10
+                    HIGH = 15
+                    MAX = 20
+                }
+            }
+            
+            add_estate_influence_modifier = {
+                estate = estate_stewards
+                desc = EST_VAL_GRANTED_LEGITIMACY
+                influence = 15
+                duration = 3650
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                estate_influence = {
+                    estate = estate_stewards
+                    influence = 60
+                }
+            }
+        }
+    }
+    
+    # Calm Tension on the Wall
+    interaction = {
+        name = "CALM_TENSIONS_ON_THE_WALL"
+        icon = 1
+        
+        years_between_use = 20
+        
+        potential = { 
+            NOT = { has_country_flag = steward_estate_in_power }
+        }
+        
+        trigger = {
+            hidden_trigger = { NOT = { has_country_flag = steward_estate_in_power } }
+            estate_loyalty = {
+                estate = estate_stewards
+                loyalty = 30
+            }    
+            estate_influence = {
+                estate = estate_stewards
+                influence = 40
+            }            
+        }
+        
+        effect = {
+            if = {
+                limit = { has_idea = got_harmony_ideas_2 }
+                add_stability = 2
+            }
+            else = {
+                add_stability = 1
+            }
+            
+            add_estate_influence_modifier = {
+                estate = estate_stewards
+                desc = EST_VAL_CALMED_TENSIONS
+                influence = 10
+                duration = 7300
+            }
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                
+                stability = 3
+            }
+            
+            modifier = {   
+                factor = 0
+                
+                estate_influence = {
+                    estate = estate_stewards
+                    influence = 60
+                }	
+            }
         }
     }
 }

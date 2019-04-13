@@ -169,6 +169,9 @@
  PUNISH_THE_SLAVES: "Punish the Slaves"
  MUSTER_INFANTRY: "Muster Infantry"
  
+ TT_OWN_SLAVE_PROVINCE: "At least one owned province belongs to the §Slaves§! Estate."
+ TT_SPAWN_SLAVE_INFANTRY: "Up to §Y10§! §YInfantry§! will be recruited dependent on the number of provinces under §YSlaves§! control and current §YSlaves§! influence."
+ 
  #-----------------------------------------
  # Undead
  #-----------------------------------------
@@ -219,6 +222,16 @@
  PUNISH_THE_BUCCANEERS: "Punish the Buccaneers"
  BRIBE_THE_BUCCANEERS: "Bribe the Buccaneers"
  GAIN_SUPPORT_OF_THE_BUCCANEERS: "Gain Support of the Buccaneers"
+ ARM_FAVOURED_BUCCANEERS: "Arm Favoured Buccaneers"
+ PREPARE_FOR_WAR: "Prepare for War"
+ EXALT_PIRACY: "Exalt Piracy"
+ PRESS_SAILORS: "Press Sailors"
+ CONSTRUCT_SHIPS: "Construct Ships"
+ RECRUIT_MATE: "Recruit Mate"
+ RECRUIT_SWAB: "Recruit Swab"
+ 
+ TT_OWN_BUCCANEER_PROVINCE: "At least one owned coastal province belongs to the §YBuccaneers§! Estate."
+ TT_SPAWN_BUCCANEER_SHIPS: "Up to §Y10§! §YGalleys§! will be recruited dependent on the number of provinces under §YBuccaneers§! control and current §YBuccaneers§! influence."
  
  #-----------------------------------------
  # Smugglers
@@ -230,6 +243,14 @@
  PUNISH_THE_SMUGGLERS: "Punish the Smugglers"
  BRIBE_THE_SMUGGLERS: "Bribe the Smugglers"
  GAIN_SUPPORT_OF_THE_SMUGGLERS: "Gain Support of the Smugglers"
+ SUPPORT_FAVOURED_SMUGGLERS: "Support Favoured Smugglers"
+ SMUGGLE_VALUABLES: "Smuggle Valuables"
+ HARASS_TRADING_VESSELS: "Harass Trading Vessels"
+ RECRUIT_MARINER: "Recruit Mariner"
+ RECRUIT_SHIPWRIGHT: "Recruit Shipwright"
+ 
+ TT_OWN_SMUGGLER_PROVINCE: "At least one owned coastal province belongs to the §YSmugglers§! Estate."
+ TT_SPAWN_SMUGGLER_SHIPS: "Up to §Y10§! §YLight Ships§! will be recruited dependent on the number of provinces under §YSmugglers§! control and current §YSmugglers§! influence."
  
  #-----------------------------------------
  # Captains
@@ -241,6 +262,14 @@
  PUNISH_THE_CAPTAINS: "Punish the Captains"
  BRIBE_THE_CAPTAINS: "Bribe the Captains"
  GAIN_SUPPORT_OF_THE_CAPTAINS: "Gain Support of the Captains"
+ SUPPORT_FAVOURED_CAPTAINS: "Support Favoured Captains"
+ SEEK_LEGITIMACY: "Seek Legitimacy"
+ APPOINT_CAPTAIN: "Appoint Captain"
+ RECRUIT_NAVIGATOR: "Recruit Navigator"
+ RECRUIT_SEA_DOG: "Recruit Sea Dog"
+ 
+ TT_OWN_CAPTAIN_PROVINCE: "At least one owned coastal province belongs to the §YCaptains§! Estate."
+ TT_SPAWN_CAPTAIN_SHIPS: "Up to §Y10§! §YHeavy Ships§! will be recruited dependent on the number of provinces under §YCaptains§! control and current §YCaptains§! influence."
  
  #-----------------------------------------
  # Stewards
@@ -252,6 +281,11 @@
  PUNISH_THE_STEWARDS: "Punish the Stewards"
  INVEST_IN_THE_STEWARDS: "Invest in the Stewards"
  GAIN_SUPPORT_OF_THE_STEWARDS: "Gain Support of the Stewards"
+ EXPLOIT_THE_STEWARDS: "Exploit the Stewards"
+ RECRUIT_STEWARD: "Recruit Steward"
+ RECRUIT_MAESTER: "Recruit Maester"
+ PURGE_CORRUPTION: "Purge Corruption"
+ CALM_TENSIONS_ON_THE_WALL: "Calm Tension on the Wall"
  
  #-----------------------------------------
  # Builders
@@ -263,6 +297,18 @@
  PUNISH_THE_BUILDERS: "Punish the Builders"
  INVEST_IN_THE_BUILDERS: "Invest in the Builders"
  GAIN_SUPPORT_OF_THE_BUILDERS: "Gain Support of the Builders"
+ EXPLOIT_THE_BUILDERS: "Exploit the Builders"
+ RECRUIT_ARCHITECT: "Recruit Architect"
+ RECRUIT_CARPENTER: "Recruit Carpenter"
+ CONSTRUCT_MONUMENT: "Construct Monument"
+ ENFORCE_LABOUR: "Enforce Mandatory Labour"
+ ESTABLISH_OUTPOSTS: "Establish Outposts"
+ 
+ enforced_labour: "Enforced Labour"
+ enforced_labour_desc: "We are enforcing labour amoungst our Builder population."
+
+ establishing_outposts: "Establishing Outposts"
+ establishing_outposts_desc: "We are establishing outposts, making it easier to administrate our external provinces."
  
  #-----------------------------------------
  # Rangers
@@ -274,6 +320,16 @@
  PUNISH_THE_RANGERS: "Punish the Rangers"
  INVEST_IN_THE_RANGERS: "Invest in the Rangers"
  GAIN_SUPPORT_OF_THE_RANGERS: "Gain Support of the Rangers"
+ EXPLOIT_THE_RANGERS: "Exploit the Rangers"
+ RECRUIT_WATCHMAN: "Recruit Watchman"
+ RECRUIT_MARSHAL: "Recruit Marshal"
+ APPOINT_RANGER: "Appoint Ranger"
+ COLLECT_CRIMINALS: "Collect Criminals"
+ CONDUCT_RANGING: "Conduct Ranging"
+ MUSTER_RANGERS: "Muster Rangers"
+ 
+ TT_OWN_RANGER_PROVINCE: "At least one owned province belongs to the §YRangers§! Estate."
+ TT_SPAWN_RANGER_INFANTRY: "Up to §Y10§! §YInfantry§! will be recruited dependent on the number of provinces under §YRangers§! control and current §YRangers§! influence."
  
  #-----------------------------------------
  # Loyalty
@@ -387,7 +443,13 @@
  EST_VAL_SUPPORT_OF_THE_STEWARDS: "Support of the Stewards: §Y$VAL$%§!"
  EST_VAL_SUPPORT_OF_THE_BUILDERS: "Support of the Builders: §Y$VAL$%§!"
  EST_VAL_SUPPORT_OF_THE_RANGERS: "Support of the Rangers: §Y$VAL$%§!"
- 
+ EST_VAL_EXALT_PIRACY: "Exalted Piracy: §Y$VAL$§!"
+ EST_VAL_CONSTRUCTED_SHIPS: "Constructed Ships: §Y$VAL$§!"
+ EST_VAL_SEEK_LEGITIMACY: "Seeked Legitimacy: §Y$VAL$§!"
+ EST_VAL_CALMED_TENSIONS: "Calmed Tensions on the Wall: §Y$VAL$§!"
+ EST_VAL_CONSTRUCTED_MONUMENT: "Constructed Monument: §Y$VAL$§!"
+ EST_VAL_ESTABLISHING_OUTPOSTS: "Establishing Outposts: §Y$VAL$§!"
+ EST_VAL_CONDUCTED_RANGING: "Conducted Ranging: §Y$VAL$§!"
  
  #-----------------------------------------
  # Territory 

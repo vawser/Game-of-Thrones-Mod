@@ -82,12 +82,12 @@ guiTypes = {
 		{
 			name = "innovativeness_icon"
 			spriteType = "GFX_innovativeness_icon"
-			position = { x= 495 y = -9999 }
+			position = { x= 495 y = 115 }
 		}
 
 		instantTextBoxType = {
 			name = "innovativeness_text"
-			position = { x = 446 y = -9999 }
+			position = { x = 446 y = 115 }
 			textureFile = ""
 			font = "vic_22"
 			borderSize = {x = 4 y = 4}
@@ -126,8 +126,8 @@ guiTypes = {
 			
 			OverlappingElementsBoxType = {
 				name = "institutions"
-				position = { x = -28 y = 112 }
-				size = { x = 580 y = 64 }
+				position = { x = -35 y = 112 }
+				size = { x = 604 y = 128 }
 				Orientation = "UPPER_LEFT"
 				format = center
 				spacing = 1
@@ -311,9 +311,7 @@ guiTypes = {
 		}
 	}
 	
-    #--------------------------------------------------------------------------------------
-	# ADM
-    #--------------------------------------------------------------------------------------
+	### ------- Administrative Tech Research -------		
 	windowType = {
 		name = "countrytechnologyview_table_adm_tech"
 		position = { x=0 y=0 }	
@@ -417,13 +415,13 @@ guiTypes = {
 		{
 			name ="time_icon"
 			spriteType = "GFX_icon_time"
-			position = { x = 402 y = -9999 }
+			position = { x = 402 y = 28 }
 			Orientation = "UPPER_LEFT"
 		}				
 		
 		instantTextBoxType = {
 			name = "time_value"
-			position = { x = 430 y = -9999 }
+			position = { x = 430 y = 29 }
 			textureFile = ""
 			font = "vic_22"
 			borderSize = {x = 4 y = 4}	
@@ -432,6 +430,11 @@ guiTypes = {
 			maxHeight = 32
 			format = left
 		}	
+		
+		
+		### ------- Administrative Tech Goverment/idea groups/production efficiency -------	
+		
+		
 		
 		iconType =
 		{
@@ -655,9 +658,8 @@ guiTypes = {
 		
 	}
 	
-	#--------------------------------------------------------------------------------------
-    # DIP 
-    #--------------------------------------------------------------------------------------
+	
+	### ------- Diplomatic Tech Research -------		
 	windowType = {
 		name = "countrytechnologyview_table_dip_tech"
 		position = { x=0 y=0 }	
@@ -758,13 +760,13 @@ guiTypes = {
 		{
 			name ="time_icon"
 			spriteType = "GFX_icon_time"
-			position = { x = 402 y = -9999 }
+			position = { x = 402 y = 8 }
 			Orientation = "UPPER_LEFT"
 		}				
 		
 		instantTextBoxType = {
 			name = "time_value"
-			position = { x = 430 y = -9999 }
+			position = { x = 430 y = 9 }
 			textureFile = ""
 			font = "vic_22"
 			borderSize = {x = 4 y = 4}	
@@ -1086,9 +1088,7 @@ guiTypes = {
 		}						
 	}
 	
-	#--------------------------------------------------------------------------------------
-    # MIL
-    #--------------------------------------------------------------------------------------
+	### ------- Military Tech Research -------		
 	windowType = {
 		name = "countrytechnologyview_table_mil_tech"
 		position = { x=0 y=0 }	
@@ -1189,13 +1189,13 @@ guiTypes = {
 		{
 			name ="time_icon"
 			spriteType = "GFX_icon_time"
-			position = { x = 402 y = -9999 }
+			position = { x = 402 y = 8 }
 			Orientation = "UPPER_LEFT"
 		}				
 		
 		instantTextBoxType = {
 			name = "time_value"
-			position = { x = 430 y = -9999 }
+			position = { x = 430 y = 9 }
 			textureFile = ""
 			font = "vic_22"
 			borderSize = {x = 4 y = 4}	
@@ -1204,7 +1204,11 @@ guiTypes = {
 			maxHeight = 32
 			format = left
 		}			
-        
+		
+		### ------- Military Tech Units/Morale -------	
+		
+		
+		
 		iconType =
 		{
 			name ="tech_unit_infantry_unlock"
@@ -1553,7 +1557,6 @@ guiTypes = {
 		}		
 	}	
 	
-    
 	################################################################################################
 	### --- Tech Research Mil Items
 	

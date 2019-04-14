@@ -42,9 +42,9 @@ country_decisions = {
 			NOT = { exists = Z01 }
 		}
 		allow = {
-            custom_trigger_tooltip = {
-				tooltip = become_king_beyond_the_wall_TT
-				has_country_flag = can_form_kingdom_beyond_the_wall
+            region_beyond_the_wall = {
+				type = all
+				country_or_vassal_holds = ROOT
 			}
 		}
 		effect = {

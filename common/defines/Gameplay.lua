@@ -57,12 +57,6 @@ NDefines.NCountry.PS_IMPROVE_PROVINCE_BASE = 100
 NDefines.NCountry.PS_MAKE_PROVINCE_CORE = 20
 
 --------------------------------
--- Corruption
---------------------------------
-NDefines.NCountry.LAGGINGTECH_CORRUPTION = 0 -- Disable
-NDefines.NCountry.LAGGINGTECH_CORRUPTION_MAX = 0 -- Disable
-
---------------------------------
 -- Advisors
 --------------------------------
 NDefines.NCountry.MAXIMUM_ADVISOR_SKILL = 10 
@@ -121,12 +115,7 @@ NDefines.NCountry.ABANDON_IDEAGROUP_REFUND = 0.1
 --------------------------------
 NDefines.NCountry.PS_ADVANCE_TECH = 600
 NDefines.NCountry.TECH_TIME_COST = 0.0
-NDefines.NCountry.TECH_AHEAD_OF_TIME = 0.0
-
---------------------------------
--- Policies
---------------------------------
-NDefines.NCountry.POLICY_COST = 1
+NDefines.NCountry.TECH_AHEAD_OF_TIME = 0.1
 
 --------------------------------
 -- Subjects
@@ -139,9 +128,10 @@ NDefines.NDiplomacy.MARCH_BASE_DEVELOPMENT_CAP = 500
 --------------------------------
 -- Diplomacy
 --------------------------------
-NDefines.NDiplomacy.CALL_TO_ARMS_COST = 5                   -- Make it easier to call allies in                
+NDefines.NDiplomacy.CALL_TO_ARMS_COST = 1         
 NDefines.NDiplomacy.INCREASE_TRUST_COST = 1                 -- Make Increase Trust a more attractive choice
-NDefines.NDiplomacy.PREPARE_FOR_WAR_COST = 5                -- Make Prepare for War a more attractive choice
+NDefines.NDiplomacy.INCREASE_TRUST_AMOUNT = 1
+NDefines.NDiplomacy.PREPARE_FOR_WAR_COST = 1
 NDefines.NDiplomacy.NUM_POSSIBLE_RIVALS = 1
 NDefines.NDiplomacy.DAYS_TO_DECLARE_WAR = 0                 -- Reverse Paradox's 'anti-fun' changes
 NDefines.NDiplomacy.OFFENSIVE_WAR_COOLDOWN = 0              -- Reverse Paradox's 'anti-fun' changes
@@ -175,13 +165,3 @@ NDefines.NEconomy.MISSIONARY_MAINTENANCE_AUTONOMY_FACTOR = 0.0		-- How much this
 NDefines.NEconomy.MISSIONARY_MAINTENANCE_AUTONOMY_BASE = 0.0	    -- The local autonomy is added to this base in the formula.
 NDefines.NEconomy.MISSIONARY_MAINTENANCE_DEVELOPMENT_CAP = 100
     
---------------------------------
--- Diplomacy
---------------------------------
-NDefines.NDiplomacy.OFFENSIVE_WAR_COOLDOWN = 1
-
-NDefines.NDiplomacy.INCREASE_TRUST_COST = 1
-NDefines.NDiplomacy.INCREASE_TRUST_AMOUNT = 1
-NDefines.NDiplomacy.PREPARE_FOR_WAR_COST = 1
-NDefines.NDiplomacy.PREPARE_FOR_WAR_MONTHS = 60
-NDefines.NDiplomacy.CALL_TO_ARMS_COST = 1

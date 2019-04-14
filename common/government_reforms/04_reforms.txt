@@ -142,19 +142,6 @@ magi_counsel_reform = {
         idea_cost = -0.05
 	}
 }
-slave_counsel_reform = {
-	icon = "tribal_civil_society"
-    
-    potential = {
-        has_estate = estate_slaves
-        NOT = { has_country_modifier = slavery_prohibited }
-    }
-    
-    modifiers = {
-        global_manpower_modifier = 0.1
-	}
-}
-
 #-------------------------------
 # Rule of Law
 #-------------------------------

@@ -127,15 +127,6 @@ estate_slaves = {
 		influence = -200
 	}
     
-    influence_modifier = {
-		desc = EST_VAL_SLAVE_COUNSEL
-        
-		trigger = {
-			has_reform = slave_counsel_reform
-		}
-		influence = 10
-	}
-    
 	# ----- Loyalty -----
 	loyalty_modifier = {
 		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
@@ -151,15 +142,6 @@ estate_slaves = {
 			}
 		}
 		loyalty = -40
-	}
-	
-    loyalty_modifier = {
-		desc = EST_VAL_SLAVE_COUNSEL
-        
-		trigger = {
-			has_reform = slave_counsel_reform
-		}
-		loyalty = 20
 	}
     
 	# ----- Interactions -----

@@ -74,7 +74,9 @@ NDefines.NEconomy.MAX_BUILDING_SLOTS = 12
 --------------------------------
 NDefines.NCountry.CAN_CONVERT_TERRITORY_CULTURE = 1
 NDefines.NCountry.CAN_CONVERT_TERRITORY_RELIGION = 1
-    
+NDefines.NCountry.ALLOWED_TERRITORY_VS_MAX_STATES = 1.0
+NDefines.NCountry.TERRITORY_PENALTY_CAP = 50
+
 --------------------------------
 -- Great Powers
 --------------------------------

@@ -12,6 +12,8 @@ country_event = {
 
 	trigger = {
         NOT = { has_country_flag = looking_for_dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
+        NOT = { has_country_modifier = dragon_eggs }
 	}
 	
 	mean_time_to_happen = {
@@ -55,6 +57,8 @@ country_event = {
 	is_triggered_only = yes
     
     trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
         has_country_flag = looking_for_dragon_eggs
     }
 	
@@ -81,6 +85,8 @@ country_event = {
 	is_triggered_only = yes
     
     trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
         has_country_flag = looking_for_dragon_eggs
     }
 	
@@ -107,6 +113,8 @@ country_event = {
 	is_triggered_only = yes
     
     trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
         has_country_flag = looking_for_dragon_eggs
     }
 	
@@ -129,6 +137,8 @@ country_event = {
 	is_triggered_only = yes
     
     trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
         has_country_flag = looking_for_dragon_eggs
     }
 	
@@ -151,6 +161,8 @@ country_event = {
 	is_triggered_only = yes
     
     trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
         has_country_flag = looking_for_dragon_eggs
     }
 	
@@ -173,6 +185,8 @@ country_event = {
 	is_triggered_only = yes
     
     trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
         has_country_flag = looking_for_dragon_eggs
     }
 	
@@ -195,6 +209,9 @@ country_event = {
 	is_triggered_only = yes
     
     trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
+        has_country_flag = looking_for_dragon_eggs
         check_variable = { dragon_egg_leads = 3 }
     }
 	
@@ -204,6 +221,11 @@ country_event = {
         add_country_modifier = {
             name = dragon_eggs
             duration = -1
+        }
+        
+        hidden_effect = {
+            clr_country_flag = looking_for_dragon_eggs
+            set_variable = { dragon_egg_leads = 0 }
         }
 	}
 }

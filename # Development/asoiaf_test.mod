@@ -89,7 +89,6 @@ replace_path="history/countries"
 replace_path="history/provinces"
 replace_path="history/wars"
 replace_path="missions"
-replace_path="gfx/entities"
 tags={
 	"Alternative History"
 	"Events"

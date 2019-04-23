@@ -28,47 +28,4 @@ country_decisions = {
 			}
 		}
 	}
-    
-	wildling_raise_clansmen = {
-		potential = {
-			technology_group = wildling
-		}
-		
-		allow = {
-			manpower = 5
-            NOT = { has_country_modifier = wildling_raised_clansmen }
-		}
-		
-		effect = {
-			add_manpower = -5
-			
-			add_country_modifier = {
-				name = wildling_raised_clansmen
-				duration = 365
-			}
-			capital_scope = {
-				infantry = PREV
-				infantry = PREV
-				infantry = PREV
-				artillery = PREV
-				cavalry = PREV
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 0.25
-				
-				army_size_percentage = 0.6
-			}
-			
-			modifier = {
-				factor = 0
-				NOT = { stability = 0 }
-			}
-		}
-		
-	}
 }

@@ -45,11 +45,19 @@ country_event = {
 		name = GOT_ESTATES.101.option.a
         
         if = {
-            limit = { has_idea = got_dynastic_ideas_7 }
-            change_heir_adm = 2
+            limit = {
+                heir_adm = 6
+            }
+            add_adm_power = 100
         }
         else = {
-            change_heir_adm = 1
+            if = {
+                limit = { has_idea = got_dynastic_ideas_7 }
+                change_heir_adm = 2
+            }
+            else = {
+                change_heir_adm = 1
+            }
         }
 	}
 }
@@ -66,11 +74,19 @@ country_event = {
 		name = GOT_ESTATES.102.option.a
         
         if = {
-            limit = { has_idea = got_dynastic_ideas_7 }
-            change_heir_dip = 2
+            limit = {
+                heir_dip = 6
+            }
+            add_dip_power = 100
         }
         else = {
-            change_heir_dip = 1
+            if = {
+                limit = { has_idea = got_dynastic_ideas_7 }
+                change_heir_dip = 2
+            }
+            else = {
+                change_heir_dip = 1
+            }
         }
 	}
 }
@@ -87,11 +103,19 @@ country_event = {
 		name = GOT_ESTATES.103.option.a
         
         if = {
-            limit = { has_idea = got_dynastic_ideas_7 }
-            change_heir_mil = 2
+            limit = {
+                heir_mil = 6
+            }
+            add_mil_power = 100
         }
         else = {
-            change_heir_mil = 1
+            if = {
+                limit = { has_idea = got_dynastic_ideas_7 }
+                change_heir_mil = 2
+            }
+            else = {
+                change_heir_mil = 1
+            }
         }
 	}
 }

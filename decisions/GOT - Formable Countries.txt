@@ -42,10 +42,18 @@ country_decisions = {
 			NOT = { exists = Z01 }
 		}
 		allow = {
-            region_beyond_the_wall = {
-				type = all
-				country_or_vassal_holds = ROOT
-			}
+            custom_trigger_tooltip = {
+                tooltip = ONLY_WILDING_NATION_TT
+                NOT = {
+                    calc_true_if = {
+                        any_country = {
+                            has_reform = wildling_clan_reform
+                        }
+                        amount = 1
+                    }
+                }
+            }
+            total_development = 50
 		}
 		effect = {
 			change_tag = Z01
@@ -499,6 +507,62 @@ country_decisions = {
 			set_government_rank = 5
 		}
 		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    shattered_world_unite_the_seven_kingdoms = {
+        major = yes
+		potential = {
+            NOT = { has_global_flag = edict_unite_the_seven_kingdoms }
+            has_global_flag = shattered_world
+		}
+		allow =  {
+            region_the_north = {
+                type = all
+                country_or_vassal_holds = ROOT
+            }
+            region_riverlands = {
+                type = all
+                country_or_vassal_holds = ROOT
+            }
+            region_crownlands = {
+                type = all
+                country_or_vassal_holds = ROOT
+            }
+            region_stormlands = {
+                type = all
+                country_or_vassal_holds = ROOT
+            }
+            region_iron_islands = {
+                type = all
+                country_or_vassal_holds = ROOT
+            }
+            region_vale = {
+                type = all
+                country_or_vassal_holds = ROOT
+            }
+            region_reach = {
+                type = all
+                country_or_vassal_holds = ROOT
+            }
+            region_westerlands = {
+                type = all
+                country_or_vassal_holds = ROOT
+            }
+            region_dorne = {
+                type = all
+                country_or_vassal_holds = ROOT
+            }
+		}
+	  	effect = {
+            custom_tooltip = TT_UNITE_THE_SEVEN_KINGDOMS
+            change_tag = WST
+            add_prestige = 200
+			add_stability = 6
+			set_government_rank = 10
+		}
 		ai_will_do = {
 			factor = 1
 		}

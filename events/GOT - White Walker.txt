@@ -41,100 +41,103 @@ country_event = {
 	}
 }
 
-# Summer fades...
+# Winter Begins
 country_event = {
 	id = GOT_WHITE_WALKER.1
 	title = GOT_WHITE_WALKER.1.title
 	desc = GOT_WHITE_WALKER.1.desc
-	picture = FEAST_eventPicture
+	picture = GOOD_WITH_MONARCH_eventPicture
 	
-	is_triggered_only = yes
 	major = yes
     
     trigger = {
-        ai = no
-        NOT = { exists = WIT }
+        NOT = { has_global_flag = white_walkers_empowered }
+        tag = WIT
+        OR = {
+            ai = no # Player can do whatever
+            
+            # If any nation gets near them before 280
+            any_country = {
+                is_neighbor_of = ROOT
+            }
+            
+            is_year = 280
+        }
     }
     
-	option = {
-		name = GOT_WHITE_WALKER.1.option.a
-	
-        custom_tooltip = SUMMER_FADES_TT
-        hidden_effect = {
-            change_variable = { which = winter_power value = 1 }
-        }
-	}
-    option = {
-		name = GOT_WHITE_WALKER.1.option.b
+    immediate = {
+        hidden_effect = { set_global_flag = white_walkers_empowered }
+    }
     
-        custom_tooltip = SUMMER_PERSISTS_TT
-        
-        add_adm_power = -100
-        add_dip_power = -100
-        add_mil_power = -100
-	}
-}
-
-# The Winter begins!
-country_event = {
-	id = GOT_WHITE_WALKER.2
-	title = GOT_WHITE_WALKER.2.title
-	desc = GOT_WHITE_WALKER.2.desc
-	picture = FEAST_eventPicture
-	
-	trigger = {
-        ai = no
-		NOT = { exists = WIT }
-        check_variable = {
-            which = winter_power
-            value = 3
-        }
-	}
-
     mean_time_to_happen = {
 		months = 1
     }
     
-    immediate = {
-        hidden_effect = {
-            set_global_flag = winter_active
-            1 = {
-                cede_province = WIT
-                add_core = WIT
-            }
-            westeros = {
-                add_claim = WIT
-                discover_country = WIT
-            }
-            westeros_sea_region = {
-                discover_country = WIT
-            }
-            WIT = {
-                define_ruler = {
-                    name = "The Night King"
-                    dynasty = "of the Eternal Winter"
-                    age = 20
-                    adm = 6
-                    dip = 6
-                    mil = 6
-                    male = yes
-                    fixed = yes
-                }
-            }
-            
-            set_global_flag = winter_has_fired
+	option = {
+		name = GOT_WHITE_WALKER.1.option.a
+        
+        remove_country_modifier = summer_reigns
+        
+        capital_scope = {
+            set_base_tax = 10
+            set_base_production = 10
+            set_base_manpower = 10
         }
-    }
+        
+        area_land_of_always_winter = {
+            cede_province = WIT
+        }
+        
+        westeros = {
+            add_claim = WIT
+            discover_country = WIT
+        }
+        westeros_sea_region = {
+            discover_country = WIT
+        }
+	}
+}
 
+# Arise, Undead Soldiers
+country_event = {
+	id = GOT_WHITE_WALKER.2
+	title = GOT_WHITE_WALKER.2.title
+	desc = GOT_WHITE_WALKER.2.desc
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+    
+    trigger = {
+        tag = WIT
+    }
+    
 	option = {
 		name = GOT_WHITE_WALKER.2.option.a
-	
         
+        add_yearly_manpower = 0.25
 	}
-    option = {
-		name = GOT_WHITE_WALKER.2.option.b
+}
+
+# Cyromantic Conversion
+province_event = {
+	id = GOT_WHITE_WALKER.3
+	title = GOT_WHITE_WALKER.3.title
+	desc = GOT_WHITE_WALKER.3.desc
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+    
+    trigger = {
+        NOT = { owned_by = WIT }
+        controlled_by = WIT
+    }
+    
+	option = {
+		name = GOT_WHITE_WALKER.3.option.a
         
-        switch_tag = WIT
+        add_core = WIT
+        change_religion = WIT
+        change_culture = WIT
 	}
 }
 

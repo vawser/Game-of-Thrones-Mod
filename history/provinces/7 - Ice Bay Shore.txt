@@ -1,9 +1,7 @@
-# 7 - Ice Bay Shore.txt
-is_city = yes
-
-owner = U94
-controller = U94
-add_core = U94
+is_city = no
+native_size = 10
+native_ferocity = 10
+native_hostileness = 10
 
 base_tax = 1
 base_production = 1
@@ -12,10 +10,15 @@ base_manpower = 1
 culture = free_folk
 religion = asoiaf_the_old_gods
 
-trade_goods = fish
+trade_goods = unknown
 hre = no
 
+100.1.1 = {
+    
+}
+
 299.1.1 = {
+    is_city = yes
 	owner = Z01
 	controller = Z01
 	add_core = Z01
@@ -28,9 +31,4 @@ hre = no
 	
     culture = white_walkers
     religion = asoiaf_white_walker
-    
-    base_tax = 4
-    base_production = 3
-    base_manpower = 5
 }
-

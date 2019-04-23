@@ -75,6 +75,7 @@ province_event = {
 	picture = RELIGION_eventPicture
 	
 	trigger = {
+        owner = { NOT = { technology_group = wildling } }
 		religion = asoiaf_the_old_gods
 		owner = { religion = asoiaf_the_old_gods }
 	}

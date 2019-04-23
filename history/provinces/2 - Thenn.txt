@@ -1,28 +1,29 @@
-# 2 - Thenn.txt
-is_city = yes
+is_city = no
+native_size = 10
+native_ferocity = 10
+native_hostileness = 10
 
-owner = Q06
-controller = Q06
-add_core = Q06
-
-base_tax = 1
-base_production = 1
-base_manpower = 1
+base_tax = 3
+base_production = 3
+base_manpower = 5
 
 culture = free_folk
 religion = asoiaf_the_old_gods
 
-trade_goods = fish
+trade_goods = unknown
 hre = no
+
+100.1.1 = {
+    is_city = yes
+    owner = Q06
+	controller = Q06
+	add_core = Q06
+}
 
 299.1.1 = {
 	owner = Z01
 	controller = Z01
 	add_core = Z01
-	
-	base_tax = 5
-	base_production = 5
-	base_manpower = 5
 }
 
 304.1.1 = {
@@ -32,8 +33,4 @@ hre = no
 	
     culture = white_walkers
     religion = asoiaf_white_walker
-    
-    base_tax = 8
-	base_production = 7
-	base_manpower = 8
 }

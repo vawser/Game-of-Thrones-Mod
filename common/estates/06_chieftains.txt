@@ -777,4 +777,184 @@ estate_chieftains = {
             }       
         }
     }
+    
+    # Raise Clansmen
+    interaction = {
+		name = "RAISE_CLANSMEN"
+		icon = 1
+		
+		years_between_use = 10
+		
+		trigger = {
+            estate_loyalty = {
+                estate = estate_chieftains
+                loyalty = 30
+            }
+            estate_influence = {
+                estate = estate_chieftains
+                influence = 40
+            }
+            
+            custom_trigger_tooltip = {
+				tooltip = TT_OWN_CHEIFTAINS_PROVINCE
+				any_owned_province = {
+					has_estate = estate_chieftains
+				}
+			}
+        }
+		
+		effect = {
+            custom_tooltip = TT_SPAWN_CHEIFTAINS_CAVALRY
+            
+            hidden_effect = {
+				capital_scope = {
+					infantry = ROOT
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 2
+									has_estate = estate_chieftains
+								}
+							}
+						}
+						infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 3
+									has_estate = estate_chieftains
+								}
+							}
+						}
+						infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 4
+									has_estate = estate_chieftains
+								}
+							}
+						}
+						infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 5
+									has_estate = estate_chieftains
+                                }
+							}
+						}
+						infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 6
+									has_estate = estate_chieftains
+								}
+								estate_influence = {
+									estate = estate_chieftains
+									influence = 60
+								}
+							}
+						
+						}
+						infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 7
+									has_estate = estate_chieftains
+								}
+								estate_influence = {
+									estate = estate_chieftains
+									influence = 60
+								}
+							}
+						}
+						infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 8
+									has_estate = estate_chieftains
+								}
+								estate_influence = {
+									estate = estate_chieftains
+									influence = 60
+								}
+							}
+						}
+						infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 9
+									has_estate = estate_chieftains
+								}
+								estate_influence = {
+									estate = estate_chieftains
+									influence = 60
+								}
+							}
+						}
+						infantry = ROOT
+					}
+					if = {
+						limit = {
+							owner = {
+								num_of_owned_provinces_with = {
+									value = 10
+									has_estate = estate_chieftains
+								}
+								estate_influence = {
+									estate = estate_chieftains
+									influence = 60
+								}
+							}
+						}
+						infantry = ROOT
+					}
+				}
+            }
+            
+            add_estate_loyalty = {
+				estate = estate_chieftains
+				loyalty = -10
+			}
+            
+            add_estate_influence_modifier = {
+				estate = estate_chieftains
+				desc = EST_VAL_MUSTERED_INFANTRY
+				influence = 10
+				duration = 3650
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+            
+            modifier = {   
+                factor = 0
+                estate_influence = {
+                    estate = estate_chieftains
+                    influence = 60
+                }	
+            }
+		}
+	}
 }

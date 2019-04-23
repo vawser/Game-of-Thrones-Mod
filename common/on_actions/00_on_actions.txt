@@ -74,6 +74,10 @@ on_war_lost = {
 on_battle_won_country = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - winner : [Root.GetName] - loser : [From.GetName] - on_battle_won_country" }
     
+    events = {
+        GOT_WHITE_WALKER.2 
+    }
+    
     random_events = {
         1000 = GOT_RULER_IMPROVEMENT.1
         1000 = GOT_RULER_IMPROVEMENT.10
@@ -136,6 +140,9 @@ on_siege_lost_country = {
 on_siege_won_province = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - province : [Root.GetName] - loser : [From.GetName] - on_siege_won_province" }
     
+    events = {
+        GOT_WHITE_WALKER.3
+    }
 }
 
 # Province - ROOT = location, FROM = winning country
@@ -640,13 +647,13 @@ on_thri_yearly_pulse_2 = {
     
     random_events = {
         # Dragon Eggs
-        100 = GOT_TARGARYEN.2
-		100 = GOT_TARGARYEN.3
-        100 = GOT_TARGARYEN.4
-        100 = GOT_TARGARYEN.5
-        100 = GOT_TARGARYEN.6
-        100 = GOT_TARGARYEN.7
-        100 = GOT_TARGARYEN.10
+        100 = GOT_DRAGON_EGGS.2
+		100 = GOT_DRAGON_EGGS.3
+        100 = GOT_DRAGON_EGGS.4
+        100 = GOT_DRAGON_EGGS.5
+        100 = GOT_DRAGON_EGGS.6
+        100 = GOT_DRAGON_EGGS.7
+        100 = GOT_DRAGON_EGGS.10
     }
 }
 
@@ -725,8 +732,6 @@ on_five_year_pulse = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_five_year_pulse" }
 
 	random_events = {
-        500 = GOT_WHITE_WALKER.1 # Summer fades
-        
 		100 = GOT_FAITH_OF_THE_SEVEN.2 # A warrior demands representation!
 		100 = GOT_FAITH_OF_THE_SEVEN.4 # Our Faith Rewarded!
 		100 = GOT_FAITH_OF_THE_SEVEN.5 # Hand of the Father

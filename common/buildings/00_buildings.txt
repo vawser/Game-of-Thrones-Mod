@@ -25,6 +25,10 @@ town_hall = {
 	cost = 50
 	time = 12
 
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         local_development_cost = -0.20
 		allowed_num_of_buildings = 1
@@ -40,6 +44,10 @@ tavern = {
 	cost = 50
 	time = 12
 
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         local_unrest = -1
         local_culture_conversion_cost = -0.1
@@ -55,6 +63,10 @@ market = {
 	cost = 50
 	time = 12
 
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         province_trade_power_modifier = 0.5
 	}
@@ -69,6 +81,10 @@ farm = {
 	cost = 50
 	time = 12
 
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         local_tax_modifier = 0.5
 	}
@@ -83,6 +99,10 @@ mine = {
 	cost = 50
 	time = 12
 
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         local_production_efficiency = 0.5
 	}
@@ -97,6 +117,10 @@ temple = {
 	cost = 50
 	time = 12
 
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         local_missionary_strength = 0.03
         local_state_maintenance_modifier = -0.25
@@ -113,6 +137,7 @@ dock = {
 	time = 12
 
     trigger = {
+        NOT = { province_id = 1590 }
 		has_port = yes
 	}
     
@@ -136,6 +161,7 @@ shipyard = {
 	time = 12
 
     trigger = {
+        NOT = { province_id = 1590 }
 		has_port = yes
 	}
     
@@ -160,6 +186,10 @@ barracks = {
 	cost = 50
 	time = 12
 
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         local_manpower_modifier = 0.5
 	}
@@ -174,6 +204,10 @@ drill_square = {
 	cost = 50
 	time = 12
 
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         land_forcelimit = 2
         regiment_recruit_speed = -0.25
@@ -189,6 +223,10 @@ paved_road = {
 	cost = 50
 	time = 12
 
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         local_friendly_movement_speed = 0.25
 	}
@@ -203,6 +241,10 @@ supply_depot = {
 	cost = 50
 	time = 12
 
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         supply_limit_modifier = 0.25
 	}
@@ -223,6 +265,10 @@ motte_and_bailey = {
     onmap = yes
 	#influencing_fort = yes
     
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         fort_level = 1
         local_hostile_attrition = 1
@@ -242,6 +288,10 @@ castle = {
     onmap = yes
 	#influencing_fort = yes
     
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         fort_level = 2
         local_hostile_attrition = 2
@@ -260,6 +310,10 @@ fortress = {
     
     onmap = yes
 	#influencing_fort = yes
+    
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
     
 	modifier = {
         fort_level = 3
@@ -281,6 +335,10 @@ citadel = {
     onmap = yes
     #influencing_fort = yes
     
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         fort_level = 4
         local_hostile_attrition = 4
@@ -299,6 +357,7 @@ cot = {
 	time = 12
     
 	trigger = {
+        NOT = { province_id = 1590 }
         NOT = {
             any_province_in_state = {
                 province_has_center_of_trade_of_level = 1
@@ -329,6 +388,7 @@ cot = {
 manufactory = {
 	cost = 500
 	time = 12
+    
 	modifier = {
 		trade_goods_size = 1.0
 	}
@@ -337,6 +397,10 @@ manufactory = {
 # Farmers Guild
 # grain, fish, tea, coffee, cotton, sugar, tobacco, cocoa
 farmers_guild = {
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
     manufactory = {
         grain
         fish
@@ -346,6 +410,7 @@ farmers_guild = {
         sugar
         tobacco
         cocoa
+        fruit
     }
 	
 	ai_will_do = {
@@ -356,6 +421,10 @@ farmers_guild = {
 # Foresters Guild
 # naval_supplies, ironwood, tropical_wood
 foresters_guild = {
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
     manufactory = {
         naval_supplies
         ironwood
@@ -370,6 +439,10 @@ foresters_guild = {
 # Blacksmiths Guild
 # iron, copper
 blacksmiths_guild = {
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
     manufactory = {
         iron
         copper
@@ -383,6 +456,10 @@ blacksmiths_guild = {
 # Artisans Guild
 # wine, ivory, spices, silk, dyes, candles, salt
 artisans_guild = {
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
     manufactory = {
         wine
         ivory
@@ -401,6 +478,10 @@ artisans_guild = {
 # Tailors Guild
 # wool, cloth, fur
 tailors_guild = {
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
     manufactory = {
         wool
         cloth
@@ -416,6 +497,7 @@ tailors_guild = {
 # slaves
 slavers_guild = {
     trigger = {
+        NOT = { province_id = 1590 }
         owner = { has_country_modifier = slavery_permitted }
     }
     
@@ -437,6 +519,10 @@ grand_palace = {
 	time = 12
     one_per_country = yes
     
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         legitimacy = 1
         republican_tradition = 1
@@ -456,6 +542,10 @@ merchants_quarter = {
 	time = 12
     one_per_country = yes
     
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         merchants = 1
 	}
@@ -470,6 +560,10 @@ grand_temple = {
 	cost = 10000
 	time = 12
     one_per_country = yes
+    
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
     
 	modifier = {
         global_missionary_strength = 0.03
@@ -487,6 +581,10 @@ tourney_grounds = {
 	time = 12
     one_per_country = yes
     
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         diplomatic_reputation = 1
         improve_relation_modifier = 0.25
@@ -503,6 +601,10 @@ military_academy = {
 	time = 12
     one_per_country = yes
     
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
+    
 	modifier = {
         free_leader_pool = 1
         prestige_from_land = 1.0
@@ -518,6 +620,10 @@ naval_academy = {
 	cost = 10000
 	time = 12
     one_per_country = yes
+    
+    trigger = {
+        NOT = { province_id = 1590 }
+    }
     
 	modifier = {
         free_leader_pool = 1

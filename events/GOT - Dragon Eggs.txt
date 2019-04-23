@@ -1,0 +1,293 @@
+namespace = GOT_DRAGON_EGGS
+
+# A Rare Opportunity
+# Rumours have it that dragon eggs have been found in the far east of Essos. If we are willing, let an expeditionary company be established to search for these eggs, and if found, for them to be delivered to us promptly. 
+# We must retrieve those eggs!
+# Bah, we have no need for such artefacts.
+country_event = {
+	id = GOT_DRAGON_EGGS.1
+	title = "GOT_DRAGON_EGGS.1.title"
+	desc = "GOT_DRAGON_EGGS.1.desc"
+	picture = COASTLINE_MAP_eventPicture
+
+	trigger = {
+        NOT = { has_country_flag = looking_for_dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
+        NOT = { has_country_modifier = dragon_eggs }
+	}
+	
+	mean_time_to_happen = {
+		months = 6000
+        
+        modifier = {
+            factor = 0.1
+            
+            OR = {
+                tag = CRW
+                tag = A10
+            }
+        }
+	}
+	
+	option = {
+		name = "GOT_DRAGON_EGGS.1.option.a"
+		
+        custom_tooltip = DRAGON_EGGS_SEARCH_TT
+        
+		hidden_effect = { set_country_flag = looking_for_dragon_eggs }
+        
+        add_years_of_income = -1
+	}
+    option = {
+		name = "GOT_DRAGON_EGGS.1.option.b"
+		
+        add_adm_power = 50
+	}
+}
+
+# New Leads
+# Our expeditionary company have discovered new leads during their time in Essos. These leads will draw us closer to the actual location of the rumored dragon eggs.
+# Wonderful
+country_event = {
+	id = GOT_DRAGON_EGGS.2
+	title = "GOT_DRAGON_EGGS.2.title"
+	desc = "GOT_DRAGON_EGGS.2.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+    
+    trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
+        has_country_flag = looking_for_dragon_eggs
+    }
+	
+	option = {
+		name = "GOT_DRAGON_EGGS.2.option.a"
+		
+        custom_tooltip = DRAGON_EGGS_LEAD_TT
+        
+        hidden_effect = {
+            change_variable = { dragon_egg_leads = 1 }
+        }
+	}
+}
+
+# Useful Clue
+# New clues have been found that point to the whereabouts of the dragon eggs. Our expeditionary company promises these clues will draw us closer to the actual location of the rumored dragon eggs. 
+# Great
+country_event = {
+	id = GOT_DRAGON_EGGS.3
+	title = "GOT_DRAGON_EGGS.3.title"
+	desc = "GOT_DRAGON_EGGS.3.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+    
+    trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
+        has_country_flag = looking_for_dragon_eggs
+    }
+	
+	option = {
+		name = "GOT_DRAGON_EGGS.3.option.a"
+		
+        custom_tooltip = DRAGON_EGGS_LEAD_TT
+        
+        hidden_effect = {
+            change_variable = { dragon_egg_leads = 1 }
+        }
+	}
+}
+
+# Mishap in Qarth
+# Whilst conducting inquiries in Qarth, our expeditionary company offended a powerful lord. He has taken issue with their actions, and requires a hefty 'donation' for him to look the other way. 
+# Blasted oafs!
+country_event = {
+	id = GOT_DRAGON_EGGS.4
+	title = "GOT_DRAGON_EGGS.4.title"
+	desc = "GOT_DRAGON_EGGS.4.desc"
+	picture = CULTURE_eventPicture
+
+	is_triggered_only = yes
+    
+    trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
+        has_country_flag = looking_for_dragon_eggs
+    }
+	
+	option = {
+		name = "GOT_DRAGON_EGGS.4.option.a"
+		
+        add_years_of_income = -1
+        
+        ai_chance = {
+            factor = 100
+        }
+	}
+    
+    option = {
+		name = "GOT_DRAGON_EGGS.4.option.b"
+		
+        custom_tooltip = DRAGON_EGGS_SEARCH_END_TT
+        
+		hidden_effect = { clr_country_flag = looking_for_dragon_eggs }
+        
+        ai_chance = {
+            factor = 0
+        }
+	}
+}
+
+# Trouble in Naath
+# Whilst look for signs of the dragon eggs in Naath, our expeditionary company ran across the native Naathi people. Unfortunately several members of the company perished to these fiendish natives, so the company has requested men to replace those lost.
+# Bloody natives!
+country_event = {
+	id = GOT_DRAGON_EGGS.5
+	title = "GOT_DRAGON_EGGS.5.title"
+	desc = "GOT_DRAGON_EGGS.5.desc"
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+    
+    trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
+        has_country_flag = looking_for_dragon_eggs
+    }
+	
+	option = {
+		name = "GOT_DRAGON_EGGS.5.option.a"
+		
+        add_yearly_manpower = -1
+        
+        ai_chance = {
+            factor = 100
+        }
+	}
+    option = {
+		name = "GOT_DRAGON_EGGS.5.option.b"
+		
+        custom_tooltip = DRAGON_EGGS_SEARCH_END_TT
+        
+		hidden_effect = { clr_country_flag = looking_for_dragon_eggs }
+        
+        ai_chance = {
+            factor = 0
+        }
+	}
+}
+
+# Difficulty in Trader Town
+# Whilst look for signs of the dragon eggs in Trader Town, our expeditionary company insulted a prominent merchant. This will threaten our trade partnerships unless we make a diplomatic offering to resolve the insult.
+# Ignorant fools!
+country_event = {
+	id = GOT_DRAGON_EGGS.6
+	title = "GOT_DRAGON_EGGS.6.title"
+	desc = "GOT_DRAGON_EGGS.6.desc"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+    
+    trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
+        has_country_flag = looking_for_dragon_eggs
+    }
+	
+	option = {
+		name = "GOT_DRAGON_EGGS.6.option.a"
+		
+        add_dip_power = -100
+        
+        ai_chance = {
+            factor = 100
+        }
+	}
+    option = {
+		name = "GOT_DRAGON_EGGS.6.option.b"
+		
+        custom_tooltip = DRAGON_EGGS_SEARCH_END_TT
+        
+		hidden_effect = { clr_country_flag = looking_for_dragon_eggs }
+        
+        ai_chance = {
+            factor = 0
+        }
+	}
+}
+
+# Disorder in the Bloodlands
+# Whilst look for signs of the dragon eggs in the Bloodlands, our expeditionary company was set upon by the vicious natives of the region. The company has requested fresh armaments and supplies to curb further attacks.
+# Fiendish natives!
+country_event = {
+	id = GOT_DRAGON_EGGS.7
+	title = "GOT_DRAGON_EGGS.7.title"
+	desc = "GOT_DRAGON_EGGS.7.desc"
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+    
+    trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
+        has_country_flag = looking_for_dragon_eggs
+    }
+	
+	option = {
+		name = "GOT_DRAGON_EGGS.7.option.a"
+		
+        add_mil_power = -100
+        
+        ai_chance = {
+            factor = 100
+        }
+	}
+    option = {
+		name = "GOT_DRAGON_EGGS.7.option.b"
+		
+        custom_tooltip = DRAGON_EGGS_SEARCH_END_TT
+        
+		hidden_effect = { clr_country_flag = looking_for_dragon_eggs }
+        
+        ai_chance = {
+            factor = 0
+        }
+	}
+}
+
+# Dragon Eggs Discovered!
+# Our expeditionary company has finally succeeded in located the rumoured dragon eggs, and are set to return them promptly.
+# Hurrah!
+country_event = {
+	id = GOT_DRAGON_EGGS.10
+	title = "GOT_DRAGON_EGGS.10.title"
+	desc = "GOT_DRAGON_EGGS.10.desc"
+	picture = COASTLINE_MAP_eventPicture
+
+	is_triggered_only = yes
+    
+    trigger = {
+        NOT = { has_country_modifier = dragon_eggs }
+        NOT = { has_country_modifier = revival_of_the_dragons }
+        has_country_flag = looking_for_dragon_eggs
+        check_variable = { dragon_egg_leads = 3 }
+    }
+	
+	option = {
+		name = "GOT_DRAGON_EGGS.10.option.a"
+		
+        add_country_modifier = {
+            name = dragon_eggs
+            duration = -1
+        }
+        
+        hidden_effect = {
+            clr_country_flag = looking_for_dragon_eggs
+            set_variable = { dragon_egg_leads = 0 }
+        }
+	}
+}
+

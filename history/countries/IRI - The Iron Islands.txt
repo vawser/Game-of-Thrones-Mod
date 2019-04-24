@@ -187,11 +187,16 @@ fixed_capital = 162
 # The Night King
 304.1.1 = {
 	monarch = {
-		name = "Euron"
+		name = "Yara"
 		dynasty = "Greyjoy"
-		adm = 3
+		adm = 4
 		dip = 4
-		mil = 6
-		birth_date = 256.1.1
+		mil = 5
+		birth_date = 275.1.1
+        female = yes
 	}
+    add_country_modifier = {
+        name = decimated_fleet
+        duration = 7300
+    }
 }

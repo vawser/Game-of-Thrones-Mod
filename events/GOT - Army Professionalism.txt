@@ -115,7 +115,7 @@ country_event = {
 				culture = FROM
 			}
 		}
-		add_army_tradition = -5
+		add_army_tradition = 10
 		add_prestige = -10
 		add_horde_unity = 5
 		add_loot_from_province_effect = yes
@@ -565,14 +565,16 @@ country_event = {
 		ai_chance = {
 			factor = 75
 		}
-		add_army_tradition = 15
+		add_army_tradition = 25
 	}
 	option = {
 		name = GOT_ARMY_PROFESSIONALISM.10.option.b #
 		ai_chance = {
 			factor = 25
 		}
-		add_army_tradition = -10
+		create_general = {
+            tradition = 25
+        }
 	}
 }
 

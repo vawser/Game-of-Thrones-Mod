@@ -18,6 +18,7 @@ kingdom_reform = {
         NOT = { has_reform = yunkai_city_reform }
         NOT = { has_reform = astapor_city_reform }
         NOT = { has_reform = ghis_city_reform }
+        NOT = { has_reform = daenerys_host_reform }
     }
     
     allow_normal_conversion = yes
@@ -306,6 +307,30 @@ ghis_city_reform = {
         core_creation = -0.1
         max_absolutism = 10
 	}
+    
+    custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+}
+daenerys_host_reform = {
+	icon = "castle"
+    
+    potential = {
+        has_reform = daenerys_host_reform
+    }
+    
+    allow_normal_conversion = no
+	legacy_equivalent = daenerys_host_legacy
+    
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    monarchy = yes
+    
+    modifiers = {
+        prestige = 1
+        core_creation = -0.1
+    }
     
     custom_attributes = {
 		enables_monarchy_ideagroup = yes

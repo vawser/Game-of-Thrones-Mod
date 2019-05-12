@@ -315,6 +315,29 @@ ghis_city_legacy = {
     
 	ai = { factor = 1 }
 }
+daenerys_host_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = no
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    monarchy = yes
+    
+    modifiers = {
+        prestige = 1
+        core_creation = -0.1
+    }
+    
+    custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+    
+	ai = { factor = 1 }
+}
 
 #------------------------------------------------------------
 # Republic

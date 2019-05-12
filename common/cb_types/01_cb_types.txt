@@ -30,6 +30,19 @@ cb_iron_throne_rebellion = {
     war_goal = superiority_iron_throne
 }
 
+cb_claim_the_iron_throne = {
+	valid_for_subject = no
+    
+    prerequisites = {
+		has_reform = daenerys_host_reform
+        FROM = { 
+            has_reform = royal_house_reform
+        }
+	}
+    
+    war_goal = superiority_iron_throne
+}
+
 cb_royal_conquest = {
     valid_for_subject = no
     

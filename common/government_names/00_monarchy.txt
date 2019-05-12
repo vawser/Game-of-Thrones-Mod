@@ -633,3 +633,51 @@ gov_nefer_clan = {
         }
 	}
 }
+
+gov_daenerys_host = {
+	rank = {
+		1 = DAENERYS_HOST
+        2 = DAENERYS_HOST
+        3 = DAENERYS_HOST
+		4 = DAENERYS_HOST
+        5 = DAENERYS_HOST
+        6 = DAENERYS_HOST
+        7 = DAENERYS_HOST
+		8 = DAENERYS_HOST
+        9 = DAENERYS_HOST
+        10 = DAENERYS_HOST
+	}
+	
+	ruler_male = {
+		1 = KING
+        2 = KING
+        3 = KING
+		4 = KING
+        5 = KING
+        6 = KING
+        7 = KING
+		8 = KING
+        9 = KING
+        10 = KING
+	}
+	
+	ruler_female = {
+		1 = QUEEN
+        2 = QUEEN
+        3 = QUEEN
+		4 = QUEEN	
+        5 = QUEEN	
+        6 = QUEEN	
+        7 = QUEEN	
+		8 = QUEEN
+        9 = QUEEN
+        10 = QUEEN
+	}
+	
+	trigger = {
+        OR = {
+            has_reform = daenerys_host_reform
+            has_reform = daenerys_host_legacy
+        }
+	}
+}

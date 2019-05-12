@@ -73,12 +73,14 @@ claim_the_iron_throne = {
     }
     
     is_visible = {
-        has_reform = noble_house_reform
+        OR = {
+            has_reform = noble_house_reform
+            has_reform = daenerys_host_reform
+        }
         FROM = { has_reform = royal_house_reform }
     }
     is_allowed = {
-        has_reform = noble_house_reform
-        FROM = { has_reform = royal_house_reform }
+        always = yes
     }
     effect = {
         # Cleanup

@@ -74,10 +74,6 @@ on_war_lost = {
 on_battle_won_country = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - winner : [Root.GetName] - loser : [From.GetName] - on_battle_won_country" }
     
-    events = {
-        GOT_WHITE_WALKER.2 
-    }
-    
     random_events = {
         1000 = GOT_RULER_IMPROVEMENT.1
         1000 = GOT_RULER_IMPROVEMENT.10
@@ -98,6 +94,11 @@ on_battle_won_province = {
 # Province - ROOT = location, FROM = winner country
 on_battle_lost_province = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - province : [Root.GetName] - winner : [From.GetName] - on_battle_lost_province" }
+    
+    random_events = {
+        50 = GOT_WHITE_WALKER.2 
+        50 = 0
+    }
 }
 
 # Province - ROOT = location, FROM = country doing it
@@ -139,15 +140,15 @@ on_siege_lost_country = {
 # Province - ROOT = location, FROM = losing country
 on_siege_won_province = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - province : [Root.GetName] - loser : [From.GetName] - on_siege_won_province" }
-    
-    events = {
-        GOT_WHITE_WALKER.3
-    }
 }
 
 # Province - ROOT = location, FROM = winning country
 on_siege_lost_province =  {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - province : [Root.GetName] - winner : [From.GetName] - on_siege_lost_province" }
+    
+    events = {
+        GOT_WHITE_WALKER.3
+    }
 }
 
 # Province - ROOT = location, FROM = country that abandons colony - Fired right before the colony is abandoned.

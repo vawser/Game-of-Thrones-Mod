@@ -315,7 +315,7 @@ scorched_earth = {
 # Sea
 #--------------------------------------
 sea_zone = {
-    max_attrition = 100
+    max_attrition = 10
 }
 
 non_coastal = {
@@ -331,7 +331,7 @@ coastal_sea = {
 tropical = {
 	local_colonial_growth = -10
 	supply_limit_modifier = -0.3
-	local_hostile_attrition = 2
+	local_hostile_attrition = 1
 
 	local_development_cost = 0.15
 
@@ -341,7 +341,7 @@ tropical = {
 arctic = {
 	local_colonial_growth = -10
 	supply_limit_modifier = -0.4
-	local_hostile_attrition = 3
+	local_hostile_attrition = 1
 
 	allowed_num_of_buildings = -1
 	local_development_cost = 0.5
@@ -370,14 +370,14 @@ mild_winter = {
 }
 
 normal_winter = {
-	local_hostile_attrition = 2
+	local_hostile_attrition = 1
 	supply_limit_modifier = -0.2
 
 	picture = "winter_normal"
 }
 
 severe_winter = {
-	local_hostile_attrition = 3
+	local_hostile_attrition = 1
 	supply_limit_modifier = -0.3
 
 	picture = "winter_severe"
@@ -392,7 +392,7 @@ mild_monsoon = {
 }
 
 normal_monsoon = {
-	local_hostile_attrition = 2
+	local_hostile_attrition = 1
 	local_hostile_movement_speed = -0.25
 	local_friendly_movement_speed = -0.25
 
@@ -400,7 +400,7 @@ normal_monsoon = {
 }
 
 severe_monsoon = {
-	local_hostile_attrition = 3
+	local_hostile_attrition = 1
 	local_hostile_movement_speed = -0.50
 	local_friendly_movement_speed = -0.50
 

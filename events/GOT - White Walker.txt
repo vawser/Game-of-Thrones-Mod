@@ -85,24 +85,25 @@ country_event = {
         }
         
         area_land_of_always_winter = {
-            cede_province = WIT
-            add_core = WIT
-            change_culture = WIT
-            change_religion = WIT
+            cede_province = ROOT
+            add_core = ROOT
+            change_culture = white_walkers
+            change_religion = asoiaf_white_walker
+            set_local_autonomy = 0
         }
         
         westeros = {
-            add_claim = WIT
-            discover_country = WIT
+            add_permanent_claim = ROOT
+            discover_country = ROOT
         }
         westeros_sea_region = {
-            discover_country = WIT
+            discover_country = ROOT
         }
 	}
 }
 
 # Arise, Undead Soldiers
-country_event = {
+province_event = {
 	id = GOT_WHITE_WALKER.2
 	title = GOT_WHITE_WALKER.2.title
 	desc = GOT_WHITE_WALKER.2.desc
@@ -111,13 +112,14 @@ country_event = {
 	is_triggered_only = yes
     
     trigger = {
-        tag = WIT
+        is_empty = no # Only occur in owned provinces
+        FROM = { primary_culture = white_walkers }
     }
     
 	option = {
 		name = GOT_WHITE_WALKER.2.option.a
         
-        add_yearly_manpower = 1
+        FROM = { add_yearly_manpower = 1 }
 	}
 }
 
@@ -131,16 +133,19 @@ province_event = {
 	is_triggered_only = yes
     
     trigger = {
-        NOT = { owned_by = WIT }
-        controlled_by = WIT
+        is_capital = no
+        FROM = { primary_culture = white_walkers }
+        NOT = { owned_by = FROM }
+        controlled_by = FROM
     }
     
 	option = {
 		name = GOT_WHITE_WALKER.3.option.a
         
-        add_core = WIT
-        change_religion = WIT
-        change_culture = WIT
+        cede_province = FROM
+        add_core = FROM
+        change_culture = white_walkers
+        change_religion = asoiaf_white_walker
 	}
 }
 

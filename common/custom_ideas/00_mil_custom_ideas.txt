@@ -13,20 +13,14 @@ mil_idea_modifiers = {
 		land_maintenance_modifier = -0.05
 		default = 10
 	}
-	custom_idea_mercenary_cost = {
-		mercenary_cost = -0.05
-		level_cost_2 = 3
-		level_cost_3 = 9
-		level_cost_4 = 18			
-	}
 	custom_idea_merc_maintenance_modifier = {
-		merc_maintenance_modifier = -0.05
+		merc_maintenance_modifier = -0.1
 		level_cost_2 = 3
 		level_cost_3 = 9
 		level_cost_4 = 18		
 	}
-	custom_idea_possible_mercenaries = {
-		possible_mercenaries = 0.125
+	custom_idea_mercenary_manpower = {
+		mercenary_manpower = 0.125
 		level_cost_2 = 3
 		level_cost_3 = 9
 		level_cost_4 = 18		
@@ -106,16 +100,32 @@ mil_idea_modifiers = {
 	}	
 	custom_idea_infantry_power = {
 		infantry_power = 0.05
-		level_cost_2 = 3
-		level_cost_3 = 9
-		level_cost_4 = 18		
+		level_cost_2 = 5
+		level_cost_3 = 15
+		level_cost_4 = 30		
 	}
 	custom_idea_cavalry_power = {
 		cavalry_power = 0.05
 		level_cost_2 = 3
 		level_cost_3 = 9
-		level_cost_4 = 18			
-	}		
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_reform = steppe_horde
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					technology_group = andean
+					technology_group = south_american
+					technology_group = mesoamerican
+					technology_group = north_american
+				}
+			}
+		}		
+	}
 	custom_idea_artillery_power = {
 		artillery_power = 0.05
 	}
@@ -130,6 +140,22 @@ mil_idea_modifiers = {
 		level_cost_2 = 3
 		level_cost_3 = 9
 		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_reform = steppe_horde
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					technology_group = andean
+					technology_group = south_american
+					technology_group = mesoamerican
+					technology_group = north_american
+				}
+			}
+		}
 	}
 	custom_idea_artillery_cost = {
 		artillery_cost = -0.05
@@ -142,5 +168,15 @@ mil_idea_modifiers = {
 		level_cost_2 = 3
 		level_cost_3 = 9
 		level_cost_4 = 18		
+	}
+	custom_idea_free_mil_policy = {
+		free_mil_policy = 1
+		max_level = 1
+		level_cost_1 = 30
+	}
+	custom_idea_possible_mil_policy = {
+		possible_mil_policy = 1
+		max_level = 1
+		level_cost_1 = 30
 	}	
 }

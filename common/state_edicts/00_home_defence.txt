@@ -1,0 +1,19 @@
+#------------------------------------
+# Home Defence
+#------------------------------------
+edict_home_defence = {
+    color = { 33 140 200 }
+    
+	potential = { always = yes }
+	allow = {
+		always = yes
+	}
+	
+	modifier = {
+		local_hostile_attrition = 2
+	}
+	
+	ai_will_do = {
+		factor = 0
+	}
+}

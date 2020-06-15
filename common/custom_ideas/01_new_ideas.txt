@@ -9,6 +9,7 @@ new_idea_adm_modifiers = {
 		level_cost_1 = 5
 		level_cost_2 = 30
 	}
+
 	custom_idea_female_advisor_chance = {
 		female_advisor_chance = 0.1
 		max_level = 10
@@ -68,6 +69,19 @@ new_idea_dip_modifiers = {
 				factor = 0
 				NOT = { num_of_ports = 1 }
 			}
+			modifier = {
+				factor = 2
+				religion = norse_pagan_reformed
+			}
+			modifier = {
+				factor = 2
+				capital_scope = {
+					region = maghreb_region
+				}
+			}
+		}
+		enabled = {
+			has_dlc = "Mare Nostrum"
 		}
 	}
 }

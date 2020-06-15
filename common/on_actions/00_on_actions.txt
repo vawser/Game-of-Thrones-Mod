@@ -1134,3 +1134,98 @@ on_flagship_destroyed = {
 on_country_released = {
 	if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_country_released" }
 }
+
+
+# ROOT = province, FROM = country
+on_trade_good_changed = {
+	
+
+# this = country
+on_loan_repaid = {
+	
+}
+
+# this = country
+on_rebels_break_country = {
+	add_country_modifier = {
+		name = just_lost_to_rebels
+		duration = 10
+		hidden = yes
+	}
+}
+
+# this = country
+## Fires when you fire or replace your ADM advisor, in the moment before they are actually removed from their post.
+## Note: Defining a new advisor here will result in the shortest appointment in history. Use on_post_adm_advisor_fired instead :)
+on_pre_adm_advisor_fired = {
+	if = {
+		limit = {
+			has_country_flag = need_to_fire_adm_advisor
+		}
+		set_country_flag = just_fired_adm_advisor
+		remove_advisor_by_category_no_action = ADM
+	}
+}
+
+# this = country
+on_pre_dip_advisor_fired = {
+	if = {
+		limit = {
+			has_country_flag = need_to_fire_dip_advisor
+		}
+		set_country_flag = just_fired_dip_advisor
+		remove_advisor_by_category_no_action = DIP
+	}
+}
+
+# this = country
+on_pre_mil_advisor_fired = {
+	if = {
+		limit = {
+			has_country_flag = need_to_fire_mil_advisor
+		}
+		set_country_flag = just_fired_mil_advisor
+		remove_advisor_by_category_no_action = MIL
+	}
+}
+
+# this = country
+on_post_adm_advisor_fired = {
+
+}
+
+# this = country
+on_post_dip_advisor_fired = {
+	
+}
+
+# this = country
+on_post_mil_advisor_fired = {
+	
+}
+
+# this = new client state, from = parent country
+on_create_client_state = {
+	
+}
+
+# this = new target, from = previous target (both can be non-existent tag)
+on_change_revolution_target = {
+	
+}
+
+# this = curia controller (enactor of the bull)
+on_golden_bull_enacted = {
+	set_country_flag = enacted_golden_bull
+}
+
+
+# province:  spawned whenever a new owner takes over the province
+# FROM = The previous owner.
+on_conquest = {
+	remove_named_unrest = estate_land_seized
+}
+
+on_country_creation = {
+	
+}

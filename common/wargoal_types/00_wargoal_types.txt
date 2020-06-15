@@ -26,6 +26,7 @@
 # po_change_government
 # po_revoke_elector
 # po_trade_power
+# po_steer_trade
 # po_humiliate
 # po_enforce_rebel_demands
 #
@@ -57,6 +58,7 @@ fallback_wargoal = {
 		po_gold
 		po_concede_defeat
 		po_trade_power
+		po_steer_trade
 	}
 }
 
@@ -106,6 +108,7 @@ superiority_loan = {
 		po_gold
 		po_concede_defeat
 		po_trade_power
+		po_steer_trade
 	}
 	
 	war_name = FINANCIAL_WAR_NAME
@@ -141,9 +144,9 @@ superiority_revolution = {
 			po_revoke_cores
 			po_release_vassals
 			po_release_annexed
-			po_change_religion
 			po_gold
 			po_annul_treaties
+			po_spread_revolution
 		}
 	}
 	
@@ -158,7 +161,6 @@ superiority_revolution = {
 			po_revoke_cores
 			po_release_vassals
 			po_release_annexed
-			po_change_religion
 			po_gold
 			po_annul_treaties
 			po_dismantle_revolution
@@ -186,7 +188,6 @@ take_capital_revolution = {
 			po_revoke_cores
 			po_release_vassals
 			po_release_annexed
-			po_change_religion
 			po_gold
 			po_concede_defeat
 			po_annul_treaties
@@ -205,10 +206,10 @@ take_capital_revolution = {
 			po_revoke_cores
 			po_release_vassals
 			po_release_annexed
-			po_change_religion
 			po_gold
 			po_concede_defeat
 			po_annul_treaties
+			po_spread_revolution
 		}
 	}
 }
@@ -430,7 +431,6 @@ defend_capital_independence = {
 		peace_options = {
 			po_concede_defeat
 			po_independence
-            claim_the_iron_throne
 		}
 	}
 	
@@ -531,19 +531,34 @@ take_capital_claim = {
 take_claim = {
 	type = take_province
 	
-	badboy_factor = 1.0
-	prestige_factor = 1
-	peace_cost_factor = 1.0	
-	
-	allowed_provinces = {
-		is_claim = ROOT
+	attacker = {
+		badboy_factor = 1.0
+		prestige_factor = 1
+		peace_cost_factor = 1.0	
+		allowed_provinces = {
+			is_claim = ROOT
+		}
+		peace_options = {
+			po_demand_provinces
+		}
+		prov_desc = ALL_CLAIMS
 	}
 	
-	peace_options = {
-		po_demand_provinces
+	defender = {
+		badboy_factor = 1.0
+		prestige_factor = 1
+		peace_cost_factor = 1.0	
+		allowed_provinces = {
+			OR = {
+				is_claim = FROM
+				is_core = FROM
+			}
+		}
+		peace_options = {
+			po_demand_provinces
+		}
+		prov_desc = ALL_CLAIMS
 	}
-	
-	prov_desc = ALL_CLAIMS
 	war_name = CLAIM_WAR_NAME
 }
 
@@ -627,6 +642,48 @@ take_capital_imperial = {
 	}	
 	
 	war_name = IMPERIAL_WAR_NAME
+}
+
+take_capital_pirates = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 0.75
+		prestige_factor = 1
+		peace_cost_factor = 0.75	
+		
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_demand_provinces
+		}
+		
+		country_desc = ALL_COUNTRIES
+		prov_desc = ALL_PROVS
+	}
+	
+	defender = {
+		badboy_factor = 0.75
+		prestige_factor = 1
+		peace_cost_factor = 0.75	
+		
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_demand_provinces
+		}
+		
+		country_desc = ALL_COUNTRIES
+		prov_desc = ALL_PROVS
+	}	
+	
+	war_name = PIRATE_WAR_NAME
 }
 
 take_capital_mayan = {
@@ -784,6 +841,49 @@ superiority_liberation = {
 	war_name = LIBERATION_WAR_NAME	
 }
 
+superiority_world_crusade = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 0.75
+		prestige_factor = 2
+		peace_cost_factor = 0.75
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_demand_provinces
+			po_change_religion
+			po_release_vassals
+		}
+		
+		country_desc = ALL_INFIDELS
+		prov_desc = ALL_PROVS
+	}
+	
+	defender = {
+		badboy_factor = 0.75
+		prestige_factor = 2
+		peace_cost_factor = 0.75
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_demand_provinces
+			po_release_vassals
+		}
+		
+		country_desc = ALL_INFIDELS
+		prov_desc = ALL_PROVS
+	}	
+	
+	war_name = WORLD_CRUSADE_WAR_NAME	
+}
+
 superiority_crusade = {
 	type = superiority
 	
@@ -891,17 +991,17 @@ take_province_excommunication = {
 	peace_cost_factor = 1.0	
 	
 	allowed_provinces = {
-		owner = { 
-			is_excommunicated = yes
-			religion = catholic		
-		}
-		OR = {
-			is_core = ROOT
-			is_claim = ROOT
-			any_neighbor_province = {
-				owned_by = ROOT
-			}
-		}
+		# owner = { 
+			# is_excommunicated = yes
+			# religion = catholic		
+		# }
+		# OR = {
+			# is_core = ROOT
+			# is_claim = ROOT
+			# any_neighbor_province = {
+				# owned_by = ROOT
+			# }
+		# }
 	}
 
 	peace_options = {
@@ -931,6 +1031,7 @@ superiority_trade = {
 		po_gold
 		po_concede_defeat
 		po_trade_power
+		po_steer_trade
 	}
 	
 	war_name = TRADE_WAR_NAME	
@@ -949,6 +1050,7 @@ superiority_trade_mutual = {
 			po_gold
 			po_concede_defeat
 			po_trade_power
+			po_steer_trade
 		}
 	}
 	
@@ -962,6 +1064,7 @@ superiority_trade_mutual = {
 			po_gold
 			po_concede_defeat
 			po_trade_power
+			po_steer_trade
 		}
 	}
 	
@@ -987,7 +1090,6 @@ take_province_ban = {
 	peace_options = {
 		po_release_vassals
 		po_release_annexed
-		po_return_cores
 		po_return_cores
 		po_demand_provinces
 	}
@@ -1086,7 +1188,22 @@ superiority_overseas = {
 	peace_cost_factor = 0.5	
 	
 	allowed_provinces = {
-		always = yes
+		# owner = {
+			# capital_scope = {
+				# OR = {
+					# continent = asia
+					# continent = africa
+				# }
+			# }
+			# OR = {
+				# technology_group = indian
+				# technology_group = sub_saharan
+				# technology_group = east_african
+				# technology_group = central_african
+				# technology_group = chinese
+				# technology_group = nomad_group
+			# }
+		# }
 	}
 	
 	peace_options = {
@@ -1248,6 +1365,32 @@ annex_country = {
 	war_name = PRIMITIVE_WAR_NAME
 }
 
+annex_country_japan = {
+	type = take_capital
+	
+	badboy_factor = 0.75
+	prestige_factor = 1
+	peace_cost_factor = 1.0	
+	
+	allowed_provinces = {
+		# owner = {
+			# OR = {
+				# has_reform = daimyo
+				# has_reform = indep_daimyo
+				# has_reform = shogunate
+			# }
+		# }
+	}
+
+	peace_options = {
+		po_demand_provinces
+	}
+	
+	allow_annex = yes
+	
+	war_name = PRIMITIVE_WAR_NAME
+}
+
 war_goal_change_government = {
 	type = take_capital
 	
@@ -1365,6 +1508,7 @@ humiliate_rotw = {
 		po_gold
 		po_annul_treaties
 		po_trade_power
+		po_steer_trade
 		po_humiliate
 		po_humiliate_rival
 	}
@@ -1383,6 +1527,7 @@ blockade_ports = {
 		po_gold
 		po_concede_defeat
 		po_trade_power
+		po_steer_trade
 	}
 	
 	transfer_trade_cost_factor = 0.5	
@@ -1455,7 +1600,7 @@ superiority_chinese_unification = {
 		peace_cost_factor = 0.5
 		
 		allowed_provinces = {
-			always = yes
+			# superregion = china_superregion
 		}
 		
 		peace_options = {
@@ -1472,7 +1617,12 @@ superiority_chinese_unification = {
 		peace_cost_factor = 0.5
 		
 		allowed_provinces = {
-			always = yes
+			# OR = {
+				# region = south_china_region
+				# region = xinan_region
+				# region = north_china_region
+				# culture_group = FROM
+			# }
 		}
 		
 		peace_options = {
@@ -1549,4 +1699,61 @@ take_capital_force_tributary = {
 	}
 	
 	war_name = TRIBUTARY_MISSION_WAR_NAME
+}
+
+take_capital_force_join_hre = {
+	type = take_capital
+
+	prestige_factor = 0.25
+
+	attacker = {
+		badboy_factor = 1.0
+		peace_options = {
+			po_join_empire
+		}
+	}
+
+	defender = {
+		badboy_factor = 1.0
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+
+	war_name = FORCE_JOIN_HRE_WAR_NAME
+}
+
+superiority_reichskrieg = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 1.0
+		prestige_factor = 0.75
+		peace_cost_factor = 1.0	
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_demand_provinces
+			po_join_empire
+		}
+	}
+	
+	defender = {
+		badboy_factor = 0.75
+		prestige_factor = 1.25
+		peace_cost_factor = 1.0	
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_demand_provinces
+		}
+	}	
+	
+	war_name = REICHSKRIEG_WAR_NAME	
 }

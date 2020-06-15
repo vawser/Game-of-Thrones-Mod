@@ -1,0 +1,30 @@
+#------------------------------------
+# Centralization
+#------------------------------------
+edict_centralization = {
+    color = {  220 178 155 }
+    
+	potential = { always = yes }
+    allow = { always = yes }
+	
+	modifier = {
+		local_autonomy = -0.05
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			all_province_in_state = {
+				NOT = {
+					local_autonomy_above_min = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			all_province_in_state = {
+				local_autonomy_above_min = 10
+			}
+		}
+	}
+}

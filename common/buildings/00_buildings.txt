@@ -4,7 +4,7 @@
 # cost = x #==> cost in $ to build (subject to other modifiers)
 # time = x #==> number of months to build.
 # modifier = m # a modifier on the province that the building gives
-# trigger = t # an and trigger that needs to be fullfilled to build and keep the building
+# build_trigger = t # an and trigger that needs to be fullfilled to build and keep the building
 # one_per_country = yes/no # if yes, only one of these can exist in a country
 # manufactory = { trade_good trade_good } # list of trade goods that get a production bonus
 # onmap = yes/no # show as a sprite on the map
@@ -25,12 +25,13 @@ town_hall = {
 	cost = 50
 	time = 12
 
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
 	modifier = {
         local_development_cost = -0.20
+        local_governing_cost = -0.25
 		allowed_num_of_buildings = 1
 	}
 	
@@ -44,7 +45,7 @@ tavern = {
 	cost = 50
 	time = 12
 
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -63,7 +64,7 @@ market = {
 	cost = 50
 	time = 12
 
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -81,7 +82,7 @@ farm = {
 	cost = 50
 	time = 12
 
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -99,7 +100,7 @@ mine = {
 	cost = 50
 	time = 12
 
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -117,7 +118,7 @@ temple = {
 	cost = 50
 	time = 12
 
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -136,7 +137,7 @@ dock = {
 	cost = 50
 	time = 12
 
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
 		has_port = yes
 	}
@@ -147,11 +148,6 @@ dock = {
 	
 	ai_will_do = {
 		factor = 1
-        
-        modifier = {
-			factor = 105 # Little above build cost
-			FROM = { navy_size_percentage = 0.95 }
-		}
 	}
 }
 
@@ -160,7 +156,7 @@ shipyard = {
 	cost = 50
 	time = 12
 
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
 		has_port = yes
 	}
@@ -173,11 +169,6 @@ shipyard = {
 	
 	ai_will_do = {
 		factor = 1
-        
-        modifier = {
-			factor = 105 # Little above build cost
-			FROM = { navy_size_percentage = 0.95 }
-		}
 	}
 }
 
@@ -186,7 +177,7 @@ barracks = {
 	cost = 50
 	time = 12
 
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -204,7 +195,7 @@ drill_square = {
 	cost = 50
 	time = 12
 
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -223,12 +214,13 @@ paved_road = {
 	cost = 50
 	time = 12
 
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
 	modifier = {
         local_friendly_movement_speed = 0.25
+        local_governing_cost = -0.1
 	}
 	
 	ai_will_do = {
@@ -241,12 +233,13 @@ supply_depot = {
 	cost = 50
 	time = 12
 
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
 	modifier = {
         supply_limit_modifier = 0.25
+        local_governing_cost = -0.1
 	}
 	
 	ai_will_do = {
@@ -263,9 +256,9 @@ motte_and_bailey = {
 	time = 12
 
     onmap = yes
-	#influencing_fort = yes
+	influencing_fort = yes
     
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -286,9 +279,9 @@ castle = {
     make_obsolete = motte_and_bailey
     
     onmap = yes
-	#influencing_fort = yes
+	influencing_fort = yes
     
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -309,9 +302,9 @@ fortress = {
     make_obsolete = castle
     
     onmap = yes
-	#influencing_fort = yes
+	influencing_fort = yes
     
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -333,9 +326,9 @@ citadel = {
     make_obsolete = fortress
     
     onmap = yes
-    #influencing_fort = yes
+    influencing_fort = yes
     
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -356,7 +349,7 @@ cot = {
 	cost = 1000
 	time = 12
     
-	trigger = {
+	build_trigger = {
         NOT = { province_id = 1590 }
         NOT = {
             any_province_in_state = {
@@ -397,7 +390,7 @@ manufactory = {
 # Farmers Guild
 # grain, fish, tea, coffee, cotton, sugar, tobacco, cocoa
 farmers_guild = {
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -421,7 +414,7 @@ farmers_guild = {
 # Foresters Guild
 # naval_supplies, ironwood, tropical_wood
 foresters_guild = {
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -439,7 +432,7 @@ foresters_guild = {
 # Blacksmiths Guild
 # iron, copper
 blacksmiths_guild = {
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -456,7 +449,7 @@ blacksmiths_guild = {
 # Artisans Guild
 # wine, ivory, spices, silk, dyes, candles, salt
 artisans_guild = {
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -478,7 +471,7 @@ artisans_guild = {
 # Tailors Guild
 # wool, cloth, fur
 tailors_guild = {
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -496,7 +489,7 @@ tailors_guild = {
 # Slavers Guild
 # slaves
 slavers_guild = {
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
         owner = { has_country_modifier = slavery_permitted }
     }
@@ -519,7 +512,7 @@ grand_palace = {
 	time = 12
     one_per_country = yes
     
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
@@ -529,6 +522,7 @@ grand_palace = {
         devotion = 1
         horde_unity = 1
         meritocracy = 1
+        statewide_governing_cost = -0.1
 	}
 	
 	ai_will_do = {
@@ -542,12 +536,13 @@ merchants_quarter = {
 	time = 12
     one_per_country = yes
     
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
 	modifier = {
         merchants = 1
+        statewide_governing_cost = -0.1
 	}
 	
 	ai_will_do = {
@@ -561,13 +556,14 @@ grand_temple = {
 	time = 12
     one_per_country = yes
     
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
 	modifier = {
         global_missionary_strength = 0.03
         missionaries = 1
+        statewide_governing_cost = -0.1
 	}
 	
 	ai_will_do = {
@@ -581,13 +577,14 @@ tourney_grounds = {
 	time = 12
     one_per_country = yes
     
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
 	modifier = {
         diplomatic_reputation = 1
         improve_relation_modifier = 0.25
+        statewide_governing_cost = -0.1
 	}
 	
 	ai_will_do = {
@@ -601,13 +598,14 @@ military_academy = {
 	time = 12
     one_per_country = yes
     
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
 	modifier = {
         free_leader_pool = 1
         prestige_from_land = 1.0
+        statewide_governing_cost = -0.1
 	}
 	
 	ai_will_do = {
@@ -621,13 +619,14 @@ naval_academy = {
 	time = 12
     one_per_country = yes
     
-    trigger = {
+    build_trigger = {
         NOT = { province_id = 1590 }
     }
     
 	modifier = {
         free_leader_pool = 1
         prestige_from_naval = 1.0
+        statewide_governing_cost = -0.1
 	}
 	
 	ai_will_do = {

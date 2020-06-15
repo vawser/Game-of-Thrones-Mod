@@ -1,0 +1,29 @@
+edict_religious_conversion = {
+    color = { 117 38 143 }
+    
+	potential = { always = yes }
+	allow = {
+		always = yes
+	}
+	
+	modifier = {
+		local_missionary_strength = 0.01
+	}
+
+	ai_will_do = {
+		factor = 100
+        
+		modifier = {
+			factor = 0
+			all_province_in_state = {
+				has_missionary = no
+			}
+		}
+		modifier = {
+			factor = 3
+			all_province_in_state = {
+				has_missionary = yes
+			}
+		}
+	}
+}

@@ -1,10 +1,28 @@
 dip_idea_modifiers = {
 	category = DIP
+
+	custom_idea_accepted_culture_threshold = {
+		num_accepted_cultures = 1
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 1.5
+				NOT = { dominant_culture = ROOT }
+			}
+		}
+	}	
 	custom_idea_culture_conversion_cost = {
 		culture_conversion_cost = -0.05
 		level_cost_2 = 3
 		level_cost_3 = 9
 		level_cost_4 = 18
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 1.5
+				NOT = { dominant_culture = ROOT }
+			}
+		}
 	}
 	custom_idea_naval_morale = {
 		naval_morale = 0.05
@@ -15,13 +33,30 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
-		}		
-	}	
+			modifier = {
+				factor = 1.5
+				num_of_ports = 10
+			}
+		}
+	}
 	custom_idea_trade_efficiency = {
 		trade_efficiency = 0.05
 		default = 7
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				any_owned_province = {
+					province_has_center_of_trade_of_level = 1
+				}
+			}
+			modifier = {
+				factor = 1.5
+				num_of_ports = 10
+			}
+		}
 	}
 	custom_idea_global_trade_power = {
 		global_trade_power = 0.05
@@ -29,19 +64,59 @@ dip_idea_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18			
 		default = 9
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 1.5
+				any_owned_province = {
+					province_has_center_of_trade_of_level = 1
+				}
+			}
+			modifier = {
+				factor = 1.5
+				num_of_ports = 10
+			}
+		}
 	}		
 	custom_idea_global_prov_trade_power_modifier = {
 		global_prov_trade_power_modifier = 0.05
 		level_cost_2 = 3
 		level_cost_3 = 9
-		level_cost_4 = 18			
+		level_cost_4 = 18
+		chance = {
+			factor = 0.75
+			modifier = {
+				factor = 1.5
+				any_owned_province = {
+					province_has_center_of_trade_of_level = 1
+				}
+			}
+			modifier = {
+				factor = 1.5
+				num_of_ports = 10
+			}
+		}
 	}	
 	custom_idea_trade_steering = {
 		trade_steering = 0.05
 		level_cost_2 = 3
 		level_cost_3 = 9
-		level_cost_4 = 18		
-	}	
+		level_cost_4 = 18
+		chance = {
+			factor = 0.75
+			modifier = {
+				factor = 1.5
+				any_owned_province = {
+					province_has_center_of_trade_of_level = 1
+					has_port = yes
+				}
+			}
+			modifier = {
+				factor = 1.5
+				num_of_ports = 10
+			}
+		}
+	}
 	custom_idea_global_tariffs = {
 		global_tariffs = 0.05
 	}	
@@ -62,6 +137,15 @@ dip_idea_modifiers = {
 		max_level = 2
 		level_cost_1 = 30
 		level_cost_2 = 140
+		chance = {
+			factor = 0.75
+			modifier = {
+				factor = 1.5
+				any_owned_province = {
+					province_has_center_of_trade_of_level = 1
+				}
+			}
+		}
 	}
 	custom_idea_colonists = {
 		colonists = 1
@@ -74,9 +158,9 @@ dip_idea_modifiers = {
 			factor = 0.1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
-		}			
+		}
 	}
 	custom_idea_diplomats = {
 		diplomats = 1
@@ -92,7 +176,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}		
 	}	
@@ -104,7 +188,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}	
@@ -116,7 +200,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}	
@@ -142,7 +226,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}
 	}	
@@ -156,7 +240,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}
 	}	
@@ -171,7 +255,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}	
@@ -186,7 +270,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}	
 	}
@@ -201,12 +285,12 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}		
 	custom_idea_spy_offence = {
-		spy_offence = 0.05
+		spy_offence = 0.1
 		level_cost_2 = 3
 		level_cost_3 = 9
 		level_cost_4 = 18		
@@ -228,7 +312,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}	
@@ -243,7 +327,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}	
@@ -264,7 +348,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}	
@@ -279,7 +363,7 @@ dip_idea_modifiers = {
 			factor = 0.1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}	
@@ -291,7 +375,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}	
 	}	
@@ -309,12 +393,19 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}	
 	custom_idea_diplomatic_annexation_cost = {
 		diplomatic_annexation_cost = -0.05
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.25
+				vassal = 2
+			}
+		}
 	}		
 	custom_idea_heavy_ship_cost = {
 		heavy_ship_cost = -0.05
@@ -324,7 +415,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}
 	}	
@@ -339,7 +430,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}	
@@ -354,7 +445,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}	
@@ -369,7 +460,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}
@@ -381,7 +472,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}	
 	}	
@@ -396,7 +487,7 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}
@@ -411,8 +502,18 @@ dip_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { any_owned_province = { has_port = yes } }
+				NOT = { num_of_ports = 1 }
 			}
 		}			
 	}	
+	custom_idea_free_dip_policy = {
+		free_dip_policy = 1
+		max_level = 1
+		level_cost_1 = 30
+	}
+	custom_idea_possible_dip_policy = {
+		possible_dip_policy = 1
+		max_level = 1
+		level_cost_1 = 30
+	}
 }

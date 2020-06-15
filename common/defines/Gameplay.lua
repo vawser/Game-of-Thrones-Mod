@@ -1,169 +1,168 @@
 --------------------------------
--- Ages
+-- Exploration
 --------------------------------
-NDefines.NGame.AGE_USHER_IN_TIME = 12
-NDefines.NCountry.GOLDEN_ERA_YEARS = 25
-NDefines.NCountry.SPLENDOR_ABILITY_COST = 2500
-
-NDefines.NCountry.LEGITIMACY_DYNASTY_CHANGE = 50
-NDefines.NCountry.STRENGTHEN_GOVERNMENT_REPUBLICAN_TRADITION = 10
-NDefines.NCountry.BASE_TARIFF = 0.25
-NDefines.NCountry.RAZE_TECH_POWER_DECREASE = 0.01
-
-NDefines.NDiplomacy.CHARTER_COMPANY_BASE_COST = 5000
-NDefines.NDiplomacy.CHARTER_COMPANY_MINIMUM_COST = 1000
+NDefines.NCountry.EXPLORE_COAST_EVENT_CHANCE = 10
+NDefines.NCountry.MIN_TECH_FOR_CIRCUMNAVIGATE = 20
+NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_1 = 887
+NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_2 = 1045
+NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_3 = 1019
+NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_4 = 1113
+NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_5 = 1637
+NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_6 = 1564
+NDefines.NCountry.MIN_SHIPS_TO_EXPLORE = 3
 
 --------------------------------
--- Trade
+-- Government Ranks
 --------------------------------
-NDefines.NEconomy.TRADE_NON_CAPITAL_OFFICE = -0.1 -- Collection in non-home node
-NDefines.NEconomy.TRADE_MERCHANT_PRESENT = 0.1 -- Merchant Present Bonus
+NDefines.NCountry.MAX_GOV_RANK = 10
+
+NDefines.NCountry.CULTURAL_UNION_MIN_RANK = 10
+
+NDefines.NCountry.PRESTIGE_GAIN_FOR_GOV_RANK_2 = 25
+NDefines.NCountry.MIN_PRESTIGE_FOR_GOV_RANK_2 = 75
+NDefines.NCountry.MIN_DEVELOPMENT_FOR_GOV_RANK_2 = 100
+NDefines.NCountry.PRESTIGE_GAIN_FOR_GOV_RANK_3 = 25
+NDefines.NCountry.MIN_PRESTIGE_FOR_GOV_RANK_3 = 75
+NDefines.NCountry.MIN_DEVELOPMENT_FOR_GOV_RANK_3 = 200
+NDefines.NCountry.PRESTIGE_GAIN_FOR_GOV_RANK_X = 25
+NDefines.NCountry.MIN_PRESTIGE_FOR_GOV_RANK_X = 75
+NDefines.NCountry.ADDITIONAL_MIN_DEVELOPMENT_FOR_GOV_RANK_X = 100
+
+NDefines.NCountry.NAT_FOCUS_YEARS_RANK = 2
 
 --------------------------------
--- Power
+-- Government Reforms
 --------------------------------
-NDefines.NCountry.POWER_MAX = 5000
-NDefines.NCountry.BASE_POWER_INCREASE = 3
-NDefines.NCountry.MONARCH_MIN_SKILL = 0
-NDefines.NCountry.MONARCH_MAX_SKILL = 6
+NDefines.NGovernment.LEGACY_NATIVES_REFORM_REPUBLIC_SPONSOR = "republic_reform"
+NDefines.NGovernment.LEGACY_NATIVES_REFORM_MONARCHY_SPONSOR = "kingdom_reform"
+NDefines.NGovernment.LEGACY_NATIVES_REFORM_THEOCRACY_SPONSOR = "theocracy_reform"
+NDefines.NGovernment.GOVERNMENT_REFORM_BASE_COST = 100.0
+NDefines.NGovernment.GOVERNMENT_REFORM_COST_INCREASE = 100.0
+NDefines.NGovernment.GOVERNMENT_REFORM_CHANGE_CORRUPTION = 10.0
+NDefines.NGovernment.GOVERNMENT_REFORM_CHANGE_MAX_CORRUPTION = 50.0
+NDefines.NGovernment.GOVERNMENT_REFORM_YEARLY_BASE_PROGRESS = 10.0
+NDefines.NGovernment.GOVERNMENT_REFORM_HISTORIC_AUTONOMY = 0.0
 
 --------------------------------
--- Power Costs
+-- Government Abilities
 --------------------------------
-NDefines.NCountry.PS_BUY_GENERAL = 100
-NDefines.NCountry.PS_BUY_ADMIRAL = 100
-NDefines.NCountry.PS_BUY_CONQUISTADOR = 100
-NDefines.NCountry.PS_BUY_EXPLORER = 100
-NDefines.NCountry.PS_ARTILLERY_BARRAGE = 100
-NDefines.NCountry.PS_NAVAL_BARRAGE = 100
-NDefines.NCountry.PS_FORCE_MARCH = 5
-NDefines.NCountry.PS_REDUCE_INFLATION = 100
-NDefines.NCountry.PS_MOVE_CAPITAL = 100
-NDefines.NCountry.PS_MOVE_CAPITAL_EXTRA = 0
-NDefines.NCountry.PS_MOVE_TRADE_PORT = 100
-NDefines.NCountry.PS_REPLACE_RIVAL = 0
-NDefines.NCountry.PS_SEIZE_COLONY = 100
-NDefines.NCountry.PS_BURN_COLONY = 50
-NDefines.NCountry.PS_ATTACK_NATIVES = 25
-NDefines.NCountry.PS_SCORCH_EARTH = 25
-NDefines.NCountry.PS_REDUCE_WAREXHAUSTION = 100
-NDefines.NCountry.PS_FACTION_BOOST = 25
-NDefines.NCountry.PS_RAISE_TARIFFS = 100
-NDefines.NCountry.PS_LOWER_TARIFFS = 50
-NDefines.NCountry.PS_RAISE_WAR_TAXES = 100
-NDefines.NCountry.PS_CREATE_TRADE_POST = 100
-NDefines.NCountry.PS_ESTABLISH_SIBERIAN_FRONTIER = 100
-NDefines.NCountry.PS_IMPROVE_PROVINCE_BASE = 100
-NDefines.NCountry.PS_MAKE_PROVINCE_CORE = 20
+NDefines.NGovernment.RUSSIAN_ABILITY_COST = 100
+NDefines.NGovernment.RUSSIAN_ABILITY_POOL_SIZE = 150
+NDefines.NGovernment.RUSSIAN_ABILITY_BASE_GAIN = 3
+
+NDefines.NGovernment.RUSSIAN_ABILITY_SUBEDNIK_MIN_AUTONOMY = 10
+NDefines.NGovernment.RUSSIAN_ABILITY_SUBEDNIK_AUTONOMY_CHANGE = -10
+NDefines.NGovernment.RUSSIAN_ABILITY_OPRICHNINA_THRESHOLD = 0.3
+NDefines.NGovernment.RUSSIAN_ABILITY_OPRICHNINA_AI_THRESHOLD = 0.85 -- AI will use ability when revolt risk is 90%, or when they have full power
+NDefines.NGovernment.RUSSIAN_ABILITY_OPRICHNINA_CHANGE = -0.3
+NDefines.NGovernment.RUSSIAN_ABILITY_STRELTSY_WE_CHANGE = -2
+NDefines.NGovernment.RUSSIAN_ABILITY_STRELTSY_SPAWN_SIZE = 0.2
+
+NDefines.NGovernment.IQTA_POLICY_COOLDOWN_YEARS = 20
+NDefines.NGovernment.EFFICIENT_FARMING_DUCAT_MULTIPLIER = 2
+NDefines.NGovernment.LAND_AQUISITION_MANPOWER_MULTIPLIER = 0.05
+
+NDefines.NGovernment.SEIZE_CLERICAL_HOLDINGS_COST = 100
+NDefines.NGovernment.INVITE_MINORITIES_COST = 100
+NDefines.NGovernment.SANCTION_HOLY_WAR_COST = 100
+NDefines.NGovernment.FEUDAL_THEOCRACY_INTERACTION_COOLDOWN_YEARS = 5
+NDefines.NGovernment.SANCTION_HOLY_WAR_LIST_SIZE = 7
+NDefines.NGovernment.INVITE_MINORITIES_GAIN = 1
+
+NDefines.NGovernment.MAMLUK_ABILITY_POOL_SIZE = 150
+NDefines.NGovernment.MAMLUK_ABILITY_COST = 100
+NDefines.NGovernment.MAMLUK_RECRUIT_MANPOWER_MULTIPLIER = 100
+NDefines.NGovernment.MAMLUK_SELL_SLAVES_DUCATS_MULTIPLIER = 10
+NDefines.NGovernment.PROMOTE_MAMLUK_CULTURE_DURATION_YEARS = 1
+
+NDefines.NGovernment.TRAIN_HORSEMANSHIP_DURATION_YEARS = 5
+NDefines.NGovernment.CONSCRIPT_FROM_TRIBES_AMOUNT = 5
+NDefines.NGovernment.CONSCRIPT_FROM_TRIBES_TIME = 0.25
+NDefines.NGovernment.TRIBAL_ALLEGIANCE_MAX = 100
+NDefines.NGovernment.TRIBAL_ALLEGIANCE_HUMILIATE = 30.0
+NDefines.NGovernment.TRIBAL_FEDERATION_ABILITY_COST = 50
+NDefines.NGovernment.ENLIST_GENERAL_TRADITION = 50
 
 --------------------------------
--- Advisors
+-- Peity
 --------------------------------
-NDefines.NCountry.MAXIMUM_ADVISOR_SKILL = 10 
-NDefines.NCountry.PROMOTE_COST_MONTHS_ADVISOR_SALARY = 120
-NDefines.NCountry.ADVISOR_COST_INCREASE_PER_YEAR = 0.0 -- Disable yearly increase.
-NDefines.NEconomy.ADVISOR_COST = 1.0
+NDefines.NCountry.PIETY_PERCENTAGE_AT_NEW_RULER = 0.0
+NDefines.NCountry.PIETY_INCREASE_AT_GOOD_WAR = 0.25
+NDefines.NCountry.PIETY_DECREASE_AT_BAD_WAR = 0.25
+NDefines.NReligion.PIETY_CORRUPTION = -2
+NDefines.NReligion.PIETY_MANPOWER = 2.0
+NDefines.NReligion.PIETY_COST = 0.5
+NDefines.NReligion.PIETY_ABS_THRESHOLD = 0.75
+NDefines.NReligion.PIETY_ACTION_COOLDOWN = 5
 
 --------------------------------
--- Buildings
+-- Patriarch Authority
 --------------------------------
-NDefines.NEconomy.MAX_BUILDING_SLOTS = 12
+NDefines.NReligion.CONSECRATE_PATRIACH_AUTHORITY_BOOST = 0.05   --5% or so
+NDefines.NReligion.CONSECRATE_PATRIARCH_THRESHOLD = 30          --in development
+NDefines.NReligion.ORTHODOX_ICON_DURATION_MONTHS = 240
+NDefines.NReligion.ORTHODOX_ICON_AUTHORITY_COST = 0.1
+NDefines.NReligion.CONSECRATE_PATRIACH_AUTHORITY_BOOST = 0.05
+NDefines.NReligion.CONSECRATE_PATRIARCH_THRESHOLD = 30
+NDefines.NReligion.ORTHODOX_ICON_DURATION_MONTHS = 240
+NDefines.NReligion.ORTHODOX_ICON_AUTHORITY_COST = 0.1
 
 --------------------------------
--- Conversion
+-- Aspects
 --------------------------------
-NDefines.NCountry.CAN_CONVERT_TERRITORY_CULTURE = 1
-NDefines.NCountry.CAN_CONVERT_TERRITORY_RELIGION = 1
-NDefines.NCountry.ALLOWED_TERRITORY_VS_MAX_STATES = 1.0
-NDefines.NCountry.TERRITORY_PENALTY_CAP = 50
+NDefines.NReligion.MAX_CHURCH_POWER = 200
+NDefines.NReligion.ASPECT_REMOVE_COST = 0           -- Stabhit for removing an Aspect of Faith.
+NDefines.NReligion.MAX_UNLOCKED_ASPECTS = 3         -- Maximum number of Aspects of Faith the player can have unlocked at once.
+NDefines.NReligion.CHURCH_POWER_RATE_SCALE = 0.1    -- Scaling value for rate at which church power is gained.
 
 --------------------------------
--- Great Powers
+-- Karma
 --------------------------------
-NDefines.NDiplomacy.NUM_OF_GREAT_POWERS = 0                 -- Great Power mechanics don't make sense in GOT
+NDefines.NReligion.KARMA_FOR_OFFENSIVE_WAR = -10
+NDefines.NReligion.KARMA_FOR_DEFENSIVE_WAR = 10
+NDefines.NReligion.KARMA_FOR_HONORING_CTA = 25
+NDefines.NReligion.KARMA_PER_RELEASED_PROVINCE = 1
+NDefines.NReligion.KARMA_PER_TAKEN_PROVINCE = -1
+NDefines.NReligion.KARMA_TOO_HIGH = 33
+NDefines.NReligion.KARMA_TOO_LOW = -33
+NDefines.NReligion.KARMA_JUST_RIGHT_HIGH = 33
+NDefines.NReligion.KARMA_JUST_RIGHT_LOW = -33
+NDefines.NReligion.KARMA_RESTORE_ON_RULER_DEATH = 25
+NDefines.NReligion.KARMA_FOR_CONVERSION = 0.1
 
 --------------------------------
--- Institutions
+-- Secondary
 --------------------------------
-NDefines.NCountry.INSTITUTION_BONUS_FROM_IMP_DEVELOPMENT = 5
-NDefines.NCountry.INSTITUTION_CAP_IMP_DEVELOPMENT = 10
-NDefines.NCountry.INSTITUTION_BASE_IMP_DEVELOPMENT = 30
-NDefines.NCountry.EMBRACE_INSTITUTION_COST = 5
+NDefines.NReligion.CHANGE_SECONDARY_PRESTIGE_HIT = -50
 
 --------------------------------
--- Migration
+-- Harmony
 --------------------------------
-NDefines.NCountry.MIGRATION_BOOST = 5
-NDefines.NCountry.MIGRATION_COOLDOWN = 12
-NDefines.NCountry.MIGRATION_DEPLETION_TIME = 365
+NDefines.NReligion.MIN_HARMONIZE_DEVELOPMENT = 20
+NDefines.NReligion.STARTING_HARMONY = 50.0          -- Confucian countries start with this.
+NDefines.NReligion.YEARLY_HARMONY_INCREASE = 1.0
+NDefines.NReligion.HARMONY_LOSS_PER_DEV_CONVERTED = 1.0
+NDefines.NReligion.YEARLY_HARMONY_INCREASE_WHEN_HARMONIZING = -3.0
+NDefines.NReligion.YEARLY_HARMONIZATION_PROGRESS = 0.03 
 
 --------------------------------
--- Cores
+-- Isolationism
 --------------------------------
-NDefines.NCountry.CORE_LOSE = -1							
-NDefines.NCountry.CORE_LOSE_CULTURE_GROUP = -1
-NDefines.NCountry.CORE_LOSE_PRIMARY_CULTURE_TAG = -1
+NDefines.NReligion.INITIAL_ISOLATIONISM = 1	-- Level of isolationism for a newly shintoed country.
 
 --------------------------------
--- Ideas
+-- Faith of the Seven
 --------------------------------
-NDefines.NCountry.PS_BUY_IDEA = 400
-NDefines.NCountry.FREE_IDEA_GROUP_COST = 3
-NDefines.NCountry.MAX_IDEA_GROUPS_FROM_SAME_CATEGORY = 1.0
-NDefines.NCountry.ABANDON_IDEAGROUP_REFUND = 0.1
+NDefines.NReligion.MIN_CARDINALS = 7
+NDefines.NReligion.MAX_CARDINALS = 49
+NDefines.NReligion.MAX_CARDINALS_PER_COUNTRY = 7
+NDefines.NReligion.YEARLY_PAPAL_INFLUENCE_CATHOLIC = 0.5
+NDefines.NReligion.YEARLY_PAPAL_INFLUENCE_PER_CARDINAL = 0.5
+NDefines.NReligion.YEARLY_POPE_INVESTED_INFLUENCE_PER_CARDINAL = 0.1
+NDefines.NReligion.MAX_PAPAL_INFLUENCE = 200.0
+NDefines.NReligion.REFORM_DESIRE_PER_YEAR = 0.005
+NDefines.NReligion.MINIMUM_DEVELOPMENT_ALLOWED = 10.0
+NDefines.NReligion.COUNTRY_DEVELOPMENT_DIVIDER = 200.0
+NDefines.NReligion.INVEST_PAPAL_INFLUENCE = 10.0
+NDefines.NReligion.NUMBER_OF_POSSIBLE_CARDINALS = 10
 
---------------------------------
--- Technology
---------------------------------
-NDefines.NCountry.PS_ADVANCE_TECH = 600
-NDefines.NCountry.TECH_TIME_COST = 0.0
-NDefines.NCountry.TECH_AHEAD_OF_TIME = 0.1
-
---------------------------------
--- Subjects
---------------------------------
-NDefines.NCountry.OVERSEAS_CLIENT_STATES = 1
-NDefines.NCountry.LIBERTY_DESIRE_RELATIVE_POWER = 15        -- Required so liberty desire is reasonable for GOT
-NDefines.NDiplomacy.VASSALIZE_BASE_DEVELOPMENT_CAP = 250    -- Make vassalisation easier
-NDefines.NDiplomacy.MARCH_BASE_DEVELOPMENT_CAP = 500
-
---------------------------------
--- Diplomacy
---------------------------------
-NDefines.NDiplomacy.CALL_TO_ARMS_COST = 1         
-NDefines.NDiplomacy.INCREASE_TRUST_COST = 1                 -- Make Increase Trust a more attractive choice
-NDefines.NDiplomacy.INCREASE_TRUST_AMOUNT = 1
-NDefines.NDiplomacy.PREPARE_FOR_WAR_COST = 1
-NDefines.NDiplomacy.NUM_POSSIBLE_RIVALS = 1
-NDefines.NDiplomacy.DAYS_TO_DECLARE_WAR = 0                 -- Reverse Paradox's 'anti-fun' changes
-NDefines.NDiplomacy.OFFENSIVE_WAR_COOLDOWN = 0              -- Reverse Paradox's 'anti-fun' changes
-NDefines.NDiplomacy.TRUCE_YEARS = 5                         -- Reverse truces to original design
-NDefines.NDiplomacy.SCALED_TRUCE_YEARS = 0                  -- Reverse truces to original design
-NDefines.NDiplomacy.MONTHS_BEFORE_TOTAL_OCCUPATION = 12     -- More suited to the warfare in GOT
-NDefines.NDiplomacy.DISHONORABLE_PEACE_MONTHS = 0           -- More suited to the warfar in GOT
-
---------------------------------
--- Innovation
---------------------------------
-NDefines.NCountry.INNOVATIVENESS_FIRST_REACHED_TECH_LEVEL = 0.0
-NDefines.NCountry.INNOVATIVENESS_FIRST_PICKED_IDEA = 0.0
-NDefines.NCountry.INNOVATIVENESS_BEHIND_IN_TECH_PENALTY = 0.0
-NDefines.NCountry.INNOVATIVENESS_ENABLE_ANY_BEHIND_IN_TECH_PENALTY = 0
-NDefines.NCountry.INNOVATIVENESS_ENABLE_PER_TECH_BEHIND_IN_TECH_PENALTY = 0
-NDefines.NCountry.INNOVATIVENESS_AHEAD_OF_TIME_BONUS = 0.0
-NDefines.NCountry.INNOVATIVENESS_DAYS_AFTER_FIRST_PICK_VIABLE = 0
-NDefines.NCountry.INNOVATIVENESS_MAX = 0.0
-
---------------------------------
--- Loans
---------------------------------
-NDefines.NEconomy.GOLD_INFLATION = 0.1
-NDefines.NEconomy.TREASURE_FLEET_INFLATION = 0.1
-NDefines.NEconomy.INFLATION_FROM_LOAN = 0.1
-
-NDefines.NEconomy.MISSIONARY_MAINTENANCE_FACTOR = 0.0				-- How much a missionary costs in itself
-NDefines.NEconomy.MISSIONARY_MAINTENANCE_DEVELOPMENT_FACTOR = 5.0	-- How much this is ncreased from development
-NDefines.NEconomy.MISSIONARY_MAINTENANCE_AUTONOMY_FACTOR = 0.0		-- How much this is ncreased from local autonomy
-NDefines.NEconomy.MISSIONARY_MAINTENANCE_AUTONOMY_BASE = 0.0	    -- The local autonomy is added to this base in the formula.
-NDefines.NEconomy.MISSIONARY_MAINTENANCE_DEVELOPMENT_CAP = 100
-    

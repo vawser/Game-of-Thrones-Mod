@@ -102,7 +102,8 @@ ko_counsel_reform = {
 	icon = "mamluk_government"
     
     potential = {
-        has_estate = estate_khalasar
+        has_estate = estate_tribe
+        has_reform = khalasar_reform
     }
     
     modifiers = {
@@ -113,7 +114,8 @@ jhat_counsel_reform = {
 	icon = "mamluk_government"
     
     potential = {
-        has_estate = estate_jhats
+        has_estate = estate_tribe
+        has_reform = jhattar_reform
     }
     
     modifiers = {
@@ -124,7 +126,8 @@ chieftain_counsel_reform = {
 	icon = "chieftain"
     
     potential = {
-        has_estate = estate_chieftains
+        has_estate = estate_nobles
+        has_reform = wildling_clan_reform
     }
     
     modifiers = {
@@ -135,7 +138,15 @@ magi_counsel_reform = {
 	icon = "articles_of_agreement"
     
     potential = {
-        has_estate = estate_magi
+        has_estate = estate_nobles
+        OR = {
+            has_reform = qarth_city_reform
+            has_reform = nefer_city_reform
+            has_reform = yiti_city_reform
+            has_reform = yiti_empire_reform
+            has_reform = asshai_cult_reform
+            has_reform = bloodless_cult_reform
+        }
     }
     
     modifiers = {

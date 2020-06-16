@@ -1,0 +1,1110 @@
+#Scripted effects for estates
+
+# Will apply effect if estate is present
+# effect: Will apply effect to each estate present if defined
+# <estate>_effect: Will apply effect to specific estate present if defined
+each_estate_effect = {
+	if = {
+		limit = {
+			has_estate = estate_clergy
+		}
+		[[effect]
+			$effect$
+		]
+		[[clergy_effect]
+			$clergy_effect$
+		]
+	}
+	if = {
+		limit = {
+			has_estate = estate_nobles
+		}
+		[[effect]
+			$effect$
+		]
+		[[nobles_effect]
+			$nobles_effect$
+		]
+	}
+	if = {
+		limit = {
+			has_estate = estate_merchants
+		}
+		[[effect]
+			$effect$
+		]
+		[[merchants_effect]
+			$merchants_effect$
+		]
+	}
+    if = {
+		limit = {
+			has_estate = estate_commoners
+		}
+		[[effect]
+			$effect$
+		]
+		[[commoners_effect]
+			$commoners_effect$
+		]
+	}
+	if = {
+		limit = {
+			has_estate = estate_tribes
+		}
+		[[effect]
+			$effect$
+		]
+		[[tribes_effect]
+			$tribes_effect$
+		]
+	}
+}
+
+#Estate Privilege on_action effects
+on_religion_change_estate_privileges_effect = {
+	if = {
+		limit = {
+			any_country = {
+				root = {
+					force_converted_by = prev
+					religion = prev
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				root = {
+					force_converted_by = prev
+					religion = prev
+				}
+			}
+			add_country_modifier = {
+				name = recently_force_converted_protagonist_timer
+				duration = 5475
+				hidden = yes
+			}
+		}
+	}
+}
+
+on_annexed_estate_privileges_effect = {
+	if = {
+		limit = {
+			from = {
+				NOT = { religion = root }
+			}
+		}
+		add_country_modifier = {
+			name = recently_annexed_other_religion_timer
+			duration = 5475
+			hidden = yes
+		}
+	}
+}
+
+on_province_religion_converted_estate_privileges_effect = {
+	if = {
+		limit = {
+			owner = {
+				has_estate_privilege = estate_commoners_lighter_commonfolk_taxes
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_province_modifier = estate_commoners_lighter_commonfolk_taxes_privilege_mod }
+			}
+			add_province_modifier = {
+				name = estate_commoners_lighter_commonfolk_taxes_privilege_mod
+				duration = -1
+			}
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_estate_privilege = estate_commoners_manpower
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_province_modifier = estate_commoners_manpower_mod }
+			}
+			add_province_modifier = {
+				name = estate_commoners_manpower_mod
+				duration = -1
+			}
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_estate_privilege = estate_commoners_guaranteed_autonomy
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_province_modifier = estate_commoners_guaranteed_autonomy_mod }
+			}
+			add_province_modifier = {
+				name = estate_commoners_guaranteed_autonomy_mod
+				duration = -1
+			}
+		}
+	}
+}
+
+on_province_owner_change_estate_privileges_effect = {
+    #----------------------
+    # Commoners
+    #----------------------
+	if = {
+		limit = {
+			owner = {
+				has_estate_privilege = estate_commoners_lighter_commonfolk_taxes
+			}
+		}
+		add_province_modifier = {
+			name = estate_commoners_lighter_commonfolk_taxes_privilege_mod
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_estate_privilege = estate_commoners_manpower
+			}
+		}
+		add_province_modifier = {
+			name = estate_commoners_manpower_mod
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_estate_privilege = estate_commoners_guaranteed_autonomy
+			}
+		}
+		add_province_modifier = {
+			name = estate_commoners_guaranteed_autonomy_mod
+			duration = -1
+		}
+	}
+    
+    #----------------------
+    # Monopolies
+    #----------------------
+	# if = {
+		# limit = {
+			# owner = {
+				# has_estate_privilege = estate_burghers_monopoly_of_textiles
+			# }
+			# OR = {
+				# trade_goods = cloth
+				# trade_goods = silk
+			# }
+		# }
+		# add_province_modifier = {
+			# name = estate_burghers_monopoly_of_textiles_mod
+			# duration = -1
+		# }
+	# }
+	# if = {
+		# limit = {
+			# owner = {
+				# has_estate_privilege = estate_burghers_monopoly_of_dyes
+			# }
+			# trade_goods = dyes
+		# }
+		# add_province_modifier = {
+			# name = estate_burghers_monopoly_of_dyes_mod
+			# duration = -1
+		# }
+	# }
+	# if = {
+		# limit = {
+			# owner = {
+				# has_estate_privilege = estate_burghers_monopoly_of_glass
+			# }
+			# trade_goods = glass
+		# }
+		# add_province_modifier = {
+			# name = estate_burghers_monopoly_of_glass_mod
+			# duration = -1
+		# }
+	# }
+	# if = {
+		# limit = {
+			# owner = {
+				# has_estate_privilege = estate_burghers_monopoly_of_paper
+			# }
+			# trade_goods = paper
+		# }
+		# add_province_modifier = {
+			# name = estate_burghers_monopoly_of_paper_mod
+			# duration = -1
+		# }
+	# }
+	# if = {
+		# limit = {
+			# owner = {
+				# has_estate_privilege = estate_church_monopoly_of_incense
+			# }
+			# trade_goods = incense
+		# }
+		# add_province_modifier = {
+			# name = estate_church_monopoly_of_incense_mod
+			# duration = -1
+		# }
+	# }
+	# if = {
+		# limit = {
+			# owner = {
+				# has_estate_privilege = estate_church_monopoly_of_wool
+			# }
+			# trade_goods = wool
+		# }
+		# add_province_modifier = {
+			# name = estate_church_monopoly_of_wool_mod
+			# duration = -1
+		# }
+	# }
+	# if = {
+		# limit = {
+			# owner = {
+				# has_estate_privilege = estate_church_monopoly_of_wine
+			# }
+			# trade_goods = wine
+		# }
+		# add_province_modifier = {
+			# name = estate_church_monopoly_of_wine_mod
+			# duration = -1
+		# }
+	# }
+	# if = {
+		# limit = {
+			# owner = {
+				# has_estate_privilege = estate_church_monopoly_of_slaves
+			# }
+			# trade_goods = slaves
+		# }
+		# add_province_modifier = {
+			# name = estate_church_monopoly_of_slaves_mod
+			# duration = -1
+		# }
+	# }
+	# if = {
+		# limit = {
+			# owner = {
+				# has_estate_privilege = estate_nobles_monopoly_of_metals
+			# }
+			# OR = {
+				# trade_goods = iron
+				# trade_goods = copper
+			# }
+		# }
+		# add_province_modifier = {
+			# name = estate_nobles_monopoly_of_metals_mod
+			# duration = -1
+		# }
+	# }
+	# if = {
+		# limit = {
+			# owner = {
+				# has_estate_privilege = estate_nobles_monopoly_of_livestock
+			# }
+			# trade_goods = livestock
+		# }
+		# add_province_modifier = {
+			# name = estate_nobles_monopoly_of_livestock_mod
+			# duration = -1
+		# }
+	# }
+	# if = {
+		# limit = {
+			# owner = {
+				# has_estate_privilege = estate_nobles_monopoly_of_gems
+			# }
+			# trade_goods = gems
+		# }
+		# add_province_modifier = {
+			# name = estate_nobles_monopoly_of_gems_mod
+			# duration = -1
+		# }
+	# }
+}
+
+on_trade_good_changed_estate_privileges_effect = {
+	# if = {
+		# limit = {
+			# has_province_modifier = estate_burghers_monopoly_of_textiles_mod
+			# NOT = { trade_goods = silk }
+			# NOT = { trade_goods = cloth }
+		# }
+		# remove_province_modifier = estate_burghers_monopoly_of_textiles_mod
+	# }
+	# else_if = {
+		# limit = {
+			# from = { has_estate_privilege = estate_burghers_monopoly_of_textiles }
+			# NOT = { has_province_modifier = estate_burghers_monopoly_of_textiles_mod }
+			# OR = {
+				# trade_goods = silk
+				# trade_goods = cloth
+			# }
+		# }
+		# remove_province_modifier = estate_burghers_monopoly_of_textiles_mod
+    # }
+	# if = {
+		# limit = {
+			# has_province_modifier = estate_burghers_monopoly_of_dyes_mod
+			# NOT = { trade_goods = dyes }
+		# }
+		# remove_province_modifier = estate_burghers_monopoly_of_dyes_mod
+	# }
+	# else_if = {
+		# limit = {
+			# from = { has_estate_privilege = estate_burghers_monopoly_of_dyes }
+			# NOT = { has_province_modifier = estate_burghers_monopoly_of_dyes_mod }
+			# trade_goods = dyes
+		# }
+		# remove_province_modifier = estate_burghers_monopoly_of_dyes_mod
+	# }
+	# if = {
+		# limit = {
+			# has_province_modifier = estate_burghers_monopoly_of_glass_mod
+			# NOT = { trade_goods = glass }
+		# }
+		# remove_province_modifier = estate_burghers_monopoly_of_glass_mod
+	# }
+	# else_if = {
+		# limit = {
+			# from = { has_estate_privilege = estate_burghers_monopoly_of_glass }
+			# NOT = { has_province_modifier = estate_burghers_monopoly_of_glass_mod }
+			# trade_goods = glass
+		# }
+		# remove_province_modifier = estate_burghers_monopoly_of_glass_mod
+	# }
+	# if = {
+		# limit = {
+			# has_province_modifier = estate_burghers_monopoly_of_paper_mod
+			# NOT = { trade_goods = paper }
+		# }
+		# remove_province_modifier = estate_burghers_monopoly_of_paper_mod
+	# }
+	# else_if = {
+		# limit = {
+			# from = { has_estate_privilege = estate_burghers_monopoly_of_paper }
+			# NOT = { has_province_modifier = estate_burghers_monopoly_of_paper_mod }
+			# trade_goods = paper
+		# }
+		# remove_province_modifier = estate_burghers_monopoly_of_paper_mod
+	# }
+	# if = {
+		# limit = {
+			# has_province_modifier = estate_church_monopoly_of_incense_mod
+			# NOT = { trade_goods = incense }
+		# }
+		# remove_province_modifier = estate_church_monopoly_of_incense_mod
+	# }
+	# else_if = {
+		# limit = {
+			# from = { has_estate_privilege = estate_church_monopoly_of_incense }
+			# NOT = { has_province_modifier = estate_church_monopoly_of_incense_mod }
+			# trade_goods = incense
+		# }
+		# remove_province_modifier = estate_church_monopoly_of_incense_mod
+	# }
+	# if = {
+		# limit = {
+			# has_province_modifier = estate_church_monopoly_of_wool_mod
+			# NOT = { trade_goods = wool }
+		# }
+		# remove_province_modifier = estate_church_monopoly_of_wool_mod
+	# }
+	# else_if = {
+		# limit = {
+			# from = { has_estate_privilege = estate_church_monopoly_of_wool }
+			# NOT = { has_province_modifier = estate_church_monopoly_of_wool_mod }
+			# trade_goods = wool
+		# }
+		# remove_province_modifier = estate_church_monopoly_of_wool_mod
+	# }
+	# if = {
+		# limit = {
+			# has_province_modifier = estate_church_monopoly_of_wine_mod
+			# NOT = { trade_goods = wine }
+		# }
+		# remove_province_modifier = estate_church_monopoly_of_wine_mod
+	# }
+	# else_if = {
+		# limit = {
+			# from = { has_estate_privilege = estate_church_monopoly_of_wine }
+			# NOT = { has_province_modifier = estate_church_monopoly_of_wine_mod }
+			# trade_goods = wine
+		# }
+		# remove_province_modifier = estate_church_monopoly_of_wine_mod
+	# }
+	# if = {
+		# limit = {
+			# has_province_modifier = estate_church_monopoly_of_slaves_mod
+			# NOT = { trade_goods = slaves }
+		# }
+		# remove_province_modifier = estate_church_monopoly_of_slaves_mod
+	# }
+	# else_if = {
+		# limit = {
+			# from = { has_estate_privilege = estate_church_monopoly_of_slaves }
+			# NOT = { has_province_modifier = estate_church_monopoly_of_slaves_mod }
+			# trade_goods = slaves
+		# }
+		# remove_province_modifier = estate_church_monopoly_of_slaves_mod
+	# }
+	# if = {
+		# limit = {
+			# has_province_modifier = estate_nobles_monopoly_of_metals_mod
+			# NOT = { trade_goods = copper }
+			# NOT = { trade_goods = iron }
+		# }
+		# remove_province_modifier = estate_nobles_monopoly_of_metals_mod
+	# }
+	# else_if = {
+		# limit = {
+			# from = { has_estate_privilege = estate_nobles_monopoly_of_metals }
+			# NOT = { has_province_modifier = estate_nobles_monopoly_of_metals_mod }
+			# OR = {
+				# trade_goods = copper
+				# trade_goods = iron
+			# }
+		# }
+		# remove_province_modifier = estate_nobles_monopoly_of_metals_mod
+	# }
+	# if = {
+		# limit = {
+			# has_province_modifier = estate_nobles_monopoly_of_livestock_mod
+			# NOT = { trade_goods = livestock }
+		# }
+		# remove_province_modifier = estate_nobles_monopoly_of_livestock_mod
+	# }
+	# else_if = {
+		# limit = {
+			# from = { has_estate_privilege = estate_nobles_monopoly_of_livestock }
+			# NOT = { has_province_modifier = estate_nobles_monopoly_of_livestock_mod }
+			# trade_goods = livestock
+		# }
+		# remove_province_modifier = estate_nobles_monopoly_of_livestock_mod
+	# }
+	# else_if = {
+		# limit = {
+			# from = { has_estate_privilege = estate_maratha_monopoly_of_livestock }
+			# NOT = { has_province_modifier = estate_maratha_monopoly_of_livestock_mod }
+			# trade_goods = livestock
+		# }
+		# remove_province_modifier = estate_maratha_monopoly_of_livestock_mod
+	# }
+	# if = {
+		# limit = {
+			# has_province_modifier = estate_nobles_monopoly_of_gems_mod
+			# NOT = { trade_goods = gems }
+		# }
+		# remove_province_modifier = estate_nobles_monopoly_of_gems_mod
+	# }
+	# else_if = {
+		# limit = {
+			# from = { has_estate_privilege = estate_nobles_monopoly_of_gems }
+			# NOT = { has_province_modifier = estate_nobles_monopoly_of_gems_mod }
+			# trade_goods = gems
+		# }
+		# remove_province_modifier = estate_nobles_monopoly_of_gems_mod
+	# }
+}
+
+on_loan_repaid_estate_privileges_effect = {
+	if = {
+		limit = {
+			has_estate_privilege = estate_merchants_indebted_to_merchants
+			NOT = { has_estate_loan = 1 }
+		}
+		remove_estate_privilege = estate_merchants_indebted_to_merchants
+	}
+}
+
+reapply_estate_privilege = {
+	# privilege: The privilege we want to reapply
+	if = {
+		limit = { 
+			can_revoke_estate_privilege = $privilege$
+		}
+		hidden_effect = {
+			remove_estate_privilege = $privilege$
+		}
+		set_estate_privilege = $privilege$
+	}
+}
+
+scaled_estate_clergy_land_share_effect = {
+	scaled_estate_land_share_add_effect = { estate = estate_clergy }
+}
+
+scaled_estate_merchants_land_share_effect = {
+	scaled_estate_land_share_add_effect = { estate = estate_merchants }
+}
+
+scaled_estate_nobles_land_share_effect = {
+	scaled_estate_land_share_add_effect = { estate = estate_nobles }
+}
+
+scaled_estate_commoners_land_share_effect = {
+	scaled_estate_land_share_add_effect = { estate = estate_commoners }
+}
+
+scaled_estate_tribes_land_share_effect = {
+	scaled_estate_land_share_add_effect = { estate = estate_tribes }
+}
+
+#Based on those above, but you can choose which estate you use
+#example of usage: scaled_estate_land_share_add_effect = { estate = estate_nobles }
+scaled_estate_land_share_add_effect = {
+	if = {
+		limit = {
+			NOT = { total_development = 50 }
+		}
+		give_estate_land_share_large = { estate = $estate$ }
+	}
+	else_if = {
+		limit = {
+			total_development = 50
+			NOT = { total_development = 100 }
+		}
+		give_estate_land_share_medium = { estate = $estate$ }
+	}
+	else_if = {
+		limit = {
+			total_development = 100
+		}
+		give_estate_land_share_small = { estate = $estate$ }
+	}
+}
+
+#example of usage: scaled_estate_land_share_reduce_effect = { estate = estate_nobles }
+scaled_estate_land_share_reduce_effect = {
+	if = {
+		limit = {
+			NOT = { total_development = 50 }
+		}
+		take_estate_land_share_large = { estate = $estate$ }
+	}
+	else_if = {
+		limit = {
+			total_development = 50
+			NOT = { total_development = 100 }
+		}
+		give_estate_land_share_medium = { estate = $estate$ }
+	}
+	else_if = {
+		limit = {
+			total_development = 100
+		}
+		give_estate_land_share_small = { estate = $estate$ }
+	}
+}
+
+# Expects country scope
+seize_land_effect = {
+	hidden_effect = {
+		set_variable = {
+			which = seize_land_effect_variable
+			value = $scale$
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = seize_land_effect_variable
+					value = 1
+				}
+			}
+			change_variable = {
+				which = seize_land_effect_variable
+				value = -1
+			}
+			if = {
+				limit = {
+					any_owned_province = {
+						OR = {
+							is_in_capital_area = yes
+							is_state_core = root
+						}
+						is_capital = no
+						NOT = {
+							area_for_scope_province = {
+								owned_by = root
+								has_province_flag = seize_land_spawn_unrest_and_rebels
+							}
+						}
+						area_for_scope_province = {
+							any_neighbor_province = {
+								owned_by = root
+								has_province_flag = seize_land_spawn_unrest_and_rebels
+							}
+						}
+					}
+				}
+				random_owned_province = {
+					limit = {
+						OR = {
+							is_in_capital_area = yes
+							is_state_core = root
+						}
+						is_capital = no
+						NOT = {
+							area_for_scope_province = {
+								owned_by = root
+								has_province_flag = seize_land_spawn_unrest_and_rebels
+							}
+						}
+						area_for_scope_province = {
+							any_neighbor_province = {
+								owned_by = root
+								has_province_flag = seize_land_spawn_unrest_and_rebels
+							}
+						}
+						highest_supply_limit_in_area = yes
+					}
+					spawn_rebels_from_unhappy_estate = { size = 2 }
+					area = {
+						limit = {
+							owned_by = ROOT
+						}
+						set_province_flag = seize_land_spawn_unrest_and_rebels
+						add_named_unrest = { name = estate_land_seized value = 10 }
+					}
+				}
+			}
+			else = {
+				random_owned_province = {
+					limit = {
+						OR = {
+							is_in_capital_area = yes
+							is_state_core = root
+						}
+						NOT = {
+							area_for_scope_province = {
+								owned_by = root
+								has_province_flag = seize_land_spawn_unrest_and_rebels
+							}
+						}
+						highest_supply_limit_in_area = yes
+					}
+					spawn_rebels_from_unhappy_estate = { size = 2 }
+					area = {
+						limit = {
+							owned_by = ROOT
+						}
+						set_province_flag = seize_land_spawn_unrest_and_rebels
+						add_named_unrest = { name = estate_land_seized value = 10 }
+					}
+				}
+			}
+		}
+		every_owned_province = {
+			limit = { has_province_flag = seize_land_spawn_unrest_and_rebels }
+			clr_province_flag = seize_land_spawn_unrest_and_rebels
+		}
+	}
+}
+
+spawn_rebels_from_unhappy_estate = {
+	random_list = {
+		1 = {
+			trigger = {
+				owner = {
+					has_estate = estate_clergy
+					NOT = {
+						estate_loyalty = {
+							estate = estate_clergy
+							loyalty = 30
+						}
+					}
+				}
+			}
+			owner = {
+				trigger_switch = {
+					on_trigger = religion
+					asoiaf_trios = { PREV = { spawn_rebels = { type = asoiaf_trios_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_the_old_gods = { PREV = { spawn_rebels = { type = asoiaf_the_old_gods_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_the_great_stallion = { PREV = { spawn_rebels = { type = asoiaf_the_great_stallion_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_the_drowned_god = { PREV = { spawn_rebels = { type = asoiaf_the_drowned_god_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_summer_gods = { PREV = { spawn_rebels = { type = asoiaf_summer_gods_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_stone_cow_of_faros = { PREV = { spawn_rebels = { type = asoiaf_stone_cow_of_faros_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_rhllor = { PREV = { spawn_rebels = { type = asoiaf_rhllor_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_mother_rhoyne = { PREV = { spawn_rebels = { type = asoiaf_mother_rhoyne_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_gods_of_jogos_nhai = { PREV = { spawn_rebels = { type = asoiaf_gods_of_jogos_nhai_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_shadowbinders = { PREV = { spawn_rebels = { type = asoiaf_shadowbinders_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_lion_of_the_night = { PREV = { spawn_rebels = { type = asoiaf_lion_of_the_night_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_lady_of_the_waves = { PREV = { spawn_rebels = { type = asoiaf_lady_of_the_waves_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_great_shepherd = { PREV = { spawn_rebels = { type = asoiaf_great_shepherd_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_graces = { PREV = { spawn_rebels = { type = asoiaf_graces_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_gods_of_sarnor = { PREV = { spawn_rebels = { type = asoiaf_gods_of_sarnor_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_gods_of_lorath = { PREV = { spawn_rebels = { type = asoiaf_gods_of_lorath_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_gods_of_ibben = { PREV = { spawn_rebels = { type = asoiaf_gods_of_ibben_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_gods_of_hyrkoon = { PREV = { spawn_rebels = { type = asoiaf_gods_of_hyrkoon_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_god_of_harmony = { PREV = { spawn_rebels = { type = asoiaf_god_of_harmony_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_faith_of_the_seven = { PREV = { spawn_rebels = { type = asoiaf_faith_of_the_seven_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_black_goat_of_qohor = { PREV = { spawn_rebels = { type = asoiaf_black_goat_of_qohor_rebels size = $size$ as_if_faction = yes } } }
+					asoiaf_bearded_priests = { PREV = { spawn_rebels = { type = asoiaf_bearded_priests_rebels size = $size$ as_if_faction = yes } } }
+				}
+			}
+		}
+		1 = {
+			trigger = {
+				owner = {
+					has_estate = estate_merchants
+					NOT = {
+						estate_loyalty = {
+							estate = estate_merchants
+							loyalty = 30
+						}
+					}
+				}
+			}
+			spawn_rebels = {
+				type = particularist_rebels
+				size = $size$
+				estate = estate_merchants
+				as_if_faction = yes
+			}
+		}
+        1 = {
+			trigger = {
+				owner = {
+					has_estate = estate_nobles
+					NOT = {
+						estate_loyalty = {
+							estate = estate_nobles
+							loyalty = 30
+						}
+					}
+				}
+			}
+			spawn_rebels = {
+                type = noble_rebels
+                size = $size$
+                estate = estate_nobles
+                as_if_faction = yes
+            }
+		}
+        1 = {
+			trigger = {
+				owner = {
+					has_estate = estate_commoners
+					NOT = {
+						estate_loyalty = {
+							estate = estate_commoners
+							loyalty = 30
+						}
+					}
+				}
+			}
+			spawn_rebels = {
+                type = anti_tax_rebels
+                size = $size$
+                estate = estate_commoners
+                as_if_faction = yes
+            }
+		}
+		1 = {
+			trigger = {
+				owner = {
+					has_estate = estate_tribes
+					NOT = {
+						estate_loyalty = {
+							estate = estate_tribes
+							loyalty = 30
+						}
+					}
+				}
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = $size$
+				estate = estate_tribes
+				as_if_faction = yes
+			}
+		}
+	}
+}
+
+pick_random_estate_if_present = {
+	random_list = {
+		1 = { 
+			trigger = {
+				has_estate = estate_clergy
+				NOT = { has_country_flag = estate_clergy_$flag$ }
+			}
+			set_country_flag = estate_clergy_$flag$
+			[[estate_action]
+			$estate_action$ = estate_clergy
+			]
+		}
+		1 = { 
+			trigger = {
+				has_estate = estate_merchants
+				NOT = { has_country_flag = estate_merchants_$flag$ }
+			}
+			set_country_flag = estate_merchants_$flag$ 
+			[[estate_action]
+			$estate_action$ = estate_merchants
+			]
+		}
+		1 = { 
+			trigger = {
+				has_estate = estate_nobles
+				NOT = { has_country_flag = estate_nobles_$flag$ }
+			}
+			set_country_flag = estate_nobles_$flag$
+			[[estate_action]
+			$estate_action$ = estate_nobles
+			]
+		}
+		1 = { 
+			trigger = {
+				has_estate = estate_commoners
+				NOT = { has_country_flag = estate_commoners_$flag$ }
+			}
+			set_country_flag = estate_commoners_$flag$
+			[[estate_action]
+			$estate_action$ = estate_commoners
+			]
+		}
+		1 = { 
+			trigger = {
+				has_estate = estate_tribes
+				NOT = { has_country_flag = estate_tribes_$flag$ }
+			}
+			set_country_flag = estate_tribes_$flag$
+			[[estate_action]
+			$estate_action$ = estate_tribes
+			]
+		}
+	}
+}
+
+# estate = what estate
+# Will give the estate 1% land
+give_estate_land_share_small = {
+	 change_estate_land_share = {
+		estate = $estate$
+		share = 1
+	}
+}
+
+# estate = what estate
+# Will give the estate 2% land
+give_estate_land_share_medium = {
+	 change_estate_land_share = {
+		estate = $estate$
+		share = 2
+	}
+}
+
+# estate = what estate
+# Will give the estate 3% land
+give_estate_land_share_large = {
+	 change_estate_land_share = {
+		estate = $estate$
+		share = 3
+	}
+}
+
+# estate = what estate
+# Will give the estate 5% land
+give_estate_land_share_massive = {
+	 change_estate_land_share = {
+		estate = $estate$
+		share = 5
+	}
+}
+
+# estate = what estate
+# Will give the estate 10% land
+give_estate_land_share_gigantic = {
+	 change_estate_land_share = {
+		estate = $estate$
+		share = 10
+	}
+}
+
+give_estate_land_share_init = {
+	 change_estate_land_share = {
+		estate = $estate$
+		share = 20
+	}
+}
+
+# estate = what estate
+# Will take the 1% land from estate
+take_estate_land_share_small = {
+	 change_estate_land_share = {
+		estate = $estate$
+		share = -1
+	}
+}
+
+# estate = what estate
+# Will take away 2% land from estate
+take_estate_land_share_medium = {
+	 change_estate_land_share = {
+		estate = $estate$
+		share = -2
+	}
+}
+
+# estate = what estate
+# Will take the 3% land from estate
+take_estate_land_share_large = {
+	 change_estate_land_share = {
+		estate = $estate$
+		share = -3
+	}
+}
+
+# estate = what estate
+# Will take the 5% land from estate
+take_estate_land_share_massive = {
+	 change_estate_land_share = {
+		estate = $estate$
+		share = -5
+	}
+}
+
+# estate = what estate
+# Will take the 10% land from estate
+take_estate_land_share_gigantic = {
+	 change_estate_land_share = {
+		estate = $estate$
+		share = -10
+	}
+}
+
+# Used to apply estate monopoly modifier based on the estate privilege name
+# privilege = name of privilege
+apply_estate_monopoly_modifier = {
+	if = {
+		limit = { owner = { has_estate_privilege = $privilege$ } }
+		add_province_modifier = { 
+			name = $privilege$_mod 
+			duration = -1
+		}
+	}
+}
+
+remove_estate_monopoly_modifier = {
+	remove_province_modifier = $privilege$_mod
+}
+
+spawn_rebels_seize_land_switch = {
+	trigger_switch = {
+		on_trigger = num_of_owned_areas
+		1000 = { custom_tooltip = estate_seize_land_interaction_tooltip_1000 seize_land_effect = { scale = 101 } }
+		990 = { custom_tooltip = estate_seize_land_interaction_tooltip_990 seize_land_effect = { scale = 100 } }
+		980 = { custom_tooltip = estate_seize_land_interaction_tooltip_980 seize_land_effect = { scale = 99 } }
+		970 = { custom_tooltip = estate_seize_land_interaction_tooltip_970 seize_land_effect = { scale = 98 } }
+		960 = { custom_tooltip = estate_seize_land_interaction_tooltip_960 seize_land_effect = { scale = 97 } }
+		950 = { custom_tooltip = estate_seize_land_interaction_tooltip_950 seize_land_effect = { scale = 96 } }
+		940 = { custom_tooltip = estate_seize_land_interaction_tooltip_940 seize_land_effect = { scale = 95 } }
+		930 = { custom_tooltip = estate_seize_land_interaction_tooltip_930 seize_land_effect = { scale = 94 } }
+		920 = { custom_tooltip = estate_seize_land_interaction_tooltip_920 seize_land_effect = { scale = 93 } }
+		910 = { custom_tooltip = estate_seize_land_interaction_tooltip_910 seize_land_effect = { scale = 92 } }
+		900 = { custom_tooltip = estate_seize_land_interaction_tooltip_900 seize_land_effect = { scale = 91 } }
+		890 = { custom_tooltip = estate_seize_land_interaction_tooltip_890 seize_land_effect = { scale = 90 } }
+		880 = { custom_tooltip = estate_seize_land_interaction_tooltip_880 seize_land_effect = { scale = 89 } }
+		870 = { custom_tooltip = estate_seize_land_interaction_tooltip_870 seize_land_effect = { scale = 88 } }
+		860 = { custom_tooltip = estate_seize_land_interaction_tooltip_860 seize_land_effect = { scale = 87 } }
+		850 = { custom_tooltip = estate_seize_land_interaction_tooltip_850 seize_land_effect = { scale = 86 } }
+		840 = { custom_tooltip = estate_seize_land_interaction_tooltip_840 seize_land_effect = { scale = 85 } }
+		830 = { custom_tooltip = estate_seize_land_interaction_tooltip_830 seize_land_effect = { scale = 84 } }
+		820 = { custom_tooltip = estate_seize_land_interaction_tooltip_820 seize_land_effect = { scale = 83 } }
+		810 = { custom_tooltip = estate_seize_land_interaction_tooltip_810 seize_land_effect = { scale = 82 } }
+		800 = { custom_tooltip = estate_seize_land_interaction_tooltip_800 seize_land_effect = { scale = 81 } }
+		790 = { custom_tooltip = estate_seize_land_interaction_tooltip_790 seize_land_effect = { scale = 80 } }
+		780 = { custom_tooltip = estate_seize_land_interaction_tooltip_780 seize_land_effect = { scale = 79 } }
+		770 = { custom_tooltip = estate_seize_land_interaction_tooltip_770 seize_land_effect = { scale = 78 } }
+		760 = { custom_tooltip = estate_seize_land_interaction_tooltip_760 seize_land_effect = { scale = 77 } }
+		750 = { custom_tooltip = estate_seize_land_interaction_tooltip_750 seize_land_effect = { scale = 76 } }
+		740 = { custom_tooltip = estate_seize_land_interaction_tooltip_740 seize_land_effect = { scale = 75 } }
+		730 = { custom_tooltip = estate_seize_land_interaction_tooltip_730 seize_land_effect = { scale = 74 } }
+		720 = { custom_tooltip = estate_seize_land_interaction_tooltip_720 seize_land_effect = { scale = 73 } }
+		710 = { custom_tooltip = estate_seize_land_interaction_tooltip_710 seize_land_effect = { scale = 72 } }
+		700 = { custom_tooltip = estate_seize_land_interaction_tooltip_700 seize_land_effect = { scale = 71 } }
+		690 = { custom_tooltip = estate_seize_land_interaction_tooltip_690 seize_land_effect = { scale = 70 } }
+		680 = { custom_tooltip = estate_seize_land_interaction_tooltip_680 seize_land_effect = { scale = 69 } }
+		670 = { custom_tooltip = estate_seize_land_interaction_tooltip_670 seize_land_effect = { scale = 68 } }
+		660 = { custom_tooltip = estate_seize_land_interaction_tooltip_660 seize_land_effect = { scale = 67 } }
+		650 = { custom_tooltip = estate_seize_land_interaction_tooltip_650 seize_land_effect = { scale = 66 } }
+		640 = { custom_tooltip = estate_seize_land_interaction_tooltip_640 seize_land_effect = { scale = 65 } }
+		630 = { custom_tooltip = estate_seize_land_interaction_tooltip_630 seize_land_effect = { scale = 64 } }
+		620 = { custom_tooltip = estate_seize_land_interaction_tooltip_620 seize_land_effect = { scale = 63 } }
+		610 = { custom_tooltip = estate_seize_land_interaction_tooltip_610 seize_land_effect = { scale = 62 } }
+		600 = { custom_tooltip = estate_seize_land_interaction_tooltip_600 seize_land_effect = { scale = 61 } }
+		590 = { custom_tooltip = estate_seize_land_interaction_tooltip_590 seize_land_effect = { scale = 60 } }
+		580 = { custom_tooltip = estate_seize_land_interaction_tooltip_580 seize_land_effect = { scale = 59 } }
+		570 = { custom_tooltip = estate_seize_land_interaction_tooltip_570 seize_land_effect = { scale = 58 } }
+		560 = { custom_tooltip = estate_seize_land_interaction_tooltip_560 seize_land_effect = { scale = 57 } }
+		550 = { custom_tooltip = estate_seize_land_interaction_tooltip_550 seize_land_effect = { scale = 56 } }
+		540 = { custom_tooltip = estate_seize_land_interaction_tooltip_540 seize_land_effect = { scale = 55 } }
+		530 = { custom_tooltip = estate_seize_land_interaction_tooltip_530 seize_land_effect = { scale = 54 } }
+		520 = { custom_tooltip = estate_seize_land_interaction_tooltip_520 seize_land_effect = { scale = 53 } }
+		510 = { custom_tooltip = estate_seize_land_interaction_tooltip_510 seize_land_effect = { scale = 52 } }
+		500 = { custom_tooltip = estate_seize_land_interaction_tooltip_500 seize_land_effect = { scale = 51 } }
+		490 = { custom_tooltip = estate_seize_land_interaction_tooltip_490 seize_land_effect = { scale = 50 } }
+		480 = { custom_tooltip = estate_seize_land_interaction_tooltip_480 seize_land_effect = { scale = 49 } }
+		470 = { custom_tooltip = estate_seize_land_interaction_tooltip_470 seize_land_effect = { scale = 48 } }
+		460 = { custom_tooltip = estate_seize_land_interaction_tooltip_460 seize_land_effect = { scale = 47 } }
+		450 = { custom_tooltip = estate_seize_land_interaction_tooltip_450 seize_land_effect = { scale = 46 } }
+		440 = { custom_tooltip = estate_seize_land_interaction_tooltip_440 seize_land_effect = { scale = 45 } }
+		430 = { custom_tooltip = estate_seize_land_interaction_tooltip_430 seize_land_effect = { scale = 44 } }
+		420 = { custom_tooltip = estate_seize_land_interaction_tooltip_420 seize_land_effect = { scale = 43 } }
+		410 = { custom_tooltip = estate_seize_land_interaction_tooltip_410 seize_land_effect = { scale = 42 } }
+		400 = { custom_tooltip = estate_seize_land_interaction_tooltip_400 seize_land_effect = { scale = 41 } }
+		390 = { custom_tooltip = estate_seize_land_interaction_tooltip_390 seize_land_effect = { scale = 40 } }
+		380 = { custom_tooltip = estate_seize_land_interaction_tooltip_380 seize_land_effect = { scale = 39 } }
+		370 = { custom_tooltip = estate_seize_land_interaction_tooltip_370 seize_land_effect = { scale = 38 } }
+		360 = { custom_tooltip = estate_seize_land_interaction_tooltip_360 seize_land_effect = { scale = 37 } }
+		350 = { custom_tooltip = estate_seize_land_interaction_tooltip_350 seize_land_effect = { scale = 36 } }
+		340 = { custom_tooltip = estate_seize_land_interaction_tooltip_340 seize_land_effect = { scale = 35 } }
+		330 = { custom_tooltip = estate_seize_land_interaction_tooltip_330 seize_land_effect = { scale = 34 } }
+		320 = { custom_tooltip = estate_seize_land_interaction_tooltip_320 seize_land_effect = { scale = 33 } }
+		310 = { custom_tooltip = estate_seize_land_interaction_tooltip_310 seize_land_effect = { scale = 32 } }
+		300 = { custom_tooltip = estate_seize_land_interaction_tooltip_300 seize_land_effect = { scale = 31 } }
+		290 = { custom_tooltip = estate_seize_land_interaction_tooltip_290 seize_land_effect = { scale = 30 } }
+		280 = { custom_tooltip = estate_seize_land_interaction_tooltip_280 seize_land_effect = { scale = 29 } }
+		270 = { custom_tooltip = estate_seize_land_interaction_tooltip_270 seize_land_effect = { scale = 28 } }
+		260 = { custom_tooltip = estate_seize_land_interaction_tooltip_260 seize_land_effect = { scale = 27 } }
+		250 = { custom_tooltip = estate_seize_land_interaction_tooltip_250 seize_land_effect = { scale = 26 } }
+		240 = { custom_tooltip = estate_seize_land_interaction_tooltip_240 seize_land_effect = { scale = 25 } }
+		230 = { custom_tooltip = estate_seize_land_interaction_tooltip_230 seize_land_effect = { scale = 24 } }
+		220 = { custom_tooltip = estate_seize_land_interaction_tooltip_220 seize_land_effect = { scale = 23 } }
+		210 = { custom_tooltip = estate_seize_land_interaction_tooltip_210 seize_land_effect = { scale = 22 } }
+		200 = { custom_tooltip = estate_seize_land_interaction_tooltip_200 seize_land_effect = { scale = 21 } }
+		190 = { custom_tooltip = estate_seize_land_interaction_tooltip_190 seize_land_effect = { scale = 20 } }
+		180 = { custom_tooltip = estate_seize_land_interaction_tooltip_180 seize_land_effect = { scale = 19 } }
+		170 = { custom_tooltip = estate_seize_land_interaction_tooltip_170 seize_land_effect = { scale = 18 } }
+		160 = { custom_tooltip = estate_seize_land_interaction_tooltip_160 seize_land_effect = { scale = 17 } }
+		150 = { custom_tooltip = estate_seize_land_interaction_tooltip_150 seize_land_effect = { scale = 16 } }
+		140 = { custom_tooltip = estate_seize_land_interaction_tooltip_140 seize_land_effect = { scale = 15 } }
+		130 = { custom_tooltip = estate_seize_land_interaction_tooltip_130 seize_land_effect = { scale = 14 } }
+		120 = { custom_tooltip = estate_seize_land_interaction_tooltip_120 seize_land_effect = { scale = 13 } }
+		110 = { custom_tooltip = estate_seize_land_interaction_tooltip_110 seize_land_effect = { scale = 12 } }
+		100 = { custom_tooltip = estate_seize_land_interaction_tooltip_100 seize_land_effect = { scale = 11 } }
+		90 = { custom_tooltip = estate_seize_land_interaction_tooltip_90 seize_land_effect = { scale = 10 } }
+		80 = { custom_tooltip = estate_seize_land_interaction_tooltip_80 seize_land_effect = { scale = 9 } }
+		70 = { custom_tooltip = estate_seize_land_interaction_tooltip_70 seize_land_effect = { scale = 8 } }
+		60 = { custom_tooltip = estate_seize_land_interaction_tooltip_60 seize_land_effect = { scale = 7 } }
+		50 = { custom_tooltip = estate_seize_land_interaction_tooltip_50 seize_land_effect = { scale = 6 } }
+		40 = { custom_tooltip = estate_seize_land_interaction_tooltip_40 seize_land_effect = { scale = 5 } }
+		30 = { custom_tooltip = estate_seize_land_interaction_tooltip_30 seize_land_effect = { scale = 4 } }
+		20 = { custom_tooltip = estate_seize_land_interaction_tooltip_20 seize_land_effect = { scale = 3 } }
+		10 = { custom_tooltip = estate_seize_land_interaction_tooltip_10 seize_land_effect = { scale = 2 } }
+		1 = { custom_tooltip = estate_seize_land_interaction_tooltip_1 seize_land_effect = { scale = 1 } }
+	}
+}

@@ -1,0 +1,136 @@
+defined_text = {
+	name = GetClergyName
+    
+	random = no
+	
+	text = {
+		localisation_key = estate_stewards
+		trigger = {
+            has_estate = estate_clergy
+			has_reform = nights_watch_reform
+		}
+	}
+    
+	text = {
+		localisation_key = estate_seers
+		trigger = {
+            has_estate = estate_clergy
+			has_reform = wildling_clan_reform
+		}
+	}
+    
+    text = {
+		localisation_key = estate_clergy
+		trigger = {
+			has_estate = estate_clergy
+		}
+	}
+}
+
+defined_text = {
+	name = GetMerchantsName
+    
+	random = no
+	
+	text = {
+		localisation_key = estate_builders
+		trigger = {
+            has_estate = estate_merchants
+			has_reform = nights_watch_reform
+		}
+	}
+    
+	text = {
+		localisation_key = estate_traders
+		trigger = {
+            has_estate = estate_merchants
+			has_reform = wildling_clan_reform
+		}
+	}
+    
+    text = {
+		localisation_key = estate_merchants
+		trigger = {
+			has_estate = estate_merchants
+		}
+	}
+}
+
+defined_text = {
+	name = GetNoblesName
+    
+	random = no
+	
+	text = {
+		localisation_key = estate_rangers
+		trigger = {
+            has_estate = estate_nobles
+			has_reform = nights_watch_reform
+		}
+	}
+    
+	text = {
+		localisation_key = estate_chieftains
+		trigger = {
+            has_estate = estate_nobles
+			has_reform = wildling_clan_reform
+		}
+	}
+    
+    text = {
+		localisation_key = estate_nobles
+		trigger = {
+			has_estate = estate_nobles
+		}
+	}
+}
+
+defined_text = {
+	name = GetCommonersName
+    
+	random = no
+
+	text = {
+		localisation_key = estate_freefolk
+		trigger = {
+            has_estate = estate_commoners
+			has_reform = wildling_clan_reform
+		}
+	}
+    
+    text = {
+		localisation_key = estate_commoners
+		trigger = {
+			has_estate = estate_commoners
+		}
+	}
+}
+
+defined_text = {
+	name = GetTribesName
+    
+	random = no
+
+	text = {
+		localisation_key = estate_khalasar
+		trigger = {
+            has_estate = estate_tribes
+			has_reform = khalasar_reform
+		}
+	}
+    
+    text = {
+		localisation_key = estate_jhats
+		trigger = {
+            has_estate = estate_tribes
+			has_reform = jhattar_reform
+		}
+	}
+    
+    text = {
+		localisation_key = estate_tribes
+		trigger = {
+			has_estate = estate_tribes
+		}
+	}
+}

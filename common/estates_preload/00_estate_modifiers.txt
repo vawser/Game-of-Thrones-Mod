@@ -1,0 +1,86 @@
+#Define estate loyalty and influence modifiers here
+
+estate_clergy = {
+	modifier_definition = {
+		type = loyalty
+		key = clergy_loyalty_modifier
+		trigger = {
+			has_estate = estate_clergy
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = clergy_influence_modifier
+		trigger = {
+			has_estate = estate_clergy
+		}
+	}
+}
+
+estate_merchants = {
+	modifier_definition = {
+		type = loyalty
+		key = merchants_loyalty_modifier
+		trigger = {
+			has_estate = estate_merchants
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = merchants_influence_modifier
+		trigger = {
+			has_estate = estate_merchants
+		}
+	}
+}
+
+estate_nobles = {
+	modifier_definition = {
+		type = loyalty
+		key = nobles_loyalty_modifier
+		trigger = {
+			has_estate = estate_nobles
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = nobles_influence_modifier
+		trigger = {
+			has_estate = estate_nobles
+		}
+	}
+}
+
+estate_commoners = {
+	modifier_definition = {
+		type = loyalty
+		key = commoners_loyalty_modifier
+		trigger = {
+			has_estate = estate_commoners
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = commoners_influence_modifier
+		trigger = {
+			has_estate = estate_commoners
+		}
+	}
+}
+
+estate_tribes = {
+	modifier_definition = {
+		type = loyalty
+		key = tribes_loyalty_modifier
+		trigger = {
+			has_estate = estate_tribes
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = tribes_influence_modifier
+		trigger = {
+			has_estate = estate_tribes
+		}
+	}
+}

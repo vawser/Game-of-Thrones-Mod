@@ -9,7 +9,7 @@ province_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		owner = { has_idea_group = exploration_ideas }
+		owner = { has_idea_group = got_exploration_ideas }
 		has_empty_adjacent_province = yes
 		owner = { NOT = { num_of_colonies = 2 } }
 	}

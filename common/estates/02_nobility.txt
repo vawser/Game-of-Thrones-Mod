@@ -1,0 +1,229 @@
+estate_nobles = {
+	icon = 2
+    color = { 200 0 50 }
+    
+    influence_from_dev_modifier = 1.0
+    
+    # ----- Names -----
+    custom_name = {
+		desc = estate_chieftains
+		trigger = {
+			has_reform = wildling_clan_reform
+		}
+	}
+    custom_name = {
+		desc = estate_rangers
+		trigger = {
+			has_reform = nights_watch_reform
+		}
+	}
+    
+	# ----- Conditions -----
+	trigger = {
+        NOT = { has_reform = khalasar_reform }
+        NOT = { has_reform = jhattar_reform }
+        NOT = { has_reform = pirate_clan_reform }
+	}
+
+	# ----- Country -----
+	country_modifier_happy = {
+		global_manpower_modifier = 0.1
+        army_tradition = 1
+        leader_cost = -0.5
+	}
+	country_modifier_neutral = {
+		global_manpower_modifier = 0.05
+        army_tradition = 0.5
+        leader_cost = -0.25
+	}	
+	country_modifier_angry = {
+		global_manpower_modifier = -0.1
+        army_tradition = -1
+        leader_cost = 0.5
+	}	
+    
+	land_ownership_modifier = {
+		nobles_loyalty_modifier = 0.2
+	}
+
+	province_independence_weight = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			culture_group = owner
+			religion_group = owner
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 5
+		}
+		modifier = {
+			factor = 0.75
+			development = 20
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { is_state_core = owner }
+		}
+	}
+
+	# ----- Influence -----
+	base_influence = 30
+	
+    influence_modifier = {
+		desc = EST_VAL_NOBLE_COUNSEL
+		trigger = {
+			has_reform = noble_counsel_reform
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_MONARCHY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_monarchy_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_AUTONOMY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_autonomy_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_DYNASTIC_IDEAGROUP
+		trigger = {
+			full_idea_group = got_dynastic_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_INFLUENCE_IDEAGROUP
+		trigger = {
+			full_idea_group = got_influence_ideas
+		}
+		influence = 5
+	}
+	
+	# ----- Loyalty -----
+    loyalty_modifier = {
+		desc = EST_VAL_NOBLE_COUNSEL
+		trigger = {
+			has_reform = noble_counsel_reform
+		}
+		loyalty = 5
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_MONARCHY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_monarchy_ideas
+		}
+		loyalty = 5
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_AUTONOMY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_autonomy_ideas
+		}
+		loyalty = 5
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_DYNASTIC_IDEAGROUP
+		trigger = {
+			full_idea_group = got_dynastic_ideas
+		}
+		loyalty = 5
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_HARMONY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_harmony_ideas
+		}
+		loyalty = -5
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_RELIGIOUS_IDEAGROUP
+		trigger = {
+			full_idea_group = got_religious_ideas
+		}
+		loyalty = -5
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_INNOVATION_IDEAGROUP
+		trigger = {
+			full_idea_group = got_innovation_ideas
+		}
+		loyalty = -5
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_TRADE_IDEAGROUP
+		trigger = {
+			full_idea_group = got_trade_ideas
+		}
+		loyalty = -5
+	}
+    
+	# ----- Privileges -----
+	privileges = {
+		estate_nobility_land_rights
+		estate_nobility_nobility_primacy
+		estate_nobility_officer_corp
+		estate_nobility_levies
+		estate_nobility_advisors
+		estate_nobility_right_of_counsel
+		estate_nobility_strong_duchies
+		estate_nobility_supremacy_over_crown
+		estate_nobility_statutory_rights
+        estate_nobles_monopoly_of_cloth
+        estate_nobles_monopoly_of_fur
+        estate_nobles_monopoly_of_copper
+        estate_nobles_monopoly_of_iron
+        estate_nobles_monopoly_of_dyes
+        estate_nobles_monopoly_of_silk
+        estate_nobles_monopoly_of_sugar
+	}
+
+    # ----- Agendas -----
+	agendas = {
+		estate_nobles_develop_x
+		estate_nobles_build_army_building_in_y
+		estate_nobles_build_fort_building_in_y
+		estate_nobles_build_university_in_y
+		estate_nobles_build_manufactory_in_y
+		estate_nobles_get_allies
+		estate_nobles_befriend_rival_of_rival
+		estate_nobles_restore_legitimacy
+		estate_nobles_relations_with_X
+		estate_nobles_break_coalition
+		estate_nobles_condottieri_rivals
+		estate_nobles_support_independence
+		estate_nobles_retake_core
+		estate_nobles_crush_revolts
+		estate_nobles_regain_liberty
+		estate_nobles_convert_province_culture
+		estate_nobles_protect_our_culture
+		estate_nobles_vassalise_vulnerable_country
+		estate_nobles_expand_into_x
+		estate_nobles_complete_conquest_of_x
+		estate_nobles_annex_subject
+		estate_nobles_build_an_army
+		estate_nobles_bigger_army_than_rival
+		estate_nobles_build_up_manpower_reserves
+		estate_nobles_recover_abysmal_prestige
+		estate_nobles_improve_prestige
+		estate_nobles_hire_advisor
+		estate_nobles_fire_advisor
+	}
+}

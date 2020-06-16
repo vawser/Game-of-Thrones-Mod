@@ -419,3 +419,2065 @@ generate_advisor_of_type_and_semi_random_religion_effect = {
 	clr_country_flag = $scaled_skill$_scaled_skill_flag #Important, unless cleared like this you will be unable to find it again.
 }
 
+#Use this one if you just want a scaled advisor
+generate_scaled_advisor_of_type_and_religion_effect = {
+	#$type$ = Advisor type
+	#$religion$ = Advisor religion
+	#$discount$ = yes/no for discount
+		
+	if = {
+		limit = {
+			NOT = { monthly_income = 15 }
+		}
+		define_advisor = {
+			type = $type$
+			religion = $religion$
+			skill = 1
+			discount = $discount$
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = { monthly_income = 25 }
+		}
+		define_advisor = {
+			type = $type$
+			religion = $religion$
+			skill = 2
+			discount = $discount$
+		}
+	}
+	else = {
+		define_advisor = {
+			type = $type$
+			religion = $religion$
+			skill = 3
+			discount = $discount$
+		}
+	}
+}
+
+generate_traitor_advisor_effect = {
+	if = {
+		limit = {
+			from = {
+				has_country_flag = advisor_events_adm
+			}
+		}
+		random_list = {
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = wizard
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = maester
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = architect
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = artist
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = astrologer
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = bookbinder
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = brewer
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = engraver
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = oracle
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = gardener
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = painter
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = playwright
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = politician
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = scribe
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = poet
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = farmer
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = philosopher
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = treasurer
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = priest
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = evangelist
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = inquisitor
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = sculptor
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = courtesan
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = catchpole
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = steward
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = marshal
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = pilgrim
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = moneylender
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			from = {
+				has_country_flag = advisor_events_dip
+			}
+		}
+		random_list = {
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = cartographer
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = clothier
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = cook
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = diplomat
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = herald
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = interpreter
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = jester
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = jeweler
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = messenger
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = colonist
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = navigator
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = trader
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = forger
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = poisoner
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = spicer
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = wayfarer
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = shipwright
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = mariner
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = governor
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = merchant
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = broker
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = spymaster
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = swab
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = seafarer
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = sea_dog
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = mate
+				}
+			}
+		}
+	}
+	else = {
+		random_list = {
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = knight
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = alchemist
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = apothecarist
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = armorer
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = bowyer
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = engineer
+				}
+			}
+			1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = furrier
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = herbalist
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = hunter
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = leatherworker
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = physician
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = storyteller
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = stablemaster
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = master_at_arms
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = mason
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = carpenter
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = bladesmith
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = bard
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = watchman
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = captain
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = sapper
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = planner
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = custodian
+				}
+			}
+            1 = {
+				define_advisor = {
+					name = advisor_traitor
+					skill = $skill_level$
+					culture = ROOT
+					type = saddler
+				}
+			}
+		}
+	}
+}
+
+generate_exile_advisor_effect = {
+	if = {
+		limit = {
+			NOT = { monthly_income = 15 }
+		}
+		define_advisor = {
+			type = $advisor_type$
+			name = fleeing_advisor
+			skill = 1
+			culture = event_target:exile_country
+			religion = event_target:exile_country
+			discount = yes
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = { monthly_income = 25 }
+		}
+		define_advisor = {
+			type = $advisor_type$
+			name = fleeing_advisor
+			skill = 2
+			culture = event_target:exile_country
+			religion = event_target:exile_country
+			discount = yes
+		}
+	}
+	else = {
+		define_advisor = {
+			type = $advisor_type$
+			name = fleeing_advisor
+			skill = 3
+			culture = event_target:exile_country
+			religion = event_target:exile_country
+			discount = yes
+		}
+	}
+}
+
+#------------------------------------------
+# Advisor Removal
+#------------------------------------------
+#Specify ADM/DIP/MIL = yes
+kill_advisor_by_category_effect = {
+	[[ADM]
+		trigger_switch = {
+			on_trigger = advisor
+			wizard = { kill_advisor = wizard }
+			maester = { kill_advisor = maester }
+			architect = { kill_advisor = architect }
+			artist = { kill_advisor = artist }
+			astrologer = { kill_advisor = astrologer }
+			bookbinder = { kill_advisor = bookbinder }
+			brewer = { kill_advisor = brewer }
+            engraver = { kill_advisor = engraver }
+            oracle = { kill_advisor = oracle }
+            gardener = { kill_advisor = gardener }
+            painter = { kill_advisor = painter }
+            playwright = { kill_advisor = playwright }
+            politician = { kill_advisor = politician }
+            scribe = { kill_advisor = scribe }
+            poet = { kill_advisor = poet }
+            farmer = { kill_advisor = farmer }
+            philosopher = { kill_advisor = philosopher }
+            treasurer = { kill_advisor = treasurer }
+            priest = { kill_advisor = priest }
+            evangelist = { kill_advisor = evangelist }
+            inquisitor = { kill_advisor = inquisitor }
+            sculptor = { kill_advisor = sculptor }
+            courtesan = { kill_advisor = courtesan }
+            catchpole = { kill_advisor = catchpole }
+            steward = { kill_advisor = steward }
+            marshal = { kill_advisor = marshal }
+            pilgrim = { kill_advisor = pilgrim }
+            moneylender = { kill_advisor = moneylender }
+            
+		}
+	]
+	[[DIP]
+		trigger_switch = {
+			on_trigger = advisor
+			cartographer = { kill_advisor = cartographer }
+			clothier = { kill_advisor = clothier }
+			cook = { kill_advisor = cook }
+			diplomat = { kill_advisor = diplomat }
+			herald = { kill_advisor = herald }
+			interpreter = { kill_advisor = interpreter }
+			jester = { kill_advisor = jester }
+            jeweler = { kill_advisor = jeweler }
+            messenger = { kill_advisor = messenger }
+            colonist = { kill_advisor = colonist }
+            navigator = { kill_advisor = navigator }
+            trader = { kill_advisor = trader }
+            forger = { kill_advisor = forger }
+            poisoner = { kill_advisor = poisoner }
+            spicer = { kill_advisor = spicer }
+            wayfarer = { kill_advisor = wayfarer }
+            shipwright = { kill_advisor = shipwright }
+            mariner = { kill_advisor = mariner }
+            governor = { kill_advisor = governor }
+            merchant = { kill_advisor = merchant }
+            broker = { kill_advisor = broker }
+            spymaster = { kill_advisor = spymaster }
+            swab = { kill_advisor = swab }
+            seafarer = { kill_advisor = seafarer }
+            sea_dog = { kill_advisor = sea_dog }
+            mate = { kill_advisor = mate }
+		}
+	]
+	[[MIL]
+		trigger_switch = {
+			on_trigger = advisor
+			knight = { kill_advisor = knight }
+			alchemist = { kill_advisor = alchemist }
+			apothecarist = { kill_advisor = apothecarist }
+			armorer = { kill_advisor = armorer }
+			bowyer = { kill_advisor = bowyer }
+			engineer = { kill_advisor = engineer }
+			furrier = { kill_advisor = furrier }
+            herbalist = { kill_advisor = herbalist }
+            hunter = { kill_advisor = hunter }
+            leatherworker = { kill_advisor = leatherworker }
+            physician = { kill_advisor = physician }
+            storyteller = { kill_advisor = storyteller }
+            stablemaster = { kill_advisor = stablemaster }
+            master_at_arms = { kill_advisor = master_at_arms }
+            mason = { kill_advisor = mason }
+            carpenter = { kill_advisor = carpenter }
+            bladesmith = { kill_advisor = bladesmith }
+            bard = { kill_advisor = bard }
+            watchman = { kill_advisor = watchman }
+            captain = { kill_advisor = captain }
+            sapper = { kill_advisor = sapper }
+            planner = { kill_advisor = planner }
+            custodian = { kill_advisor = custodian }
+            saddler = { kill_advisor = saddler }
+            
+		}
+	]
+}
+
+remove_advisor_adm_effect = {
+	if = {
+		limit = {
+			advisor = wizard
+		}
+		remove_advisor = wizard
+	}
+	if = {
+		limit = {
+			advisor = maester
+		}
+		remove_advisor = maester
+	}
+	if = {
+		limit = {
+			advisor = architect
+		}
+		remove_advisor = architect
+	}
+	if = {
+		limit = {
+			advisor = artist
+		}
+		remove_advisor = artist
+	}
+	if = { 
+		limit = {
+			advisor = astrologer
+		}
+		remove_advisor = astrologer
+	}
+	if = {
+		limit = {
+			advisor = bookbinder
+		}
+		remove_advisor = bookbinder
+	}
+	if = {
+		limit = { 
+			advisor = brewer
+		}
+		remove_advisor = brewer
+	}
+    if = {
+		limit = { 
+			advisor = engraver
+		}
+		remove_advisor = engraver
+	}
+    if = {
+		limit = { 
+			advisor = oracle
+		}
+		remove_advisor = oracle
+	}
+    if = {
+		limit = { 
+			advisor = gardener
+		}
+		remove_advisor = gardener
+	}
+    if = {
+		limit = { 
+			advisor = painter
+		}
+		remove_advisor = painter
+	}
+    if = {
+		limit = { 
+			advisor = playwright
+		}
+		remove_advisor = playwright
+	}
+    if = {
+		limit = { 
+			advisor = politician
+		}
+		remove_advisor = politician
+	}
+    if = {
+		limit = { 
+			advisor = scribe
+		}
+		remove_advisor = scribe
+	}
+    if = {
+		limit = { 
+			advisor = poet
+		}
+		remove_advisor = poet
+	}
+    if = {
+		limit = { 
+			advisor = farmer
+		}
+		remove_advisor = farmer
+	}
+    if = {
+		limit = { 
+			advisor = philosopher
+		}
+		remove_advisor = philosopher
+	}
+    if = {
+		limit = { 
+			advisor = treasurer
+		}
+		remove_advisor = treasurer
+	}
+    if = {
+		limit = { 
+			advisor = priest
+		}
+		remove_advisor = priest
+	}
+    if = {
+		limit = { 
+			advisor = evangelist
+		}
+		remove_advisor = evangelist
+	}
+    if = {
+		limit = { 
+			advisor = inquisitor
+		}
+		remove_advisor = inquisitor
+	}
+    if = {
+		limit = { 
+			advisor = sculptor
+		}
+		remove_advisor = sculptor
+	}
+    if = {
+		limit = { 
+			advisor = courtesan
+		}
+		remove_advisor = courtesan
+	}
+    if = {
+		limit = { 
+			advisor = catchpole
+		}
+		remove_advisor = catchpole
+	}
+    if = {
+		limit = { 
+			advisor = steward
+		}
+		remove_advisor = steward
+	}
+    if = {
+		limit = { 
+			advisor = marshal
+		}
+		remove_advisor = marshal
+	}
+    if = {
+		limit = { 
+			advisor = pilgrim
+		}
+		remove_advisor = pilgrim
+	}
+    if = {
+		limit = { 
+			advisor = moneylender
+		}
+		remove_advisor = moneylender
+	}
+}
+
+remove_advisor_dip_effect = {
+	if = {
+		limit = {
+			advisor = cartographer
+		}
+		remove_advisor = cartographer
+	}
+	if = {
+		limit = {
+			advisor = clothier
+		}
+		remove_advisor = clothier
+	}
+	if = {
+		limit = {
+			advisor = cook
+		}
+		remove_advisor = cook
+	}
+	if = {
+		limit = {
+			advisor = diplomat
+		}
+		remove_advisor = diplomat
+	}
+	if = { 
+		limit = {
+			advisor = herald
+		}
+		remove_advisor = herald
+	}
+	if = {
+		limit = {
+			advisor = interpreter
+		}
+		remove_advisor = interpreter
+	}
+	if = {
+		limit = { 
+			advisor = jester
+		}
+		remove_advisor = jester
+	}
+    if = {
+		limit = { 
+			advisor = jeweler
+		}
+		remove_advisor = jeweler
+	}
+    if = {
+		limit = { 
+			advisor = messenger
+		}
+		remove_advisor = messenger
+	}
+    if = {
+		limit = { 
+			advisor = colonist
+		}
+		remove_advisor = colonist
+	}
+    if = {
+		limit = { 
+			advisor = navigator
+		}
+		remove_advisor = navigator
+	}
+    if = {
+		limit = { 
+			advisor = trader
+		}
+		remove_advisor = trader
+	}
+    if = {
+		limit = { 
+			advisor = forger
+		}
+		remove_advisor = forger
+	}
+    if = {
+		limit = { 
+			advisor = poisoner
+		}
+		remove_advisor = poisoner
+	}
+    if = {
+		limit = { 
+			advisor = spicer
+		}
+		remove_advisor = spicer
+	}
+    if = {
+		limit = { 
+			advisor = wayfarer
+		}
+		remove_advisor = wayfarer
+	}
+    if = {
+		limit = { 
+			advisor = shipwright
+		}
+		remove_advisor = shipwright
+	}
+    if = {
+		limit = { 
+			advisor = mariner
+		}
+		remove_advisor = mariner
+	}
+    if = {
+		limit = { 
+			advisor = governor
+		}
+		remove_advisor = governor
+	}
+    if = {
+		limit = { 
+			advisor = merchant
+		}
+		remove_advisor = merchant
+	}
+    if = {
+		limit = { 
+			advisor = broker
+		}
+		remove_advisor = broker
+	}
+    if = {
+		limit = { 
+			advisor = spymaster
+		}
+		remove_advisor = spymaster
+	}
+    if = {
+		limit = { 
+			advisor = swab
+		}
+		remove_advisor = swab
+	}
+    if = {
+		limit = { 
+			advisor = seafarer
+		}
+		remove_advisor = seafarer
+	}
+    if = {
+		limit = { 
+			advisor = sea_dog
+		}
+		remove_advisor = sea_dog
+	}
+    if = {
+		limit = { 
+			advisor = mate
+		}
+		remove_advisor = mate
+	}
+}
+
+remove_advisor_mil_effect = {
+	if = {
+		limit = {
+			advisor = knight
+		}
+		remove_advisor = knight
+	}
+	if = {
+		limit = {
+			advisor = alchemist
+		}
+		remove_advisor = alchemist
+	}
+	if = {
+		limit = {
+			advisor = apothecarist
+		}
+		remove_advisor = apothecarist
+	}
+	if = {
+		limit = {
+			advisor = armorer
+		}
+		remove_advisor = armorer
+	}
+	if = { 
+		limit = {
+			advisor = bowyer
+		}
+		remove_advisor = bowyer
+	}
+	if = {
+		limit = {
+			advisor = engineer
+		}
+		remove_advisor = engineer
+	}
+	if = {
+		limit = { 
+			advisor = furrier
+		}
+		remove_advisor = furrier
+	}
+    if = {
+		limit = { 
+			advisor = herbalist
+		}
+		remove_advisor = herbalist
+	}
+    if = {
+		limit = { 
+			advisor = hunter
+		}
+		remove_advisor = hunter
+	}
+    if = {
+		limit = { 
+			advisor = leatherworker
+		}
+		remove_advisor = leatherworker
+	}
+    if = {
+		limit = { 
+			advisor = physician
+		}
+		remove_advisor = physician
+	}
+    if = {
+		limit = { 
+			advisor = storyteller
+		}
+		remove_advisor = storyteller
+	}
+    if = {
+		limit = { 
+			advisor = stablemaster
+		}
+		remove_advisor = stablemaster
+	}
+    if = {
+		limit = { 
+			advisor = master_at_arms
+		}
+		remove_advisor = master_at_arms
+	}
+    if = {
+		limit = { 
+			advisor = mason
+		}
+		remove_advisor = mason
+	}
+    if = {
+		limit = { 
+			advisor = carpenter
+		}
+		remove_advisor = carpenter
+	}
+    if = {
+		limit = { 
+			advisor = bladesmith
+		}
+		remove_advisor = bladesmith
+	}
+    if = {
+		limit = { 
+			advisor = bard
+		}
+		remove_advisor = bard
+	}
+    if = {
+		limit = { 
+			advisor = watchman
+		}
+		remove_advisor = watchman
+	}
+    if = {
+		limit = { 
+			advisor = captain
+		}
+		remove_advisor = captain
+	}
+    if = {
+		limit = { 
+			advisor = sapper
+		}
+		remove_advisor = sapper
+	}
+    if = {
+		limit = { 
+			advisor = planner
+		}
+		remove_advisor = planner
+	}
+    if = {
+		limit = { 
+			advisor = custodian
+		}
+		remove_advisor = custodian
+	}
+    if = {
+		limit = { 
+			advisor = saddler
+		}
+		remove_advisor = saddler
+	}
+}
+
+#------------------------------------------
+# Administrative Advisors
+#------------------------------------------
+pick_type_of_administrative_advisor = {
+	random_list = {
+		1 = { set_country_flag = generate_wizard }
+		1 = { set_country_flag = generate_maester }
+		1 = { set_country_flag = generate_architect }
+		1 = { set_country_flag = generate_artist }
+		1 = { set_country_flag = generate_astrologer }
+		1 = { set_country_flag = generate_bookbinder }
+		1 = { set_country_flag = generate_brewer }
+        1 = { set_country_flag = generate_engraver }
+        1 = { set_country_flag = generate_oracle }
+        1 = { set_country_flag = generate_gardener }
+        1 = { set_country_flag = generate_painter }
+        1 = { set_country_flag = generate_playwright }
+        1 = { set_country_flag = generate_politician }
+        1 = { set_country_flag = generate_scribe }
+        1 = { set_country_flag = generate_poet }
+        1 = { set_country_flag = generate_farmer }
+        1 = { set_country_flag = generate_philosopher }
+        1 = { set_country_flag = generate_treasurer }
+        1 = { set_country_flag = generate_priest }
+        1 = { set_country_flag = generate_evangelist }
+        1 = { set_country_flag = generate_inquisitor }
+        1 = { set_country_flag = generate_sculptor }
+        1 = { set_country_flag = generate_courtesan }
+        1 = { set_country_flag = generate_catchpole }
+        1 = { set_country_flag = generate_steward }
+        1 = { set_country_flag = generate_marshal }
+        1 = { set_country_flag = generate_pilgrim }
+        1 = { set_country_flag = generate_moneylender }
+	}
+}
+
+clear_random_administrative_advisor_generation_flags = {
+	clr_country_flag = generate_wizard
+	clr_country_flag = generate_maester
+	clr_country_flag = generate_architect
+	clr_country_flag = generate_artist
+	clr_country_flag = generate_astrologer
+	clr_country_flag = generate_bookbinder
+	clr_country_flag = generate_brewer
+    clr_country_flag = generate_engraver
+    clr_country_flag = generate_oracle
+    clr_country_flag = generate_gardener
+    clr_country_flag = generate_painter
+    clr_country_flag = generate_playwright
+    clr_country_flag = generate_politician
+    clr_country_flag = generate_scribe
+    clr_country_flag = generate_poet
+    clr_country_flag = generate_farmer
+    clr_country_flag = generate_philosopher
+    clr_country_flag = generate_treasurer
+    clr_country_flag = generate_priest
+    clr_country_flag = generate_evangelist
+    clr_country_flag = generate_inquisitor
+    clr_country_flag = generate_sculptor
+    clr_country_flag = generate_courtesan
+    clr_country_flag = generate_catchpole
+    clr_country_flag = generate_steward
+    clr_country_flag = generate_marshal
+    clr_country_flag = generate_pilgrim
+    clr_country_flag = generate_moneylender
+}
+
+generate_scaled_administrative_advisor_of_religion_effect = {
+	trigger_switch = {
+		on_trigger = has_country_flag
+		generate_wizard = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = wizard
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_maester = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = maester
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_architect = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = architect
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_artist = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = artist
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_astrologer = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = astrologer
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_bookbinder = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = bookbinder
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_brewer = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = brewer
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_engraver = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = engraver
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_oracle = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = oracle
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_gardener = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = gardener
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_painter = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = painter
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_playwright = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = playwright
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_politician = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = politician
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_scribe = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = scribe
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_poet = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = poet
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_farmer = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = farmer
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_philosopher = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = philosopher
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_treasurer = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = treasurer
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_priest = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = priest
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_evangelist = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = evangelist
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_inquisitor = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = inquisitor
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_sculptor = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = sculptor
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_courtesan = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = courtesan
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_catchpole = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = catchpole
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_steward = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = steward
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_marshal = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = marshal
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_pilgrim = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = pilgrim
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_moneylender = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = moneylender
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+	}
+}
+
+#------------------------------------------
+# Diplomatic Advisors
+#------------------------------------------
+pick_type_of_diplomatic_advisor = {
+	random_list = {
+		1 = { set_country_flag = generate_cartographer }
+		1 = { set_country_flag = generate_clothier }
+		1 = { set_country_flag = generate_cook }
+		1 = { set_country_flag = generate_diplomat }
+		1 = { set_country_flag = generate_herald }
+		1 = { set_country_flag = generate_interpreter }
+		1 = { set_country_flag = generate_jester }
+        1 = { set_country_flag = generate_jeweler }
+        1 = { set_country_flag = generate_messenger }
+        1 = { set_country_flag = generate_colonist }
+        1 = { set_country_flag = generate_navigator }
+        1 = { set_country_flag = generate_trader }
+        1 = { set_country_flag = generate_forger }
+        1 = { set_country_flag = generate_poisoner }
+        1 = { set_country_flag = generate_spicer }
+        1 = { set_country_flag = generate_wayfarer }
+        1 = { set_country_flag = generate_shipwright }
+        1 = { set_country_flag = generate_mariner }
+        1 = { set_country_flag = generate_governor }
+        1 = { set_country_flag = generate_merchant }
+        1 = { set_country_flag = generate_broker }
+        1 = { set_country_flag = generate_spymaster }
+        1 = { set_country_flag = generate_swab }
+        1 = { set_country_flag = generate_seafarer }
+        1 = { set_country_flag = generate_sea_dog }
+        1 = { set_country_flag = generate_mate }
+	}
+}
+
+clear_random_diplomatic_advisor_generation_flags = {
+	clr_country_flag = generate_cartographer
+	clr_country_flag = generate_clothier
+	clr_country_flag = generate_cook
+	clr_country_flag = generate_diplomat
+	clr_country_flag = generate_herald
+	clr_country_flag = generate_interpreter
+	clr_country_flag = generate_jester
+    clr_country_flag = generate_jeweler
+    clr_country_flag = generate_messenger
+    clr_country_flag = generate_colonist
+    clr_country_flag = generate_navigator
+    clr_country_flag = generate_trader
+    clr_country_flag = generate_forger
+    clr_country_flag = generate_poisoner
+    clr_country_flag = generate_spicer
+    clr_country_flag = generate_wayfarer
+    clr_country_flag = generate_shipwright
+    clr_country_flag = generate_mariner
+    clr_country_flag = generate_governor
+    clr_country_flag = generate_merchant
+    clr_country_flag = generate_broker
+    clr_country_flag = generate_spymaster
+    clr_country_flag = generate_swab
+    clr_country_flag = generate_seafarer
+    clr_country_flag = generate_sea_dog
+    clr_country_flag = generate_mate
+}
+
+generate_scaled_diplomatic_advisor_of_religion_effect = {
+	trigger_switch = {
+		on_trigger = has_country_flag
+		generate_cartographer = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = cartographer
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_clothier = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = clothier
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_cook = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = cook
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_diplomat = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = diplomat
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_herald = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = herald
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_interpreter = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = interpreter
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_jester = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = jester
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_jeweler = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = jeweler
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_messenger = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = messenger
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_colonist = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = colonist
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_navigator = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = navigator
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_trader = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = trader
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_forger = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = forger
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_poisoner = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = poisoner
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_spicer = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = spicer
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_wayfarer = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = wayfarer
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_shipwright = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = shipwright
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_mariner = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = mariner
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_governor = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = governor
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_merchant = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = merchant
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_broker = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = broker
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_spymaster = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = spymaster
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_swab = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = swab
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_seafarer = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = seafarer
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_sea_dog = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = sea_dog
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_mate = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = mate
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+	}
+}
+
+#------------------------------------------
+# Military Advisors
+#------------------------------------------
+pick_type_of_military_advisor = {
+	random_list = {
+		1 = { set_country_flag = generate_knight }
+		1 = { set_country_flag = generate_alchemist }
+		1 = { set_country_flag = generate_apothecarist }
+		1 = { set_country_flag = generate_armorer }
+		1 = { set_country_flag = generate_bowyer }
+		1 = { set_country_flag = generate_engineer }
+		1 = { set_country_flag = generate_furrier }
+        1 = { set_country_flag = generate_herbalist }
+        1 = { set_country_flag = generate_hunter }
+        1 = { set_country_flag = generate_leatherworker }
+        1 = { set_country_flag = generate_physician }
+        1 = { set_country_flag = generate_storyteller }
+        1 = { set_country_flag = generate_stablemaster }
+        1 = { set_country_flag = generate_master_at_arms }
+        1 = { set_country_flag = generate_mason }
+        1 = { set_country_flag = generate_carpenter }
+        1 = { set_country_flag = generate_bladesmith }
+        1 = { set_country_flag = generate_bard }
+        1 = { set_country_flag = generate_watchman }
+        1 = { set_country_flag = generate_captain }
+        1 = { set_country_flag = generate_sapper }
+        1 = { set_country_flag = generate_planner }
+        1 = { set_country_flag = generate_custodian }
+        1 = { set_country_flag = generate_saddler }
+        
+	}
+}
+
+clear_random_military_advisor_generation_flags = {
+	clr_country_flag = generate_knight
+	clr_country_flag = generate_alchemist
+	clr_country_flag = generate_apothecarist
+	clr_country_flag = generate_armorer
+	clr_country_flag = generate_bowyer
+	clr_country_flag = generate_engineer
+	clr_country_flag = generate_furrier
+    clr_country_flag = generate_herbalist
+    clr_country_flag = generate_hunter
+    clr_country_flag = generate_leatherworker
+    clr_country_flag = generate_physician
+    clr_country_flag = generate_storyteller
+    clr_country_flag = generate_stablemaster
+    clr_country_flag = generate_master_at_arms
+    clr_country_flag = generate_mason
+    clr_country_flag = generate_carpenter
+    clr_country_flag = generate_bladesmith
+    clr_country_flag = generate_bard
+    clr_country_flag = generate_watchman
+    clr_country_flag = generate_captain
+    clr_country_flag = generate_sapper
+    clr_country_flag = generate_planner
+    clr_country_flag = generate_custodian
+    clr_country_flag = generate_saddler
+    
+}
+
+#Needs you to have executed pick_type_of_military_advisor
+generate_scaled_military_advisor_of_religion_effect = {
+	trigger_switch = {
+		on_trigger = has_country_flag
+		generate_knight = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = knight
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_alchemist = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = alchemist
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_apothecarist = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = apothecarist
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_armorer = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = armorer
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_bowyer = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = bowyer
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_engineer = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = engineer
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+		generate_furrier = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = furrier
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_herbalist = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = herbalist
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_hunter = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = hunter
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_leatherworker = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = leatherworker
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_physician = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = physician
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_storyteller = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = storyteller
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_stablemaster = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = stablemaster
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_master_at_arms = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = master_at_arms
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_mason = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = mason
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_carpenter = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = carpenter
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_bladesmith = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = bladesmith
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_bard = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = bard
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_watchman = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = watchman
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_captain = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = captain
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_sapper = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = sapper
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_planner = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = planner
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_custodian = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = custodian
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+        generate_saddler = {
+			generate_scaled_advisor_of_type_and_religion_effect = {
+				type = saddler
+				religion = $religion$
+				discount = $discount$
+			}
+		}
+	}
+}
+
+

@@ -11,6 +11,8 @@ on_startup = {
 # Country
 on_religion_change = {
 	if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_religion_change" }
+    
+    on_religion_change_estate_privileges_effect = yes
 }
 
 # Country
@@ -369,6 +371,8 @@ on_integrate = {
 on_annexed = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_annexed" }
     
+    on_annexed_estate_privileges_effect = yes
+    
     dismantle_yi_ti_empire_effect = yes
     
     events = {
@@ -615,6 +619,12 @@ on_bi_yearly_pulse_3 = {
 # Country
 on_bi_yearly_pulse_4 = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_bi_yearly_pulse_4" }
+    
+    random_events = {   
+        1000 = GOT_ESTATE_SYSTEM.1
+        
+        2000 = 0
+    }
 }
 
 # Country
@@ -769,24 +779,6 @@ on_five_year_pulse = {
 on_five_year_pulse_2 = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_five_year_pulse_2" }
     
-	random_events = {
-        100 = GOT_ESTATE_NOBILITY.1
-        100 = GOT_ESTATE_CLERGY.1
-        100 = GOT_ESTATE_MERCHANTS.1
-        100 = GOT_ESTATE_COMMONERS.1
-        100 = GOT_ESTATE_CHIEFTAINS.1
-		100 = GOT_ESTATE_KOS.1
-        100 = GOT_ESTATE_MAGI.1
-        100 = GOT_ESTATE_SLAVES.1
-        100 = GOT_ESTATE_JHATS.1
-        100 = GOT_ESTATE_BUCCANEERS.1
-        100 = GOT_ESTATE_SMUGGLERS.1
-        100 = GOT_ESTATE_CAPTAINS.1
-        100 = GOT_ESTATE_STEWARDS.1
-        100 = GOT_ESTATE_BUILDERS.1
-        100 = GOT_ESTATE_RANGERS.1
-        10000 = 0
-    }
 }
 
 # Country
@@ -865,23 +857,6 @@ on_remove_free_city = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_remove_free_city" }
 }
 
-# Province
-on_revoke_estate_land_ai = { 
-    if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_revoke_estate_land_ai" }
-}
-
-# Province
-on_revoke_estate_land = {
-    if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_revoke_estate_land" }
-    
-    estate_land_revoked_effect = yes
-}
-
-# Province
-on_grant_estate_land = {
-    if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_grant_estate_land" }
-}
-
 # Country
 on_death_has_harem = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_death_has_harem" }
@@ -910,6 +885,8 @@ on_lose_great_power_status = {
 # Province
 on_province_religion_converted = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_province_religion_converted" }
+    
+    on_province_religion_converted_estate_privileges_effect = yes
 }
 
 # Province
@@ -926,6 +903,8 @@ on_province_culture_converted = {
 # Province - ROOT = current owner, FROM = old owner
 on_province_owner_change = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_province_owner_change" }
+    
+    on_province_owner_change_estate_privileges_effect = yes
 }
 
 # Country
@@ -1138,12 +1117,12 @@ on_country_released = {
 
 # ROOT = province, FROM = country
 on_trade_good_changed = {
-	
+	on_trade_good_changed_estate_privileges_effect = yes
 }
 
 # this = country
 on_loan_repaid = {
-	
+	on_loan_repaid_estate_privileges_effect = yes
 }
 
 # this = country

@@ -1,30 +1,13 @@
 ﻿l_english:
  #-----------------------------------------
- # Nobility
+ # Crownland
  #-----------------------------------------
- estate_nobles: "Nobility"
- estate_nobles_desc: "Lords and ladies of the realm comprise our nobility. Fickle creatures, nobles will only follow orders once they've been paid off, or if they're particularly deranged, had somebody killed off."
- 
- ASSEMBLE_COUNCIL: "Assemble Council"
- SEIZE_HOLDFASTS: "Seize Holdfasts"
- BRIBE_NOBLES: "Bribe Nobles"
- SEEK_SUPPORT_OF_NOBILITY: "Seek Support of Nobility"
- RECRUIT_TREASURER: "Recruit Treasurer"
- RECRUIT_STEWARD: "Recruit Steward"
- GRANT_KNIGHTHOOD: "Grant Knighthood"
- APPOINT_CAPTAIN: "Appoint Captain"
- TUTOR_HEIR: "Tutor Heir"
- RALLY_BANNERMEN: "Rally Bannermen"
- RAISE_ELITE_SOLDIERS: "Raise Elite Soldiers"
- RAISE_ELITE_CAVALRY: "Raise Elite Cavalry"
- CULTIVATE_SAND_STEEDS: "Cultivate Sand Steeds"
- SACRIFICE_THE_PRINCE: "Sacrifice the Prince"
- CURTAIL_THE_NOBILITY: "Curtail the Nobility"
- PUNISH_THE_NOBILITY: "Punish the Nobility"
- 
- TT_OWN_NOBILITY_PROVINCE: "At least one owned province belongs to the §YNobility§! Estate."
- TT_ELITE_SOLDIERS: "Up to §Y10§! §YElite Soldiers§! will be recruited dependent on the number of provinces under §YNobility§! control and current §YNobility§! influence.\nNumber of §YElite Soldiers§! cannot exceed the number of provinces controlled by the §YNobility§! estate."
- TT_ELITE_CAVALRY: "Up to §Y10§! §YElite Cavalry§! will be recruited dependent on the number of provinces under §YNobility§! control and current §YNobility§! influence.\nNumber of §YElite Cavalry§! cannot exceed the number of provinces controlled by the §YNobility§! estate."
+ got_crown_land_ownership: "Crown Land Ownership"
+ estate_clergy_ownership: "Clergy Ownership"
+ estate_merchants_ownership: "Merchant Ownership"
+ estate_nobles_ownership: "Nobility Ownership"
+ estate_commoners_ownership: "Commoner Ownership"
+ estate_tribes_ownership: "Tribal Ownership"
  
  #-----------------------------------------
  # Clergy
@@ -32,19 +15,61 @@
  estate_clergy: "Clergy"
  estate_clergy_desc: "The devout and the downtrodden comprise our clergy. Charitable folks, they will help those who need it most. However, if we attempt to discourage worship of their favoured god, they will not go down without a fight."
  
- DICTATE_RELIGIOUS_TEXTS: "Dictate Religious Texts"
- FURNISH_RELIGIOUS_BUILDINGS: "Furnish Religious Buildings"
- SEEK_SUPPORT_OF_CLERGY: "Seek Support of Clergy"
- RECRUIT_INQUISITOR: "Recruit Inquisitor"
- RECRUIT_EVANGELIST: "Recruit Evangelist"
- GRANT_PRIESTHOOD: "Grant Priesthood"
- INCITE_RELIGIOUS_FERVOR: "Incite Religious Fervor"
- DISPLAY_RELIGIOUS_GLORY: "Display Religious Glory"
- OUST_CORRUPTED_CLERGY: "Oust Corrupted Clergy"
- WITHDRAW_IN_SECLUSION: "Withdraw in Seclusion"
- DISGRACE_PRIEST: "Disgrace Priest"
- CURTAIL_THE_CLERGY: "Curtail the Clergy"
- PUNISH_THE_CLERGY: "Punish the Clergy"
+ estate_seers: "Seers"
+ estate_stewards: "Stewards"
+
+ clergy_loyalty_modifier: "[Country.GetClergyName] Loyalty Equilibrium"
+ clergy_influence_modifier: "[Country.GetClergyName] Influence"
+ 
+ # ------------ Privileges ------------ 
+ estate_clergy_land_rights: "$ESTATE_NAME$ Land Rights"
+ estate_clergy_land_rights_desc: "If they cannot support themselves from the land they have been granted, the [Root.GetClergyName] will be unable to perform their spiritual duties."
+ 
+ estate_clergy_religious_state: "Religious State"
+ estate_clergy_religious_state_desc: "By making matters of religion our foremost priority, we shall forge our nation into a more cohesive whole."
+ 
+ estate_clergy_independent_inquisition: "Clerical Advisory Council"
+ estate_clergy_independent_inquisition_desc:0 "A key role of the [Root.GetClergyName] is to advise the [Root.Monarch.GetTitle]. Formalizing this arrangement would ease the process and allow their wisdom to better serve the [Root.GovernmentName], although it would also grant them unlimited access to the ear of the [Root.Monarch.GetTitle]."
+ 
+ estate_clergy_far_east_mission: "Establish Far East Missions"
+ estate_clergy_far_east_mission_desc: "The Far East is teeming with heathens. It is the calling of the [Root.GetClergyName] to bring the truth of the [Root.Religion.GetName] faith to these lands."
+ 
+ estate_clergy_clerical_ministers: "Clerical Ministers"
+ estate_clergy_clerical_ministers_desc: "If we listen to the advice of the [Root.GetClergyName] and place their concerns at the forefront of our mind, we may derive considerable benefits for our rule and see the people's faith greatly strengthened."
+ 
+ estate_clergy_clerical_oversight: "Oversight by the $ESTATE_NAME$"
+ estate_clergy_clerical_oversight_desc: "The only sure way to guarantee that correct practices are maintained is to allow the [Root.GetClergyName] to oversee the implementation of the [Root.Monarch.GetTitle]'s decisions."
+ 
+ estate_clergy_inwards_perfection: "Inwards Perfection"
+ estate_clergy_inwards_perfection_desc: "The core principles of faith are to focus inwards on improving the self rather than outwards on any aspect of the other. The supposed glory achieved through violent conquest is irrelevant in such a society."
+ 
+ estate_clergy_enforced_one_faith: "Enforced Unity of Faith"
+ estate_clergy_enforced_one_faith_desc: "It is self-evident that our faith is the one true faith. There shall be no compromising our beliefs for those who heed the words of heretics and heathens!"
+ 
+ estate_clergy_for_the_faith: "Expansionist Zealotry"
+ estate_clergy_for_the_faith_desc: "To wage war for our faith is the prime calling of all true believers."
+ estate_clergy_for_the_faith_effect_tooltip:2 "Morale of Armies: §G+5%§! when at war with heretics or heathens.\n\nMorale of Armies: §R-5%§! if at peace with heretics and heathens for 15 years"
+ 
+ estate_clergy_statutory_rights: "Estates Statutory Rights"
+ estate_clergy_statutory_rights_desc: "In return for their support in a moment of need, the [Root.Monarch.GetTitle] has agreed to grant the Estates considerable rights that place stringent limitations on [Root.Monarch.GetHerHis] authority."
+ 
+ estate_clergy_monopoly_of_wine: "Monopoly on Wine"
+ estate_clergy_monopoly_of_wine_desc: "The [Root.GetClergyName] shall be granted a monopoly over the production of wine."
+ 
+ estate_clergy_monopoly_of_wool: "Monopoly on Wool"
+ estate_clergy_monopoly_of_wool_desc: "The [Root.GetClergyName] shall be granted a monopoly over the production of wool."
+ 
+ estate_clergy_monopoly_of_tea: "Monopoly on Tea"
+ estate_clergy_monopoly_of_tea_desc: "The [Root.GetClergyName] shall be granted a monopoly over the production of tea."
+ 
+ estate_clergy_monopoly_of_coffee: "Monopoly on Coffee"
+ estate_clergy_monopoly_of_coffee_desc: "The [Root.GetClergyName] shall be granted a monopoly over the production of coffee."
+ 
+ estate_clergy_monopoly_of_cotton: "Monopoly on Cotton"
+ estate_clergy_monopoly_of_cotton_desc: "The [Root.GetClergyName] shall be granted a monopoly over the production of cotton."
+ 
+ estate_clergy_monopoly_of_candles: "Monopoly on Candles"
+ estate_clergy_monopoly_of_candles_desc: "The [Root.GetClergyName] shall be granted a monopoly over the production of candles."
  
  #-----------------------------------------
  # Merchants
@@ -52,297 +77,255 @@
  estate_merchants: "Merchants"
  estate_merchants_desc: "The buyers and sellers of our realm. Merchants care for one thing only, money and will persue its accumlation without undue vigor. If we attempt to part them with their money, expect major resistance."
  
- FAVOUR_CHOSEN_MERCHANTS: "Favour Chosen Merchants"
- FUND_MERCHANT_GUILDS: "Fund Merchant Guilds"
- SEEK_SUPPORT_OF_MERCHANTS: "Seek Support of Merchants"
- RECRUIT_TRADER: "Recruit Trader"
- RECRUIT_SPYMASTER: "Recruit Spymaster"
- RESTRICT_EXOTIC_IMPORTS: "Restrict Exotic Imports"
- APPOINT_EXPLORER: "Appoint Explorer"
- APPOINT_NAVAL_EXPLORER: "Appoint Naval Explorer"
- ENACT_MERCANTILE_TAX: "Enact Mercantile Tax"
- WIPE_DEBT: "Wipe Debt"
- CONDUCT_PRESSGANGS: "Conduct Mandatory Enrollment"
- CURTAIL_THE_MERCHANTS: "Curtail the Merchants"
- PUNISH_THE_MERCHANTS: "Punish the Merchants"
+ estate_traders: "Traders"
+ estate_builders: "Builders"
+ 
+ merchants_loyalty_modifier: "[Country.GetMerchantsName] Loyalty Equilibrium"
+ merchants_influence_modifier: "[Country.GetMerchantsName] Influence"
+ 
+ # ------------ Privileges ------------ 
+ estate_merchants_land_rights: "$ESTATE_NAME$ Land Rights"
+ estate_merchants_land_rights_desc: "The [Root.GetMerchantsName], the middle classes of our society, desire land above all else, so that they may finally be seen as equals by the Nobility. Granting them this wish would earn their immeasurable gratitude."
+ 
+ estate_merchants_land_of_commerce: "Land of Commerce"
+ estate_merchants_land_of_commerce_desc: "In the land where the Burgher is king, the interests of commerce shall be well looked after."
+ 
+ estate_merchants_admirals: "$ESTATE_NAME$ in the Admirality"
+ estate_merchants_admirals_desc: "The expertise of the many great seafarers among the [Root.GetMerchantsName] shall be our first port of call when seeking admirals for our navy!"
+ 
+ estate_merchants_patronage_of_the_arts: "Patronage of the Arts"
+ estate_merchants_patronage_of_the_arts_desc: "By offering patronage to prominent artists and intellectuals, we can convince the world of the splendor of [Root.GetAdjective] culture."
+ 
+ estate_merchants_commercial_board_of_advice: "Commercial Advisory Board"
+ estate_merchants_commercial_board_of_advice_desc: "In matters of commerce, the [Root.GetMerchantsName] are far more knowledgeable than the [Root.Monarch.GetTitle]. It would be folly not to make use of this advice to ensure that the wheels of the economy remain in motion."
+ 
+ estate_merchants_far_east_charter: "Grant New World Charters"
+ estate_merchants_far_east_charter_desc: "The New World is a land of opportunities - particularly for entrepreneurs seeking to enrichen themselves. We should encourage this by offering the [Root.GetMerchantsName] charters granting them favorable conditions for their businesses."
+ 
+ estate_merchants_indebted_to_merchants: "Indebted to the $ESTATE_NAME$"
+ estate_merchants_indebted_to_merchants_desc: "The [Root.GetMerchantsName] are willing to offer cheap loans to the [Root.GovernmentName] in return for greater political influence. However, this would drain funding away from their business interests and cause a slowdown in the economy."
+ estate_merchants_indebted_to_merchants_effect_tooltip: "Take §Y5§! five-year loans at §Y1.0%§! interest. The privilege will be removed automatically when repaid."
+ 
+ estate_merchants_free_enterprise: "Free Enterprise"
+ estate_merchants_free_enterprise_desc: "Granting the [Root.GetMerchantsName] greater freedom in their commercial affairs will increase their willingness to support the [Root.Monarch.GetTitle]."
+ 
+ estate_merchants_exclusive_trade_rights: "Exclusive Trade Rights"
+ estate_merchants_exclusive_trade_rights_desc: "The [Root.GetMerchantsName] livelihood depends on trade. Their position would be considerably strengthened if we granted them a degree of exclusivity in their control of the revenues derived from it, a move which would surely be reciprocated in the form of greater support for the [Root.Monarch.GetTitle]."
+ 
+ estate_merchants_exclusive_trade_rights_revoke_tooltip: "Removes "Exclusive Trade Rights" modifier from all owned provinces"
+ 
+ estate_merchants_exclusive_trade_rights_mod: "Exclusive Trade Rights"
+ desc_estate_merchants_exclusive_trade_rights_mod: "The state has ceded exclusive trade rights in this province to commercial interest groups."
+ 
+ estate_merchants_control_over_monetary_policy: "Control over Monetary Policy"
+ estate_merchants_control_over_monetary_policy_desc: "By giving the [Root.GetMerchantsName] the final say over monetary policy, the state guarantees that commercial interests will be taken into account when key economic decisions are made."
+ 
+ estate_merchants_private_trade_fleets: "Private Trade Fleets"
+ estate_merchants_private_trade_fleets_desc: "Wealth derived from shipping is particularly important to the [Root.GetMerchantsName], making up a significant part of their income. It is only right that they should be allowed to maintain private fleets for the purpose of protecting this trade from disruption."
+ 
+ estate_merchants_enforced_interfaith_dialogue: "Enforced Interfaith Dialog"
+ estate_merchants_enforced_interfaith_dialogue_desc: "The accumulation of wealth is truly a higher calling than that of religion. We must cast off our differences and come together in our pursuit of riches."
+ 
+ estate_merchants_statutory_rights: "Estates Statutory Rights"
+ estate_merchants_statutory_rights_desc: "In return for their support in a moment of need, the [Root.Monarch.GetTitle] has agreed to grant the Estates considerable rights that place stringent limitations on [Root.Monarch.GetHerHis] authority."
+ 
+ estate_merchants_monopoly_of_salt: "Monopoly on Salt"
+ estate_merchants_monopoly_of_salt_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of wine."
+ 
+ estate_merchants_monopoly_of_naval_supplies: "Monopoly on Naval Supplies"
+ estate_merchants_monopoly_of_naval_supplies_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of naval supplies."
+ 
+ estate_merchants_monopoly_of_ivory: "Monopoly on Ivory"
+ estate_merchants_monopoly_of_ivory_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of ivory."
+ 
+ estate_merchants_monopoly_of_spices: "Monopoly on Spices"
+ estate_merchants_monopoly_of_spices_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of spices."
+ 
+ estate_merchants_monopoly_of_tobacco: "Monopoly on Tobacco"
+ estate_merchants_monopoly_of_tobacco_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of tobacco."
+ 
+ estate_merchants_monopoly_of_cocoa: "Monopoly on Cocoa"
+ estate_merchants_monopoly_of_cocoa_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of cocoa."
+ 
+ estate_merchants_monopoly_of_slaves: "Monopoly on Slaves"
+ estate_merchants_monopoly_of_slaves_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of slaves."
+ 
+ estate_merchants_monopoly_of_tropical_wood: "Monopoly on Tropical Wood"
+ estate_merchants_monopoly_of_tropical_wood_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of tropical wood."
+    
+ #-----------------------------------------
+ # Nobility
+ #-----------------------------------------
+ estate_nobles: "Nobility"
+ estate_nobles_desc: "Lords and ladies of the realm comprise our nobility. Fickle creatures, nobles will only follow orders once they've been paid off, or if they're particularly deranged, had somebody killed off."
+ 
+ estate_chieftains: "Cheiftains"
+ estate_rangers: "Rangers"
+ 
+ nobles_loyalty_modifier: "[Country.GetNoblesName] Loyalty Equilibrium"
+ nobles_influence_modifier: "[Country.GetNoblesName] Influence"
+ 
+ # ------------ Privileges ------------ 
+ estate_nobility_land_rights: "$ESTATE_NAME$ Land Rights"
+ estate_nobility_land_rights_desc: "The [Root.GetNoblesName], the best men of the nation, are surely those with the greatest claim to its lands."
+ 
+ estate_nobility_nobility_primacy: "Primacy of the $ESTATE_NAME$"
+ estate_nobility_nobility_primacy_desc: "Giving the [Root.GetNoblesName] free rein over our military would strengthen our capacities considerably, even if it may cost us dearly in compensating their contributions."
+ 
+ estate_nobility_officer_corp: "$ESTATE_NAME$ in Officer Corps"
+ estate_nobility_officer_corp_desc: "The [Root.GetNoblesName] are experienced in the art of leading men. It is only sensible that they should be the ones to lead our armies."
+ 
+ estate_nobility_levies: "Increased Levies"
+ estate_nobility_levies_desc: "Levies from the [Root.GetNoblesName] provide the majority of our nation's armies. An arrangement can be made for them to provide us with more men in return for other compensation."
+
+ estate_nobility_advisors: "Aristocratic Counselors"
+ estate_nobility_advisors_desc: "There can be no better source of advice than the [Root.GetNoblesName], who are able more than anyone else to dedicate themselves to the cultivation of their minds."
+
+ estate_nobility_right_of_counsel: "Right of Counsel"
+ estate_nobility_right_of_counsel_desc: "The [Root.GetNobilityName] must have the right to speak to the [Root.Monarch.GetTitle] openly and freely, without fear of repercussions."
+ 
+ estate_nobility_strong_duchies: "Strong Duchies"
+ estate_nobility_strong_duchies_desc: "Westeros is a decentralized land in which local dukes and counts have considerable independence from the [Root.Monarch.GetTitle]. This system has its benefits but makes maintaining the primacy of royal power a significant challenge."
+ 
+ estate_nobility_strong_duchies_trigger_tooltip: "§Y[Root.GetName]§! has at least 2 vassals or marches."
+ 
+ estate_nobility_supremacy_over_crown: "Supremacy over the [Root.GetStateForm]"
+ estate_nobility_supremacy_over_crown_desc: "With the scales tipping towards the decentralization of power, the Estates are increasingly able to dictate their priorities to the [Root.Monarch.GetTitle], leaving [Root.Monarch.GetHerHim] little choice but to agree to their will."
+ 
+ estate_nobility_statutory_rights: "Estates Statutory Rights"
+ estate_nobility_statutory_rights_desc: "In return for their support in a moment of need, the [Root.Monarch.GetTitle] has agreed to grant the Estates considerable rights that place stringent limitations on [Root.Monarch.GetHerHis] authority."
+ 
+ estate_nobles_monopoly_of_cloth: "Monopoly on Cloth"
+ estate_nobles_monopoly_of_cloth_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of cloth."
+ 
+ estate_nobles_monopoly_of_fur: "Monopoly on Fur"
+ estate_nobles_monopoly_of_fur_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of fur."
+ 
+ estate_nobles_monopoly_of_copper: "Monopoly on Copper"
+ estate_nobles_monopoly_of_copper_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of copper."
+ 
+ estate_nobles_monopoly_of_iron: "Monopoly on Iron"
+ estate_nobles_monopoly_of_iron_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of iron."
+ 
+ estate_nobles_monopoly_of_dyes: "Monopoly on Dyes"
+ estate_nobles_monopoly_of_dyes_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of dyes."
+ 
+ estate_nobles_monopoly_of_silk: "Monopoly on Silk"
+ estate_nobles_monopoly_of_silk_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of silk."
+ 
+ estate_nobles_monopoly_of_sugar: "Monopoly on Sugar"
+ estate_nobles_monopoly_of_sugar_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of sugar."
  
  #-----------------------------------------
  # Commoners
  #-----------------------------------------
- estate_commoners: "Commoners"
+ estate_commoners: "Commonfolk"
  estate_commoners_desc: "The common folk. A wide and unorganised group, commoners will rare want for much and are often satisfied if the status quo is not distrubed. However, if times get particularly tough, they will resent their overseers and plot rebellion."
  
- ENFORCE_MARTIAL_LAW: "Enforce Martial Law"
- INVEST_IN_THE_MASSES: "Invest in the Masses"
- SEEK_SUPPORT_OF_COMMONERS: "Seek Support of Commoners"
- RECRUIT_PHILOSOPHER: "Recruit Philosopher"
- RECRUIT_ARTIST: "Recruit Artist"
- SOOTHE_PEASANTRY: "Soothe Peasantry"
- CELEBRATE_ACHIEVEMENTS: "Celebrate Achievement"
- SUPPORT_LOCAL_MAYORS: "Support Local Mayors"
- EXPLOIT_WORKERS: "Exploit Workers"
- ENCOURAGE_FREETHINKERS: "Encourage Freethinkers"
- CURTAIL_THE_PEASANTRY: "Curtail the Peasantry"
- PUNISH_THE_COMMONERS: "Punish the Commoners"
+ estate_freefolk: "Freefolk"
  
- #-----------------------------------------
- # Chieftains
- #-----------------------------------------
- estate_chieftains: "Chieftains"
- estate_chieftains_desc: "The leaders of the disparate clans beyond the wall make up our nation. Whether or not they cooperate is up to us."
+ commoners_loyalty_modifier: "[Country.GetCommonersName] Loyalty Equilibrium"
+ commoners_influence_modifier: "[Country.GetCommonersName] Influence"
  
- THROW_FEAST: "Throw Feast"
- ASSEMBLE_CLANS: "Assemble Clans"
- RECRUIT_HERBALIST: "Recruit Quartermaster"
- RECRUIT_WATCHMAN: "Recruit Army Organiser"
- APPOINT_CHIEFTAIN: "Appoint Chieftain"
- RALLY_MEN: "Rally Men"
- MOBILIZE_CLANS: "Mobilize Clans"
- SAIL_THE_WALL: "Sail the Wall"
- CURTAIL_THE_CHIEFTAINS: "Curtail the Chieftains"
- PUNISH_THE_CHIEFTAINS: "Punish the Chieftains"
- RAISE_CLANSMEN: "Raise Clansmen"
+ # ------------ Privileges ------------ 
+ estate_commoners_land_rights: "$ESTATE_NAME$ Land Rights"
+ estate_commoners_land_rights_desc: "The [Root.GetCommonersName] may be simple, but they can be very useful simpletons if handled well. Granting them more land may not rub well with some of the wealthier in our nation, but it could nevertheless be of considerable benefit to us."
  
- TT_OWN_CHEIFTAINS_PROVINCE: "At least one owned province belongs to the §YChieftains§! Estate."
- TT_SPAWN_CHEIFTAINS_CAVALRY: "Up to §Y10§! §YInfantry§! will be recruited dependent on the number of provinces under §YChieftains§! control and current §YChieftains§! influence."
+ estate_commoners_lighter_commonfolk_taxes: "Higher Common Taxes"
+ estate_commoners_lighter_commonfolk_taxes_desc: "Although they are sure to protest, the [Root.GetCommonersName] can be persuaded to give up a greater portion of their wealth in taxes in return for certain guarantees."
  
+ estate_commoners_lighter_commonfolk_taxes_effect_tooltip: "Every owned province gains §Y'Higher Common Taxes'§!, giving the following effects:\nLocal Tax Modifier: §G15.0%§!"
+ estate_commoners_lighter_commonfolk_taxes_revoke_effect_tooltip: "The modifier §Y'Higher Commonfolk Taxes'§! is removed from all owned provinces."
+ 
+ estate_commoners_lighter_commonfolk_taxes_privilege_mod: "Higher Common Taxes"
+ desc_estate_commoners_lighter_commonfolk_taxes_privilege_mod: "The state demands higher taxes from the commonfolk than from the rest of the population."
+ 
+ estate_commoners_guaranteed_autonomy: "Guaranteed Religious Autonomy"
+ estate_commoners_guaranteed_autonomy_desc: "Guaranteeing the [Root.GetCommonersName] freedom from government interference will ease the burdens of our administration and be sure to make them more supportive of our rule."
+ 
+ estate_commoners_guaranteed_autonomy_effect_tooltip: "Every owned province  gains:\nLocal Missionary Strength: §R-100%§!\nLocal Religious Unity Contribution: §G-100%§!"
+ estate_commoners_guaranteed_autonomy_revoke_effect_tooltip: "The modifier §Y'Guaranteed Religious Autonomy'§! is removed from all owned provinces."
+ 
+ estate_commoners_guaranteed_autonomy_mod: "Guaranteed Religious Autonomy"
+ desc_estate_commoners_guaranteed_autonomy_mod: "The state has guaranteed greater religious autonomy for the commonfolk."
+ 
+ estate_commoners_unlanded_nobles: "Promote Unlanded Nobles"
+ estate_commoners_unlanded_nobles_desc: "A key aspiration of the [Root.GetCommonersName] is for their wealthy to enjoy the same legal rights and prominence as the [Root.GetAdjective] [Root.GetNobilityName]."
+ 
+ estate_commoners_manpower: "Mass Conscription"
+ estate_commoners_manpower_desc: "If the reward of tax relief is offered, the [Root.GetCommonersName] will be more than willing to serve as the backbone of our armies."
+ 
+ estate_commoners_manpower_effect_tooltip: "Every owned province gains §Y'Mass Conscription'§!, giving the following effects:\nLocal Manpower Modifier: §G+20.0%§!"
+ 
+ estate_commoners_manpower_revoke_effect_tooltip: "The modifier §Y'Mass Conscription'§! is removed from all owned provinces."
+ 
+ estate_commoners_manpower_mod: "Mass Conscription"
+ desc_estate_commoners_manpower_mod: "The state has increased its conscription of the commonfolk."
+ 
+ estate_commoners_religious_tolerance: "Guaranteed Religious Rights"
+ estate_commoners_religious_tolerance_desc: "Discrimination and prejudice based on religious divisions cause the [Root.GetCommonersName] great suffering. We must cast off our differences and come together to truly unite the state if we are to unlock our people's full potential."
+ 
+ estate_commoners_monopoly_of_grain: "Monopoly on Grain"
+ estate_commoners_monopoly_of_grain_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of grain."
+ 
+ estate_commoners_monopoly_of_fish: "Monopoly on Fish"
+ estate_commoners_monopoly_of_fish_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of fish."
+ 
+ estate_commoners_monopoly_of_ironwood: "Monopoly on Ironwood"
+ estate_commoners_monopoly_of_ironwood_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of ironwood."
+ 
+ estate_commoners_monopoly_of_fruit: "Monopoly on Fruit"
+ estate_commoners_monopoly_of_fruit_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of fruit."
+    
  #-----------------------------------------
- # Kos
+ # Tribes
  #-----------------------------------------
+ estate_tribes: "Tribes"
+ estate_tribes_desc: "Tribal chieftains are loyal to their chief. They will fight to their death to protect the chief, but only if he is worthy of such protection."
+ 
  estate_khalasar: "Kos"
- estate_khalasar_desc: "Ko are the captains within a khal's khalasar, loyal only to him. They will fight to their death to protect the khal, but only if he is worthy of such protection."
+ estate_khalasar_desc: "Ko are captains loyal to their khal. They will fight to their death to protect the khal, but only if he is worthy of such protection."
  
- EXHORT_STRENGTH: "Exhort Strength"
- ADMONISH_GREED: "Admonish Greed"
- ASSEMBLE_BLOODRIDERS: "Assemble Bloodriders"
- RECRUIT_FURRIER: "Recruit Furrier"
- RECRUIT_STABLEMASTER: "Recruit Stablemaster"
- APPOINT_KOS: "Appoint Ko"
- RALLY_ARAKHS: "Rally Arakhs"
- MOBILIZE_KHALASAR: "Mobilize Khalasar"
- MUSTER_CAVALRY: "Muster Cavalry"
- CURTAIL_THE_KOS: "Curtail the Kos"
- PUNISH_THE_KOS: "Punish the Kos"
- 
- TT_OWN_KOS_PROVINCE: "At least one owned province belongs to the §YKos§! Estate."
- TT_SPAWN_KOS_CAVALRY: "Up to §Y10§! §YCavalry§! will be recruited dependent on the number of provinces under §YKos§! control and current §YKos§! influence."
- 
- #-----------------------------------------
- # Magi
- #-----------------------------------------
- estate_wizards: "Wizards"
- estate_wizards_desc: "Individuals said to exert control over magical forces. Their legitimacy is often suspect, although there have been occasions of brilliance."
- estate_shadowbinders: "Shadowbinders"
- estate_warlocks: "Warlocks"
- estate_bloodmages: "Bloodmages"
- estate_magi: "Magi"
- estate_magi_desc: "The magic wielders of our realm."
- 
- SEIZE_MAGICAL_ARTEFACTS: "Sieze Magical Artefacts"
- FUND_MAGI_RESEARCH: "Fund Magi Research"
- SEEK_SUPPORT_OF_MAGI: "Seek Support of Magi"
- RECRUIT_WIZARD: "Recruit Wizard"
- RECRUIT_BOOKBINDER: "Recruit Bookbinder"
- PERFORM_ALCHEMY: "Perform Alchemy"
- GRANT_LEGITIMACY: "Grant Legitimacy"
- EXPLOIT_LOCAL_MAGI: "Exploit Local Magi"
- CORRUPT_OFFICIALS: "Corrupt Officials"
- SUBJUGATE_CONQUESTS: "Subjugate Conquests"
- PRODUCE_WILDFIRE: "Produce Wildfire"
- CURTAIL_THE_MAGI: "Curtail the Magi"
- PUNISH_THE_MAGI: "Punish the Magi"
- 
- #-----------------------------------------
- # Slaves
- #-----------------------------------------
- estate_slaves: "Slaves"
- estate_slaves_desc: "The destitute and downtrodden are often forced into slavery. Although there is much use to slave labour, it is frowned upon in Westeros and the risk of revolt is always high."
- estate_freemen: "Freemen"
- estate_freemen_desc: "Slaves, if they exist within our realm, are now considered freemen."
- 
- PERMIT_SLAVERY: "Permit Slavery"
- PROHIBIT_SLAVERY: "Prohibit Slavery"
- FUND_SLAVERS: "Fund Slavers"
- SEEK_SUPPORT_OF_SLAVERS: "Seek Support of Slavers"
- HASTEN_CONSTRUCTION_PROJECTS: "Hasten Construction Projects" 
- EMPLOY_SLAVE_LABOUR: "Employ Slave Labour"
- SUBJUGATE_REBELLIOUS_SLAVES: "Subjugate Rebellious Slaves" 
- SELL_SLAVES_TO_NOBILITY: "Sell Slaves to Nobility"
- BREED_SLAVES: "Breed Slaves"
- CURTAIL_THE_SLAVES: "Curtail the Slaves"
- PUNISH_THE_SLAVES: "Punish the Slaves"
- MUSTER_INFANTRY: "Muster Infantry"
- 
- TT_OWN_SLAVE_PROVINCE: "At least one owned province belongs to the §Slaves§! Estate."
- TT_SPAWN_SLAVE_INFANTRY: "Up to §Y10§! §YInfantry§! will be recruited dependent on the number of provinces under §YSlaves§! control and current §YSlaves§! influence."
- 
- #-----------------------------------------
- # Undead
- #-----------------------------------------
- estate_undead: "Army of the Undead"
- estate_undead_desc: "The horde of undead under the command of the Night King and his lieutenants."
- 
- PUNISH_LIEUTENANTS: "Punish Lieutenants"
- CONSULT_LIEUTENANTS: "Consult Lieutenants"
- SEEK_SUPPORT_OF_LIEUTENANTS: "Seek Support of Lieutenants"
- EXTRACT_LIFEFORCE: "Extract Lifeforce"
- RECRUIT_ENGINEER: "Recruit Engineer"
- RECRUIT_BLADESMITH: "Recruit Bladesmith"
- RAISE_CHAMPION: "Raise Champion"
- RALLY_UNDEAD: "Rally Undead"
- RAISE_UNDEAD_SOLDIERS: "Raise Undead Soldiers"
- 
- TT_OWN_UNDEAD_PROVINCE: "At least one owned province belongs to the §YArmy of the Undead§! Estate."
- TT_SPAWN_UNDEAD_INFANTRY: "Up to §Y10§! §YInfantry§! will be recruited dependent on the number of provinces under §YArmy of the Undead§! control and current §YArmy of the Undead§! influence."
- 
- #-----------------------------------------
- # Jhats
- #-----------------------------------------
  estate_jhats: "Jhat"
  estate_jhats_desc: "Jhat are the captains within a jhattar, loyal only to their leader. They will fight to their death to protect the chief jhat, but only if he is worthy of such protection."
  
- EXHORT_STRENGTH: "Exhort Strength"
- ADMONISH_GREED: "Admonish Greed"
- ASSEMBLE_RIDERS: "Assemble Riders"
- RECRUIT_FURRIER: "Recruit Furrier"
- RECRUIT_STABLEMASTER: "Recruit Stablemaster"
- APPOINT_JHAT: "Appoint Jhat"
- RALLY_ZEBRAS: "Rally Zebras"
- MOBILIZE_JHATTAR: "Mobilize Jhattar"
- RALLY_WARRIORS: "Rally Warriors"
- CURTAIL_THE_JHATS: "Curtail the Jhats"
- PUNISH_THE_JHATS: "Punish the Jhats"
+ tribes_loyalty_modifier: "[Country.GetTribesName] Loyalty Equilibrium"
+ tribes_influence_modifier: "[Country.GetTribesName] Influence"
  
- TT_OWN_JHAT_PROVINCE: "At least one owned province belongs to the §YJhat§! Estate."
- TT_SPAWN_JHAT_CAVALRY: "Up to §Y10§! §YCavalry§! will be recruited dependent on the number of provinces under §YJhat§! control and current §YJhat§! influence."
+ # ------------ Privileges ------------ 
+ estate_tribes_land_rights: "$ESTATE_NAME$ Land Rights"
+ estate_tribes_land_rights_desc: "The strength of the [Root.GetTribesName] is the backbone of [Root.GetUsableName]. Granting them more land will only feed our own strength and allow us to grow even mightier in future!"
  
- #-----------------------------------------
- # Buccaneers
- #-----------------------------------------
- estate_buccaneers: "Buccaneers"
- estate_buccaneers_desc: "Swashbucklers that seek to wage war on the high seas."
+ estate_tribes_share_of_the_spoils: "Share of the Spoils"
+ estate_tribes_share_of_the_spoils_desc: "The greatest happiness is to vanquish your enemies, to chase them before you, to rob them of their wealth, to see those dear to them bathed in tears, to clasp to your bosom their wives and daughters."
  
- CURTAIL_THE_BUCCANEERS: "Curtail the Buccaneers"
- PUNISH_THE_BUCCANEERS: "Punish the Buccaneers"
- BRIBE_THE_BUCCANEERS: "Bribe the Buccaneers"
- GAIN_SUPPORT_OF_THE_BUCCANEERS: "Gain Support of the Buccaneers"
- ARM_FAVOURED_BUCCANEERS: "Arm Favoured Buccaneers"
- PREPARE_FOR_WAR: "Prepare for War"
- EXALT_PIRACY: "Exalt Piracy"
- PRESS_SAILORS: "Press Sailors"
- CONSTRUCT_SHIPS: "Construct Ships"
- RECRUIT_MATE: "Recruit Mate"
- RECRUIT_SWAB: "Recruit Swab"
+ estate_tribes_chieftains_autonomy: "Greater Autonomy for Chieftains"
+ estate_tribes_chieftains_autonomy_desc: "So long as they continue to obey the orders of the [Root.Monarch.GetTitle], the local chieftains shall have free rein to rule over their tribes in whatever manner they please."
  
- TT_OWN_BUCCANEER_PROVINCE: "At least one owned coastal province belongs to the §YBuccaneers§! Estate."
- TT_SPAWN_BUCCANEER_SHIPS: "Up to §Y10§! §YGalleys§! will be recruited dependent on the number of provinces under §YBuccaneers§! control and current §YBuccaneers§! influence."
+ estate_tribes_guaranteed_leadgership_in_host: "Guaranteed Leadership of Host"
+ estate_tribes_guaranteed_leadgership_in_host_desc: "Our tribal chieftains make fine leaders of men. We need look no further when seeking new generals for our armies."
  
- #-----------------------------------------
- # Smugglers
- #-----------------------------------------
- estate_smugglers: "Smugglers"
- estate_smugglers_desc: "Pirates that smuggle goods across the high seas."
+ estate_tribes_tribal_host: "Larger Tribal Hosts"
+ estate_tribes_tribal_host_desc: "By offering the [Root.GetTribesName] further influence over the [Root.Monarch.GetTitle], we can persuade them to allow us to levy more of their men for our armies."
  
- CURTAIL_THE_SMUGGLERS: "Curtail the Smugglers"
- PUNISH_THE_SMUGGLERS: "Punish the Smugglers"
- BRIBE_THE_SMUGGLERS: "Bribe the Smugglers"
- GAIN_SUPPORT_OF_THE_SMUGGLERS: "Gain Support of the Smugglers"
- SUPPORT_FAVOURED_SMUGGLERS: "Support Favoured Smugglers"
- SMUGGLE_VALUABLES: "Smuggle Valuables"
- HARASS_TRADING_VESSELS: "Harass Trading Vessels"
- RECRUIT_MARINER: "Recruit Mariner"
- RECRUIT_SHIPWRIGHT: "Recruit Shipwright"
+ estate_tribes_tribal_primacy: "Primacy of the $ESTATE_NAME$"
+ estate_tribes_tribal_primacy_desc: "Giving the [Root.GetTribesName] free rein over our military would strengthen our capacities considerably, even if it may cost us dearly in compensating their contributions."
  
- TT_OWN_SMUGGLER_PROVINCE: "At least one owned coastal province belongs to the §YSmugglers§! Estate."
- TT_SPAWN_SMUGGLER_SHIPS: "Up to §Y10§! §YLight Ships§! will be recruited dependent on the number of provinces under §YSmugglers§! control and current §YSmugglers§! influence."
+ estate_tribes_monopoly_of_grain: "Monopoly on Grain"
+ estate_tribes_monopoly_of_grain_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of grain."
  
- #-----------------------------------------
- # Captains
- #-----------------------------------------
- estate_captains: "Captains"
- estate_captains_desc: "Veteran pirates hardened by the high seas, making them valuable tools for shaping new recruits."
+ estate_tribes_monopoly_of_copper: "Monopoly on Copper"
+ estate_tribes_monopoly_of_copper_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of copper."
  
- CURTAIL_THE_CAPTAINS: "Curtail the Captains"
- PUNISH_THE_CAPTAINS: "Punish the Captains"
- BRIBE_THE_CAPTAINS: "Bribe the Captains"
- GAIN_SUPPORT_OF_THE_CAPTAINS: "Gain Support of the Captains"
- SUPPORT_FAVOURED_CAPTAINS: "Support Favoured Captains"
- SEEK_LEGITIMACY: "Seek Legitimacy"
- APPOINT_CAPTAIN: "Appoint Captain"
- RECRUIT_NAVIGATOR: "Recruit Navigator"
- RECRUIT_SEA_DOG: "Recruit Sea Dog"
+ estate_tribes_monopoly_of_iron: "Monopoly on Iron"
+ estate_tribes_monopoly_of_iron_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of iron."
  
- TT_OWN_CAPTAIN_PROVINCE: "At least one owned coastal province belongs to the §YCaptains§! Estate."
- TT_SPAWN_CAPTAIN_SHIPS: "Up to §Y10§! §YHeavy Ships§! will be recruited dependent on the number of provinces under §YCaptains§! control and current §YCaptains§! influence."
- 
- #-----------------------------------------
- # Stewards
- #-----------------------------------------
- estate_stewards: "Stewards"
- estate_stewards_desc: ""
- 
- CURTAIL_THE_STEWARDS: "Curtail the Stewards"
- PUNISH_THE_STEWARDS: "Punish the Stewards"
- INVEST_IN_THE_STEWARDS: "Invest in the Stewards"
- GAIN_SUPPORT_OF_THE_STEWARDS: "Gain Support of the Stewards"
- EXPLOIT_THE_STEWARDS: "Exploit the Stewards"
- RECRUIT_STEWARD: "Recruit Steward"
- RECRUIT_MAESTER: "Recruit Maester"
- PURGE_CORRUPTION: "Purge Corruption"
- CALM_TENSIONS_ON_THE_WALL: "Calm Tension on the Wall"
- 
- #-----------------------------------------
- # Builders
- #-----------------------------------------
- estate_builders: "Builders"
- estate_builders_desc: ""
- 
- CURTAIL_THE_BUILDERS: "Curtail the Builders"
- PUNISH_THE_BUILDERS: "Punish the Builders"
- INVEST_IN_THE_BUILDERS: "Invest in the Builders"
- GAIN_SUPPORT_OF_THE_BUILDERS: "Gain Support of the Builders"
- EXPLOIT_THE_BUILDERS: "Exploit the Builders"
- RECRUIT_ARCHITECT: "Recruit Architect"
- RECRUIT_CARPENTER: "Recruit Carpenter"
- CONSTRUCT_MONUMENT: "Construct Monument"
- ENFORCE_LABOUR: "Enforce Mandatory Labour"
- ESTABLISH_OUTPOSTS: "Establish Outposts"
- 
- enforced_labour: "Enforced Labour"
- enforced_labour_desc: "We are enforcing labour amoungst our Builder population."
-
- establishing_outposts: "Establishing Outposts"
- establishing_outposts_desc: "We are establishing outposts, making it easier to administrate our external provinces."
- 
- #-----------------------------------------
- # Rangers
- #-----------------------------------------
- estate_rangers: "Rangers"
- estate_rangers_desc: ""
- 
- CURTAIL_THE_RANGERS: "Curtail the Rangers"
- PUNISH_THE_RANGERS: "Punish the Rangers"
- INVEST_IN_THE_RANGERS: "Invest in the Rangers"
- GAIN_SUPPORT_OF_THE_RANGERS: "Gain Support of the Rangers"
- EXPLOIT_THE_RANGERS: "Exploit the Rangers"
- RECRUIT_WATCHMAN: "Recruit Watchman"
- RECRUIT_MARSHAL: "Recruit Marshal"
- APPOINT_RANGER: "Appoint Ranger"
- COLLECT_CRIMINALS: "Collect Criminals"
- CONDUCT_RANGING: "Conduct Ranging"
- MUSTER_RANGERS: "Muster Rangers"
- 
- TT_OWN_RANGER_PROVINCE: "At least one owned province belongs to the §YRangers§! Estate."
- TT_SPAWN_RANGER_INFANTRY: "Up to §Y10§! §YInfantry§! will be recruited dependent on the number of provinces under §YRangers§! control and current §YRangers§! influence."
+ estate_tribes_monopoly_of_slaves: "Monopoly on Slaves"
+ estate_tribes_monopoly_of_slaves_desc: "The [Root.GetMerchantsName] shall be granted a monopoly over the production of slaves."
  
  #-----------------------------------------
  # Loyalty
  #-----------------------------------------
- EST_VAL_SOLICITED_INVESTMENT: "Solicited Investment: §Y$VAL$§!"
- EST_VAL_ENTREATED: "Entreated: §Y$VAL$§!"
- EST_VAL_OUSTED: "Ousted: §Y$VAL$§!"
- EST_VAL_GROVELED: "Groveled for funds: §Y$VAL$§!"
- EST_VAL_PREDICAMENT: "Solved the Predicament: §Y$VAL$§!"
  EST_VAL_LEGITIMACY: "Legitimacy: §Y$VAL$§!"
  EST_VAL_FULL_NAVAL_LEADERSHIP: "Naval Leadership: §Y$VAL$§!"
  EST_VAL_FULL_ARMY_LEADERSHIP: "Army Leadership: §Y$VAL$§!"
@@ -454,112 +437,250 @@
  EST_VAL_CONSTRUCTED_MONUMENT: "Constructed Monument: §Y$VAL$§!"
  EST_VAL_ESTABLISHING_OUTPOSTS: "Establishing Outposts: §Y$VAL$§!"
  EST_VAL_CONDUCTED_RANGING: "Conducted Ranging: §Y$VAL$§!"
+ EST_VAL_COUNCIL_SUMMONED: "Council Summoned: §Y$VAL$§!"
  
  #-----------------------------------------
- # Territory 
+ # Monopolies
  #-----------------------------------------
- EST_VAL_LARGE_REALM: "Large Realm: §Y$VAL$%§!"	
- EST_VAL_MEDIUM_REALM: "Medium Realm: §Y$VAL$%§!"	
- EST_VAL_UNIFIED_RELIGION: "Full Religious Unity: §Y$VAL$%§!"
- EST_VAL_LARGE_KHAS: "Large Khas: §Y$VAL$%§!"
+ monopoly_of_wine_mod: "Monopoly on Wine"
+ desc_monopoly_of_wine_mod: "The state has granted monopoly rights over wine production."
+ monopoly_of_wool_mod: "Monopoly on Wool"
+ desc_monopoly_of_wool_mod: "The state has granted monopoly rights over wool production."
+ monopoly_of_tea_mod: "Monopoly on Tea"
+ desc_monopoly_of_tea_mod: "The state has granted monopoly rights over tea production."
+ monopoly_of_coffee_mod: "Monopoly on Coffee"
+ desc_monopoly_of_coffee_mod: "The state has granted monopoly rights over coffee production."
+ monopoly_of_cotton_mod: "Monopoly on Cotton"
+ desc_monopoly_of_cotton_mod: "The state has granted monopoly rights over cotton production."
+ monopoly_of_candles_mod: "Monopoly on Candles"
+ desc_monopoly_of_candles_mod: "The state has granted monopoly rights over candles production."
+ monopoly_of_salt_mod: "Monopoly on Salt"
+ desc_monopoly_of_salt_mod: "The state has granted monopoly rights over salt production."
+ monopoly_of_naval_supplies_mod: "Monopoly on Naval Supplies"
+ desc_monopoly_of_naval_supplies_mod: "The state has granted monopoly rights over naval supplies production."
+ monopoly_of_ivory_mod: "Monopoly on Ivory"
+ desc_monopoly_of_ivory_mod: "The state has granted monopoly rights over ivory production."
+ monopoly_of_spices_mod: "Monopoly on Spices"
+ desc_monopoly_of_spices_mod: "The state has granted monopoly rights over spices production."
+ monopoly_of_tobacco_mod: "Monopoly on Tobacco"
+ desc_monopoly_of_tobacco_mod: "The state has granted monopoly rights over tobacco production."
+ monopoly_of_cocoa_mod: "Monopoly on Cocoa"
+ desc_monopoly_of_cocoa_mod: "The state has granted monopoly rights over cocoa production."
+ monopoly_of_slaves_mod: "Monopoly on Slaves"
+ desc_monopoly_of_slaves_mod: "The state has granted monopoly rights over slaves production."
+ monopoly_of_tropical_wood_mod: "Monopoly on Tropical Wood"
+ desc_monopoly_of_tropical_wood_mod: "The state has granted monopoly rights over tropical wood production."
+ monopoly_of_cloth_mod: "Monopoly on Cloth"
+ desc_monopoly_of_cloth_mod: "The state has granted monopoly rights over cloth production."
+ monopoly_of_fur_mod: "Monopoly on Fur"
+ desc_monopoly_of_fur_mod: "The state has granted monopoly rights over fur production."
+ monopoly_of_copper_mod: "Monopoly on Copper"
+ desc_monopoly_of_copper_mod: "The state has granted monopoly rights over copper production."
+ monopoly_of_iron_mod: "Monopoly on Iron"
+ desc_monopoly_of_iron_mod: "The state has granted monopoly rights over iron production."
+ monopoly_of_dyes_mod: "Monopoly on Dyes"
+ desc_monopoly_of_dyes_mod: "The state has granted monopoly rights over dyes production."
+ monopoly_of_silk_mod: "Monopoly on Silk"
+ desc_monopoly_of_silk_mod: "The state has granted monopoly rights over silk production."
+ monopoly_of_sugar_mod: "Monopoly on Sugar"
+ desc_monopoly_of_sugar_mod: "The state has granted monopoly rights over sugar production."
+ monopoly_of_grain_mod: "Monopoly on Grain"
+ desc_monopoly_of_grain_mod: "The state has granted monopoly rights over grain production."
+ monopoly_of_fish_mod: "Monopoly on Fish"
+ desc_monopoly_of_fish_mod: "The state has granted monopoly rights over fish production."
+ monopoly_of_ironwood_mod: "Monopoly on Ironwood"
+ desc_monopoly_of__mod: "The state has granted monopoly rights over ironwood production."
+ monopoly_of_fruit_mod: "Monopoly on Fruit"
+ desc_monopoly_of_fruit_mod: "The state has granted monopoly rights over fruit production."
  
- #----------------------------------------------------------------------
- # Random Events
- #----------------------------------------------------------------------
- GOT_ESTATE_NOBILITY.1.title: "A Noble Predicament"
- GOT_ESTATE_NOBILITY.1.desc: "Two of our nobles are feuding over etiquette. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_NOBILITY.1.option.a: "Resolve the predicament"
- GOT_ESTATE_NOBILITY.1.option.b: "Ignore the predicament"
+ RESTORE_INCOME_WINE_TT: "Production income from §YWine§! is restored"
+ RESTORE_INCOME_WOOL_TT: "Production income from §YWool§! is restored"
+ RESTORE_INCOME_TEA_TT: "Production income from §YTea§! is restored"
+ RESTORE_INCOME_COFFEE_TT: "Production income from §YCoffee§! is restored"
+ RESTORE_INCOME_COTTON_TT: "Production income from §YCotton§! is restored"
+ RESTORE_INCOME_CANDLES_TT: "Production income from §YCandles§! is restored"
+ RESTORE_INCOME_SALT_TT: "Production income from §YSalt§! is restored"
+ RESTORE_INCOME_NAVAL_SUPPLIES_TT: "Production income from §YNaval Supplies§! is restored"
+ RESTORE_INCOME_IVORY_TT: "Production income from §YIvory§! is restored"
+ RESTORE_INCOME_SPICES_TT: "Production income from §YSpices§! is restored"
+ RESTORE_INCOME_TOBACCO_TT: "Production income from §YTobacco§! is restored"
+ RESTORE_INCOME_COCOA_TT: "Production income from §YCocoa§! is restored"
+ RESTORE_INCOME_SLAVES_TT: "Production income from §YSlaves§! is restored"
+ RESTORE_INCOME_TROPICAL_WOOD_TT: "Production income from §YTropical Wood§! is restored"
+ RESTORE_INCOME_CLOTH_TT: "Production income from §YCloth§! is restored"
+ RESTORE_INCOME_FUR_TT: "Production income from §YFur§! is restored"
+ RESTORE_INCOME_COPPER_TT: "Production income from §YCopper§! is restored"
+ RESTORE_INCOME_IRON_TT: "Production income from §YIron§! is restored"
+ RESTORE_INCOME_DYES_TT: "Production income from §YDyes§! is restored"
+ RESTORE_INCOME_SILK_TT: "Production income from §YSilk§! is restored"
+ RESTORE_INCOME_SUGAR_TT: "Production income from §YSugar§! is restored"
+ RESTORE_INCOME_GRAIN_TT: "Production income from §YGrain§! is restored"
+ RESTORE_INCOME_FISH_TT: "Production income from §YFish§! is restored"
+ RESTORE_INCOME_IRONWOOD_TT: "Production income from §YIronwood§! is restored"
+ RESTORE_INCOME_FRUIT_TT: "Production income from §YFruit§! is restored"
  
- GOT_ESTATE_CLERGY.1.title: "A Holy Predicament"
- GOT_ESTATE_CLERGY.1.desc: "Two of our priests are feuding over a religious interpretation. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_CLERGY.1.option.a: "Resolve the predicament"
- GOT_ESTATE_CLERGY.1.option.b: "Ignore the predicament"
+ NO_INCOME_WINE_TT: "§RNo income from §YWine§!§!"
+ NO_INCOME_WOOL_TT: "§RNo income from §YWool§!§!"
+ NO_INCOME_TEA_TT: "§RNo income from §YTea§!§!"
+ NO_INCOME_COFFEE_TT: "§RNo income from §YCoffee§!§!"
+ NO_INCOME_COTTON_TT: "§RNo income from §YCotton§!§!"
+ NO_INCOME_CANDLES_TT: "§RNo income from §YCandles§!§!"
+ NO_INCOME_SALT_TT: "§RNo income from §YSalt§!§!"
+ NO_INCOME_NAVAL_SUPPLIES_TT: "§RNo income from §YNaval Supplies§!§!"
+ NO_INCOME_IVORY_TT: "§RNo income from §YIvory§!§!"
+ NO_INCOME_SPICES_TT: "§RNo income from §YSpices§!§!"
+ NO_INCOME_TOBACCO_TT: "§RNo income from §YTobacco§!§!"
+ NO_INCOME_COCOA_TT: "§RNo income from §YCocoa§!§!"
+ NO_INCOME_SLAVES_TT: "§RNo income from §YSlaves§!§!"
+ NO_INCOME_TROPICAL_WOOD_TT: "§RNo income from §YTropical Wood§!§!"
+ NO_INCOME_CLOTH_TT: "§RNo income from §YCloth§!§!"
+ NO_INCOME_FUR_TT: "§RNo income from §YFur§!§!"
+ NO_INCOME_COPPER_TT: "§RNo income from §YCopper§!§!"
+ NO_INCOME_IRON_TT: "§RNo income from §YIron§!§!"
+ NO_INCOME_DYES_TT: "§RNo income from §YDyes§!§!"
+ NO_INCOME_SILK_TT: "§RNo income from §YSilk§!§!"
+ NO_INCOME_SUGAR_TT: "§RNo income from §YSugar§!§!"
+ NO_INCOME_GRAIN_TT: "§RNo income from §YGrain§!§!"
+ NO_INCOME_FISH_TT: "§RNo income from §YFish§!§!"
+ NO_INCOME_IRONWOOD_TT: "§RNo income from §YIronwood§!§!"
+ NO_INCOME_FRUIT_TT: "§RNo income from §YFruit§!§!"
  
- GOT_ESTATE_MERCHANTS.1.title: "A Trade Predicament"
- GOT_ESTATE_MERCHANTS.1.desc: "Two of our merchants are feuding over wealth distribution. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_MERCHANTS.1.option.a: "Resolve the predicament"
- GOT_ESTATE_MERCHANTS.1.option.b: "Ignore the predicament"
+ MONOPOLY_INCOME_WINE_DESC: "from wine production."
+ MONOPOLY_INCOME_WOOL_DESC: "from wool production."
+ MONOPOLY_INCOME_TEA_DESC: "from tea production."
+ MONOPOLY_INCOME_COFFEE_DESC: "from coffee production."
+ MONOPOLY_INCOME_COTTON_DESC: "from cotton production."
+ MONOPOLY_INCOME_CANDLES_DESC: "from candles production."
+ MONOPOLY_INCOME_SALT_DESC: "from salt production."
+ MONOPOLY_INCOME_NAVAL_SUPPLIES_DESC: "from naval supplies production."
+ MONOPOLY_INCOME_IVORY_DESC: "from ivory production."
+ MONOPOLY_INCOME_SPICES_DESC: "from spices production."
+ MONOPOLY_INCOME_TOBACCO_DESC: "from tobacco production."
+ MONOPOLY_INCOME_COCOA_DESC: "from cocoa production."
+ MONOPOLY_INCOME_SLAVES_DESC: "from slaves production."
+ MONOPOLY_INCOME_TROPICAL_WOOD_DESC: "from tropical wood production."
+ MONOPOLY_INCOME_CLOTH_DESC: "from cloth production."
+ MONOPOLY_INCOME_FUR_DESC: "from fur production."
+ MONOPOLY_INCOME_COPPER_DESC: "from copper production."
+ MONOPOLY_INCOME_IRON_DESC: "from iron production."
+ MONOPOLY_INCOME_DYES_DESC: "from dyes production."
+ MONOPOLY_INCOME_SILK_DESC: "from silk production."
+ MONOPOLY_INCOME_SUGAR_DESC: "from sugar production."
+ MONOPOLY_INCOME_GRAIN_DESC: "from grain production."
+ MONOPOLY_INCOME_FISH_DESC: "from fish production."
+ MONOPOLY_INCOME_IRONWOOD_DESC: "from ironwood production."
+ MONOPOLY_INCOME_FRUIT_DESC: "from fruit production."
  
- GOT_ESTATE_COMMONERS.1.title: "A Land Predicament"
- GOT_ESTATE_COMMONERS.1.desc: "Two prominent lords are feuding over land. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_COMMONERS.1.option.a: "Resolve the predicament"
- GOT_ESTATE_COMMONERS.1.option.b: "Ignore the predicament"
+ #-----------------------------------------
+ # Estate System
+ #-----------------------------------------
+ summon_the_council: "Summon the Council"
+ ESTATES_SUMMON_THE_COUNCIL_DESC:0 "Will summon the Council to set an §YAgenda§!"
+ 
+ GOT_ESTATE_SYSTEM.2.name:0 "The Agenda of the Council"
+ GOT_ESTATE_SYSTEM.2.desc:1 "The Estates of [Root.GetName] have proposed agendas for the summoned Council. Favoring one of the Estates here could have large benefits in the long term.\n\n[Root.GetCachedAgendasFlavorText]"
+ GOT_ESTATE_SYSTEM.2.a:1 "The Proposal of the [Root.GetClergyName]"
+ GOT_ESTATE_SYSTEM.2.b:1 "The Proposal of the [Root.GetMerchantName]"
+ GOT_ESTATE_SYSTEM.2.c:1 "The Proposal of the [Root.GetNoblesName]"
+ GOT_ESTATE_SYSTEM.2.d:1 "The Proposal of the [Root.GetCommonersName]"
+ GOT_ESTATE_SYSTEM.2.e:1 "The Proposal of the [Root.GetTribesName]"
+ 
+ GOT_ESTATE_SYSTEM.3.name: "Estate Statutory Rights"
+ GOT_ESTATE_SYSTEM.3.desc: "The Estates of [Root.GetName] have come forth offering a compromise to [Root.Monarch.GetTitle] [Root.Monarch.GetName] to solve the weak control that the [Root.GovernmentName] exercises over the land. In exchange for control, the Estates demand certain liberties..."
+ GOT_ESTATE_SYSTEM.3.a: "Honestly what did you expect when you sold out the entire country?"
+ GOT_ESTATE_SYSTEM.3.b: "Pfft we'll solve this ourselves..."
 
- GOT_ESTATE_CHIEFTAINS.1.title: "Quarreling Chieftains"
- GOT_ESTATE_CHIEFTAINS.1.desc: "Two prominent chieftains are feuding over who is the strongest. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_CHIEFTAINS.1.option.a: "Attempt to resolve the quarrel"
- GOT_ESTATE_CHIEFTAINS.1.option.b: "Ignore the quarrel"
+ #-----------------------------------------
+ # Agendas
+ #-----------------------------------------
+ got_local_clergy_displeased: "Local Clergy Displeased"
+ got_local_merchants_displeased: "Local Merchants Displeased"
+ got_local_nobles_displeased: "Local Nobles Displeased"
+ got_local_commoners_displeased: "Local Commonfolk Displeased"
+ got_local_tribes_displeased: "Local Tribes Displeased"
  
- GOT_ESTATE_KOS.1.title: "Troublesome Bloodriders"
- GOT_ESTATE_KOS.1.desc: "Two bloodriders are feuding over a trival matter. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_KOS.1.option.a: "Attempt to resolve the feud"
- GOT_ESTATE_KOS.1.option.b: "Ignore the feud"
+ EST_VAL_AGENDA_FAILED: "Agenda Failed: §R$VAL$§!"
  
- GOT_ESTATE_MAGI.1.title: "Feuding Magi"
- GOT_ESTATE_MAGI.1.desc: "Two prominent magi are feuding over who is the most skilled. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_MAGI.1.option.a: "Attempt to resolve the feud"
- GOT_ESTATE_MAGI.1.option.b: "Ignore the feud"
+ estate_fire_adm_advisor_tooltip: "[Root.Adm_Advisor.GetName] has been fired."
+ estate_fire_dip_advisor_tooltip: "[Root.Dip_Advisor.GetName] has been fired."
+ estate_fire_mil_advisor_tooltip: "[Root.Mil_Advisor.GetName] has been fired."
  
- GOT_ESTATE_SLAVES.1.title: "Feuding Slavemasters"
- GOT_ESTATE_SLAVES.1.desc: "Two prominent slavemasters are feuding over who has the largest collection of slaves. It will require much smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_SLAVES.1.option.a: "Attempt to resolve the feud"
- GOT_ESTATE_SLAVES.1.option.b: "Ignore the feud"
+ # ------------ Clergy ------------ 
+ estate_clergy_develop_x: "Increase Tax Income in [agenda_province.GetName]"
+ estate_clergy_develop_x_desc: "The [Root.GetClergyName] request that we invest in the prosperity of their lands in [agenda_province.GetName]."
  
- GOT_ESTATE_JHATS.1.title: "Troublesome Jhats"
- GOT_ESTATE_JHATS.1.desc: "Two jhats are feuding over a trival matter. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_JHATS.1.option.a: "Attempt to resolve the feud"
- GOT_ESTATE_JHATS.1.option.b: "Ignore the feud"
+ estate_clergy_build_temple_in_y: "Build a House of Worship in [agenda_province.GetName]"
+ estate_clergy_build_temple_in_y_desc: "The [Root.GetClergyName] urge us to build a magnificent house of worship in [agenda_province.GetName] so that their followers might have an adequate place to congregate in the province."
  
- GOT_ESTATE_BUCCANEERS.1.title: "Troublesome Buccaneers"
- GOT_ESTATE_BUCCANEERS.1.desc: "Two buccaneers are feuding. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_BUCCANEERS.1.option.a: "Attempt to resolve the feud"
- GOT_ESTATE_BUCCANEERS.1.option.b: "Ignore the feud"
+ estate_clergy_build_town_hall_in_y: "Build a Town Hall in [agenda_province.GetName]"
+ estate_clergy_build_town_hall_in_y_desc: "The [Root.GetClergyName] urge us to build a town hall in [agenda_province.GetName] so that their followers might administrate the province better."
  
- GOT_ESTATE_SMUGGLERS.1.title: "Troublesome Smugglers"
- GOT_ESTATE_SMUGGLERS.1.desc: "Two smugglers are feuding over a trival matter. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_SMUGGLERS.1.option.a: "Attempt to resolve the feud"
- GOT_ESTATE_SMUGGLERS.1.option.b: "Ignore the feud"
+ estate_clergy_build_manufactory_in_y: "Build a Manufactory in [agenda_province.GetName]"
+ estate_clergy_build_manufactory_in_y_desc: "The [Root.GetClergyName] of [agenda_province.GetName] request that we fund the construction of a new [agenda_province.GetManufactory]. They claim that it will be a highly profitable investment, doubling the province's output of [agenda_province.GetTradeGoodsName]."
  
- GOT_ESTATE_CAPTAINS.1.title: "Malcontent Captains"
- GOT_ESTATE_CAPTAINS.1.desc: "Two captains are feuding over a trival matter. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_CAPTAINS.1.option.a: "Attempt to resolve the feud"
- GOT_ESTATE_CAPTAINS.1.option.b: "Ignore the feud"
+ estate_clergy_convert_province_x: "Convert [agenda_province.GetName]"
+ estate_clergy_convert_province_x_desc: "The [Root.GetClergyName] are concerned at the continued presence of unbelievers in our nation. They demand that we root them out, starting with those living in [agenda_province.GetName]!"
  
- GOT_ESTATE_STEWARDS.1.title: "A Stewardly Predicament"
- GOT_ESTATE_STEWARDS.1.desc: "Two of our stewards are feuding over an administrative task. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_STEWARDS.1.option.a: "Resolve the predicament"
- GOT_ESTATE_STEWARDS.1.option.b: "Ignore the predicament"
+ estate_clergy_reduce_war_exhaustion: "Recover from the Ravages of War"
+ estate_clergy_reduce_war_exhaustion_desc: "The [Root.GetClergyName] complain at the suffering caused by [Root.GetName]'s many wars. They beseech us to allow the nation to recover before attempting further conquests."
  
- GOT_ESTATE_BUILDERS.1.title: "An Architectural Predicament"
- GOT_ESTATE_BUILDERS.1.desc: "Two of our builders are feuding over the architecture for a future project. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_BUILDERS.1.option.a: "Resolve the predicament"
- GOT_ESTATE_BUILDERS.1.option.b: "Ignore the predicament"
+ estate_clergy_recover_stability: "Stabilize the Country"
+ estate_clergy_recover_stability_desc: "The [Root.GetClergyName] long for stability. They call on us to restore order to [Root.GetName]."
  
- GOT_ESTATE_RANGERS.1.title: "A Ranging Predicament"
- GOT_ESTATE_RANGERS.1.desc: "Two of our rangers are feuding over the details of our next ranging. It will require many promises and some smooth talking to resolve this dispute, but hopefully it will be worth it."
- GOT_ESTATE_RANGERS.1.option.a: "Resolve the predicament"
- GOT_ESTATE_RANGERS.1.option.b: "Ignore the predicament"
+ estate_clergy_increase_stability: "Boost National Stability"
+ estate_clergy_increase_stability_desc: ""The [Root.GetClergyName] see the stability of [Root.GetName] as paramount. They insist that we must improve the nation's governance so that our nation may be free from instability."
  
- #----------------------------------------------------------------------
- # Triggered Events
- #----------------------------------------------------------------------
- GOT_ESTATES.100.title: "Tuition of [Root.Heir.GetName]"
- GOT_ESTATES.100.desc: "A trusted noble has tutored our heir, [Root.Heir.GetTitle] [Root.Heir.GetName]. Let us see how well [Root.Heir.GetName] has learnt the material..."
- GOT_ESTATES.100.option.a: "..."
+ estate_clergy_reduce_overextension: "Reduce Overextension"
+ estate_clergy_reduce_overextension_desc: "The [Root.GetClergyName] claim that our nation's governing capabilities are stretched to breaking point. They contend that we must pause to consolidate before attempting further conquests."
  
- GOT_ESTATES.101.title: "Administrative Lessons"
- GOT_ESTATES.101.desc: "[Root.Heir.GetTitle] [Root.Heir.GetName] has taken well to [Root.Heir.GetHerHis] administration lessons. It seems that [Root.Heir.GetName] will be adept at administration once [Root.Heir.GetSheHe] is of age."
- GOT_ESTATES.101.option.a: "Wonderful"
+ estate_clergy_restore_devotion: "Restore Devotion"
+ estate_clergy_restore_devotion_desc: ""The [Root.GetClergyName] are dismayed at the lack of devotion shown by the [Root.Monarch.GetTitle]. They demand that proper religious practices be restored in [Root.GetName]."
  
- GOT_ESTATES.102.title: "Diplomacy Lessons"
- GOT_ESTATES.102.desc: "[Root.Heir.GetTitle] [Root.Heir.GetName] has taken well to [Root.Heir.GetHerHis] diplomacy lessons. It seems that [Root.Heir.GetName] will be adept at diplomacy once [Root.Heir.GetSheHe] is of age."
- GOT_ESTATES.102.option.a: "Wonderful"
+ estate_clergy_root_out_heresy: "Root out Heresy in [agenda_country.GetName]"
+ estate_clergy_root_out_heresy_desc: "The [Root.GetClergyName] consider our failure to confront the heretical beliefs practiced in [agenda_country.GetName] a stain on the honor of our nation. They demand immediate action to bring them back into the light."
  
- GOT_ESTATES.103.title: "Military Lessons"
- GOT_ESTATES.103.desc: "[Root.Heir.GetTitle] [Root.Heir.GetName] has taken well to [Root.Heir.GetHerHis] military lessons. It seems that [Root.Heir.GetName] will be adept at military matters once [Root.Heir.GetSheHe] is of age."
- GOT_ESTATES.103.option.a: "Wonderful"
+ estate_clergy_crush_religious_revolts: "Crush the Heretics"
+ estate_clergy_crush_religious_revolts_desc: "The [Root.GetClergyName] demand that we crush the heretics that have risen up to challenge their authority over spiritual affairs."
  
- GOT_ESTATES.104.title: "Inept Heir"
- GOT_ESTATES.104.desc: "[Root.Heir.GetTitle] [Root.Heir.GetName] has refused to engage in [Root.Heir.GetHerHis] lessons, preferring to slack off."
- GOT_ESTATES.104.option.a: "..."
+ estate_clergy_protect_brethren: "Protect our Brethren in [agenda_province.GetName]"
+ estate_clergy_protect_brethren_desc: "The [Root.GetClergyName] are horrified at the persecution of their [Root.Religion.GetName] brothers in [agenda_province.GetName] at the hands of their [agenda_country.GetAdjective] masters. They demand that we take immediate action to free them from oppression!"
+ 
+ estate_clergy_protect_our_religion_effect_tooltip:0 "If conquered, §Y[agenda_province.GetName]§! will lose §G5§! years of separatism."
+ 
+ estate_clergy_propagate_religion: "Propagate [Root.Religion.GetName] in the [agenda_trade_node.GetTradeNodeName] Trade Node"
+ estate_clergy_propagate_religion_desc: "The [Root.GetClergyName] are pushing for us to use our dominant position in the [agenda_trade_node.GetTradeNodeName] trade node to spread the true faith throughout the region."
+ 
+ estate_clergy_propagate_religion_trigger_tooltip:1 "All inhabited provinces in the §Y[agenda_trade_node.GetTradeNodeName]§! trade node follow the §Y[Root.Religion.GetName]§! faith."
+ 
+ estate_clergy_relations_with_dotf: "Improve Relations with the Defender of the [Root.Religion.GetName] Faith"
+ estate_clergy_relations_with_dotf_desc: "[agenda_country.GetName] is a great bastion of the [Root.Religion.GetName] faith. The [Root.GetClergyName] wish us to strengthen our ties with them, so that their cause may also become our own."
+ 
+ estate_clergy_hire_advisor: "Hire an Administrative Advisor"
+ estate_clergy_hire_advisor_desc: "The [Root.GetClergyName] desire the [Root.Monarch.GetTitle] to hire a new administrative advisor."
+ 
+ estate_clergy_fire_advisor: "Fire our [Root.Adm_Advisor.GetTitle]"
+ estate_clergy_fire_advisor_desc: "[Root.Adm_Advisor.GetTitle] [Root.Adm_Advisor.GetName] has insulted the [Root.GetClergyName]. They demand that we fire [Root.Adm_Advisor.GetHerHim]!"
+ 
+ # ------------ Merchants ------------ 
+ 
+ # ------------ Nobility ------------ 
+ 
+ # ------------ Commoners ------------ 
+ 
+ # ------------ Tribes ------------ 
+ 
+ #-----------------------------------------
+ # Modifiers
+ #-----------------------------------------
+ estate_prospering_production: "Prospering Production"
+ desc_estate_prospering_production: "State investment has caused the local economy to flourish."
+ 
+ estate_agenda_conversion_zeal: "Conversion Zeal"
+ desc_estate_agenda_conversion_zeal: "The clergy are focusing their efforts on converting the populace of this province."
+ 
+ estate_national_recovery: "National Recovery"
+ desc_estate_national_recovery: "After a long bout of warfare our nation has finally been given an opportunity to catch its breath. As granaries refill and a new generation of subjects begins to near the age of adulthood it seems our nation has finally recovered."
+ 
+ estate_missionary_zeal: "Missionary Zeal"
+ desc_estate_missionary_zeal: "With our nation based around the principle of divine supremacy, our missionaries are feeling more zealous than usual."
+ 

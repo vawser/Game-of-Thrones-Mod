@@ -1,0 +1,930 @@
+estate_clergy_land_rights = {
+	icon = privilege_grant_autonomy
+	land_share = 5
+	max_absolutism = -5
+	loyalty = 0.05
+	influence = 0.05
+	can_select = {
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 25 }
+				estate_influence = {
+					estate = estate_church
+					influence = 75
+				}
+			}
+			NOT = { has_estate_privilege = estate_clergy_land_rights }
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 40 }
+				AND = {
+					NOT = { crown_land_share = 60 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_clergy_land_rights }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 30 }
+				AND = {
+					NOT = { crown_land_share = 50 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_clergy_land_rights }
+		}
+	}
+}
+
+estate_clergy_religious_state = {
+	icon = privilege_seek_support_of_clergy
+	land_share = 10
+	max_absolutism = -5
+	loyalty = -0.05
+	can_select = {
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	benefits = {
+		country_admin_power = 1
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 30 }
+				estate_influence = {
+					estate = estate_clergy
+					influence = 75
+				}
+			}
+			NOT = { has_estate_privilege = estate_clergy_religious_state }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 35 }
+				AND = {
+					NOT = { crown_land_share = 55 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_clergy_religious_state }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { adm = 2 }
+		}
+		modifier = {
+			factor = 0.8
+			adm = 5
+		}
+	}
+}
+
+estate_clergy_independent_inquisition = {
+	icon = privilege_empty_throne
+	max_absolutism = -5
+	influence = 0.1
+	loyalty = 0.05
+	penalties = {
+		stability_cost_modifier = 0.1
+	}
+	benefits = {
+		adm_advisor_cost = -0.25
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 1.25
+			NOT = { adm = 2 }
+		}
+		modifier = {
+			factor = 0.8
+			adm = 5
+		}
+	}
+}
+
+estate_clergy_far_east_mission = {
+	icon = privilege_new_world_mission
+	max_absolutism = -5
+	loyalty = 0.05
+	influence = 0.05
+	is_valid = {
+		OR = {
+			num_of_colonists = 1
+			num_of_colonies = 1
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+		native_assimilation = 0.5
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_clergy_clerical_ministers = {
+	icon = privilege_recruit_minister
+	max_absolutism = -5
+	influence = 0.10
+    
+	conditional_modifier = {
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Common Sense"
+				}
+				NOT = { religion = asoiaf_rhllor }
+				NOT = { religion = asoiaf_great_shepherd }
+                NOT = { religion = asoiaf_gods_of_ibben }
+                NOT = { religion = asoiaf_moonsingers }
+                NOT = { religion = asoiaf_summer_gods }
+                NOT = { religion = asoiaf_white_walker}
+			}
+			if = {
+				limit = {
+					has_dlc = "Wealth of Nations"
+				}
+				NOT = { religion = asoiaf_mother_rhoyne }
+                NOT = { religion = asoiaf_trios }
+                NOT = { religion = asoiaf_gods_of_lorath }
+                NOT = { religion = asoiaf_gods_of_sarnor }
+                NOT = { religion = asoiaf_stone_cow_of_faros }
+                NOT = { religion = asoiaf_god_of_harmony }
+			}
+			if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+				}
+				#  NOT = { religion_group = muslim }
+			}
+			if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+				}
+				#  NOT = { religion = confucianism }
+			}
+			if = {
+				limit = {
+					has_dlc = "Third Rome"
+				}
+				NOT = { religion = asoiaf_the_drowned_god }
+                NOT = { religion = asoiaf_the_old_gods }
+                NOT = { religion = asoiaf_lion_of_the_night }
+                NOT = { religion = asoiaf_gods_of_hyrkoon }
+			}
+            NOT = { religion = asoiaf_bearded_priests }
+            NOT = { religion = asoiaf_graces }
+            NOT = { religion = asoiaf_magic }
+            NOT = { religion = asoiaf_the_great_stallion }
+            NOT = { religion = asoiaf_lady_of_the_waves }
+            
+		}
+		modifier = {
+			missionary_maintenance_cost = -0.2
+		}
+	}
+	# conditional_modifier = {
+		# trigger = {
+			# has_dlc = "Common Sense"
+			# OR = {
+				# religion = buddhism
+				# religion = vajrayana
+				# religion = mahayana
+			# }
+		# }
+		# modifier = {
+			# yearly_karma_decay = 0.005
+		# }
+	# }
+	conditional_modifier = {
+		trigger = {
+			has_dlc = "Common Sense"
+			OR = {
+                religion = asoiaf_rhllor
+                religion = asoiaf_great_shepherd
+                religion = asoiaf_gods_of_ibben
+                religion = asoiaf_moonsingers
+                religion = asoiaf_summer_gods
+                religion = asoiaf_white_walker
+            }
+		}
+		modifier = {
+			church_power_modifier = 0.1
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_dlc = "Wealth of Nations"
+			OR = {
+                religion = asoiaf_mother_rhoyne
+                religion = asoiaf_trios
+                religion = asoiaf_gods_of_lorath
+                religion = asoiaf_gods_of_sarnor
+                religion = asoiaf_stone_cow_of_faros
+                religion = asoiaf_god_of_harmony
+            }
+		}
+		modifier = {
+			monthly_fervor_increase = 0.5
+		}
+	}
+	# conditional_modifier = {
+		# trigger = {
+			# has_dlc = "Cradle of Civilization"
+			# religion_group = muslim
+		# }
+		# modifier = {
+			# monthly_piety = 0.001
+		# }
+	# }
+	# conditional_modifier = {
+		# trigger = {
+			# has_dlc = "Mandate of Heaven"
+			# religion = confucianism
+		# }
+		# modifier = {
+			# yearly_harmony = 0.25
+		# }
+	# }
+	conditional_modifier = {
+		trigger = {
+			has_dlc = "Third Rome"
+			OR = {
+                religion = asoiaf_the_drowned_god
+                religion = asoiaf_the_old_gods
+                religion = asoiaf_lion_of_the_night
+                religion = asoiaf_gods_of_hyrkoon 
+            }
+		}
+		modifier = {
+			yearly_patriarch_authority = 0.005
+		}
+	}
+    conditional_modifier = {
+		trigger = {
+			OR = {
+                religion = asoiaf_bearded_priests
+                religion = asoiaf_graces
+                religion = asoiaf_magic
+                religion = asoiaf_the_great_stallion
+                religion = asoiaf_lady_of_the_waves
+            }
+		}
+		modifier = {
+			church_power_modifier = 0.1
+		}
+	}
+    
+	penalties = {
+	}
+	benefits = {
+	}
+	ai_will_do = {
+		factor = 10
+        
+		modifier = {
+			factor = 0.5
+			OR = {
+                religion = asoiaf_rhllor
+                religion = asoiaf_bearded_priests
+                religion = asoiaf_graces
+                religion = asoiaf_great_shepherd
+                religion = asoiaf_gods_of_ibben
+                religion = asoiaf_moonsingers
+                religion = asoiaf_magic
+                religion = asoiaf_summer_gods
+                religion = asoiaf_the_great_stallion
+                religion = asoiaf_lady_of_the_waves
+                religion = asoiaf_white_walker
+            }
+			num_of_aspects = 3
+		}
+	}
+}
+
+estate_clergy_clerical_oversight = {
+	icon = privilege_tolerance_heathen
+	max_absolutism = -10
+	loyalty = 0.1
+	influence = 0.1
+	penalties = {
+	}
+	benefits = {
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+estate_clergy_inwards_perfection = {
+	icon = privilege_grant_autonomy
+	land_share = 5
+	max_absolutism = -5
+	loyalty = 0.1
+	influence = 0.05
+	is_valid = {
+		religion_group = religion_distant_essos
+	}
+	can_select = {
+		NOT = { has_estate_privilege = estate_clergy_for_the_faith }
+	}
+	on_granted = {
+	}
+	modifier_by_land_ownership = {
+		development_cost = -0.15
+	}
+	penalties = {
+		stability_cost_to_declare_war = 1
+	}
+	benefits = {
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+estate_clergy_enforced_one_faith = {
+	icon = privilege_recruit_inouisitor
+	max_absolutism = -5
+	loyalty = 0.1
+	is_valid = {
+		any_owned_province = {
+			NOT = { religion = root }
+		}
+	}
+	can_select = {
+		NOT = { has_estate_privilege = estate_merchants_enforced_interfaith_dialogue }
+		NOT = { has_estate_privilege = estate_commoners_tolerance }
+	}
+	penalties = {
+		tolerance_heathen = -2
+		tolerance_heretic = -2
+	}
+	benefits = {
+		global_missionary_strength = 0.01
+		tolerance_own = 1
+	}
+	cooldown_years = 20
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_clergy_enforced_one_faith
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_clergy_for_the_faith = {
+	icon = privilege_recruit_inouisitor
+	max_absolutism = -5
+	is_valid = {
+		has_dlc = "Emperor"
+		OR = {
+			any_known_country = {
+				NOT = { religion = root }
+			}
+			has_country_modifier = recently_force_converted_protagonist_timer
+			has_country_modifier = recently_annexed_other_religion_timer
+		}
+	}
+	can_select = {
+		any_known_country = {
+			NOT = { religion = root }
+		}
+		NOT = { has_estate_privilege = estate_clergy_inwards_perfection }
+	}
+	on_granted = {
+		custom_tooltip = estate_clergy_for_the_faith_effect_tooltip
+	}
+	on_revoked = {
+		custom_tooltip = estate_clergy_for_the_faith_effect_tooltip
+	}
+	conditional_modifier = {
+		trigger = {
+			any_known_country = {
+				NOT = { religion = root }
+				war_with = root
+			}
+		}
+		modifier = {
+			clergy_loyalty_modifier = 0.1
+			land_morale = 0.1
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			NOT = {
+				any_known_country = {
+					NOT = { religion = root }
+					OR = {
+						war_with = root
+						truce_with = root
+					}
+				}
+			}
+			NOT = { has_country_modifier = recently_force_converted_protagonist_timer }
+			NOT = { has_country_modifier = recently_annexed_other_religion_timer }
+		}
+		modifier = {
+			clergy_loyalty_modifier = -0.1
+			land_morale = -0.1
+		}
+		is_bad = yes
+	}
+	penalties = {
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_clergy_statutory_rights = {
+	icon = privilege_grant_autonomy
+	max_absolutism = -5
+	influence = 0.1
+	is_valid = {
+		has_estate_privilege = estate_clergy_statutory_rights
+	}
+	on_granted = {
+		change_estate_land_share = {
+			estate = all
+			share = -30
+		}
+	}
+	penalties = {
+		min_autonomy = 25
+	}
+	benefits = {
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	cooldown_years = 20
+}
+
+estate_clergy_monopoly_of_wine = {
+	icon = privilege_make_generous_donation
+    
+	max_absolutism = -2
+	loyalty = 0.1
+    
+	is_valid = {
+		has_dlc = "Emperor"
+		any_owned_province = {
+			trade_goods = wine
+		}
+	}
+	can_select = {
+        
+	}
+	on_granted = {
+		add_mercantilism = 1
+		add_years_of_owned_provinces_production_income = {
+			years = 8
+			trigger = {
+				trade_goods = wine
+			}
+			custom_tooltip = MONOPOLY_INCOME_WINE_DESC
+		}
+		custom_tooltip = NO_INCOME_WINE_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = wine
+				}
+				add_province_modifier = {
+					name = monopoly_of_wine_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	on_revoked = {
+		custom_tooltip = RESTORE_INCOME_WINE_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_wine_mod
+				}
+				remove_province_modifier = monopoly_of_wine_mod
+			}
+		}
+	}
+	on_invalid = {
+		custom_tooltip = RESTORE_INCOME_WINE_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_wine_mod
+				}
+				remove_province_modifier = monopoly_of_wine_mod
+			}
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_clergy_monopoly_of_wine
+	}
+	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}
+
+estate_clergy_monopoly_of_wool = {
+	icon = privilege_make_generous_donation
+    
+	max_absolutism = -2
+	loyalty = 0.1
+    
+	is_valid = {
+		has_dlc = "Emperor"
+		any_owned_province = {
+			trade_goods = wool
+		}
+	}
+	can_select = {
+        
+	}
+	on_granted = {
+		add_mercantilism = 1
+		add_years_of_owned_provinces_production_income = {
+			years = 8
+			trigger = {
+				trade_goods = wool
+			}
+			custom_tooltip = MONOPOLY_INCOME_WOOL_DESC
+		}
+		custom_tooltip = NO_INCOME_WOOL_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = wool
+				}
+				add_province_modifier = {
+					name = monopoly_of_wool_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	on_revoked = {
+		custom_tooltip = RESTORE_INCOME_WOOL_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_wool_mod
+				}
+				remove_province_modifier = monopoly_of_wool_mod
+			}
+		}
+	}
+	on_invalid = {
+		custom_tooltip = RESTORE_INCOME_WOOL_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_wool_mod
+				}
+				remove_province_modifier = monopoly_of_wool_mod
+			}
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_clergy_monopoly_of_wool
+	}
+	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}
+
+estate_clergy_monopoly_of_tea = {
+	icon = privilege_make_generous_donation
+    
+	max_absolutism = -2
+	loyalty = 0.1
+    
+	is_valid = {
+		has_dlc = "Emperor"
+		any_owned_province = {
+			trade_goods = tea
+		}
+	}
+	can_select = {
+        
+	}
+	on_granted = {
+		add_mercantilism = 1
+		add_years_of_owned_provinces_production_income = {
+			years = 8
+			trigger = {
+				trade_goods = tea
+			}
+			custom_tooltip = MONOPOLY_INCOME_TEA_DESC
+		}
+		custom_tooltip = NO_INCOME_TEA_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = tea
+				}
+				add_province_modifier = {
+					name = monopoly_of_tea_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	on_revoked = {
+		custom_tooltip = RESTORE_INCOME_TEA_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_tea_mod
+				}
+				remove_province_modifier = monopoly_of_tea_mod
+			}
+		}
+	}
+	on_invalid = {
+		custom_tooltip = RESTORE_INCOME_TEA_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_tea_mod
+				}
+				remove_province_modifier = monopoly_of_tea_mod
+			}
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_clergy_monopoly_of_tea
+	}
+	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}
+
+estate_clergy_monopoly_of_coffee = {
+	icon = privilege_make_generous_donation
+    
+	max_absolutism = -2
+	loyalty = 0.1
+    
+	is_valid = {
+		has_dlc = "Emperor"
+		any_owned_province = {
+			trade_goods = coffee
+		}
+	}
+	can_select = {
+        
+	}
+	on_granted = {
+		add_mercantilism = 1
+		add_years_of_owned_provinces_production_income = {
+			years = 8
+			trigger = {
+				trade_goods = coffee
+			}
+			custom_tooltip = MONOPOLY_INCOME_COFFEE_DESC
+		}
+		custom_tooltip = NO_INCOME_COFFEE_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = coffee
+				}
+				add_province_modifier = {
+					name = monopoly_of_coffee_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	on_revoked = {
+		custom_tooltip = RESTORE_INCOME_COFFEE_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_coffee_mod
+				}
+				remove_province_modifier = monopoly_of_coffee_mod
+			}
+		}
+	}
+	on_invalid = {
+		custom_tooltip = RESTORE_INCOME_COFFEE_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_coffee_mod
+				}
+				remove_province_modifier = monopoly_of_coffee_mod
+			}
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_clergy_monopoly_of_coffee
+	}
+	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}
+
+estate_clergy_monopoly_of_cotton = {
+	icon = privilege_make_generous_donation
+    
+	max_absolutism = -2
+	loyalty = 0.1
+    
+	is_valid = {
+		has_dlc = "Emperor"
+		any_owned_province = {
+			trade_goods = cotton
+		}
+	}
+	can_select = {
+        
+	}
+	on_granted = {
+		add_mercantilism = 1
+		add_years_of_owned_provinces_production_income = {
+			years = 8
+			trigger = {
+				trade_goods = cotton
+			}
+			custom_tooltip = MONOPOLY_INCOME_COTTON_DESC
+		}
+		custom_tooltip = NO_INCOME_COTTON_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = cotton
+				}
+				add_province_modifier = {
+					name = monopoly_of_cotton_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	on_revoked = {
+		custom_tooltip = RESTORE_INCOME_COTTON_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_cotton_mod
+				}
+				remove_province_modifier = monopoly_of_cotton_mod
+			}
+		}
+	}
+	on_invalid = {
+		custom_tooltip = RESTORE_INCOME_COTTON_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_cotton_mod
+				}
+				remove_province_modifier = monopoly_of_cotton_mod
+			}
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_clergy_monopoly_of_cotton
+	}
+	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}
+
+estate_clergy_monopoly_of_candles = {
+	icon = privilege_make_generous_donation
+    
+	max_absolutism = -2
+	loyalty = 0.1
+    
+	is_valid = {
+		has_dlc = "Emperor"
+		any_owned_province = {
+			trade_goods = candles
+		}
+	}
+	can_select = {
+        
+	}
+	on_granted = {
+		add_mercantilism = 1
+		add_years_of_owned_provinces_production_income = {
+			years = 8
+			trigger = {
+				trade_goods = candles
+			}
+			custom_tooltip = MONOPOLY_INCOME_CANDLES_DESC
+		}
+		custom_tooltip = NO_INCOME_CANDLES_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = candles
+				}
+				add_province_modifier = {
+					name = monopoly_of_candles_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	on_revoked = {
+		custom_tooltip = RESTORE_INCOME_CANDLES_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_candles_mod
+				}
+				remove_province_modifier = monopoly_of_candles_mod
+			}
+		}
+	}
+	on_invalid = {
+		custom_tooltip = RESTORE_INCOME_CANDLES_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_candles_mod
+				}
+				remove_province_modifier = monopoly_of_candles_mod
+			}
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_clergy_monopoly_of_candles
+	}
+	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}

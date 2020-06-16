@@ -1,5 +1,24 @@
 name="A Song of Ice and Fire"
 path="mod/asoiaf_test"
+
+tags={
+	"Alternative History"
+	"Events"
+	"Gameplay"
+	"Graphics"
+	"Map"
+	"National Ideas"
+	"New Nations"
+	"Religion"
+	"Sound"
+	"Technologies"
+	"Trade"
+	"Military"
+	"Expansion"
+}
+picture="image.jpg"
+supported_version="1.30.*.*"
+
 replace_path="common/advisortypes"
 replace_path="common/ages"
 replace_path="common/ai_army"
@@ -90,29 +109,17 @@ replace_path="common/triggered_modifiers"
 replace_path="common/units"
 replace_path="common/units_display"
 replace_path="common/wargoal_types"
+
 replace_path="customizable_localization"
+
 replace_path="decisions"
+
 replace_path="events"
+
 replace_path="history/advisors"
 replace_path="history/diplomacy"
 replace_path="history/countries"
 replace_path="history/provinces"
 replace_path="history/wars"
+
 replace_path="missions"
-tags={
-	"Alternative History"
-	"Events"
-	"Gameplay"
-	"Graphics"
-	"Map"
-	"National Ideas"
-	"New Nations"
-	"Religion"
-	"Sound"
-	"Technologies"
-	"Trade"
-	"Military"
-	"Expansion"
-}
-picture="image.jpg"
-supported_version="1.30.*.*"

@@ -1,11 +1,78 @@
-##################################################################################################
-# scriptable and usable for event-system below.
-##################################################################################################
+#--------------------------------------
+# Generic
+#--------------------------------------
+got_thriving_arms_industry = {
+	land_maintenance_modifier = -0.05
+}
 
-# Custom Mission Rewards
+got_growth_of_capital = {
+	local_development_cost = -0.05
+	local_build_cost = -0.05
+}
 
+got_expansionist_country = {
+	harsh_treatment_cost = -0.1
+	state_maintenance_modifier = -0.1
+}
+
+got_army_enthusiasm = {	
+	manpower_recovery_speed = 0.05
+	army_tradition = 0.5
+}
+
+got_hegemonic_ambition = {
+	global_autonomy = -0.05
+}
+
+got_influential_diplomacy = {
+	diplomatic_reputation = 0.5
+}
+
+got_obedient_subjects = { 
+	diplomatic_annexation_cost = -0.05
+}
+
+got_naval_enthusiasm_mission = {
+	navy_tradition = 0.5
+	global_sailors_modifier = 0.05
+}
+
+got_dominant_trade_hub = {
+	province_trade_power_value = 10
+	local_development_cost = -0.05
+	picture = "province_trade_power_value"
+}
+
+got_essos_trade_rush = {
+	trade_efficiency = 0.05
+	global_trade_power = 0.05
+}
+
+got_growing_economy = { 
+	build_cost = -0.05
+	build_time = -0.05
+}
+
+got_building_spree = {
+	global_tax_income = 5
+}
+
+got_strong_treasury = {
+	inflation_reduction = 0.05
+}
+
+got_proto_industrialization = { 
+	production_efficiency = 0.05
+}
+
+got_imperial_ambition = { 
+	years_of_nationalism = -5
+}
+
+#--------------------------------------
+# Custom
+#--------------------------------------
 focusing_on_trade = {
-	
 	trade_efficiency = 0.05
 	naval_forcelimit_modifier = 0.1
 }
@@ -30,12 +97,10 @@ dominating_trade = {
 }
 
 global_influences = {
-
 	technology_cost = -0.1
 	idea_cost = -0.1
 	global_institution_spread = 0.1
 	merchants = 2
-
 }
 
 expanding_new_continent = {
@@ -107,82 +172,6 @@ dornish_marches = {
 	
 }
 
-#Generic Military Mission Rewards:
-
-thriving_arms_industry = {
-	land_morale = 0.05
-	land_maintenance_modifier = -0.05
-}
-
-growth_of_capital = {
-	local_development_cost = -0.1
-	local_build_cost = -0.1
-}
-
-expansionist_country = {
-	harsh_treatment_cost = -0.33
-	state_maintenance_modifier = -0.25
-}
-
-army_enthusiasm = {	
-	manpower_recovery_speed = 0.1
-	army_tradition = 1
-}
-
-hegemonic_ambition = {
-	global_autonomy = -0.05
-}
-
-#Generic Diplomatic Mission Rewards:
-
-influential_diplomacy = {
-	diplomatic_reputation = 1
-}
-
-obedient_subjects = { 
-	diplomatic_annexation_cost = -0.15
-}
-
-naval_enthusiasm_mission = {
-	naval_morale = 0.1
-	navy_tradition = 1
-	global_sailors_modifier = 0.20
-}
-
-dominant_trade_hub = {
-	province_trade_power_value = 10
-	local_development_cost = -0.05
-	picture = "province_trade_power_value"
-}
-
-east_india_trade_rush = {
-	trade_efficiency = 0.3
-	global_trade_power = 0.02
-}
-
-#Generic Administrative Mission Rewards:
-
-growing_economy = { 
-	build_cost = -0.10
-	build_time = -0.25
-}
-
-building_spree = {
-	global_tax_income = 10
-}
-
-strong_treasury = {
-	inflation_reduction = 0.1
-}
-
-proto_industrialization = { 
-	production_efficiency = 0.1
-}
-
-imperial_ambition = { 
-	years_of_nationalism = -5
-}
-
 # Province Modifier
 the_goldroad = {
 	province_trade_power_value = 3
@@ -214,10 +203,8 @@ supporting_nights_watch = {
 
 # Province Modifier
 braavosi_trading_post = {
-
 	trade_value_modifier = 0.10
 	province_trade_power_modifier = 0.10
 	province_trade_power_value = 7
 	picture = "province_trade_power_value"
-
 }

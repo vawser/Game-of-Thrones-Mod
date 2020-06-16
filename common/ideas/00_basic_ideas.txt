@@ -1901,3 +1901,1475 @@ got_nomadic_ideas = {
     }
 }
 
+# Espionage
+got_espionage_ideas = {
+    category = DIP
+
+    bonus = {
+        rebel_support_efficiency = 0.50
+		advisor_cost = -0.1
+    }
+    
+    # Effective Spies
+    got_espionage_ideas_1 = {
+        spy_offence = 0.5
+    }
+    # Covert Missionaries
+    got_espionage_ideas_2 = {
+        rebel_support_efficiency = 0.5
+    }
+    # Vetting
+    got_espionage_ideas_3 = {
+        global_spy_defence = 0.5
+    }
+    # Loyalist Recruitment
+    got_espionage_ideas_4 = {
+        reduced_liberty_desire = 10
+    }
+    # Local Intergration
+    got_espionage_ideas_5 = {
+        diplomats = 1	
+		trade_efficiency = 0.1
+    }
+    # Privateers
+    got_espionage_ideas_6 = {
+        embargo_efficiency = 0.25
+		privateer_efficiency = 0.25
+    }
+    # Anti-Corruption Purges
+    got_espionage_ideas_7 = {
+        yearly_corruption = -0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 4
+			personality = ai_diplomat
+		}
+		
+		modifier = {
+			factor = 2
+			personality = ai_militarist 
+		}
+    }
+}
+
+# Dynastic
+got_dynastic_ideas = {
+    category = DIP
+
+    bonus = {
+        reduced_stab_impacts = yes
+		heir_chance = 0.5
+    }
+    
+    # Foreign Courts
+    got_dynastic_ideas_1 = {
+        diplomats = 1
+    }
+    # Establish Cadet Branches
+    got_dynastic_ideas_2 = {
+        legitimacy = 1
+		prestige = 1
+    }
+    # Royal Council
+    got_dynastic_ideas_3 = {
+        diplomatic_upkeep = 2
+    }
+    # Diplomatic Corps
+    got_dynastic_ideas_4 = {
+        dip_tech_cost_modifier = -0.1
+    }
+    # Beloved Diplomats
+    got_dynastic_ideas_5 = {
+        improve_relation_modifier = 0.2
+    }
+    # Fame and Fortune
+    got_dynastic_ideas_6 = {
+        diplomatic_reputation = 2
+    }
+    # Familial Ties
+    got_dynastic_ideas_7 = {
+        yearly_corruption = -0.05
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_diplomat 
+		}
+    }
+}
+
+# Influence
+got_influence_ideas = {
+    category = DIP
+
+    bonus = {
+        unjustified_demands = -0.25
+    }
+    
+    # Loyal Subjects
+    got_influence_ideas_1 = {
+        vassal_income = 0.25
+    }
+    # Flexible Negotiation
+    got_influence_ideas_2 = {
+        province_warscore_cost = -0.2
+    }
+    # Integrated Nobility
+    got_influence_ideas_3 = {
+		diplomatic_annexation_cost = -0.25
+    }
+    # Propaganda for the Masses
+    got_influence_ideas_4 = {
+        ae_impact = -0.2
+    }
+    # Diplomatic Influence
+    got_influence_ideas_5 = {
+        diplomatic_reputation = 2
+    }
+    # Delivery Service
+    got_influence_ideas_6 = {
+        diplomatic_upkeep = 1
+    }
+    # Marcher Lords
+    got_influence_ideas_7 = {
+        vassal_forcelimit_bonus = 0.5
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 1.25
+			personality = ai_diplomat 
+		}
+    }
+}
+
+# Trade
+got_trade_ideas = {
+    category = DIP
+
+    bonus = {
+        merchants = 1
+    }
+    
+    # Shrewd Practises
+    got_trade_ideas_1 = {
+        global_trade_power = 0.2
+    }
+    # Free Trade
+    got_trade_ideas_2 = {
+        merchants = 1
+    }
+    # Merchant Adventures
+    got_trade_ideas_3 = {
+        trade_range_modifier = 0.5
+    }
+    # Common Trade Policy
+    got_trade_ideas_4 = {
+        trade_efficiency = 0.1
+    }
+    # Exotic Merchants
+    got_trade_ideas_5 = {
+        merchants = 1
+    }
+    # Trade Manipulation
+    got_trade_ideas_6 = {
+        trade_steering = 0.2
+    }
+    # Fast Negotations
+    got_trade_ideas_7 = {
+        caravan_power = 0.2
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 0
+			NOT = { trade_income_percentage = 0.25 }
+		}
+		modifier = {
+			factor = 0.33
+			NOT = { trade_income_percentage = 0.33 }
+		}
+        modifier = {
+			factor = 2
+			trade_income_percentage = 0.25
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 2
+			trade_income_percentage = 0.33
+		}
+    }
+}
+
+# Exploration
+got_exploration_ideas = {
+    category = DIP
+
+    bonus = {
+        colonist_placement_chance = 0.05
+        auto_explore_adjacent_to_colony = yes
+    }
+    
+    # Colonial Ventures
+    got_exploration_ideas_1 = {
+        colonists = 1
+    }
+    # Quest for the Lost Lands
+    got_exploration_ideas_2 = {
+        may_explore = yes
+    }
+    # Overseas Adventures
+    got_exploration_ideas_3 = {
+        range = 0.5
+    }
+    # Land of Opportunity
+    got_exploration_ideas_4 = {
+        global_colonial_growth = 20
+    }
+    # Governors
+    got_exploration_ideas_5 = {
+        global_tariffs = 0.2
+    }
+    # Colonial Surge
+    got_exploration_ideas_6 = {
+        colonists = 1
+		expel_minorities_cost = -0.25
+    }
+    # Domination of the Seas
+    got_exploration_ideas_7 = {
+        naval_forcelimit_modifier = 0.2
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 0
+			OR = {
+				is_subject = yes
+				is_vassal = yes
+				is_colonial_nation = yes
+				is_tribal = yes
+				primitives = yes
+			}
+		}
+        modifier = {
+            factor = 0
+            NOT = { num_of_ports = 1 }
+        }
+        modifier = {
+			factor = 0.5
+			NOT = { num_of_ports = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { num_of_ports = 3 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { num_of_ports = 4 }
+			num_of_cities = 4
+		}
+        modifier = {
+			factor = 2
+			num_of_ports = 5
+		}
+		modifier = {
+			factor = 2
+			num_of_ports = 10
+		}
+		modifier = {
+			factor = 2
+			num_of_ports = 15
+		}
+		modifier = {
+			factor = 2
+			num_of_ports = 20
+		}
+    }
+}
+
+# Maritime
+got_maritime_ideas = {
+    category = DIP
+
+    trigger = {
+		primitives = no
+	}
+    
+    bonus = {
+        leader_naval_shock = 1
+		blockade_efficiency = 0.33
+    }
+    
+    # Sea Hawks
+    got_maritime_ideas_1 = {
+        navy_tradition = 1
+    }
+    # Merchant Marines
+    got_maritime_ideas_2 = {
+        global_sailors_modifier = 0.5
+    }
+    # Sheltered Ports
+    got_maritime_ideas_3 = {
+        global_ship_repair = 0.2
+		sailor_maintenance_modifer = -0.1
+    }
+    # Grand Navy
+    got_maritime_ideas_4 = {
+        naval_forcelimit_modifier = 0.25
+    }
+    # Local Timber
+    got_maritime_ideas_5 = {
+        global_ship_cost = -0.1
+    }
+    # Excellent Shipwrights
+    got_maritime_ideas_6 = {
+        leader_naval_manuever = 1
+    }
+    # Naval Fighting Instruction
+    got_maritime_ideas_7 = {
+        leader_naval_fire = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 0
+			NOT = { num_of_ports = 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 5 }
+			num_of_cities = 5
+		}
+        modifier = {
+			factor = 0
+			NOT = { num_of_ports = 8 }
+			num_of_cities = 10
+		}
+        modifier = {
+			factor = 3
+			OR = {
+				num_of_heavy_ship = 20
+				num_of_light_ship = 50
+				num_of_galley = 70
+			}
+		}
+    }
+}
+
+# Assimilation
+got_assimilation_ideas = {
+    category = DIP
+
+    bonus = {
+        diplomatic_reputation = 2
+    }
+    
+    # Cultural Doctrine
+    got_assimilation_ideas_1 = {
+        culture_conversion_cost = -0.33
+    }
+    # Mixed Courts
+    got_assimilation_ideas_2 = {
+        diplomatic_annexation_cost = -0.25
+    }
+    # Brothers in Arms
+    got_assimilation_ideas_3 = {
+        global_manpower_modifier = 0.15
+    }
+    # Religious Unity
+    got_assimilation_ideas_4 = {
+        religious_unity = 0.25
+    }
+    # Local Concessions
+    got_assimilation_ideas_5 = {
+        years_of_nationalism = -5
+    }
+    # Cultural Heritage
+    got_assimilation_ideas_6 = {
+		stability_cost_modifier = -0.25
+    }
+    # Solidarity
+    got_assimilation_ideas_7 = {
+        diplomatic_upkeep = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_diplomat
+		}
+    }
+}
+
+# Society
+got_society_ideas = {
+    category = DIP
+
+    bonus = {
+        advisor_pool = 1
+    }
+    
+    # War Attitudes
+    got_society_ideas_1 = {
+        land_maintenance_modifier = -0.1
+    }
+    # Local Communities
+    got_society_ideas_2 = {
+        improve_relation_modifier = 0.15
+    }
+    # Education for Commoners
+    got_society_ideas_3 = {
+        global_institution_spread = 0.15
+    }
+    # Meritocracy
+    got_society_ideas_4 = {
+        advisor_cost = -0.15
+    }
+    # Close Ties
+    got_society_ideas_5 = {
+        spy_offence = 0.15
+		global_spy_defence = 0.15
+    }
+    # Fed and Plump
+    got_society_ideas_6 = {
+        global_unrest = -2
+    }
+    # Loyalty to their Lord
+    got_society_ideas_7 = {
+        land_morale = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 2
+			personality = ai_militarist 
+		}
+    }
+}
+
+# Propaganda
+got_propaganda_ideas = {
+    category = DIP
+
+    bonus = {
+        global_manpower_modifier = 0.1
+        can_fabricate_for_vassals = yes
+    }
+    
+    # War Propaganda
+    got_propaganda_ideas_1 = {
+        war_exhaustion = -0.05
+    }
+    # Intergrated Spymaster
+    got_propaganda_ideas_2 = {
+        diplomats = 1
+    }
+    # Foreign Influences
+    got_propaganda_ideas_3 = {
+        improve_relation_modifier = 0.15
+    }
+    # Proclaimations of Credibility
+    got_propaganda_ideas_4 = {
+        diplomatic_reputation = 2
+    }
+    # Dissuade Dissidents
+    got_propaganda_ideas_5 = {
+		yearly_absolutism = 1
+    }
+    # Unending Rhetoric
+    got_propaganda_ideas_6 = {
+        unjustified_demands = -0.25
+    }
+    # Seeds of Chaos
+    got_propaganda_ideas_7 = {
+        siege_ability = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_diplomat
+		}
+    }
+}
+
+# Naval Bombardment (Heavy Ship)
+got_naval_bombardment_ideas = {
+    category = DIP
+
+    trigger = {
+		primitives = no
+	}
+    
+    bonus = {
+        naval_maintenance_modifier = -0.1
+    }
+    # Born of the Sea
+    got_naval_bombardment_ideas_1 = {
+        navy_tradition = 1
+    }
+    # Expert Bombardment
+    got_naval_bombardment_ideas_2 = {
+        heavy_ship_power = 0.1
+    }
+    # Efficient Shipyards
+    got_naval_bombardment_ideas_3 = {
+        heavy_ship_cost = -0.15
+    }
+    # Grand Armarda
+    got_naval_bombardment_ideas_4 = {
+        naval_forcelimit_modifier = 0.2
+    }
+    # Man the Decks
+    got_naval_bombardment_ideas_5 = {
+        global_sailors_modifier = 0.2
+    }
+    # Impenetrable Hulls
+    got_naval_bombardment_ideas_6 = {
+        ship_durability = 0.1
+    }
+    # Oceanic Campaigns
+    got_naval_bombardment_ideas_7 = {
+        leader_naval_fire = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+# Naval Skirmish (Galley Ship)
+got_naval_skirmish_ideas = {
+    category = DIP
+
+    trigger = {
+		primitives = no
+	}
+    
+    bonus = {
+        naval_forcelimit_modifier = 0.1
+        may_perform_slave_raid = yes
+        may_perform_slave_raid_on_same_religion = yes
+    }
+    # Sea Skirmishers
+    got_naval_skirmish_ideas_1 = {
+        galley_power = 0.1
+    }
+    # Hardy Sailors
+    got_naval_skirmish_ideas_2 = {
+        recover_navy_morale_speed = 0.1
+    }
+    # Local Shipyards
+    got_naval_skirmish_ideas_3 = {
+        galley_cost = -0.15
+    }
+    # Expert Targeting
+    got_naval_skirmish_ideas_4 = {
+        capture_ship_chance = 0.1
+    }
+    # Indomitable Sailors
+    got_naval_skirmish_ideas_5 = {
+        sunk_ship_morale_hit_recieved = -0.2
+    }
+    # Beach Assaults
+    got_naval_skirmish_ideas_6 = {
+        movement_speed_onto_off_boat_modifier = -0.33
+    }
+    # Lifelong Seamen
+    got_naval_skirmish_ideas_7 = {
+        navy_tradition_decay = -0.01
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+# Naval Trade (Light Ship)
+got_naval_trade_ideas = {
+    category = DIP
+
+    trigger = {
+		primitives = no
+	}
+    
+    bonus = {
+        naval_tradition_from_trade = 1.0
+    }
+    # Mercantile Shipyards
+    got_naval_trade_ideas_1 = {
+        light_ship_cost = -0.15
+    }
+    # Protected Vessels
+    got_naval_trade_ideas_2 = {
+        light_ship_power = 0.1
+    }
+    # Mercantile Sailors
+    got_naval_trade_ideas_3 = {
+        global_sailors_modifier = 0.2
+    }
+    # Consistent Blockades
+    got_naval_trade_ideas_4 = {
+        blockade_efficiency = 0.33
+    }
+    # Infamous Crews
+    got_naval_trade_ideas_5 = {
+        ship_power_propagation = 0.2
+    }
+    # Mapped Sea Routes
+    got_naval_trade_ideas_6 = {
+        global_ship_trade_power = 0.25
+    }
+    # Embargos
+    got_naval_trade_ideas_7 = {
+        embargo_efficiency = 0.33
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+# Naval Organisation
+got_naval_organisation_ideas = {
+    category = DIP
+
+    trigger = {
+		primitives = no
+	}
+    
+    bonus = {
+        sea_repair = yes
+    }
+    # Press Gangs
+    got_naval_organisation_ideas_1 = {
+        global_sailors_modifier = 0.25
+    }
+    # Massed Shipyards
+    got_naval_organisation_ideas_2 = {
+        naval_forcelimit_modifier = 0.5
+    }
+    # Loyal Sailors
+    got_naval_organisation_ideas_3 = {
+        sailor_maintenance_modifer = -0.2
+    }
+    # Sea Dogs
+    got_naval_organisation_ideas_4 = {
+        sailors_recovery_speed = 0.1
+    }
+    # Experienced Sailors
+    got_naval_organisation_ideas_5 = {
+        naval_morale = 0.1
+    }
+    # Built to Last
+    got_naval_organisation_ideas_6 = {
+        naval_maintenance_modifier = -0.1
+    }
+    # Landing Crews
+    got_naval_organisation_ideas_7 = {
+        movement_speed_onto_off_boat_modifier = -0.33
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+# Naval Leadership
+got_naval_leadership_ideas = {
+    category = DIP
+
+    trigger = {
+		primitives = no
+	}
+    
+    bonus = {
+        navy_tradition_decay = -0.01
+    }
+    # Admirality
+    got_naval_leadership_ideas_1 = {
+        navy_tradition = 1
+    }
+    # Naval Firing Line
+    got_naval_leadership_ideas_2 = {
+        leader_naval_fire = 1
+    }
+    # Naval Skirmisher
+    got_naval_leadership_ideas_3 = {
+        leader_naval_shock = 1
+    }
+    # Naval Explorer
+    got_naval_leadership_ideas_4 = {
+        leader_naval_manuever = 1
+    }
+    # Naval Tradition
+    got_naval_leadership_ideas_5 = {
+        admiral_cost = -0.25
+        admiral_skill_gain_modifier = 0.25
+    }
+    # Onboard Supplies
+    got_naval_leadership_ideas_6 = {
+        naval_attrition = -0.2
+    }
+    # Glory of Battle
+    got_naval_leadership_ideas_7 = {
+        naval_tradition_from_battle = 1.0
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+# Naval Tactics
+got_naval_tactics_ideas = {
+    category = DIP
+
+    trigger = {
+		primitives = no
+	}
+    
+    bonus = {
+        naval_maintenance_modifier = -0.1
+    }
+    # Fearless Admirals
+    got_naval_tactics_ideas_1 = {
+        naval_morale = 0.1
+    }
+    # Wide Sweeps
+    got_naval_tactics_ideas_2 = {
+        global_naval_engagement_modifier = 0.2
+    }
+    # Local Coastline
+    got_naval_tactics_ideas_3 = {
+        own_coast_naval_combat_bonus = 1.0
+    }
+    # Willingness to Fight
+    got_naval_tactics_ideas_4 = {
+        recover_navy_morale_speed = 0.1
+    }
+    # Adaptable Sailors
+    got_naval_tactics_ideas_5 = {
+        sunk_ship_morale_hit_recieved = -0.2
+    }
+    # Reinforced Hulls
+    got_naval_tactics_ideas_6 = {
+        ship_durability = 0.1
+    }
+    # Homeland Defence
+    got_naval_tactics_ideas_7 = {
+        sailors_recovery_speed = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+            factor = 0
+            
+            NOT = { num_of_ports = 1 }
+        }
+    }
+}
+
+# Offensive 
+got_offensive_ideas = {
+    category = MIL
+
+    bonus = {
+        land_attrition = -0.2
+    }
+    
+    # Suprise Offensive
+    got_offensive_ideas_1 = {
+        leader_land_shock = 1
+    }
+    # Local Conscripts
+    got_offensive_ideas_2 = {
+        global_regiment_recruit_speed = -0.2
+    }
+    # Lay of the Land
+    got_offensive_ideas_3 = {
+        leader_land_manuever = 1
+    }
+    # Glory of War
+    got_offensive_ideas_4 = {
+        prestige_from_land = 1.0
+    }
+    # Engineer Corps
+    got_offensive_ideas_5 = {
+        siege_ability = 0.2
+    }
+    # Grand Army
+    got_offensive_ideas_6 = {
+        land_forcelimit_modifier = 0.2
+    }
+    # Valyrian Warfare
+    got_offensive_ideas_7 = {
+        discipline = 0.05
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_militarist 
+		}
+    }
+}
+
+# Defensive
+got_defensive_ideas = {
+    category = MIL
+
+    bonus = {
+        hostile_attrition = 1
+    }
+    
+    # Battlefield Traditions
+    got_defensive_ideas_1 = {
+        army_tradition = 1
+    }
+    # Military Drill
+    got_defensive_ideas_2 = {
+        land_morale = 0.1
+		recover_army_morale_speed = 0.05
+    }
+    # Superior Aim
+    got_defensive_ideas_3 = {
+        leader_land_fire = 1
+    }
+    # Regimental System
+    got_defensive_ideas_4 = {
+        reinforce_speed = 0.33
+    }
+    # Defensive Mentality
+    got_defensive_ideas_5 = {
+        shock_damage_received = -0.05
+		defensiveness = 0.1
+    }
+    # Supply Lines
+    got_defensive_ideas_6 = {
+        global_supply_limit_modifier = 0.15
+    }
+    # Improved Foraging
+    got_defensive_ideas_7 = {
+        land_maintenance_modifier = -0.10
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_militarist 
+		}
+    }
+}
+
+# Quality
+got_quality_ideas = {
+    category = MIL
+
+    bonus = {
+        discipline = 0.05
+    }
+    # Squire to Knight
+    got_quality_ideas_1 = {
+        infantry_power = 0.1
+    }
+    # Noble Education
+    got_quality_ideas_2 = {
+        army_tradition_decay = -0.01
+    }
+    # Finest of Horses
+    got_quality_ideas_3 = {
+        cavalry_power = 0.1
+    }
+    # Ironwood Hulls
+    got_quality_ideas_4 = {
+        ship_durability = 0.1
+    }
+    # Naval Drill
+    got_quality_ideas_5 = {
+        naval_morale = 0.1
+    }
+    # Fruit Barrels
+    got_quality_ideas_6 = {
+        naval_attrition = -0.2
+    }
+    # Massed Batteries
+    got_quality_ideas_7 = {
+        artillery_power = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_militarist 
+		}
+    }
+}
+
+# Quantity
+got_quantity_ideas = {
+    category = MIL
+
+    bonus = {
+        land_forcelimit_modifier  = 0.5
+    }
+    # Grand Army
+    got_quantity_ideas_1 = {
+        global_manpower_modifier = 0.5
+    }
+    # All Can Serve
+    got_quantity_ideas_2 = {
+        manpower_recovery_speed = 0.5
+    }
+    # Enforced Service
+    got_quantity_ideas_3 = {
+        global_regiment_cost = -0.1
+    }
+    # Regular Meals
+    got_quantity_ideas_4 = {
+        land_maintenance_modifier = -0.10
+    }
+    # Mercenary Contracts
+    got_quantity_ideas_5 = {
+        mercenary_manpower = 0.25
+    }
+    # Homely Garrisons
+    got_quantity_ideas_6 = {
+        garrison_size = 0.50
+    }
+    # Improved Supply Lines
+    got_quantity_ideas_7 = {
+        land_attrition = -0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+        
+        modifier = {
+			factor = 2
+			personality = ai_militarist 
+		}
+    }
+}
+
+got_professional_army_ideas = {
+    category = MIL
+
+    bonus = {
+        discipline = 0.05
+    }
+    # Professional Soldiers
+    got_professional_army_ideas_1 = {
+        army_tradition_decay = -0.02
+    }
+    # Scheduled Drills
+    got_professional_army_ideas_2 = {
+        drill_gain_modifier = 0.5
+        army_tradition = 0.5
+    }
+    # Forced Marches
+    got_professional_army_ideas_3 = {
+        movement_speed = 0.1
+    }
+    # Rations
+    got_professional_army_ideas_4 = {
+        land_attrition = -0.2
+    }
+    # Organised Reserves
+    got_professional_army_ideas_5 = {
+        reserves_organisation = 0.5
+    }
+    # Battleready
+    got_professional_army_ideas_6 = {
+        recover_army_morale_speed = 0.1
+    }
+    # Daily Drills
+    got_professional_army_ideas_7 = {
+        drill_decay_modifier = -0.5
+        army_tradition = 0.5
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Mercenary Army
+got_mercenary_army_ideas = {
+    category = MIL
+
+    bonus = {
+        mercenary_discipline = 0.05
+    }
+    # Mercenary Contacts
+    got_mercenary_army_ideas_1 = {
+        mercenary_cost = -0.25
+    }
+    # Established Contracts
+    got_mercenary_army_ideas_2 = {
+        mercenary_manpower = 1.0
+    }
+    # Terror in the Fields
+    got_mercenary_army_ideas_3 = {
+        hostile_attrition = 1
+    }
+    # Gold before Promises
+    got_mercenary_army_ideas_4 = {
+        merc_maintenance_modifier = -0.2
+    }
+    # Mercenary Generals
+    got_mercenary_army_ideas_5 = {
+        free_leader_pool = 1
+    }
+    # A Little Coin
+    got_mercenary_army_ideas_6 = {
+        global_regiment_recruit_speed = -0.33
+    }
+    # Looters
+    got_mercenary_army_ideas_7 = {
+        loot_amount = 1.0
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Army Organisation
+got_army_organisation_ideas = {
+    category = MIL
+
+    bonus = {
+        land_morale = 0.1
+    }
+    # Established Recruitment
+    got_army_organisation_ideas_1 = {
+        global_regiment_cost = -0.15
+    }
+    # Local Recruiters
+    got_army_organisation_ideas_2 = {
+        global_regiment_recruit_speed = -0.25
+    }
+    # Orderly Barracks
+    got_army_organisation_ideas_3 = {
+        land_maintenance_modifier = -0.15
+    }
+    # Regular Drills
+    got_army_organisation_ideas_4 = {
+        army_tradition = 1
+    }
+    # Start Them Young
+    got_army_organisation_ideas_5 = {
+        land_forcelimit_modifier = 0.25
+    }
+    # Local Recruitment
+    got_army_organisation_ideas_6 = {
+        global_manpower_modifier = 0.2
+    }
+    # Supply Depots
+    got_army_organisation_ideas_7 = {
+        global_supply_limit_modifier = 0.25
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Army Leadership
+got_army_leadership_ideas = {
+    category = MIL
+
+    bonus = {
+        army_tradition = 1
+    }
+    # Swift Movements
+    got_army_leadership_ideas_1 = {
+        leader_land_manuever = 1
+    }
+    # First Strikes
+    got_army_leadership_ideas_2 = {
+        leader_land_shock = 1
+    }
+    # Sustained Fire
+    got_army_leadership_ideas_3 = {
+        leader_land_fire = 1
+    }
+    # Military Training
+    got_army_leadership_ideas_4 = {
+        general_cost = -0.25
+    }
+    # Effective Leadership
+    got_army_leadership_ideas_5 = {
+        free_leader_pool = 1
+    }
+    # Veteran Engineers
+    got_army_leadership_ideas_6 = {
+        leader_siege = 1
+    }
+    # Staggered Formations
+    got_army_leadership_ideas_7 = {
+        backrow_artillery_damage = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Army Tactics
+got_army_tactics_ideas = {
+    category = MIL
+
+    bonus = {
+        war_exhaustion = -0.05
+    }
+    # Battlefield Techniques
+    got_army_tactics_ideas_1 = {
+        infantry_power = 0.2
+    }
+    # Fearless Cavalry
+    got_army_tactics_ideas_2 = {
+        cavalry_power = 0.2
+    }
+    # Tactical Maneuvers
+    got_army_tactics_ideas_3 = {
+        fire_damage_received = -0.1
+    }
+    # Skirmishing Techniques
+    got_army_tactics_ideas_4 = {
+        infantry_shock = 1
+    }
+    # Anticapated Strikes
+    got_army_tactics_ideas_5 = {
+        shock_damage_received = -0.1
+    }
+    # Continuous Bombardment
+    got_army_tactics_ideas_6 = {
+        artillery_fire = 1
+    }
+    # Glory on the Battlefield
+    got_army_tactics_ideas_7 = {
+        army_tradition_from_battle = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Armaments
+got_armaments_ideas = {
+    category = MIL
+
+    bonus = {
+        siege_ability = 0.1
+    }
+    # Sharpened Blades
+    got_armaments_ideas_1 = {
+        shock_damage = 0.1
+    }
+    # Barbed Arrows
+    got_armaments_ideas_2 = {
+        fire_damage = 0.1
+    }
+    # Burning Ammunition 
+    got_armaments_ideas_3 = {
+        artillery_fire = 1
+    }
+    # Unbreakable Lances
+    got_armaments_ideas_4 = {
+        cavalry_shock = 1
+    }
+    # Vambraces
+    got_armaments_ideas_5 = {
+        infantry_fire = 1
+    }
+    # Greatswords
+    got_armaments_ideas_6 = {
+        infantry_shock = 1
+    }
+    # Diseased Ammunition
+    got_armaments_ideas_7 = {
+        artillery_bonus_vs_fort = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Fortification
+got_fortification_ideas = {
+    category = MIL
+
+    bonus = {
+        hostile_attrition = 2
+    }
+    # Reinforced Barricades
+    got_fortification_ideas_1 = {
+        defensiveness = 0.5
+    }
+    # Battlefield Shelters
+    got_fortification_ideas_2 = {
+        fire_damage_received = -0.1
+    }
+    # Stocked Garrisons
+    got_fortification_ideas_3 = {
+        garrison_size = 0.5
+    }
+    # All Are Welcome
+    got_fortification_ideas_4 = {
+        global_garrison_growth = 1.0
+    }
+    # Maintained Forts
+    got_fortification_ideas_5 = {
+        global_supply_limit_modifier = 0.15
+    }
+    # Strategic Citadels
+    got_fortification_ideas_6 = {
+        manpower_recovery_speed = 0.1
+    }
+    # Farmsteads
+    got_fortification_ideas_7 = {
+        global_supply_limit_modifier = 0.1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Militarization
+got_militarization_ideas = {
+    category = MIL
+
+    bonus = {
+        mil_tech_cost_modifier = -0.1
+    }
+    # Regular Enlistment
+    got_militarization_ideas_1 = {
+        reinforce_cost_modifier = -0.33
+    }
+    # Wartime Efficiencies
+    got_militarization_ideas_2 = {
+        global_tax_modifier = 0.1
+    }
+    # Home Support
+    got_militarization_ideas_3 = {
+        state_maintenance_modifier = -0.25
+    }
+    # Combat Readiness
+    got_militarization_ideas_4 = {
+        land_forcelimit_modifier = 0.15
+    }
+    # Wartime Construction
+    got_militarization_ideas_5 = {
+        build_time = -0.33
+    }
+    # Marshal Law
+    got_militarization_ideas_6 = {
+        core_creation = -0.1
+    }
+    # Common Fortitude
+    got_militarization_ideas_7 = {
+        war_exhaustion_cost = -0.25
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Subjugation
+got_subjugation_ideas = {
+    category = MIL
+
+    bonus = {
+        land_maintenance_modifier = -0.1
+    }
+    # Conquest
+    got_subjugation_ideas_1 = {
+        province_warscore_cost = -0.25
+    }
+    # Intimidation
+    got_subjugation_ideas_2 = {
+        unjustified_demands = -0.2
+    }
+    # Incorrigible Disputes
+    got_subjugation_ideas_3 = {
+        fabricate_claims_cost = -0.25
+    }
+    # Military Envoys
+    got_subjugation_ideas_4 = {
+        free_leader_pool = 1
+    }
+    # Military Vassals
+    got_subjugation_ideas_5 = {
+        vassal_forcelimit_bonus = 0.5
+    }
+    # Make Haste
+    got_subjugation_ideas_6 = {
+        envoy_travel_time = -0.5
+    }
+    # Squeeze Them Dry
+    got_subjugation_ideas_7 = {
+        vassal_income = 0.15
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Tyranny
+got_tyranny_ideas = {
+    category = MIL
+
+    bonus = {
+        #cb_on_government_enemies = yes
+        global_autonomy = -0.05
+    }
+    # Tyranny of the Weak
+    got_tyranny_ideas_1 = {
+        max_absolutism = 20
+    }
+    # Enforced Legitimacy
+    got_tyranny_ideas_2 = {
+        legitimacy = 1
+        republican_tradition = 1
+        devotion = 1
+        horde_unity = 1
+        meritocracy = 1
+    }
+    # Military Parades
+    got_tyranny_ideas_3 = {
+        prestige = 1
+    }
+    # Labour Camps
+    got_tyranny_ideas_4 = {
+        build_time = -0.33
+    }
+    # Military Executions
+    got_tyranny_ideas_5 = {
+        yearly_corruption = -0.05
+    }
+    # Hammer the Nail
+    got_tyranny_ideas_6 = {
+        years_of_nationalism = -5
+    }
+    # Absolute Rule
+    got_tyranny_ideas_7 = {
+        yearly_absolutism = 1
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}
+
+# Imperialism
+got_imperialism_ideas = {
+    category = MIL
+
+    bonus = {
+        treasure_fleet_income = 1.0
+        colonist_placement_chance = 0.05
+    }
+    # Imperial Frontiers
+    got_imperialism_ideas_1 = {
+        may_establish_frontier = yes
+        may_explore = yes
+    }
+    # Loyal Colonists
+    got_imperialism_ideas_2 = {
+        colonists = 1
+    }
+    # Enforced Migration
+    got_imperialism_ideas_3 = {
+        global_colonial_growth = 20
+    }
+    # Cut and Burn
+    got_imperialism_ideas_4 = {
+        native_uprising_chance = -0.25
+    }
+    # Exploit the Natives
+    got_imperialism_ideas_5 = {
+        native_assimilation = 1.0
+    }
+    # Protected Shipping Routes
+    got_imperialism_ideas_6 = {
+        global_tariffs = 0.2
+    }
+    # Distant Colonies
+    got_imperialism_ideas_7 = {
+        range = 0.5
+    }
+    
+    ai_will_do = {
+        factor = 1
+    }
+}

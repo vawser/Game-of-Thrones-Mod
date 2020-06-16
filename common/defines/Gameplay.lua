@@ -12,36 +12,11 @@ NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_6 = 1564
 NDefines.NCountry.MIN_SHIPS_TO_EXPLORE = 3
 
 --------------------------------
--- Government Ranks
---------------------------------
-NDefines.NCountry.MAX_GOV_RANK = 10
-
-NDefines.NCountry.CULTURAL_UNION_MIN_RANK = 10
-
-NDefines.NCountry.PRESTIGE_GAIN_FOR_GOV_RANK_2 = 25
-NDefines.NCountry.MIN_PRESTIGE_FOR_GOV_RANK_2 = 75
-NDefines.NCountry.MIN_DEVELOPMENT_FOR_GOV_RANK_2 = 100
-NDefines.NCountry.PRESTIGE_GAIN_FOR_GOV_RANK_3 = 25
-NDefines.NCountry.MIN_PRESTIGE_FOR_GOV_RANK_3 = 75
-NDefines.NCountry.MIN_DEVELOPMENT_FOR_GOV_RANK_3 = 200
-NDefines.NCountry.PRESTIGE_GAIN_FOR_GOV_RANK_X = 25
-NDefines.NCountry.MIN_PRESTIGE_FOR_GOV_RANK_X = 75
-NDefines.NCountry.ADDITIONAL_MIN_DEVELOPMENT_FOR_GOV_RANK_X = 100
-
-NDefines.NCountry.NAT_FOCUS_YEARS_RANK = 2
-
---------------------------------
 -- Government Reforms
 --------------------------------
 NDefines.NGovernment.LEGACY_NATIVES_REFORM_REPUBLIC_SPONSOR = "republic_reform"
 NDefines.NGovernment.LEGACY_NATIVES_REFORM_MONARCHY_SPONSOR = "kingdom_reform"
 NDefines.NGovernment.LEGACY_NATIVES_REFORM_THEOCRACY_SPONSOR = "theocracy_reform"
-NDefines.NGovernment.GOVERNMENT_REFORM_BASE_COST = 100.0
-NDefines.NGovernment.GOVERNMENT_REFORM_COST_INCREASE = 100.0
-NDefines.NGovernment.GOVERNMENT_REFORM_CHANGE_CORRUPTION = 10.0
-NDefines.NGovernment.GOVERNMENT_REFORM_CHANGE_MAX_CORRUPTION = 50.0
-NDefines.NGovernment.GOVERNMENT_REFORM_YEARLY_BASE_PROGRESS = 10.0
-NDefines.NGovernment.GOVERNMENT_REFORM_HISTORIC_AUTONOMY = 0.0
 
 --------------------------------
 -- Government Abilities

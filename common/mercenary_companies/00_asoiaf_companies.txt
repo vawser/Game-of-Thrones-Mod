@@ -1,0 +1,328 @@
+# Brave Companions
+merc_brave_companions = {
+    regiments_per_development = 0.04
+    
+    cavalry_weight = 0.2
+	artillery_weight = 0.1
+    
+	cost_modifier = 1.5
+    home_province = 476
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = westeros_superregion
+                superregion = west_essos_superregion
+                superregion = central_essos_superregion
+            }
+		}
+	}
+	modifier = {
+        shock_damage = 0.2
+	}
+}
+
+# The Bright Banners
+merc_bright_banners = {
+    regiments_per_development = 0.03
+    
+    cavalry_weight = 0.1
+    
+	cost_modifier = 1.2
+    home_province = 370
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = west_essos_superregion
+                superregion = central_essos_superregion
+            }
+		}
+	}
+	modifier = {
+        land_morale = 0.1
+	}
+}
+
+# The Company of the Cat
+merc_company_of_the_cat = {
+    regiments_per_development = 0.03
+    
+    cavalry_weight = 0.2
+    
+	cost_modifier = 1.3
+    home_province = 372
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = west_essos_superregion
+                superregion = central_essos_superregion
+            }
+		}
+	}
+	modifier = {
+        fire_damage = 0.1
+	}
+}
+
+# The Gallant Men
+merc_gallant_men = {
+    regiments_per_development = 0.04
+    
+    cavalry_weight = 0.2
+    
+	cost_modifier = 1.25
+    home_province = 394
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = west_essos_superregion
+                superregion = central_essos_superregion
+            }
+		}
+	}
+	modifier = {
+        fire_damage = 0.1
+	}
+}
+
+# Golden Company
+merc_golden_company = {
+    regiments_per_development = 0.08
+    
+    cavalry_weight = 0.2
+	artillery_weight = 0.4
+    
+	cost_modifier = 3
+    home_province = 367
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = westeros_superregion
+                superregion = west_essos_superregion
+                superregion = central_essos_superregion
+            }
+		}
+	}
+	modifier = {
+		land_morale = 0.15
+        discipline = 0.15
+	}
+}
+
+# Long Lances
+merc_long_lances = {
+    regiments_per_development = 0.03
+    
+    cavalry_weight = 1.0
+	artillery_weight = 0.0
+    
+	cost_modifier = 1.5
+    home_province = 417
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = west_essos_superregion
+                superregion = central_essos_superregion
+            }
+		}
+	}
+	modifier = {
+		cavalry_power = 0.2
+	}
+}
+
+# Maiden's Men
+merc_maidens_men = {
+    regiments_per_development = 0.02
+    
+    cavalry_weight = 0.1
+	artillery_weight = 0.05
+    
+	cost_modifier = 0.8
+    home_province = 476
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = westeros_superregion
+                superregion = west_essos_superregion
+                superregion = central_essos_superregion
+            }
+		}
+	}
+	modifier = {
+        
+	}
+}
+
+# Men of Valor
+merc_men_of_valor = {
+    regiments_per_development = 0.03
+    
+    cavalry_weight = 0.2
+	artillery_weight = 0.1
+    
+	cost_modifier = 1.1
+    home_province = 452
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = westeros_superregion
+                superregion = west_essos_superregion
+                superregion = central_essos_superregion
+            }
+		}
+	}
+	modifier = {
+        shock_damage_received = -0.2
+	}
+}
+
+# Ragged Standard
+merc_ragged_standard = {
+    regiments_per_development = 0.05
+    
+    cavalry_weight = 0.1
+	artillery_weight = 0.0
+    
+	cost_modifier = 0.75
+    home_province = 440
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = westeros_superregion
+                superregion = west_essos_superregion
+                superregion = central_essos_superregion
+            }
+		}
+	}
+	modifier = {
+        
+	}
+}
+
+# Second Sons
+merc_second_sons = {
+    regiments_per_development = 0.03
+    
+    cavalry_weight = 0.2
+	artillery_weight = 0.1
+    
+	cost_modifier = 1.2
+    home_province = 441
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = westeros_superregion
+                superregion = westeros_superregion
+                superregion = west_essos_superregion
+            }
+		}
+	}
+	modifier = {
+		land_morale = 0.1
+	}
+}
+
+# Stormbreakers
+merc_stormbreakers = {
+    regiments_per_development = 0.03
+    
+    cavalry_weight = 0.3
+	artillery_weight = 0.1
+    
+	cost_modifier = 1.3
+    home_province = 390
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = westeros_superregion
+                superregion = west_essos_superregion
+                superregion = central_essos_superregion
+            }
+		}
+	}
+	modifier = {
+        shock_damage = 0.05
+	}
+}
+
+# Stormcrows
+merc_stormcrows = {
+    regiments_per_development = 0.05
+    
+    cavalry_weight = 0.4
+	artillery_weight = 0.2
+    
+	cost_modifier = 1.6
+    home_province = 404
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = westeros_superregion
+                superregion = west_essos_superregion
+                superregion = central_essos_superregion
+            }
+		}
+	}
+	modifier = {
+		discipline = 0.05
+	}
+}
+
+# Windblown
+merc_windblown = {
+    regiments_per_development = 0.05
+    
+    cavalry_weight = 0.3
+	artillery_weight = 0.2
+    
+	cost_modifier = 1.4
+    home_province = 406
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = westeros_superregion
+                superregion = west_essos_superregion
+            }
+		}
+	}
+	modifier = {
+		land_morale = 0.1
+	}
+}
+
+# Wolf Pack
+merc_wolf_pack = {
+    regiments_per_development = 0.04
+    
+    cavalry_weight = 0.2
+	artillery_weight = 0.1
+    
+	cost_modifier = 1.1
+    home_province = 378
+    
+	trigger = {
+		capital_scope = {
+			OR = {
+                superregion = westeros_superregion
+                superregion = west_essos_superregion
+                superregion = central_essos_superregion
+            }
+		}
+	}
+	modifier = {
+        infantry_power = 0.05
+	}
+}

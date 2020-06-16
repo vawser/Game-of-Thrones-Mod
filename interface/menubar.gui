@@ -72,7 +72,7 @@ guiTypes = {
 		{
 			name ="waroverview_icon"
 			spriteType = "GFX_shield_medium"
-			position = { x= 3 y = -14 }
+			position = { x= -1 y = -14 }
 			hint_tag = "hint_waroverview"
 		}
 		
@@ -163,20 +163,20 @@ guiTypes = {
 		guiButtonType = {
 			name ="messageicon_bg"
 			quadTextureSprite = "GFX_messageicon_bg"
-			position = { x= 0 y = 0 }
+			position = { x= 10 y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
 
 		guiButtonType = {
 			name = "diplomessageicon_button"
-			position = { x = 10 y = 10 }
+			position = { x = 20 y = 10 }
 			quadTextureSprite ="GFX_messageicons"	
 		}
 
 		guiButtonType = {
 			name ="diplo_flag_overlay"
 			quadTextureSprite = "GFX_flag_smallest"
-			position = { x= 14 y = 39 }
+			position = { x= 24 y = 39 }
 			Orientation = "UPPER_LEFT"
 		}			
 	}
@@ -290,8 +290,19 @@ guiTypes = {
 			}
 
 			guiButtonType = {
-				name = "menu_resign_button"
+				name = "privacy_policy_button"
 				position = { x = 86 y = 290}
+				quadTextureSprite ="button_type_8"	
+				tooltip = ""
+				tooltipText =""
+				delayedTooltipText = ""
+				buttonFont = "vic_18"
+				buttonText = "PRIVACY_POLICY"
+			}	
+
+			guiButtonType = {
+				name = "menu_resign_button"
+				position = { x = 86 y = 325 }
 				quadTextureSprite ="button_type_8"	
 				tooltip = ""
 				tooltipText =""
@@ -302,7 +313,7 @@ guiTypes = {
 
 			guiButtonType = {
 				name = "menu_quit_button"
-				position = { x = 86 y = 325 }
+				position = { x = 86 y = 360 }
 				quadTextureSprite ="button_type_8"	
 				tooltip = ""
 				tooltipText =""
@@ -310,18 +321,7 @@ guiTypes = {
 				buttonText = "MENU_BAR_QUIT"
 				buttonFont = "vic_18"
 			}
-			
-			guiButtonType = {
-				name = "privacy_policy_button"
-				position = { x = 86 y = 360 }
-				quadTextureSprite ="button_type_8"	
-				tooltip = ""
-				tooltipText =""
-				delayedTooltipText = ""
-				buttonFont = "vic_18"
-				buttonText = "PRIVACY_POLICY"
-			}	
-				
+							
 			guiButtonType = {
 				name = "menu_close_button"
 				position = { x = 142 y = 395 }
@@ -1295,6 +1295,48 @@ guiTypes = {
 		
 	}
 
+	windowType = {
+		name = "largefonts_chat_entry"
+		backGround=""
+		position = { x=0 y=0 }	
+		size = { x=512 y= 24 }
+		moveable = 0
+		dontRender = ""
+		horizontalBorder= ""
+		verticalBorder= ""
+		fullScreen = no
+		
+		instantTextBoxType={
+			position = {x = 4 y = 5 }
+			name = "text_shadow"
+			font = "chat_largefont"
+			borderSize = {x = 0 y = 0}	
+			maxWidth = 512
+			maxHeight = 24
+			text = ""	
+			orientation = "UPPER_LEFT"
+			format = left
+			allwaystransparent = yes
+		}
+		
+		instantTextBoxType={
+			position = {x = 3 y = 4 }
+			name = "text"
+			font = "chat_largefont"
+			borderSize = {x = 0 y = 0}	
+			maxWidth = 512
+			maxHeight = 24
+			text = ""	
+			orientation = "UPPER_LEFT"
+			format = left
+			allwaystransparent = yes
+		}
+
+		
+		
+	}
+
+
 
 	windowType = 
 	{
@@ -1773,7 +1815,7 @@ guiTypes = {
 			
 			instantTextBoxType = {
 				name = "floating_number_3"
-				position = { x = -456 y = -38 }
+				position = { x = -454 y = -18 }
 				
 				font = "vic_18"
 				borderSize = {x = 0 y = 0}
@@ -1786,7 +1828,7 @@ guiTypes = {
 			}		
 			instantTextBoxType = {
 				name = "floating_number_4"
-				position = { x = -502 y = -38 }
+				position = { x = -499 y = -18 }
 				
 				font = "vic_18"
 				borderSize = {x = 0 y = 0}
@@ -1799,7 +1841,7 @@ guiTypes = {
 			}	
 			instantTextBoxType = {
 				name = "floating_number_5"
-				position = { x = -548 y = -38 }
+				position = { x = -548 y = -18 }
 				
 				font = "vic_18"
 				borderSize = {x = 0 y = 0}
@@ -1812,7 +1854,7 @@ guiTypes = {
 			}		
 			instantTextBoxType = {
 				name = "floating_number_6"
-				position = { x = -596 y = -38 }
+				position = { x = -596 y = -18 }
 				
 				font = "vic_18"
 				borderSize = {x = 0 y = 0}
@@ -1825,7 +1867,7 @@ guiTypes = {
 			}
 			instantTextBoxType = {
 				name = "floating_number_7"
-				position = { x = -644 y = -38 }
+				position = { x = -644 y = -18 }
 				
 				font = "vic_18"
 				borderSize = {x = 0 y = 0}
@@ -1838,7 +1880,7 @@ guiTypes = {
 			}
 			instantTextBoxType = {
 				name = "floating_number_8"
-				position = { x = -692 y = -38 }
+				position = { x = -692 y = -18 }
 				
 				font = "vic_18"
 				borderSize = {x = 0 y = 0}
@@ -2029,7 +2071,7 @@ guiTypes = {
 	{
 		name ="minimap_bg"
 		spriteType = "GFX_minimap_bg"
-		position = { x= -319 y = -219 }
+		position = { x= -319 y = -221 }
 		Orientation = "UPPER_LEFT"
 	}
 	
@@ -2037,7 +2079,7 @@ guiTypes = {
 	{
 		name ="minimap_pic"
 		spriteType = "GFX_minimap"
-		position = { x= -276 y = -147 }
+		position = { x= -276 y = -145 }
 		Orientation = "UPPER_LEFT"
 	}
 

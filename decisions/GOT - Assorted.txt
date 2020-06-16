@@ -1,10 +1,10 @@
 country_decisions = {
 	employ_more_spies = {
 		potential = {
-			has_idea_group = espionage_ideas
+			has_idea_group = got_espionage_ideas
 		}
 		allow = {
-			has_idea_group = espionage_ideas
+			has_idea_group = got_espionage_ideas
 			years_of_income = 1
 		}
 		effect = {
@@ -30,11 +30,12 @@ country_decisions = {
 		allow = {
 			navy_size_percentage = 0.5
             OR = {
-                full_idea_group = raiding_ideas
-                full_idea_group = navy_combat_ideas
-                full_idea_group = navy_recruitment_ideas
-                full_idea_group = navy_organisation_ideas
-                full_idea_group = navy_leadership_ideas
+                full_idea_group = got_naval_skirmish_ideas
+                full_idea_group = got_naval_bombardment_ideas
+                full_idea_group = got_naval_trade_ideas
+                full_idea_group = got_naval_organisation_ideas
+                full_idea_group = got_naval_leadership_ideas
+                full_idea_group = got_naval_tactics_ideas
             }
 		}
 		effect = {

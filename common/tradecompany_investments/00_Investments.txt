@@ -10,11 +10,11 @@ local_quarter = {
 	
 	upgrades_to = permanent_quarters
 	
-	cost = 300.0
+	cost = 200.0
 	
 	company_province_area_modifier = {
 		local_defensiveness = 0.15
-		supply_limit = 0.25
+		supply_limit_modifier = 0.25
 	}
 	
 	ai_global_worth = { factor = 0 }
@@ -28,11 +28,11 @@ permanent_quarters = {
 
 	sprite = "GFX_investment_permanent_quarter"
 
-	cost = 600.0
+	cost = 400.0
 
 	company_province_area_modifier = {
 		local_defensiveness = 0.30
-		supply_limit = 0.50
+		supply_limit_modifier = 0.50
 	}
 	
 	ai_global_worth = { factor = 0 }
@@ -52,6 +52,30 @@ officers_mess = {
 		NOT = {
 			num_investments_in_trade_company_region = { 
 				investment = officers_mess
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = admiralty
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = property_appraiser
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = townships
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = governor_general_mansion
 				value = 1
 			}
 		}
@@ -76,7 +100,7 @@ company_warehouse = {
 	
 	upgrades_to = company_depot
 		
-	cost = 300.0
+	cost = 200.0
 
 	company_province_area_modifier = {
 		province_trade_power_value = 2
@@ -97,7 +121,7 @@ company_depot = {
 	
 	sprite = "GFX_investment_company_depot"
 
-	cost = 600.0
+	cost = 400.0
 
 	company_province_area_modifier = {
 		province_trade_power_value = 4
@@ -123,7 +147,31 @@ admiralty = {
 	allow = {
 		NOT = {
 			num_investments_in_trade_company_region = { 
+				investment = officers_mess
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
 				investment = admiralty
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = property_appraiser
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = townships
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = governor_general_mansion
 				value = 1
 			}
 		}
@@ -148,7 +196,7 @@ brokers_office = {
 
 	upgrades_to = brokers_exchange
 		
-	cost = 300.0
+	cost = 200.0
 
 	company_province_area_modifier = {
 		local_production_efficiency = 0.25
@@ -169,7 +217,7 @@ brokers_exchange = {
 				
 	sprite = "GFX_investment_brokers_exchange"
 
-	cost = 600.0
+	cost = 400.0
 
 	company_province_area_modifier = {
 		local_production_efficiency = 0.5
@@ -195,7 +243,31 @@ property_appraiser = {
 	allow = {
 		NOT = {
 			num_investments_in_trade_company_region = { 
+				investment = officers_mess
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = admiralty
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
 				investment = property_appraiser
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = townships
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = governor_general_mansion
 				value = 1
 			}
 		}
@@ -220,7 +292,7 @@ settlements = {
 
 	upgrades_to = district
 		
-	cost = 300.0
+	cost = 200.0
 
 	company_province_area_modifier = {
 		local_tax_modifier = 0.25
@@ -241,7 +313,7 @@ district = {
 		
 	sprite = "GFX_investment_district"
 		
-	cost = 600.0
+	cost = 400.0
 
 	company_province_area_modifier = {
 		local_tax_modifier = 0.5
@@ -267,14 +339,38 @@ townships = {
 	allow = {
 		NOT = {
 			num_investments_in_trade_company_region = { 
+				investment = officers_mess
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = admiralty
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = property_appraiser
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
 				investment = townships
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = governor_general_mansion
 				value = 1
 			}
 		}
 	}
 
 	owner_modifier = {
-		army_tradition = 0.1
+		army_tradition = 0.025
 	}
 	
 	company_region_modifier = {
@@ -296,11 +392,11 @@ company_administration = {
 	
 	upgrades_to = military_administration
 	
-	cost = 300.0
+	cost = 200.0
 	
 	company_province_area_modifier = {
-		local_manpower_modifier = 0.25
-		local_sailors_modifier = 0.25
+		local_manpower_modifier = 0.5
+		local_sailors_modifier = 0.5
 	}
 	
 	ai_global_worth = { factor = 0 }
@@ -314,11 +410,11 @@ military_administration = {
 	
 	sprite = "GFX_investment_military_administration"
 	
-	cost = 600.0
+	cost = 400.0
 	
 	company_province_area_modifier = {
-		local_manpower_modifier = 0.5
-		local_sailors_modifier = 0.5
+		local_manpower_modifier = 1.0
+		local_sailors_modifier = 1.0
 	}
 	
 	ai_global_worth = { factor = 0 }
@@ -337,14 +433,42 @@ governor_general_mansion = {
 	allow = {
 		NOT = {
 			num_investments_in_trade_company_region = { 
+				investment = officers_mess
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = admiralty
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = property_appraiser
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
+				investment = townships
+				value = 1
+			}
+		}
+		NOT = {
+			num_investments_in_trade_company_region = { 
 				investment = governor_general_mansion
 				value = 1
 			}
 		}
 	}
+
+	company_region_modifier = {
+		min_local_autonomy = -5
+	}
 	
 	owner_modifier = {
-		global_ship_cost = -0.02
+		allowed_marine_fraction = 0.02
 	}
 
 	ai_global_worth = { factor = 2 }

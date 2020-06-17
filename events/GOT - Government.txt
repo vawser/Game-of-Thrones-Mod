@@ -12,6 +12,10 @@ country_event = {
 	trigger = {
 		government = republic
 		NOT = { has_reform = volantis_city_reform }
+        NOT = { has_states_general_mechanic = yes }
+		NOT = { has_government_attribute = lottery_election }
+        NOT = { has_reform = admiralty_reform }
+        NOT = { has_reform = military_dictatorship_reform }
 	}
 	
 	option = {
@@ -111,6 +115,10 @@ country_event = {
 	trigger = {
 		government = republic
         NOT = { has_reform = volantis_city_reform }
+        NOT = { has_states_general_mechanic = yes }
+		NOT = { has_government_attribute = lottery_election }
+        NOT = { has_reform = admiralty_reform }
+        NOT = { has_reform = military_dictatorship_reform }
 	}
 
 	option = {
@@ -193,7 +201,7 @@ country_event = {
 				is_free_city_government = yes
 				NOT = { republican_tradition = 20 }
 			}
-			add_stability = -1
+			add_government_reform = military_dictatorship_reform	
 		}	
         
 		add_scaled_republican_tradition = -10
@@ -209,6 +217,26 @@ country_event = {
 				add_mil_power = 50
 			}
 		}
+	}
+    option = {
+		name = GOT_GOVERNMENT.2.option.e
+		trigger = {
+			has_government_attribute = enables_nepotism
+		}
+		ai_chance = { factor = 10 }
+        
+		else = {
+			add_scaled_republican_tradition = -4
+		}
+        define_ruler = {
+            mil = -2
+            adm = -2
+            dip = -2
+            min_age = 30
+            max_age = 50
+            name = "lastname"
+            random_gender = yes # Allows random gender for republics
+        }
 	}
 }
 
@@ -271,5 +299,178 @@ country_event = {
             
             hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
 		}
+	}
+}
+
+# Ruled by Despot
+country_event = {
+	id = GOT_GOVERNMENT.4
+	title = GOT_GOVERNMENT.4.title
+	desc = GOT_GOVERNMENT.4.desc
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	trigger = {
+		government = republic
+		is_colonial_nation = no
+		OR = {
+			AND = {
+				NOT = { republican_tradition = 40 }
+				has_dlc = "Res Publica"
+			}
+			NOT = { republican_tradition = 1 }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			NOT = { republican_tradition = 30 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { republican_tradition = 20 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { republican_tradition = 10 }
+		}		
+		modifier = {
+			factor = 0.01
+			NOT = { republican_tradition = 1 }
+		}			
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_government_reform = military_dictatorship_reform
+		}
+	}
+	
+	option = {
+		name = GOT_GOVERNMENT.4.option.a
+		tooltip = {
+			add_government_reform = military_dictatorship_reform
+		}
+	}
+}
+
+# Lottery Election
+country_event = {
+	id = GOT_GOVERNMENT.5
+	title = GOT_GOVERNMENT.5.title
+	desc = GOT_GOVERNMENT.5.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_government_attribute = lottery_election
+	}
+	
+	immediate = {
+		hidden_effect = {
+			define_exiled_ruler = {
+                exiled_as = lottery_candidate_a_@ROOT
+                random_gender = yes
+                min_age = 50
+                max_age = 75
+                adm = 2
+                dip = -1
+                mil = -1
+                option = 0
+            }
+            define_exiled_ruler = {
+                exiled_as = lottery_candidate_b_@ROOT
+                min_age = 50
+                max_age = 75
+                adm = -1
+                dip = 2
+                mil = -1
+                random_gender = yes
+                option = 1
+            }
+            define_exiled_ruler = {
+                exiled_as = lottery_candidate_c_@ROOT
+                min_age = 50
+                max_age = 75
+                adm = -1
+                dip = -1
+                mil = 2
+                random_gender = yes
+                option = 2
+            }
+		}
+	}
+	
+	after = {
+		clear_exiled_ruler = lottery_candidate_a_@ROOT
+		clear_exiled_ruler = lottery_candidate_b_@ROOT
+		clear_exiled_ruler = lottery_candidate_c_@ROOT
+	}
+	
+	option = {
+		name = GOT_GOVERNMENT.5.option.a
+		ai_chance = {
+			factor = 0
+		}
+		set_ruler = lottery_candidate_a_@ROOT
+		add_republican_tradition = -25
+		custom_tooltip = lottery_candidate_bonus_one
+	}
+	option = {
+		name = GOT_GOVERNMENT.5.option.b
+		ai_chance = {
+			factor = 0
+		}
+		set_ruler = lottery_candidate_b_@ROOT
+		add_republican_tradition = -25
+		custom_tooltip = lottery_candidate_bonus_one
+	}
+	option = {
+		name = GOT_GOVERNMENT.5.option.c
+		ai_chance = {
+			factor = 0
+		}
+		set_ruler = lottery_candidate_c_@ROOT
+		add_republican_tradition = -25
+		custom_tooltip = lottery_candidate_bonus_one
+	}
+	option = { # lottery
+		name = GOT_GOVERNMENT.5.option.d
+		ai_chance = {
+			factor = 90
+		}
+		random_list = {
+			33 = { 
+				set_ruler = lottery_candidate_a_@ROOT 
+			}
+			33 = { 
+				set_ruler = lottery_candidate_b_@ROOT 
+			}
+			33 = { 
+				set_ruler = lottery_candidate_c_@ROOT 
+			}
+		}
+		custom_tooltip = lottery_candidate_bonus_plural
+	}
+	option = {
+		name = GOT_GOVERNMENT.5.option.e
+		trigger = {
+			has_government_attribute = enables_nepotism
+		}
+		ai_chance = { factor = 10 }
+        
+        add_republican_tradition = -15
+		
+		define_ruler = {
+            min_age = 30
+            max_age = 50
+            mil = -1
+            adm = -1
+            dip = -1
+            name = "lastname"
+            random_gender = yes
+        }
 	}
 }

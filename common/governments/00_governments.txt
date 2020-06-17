@@ -7,7 +7,7 @@ monarchy = {
     basic_reform = monarchy_mechanic
     
     reform_levels = {
-        government_form = {
+        tier_monarchy_government_form = {
 			reforms = {
                 kingdom_reform
                 noble_house_reform
@@ -25,68 +25,60 @@ monarchy = {
                 daenerys_host_reform
 			}
 		}
-        bureaucracy = {
-            reforms = {
-                taxation_reform
-                manpower_reform
-                production_reform
-                trade_reform
-            }
-        }
-        court = {
-            reforms = {
-                noble_counsel_reform
-                religious_counsel_reform
-                merchant_counsel_reform
-                common_counsel_reform
-                ko_counsel_reform
-                jhat_counsel_reform
-                chieftain_counsel_reform
-                magi_counsel_reform
-                administrative_counsel_reform
-                diplomatic_counsel_reform
-                military_counsel_reform
-            }
-        }
-        rule_of_law = {
-            reforms = {
-                absolute_authority_reform
-                central_authority_reform
-                regional_authority_reform
-                local_authority_reform
-            }
-        }
-        justice = {
-            reforms = {
-                court_justice_reform
-                community_justice_reform
-                torture_justice_reform
-                enslavement_justice_reform
-                death_justice_reform
-            }
-        }
-        ruling_trait = {
-            reforms = {
-                excellent_administrators_reform
-                charismatic_family_reform
-                warminded_leaders_reform
-                militarized_rulers_reform
-                rule_by_council_reform
-                assimilation_reform
-            }
-        }
-        national_trait = {
-            reforms = {
-                disciplined_army_reform
-                peerless_navy_reform
-                beloved_diplomats_reform
-                keen_minds_reform
-                inquistorial_fury_reform
-                burning_scrutiny_reform
-                fed_and_plump_reform
-                mercantile_infamy_reform
-            }
-        }
+        tier_monarchy_hereditary_vs_nobility = {
+			reforms = {
+				got_enforce_privileges_reform
+				got_quash_noble_power_reform
+				got_enforce_trader_privileges_reform
+				got_volantene_traders_reform
+				got_red_syncretism_reform
+				got_yitish_nobles_reform
+				got_strength_of_the_ghiscari_reform
+				got_hyrkooni_society_reform
+				got_kingsguard_reform
+			}
+		}
+		tier_monarchy_bureaucracy = {
+			reforms = {
+				got_centralize_reform
+				got_decentralize_reform
+				got_westerosi_recruitment
+				got_jade_signet_reform
+                got_penal_colonies_reform
+			}
+		}
+		tier_monarchy_growth_of_administration = {
+			reforms = {
+				got_clergy_in_administration_reform
+				got_of_noble_bearing_reform
+				got_meritocratic_focus_reform
+				got_lhazar_culture_reform
+				got_formalized_glyph_reform
+			}
+		}
+		tier_monarchy_deliberative_assembly = {
+			reforms = {
+				got_parliamentary_reform
+				got_royal_decree_reform
+				got_aristocratic_court_reform
+				got_states_general_reform
+				got_general_estates_reform
+			}
+		}
+		tier_monarchy_absolute_rule_vs_constitutional = {
+			reforms = {
+				got_law_and_order_reform
+				got_regional_representation_reform
+			}
+		}
+		tier_monarchy_separation_of_power = {
+			reforms = {
+				got_political_absolutism_reform
+				got_legislative_houses_reform
+				got_become_a_republic_reform
+				got_become_a_theocracy_reform
+			}
+		}
     }
     
     legacy_government = {
@@ -105,23 +97,6 @@ monarchy = {
         ghis_city_legacy
         daenerys_host_legacy
     }
-
-    exclusive_reforms = {
-        kingdom_reform
-		noble_house_reform
-		royal_house_reform
-		yiti_city_reform
-		yiti_empire_reform
-		qarth_city_reform
-		nefer_city_reform
-		hyrkoon_city_reform
-		valyria_city_reform
-		meereen_city_reform
-		yunkai_city_reform
-		astapor_city_reform
-		ghis_city_reform
-        daenerys_host_reform
-    }
 }
 
 #--------------------------------------------
@@ -133,7 +108,7 @@ republic = {
     basic_reform = republic_mechanic
     
     reform_levels = {
-        government_form = {
+        tier_republic_government_form = {
 			reforms = {
                 republic_reform
                 merchant_republic_reform
@@ -150,73 +125,76 @@ republic = {
                 andal_city_reform
                 expeditionary_company_reform
                 rhoynar_city_reform
+                nights_watch_reform
+                military_dictatorship_reform
 			}
 		}
-        bureaucracy = {
-            reforms = {
-                taxation_reform
-                manpower_reform
-                production_reform
-                trade_reform
-            }
-        }
-        court = {
-            reforms = {
-                noble_counsel_reform
-                religious_counsel_reform
-                merchant_counsel_reform
-                common_counsel_reform
-                ko_counsel_reform
-                jhat_counsel_reform
-                chieftain_counsel_reform
-                magi_counsel_reform
-                administrative_counsel_reform
-                diplomatic_counsel_reform
-                military_counsel_reform
-            }
-        }
-        rule_of_law = {
-            reforms = {
-                absolute_authority_reform
-                central_authority_reform
-                regional_authority_reform
-                local_authority_reform
-            }
-        }
-        justice = {
-            reforms = {
-                court_justice_reform
-                community_justice_reform
-                torture_justice_reform
-                enslavement_justice_reform
-                death_justice_reform
-            }
-        }
-        ruling_trait = {
-            reforms = {
-                excellent_administrators_reform
-                charismatic_family_reform
-                warminded_leaders_reform
-                populist_demagogues_reform
-                militarized_rulers_reform
-                rule_by_council_reform
-                assimilation_reform
-            }
-        }
-        national_trait = {
-            reforms = {
-                disciplined_army_reform
-                peerless_navy_reform
-                beloved_diplomats_reform
-                keen_minds_reform
-                inquistorial_fury_reform
-                burning_scrutiny_reform
-                fed_and_plump_reform
-                mercantile_infamy_reform
-            }
-        }
+        tier_republic_republican_virtues = {
+			reforms = {
+				got_republican_authoritarianism_reform
+				got_nepotism_reform
+				got_republicanism_reform
+			}
+		}
+		tier_republic_frequency_of_elections = {
+			reforms = {
+				got_frequent_elections_reform
+				got_consolidation_of_power_reform
+				got_lottery_reform
+			}
+		}
+		tier_republic_regionalism = {
+			reforms = {
+				got_provincial_governments_reform
+				got_administrative_divisions_reform
+				got_union_of_states_reform
+				got_penal_colonies_reform
+			}
+		}
+		tier_republic_separation_of_power = {
+			reforms = {
+				got_parliamentary_reform
+				got_presidential_reform
+                got_republican_diplomacy_reform
+                got_municipal_self_defense_reform
+			}
+		}
+		tier_republic_consolidation_of_power = {
+			reforms = {
+				got_broaden_executive_powers_reform
+				got_devolution_of_powers_reform
+			}
+		}
+		tier_republic_guiding_principle_of_administration = {
+			reforms = {
+				got_political_principle_reform
+				got_moral_principle_reform
+			}
+		}
+		tier_republic_electorate = {
+			reforms = {
+				got_landholders_reform
+				got_citizenry_reform
+				got_admiralty_reform
+			}
+		}
+		tier_republic_office_selection = {
+			reforms = {
+				got_appointment_by_committee_reform
+				got_bureaucratic_aparatus_reform
+				got_universal_suffrage_reform
+			}
+		}
+		tier_republic_question_of_dictatorship = {
+			reforms = {
+				got_become_a_monarchy_reform
+				got_become_a_theocracy_reform
+				got_strengthen_executive_powers_reform
+				got_reinforce_republican_values_reform
+			}
+		}
     }
-    
+
     legacy_government = {
         republic_legacy
         merchant_republic_legacy
@@ -235,24 +213,8 @@ republic = {
         andal_city_legacy
         expeditionary_company_legacy
         rhoynar_city_legacy
-    }
-    
-    exclusive_reforms = {
-        republic_reform
-        merchant_republic_reform
-        trading_outpost_reform
-        tyrosh_city_reform
-		myr_city_reform
-		lys_city_reform
-		volantis_city_reform
-		pentos_city_reform
-		braavos_city_reform
-		lorath_city_reform
-		saath_city_reform
-		trader_city_reform
-		andal_city_reform
-        expeditionary_company_reform
-        rhoynar_city_reform
+        nights_watch_legacy
+        military_dictatorship_legacy
     }
 }
 
@@ -265,82 +227,78 @@ theocracy = {
     basic_reform = theocracy_mechanic
     
     reform_levels = {
-        government_form = {
+        tier_theocracy_government_form = {
 			reforms = {
                 theocracy_reform
+                the_faith_reform
+                qohor_city_reform
+                norvos_city_reform
                 asshai_cult_reform
                 bloodless_cult_reform
                 winged_dominion_reform
                 white_walker_cult_reform
-                the_faith_reform
-                qohor_city_reform
-                norvos_city_reform
                 shadow_cult_reform
                 cult_of_madness_reform
 			}
 		}
-        bureaucracy = {
-            reforms = {
-                taxation_reform
-                manpower_reform
-                production_reform
-                trade_reform
-            }
-        }
-        court = {
-            reforms = {
-                noble_counsel_reform
-                religious_counsel_reform
-                merchant_counsel_reform
-                common_counsel_reform
-                ko_counsel_reform
-                jhat_counsel_reform
-                chieftain_counsel_reform
-                magi_counsel_reform
-                administrative_counsel_reform
-                diplomatic_counsel_reform
-                military_counsel_reform
-            }
-        }
-        rule_of_law = {
-            reforms = {
-                absolute_authority_reform
-                central_authority_reform
-                regional_authority_reform
-                local_authority_reform
-            }
-        }
-        justice = {
-            reforms = {
-                court_justice_reform
-                community_justice_reform
-                torture_justice_reform
-                enslavement_justice_reform
-                death_justice_reform
-            }
-        }
-        ruling_trait = {
-            reforms = {
-                excellent_administrators_reform
-                charismatic_family_reform
-                warminded_leaders_reform
-                militarized_rulers_reform
-                rule_by_council_reform
-                assimilation_reform
-            }
-        }
-        national_trait = {
-            reforms = {
-                disciplined_army_reform
-                peerless_navy_reform
-                beloved_diplomats_reform
-                keen_minds_reform
-                inquistorial_fury_reform
-                burning_scrutiny_reform
-                fed_and_plump_reform
-                mercantile_infamy_reform
-            }
-        }
+        tier_theocracy_internal_vs_external_mission = {
+			reforms = {
+				got_internal_mission_reform
+				got_external_mission_reform
+				got_mission_to_civilize_reform
+				got_mission_to_kill_pirates_reform
+			}
+		}
+		tier_theocracy_divine_cause = {
+			reforms = {
+				got_safeguard_holy_sites_reform
+				got_combat_heresy_reform
+				got_expel_heathens_reform
+			}
+		}
+		tier_theocracy_clergy_in_administration = {
+			reforms = {
+				got_subservient_administrators_reform
+				got_religious_administrators_reform
+				got_pious_merchants_reform
+				got_loyal_nobility_reform
+				got_monastic_breweries_reform
+				got_qohorik_warriors_reform
+				got_norvosi_advisors_reform
+			}
+		}
+		tier_theocracy_secularization = {
+			reforms = {
+				got_maintain_religious_head_reform
+				got_partial_secularisation_reform
+                got_become_a_monarchy_reform
+                got_become_a_republic_reform
+			}
+		}
+		tier_theocracy_separation_of_power = {
+			reforms = {
+				got_clerical_commission_reform
+				got_divine_guidance_reform
+				got_theocratic_democracy_reform
+			}
+		}
+		tier_theocracy_nature_of_faith = {
+			reforms = {
+				got_church_and_state_reform
+				got_religious_harmony_reform
+				got_god_and_man_reform
+				got_organising_our_religion_reform
+			}
+		}
+		tier_theocracy_faith_and_the_world = {
+			reforms = {
+				got_religion_in_one_country_reform
+				got_religious_permanent_revolution_reform
+				got_many_fingers_of_god_reform
+				got_priestly_autonomy_reform
+				got_proclaim_religious_head_reform
+			}
+		}
     }
     
     legacy_government = {
@@ -355,19 +313,6 @@ theocracy = {
         shadow_cult_legacy
         cult_of_madness_legacy
     }
-    
-    exclusive_reforms = {
-        theocracy_reform
-        asshai_cult_reform
-        bloodless_cult_reform
-        winged_dominion_reform
-        white_walker_cult_reform
-        the_faith_reform
-        qohor_city_reform
-        norvos_city_reform
-        shadow_cult_reform
-        cult_of_madness_reform
-    }
 }
 
 #--------------------------------------------
@@ -379,7 +324,7 @@ tribal = {
     basic_reform = tribal_mechanic
     
     reform_levels = {
-        government_form = {
+        tier_tribal_government_form = {
 			reforms = {
                 tribe_reform
                 pirate_clan_reform
@@ -390,70 +335,39 @@ tribal = {
                 faros_clan_reform
                 naath_clan_reform
                 summer_islander_clan_reform
+                warband_reform
+                khalasar_reform
+                jhattar_reform
 			}
 		}
-        bureaucracy = {
-            reforms = {
-                taxation_reform
-                manpower_reform
-                production_reform
-                trade_reform
-            }
-        }
-        court = {
-            reforms = {
-                noble_counsel_reform
-                religious_counsel_reform
-                merchant_counsel_reform
-                common_counsel_reform
-                ko_counsel_reform
-                jhat_counsel_reform
-                chieftain_counsel_reform
-                magi_counsel_reform
-                administrative_counsel_reform
-                diplomatic_counsel_reform
-                military_counsel_reform
-            }
-        }
-        rule_of_law = {
-            reforms = {
-                absolute_authority_reform
-                central_authority_reform
-                regional_authority_reform
-                local_authority_reform
-            }
-        }
-        justice = {
-            reforms = {
-                court_justice_reform
-                community_justice_reform
-                torture_justice_reform
-                enslavement_justice_reform
-                death_justice_reform
-            }
-        }
-        ruling_trait = {
-            reforms = {
-                excellent_administrators_reform
-                charismatic_family_reform
-                warminded_leaders_reform
-                militarized_rulers_reform
-                rule_by_council_reform
-                assimilation_reform
-            }
-        }
-        national_trait = {
-            reforms = {
-                disciplined_army_reform
-                peerless_navy_reform
-                beloved_diplomats_reform
-                keen_minds_reform
-                inquistorial_fury_reform
-                burning_scrutiny_reform
-                fed_and_plump_reform
-                mercantile_infamy_reform
-            }
-        }
+        tier_tribal_tribal_cultural_values = {
+			reforms = {
+				got_martial_society_reform
+				got_civil_society_reform
+			}
+		}
+		tier_tribal_tribal_religion = {
+			reforms = {
+				got_religious_societies_reform
+				got_lip_service_reform
+			}
+		}
+		tier_tribal_tribal_modernization = {
+			reforms = {
+				got_centralize_tribal_power_reform
+				got_retain_tribal_hierarchy_reform
+			}
+		}
+		tier_tribal_tribal_reformation = {
+			reforms = {
+				got_become_a_monarchy_reform
+				got_become_a_republic_reform
+				got_become_a_theocracy_reform
+				got_become_a_warband_reform
+                got_barbaric_despoilers_reform
+				got_tribal_unity_reform
+			}
+		}
     }
     
     legacy_government = {
@@ -466,200 +380,20 @@ tribal = {
         faros_clan_legacy
         naath_clan_legacy
         summer_islander_clan_legacy
-    }
-    
-    exclusive_reforms = {
-        tribe_reform
-        pirate_clan_reform
-        wildling_clan_reform
-        lhazar_clan_reform
-        ibben_clan_reform
-        omber_clan_reform
-        faros_clan_reform
-        naath_clan_reform
-        summer_islander_clan_reform
-    }
-}
-
-#--------------------------------------------
-# Nomadic
-#--------------------------------------------
-nomadic = {
-    color = { 122 140 92 }
-    
-    basic_reform = nomadic_mechanic
-    
-    reform_levels = {
-        government_form = {
-			reforms = {
-                warband_reform
-                khalasar_reform
-                jhattar_reform
-			}
-		}
-        bureaucracy = {
-            reforms = {
-                taxation_reform
-                manpower_reform
-                production_reform
-                trade_reform
-            }
-        }
-        court = {
-            reforms = {
-                noble_counsel_reform
-                religious_counsel_reform
-                merchant_counsel_reform
-                common_counsel_reform
-                ko_counsel_reform
-                jhat_counsel_reform
-                chieftain_counsel_reform
-                magi_counsel_reform
-                administrative_counsel_reform
-                diplomatic_counsel_reform
-                military_counsel_reform
-            }
-        }
-        rule_of_law = {
-            reforms = {
-                absolute_authority_reform
-                central_authority_reform
-                regional_authority_reform
-                local_authority_reform
-            }
-        }
-        justice = {
-            reforms = {
-                court_justice_reform
-                community_justice_reform
-                torture_justice_reform
-                enslavement_justice_reform
-                death_justice_reform
-            }
-        }
-        ruling_trait = {
-            reforms = {
-                excellent_administrators_reform
-                charismatic_family_reform
-                warminded_leaders_reform
-                militarized_rulers_reform
-                rule_by_council_reform
-                assimilation_reform
-            }
-        }
-        national_trait = {
-            reforms = {
-                disciplined_army_reform
-                peerless_navy_reform
-                beloved_diplomats_reform
-                keen_minds_reform
-                inquistorial_fury_reform
-                burning_scrutiny_reform
-                fed_and_plump_reform
-                mercantile_infamy_reform
-            }
-        }
-    }
-    
-    legacy_government = {
         warband_legacy
         khalasar_legacy
         jhattar_legacy
     }
-    
-    exclusive_reforms = {
-        warband_reform
-        khalasar_reform
-        jhattar_reform
-    }
 }
 
 #--------------------------------------------
-# Night's Watch
+# Native
 #--------------------------------------------
-nights_watch = {
-    color = { 92 106 140 }
-    
-    basic_reform = nights_watch_mechanic
-    
-    reform_levels = {
-        government_form = {
-			reforms = {
-                nights_watch_reform
-                outpost_reform
-			}
-		}
-        bureaucracy = {
-            reforms = {
-                taxation_reform
-                manpower_reform
-                production_reform
-                trade_reform
-            }
-        }
-        court = {
-            reforms = {
-                noble_counsel_reform
-                religious_counsel_reform
-                merchant_counsel_reform
-                common_counsel_reform
-                ko_counsel_reform
-                jhat_counsel_reform
-                chieftain_counsel_reform
-                magi_counsel_reform
-                administrative_counsel_reform
-                diplomatic_counsel_reform
-                military_counsel_reform
-            }
-        }
-        rule_of_law = {
-            reforms = {
-                absolute_authority_reform
-                central_authority_reform
-                regional_authority_reform
-                local_authority_reform
-            }
-        }
-        justice = {
-            reforms = {
-                court_justice_reform
-                community_justice_reform
-                torture_justice_reform
-                enslavement_justice_reform
-                death_justice_reform
-            }
-        }
-        ruling_trait = {
-            reforms = {
-                excellent_administrators_reform
-                charismatic_family_reform
-                warminded_leaders_reform
-                militarized_rulers_reform
-                rule_by_council_reform
-                assimilation_reform
-            }
-        }
-        national_trait = {
-            reforms = {
-                disciplined_army_reform
-                peerless_navy_reform
-                beloved_diplomats_reform
-                keen_minds_reform
-                inquistorial_fury_reform
-                burning_scrutiny_reform
-                fed_and_plump_reform
-                mercantile_infamy_reform
-            }
-        }
-    }
-    
-    legacy_government = {
-        nights_watch_legacy
-        outpost_legacy
-    }
-    
-    exclusive_reforms = {
-        nights_watch_reform
-        outpost_reform
-    }
+native = {
+	basic_reform = native_mechanic
+
+	legacy_government = {
+		native_council_legacy
+	}
+	color = { 194 127 209 }
 }

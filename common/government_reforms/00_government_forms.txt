@@ -30,6 +30,7 @@ kingdom_reform = {
     modifiers = {
 		global_unrest = -1
 		unjustified_demands = -0.1
+        nobles_influence_modifier = 0.05
     }
 
     custom_attributes = {
@@ -52,6 +53,7 @@ noble_house_reform = {
     modifiers = {
 		prestige = 0.5
 		diplomatic_upkeep = 1
+        nobles_influence_modifier = 0.05
     }
     
     custom_attributes = {
@@ -64,19 +66,20 @@ royal_house_reform = {
     potential = {
         has_reform = royal_house_reform
     }
-    
+   
     allow_normal_conversion = yes
     legacy_equivalent = royal_house_legacy
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
-    fixed_rank = 10
+    fixed_rank = 3
     
     modifiers = {
         prestige = 1
 		diplomatic_upkeep = 2
-		max_absolutism = 10
+        governing_capacity = 100
+		nobles_influence_modifier = 0.1
     }
     
     custom_attributes = {
@@ -101,6 +104,7 @@ yiti_city_reform = {
     modifiers = {
 		improve_relation_modifier = 0.1
         diplomatic_upkeep = 1
+        nobles_influence_modifier = 0.05
 	}
 
     custom_attributes = {
@@ -125,7 +129,8 @@ yiti_empire_reform = {
     modifiers = {
 		improve_relation_modifier = 0.25
         diplomatic_upkeep = 2
-        max_absolutism = 10
+        governing_capacity = 100
+		nobles_influence_modifier = 0.1
 	}
     
     claim_states = yes
@@ -149,6 +154,7 @@ qarth_city_reform = {
     
     modifiers = {
 		global_trade_goods_size_modifier = 0.2
+        merchants_influence_modifier = 0.05
 	}
     
     custom_attributes = {
@@ -170,6 +176,7 @@ nefer_city_reform = {
     
     modifiers = {
 		idea_cost = -0.1
+        clergy_influence_modifier = 0.05
 	}
     
     custom_attributes = {
@@ -236,7 +243,7 @@ meereen_city_reform = {
     modifiers = {
 		global_manpower_modifier = 0.1
         land_forcelimit_modifier = 0.1
-        max_absolutism = 10
+        nobles_influence_modifier = 0.05
 	}
 
     custom_attributes = {
@@ -259,7 +266,7 @@ yunkai_city_reform = {
     modifiers = {
     	global_manpower_modifier = 0.1
         heir_chance = 0.5
-        max_absolutism = 10
+        nobles_influence_modifier = 0.05
 	}
     
     custom_attributes = {
@@ -282,7 +289,7 @@ astapor_city_reform = {
     modifiers = {
     	global_manpower_modifier = 0.1
         discipline = 0.05
-        max_absolutism = 10
+        nobles_influence_modifier = 0.05
 	}
     
     custom_attributes = {
@@ -305,7 +312,7 @@ ghis_city_reform = {
     modifiers = {
     	global_manpower_modifier = 0.1
         core_creation = -0.1
-        max_absolutism = 10
+        nobles_influence_modifier = 0.05
 	}
     
     custom_attributes = {
@@ -366,10 +373,38 @@ republic_reform = {
     
     modifiers = {
         global_unrest = -2
+        merchants_influence_modifier = 0.05
     }
     
     custom_attributes = {
 		enables_republic_ideagroup = yes
+	}
+}
+military_dictatorship_reform = {
+    icon = "parliament_hall"
+    
+    potential = {
+		has_reform = military_dictatorship_reform
+	}
+    
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+    
+	valid_for_nation_designer = yes
+	legacy_equivalent = military_dictatorship_legacy
+	has_term_election = no
+    
+	modifiers = {
+		global_autonomy = -0.075
+		land_morale = 0.1
+		max_absolutism = -10
+	}
+    
+	custom_attributes = {
+		generals_become_rulers = yes
+		locked_government_type = yes
+		enables_republic_ideagroup = no
+		enables_monarchy_ideagroup = yes
 	}
 }
 merchant_republic_reform = {
@@ -387,6 +422,7 @@ merchant_republic_reform = {
     
     modifiers = {
         merchants = 1
+        merchants_influence_modifier = 0.05
     }
     
     conditional = {
@@ -437,6 +473,7 @@ tyrosh_city_reform = {
     modifiers = {
 		navy_tradition = 1
         global_ship_trade_power = 0.1
+        merchants_influence_modifier = 0.05
 	}
     
     conditional = {
@@ -484,6 +521,7 @@ myr_city_reform = {
     modifiers = {
         global_regiment_cost = -0.1
     	province_warscore_cost = -0.1
+        merchants_influence_modifier = 0.05
 	}
     
     conditional = {
@@ -531,6 +569,7 @@ lys_city_reform = {
     modifiers = {
 		ae_impact = -0.1
         spy_offence = 0.2
+        merchants_influence_modifier = 0.05
 	}
     
     conditional = {
@@ -581,6 +620,7 @@ volantis_city_reform = {
     modifiers = {
 		infantry_power = 0.05
         global_trade_power = 0.1
+        merchants_influence_modifier = 0.05
 	}
     
     conditional = {
@@ -633,6 +673,7 @@ pentos_city_reform = {
     modifiers = {
         global_manpower_modifier = 0.1
     	reinforce_cost_modifier = -0.1
+        merchants_influence_modifier = 0.05
 	}
     
     conditional = {
@@ -680,6 +721,7 @@ braavos_city_reform = {
     modifiers = {
     	religious_unity = 0.33
         global_ship_cost = -0.1
+        merchants_influence_modifier = 0.05
 	}
     
     conditional = {
@@ -774,6 +816,7 @@ trader_city_reform = {
     modifiers = {
     	trade_steering = 0.15
         merchants = 1
+        merchants_influence_modifier = 0.05
 	}
     
     conditional = {
@@ -841,11 +884,11 @@ trading_outpost_reform = {
     
 	boost_income = yes
     
-	lock_level_when_selected = yes
 	is_trading_city = yes
     
 	modifiers = {
         global_trade_power = 0.1
+        commoners_influence_modifier = 0.05
 	}
 
 	custom_attributes = {
@@ -892,11 +935,11 @@ expeditionary_company_reform = {
 	nation_designer_cost = 0
     
     fixed_rank = 1
-    lock_level_when_selected = yes
     
     modifiers = {
 		colonist_placement_chance = 0.05
         range = 0.1
+        commoners_influence_modifier = 0.05
     }
     
     custom_attributes = {
@@ -951,6 +994,34 @@ rhoynar_city_reform = {
 		is_merchant_republic = yes
 	}
 }
+nights_watch_reform = {
+	icon = "castle"
+    
+    potential = {
+        has_reform = nights_watch_reform
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = nights_watch_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    min_autonomy = 50
+    
+    duration = 10
+    has_term_election = no
+    election_on_death = yes
+    
+    modifiers = {
+    	global_regiment_cost = -0.1
+        global_unrest = -1
+	}
+    
+    custom_attributes = {
+		enables_republic_ideagroup = yes
+	}
+}
 
 #------------------------------------------------------------
 # Theocracy
@@ -998,7 +1069,6 @@ asshai_cult_reform = {
     
     modifiers = {
 		technology_cost = -0.1
-        max_absolutism = 10
 	}
     
     custom_attributes = {
@@ -1022,7 +1092,6 @@ bloodless_cult_reform = {
     
     modifiers = {
 		land_morale = 0.1
-        max_absolutism = 10
 	}
     
     custom_attributes = {
@@ -1046,7 +1115,6 @@ winged_dominion_reform = {
     
     modifiers = {
 		movement_speed = 0.2
-        max_absolutism = 10
 	}
     
     custom_attributes = {
@@ -1071,7 +1139,6 @@ white_walker_cult_reform = {
     modifiers = {
 		discipline = 0.1
         land_morale = 0.1
-        max_absolutism = 10
 	}
     
     custom_attributes = {
@@ -1091,12 +1158,12 @@ the_faith_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
-    lock_level_when_selected = yes
     has_devotion = yes
     
     modifiers = {
 		tolerance_own = 1
         missionaries = 1
+        clergy_influence_modifier = 0.2
 	}
     
     custom_attributes = {
@@ -1122,7 +1189,7 @@ qohor_city_reform = {
     modifiers = {
 		tolerance_own = 1
         missionary_maintenance_cost = -0.1
-        max_absolutism = 10
+        clergy_influence_modifier = 0.05
 	}
     
     custom_attributes = {
@@ -1147,7 +1214,7 @@ norvos_city_reform = {
     modifiers = {
     	tolerance_own = 1
         infantry_power = 0.1
-        max_absolutism = 10
+        clergy_influence_modifier = 0.05
 	}
     
     custom_attributes = {
@@ -1171,7 +1238,6 @@ shadow_cult_reform = {
     
     modifiers = {
 		hostile_attrition = 2
-        max_absolutism = 10
 	}
     
     custom_attributes = {
@@ -1194,7 +1260,7 @@ cult_of_madness_reform = {
     has_devotion = yes
     
     modifiers = {
-		all_power_cost = -0.1
+		all_power_cost = -0.05
 	}
     
     custom_attributes = {
@@ -1218,7 +1284,7 @@ tribe_reform = {
         NOT = { has_reform = naath_clan_reform }
         NOT = { has_reform = summer_islander_clan_reform }
     }
-    
+
     allow_normal_conversion = yes
     legacy_equivalent = tribe_legacy
     
@@ -1249,6 +1315,13 @@ pirate_clan_reform = {
     modifiers = {
     	naval_forcelimit_modifier = 0.15
 		global_sailors_modifier = 0.15
+	}
+    
+    factions_frame = 9
+	factions = {
+		pr_buccaneers
+		pr_smugglers
+		pr_captains
 	}
     
     custom_attributes = {
@@ -1417,12 +1490,8 @@ summer_islander_clan_reform = {
 		enables_tribal_ideagroup = yes
 	}
 }
-
-#------------------------------------------------------------
-# Nomadic
-#------------------------------------------------------------
 warband_reform = {
-	icon = "castle"
+	icon = "horde_riding"
     
     potential = {
         NOT = { has_reform = khalasar_reform }
@@ -1435,11 +1504,12 @@ warband_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    nomad = yes
     
     modifiers = {
-        land_attrition = -0.1
+        cavalry_power = 0.1
+        cav_to_inf_ratio = 0.5
         reinforce_cost_modifier = -0.1
-        max_absolutism = 10
     }
     
     custom_attributes = {
@@ -1447,7 +1517,7 @@ warband_reform = {
 	}
 }
 khalasar_reform = {
-	icon = "castle"
+	icon = "horde_riding"
     
     potential = {
         has_reform = khalasar_reform
@@ -1459,10 +1529,12 @@ khalasar_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
 
+    nomad = yes
+    
     modifiers = {
 		cavalry_power = 0.1
         cav_to_inf_ratio = 0.5
-        max_absolutism = 10
+        loot_amount = 0.33
 	}
     
     custom_attributes = {
@@ -1470,7 +1542,7 @@ khalasar_reform = {
 	}
 }
 jhattar_reform = {
-	icon = "castle"
+	icon = "horde_riding"
     
     potential = {
         has_reform = jhattar_reform
@@ -1482,86 +1554,17 @@ jhattar_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    nomad = yes
+    
     modifiers = {
 		cavalry_power = 0.1
         cav_to_inf_ratio = 0.5
-        max_absolutism = 10
+        global_missionary_strength = 0.01
 	}
     
     custom_attributes = {
 		enables_nomadic_ideagroup = yes
 	}
 }
-#------------------------------------------------------------
-# Night's Watch
-#------------------------------------------------------------
-outpost_reform = {
-	icon = "castle"
-    
-    potential = {
-        NOT = { has_reform = nights_watch_reform }
-    }
-    
-    allow_normal_conversion = yes
-    legacy_equivalent = outpost_legacy
-    
-    valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    min_autonomy = 50
-    
-    modifiers = {
-    	global_regiment_cost = -0.1
-        global_unrest = -1
-	}
-    
-    custom_attributes = {
-		enables_republic_ideagroup = yes
-	}
-}
-
-nights_watch_reform = {
-	icon = "castle"
-    
-    potential = {
-        has_reform = nights_watch_reform
-    }
-    
-    allow_normal_conversion = yes
-    legacy_equivalent = nights_watch_legacy
-    
-    valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    min_autonomy = 50
-    
-    modifiers = {
-    	global_regiment_cost = -0.1
-        global_unrest = -1
-	}
-    
-    custom_attributes = {
-		enables_republic_ideagroup = yes
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

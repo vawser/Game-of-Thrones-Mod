@@ -74,7 +74,7 @@ gov_wildling_confederation = {
             has_reform = wildling_clan_reform
             has_reform = wildling_clan_legacy
         }
-        government_rank = 5
+        government_rank = 3
 	}
 }
 gov_lhazar_clan = {
@@ -234,4 +234,84 @@ gov_summer_islander_clan = {
 	}
 }
 
+gov_khalasar = {
+	rank = {
+		1 = KHAS
+        2 = KHAS
+        3 = KHAS
+    }
+	
+	ruler_male = {
+		1 = KHAL
+        2 = KHAL
+        3 = KHAL
+	}
+	
+	ruler_female = {
+		1 = KHALEESI
+        2 = KHALEESI
+        3 = KHALEESI
+	}
+	
+	trigger = {
+        OR = {
+            has_reform = khalasar_reform
+            has_reform = khalasar_legacy
+        }
+	}
+}
+
+gov_jhattar = {
+	rank = {
+		1 = JHATTAR
+        2 = JHATTAR
+        3 = JHATTAR
+    }
+	
+	ruler_male = {
+		1 = JHAT
+        2 = JHAT
+        3 = JHAT
+	}
+	
+	ruler_female = {
+		1 = JHAT
+        2 = JHAT
+        3 = JHAT
+	}
+	
+	trigger = {
+        OR = {
+            has_reform = jhattar_reform
+            has_reform = jhattar_legacy
+        }
+	}
+}
+
+gov_warband = {
+	rank = {
+		1 = WARBAND
+        2 = WARBAND
+        3 = WARBAND
+    }
+	
+	ruler_male = {
+		1 = CHIEF
+        2 = CHIEF
+        3 = CHIEF
+	}
+	
+	ruler_female = {
+		1 = CHIEFTESS
+        2 = CHIEFTESS
+        3 = CHIEFTESS
+	}
+	
+	trigger = {
+        OR = {
+            has_reform = warband_reform
+            has_reform = warband_legacy
+        }
+	}
+}
 

@@ -526,12 +526,25 @@
  GOT_GOVERNMENT.2.option.b: "An diplomatic [Root.Monarch.GetTitle]"
  GOT_GOVERNMENT.2.option.c: "A militaristic [Root.Monarch.GetTitle]"
  GOT_GOVERNMENT.2.option.d: "Re-elect [Root.Monarch.GetTitle] [Root.Monarch.GetName]"
+ GOT_GOVERNMENT.2.option.e: "The beloved relative of [Root.Monarch.GetName]."
  
  GOT_GOVERNMENT.3.title: "New [From.Monarch.GetTitle] in [From.GetName]"
  GOT_GOVERNMENT.3.desc: "We have chosen to replace [From.Monarch.GetName] as Governor of [From.GetName]. Whom shall we appoint in [From.Monarch.GetHerHis] place?"
  GOT_GOVERNMENT.3.option.a: "Bureaucrat Candidate"
  GOT_GOVERNMENT.3.option.b: "Diplomat Candidate"
  GOT_GOVERNMENT.3.option.c: "Military Candidate"
+ 
+ GOT_GOVERNMENT.4.title: "Rise of a Despot"
+ GOT_GOVERNMENT.4.desc: "The lack of respect for the republic has slowly eroded its foundations. To preserve the stability of the state, $MONARCHTITLE$ $MONARCH$ has proclaimed $RULER_O_PRONOUN$self dictator for life."
+ GOT_GOVERNMENT.4.option.a: "Long live $MONARCH$!"
+ 
+ GOT_GOVERNMENT.5.title: "Election in the [Root.GovernmentName]"
+ GOT_GOVERNMENT.5.desc: "The unfortunate passing of $MONARCH$ forces us to hold an election. After several rounds of secret allotment, three candidates have been presented each representing powerful factions within [Root.Country.GetName]. Officially the election should be decided by lottery, however we could pull some strings..."
+ GOT_GOVERNMENT.5.option.a: "Have [lottery_candidate_a_@ROOT.GetName] elected."
+ GOT_GOVERNMENT.5.option.b: "Have [lottery_candidate_b_@ROOT.GetName] elected."
+ GOT_GOVERNMENT.5.option.c: "Have [lottery_candidate_c_@ROOT.GetName] elected."
+ GOT_GOVERNMENT.5.option.d: "Let the Lottery decide."
+ GOT_GOVERNMENT.5.option.e: "Elect the beloved relative of [Root.Monarch.GetName]."
  
  #----------------------------------------------------------------------
  # Volantis
@@ -1841,4 +1854,13 @@
  GOT_RULER_IMPROVEMENT.13.title: "Excellent Initative by [Root.Owner.Heir.GetName]"
  GOT_RULER_IMPROVEMENT.13.desc: "Thanks to recent cultural changes in [Root.GetName], [Root.Owner.Heir.GetName] has proven themselves a capable diplomat, garnering the respect of [Root.Owner.Heir.GetHerHis] diplomats."
  GOT_RULER_IMPROVEMENT.13.option.a: "Great"
+ 
+ #----------------------------------------------------------------------
+ # States General
+ #----------------------------------------------------------------------
+ GOT_STATES_GENERAL.33.t: "[Root.GetAdjectiveCap] Assembly Abolished"
+ GOT_STATES_GENERAL.33.d1: "After years of bickering, internal conflict, and delayed legislation, all have agreed that something must be done about the state of the Assembly.\n\nThe ancient House of [Root.Monarch.Dynasty.GetName], who for years have been biding their time, has, in a superbly timed maneouvre, spearheaded a bill abolishing the assembly altogether, and reinstating [Root.Monarch.GetName] on the throne of [Root.GetName]."
+ GOT_STATES_GENERAL.33.d2: "Years of internal strife within the [Root.GetAdjectiveCap] Assembly have begun to take their toll on the national spirit of [Root.GetName]. The rising popular opinion against the Assembly has drawn out many vocal opponents among our citizens.\n\nAt long last, one contender stands tall amidst his opponents, overthrowing what little opposition remains in the Assembly, and reinstating the glorious traditions of [Root.GetName]."
+ GOT_STATES_GENERAL.33.a: "Long live [Root.Monarch.GetName]!"
+ GOT_STATES_GENERAL.33.b: "Long live the [Root.GovernmentName]!"
  

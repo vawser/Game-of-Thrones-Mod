@@ -675,7 +675,7 @@ cb_force_tributary = {
 	prerequisites = {
 		has_dlc = "Mandate of Heaven"
         OR = {
-            government = nomadic
+            government = tribal
             is_emperor_of_china = yes
         }
 		FROM = { is_subject = no }
@@ -683,4 +683,23 @@ cb_force_tributary = {
 	}
 	
 	war_goal = take_capital_force_tributary
+}
+
+# Force religion on Heathens
+cb_world_crusade = {
+	valid_for_subject = no
+
+	prerequisites = {
+		has_reform = got_religious_permanent_revolution_reform
+		OR = {
+			is_neighbor_of = FROM
+			claim = FROM
+			cb_on_religious_enemies = yes
+		}
+		NOT = { religion_group = FROM }
+		NOT = {	has_matching_religion = FROM }
+		is_revolutionary = no
+	}
+
+	war_goal = superiority_world_crusade
 }

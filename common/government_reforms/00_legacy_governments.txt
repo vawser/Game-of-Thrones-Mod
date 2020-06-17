@@ -59,7 +59,7 @@ royal_house_legacy = {
     
     monarchy = yes
     
-    fixed_rank = 10
+    fixed_rank = 3
     
     modifiers = {
         prestige = 1
@@ -365,6 +365,26 @@ republic_legacy = {
 	}
     
 	ai = { factor = 1 }
+}
+military_dictatorship_legacy = {
+	icon = "paper_with_seal_3"
+	allow_normal_conversion = no
+	legacy_government = yes
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	has_term_election = no
+	
+	republican_name = yes
+	royal_marriage = no
+	republic = yes
+
+	modifiers = {
+		global_autonomy = -0.075
+		land_morale = 0.1
+	}
+	custom_attributes = {
+		generals_become_rulers = yes
+	}
 }
 merchant_republic_legacy = {
 	icon = "crown"
@@ -983,6 +1003,36 @@ rhoynar_city_legacy = {
 	ai = { factor = 1 }
 }
 
+nights_watch_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = no
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    republic = yes
+    duration = 10
+    has_term_election = no
+    
+    min_autonomy = 50
+    
+    modifiers = {
+    	global_regiment_cost = -0.1
+        global_unrest = -1
+	}
+    
+    custom_attributes = {
+		enables_republic_ideagroup = yes
+	}
+    
+	ai = { factor = 1 }
+}
+
+
+
 #------------------------------------------------------------
 # Theocracy
 #------------------------------------------------------------
@@ -1508,9 +1558,6 @@ summer_islander_clan_legacy = {
     
 	ai = { factor = 1 }
 }
-#------------------------------------------------------------
-# Nomadic
-#------------------------------------------------------------
 warband_legacy = {
 	icon = "crown"
     
@@ -1588,60 +1635,28 @@ jhattar_legacy = {
 }
 
 #------------------------------------------------------------
-# Night's Watch
+# Native
 #------------------------------------------------------------
-nights_watch_legacy = {
-	icon = "crown"
-    
-    allow_normal_conversion = no
+native_council_legacy = {
+	icon = "shaman"
+	allow_normal_conversion = no
 	legacy_government = yes
-    
-	valid_for_new_country = yes
-	valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    republic = yes
-    duration = 10
-    has_term_election = no
-    
-    min_autonomy = 50
-    
-    modifiers = {
-    	global_regiment_cost = -0.1
-        global_unrest = -1
-	}
-    
-    custom_attributes = {
-		enables_republic_ideagroup = yes
-	}
-    
-	ai = { factor = 1 }
-}
+	valid_for_new_country = no
+	allow_convert = no
+	native_mechanic = yes
+	allow_migration = yes
 
-outpost_legacy = {
-	icon = "crown"
-    
-    allow_normal_conversion = no
-	legacy_government = yes
-    
-	valid_for_new_country = yes
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
-    
-    republic = yes
-    duration = 10
-    has_term_election = no
-    
-    modifiers = {
-    	global_regiment_cost = -0.1
-        global_unrest = -1
+
+    fixed_rank = 1
+	modifiers = {
+		stability_cost_modifier = -0.33
+		land_maintenance_modifier = -0.25
+		diplomatic_upkeep = -1
+		global_institution_spread = -0.025
 	}
-    
-    min_autonomy = 50
-    
-    custom_attributes = {
-		enables_republic_ideagroup = yes
+	ai = {
+		factor = 0
 	}
-    
-	ai = { factor = 1 }
 }

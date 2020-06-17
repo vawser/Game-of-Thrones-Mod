@@ -414,3 +414,59 @@ gov_rhoynish_city = {
         }
 	}
 }
+
+gov_nights_watch = {
+	rank = {
+		1 = NIGHTS_WATCH
+		2 = NIGHTS_WATCH
+		3 = NIGHTS_WATCH
+	}
+	
+	ruler_male = {
+		1 = LORD_COMMANDER
+        2 = LORD_COMMANDER
+        3 = LORD_COMMANDER
+    }
+	
+	ruler_female = {
+		1 = LORD_COMMANDER
+        2 = LORD_COMMANDER
+        3 = LORD_COMMANDER
+	}
+	
+	trigger = {
+        NOT = { tag = A02 }
+        OR = {
+            has_reform = nights_watch_reform
+            has_reform = nights_watch_legacy
+        }
+	}
+}
+
+gov_outpost = {
+	rank = {
+		1 = OUTPOST
+		2 = OUTPOST
+		3 = OUTPOST
+	}
+	
+	ruler_male = {
+		1 = LORD_COMMANDER
+        2 = LORD_COMMANDER
+        3 = LORD_COMMANDER
+    }
+	
+	ruler_female = {
+		1 = LORD_COMMANDER
+        2 = LORD_COMMANDER
+        3 = LORD_COMMANDER
+	}
+	
+	trigger = {
+        NOT = { tag = A02 }
+        OR = {
+            has_reform = nights_watch_reform
+            has_reform = nights_watch_legacy
+        }
+	}
+}

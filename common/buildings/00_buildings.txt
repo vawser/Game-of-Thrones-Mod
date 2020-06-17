@@ -22,7 +22,7 @@
 #--------------------------------------
 # Town Hall
 town_hall = {
-	cost = 50
+	cost = 300
 	time = 12
 
     build_trigger = {
@@ -30,9 +30,8 @@ town_hall = {
     }
     
 	modifier = {
-        local_development_cost = -0.20
+        local_development_cost = -0.1
         local_governing_cost = -0.25
-		allowed_num_of_buildings = 1
 	}
 	
 	ai_will_do = {
@@ -42,7 +41,7 @@ town_hall = {
 
 # Tavern
 tavern = {
-	cost = 50
+	cost = 100
 	time = 12
 
     build_trigger = {
@@ -51,7 +50,7 @@ tavern = {
     
 	modifier = {
         local_unrest = -1
-        local_culture_conversion_cost = -0.1
+        local_culture_conversion_cost = -0.25
 	}
 	
 	ai_will_do = {
@@ -61,7 +60,7 @@ tavern = {
 
 # Market
 market = {
-	cost = 50
+	cost = 150
 	time = 12
 
     build_trigger = {
@@ -69,7 +68,7 @@ market = {
     }
     
 	modifier = {
-        province_trade_power_modifier = 0.5
+        province_trade_power_modifier = 0.25
 	}
 	
 	ai_will_do = {
@@ -79,7 +78,7 @@ market = {
 
 # Farm
 farm = {
-	cost = 50
+	cost = 100
 	time = 12
 
     build_trigger = {
@@ -87,7 +86,7 @@ farm = {
     }
     
 	modifier = {
-        local_tax_modifier = 0.5
+        local_tax_modifier = 0.25
 	}
 	
 	ai_will_do = {
@@ -97,7 +96,7 @@ farm = {
 
 # Mine
 mine = {
-	cost = 50
+	cost = 100
 	time = 12
 
     build_trigger = {
@@ -105,7 +104,7 @@ mine = {
     }
     
 	modifier = {
-        local_production_efficiency = 0.5
+        local_production_efficiency = 0.25
 	}
 	
 	ai_will_do = {
@@ -115,7 +114,7 @@ mine = {
 
 # Church / Temple
 temple = {
-	cost = 50
+	cost = 200
 	time = 12
 
     build_trigger = {
@@ -134,7 +133,7 @@ temple = {
 
 # Dock
 dock = {
-	cost = 50
+	cost = 200
 	time = 12
 
     build_trigger = {
@@ -143,7 +142,7 @@ dock = {
 	}
     
 	modifier = {
-        local_sailors_modifier = 0.5
+        local_sailors_modifier = 0.25
 	}
 	
 	ai_will_do = {
@@ -153,7 +152,7 @@ dock = {
 
 # Shipyard
 shipyard = {
-	cost = 50
+	cost = 200
 	time = 12
 
     build_trigger = {
@@ -174,7 +173,7 @@ shipyard = {
 
 # Barracks
 barracks = {
-	cost = 50
+	cost = 100
 	time = 12
 
     build_trigger = {
@@ -182,7 +181,7 @@ barracks = {
     }
     
 	modifier = {
-        local_manpower_modifier = 0.5
+        local_manpower_modifier = 0.25
 	}
 	
 	ai_will_do = {
@@ -192,7 +191,7 @@ barracks = {
 
 # Drill Square
 drill_square = {
-	cost = 50
+	cost = 200
 	time = 12
 
     build_trigger = {
@@ -211,7 +210,7 @@ drill_square = {
 
 # Paved Road
 paved_road = {
-	cost = 50
+	cost = 300
 	time = 12
 
     build_trigger = {
@@ -220,7 +219,7 @@ paved_road = {
     
 	modifier = {
         local_friendly_movement_speed = 0.25
-        local_governing_cost = -0.1
+        local_governing_cost = -0.25
 	}
 	
 	ai_will_do = {
@@ -230,7 +229,7 @@ paved_road = {
 
 # Supply Depot
 supply_depot = {
-	cost = 50
+	cost = 200
 	time = 12
 
     build_trigger = {
@@ -239,7 +238,7 @@ supply_depot = {
     
 	modifier = {
         supply_limit_modifier = 0.25
-        local_governing_cost = -0.1
+        local_governing_cost = -0.25
 	}
 	
 	ai_will_do = {
@@ -252,7 +251,7 @@ supply_depot = {
 #--------------------------------------
 # Motte and Bailey
 motte_and_bailey = {
-	cost = 500
+	cost = 250
 	time = 12
 
     onmap = yes
@@ -264,7 +263,7 @@ motte_and_bailey = {
     
 	modifier = {
         fort_level = 1
-        local_hostile_attrition = 1
+        local_hostile_movement_speed = -0.1
 	}
 	
 	ai_will_do = {
@@ -274,7 +273,7 @@ motte_and_bailey = {
 
 # Castle
 castle = {
-	cost = 750
+	cost = 500
 	time = 12
     make_obsolete = motte_and_bailey
     
@@ -287,7 +286,7 @@ castle = {
     
 	modifier = {
         fort_level = 2
-        local_hostile_attrition = 2
+        local_hostile_movement_speed = -0.2
 	}
 	
 	ai_will_do = {
@@ -297,7 +296,7 @@ castle = {
 
 # Fortress
 fortress = {
-	cost = 1000
+	cost = 750
 	time = 12
     make_obsolete = castle
     
@@ -310,7 +309,7 @@ fortress = {
     
 	modifier = {
         fort_level = 3
-        local_hostile_attrition = 3
+        local_hostile_movement_speed = -0.3
 	}
 	
 	ai_will_do = {
@@ -321,7 +320,7 @@ fortress = {
 
 # Citadel
 citadel = {
-	cost = 2000
+	cost = 1000
 	time = 12
     make_obsolete = fortress
     
@@ -334,7 +333,7 @@ citadel = {
     
 	modifier = {
         fort_level = 4
-        local_hostile_attrition = 4
+        local_hostile_movement_speed = -0.4
 	}
 	
 	ai_will_do = {
@@ -508,7 +507,7 @@ slavers_guild = {
 #--------------------------------------
 # Royal Palace
 grand_palace = {
-	cost = 10000
+	cost = 5000
 	time = 12
     one_per_country = yes
     
@@ -522,7 +521,7 @@ grand_palace = {
         devotion = 1
         horde_unity = 1
         meritocracy = 1
-        statewide_governing_cost = -0.1
+        statewide_governing_cost = -0.25
 	}
 	
 	ai_will_do = {
@@ -532,7 +531,7 @@ grand_palace = {
 
 # Merchant's Quarter
 merchants_quarter = {
-	cost = 10000
+	cost = 5000
 	time = 12
     one_per_country = yes
     
@@ -542,7 +541,7 @@ merchants_quarter = {
     
 	modifier = {
         merchants = 1
-        statewide_governing_cost = -0.1
+        global_own_trade_power = 0.2
 	}
 	
 	ai_will_do = {
@@ -552,7 +551,7 @@ merchants_quarter = {
 
 # Cathedral / Grand Temple
 grand_temple = {
-	cost = 10000
+	cost = 5000
 	time = 12
     one_per_country = yes
     
@@ -563,7 +562,6 @@ grand_temple = {
 	modifier = {
         global_missionary_strength = 0.03
         missionaries = 1
-        statewide_governing_cost = -0.1
 	}
 	
 	ai_will_do = {
@@ -573,7 +571,7 @@ grand_temple = {
 
 # Tourney Grounds
 tourney_grounds = {
-	cost = 10000
+	cost = 5000
 	time = 12
     one_per_country = yes
     
@@ -583,8 +581,7 @@ tourney_grounds = {
     
 	modifier = {
         diplomatic_reputation = 1
-        improve_relation_modifier = 0.25
-        statewide_governing_cost = -0.1
+        improve_relation_modifier = 0.2
 	}
 	
 	ai_will_do = {
@@ -594,7 +591,7 @@ tourney_grounds = {
 
 # Military Academy
 military_academy = {
-	cost = 10000
+	cost = 5000
 	time = 12
     one_per_country = yes
     
@@ -603,9 +600,8 @@ military_academy = {
     }
     
 	modifier = {
-        free_leader_pool = 1
-        prestige_from_land = 1.0
-        statewide_governing_cost = -0.1
+        army_tradition_from_battle = 1.0
+        army_tradition = 1
 	}
 	
 	ai_will_do = {
@@ -615,7 +611,7 @@ military_academy = {
 
 # Naval Academy
 naval_academy = {
-	cost = 10000
+	cost = 5000
 	time = 12
     one_per_country = yes
     
@@ -624,9 +620,8 @@ naval_academy = {
     }
     
 	modifier = {
-        free_leader_pool = 1
-        prestige_from_naval = 1.0
-        statewide_governing_cost = -0.1
+        naval_tradition_from_trade = 1.0
+        navy_tradition = 1
 	}
 	
 	ai_will_do = {

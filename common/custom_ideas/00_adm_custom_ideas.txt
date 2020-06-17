@@ -83,7 +83,9 @@ adm_idea_modifiers = {
 				factor = 0
 				OR = {
 					NOT = { government = monarchy }
-					NOT = { government = nomadic }
+					NOT = { has_reform = warband_reform }
+                    NOT = { has_reform = khalasar_reform }
+                    NOT = { has_reform = jhattar_reform }
 				}
 			}
 		}
@@ -98,7 +100,11 @@ adm_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { government = nomadic }
+                OR = {
+                    NOT = { has_reform = warband_reform }
+                    NOT = { has_reform = khalasar_reform }
+                    NOT = { has_reform = jhattar_reform }
+                }
 			}
 		}
 	}

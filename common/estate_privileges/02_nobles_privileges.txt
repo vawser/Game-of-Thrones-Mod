@@ -276,7 +276,7 @@ estate_nobility_strong_duchies = {
 	loyalty = 0.1
 	influence = 0.1
 	is_valid = {
-		has_estate_privilege = estate_nobles_strong_duchies
+		has_estate_privilege = estate_nobility_strong_duchies
 		OR = {
 			any_subject_country = {
 				is_march = yes
@@ -316,7 +316,7 @@ estate_nobility_strong_duchies = {
 		factor = 1
 		modifier = { #will lose it via invalid sooner or later
 			factor = 10
-			has_estate_privilege = estate_nobles_strong_duchies
+			has_estate_privilege = estate_nobility_strong_duchies
 		}
 	}
 }
@@ -337,7 +337,6 @@ estate_nobility_supremacy_over_crown = {
 		nobles_loyalty_modifier = 0.1
 		commoners_loyalty_modifier = 0.1
 		tribes_loyalty_modifier = 0.1
-		
 		clergy_influence_modifier = 0.1
 		merchants_influence_modifier = 0.1
 		nobles_influence_modifier = 0.1

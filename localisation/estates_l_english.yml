@@ -191,6 +191,7 @@
  
  estate_nobility_supremacy_over_crown: "Supremacy over the [Root.GetStateForm]"
  estate_nobility_supremacy_over_crown_desc: "With the scales tipping towards the decentralization of power, the Estates are increasingly able to dictate their priorities to the [Root.Monarch.GetTitle], leaving [Root.Monarch.GetHerHim] little choice but to agree to their will."
+ estate_nobility_supremacy_over_crown_effect_tooltip: "§YEstates§! can give §YAgendas§! without the §YCouncil§! having been summoned."
  
  estate_nobility_statutory_rights: "Estates Statutory Rights"
  estate_nobility_statutory_rights_desc: "In return for their support in a moment of need, the [Root.Monarch.GetTitle] has agreed to grant the Estates considerable rights that place stringent limitations on [Root.Monarch.GetHerHis] authority."
@@ -294,7 +295,7 @@
  
  # ------------ Privileges ------------ 
  estate_tribes_land_rights: "$ESTATE_NAME$ Land Rights"
- estate_tribes_land_rights_desc: "The strength of the [Root.GetTribesName] is the backbone of [Root.GetUsableName]. Granting them more land will only feed our own strength and allow us to grow even mightier in future!"
+ estate_tribes_land_rights_desc: "The strength of the [Root.GetTribesName] is the backbone of [Root.GetName]. Granting them more land will only feed our own strength and allow us to grow even mightier in future!"
  
  estate_tribes_share_of_the_spoils: "Share of the Spoils"
  estate_tribes_share_of_the_spoils_desc: "The greatest happiness is to vanquish your enemies, to chase them before you, to rob them of their wealth, to see those dear to them bathed in tears, to clasp to your bosom their wives and daughters."
@@ -662,12 +663,303 @@
  estate_clergy_fire_advisor_desc: "[Root.Adm_Advisor.GetTitle] [Root.Adm_Advisor.GetName] has insulted the [Root.GetClergyName]. They demand that we fire [Root.Adm_Advisor.GetHerHim]!"
  
  # ------------ Merchants ------------ 
+ estate_merchants_develop_x: "Increase Production Income in [agenda_province.GetName]"
+ estate_merchants_develop_x_desc: "The [Root.GetMerchantsName] request that we invest in the prosperity of their lands in [agenda_province.GetName]."
+ 
+ estate_merchants_build_a_market_in_y: "Build a Market in [agenda_province.GetName]"
+ estate_merchants_build_a_market_in_y_desc: "The [Root.GetMerchantsName] claim that the marketplace in [agenda_province.GetName] is too small to suit their needs. They request that we invest in a larger market, which they say will greatly increase the prosperity of the province and the country as a whole."
+
+ estate_merchants_build_a_dock_in_y: "Build a Dock in [agenda_province.GetName]"
+ estate_merchants_build_a_dock_in_y_desc: "The [Root.GetMerchantsName] call for the expansion of [agenda_province.GetName]'s dock facilities, allowing the province to develop into a valuable naval base for our nation."
+ 
+ estate_merchants_build_a_shipyard_in_y: "Build a Shipyard in [agenda_province.GetName]"
+ estate_merchants_build_a_shipyard_in_y_desc: "The [Root.GetMerchantsName] call for the expansion of [agenda_province.GetName]'s shipyard facilities, allowing the province to develop into a valuable naval base for our nation."
+ 
+ estate_merchants_build_a_mine_in_y: "Build a Mine in [agenda_province.GetName]"
+ estate_merchants_build_a_mine_in_y_desc: "The [Root.GetMerchantsName] claim that the mine in [agenda_province.GetName] is too small to suit their needs. They request that we invest in a larger mine, which they say will greatly increase the prosperity of the province and the country as a whole."
+
+ estate_merchants_build_town_hall_in_y: "Build a Town Hall in [agenda_province.GetName]"
+ estate_merchants_build_town_hall_in_y_desc: "The [Root.GetMerchantsName] urge us to build a town hall in [agenda_province.GetName] so that their merchants might administrate the province better."
+ 
+ estate_merchants_build_manufactory_in_y: "Build a Manufactory in [agenda_province.GetName]"
+ estate_merchants_build_manufactory_in_y_desc: "The [Root.GetMerchantsName] of [agenda_province.GetName] request that we fund the construction of a new [agenda_province.GetManufactory]. They claim that it will be a highly profitable investment, doubling the province's output of [agenda_province.GetTradeGoodsName]."
+ 
+ estate_merchants_pay_off_loans: "Pay off the National Debt"
+ estate_merchants_pay_off_loans_desc: "The [Root.GetMerchantsName] are troubled by the state of our nation's finances. They are pressuring us to rein in our spending and reduce the scale of our debts."
+ 
+ estate_merchants_restore_republican_tradition: "Restore Republican Virtues"
+ estate_merchants_restore_republican_tradition_desc: "The state of our Republic worries the [Root.GetMerchantsName]. They call for action to strengthen our institutions and restore public faith in democracy."
+ 
+ estate_merchants_restore_currency: "Restore the Currency"
+ estate_merchants_restore_currency_desc: "The [Root.GetMerchantsName] are concerned at the inflation [Root.GetName] is experiencing. They call for it to be curbed before it gets out of hand!"
+ 
+ estate_merchants_recovery_from_hyperinflation: "Recover from Hyperinflation"
+ estate_merchants_recovery_from_hyperinflation_desc: "The [Root.GetMerchantsName] complain bitterly at the hardship caused by the rapid devaluation of our currency. They demand action to restore stable prices!"
+ 
+ estate_merchants_increase_trade_power_in_X: "Increase Trade Power in [agenda_trade_node.GetTradeNodeName]"
+ estate_merchants_increase_trade_power_in_X_desc: "The [Root.GetMerchantsName] call for us to increase our commercial presence in the [agenda_trade_node.GetTradeNodeName] trade node, an action they claim would greatly increase the prosperity of the nation."
+ 
+ estate_merchants_access_sea: "Gain Access to the Sea"
+ estate_merchants_access_sea_desc: "The [Root.GetMerchantsName] yearn for access to the sea, our lack of which is harming their mercantile interests. They request military action to secure a port for our nation."
+ 
+ estate_merchants_build_a_fleet: "Build a Navy for our Nation"
+ estate_merchants_build_a_fleet_desc: "The [Root.GetMerchantsName] bemoan the pitiful state of our fleet. They call for us to expand it significantly with an ambitious shipbuilding program so as to ensure that their trade interests may be protected."
+ 
+ estate_merchants_bigger_fleet_than_rival: "Protect against the [agenda_country.GetAdjective] Fleet"
+ estate_merchants_bigger_fleet_than_rival_desc: "The strength of the [agenda_country.GetAdjective] fleet is a matter of great concern to the [Root.GetMerchantsName], who worry that they would easily achieve naval supremacy in a war, thus wrecking the security of our trade routes. They call for us to expand our fleet to match that of our rivals."
+ 
+ estate_merchants_improve_dip_rep: "Improve our Reputation"
+ estate_merchants_improve_dip_rep_desc: "The [Root.GetMerchantsName] are concerned at the poor reputation [Root.GetName] has for dishonesty in diplomatic affairs. They are pushing for us to restore our nation's honor in the eyes of our peers."
+ 
+ estate_merchants_get_cash: "Build a Treasury"
+ estate_merchants_get_cash_desc: "The pitiful state of our coffers is a matter of great concern to the [Root.GetMerchantsName]. They urge us to moderate our spending so that our treasury may be replenished."
+ 
+ estate_merchants_discover_X_in_far_east: "Discover [agenda_province.GetAreaName]"
+ estate_merchants_discover_X_in_far_east_desc: "The [Root.GetMerchantsName] have heard tales of a bountiful land called [agenda_province.GetAreaName] that apparently lies just beyond the distant horizon in [agenda_province.GetColonialRegionName]. They request that we send an expedition to discover it."
+ 
+ estate_merchants_colonise_X: "Settle [agenda_province.GetAreaName]"
+ estate_merchants_colonise_X_desc: "The [Root.GetMerchantsName]' prospectors have identified [agenda_province.GetAreaName] as a fertile area well-suited for colonization. They request an expedition to claim it for [Root.GetName]."
+ 
+ estate_merchants_colonise_X_requirements: "Colonize or have a colonial subject fully colonize any province in the §Y[agenda_province.GetAreaName]§! area."
+ 
+ estate_merchants_colonise_more_X: "Colonize [agenda_province.GetAreaName] Area"
+ estate_merchants_colonise_more_X_desc: "Our settlers in [agenda_owned_province.GetName] report a thriving colony and a land that is ripe for further settlement. The [Root.GetMerchantsName] request that we send colonists to claim the rest of [agenda_province.GetAreaName] for [Root.GetName]."
+ 
+ estate_merchants_colonise_more_X_requirements: "Colonize or have a subject fully colonize all provinces in the §Y[agenda_province.GetAreaName]§! area."
+ 
+ estate_merchants_colonial_nation: "Expand our Colony in [agenda_province.GetColonialRegionName]"
+ estate_merchants_colonial_nation_desc: "Our settlements in [agenda_province.GetColonialRegionName] are growing fast. The [Root.GetMerchantsName] advocate that we support this growth and aid them to establish their own administration, so that they may develop into a regional outpost of [Root.GetAdjective] power able to stand on their own two legs."
+ 
+ estate_merchants_colonial_nation_requirements_tooltip: "§Y[Root.GetName]§! is the overlord of a colonial nation with at least §Y5§! cities in §Y[agenda_province.GetColonialRegionName]§!."
+ 
+ estate_merchants_expand_trade_company: "Expand the [agenda_province.TradeCompany.GetName]"
+ estate_merchants_expand_trade_company_desc: "The [Root.GetMerchantsName] highlight the benefits that foreign trade provides for our nation. They urge us to use our resources - including our military strength - to expand the [agenda_province.TradeCompany.GetName]."
+ 
+ estate_merchants_trade_post_in_west_essos: "Establish a Trade Post in West Essos"
+ estate_merchants_trade_post_in_west_essos_desc: "The [Root.GetMerchantsName] are enraptured by stories of the riches of west Essos. They clamor for us to establish a trade post on the continent so that they may open its trade up to us."
+ 
+ estate_merchants_trade_post_in_west_essos_reward_tooltip: "A province owned by §Y[Root.GetName]§! in §YWest Essos§! with the trade good §YSilk§!, §YDyes§! or §YSpices§! will gain the modifier "§YMajor Trading Post§!", granting §G+1§! local goods produced."
+ 
+ estate_merchants_trade_post_in_central_essos: "Establish a Trade Post in Central Essos"
+ estate_merchants_trade_post_in_central_essos_desc: "The [Root.GetMerchantsName] are enraptured by stories of the riches of central Essos. They clamor for us to establish a trade post on the continent so that they may open its trade up to us."
+ 
+ estate_merchants_trade_post_in_central_essos_reward_tooltip: "A province owned by §Y[Root.GetName]§! in §YCentral Essos§! with the trade good §YSilk§!, §YSlaves§! or §YSpices§! will gain the modifier "§YMajor Trading Post§!", granting §G+1§! local goods produced."
+ 
+ estate_merchants_trade_post_in_far_essos: "Establish a Trade Post in Far Essos"
+ estate_merchants_trade_post_in_far_essos_desc: "The [Root.GetMerchantsName] are enraptured by stories of the riches of far Essos. They clamor for us to establish a trade post on the continent so that they may open its trade up to us."
+ 
+ estate_merchants_trade_post_in_far_essos_reward_tooltip: "A province owned by §Y[Root.GetName]§! in §YFar Essos§! with the trade good §YSilk§!, §YTea§! or §YSpices§! will gain the modifier "§YMajor Trading Post§!", granting §G+1§! local goods produced."
+ 
+ estate_merchants_silk_trade: "Control the Silk Trade"
+ estate_merchants_silk_trade_desc: "Among the opportunities that our outposts in the East offer are the chance to establish control over the sources of high-quality silk. The [Root.GetMerchantsName] urge us to make their acquisition our priority."
+ 
+ estate_merchants_spice_trade: "Control the Spice Trade"
+ estate_merchants_spice_trade_desc: "Among the opportunities that our outposts in the East offer are the chance to establish control over the sources of high-quality spice. The [Root.GetMerchantsName] urge us to make their acquisition our priority."
+ 
+ estate_merchants_tea_trade: "Control the Tea Trade"
+ estate_merchants_tea_trade_desc: "Among the opportunities that our outposts in the East offer are the chance to establish control over the sources of high-quality tea. The [Root.GetMerchantsName] urge us to make their acquisition our priority."
+ 
+ estate_merchants_reduce_corruption: "Reduce Corruption"
+ estate_merchants_reduce_corruption_desc: "The [Root.GetMerchantsName] complain at the injustices caused by the corruption that plagues our nation. They urge us to take action to restrict such illegal practices."
+ 
+ estate_merchants_protect_against_piracy: "Protect against Piracy"
+ estate_merchants_protect_against_piracy_desc: "The [Root.GetMerchantsName] bemoan their losses from piracy in the [agenda_trade_node_sea.GetName]. They beseech us to take action to drive out the pirates and privateers that are plundering their trade ships."
+ 
+ estate_merchants_hire_advisor: "Hire a Diplomatic Advisor"
+ estate_merchants_hire_advisor_desc: "The [Root.GetMerchantsName] desire the [Root.Monarch.GetTitle] to hire a new diplomatic advisor."
+ 
+ estate_merchants_fire_advisor: "Fire our [Root.Dip_Advisor.GetTitle]"
+ estate_merchants_fire_advisor_desc: "[Root.Dip_Advisor.GetTitle] [Root.Dip_Advisor.GetName] has insulted the [Root.GetMerchantsName]. They demand that we fire [Root.Dip_Advisor.GetHerHim]!"
  
  # ------------ Nobility ------------ 
+ estate_nobility_develop_x: "Increase Manpower in [agenda_province.GetName]"
+ estate_nobility_develop_x_desc: "The [Root.GetNoblesName] request that we invest in the prosperity of their lands in [agenda_province.GetName]."
  
+ estate_nobility_build_a_barracks_in_y: "Build a Barracks in [agenda_province.GetName]"
+ estate_nobility_build_a_barracks_in_y_desc: "The [Root.GetNoblesName] of [agenda_province.GetName] urge us to build a new barrack in the province so that our supply of high-quality recruits to the army may be made more secure."
+ 
+ estate_nobility_build_a_drill_square_in_y: "Build a Drill Square in [agenda_province.GetName]"
+ estate_nobility_build_a_drill_square_in_y_desc: "The [Root.GetNoblesName] of [agenda_province.GetName] urge us to build a new drill square in the province so that our supply of high-quality recruits to the army may be made more secure."
+ 
+ estate_nobility_build_a_paved_road_in_y: "Build a Paved Road in [agenda_province.GetName]"
+ estate_nobility_build_a_barracks_in_y_desc: "The [Root.GetNoblesName] of [agenda_province.GetName] urge us to build a new paved road in the province so that our supply of high-quality recruits to the army may be made more secure."
+ 
+ estate_nobility_build_a_supply_depot_in_y: "Build a Supply Depot in [agenda_province.GetName]"
+ estate_nobility_build_a_supply_depot_in_y_desc: "The [Root.GetNoblesName] of [agenda_province.GetName] urge us to build a new supply depot in the province so that our supply of high-quality recruits to the army may be made more secure."
+ 
+ estate_nobility_build_motte_and_bailey_in_y: "Build a Motte and Bailey in [agenda_province.GetName]"
+ estate_nobility_build_motte_and_bailey_in_y_desc: "The [Root.GetNoblesName] of [agenda_province.GetName] urge us to build a new motte and bailey in the province so that our supply of high-quality recruits to the army may be made more secure."
+
+ estate_nobility_get_allies: "Build Alliances"
+ estate_nobility_get_allies_desc: "The [Root.GetNoblesName] are worried at [Root.GetName]'s diplomatic isolation. They advocate that we find more allies for our nation."
+ 
+ estate_nobility_befriend_rival_of_rival: "Befriend [rival_country.GetName]'s Rivals"
+ estate_nobility_befriend_rival_of_rival_desc: "The [Root.GetNoblesName] are concerned at the threat posed by our rivals in [rival_country.GetName]. They recommend that we befriend their rivals, [agenda_country.GetName], so that together way may stand strong against them."
+ 
+ estate_nobility_restore_legitimacy: "Restore Legitimacy"
+ estate_nobility_restore_legitimacy_desc: "The [Root.GetNoblesName] are concerned that the [Root.Monarch.GetTitle] is unable to command the respect of [Root.Monarch.GetHerHis] people. They demand that the legitimacy of the [Root.Monarch.GetTitle] be restored - one way or another..."
+ 
+ estate_nobility_relations_with_X: "Improve Relations with [agenda_country.GetName]"
+ estate_nobility_relations_with_X_desc: "The [Root.GetNoblesName] see [agenda_country.GetName] as a valuable potential ally. They recommend that we seek closer ties with them."
+ 
+ estate_nobility_break_coalition: "Break the Coalition"
+ estate_nobility_break_coalition_desc: "The alliance of nations arrayed against us is deeply worrying to the [Root.GetNoblesName]. They beseech us to do what we can to mollify the fears of those who would oppose us - or failing that, to break their resistance by crushing them in battle."
+ 
+ estate_no_coalition_against_us_tooltip: "No country is in a coalition against §Y[Root.GetName]§!."
+ estate_no_one_has_15_ae_on_us_tooltip: "No country has more than §R-15§! Aggressive Expansion towards §Y[Root.GetName]§!."
+ 
+ estate_nobility_condottieri_rivals: "Send Sellswords against [agenda_country.GetName]"
+ estate_nobility_condottieri_rivals_desc: "Our rivals in [agenda_country.GetName] are seeking to expand their power through their war with [agenda_enemy_country.GetName]. The [Root.GetNoblesName] call for us to prevent them from stealing a march on us by sending a force to support the [agenda_enemy_country.GetAdjective] cause."
+ 
+ estate_sending_condottieri_to_them: "§Y[Root.GetName]§! is renting Sellswords to §YCountry§!."
+ 
+ estate_nobility_support_independence: "Support [agenda_country.GetAdjective] Independence"
+ estate_nobility_support_independence_desc: "The [Root.GetNoblesName] draw attention to the plight of [agenda_country.GetName], a nation cruelly subjugated by our rivals, [agenda_rival_country.GetName]. They enjoin us to take up the cause of justice and support [agenda_country.GetAdjective] independence."
+ 
+ estate_nobility_retake_core: "Retake [agenda_province.GetName]"
+ estate_nobility_retake_core_desc: "The [Root.GetNoblesName] bemoan the fact that [agenda_province.GetName], an integral part of our nation, is not under our control. They demand that we reclaim the land that is rightfully ours!"
+ 
+ estate_nobility_crush_revolts: "Crush the Rebels"
+ estate_nobility_crush_revolts_desc: "The [Root.GetNoblesName] demand that we restore order and crush the revolts that are sweeping across our nation."
+ 
+ estate_nobility_regain_liberty: "Regain our Liberty"
+ estate_nobility_regain_liberty_desc: "The [Root.GetNoblesName] chafe under the rule of our [agenda_country.GetAdjective] overlords. They demand action to restore [Root.GetAdjective] liberty!"
+ 
+ estate_nobility_convert_province_culture: "Make [agenda_province.GetName] [Root.Culture.GetName]"
+ estate_nobility_convert_province_culture_desc: "The [Root.GetNoblesName] have been seeking new land for their people. They consider [agenda_province.GetName] to be an ideal place for [Root.Culture.GetName] settlement, if the locals can be persuaded of the merits of our ways."
+ 
+ estate_nobility_protect_our_culture: "Protect the [Root.GetAdjective] Population in [agenda_province.GetName]"
+ estate_nobility_protect_our_culture_desc: "The [Root.GetNoblesName] claim that our [Root.Culture.GetName] brothers in [agenda_province.GetName] face considerable oppression at the hands of their [agenda_country.GetAdjective] masters. They demand that we seize the province and bring them into our nation!"
+ 
+ estate_nobility_protect_our_culture_effect_tooltip:0 "If conquered, §Y[agenda_province.GetName]§! will lose §G5§! years of separatism."
+ 
+ estate_nobility_vassalise_vulnerable_country: "Vassalize [agenda_country.GetName]"
+ estate_nobility_vassalise_vulnerable_country_desc: "The [Root.GetNoblesName] can't help but be tempted by the vulnerable target presented by our neighbors in [agenda_country.GetName]. They are pushing for a military campaign to bring them under our dominion!"
+ 
+ estate_nobility_expand_into_x: "Expand into [agenda_province.GetAreaName]"
+ estate_nobility_expand_into_x_desc: "The [Root.GetNoblesName] have been casting a jealous eye on [agenda_province.GetAreaName], an area they claim would make a fine addition to our nation. They call for a military campaign to secure part of it for ourselves."
+ 
+ estate_nobility_complete_conquest_of_x: "Complete the Conquest of [agenda_province.GetAreaName]"
+ estate_nobility_complete_conquest_of_x_desc: "The [Root.GetNoblesName] see [agenda_province.GetAreaName] as an integral part of [Root.GetName] and resent the fact that it is not entirely our own. They exhort us to secure the rest of the area for ourselves!"
+ 
+ estate_nobility_annex_subject: "Annex [agenda_country.GetName]"
+ estate_nobility_annex_subject_desc: "The [Root.GetNoblesName] covet the lands of our [agenda_country.GetAdjective] subjects. They demand that we integrate them fully into our country."
+ 
+ estate_no_penalties_annexing_tt:0 "§Y[Root.GetName]§! will not get a diplomatic reputation penalty for annexing §Y[agenda_country.GetName]§!."
+
+ estate_nobility_build_an_army: "Build an Army for our Nation"
+ estate_nobility_build_an_army_desc: "The [Root.GetNoblesName] consider our army to be an embarrassment to our nation. They urgently call for it to be expanded, so that our forces may present sufficient deterrence to enemies that may covet our lands."
+ 
+ estate_nobility_bigger_army_than_rival: "Protect against [agenda_country.GetName]"
+ estate_nobility_bigger_army_than_rival_desc: "The [Root.GetNoblesName] are worried that our army would fare poorly against the [agenda_country.GetAdjective] in a war. They insist that we must increase our recruitment so that our armed forces are no longer outmatched by our rivals."
+ 
+ estate_nobility_build_up_manpower_reserves: "Build up our Manpower Reserves"
+ estate_nobility_build_up_manpower_reserves_desc: "The depletion of our manpower reserves is worrying to the [Root.GetNoblesName], who warn that [Root.GetName] would be left defenseless should our enemies seek to take advantage of the situation. They advocate that we consolidate for a time and allow our reserves to recover."
+ 
+ estate_nobility_recover_abysmal_prestige: "Recover our Prestige"
+ estate_nobility_recover_abysmal_prestige_desc: "The [Root.GetNoblesName] are dismayed at the depths to which we have allowed the image of our nation to sink. They demand a concerted effort to restore our reputation among our peers!"
+ 
+ estate_nobility_improve_prestige: "Improve our Prestige"
+ estate_nobility_improve_prestige_desc: "The [Root.GetNoblesName] wish us to improve our standing among nations by increasing the splendor of the [Root.Monarch.GetTitle]'s court."
+ 
+ estate_nobility_hire_advisor: "Hire a Military Advisor"
+ estate_nobility_hire_advisor_desc: "The [Root.GetNoblesName] desire the [Root.Monarch.GetTitle] to hire a new military advisor."
+ 
+ estate_nobility_fire_advisor: "Fire our [Root.Mil_Advisor.GetTitle]"
+ estate_nobility_fire_advisor_desc: "[Root.Mil_Advisor.GetTitle] [Root.Mil_Advisor.GetName] has insulted the [Root.GetMerchantsName]. They demand that we fire [Root.Mil_Advisor.GetHerHim]!"
+
  # ------------ Commoners ------------ 
+ estate_commoners_develop_x: "Develop [agenda_province.GetName]"
+ estate_commoners_develop_x_desc: "The [Root.GetCommonersName] request that we invest in the prosperity of their lands in [agenda_province.GetName]."
+ 
+ estate_commoners_build_tavern_in_y: "Build a Tavern in [agenda_province.GetName]"
+ estate_commoners_build_tavern_in_y_desc: "The [Root.GetCommonersName] claim that the tavern in [agenda_province.GetName] is too small to suit their needs. They request that we invest in a larger tavern, which they say will greatly increase the prosperity of the province and the country as a whole."
+ 
+ estate_commoners_build_farm_in_y: "Build a Farm in [agenda_province.GetName]"
+ estate_commoners_build_farm_in_y_desc: "The [Root.GetCommonersName] claim that the farm in [agenda_province.GetName] is too small to suit their needs. They request that we invest in a larger tavern, which they say will greatly increase the prosperity of the province and the country as a whole."
+ 
+ estate_commoners_increase_autonomy_in_province_x: "Increase Autonomy in [agenda_province.GetName]"
+ estate_commoners_increase_autonomy_in_province_x_desc: "The [Root.GetCommonersName] of [agenda_province.GetName] complain at the [Root.GovernmentName]'s frequent interference in their affairs. They clamor for us to grant them greater autonomy."
+ 
+ estate_commoners_three_privileges: "Extend Common Privileges"
+ estate_commoners_three_privileges_desc: "The [Root.GetCommonersName] complain at the constant infringements on their rights they claim to suffer at the hands of the [Root.Monarch.GetTitle]. They demand reassurance of their position in the form of greater privileges being bestowed upon them."
+ 
+ estate_commoners_hire_advisor: "Hire an Administrative Advisor"
+ estate_commoners_hire_advisor_desc: "The [Root.GetCommonersName] desire the [Root.Monarch.GetTitle] to hire a new administrative advisor."
+ 
+ estate_commoners_fire_advisor: "Fire our [Root.Adm_Advisor.GetTitle]"
+ estate_commoners_fire_advisor_desc: "[Root.Adm_Advisor.GetTitle] [Root.Adm_Advisor.GetName] has insulted the [Root.GetCommonersName]. They demand that we fire [Root.Adm_Advisor.GetHerHim]!"
  
  # ------------ Tribes ------------ 
+ estate_tribes_raze_a_province: ""
+ estate_tribes_raze_a_province_desc: ""
+ 
+ estate_tribes_develop_x: ""
+ estate_tribes_develop_x_desc: ""
+ 
+ estate_tribes_restore_horde_unity: ""
+ estate_tribes_restore_horde_unity_desc: ""
+ 
+ estate_tribes_befriend_rival_of_rival: ""
+ estate_tribes_befriend_rival_of_rival_desc: ""
+ 
+ estate_tribes_relations_with_X: ""
+ estate_tribes_relations_with_X_desc: ""
+ 
+ estate_tribes_retake_core: ""
+ estate_tribes_retake_core_desc: ""
+ 
+ estate_tribes_crush_revolts: ""
+ estate_tribes_crush_revolts_desc: ""
+ 
+ estate_tribes_regain_liberty: ""
+ estate_tribes_regain_liberty_desc: ""
+ 
+ estate_tribes_convert_province_culture: ""
+ estate_tribes_convert_province_culture_desc: ""
+ 
+ estate_tribes_protect_our_culture: ""
+ estate_tribes_protect_our_culture_desc: ""
+ 
+ estate_tribes_vassalise_vulnerable_country: ""
+ estate_tribes_vassalise_vulnerable_country_desc: ""
+ 
+ estate_tribes_expand_into_x: ""
+ estate_tribes_expand_into_x_desc: ""
+ 
+ estate_tribes_complete_conquest_of_x: ""
+ estate_tribes_complete_conquest_of_x_desc: ""
+ 
+ estate_tribes_annex_subject: ""
+ estate_tribes_annex_subject_desc: ""
+ 
+ estate_tribes_build_an_army: ""
+ estate_tribes_build_an_army_desc: ""
+ 
+ estate_tribes_bigger_army_than_rival: ""
+ estate_tribes_bigger_army_than_rival_desc: ""
+ 
+ estate_tribes_build_up_manpower_reserves: ""
+ estate_tribes_build_up_manpower_reserves_desc: ""
+ 
+ estate_tribes_three_privileges: ""
+ estate_tribes_three_privileges_desc: ""
+ 
+ estate_tribes_recover_stability: ""
+ estate_tribes_recover_stability_desc: ""
+ 
+ estate_tribes_increase_stability: ""
+ estate_tribes_increase_stability_desc: ""
+ 
+ estate_tribes_despoil_x: ""
+ estate_tribes_despoil_x_desc: ""
+ 
+ estate_tribes_hire_advisor: ""
+ estate_tribes_hire_advisor_desc: ""
+ 
+ estate_tribes_fire_advisor: ""
+ estate_tribes_fire_advisor_desc: ""
+ 
  
  #-----------------------------------------
  # Modifiers
@@ -684,3 +976,50 @@
  estate_missionary_zeal: "Missionary Zeal"
  desc_estate_missionary_zeal: "With our nation based around the principle of divine supremacy, our missionaries are feeling more zealous than usual."
  
+ estate_agenda_republicanism_restored: "Republican Virtues Restored"
+ desc_estate_agenda_republicanism_restored: "After a period of internal strife and instability, order has been restored and the citizenry are once again fully behind the Republic."
+ 
+ estate_boom_economy: "Booming Economy"
+ desc_estate_boom_economy: "Our cup runneth over! The economy is booming!"
+ 
+ estate_thriving_ship_building_sector: "Thriving Ship Building Sector"
+ desc_estate_thriving_ship_building_sector: "The many orders to the shipyards of our country have resulted in a thriving shipbuilding sector which in turn means cheaper and more efficiently produced ships for the state."
+ 
+ estate_naval_enthusiasm: "Naval Enthusiasm"
+ desc_estate_naval_enthusiasm: "Our efforts to strengthen the navy have created a widespread enthusiasm for it in our country with more people wanting to join as both officers and sailors."
+ 
+ estate_colonial_enthusiasm: "Colonial Enthusiasm"
+ desc_estate_colonial_enthusiasm: "Large groups of ambitious people are interested in moving to the colonies."
+ 
+ estate_agenda_colonial_administration: "New Colonial Administration"
+ desc_estate_agenda_colonial_administration: "One of our colonies has developed into an entity capable of limited self-governance. This is drawing many ambitious people to seek to settle there and also has significant benefits for our coffers."
+ 
+ estate_major_trade_post: "Major Trading Post"
+ desc_estate_major_trade_post: "This port is a major trading post for the silks, dyes and spices coming out of Essos."
+ 
+ estate_growing_silk_trade: "Silk Trade"
+ desc_estate_growing_silk_trade: "Our efforts to secure more sources of silk have not gone unnoticed by the domestic merchants. Confident that the state is looking after their interests, they have been unusually forthcoming with any taxes or fees they are required to pay."
+ 
+ estate_growing_spice_trade: "Spice Trade"
+ desc_estate_growing_spice_trade: "Our efforts to secure more sources of spice have not gone unnoticed by the domestic spice merchants. Confident that the state is looking after their interests, they have been unusually forthcoming with any taxes or fees they are required to pay."
+ 
+ estate_growing_tea_trade: "Tea Trade"
+ desc_estate_growing_tea_trade: "Our efforts to secure more sources of tea have not gone unnoticed by the domestic merchants. Confident that the state is looking after their interests, they have been unusually forthcoming with any taxes or fees they are required to pay."
+ 
+ estate_freedom_from_corruption: "Reduced Corruption"
+ desc_estate_freedom_from_corruption: "Freed from the need to engage in corruption, our businessmen are now able to thrive."
+ 
+ estate_foreign_contacts: "Foreign Contacts"
+ desc_estate_foreign_contacts: "Making the right diplomatic moves at the right time has improved our international reputation."
+ 
+ estate_legitimacy_defended: "Legitimacy Defended"
+ desc_estate_legitimacy_defended: "Our ruler was once despised and disliked by large portions of our population. Many claimed that he had no right to his throne. Now nobody would dream of saying such a thing. By turning the situation around completely, our ruler's claim has become stronger than ever."
+ 
+ estate_military_victory: "Inspiring Victory"
+ desc_estate_military_victory: "The capture and annexation of a symbolically important region has inspired our population. Recruiters all over our country are reporting an increased interest among our subjects to join the army."
+ 
+ estate_agenda_cultural_conversion_help: "Influx of Settlers"
+ desc_estate_agenda_cultural_conversion_help: "Large numbers of settlers are moving to this province."
+ 
+ estate_thriving_arms_industry: "Thriving Arms Industry"
+ desc_estate_thriving_arms_industry: "Our efforts to strengthen the army has resulted in a big upswing for our domestic arms producers."

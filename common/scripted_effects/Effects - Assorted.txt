@@ -188,3 +188,28 @@ add_loot_from_rich_province_general_effect = {
 		}
 	}
 }
+
+#province scope, chooses which random monarch point bonus to give for agendas
+choose_random_development_bonus_effect = {
+	random_list = {
+		1 = { set_province_flag = add_base_tax_flag }
+		1 = { set_province_flag = add_base_production_flag }
+		1 = { set_province_flag = add_base_manpower_flag }
+	}
+}
+
+apply_random_development_bonus_bonus_effect = {
+	trigger_switch = {
+		on_trigger = has_province_flag
+		add_base_tax_flag = { add_base_tax = 1 }
+		add_base_production_flag = { add_base_production = 1 }
+		add_base_manpower_flag = { add_base_manpower = 1 }
+	}
+	clear_random_development_bonus_flags_effect = yes
+}
+
+clear_random_development_bonus_flags_effect = {
+	clr_province_flag = add_base_tax_flag
+	clr_province_flag = add_base_production_flag
+	clr_province_flag = add_base_manpower_flag
+}

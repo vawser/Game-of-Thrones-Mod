@@ -12,6 +12,17 @@ NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_6 = 1564
 NDefines.NCountry.MIN_SHIPS_TO_EXPLORE = 3
 
 --------------------------------
+-- Ruler
+--------------------------------
+NDefines.NCountry.MONARCH_DEATH_MIN_CHANCE_MODIFIER = 0.0 -- Allow immortality
+
+--------------------------------
+-- Estates
+--------------------------------
+NDefines.NCountry.ESTATE_MIN_DISTRIBUTED_CROWNLAND = 40.0
+NDefines.NCountry.ESTATE_START_CROWNLAND_INFLUENCE = 20.0
+
+--------------------------------
 -- Government Reforms
 --------------------------------
 NDefines.NGovernment.LEGACY_NATIVES_REFORM_REPUBLIC_SPONSOR = "republic_reform"

@@ -1,4 +1,4 @@
-﻿#------------------------------------------------------------
+#------------------------------------------------------------
 # "Raze our Enemies"
 #------------------------------------------------------------
 estate_tribes_raze_a_province = {
@@ -37,7 +37,7 @@ estate_tribes_raze_a_province = {
 				}
 			}
 		}
-		NOT = { has_country_modifier = estate_estate_agenda_looting_zeal }
+		NOT = { has_country_modifier = estate_agenda_looting_zeal }
 	}
 	provinces_to_highlight = {
 		is_capital = yes
@@ -443,7 +443,7 @@ estate_tribes_raze_a_province = {
 			loyalty = 10
 		}
 		add_country_modifier = {
-			name = estate_estate_agenda_looting_zeal
+			name = estate_agenda_looting_zeal
 			duration = 3650
 		}
     }

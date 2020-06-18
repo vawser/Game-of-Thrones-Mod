@@ -387,12 +387,12 @@ cb_trade_war = {
 			AND = {
 				OR = { 
                     is_free_city_government = yes
-                    has_reform = pirate_clan_reform
+                    government = pirate
 				}
 				FROM = { 
 					OR = {
 						is_free_city_government = yes
-                        has_reform = pirate_clan_reform
+                        government = pirate
 					}
 				}
 			}
@@ -702,4 +702,26 @@ cb_world_crusade = {
 	}
 
 	war_goal = superiority_world_crusade
+}
+
+cb_hegemon = {
+	valid_for_subject = no
+
+	prerequisites = {
+		is_hegemon = no
+		from = { is_hegemon = yes }
+	}
+
+	war_goal = take_capital_imperial
+}
+
+cb_war_against_the_world = {
+	valid_for_subject = no
+	
+	prerequisites = {
+		has_reform = got_war_against_the_world_doctrine_reform
+		is_free_or_tributary_trigger = yes
+	}
+
+	war_goal = take_capital_pirates
 }

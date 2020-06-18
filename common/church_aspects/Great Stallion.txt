@@ -38,7 +38,10 @@ ready_the_khalasar_action = {
 		always = yes
 	}
 	effect = {
-        add_mil_power = 200
+        add_country_modifier = {
+            name = khalasar_ready_for_war
+            duration = 3650
+        }
 	}
 	ai_will_do = {
 		factor = 1
@@ -76,7 +79,7 @@ offerings_to_the_stallion_action = {
 		always = yes
 	}
 	effect = {
-        add_horde_unity = 25
+        add_horde_unity = 10
 	}
 	ai_will_do = {
 		factor = 1
@@ -95,7 +98,7 @@ cull_the_sickly_action = {
 		always = yes
 	}
 	effect = {
-        add_war_exhaustion = -10
+        add_war_exhaustion = -5
 	}
 	ai_will_do = {
 		factor = 1
@@ -114,7 +117,7 @@ cultivate_discipline_action = {
 		always = yes
 	}
 	effect = {
-        add_army_tradition = 20
+        add_army_tradition = 10
 	}
 	ai_will_do = {
 		factor = 1

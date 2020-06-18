@@ -1,0 +1,157 @@
+#-----------------------------------------
+# "Cultural Values"
+#-----------------------------------------
+got_martial_society_reform = {
+	allow_normal_conversion = yes
+	icon = "tribal_martial_society"
+    
+	modifiers = {
+		global_manpower_modifier = 0.2
+	}
+    
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 2
+			any_enemy_country = {
+				army_size = root
+			}
+		}
+	}
+}
+
+got_civil_society_reform = {
+	allow_normal_conversion = yes
+	icon = "tribal_civil_society"
+    
+	modifiers = {
+		global_tax_modifier = 0.05
+		yearly_corruption = -0.05
+	}
+    
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 2
+			OR = {
+				is_in_deficit = yes
+				num_of_loans = 5
+				corruption = 5
+			}
+		}
+	}
+}
+
+#-----------------------------------------
+# "Tribal Religion"
+#-----------------------------------------
+got_religious_societies_reform = {
+	icon = "tribal_religious_society"
+	allow_normal_conversion = yes
+    
+	modifiers = {
+		stability_cost_modifier = -0.1
+		religious_unity = 0.15
+	}
+    
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			religious_unity = 1
+		}
+		modifier = {
+			factor = 0.5
+			religious_unity = 0.9
+		}
+	}
+}
+
+got_lip_service_reform = {
+	icon = "tribal_lip_service"
+	allow_normal_conversion = yes
+    
+	modifiers = {
+		land_maintenance_modifier = -0.1
+	}
+}
+
+#-----------------------------------------
+# "Modernization"
+#-----------------------------------------
+got_centralize_tribal_power_reform = {
+	icon = "tribal_centralize_power"
+	allow_normal_conversion = yes
+    
+	modifiers = {
+		core_creation = -0.05
+		stability_cost_modifier = -0.05
+	}
+}
+
+got_retain_tribal_hierarchy_reform = {
+	icon = "retain_tribal_hierarchy"
+	allow_normal_conversion = yes
+    
+	modifiers = {
+		governing_capacity = 150
+		max_absolutism = 10
+	}
+    
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			NOT = {
+				any_owned_province = {
+					is_territorial_core = root
+				}
+			}
+		}
+	}
+}
+
+got_barbaric_despoilers_reform = {
+	icon = "rioting_burning_2"
+	allow_normal_conversion = yes
+    
+	potential = {
+		OR = {
+			has_reform = khalasar_reform
+			has_reform = jhattar_reform
+		}
+		has_dlc = "The Cossacks"
+	}
+    
+	modifiers = {
+		raze_power_gain = 0.33
+	}
+    
+	ai = {
+		factor = 2
+	}
+}
+
+got_tribal_unity_reform = {
+	icon = "fist_in_air"
+	allow_normal_conversion = yes
+    
+	potential = {
+		OR = {
+			has_reform = khalasar_reform
+			has_reform = jhattar_reform
+		}
+		has_dlc = "The Cossacks"
+	}
+    
+	modifiers = {
+		horde_unity = 2
+	}
+    
+	ai = {
+		factor = 2
+	}
+}
+
+
+				

@@ -327,7 +327,6 @@ tribal = {
         tier_tribal_government_form = {
 			reforms = {
                 tribe_reform
-                pirate_clan_reform
                 wildling_clan_reform
                 lhazar_clan_reform
                 ibben_clan_reform
@@ -372,7 +371,6 @@ tribal = {
     
     legacy_government = {
         tribe_legacy
-        pirate_clan_legacy
         wildling_clan_legacy
         lhazar_clan_legacy
         ibben_clan_legacy
@@ -396,4 +394,48 @@ native = {
 		native_council_legacy
 	}
 	color = { 194 127 209 }
+}
+
+#--------------------------------------------
+# Pirate
+#--------------------------------------------
+pirate = {
+    color = { 10 10 10 }
+    
+    basic_reform = pirate_mechanic
+    
+    reform_levels = {
+        tier_pirate_government_form = {
+			reforms = {
+                pirate_kingdom_reform
+                pirate_republic_reform
+			}
+		}
+        tier_pirate_governance = {
+			reforms = {
+				got_council_of_captains_reform
+                got_articles_of_agreement_reform
+                got_smugglers_haven_reform
+			}
+		}
+		tier_pirate_principles = {
+			reforms = {
+				got_war_against_the_world_doctrine_reform
+				got_black_market_consortium_reform
+			}
+		}
+		tier_pirate_reformation = {
+			reforms = {
+                got_strengthen_pirate_unity
+				got_become_a_monarchy_reform
+				got_become_a_republic_reform
+				got_become_a_theocracy_reform
+			}
+		}
+    }
+    
+    legacy_government = {
+        pirate_kingdom_legacy
+        pirate_republic_legacy
+    }
 }

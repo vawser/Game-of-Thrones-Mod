@@ -1,0 +1,203 @@
+#-----------------------------------------
+# Shared
+#-----------------------------------------
+got_states_general_reform = {
+	icon = "states_general"
+	allow_normal_conversion = yes
+
+	trigger = {
+		NOT = { is_lesser_in_union = yes }
+		is_emperor = no
+	}
+
+	modifiers = {
+		stability_cost_modifier = -0.1
+	}
+
+	ai = {
+		factor = 0 # AI should never pick this
+	}
+
+	removed_effect = {
+		country_event = { id = GOT_STATES_GENERAL.33 }
+	}
+
+	conditional = {
+		allow = { has_dlc = "Res Publica" }
+		queen = no
+		heir = no
+		duration = 4
+		has_term_election = yes
+		states_general_mechanic = {
+			statists = {
+				diplomatic_reputation = 1
+				global_unrest = -1
+				legitimacy = -0.5
+			}
+
+			monarchists = {
+				prestige = 0.5
+				manpower_recovery_speed = 0.1
+				legitimacy = 0.5
+			}
+		}
+	}
+}
+
+got_parliamentary_reform = {
+	icon = "judge"
+    allow_normal_conversion = yes
+    
+	modifiers = {
+		global_unrest = -1
+	}
+	
+	trigger = {
+		OR = {
+			NOT = { has_estate = estate_nobles }
+			crown_stronger_than_estate = { estate = estate_nobles }
+			has_reform = got_parliamentary_reform
+		}
+	}
+
+	conditional = {
+		allow = { has_dlc = "Common Sense" }
+		has_parliament = yes
+	}
+    
+	custom_attributes = {
+		blocked_call_diet = yes
+	}
+	ai = {
+		factor = 1
+	}
+	post_removed_effect = {
+		give_estate_land_share_init = { estate = estate_nobles }
+	}
+
+	custom_attributes = {
+		blocked_call_diet = yes
+	}
+}
+
+got_penal_colonies_reform = {
+	icon = "merchant_ship"
+	allow_normal_conversion = yes
+    
+	potential = {
+		num_of_colonists = 1
+		has_dlc = "Golden Century"
+		capital_scope = {
+			NOT = {
+				superregion = distant_lands_superregion
+			}
+		}
+	}
+    
+	trigger = {
+		num_of_colonists = 1
+		num_of_continents = 2
+	}
+    
+	modifiers = {
+		expel_minorities_cost = -0.5
+	}
+    
+	ai = {
+		factor = 0.1
+	}
+}
+
+#-----------------------------------------
+# Switch Government
+#-----------------------------------------
+got_become_a_monarchy_reform = {
+	icon = "king_2_highlighted"
+	allow_normal_conversion = yes
+
+	trigger = {
+		NOT = { has_government_attribute_short_desc = locked_government_type }
+		is_emperor = no
+		NOT = { is_lesser_in_union = yes }
+	}
+    
+	effect = {
+		if = {
+			limit = { has_government_attribute = states_general_mechanic }
+			set_country_flag = had_states_general_mechanic
+		}
+		set_country_flag = populists_in_government
+		lose_reforms = 3
+		change_government = monarchy
+		if = {
+			limit = { has_country_flag = had_states_general_mechanic }
+			country_event = { id = GOT_STATES_GENERAL.33 }
+			clr_country_flag = had_states_general_mechanic
+		}
+	}
+	ai = {
+		factor = 0
+	}
+}
+
+got_become_a_republic_reform = {
+	icon = "parliament_highlighted"
+	allow_normal_conversion = yes
+
+	trigger = {
+		NOT = { has_government_attribute_short_desc = locked_government_type }
+		is_emperor = no
+		NOT = { is_lesser_in_union = yes }
+	}
+    
+	effect = {
+		set_country_flag = populists_in_government
+		lose_reforms = 3
+		change_government = republic
+	}
+	ai = {
+		factor = 0
+	}
+}
+
+got_become_a_theocracy_reform = {
+	icon = "pope_highlighted"
+	allow_normal_conversion = yes
+
+	trigger = {
+		NOT = { has_government_attribute_short_desc = locked_government_type }
+		is_emperor = no
+		NOT = { is_lesser_in_union = yes }
+	}
+    
+	effect = {
+		set_country_flag = populists_in_government
+		lose_reforms = 3
+		change_government = theocracy
+	}
+    
+	ai = {
+		factor = 0
+	}
+}
+
+got_become_a_warband_reform = {
+    icon = "horde_riding_highlighted"
+	allow_normal_conversion = yes
+    
+    trigger = {
+		NOT = { has_government_attribute_short_desc = locked_government_type }
+		is_emperor = no
+		NOT = { is_lesser_in_union = yes }
+	}
+    
+	effect = {
+		set_country_flag = populists_in_government
+        lose_reforms = 3
+        change_government = tribal
+	}
+    
+	ai = {
+		factor = 0
+	}
+}

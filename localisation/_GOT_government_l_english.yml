@@ -58,6 +58,8 @@
  theocracy_desc: ""
  tribal: "Tribal"
  tribal_desc: ""
+ pirate: "Piratical"
+ pirate_desc: ""
  
  #---------------------------------------------
  # Government Types
@@ -66,6 +68,7 @@
  republic_name: "Republic"
  theocracy_name: "Theocracy"
  tribal_name: "Tribal"
+ pirate_name: "Piratical"
  
  #---------------------------------------------
  # Ruler Titles
@@ -117,6 +120,9 @@
  JHAT: "Jhat"
  SHADOWMASTER: "Shadowmaster"
  WHISPERER: "Whisperer"
+ PIRATE_KING: "Pirate King"
+ PIRATE_QUEEN: "Pirate Queen"
+ PIRATE_LORD: "Pirate Lord"
  
  #---------------------------------------------
  # Government Titles
@@ -171,6 +177,8 @@
  RHOYNISH_CITY: "Rhoynish City"
  DAENERYS_HOST: "Daenerys's Host"
  WARBAND: "Warband"
+ PIRATE_KINGDOM: "Pirate Kingdom"
+ PIRATE_REPUBLIC: "Pirate Republic"
  
  #---------------------------------------------
  # Mechanics
@@ -189,6 +197,9 @@
  
  native_mechanic: "Primitive"
  native_mechanic_desc: "This is a Primitive government."
+ 
+ pirate_mechanic: "Piratical"
+ pirate_mechanic_desc: "This is a Piratical government."
  
  #---------------------------------------------
  # Government Form (Monarchy)
@@ -412,11 +423,6 @@
  tribe_legacy: "Tribe"
  tribe_legacy_desc: "A realm ruled by a tribal chieftain."
  
- pirate_clan_reform: "Pirate Clan"
- pirate_clan_reform_desc: "A band of pirates whom are particularly wealthy and influential."
- pirate_clan_legacy: "Pirate Clan"
- pirate_clan_legacy_desc: "A band of pirates whom are particularly wealthy and influential."
-
  wildling_clan_reform: "Wildling Clan"
  wildling_clan_reform_desc: "A clan of men and women from north of the Wall."
  wildling_clan_legacy: "Wildling Clan"
@@ -466,7 +472,20 @@
  jhattar_reform_desc: "A group of nomadic men and women whom follow their khal across grasslands."
  jhattar_legacy: "Jhattar"
  jhattar_legacy_desc: "A group of nomadic men and women whom follow their khal across grasslands."
+ 
+ #---------------------------------------------
+ # Piratical
+ #---------------------------------------------
+ pirate_kingdom_reform: "Pirate Kingdom"
+ pirate_kingdom_reform_desc: "A band of pirates whom are particularly wealthy and influential."
+ pirate_kingdom_legacy: "Pirate Kingdom"
+ pirate_kingdom_legacy_desc: "A band of pirates whom are particularly wealthy and influential."
 
+ pirate_republic_reform: "Pirate Republic"
+ pirate_republic_reform_desc: "A band of pirates whom are particularly wealthy and influential."
+ pirate_republic_legacy: "Pirate Republic"
+ pirate_republic_legacy_desc: "A band of pirates whom are particularly wealthy and influential."
+ 
  #---------------------------------------------
  # Tiers
  #---------------------------------------------
@@ -503,6 +522,11 @@
  tier_tribal_tribal_religion: "Tribal Religion"
  tier_tribal_tribal_modernization: "Modernization"
  tier_tribal_tribal_reformation: "Tribal Reformation"
+ 
+ tier_pirate_government_form: "Government Form"
+ tier_pirate_governance: "Piratical Governance"
+ tier_pirate_principles: "Piratical Principles"
+ tier_pirate_reformation: "Reformation of Government"
  
  #---------------------------------------------
  # Monarchy Reforms
@@ -777,6 +801,27 @@
  
  got_tribal_unity_reform: "Unified Horde Identity"
  got_tribal_unity_reform_desc: "We must put aside old tribal allegiances in the name of the Horde. We are one people under one Khal."
+ 
+ #---------------------------------------------
+ # Pirate
+ #---------------------------------------------
+ got_council_of_captains_reform: "Council of Captains"
+ got_council_of_captains_reform_desc: "The Pirate Republic should be governed by the will of its greatest captains. It is their alliance that holds our nation together, and so their decisions must take precedence over any other authority."
+ 
+ got_articles_of_agreement_reform: "Articles of Agreement"
+ got_articles_of_agreement_reform_desc: "The Articles of Agreement are the cornerstone of the social order on board a pirate ship. They guarantee that every crewman has an equal vote in all matters and an equal share of all plunder. Articles such as these should be established for the government itself, so that the liberty and equality of all pirates is secured."
+ 
+ got_smugglers_haven_reform: "Smugglers Haven"
+ got_smugglers_haven_reform_desc: "A pirate enterprise cannot function without a way to sell their stolen goods. We must ensure that conditions in the Republic are favorable for smuggling operations."
+ 
+ got_war_against_the_world_doctrine_reform: "War Against the World Doctrine"
+ got_war_against_the_world_doctrine_reform_desc: "The tyrants of the world must be unseated! We can no longer tolerate kings and despots making slaves of our fellow man. And so we shall adopt a new doctrine: war against the world!"
+ 
+ got_black_market_consortium_reform: "Black Market Consortium"
+ got_black_market_consortium_reform_desc: "The pirates that run amok in the state cannot be trusted to bathe themselves, let alone to govern a nation whose future hands on the edge of a cutlass. A Consortium formed of the most influential black market merchants shall be established as its true governors. Profit must come before liberty."
+ 
+ got_strengthen_pirate_unity: "Strengthen Piratical Unity"
+ got_strengthen_pirate_unity_desc: "The pirates have been brought together from throughout the world. Let us formalize our bonds and unleash hell upon those that seek to crush us!"
  
  #---------------------------------------------
  # Shared Reforms

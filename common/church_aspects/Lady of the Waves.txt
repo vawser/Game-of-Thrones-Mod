@@ -4,13 +4,13 @@ enforce_rule_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        has_reform = pirate_clan_reform
+        government = pirate
 	}
 	trigger = {
 		always = yes
 	}
 	effect = {
-		add_absolutism = 10		
+		add_absolutism = 5		
 	}
 	ai_will_do = {
 		factor = 1
@@ -23,7 +23,7 @@ raid_local_villages_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        has_reform = pirate_clan_reform
+        government = pirate
 	}
 	trigger = {
         always = yes
@@ -42,13 +42,13 @@ display_wealth_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        has_reform = pirate_clan_reform
+        government = pirate
 	}
 	trigger = {
 		always = yes
 	}
 	effect = {
-		add_prestige = 25
+		add_prestige = 20
 	}
 	ai_will_do = {
 		factor = 1
@@ -61,13 +61,13 @@ impress_travelers_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        has_reform = pirate_clan_reform
+        government = pirate
 	}
 	trigger = {
         num_of_ports = 1
 	}
 	effect = {
-		add_yearly_sailors = 5
+		add_yearly_sailors = 2
 	}
 	ai_will_do = {
 		factor = 1
@@ -80,13 +80,13 @@ purchase_slaves_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        has_reform = pirate_clan_reform
+        government = pirate
 	}
 	trigger = {
         always = yes
 	}
 	effect = {
-		add_yearly_manpower = 5
+		add_yearly_manpower = 2
 	}
 	ai_will_do = {
 		factor = 1
@@ -99,7 +99,7 @@ explore_the_high_seas_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        has_reform = pirate_clan_reform
+        government = pirate
 	}
 	trigger = {
         num_of_ports = 1

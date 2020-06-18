@@ -9,13 +9,9 @@ divine_inspiration_action = {
 		always = yes
 	}
 	effect = {
-        custom_tooltip = DIVINE_INSPIRATION_TT
-        hidden_effect = {
-            random_list = {
-                33 = { add_adm_tech = 1 }
-                33 = { add_dip_tech = 1 }
-                33 = { add_mil_tech = 1 }
-            }
+        add_country_modifier = {
+            name = divine_inspiration
+            duration = 3650
         }
 	}
 	ai_will_do = {
@@ -52,7 +48,7 @@ bolster_holy_guard_action = {
 		always = yes
 	}
 	effect = {
-		add_yearly_manpower = 5
+		add_yearly_manpower = 2
 	}
 	ai_will_do = {
 		factor = 1
@@ -104,7 +100,7 @@ public_flagellation_action = {
         corruption = 0.01
 	}
 	effect = {
-		add_corruption = -10
+		add_corruption = -5
 	}
 	ai_will_do = {
 		factor = 1
@@ -122,7 +118,7 @@ ritual_drilling_action = {
 		always = yes
 	}
 	effect = {
-		add_army_tradition = 20
+		add_army_tradition = 10
 	}
 	ai_will_do = {
 		factor = 1

@@ -14,7 +14,7 @@ country_event = {
 		NOT = { has_reform = volantis_city_reform }
         NOT = { has_states_general_mechanic = yes }
 		NOT = { has_government_attribute = lottery_election }
-        NOT = { has_reform = admiralty_reform }
+        NOT = { has_reform = got_admiralty_reform }
         NOT = { has_reform = military_dictatorship_reform }
 	}
 	
@@ -117,7 +117,7 @@ country_event = {
         NOT = { has_reform = volantis_city_reform }
         NOT = { has_states_general_mechanic = yes }
 		NOT = { has_government_attribute = lottery_election }
-        NOT = { has_reform = admiralty_reform }
+        NOT = { has_reform = got_admiralty_reform }
         NOT = { has_reform = military_dictatorship_reform }
 	}
 
@@ -225,9 +225,8 @@ country_event = {
 		}
 		ai_chance = { factor = 10 }
         
-		else = {
-			add_scaled_republican_tradition = -4
-		}
+		add_scaled_republican_tradition = -4
+        
         define_ruler = {
             mil = -2
             adm = -2

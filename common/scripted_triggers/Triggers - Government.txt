@@ -3,7 +3,6 @@ is_primitive_government = {
     OR = {
         has_reform = khalasar_reform
         has_reform = jhattar_reform
-        has_reform = pirate_clan_reform
         has_reform = wildling_clan_reform
     }
 }
@@ -94,7 +93,6 @@ is_theocracy_government = {
 is_tribal_government = {
     OR = {
         has_reform = tribe_reform
-        has_reform = pirate_clan_reform
         has_reform = wildling_clan_reform
         has_reform = lhazar_clan_reform
         has_reform = ibben_clan_reform
@@ -117,4 +115,8 @@ is_nights_watch_government = {
     OR = {
         has_reform = nights_watch_reform
     }
+}
+
+is_pirate_government = {
+    government = pirate
 }

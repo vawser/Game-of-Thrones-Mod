@@ -32,9 +32,30 @@ vision_of_a_green_grace_action = {
         custom_tooltip = VISION_OF_A_GREEN_GRACE_TT
 		hidden_effect = {
             random_list = {
-                33 = { add_adm_power = 100 }
-                33 = { add_dip_power = 100 }
-                33 = { add_mil_power = 100 }
+                30 = { 
+                    add_country_modifier = {
+                        name = vision_of_order
+                        duration = 3650
+                    }
+                }
+                30 = { 
+                    add_country_modifier = {
+                        name = vision_of_influence
+                        duration = 3650
+                    }
+                }
+                30 = { 
+                    add_country_modifier = {
+                        name = vision_of_conquest
+                        duration = 3650
+                    }
+                }
+                10 = { 
+                    add_country_modifier = {
+                        name = vision_of_failure
+                        duration = 3650
+                    }
+                }
             }
         }
 	}
@@ -54,7 +75,7 @@ garner_legitimacy_action = {
 		always = yes
 	}
 	effect = {
-		add_legitimacy = 25
+		add_legitimacy = 10
 	}
 	ai_will_do = {
 		factor = 1
@@ -72,7 +93,7 @@ echo_of_ghis_action = {
 		war_exhaustion = 0.01
 	}
 	effect = {
-        add_war_exhaustion = -10
+        add_war_exhaustion = -5
 	}
 	ai_will_do = {
 		factor = 1
@@ -109,7 +130,7 @@ conscript_orphans_action = {
 		always = yes
 	}
 	effect = {
-		add_yearly_manpower = 5
+		add_yearly_manpower = 2
 	}
 	ai_will_do = {
 		factor = 1

@@ -1,10 +1,19 @@
 country_decisions = {
 
+	# ---------------------------------
+	# Kingdom of the Stepstones
+	# ---------------------------------
     form_the_kingdom_of_the_stepstones = {
 		major = yes
 		potential = {
             has_reform = pirate_kingdom_reform
 			NOT = { exists = J23 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+					has_country_flag = formed_minor_formable
+				}
+			}
 		}
 		allow = {
 			upper_stepstones_area = {
@@ -26,6 +35,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_minor_formable
 		}
 		
 		ai_will_do = {
@@ -33,12 +43,21 @@ country_decisions = {
 		}
 	}
     
+	# ---------------------------------
+	# King Beyond the Wall
+	# ---------------------------------
 	become_king_beyond_the_wall = {
 		major = yes
 		potential = {
             has_reform = wildling_clan_reform
 			technology_group = wildling
 			NOT = { exists = Z01 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+					has_country_flag = formed_minor_formable
+				}
+			}
 		}
 		allow = {
             custom_trigger_tooltip = {
@@ -60,6 +79,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_minor_formable
 			hidden_effect = {
 				country_event = {
 					id = GOT_WILDLING.1
@@ -72,12 +92,20 @@ country_decisions = {
 		}
 	}
 	
+	# ---------------------------------
+	# Kingdom of Sarnor
+	# ---------------------------------
 	form_the_kingdom_of_sarnor = {
 		major = yes
 		potential = {
             has_reform = saath_city_reform
 			primary_culture = saathi
 			NOT = { exists = J22 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+				}
+			}
 		}
 		allow = {
 			region_sarnor = {
@@ -92,7 +120,8 @@ country_decisions = {
 			swap_free_idea_group = yes
 			set_government_rank = 3
 			swap_free_idea_group = yes
-            hidden_effect = {
+            set_country_flag = formed_major_formable
+			hidden_effect = {
                 546 = {
                     change_province_name = "Sarys"
                 }
@@ -119,12 +148,21 @@ country_decisions = {
 		}
 	}
 	
+	# ---------------------------------
+	# Realm of the Summer Islands
+	# ---------------------------------
 	form_the_summer_islands = {
 		major = yes
 		potential = {
             has_reform = summer_islander_clan_reform
 			culture_group = culture_summer_isles
 			NOT = { exists = J14 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+					has_country_flag = formed_minor_formable
+				}
+			}
 		}
 		allow = {
 			region_summer_islands = {
@@ -138,6 +176,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_minor_formable
 		}
 		
 		ai_will_do = {
@@ -145,12 +184,20 @@ country_decisions = {
 		}
 	}
 	
+	# ---------------------------------
+	# Ghiscari Empire
+	# ---------------------------------
 	form_the_ghiscari_empire = {
 		major = yes
 		potential = {
             has_reform = ghis_city_reform
 			culture_group = culture_ghiscari
 			NOT = { exists = J15 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+				}
+			}
 		}
 		allow = {
 			region_slavers_bay = {
@@ -164,6 +211,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_major_formable
 		}
 		
 		ai_will_do = {
@@ -171,12 +219,21 @@ country_decisions = {
 		}
 	}
 	
+	# ---------------------------------
+	# Patrimony of Hyrkoon
+	# ---------------------------------
 	form_the_patrimony_of_hyrkoon = {
 		major = yes
 		potential = {
-            has_reform = ghis_city_reform
+            has_reform = hyrkoon_city_reform
 			culture_group = culture_hyrkoon
 			NOT = { exists = J16 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+					has_country_flag = formed_minor_formable
+				}
+			}
 		}
 		allow = {
 			region_hyrkoon = {
@@ -190,6 +247,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_minor_formable
 		}
 		
 		ai_will_do = {
@@ -197,45 +255,55 @@ country_decisions = {
 		}
 	}
 	
+	# ---------------------------------
+	# New Valyria
+	# ---------------------------------
 	form_new_valyria = {
 		major = yes
 		potential = {
-            has_reform = valyria_city_reform
             culture_group = culture_valyrian
 			NOT = { exists = J17 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+				}
+			}
 		}
 		allow = {
-			region_valyria = {
+			stability = 3
+			is_at_war = no
+			valyrian_peninsula = {
 				type = all
-				country_or_vassal_holds = ROOT
+				country_or_vassal_holds = ROOT			
 			}
-            region_slavers_bay = {
-				type = all
-				country_or_vassal_holds = ROOT
-			}
-            region_volantis = {
-				type = all
-				country_or_vassal_holds = ROOT
-			}
-            
+			owns = 597
 		}
 		effect = {
 			change_tag = J17
 			add_prestige = 200
-			add_stability = 6
+			add_stability = -2
 			swap_free_idea_group = yes
 			set_government_rank = 3
-            country_event = { id = GOT_VALYRIA.1 }
+			set_country_flag = formed_major_formable
+            country_event = { 
+				id = GOT_DRAGON_EGGS.99 # Dragon Riders unlocked
+				days = 100
+				random = 150
+			}
+			region_valyria = {
+				add_claim = ROOT
+			}
             hidden_effect = {
                 every_owned_province = {    
                     limit = {
-                        region = region_valyria
+                        province_group = valyrian_peninsula
                     }
                     add_base_tax = 3
                     add_base_production = 3
                     add_base_manpower = 3
                 }
 			}
+			
 		}
 		
 		ai_will_do = {
@@ -243,7 +311,9 @@ country_decisions = {
 		}
 	}
 	
-	# Shattered World
+	# ---------------------------------
+	# Kingdom of the North
+	# ---------------------------------
 	form_the_kingdom_of_the_north = {
 		major = yes
 		potential = {
@@ -251,6 +321,12 @@ country_decisions = {
 			has_global_flag = shattered_world
 			primary_culture = men_of_the_north
 			NOT = { exists = J07 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+					has_country_flag = formed_minor_formable
+				}
+			}
 		}
 		allow = {
 			region_the_north = {
@@ -264,6 +340,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_minor_formable
 		}
 		
 		ai_will_do = {
@@ -271,6 +348,9 @@ country_decisions = {
 		}
 	}
 	
+	# ---------------------------------
+	# Kingdom of the Isles and Rivers
+	# ---------------------------------
 	form_the_kingdom_of_the_isles_and_rivers = {
 		major = yes
 		potential = {
@@ -283,6 +363,12 @@ country_decisions = {
 				primary_culture = men_of_the_claw_isle
 			}
 			NOT = { exists = J08 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+					has_country_flag = formed_minor_formable
+				}
+			}
 		}
 		allow = {
 			region_riverlands = {
@@ -304,6 +390,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_minor_formable
 		}
 		
 		ai_will_do = {
@@ -311,6 +398,9 @@ country_decisions = {
 		}
 	}
 	
+	# ---------------------------------
+	# Kingdom of the Rock
+	# ---------------------------------
 	form_the_kingdom_of_the_rock = {
 		major = yes
 		potential = {
@@ -318,6 +408,12 @@ country_decisions = {
 			has_global_flag = shattered_world
 			primary_culture = men_of_the_westerlands
 			NOT = { exists = J09 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+					has_country_flag = formed_minor_formable
+				}
+			}
 		}
 		allow = {
 			region_westerlands = {
@@ -331,6 +427,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_minor_formable
 		}
 		
 		ai_will_do = {
@@ -338,6 +435,9 @@ country_decisions = {
 		}
 	}
 	
+	# ---------------------------------
+	# Kingdom of the Stormlands
+	# ---------------------------------
 	form_the_kingdom_of_the_stormlands = {
 		major = yes
 		potential = {
@@ -348,6 +448,12 @@ country_decisions = {
 				primary_culture = men_of_the_crownlands
 			}
 			NOT = { exists = J10 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+					has_country_flag = formed_minor_formable
+				}
+			}
 		}
 		allow = {
 			region_stormlands = {
@@ -362,6 +468,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_minor_formable
 		}
 		
 		ai_will_do = {
@@ -369,6 +476,9 @@ country_decisions = {
 		}
 	}
 	
+	# ---------------------------------
+	# Kingdom of the Mountain and the Vale
+	# ---------------------------------
 	form_the_kingdom_of_the_mountain_and_the_vale = {
 		major = yes
 		potential = {
@@ -376,6 +486,12 @@ country_decisions = {
 			has_global_flag = shattered_world
 			primary_culture = men_of_the_vale
 			NOT = { exists = J11 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+					has_country_flag = formed_minor_formable
+				}
+			}
 		}
 		allow = {
 			region_vale = {
@@ -389,6 +505,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_minor_formable
 		}
 		
 		ai_will_do = {
@@ -396,6 +513,9 @@ country_decisions = {
 		}
 	}
 	
+	# ---------------------------------
+	# Principality of Dorne
+	# ---------------------------------
 	form_the_principality_of_dorne = {
 		major = yes
 		potential = {
@@ -407,6 +527,12 @@ country_decisions = {
 				primary_culture = stone_dornish
 			}
 			NOT = { exists = J12 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+					has_country_flag = formed_minor_formable
+				}
+			}
 		}
 		allow = {
 			region_dorne = {
@@ -420,6 +546,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_minor_formable
 		}
 		
 		ai_will_do = {
@@ -427,6 +554,9 @@ country_decisions = {
 		}
 	}
 	
+	# ---------------------------------
+	# Kingdom of the Reach
+	# ---------------------------------
 	form_the_kingdom_of_the_reach = {
 		major = yes
 		potential = {
@@ -434,6 +564,12 @@ country_decisions = {
 			has_global_flag = shattered_world
 			primary_culture = men_of_the_reach
 			NOT = { exists = J13 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+					has_country_flag = formed_minor_formable
+				}
+			}
 		}
 		allow = {
 			region_reach = {
@@ -447,6 +583,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_minor_formable
 		}
 		
 		ai_will_do = {
@@ -454,12 +591,20 @@ country_decisions = {
 		}
 	}
     
+	# ---------------------------------
+	# Jogos Nhai
+	# ---------------------------------
     unite_the_jogos_nhai = {
 		major = yes
 		potential = {
             has_reform = jhattar_reform
 			primary_culture = jogos_nhai
 			NOT = { exists = J03 }
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+				}
+			}
 		}
 		allow = {
 			owns_core_province = 851 
@@ -485,6 +630,7 @@ country_decisions = {
 			add_stability = 6
 			swap_free_idea_group = yes
 			set_government_rank = 3
+			set_country_flag = formed_major_formable
 		}
 		
 		ai_will_do = {
@@ -492,11 +638,25 @@ country_decisions = {
 		}
 	}
     
+	# ---------------------------------
+	# Seven Kingdoms
+	# ---------------------------------
     shattered_world_unite_the_seven_kingdoms = {
         major = yes
 		potential = {
-            NOT = { has_global_flag = edict_unite_the_seven_kingdoms }
+			capital_scope = {
+				continent = westeros
+			}
+            NOT = {
+				has_global_flag = edict_unite_the_seven_kingdoms
+				tag = WIT
+			}
             has_global_flag = shattered_world
+			NOT = {
+				OR = {
+					has_country_flag = formed_major_formable
+				}
+			}
 		}
 		allow =  {
             region_the_north = {
@@ -542,7 +702,7 @@ country_decisions = {
             add_prestige = 200
 			add_stability = 6
 			set_government_rank = 3
-			set_global_flag = edict_unite_the_seven_kingdoms
+			set_country_flag = formed_major_formable
 		}
 		ai_will_do = {
 			factor = 1

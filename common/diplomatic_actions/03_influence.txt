@@ -58,7 +58,34 @@ vassalaction = {
 # Establish Tributary
 #------------------------------------
 ask_for_tributary_state_action = {
-
+	condition = {
+		tooltip = BLANK
+		potential = {
+			OR = {
+				is_emperor_of_china = yes
+				primary_culture = dothraki
+				primary_culture = jogos_nhai
+			}
+		}
+		allow = {
+			always = yes
+		}
+	}
+	condition = {
+		tooltip = BLANK
+		potential = {
+			NOT = {
+				OR = {
+					is_emperor_of_china = yes
+					primary_culture = dothraki
+					primary_culture = jogos_nhai
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
 }
 
 #------------------------------------

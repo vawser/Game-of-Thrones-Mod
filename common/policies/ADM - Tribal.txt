@@ -5,7 +5,10 @@ tribal_legitimacy = {
 	monarch_power = ADM
 
 	potential = {
-		always = yes
+        OR = {
+            government = monarchy
+            government = tribal
+        }
 	}
 	allow = {
         AND = {

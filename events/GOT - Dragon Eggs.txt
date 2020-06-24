@@ -291,3 +291,21 @@ country_event = {
 	}
 }
 
+# Valyrians can ride dragons
+country_event = {
+	id = GOT_DRAGON_EGGS.99
+	title = GOT_DRAGON_EGGS.99.title
+	desc = GOT_DRAGON_EGGS.99.desc
+	picture = CONQUEST_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_DRAGON_EGGS.99.option.a
+		
+        custom_tooltip = ENABLE_VALYRIAN_DRAGONS
+        hidden_effect = {
+            change_unit_type = valyrian
+        }
+	}
+}

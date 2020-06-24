@@ -1,20 +1,99 @@
 namespace = GOT_VALYRIA
 
+# Valyrian Info Trigger
+country_event = {
+	id = GOT_VALYRIA.0
+	title = GOT_VALYRIA.0.title
+	desc = GOT_VALYRIA.0.desc
+	picture = CONQUEST_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		country_event = {
+			id = GOT_VALYRIA.1
+			days = 10
+		}
+	}
+	
+	option = {
+		name = GOT_VALYRIA.0.option.a
+	}
+}
+
+# Valyria Info
 country_event = {
 	id = GOT_VALYRIA.1
 	title = GOT_VALYRIA.1.title
 	desc = GOT_VALYRIA.1.desc
-	picture = CONQUEST_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+            primary_culture = elyrian
+            primary_culture = tolosi
+            primary_culture = mantarys
+        }
+		NOT = { has_country_flag = valyrian_info_read }
+	}
+
+	option = {
+		name = GOT_VALYRIA.1.option.a
+		set_country_flag = valyrian_info_read
+	}
+}
+
+# A Monumental Task
+country_event = {
+	id = GOT_VALYRIA.2
+	title = GOT_VALYRIA.2.title
+	desc = GOT_VALYRIA.2.desc
+	picture = CITY_DEVELOPMENT_eventPicture
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = GOT_VALYRIA.1.option.a
-		
-        custom_tooltip = ENABLE_VALYRIAN_DRAGONS
-        hidden_effect = {
-            change_unit_type = valyrian
-        }
+		name = GOT_VALYRIA.2.option.a
+		add_country_modifier = {
+			name = valyrian_ambitions_1
+			duration = -1
+		}
 	}
 }
+
+country_event = {
+	id = GOT_VALYRIA.99
+	title = GOT_VALYRIA.99.title
+	desc = GOT_VALYRIA.99.desc
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_VALYRIA.99.option.a
+		valyrian_peninsula = {
+			cede_province = ROOT
+			add_core = ROOT
+		}
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -10,6 +10,7 @@ establish_cult = {
 	require_acceptance = no
 	
 	is_visible = {
+        has_idea = got_espionage_ideas_2
 		FROM = {
             NOT = { religion = ROOT }
             any_owned_province = {
@@ -80,6 +81,7 @@ assassinate_leader = {
 	require_acceptance = no
 	
 	is_visible = {
+        has_idea = got_espionage_ideas_3
 		is_neighbor_of = FROM
 	}
     

@@ -504,18 +504,18 @@ on_bi_yearly_pulse = {
 	random_events = {
         100 = GOT_CULTURAL_UPRISING.1
         
-		100 = GOT_ACCOMPLISHMENTS.6 # Grand Army
-		100 = GOT_ACCOMPLISHMENTS.7 # Colonial Vigor
-		100 = GOT_ACCOMPLISHMENTS.8 # Treasures of Exploration
-		100 = GOT_ACCOMPLISHMENTS.9 # Peaceful Realm
-		100 = GOT_ACCOMPLISHMENTS.10 # One Faith
-		100 = GOT_ACCOMPLISHMENTS.11 # Royal Network
-		100 = GOT_ACCOMPLISHMENTS.12 # Marcher Lords
-		100 = GOT_ACCOMPLISHMENTS.13 # Lord of Many
-		100 = GOT_ACCOMPLISHMENTS.14 # Bleed Them Dry
-		100 = GOT_ACCOMPLISHMENTS.15 # Prestigeous Realm
-		100 = GOT_ACCOMPLISHMENTS.16 # Grand Fleet
-		100 = GOT_ACCOMPLISHMENTS.17 # Strategic Blockades
+		10 = GOT_ACCOMPLISHMENTS.6 # Grand Army
+		10 = GOT_ACCOMPLISHMENTS.7 # Colonial Vigor
+		10 = GOT_ACCOMPLISHMENTS.8 # Treasures of Exploration
+		10 = GOT_ACCOMPLISHMENTS.9 # Peaceful Realm
+		10 = GOT_ACCOMPLISHMENTS.10 # One Faith
+		10 = GOT_ACCOMPLISHMENTS.11 # Royal Network
+		10 = GOT_ACCOMPLISHMENTS.12 # Marcher Lords
+		10 = GOT_ACCOMPLISHMENTS.13 # Lord of Many
+		10 = GOT_ACCOMPLISHMENTS.14 # Bleed Them Dry
+		10 = GOT_ACCOMPLISHMENTS.15 # Prestigeous Realm
+		10 = GOT_ACCOMPLISHMENTS.16 # Grand Fleet
+		10 = GOT_ACCOMPLISHMENTS.17 # Strategic Blockades
         
         100 = GOT_CORRUPTION.16
 		100 = GOT_CORRUPTION.17
@@ -546,7 +546,29 @@ on_bi_yearly_pulse = {
 		125 = culture_religion_events.22
 		125 = culture_religion_events.23
         
-		1000 = 0
+        # Espionage
+		100 = GOT_ESPIONAGE.1
+		100 = GOT_ESPIONAGE.4
+        40 = GOT_ESPIONAGE.6
+		100 = GOT_ESPIONAGE.8
+		80 = GOT_ESPIONAGE.9
+        
+        # Professionalism
+		100 = GOT_ARMY_PROFESSIONALISM.4
+		100 = GOT_ARMY_PROFESSIONALISM.5
+		75 = GOT_ARMY_PROFESSIONALISM.6
+		100 = GOT_ARMY_PROFESSIONALISM.8
+		100 = GOT_ARMY_PROFESSIONALISM.9
+		100 = GOT_ARMY_PROFESSIONALISM.10
+		100 = GOT_ARMY_PROFESSIONALISM.11
+		75 = GOT_ARMY_PROFESSIONALISM.12
+		100 = GOT_ARMY_PROFESSIONALISM.13
+		75 = GOT_ARMY_PROFESSIONALISM.16
+        
+        # Agenda from the Estates
+		1000 = GOT_ESTATE_SYSTEM.1
+        
+		2000 = 0
 	}
 }
 
@@ -621,11 +643,6 @@ on_bi_yearly_pulse_3 = {
 on_bi_yearly_pulse_4 = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_bi_yearly_pulse_4" }
     
-    random_events = {   
-        1000 = GOT_ESTATE_SYSTEM.1
-        
-        2000 = 0
-    }
 }
 
 # Country

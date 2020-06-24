@@ -41,8 +41,10 @@ country_event = {
 				NOT = { is_year = 106 }
 			}
 			set_global_flag = shattered_world
+			set_country_flag = shattered_world_c
 		}
 	}
+	
 }
 
 country_event = {
@@ -377,6 +379,19 @@ country_event = {
         }
         
         set_country_flag = completed_country_setup
+		
+		if = {
+			limit = {
+				start_date = 100.1.1
+				NOT = { has_country_flag = starting_bonuses }
+			}
+			country_event = {
+				id = GOT_SYSTEM.9
+				days = 0
+			}	
+		}
+		
+		
     }
     
 	option = {
@@ -933,3 +948,38 @@ country_event = {
     }  
 }
 
+country_event = {
+	id = GOT_SYSTEM.9
+	title = GOT_SYSTEM.9.title
+	desc = GOT_SYSTEM.9.desc
+	picture = OVEREXTENSION_eventPicture
+	
+	hidden = no
+    is_triggered_only = yes
+    
+	immediate = {
+		set_country_flag = starting_bonuses
+	}
+	
+	# Normal Start
+    option = {
+        name = GOT_SYSTEM.9.option.a
+    }  
+	
+	# Starting Bonus
+	option = {
+        name = GOT_SYSTEM.9.option.b
+		
+		if = {
+			limit = {
+				ai = no
+				has_global_flag = shattered_world
+			}
+			# Starting Bonuses for 5 Years
+			add_country_modifier = {
+				name = easier_start_bonuses
+				duration = 1825
+			}
+		}
+    }
+}

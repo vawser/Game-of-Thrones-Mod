@@ -1730,7 +1730,11 @@ valyrian_remnants_ideas = {
 	}
 	
 	trigger = {
-		culture_group = culture_valyrian_remnants
+		OR = {
+            primary_culture = elyrian
+            primary_culture = tolosi
+            primary_culture = mantarys
+        }
 	}
 	free = yes
 	

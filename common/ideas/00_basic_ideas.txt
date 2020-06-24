@@ -12,24 +12,25 @@ got_innovation_ideas = {
     category = ADM
 
     bonus = {
-        advisor_cost = -0.15
+        advisor_cost = -0.2
     }
     
     # Scientific Progress
     got_innovation_ideas_1 = {
-        technology_cost = -0.15
+        technology_cost = -0.1
     }
     # Astute Accounting
     got_innovation_ideas_2 = {
-        inflation_action_cost = -0.25
+        inflation_action_cost = -0.2
     }
     # Patron of the Arts
     got_innovation_ideas_3 = {
-       prestige_decay = -0.01
+        prestige_decay = -0.01
     }
     # Popular Court
     got_innovation_ideas_4 = {
         advisor_pool = 1
+        monarch_lifespan = 0.1
     }
     # Pragmatism
     got_innovation_ideas_5 = {
@@ -65,6 +66,7 @@ got_religious_ideas = {
 
     bonus = {
         culture_conversion_cost = -0.2
+        clergy_loyalty_modifier = 0.1
     }
     
     # Deus Vult
@@ -77,7 +79,7 @@ got_religious_ideas = {
     }
     # Attendance Duty
     got_religious_ideas_3 = {
-        stability_cost_modifier = -0.25
+        stability_cost_modifier = -0.2
     }
     # Divine Supremacy
     got_religious_ideas_4 = {
@@ -127,12 +129,13 @@ got_economic_ideas = {
     category = ADM
 
     bonus = {
-        development_cost = -0.1
+        development_cost = -0.2
     }
     
     # Bureaucracy
     got_economic_ideas_1 = {
         global_tax_modifier = 0.1
+        expand_administration_cost = -0.25
     }
     # Organised Construction
     got_economic_ideas_2 = {
@@ -141,7 +144,7 @@ got_economic_ideas = {
     }
     # Royal Bank
     got_economic_ideas_3 = {
-        inflation_reduction = 0.2
+        inflation_reduction = 0.1
     }
     # Debt and Loans
     got_economic_ideas_4 = {
@@ -188,7 +191,7 @@ got_expansion_ideas = {
     }
     # Surge of Growth
     got_expansion_ideas_3 = {
-        global_colonial_growth = 20
+        global_colonial_growth = 15
     }
     # Colonial Recruitment
     got_expansion_ideas_4 = {
@@ -200,7 +203,7 @@ got_expansion_ideas = {
     }
     # Global Territories
     got_expansion_ideas_6 = {
-        governing_capacity_modifier = 0.25
+        min_autonomy_in_territories = -0.2
     }
     # Local Policing
     got_expansion_ideas_7 = {
@@ -244,7 +247,7 @@ got_administrative_ideas = {
     }
     # Consistent Recordkeeping
     got_administrative_ideas_3 = {
-        global_institution_spread = 0.1
+        global_institution_spread = 0.15
     }
     # Bookkeeping
     got_administrative_ideas_4 = {
@@ -256,7 +259,7 @@ got_administrative_ideas = {
     }
     # Administrative Efficiency
     got_administrative_ideas_6 = {
-        administrative_efficiency = 0.1
+        administrative_efficiency = 0.05
     }
     # Links to the Citadel
     got_administrative_ideas_7 = {
@@ -278,12 +281,13 @@ got_harmony_ideas = {
     category = ADM
 
     bonus = {
-        stability_cost_modifier = -0.25
+        stability_cost_modifier = -0.2
+        commoners_loyalty_modifier = 0.1
     }
     
     # Religious Unity
     got_harmony_ideas_1 = {
-        religious_unity = 0.33
+        religious_unity = 0.25
     }
     # Local Traditions
     got_harmony_ideas_2 = {
@@ -295,7 +299,7 @@ got_harmony_ideas = {
     }
     # Indirect Rule
     got_harmony_ideas_4 = {
-        years_of_nationalism = -10
+        years_of_nationalism = -5
     }
     # Cultural Ties
     got_harmony_ideas_5 = {
@@ -364,7 +368,7 @@ got_law_ideas = {
     category = ADM
 
     bonus = {
-        reform_progress_growth = 0.5
+        reform_progress_growth = 0.25
     }
     # Collection of Laws
     got_law_ideas_1 = {
@@ -376,7 +380,7 @@ got_law_ideas = {
     }
     # Trial by Combat
     got_law_ideas_2 = {
-        yearly_corruption = -0.2
+        yearly_corruption = -0.1
     }
     # Ministerial Traditions
     got_law_ideas_3 = {
@@ -385,6 +389,7 @@ got_law_ideas = {
     # Sealed Contracts
     got_law_ideas_4 = {
         trade_efficiency = 0.1
+        transfer_trade_power_reasons = 5
     }
     # Persuit of Usury
     got_law_ideas_5 = {
@@ -416,11 +421,11 @@ got_development_ideas = {
     category = ADM
 
     bonus = {
-        state_maintenance_modifier = -0.15
+        state_maintenance_modifier = -0.1
     }
     # Local Development
     got_development_ideas_1 = {
-        development_cost = -0.2
+        development_cost = -0.25
     }
     # Regional Standards
     got_development_ideas_2 = {
@@ -482,11 +487,11 @@ got_absolutism_ideas = {
     }
     # Might is Right
     got_absolutism_ideas_4 = {
-        war_exhaustion_cost = -0.25
+        war_exhaustion_cost = -0.15
     }
     # Religious Conviction
     got_absolutism_ideas_5 = {
-        global_heretic_missionary_strength = 0.02
+        global_heretic_missionary_strength = 0.01
     }
     # Uncompromising Vision
     got_absolutism_ideas_6 = {
@@ -507,7 +512,7 @@ got_autonomy_ideas = {
     category = ADM
 
     bonus = {
-        reduced_liberty_desire = 10
+        reduced_liberty_desire = 25
     }
     # Local Rule
     got_autonomy_ideas_1 = {
@@ -552,19 +557,19 @@ got_cryomancy_ideas = {
     }
     
     bonus = {
-        fire_damage = 0.1
+        fire_damage = 0.05
     }
     # Ressurection of the Dead
     got_cryomancy_ideas_1 = {
-        global_manpower_modifier = 0.25
+        global_manpower_modifier = 0.15
     }
     # Necromantic Arts
     got_cryomancy_ideas_2 = {
-        global_regiment_recruit_speed = -0.33
+        global_regiment_recruit_speed = -0.25
     }
     # Ancient Horror
     got_cryomancy_ideas_3 = {
-        province_warscore_cost = -0.15
+        province_warscore_cost = -0.1
     }
     # Bonds of Ice
     got_cryomancy_ideas_4 = {
@@ -572,7 +577,7 @@ got_cryomancy_ideas = {
     }
     # Absolute Loyalty
     got_cryomancy_ideas_5 = {
-        advisor_cost = -0.15
+        advisor_cost = -0.1
     }
     # Mythos of the Night King
     got_cryomancy_ideas_6 = {
@@ -605,7 +610,7 @@ got_old_gods_ideas = {
     }
     # Godswoods
     got_old_gods_ideas_2 = {
-        missionary_maintenance_cost = -0.2
+        missionary_maintenance_cost = -0.15
     }
     # Natural Order
     got_old_gods_ideas_3 = {
@@ -647,7 +652,7 @@ got_faith_of_the_seven_ideas = {
     }
     # The Father
     got_faith_of_the_seven_ideas_1 = {
-        yearly_corruption = -0.1
+        yearly_corruption = -0.05
     }
     # The Mother
     got_faith_of_the_seven_ideas_2 = {
@@ -655,11 +660,11 @@ got_faith_of_the_seven_ideas = {
     }
     # The Warrior
     got_faith_of_the_seven_ideas_3 = {
-        recover_army_morale_speed = 0.1
+        land_morale = 0.1
     }
     # The Smith
     got_faith_of_the_seven_ideas_4 = {
-        reinforce_cost_modifier = -0.2
+        reinforce_cost_modifier = -0.1
     }
     # The Maiden
     got_faith_of_the_seven_ideas_5 = {
@@ -667,7 +672,7 @@ got_faith_of_the_seven_ideas = {
     }
     # The Crone
     got_faith_of_the_seven_ideas_6 = {
-        technology_cost = -0.1
+        technology_cost = -0.05
     }
     # The Stranger
     got_faith_of_the_seven_ideas_7 = {
@@ -692,7 +697,8 @@ got_drowned_god_ideas = {
     }
     # Ironborn Dogma
     got_drowned_god_ideas_1 = {
-        missionary_maintenance_cost = -0.25
+        missionary_maintenance_cost = -0.1
+        allowed_marine_fraction = 0.1
     }
     # Drowned Priests
     got_drowned_god_ideas_2 = {
@@ -716,7 +722,7 @@ got_drowned_god_ideas = {
     }
     # Blood of the Ironborn
     got_drowned_god_ideas_7 = {
-        naval_forcelimit_modifier = 0.2
+        naval_forcelimit_modifier = 0.25
     }
     
     ai_will_do = {
@@ -733,7 +739,7 @@ got_mother_rhoyne_ideas = {
     }
     
     bonus = {
-        global_heretic_missionary_strength = 0.02
+        global_heretic_missionary_strength = 0.01
     }
     # Nourishment of the Rhoynar
     got_mother_rhoyne_ideas_1 = {
@@ -749,7 +755,7 @@ got_mother_rhoyne_ideas = {
     }
     # Natural Sailors
     got_mother_rhoyne_ideas_4 = {
-        global_sailors_modifier = 0.2
+        global_sailors_modifier = 0.25
     }
     # Boarding Planks
     got_mother_rhoyne_ideas_5 = {
@@ -790,11 +796,11 @@ got_lion_of_the_night_ideas = {
     }
     # The Five Forts
     got_lion_of_the_night_ideas_3 = {
-        defensiveness = 0.33
+        defensiveness = 0.5
     }
     # Endless Vigil
     got_lion_of_the_night_ideas_4 = {
-        missionary_maintenance_cost = -0.2
+        missionary_maintenance_cost = -0.15
     }
     # Yitish Devotion
     got_lion_of_the_night_ideas_5 = {
@@ -802,7 +808,7 @@ got_lion_of_the_night_ideas = {
     }
     # Fear of the Darkness
     got_lion_of_the_night_ideas_6 = {
-        global_missionary_strength = 0.03
+        global_missionary_strength = 0.02
     }
     # The Blood Betrayal
     got_lion_of_the_night_ideas_7 = {
@@ -823,7 +829,7 @@ got_great_stallion_ideas = {
     }
     
     bonus = {
-        movement_speed = 0.15
+        movement_speed = 0.25
     }
     # The Stallion who mounts the World
     got_great_stallion_ideas_1 = {
@@ -835,19 +841,19 @@ got_great_stallion_ideas = {
     }
     # Riders of the Dothraki Sea
     got_great_stallion_ideas_3 = {
-        cavalry_power = 0.2
+        cavalry_power = 0.1
     }
     # Blood for the Horse God
     got_great_stallion_ideas_4 = {
-        missionary_maintenance_cost = -0.2
+        missionary_maintenance_cost = -0.1
     }
     # No Quarters
     got_great_stallion_ideas_5 = {
-        global_missionary_strength = 0.02
+        global_missionary_strength = 0.01
     }
     # Vaes Dothrak
     got_great_stallion_ideas_6 = {
-        church_power_modifier = 0.2
+        church_power_modifier = 0.25
     }
     # Glory to the Stallion
     got_great_stallion_ideas_7 = {
@@ -868,7 +874,7 @@ got_rhllor_ideas = {
     }
     
     bonus = {
-        all_power_cost = -0.05
+        all_power_cost = -0.1
     }
     # R'hllor, the God of Light
     got_rhllor_ideas_1 = {
@@ -876,15 +882,15 @@ got_rhllor_ideas = {
     }
     # The Great Other, the God of Death
     got_rhllor_ideas_2 = {
-        yearly_corruption = -0.1
+        yearly_corruption = -0.05
     }
     # Fervor of the Red Priest
     got_rhllor_ideas_3 = {
-        global_missionary_strength = 0.03
+        global_missionary_strength = 0.02
     }
     # Temple Prostitutes
     got_rhllor_ideas_4 = {
-        church_power_modifier = 0.15 
+        church_power_modifier = 0.1
     }
     # The Fiery Hand
     got_rhllor_ideas_5 = {
@@ -892,7 +898,7 @@ got_rhllor_ideas = {
     }
     # Daily Prayers
     got_rhllor_ideas_6 = {
-        missionary_maintenance_cost = -0.2
+        missionary_maintenance_cost = -0.1
     }
     # The Last Kiss
     got_rhllor_ideas_7 = {
@@ -970,7 +976,7 @@ got_bearded_priests_ideas = {
     }
     # Serve, Obey, Protect
     got_bearded_priests_ideas_3 = {
-        missionary_maintenance_cost = -0.33
+        missionary_maintenance_cost = -0.2
     }
     # Mysterious Sect
     got_bearded_priests_ideas_4 = {
@@ -978,7 +984,7 @@ got_bearded_priests_ideas = {
     }
     # Sacred Axes
     got_bearded_priests_ideas_5 = {
-        infantry_power = 0.1
+        discipline = 0.05
     }
     # Theological Absolutism
     got_bearded_priests_ideas_6 = {
@@ -1012,7 +1018,7 @@ got_remnants_of_boash_ideas = {
     }
     # Abnegation of Self
     got_remnants_of_boash_ideas_2 = {
-        religious_unity = 0.25
+        religious_unity = 0.2
     }
     # The Higher Truths
     got_remnants_of_boash_ideas_3 = {
@@ -1024,7 +1030,7 @@ got_remnants_of_boash_ideas = {
     }
     # Equality for All
     got_remnants_of_boash_ideas_5 = {
-        stability_cost_modifier = -0.33
+        stability_cost_modifier = -0.25
     }
     # Mazemakers
     got_remnants_of_boash_ideas_6 = {
@@ -1069,7 +1075,7 @@ got_black_goat_ideas = {
     }
     # Religious Piety
     got_black_goat_ideas_5 = {
-        global_missionary_strength = 0.03
+        global_missionary_strength = 0.02
     }
     # Qohorik Customs
     got_black_goat_ideas_6 = {
@@ -1122,7 +1128,7 @@ got_gods_of_hyrkoon_ideas = {
     }
     # Warrior Women
     got_gods_of_hyrkoon_ideas_7 = {
-        infantry_power = 0.1
+        infantry_shock = 1
     }
     
     ai_will_do = {
@@ -1139,7 +1145,7 @@ got_moonsingers_ideas = {
     }
     
     bonus = {
-        free_policy = 1
+        free_dip_policy = 1
     }
     # Priestesses of Jogos Nhai
     got_moonsingers_ideas_1 = {
@@ -1189,6 +1195,7 @@ got_lady_of_the_waves_ideas = {
     # Ride the Waves
     got_lady_of_the_waves_ideas_1 = {
         naval_maintenance_modifier = -0.1
+        allowed_marine_fraction = 0.1
     }
     # Blessing of the Lady
     got_lady_of_the_waves_ideas_2 = {
@@ -1469,7 +1476,8 @@ got_ib_ideas = {
     }
     # Whalers
     got_ib_ideas_3 = {
-        naval_forcelimit_modifier = 0.2
+        naval_forcelimit_modifier = 0.1
+        heavy_ship_power = 0.1
     }
     # Mother Ib
     got_ib_ideas_4 = {
@@ -1616,7 +1624,7 @@ got_lord_of_harmony_ideas = {
     }
     # Ritual of the Butterfly
     got_lord_of_harmony_ideas_6 = {
-        warscore_cost_vs_other_religion = -0.2
+        warscore_cost_vs_other_religion = -0.1
     }
     # One True God
     got_lord_of_harmony_ideas_7 = {
@@ -1638,6 +1646,7 @@ got_monarchy_ideas = {
     
     bonus = {
         cav_to_inf_ratio = 0.25
+        nobles_loyalty_modifier = 0.1
     }
     # Familial Ties
     got_monarchy_ideas_1 = {
@@ -1755,7 +1764,7 @@ got_theocracy_ideas = {
     }
     # Divine Assault
     got_theocracy_ideas_2 = {
-        shock_damage = 0.1
+        discipline = 0.05
     }
     # Religious Supremacy
     got_theocracy_ideas_3 = {
@@ -1810,7 +1819,7 @@ got_tribal_ideas = {
     }
     # Nightly Raids
     got_tribal_ideas_2 = {
-        shock_damage = 0.1
+        shock_damage = 0.15
     }
     # Tribal Moot
     got_tribal_ideas_3 = {
@@ -1826,7 +1835,7 @@ got_tribal_ideas = {
     }
     # Primitive Diplomacy
     got_tribal_ideas_6 = {
-        province_warscore_cost = -0.2
+        province_warscore_cost = -0.1
     }
     # Fury of the Fearless
     got_tribal_ideas_7 = {
@@ -1880,7 +1889,7 @@ got_nomadic_ideas = {
     }
     # Nomad Territory
     got_nomadic_ideas_6 = {
-        governing_capacity_modifier = 0.25
+        governing_capacity_modifier = 0.1
     }
     # Supplicant Tributaries
     got_nomadic_ideas_7 = {
@@ -2028,6 +2037,7 @@ got_influence_ideas = {
     # Propaganda for the Masses
     got_influence_ideas_4 = {
         ae_impact = -0.2
+        accept_vassalization_reasons = 10
     }
     # Diplomatic Influence
     got_influence_ideas_5 = {
@@ -2058,6 +2068,7 @@ got_trade_ideas = {
 
     bonus = {
         merchants = 1
+        merchants_loyalty_modifier = 0.1
     }
     
     # Shrewd Practises
@@ -2070,7 +2081,7 @@ got_trade_ideas = {
     }
     # Merchant Adventures
     got_trade_ideas_3 = {
-        trade_range_modifier = 0.5
+        trade_range_modifier = 0.33
     }
     # Common Trade Policy
     got_trade_ideas_4 = {
@@ -2219,7 +2230,8 @@ got_maritime_ideas = {
     }
     # Merchant Marines
     got_maritime_ideas_2 = {
-        global_sailors_modifier = 0.5
+        global_sailors_modifier = 0.25
+        allowed_marine_fraction = 0.1
     }
     # Sheltered Ports
     got_maritime_ideas_3 = {
@@ -2276,7 +2288,8 @@ got_assimilation_ideas = {
     category = DIP
 
     bonus = {
-        diplomatic_reputation = 2
+        diplomatic_reputation = 1
+        commoners_loyalty_modifier = 0.1
     }
     
     # Cultural Doctrine
@@ -2306,6 +2319,7 @@ got_assimilation_ideas = {
     # Solidarity
     got_assimilation_ideas_7 = {
         diplomatic_upkeep = 1
+        accept_vassalization_reasons = 5
     }
     
     ai_will_do = {
@@ -2353,7 +2367,7 @@ got_society_ideas = {
     }
     # Loyalty to their Lord
     got_society_ideas_7 = {
-        land_morale = 0.1
+        min_autonomy_in_territories = -0.2
     }
     
     ai_will_do = {
@@ -2485,6 +2499,7 @@ got_naval_skirmish_ideas = {
     # Sea Skirmishers
     got_naval_skirmish_ideas_1 = {
         galley_power = 0.1
+        allowed_marine_fraction = 0.05
     }
     # Hardy Sailors
     got_naval_skirmish_ideas_2 = {
@@ -2874,7 +2889,7 @@ got_quantity_ideas = {
     category = MIL
 
     bonus = {
-        land_forcelimit_modifier  = 0.5
+        land_forcelimit_modifier = 0.25
     }
     # Grand Army
     got_quantity_ideas_1 = {
@@ -2918,8 +2933,9 @@ got_quantity_ideas = {
 got_professional_army_ideas = {
     category = MIL
 
-    bonus = {
-        discipline = 0.05
+    bonus = {   
+        global_supply_limit_modifier = 0.1
+        special_unit_forcelimit = 0.2
     }
     # Professional Soldiers
     got_professional_army_ideas_1 = {
@@ -2927,8 +2943,7 @@ got_professional_army_ideas = {
     }
     # Scheduled Drills
     got_professional_army_ideas_2 = {
-        drill_gain_modifier = 0.5
-        army_tradition = 0.5
+        drill_gain_modifier = 1.0
     }
     # Forced Marches
     got_professional_army_ideas_3 = {
@@ -2949,7 +2964,7 @@ got_professional_army_ideas = {
     # Daily Drills
     got_professional_army_ideas_7 = {
         drill_decay_modifier = -0.5
-        army_tradition = 0.5
+        army_tradition = 1
     }
     
     ai_will_do = {
@@ -3089,11 +3104,11 @@ got_army_tactics_ideas = {
     }
     # Battlefield Techniques
     got_army_tactics_ideas_1 = {
-        infantry_power = 0.2
+        infantry_power = 0.1
     }
     # Fearless Cavalry
     got_army_tactics_ideas_2 = {
-        cavalry_power = 0.2
+        cavalry_power = 0.1
     }
     # Tactical Maneuvers
     got_army_tactics_ideas_3 = {
@@ -3101,7 +3116,7 @@ got_army_tactics_ideas = {
     }
     # Skirmishing Techniques
     got_army_tactics_ideas_4 = {
-        infantry_shock = 1
+        infantry_shock = 0.5
     }
     # Anticapated Strikes
     got_army_tactics_ideas_5 = {
@@ -3109,7 +3124,7 @@ got_army_tactics_ideas = {
     }
     # Continuous Bombardment
     got_army_tactics_ideas_6 = {
-        artillery_fire = 1
+        artillery_fire = 0.5
     }
     # Glory on the Battlefield
     got_army_tactics_ideas_7 = {
@@ -3138,23 +3153,23 @@ got_armaments_ideas = {
     }
     # Burning Ammunition 
     got_armaments_ideas_3 = {
-        artillery_fire = 1
+        artillery_fire = 0.5
     }
     # Unbreakable Lances
     got_armaments_ideas_4 = {
-        cavalry_shock = 1
+        cavalry_shock = 0.5
     }
     # Vambraces
     got_armaments_ideas_5 = {
-        infantry_fire = 1
+        infantry_fire = 0.5
     }
     # Greatswords
     got_armaments_ideas_6 = {
-        infantry_shock = 1
+        infantry_shock = 0.5
     }
     # Diseased Ammunition
     got_armaments_ideas_7 = {
-        artillery_bonus_vs_fort = 1
+        artillery_bonus_vs_fort = 3
     }
     
     ai_will_do = {
@@ -3216,7 +3231,7 @@ got_militarization_ideas = {
     }
     # Wartime Efficiencies
     got_militarization_ideas_2 = {
-        global_tax_modifier = 0.1
+        governing_capacity_modifier = 0.1
     }
     # Home Support
     got_militarization_ideas_3 = {
@@ -3232,7 +3247,7 @@ got_militarization_ideas = {
     }
     # Marshal Law
     got_militarization_ideas_6 = {
-        core_creation = -0.1
+        yearly_absolutism = 1
     }
     # Common Fortitude
     got_militarization_ideas_7 = {
@@ -3266,6 +3281,7 @@ got_subjugation_ideas = {
     # Military Envoys
     got_subjugation_ideas_4 = {
         free_leader_pool = 1
+        accept_vassalization_reasons = 5
     }
     # Military Vassals
     got_subjugation_ideas_5 = {

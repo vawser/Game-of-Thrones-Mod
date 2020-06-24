@@ -1,0 +1,2361 @@
+namespace = GOT_KARMA
+
+#Advisor resigns
+#According to The White History of the Dharma the faith for an unjust ruler.
+country_event = {
+	id = GOT_KARMA.1
+	title = GOT_KARMA.1.title
+	desc = GOT_KARMA.1.desc
+	picture = BUDDHISM_BAD_eventPicture
+	
+	trigger = {
+		uses_karma = yes
+		has_dlc = "Common Sense"
+		has_regency = no
+		OR = {
+			advisor = maester
+			advisor = astrologer
+			advisor = artist
+			advisor = treasurer
+			advisor = evangelist
+			advisor = philosopher
+			advisor = inquisitor
+		}
+		NOT = { karma = -50 }
+	}
+	
+	mean_time_to_happen = {
+		months = 360
+		modifier = {
+			factor = 0.9
+			NOT = { karma = -75 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { karma = -80 }
+		}
+	}
+	
+	option = {
+		name = GOT_KARMA.1.option.a #
+		add_karma = -15
+		reduce_meritocracy_effect = yes
+		if = {
+			limit = {
+				advisor = maester
+			}
+			kill_advisor = maester
+		}
+		if = {
+			limit = {
+				advisor = astrologer
+			}
+			kill_advisor = astrologer
+		}
+		if = {
+			limit = {
+				advisor = artist
+			}
+			kill_advisor = artist
+		}
+		if = {
+			limit = {
+				advisor = treasurer
+			}
+			kill_advisor = treasurer
+		}
+		if = {
+			limit = {
+				advisor = evangelist
+			}
+			kill_advisor = evangelist
+		}
+		if = {
+			limit = {
+				advisor = philosopher
+			}
+			kill_advisor = philosopher
+		}
+		if = {
+			limit = {
+				advisor = inquisitor
+			}
+			kill_advisor = inquisitor
+		}
+	}
+}
+
+#Monasteries deteriorating
+province_event = {
+	id = GOT_KARMA.2
+	title = GOT_KARMA.2.title
+	desc = GOT_KARMA.2.desc
+	picture = BUDDHISM_MONASTERY_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		owner = {
+			uses_karma = yes
+			has_regency = no
+			NOT = { karma = -50 }
+		}
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 360
+		modifier = {
+			factor = 0.9
+			NOT = { owner = { karma = -75 } }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { owner = { karma = -80 } }
+		}
+	}
+	
+	option = {
+		name = GOT_KARMA.2.option.a #We must do all we can!
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				NOT = { owner = { years_of_income = 0.1 } }
+			}
+		}
+		owner = {
+			add_years_of_income = -0.05
+			add_karma = 10
+		}
+		if = {
+			limit = {
+				owner = { has_estate = estate_clergy }
+			}
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_clergy
+					loyalty = 10
+				}
+			}
+		}
+	}
+	option = {
+		name = GOT_KARMA.2.option.b #Perhaps now the land will come to better use.
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				owner = { has_estate = estate_clergy }
+				owner = {
+					NOT = {
+						estate_loyalty = {
+							estate = estate_clergy
+							loyalty = 40
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { has_estate = estate_clergy }
+			}
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_clergy
+					loyalty = -10
+				}
+				scaled_estate_land_share_reduce_effect = {
+					estate = estate_clergy
+				}
+			}
+		}
+		owner = { add_karma = -10 }
+	}
+}
+
+
+#Monks break their monastic vows
+province_event = {
+	id = GOT_KARMA.3
+	title = GOT_KARMA.3.title
+	desc = GOT_KARMA.3.desc
+	picture = BUDDHISM_BAD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		is_capital = no
+		NOT = { has_province_modifier = got_lacking_monastic_discipline }
+		NOT = { has_province_modifier = got_strict_punishment_of_monks }
+		NOT = { has_province_modifier = got_cleansing_of_monasteries }
+		NOT = { has_province_modifier = got_monastaries_blooming }
+		owner = {
+			uses_karma = yes
+			has_regency = no
+			NOT = { karma = -50 }
+		}
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 300
+		modifier = {
+			factor = 0.8
+			NOT = { owner = { karma = -75 } }
+		}
+		modifier = {
+			factor = 0.7
+			NOT = { owner = { karma = -80 } }
+		}
+	}
+	
+	#All options are acceptable reactions in regards to Karma, but have different other implications.
+	
+	option = {
+		name = GOT_KARMA.3.option.a #"We must show gentleness."
+		ai_chance = {
+			factor = 9
+		}
+		owner = { add_karma = 10 }
+		add_province_modifier = {
+			name = "got_lacking_monastic_discipline"
+			duration = 3650
+		}
+	}
+	option = {
+		name = GOT_KARMA.3.option.b #Fine him all movable property and livestock.
+		ai_chance = {
+			factor = 1
+		}
+		owner = { add_karma = 10 }
+		add_province_modifier = {
+			name = "got_strict_punishment_of_monks"
+			duration = 3650
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 1
+		}
+		name = GOT_KARMA.3.option.c #Execute the Monk and anyone who stands by him!
+		owner = { add_karma = 10 }
+		add_province_modifier = {
+			name = "got_cleansing_of_monasteries"
+			duration = 3650
+		}
+	}
+}
+
+#Pretender (Vajrayana)
+country_event = {
+	id = GOT_KARMA.4
+	title = GOT_KARMA.4.title
+	desc = GOT_KARMA.4.desc
+	picture = BUDDHISM_LAMA_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		government = monarchy
+		has_regency = no
+		num_of_cities = 3
+		NOT = { karma = -50 }
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.8
+			NOT = { karma = -75 }
+		}
+		modifier = {
+			factor = 0.6
+			NOT = { karma = -80 }
+		}
+	}
+	
+	option = {
+		name = GOT_KARMA.4.option.a #"This is an outrage!"
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				religion = asoiaf_stone_cow_of_faros
+				size = 1
+			}
+		}
+	}
+}
+
+#High Karma
+#1 goes even higher, 2 lowers it for a cost.
+
+#Precedent of RULER
+country_event = {
+	id = GOT_KARMA.5
+	title = GOT_KARMA.5.title
+	desc = GOT_KARMA.5.desc
+	picture = BUDDHISM_LAMA_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		government = monarchy
+		has_regency = no
+		num_of_cities = 3
+		karma = 50
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.7
+			karma = 65
+		}
+		modifier = {
+			factor = 0.6
+			karma = 85
+		}
+	}
+	
+	option = {
+		name = GOT_KARMA.5.option.a #Make Good use of this.
+		add_karma = 15
+	}
+}
+
+#White Elephant Captured
+
+country_event = {
+	id = GOT_KARMA.6
+	title = GOT_KARMA.6.title
+	desc = GOT_KARMA.6.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		government = monarchy
+		has_regency = no
+		num_of_cities = 3
+		karma = 50
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+		modifier = {
+			factor = 0.8
+			karma = 75
+		}
+	}
+	
+	option = {
+		name = GOT_KARMA.6.option.a #Take good care of it
+		ai_chance = {
+			factor = 1
+		}
+		add_years_of_income = -0.10 #Taking care of it is expensive
+		add_prestige = 10
+		add_karma = 10
+	}
+	option = {
+		name = GOT_KARMA.6.option.b #Sell it
+		ai_chance = {
+			factor = 9
+		}
+		add_years_of_income = 0.05
+		add_prestige = -10
+		add_karma = -10
+	}
+	option = {
+		name = GOT_KARMA.6.option.c #It would make an excellent gift!
+		trigger = {
+			any_ally = {
+				is_neighbor_of = ROOT
+				uses_karma = yes
+			}
+		}
+		random_ally = {
+			limit = {
+				is_neighbor_of = ROOT
+				uses_karma = yes
+			}
+			country_event = { id = GOT_KARMA.7 }
+			add_opinion = {
+				who = ROOT
+				modifier = gifted_white_cow
+			}
+		}
+	}
+}
+
+country_event = {
+	id = GOT_KARMA.7
+	title = GOT_KARMA.7.title
+	desc = GOT_KARMA.7.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_KARMA.6.option.a #Let us take good care of it.
+		add_years_of_income = -0.1
+		add_karma = 10
+		add_prestige = 10
+	}
+	option = {
+		name = GOT_KARMA.6.option.b #Sell it
+		add_years_of_income = 0.05
+		add_prestige = -10
+		add_karma = -10
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = sold_our_cow
+			}
+		}
+	}
+}
+
+#Monastaries Blooming
+province_event = {
+	id = GOT_KARMA.8
+	title = GOT_KARMA.8.title
+	desc = GOT_KARMA.8.desc
+	picture = BUDDHISM_MONASTERY_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		is_capital = no
+		NOT = { has_province_modifier = got_lacking_monastic_discipline }
+		NOT = { has_province_modifier = got_strict_punishment_of_monks }
+		NOT = { has_province_modifier = got_cleansing_of_monasteries }
+		NOT = { has_province_modifier = got_monastaries_blooming }
+		owner = {
+			uses_karma = yes
+			has_regency = no
+			karma = 50
+		}
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 0.9
+			NOT = { owner = { karma = 75 } }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { owner = { karma = 80 } }
+		}
+	}
+	
+	option = {
+		name = GOT_KARMA.8.option.a #Demand that they share their wealth.
+		ai_chance = {
+			factor = 9
+		}
+		owner = {
+			add_karma = -15
+			add_prestige = -10
+		}
+		add_province_modifier = {
+			name = got_monastaries_blooming
+			duration = 3650
+		}
+	}
+	option = {
+		name = GOT_KARMA.8.option.b #Wonderful!
+		ai_chance = {
+			factor = 1
+		}
+		owner = {
+			add_prestige = 5
+		}
+	}
+}
+
+#Choices to affect Karma
+#Choices to go higher or lower with added aspects that may or may not be tempting.
+
+#Soldiers fleeing their military service to join Monasteries
+country_event = {
+	id = GOT_KARMA.9
+	title = GOT_KARMA.9.title
+	desc = GOT_KARMA.9.desc
+	picture = BUDDHISM_MONASTERY_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		is_at_war = yes
+		government = monarchy
+		has_regency = no
+		num_of_cities = 3
+		war_exhaustion = 2
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 0.9
+			war_exhaustion = 5
+		}
+	}
+	
+	option = {
+		name = GOT_KARMA.9.option.a #We must remember to be gentle.
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				NOT = { karma = -50 }
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_clergy
+			}
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 10
+			}
+		}
+		add_karma = 10
+		add_war_exhaustion = -1
+	}
+	option = {
+		name = GOT_KARMA.9.option.b #Demand that the Monasteries release these 'Monks' to us.
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				karma = 50
+			}
+			modifier = {
+				factor = 0
+				has_estate = estate_clergy
+				NOT = {
+					estate_loyalty = {
+						estate = estate_clergy
+						loyalty = 40
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_clergy
+			}
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = -10
+			}
+		}
+		add_karma = -10
+		add_yearly_manpower = 0.5
+	}
+}
+
+#The Wedge-Throw
+province_event = {
+	id = GOT_KARMA.10
+	title = GOT_KARMA.10.title
+	desc = GOT_KARMA.10.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		trade_goods = grain
+		is_capital = no
+		NOT = { has_province_modifier = got_wedge_throw }
+		NOT = { has_province_modifier = got_poor_rice_harvests }
+		owner = {
+			uses_karma = yes
+			has_regency = no
+		}
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = GOT_KARMA.10.option.a #"A reasonable request."
+		custom_tooltip = GOT_KARMA.10.a.tt
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				NOT = { owner = { karma = -50 } }
+			}
+		}
+		owner = {
+			add_years_of_income = -0.05
+			add_karma = 10
+		}
+		add_province_modifier = {
+			name = "got_wedge_throw"
+			duration = 1825
+		}
+		set_province_flag = borrowed_money
+	}
+	option = {
+		name = GOT_KARMA.10.option.b #"Sadly the state coffers are also famished."
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { karma = 50 }
+			}
+		}
+		owner = {
+			add_karma = -10
+		}
+		add_province_modifier = {
+			name = "got_poor_rice_harvests"
+			duration = 3650
+		}
+	}
+}
+
+#Payback
+province_event = {
+	id = GOT_KARMA.11
+	title = GOT_KARMA.11.title
+	desc = GOT_KARMA.11.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		has_province_modifier = got_wedge_throw
+		owner = {
+			uses_karma = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = GOT_KARMA.11.option.a #
+		clr_province_flag = borrowed_money
+		remove_province_modifier = got_wedge_throw
+		owner = {
+			add_years_of_income = 0.05
+		}
+	}
+}
+
+#Farmers unable to Pay Back
+province_event = {
+	id = GOT_KARMA.12
+	title = GOT_KARMA.12.title
+	desc = GOT_KARMA.12.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		NOT = { has_province_modifier = got_wedge_throw }
+		has_province_flag = borrowed_money
+		owner = {
+			uses_karma = yes
+			has_regency = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = GOT_KARMA.12.option.a #
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				NOT = { owner = { karma = -50 } }
+			}
+		}
+		clr_province_flag = borrowed_money
+	}
+	
+	option = {
+		name = GOT_KARMA.12.option.b #
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { karma = 50 }
+			}
+		}
+		
+		clr_province_flag = borrowed_money
+		owner = {
+			add_karma = -10
+			add_years_of_income = 0.05
+		}
+	}
+}
+
+#"Human Sacrifice"
+province_event = {
+	id = GOT_KARMA.13
+	title = GOT_KARMA.13.title
+	desc = GOT_KARMA.13.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		is_capital = no
+		NOT = { has_province_modifier = got_wedge_throw }
+		NOT = { has_province_modifier = got_poor_rice_harvests }
+		owner = {
+			has_regency = no
+			uses_karma = yes
+		}
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = GOT_KARMA.13.option.a #Compensate the Farmers
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 2
+				owner = { NOT = { karma = -50 } }
+			}
+		}
+		owner = {
+			add_karma = 10
+			add_years_of_income = -0.1
+		}
+		add_province_modifier = {
+			name = "got_human_sacrifice"
+			duration = 3650
+		}
+	}
+	option = {
+		name = GOT_KARMA.13.option.b #Abandon the Idea
+		owner = { add_prestige = -10 }
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 2
+				owner = {
+					NOT = { karma = 50 }
+					karma = -50
+				}
+			}
+		}
+	}
+	option = {
+		name = GOT_KARMA.13.option.c #Demand that they work without compensation
+		owner = { add_karma = -5 }
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 2
+				owner = { karma = 50 }
+			}
+		}
+		add_province_modifier = {
+			name = "got_forced_labor"
+			duration = 3650
+		}
+	}
+}
+
+#Dishonoring the "Hay Sacrifice"
+country_event = {
+	id = GOT_KARMA.14
+	title = GOT_KARMA.14.title
+	desc = GOT_KARMA.14.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		has_regency = no
+	}
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = GOT_KARMA.14.option.a #Levy the tax.
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				karma = 50
+			}
+		}
+		add_karma = -10
+		add_years_of_income = 0.1
+	}
+	option = {
+		name = GOT_KARMA.14.option.b #Let us not steal the fruits of their labor.
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				NOT = { karma = -50 }
+			}
+		}
+		add_karma = 10
+	}
+}
+
+# Dana / Charity 
+country_event = {
+	id = GOT_KARMA.15
+	title = GOT_KARMA.15.title
+	desc = GOT_KARMA.15.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		NOT = { has_country_modifier = got_grain_for_the_poor }
+		NOT = { has_country_modifier = got_grain_reserves }
+		has_regency = no
+		stability = 1
+		is_at_war = no
+		NOT = { num_of_rebel_armies = 1 }
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	option = {
+		name = GOT_KARMA.15.option.a #
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				NOT = { karma = -50 }
+			}
+		}
+		add_karma = 15
+		add_country_modifier = {
+			name = "got_grain_for_the_poor"
+			duration = 3650
+		}
+	}
+	option = {
+		name = GOT_KARMA.15.option.b #
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				karma = 50
+			}
+		}
+		add_country_modifier = {
+			name = "got_grain_reserves"
+			duration = 3650
+		}
+		add_karma = -15
+	}
+}
+
+#Vicious Words?
+province_event = {
+	id = GOT_KARMA.16
+	title = GOT_KARMA.16.title
+	desc = GOT_KARMA.16.desc
+	picture = BUDDHISM_BAD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		is_capital = no
+		local_autonomy = 50
+		is_colony = no
+		is_state = yes
+		owner = {
+			uses_karma = yes
+			has_regency = no
+		}
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = GOT_KARMA.16.option.a #
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { NOT = { karma = -50 } }
+			}
+		}
+		owner = {
+			add_prestige = 5
+			add_karma = 10
+		}
+	}
+	option = {
+		name = GOT_KARMA.16.option.b #
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { karma = 50 }
+			}
+		}
+		owner = {
+			add_karma = -10
+		}
+		add_local_autonomy = -20
+	}
+}
+
+#Risking Life and Limb for ones people
+country_event = {
+	id = GOT_KARMA.17
+	title = GOT_KARMA.17.title
+	desc = GOT_KARMA.17.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		has_regency = no
+		is_monarch_leader = yes
+		any_army = {
+			is_ruler_commanding_unit = yes
+		}
+		NOT = { has_ruler_flag = divine_ruler_flag }
+		any_known_country = {
+			offensive_war_with = ROOT
+		}
+	}
+	
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	option = {
+		name = GOT_KARMA.17.option.a #Ok.
+		add_karma = 10
+		set_ruler_flag = divine_ruler_flag
+	}
+}
+
+# Indulgence
+country_event = {
+	id = GOT_KARMA.18
+	title = GOT_KARMA.18.title
+	desc = GOT_KARMA.18.desc
+	picture = BUDDHISM_LAMA_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		has_regency = no
+		NOT = { has_ruler_flag = had_indulgences }
+	}
+	
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = GOT_KARMA.18.option.a #Ok.
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				NOT = { karma = -50 }
+			}
+		}
+		add_karma = 10
+		add_prestige = -10
+		set_ruler_flag = had_indulgences
+	}
+	option = {
+		name = GOT_KARMA.18.option.b #Ok.
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				karma = 50
+			}
+		}
+		add_karma = -10
+		add_legitimacy = -10
+		add_horde_unity = -10
+		set_ruler_flag = had_indulgences
+	}
+}
+
+#Good Will
+country_event = {
+	id = GOT_KARMA.19
+	title = GOT_KARMA.19.title
+	desc = GOT_KARMA.19.desc
+	picture = BUDDHISM_LAMA_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		has_regency = no
+		NOT = { has_ruler_flag = ruler_good_will }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = ruler_good_will
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = GOT_KARMA.19.option.a #Make full use of the situation.
+		add_karma = -10
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				karma = 50
+			}
+		}
+		add_country_modifier = {
+			name = "got_political_rival_crushed"
+			duration = 3650
+		}
+	}
+	option = {
+		name = GOT_KARMA.19.option.b #A true [Root.Monarch.GetTitle] holds no grudges.
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				NOT = { karma = -50 }
+			}
+		}
+		add_karma = 10
+		add_prestige = 5
+	}
+	option = {
+		name = GOT_KARMA.19.option.c #This is a time for Charity, let us help this man.
+		ai_chance = {
+			factor = 0
+		}
+		add_karma = 10
+		add_prestige = 15
+		add_years_of_income = -0.15
+		set_ruler_flag = helped_rival
+	}
+}
+
+#Rival Bounces Back - Good Outcome
+country_event = {
+	id = GOT_KARMA.20
+	title = GOT_KARMA.20.title
+	desc = GOT_KARMA.20.desc
+	picture = BUDDHISM_LAMA_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		has_ruler_flag = helped_rival
+		had_ruler_flag = { flag = helped_rival days = 730 }
+	}
+	
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = GOT_KARMA.20.option.a #
+		clr_ruler_flag = helped_rival
+		add_adm_power = 25
+		define_advisor = {
+			skill = 2
+			type = diplomat
+			discount = yes
+		}
+	}
+}
+
+#Rival Bounces Back - Bad Outcome
+country_event = {
+	id = GOT_KARMA.21
+	title = GOT_KARMA.21.title
+	desc = GOT_KARMA.21.desc
+	picture = BUDDHISM_BAD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		has_ruler_flag = helped_rival
+		had_ruler_flag = { flag = helped_rival days = 730 }
+	}
+	
+	
+	mean_time_to_happen = {
+		months = 40
+	}
+	
+	option = {
+		name = GOT_KARMA.21.option.a #
+		clr_ruler_flag = helped_rival
+		add_adm_power = -25
+	}
+}
+
+#Plight of [Root.GetName]
+province_event = {
+	id = GOT_KARMA.22
+	title = GOT_KARMA.22.title
+	desc = GOT_KARMA.22.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		NOT = { development = 24 }
+		NOT = { has_province_modifier = got_improvement_program }
+		NOT = { has_province_modifier = got_hampered_growth }
+		owner = {
+			uses_karma = yes
+			has_regency = no
+		}
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = GOT_KARMA.22.option.a #
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { NOT = { karma = -50 } }
+			}
+		}
+		owner = {
+			add_karma = 10
+			add_years_of_income = -0.1
+		}
+		add_province_modifier = {
+			name = "got_improvement_program"
+			duration = 1825
+		}
+	}
+	option = {
+		name = GOT_KARMA.22.option.b #
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { karma = 50 }
+			}
+		}
+		owner = { add_karma = -15 }
+		add_province_modifier = {
+			name = "got_hampered_growth"
+			duration = 1825
+		}
+	}
+}
+
+#Inheritance of a Monk
+country_event = {
+	id = GOT_KARMA.23
+	title = GOT_KARMA.23.title
+	desc = GOT_KARMA.23.desc
+	picture = BUDDHISM_MONASTERY_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		has_regency = no
+		any_owned_province = {
+			is_capital = no
+			NOT = { has_province_modifier = got_hostile_monastery }
+		}
+	}
+	
+
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = GOT_KARMA.23.option.a #Rule in favor of the disciple.
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 2
+				NOT = { karma = -50 }
+			}
+		}
+		add_karma = 10
+		add_prestige = 5
+	}
+	option = {
+		name = GOT_KARMA.23.option.b #Rule in favor of the Monastery
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 2
+				karma = 50
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_clergy
+			}
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 10
+			}
+		}
+		add_karma = -10
+		add_legitimacy = 5
+		add_horde_unity = 5
+		add_republican_tradition = 5
+	}
+	option = {
+		name = GOT_KARMA.23.option.c #Support the lay family of the monk.
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 2
+				karma = 75
+			}
+			modifier = {
+				factor = 0
+				has_estate = estate_clergy
+				NOT = {
+					estate_loyalty = {
+						estate = estate_clergy
+						loyalty = 40
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_clergy
+			}
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = -10
+			}
+		}
+		add_karma = -15
+		add_years_of_income = 0.25
+		random_owned_area = {
+			limit = {
+				is_capital = no
+			}
+			add_province_modifier = {
+				name = "got_hostile_monastery"
+				duration = 3650
+			}
+		}
+	}
+}
+
+
+#Increasingly Powerful Monastery
+province_event = {
+	id = GOT_KARMA.24
+	title = GOT_KARMA.24.title
+	desc = GOT_KARMA.24.desc
+	picture = BUDDHISM_MONASTERY_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		is_capital = no
+		is_state = yes
+		NOT = {
+			has_province_modifier = got_powerful_hostile_monastery
+		}
+		NOT = {
+			has_province_modifier = got_powerful_benevolent_monastery
+		}
+		NOT = { has_province_modifier = got_hostile_monastery }
+		local_autonomy = 25
+		owner = {
+			uses_karma = yes
+			has_regency = no
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = got_powerful_benevolent_monastery
+				}
+			}
+		}
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	option = {
+		name = GOT_KARMA.24.option.a #We must try to curb their power
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { NOT = { karma = -50 } }
+			}
+			modifier = {
+				factor = 0
+				owner = {
+					has_estate = estate_clergy
+					NOT = {
+						estate_loyalty = {
+							estate = estate_clergy
+							loyalty = 40
+						}
+					}
+				}
+			}
+		}
+		owner = { add_karma = 10 }
+		if = {
+			limit = {
+				owner = {
+					has_estate = estate_clergy
+				}
+			}
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_clergy
+					loyalty = -10
+				}
+				take_estate_land_share_small = { estate = estate_clergy }
+			}
+		}
+		add_local_autonomy = -50
+		add_province_modifier = {
+			name = "got_powerful_hostile_monastery"
+			duration = 3650
+		}
+	}
+	option = {
+		name = GOT_KARMA.24.option.b #Seek their support
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { karma = 50 }
+			}
+		}
+		owner = { add_karma = -10 }
+		if = {
+			limit = {
+				owner = {
+					has_estate = estate_clergy
+				}
+			}
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_clergy
+					loyalty = 10
+				}
+				give_estate_land_share_small = { estate = estate_clergy }
+			}
+		}
+		add_local_autonomy = 25
+		add_province_modifier = {
+			name = "got_powerful_benevolent_monastery"
+			duration = 3650
+		}
+	}
+}
+
+
+#Banditry
+province_event = {
+	id = GOT_KARMA.25
+	title = GOT_KARMA.25.title
+	desc = GOT_KARMA.25.desc
+	picture = BUDDHISM_BAD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		is_capital = no
+		local_autonomy = 25
+		NOT = { has_province_modifier = got_social_bandit }
+		NOT = {
+			owner = {
+				any_owned_province = {
+					has_province_modifier = got_social_bandit
+				}
+			}
+		}
+		NOT = {
+			any_neighbor_province = {
+				is_capital = yes
+			}
+		}
+		owner = {
+			uses_karma = yes
+			has_regency = no
+		}
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 0.6
+			local_autonomy = 50
+		}
+	}
+	
+	option = {
+		name = GOT_KARMA.25.option.a #We need to deal with these Thieves
+		custom_tooltip = GOT_KARMA.25.a.tt
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { NOT = { karma = -50 } }
+			}
+		}
+		owner = {
+			add_karma = 10
+			add_mil_power = -50
+		} #Upholding the law
+		add_province_modifier = {
+			name = "got_social_bandit"
+			duration = -1
+		}
+	}
+	option = {
+		name = GOT_KARMA.25.option.b #Let Local Authorities Handle it
+		custom_tooltip = GOT_KARMA.25.b.tt
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { karma = 50 }
+			}
+		}
+		owner = {
+			add_karma = -10
+		}
+		add_province_modifier = {
+			name = "got_social_bandit_local_search"
+			duration = -1
+		}
+	}
+}
+
+#Bandits Caught
+province_event = {
+	id = GOT_KARMA.26
+	title = GOT_KARMA.26.title
+	desc = GOT_KARMA.26.desc
+	picture = BUDDHISM_BAD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		OR = {
+			has_province_modifier = got_social_bandit
+			has_province_modifier = got_social_bandit_local_search
+		}
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 70
+		
+		modifier = {
+			factor = 0.6
+			NOT = { local_autonomy = 50 }
+		}
+		
+		modifier = {
+			factor = 0.3
+			NOT = { local_autonomy = 25 }
+		}
+	}
+	
+	option = {
+		name = GOT_KARMA.26.option.a #Death
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { karma = 50 }
+			}
+		}
+		remove_province_modifier = got_social_bandit
+		remove_province_modifier = got_social_bandit_local_search
+		owner = { add_karma = -10 }
+		add_local_autonomy = -15
+		if = {	#Only Once
+			limit = {
+				NOT = {
+					owner = {
+						has_country_flag = the_myth_lives_on
+					}
+				}
+			}
+			custom_tooltip = GOT_KARMA.26.a.tt
+			owner = { set_country_flag = the_myth_lives_on }
+		}
+	}
+	option = {
+		name = GOT_KARMA.26.option.b #Banishment
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { NOT = { karma = -50 } }
+			}
+		}
+		owner = {
+			add_karma = 10
+			add_prestige = 5
+		}
+		remove_province_modifier = got_social_bandit
+		remove_province_modifier = got_social_bandit_local_search
+		if = {	#Only Once
+			limit = {
+				NOT = {
+					owner = { has_country_flag = bandit_leader_returns }
+				}
+			}
+			custom_tooltip = GOT_KARMA.26.b.tt
+			owner = { set_country_flag = bandit_leader_returns }
+		}
+	}
+}
+
+#Bandit Leader Returns
+country_event = {
+	id = GOT_KARMA.27
+	title = GOT_KARMA.27.title
+	desc = GOT_KARMA.27.desc
+	picture = BUDDHISM_BAD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		has_country_flag = bandit_leader_returns
+		NOT = {
+			has_country_flag = bandit_leader_returns_happened
+		}
+		had_country_flag = { flag = bandit_leader_returns days = 730 }
+		NOT = {
+			had_country_flag = {
+				flag = bandit_leader_returns days = 7300
+			}
+		} #Would be dead by now
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = GOT_KARMA.27.option.a #
+		set_country_flag = bandit_leader_returns_happened
+		random_owned_province = {
+			limit = { is_capital = no }
+			add_province_modifier = {
+				name = got_bandit_leader_returned
+				duration = 730
+			}
+		}
+	}
+}
+
+#The Myth lives on
+country_event = {
+	id = GOT_KARMA.28
+	title = GOT_KARMA.28.title
+	desc = GOT_KARMA.28.desc
+	picture = BUDDHISM_BAD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		has_country_flag = the_myth_lives_on
+		NOT = { has_country_flag = myth_lives_on_happened }
+		had_country_flag = { flag = the_myth_lives_on days = 730 }
+		NOT = {
+			had_country_flag = {
+				flag = the_myth_lives_on
+				days = 7300
+			}
+		} #Myth would be dead by now
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = GOT_KARMA.28.option.a #
+		set_country_flag = myth_lives_on_happened
+		add_country_modifier = {
+			name = "got_social_bandit_myth"
+			duration = 3650
+		}
+	}
+}
+
+#Khanti
+country_event = {
+	id = GOT_KARMA.29
+	title = GOT_KARMA.29.title
+	desc = GOT_KARMA.29.desc
+	picture = BUDDHISM_BAD_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		has_regency = no
+		any_neighbor_country = {
+			NOT = {
+				alliance_with = ROOT
+				war_with = ROOT
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = GOT_KARMA.29.option.a #Demand that they compensate you for the Insult
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				karma = 50
+			}
+		}
+		add_karma = -10
+		random_neighbor_country = {
+			limit = {
+				NOT = {
+					alliance_with = ROOT
+					war_with = ROOT
+				}
+			}
+			ROOT = {
+				add_casus_belli = {
+					target = PREV
+					type = cb_insult
+					months = 24
+				}
+			}
+		}
+	}
+	option = {
+		name = GOT_KARMA.29.option.b #We must never loose our temper.
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				NOT = { karma = -50 }
+			}
+		}
+		add_karma = 10
+		add_prestige = 10
+	}
+}
+
+# Ajjava
+province_event = {
+	id = GOT_KARMA.30
+	title = GOT_KARMA.30.title
+	desc = GOT_KARMA.30.desc
+	picture = BUDDHISM_LAMA_eventPicture
+	goto = root
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		NOT = { has_province_modifier = got_governor_replaced }
+		NOT = { has_province_modifier = got_farosi_nepotism }
+		owner = {
+			has_regency = no
+			uses_karma = yes
+		}
+	}
+
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = GOT_KARMA.30.option.a #
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { karma = 50 }
+			}
+		}
+		owner = {
+			add_karma = -10
+		}
+		add_province_modifier = {
+			name = "got_farosi_nepotism"
+			duration = 3650
+		}
+	}
+	option = {
+		name = GOT_KARMA.30.option.b #
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				owner = { NOT = { karma = -50 } }
+			}
+		}
+		owner = {
+			add_karma = 10
+		}
+		add_province_modifier = {
+			name = "got_governor_replaced"
+			duration = 3650
+		}
+	}
+}
+
+#Pali Law Collection
+country_event = {
+	id = GOT_KARMA.31
+	title = GOT_KARMA.31.title
+	desc = GOT_KARMA.31.desc
+	picture = BUDDHISM_LAMA_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		OR = {
+			karma = 25
+			NOT = { karma = -25 }
+		}
+		has_regency = no
+		NOT = { has_ruler_flag = divine_law_collection }
+	}
+
+	mean_time_to_happen = {
+		months = 500
+	}
+	
+	option = {
+		name = GOT_KARMA.31.option.a #Excellent! Promote these laws.
+		set_ruler_flag = divine_law_collection
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			NOT = { karma = -25 }
+		}
+		add_karma = 10
+		add_prestige = -5
+		custom_tooltip = GOT_KARMA.31.a.tt1
+	}
+	option = {
+		name = GOT_KARMA.31.option.a #Promote these laws.
+		set_ruler_flag = divine_law_collection
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+			karma = 25
+		}
+		add_karma = 10
+		add_prestige = 5
+		custom_tooltip = GOT_KARMA.31.a.tt2
+	}
+	option = {
+		name = GOT_KARMA.31.option.b #Let us do what we can to stop this from spreading.
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				karma = 50
+			}
+		}
+		set_ruler_flag = divine_law_collection
+		add_karma = -10
+	}
+}
+
+#Place your bets
+country_event = {
+	id = GOT_KARMA.32
+	title = GOT_KARMA.32.title
+	desc = GOT_KARMA.32.desc
+	picture = BUDDHISM_MONASTERY_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		has_regency = no
+		num_of_cities = 5
+		any_owned_province = {
+			is_capital = no
+			NOT = { has_province_modifier = got_upset_farosi_nobles }
+			NOT = { has_province_modifier = got_upset_farosi_monks }
+			NOT = { has_province_modifier = got_pleased_farosi_monks }
+			NOT = { has_province_modifier = got_pleased_farosi_nobles }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					NOT = { has_province_modifier = got_upset_farosi_nobles }
+					NOT = { has_province_modifier = got_upset_farosi_monks }
+					NOT = { has_province_modifier = got_pleased_farosi_monks }
+					NOT = { has_province_modifier = got_pleased_farosi_nobles }
+				}
+				set_province_flag = legal_dispute_faros
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					NOT = { has_province_modifier = got_upset_farosi_nobles }
+					NOT = { has_province_modifier = got_upset_farosi_monks }
+					NOT = { has_province_modifier = got_pleased_farosi_monks }
+					NOT = { has_province_modifier = got_pleased_farosi_nobles }
+					NOT = { has_province_flag = legal_dispute_faros }
+				}
+				set_province_flag = legal_dispute_faros
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = GOT_KARMA.32.option.a #Demand a retrial with other Lawyers.
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				NOT = { karma = -50 }
+			}
+		}
+		add_karma = 10
+	}
+	option = {
+		name = GOT_KARMA.32.option.b #Judge in favor of the monastery.
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				karma = 50
+			}
+			modifier = {
+				factor = 0.25
+				has_estate = estate_nobles
+				NOT = {
+					estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 40
+					}
+				}
+			}
+		}
+		add_karma = -10
+		if = {
+			limit = {
+				has_estate = estate_clergy
+			}
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 10
+			}
+			give_estate_land_share_small = { estate = estate_clergy }
+		}
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -10
+			}
+			take_estate_land_share_small = { estate = estate_nobles }
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = legal_dispute_faros
+			}
+			add_province_modifier = {
+				name = "got_upset_farosi_nobles"
+				duration = 3650
+			}
+			clr_province_flag = legal_dispute_faros
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = legal_dispute_faros
+			}
+			add_province_modifier = {
+				name = "got_pleased_farosi_monks"
+				duration = 3650
+			}
+			clr_province_flag = legal_dispute_faros
+		}
+	}
+	option = {
+		name = GOT_KARMA.32.option.c #Judge in favor of the nobles.
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				karma = 50
+			}
+			modifier = {
+				factor = 0.25
+				has_estate = estate_clergy
+				NOT = {
+					estate_loyalty = {
+						estate = estate_clergy
+						loyalty = 40
+					}
+				}
+			}
+		}
+		add_karma = -10
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+			give_estate_land_share_small = { estate = estate_nobles }
+		}
+		if = {
+			limit = {
+				has_estate = estate_clergy
+			}
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = -10
+			}
+			take_estate_land_share_small = { estate = estate_clergy }
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = legal_dispute_faros
+			}
+			clr_province_flag = legal_dispute_faros
+			add_province_modifier = {
+				name = "got_upset_farosi_monks"
+				duration = 3650
+			}
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = legal_dispute_faros
+			}
+			clr_province_flag = legal_dispute_faros
+			add_province_modifier = {
+				name = "got_pleased_farosi_nobles"
+				duration = 3650
+			}
+		}
+	}
+}
+
+#Encountering a Lama - Pagans
+country_event = {
+	id = GOT_KARMA.33
+	title = GOT_KARMA.33.title
+	desc = GOT_KARMA.33.desc
+	picture = BUDDHISM_LAMA_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		primary_culture = qartheen
+		has_regency = no
+		NOT = { has_country_flag = met_high_priest }
+		region_faros = {
+            controlled_by = ROOT
+        }
+	}
+	
+	immediate = {
+		set_country_flag = met_high_priest
+	}
+
+	mean_time_to_happen = {
+		months = 360
+		modifier = {
+			factor = 0.1
+			region_faros = {
+				controlled_by = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_KARMA.33.option.a #The time for change has come.
+		ai_chance = {
+			factor = 1
+		}
+		change_religion = asoiaf_stone_cow_of_faros
+		add_country_modifier = {
+			name = "got_farosi_high_priest"
+			duration = -1
+		}
+	}
+	option = {
+		name = GOT_KARMA.33.option.b #Let's stick to our old ways.
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = 10
+	}
+}
+
+country_event = {
+	id = GOT_KARMA.34
+	title = GOT_KARMA.34.title
+	desc = GOT_KARMA.34.desc
+	picture = BUDDHISM_MONASTERY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_KARMA.34.option.a #
+		add_years_of_income = -0.75
+		add_adm_power = -100
+		capital_scope = {
+			add_province_modifier = {
+				name = "got_farosi_great_monastery"
+				duration = -1
+			}
+		}
+		add_country_modifier = {
+			name = "got_farosi_high_priest"
+			duration = -1
+		}
+	}
+	option = {
+		name = GOT_KARMA.34.option.b #
+		add_prestige = -5
+		add_country_modifier = {
+			name = "got_influx_of_farosi_monks"
+			duration = 1835
+		}
+	}
+}
+
+#Death of a Lama
+country_event = {
+	id = GOT_KARMA.36
+	title = GOT_KARMA.36.title
+	desc = GOT_KARMA.36.desc
+	picture = BUDDHISM_LAMA_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		has_regency = no
+		has_country_modifier = got_farosi_high_priest
+		NOT = { has_country_flag = search_for_high_priest }
+		OR = {
+			NOT = { has_country_flag = reincarnated }
+			had_country_flag = { flag = reincarnated days = 5475 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = search_for_high_priest
+			clr_country_flag = reincarnated
+		}
+	}
+	
+	option = {
+		name = GOT_KARMA.36.option.a #Aid the Search
+		add_adm_power = -50
+		add_karma = 10
+		set_country_flag = helped_search
+	}
+	option = {
+		name = GOT_KARMA.36.option.b #Let them sort it out themselves
+		add_karma = -10
+		add_prestige = -10
+	}
+}
+
+#Reincarnation Found
+country_event = {
+	id = GOT_KARMA.37
+	title = GOT_KARMA.37.title
+	desc = GOT_KARMA.37.desc
+	picture = BUDDHISM_LAMA_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		has_regency = no
+		has_country_flag = search_for_high_priest
+		NOT = { has_country_flag = reincarnated }
+	}
+
+	mean_time_to_happen = {
+		months = 20
+		modifier = {
+			factor = 0.5
+			has_country_flag = helped_search
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = helped_search
+			clr_country_flag = search_for_high_priest
+			set_country_flag = reincarnated
+		}
+	}
+	
+	option = {
+		name = GOT_KARMA.37.option.a #Rejoice!
+		add_stability_or_adm_power = yes
+	}
+}
+
+#Legitimacy of Incarnation Questioned
+country_event = {
+	id = GOT_KARMA.38
+	title = GOT_KARMA.38.title
+	desc = GOT_KARMA.38.desc
+	picture = BUDDHISM_LAMA_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		has_country_flag = reincarnated
+	}
+
+	mean_time_to_happen = {
+		months = 260
+	}
+	
+	option = {
+		name = GOT_KARMA.38.option.a #Send envoys to convince them.
+		add_karma = 5
+		add_dip_power = -50
+	}
+	option = {
+		name = GOT_KARMA.38.option.b #Send troops to convince them.
+		add_karma = -5
+		random_owned_province = {
+            spawn_rebels = {
+                type = anti_tax_rebels
+                size = 1
+            }
+        }
+	}
+}
+
+#Inviting Lankan Priests
+country_event = {
+	id = GOT_KARMA.40
+	title = GOT_KARMA.40.title
+	desc = GOT_KARMA.40.desc
+	picture = BUDDHISM_MONASTERY_eventPicture
+	
+	trigger = {
+		has_dlc = "Common Sense"
+		uses_karma = yes
+		NOT = { has_country_modifier = got_monks_from_vahar }
+		NOT = { has_country_flag = sent_embassy_to_vahar }
+		NOT = { has_ruler_modifier = got_supporting_local_monastic_traditions }
+		vahar_area = {
+			NOT = {
+				owned_by = ROOT
+			}
+			owner = {
+				uses_karma = yes
+				is_at_war = no
+				prestige = 50
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 580
+	}
+	
+	option = {
+		name = GOT_KARMA.40.option.a #Let us send an embassy.
+		set_country_flag = sent_embassy_to_vahar
+        
+		add_dip_power = -50
+		2099 = {
+			owner = {
+				country_event = { id = GOT_KARMA.41 days = 60 }
+			}
+		}
+	}
+	option = {
+		name = GOT_KARMA.40.option.b #Support our own lineages instead.
+		set_country_flag = sent_embassy_to_vahar
+		add_ruler_modifier = {
+			name = "got_supporting_local_monastic_traditions"
+		}
+	}
+}
+
+#An Embassy from [From.GetName]
+country_event = {
+	id = GOT_KARMA.41
+	title = GOT_KARMA.41.title
+	desc = GOT_KARMA.41.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_KARMA.41.option.a #Allow it
+		ai_chance = {
+			factor = 99
+			modifier = {
+				factor = 0
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+		}
+		add_dip_power = 50
+		add_prestige = 10
+		add_opinion = {
+			who = FROM
+			modifier = vahari_monks_sent
+		}
+		FROM = {
+			country_event = { id = GOT_KARMA.42 days = 30 }
+		}
+	}
+	option = {
+		name = GOT_KARMA.41.option.b #They shall do no such thing!
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+					has_opinion = {
+						who = FROM
+						value = -50
+					}
+			}
+		}
+		add_opinion = {
+			who = FROM
+			modifier = no_vahari_monks_sent
+		}
+		FROM = {
+			country_event = { id = GOT_KARMA.43 days = 30 }
+		}
+	}
+}
+
+#Monks Arrive
+country_event = {
+	id = GOT_KARMA.42
+	title = GOT_KARMA.42.title
+	desc = GOT_KARMA.42.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_KARMA.42.option.a #
+		add_country_modifier = {
+			name = "got_monks_from_vahar"
+			duration = 18250 # 50 Years
+		}
+		add_opinion = {
+			who = FROM
+			modifier = vahari_monks_sent
+		}
+	}
+
+}
+
+#No Monks for You
+country_event = {
+	id = GOT_KARMA.43
+	title = GOT_KARMA.43.title
+	desc = GOT_KARMA.43.desc
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_KARMA.43.option.a #
+		add_prestige = -10
+		add_opinion = {
+			who = FROM
+			modifier = no_vahari_monks_sent
+		}
+	}
+
+}

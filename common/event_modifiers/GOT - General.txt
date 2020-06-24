@@ -1,0 +1,916 @@
+# -------------- Absolutism --------------
+tyrannical_ruler = {
+    yearly_absolutism = 1
+}
+
+# -------------- Ideagroups --------------
+law_and_order = {
+    local_years_of_nationalism = -20
+}
+
+# -------------- Institutions --------------
+rumours_of_magic = {
+	prestige = 1
+}
+
+home_of_the_illuminated = {
+	prestige = 1
+}
+
+cultivators_of_glory = {
+	prestige = 1
+}
+
+refinement_of_magic = {
+	prestige = 1
+}
+
+educators_of_magic = {
+	prestige = 1
+}
+
+home_of_the_enlightenment = {
+	prestige = 1
+}
+
+# -------------- Occult --------------
+occult_inspiration = {
+	technology_cost = -0.1
+    idea_cost = -0.1
+}
+
+# -------------- Old Gods --------------
+greenseer_ideas = {
+	idea_cost = -0.1
+}
+
+greenseer_hate = {
+	local_unrest = 4
+}	
+
+commissioned_runestone = {
+	missionaries = 1
+}
+
+# -------------- Ruler --------------
+ruler_education_adm_1 = {
+	development_cost = -0.1
+}
+
+ruler_education_adm_2 = {
+	production_efficiency = 0.1
+}
+
+ruler_education_adm_3 = {
+	advisor_cost = -0.1
+}
+
+ruler_education_dip_1 = {
+	ae_impact = -0.05
+}
+
+ruler_education_dip_2 = {
+	diplomatic_reputation = 1
+}
+
+ruler_education_dip_3 = {
+	province_warscore_cost = -0.1
+}
+
+ruler_education_mil_1 = {
+	army_tradition = 1
+}
+
+ruler_education_mil_2 = {
+	land_maintenance_modifier = -0.1
+}
+
+ruler_education_mil_3 = {
+	naval_morale = 0.1
+}
+
+ruler_withdrawn = {
+	stability_cost_modifier = 0.1
+}
+
+heir_is_our_heir = {
+	local_unrest = -3
+}
+
+foreigner_on_throne = {
+	local_unrest = 2
+}
+
+support_for_ruler = {
+	local_unrest = -2
+}
+
+heretic_on_throne = {
+	local_unrest = 3
+	local_missionary_strength = -0.05
+}
+
+heathen_on_throne = {
+	local_unrest = 5
+	local_missionary_strength = -0.05
+}
+
+support_for_heretic_ruler = {
+	local_unrest = -3
+	local_missionary_strength = -0.05
+}
+
+support_for_heathen_ruler = {
+	local_unrest = -3
+	local_missionary_strength = -0.05
+}
+
+alien_ruler = {
+	local_unrest = 5
+	local_missionary_strength = -0.05
+}
+
+increased_tolerance_of_heretics = {
+	tolerance_heretic = 1
+	global_heretic_missionary_strength = -0.02
+}
+
+supressing_personal_faith = {
+	legitimacy = 0.5
+	religion = yes
+}
+
+supressed_religious_minority = {
+	local_unrest = 3
+}
+
+heathen_ruler_religious_tensions = {
+	local_unrest = 4
+}
+
+learning_from_cultural_brethren = {
+	technology_cost = -0.05
+}
+
+support_for_advisor = {
+	local_unrest = -2
+	local_production_efficiency = 0.1
+}
+
+influential_power_holder = {
+	state_maintenance_modifier = -0.1
+	local_manpower_modifier = 0.1
+	local_tax_modifier = 0.1
+	local_development_cost = -0.1
+}
+
+social_unrest_mysticism = {
+	local_unrest = 6
+}
+
+loss_of_legal_competence = {
+	advisor_cost = 0.1
+}
+
+fraternities_strengthened = {
+	trade_goods_size_modifier = 0.25
+	local_autonomy = 0.03
+}
+
+coffee_house_turmoil = {
+	local_unrest = 6
+}
+
+sufi_orders_in_check = {
+	local_autonomy = -0.05
+}
+
+sufi_order_integration = {
+	local_unrest = -4
+}
+
+# -------------- Qarth --------------
+trade_empire = {
+	global_trade_power = 0.15
+}
+
+guarded_realm = {
+	defensiveness = 0.25
+}
+
+bastion_of_knowledge = {
+	idea_cost = -0.1
+}
+
+slaves_punished = {
+    local_unrest = 2
+}
+
+# -------------- Random Events --------------
+absent_diplomat = {
+	diplomatic_upkeep = -1
+}
+
+essosian_book = {
+	idea_cost = -0.025
+}
+
+toy_soldier = {
+	army_tradition = 0.5
+}
+
+miniature_warship = {
+	global_ship_cost = -0.1
+}
+
+dishonored_gods  = {
+	global_unrest = 1
+}
+
+honored_gods = {
+	global_unrest = -1
+}
+
+# Infighting
+disorganised_men = {
+	global_regiment_recruit_speed = 0.25
+}
+
+ruler_maimed = {
+	legitimacy = -0.5
+}
+
+ruler_enlightened = {
+	technology_cost = -0.05
+}
+
+ruler_mad = {
+	legitimacy = -1
+	prestige = -1
+}
+
+myrish_fire_sent_merchant = {
+	trade_efficiency = -0.1
+}
+
+myrish_fire_used_wine = {
+	caravan_power = -0.1
+}
+
+bloody_flux_quar = {
+	local_manpower_modifier = -1
+	local_production_efficiency = -1
+	local_tax_modifier = -1
+}
+
+bloody_flux_not_quar = {
+	local_manpower_modifier = -0.5
+	local_production_efficiency = -0.5
+	local_tax_modifier = -0.5
+}
+
+begging_brother_1 = {
+	local_missionary_strength = 0.01
+	local_unrest = -1
+}
+
+begging_brother_2 = {
+	local_missionary_strength = 0.02
+	local_unrest = -2
+}
+
+begging_brother_3 = {
+	local_missionary_strength = -0.02
+	local_unrest = 1
+}
+
+# -------------- R'hllor --------------
+rhllor_worshippers_banished = {
+	tolerance_own = 2
+	tolerance_heathen = -3
+	tolerance_heretic = -3
+}
+
+rhllor_worshippers_tolerated = {
+	tolerance_heathen = 1
+	tolerance_heretic = 1
+}
+
+rhllor_worshippers_accepted = {
+	tolerance_own = -2
+	tolerance_heathen = 3
+	tolerance_heretic = 3
+}
+
+rhllors_blessing = {
+	global_missionary_strength = 0.05
+	years_of_nationalism = -5
+}
+
+
+# -------------- Royal Edicts --------------
+royal_influence_timer = { }
+
+# -------------- Slavery --------------
+slavery_permitted = { }
+slavery_prohibited = { }
+
+slavery_construction = {
+    build_time = -0.5
+}
+
+slavery_production = {
+    production_efficiency = 0.25
+}
+
+slave_raid = {
+    local_tax_modifier = -0.25
+    local_production_efficiency = -0.25
+    local_manpower_modifier = -0.25
+}
+
+# -------------- Summer Islanders --------------
+act_of_lovemaking = {
+	heir_chance = 1.0
+}
+
+constructing_swan_ships = {
+	ship_durability = 0.1
+	galley_power = 0.1
+}
+
+exported_goldenwood_bows = {
+	trade_efficiency = 0.05
+	trade_range_modifier = 0.25
+	trade_steering = 0.1
+}
+
+# -------------- Targaryen --------------
+revival_of_the_dragons = {
+    prestige = 1
+}
+
+dragon_eggs = {
+    prestige = 1
+}
+
+the_unsullied = {
+    discipline = 0.1
+}
+
+the_dothraki = {
+    cavalry_power = 0.2
+}
+
+daenerys_stormborn = {
+    global_tax_income = 600
+    global_manpower = 25
+    global_sailors = 25000
+    land_forcelimit = 50
+    naval_forcelimit = 50
+}
+
+
+# -------------- Trade Goods --------------
+grain_timer = { }
+wine_timer = { }
+wool_timer = { }
+cloth_timer = { }
+fish_timer = { }
+fur_timer = { }
+salt_timer = { }
+naval_supplies_timer = { }
+copper_timer = { }
+iron_timer = { }
+slaves_timer = { }
+ivory_timer = { }
+tea_timer = { }
+spices_timer = { }
+coffee_timer = { }
+cotton_timer = { }
+sugar_timer = { }
+tobacco_timer = { }
+cocoa_timer = { }
+silk_timer = { }
+dyes_timer = { }
+tropical_wood_timer = { }
+ironwood_timer = { }
+candles_timer = { }
+fruit_timer = { }
+global_price_timer = { }
+
+
+
+# -------------- Valyria --------------
+valyrian_ambitions_1 = {
+	land_morale = 0.1
+}
+
+valyrian_ambitions_2 = {
+	land_morale = 0.15
+}
+
+valyrian_ambitions_3 = {
+	land_morale = 0.15
+}
+
+valyrian_ambitions_4 = {
+	land_morale = 0.15
+}
+
+valyrian_ambitions_5 = {
+	land_morale = 0.15
+}
+
+# -------------- War for the Stepstones --------------
+war_for_the_stepstones = {
+    global_tax_income = 240
+    global_manpower = 10
+    land_forcelimit = 20
+}
+
+# -------------- White Walkers --------------
+army_of_the_undead = {
+    land_forcelimit_modifier = 1.0
+    global_regiment_recruit_speed = -0.75
+    global_regiment_cost = -0.75
+    land_maintenance_modifier = -0.75
+}
+
+undead_viserion = {
+    artillery_fire = 3
+}
+
+summer_reigns = {
+    range = -1.0
+    global_colonial_growth = -10
+}
+
+# -------------- Wildling --------------
+wildling_arctic_homeland = {
+	local_development_cost = -0.45
+}
+
+wildling_raised_clansmen = {
+	global_tax_modifier = -0.66
+	global_unrest = 2 	
+}
+
+thenn_brutality = {
+    discipline = 0.05
+}
+
+# -------------- Yi Ti --------------
+resistance_to_cultural_changes = {
+	local_unrest = 8
+	local_autonomy = 0.1
+}
+
+# -------------- Great Stallion --------------
+khalasar_ready_for_war = {
+    land_morale = 0.1
+}
+
+# -------------- Ghiscari --------------
+vision_of_order = {
+    country_admin_power = 1
+}
+
+vision_of_influence = {
+    country_diplomatic_power = 1
+}
+
+vision_of_conquest = {
+    country_military_power = 1
+}
+
+vision_of_failure = {
+    prestige = -1
+}
+
+# -------------- Exploration --------------
+ruins_of_yeen = {
+	prestige_decay = -0.01
+}
+
+treasures_of_tochtzal = {
+	global_tax_income = 120
+}
+
+# -------------- Espionage --------------
+spy_action = {
+	global_spy_defence = -0.05
+}
+
+employed_more_spies = {
+	global_spy_defence = 0.25
+}
+
+ai_espionage_cooldown = { }
+
+# -------------- Dynastic --------------
+illegitimate_ruler = {
+	legitimacy = -1
+	global_unrest = 2
+	global_autonomy = 0.05
+}
+
+adopted_heir = {
+	global_unrest = 2
+}
+
+relief_from = {
+	global_unrest = -2
+	stability_cost_modifier = -0.1
+}
+
+sought_after_bachelor = {
+	prestige = 1
+}
+
+a_woman_scorned = {
+	prestige = -1
+	legitimacy = -1
+}
+
+dyn_newborn_daughter = {
+	heir_chance = -1
+	global_unrest = 3
+}
+
+# -------------- Dothraki --------------
+strong_khal = {
+	horde_unity = 1
+}
+
+weak_khal = {
+	horde_unity = -1
+}
+
+vaes_dothrak_ld = {
+    liberty_desire = -100
+}
+
+dothraki_succession_crisis = {
+	global_unrest = 10
+}
+
+amassed_host = {
+    global_regiment_cost = 0.1
+}
+
+# -------------- Dorne --------------
+cultivating_sand_steeds = {
+	cavalry_power = 0.1
+}
+
+# -------------- Disasters --------------
+had_peasant_war = {
+	legitimacy = 1
+}
+
+# -------------- Theocracy --------------
+dev_general_hospital = {
+	global_manpower_modifier = 0.1
+	manpower_recovery_speed = 0.05
+
+}
+dev_fort_maintenance = {
+	global_garrison_growth = 0.25
+}
+
+dev_modern_forts = {
+	defensiveness = 0.25
+}
+
+dev_heretical_expulsion = {
+	local_missionary_strength = 0.03
+	local_unrest = 5
+}
+
+add_unrest_5_modifier = {
+	local_unrest = 5
+}
+
+add_unrest_10_modifier = {
+	local_unrest = 10
+}
+
+remove_unrest_5_modifier = {
+	local_unrest = -5
+}
+
+add_country_unrest_5_modifier = {
+	global_unrest = 5
+}
+
+# -------------- Decisions --------------
+promoted_sept_attendance = {
+	global_missionary_strength = 0.02
+	global_unrest = 1
+}
+
+promoted_weirwood_attendance = {
+	global_missionary_strength = 0.02
+	global_unrest = 1
+}
+
+promoted_drowning = {
+	global_missionary_strength = 0.02
+	global_unrest = 1
+}
+
+promoted_the_great_stallion = {
+	global_missionary_strength = 0.02
+	global_unrest = 1
+}
+
+promoted_temple_attendance = {
+	global_missionary_strength = 0.02
+	global_unrest = 1
+}
+
+alchemists_fire = {
+	siege_ability = 0.1
+}
+
+educated_heir = { }
+supported_heir = { }
+consulted_the_alchemists_guild = { }
+talked_to_the_iron_bank = { }
+reflected_on_life = { }
+iron_bank_agreement = { }
+
+# -------------- Corruption --------------
+trusted_merchants = {
+	global_trade_power = 0.10
+}
+
+honest_administrators = {
+	state_maintenance_modifier = -0.1
+}
+
+recruited_smugglers = {
+	spy_offence = 0.25
+}
+
+smugglers_dominating = {
+	global_tax_modifier = -0.1
+	trade_efficiency = -0.1
+}
+
+embezzled_goods = {
+	local_production_efficiency = -0.2
+}
+
+distrusted_merchants = {
+	global_trade_power = -0.10
+}
+
+minor_trade_crisis = {
+	trade_efficiency = -0.10
+}
+
+# -------------- Bearded Priests --------------
+divine_inspiration = {
+    legitimacy = 1
+    republican_tradition = 1
+    devotion = 1
+    horde_unity = 1
+    meritocracy = 1
+}
+
+# -------------- Army Professionalism --------------
+enemies_sacked_city = {
+	global_unrest = -2
+}
+
+soldiers_stimulating_local_economy = {
+	local_production_efficiency = 0.1
+	local_tax_modifier = 0.1
+}
+
+integration_of_local_militias = {
+	defensiveness = 0.25
+	manpower_recovery_speed = -0.2
+}
+
+thriving_weapons_industry = {
+	local_development_cost = -0.15
+	trade_goods_size_modifier = 0.35
+}
+
+regimental_town = {
+	local_manpower_modifier = 0.25
+	local_development_cost = -0.15
+}
+
+wargames = {
+	army_tradition = 1
+	land_maintenance_modifier = 0.1
+}
+
+cheated_rolls = {
+	local_manpower_modifier = -0.5
+}
+
+reassessement_provinces = {
+	local_unrest = 8
+	local_manpower_modifier = -0.25
+}
+
+gunpowder_core = {
+	drill_gain_modifier = 0.4
+	land_maintenance_modifier = 0.15
+}
+
+standardized_uniforms_modifier = {
+	drill_gain_modifier = 0.4
+	land_maintenance_modifier = 0.1
+}
+
+# -------------- Misc --------------
+suppress_minority = {
+	local_manpower_modifier = -0.1
+	local_unrest = 10
+}
+
+conversion_zeal = {
+	global_heretic_missionary_strength = 0.10
+}
+
+religious_zeal_at_conv = {
+	local_missionary_strength = -1
+}
+
+religious_center = {
+	local_missionary_strength = -0.05
+}
+
+easier_start_bonuses = {
+	land_morale = 0.1
+	global_tax_modifier = 0.2
+	land_maintenance_modifier = -0.1
+	development_cost = -0.2
+	land_forcelimit = 1
+}
+
+faith_reward_faith_of_the_seven = { }
+
+# -------------- Karma --------------
+got_strict_punishment_of_monks = {
+	local_unrest = 4
+	local_tax_modifier = 0.15
+}
+
+got_cleansing_of_monasteries = {
+	local_unrest = 3
+}
+
+got_lacking_monastic_discipline = {
+	local_tax_modifier = -0.25
+	trade_goods_size = -0.25
+}
+
+got_monastaries_blooming = {
+	local_development_cost = -0.1
+}
+
+got_wedge_throw = {
+	local_tax_modifier = -0.25
+}
+
+got_poor_rice_harvests = {
+	trade_goods_size = -0.25
+}
+
+got_forced_labor = {
+	local_development_cost = -0.1
+	local_unrest = 4
+}
+
+got_human_sacrifice = {
+	local_development_cost = -0.1
+	local_tax_modifier = -0.5
+}
+
+got_grain_for_the_poor = {
+	global_unrest = -2
+	religion = yes
+}
+
+got_grain_reserves = {
+	stability_cost_modifier = -0.1
+	religion = yes
+}
+
+got_political_rival_crushed = {
+	global_unrest = -2
+}
+
+got_hostile_monastery = {
+	local_unrest = 4
+	local_autonomy = 0.05
+}
+
+got_social_bandit = {
+	local_unrest = 4
+	local_autonomy = 0.05
+}
+
+got_social_bandit_local_search = {
+	local_unrest = 4
+	local_tax_modifier = -0.25
+	local_autonomy = 0.05
+}
+
+got_social_bandit_myth = {
+	global_unrest = 1
+}
+
+got_bandit_leader_returned = {
+	local_unrest = 4
+	local_autonomy = 0.1
+}
+
+got_upset_farosi_monks = {
+	local_development_cost = 0.05
+}
+
+got_upset_farosi_nobles = {
+	local_autonomy = 0.02
+}
+
+got_pleased_farosi_nobles = {
+	local_autonomy = -0.02
+}
+
+got_pleased_farosi_monks = {
+	local_development_cost = -0.05
+}
+
+got_regulated_monasteries = {
+	tolerance_own = 1
+	stability_cost_modifier = 0.05
+}
+
+got_farosi_high_priest = {
+	legitimacy = 1
+	tolerance_own = 1
+}
+
+got_influx_of_farosi_monks = {
+	global_missionary_strength = 0.02
+	religion = yes
+}
+
+got_farosi_great_monastery = {
+	local_tax_modifier = -0.25
+	local_development_cost = -0.05
+}
+
+got_powerful_hostile_monastery = {
+	local_unrest = 4
+}
+
+got_powerful_benevolent_monastery = {
+	prestige = 0.5
+	local_autonomy = 0.05
+}
+
+got_powerful_farosi_monastery = {
+	local_autonomy = 0.01
+}
+
+got_improvement_program = {
+	local_tax_modifier = -0.5
+	local_development_cost = -0.05
+}
+
+got_hampered_growth = {
+	local_unrest = 4
+}
+
+got_supporting_local_monastic_traditions = {
+	global_autonomy = -0.02
+	diplomatic_upkeep = -1
+	religion = yes
+}
+
+got_farosi_nepotism = {
+	local_unrest = 2
+}
+
+got_governor_replaced = {
+	local_autonomy = 0.05
+}
+
+got_monks_from_vahar = {
+	tolerance_own = 1
+	prestige = 0.5
+	religion = yes
+}
+
+got_provincial_religious_migration = {
+	local_development_cost = -0.1
+}

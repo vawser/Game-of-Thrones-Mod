@@ -17,21 +17,9 @@ country_event = {
 
 	is_triggered_only = yes
 
-	trigger = {
-		NOT = { has_country_modifier = mil_tech_001 }
-	}
-	
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.1.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = mil_tech_001
-				duration = 3650
-				hidden = yes
-			}
-		}
-		
+
 		add_mil_power = 50
 	}
 }
@@ -47,20 +35,11 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_modifier = mil_tech_002 }
 		FROM = { NOT = { tag = REB } }
 	}
 	
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.2.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = mil_tech_002
-				duration = 3650
-				hidden = yes
-			}
-		}
 		
 		add_mil_power = 50
 	}
@@ -77,21 +56,12 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_modifier = mil_tech_003 }
 		FROM = { NOT = { tag = REB } }
 	}
 	
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.3.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = mil_tech_003
-				duration = 3650
-				hidden = yes
-			}
-		}
-		
+        
 		add_mil_power = 50
 	}
 }
@@ -105,21 +75,9 @@ country_event = {
 	picture = COASTLINE_MAP_eventPicture
 
 	is_triggered_only = yes
-
-	trigger = {
-		NOT = { has_country_modifier = dip_tech_001 }
-	}
 	
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.4.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = dip_tech_001
-				duration = 3650
-				hidden = yes
-			}
-		}
 		
 		add_dip_power = 50
 	}
@@ -135,21 +93,9 @@ country_event = {
 
 	is_triggered_only = yes
 
-	trigger = {
-		NOT = { has_country_modifier = dip_tech_002 }
-	}
-	
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.5.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = dip_tech_002
-				duration = 3650
-				hidden = yes
-			}
-		}
-		
+
 		add_dip_power = 50
 	}
 }
@@ -167,25 +113,11 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_modifier = mil_tech_004 }
-		
 		army_size_percentage = 0.9
-	}
-	
-	mean_time_to_happen = {
-		days = 1
 	}
 	
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.6.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = mil_tech_004
-				duration = 3650
-				hidden = yes
-			}
-		}
 		
 		add_mil_power = 50
 	}
@@ -202,25 +134,11 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_modifier = dip_tech_003 }
-		
 		num_of_colonies = 2
 	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
+
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.7.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = dip_tech_003
-				duration = 3650
-				hidden = yes
-			}
-		}
 		
 		if = {
 			limit = { 
@@ -258,25 +176,11 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_modifier = dip_tech_004 }
-		
 		tariff_value = 0.5
 	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
+
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.8.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = dip_tech_004
-				duration = 3650
-				hidden = yes
-			}
-		}
 		
 		if = {
 			limit = { 
@@ -314,26 +218,12 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_modifier = adm_tech_001 }
-		
 		NOT = { average_home_autonomy = 10 }
 	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
+
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.9.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = adm_tech_001
-				duration = 3650
-				hidden = yes
-			}
-		}
-		
+
 		add_adm_power = 50
 	}
 }
@@ -349,25 +239,11 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_modifier = adm_tech_002 }
-		
 		religious_unity = 1.0
-	}
-	
-	mean_time_to_happen = {
-		days = 1
 	}
 	
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.10.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = adm_tech_002
-				duration = 3650
-				hidden = yes
-			}
-		}
 		
 		add_adm_power = 50
 	}
@@ -384,26 +260,12 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_modifier = adm_tech_003 }
-		
 		num_of_royal_marriages = 4
 	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
+    
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.11.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = adm_tech_003
-				duration = 3650
-				hidden = yes
-			}
-		}
-		
+	
 		if = {
 			limit = {
 				num_of_royal_marriages = 4
@@ -440,25 +302,11 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_modifier = mil_tech_005 }
-		
 		march = 2
-	}
-	
-	mean_time_to_happen = {
-		days = 1
 	}
 	
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.12.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = mil_tech_005
-				duration = 3650
-				hidden = yes
-			}
-		}
 		
 		if = {
 			limit = {
@@ -496,25 +344,11 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_modifier = dip_tech_005 }
-		
 		vassal = 3
-	}
-	
-	mean_time_to_happen = {
-		days = 1
 	}
 	
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.13.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = dip_tech_005
-				duration = 3650
-				hidden = yes
-			}
-		}
 		
 		if = {
 			limit = {
@@ -552,25 +386,11 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_modifier = dip_tech_006 }
-		
 		num_of_war_reparations = 3
-	}
-	
-	mean_time_to_happen = {
-		days = 1
 	}
 	
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.14.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = dip_tech_006
-				duration = 3650
-				hidden = yes
-			}
-		}
 		
 		if = {
 			limit = {
@@ -608,25 +428,11 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_modifier = adm_tech_004 }
-		
 		prestige = 50
-	}
-	
-	mean_time_to_happen = {
-		days = 1
 	}
 	
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.15.option.a"
-		
-		hidden_effect = {
-			add_country_modifier = {
-				name = adm_tech_004
-				duration = 3650
-				hidden = yes
-			}
-		}
 		
 		if = {
 			limit = {
@@ -664,26 +470,12 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_modifier = dip_tech_007 }
-		
 		navy_size_percentage = 0.9
 	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
+
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.16.option.a"
 		
-		hidden_effect = {
-			add_country_modifier = {
-				name = dip_tech_007
-				duration = 3650
-				hidden = yes
-			}
-		}
-
 		add_dip_power = 50
 	}
 }
@@ -699,26 +491,12 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_modifier = dip_tech_008 }
-		
 		num_of_ports_blockading = 3
-	}
-	
-	mean_time_to_happen = {
-		days = 1
 	}
 	
 	option = {
 		name = "GOT_ACCOMPLISHMENTS.17.option.a"
 		
-		hidden_effect = {
-			add_country_modifier = {
-				name = dip_tech_008
-				duration = 3650
-				hidden = yes
-			}
-		}
-
 		add_dip_power = 50
 	}
 }

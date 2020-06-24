@@ -1,0 +1,48 @@
+country_decisions = {
+	regulate_the_monastaries = {
+		potential = {
+			NOT = { has_country_modifier = got_regulated_monasteries }
+			uses_karma = yes
+		}
+		allow = {
+			adm = 4
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "got_regulated_monasteries"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    invite_high_priest = {
+		potential = {
+			has_dlc = "Common Sense"
+			NOT = { has_country_modifier = got_farosi_high_priest }
+			NOT = { has_ruler_flag = invited_high_priest }
+			uses_karma = yes
+		}
+		allow = {
+			stability = 1
+			prestige = 25
+			is_at_war = no
+		}
+		effect = {
+			hidden_effect = {
+				set_ruler_flag = invited_high_priest
+			}
+			add_prestige = -25
+			country_event = { id = GOT_KARMA.34 days = 60 }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { prestige = 30 }
+			}
+		}
+	}
+}

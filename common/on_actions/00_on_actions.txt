@@ -504,19 +504,6 @@ on_bi_yearly_pulse = {
 	random_events = {
         100 = GOT_CULTURAL_UPRISING.1
         
-		10 = GOT_ACCOMPLISHMENTS.6 # Grand Army
-		10 = GOT_ACCOMPLISHMENTS.7 # Colonial Vigor
-		10 = GOT_ACCOMPLISHMENTS.8 # Treasures of Exploration
-		10 = GOT_ACCOMPLISHMENTS.9 # Peaceful Realm
-		10 = GOT_ACCOMPLISHMENTS.10 # One Faith
-		10 = GOT_ACCOMPLISHMENTS.11 # Royal Network
-		10 = GOT_ACCOMPLISHMENTS.12 # Marcher Lords
-		10 = GOT_ACCOMPLISHMENTS.13 # Lord of Many
-		10 = GOT_ACCOMPLISHMENTS.14 # Bleed Them Dry
-		10 = GOT_ACCOMPLISHMENTS.15 # Prestigeous Realm
-		10 = GOT_ACCOMPLISHMENTS.16 # Grand Fleet
-		10 = GOT_ACCOMPLISHMENTS.17 # Strategic Blockades
-        
         100 = GOT_CORRUPTION.16
 		100 = GOT_CORRUPTION.17
 		100 = GOT_CORRUPTION.18
@@ -592,16 +579,6 @@ on_bi_yearly_pulse_2 = {
 		200 = GOT_CORRUPTION.13
 		200 = GOT_CORRUPTION.14
 		200 = GOT_CORRUPTION.15
-    
-        100 = GOT_HRE.2
-        100 = GOT_HRE.3
-        100 = GOT_HRE.4
-        100 = GOT_HRE.5
-        100 = GOT_HRE.6
-        100 = GOT_HRE.7
-        100 = GOT_HRE.8
-        100 = GOT_HRE.9
-        100 = GOT_HRE.10
         
         100 = GOT_QARTH.1
 		100 = GOT_QARTH.2
@@ -625,6 +602,19 @@ on_bi_yearly_pulse_3 = {
     if = { limit = { has_global_flag = enable_onaction_logging } log = "ON_ACTIONS - [Root.GetName] - on_bi_yearly_pulse_3" }
     
 	random_events = {
+        10 = GOT_ACCOMPLISHMENTS.6 # Grand Army
+		10 = GOT_ACCOMPLISHMENTS.7 # Colonial Vigor
+		10 = GOT_ACCOMPLISHMENTS.8 # Treasures of Exploration
+		10 = GOT_ACCOMPLISHMENTS.9 # Peaceful Realm
+		10 = GOT_ACCOMPLISHMENTS.10 # One Faith
+		10 = GOT_ACCOMPLISHMENTS.11 # Royal Network
+		10 = GOT_ACCOMPLISHMENTS.12 # Marcher Lords
+		10 = GOT_ACCOMPLISHMENTS.13 # Lord of Many
+		10 = GOT_ACCOMPLISHMENTS.14 # Bleed Them Dry
+		10 = GOT_ACCOMPLISHMENTS.15 # Prestigeous Realm
+		10 = GOT_ACCOMPLISHMENTS.16 # Grand Fleet
+		10 = GOT_ACCOMPLISHMENTS.17 # Strategic Blockades
+        
 		100 = GOT_RELIGION.1
 		100 = GOT_RELIGION.2
 		100 = GOT_RELIGION.3
@@ -635,7 +625,8 @@ on_bi_yearly_pulse_3 = {
 		100 = GOT_RELIGION.8
         100 = GOT_RELIGION.11
         100 = GOT_RELIGION.12
-		5000 = 0
+        
+		8000 = 0
 	}
 }
 
@@ -671,7 +662,7 @@ on_thri_yearly_pulse = {
 		100 = devotion_events.23
 		100 = devotion_events.24
         
-        1000 = 0
+        3000 = 0
     }
 }
 
@@ -688,6 +679,8 @@ on_thri_yearly_pulse_2 = {
         100 = GOT_DRAGON_EGGS.6
         100 = GOT_DRAGON_EGGS.7
         100 = GOT_DRAGON_EGGS.10
+        
+        3000 = 0
     }
 }
 

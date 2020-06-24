@@ -255,10 +255,11 @@
  #----------------------------------------------------------------------
  # Border Friction
  #----------------------------------------------------------------------
- GOT_BORDER_FRICTION.1.title: "A Lord's Meddling"
- GOT_BORDER_FRICTION.1.desc: "A lord close to our border has expressed intent to ally with our kingdom if we cut down his brothers..."
- GOT_BORDER_FRICTION.1.option.a: "Perhaps we could arrange such an excursion..."
- GOT_BORDER_FRICTION.1.option.b: "Attempt to cover up this henious plot."
+ GOT_BORDER_FRICTION.1.title: "Border Friction"
+ GOT_BORDER_FRICTION.1.desc: "Not everyone is happy that we have allied ourselves with [border_claim_country.GetName]. An influential faction of [Root.GetAdjective] nobility has been pushing for an end to the alliance, focusing on the province of [border_claim_province.GetName], which is held by [border_claim_country.GetName] but which many view as rightfully ours. They have been able to stir up widespread outrage at the situation!"
+ GOT_BORDER_FRICTION.1.option.a: "Perhaps a policy change is in order..."
+ GOT_BORDER_FRICTION.1.option.b: "Put a positive spin on things!"
+ GOT_BORDER_FRICTION.1.option.c: "Revoke the claim."
  
  #----------------------------------------------------------------------
  # Colonial
@@ -1297,8 +1298,8 @@
  #----------------------------------------------------------------------
  # Yi Ti Empire
  #----------------------------------------------------------------------
- GOT_YITI_EMPIRE.1.title:1 "The End of the [From.GetAdjective] [From.GovernmentName]"
- GOT_YITI_EMPIRE.1.desc:1 "With the fall of [From.Capital.GetCapitalName] the last remnants of the Empire of Yi Ti have been crushed. The Emperorship and the ancient Yitish administration are now clearly seen as defunct concepts and the scholar gentry as a class will have to evolve into something else or perish.\nThough the memory of the Empire will live for some time the [Root.GovernmentName] of [Root.GetName] will forever be remembered as the destroyers of the last [From.Monarch.GetTitle]."
+ GOT_YITI_EMPIRE.1.title: "The End of the [From.GetAdjective] [From.GovernmentName]"
+ GOT_YITI_EMPIRE.1.desc: "With the fall of [From.Capital.GetCapitalName] the last remnants of the Empire of Yi Ti have been crushed. The Emperorship and the ancient Yitish administration are now clearly seen as defunct concepts and the scholar gentry as a class will have to evolve into something else or perish.\nThough the memory of the Empire will live for some time the [Root.GovernmentName] of [Root.GetName] will forever be remembered as the destroyers of the last [From.Monarch.GetTitle]."
  GOT_YITI_EMPIRE.1.option.a: "Ok."
  
  GOT_YITI_EMPIRE.2.title: "Divinity for our Empire"
@@ -1362,7 +1363,7 @@
  GOT_CORRUPTION.10.option.b: "They'll have to get used to it."
  
  GOT_CORRUPTION.11.title: "[trade_goods_province.GetTradeGoodsName] 'Disappearing'"
- GOT_CORRUPTION.11.desc:1 "With corruption ever on the rise in [Root.GetName], an increasing amount of [trade_goods_province.GetTradeGoodsName] has been disappearing from our legitimate trade networks onto the black market. While some blame too restrictive regulations and tariffs, part of the problem is clearly that these crimes are simply too easy to get away with. When silence is easily bought, secrets are easy to keep, and those secrets are growing more and more costly for [Root.GetName]."
+ GOT_CORRUPTION.11.desc: "With corruption ever on the rise in [Root.GetName], an increasing amount of [trade_goods_province.GetTradeGoodsName] has been disappearing from our legitimate trade networks onto the black market. While some blame too restrictive regulations and tariffs, part of the problem is clearly that these crimes are simply too easy to get away with. When silence is easily bought, secrets are easy to keep, and those secrets are growing more and more costly for [Root.GetName]."
  GOT_CORRUPTION.11.option.a: "We must regain control of the [trade_goods_province.GetTradeGoodsName] market."
  
  GOT_CORRUPTION.12.title: "Corrupt Generals"
@@ -1922,3 +1923,217 @@
  GOT_ESPIONAGE.10.desc: "Once arrested and removed from the comfort of his station, the ambassador we suspected of being complicit in espionage quickly admitted his guilt under interrogation. What's more, his confession indicates the spy network he was part of was more far-reaching than previously suspected. While this is certainly an embarrassment for [spying_ambassador.GetName], they are requesting we resolve the situation amicably by sending the ambassador home immediately.\n\nWhile it's good praxis not to kill or imprison diplomats when it can be avoided, this man has proven himself to be an enemy of our nation. More importantly, he could still have information that is of value to us. Should we let him go to smooth over the situation?"
  GOT_ESPIONAGE.10.option.a: "No. An enemy spy who buckles under pressure is a valuable source."
  GOT_ESPIONAGE.10.option.b: "We all spy on each other. We can forgive and forget."
+ 
+ #----------------------------------------------------------------------
+ # Karma
+ #----------------------------------------------------------------------
+ GOT_KARMA.1.title: "Minister Resigns"
+ GOT_KARMA.1.desc: "$MAESTER$$ASTROLOGER$$ARTIST$$TREASURER$$EVANGELIST$$PHILOSOPHER$$INQUISITOR$ has publicly condemned the policies of [Root.Monarch.GetName] and [Root.Monarch.GetHerHis] government. Our Minister will no longer have anything to do with us and reminds us that a [Root.Monarch.GetTitle] that cannot uphold the rightful laws will attract nothing but liars and informers to [Root.Monarch.GetHerHis] government."
+ GOT_KARMA.1.option.a: "Good Riddance!"
+ 
+ GOT_KARMA.2.title: "[Root.GetName] Monasteries deteriorating"
+ GOT_KARMA.2.desc: "Due to a combination of lacking monastic discipline and a faltering economy many of the great monasteries of [Root.GetName] have seen their membership dwindling over the last few years. A concerned monk has approached the [Root.Owner.Monarch.GetTitle] with a warning that unless something is done soon the dire situation may lead to the last few monks abandoning their vows or seeking to join monasteries elsewhere, leaving [Root.GetName] impoverished both spiritually and economically. There are, however, many local landowners more than ready to infringe on the land an empty monastery would leave behind. As the [Root.Owner.Monarch.GetTitle] is meant to protect Monastic life in [Root.Owner.GetName] it will be clear to many observers that the responsibility for whatever happens will rest on [Root.Owner.Monarch.GetHerHis] shoulders."
+ GOT_KARMA.2.option.a: "We must do all we can!"
+ GOT_KARMA.2.option.b: "Perhaps now the land will come to better use."
+ 
+ GOT_KARMA.3.title: "Monastic Vows Broken"
+ GOT_KARMA.3.desc: "The religious discipline of the monks of [Root.GetName] is faltering. As a result of lacking funds, monopolization of higher monastic positions by a small group of the aristocracy and a [Root.Owner.Monarch.GetTitle] unable to protect the faithful in the way expected of a true Farosi ruler more and more monks seem to be breaking their vows to abandon monastic life, or in some cases maintaining it while not honoring its principles. A particularly glaring case of a monk breaking his vows and inciting others do to the same has recently come to our attention and many will likely read a great deal into the way we choose to deal with this. While a good ruler should always show mercy and gentleness it is also the duty of any ruler to uphold the discipline of the monasteries, with force if needed."
+ GOT_KARMA.3.option.a: "We must show gentleness."
+ GOT_KARMA.3.option.b: "Fine errant monks all movable property and livestock."
+ GOT_KARMA.3.option.c: "Execute the monk and anyone who stands by him!"
+ 
+ GOT_KARMA.4.title: "Monastic Orders Support Pretender"
+ GOT_KARMA.4.desc: "As it is the monarch's duty to protect the monastic institutions it is those institutions duty to protect the country against bad rulers. Due to what they feel is lacking attentiveness to the duties of a monarch and inability and disinterest in upholding and protecting the common good in general and the monastic organizations of our country in particular some of the more powerful monasteries have openly come out in support of a distant relative to our [Root.Monarch.GetTitle]."
+ GOT_KARMA.4.option.a: "This is an outrage!"
+ 
+ GOT_KARMA.5.title: "Precedent of [Root.Monarch.GetName]"
+ GOT_KARMA.5.desc: "A recent ruling by [Root.Monarch.GetName] was considered so just and well argued that it has been used as an example to strive for in similar cases in a recently created addendum to a collection of the divine laws of [Root.GetName]. As [Root.Monarch.GetName] has become known for [Root.Monarch.GetHerHis] stringent and constant to adhere to the virtues of the Stone Cow this is not the first time [Root.Monarch.GetHerHis] rule has been put forward as a good example."
+ GOT_KARMA.5.option.a: "And it will not be the last."
+ 
+ GOT_KARMA.6.title: "White Cow Captured"
+ GOT_KARMA.6.desc: "A oure white cow has been captured in the hinterlands of [Root.GetName]. This auspicious incident has widely been interpreted as a testament of the wise and benevolent rule of [Root.Monarch.GetName]."
+ GOT_KARMA.6.option.a: "Let us take good care of it."
+ GOT_KARMA.6.option.b: "Sell it."
+ GOT_KARMA.6.option.c: "It would make an excellent gift!"
+ 
+ GOT_KARMA.7.title: "A White Cow"
+ GOT_KARMA.7.desc: "A white cow has been captured in the hinterlands of [From.GetName] and [From.Monarch.GetName] has wisely interpreted this as a sign of the productive alliance of our two peoples. This is the greatest gift a ruler could possibly bestow upon us and will likely be regarded very well by our population. It will, however, also be quite costly to take care of this rare beast even though we could hardly refuse to do so."
+ 
+ GOT_KARMA.8.title: "Monasteries of [Root.GetName]"
+ GOT_KARMA.8.desc: "The wise and productive policies of [Root.Monarch.GetName] in regards to the monasteries of the realm have always been well considered and benevolent. No Monastery is allowed to go poor yet the discipline and strength of the institutions themselves have not been allowed to deteriorate. As a result the monasteries of [Root.GetName] are blooming and our state has become known everywhere as an example to follow."
+ GOT_KARMA.8.option.a: "Demand that they help develop the province."
+ GOT_KARMA.8.option.b: "Wonderful!"
+ 
+ GOT_KARMA.9.title: "The Horrors of War"
+ GOT_KARMA.9.desc: "Not all men are cut out to lead a life of war and it seems the conflict our country is currently in has made some of them realize it. The number of deserters seeking to hide behind the walls of the monasteries is not big but they set a dangerous example. As a [Root.Monarch.GetTitle] it is, however, our duty to protect the monasteries and while we have repeatedly warned them not to accept men like these it seems some still do."
+ GOT_KARMA.9.option.a: "We must remember to be gentle."
+ GOT_KARMA.9.option.b: "Demand that the monasteries release these 'monks' to us."
+ 
+ GOT_KARMA.10.title: "'Wedge-Throw'"
+ GOT_KARMA.10.desc: "The last seasons have not been very kind to the [Root.GetName] region and one of the duties of a [Root.Owner.Monarch.GetTitle] is to take care of the poor. A delegation of farmers has now approached [Root.Owner.Monarch.GetName] asking to be exempt from taxes and to receive a 3-year loan so that they are able to take care of their families while they work to get back on their feet."
+ GOT_KARMA.10.option.a: "A reasonable request."
+ GOT_KARMA.10.a.tt:0 "There is a chance the province recovers and the money may then be returned."
+ GOT_KARMA.10.option.b: "Sadly the state coffers are also famished."
+ 
+ GOT_KARMA.11.title: "Economic Recovery of [Root.GetName]"
+ GOT_KARMA.11.desc: "[Root.GetName] is now fully recovered from its harsh years and the rice farmers in the area have come to pay back the loan we so graciously granted them."
+ GOT_KARMA.11.option.a: "Ok."
+ 
+ GOT_KARMA.12.title: "Partial Recovery in [Root.GetName]"
+ GOT_KARMA.12.desc: "While the loan we granted the farmers in [Root.GetName] has helped them to slowly turn the area back to its former self they are still unable to pay the debt we once granted them."
+ GOT_KARMA.12.option.a: "Write it off as a loss."
+ GOT_KARMA.12.option.b: "Demand repayment."
+ 
+ GOT_KARMA.13.title: "'Human Sacrifice'"
+ GOT_KARMA.13.desc: "[Root.GetName] is in dire need of better infrastructure. The local monasteries are doing what they can, as are the local aristocrats, but if the area is to prosper the state will have to step in. Plans to improve the situation require extra workers to join in the project from the countryside but all farmers are busy with the harvest. As ruler we can order them to lay down work to participate in construction projects for the common good but in return they will expect to be paid the customary 'Human Sacrifice' or the equivalent of the amount of rice that they could have grown during the same time."
+ GOT_KARMA.13.option.a: "Pay the Human Sacrifice."
+ GOT_KARMA.13.option.b: "Abandon the project."
+ GOT_KARMA.13.option.c: "Demand that the farmers work without compensation."
+ 
+ GOT_KARMA.14.title: "Bountiful Harvest"
+ GOT_KARMA.14.desc: "This harvest has been unusually bountiful and [Root.Monarch.GetName] could well make use of this unexpected wealth to fund planned religious works. An extra tax has been suggested to transfer the extra grain from the farmers to the state. However traditional Buddhist law dictates that he cannot take more than 10%, the 'Hay Sacrifice', of that which has been harvested and some of our ministers seem uneasy with breaking this rule."
+ GOT_KARMA.14.option.a: "Levy the tax."
+ GOT_KARMA.14.option.b: "Let us not steal the fruits of their labor."
+ 
+ GOT_KARMA.15.title: "Charity"
+ GOT_KARMA.15.desc: "It is at times such as these, when our country is characterized by relative tranquility that we are reminded to look at those who are less fortunate. The recent crop yields have been neither failures nor a great success and as a result most have food and the state have ample grain supplies. There are, however, still some unfortunate who haven't got enough food to feed themselves."
+ GOT_KARMA.15.option.a: "Let us distribute our grain to the poor!"
+ GOT_KARMA.15.option.b: "Keep it in reserve."
+ 
+ GOT_KARMA.16.title: "Vicious Words?"
+ GOT_KARMA.16.desc: "The local aristocracy in [Root.GetName] seems to have been growing quite powerful over the last few years. While we retain nominal control over the area, much of the real power lies with the local landowners, who have been known to grow their domains at the expense of monastery land. This practice, along with other excesses, may well be used against them but in order to achieve the full effect we would probably need to embellish the truth a little. There are those who would be willing to do just that for us in exchange for nice positions in our administration afterwards."
+ GOT_KARMA.16.option.a: "Let us find another way."
+ GOT_KARMA.16.option.b: "The end justifies the means."
+ 
+ GOT_KARMA.17.title: "Divine Ruler"
+ GOT_KARMA.17.desc: "The willingness of [Root.Monarch.GetName] to risk life and limb in the protection of [Root.Monarch.GetHerHis] people is considered both unusual and worthy of respect. Leading monastic figures have voiced their support for [Root.Monarch.GetHerHim] and some even liken [Root.Monarch.GetHerHim] to an ideal ruler for this self sacrifice."
+ GOT_KARMA.17.option.a: "Ok."
+ 
+ GOT_KARMA.18.title: "Indulgences"
+ GOT_KARMA.18.desc: "Recently [Root.Monarch.GetName] have come under attack by those who feel his rule has been one of extravagance and conspicuous consumption. Some of our ministers, however, insist that a certain amount of luxury is necessary for a ruler, especially when dealing with foreign monarchs and their emissaries."
+ GOT_KARMA.18.option.a: "Let us do away with worldly things!"
+ GOT_KARMA.18.option.b: "We cannot stoop to the level of peasants..."
+ 
+ GOT_KARMA.19.title: "Political Rival Weakened"
+ GOT_KARMA.19.desc: "Even a great ruler has some detractors. A particularly successful and outspoken critic of [Root.Monarch.GetName] has lately gotten himself into a quite hard situation. His friends have left him and high debts make it very hard for him to support his family. While a resourceful person may yet recover from this situation we might also use this opportunity to get rid of this man once and for all."
+ GOT_KARMA.19.option.a: "Make sure he never recovers!"
+ GOT_KARMA.19.option.b: "A true [Root.Monarch.GetTitle] holds no grudges."
+ GOT_KARMA.19.option.c: "This is a time for charity, let us help this man recover."
+ 
+ GOT_KARMA.20.title: "Old Rival Recovers"
+ GOT_KARMA.20.desc: "Our willingness to help a rival in need has converted him from a detractor to a firm supporter. With his powerbase rebuilt he is now eager to serve [Root.Monarch.GetName] and apart from his political capital he offers his own services as a minister of our government."
+ GOT_KARMA.20.option.a: "Great!"
+ 
+ GOT_KARMA.21.title: "Old Rival Recovers"
+ GOT_KARMA.21.desc: "Our willingness to help a rival in need may have been a righteous act but now that he has recovered he is as critical as ever of our power. What transpired has perhaps weakened the basis of his position slightly but he is still intent to use all his power to sabotage the government of [Root.GetName]."
+ GOT_KARMA.21.option.a: "No good deed goes unpunished..."
+ 
+ GOT_KARMA.22.title: "Plight of [Root.GetName]"
+ GOT_KARMA.22.desc: "A representative of the farmers of [Root.GetName] arrived in [Root.Owner.Capital.GetCapitalName] today, imploring [Root.Owner.Monarch.GetName] to help expand and maintain the irrigation system of the province. The local population is growing and claiming new land at a speed that the current infrastructure does not support. The representative also asks that the state supply food to those who need it in the meantime.\nWhile this project would have few downsides besides the cost there are currently no plans to improve this particular region and doing so in reasonable time would likely be quite expensive."
+ GOT_KARMA.22.option.a: "This [Root.Owner.Monarch.GetTitle] is always ready to listen to the people."
+ GOT_KARMA.22.option.b: "You will have to wait for your turn."
+ 
+ GOT_KARMA.23.title: "Inheritance"
+ GOT_KARMA.23.desc: "A conflict has arisen in one of the more influential monasteries of [Root.GetName] after the death of a monk who came from a very influential lay family. During his time in robes, he had managed to acquire a rich set of valuable manuscripts and an assortment of divine images, among other things. While monks cannot own property as such, the law still allows for a dedicated disciple to inherit these things and be considered as a son to the monk. In this case, a young disciple took care of the monk as he lay at his end. There are, however, others interested, and the monastery itself has argued that they should get the inheritance and would likely be very thankful for support in this matter. The lay family of the monk have also approached [Root.Monarch.GetName] hoping to inherit not only the manuscripts and images but also some of the land had have donated to the monastery while their family member was part of it."
+ GOT_KARMA.23.option.a: "Rule in favor of the disciple."
+ GOT_KARMA.23.option.b: "Rule in favor of the Monastery."
+ GOT_KARMA.23.option.c: "Support the lay family of the monk."
+ 
+ GOT_KARMA.24.title: "Powerful Monastery in [Root.GetName]"
+ GOT_KARMA.24.desc: "The monasteries of [Root.GetName] harbor some of the oldest and finest lineages in [Root.Owner.Country.GetName] and have therefore always been influential. They have, however, over the years come to grow more and more powerful and have also come to cultivate a disturbingly close relationship to other powers in the region. It is hard by now to find any person of influence in one of the monasteries that do not come from one of the richer noble families in the region. Monastic discipline is important but attacking a powerful Monastery as entrenched as this is not done lightly, a tempting option is to simply ally with the monks and let them lend their power to ours."
+ GOT_KARMA.24.option.a: "A cleansing is required!"
+ GOT_KARMA.24.option.b: "Seek the blessing of the monks."
+ GOT_KARMA.24.option.c: "Ignore the situation."
+ 
+ GOT_KARMA.25.title: "Banditry in [Root.GetName]"
+ GOT_KARMA.25.desc: "Bandits have been harassing the province of [Root.GetName] for quite a while now, roads are unsafe and traders have been avoiding the area and taking alternate routes to get past. As local authority isn't as strong in this area as in some other parts of our Empire the brigands have been able to continue unchecked for now. This has become a matter of some concern even outside of the area as the leader of the band has been gaining a reputation as a leader of resistance against central power in general.\nLocal authorities have reached out to the [Root.Owner.Monarch.GetTitle] for help to deal with the problem before it spreads."
+ GOT_KARMA.25.option.a: "We need to deal with these thieves."
+ GOT_KARMA.25.option.b: "Let the local authorities handle it."
+ GOT_KARMA.25.a.tt:0 "State help will help conclude this matter without diverting local funds. The process can be speeded up by decreasing local autonomy."
+ GOT_KARMA.25.b.tt:0 "Left to their own devises authorities will have to divert part of the local income to catch the bandits. The process can be speeded up by decreasing local autonomy."
+ 
+ GOT_KARMA.26.title: "Bandit leader caught in [Root.GetName]"
+ GOT_KARMA.26.desc: "The campaign in [Root.GetName] to catch the leader of the bandits in the area has finally proved successful. During the hunt for him his popularity has only increased, however, and it is clear this is a very dangerous man to be alive. The commander of the troops that caught the man recommends that we kill him now and not risk that he may one day incite those who idealize him to revolt against us. One of our ministers, however, wishes to remind [Root.Owner.Monarch.GetName] that to save a life is better than building a seven level pagoda."
+ GOT_KARMA.26.option.a: "Kill them all."
+ GOT_KARMA.26.a.tt:0 "Risk martyring the bandits."
+ GOT_KARMA.26.option.b:0 "Banish him and imprison his followers."
+ GOT_KARMA.26.b.tt:0 "The Bandit leader may return one day."
+ 
+ GOT_KARMA.27.title: "Bandit Leader Returns"
+ GOT_KARMA.27.desc: "The man we once banished for banditry in one of our provinces seems to have returned to our country, ready to once again make life hard for our local subjects. There is still a lingering popularity in some parts of the country and it is feared he may make good use of this to avoid the authorities once more.\nBy all accounts, however, he is an older and weaker man now and while the situation is still problematic it seems clear he cannot go on for long this time."
+ GOT_KARMA.27.option.a: "Ok."
+ 
+ GOT_KARMA.28.title: "The Myth Lives on"
+ GOT_KARMA.28.desc: "The reputation of the bandit leader we had executed a few years ago has refused to die with him. While his band of brigands can no longer terrorize traders and endanger the integrity of our roads the myth of the bandit leader has grown out of all proportion. Eventually his fate will surely be one of many old stories told to young kids with little meaning, right now, however, it is a story told to ridicule [Root.Monarch.GetName] and [Root.Monarch.GetHerHis] rule."
+ GOT_KARMA.28.option.a: "Ok."
+ 
+ GOT_KARMA.29.title: "Foreign Emissary Insults [Root.Monarch.GetName]"
+ GOT_KARMA.29.desc: "The emissary of one of our neighboring countries has given grave affront to the [Root.Monarch.GetTitle] by refusing to participate in a ceremony he was invited to attend. [Root.Monarch.GetName] is furious and while there can be some doubt as to if the slight was deliberate or not the public clearly sees it as such.\nIf we do not publicly condemn the ambassador we risk losing face, the council of ministers, however, urge caution."
+ GOT_KARMA.29.option.a: "Publicly deride the ambassador."
+ GOT_KARMA.29.option.b: "A ruler must never lose [Root.Monarch.GetHerHis] temper."
+ 
+ GOT_KARMA.30.title: "The [Root.Owner.Monarch.GetTitle] Accused of Favoritism"
+ GOT_KARMA.30.desc: "It is with great pleasure that [Root.Owner.Monarch.GetName] has watched some of [Root.Owner.Monarch.GetHerHis] childhood friends climb the state hierarchy but now this has made us the target of accusations of favoritism. The local governor of [Root.GetName] has been singled out by these accusations and the situation would undoubtedly be defused by replacing him no matter how competent he has been on that post."
+ GOT_KARMA.30.option.a: "His services are required by the state."
+ GOT_KARMA.30.option.b: "We must avoid favoritism at all cost."
+ 
+ GOT_KARMA.31.title: "The Laws of [Root.GetName]"
+ GOT_KARMA.31.desc: "Divine law is generally practiced in one form or another in Faros and Vahar. While these laws are not collected and written down by the states themselves they do vary from country to country and at times a collection will have to be updated or renewed. A wise monk has undertaken such a collection recently in [Root.GetName] and has produced an updated version of one of the most commonly used law collections in our country.\nAs the collection itself builds upon actual cases it can, however, be seen as quite an up to date commentary on the rulings of [Root.Monarch.GetName]."
+ GOT_KARMA.31.option.a: "Excellent! Promote these laws."
+ GOT_KARMA.31.a.tt1:0 "As our ruler has not been fair to his subjects this collection of laws reflects badly upon him and will decrease our §YPrestige§!."
+ GOT_KARMA.31.a.tt2:0 "As our ruler has been fair to his subjects this collection of laws reflects positively upon him and will increase our §YPrestige§!."
+ GOT_KARMA.31.option.b: "Let us do what we can to stop this from spreading."
+ 
+ GOT_KARMA.32.title: "Lawyers at odds"
+ GOT_KARMA.32.desc: "Lawyers placing bets on the outcome of a legal dispute is nothing uncommon in our lands and neither is a certain degree of friendly rivalry among the professionals in a courtroom. Once such rivalry turns into actual anger and passion then the integrity of our laws is at stake.\nIt appears two lawyers, each representing powerful patrons, one a rich monastery and the other an aristocrat family of some influence, have turned a recent legal conflict about a sizable estate into a heated row. This is very unfortunate and it now falls upon [Root.Monarch.GetName] to attempt to salvage the face of both sides in a fair way without compromising the integrity of our courts."
+ GOT_KARMA.32.option.a: "Demand a retrial with other Lawyers."
+ GOT_KARMA.32.option.b: "Judge in favor of the monastery."
+ GOT_KARMA.32.option.c: "Judge in favor of the nobles."
+ GOT_KARMA.32.dd:0 "Compensate both parties."
+ 
+ GOT_KARMA.33.title: "A useful alliance?"
+ GOT_KARMA.33.desc: "Many ages ago Qarth invaded Faros and attempted spread its influence among their people. Over the years, however, Qarth has been drawn back towards its heartland. [Root.Monarch.GetName] has always been fascinated by the legacy of the Stone Cow kingdoms and the empires they once created in the name of that religion. As word reach us of a dynamic and growing Stone Cow monastic order it was therefore clear to [Root.Monarch.GetHerHim] that this needed to be investigated.\nThe emissary of the High Priest now stands before us and has explained that the High Priest indeed expects that [Root.Monarch.GetName] is a reincarnation of a legendary Farosi ruler. He is also prepared to support our rule if we allow him to spread his sect in all the lands we control."
+ GOT_KARMA.33.option.a: "The time for change has come."
+ GOT_KARMA.33.option.b: "Let's stick to our old ways."
+ 
+ GOT_KARMA.34.title: "Messenger Returns from Faros"
+ GOT_KARMA.34.desc: "Our Messenger from Faros has returned with news of a powerful religious leader who has become interested in the cause of [Root.Monarch.GetName] and his dynasty. If he is to come to [Root.Capital.GetCapitalName], however, we must be able to do far more than just guarantee his safety. For the High Priest to tie his destiny with ours we must swear that he and his future incarnations will be given the proper respect and influence in our realm and that we will create a great Monastery for him and his disciples. If we cannot make these guarantees we will have to content ourselves with receiving a delegation of monks eager to found a new Monastery in our lands."
+ GOT_KARMA.34.option.a: "Agree."
+ GOT_KARMA.34.option.b: "Accept the monks."
+ 
+ GOT_KARMA.36.title: "Death of a High Priest"
+ GOT_KARMA.36.desc: "Our most venerated and honored High Priest has died and the search for his reincarnation has begun. While his order is certain they will be able to locate his new self quickly it is likely that some help from the state to fund the expedition would not go amiss."
+ GOT_KARMA.36.option.a: "Let us give them a hand."
+ GOT_KARMA.36.option.b: "I'm sure they can handle it."
+ 
+ GOT_KARMA.37.title: "Reincarnation Found"
+ GOT_KARMA.37.desc: "The order of our old High Priest has managed to find his new self and have enthroned him in their Monastery."
+ GOT_KARMA.37.option.a: "Long may he live."
+ 
+ GOT_KARMA.38.title: "Legitimacy of Incarnation Questioned"
+ GOT_KARMA.38.desc: "The intricacies of rebirth can sometimes be lost on the simpler minds. Even though his order insists that their new Lama is a reincarnation of their old leader some people in the countryside have been very hesitant to accept this fact. As they do not recognize him they fear they have been duped and on a few occasions tensions have risen to the point of armed conflict."
+ GOT_KARMA.38.option.a: "Send envoys to convince them."
+ GOT_KARMA.38.option.b: "Send troops to convince them."
+ 
+ GOT_KARMA.40.title: "Religious Guidance"
+ GOT_KARMA.40.desc: "The island of Vahar has been the source of a strong Stone Cow tradition for centuries. It is in many ways a model society for a Stone Cow state and its thriving Monastic communities are the envy of the world.\nWhile our own state also follows the Stone Cow way our laws and traditions are a patchwork of local traditions, ideas from competing Stone Cow schools and we lack the strong Monastic infrastructure of the island. Our ministers suggest that in order to remedy this we should send an embassy to Vahar and ask that they send us monks to carry their Stone Cow traditions to our country."
+ GOT_KARMA.40.option.a: "Let us send an embassy."
+ GOT_KARMA.40.option.b: "No, we must support our local sects!"
+ 
+ GOT_KARMA.41.title: "An Embassy from [From.GetName]"
+ GOT_KARMA.41.desc: "Thriving Monastic communities, holy sacred relics as well as a long tradition of how to handle the coexistence of monastic and regal power make us the envy of many Stone Cow rulers. It is therefore no surprise that the [From.Monarch.GetTitle] of [From.GetName] should aspire to imitate our greatness. The [From.GetAdjective] embassy that arrived today asks that we allow a number of their monks to travel to our country and receive ordination here in order to bring our traditions to [From.GetName]."
+ GOT_KARMA.41.option.a: "Allow it."
+ GOT_KARMA.41.option.b: "They shall do no such thing!"
+ 
+ GOT_KARMA.42.title: "[From.GetAdjective] Answer"
+ GOT_KARMA.42.desc: "The [From.Monarch.GetTitle] of [From.GetName] has allowed 40 monks to receive ordination in [From.Monarch.GetHerHis] country. He has also sent a group of monks directly from his lands to ours to ensure that the Stone Cow traditions are transfered in a sensible way."
+ GOT_KARMA.42.option.a: "Great."
+ 
+ GOT_KARMA.43.title: "[From.GetAdjective] Answer"
+ GOT_KARMA.43.desc: "The [From.GetAdjective] [From.Monarch.GetTitle] has sent word that he will not allow our monks to learn the ways of Lankan Buddhism nor will he help us in any other way to develop our religious institutions."
+ GOT_KARMA.43.option.a: "Ok."
+ 
+ #----------------------------------------------------------------------
+ # Karma
+ #----------------------------------------------------------------------
+ 

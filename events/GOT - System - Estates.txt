@@ -2,7 +2,7 @@ namespace = GOT_ESTATE_SYSTEM
 
 country_event = {
 	id = GOT_ESTATE_SYSTEM.1
-	title = GOT_ESTATE_SYSTEM.1.name
+	title = GOT_ESTATE_SYSTEM.1.title
 	desc = GOT_ESTATE_SYSTEM.1.desc
 	picture = NOBLE_ESTATE_DEMANDS_eventPicture
 
@@ -25,7 +25,7 @@ country_event = {
 
 country_event = {
 	id = GOT_ESTATE_SYSTEM.2
-	title = GOT_ESTATE_SYSTEM.2.name
+	title = GOT_ESTATE_SYSTEM.2.title
 	desc = GOT_ESTATE_SYSTEM.2.desc
 	picture = NOBLE_ESTATE_DEMANDS_eventPicture
 
@@ -49,7 +49,7 @@ country_event = {
 	}
 
 	option = {
-		name = GOT_ESTATE_SYSTEM.2.a
+		name = GOT_ESTATE_SYSTEM.2.option.a
 		trigger = { has_country_flag = estate_clergy_present_agenda }
         
 		start_estate_agenda = estate_clergy
@@ -85,7 +85,7 @@ country_event = {
 	}
 
 	option = {
-		name = GOT_ESTATE_SYSTEM.2.b
+		name = GOT_ESTATE_SYSTEM.2.option.b
 		trigger = { has_country_flag = estate_merchants_present_agenda }
         
 		start_estate_agenda = estate_merchants
@@ -121,7 +121,7 @@ country_event = {
 	}
 
 	option = {
-		name = GOT_ESTATE_SYSTEM.2.c
+		name = GOT_ESTATE_SYSTEM.2.option.c
 		trigger = { has_country_flag = estate_nobles_present_agenda }
         
 		start_estate_agenda = estate_nobles
@@ -156,7 +156,7 @@ country_event = {
 	}
 	
 	option = {
-		name = GOT_ESTATE_SYSTEM.2.d
+		name = GOT_ESTATE_SYSTEM.2.option.d
 		trigger = { has_country_flag = estate_commoners_present_agenda }
         
 		start_estate_agenda = estate_commoners
@@ -192,7 +192,7 @@ country_event = {
 	}
 
 	option = {
-		name = GOT_ESTATE_SYSTEM.2.e
+		name = GOT_ESTATE_SYSTEM.2.option.e
 		trigger = { has_country_flag = estate_tribes_present_agenda }
         
 		start_estate_agenda = estate_tribes
@@ -231,7 +231,7 @@ country_event = {
 # Estates bailing out the player
 country_event = {
 	id = GOT_ESTATE_SYSTEM.3
-	title = GOT_ESTATE_SYSTEM.3.name
+	title = GOT_ESTATE_SYSTEM.3.title
 	desc = GOT_ESTATE_SYSTEM.3.desc
 	picture = NOBLE_ESTATE_DEMANDS_eventPicture
 
@@ -279,7 +279,7 @@ country_event = {
 	}
 
 	option = { # Accept the Bail Out
-		name = GOT_ESTATE_SYSTEM.3.a
+		name = GOT_ESTATE_SYSTEM.3.option.a
         
 		custom_tooltip = seize_land_unavailable_from_privilege
 		if = {
@@ -303,7 +303,7 @@ country_event = {
 	}
 
 	option = { # Refuse the Bail Out
-		name = GOT_ESTATE_SYSTEM.3.b
+		name = GOT_ESTATE_SYSTEM.3.option.b
 	}
 }
 

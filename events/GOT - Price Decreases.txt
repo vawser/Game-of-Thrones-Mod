@@ -1,0 +1,779 @@
+namespace = GOT_PRICE_DECREASE
+
+# Bountiful Harvest 1
+country_event = {
+	id = GOT_PRICE_DECREASE.1
+	title = "GOT_PRICE_DECREASE.1.title"
+	desc = "GOT_PRICE_DECREASE.1.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.1.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = grain key = got_grain_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = grain key = got_grain_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = grain key = got_grain_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = grain key = got_grain_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = grain key = got_grain_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Ripe Grapes
+country_event = {
+	id = GOT_PRICE_DECREASE.2
+	title = "GOT_PRICE_DECREASE.2.title"
+	desc = "GOT_PRICE_DECREASE.2.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.2.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = wine key = got_wine_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = wine key = got_wine_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = wine key = got_wine_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = wine key = got_wine_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = wine key = got_wine_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Wooly Sheep
+country_event = {
+	id = GOT_PRICE_DECREASE.3
+	title = "GOT_PRICE_DECREASE.3.title"
+	desc = "GOT_PRICE_DECREASE.3.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.3.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = wool key = got_wool_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = wool key = got_wool_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = wool key = got_wool_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = wool key = got_wool_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = wool key = got_wool_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Excellent Cloth
+country_event = {
+	id = GOT_PRICE_DECREASE.4
+	title = "GOT_PRICE_DECREASE.4.title"
+	desc = "GOT_PRICE_DECREASE.4.desc"
+	picture = TRADEGOODS_eventPicture
+
+    major = yes
+	is_triggered_only = yes
+    
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.4.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = cloth key = got_cloth_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = cloth key = got_cloth_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = cloth key = got_cloth_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = cloth key = got_cloth_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = cloth key = got_cloth_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Fish!
+country_event = {
+	id = GOT_PRICE_DECREASE.5
+	title = "GOT_PRICE_DECREASE.5.title"
+	desc = "GOT_PRICE_DECREASE.5.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.5.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = fish key = got_fish_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = fish key = got_fish_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = fish key = got_fish_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = fish key = got_fish_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = fish key = got_fish_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Excellent Hides
+country_event = {
+	id = GOT_PRICE_DECREASE.6
+	title = "GOT_PRICE_DECREASE.6.title"
+	desc = "GOT_PRICE_DECREASE.6.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.6.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = fur key = got_fur_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = fur key = got_fur_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = fur key = got_fur_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = fur key = got_fur_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = fur key = got_fur_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Salt!
+country_event = {
+	id = GOT_PRICE_DECREASE.7
+	title = "GOT_PRICE_DECREASE.7.title"
+	desc = "GOT_PRICE_DECREASE.7.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.7.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = salt key = got_salt_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = salt key = got_salt_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = salt key = got_salt_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = salt key = got_salt_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = salt key = got_salt_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Fleet Commissioned
+country_event = {
+	id = GOT_PRICE_DECREASE.8
+	title = "GOT_PRICE_DECREASE.8.title"
+	desc = "GOT_PRICE_DECREASE.8.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.8.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = naval_supplies key = got_naval_supplies_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = naval_supplies key = got_naval_supplies_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = naval_supplies key = got_naval_supplies_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = naval_supplies key = got_naval_supplies_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = naval_supplies key = got_naval_supplies_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Copper!
+country_event = {
+	id = GOT_PRICE_DECREASE.9
+	title = "GOT_PRICE_DECREASE.9.title"
+	desc = "GOT_PRICE_DECREASE.9.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.9.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = copper key = got_copper_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = copper key = got_copper_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = copper key = got_copper_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = copper key = got_copper_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = copper key = got_copper_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Iron!
+country_event = {
+	id = GOT_PRICE_DECREASE.10
+	title = "GOT_PRICE_DECREASE.10.title"
+	desc = "GOT_PRICE_DECREASE.10.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.10.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = iron key = got_iron_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = iron key = got_iron_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = iron key = got_iron_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = iron key = got_iron_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = iron key = got_iron_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Strong Whips
+country_event = {
+	id = GOT_PRICE_DECREASE.11
+	title = "GOT_PRICE_DECREASE.11.title"
+	desc = "GOT_PRICE_DECREASE.11.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.11.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = slaves key = got_slaves_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = slaves key = got_slaves_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = slaves key = got_slaves_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = slaves key = got_slaves_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = slaves key = got_slaves_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Exotic Game
+country_event = {
+	id = GOT_PRICE_DECREASE.12
+	title = "GOT_PRICE_DECREASE.12.title"
+	desc = "GOT_PRICE_DECREASE.12.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.12.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = ivory key = got_ivory_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = ivory key = got_ivory_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = ivory key = got_ivory_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = ivory key = got_ivory_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = ivory key = got_ivory_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Tea!
+country_event = {
+	id = GOT_PRICE_DECREASE.13
+	title = "GOT_PRICE_DECREASE.13.title"
+	desc = "GOT_PRICE_DECREASE.13.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.13.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = tea key = got_tea_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = tea key = got_tea_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = tea key = got_tea_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = tea key = got_tea_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = tea key = got_tea_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Spice!
+country_event = {
+	id = GOT_PRICE_DECREASE.14
+	title = "GOT_PRICE_DECREASE.14.title"
+	desc = "GOT_PRICE_DECREASE.14.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.14.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = spices key = got_spices_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = spices key = got_spices_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = spices key = got_spices_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = spices key = got_spices_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = spices key = got_spices_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Coffee!
+country_event = {
+	id = GOT_PRICE_DECREASE.15
+	title = "GOT_PRICE_DECREASE.15.title"
+	desc = "GOT_PRICE_DECREASE.15.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.15.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = coffee key = got_coffee_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = coffee key = got_coffee_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = coffee key = got_coffee_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = coffee key = got_coffee_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = coffee key = got_coffee_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Cotton!
+country_event = {
+	id = GOT_PRICE_DECREASE.16
+	title = "GOT_PRICE_DECREASE.16.title"
+	desc = "GOT_PRICE_DECREASE.16.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.16.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = cotton key = got_cotton_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = cotton key = got_cotton_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = cotton key = got_cotton_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = cotton key = got_cotton_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = cotton key = got_cotton_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Sugar!
+country_event = {
+	id = GOT_PRICE_DECREASE.17
+	title = "GOT_PRICE_DECREASE.17.title"
+	desc = "GOT_PRICE_DECREASE.17.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.17.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = sugar key = got_sugar_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = sugar key = got_sugar_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = sugar key = got_sugar_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = sugar key = got_sugar_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = sugar key = got_sugar_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# High Tobacco Yields
+country_event = {
+	id = GOT_PRICE_DECREASE.18
+	title = "GOT_PRICE_DECREASE.18.title"
+	desc = "GOT_PRICE_DECREASE.18.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.18.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = tobacco key = got_tobacco_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = tobacco key = got_tobacco_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = tobacco key = got_tobacco_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = tobacco key = got_tobacco_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = tobacco key = got_tobacco_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Cocoa!
+country_event = {
+	id = GOT_PRICE_DECREASE.19
+	title = "GOT_PRICE_DECREASE.19.title"
+	desc = "GOT_PRICE_DECREASE.19.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.19.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = cocoa key = got_cocoa_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = cocoa key = got_cocoa_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = cocoa key = got_cocoa_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = cocoa key = got_cocoa_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = cocoa key = got_cocoa_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Silk is in vogue
+country_event = {
+	id = GOT_PRICE_DECREASE.20
+	title = "GOT_PRICE_DECREASE.20.title"
+	desc = "GOT_PRICE_DECREASE.20.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.20.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = silk key = got_silk_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = silk key = got_silk_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = silk key = got_silk_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = silk key = got_silk_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = silk key = got_silk_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Dyes
+country_event = {
+	id = GOT_PRICE_DECREASE.21
+	title = "GOT_PRICE_DECREASE.21.title"
+	desc = "GOT_PRICE_DECREASE.21.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+    
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.21.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = dyes key = got_dyes_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = dyes key = got_dyes_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = dyes key = got_dyes_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = dyes key = got_dyes_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = dyes key = got_dyes_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Palace Fire
+country_event = {
+	id = GOT_PRICE_DECREASE.22
+	title = "GOT_PRICE_DECREASE.22.title"
+	desc = "GOT_PRICE_DECREASE.22.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.22.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = tropical_wood key = got_tropical_wood_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = tropical_wood key = got_tropical_wood_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = tropical_wood key = got_tropical_wood_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = tropical_wood key = got_tropical_wood_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = tropical_wood key = got_tropical_wood_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Commission for a Grand Fleet
+country_event = {
+	id = GOT_PRICE_DECREASE.23
+	title = "GOT_PRICE_DECREASE.23.title"
+	desc = "GOT_PRICE_DECREASE.23.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.23.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = ironwood key = got_ironwood_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = ironwood key = got_ironwood_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = ironwood key = got_ironwood_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = ironwood key = got_ironwood_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = ironwood key = got_ironwood_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Candles!
+country_event = {
+	id = GOT_PRICE_DECREASE.24
+	title = "GOT_PRICE_DECREASE.24.title"
+	desc = "GOT_PRICE_DECREASE.24.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.24.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = candles key = got_candles_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = candles key = got_candles_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = candles key = got_candles_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = candles key = got_candles_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = candles key = got_candles_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+# Demand for Fruit
+country_event = {
+	id = GOT_PRICE_DECREASE.25
+	title = "GOT_PRICE_DECREASE.25.title"
+	desc = "GOT_PRICE_DECREASE.25.desc"
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ai = no
+    }
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "GOT_PRICE_DECREASE.25.option.a"
+		
+        random_list = {
+            20 = { change_price = { trade_goods = fruit key = got_fruit_loss value = -0.05 duration = 9125 } }
+            20 = { change_price = { trade_goods = fruit key = got_fruit_loss value = -0.1 duration = 9125 } }
+            20 = { change_price = { trade_goods = fruit key = got_fruit_loss value = -0.15 duration = 9125 } }
+            20 = { change_price = { trade_goods = fruit key = got_fruit_loss value = -0.2 duration = 9125 } }
+            20 = { change_price = { trade_goods = fruit key = got_fruit_loss value = -0.25 duration = 9125 } }
+        }
+	}
+}
+
+
+

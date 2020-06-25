@@ -26,58 +26,56 @@ religion_westeros = {
 		}
 		
 		papacy = {
-			papal_tag = FAT
+			papal_tag = CRW
 			election_cost = 5
 			seat_of_papacy = 226
 			
-			# Prestige
 			appeal_to_the_father = {
-				cost = 20
-				potential = {
-
-				}
+                curia_treasury_cost = 100
+				cost = 50
+				potential = { }
 				allow = {
-					NOT = { prestige = 100 }
+					NOT = { has_country_modifier = blessing_of_the_father }
 				}
 				effect = {
-					add_prestige = 10
+					add_country_modifier = {
+                        name = blessing_of_the_father
+                        duration = 7300
+                    }
 				}
 				ai_will_do = {
 					factor = 1
 				}
 			}
-			# Stability
 			appeal_to_the_mother = {
-				cost = 100
-				potential = {
-
-				}
+                curia_treasury_cost = 100
+				cost = 50
+				potential = { }
 				allow = {
-					NOT = { stability = 3 }
+					NOT = { has_country_modifier = blessing_of_the_mother }
 				}
 				effect = {
-					add_stability = 1
+					add_country_modifier = {
+                        name = blessing_of_the_mother
+                        duration = 7300
+                    }
 				}
 				ai_will_do = {
-					factor = 0
-					
-					modifier = {
-						factor = 1
-						NOT = { stability = 0 }
-					}
+					factor = 1
 				}
 			}
-			# Manpower
 			appeal_to_the_warrior = {
-				cost = 40
-				potential = {
-
-				}
+                curia_treasury_cost = 100
+				cost = 50
+				potential = { }
 				allow = {
-					always = yes
+					NOT = { has_country_modifier = blessing_of_the_warrior }
 				}
 				effect = {
-					add_yearly_manpower = 1
+					add_country_modifier = {
+                        name = blessing_of_the_warrior
+                        duration = 7300
+                    }
 				}
 				ai_will_do = {
 					factor = 1
@@ -85,19 +83,17 @@ religion_westeros = {
 			}
 			# Legitimacy
 			appeal_to_the_maiden = {
-				cost = 40
-				potential = {
-
-				}
+                curia_treasury_cost = 100
+				cost = 50
+				potential = { }
 				allow = {
-					OR = {
-						NOT = { legitimacy = 100 }
-						NOT = { republican_tradition = 1 }
-					}
+					NOT = { has_country_modifier = blessing_of_the_maiden }
 				}
 				effect = {
-					add_legitimacy = 5
-					add_republican_tradition = 0.05
+					add_country_modifier = {
+                        name = blessing_of_the_maiden
+                        duration = 7300
+                    }
 				}
 				ai_will_do = {
 					factor = 1
@@ -105,75 +101,75 @@ religion_westeros = {
 			}
 			# Goods
 			appeal_to_the_smith = {
-				cost = 40
-				potential = {
-
-				}
+                curia_treasury_cost = 100
+				cost = 50
+				potential = { }
 				allow = {
-					always = yes
+					NOT = { has_country_modifier = blessing_of_the_smith }
 				}
 				effect = {
-					add_years_of_income = 1
+					add_country_modifier = {
+                        name = blessing_of_the_smith
+                        duration = 7300
+                    }
 				}
 				ai_will_do = {
 					factor = 1
-				}				
-			}			
-			appeal_to_the_crone = {
-				cost = 60
-				potential = {
-
 				}
+			}		
+			appeal_to_the_crone = {
+                curia_treasury_cost = 100
+				cost = 50
+				potential = { }
 				allow = {
-					always = yes
+					NOT = { has_country_modifier = blessing_of_the_crone }
 				}
 				effect = {
-					add_adm_power = 25
-					add_dip_power = 25
-					add_mil_power = 25
+					add_country_modifier = {
+                        name = blessing_of_the_crone
+                        duration = 7300
+                    }
 				}
 				ai_will_do = {
 					factor = 1
 				}
 			}
 			appeal_to_the_stranger = {
+                curia_treasury_cost = 100
 				cost = 50
-				potential = {
-
-				}
+				potential = { }
 				allow = {
-					NOT = { stability = 0 }
+					NOT = { has_country_modifier = blessing_of_the_stranger }
 				}
 				effect = {
-					random_list = {
-						10 = {
-							add_stability = 1
-						}
-						10 = {
-							add_yearly_manpower = 1
-						}
-						10 = {
-							add_prestige = 25
-						}
-						10 = {
-							add_adm_power = 50
-							add_dip_power = 50
-							add_mil_power = 50
-						}
-						10 = {
-							add_years_of_income = 1
-						}
-						50 = {
-							
-						}
-					}
+					add_country_modifier = {
+                        name = blessing_of_the_stranger
+                        duration = 7300
+                    }
 				}
 				ai_will_do = {
-					factor = 0
-					modifier = {
-						NOT = { stability = -2 }
-						factor = 1
-					}
+					factor = 1
+				}
+			}
+            investigate_heresy = {
+				curia_treasury_cost = 1000
+				potential = {
+					is_papal_controller = yes
+				}
+				allow = {
+					is_papal_controller = yes
+					reform_desire = 0.05
+				}
+				effect = {
+					add_reform_desire = -0.05
+					add_reform_desire_scale = 0.1
+				}
+				ai_will_do = {
+					factor = 1
+                    modifier = {
+                        factor = 0
+                        NOT = { reform_desire = 0.5 }
+                    }
 				}
 			}
 		}

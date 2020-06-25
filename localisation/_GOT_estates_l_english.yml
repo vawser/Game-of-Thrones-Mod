@@ -578,18 +578,18 @@
  summon_the_council: "Summon the Council"
  ESTATES_SUMMON_THE_COUNCIL_DESC:0 "Will summon the Council to set an §YAgenda§!"
  
- GOT_ESTATE_SYSTEM.2.name:0 "The Agenda of the Council"
- GOT_ESTATE_SYSTEM.2.desc:1 "The Estates of [Root.GetName] have proposed agendas for the summoned Council. Favoring one of the Estates here could have large benefits in the long term.\n\n[Root.GetCachedAgendasFlavorText]"
- GOT_ESTATE_SYSTEM.2.a:1 "The Proposal of the [Root.GetClergyName]"
- GOT_ESTATE_SYSTEM.2.b:1 "The Proposal of the [Root.GetMerchantName]"
- GOT_ESTATE_SYSTEM.2.c:1 "The Proposal of the [Root.GetNoblesName]"
- GOT_ESTATE_SYSTEM.2.d:1 "The Proposal of the [Root.GetCommonersName]"
- GOT_ESTATE_SYSTEM.2.e:1 "The Proposal of the [Root.GetTribesName]"
+ GOT_ESTATE_SYSTEM.2.title: "The Agenda of the Council"
+ GOT_ESTATE_SYSTEM.2.desc: "The Estates of [Root.GetName] have proposed agendas for the summoned Council. Favoring one of the Estates here could have large benefits in the long term.\n\n[Root.GetCachedAgendasFlavorText]"
+ GOT_ESTATE_SYSTEM.2.option.a: "The Proposal of the [Root.GetClergyName]"
+ GOT_ESTATE_SYSTEM.2.option.b: "The Proposal of the [Root.GetMerchantsName]"
+ GOT_ESTATE_SYSTEM.2.option.c: "The Proposal of the [Root.GetNoblesName]"
+ GOT_ESTATE_SYSTEM.2.option.d: "The Proposal of the [Root.GetCommonersName]"
+ GOT_ESTATE_SYSTEM.2.option.e: "The Proposal of the [Root.GetTribesName]"
  
- GOT_ESTATE_SYSTEM.3.name: "Estate Statutory Rights"
+ GOT_ESTATE_SYSTEM.3.title: "Estate Statutory Rights"
  GOT_ESTATE_SYSTEM.3.desc: "The Estates of [Root.GetName] have come forth offering a compromise to [Root.Monarch.GetTitle] [Root.Monarch.GetName] to solve the weak control that the [Root.GovernmentName] exercises over the land. In exchange for control, the Estates demand certain liberties..."
- GOT_ESTATE_SYSTEM.3.a: "Honestly what did you expect when you sold out the entire country?"
- GOT_ESTATE_SYSTEM.3.b: "Pfft we'll solve this ourselves..."
+ GOT_ESTATE_SYSTEM.3.option.a: "Honestly what did you expect when you sold out the entire country?"
+ GOT_ESTATE_SYSTEM.3.option.b: "Pfft we'll solve this ourselves..."
 
  #-----------------------------------------
  # Agendas
@@ -763,7 +763,7 @@
  estate_merchants_reduce_corruption_desc: "The [Root.GetMerchantsName] complain at the injustices caused by the corruption that plagues our nation. They urge us to take action to restrict such illegal practices."
  
  estate_merchants_protect_against_piracy: "Protect against Piracy"
- estate_merchants_protect_against_piracy_desc: "The [Root.GetMerchantsName] bemoan their losses from piracy in the [agenda_trade_node_sea.GetName]. They beseech us to take action to drive out the pirates and privateers that are plundering their trade ships."
+ estate_merchants_protect_against_piracy_desc: "The [Root.GetMerchantsName] bemoan their losses from piracy in a nearby sea. They beseech us to take action to drive out the pirates and privateers that are plundering their trade ships."
  
  estate_merchants_hire_advisor: "Hire a Diplomatic Advisor"
  estate_merchants_hire_advisor_desc: "The [Root.GetMerchantsName] desire the [Root.Monarch.GetTitle] to hire a new diplomatic advisor."
@@ -782,7 +782,7 @@
  estate_nobility_build_a_drill_square_in_y_desc: "The [Root.GetNoblesName] of [agenda_province.GetName] urge us to build a new drill square in the province so that our supply of high-quality recruits to the army may be made more secure."
  
  estate_nobility_build_a_paved_road_in_y: "Build a Paved Road in [agenda_province.GetName]"
- estate_nobility_build_a_barracks_in_y_desc: "The [Root.GetNoblesName] of [agenda_province.GetName] urge us to build a new paved road in the province so that our supply of high-quality recruits to the army may be made more secure."
+ estate_nobility_build_a_paved_road_in_y_desc: "The [Root.GetNoblesName] of [agenda_province.GetName] urge us to build a new paved road in the province so that our supply of high-quality recruits to the army may be made more secure."
  
  estate_nobility_build_a_supply_depot_in_y: "Build a Supply Depot in [agenda_province.GetName]"
  estate_nobility_build_a_supply_depot_in_y_desc: "The [Root.GetNoblesName] of [agenda_province.GetName] urge us to build a new supply depot in the province so that our supply of high-quality recruits to the army may be made more secure."

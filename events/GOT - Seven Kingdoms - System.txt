@@ -1,0 +1,353 @@
+namespace = GOT_SK_SYSTEM
+
+# War Won
+country_event = {
+	id = GOT_SK_SYSTEM.1
+	title = GOT_SK_SYSTEM.1.title
+	desc = GOT_SK_SYSTEM.1.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        is_emperor_of_china = yes
+    }
+    
+    option = {
+        name = GOT_SK_SYSTEM.1.option.a
+
+        add_mandate = 10
+    }  
+}
+
+# War Lost
+country_event = {
+	id = GOT_SK_SYSTEM.2
+	title = GOT_SK_SYSTEM.2.title
+	desc = GOT_SK_SYSTEM.2.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        is_emperor_of_china = yes
+    }
+    
+    option = {
+        name = GOT_SK_SYSTEM.2.option.a
+
+        add_mandate = -10
+    }  
+}
+
+# New Monarch
+country_event = {
+	id = GOT_SK_SYSTEM.3
+	title = GOT_SK_SYSTEM.3.title
+	desc = GOT_SK_SYSTEM.3.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        is_emperor_of_china = yes
+        is_female = no
+        adm = 3
+        dip = 3
+        mil = 3
+        NOT = {
+            adm = 5
+            dip = 5
+            mil = 5
+        }
+    }
+    
+    option = {
+        name = GOT_SK_SYSTEM.3.option.a
+
+        add_mandate = 10
+    }  
+}
+
+# New Monarch - Female
+country_event = {
+	id = GOT_SK_SYSTEM.4
+	title = GOT_SK_SYSTEM.4.title
+	desc = GOT_SK_SYSTEM.4.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        is_emperor_of_china = yes
+        is_female = yes
+    }
+    
+    option = {
+        name = GOT_SK_SYSTEM.4.option.a
+
+        add_mandate = -10
+    }  
+}
+
+# New Monarch
+country_event = {
+	id = GOT_SK_SYSTEM.5
+	title = GOT_SK_SYSTEM.5.title
+	desc = GOT_SK_SYSTEM.5.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        is_emperor_of_china = yes
+        is_female = no
+        adm = 5
+        dip = 5
+        mil = 5
+    }
+    
+    option = {
+        name = GOT_SK_SYSTEM.5.option.a
+
+        add_mandate = 15
+    }  
+}
+
+# Swing
+country_event = {
+	id = GOT_SK_SYSTEM.10
+	title = GOT_SK_SYSTEM.10.title
+	desc = GOT_SK_SYSTEM.10.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        is_emperor_of_china = yes
+    }
+    
+    option = {
+        name = GOT_SK_SYSTEM.10.option.a
+
+        add_mandate = -10
+    } 
+    option = {
+        name = GOT_SK_SYSTEM.10.option.b
+
+        add_years_of_income = -1
+    }  
+}
+
+# Swing
+country_event = {
+	id = GOT_SK_SYSTEM.11
+	title = GOT_SK_SYSTEM.11.title
+	desc = GOT_SK_SYSTEM.11.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        is_emperor_of_china = yes
+    }
+    
+    option = {
+        name = GOT_SK_SYSTEM.11.option.a
+
+        add_mandate = -10
+    } 
+    option = {
+        name = GOT_SK_SYSTEM.11.option.a
+
+        add_yearly_manpower = -1
+    }  
+}
+
+# Swing
+country_event = {
+	id = GOT_SK_SYSTEM.12
+	title = GOT_SK_SYSTEM.12.title
+	desc = GOT_SK_SYSTEM.12.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+    is_triggered_only = yes
+    
+    trigger = {
+        is_emperor_of_china = yes
+    }
+    
+    option = {
+        name = GOT_SK_SYSTEM.12.option.a
+
+        add_mandate = -10
+    } 
+    option = {
+        name = GOT_SK_SYSTEM.12.option.a
+
+        add_corruption = 2
+    }  
+}
+
+# Add Royal House to new claimant
+country_event = {
+	id = GOT_SK_SYSTEM.20
+	title = GOT_SK_SYSTEM.20.title
+	desc = GOT_SK_SYSTEM.20.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+    trigger = {
+        is_emperor_of_china = yes
+        has_reform = noble_house_reform
+        NOT = { has_reform = royal_house_reform }
+    }
+    
+    mean_time_to_happen = {
+		days = 1
+	}
+    
+    immediate = {
+        change_government = monarchy
+        remove_government_reform = noble_house_reform
+        add_government_reform = royal_house_reform
+    }
+    
+    option = {
+        name = GOT_SK_SYSTEM.20.option.a
+
+        tooltip = {
+            add_government_reform = royal_house_reform
+        }
+    } 
+}
+
+# Remove Royal House from old claimant
+country_event = {
+	id = GOT_SK_SYSTEM.21
+	title = GOT_SK_SYSTEM.21.title
+	desc = GOT_SK_SYSTEM.21.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+    trigger = {
+        is_emperor_of_china = no
+        has_reform = royal_house_reform
+        NOT = { has_reform = noble_house_reform }
+    }
+    
+    mean_time_to_happen = {
+		days = 1
+	}
+    
+    immediate = {
+        change_government = monarchy
+        remove_government_reform = royal_house_reform
+        add_government_reform = noble_house_reform
+    }
+    
+    option = {
+        name = GOT_SK_SYSTEM.21.option.a
+
+        tooltip = {
+            add_government_reform = noble_house_reform
+        }
+    } 
+}
+
+# Dismantled Seven Kingdoms
+country_event = {
+	id = GOT_SK_SYSTEM.30
+	title = GOT_SK_SYSTEM.30.title
+	desc = GOT_SK_SYSTEM.30.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	trigger = {
+		FROM = { is_emperor_of_china = yes }
+        NOT = { has_reform = noble_house_reform }
+	}
+	
+	option = {
+		name = GOT_SK_SYSTEM.30.option.a
+		add_prestige = 20
+		add_dip_power = 50
+		add_mil_power = 50
+		add_adm_power = 50
+        
+        hidden_effect = {
+            dismantle_empire_of_china = yes
+            set_global_flag = empire_of_china_dismantled
+        }
+	}
+}
+
+# Claim the Iron Throne
+country_event = {
+	id = GOT_SK_SYSTEM.31
+	title = GOT_SK_SYSTEM.31.title
+	desc = GOT_SK_SYSTEM.31.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	trigger = {
+		FROM = { is_emperor_of_china = yes }
+        has_reform = noble_house_reform
+	}
+	
+	option = {
+		name = GOT_SK_SYSTEM.31.option.a
+        
+        set_emperor_of_china = ROOT
+		add_prestige = 20
+		add_dip_power = 50
+		add_mil_power = 50
+		add_adm_power = 50
+	}
+}
+
+country_event = {
+	id = GOT_SK_SYSTEM.32
+	title = GOT_SK_SYSTEM.32.title
+	desc = GOT_SK_SYSTEM.32.desc
+	picture = IMPERIAL_EXAMINATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor_of_china = yes
+		has_dlc = "Mandate of Heaven"
+		NOT = { has_country_flag = reacted_to_ideology_event }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = reacted_to_ideology_event
+		}
+	}
+	
+	option = {
+		name = GOT_SK_SYSTEM.32.option.a
+		ai_chance = {
+			factor = 100
+		}
+        reduce_meritocracy_effect = yes
+		add_stability = -1
+        add_country_modifier = {
+            name = punitive_ideology
+            duration = 7300
+        }
+	}
+	option = {
+		name = GOT_SK_SYSTEM.32.option.b
+		ai_chance = {
+			factor = 0
+		}
+		add_meritocracy_effect = yes
+		add_mandate_effect = yes
+	}
+}

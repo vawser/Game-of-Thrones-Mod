@@ -1,0 +1,42 @@
+#-------------------------------------------
+# Edicts
+#-------------------------------------------
+standardize_currency_decision = {
+	empire = celestial_empire
+	emperor = {
+		global_tax_modifier = 0.2
+	}
+}
+
+forbid_the_first_night_custom_decision = {
+	empire = celestial_empire
+	emperor = {
+		global_unrest = -2
+	}
+    required_reform = standardize_currency_decision
+}
+
+establish_kingsguard_decision = {
+	empire = celestial_empire
+	emperor = {
+		monarch_lifespan = 0.25
+	}
+    required_reform = forbid_the_first_night_custom_decision
+}
+
+recover_valyrian_blades_decision = {
+	empire = celestial_empire
+	emperor = {
+		discipline = 0.05
+	}
+    required_reform = establish_kingsguard_decision
+}
+
+centralize_the_houses_decision = {
+	empire = celestial_empire
+	emperor = {
+		country_admin_power = 1
+	}
+    required_reform = recover_valyrian_blades_decision
+}
+

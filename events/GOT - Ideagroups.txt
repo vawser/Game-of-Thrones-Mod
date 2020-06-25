@@ -1,5 +1,27 @@
 namespace = GOT_IDEAGROUPS
 
+country_event = {
+	id = GOT_IDEAGROUPS.100
+	title = GOT_IDEAGROUPS.100.title
+	desc = GOT_IDEAGROUPS.100.desc
+	picture = ADVISOR_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = GOT_IDEAGROUPS.100.option.a
+        
+		ai_chance = { factor = 1 }
+		trigger = { has_custom_ideas = no }
+		swap_free_idea_group = yes
+	}
+	option = {
+		name = GOT_IDEAGROUPS.100.option.b
+        
+		ai_chance = { factor = 0 }
+	}
+}
+
 # Loyal Administration in X
 province_event = {
 	id = GOT_IDEAGROUPS.1

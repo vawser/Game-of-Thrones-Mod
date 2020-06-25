@@ -1,0 +1,26 @@
+namespace = GOT_INTEGRATION
+
+country_event = {
+	id = GOT_INTEGRATION.1
+	title = GOT_INTEGRATION.1.title
+	desc = GOT_INTEGRATION.1.desc
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	trigger = {
+		NOT = {
+			FROM = {
+				has_country_modifier = to_be_agenda_annexed_timer
+			}
+		}
+	}
+
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_INTEGRATION.1.option.a
+		add_country_modifier = {
+			name = "annexers_legacy"
+			duration = 3650
+		}
+	}
+}

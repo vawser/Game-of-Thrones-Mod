@@ -225,53 +225,21 @@ superiority_wildling_feud = {
 	war_name = WILDLING_FEUD_NAME
 }
 
-superiority_yitish_unification = {
-	type = superiority
+take_capital_force_royal_subject = {
+	type = take_capital
 	
-	attacker = {
-		badboy_factor = 0.5
-		prestige_factor = 1.5
-		peace_cost_factor = 0.5
-		
-		allowed_provinces = {
-			region = region_yi_ti
-		}
-		
-		peace_options = {
-			po_demand_provinces
-		}
-		
-		country_desc = ALL_CGROUP_COUNTRIES
-		prov_desc = ALL_YITISH_PROVS
+	badboy_factor = 0.5
+	prestige_factor = 2
+	peace_cost_factor = 0.5
+	
+	peace_options = {
+		enforce_royal_subject
 	}
 	
-	defender = {
-		badboy_factor = 0.5
-		prestige_factor = 1.5
-		peace_cost_factor = 0.5
-		
-		allowed_provinces = {
-			OR = {
-				region = region_yi_ti
-				culture_group = FROM
-			}
-		}
-		
-		peace_options = {
-			po_demand_provinces
-		}
-		
-		country_desc = ALL_CGROUP_COUNTRIES
-		prov_desc = ALL_YITISH_PROVS
-	}
-	
-	war_name = YITISH_UNIFICATION_WAR_NAME	
+	war_name = ROYAL_SUBJECT_MISSION_WAR_NAME
 }
 
-#--------------------------------------
-# Take Capital
-#--------------------------------------
-take_capital_yiti_take_mandate = {
+take_capital_take_iron_throne = {
 	type = take_capital
 	
 	attacker = {
@@ -283,9 +251,6 @@ take_capital_yiti_take_mandate = {
 			po_demand_provinces
 			po_take_mandate
 		}
-
-		country_desc = YITI_EMPIRE_COUNTRY
-		prov_desc = ALL_PROVS
 	}
 	
 	defender = {
@@ -296,10 +261,7 @@ take_capital_yiti_take_mandate = {
 		peace_options = {
 			po_demand_provinces
 		}
-
-		country_desc = ALL_COUNTRIES
-		prov_desc = ALL_PROVS
 	}
 	
-	war_name = YITI_EMPIRE_WAR_NAME
+	war_name = CLAIM_THE_IRON_THRONE_WAR_NAME
 }

@@ -12,6 +12,16 @@ NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_6 = 1564
 NDefines.NCountry.MIN_SHIPS_TO_EXPLORE = 3
 
 --------------------------------
+-- Seven Kingdoms
+--------------------------------
+NDefines.NAI.WANT_TRIBUTARY_LOST_MANDATE = 0
+NDefines.NDiplomacy.CELESTIAL_EMPIRE_REFORM_COST = 100
+NDefines.NDiplomacy.CELESTIAL_EMPIRE_REFORM_MIN_VALUE = 100
+NDefines.NDiplomacy.CELESTIAL_EMPIRE_MANDATE_PER_STABILITY = 0.5
+NDefines.NDiplomacy.CELESTIAL_EMPIRE_MANDATE_PER_STATE_WITH_PROSPERITY = 0.1
+NDefines.NDiplomacy.CELESTIAL_EMPIRE_MANDATE_PER_HUNDRED_TRIBUTARY_DEV = 0.0
+
+--------------------------------
 -- Ruler
 --------------------------------
 NDefines.NCountry.MONARCH_DEATH_MIN_CHANCE_MODIFIER = 0.0 -- Allow immortality

@@ -82,6 +82,11 @@ royal_house_reform = {
 		nobles_influence_modifier = 0.1
     }
     
+    conditional = {
+		allow = { has_dlc = "Mandate of Heaven" }
+		has_meritocracy = yes
+	}
+    
     custom_attributes = {
 		enables_monarchy_ideagroup = yes
 	}

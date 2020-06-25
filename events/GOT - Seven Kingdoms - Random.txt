@@ -1,0 +1,2280 @@
+namespace = GOT_SK_RANDOM
+
+country_event = {
+	id = GOT_SK_RANDOM.1
+	title = GOT_SK_RANDOM.1.title
+	desc = GOT_SK_RANDOM.1.desc
+	picture = ADVISOR_eventPicture
+	
+	trigger = {
+        has_dlc = "Mandate of Heaven"
+		any_owned_province = {
+			is_capital = no
+			is_state = yes
+			NOT = { has_province_modifier = sk_local_trade_regulations }
+			NOT = { has_province_modifier = sk_local_trade_down_turn }
+		}
+		is_emperor_of_china = yes
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = { #Atleast here
+				limit = {
+					is_capital = no
+					is_state = yes
+					NOT = { has_province_modifier = sk_local_trade_regulations }
+					NOT = { has_province_modifier = sk_local_trade_down_turn }
+				}
+				save_event_target_as = trade_problems_province
+			}
+			random_owned_province = { #But rather here
+				limit = {
+					is_capital = no
+					has_building = marketplace
+					NOT = { has_province_modifier = sk_local_trade_regulations }
+					NOT = { has_province_modifier = sk_local_trade_down_turn }
+				}
+				save_event_target_as = trade_problems_province
+			}
+			random_owned_province = { #Here would be even better
+				limit = {
+					is_capital = no
+					has_port = yes
+					NOT = { has_province_modifier = sk_local_trade_regulations }
+					NOT = { has_province_modifier = sk_local_trade_down_turn }
+				}
+				save_event_target_as = trade_problems_province
+			}
+			random_owned_province = { #Warmer
+				limit = {
+					is_capital = no
+					has_port = yes
+					has_building = marketplace
+					NOT = { has_province_modifier = sk_local_trade_regulations }
+					NOT = { has_province_modifier = sk_local_trade_down_turn }
+				}
+				save_event_target_as = trade_problems_province
+			}
+			random_owned_province = { #Best
+				limit = {
+					is_capital = no
+					province_has_center_of_trade_of_level = 1
+					NOT = { has_province_modifier = sk_local_trade_regulations }
+					NOT = { has_province_modifier = sk_local_trade_down_turn }
+				}
+				save_event_target_as = trade_problems_province
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.1.option.a
+		
+		reduce_mandate_effect = yes
+        
+		event_target:trade_problems_province = {
+			add_province_modifier = {
+				name = "sk_local_trade_regulations"
+				duration = 3650
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.1.option.b
+		
+		add_mandate_effect = yes
+        
+		event_target:trade_problems_province = {
+			add_province_modifier = {
+				name = "sk_local_trade_down_turn"
+				duration = 3650
+			}
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.2
+	title = GOT_SK_RANDOM.2.title
+	desc = GOT_SK_RANDOM.2.desc
+	picture = DIPLOMACY_eventPicture
+	
+	trigger = {
+        has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+		any_owned_province = {
+			has_port = yes
+			is_state = yes
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_port = yes
+					is_state = yes
+				}
+				save_event_target_as = port_incident_location
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.2.option.a
+		
+		reduce_mandate_effect = yes
+        
+		add_years_of_income = 0.3
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.2.option.b
+		
+		add_mandate_effect = yes
+        
+		event_target:port_incident_location = {
+			area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = "sk_order_restored"
+					duration = 3650
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.3
+	title = GOT_SK_RANDOM.3.title
+	desc = GOT_SK_RANDOM.3.desc
+	picture = COURT_eventPicture
+
+	trigger = {
+        has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.3.option.a
+		
+        reduce_mandate_effect = yes
+		
+		add_stability_or_adm_power = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.3.option.b
+        
+		reduce_meritocracy_large_effect = yes
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.4
+	title = GOT_SK_RANDOM.4.title
+	desc = GOT_SK_RANDOM.4.desc
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+        has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.4.option.a
+        
+		if = {
+			limit = { stability = -2 }
+			add_stability = -1
+		}
+		reduce_stability_or_adm_power = yes
+		reduce_mandate_effect = yes
+		
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.4.option.b
+		
+		add_mandate_effect = yes
+		add_years_of_income = -0.25
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 50
+				NOT = { num_of_loans = 10 }
+				is_bankrupt = no
+			}
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.5
+	title = GOT_SK_RANDOM.5.title
+	desc = GOT_SK_RANDOM.5.desc
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	trigger = {
+        has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+		any_owned_province = {
+			is_state = yes
+            is_capital = no
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.5.option.a
+		add_years_of_income = -0.5
+		random_owned_province = {
+			limit = {
+				is_state = yes
+				is_capital = no
+			}
+            if = {
+                limit = { NOT = { prosperity = 100 } }
+                add_prosperity = 75
+            }
+            add_base_production = 2
+        }
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.5.option.b
+        
+		add_prestige = -5
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.6
+	title = GOT_SK_RANDOM.6.title
+	desc = GOT_SK_RANDOM.6.desc
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	trigger = {
+        has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.6.option.a
+        
+		add_years_of_income = 1
+		add_prestige = 10
+		reduce_mandate_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.6.option.b
+		add_corruption = -1
+	}
+}
+
+# Destitute Banknotes
+country_event = {
+	id = GOT_SK_RANDOM.7
+	title = GOT_SK_RANDOM.7.title
+	desc = GOT_SK_RANDOM.7.desc
+	picture = ECONOMY_eventPicture
+	
+	trigger = {
+        has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.7.option.a 
+		
+		add_mandate_effect = yes
+		add_years_of_income = -0.5
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.7.option.b 
+		
+		reduce_mandate_effect = yes
+		add_inflation = 2
+	}
+}
+
+# Treasurer Empties Coffers
+country_event = {
+	id = GOT_SK_RANDOM.8
+	title = GOT_SK_RANDOM.8.title
+	desc = GOT_SK_RANDOM.8.desc
+	picture = ADVISOR_eventPicture
+	
+	trigger = {
+        has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.8.option.a
+        
+		reduce_mandate_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.8.option.b
+        
+		add_corruption = 1
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.9
+	title = GOT_SK_RANDOM.9.title
+	desc = GOT_SK_RANDOM.9.desc
+	picture = ADVISOR_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+		num_of_cities = 2
+		any_owned_province = {
+			is_capital = no
+			is_state = yes
+		}
+	}
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.9.option.a
+		define_advisor = {
+			type = philosopher
+			skill = 3
+			discount = yes
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.9.option.b
+		random_owned_province = {
+			limit = {
+				is_state = yes
+				is_capital = no
+			}
+			if = {
+                limit = { NOT = { prosperity = 100 } }
+                add_prosperity = 75
+            }
+            area = {
+                limit = { owned_by = ROOT }
+                add_province_modifier = {
+                    name = "sk_gifted_official"
+                    duration = 3650
+                }
+            }
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.10
+	title = GOT_SK_RANDOM.10.title
+	desc = GOT_SK_RANDOM.10.desc
+	picture = COURT_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.10.option.a
+		
+		reduce_mandate_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.10.option.b
+		
+		reduce_meritocracy_large_effect = yes
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.11
+	title = GOT_SK_RANDOM.11.title
+	desc = GOT_SK_RANDOM.11.desc
+	picture = UNIVERSITY_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.11.option.a
+        
+		add_meritocracy_large_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.11.option.b
+        
+		add_mandate_effect = yes
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.12
+	title = GOT_SK_RANDOM.12.title
+	desc = GOT_SK_RANDOM.12.desc
+	picture = UNIVERSITY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_ruler_flag = quotas_discussed }
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = quotas_discussed
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.12.option.a
+        
+		reduce_meritocracy_large_effect = yes
+		add_mandate_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.12.option.b 
+        
+		reduce_mandate_effect = yes
+		add_meritocracy_large_effect = yes
+	}
+}
+
+# The Levy in X
+country_event = {
+	id = GOT_SK_RANDOM.13
+	title = GOT_SK_RANDOM.13.title
+	desc = GOT_SK_RANDOM.13.desc
+	picture = MILITARY_CAMP_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+		any_owned_province = {
+			is_capital = no
+			is_state = yes
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+				}
+				save_event_target_as = levy_province
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.13.option.a
+		
+		event_target:levy_province = {
+			add_base_manpower = 2
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.13.option.b
+		
+		event_target:levy_province = {
+			if = {
+                limit = { NOT = { prosperity = 100 } }
+                add_prosperity = 50
+            }
+            add_base_tax = 1
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.14
+	title = GOT_SK_RANDOM.14.title
+	desc = GOT_SK_RANDOM.14.desc
+	picture = MILITARY_CAMP_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+		any_owned_province = {
+			fort_level = 2
+		}
+		has_leaders = {
+			value = 1
+			type = general
+			include_monarch = no
+			include_heir = no
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					fort_level = 2
+				}
+				save_event_target_as = corrupt_fort
+				set_province_flag = corrupt_fort_flag
+			}
+			random_owned_province = {
+				limit = {
+					fort_level = 2
+					NOT = { has_province_flag = corrupt_fort_flag }
+				}
+				save_event_target_as = corrupt_fort2
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.14.option.a
+		event_target:corrupt_fort = {
+			add_province_modifier = {
+				name = "chi_forts_underfunded"
+				duration = 3650
+			}
+			clr_province_flag = corrupt_fort_flag
+		}
+		event_target:corrupt_fort2 = {
+			add_province_modifier = {
+				name = "chi_forts_underfunded"
+				duration = 3650
+			}
+		}
+		reduce_temples_effect = yes
+		kill_leader = {
+			type = general
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.14.option.b
+		
+		reduce_mandate_effect = yes
+		add_mil_power = -50
+	}
+}
+
+# Heir Controlled
+country_event = {
+	id = GOT_SK_RANDOM.15
+	title = GOT_SK_RANDOM.15.title
+	desc = GOT_SK_RANDOM.15.desc
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+		has_heir = yes
+		heir_age = 15
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = GOT_SK_RANDOM.15.option.a
+
+		add_mandate_effect = yes
+	}
+	option = {
+		name = GOT_SK_RANDOM.15.option.b
+
+		reduce_mandate_effect = yes
+        
+		random_list = {
+			50 = { }
+			25 = { change_heir_dip = 1 }
+			25 = { change_heir_adm = 1 }
+		}
+	}
+}
+
+# 'When the people have enough, how can the ruler alone have too little?'
+# Based on Wang Ao's 8-legged essay.
+country_event = {
+	id = GOT_SK_RANDOM.16
+	title = GOT_SK_RANDOM.16.title
+	desc = GOT_SK_RANDOM.16.desc
+	picture = UNIVERSITY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+        has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+        
+		NOT = { has_country_modifier = sk_efficient_taxation }
+        
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+        meritocracy = 70
+
+		stability = 1
+		any_owned_province = {
+			is_state = yes
+			NOT = { devastation = 1 }
+			NOT = { has_province_modifier = sk_lowered_taxes_in_state }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					NOT = { devastation = 1 }
+					NOT = { has_province_modifier = sk_lowered_taxes_in_state }
+				}
+				save_event_target_as = prosperity_boost_here
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.16.option.a
+		goto = prosperity_boost_here
+        
+        event_target:prosperity_boost_here = {
+            if = {
+                limit = { NOT = { prosperity = 100 } }
+                add_prosperity = 25
+            }
+            area = {
+                add_province_modifier = {
+                    name = "sk_lowered_taxes_in_state"
+                    duration = 1825
+                }
+            }
+        }
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.16.option.b
+		
+		reduce_meritocracy_effect = yes
+		add_country_modifier = {
+			name = "sk_efficient_taxation"
+			duration = 3650
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.17
+	title = GOT_SK_RANDOM.17.title
+	desc = GOT_SK_RANDOM.17.desc
+	picture = ADVISOR_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.17.option.a
+        
+		add_meritocracy_effect = yes
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.18
+	title = GOT_SK_RANDOM.18.title
+	desc = GOT_SK_RANDOM.18.desc
+	picture = ADVISOR_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.18.option.a
+        
+		reduce_mandate_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.18.option.b
+        
+		reduce_meritocracy_large_effect = yes
+	}
+}
+
+# Drama on The Pearl River
+country_event = {
+	id = GOT_SK_RANDOM.19
+	title = GOT_SK_RANDOM.19.title
+    desc = GOT_SK_RANDOM.19.desc
+	picture = NAVAL_MILITARY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.19.option.a
+        
+		add_years_of_income = -0.5
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.19.option.b
+        
+		reduce_mandate_large_effect = yes
+	}
+}
+
+# Gold Mine Discovered
+country_event = {
+	id = GOT_SK_RANDOM.20
+	title = GOT_SK_RANDOM.20.title
+	desc = GOT_SK_RANDOM.20.desc
+	picture = ECONOMY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+        meritocracy = 70
+
+		NOT = { gold = 2 }
+        
+		any_owned_province = {
+			NOT = { trade_goods = gold }
+			has_port = no
+			NOT = { development = 10 }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.20.option.a
+        
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = gold }
+				NOT = { development = 10 }
+				has_port = no
+			}
+			change_trade_goods = gold
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.20.option.b
+		add_inflation = -5
+		add_mandate_effect = yes
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.21
+	title = GOT_SK_RANDOM.21.title
+	desc = GOT_SK_RANDOM.21.desc
+	picture = ECONOMY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.21.option.a 
+		
+		reduce_mandate_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.21.option.b
+
+		add_years_of_income = -0.5
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.22
+	title = GOT_SK_RANDOM.22.title
+	desc = GOT_SK_RANDOM.22.desc
+	picture = FORT_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.22.option.a
+		add_years_of_income = -0.5
+		add_mandate_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.22.option.b
+		add_prestige = -5
+	}
+}
+
+# Frontier Hero
+country_event = {
+	id = GOT_SK_RANDOM.23
+	title = GOT_SK_RANDOM.23.title
+    desc = GOT_SK_RANDOM.23.desc
+	picture = MILITARY_CAMP_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+		has_leaders = {
+			value = 1
+			type = general
+			include_monarch = no
+			include_heir = no
+		}
+	}
+    
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.23.option.a #Charge with Corruption
+		
+		add_corruption = 1
+		if = {
+			limit = {
+				any_owned_province = {
+					has_province_modifier = domain_of_spouses_family
+				}
+			}
+			random_owned_province = {
+				limit = { has_province_modifier = domain_of_spouses_family }
+				add_province_modifier = {
+					name = "sk_upset_local_nobles"
+					duration = 3650
+				}
+			}
+		}
+		kill_leader = {
+			type = general
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.23.option.b #Distance ourselves and end his carreer
+        
+		reduce_mandate_effect = yes
+		if = {
+			limit = {
+				any_owned_province = {
+					has_province_modifier = domain_of_spouses_family
+				}
+			}
+			remove_consort = yes
+			random_owned_province = {
+				limit = {
+					has_province_modifier = domain_of_spouses_family
+				}
+				remove_province_modifier = domain_of_spouses_family
+				area = {
+					limit = { owned_by = ROOT }
+					add_province_modifier = {
+						name = "sk_upset_local_nobles"
+						duration = 3650
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_owned_province = {
+						has_province_modifier = domain_of_spouses_family
+					}
+				}
+			}
+			random_owned_area = {
+				limit = {
+					is_capital = no
+					is_state = yes
+				}
+				add_province_modifier = {
+					name = "sk_upset_local_nobles"
+					duration = 3650
+				}
+			}
+		}
+		kill_leader = {
+			type = general
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.23.option.c #We can't touch him
+		
+		reduce_mandate_large_effect = yes
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.24
+	title = GOT_SK_RANDOM.24.title
+	desc = GOT_SK_RANDOM.24.desc
+	picture = UNIVERSITY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.24.option.a
+        
+		reduce_meritocracy_effect = yes
+		add_years_of_income = 0.25
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.24.option.b
+        
+		add_prestige = 5
+	}
+}
+
+# Faction Diplomacy
+country_event = {
+	id = GOT_SK_RANDOM.25
+	title = GOT_SK_RANDOM.25.title
+	desc = GOT_SK_RANDOM.25.desc
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+		any_known_country = {
+			any_owned_province = {
+				range = ROOT
+			}
+			NOT = { is_subject_of = ROOT }
+			any_active_trade_node = {
+				has_merchant = ROOT
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					any_owned_province = {
+						range = ROOT
+					}
+					NOT = { is_subject_of = ROOT }
+					any_active_trade_node = {
+						has_merchant = ROOT
+					}
+				}
+				save_event_target_as = country_of_interest
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.25.option.a
+        
+		event_target:country_of_interest = {
+			add_opinion = {
+				who = ROOT
+				modifier = sk_trade_opportunity
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.25.option.b
+        
+		event_target:country_of_interest = {
+			reverse_add_casus_belli = {
+				target = ROOT
+				type = cb_trade_war_triggered
+				months = 36
+			}
+		}
+	}
+}
+
+# The Favor of X
+country_event = {
+	id = GOT_SK_RANDOM.26
+	title = GOT_SK_RANDOM.26.title
+	desc = GOT_SK_RANDOM.26.desc
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.26.option.a
+        
+		add_mandate_effect = yes
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.27
+	title = GOT_SK_RANDOM.27.title
+	desc = GOT_SK_RANDOM.27.desc
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+		any_known_country = {
+			NOT = { is_subject_of = ROOT }
+			num_of_cities = 20
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					NOT = { is_subject_of = ROOT }
+					num_of_cities = 20
+				}
+				save_event_target_as = country_of_interest
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.27.option.a
+		add_years_of_income = 0.35
+		add_prestige = 5
+        
+		event_target:country_of_interest = {
+			add_opinion = {
+				who = ROOT
+				modifier = sk_trade_opportunity
+			}
+		}
+	}
+	option = {
+		name = GOT_SK_RANDOM.27.option.b
+        
+		add_mandate_effect = yes
+        
+		event_target:country_of_interest = {
+			reverse_add_casus_belli = {
+				target = ROOT
+				type = cb_insult
+				months = 36
+			}
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.28
+	title = GOT_SK_RANDOM.28.title
+	desc = GOT_SK_RANDOM.28.desc
+	picture = LAND_MILITARY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.28.option.a
+        
+		add_army_tradition = 20
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.28.option.b
+        
+		add_army_tradition = -20
+		add_mandate_effect = yes
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.29
+	title = GOT_SK_RANDOM.29.title
+	desc = GOT_SK_RANDOM.29.desc
+	picture = UNIVERSITY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+        imperial_mandate = 90
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.29.option.a
+
+		add_mandate_effect = yes
+	}
+	option = {
+		name = GOT_SK_RANDOM.29.option.b
+        
+		add_meritocracy_effect = yes
+	}
+}
+
+# Examining the Examinations
+country_event = {
+	id = GOT_SK_RANDOM.30
+	title = GOT_SK_RANDOM.30.title
+	desc = GOT_SK_RANDOM.30.desc
+	picture = UNIVERSITY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+		NOT = {
+			has_country_modifier = sk_renewing_the_citadel_relationship
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.30.option.a
+		custom_tooltip = GOT_SK_RANDOM.30.option.a.tt
+        
+		add_mandate_effect = yes
+		add_stability_or_adm_power = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.30.option.b
+		custom_tooltip = GOT_SK_RANDOM.30.option.b.tt
+        
+		reduce_mandate_effect = yes
+		
+		add_country_modifier = {
+			name = "sk_renewing_the_citadel_relationship"
+			duration = 3650
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.31
+	title = GOT_SK_RANDOM.31.title
+	desc = GOT_SK_RANDOM.31.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_SK_RANDOM.31.option.a
+        
+		add_adm_power = -75
+		add_dip_power = -75
+		add_mil_power = -75
+		add_years_of_income = -0.5
+		add_meritocracy_effect = yes
+		add_mandate_large_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.31.option.b
+        
+		add_stability_or_adm_power = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.31.option.c
+        
+		reduce_mandate_large_effect = yes
+		add_stability = -2
+		add_years_of_income = 1.5
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.32
+	title = GOT_SK_RANDOM.32.title
+	desc = GOT_SK_RANDOM.32.desc
+	picture = ADVISOR_eventPicture
+
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.32.option.a
+        
+		add_mandate_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.32.option.b
+        
+		add_mandate_large_effect = yes
+		reduce_meritocracy_effect = yes
+		add_years_of_income = -0.5
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.35
+	title = GOT_SK_RANDOM.35.title
+	desc = GOT_SK_RANDOM.35.desc
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+        imperial_mandate = 80
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.35.option.a
+		
+		add_mandate_effect = yes
+		add_years_of_income = -0.1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.35.option.b
+        
+		add_mil_power = 40
+	}
+}
+
+### Multiple-Choice Questions ###
+
+# Jin Era Statue
+country_event = {
+	id = GOT_SK_RANDOM.36
+	title = GOT_SK_RANDOM.36.title
+	desc = GOT_SK_RANDOM.36.desc
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_SK_RANDOM.36.option.a
+        
+		add_meritocracy_effect = yes
+		add_adm_power = 10
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.36.option.b
+        
+		add_prestige = 10
+		if = {
+			limit = {
+				any_owned_province = { has_province_modifier = domain_of_spouses_family }
+			}
+			random_owned_province = {
+				limit = { has_province_modifier = domain_of_spouses_family }
+				add_base_tax = 1
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.36.option.c
+        
+		add_army_tradition = 10
+	}
+}
+
+# Withdrawing Excess Paper
+country_event = {
+	id = GOT_SK_RANDOM.39
+	title = GOT_SK_RANDOM.39.title
+	desc = GOT_SK_RANDOM.39.desc
+	picture = ECONOMY_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.39.option.a
+        
+		add_inflation = 2
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.39.option.b
+        
+		add_mandate_large_effect = yes
+		add_years_of_income = -0.5
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.42
+	title = GOT_SK_RANDOM.42.title
+	desc = GOT_SK_RANDOM.42.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.42.option.a
+        
+		add_adm_power = -25
+        reduce_meritocracy_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.42.option.b
+		
+        add_army_tradition = -10
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.42.option.c
+		
+		reduce_meritocracy_effect = yes
+		add_army_tradition = -10
+		add_mandate_effect = yes
+	}
+}
+
+# Millenarianism / White Lotus Society
+country_event = {
+	id = GOT_SK_RANDOM.45
+	title = GOT_SK_RANDOM.45.title
+	desc = GOT_SK_RANDOM.45.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+        has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 50 }
+		num_of_states = 2
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_area = {
+				limit = {
+					is_state = yes
+					NOT = { has_province_modifier = sk_militia_area }
+				}
+				set_province_flag = sk_militia_area
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.45.option.a
+		random_owned_area = {
+			limit = { has_province_flag = sk_militia_area }
+			clr_province_flag = sk_militia_area
+			add_province_modifier = {
+				name = "sk_militia_area"
+				duration = 3650
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.45.option.b
+		every_province = { #Just to be Sure
+			limit = { has_province_flag = sk_militia_area }
+			clr_province_flag = sk_militia_area
+		}
+		add_adm_power = -50
+		add_mil_power = -50
+	}
+}
+
+# Major River Floods
+country_event = {
+	id = GOT_SK_RANDOM.46
+	title = GOT_SK_RANDOM.46.title
+	desc = GOT_SK_RANDOM.46.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 50 }
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.46.option.a
+        
+		add_years_of_income = -0.5
+	}
+	option = {
+		name = GOT_SK_RANDOM.46.option.b
+        
+		reduce_mandate_effect = yes
+	}
+}
+
+# Brigands on the Silk Road
+country_event = {
+	id = GOT_SK_RANDOM.47
+	title = GOT_SK_RANDOM.47.title
+	desc = GOT_SK_RANDOM.47.desc
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 21 }
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.47.option.a
+        
+		add_country_modifier = {
+			name = "sk_military_protecting_traders"
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.47.option.b
+        
+		add_country_modifier = {
+			name = "sk_no_law_and_order"
+			duration = 3650
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.48
+	title = GOT_SK_RANDOM.48.title
+	desc = GOT_SK_RANDOM.48.desc
+	picture = COURT_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 50 }
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.48.option.a
+		ai_chance = {
+			factor = 80
+		}
+        
+		add_stability = -1
+		reduce_meritocracy_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.48.option.b
+		ai_chance = {
+			factor = 20
+		}
+        
+		reduce_mandate_effect = yes
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.49
+	title = GOT_SK_RANDOM.49.title
+	desc = GOT_SK_RANDOM.49.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 50 }
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.49.option.a
+        
+		reduce_meritocracy_large_effect = yes
+		add_stability = -1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.49.option.b
+        
+		reduce_mandate_effect = yes
+	}
+}
+
+# Disloyal Officials
+country_event = {
+	id = GOT_SK_RANDOM.50
+	title = GOT_SK_RANDOM.50.title
+	desc = GOT_SK_RANDOM.50.desc
+	picture = ADVISOR_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 50 }
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.50.option.a
+
+		add_country_modifier = {
+			name = "sk_purging_officials"
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.50.option.b
+        
+		reduce_mandate_effect = yes
+	}
+}
+
+# Disloyal Vassals
+country_event = {
+	id = GOT_SK_RANDOM.51
+	title = GOT_SK_RANDOM.51.title
+	desc = GOT_SK_RANDOM.51.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 21 }
+		num_of_subjects = 1
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_subject_country = {
+				save_event_target_as = unruly_subject
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.51.option.a
+		every_subject_country = {
+			country_event = { id = GOT_SK_RANDOM.62 }
+			add_opinion = {
+				who = ROOT
+				modifier = sk_low_mandate_subjects
+			}
+			add_liberty_desire = 20
+		}
+	}
+}
+
+# Plague Strikes the Court
+country_event = {
+	id = GOT_SK_RANDOM.52
+	title = GOT_SK_RANDOM.52.title
+	desc = GOT_SK_RANDOM.52.desc
+	picture = PLAGUE_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 50 }
+		capital_scope = {
+			NOT = { has_province_modifier = severe_plague_local }
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.52.option.a
+        
+		reduce_mandate_large_effect = yes
+		capital_scope = {
+			area = {
+				limit = { owned_by = ROOT }
+				add_province_modifier = {
+					name = "severe_plague_local"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.52.option.b
+        
+		reduce_mandate_effect = yes
+		reduce_meritocracy_large_effect = yes
+
+		capital_scope = {
+			area = {
+				limit = { owned_by = ROOT }
+				add_province_modifier = {
+					name = "severe_plague_local"
+					duration = 3650
+				}
+			}
+		}
+	}
+}
+
+# Daggers in the Dark
+country_event = {
+	id = GOT_SK_RANDOM.53
+	title = GOT_SK_RANDOM.53.title
+	desc = GOT_SK_RANDOM.53.desc
+	picture = ASSASSINATION_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 50 }
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.53.option.a
+		add_mil_power = -25
+		add_dip_power = -25
+		add_adm_power = -25
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.53.option.b
+		add_country_modifier = {
+			name = "sk_unhealthy_political_climate"
+			duration = 3650
+		}
+	}
+}
+
+# The Concubine's Child
+country_event = {
+	id = GOT_SK_RANDOM.54
+	title = GOT_SK_RANDOM.54.title
+	desc = GOT_SK_RANDOM.54.desc
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 21 }
+		has_government_attribute = heir
+		has_heir = no
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.54.option.a
+		define_heir = {
+			age = 0
+			dynasty = ROOT
+			claim = 20
+			max_random_dip = 4
+			max_random_adm = 4
+			max_random_mil = 4
+		}
+		add_stability = -1
+	}
+}
+
+# Flawed Insights
+country_event = {
+	id = GOT_SK_RANDOM.56
+	title = GOT_SK_RANDOM.56.title
+    desc = GOT_SK_RANDOM.56.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 50 }
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.56.option.a
+        
+		add_adm_power = -50
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.56.option.b
+        
+		add_dip_power = -50
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.56.option.c
+        
+		add_mil_power = -50
+	}
+}
+
+# Global Unrest
+country_event = {
+	id = GOT_SK_RANDOM.57
+	title = GOT_SK_RANDOM.57.title
+	desc = GOT_SK_RANDOM.57.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 21 }
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					any_core_country = {
+						NOT = { tag = ROOT }
+					}
+				}
+				random_core_country = {
+					limit = {
+						NOT = { tag = ROOT }
+					}
+					save_event_target_as = low_mandate_separatism_country
+					every_core_province = {
+						limit = { owned_by = ROOT }
+						set_province_flag = low_mandate_separatism
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					NOT = { has_province_flag = low_mandate_separatism }
+					any_core_country = {
+						NOT = { tag = ROOT }
+					}
+				}
+				random_core_country = {
+					limit = {
+						NOT = { tag = ROOT }
+					}
+					save_event_target_as = low_mandate_separatism_country_2
+					every_core_province = {
+						limit = { owned_by = ROOT }
+						set_province_flag = low_mandate_separatism_2
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					NOT = { has_province_flag = low_mandate_separatism }
+					any_core_country = {
+						NOT = { tag = ROOT }
+					}
+				}
+				random_core_country = {
+					limit = {
+						NOT = { tag = ROOT }
+					}
+					save_event_target_as = low_mandate_separatism_country_3
+					every_core_province = {
+						limit = { owned_by = ROOT }
+						set_province_flag = low_mandate_separatism_3
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.57.option.a
+		add_stability = -2
+		if = {
+			limit = {
+				any_owned_province = {
+					has_province_flag = low_mandate_separatism
+				}
+			}
+			custom_tooltip = low_mandate_separatism_tooltip_1
+		}
+		hidden_effect = {
+			every_province = {
+				limit = { has_province_flag = low_mandate_separatism }
+				add_province_modifier = {
+					name = "sk_separatist_sentiments"
+					duration = 3650
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					NOT = { has_province_flag = low_mandate_separatism }
+					has_province_flag = low_mandate_separatism_2
+				}
+			}
+			custom_tooltip = low_mandate_separatism_tooltip_2
+		}
+		hidden_effect = {
+			every_province = {
+				limit = { has_province_flag = low_mandate_separatism_2 }
+				add_province_modifier = {
+					name = "sk_separatist_sentiments"
+					duration = 3650
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					NOT = { has_province_flag = low_mandate_separatism }
+					NOT = { has_province_flag = low_mandate_separatism_2 }
+					has_province_flag = low_mandate_separatism_3
+				}
+			}
+			custom_tooltip = low_mandate_separatism_tooltip_3
+		}
+		hidden_effect = {
+			every_province = {
+				limit = { has_province_flag = low_mandate_separatism_3 }
+				add_province_modifier = {
+					name = "sk_separatist_sentiments"
+					duration = 3650
+				}
+				clr_province_flag = low_mandate_separatism_3
+			}
+			every_province = {
+				limit = {
+					OR ={
+						has_province_flag = low_mandate_separatism
+						has_province_flag = low_mandate_separatism_2
+						has_province_flag = low_mandate_separatism_3
+					}
+				}
+				clr_province_flag = low_mandate_separatism
+				clr_province_flag = low_mandate_separatism_2
+				clr_province_flag = low_mandate_separatism_3
+			}
+		}
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.58
+	title = GOT_SK_RANDOM.58.title
+	desc = GOT_SK_RANDOM.58.desc
+	picture = ADVISOR_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 21 }
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.58.option.a
+        
+		reduce_mandate_effect = yes
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.58.option.b
+        
+		reduce_meritocracy_large_effect = yes
+	}
+}
+
+country_event = {
+	id = GOT_SK_RANDOM.59
+	title = GOT_SK_RANDOM.59.title
+	desc = GOT_SK_RANDOM.59.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 50 }
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.59.option.a
+		add_years_of_income = -0.5
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.59.option.b
+		add_inflation = 2
+	}
+}
+
+# False Edicts
+country_event = {
+	id = GOT_SK_RANDOM.60
+	title = GOT_SK_RANDOM.60.title
+	desc = GOT_SK_RANDOM.60.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		NOT = { has_country_modifier = sk_false_edicts_modifier }
+		has_dlc = "Mandate of Heaven"
+		has_country_modifier = the_mandate_of_heaven_lost
+        has_country_modifier = lost_mandate_of_heaven
+        NOT = { imperial_mandate = 21 }
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.60.option.a
+        
+		add_country_modifier = {
+			name = sk_false_edicts_modifier
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = GOT_SK_RANDOM.60.option.b
+        
+		reduce_mandate_effect = yes
+	}
+}
+# Notification Unruly subject event
+country_event = {
+	id = GOT_SK_RANDOM.62
+	title = GOT_SK_RANDOM.62.title
+	desc = GOT_SK_RANDOM.62.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_SK_RANDOM.62.option.a
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = sk_low_mandate_subjects
+			}
+		}
+	}
+}

@@ -213,3 +213,75 @@ clear_random_development_bonus_flags_effect = {
 	clr_province_flag = add_base_production_flag
 	clr_province_flag = add_base_manpower_flag
 }
+
+change_government_to_republic = {
+	if = {
+		limit = {
+			NOT = { government = republic }
+		}
+		change_government = republic
+		lose_reforms = 2
+	}
+}
+
+change_government_to_monarchy = {
+	if = {
+		limit = {
+			NOT = { government = monarchy }
+		}
+		if = {
+			limit = {
+				government = republic
+			}
+			change_government = monarchy
+			lose_reforms = 4
+		}
+		else = {
+			change_government = monarchy
+			lose_reforms = 2
+		}
+	}
+}
+
+change_government_to_theocracy = {
+	if = {
+		limit = {
+			NOT = { government = theocracy }
+		}
+		if = {
+			limit = {
+				government = republic
+			}
+			change_government = theocracy
+			lose_reforms = 4
+		}
+		else = {
+			change_government = theocracy
+			lose_reforms = 2
+		}
+	}
+}
+
+add_vassalise_cb_effect = {
+	add_casus_belli = {
+		type = cb_vassalize_mission
+		months = 300
+		target = ROOT
+	}
+}
+
+
+remove_vassalise_cb_effect = {
+	if = {
+		limit = {
+			has_casus_belli = {
+				type = cb_vassalize_mission
+				target = event_target:agenda_country
+			}
+		}
+		remove_casus_belli = {
+			type = cb_vassalize_mission
+			target = event_target:agenda_country
+		}
+	}
+}

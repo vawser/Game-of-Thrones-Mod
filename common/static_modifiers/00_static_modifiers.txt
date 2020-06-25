@@ -602,12 +602,14 @@ negative_stability = {
     monarch_lifespan = 0.1 # -30% max
 }
 
+# Royal Authority
 positive_mandate = {	# 100% strength at 100 mandate, 0% at 50 mandate
 	global_unrest = -2.5
 	stability_cost_modifier = -0.1
 	war_exhaustion = -0.03
 }
 
+# Royal Authority
 negative_mandate = { # By default, starts at 50 mandate, 100% strength at 0 mandate
 	global_trade_goods_size_modifier = -0.5
 	fire_damage_received = 0.5
@@ -617,6 +619,7 @@ negative_mandate = { # By default, starts at 50 mandate, 100% strength at 0 mand
 	global_manpower_modifier = -0.5
 }
 
+# Lost the Iron Throne
 lost_mandate_of_heaven = {
 	discipline = -0.1
 	stability_cost_modifier = 0.5

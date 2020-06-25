@@ -16,33 +16,6 @@ cb_undead_conquest = {
     war_goal = superiority_undead_conquest
 }
 
-cb_iron_throne_rebellion = {
-	valid_for_subject = no
-    
-    prerequisites = {
-		has_reform = noble_house_reform
-        FROM = { 
-            has_reform = royal_house_reform
-            NOT = { has_opinion = { who = ROOT value = 0 } }
-        }
-	}
-    
-    war_goal = superiority_iron_throne
-}
-
-cb_claim_the_iron_throne = {
-	valid_for_subject = no
-    
-    prerequisites = {
-		has_reform = daenerys_host_reform
-        FROM = { 
-            has_reform = royal_house_reform
-        }
-	}
-    
-    war_goal = superiority_iron_throne
-}
-
 cb_royal_conquest = {
     valid_for_subject = no
     
@@ -148,20 +121,6 @@ cb_unification_of_yiti = {
 	war_goal = superiority_yitish_unification
 }
 
-# Take the Mandate of Heaven
-cb_take_mandate_yiti = {
-	valid_for_subject = no
-
-	prerequisites = {
-		has_dlc = "Mandate of Heaven"
-		is_subject = no
-		is_neighbor_of = FROM
-		FROM = { is_emperor_of_china = yes }
-	}
-
-	war_goal = take_capital_yiti_take_mandate
-}
-
 cb_pirates = {
 	is_triggered_only = yes
 	months = 120
@@ -169,3 +128,33 @@ cb_pirates = {
 	war_goal = blockade_ports
 }
 
+cb_claim_the_iron_throne = {
+	valid_for_subject = yes
+    
+    prerequisites = {
+		OR = {
+            has_reform = noble_house_reform
+            has_reform = daenerys_host_reform
+        }
+        FROM = { 
+            has_reform = royal_house_reform
+            is_emperor_of_china = yes
+        }
+	}
+    
+    war_goal = take_capital_take_iron_throne
+}
+
+cb_force_royal_subject = {
+	valid_for_subject = no
+
+	prerequisites = {
+		is_emperor_of_china = yes
+		FROM = {
+            has_reform = noble_house_reform
+            NOT = { is_subject_of = ROOT }
+        }
+	}
+	
+	war_goal = take_capital_force_royal_subject
+}

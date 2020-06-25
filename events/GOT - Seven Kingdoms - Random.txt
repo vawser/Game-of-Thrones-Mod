@@ -33,7 +33,7 @@ country_event = {
 			random_owned_province = { #But rather here
 				limit = {
 					is_capital = no
-					has_building = marketplace
+					has_building = market
 					NOT = { has_province_modifier = sk_local_trade_regulations }
 					NOT = { has_province_modifier = sk_local_trade_down_turn }
 				}
@@ -52,7 +52,7 @@ country_event = {
 				limit = {
 					is_capital = no
 					has_port = yes
-					has_building = marketplace
+					has_building = market
 					NOT = { has_province_modifier = sk_local_trade_regulations }
 					NOT = { has_province_modifier = sk_local_trade_down_turn }
 				}
@@ -643,7 +643,6 @@ country_event = {
 				duration = 3650
 			}
 		}
-		reduce_temples_effect = yes
 		kill_leader = {
 			type = general
 		}
@@ -1575,7 +1574,7 @@ country_event = {
 	
 	trigger = {
         has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 50 }
 		num_of_states = 2
@@ -1631,7 +1630,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 50 }
 	}
@@ -1663,7 +1662,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 21 }
 	}
@@ -1701,7 +1700,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 50 }
 	}
@@ -1740,7 +1739,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 50 }
 	}
@@ -1774,7 +1773,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 50 }
 	}
@@ -1810,7 +1809,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 21 }
 		num_of_subjects = 1
@@ -1852,7 +1851,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 50 }
 		capital_scope = {
@@ -1908,7 +1907,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 50 }
 	}
@@ -1944,7 +1943,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 21 }
 		has_government_attribute = heir
@@ -1980,7 +1979,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 50 }
 	}
@@ -2019,7 +2018,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 21 }
 	}
@@ -2169,7 +2168,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 21 }
 	}
@@ -2201,7 +2200,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 50 }
 	}
@@ -2233,7 +2232,7 @@ country_event = {
 	trigger = {
 		NOT = { has_country_modifier = sk_false_edicts_modifier }
 		has_dlc = "Mandate of Heaven"
-		has_country_modifier = the_mandate_of_heaven_lost
+		# has_country_modifier = the_mandate_of_heaven_lost
         has_country_modifier = lost_mandate_of_heaven
         NOT = { imperial_mandate = 21 }
 	}

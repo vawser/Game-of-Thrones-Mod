@@ -1,10 +1,10 @@
-namespace = devotion_events
+namespace = GOT_DEVOTION
 
 # General Hospital
 country_event = {
-	id = devotion_events.1
-	title = devotion_events.1.t
-	desc = devotion_events.1.d
+	id = GOT_DEVOTION.1
+	title = GOT_DEVOTION.1.title
+	desc = GOT_DEVOTION.1.desc
 	picture = WOUNDED_SOLDIERS_eventPicture
 	
 	trigger = {
@@ -15,8 +15,6 @@ country_event = {
 		}
 	}
 	
-	
-
 	is_triggered_only = yes
 	
 	mean_time_to_happen = {
@@ -24,7 +22,7 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.1.a
+		name = GOT_DEVOTION.1.option.a
 		ai_chance = {
 			factor = 55
 			modifier = {
@@ -54,7 +52,7 @@ country_event = {
 	}
 	
 	option = {
-		name = devotion_events.1.b
+		name = GOT_DEVOTION.1.option.b
 		ai_chance = {
 			factor = 45
 		}
@@ -73,9 +71,9 @@ country_event = {
 
 # Fort Maintenance
 country_event = {
-	id = devotion_events.2
-	title = devotion_events.2.t
-	desc = devotion_events.2.d
+	id = GOT_DEVOTION.2
+	title = GOT_DEVOTION.2.title
+	desc = GOT_DEVOTION.2.desc
 	picture = FORT_eventPicture
 	
 	trigger = {
@@ -93,23 +91,23 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.2.a
+		name = GOT_DEVOTION.2.option.a
 		add_country_modifier = {
 			name = dev_fort_maintenance
 			duration = 3650
 		}
 	}
 	option = {
-		name = devotion_events.2.b
+		name = GOT_DEVOTION.2.option.b
 		add_devotion = -10
 	}
 }
 
 # Modernization of the Forts
 country_event = {
-	id = devotion_events.3
-	title = devotion_events.3.t
-	desc = devotion_events.3.d
+	id = GOT_DEVOTION.3
+	title = GOT_DEVOTION.3.title
+	desc = GOT_DEVOTION.3.desc
 	picture = FORT_eventPicture
 	
 	trigger = {
@@ -125,7 +123,7 @@ country_event = {
 	}
 	
 	option = {
-		name = devotion_events.3.a
+		name = GOT_DEVOTION.3.option.a
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -154,7 +152,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = devotion_events.3.b
+		name = GOT_DEVOTION.3.option.b
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -183,9 +181,9 @@ country_event = {
 
 # Citizens complain about fort taxes
 country_event = {
-	id = devotion_events.4
-	title = devotion_events.4.t
-	desc = devotion_events.4.d
+	id = GOT_DEVOTION.4
+	title = GOT_DEVOTION.4.title
+	desc = GOT_DEVOTION.4.desc
 	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	trigger = {
@@ -204,7 +202,7 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.4.a
+		name = GOT_DEVOTION.4.option.a
 		every_owned_province = {
 			limit = {
 				has_influencing_fort = yes
@@ -215,7 +213,7 @@ country_event = {
 	}
 	
 	option = {
-		name = devotion_events.4.b
+		name = GOT_DEVOTION.4.option.b
 		every_owned_province = {
 			limit = {
 				has_influencing_fort = yes
@@ -228,9 +226,9 @@ country_event = {
 
 # Embellishment of Forts 
 country_event = {
-	id = devotion_events.5
-	title = devotion_events.5.t
-	desc = devotion_events.5.d
+	id = GOT_DEVOTION.5
+	title = GOT_DEVOTION.5.title
+	desc = GOT_DEVOTION.5.desc
 	picture = FORT_eventPicture
 	
 	trigger = {
@@ -248,21 +246,21 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.5.a
+		name = GOT_DEVOTION.5.option.a
 		add_devotion = 5
 	}
 	
 	option = {
-		name = devotion_events.5.b
+		name = GOT_DEVOTION.5.option.b
 		add_prestige = 10
 	}
 }
 
 # False Beliefs
 country_event = {
-	id = devotion_events.7
-	title = devotion_events.7.t
-	desc = devotion_events.7.d
+	id = GOT_DEVOTION.7
+	title = GOT_DEVOTION.7.title
+	desc = GOT_DEVOTION.7.desc
 	picture = RELIGION_eventPicture
 	
 	trigger = {
@@ -284,7 +282,7 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.7.a
+		name = GOT_DEVOTION.7.option.a
 		ai_chance = {
 			factor = 50
 		}
@@ -315,7 +313,7 @@ country_event = {
 	}
 	
 	option = {
-		name = devotion_events.7.b
+		name = GOT_DEVOTION.7.option.b
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -345,9 +343,9 @@ country_event = {
 
 # Forgery of Documents
 country_event = {
-	id = devotion_events.8
-	title = devotion_events.8.t
-	desc = devotion_events.8.d
+	id = GOT_DEVOTION.8
+	title = GOT_DEVOTION.8.title
+	desc = GOT_DEVOTION.8.desc
 	picture = ECONOMY_eventPicture
 	
 	trigger = {
@@ -362,24 +360,24 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.8.a
+		name = GOT_DEVOTION.8.option.a
 		add_adm_power = 50
 		set_country_flag = dev_forged_documents_flag
 		add_corruption = 0.5
-		custom_tooltip = devotion_events.8.ct
+		custom_tooltip = GOT_DEVOTION.8.option.a.tt
 	}
 	
 	option = {
-		name = devotion_events.8.b
+		name = GOT_DEVOTION.8.option.b
 		add_devotion = 5
 	}
 }
 
 # Forged Documents
 country_event = {
-	id = devotion_events.9
-	title = devotion_events.9.t
-	desc = devotion_events.9.d
+	id = GOT_DEVOTION.9
+	title = GOT_DEVOTION.9.title
+	desc = GOT_DEVOTION.9.desc
 	picture = ACCUSATION_eventPicture
 	
 	trigger = {
@@ -402,16 +400,16 @@ country_event = {
 	}
 	
 	option = {
-		name = devotion_events.9.a
+		name = GOT_DEVOTION.9.option.a
 		add_prestige = -10
 	}
 }
 
 # The Local Noble
 country_event = {
-	id = devotion_events.10
-	title = devotion_events.10.t
-	desc = devotion_events.10.d
+	id = GOT_DEVOTION.10
+	title = GOT_DEVOTION.10.title
+	desc = GOT_DEVOTION.10.desc
 	picture = ELECTION_REPUBLICAN_eventPicture
 	
 	trigger = {
@@ -434,16 +432,16 @@ country_event = {
 	}
 	
 	option = {
-		name = devotion_events.10.a
+		name = GOT_DEVOTION.10.option.a
 		add_devotion = 10
 	}
 }
 
 # The Foreign Noble
 country_event = {
-	id = devotion_events.11
-	title = devotion_events.11.t
-	desc = devotion_events.11.d
+	id = GOT_DEVOTION.11
+	title = GOT_DEVOTION.11.title
+	desc = GOT_DEVOTION.11.desc
 	picture = ELECTION_REPUBLICAN_eventPicture
 	
 	trigger = {
@@ -465,16 +463,16 @@ country_event = {
 	}
 	
 	option = {
-		name = devotion_events.11.a
+		name = GOT_DEVOTION.11.option.a
 		add_dip_power = 50
 	}
 }
 
 # The Merchant's Son
 country_event = {
-	id = devotion_events.12
-	title = devotion_events.12.t
-	desc = devotion_events.12.d
+	id = GOT_DEVOTION.12
+	title = GOT_DEVOTION.12.title
+	desc = GOT_DEVOTION.12.desc
 	picture = ELECTION_REPUBLICAN_eventPicture
 	
 	trigger = {
@@ -496,16 +494,16 @@ country_event = {
 	}
 	
 	option = {
-		name = devotion_events.12.a
+		name = GOT_DEVOTION.12.option.a
 		add_mercantilism = 1
 	}
 }
 
 # The Talented Theologian
 country_event = {
-	id = devotion_events.13
-	title = devotion_events.13.t
-	desc = devotion_events.13.d
+	id = GOT_DEVOTION.13
+	title = GOT_DEVOTION.13.title
+	desc = GOT_DEVOTION.13.desc
 	picture = ELECTION_REPUBLICAN_eventPicture
 
 	trigger = {
@@ -527,16 +525,16 @@ country_event = {
 	}
 	
 	option = {
-		name = devotion_events.13.a
+		name = GOT_DEVOTION.13.option.a
 		add_adm_power = 50
 	}
 }
 
 # The Local Preacher
 country_event = {
-	id = devotion_events.14
-	title = devotion_events.14.t
-	desc = devotion_events.14.d
+	id = GOT_DEVOTION.14
+	title = GOT_DEVOTION.14.title
+	desc = GOT_DEVOTION.14.desc
 	picture = ELECTION_REPUBLICAN_eventPicture
 	
 	trigger = {
@@ -558,7 +556,7 @@ country_event = {
 	}
 	
 	option = {
-		name = devotion_events.14.a
+		name = GOT_DEVOTION.14.option.a
 		add_prestige = 10
 		add_years_of_income = 0.1
 	}
@@ -566,9 +564,9 @@ country_event = {
 
 # Rule Challenged
 country_event = {
-	id = devotion_events.15
-	title = devotion_events.15.t
-	desc = devotion_events.15.d
+	id = GOT_DEVOTION.15
+	title = GOT_DEVOTION.15.title
+	desc = GOT_DEVOTION.15.desc
 	picture = ACCUSATION_eventPicture
 	
 	trigger = {
@@ -583,16 +581,16 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.15.a
+		name = GOT_DEVOTION.15.option.a
 		add_devotion = -10
 	}
 }
 
 # Banned Pilgrimages and Superstitious Practices
 country_event = {
-	id = devotion_events.16
-	title = devotion_events.16.t
-	desc = devotion_events.16.d
+	id = GOT_DEVOTION.16
+	title = GOT_DEVOTION.16.title
+	desc = GOT_DEVOTION.16.desc
 	picture = RELIGION_eventPicture
 	
 	trigger = {
@@ -607,7 +605,7 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.16.a
+		name = GOT_DEVOTION.16.option.a
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -638,7 +636,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = devotion_events.16.b
+		name = GOT_DEVOTION.16.option.b
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -672,9 +670,9 @@ country_event = {
 
 # The Great Feud
 province_event = {
-	id = devotion_events.17
-	title = devotion_events.17.t
-	desc = devotion_events.17.d
+	id = GOT_DEVOTION.17
+	title = GOT_DEVOTION.17.title
+	desc = GOT_DEVOTION.17.desc
 	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	trigger = {
@@ -698,7 +696,7 @@ province_event = {
 	}
 		
 	option = {
-		name = devotion_events.17.a
+		name = GOT_DEVOTION.17.option.a
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -731,7 +729,7 @@ province_event = {
 		}			
 	}
 	option = {
-		name = devotion_events.17.b
+		name = GOT_DEVOTION.17.option.b
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -765,9 +763,9 @@ province_event = {
 
 # The Mad Seer
 country_event = {
-	id = devotion_events.18
-	title = devotion_events.18.t
-	desc = devotion_events.18.d
+	id = GOT_DEVOTION.18
+	title = GOT_DEVOTION.18.title
+	desc = GOT_DEVOTION.18.desc
 	picture = POPE_PREACHING_eventPicture
 	
 	trigger = {
@@ -782,7 +780,7 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.18.a
+		name = GOT_DEVOTION.18.option.a
 		ai_chance = {
 			factor = 50
 		}
@@ -798,7 +796,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = devotion_events.18.b
+		name = GOT_DEVOTION.18.option.b
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -827,9 +825,9 @@ country_event = {
 
 # A Council after our own Tastes
 country_event = {
-	id = devotion_events.19
-	title = devotion_events.19.t
-	desc = devotion_events.19.d
+	id = GOT_DEVOTION.19
+	title = GOT_DEVOTION.19.title
+	desc = GOT_DEVOTION.19.desc
 	picture = DEBATE_REPUBLICAN_eventPicture
 	
 	trigger = {
@@ -847,7 +845,7 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.19.a
+		name = GOT_DEVOTION.19.option.a
 		define_advisor = {
 			type = evangelist
 			discount = yes
@@ -855,16 +853,16 @@ country_event = {
 		}
 	}
 	option = {
-		name = devotion_events.19.b
+		name = GOT_DEVOTION.19.option.b
 		add_devotion = 10
 	}
 }
 
 # The Social and Political Conflict
 province_event = {
-	id = devotion_events.20
-	title = devotion_events.20.t
-	desc = devotion_events.20.d
+	id = GOT_DEVOTION.20
+	title = GOT_DEVOTION.20.title
+	desc = GOT_DEVOTION.20.desc
 	picture = DEBATE_REPUBLICAN_eventPicture
 	
 	trigger = {
@@ -885,7 +883,7 @@ province_event = {
 	}
 		
 	option = {
-		name = devotion_events.20.a
+		name = GOT_DEVOTION.20.option.a
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -919,7 +917,7 @@ province_event = {
 		}
 	}
 	option = {
-		name = devotion_events.20.b
+		name = GOT_DEVOTION.20.option.b
 		ai_chance = {
 			factor = 50
 		}
@@ -940,9 +938,9 @@ province_event = {
 
 # The Secularists Among Us
 country_event = {
-	id = devotion_events.21
-	title = devotion_events.21.t
-	desc = devotion_events.21.d
+	id = GOT_DEVOTION.21
+	title = GOT_DEVOTION.21.title
+	desc = GOT_DEVOTION.21.desc
 	picture = DEBATE_REPUBLICAN_eventPicture
 	
 	trigger = {
@@ -960,7 +958,7 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.21.a
+		name = GOT_DEVOTION.21.option.a
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -986,7 +984,7 @@ country_event = {
 		kill_ruler = yes
 	}
 	option = {
-		name = devotion_events.21.b
+		name = GOT_DEVOTION.21.option.b
 		ai_chance = {
 			factor = 50
 		}
@@ -1007,9 +1005,9 @@ country_event = {
 
 # Decadent Ruler
 country_event = {
-	id = devotion_events.22
-	title = devotion_events.22.t
-	desc = devotion_events.22.d
+	id = GOT_DEVOTION.22
+	title = GOT_DEVOTION.22.title
+	desc = GOT_DEVOTION.22.desc
 	picture = COURT_eventPicture
 	
 	trigger = {
@@ -1027,7 +1025,7 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.22.a
+		name = GOT_DEVOTION.22.option.a
 		add_yearly_manpower = -1.0
 		add_years_of_income = -0.5
 		if = {
@@ -1044,9 +1042,9 @@ country_event = {
 
 # Corrupt [Root.Monarch.GetTitle]
 country_event = {
-	id = devotion_events.23
-	title = devotion_events.23.t
-	desc = devotion_events.23.d
+	id = GOT_DEVOTION.23
+	title = GOT_DEVOTION.23.title
+	desc = GOT_DEVOTION.23.desc
 	picture = CORRUPTION_eventPicture
 	
 	trigger = {
@@ -1064,7 +1062,7 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.23.a
+		name = GOT_DEVOTION.23.option.a
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -1090,7 +1088,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = devotion_events.23.b
+		name = GOT_DEVOTION.23.option.b
 		ai_chance = {
 			factor = 50
 		}
@@ -1100,9 +1098,9 @@ country_event = {
 
 # Volunteers for the Holy Fight
 country_event = {
-	id = devotion_events.24
-	title = devotion_events.24.t
-	desc = devotion_events.24.d
+	id = GOT_DEVOTION.24
+	title = GOT_DEVOTION.24.title
+	desc = GOT_DEVOTION.24.desc
 	picture = LAND_MILITARY_eventPicture
 	
 	trigger = {
@@ -1124,7 +1122,7 @@ country_event = {
 	}
 		
 	option = {
-		name = devotion_events.24.a
+		name = GOT_DEVOTION.24.option.a
 		add_yearly_manpower = 0.5
 	}
 }

@@ -1,9 +1,9 @@
-namespace = got_colonial
+namespace = GOT_COLONIAL
 
 province_event = {
-	id =  got_colonial.1
-	title = got_colonial.1.title
-	desc = got_colonial.1.desc
+	id =  GOT_COLONIAL.1
+	title = GOT_COLONIAL.1.title
+	desc = GOT_COLONIAL.1.desc
 	picture = COLONIZATION_eventPicture
 	
 	is_triggered_only = yes
@@ -19,13 +19,13 @@ province_event = {
 	}
 	
 	option = {
-		name = got_colonial.1.option.a
+		name = GOT_COLONIAL.1.option.a
 		random_empty_neighbor_province = {
 			create_colony = 200
 		}
 	}
 	option = {
-		name = got_colonial.1.option.b
+		name = GOT_COLONIAL.1.option.b
 		trigger = {
 			owner = {
 			num_of_colonies = 1
@@ -45,9 +45,9 @@ province_event = {
 
 # Rival Settlements
 province_event = {
-	id = got_colonial.2
-	title = got_colonial.2.title
-	desc = got_colonial.2.desc
+	id = GOT_COLONIAL.2
+	title = GOT_COLONIAL.2.title
+	desc = GOT_COLONIAL.2.desc
 	picture = COLONIZATION_eventPicture
 	
 	is_triggered_only = yes
@@ -61,11 +61,11 @@ province_event = {
 	}
 	
 	option = {
-		name = got_colonial.2.option.a
+		name = GOT_COLONIAL.2.option.a
 		owner = { add_prestige = 10 }
 	}
 	option = {
-		name = got_colonial.2.option.b
+		name = GOT_COLONIAL.2.option.b
 		add_base_tax = 1	
 		set_province_flag = rival_settlements
 	}
@@ -73,9 +73,9 @@ province_event = {
 
 # Rival Settlements
 province_event = {
-	id = got_colonial.3
-	title = got_colonial.3.title
-	desc = got_colonial.3.desc
+	id = GOT_COLONIAL.3
+	title = GOT_COLONIAL.3.title
+	desc = GOT_COLONIAL.3.desc
 	picture = COLONIZATION_eventPicture
 	
 	is_triggered_only = yes
@@ -89,20 +89,20 @@ province_event = {
 	}
 	
 	option = {
-		name = got_colonial.3.option.a
+		name = GOT_COLONIAL.3.option.a
 		owner = {  add_dip_power = 10 }
 	}
 	option = {
-		name = got_colonial.3.option.b
+		name = GOT_COLONIAL.3.option.b
 		owner = {  add_adm_power = 10 }
 	}	
 }
 
 # Rival Settlements
 province_event = {
-	id = got_colonial.4
-	title = got_colonial.4.title
-	desc = got_colonial.4.desc
+	id = GOT_COLONIAL.4
+	title = GOT_COLONIAL.4.title
+	desc = GOT_COLONIAL.4.desc
 	picture = COLONIZATION_eventPicture
 	
 	is_triggered_only = yes
@@ -116,12 +116,12 @@ province_event = {
 	}
 	
 	option = {
-		name = got_colonial.4.option.a
+		name = GOT_COLONIAL.4.option.a
 		owner = { add_mil_power = -25 }
 
 	}
 	option = {
-		name = got_colonial.4.option.b
+		name = GOT_COLONIAL.4.option.b
 		owner = { add_years_of_income = -0.10 }
 
 	}
@@ -129,9 +129,9 @@ province_event = {
 
 # The Call of the Hunt
 province_event = {
-	id = got_colonial.5
-	title = got_colonial.5.title
-	desc = got_colonial.5.desc
+	id = GOT_COLONIAL.5
+	title = GOT_COLONIAL.5.title
+	desc = GOT_COLONIAL.5.desc
 	picture = NATIVES_eventPicture
 	
 	is_triggered_only = yes
@@ -148,24 +148,24 @@ province_event = {
 	}
 	
 	option = {
-		name = got_colonial.5.option.a
+		name = GOT_COLONIAL.5.option.a
 		add_base_manpower = 2
 	}
 	option = {
-		name = got_colonial.5.option.b
+		name = GOT_COLONIAL.5.option.b
 		create_advisor = cartographer
 	}
 	option = {
-		name = got_colonial.5.option.c
+		name = GOT_COLONIAL.5.option.c
 		change_trade_goods = fur
 	}
 }
 
 # Fur Trade Dwindles
 province_event = {
-	id = got_colonial.6
-	title = got_colonial.6.title
-	desc = got_colonial.6.desc
+	id = GOT_COLONIAL.6
+	title = GOT_COLONIAL.6.title
+	desc = GOT_COLONIAL.6.desc
 	picture = MERCHANTS_TALKING_eventPicture
 	
 	is_triggered_only = yes
@@ -184,20 +184,20 @@ province_event = {
 	}
 	
 	option = {
-		name = got_colonial.6.option.a
+		name = GOT_COLONIAL.6.option.a
 		change_trade_goods = naval_supplies
 	}
 	option = {
-		name = got_colonial.6.option.b
+		name = GOT_COLONIAL.6.option.b
 		change_trade_goods = grain
 	}
 }
 
 # Colonial Expansion
 province_event = {
-	id = got_colonial.7
-	title = got_colonial.7.title
-	desc = got_colonial.7.desc
+	id = GOT_COLONIAL.7
+	title = GOT_COLONIAL.7.title
+	desc = GOT_COLONIAL.7.desc
 	picture = COLONIZATION_eventPicture
 
 	is_triggered_only = yes
@@ -216,7 +216,7 @@ province_event = {
 	}
 	
 	option = {
-		name = got_colonial.7.option.a
+		name = GOT_COLONIAL.7.option.a
 		random_empty_neighbor_province = {
 			limit = {
 				has_discovered = ROOT
@@ -225,7 +225,7 @@ province_event = {
 		}
 	}
 	option = {
-		name = got_colonial.7.option.b
+		name = GOT_COLONIAL.7.option.b
 		trigger = {
 			owner = { num_of_colonies = 1 }
 		}
@@ -242,9 +242,9 @@ province_event = {
 
 # Colonial Migration
 province_event = {
-	id = got_colonial.8
-	title = got_colonial.8.title
-	desc = got_colonial.8.desc
+	id = GOT_COLONIAL.8
+	title = GOT_COLONIAL.8.title
+	desc = GOT_COLONIAL.8.desc
 	picture = COLONIZATION_eventPicture
 
 	is_triggered_only = yes
@@ -265,7 +265,7 @@ province_event = {
 	}
 
 	option = {
-		name = got_colonial.8.option.a
+		name = GOT_COLONIAL.8.option.a
 		add_colonysize = -200
 		owner = {
 			random_owned_province = {

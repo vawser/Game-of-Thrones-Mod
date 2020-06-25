@@ -245,7 +245,6 @@ on_new_monarch = {
 		GOT_EDUCATION.1     
 		GOT_DOTHRAKI.1
         GOT_DAENERYS.100
-        GOT_YITI_EMPIRE.3
         GOT_DYNASTIC.21
         GOT_SK_SYSTEM.3
         GOT_SK_SYSTEM.4
@@ -255,7 +254,7 @@ on_new_monarch = {
 
 # Country 
 on_new_consort = {
-	country_event = { id = consort_events.2 }
+	country_event = { id = GOT_CONSORT.2 }
 	if = {
 		limit = { has_ruler_flag = had_10_years_anniversary }
 		clr_ruler_flag = had_10_years_anniversary
@@ -456,7 +455,9 @@ on_weak_heir_claim = {
 
 # Country
 on_heir_needed_theocracy = {
-
+    events = {
+		GOT_THEOCRACY.1
+	}
 }
 
 # Country
@@ -682,16 +683,16 @@ on_mil_development = {
 on_overextension_pulse = {
 
 	random_events = {
-		100 = got_overextension.1
-		100 = got_overextension.2
-		100 = got_overextension.3
-		100 = got_overextension.4
-		100 = got_overextension.5
-		100 = got_overextension.6
-		100 = got_overextension.7
-		100 = got_overextension.8
-		100 = got_overextension.9
-		100 = got_overextension.10
+		100 = GOT_OVEREXTENSION.1
+		100 = GOT_OVEREXTENSION.2
+		100 = GOT_OVEREXTENSION.3
+		100 = GOT_OVEREXTENSION.4
+		100 = GOT_OVEREXTENSION.5
+		100 = GOT_OVEREXTENSION.6
+		100 = GOT_OVEREXTENSION.7
+		100 = GOT_OVEREXTENSION.8
+		100 = GOT_OVEREXTENSION.9
+		100 = GOT_OVEREXTENSION.10
 	}
 }
 
@@ -699,14 +700,14 @@ on_overextension_pulse = {
 on_colonial_pulse = {
 
 	random_events = {
-		100 = got_colonial.1
-		100 = got_colonial.2
-		100 = got_colonial.3
-		100 = got_colonial.4
-		100 = got_colonial.5
-		100 = got_colonial.6
-		100 = got_colonial.7
-		100 = got_colonial.8
+		100 = GOT_COLONIAL.1
+		100 = GOT_COLONIAL.2
+		100 = GOT_COLONIAL.3
+		100 = GOT_COLONIAL.4
+		100 = GOT_COLONIAL.5
+		100 = GOT_COLONIAL.6
+		100 = GOT_COLONIAL.7
+		100 = GOT_COLONIAL.8
 		10000 = 0
 	}
 }
@@ -728,47 +729,47 @@ on_bi_yearly_pulse = {
 		100 = GOT_CORRUPTION.19
 		100 = GOT_CORRUPTION.20
         
-        125 = culture_religion_events.1
-		125 = culture_religion_events.3
-		125 = culture_religion_events.4
-		125 = culture_religion_events.5
-		125 = culture_religion_events.6
-		125 = culture_religion_events.7
-		125 = culture_religion_events.8
-		125 = culture_religion_events.9
-		125 = culture_religion_events.10
-		125 = culture_religion_events.11
-		125 = culture_religion_events.12
-		125 = culture_religion_events.13
-		125 = culture_religion_events.14
-		125 = culture_religion_events.15
-		125 = culture_religion_events.16
-		100 = culture_religion_events.17
-		125 = culture_religion_events.18
-		125 = culture_religion_events.19
-		125 = culture_religion_events.20
-		175 = culture_religion_events.21
-		125 = culture_religion_events.22
-		125 = culture_religion_events.23
+        125 = GOT_CULTURE_RELIGION.1
+		125 = GOT_CULTURE_RELIGION.3
+		125 = GOT_CULTURE_RELIGION.4
+		125 = GOT_CULTURE_RELIGION.5
+		125 = GOT_CULTURE_RELIGION.6
+		125 = GOT_CULTURE_RELIGION.7
+		125 = GOT_CULTURE_RELIGION.8
+		125 = GOT_CULTURE_RELIGION.9
+		125 = GOT_CULTURE_RELIGION.10
+		125 = GOT_CULTURE_RELIGION.11
+		125 = GOT_CULTURE_RELIGION.12
+		125 = GOT_CULTURE_RELIGION.13
+		125 = GOT_CULTURE_RELIGION.14
+		125 = GOT_CULTURE_RELIGION.15
+		125 = GOT_CULTURE_RELIGION.16
+		100 = GOT_CULTURE_RELIGION.17
+		125 = GOT_CULTURE_RELIGION.18
+		125 = GOT_CULTURE_RELIGION.19
+		125 = GOT_CULTURE_RELIGION.20
+		175 = GOT_CULTURE_RELIGION.21
+		125 = GOT_CULTURE_RELIGION.22
+		125 = GOT_CULTURE_RELIGION.23
         
         # Espionage
 		100 = GOT_ESPIONAGE.1
 		100 = GOT_ESPIONAGE.4
-        40 = GOT_ESPIONAGE.6
+        40  = GOT_ESPIONAGE.6
 		100 = GOT_ESPIONAGE.8
-		80 = GOT_ESPIONAGE.9
+		80  = GOT_ESPIONAGE.9
         
         # Professionalism
 		100 = GOT_ARMY_PROFESSIONALISM.4
 		100 = GOT_ARMY_PROFESSIONALISM.5
-		75 = GOT_ARMY_PROFESSIONALISM.6
+		75  = GOT_ARMY_PROFESSIONALISM.6
 		100 = GOT_ARMY_PROFESSIONALISM.8
 		100 = GOT_ARMY_PROFESSIONALISM.9
 		100 = GOT_ARMY_PROFESSIONALISM.10
 		100 = GOT_ARMY_PROFESSIONALISM.11
-		75 = GOT_ARMY_PROFESSIONALISM.12
+		75  = GOT_ARMY_PROFESSIONALISM.12
 		100 = GOT_ARMY_PROFESSIONALISM.13
-		75 = GOT_ARMY_PROFESSIONALISM.16
+		75  = GOT_ARMY_PROFESSIONALISM.16
         
         # Agenda from the Estates
 		1000 = GOT_ESTATE_SYSTEM.1
@@ -855,26 +856,26 @@ on_bi_yearly_pulse_4 = {
 on_thri_yearly_pulse = {
 
     random_events = {
-        100 = devotion_events.1
-		100 = devotion_events.2
-		100 = devotion_events.3
-		100 = devotion_events.4
-		100 = devotion_events.5
-		100 = devotion_events.7
-		100 = devotion_events.8
-		100 = devotion_events.9
-		100 = devotion_events.10
-		100 = devotion_events.11
-		100 = devotion_events.12
-		100 = devotion_events.13
-		100 = devotion_events.14
-		100 = devotion_events.15
-		100 = devotion_events.16
-		100 = devotion_events.18
-		100 = devotion_events.19
-		100 = devotion_events.22
-		100 = devotion_events.23
-		100 = devotion_events.24
+        100 = GOT_DEVOTION.1
+		100 = GOT_DEVOTION.2
+		100 = GOT_DEVOTION.3
+		100 = GOT_DEVOTION.4
+		100 = GOT_DEVOTION.5
+		100 = GOT_DEVOTION.7
+		100 = GOT_DEVOTION.8
+		100 = GOT_DEVOTION.9
+		100 = GOT_DEVOTION.10
+		100 = GOT_DEVOTION.11
+		100 = GOT_DEVOTION.12
+		100 = GOT_DEVOTION.13
+		100 = GOT_DEVOTION.14
+		100 = GOT_DEVOTION.15
+		100 = GOT_DEVOTION.16
+		100 = GOT_DEVOTION.18
+		100 = GOT_DEVOTION.19
+		100 = GOT_DEVOTION.22
+		100 = GOT_DEVOTION.23
+		100 = GOT_DEVOTION.24
         50 = GOT_SK_RANDOM.11
 		25 = GOT_SK_RANDOM.12
 		25 = GOT_SK_RANDOM.24
@@ -1040,9 +1041,9 @@ on_five_year_pulse = {
 		500 = GOT_ACCOMPLISHMENTS.18    # A Noble Fool
         500 = GOT_VOLANTIS.10           # A Volantene Honor
         
-        200 = got_absolutism.1
-        200 = got_absolutism.2
-        200 = got_absolutism.3
+        200 = GOT_ABSOLUTISM.1
+        200 = GOT_ABSOLUTISM.2
+        200 = GOT_ABSOLUTISM.3
 
         1000 = GOT_SK_SYSTEM.10
         1000 = GOT_SK_SYSTEM.11

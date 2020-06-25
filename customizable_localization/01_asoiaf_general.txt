@@ -1,0 +1,863 @@
+defined_text = {
+	name = GetStateForm
+
+	text = {
+		localisation_key = string_crown
+		trigger = {
+			government = monarchy
+		}
+	}
+	text = {
+		localisation_key = string_council
+		trigger = {
+			government = republic
+		}
+	}
+	text = { #fallback
+		localisation_key = string_govtname
+		trigger = {
+			NOT = {
+				government = monarchy
+				government = republic
+			}
+		}
+	}
+}
+
+defined_text = {
+    name = GetRulerOrRegency
+	random = no
+	
+	text = {
+        localisation_key = string_ruler_name_really
+        trigger = {
+			has_regency = no
+        }
+    }
+    text = {
+        localisation_key = string_regency_council
+        trigger = {
+			has_regency = yes
+        }
+    }
+}
+
+defined_text = {
+	name = GetRoyalOrState
+
+	text = {
+		localisation_key = string_royal
+		trigger = {
+			NOT = { government = republic }
+		}
+	}
+	text = {
+		localisation_key = string_state
+		trigger = {
+			government = republic
+		}
+	}
+}
+
+defined_text = {
+    name = GetSuccessionCrisisType
+
+    text = {
+        localisation_key = string_succession_crisis
+        trigger = {
+            government = nomadic
+        }
+    } 
+    
+    text = {
+        localisation_key = string_succession_crisis
+    } 
+}
+
+defined_text = {
+    name = GetSuccessionGovernmentWord
+
+    text = {
+        localisation_key = string_khas
+        trigger = {
+            government = nomadic
+        }
+    } 
+    text = {
+        localisation_key = string_throne
+    } 
+}
+
+defined_text = {
+    name = GetVanguardCandidate
+
+    text = {
+        localisation_key = string_elephant_candidate
+        trigger = {
+			has_reform = volantis_city_reform
+        }
+    }
+    
+    text = {
+        localisation_key = string_vanguard
+    }
+}
+
+defined_text = {
+    name = GetVanguardCandidatePlural
+
+    text = {
+        localisation_key = string_elephant_party
+        trigger = {
+			has_reform = volantis_city_reform
+        }
+    }
+    
+    text = {
+        localisation_key = string_vanguard
+    }
+}
+
+defined_text = {
+    name = GetOldGuardCandidatePlural
+
+    text = {
+        localisation_key = string_tiger_party
+        trigger = {
+			has_reform = volantis_city_reform
+        }
+    }
+    
+    text = {
+        localisation_key = string_old_guard
+    }
+}
+
+defined_text = {
+    name = GetOldGuardCandidate
+
+    text = {
+        localisation_key = string_tiger_candidate
+        trigger = {
+			has_reform = volantis_city_reform
+        }
+    }
+    
+    text = {
+        localisation_key = string_old_guard
+    }
+}
+
+defined_text = {
+    name = GetMaleNobleNamePlural
+
+    text = {
+        localisation_key = string_stewards
+        trigger = {
+			tag = A02
+        }
+    }
+    text = {
+        localisation_key = string_lords
+        trigger = {
+			culture_group = culture_westeros
+            NOT = { tag = A02 }
+            NOT = { 
+                primary_culture = sand_dornish
+                primary_culture = salt_dornish
+                primary_culture = stone_dornish
+                primary_culture = skagosi
+            }
+        }
+    }
+    text = {
+        localisation_key = string_magisters
+        trigger = {
+			culture_group = culture_west_essos
+        }
+    }
+	text = {
+        localisation_key = string_chief
+        trigger = {
+            OR = {
+                culture_group = culture_free_folk
+                culture_group = culture_ibben
+                culture_group = culture_faros
+                culture_group = culture_naathi
+                culture_group = culture_tribal
+                culture_group = culture_summer_isles
+                NOT = { primary_culture = corsairs }
+                primary_culture = skagosi
+                primary_culture = first_men
+                primary_culture = mountain_men
+            }
+        }
+	}
+    text = {
+        localisation_key = string_masters
+        trigger = {
+			culture_group = culture_central_essos
+        }
+	}
+    text = {
+        localisation_key = string_kos
+        trigger = {
+			culture_group = culture_dothraki
+        }
+	}
+    text = {
+        localisation_key = string_jhat
+        trigger = {
+			culture_group = culture_jogos_nhai
+        }
+	}
+    text = {
+        localisation_key = string_princes
+        trigger = {
+			OR = {
+                culture_group = culture_valyrian
+                culture_group = culture_hyrkoon
+                culture_group = culture_yi_ti
+                culture_group = culture_nefer
+                culture_group = culture_bloodless_men
+                AND = {
+                    culture_group = culture_westeros
+                    OR = {
+                        primary_culture = sand_dornish
+                        primary_culture = salt_dornish
+                        primary_culture = stone_dornish
+                    }
+                }
+            }
+        }
+	}
+    text = {
+        localisation_key = string_nobles
+        trigger = {
+            OR = {
+                culture_group = culture_ancient
+                culture_group = culture_qarth
+                culture_group = culture_trader_town
+            }
+        }
+    }
+    text = {
+        localisation_key = string_corsairs
+        trigger = {
+            primary_culture = corsairs
+        }
+    }
+}
+
+defined_text = {
+    name = GetFemaleNobleNamePlural
+
+    text = {
+        localisation_key = string_stewardesses
+        trigger = {
+			tag = A02
+        }
+    }
+    text = {
+        localisation_key = string_ladies
+        trigger = {
+			culture_group = culture_westeros
+            NOT = { tag = A02 }
+            NOT = { 
+                primary_culture = sand_dornish
+                primary_culture = salt_dornish
+                primary_culture = stone_dornish
+                primary_culture = skagosi
+            }
+        }
+    }
+    text = {
+        localisation_key = string_magisters
+        trigger = {
+			culture_group = culture_west_essos
+        }
+    }
+	text = {
+        localisation_key = string_chiefesses
+        trigger = {
+            OR = {
+                culture_group = culture_free_folk
+                culture_group = culture_ibben
+                culture_group = culture_faros
+                culture_group = culture_naathi
+                culture_group = culture_tribal
+                culture_group = culture_summer_isles
+                NOT = { primary_culture = corsairs }
+                primary_culture = skagosi
+                primary_culture = first_men
+                primary_culture = mountain_men
+            }
+        }
+	}
+    text = {
+        localisation_key = string_mistresses
+        trigger = {
+			culture_group = culture_central_essos
+        }
+	}
+    text = {
+        localisation_key = string_kos
+        trigger = {
+			culture_group = culture_dothraki
+        }
+	}
+    text = {
+        localisation_key = string_jhat
+        trigger = {
+			culture_group = culture_jogos_nhai
+        }
+	}
+    text = {
+        localisation_key = string_princesses
+        trigger = {
+			OR = {
+                culture_group = culture_valyrian
+                culture_group = culture_hyrkoon
+                culture_group = culture_yi_ti
+                culture_group = culture_nefer
+                culture_group = culture_bloodless_men
+                AND = {
+                    culture_group = culture_westeros
+                    OR = {
+                        primary_culture = sand_dornish
+                        primary_culture = salt_dornish
+                        primary_culture = stone_dornish
+                    }
+                }
+            }
+        }
+	}
+    text = {
+        localisation_key = string_nobles
+        trigger = {
+            OR = {
+                culture_group = culture_ancient
+                culture_group = culture_qarth
+                culture_group = culture_trader_town
+            }
+        }
+    }
+    text = {
+        localisation_key = string_corsairs
+        trigger = {
+            primary_culture = corsairs
+        }
+    }
+}
+
+defined_text = {
+    name = GetFemaleNobleName
+
+    text = {
+        localisation_key = string_stewardess
+        trigger = {
+			tag = A02
+        }
+    }
+    text = {
+        localisation_key = string_lady
+        trigger = {
+			culture_group = culture_westeros
+            NOT = { tag = A02 }
+            NOT = { 
+                primary_culture = sand_dornish
+                primary_culture = salt_dornish
+                primary_culture = stone_dornish
+                primary_culture = skagosi
+            }
+        }
+    }
+    text = {
+        localisation_key = string_magister
+        trigger = {
+			culture_group = culture_west_essos
+        }
+    }
+	text = {
+        localisation_key = string_chiefess
+        trigger = {
+            OR = {
+                culture_group = culture_free_folk
+                culture_group = culture_ibben
+                culture_group = culture_faros
+                culture_group = culture_naathi
+                culture_group = culture_tribal
+                culture_group = culture_summer_isles
+                NOT = { primary_culture = corsairs }
+                primary_culture = skagosi
+                primary_culture = first_men
+                primary_culture = mountain_men
+            }
+        }
+	}
+    text = {
+        localisation_key = string_mistress
+        trigger = {
+			culture_group = culture_central_essos
+        }
+	}
+    text = {
+        localisation_key = string_kos
+        trigger = {
+			culture_group = culture_dothraki
+        }
+	}
+    text = {
+        localisation_key = string_jhat
+        trigger = {
+			culture_group = culture_jogos_nhai
+        }
+	}
+    text = {
+        localisation_key = string_princess
+        trigger = {
+			OR = {
+                culture_group = culture_valyrian
+                culture_group = culture_hyrkoon
+                culture_group = culture_yi_ti
+                culture_group = culture_nefer
+                culture_group = culture_bloodless_men
+                AND = {
+                    culture_group = culture_westeros
+                    OR = {
+                        primary_culture = sand_dornish
+                        primary_culture = salt_dornish
+                        primary_culture = stone_dornish
+                    }
+                }
+            }
+        }
+	}
+    text = {
+        localisation_key = string_noble
+        trigger = {
+            OR = {
+                culture_group = culture_ancient
+                culture_group = culture_qarth
+                culture_group = culture_trader_town
+            }
+        }
+    }
+    text = {
+        localisation_key = string_corsair
+        trigger = {
+            primary_culture = corsairs
+        }
+    }
+}
+
+defined_text = {
+	name = GetNoblesReplacementForOtherGovernments
+
+	text = {
+		localisation_key = string_nobles
+		trigger = {
+			NOT = { government = republic }
+		}
+	}
+	text = {
+		localisation_key = string_influential_families
+		trigger = {
+			government = republic
+		}
+	}
+}
+
+defined_text = {
+    name = GetGovernmentSupporters
+
+    text = {
+        localisation_key = string_royalist
+		trigger = {
+			government = monarchy
+		}
+    }
+	text = {
+        localisation_key = string_khanzada
+		trigger = {
+			government = nomadic
+		}
+    }
+	text = {
+        localisation_key = string_royalist
+		trigger = {
+			government = tribal
+		}
+    }
+	text = {
+		 localisation_key = string_republican
+		trigger = {
+			government = republic
+		}
+	}
+	text = {
+		 localisation_key = string_clergy
+		trigger = {
+			government = theocracy
+		}
+	}
+}
+
+defined_text = {
+    name = GetLocalPowerStructure
+
+	text = {
+        localisation_key = string_court
+	}
+}
+
+defined_text = {
+    name = GetLowLevelOfficialForCountry
+
+	text = {
+		localisation_key = string_bailif
+		trigger = {
+			culture_group = culture_first_men
+		}
+	}
+	text = {
+        localisation_key = string_official
+	}
+}
+
+defined_text = {
+    name = GetOldEra
+
+	text = {
+        localisation_key = string_ancient_era
+	}
+}
+
+defined_text = {
+    name = GetTributaryOverlord
+
+	text = {
+        localisation_key = string_tributary_overlord_title
+        trigger = {
+			is_emperor_of_china = no
+        }
+	}
+}
+
+defined_text = {
+    name = GetDefiniteArticleBeforePluralCountry
+	random = no
+	
+	text = {
+		
+        localisation_key = string_definite_article_before_country
+        trigger = {
+			tag_with_plural_name_trigger = yes
+        }
+    }
+    text = {
+        localisation_key = string_empty
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text = {
+	name = GetNoblemenPoliticians
+
+	text = {
+		localisation_key = string_merchants
+		trigger = {
+			government = republic
+		}
+	}
+	text = {
+		 localisation_key = string_clergymen
+		trigger = {
+			government = theocracy
+		}
+	}
+	text = {
+		localisation_key = string_noblemen
+	}
+}
+
+defined_text = {
+	name = GetNobilityPoliticians
+
+	text = {
+		localisation_key = string_merchants
+		trigger = {
+			government = republic
+		}
+	}
+	text = {
+        localisation_key = string_clergy_members
+		trigger = {
+			government = theocracy
+		}
+	}
+	text = {
+		localisation_key = string_members_nobility
+	}
+}
+
+defined_text = {
+	name = GetRulerAdjAndTitle
+
+	text = {
+		localisation_key = string_ruler_adj_and_title
+		trigger = {
+			has_regency = no
+		}
+	}
+	text = {
+		localisation_key = string_adj_and_regency_council
+		trigger = {
+			has_regency = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetRulerTitleOrRegency
+
+	text = {
+		localisation_key = string_ruler_title
+		trigger = {
+			has_regency = no
+		}
+	}
+	text = {
+		localisation_key = string_regency_council_2
+		trigger = {
+			has_regency = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetRulerTitleAndNameOrRegency
+
+	text = {
+		localisation_key = string_ruler_title_and_name
+		trigger = {
+			has_regency = no
+		}
+	}
+	text = {
+		localisation_key = string_regency_council_no_cap
+		trigger = {
+			has_regency = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetRulerTitleAndNameOrRegencyCap
+
+	text = {
+		localisation_key = string_ruler_title_and_name
+		trigger = {
+			has_regency = no
+		}
+	}
+	text = {
+		localisation_key = string_regency_council
+		trigger = {
+			has_regency = yes
+		}
+	}
+}
+
+###Event Advisors (if you want to use this system, remember to set the flags and remove them once they are no longer needed so the custom locs can be used again for the next event)
+
+#GetName of the correct advisor
+defined_text = {
+	name = GetEventAdvisorName
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorName.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorName.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorName.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+#GetTitle of the correct advisor
+defined_text = {
+	name = GetEventAdvisorTitle
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorTitle.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorTitle.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorTitle.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+#GetSheHeCap of the correct advisor
+defined_text = {
+	name = GetEventAdvisorSheHeCap
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorSheHeCap.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorSheHeCap.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorSheHeCap.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+#GetSheHe of the correct advisor
+defined_text = {
+	name = GetEventAdvisorSheHe
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorSheHe.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorSheHe.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorSheHe.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+#GetHerHisCap of the correct advisor
+defined_text = {
+	name = GetEventAdvisorHerHisCap
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorHerHisCap.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorHerHisCap.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorHerHisCap.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+#GetHerHis of the correct advisor
+defined_text = {
+	name = GetEventAdvisorHerHis
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorHerHis.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorHerHis.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorHerHis.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}
+
+#GetHerHim of the correct advisor
+defined_text = {
+	name = GetEventAdvisorHerHim
+	random = no
+	
+	text = {
+		localisation_key = EventAdvisorHerHim.A
+		trigger = {
+			has_country_flag = advisor_events_adm
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorHerHim.D
+		trigger = {
+			has_country_flag = advisor_events_dip
+		}
+	}
+	
+	text = {
+		localisation_key = EventAdvisorHerHim.M
+		trigger = {
+			has_country_flag = advisor_events_mil
+		}
+	}
+}

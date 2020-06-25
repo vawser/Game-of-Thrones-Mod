@@ -1,0 +1,305 @@
+namespace = GOT_THEOCRACY
+
+country_event = {
+	id = GOT_THEOCRACY.1
+	title = GOT_THEOCRACY.1.title
+    desc = GOT_THEOCRACY.1.desc
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = in_theocracy_heir_selection }
+		has_government_attribute = heir
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = in_theocracy_heir_selection
+			
+			clr_country_flag = theo_local_noble_flag
+			clr_country_flag = theo_foreign_noble_flag
+			clr_country_flag = theo_merchants_son_flag
+			clr_country_flag = theo_talented_theologian_flag
+			clr_country_flag = theo_local_preacher_flag
+			
+			if = {
+				limit = {
+					has_estate = estate_nobles
+					any_owned_province = {
+						is_capital = no
+						is_state = yes
+					}
+				}
+				random_owned_province = {
+					limit = { 
+						is_capital = no
+						is_state = yes
+					}
+					save_event_target_as = noble_province
+				}
+			}
+			if = {
+				limit = {
+					has_estate = estate_merchants
+					any_owned_province = {
+						is_capital = no
+						is_state = yes
+					}
+				}
+				random_owned_province = {
+					limit = { 
+						is_capital = no
+						is_state = yes
+					}
+					save_event_target_as = merchant_province
+				}
+			}
+			if = {
+				limit = {
+					has_estate = estate_clergy
+					any_owned_province = {
+						is_capital = no
+						is_state = yes
+					}
+				}
+				random_owned_province = {
+					limit = { 
+						is_capital = no
+						is_state = yes
+					}
+					save_event_target_as = clergy_province
+				}
+			}
+		}
+	}
+
+	option = {
+		name = GOT_THEOCRACY.1.option.a
+        
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 15
+			}
+        }
+		if = {
+			limit = {
+				has_estate = estate_clergy
+			}
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = -15
+			}
+		}
+		set_country_flag = theo_local_noble_flag
+        
+		if = {
+			limit = {
+				has_saved_event_target = noble_province
+			}
+			define_heir = {
+				age = 35
+				hidden = yes
+				culture = event_target:noble_province
+			}
+		}
+		else = {
+			define_heir = {
+				age = 35
+				hidden = yes
+			}
+		}
+		add_devotion = -5
+		add_prestige = 10
+		clr_country_flag = in_theocracy_heir_selection
+		custom_tooltip = GOT_THEOCRACY.1.tt
+	}
+
+	option = {
+		name = GOT_THEOCRACY.1.option.b
+        
+		trigger = {
+			any_neighbor_country = {
+				government = monarchy
+				has_regency = no
+				religion = ROOT
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_clergy
+			}
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = -10
+			}
+		}
+	
+		set_country_flag = theo_foreign_noble_flag
+        
+		random_neighbor_country = { 
+			limit = {
+				government = monarchy
+				has_regency = no
+				religion = ROOT
+			}
+			ROOT = { 
+				define_heir = { 
+					dynasty = PREV 
+					age = 35
+					culture = PREV
+					hidden = yes
+				} 
+			}
+			add_opinion = { who = ROOT modifier = opinion_theocracy_noble }
+		}
+		clr_country_flag = in_theocracy_heir_selection
+		custom_tooltip = GOT_THEOCRACY.1.tt
+	}
+
+	option = {
+		name = GOT_THEOCRACY.1.option.c
+        
+		if = {
+			limit = {
+				has_estate = estate_merchants
+			}
+			add_estate_loyalty = {
+				estate = estate_merchants
+				loyalty = 15
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_clergy
+			}
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = -15
+			}
+		}
+		set_country_flag = theo_merchants_son_flag
+		
+		if = {
+			limit = {
+				has_saved_event_target = merchant_province
+			}
+			define_heir = {
+				age = 35
+				hidden = yes
+				culture = event_target:merchant_province
+			}
+		}
+		else = {
+			define_heir = {
+				age = 35
+				hidden = yes
+			}
+		}
+		add_years_of_income = 0.35
+		add_devotion = -5
+		clr_country_flag = in_theocracy_heir_selection
+		custom_tooltip = GOT_THEOCRACY.1.tt
+	}
+
+	option = {
+		name = GOT_THEOCRACY.1.option.d
+        
+		if = {
+			limit = {
+				has_estate = estate_clergy
+			}
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 15
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_merchants
+			}
+			add_estate_loyalty = {
+				estate = estate_merchants
+				loyalty = -15
+			}
+		}
+		set_country_flag = theo_talented_theologian_flag
+        
+		if = {
+			limit = {
+				has_saved_event_target = clergy_province
+			}
+			define_heir = {
+				age = 35
+				hidden = yes
+				culture = event_target:clergy_province
+			}
+		}
+		else = {
+			define_heir = {
+				age = 35
+				hidden = yes
+			}
+		}
+		add_devotion = 5
+		clr_country_flag = in_theocracy_heir_selection
+		custom_tooltip = GOT_THEOCRACY.1.tt
+	}
+	option = {
+		name = GOT_THEOCRACY.1.option.e
+        
+		if = {
+			limit = {
+				has_estate = estate_clergy
+			}
+			add_estate_loyalty = {
+				estate = estate_clergy
+				loyalty = 15
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -15
+			}
+		}
+		set_country_flag = theo_local_preacher_flag
+        
+		if = {
+			limit = {
+				has_saved_event_target = clergy_province
+			}
+			define_heir = {
+				age = 35
+				hidden = yes
+				culture = event_target:clergy_province
+			}
+		}
+		else = {
+			define_heir = {
+				age = 35
+				hidden = yes
+			}
+		}
+		add_devotion = 10
+		add_prestige = -5
+		clr_country_flag = in_theocracy_heir_selection
+		custom_tooltip = GOT_THEOCRACY.1.tt
+	}
+}

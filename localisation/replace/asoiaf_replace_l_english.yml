@@ -101,25 +101,6 @@
  KARMA_DESC: "Karma increases from:\n- §YHonoring alliances§!\n- §YReleasing vassals§!\n- §YReleasing nations in peace deals§!\n- §YReturning cores§!\n- §YConverting Provinces§!\n\nKarma decreases from:\n- §YStarting wars§!\n- §YTaking provinces in peace deals§!"
  
  #------------------------------------------------------
- # Pasha
- #------------------------------------------------------
- ADD_PASHA_BUTTON: "Assign Encampment"
- REMOVE_PASHA_BUTTON: "Remove Encampment"
- ADD_PASHA_TOOLTIP: "§YAssign Encampment§!"
- REMOVE_PASHA_TOOLTIP: "§YRemove Encampment§!"
- ADD_PASHA_TOOLTIP_DESC: "Assigning a Encampment in $STATE|Y$ will give us the following effects:\n$EFFECT$"
- REMOVE_PASHA_TOOLTIP_DESC: "Removing the Encampment in $STATE|Y$ will give us the following effects:\n$EFFECT$"
- CONFIRMADDPASHA: "Assign Encampment"
- CONFIRMADDPASHA_TEXT: "Assigning a Encampment in $STATE|Y$ will give us the following effects:\n$EFFECT$"
- CONFIRMREMOVEPASHA: "Remove Encampment"
- CONFIRMREMOVEPASHA_TEXT: "Removing the Encampment in $STATE|Y$ will give us the following effects:\n$EFFECT$"
- pasha_removed_modifier: "Encampment Removed"
- PASHA_MODIFIER: "Encampment in State"
- pasha_state: "Encampment"
- PASHA_WRONG_GOVERNMENT: "\n§RWe cannot Assign Encampment.§!"
- PASHA_CORRECT_GOVERNMENT: "We are capable of placing Encampments in States.\n"
- 
- #------------------------------------------------------
  # Gov Abilities
  #------------------------------------------------------
  alert_can_use_russian_ability_instant: "§YCan use a Government ability!§!"
@@ -232,24 +213,6 @@
  COSSACKS_REGIMENT: "Elite Cavalry\nShock Damage Bonus: $VAL$"
  ADD_COSSACKS_SUB_UNIT_EFFECT: "Get '§GElite Cavalry§!' $UNIT$ in $WHERE|Y$."
  cossacks_modifier: "Reliance on Elite Cavalry"
- 
- # Janissaries - Slaves
- REGCAT_janissaries: "Slaves"
- STATE_JANISSARIES_GOVERNMENT_ALLOWS: "You cannot Conscript Slaves."
- STATE_JANISSARIES_COOLDOWN: "Can recruit more Slaves at $DATE|Y$."
- STATE_JANISSARIES_NEED_MIL_POWER: "You need $AMOUNT|Y$ £mil£ to Conscript Slaves"
- STATE_JANISSARIES_DESC: "§YConscript Slaves§!\nWe are capable of recruting Slaves in heathen provinces. The more heathen development, the more Slaves we can draw from them. This can only be done once every 5 years."
- ONLY_JANISSARY_MODIFIER: "§YAffects only Slave Regiments§!"
- CREATE_JANISSARIES_BUTTON: "Conscript Slaves"
- CREATEJANISSARIES: "Conscript Slaves"
- JANISSARIES_REGIMENT: "Slave Regiment\n$EFFECT$"
- STATE_JANISSARIES_CREATED_REGIMENTS: "$NUM|Y$ Slaves will spawn in $PROV|Y$"
- STATE_JANISSARIES_HEATHEN_PROVINCES: "State needs at least $AMOUNT|Y$ development of Heathen faith fully cored and controlled by you."
- STATE_JANISSARIES_BATTLE_OR_SIEGE: "You cannot conscript Slaves in a province with an ongoing battle or siege."
- HAVE_LESS_JANISSARIES_THAN_PERC: "Less than $PERC|%|Y$ of the army is Slave Regiments ($SHIPS|Y$)"
- HAVE_MORE_JANISSARIES_THAN_PERC: "More than $PERC|%|Y$ of the army is Slave Regiments ($SHIPS|Y$)"
- HAVE_LESS_JANISSARIES_THAN: "Have less Slave Regiments than $VALUE|Y$.\n"
- HAVE_AT_LEAST_JANISSARIES_THAN: "Have at least $VALUE|Y$ Slave Regiments.\n"
  
  # Banner - Champion
  REGCAT_banner: "Bannermen"
@@ -1390,4 +1353,82 @@
  ADD_SPLENDOR_EFFECT: "$DIRECTION$ $VALUE$ Influence.\n"
  HAVE_LESS_THAN_SPLENDOR: "Have less Influence than "
  HAVE_MORE_THAN_SPLENDOR: "Influence at least "
+ 
+ #------------------------------------------------------
+ # Pasha
+ #------------------------------------------------------
+ # mechanic_has_pashas_yes: "Can place Academies."
+ # ADD_PASHA_BUTTON: "Assign Academy"
+ # REMOVE_PASHA_BUTTON: "Remove Academy"
+ # ADD_PASHA_TOOLTIP: "§YAssign Academy§!"
+ # REMOVE_PASHA_TOOLTIP: "§YRemove Academy§!"
+ # ADD_PASHA_TOOLTIP_DESC: "We are capable of assigning an Academy to this state.\nAssigning a Academy in $STATE|Y$ will give us the following effects:\n$EFFECT$"
+ # REMOVE_PASHA_TOOLTIP_DESC: "Removing the Academy in $STATE|Y$ will give us the following effects:\n$EFFECT$"
+ # CONFIRMADDPASHA: "Academy Assigned"
+ # CONFIRMADDPASHA_TEXT: "Assigning a Academy in $STATE|Y$ will give us the following effects:\n$EFFECT$"
+ # CONFIRMREMOVEPASHA: "Remove Academy"
+ # CONFIRMREMOVEPASHA_TEXT: "Removing the Academy in $STATE|Y$ will give us the following effects:\n$EFFECT$"
+ # pasha_removed_modifier: "Academy Removed"
+ # PASHA_MODIFIER: "Academy"
+ # PASHA_MODIFIER_desc: "An Academy has been constructed in this state and a commissioned magi is personally overseeing education in this state."
+ # pasha_state: "Academy"
+ # PASHA_WRONG_GOVERNMENT: "\n§RYou cannot place Academies§!"
+ # PASHA_CORRECT_GOVERNMENT: "We are capable of assigning Academies.\n"
+ 
+ #------------------------------------------------------
+ # Militarization
+ #------------------------------------------------------
+ militarized_society: "Slave Efficiency"
+ INCMILSOCTITLE: "Increase Slave Efficiency of Country"
+ INC_M_ALREADY_MAX: "Slave Efficiency is already at its highest!"
+ MIL_SOC_CHANGE: "The Slave Efficiency of our Country change by $VAL$ each month due to:\n"
+ INC_MIL_NO_POINTS: "You require at least $COST|Y$ military power to increase the Slave Efficiency of your country, but you only have $VAL|Y$!"
+ INC_MIL_DO_IT: "Spend $COST|Y$ military power to increase the Slave Efficiency of your country by §G+$EFFECT$§!."
+ MODIFIER_MONTHLY_MILITARIZED_SOCIETY: "Slave Efficiency"
+ ADD_MILSOC_EFFECT: "$DIRECTION$ $VALUE$ Slave Efficiency of country.\n"
+ 
+ #------------------------------------------------------
+ # Holy Order
+ #------------------------------------------------------
+ HOLY_ORDERS: "Religious Sect"
+ HOLY_ORDER_DESC:1 "You can establish an Religious Sect in states that are fully owned and cored by you. \n\nReligious Sects will give you immediate effects when establishing them and permanent effects in all provinces of their state. Once established you cannot change it.\n\nThe availability of sects is dependant on either the presence of the religion within owned provinces, or good relations with nations that follow said religion."
+ HOLY_ORDER_DISABLED_NOT_OWNING_ALL:0 "§RThis Religious Sect is currently unable to perform its mission because all provinces in the state are not owned and cored by $COUNTRY$.§!"
+ CONFIRM_ABANDON_HOLY_ORDER: "The $NAME|Y$ Religious Sect will abandon this state:\n$EFFECT$"
+ HOLY_ORDER_ALREADY_ESTABLISHED: "§RA Religious Sect is already established in this state.§!"
+ 
+ #------------------------------------------------------
+ # Janissaries
+ #------------------------------------------------------
+ # STATE_JANISSARIES_MIL_POWER: "Costs $AMOUNT|Y$ £mil£"
+ # CREATEJANISSARIES_TEXT: "$EFFECT$"
+ # STATE_JANISSARIES_CREATED_REGIMENTS: "$NUM|Y$ Magi will spawn in $PROV|Y$"
+ # STATE_JANISSARIES_HEATHEN_PROVINCES: "State needs at least $AMOUNT|Y$ development of a faith that is not your own. It must be fully cored and controlled by you."
+ # STATE_JANISSARIES_BATTLE_OR_SIEGE: "You cannot conscript Berserkers in a province with an ongoing battle or siege."
+ 
+ # CREATE_JANISSARIES_BUTTON: "Conscript Berserkers"
+ # CREATEJANISSARIES: "Conscript Berserkers"
+ # JANISSARIES_REGIMENT: "Berserkers Regiment\n$EFFECT$"
+ # ONLY_JANISSARY_MODIFIER: "§YAffects only Berserkers§!"
+ # STATE_JANISSARIES_GOVERNMENT_ALLOWS: "Only nations with extremely militaristic governments can call upon Berserkers."
+ # STATE_JANISSARIES_COOLDOWN: "Can conscript more Berserkers at $DATE|Y$."
+ # STATE_JANISSARIES_NEED_MIL_POWER: "You need $AMOUNT|Y$ £mil£ to conscript Berserkers"
+ # STATE_JANISSARIES_DESC: "§YConscript Berserkers§!\nThis can only be done once every five years."
+ 
+ # # Janissaries - Slaves
+ # REGCAT_janissaries: "Slaves"
+ # STATE_JANISSARIES_GOVERNMENT_ALLOWS: "You cannot Conscript Slaves."
+ # STATE_JANISSARIES_COOLDOWN: "Can recruit more Slaves at $DATE|Y$."
+ # STATE_JANISSARIES_NEED_MIL_POWER: "You need $AMOUNT|Y$ £mil£ to Conscript Slaves"
+ # STATE_JANISSARIES_DESC: "§YConscript Slaves§!\nWe are capable of recruting Slaves in heathen provinces. The more heathen development, the more Slaves we can draw from them. This can only be done once every 5 years."
+ # ONLY_JANISSARY_MODIFIER: "§YAffects only Slave Regiments§!"
+ # CREATE_JANISSARIES_BUTTON: "Conscript Slaves"
+ # CREATEJANISSARIES: "Conscript Slaves"
+ # JANISSARIES_REGIMENT: "Slave Regiment\n$EFFECT$"
+ # STATE_JANISSARIES_CREATED_REGIMENTS: "$NUM|Y$ Slaves will spawn in $PROV|Y$"
+ # STATE_JANISSARIES_HEATHEN_PROVINCES: "State needs at least $AMOUNT|Y$ development of Heathen faith fully cored and controlled by you."
+ # STATE_JANISSARIES_BATTLE_OR_SIEGE: "You cannot conscript Slaves in a province with an ongoing battle or siege."
+ # HAVE_LESS_JANISSARIES_THAN_PERC: "Less than $PERC|%|Y$ of the army is Slave Regiments ($SHIPS|Y$)"
+ # HAVE_MORE_JANISSARIES_THAN_PERC: "More than $PERC|%|Y$ of the army is Slave Regiments ($SHIPS|Y$)"
+ # HAVE_LESS_JANISSARIES_THAN: "Have less Slave Regiments than $VALUE|Y$.\n"
+ # HAVE_AT_LEAST_JANISSARIES_THAN: "Have at least $VALUE|Y$ Slave Regiments.\n"
  

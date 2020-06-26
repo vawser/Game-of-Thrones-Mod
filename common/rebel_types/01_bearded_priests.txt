@@ -1,11 +1,11 @@
 ######################################################################
 # Worshippers
 ######################################################################
-asoiaf_bearded_priests_rebels = {
+bearded_priests_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
 	government = any
-	religion = asoiaf_bearded_priests
+	religion = bearded_priests
 	defection = none				# Will not defect
 	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
 	independence = none				# Does not strive for independence
@@ -42,7 +42,7 @@ asoiaf_bearded_priests_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = { religion = asoiaf_bearded_priests }
+			NOT = { religion = bearded_priests }
 		}
 		modifier = {
 			factor = 0.001
@@ -83,14 +83,14 @@ asoiaf_bearded_priests_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			religion = asoiaf_bearded_priests
-			owner = { religion = asoiaf_bearded_priests }
+			religion = bearded_priests
+			owner = { religion = bearded_priests }
 		}
 		modifier = {
 			factor = 2.0
-			NOT = { religion = asoiaf_bearded_priests }
+			NOT = { religion = bearded_priests }
 			any_neighbor_province = {
-	 			religion = asoiaf_bearded_priests
+	 			religion = bearded_priests
 	 			NOT = { has_province_modifier = "forced_conversion" }
 	 		}
 	 	}
@@ -114,7 +114,7 @@ asoiaf_bearded_priests_rebels = {
 	siege_won_effect = {
 		if = {
 			limit = {
-				religion = asoiaf_bearded_priests
+				religion = bearded_priests
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -125,7 +125,7 @@ asoiaf_bearded_priests_rebels = {
 			limit = {
 				religion_group = religion_essos
 			}
-			change_religion = asoiaf_bearded_priests
+			change_religion = bearded_priests
 			add_province_modifier = {
 				name = "forced_conversion"
 				duration = 730
@@ -153,7 +153,7 @@ asoiaf_bearded_priests_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = "asoiaf_bearded_priests_rebels_demand"
+	demands_description = "bearded_priests_rebels_demand"
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -167,10 +167,10 @@ asoiaf_bearded_priests_rebels = {
 		if = {
 			limit = {
 				OR = {
-					religion = asoiaf_bearded_priests
+					religion = bearded_priests
 					AND = {
-						NOT = { religion = asoiaf_bearded_priests }
-						NOT = { dominant_religion = asoiaf_bearded_priests }
+						NOT = { religion = bearded_priests }
+						NOT = { dominant_religion = bearded_priests }
 					}
 				}
 			}
@@ -181,10 +181,10 @@ asoiaf_bearded_priests_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion = asoiaf_bearded_priests }
-				dominant_religion = asoiaf_bearded_priests
+				NOT = { religion = bearded_priests }
+				dominant_religion = bearded_priests
 			}
-			change_religion = asoiaf_bearded_priests
+			change_religion = bearded_priests
 			force_converted = yes
 		}
 	}

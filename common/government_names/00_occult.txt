@@ -1,0 +1,132 @@
+﻿gov_asshai = {
+	rank = {
+		1 = SHADOW_CULT
+		2 = SHADOW_CULT
+		3 = SHADOW_CULT
+	}
+	
+	ruler_male = {
+		1 = ARCHMAGI
+		2 = ARCHMAGI
+		3 = ARCHMAGI
+	}
+	
+	ruler_female = {
+		1 = ARCHMAGI
+		2 = ARCHMAGI
+		3 = ARCHMAGI
+    }
+	
+	trigger = {
+        tag = J02
+        OR = {
+            has_reform = shadow_cult_reform
+            has_reform = shadow_cult_legacy
+        }
+	}
+}
+gov_shadow_cult = {
+	rank = {
+		1 = SHADOW_CULT
+		2 = SHADOW_CULT
+		3 = SHADOW_CULT
+	}
+	
+	ruler_male = {
+		1 = HIGH_PRIEST
+		2 = HIGH_PRIEST
+		3 = HIGH_PRIEST
+	}
+	
+	ruler_female = {
+		1 = HIGH_PRIEST
+		2 = HIGH_PRIEST
+		3 = HIGH_PRIEST
+    }
+	
+	trigger = {
+        OR = {
+            has_reform = shadow_cult_reform
+            has_reform = shadow_cult_legacy
+        }
+	}
+}
+gov_necromantic_cult = {
+	rank = {
+		1 = NECROMANTIC_CULT
+		2 = NECROMANTIC_CULT
+		3 = NECROMANTIC_CULT
+	}
+	
+	ruler_male = {
+		1 = NECROMANCER
+		2 = NECROMANCER
+		3 = NECROMANCER
+	}
+	
+	ruler_female = {
+		1 = NECROMANCER
+		2 = NECROMANCER
+		3 = NECROMANCER
+    }
+	
+	trigger = {
+        OR = {
+            has_reform = necromantic_cult_reform
+            has_reform = necromantic_cult_legacy
+        }
+	}
+}
+gov_winged_dominion = {
+	rank = {
+		1 = WINGED_DOMINION
+		2 = WINGED_DOMINION
+		3 = WINGED_DOMINION
+	}
+	
+	ruler_male = {
+		1 = SORCERER_LORD
+		2 = SORCERER_LORD
+		3 = SORCERER_LORD
+	}
+	
+	ruler_female = {
+		1 = SORCERER_LORD
+		2 = SORCERER_LORD
+		3 = SORCERER_LORD
+    }
+	
+	trigger = {
+        tag = J21
+        OR = {
+            has_reform = ascension_cult_reform
+            has_reform = ascension_cult_legacy
+        }
+	}
+}
+gov_ascension_cult = {
+	rank = {
+		1 = ASCENSION_CULT
+		2 = ASCENSION_CULT
+		3 = ASCENSION_CULT
+	}
+	
+	ruler_male = {
+		1 = HIGH_PRIEST
+		2 = HIGH_PRIEST
+		3 = HIGH_PRIEST
+	}
+	
+	ruler_female = {
+		1 = HIGH_PRIEST
+		2 = HIGH_PRIEST
+		3 = HIGH_PRIEST
+    }
+	
+	trigger = {
+        OR = {
+            has_reform = ascension_cult_reform
+            has_reform = ascension_cult_legacy
+        }
+	}
+}

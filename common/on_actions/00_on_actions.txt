@@ -515,6 +515,8 @@ on_government_change = {
     if = {
 		limit = {
 			NOT = { government = monarchy }
+            NOT = { government = occult }
+            NOT = { government = mythical }
 			any_owned_province = {
 				has_province_modifier = domain_of_spouses_family
 			}
@@ -527,6 +529,8 @@ on_government_change = {
 	if = {
 		limit = {
 			NOT = { government = monarchy }
+            NOT = { government = occult }
+            NOT = { government = mythical }
 			any_owned_province = {
 				has_province_modifier = home_of_consort
 			}

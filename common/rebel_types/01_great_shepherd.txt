@@ -1,11 +1,11 @@
 ######################################################################
 # Worshippers
 ######################################################################
-asoiaf_great_shepherd_rebels = {
+great_shepherd_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
 	government = any
-	religion = asoiaf_great_shepherd
+	religion = great_shepherd
 	defection = none				# Will not defect
 	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
 	independence = none				# Does not strive for independence
@@ -42,7 +42,7 @@ asoiaf_great_shepherd_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = { religion = asoiaf_great_shepherd }
+			NOT = { religion = great_shepherd }
 		}
 		modifier = {
 			factor = 0.001
@@ -83,14 +83,14 @@ asoiaf_great_shepherd_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			religion = asoiaf_great_shepherd
-			owner = { religion = asoiaf_great_shepherd }
+			religion = great_shepherd
+			owner = { religion = great_shepherd }
 		}
 		modifier = {
 			factor = 2.0
-			NOT = { religion = asoiaf_great_shepherd }
+			NOT = { religion = great_shepherd }
 			any_neighbor_province = {
-	 			religion = asoiaf_great_shepherd
+	 			religion = great_shepherd
 	 			NOT = { has_province_modifier = "forced_conversion" }
 	 		}
 	 	}
@@ -114,7 +114,7 @@ asoiaf_great_shepherd_rebels = {
 	siege_won_effect = {
 		if = {
 			limit = {
-				religion = asoiaf_great_shepherd
+				religion = great_shepherd
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -123,9 +123,9 @@ asoiaf_great_shepherd_rebels = {
 		}
 		if = {
 			limit = {
-				religion_group = religion_middle_essos
+				religion_group = religion_ghiscari
 			}
-			change_religion = asoiaf_great_shepherd
+			change_religion = great_shepherd
 			add_province_modifier = {
 				name = "forced_conversion"
 				duration = 730
@@ -133,7 +133,7 @@ asoiaf_great_shepherd_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion_group = religion_middle_essos }
+				NOT = { religion_group = religion_ghiscari }
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -153,7 +153,7 @@ asoiaf_great_shepherd_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = "asoiaf_great_shepherd_rebels_demand"
+	demands_description = "great_shepherd_rebels_demand"
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -167,10 +167,10 @@ asoiaf_great_shepherd_rebels = {
 		if = {
 			limit = {
 				OR = {
-					religion = asoiaf_great_shepherd
+					religion = great_shepherd
 					AND = {
-						NOT = { religion = asoiaf_great_shepherd }
-						NOT = { dominant_religion = asoiaf_great_shepherd }
+						NOT = { religion = great_shepherd }
+						NOT = { dominant_religion = great_shepherd }
 					}
 				}
 			}
@@ -181,10 +181,10 @@ asoiaf_great_shepherd_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion = asoiaf_great_shepherd }
-				dominant_religion = asoiaf_great_shepherd
+				NOT = { religion = great_shepherd }
+				dominant_religion = great_shepherd
 			}
-			change_religion = asoiaf_great_shepherd
+			change_religion = great_shepherd
 			force_converted = yes
 		}
 	}

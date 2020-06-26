@@ -1,11 +1,11 @@
 ######################################################################
-# Sarnor Worshippers
+# Worshippers
 ######################################################################
-asoiaf_gods_of_sarnor_rebels = {
+mavka_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
 	government = any
-	religion = asoiaf_gods_of_sarnor
+	religion = mavka
 	defection = none				# Will not defect
 	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
 	independence = none				# Does not strive for independence
@@ -42,7 +42,7 @@ asoiaf_gods_of_sarnor_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = { religion = asoiaf_gods_of_sarnor }
+			NOT = { religion = mavka }
 		}
 		modifier = {
 			factor = 0.001
@@ -83,14 +83,14 @@ asoiaf_gods_of_sarnor_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			religion = asoiaf_gods_of_sarnor
-			owner = { religion = asoiaf_gods_of_sarnor }
+			religion = mavka
+			owner = { religion = mavka }
 		}
 		modifier = {
 			factor = 2.0
-			NOT = { religion = asoiaf_gods_of_sarnor }
+			NOT = { religion = mavka }
 			any_neighbor_province = {
-	 			religion = asoiaf_gods_of_sarnor
+	 			religion = mavka
 	 			NOT = { has_province_modifier = "forced_conversion" }
 	 		}
 	 	}
@@ -114,7 +114,7 @@ asoiaf_gods_of_sarnor_rebels = {
 	siege_won_effect = {
 		if = {
 			limit = {
-				religion = asoiaf_gods_of_sarnor
+				religion = mavka
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -123,9 +123,9 @@ asoiaf_gods_of_sarnor_rebels = {
 		}
 		if = {
 			limit = {
-				religion_group = religion_distant_essos
+				religion_group = religion_tribal
 			}
-			change_religion = asoiaf_gods_of_sarnor
+			change_religion = mavka
 			add_province_modifier = {
 				name = "forced_conversion"
 				duration = 730
@@ -133,7 +133,7 @@ asoiaf_gods_of_sarnor_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion_group = religion_distant_essos }
+				NOT = { religion_group = religion_tribal }
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -153,7 +153,7 @@ asoiaf_gods_of_sarnor_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = "asoiaf_gods_of_sarnor_rebels_demand"
+	demands_description = "mavka_rebels_demand"
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -167,10 +167,10 @@ asoiaf_gods_of_sarnor_rebels = {
 		if = {
 			limit = {
 				OR = {
-					religion = asoiaf_gods_of_sarnor
+					religion = mavka
 					AND = {
-						NOT = { religion = asoiaf_gods_of_sarnor }
-						NOT = { dominant_religion = asoiaf_gods_of_sarnor }
+						NOT = { religion = mavka }
+						NOT = { dominant_religion = mavka }
 					}
 				}
 			}
@@ -181,10 +181,10 @@ asoiaf_gods_of_sarnor_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion = asoiaf_gods_of_sarnor }
-				dominant_religion = asoiaf_gods_of_sarnor
+				NOT = { religion = mavka }
+				dominant_religion = mavka
 			}
-			change_religion = asoiaf_gods_of_sarnor
+			change_religion = mavka
 			force_converted = yes
 		}
 	}

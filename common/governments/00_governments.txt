@@ -233,12 +233,6 @@ theocracy = {
                 the_faith_reform
                 qohor_city_reform
                 norvos_city_reform
-                asshai_cult_reform
-                bloodless_cult_reform
-                winged_dominion_reform
-                white_walker_cult_reform
-                shadow_cult_reform
-                cult_of_madness_reform
 			}
 		}
         tier_theocracy_internal_vs_external_mission = {
@@ -303,15 +297,9 @@ theocracy = {
     
     legacy_government = {
         theocracy_legacy
-        asshai_cult_legacy
-        bloodless_cult_legacy
-        winged_dominion_legacy
-        white_walker_cult_legacy
         the_faith_legacy
         qohor_city_legacy
 		norvos_city_legacy
-        shadow_cult_legacy
-        cult_of_madness_legacy
     }
 }
 
@@ -438,4 +426,85 @@ pirate = {
         pirate_kingdom_legacy
         pirate_republic_legacy
     }
+}
+
+#--------------------------------------------
+# Occult
+#--------------------------------------------
+occult = {
+	basic_reform = occult_mechanic
+
+    reform_levels = {
+        tier_occult_government_form = {
+			reforms = {
+                shadow_cult_reform
+                necromantic_cult_reform
+                ascension_cult_reform
+			}
+		}
+        tier_occult_guiding_occult_principle = {
+            reforms = {
+                got_strengthen_shadowfolk
+                got_strengthen_bloodless_folk
+                got_strengthen_carcosan_folk
+            }
+        }
+        tier_occult_the_nature_of_our_magic = {
+            reforms = {
+                got_outward_influence
+                got_inward_influence
+                got_uplift_the_savage
+                got_educate_the_masses
+            }
+        }
+        tier_occult_the_magicratic_cadre = {
+            reforms = {
+                got_religious_magicrats
+                got_mercantile_magicrats
+                got_landed_magicrats
+                got_centralize_magicrats
+            }
+        }
+        tier_occult_absolute_rule_vs_constitutional = {
+            reforms = {
+                got_absolute_oversight
+                got_regional_concessions
+            }
+        }
+        tier_occult_question_of_power = {
+            reforms = {
+                got_broaden_cult_influence
+                got_devolution_of_cult
+                got_become_a_republic_reform
+                got_become_a_theocracy_reform
+            }
+        }
+    }
+    
+	legacy_government = {
+		shadow_cult_legacy
+        necromantic_cult_legacy
+        ascension_cult_legacy
+	}
+	color = { 120 151 215 }
+}
+
+#--------------------------------------------
+# Native
+#--------------------------------------------
+mythical = {
+	basic_reform = mythical_mechanic
+
+    reform_levels = {
+        tier_mythical_government_form = {
+			reforms = {
+                army_of_the_dead_reform
+			}
+		}
+    }
+    
+	legacy_government = {
+		army_of_the_dead_legacy
+	}
+	color = { 214 24 45 }
 }

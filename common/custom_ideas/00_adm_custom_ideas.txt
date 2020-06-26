@@ -83,6 +83,8 @@ adm_idea_modifiers = {
 				factor = 0
 				OR = {
 					NOT = { government = monarchy }
+                    NOT = { government = occult }
+                    NOT = { government = mythical }
 					NOT = { has_reform = warband_reform }
                     NOT = { has_reform = khalasar_reform }
                     NOT = { has_reform = jhattar_reform }
@@ -210,6 +212,14 @@ adm_idea_modifiers = {
 			modifier = {
 				factor = 0
 				NOT = { government = monarchy }
+			}
+            modifier = {
+				factor = 0
+				NOT = { government = occult }
+			}
+            modifier = {
+				factor = 0
+				NOT = { government = mythical }
 			}
 		}
 	}

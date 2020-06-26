@@ -1,11 +1,11 @@
 ######################################################################
 # Worshippers
 ######################################################################
-asoiaf_shadowbinders_rebels = {
+remnants_of_boash_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
 	government = any
-	religion = asoiaf_shadowbinders
+	religion = remnants_of_boash
 	defection = none				# Will not defect
 	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
 	independence = none				# Does not strive for independence
@@ -42,7 +42,7 @@ asoiaf_shadowbinders_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = { religion = asoiaf_shadowbinders }
+			NOT = { religion = remnants_of_boash }
 		}
 		modifier = {
 			factor = 0.001
@@ -83,14 +83,14 @@ asoiaf_shadowbinders_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			religion = asoiaf_shadowbinders
-			owner = { religion = asoiaf_shadowbinders }
+			religion = remnants_of_boash
+			owner = { religion = remnants_of_boash }
 		}
 		modifier = {
 			factor = 2.0
-			NOT = { religion = asoiaf_shadowbinders }
+			NOT = { religion = remnants_of_boash }
 			any_neighbor_province = {
-	 			religion = asoiaf_shadowbinders
+	 			religion = remnants_of_boash
 	 			NOT = { has_province_modifier = "forced_conversion" }
 	 		}
 	 	}
@@ -114,7 +114,7 @@ asoiaf_shadowbinders_rebels = {
 	siege_won_effect = {
 		if = {
 			limit = {
-				religion = asoiaf_shadowbinders
+				religion = remnants_of_boash
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -123,9 +123,9 @@ asoiaf_shadowbinders_rebels = {
 		}
 		if = {
 			limit = {
-				religion_group = religion_distant_essos
+				religion_group = religion_essos
 			}
-			change_religion = asoiaf_shadowbinders
+			change_religion = remnants_of_boash
 			add_province_modifier = {
 				name = "forced_conversion"
 				duration = 730
@@ -133,7 +133,7 @@ asoiaf_shadowbinders_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion_group = religion_distant_essos }
+				NOT = { religion_group = religion_essos }
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -153,7 +153,7 @@ asoiaf_shadowbinders_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = "asoiaf_shadowbinders_rebels_demand"
+	demands_description = "remnants_of_boash_rebels_demand"
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -167,10 +167,10 @@ asoiaf_shadowbinders_rebels = {
 		if = {
 			limit = {
 				OR = {
-					religion = asoiaf_shadowbinders
+					religion = remnants_of_boash
 					AND = {
-						NOT = { religion = asoiaf_shadowbinders }
-						NOT = { dominant_religion = asoiaf_shadowbinders }
+						NOT = { religion = remnants_of_boash }
+						NOT = { dominant_religion = remnants_of_boash }
 					}
 				}
 			}
@@ -181,10 +181,10 @@ asoiaf_shadowbinders_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion = asoiaf_shadowbinders }
-				dominant_religion = asoiaf_shadowbinders
+				NOT = { religion = remnants_of_boash }
+				dominant_religion = remnants_of_boash
 			}
-			change_religion = asoiaf_shadowbinders
+			change_religion = remnants_of_boash
 			force_converted = yes
 		}
 	}

@@ -170,7 +170,11 @@ interaction = {
 					has_estate_privilege = estate_nobility_statutory_rights
 					AND = {
 						has_estate = estate_nobles
-						government = monarchy
+						OR = {
+                            government = monarchy
+                            government = occult
+                            government = mythical
+                        }
 					}
 				}
 			}

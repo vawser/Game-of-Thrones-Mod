@@ -1,25 +1,980 @@
-# dummy_order = {
-    # icon = GFX_holy_order_jesuits
-    # trigger = {
-        # always = no
-    # }
-    # cost = 50
-    # cost_type = adm_power
-    # per_province_effect = {
-        # add_base_tax = 1
-    # }
-    # per_province_abandon_effect = {
-        # add_base_tax = -1
-    # }
-    # modifier = {
-        # local_missionary_strength = 0.015
-        # local_build_cost = -0.1
-    # }
-    # ai_priority = {
-        # factor = 2
-        # modifier = {
-            # factor = 2.0
-            # NOT = { religion = ROOT }
-        # }
-    # }
-# }
+sect_faith_of_the_seven = {
+    icon = GFX_holy_order_faith_of_the_seven
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = faith_of_the_seven } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = faith_of_the_seven
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = faith_of_the_seven
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_tax = 1
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+    }
+    modifier = {
+        local_tax_modifier = 0.2
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_drowned_god = {
+    icon = GFX_holy_order_drowned_god
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = drowned_god } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = drowned_god
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = drowned_god
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+    }
+    modifier = {
+        local_sailors_modifier = 0.2
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_old_gods = {
+    icon = GFX_holy_order_old_gods
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = old_gods } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = old_gods
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = old_gods
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_tax = 1
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+    }
+    modifier = {
+        local_manpower_modifier = 0.2
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_rhllor = {
+    icon = GFX_holy_order_rhllor
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = rhllor } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = rhllor
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = rhllor
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_tax = 1
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+    }
+    modifier = {
+        local_development_cost = -0.1
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_mother_rhoyne = {
+    icon = GFX_holy_order_mother_rhoyne
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = mother_rhoyne } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = mother_rhoyne
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = mother_rhoyne
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_production = 1
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+    }
+    modifier = {
+        trade_value_modifier = 0.2
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_lady_of_the_waves = {
+    icon = GFX_holy_order_lady_of_the_waves
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = lady_of_the_waves } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = lady_of_the_waves
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = lady_of_the_waves
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+    }
+    modifier = {
+        local_ship_cost = -0.25
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_trios = {
+    icon = GFX_holy_order_trios
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = trios } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = trios
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = trios
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_tax = 1
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+    }
+    modifier = {
+        local_state_maintenance_modifier = -0.25
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_bearded_priests = {
+    icon = GFX_holy_order_bearded_priests
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = bearded_priests } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = bearded_priests
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = bearded_priests
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+    }
+    modifier = {
+        local_missionary_maintenance_cost = -0.25
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_remnants_of_boash = {
+    icon = GFX_holy_order_remnants_of_boash
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = remnants_of_boash } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = remnants_of_boash
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = remnants_of_boash
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_tax = 1
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+    }
+    modifier = {
+        local_build_cost = -0.2
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_black_goat = {
+    icon = GFX_holy_order_black_goat
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = black_goat } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = black_goat
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = black_goat
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+    }
+    modifier = {
+        local_missionary_strength = 0.02
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_hooded_wayfarer = {
+    icon = GFX_holy_order_hooded_wayfarer
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = hooded_wayfarer } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = hooded_wayfarer
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = hooded_wayfarer
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_tax = 1
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+    }
+    modifier = {
+        local_autonomy = -0.05
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_ghiscari_pantheon = {
+    icon = GFX_holy_order_ghiscari_pantheon
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = ghiscari_pantheon } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = ghiscari_pantheon
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = ghiscari_pantheon
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_tax = 1
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+    }
+    modifier = {
+        local_tax_modifier = 0.2
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_great_shepherd = {
+    icon = GFX_holy_order_great_shepherd
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = great_shepherd } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = great_shepherd
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = great_shepherd
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_production = 1
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+    }
+    modifier = {
+        local_production_efficiency = 0.2
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_ib = {
+    icon = GFX_holy_order_ib
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = ib } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = ib
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = ib
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_production = 1
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+    }
+    modifier = {
+        local_ship_repair = 1.0
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_lion_of_the_night = {
+    icon = GFX_holy_order_lion_of_the_night
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = lion_of_the_night } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = lion_of_the_night
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = lion_of_the_night
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_production = 1
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+    }
+    modifier = {
+        local_production_efficiency = 0.2
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_gods_of_hyrkoon = {
+    icon = GFX_holy_order_gods_of_hyrkoon
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = gods_of_hyrkoon } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = gods_of_hyrkoon
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = gods_of_hyrkoon
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+    }
+    modifier = {
+        local_hostile_attrition = 3
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_moonsingers = {
+    icon = GFX_holy_order_moonsingers
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = moonsingers } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = moonsingers
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = moonsingers
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_tax = 1
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+    }
+    modifier = {
+        local_institution_spread = 0.25
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_cult_of_shadows = {
+    icon = GFX_holy_order_cult_of_shadows
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = cult_of_shadows } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = cult_of_shadows
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = cult_of_shadows
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_tax = 1
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+    }
+    modifier = {
+        institution_growth = 1
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_cult_of_pallor = {
+    icon = GFX_holy_order_cult_of_pallor
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = cult_of_pallor } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = cult_of_pallor
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = cult_of_pallor
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+    }
+    modifier = {
+        local_core_creation = -0.1
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_cult_of_ascension = {
+    icon = GFX_holy_order_cult_of_ascension
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = cult_of_ascension } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = cult_of_ascension
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = cult_of_ascension
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_production = 1
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+    }
+    modifier = {
+        local_friendly_movement_speed = 0.25
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_great_stallion = {
+    icon = GFX_holy_order_great_stallion
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = great_stallion } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = great_stallion
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = great_stallion
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+    }
+    modifier = {
+        regiment_recruit_speed = -0.25
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_stone_cow = {
+    icon = GFX_holy_order_stone_cow
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = stone_cow } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = stone_cow
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = stone_cow
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_tax = 1
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+    }
+    modifier = {
+        province_trade_power_modifier = 0.2
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_summer_gods = {
+    icon = GFX_holy_order_summer_gods
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = summer_gods } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = summer_gods
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = summer_gods
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_production = 1
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+    }
+    modifier = {
+        trade_goods_size_modifier = 0.2
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_lord_of_harmony = {
+    icon = GFX_holy_order_lord_of_harmony
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = lord_of_harmony } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = lord_of_harmony
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = lord_of_harmony
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+    }
+    modifier = {
+        local_culture_conversion_cost = -0.2
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_idol_worship = {
+    icon = GFX_holy_order_idol_worship
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = idol_worship } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = idol_worship
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = idol_worship
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+    }
+    modifier = {
+        allowed_num_of_buildings = 1
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_mavka = {
+    icon = GFX_holy_order_mavka
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = mavka } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = mavka
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = mavka
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+    }
+    modifier = {
+        supply_limit_modifier = 0.1
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_drekavac = {
+    icon = GFX_holy_order_drekavac
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = drekavac } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = drekavac
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = drekavac
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+    }
+    modifier = {
+        local_defensiveness = 0.25
+    }
+    ai_priority = {
+        factor = 1
+    }
+}
+sect_cyromancy = {
+    icon = GFX_holy_order_cyromancy
+    cost_type = adm_power
+    
+    trigger = {
+        # NOT = { religion = cyromancy } # Cannot be main religion
+        # Available if any province has the sect religion in it
+        OR = {
+            any_known_country = {
+                religion = cyromancy
+                has_opinion = {
+                    who = ROOT
+                    value = 25
+                }
+            }
+            any_owned_province = {
+                religion = cyromancy
+            }
+        }
+    }
+    cost = 50
+    
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+    }
+    modifier = {
+        fort_level = 1
+    }
+    ai_priority = {
+        factor = 1
+    }
+}

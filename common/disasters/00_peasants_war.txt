@@ -1,6 +1,10 @@
 peasant_war = {
 	potential = {
-		is_monarchy_government = yes
+		OR = {
+            government = monarchy
+            government = occult
+            #government = mythical
+        }
 		uses_doom = no
 		num_of_cities = 5
 		NOT = { has_country_flag = had_peasant_war }

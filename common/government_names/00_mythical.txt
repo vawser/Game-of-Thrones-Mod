@@ -1,0 +1,26 @@
+﻿gov_white_walker_cult = {
+	rank = {
+		1 = ARMY_OF_THE_DEAD
+		2 = ARMY_OF_THE_DEAD
+		3 = ARMY_OF_THE_DEAD
+	}
+	
+	ruler_male = {
+		1 = BLANK
+		2 = BLANK
+		3 = BLANK
+	}
+	
+	ruler_female = {
+		1 = BLANK
+		2 = BLANK
+		3 = BLANK
+	}
+	
+	trigger = {
+        OR = {
+            has_reform = army_of_the_dead_reform
+            has_reform = army_of_the_dead_legacy
+        }
+	}
+}

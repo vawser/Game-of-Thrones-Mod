@@ -260,7 +260,6 @@ country_event = {
 	trigger = {
 		has_dlc = "Common Sense"
 		uses_karma = yes
-		government = monarchy
 		has_regency = no
 		num_of_cities = 3
 		NOT = { karma = -50 }
@@ -286,7 +285,7 @@ country_event = {
 			}
 			spawn_rebels = {
 				type = pretender_rebels
-				religion = asoiaf_stone_cow_of_faros
+				religion = stone_cow
 				size = 1
 			}
 		}
@@ -306,7 +305,6 @@ country_event = {
 	trigger = {
 		has_dlc = "Common Sense"
 		uses_karma = yes
-		government = monarchy
 		has_regency = no
 		num_of_cities = 3
 		karma = 50
@@ -341,7 +339,6 @@ country_event = {
 	trigger = {
 		has_dlc = "Common Sense"
 		uses_karma = yes
-		government = monarchy
 		has_regency = no
 		num_of_cities = 3
 		karma = 50
@@ -498,7 +495,6 @@ country_event = {
 		has_dlc = "Common Sense"
 		uses_karma = yes
 		is_at_war = yes
-		government = monarchy
 		has_regency = no
 		num_of_cities = 3
 		war_exhaustion = 2
@@ -2051,7 +2047,7 @@ country_event = {
 		ai_chance = {
 			factor = 1
 		}
-		change_religion = asoiaf_stone_cow_of_faros
+		change_religion = stone_cow
 		add_country_modifier = {
 			name = "got_farosi_high_priest"
 			duration = -1

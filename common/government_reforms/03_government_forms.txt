@@ -49,6 +49,7 @@ noble_house_reform = {
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    maintain_dynasty = yes
     
     modifiers = {
 		prestige = 0.5
@@ -72,6 +73,7 @@ royal_house_reform = {
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
+    maintain_dynasty = yes
     
     fixed_rank = 3
     
@@ -104,8 +106,6 @@ yiti_city_reform = {
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
-    has_meritocracy = yes
-    
     modifiers = {
 		improve_relation_modifier = 0.1
         diplomatic_upkeep = 1
@@ -128,8 +128,6 @@ yiti_empire_reform = {
     
     valid_for_nation_designer = yes
 	nation_designer_cost = 0
-    
-    has_meritocracy = yes
     
     modifiers = {
 		improve_relation_modifier = 0.25
@@ -251,6 +249,11 @@ meereen_city_reform = {
         nobles_influence_modifier = 0.05
 	}
 
+    conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+    
     custom_attributes = {
 		enables_monarchy_ideagroup = yes
 	}
@@ -272,6 +275,11 @@ yunkai_city_reform = {
     	global_manpower_modifier = 0.1
         heir_chance = 0.5
         nobles_influence_modifier = 0.05
+	}
+    
+    conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
 	}
     
     custom_attributes = {
@@ -297,6 +305,11 @@ astapor_city_reform = {
         nobles_influence_modifier = 0.05
 	}
     
+    conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+    
     custom_attributes = {
 		enables_monarchy_ideagroup = yes
 	}
@@ -318,6 +331,11 @@ ghis_city_reform = {
     	global_manpower_modifier = 0.1
         core_creation = -0.1
         nobles_influence_modifier = 0.05
+	}
+    
+    conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
 	}
     
     custom_attributes = {
@@ -1035,11 +1053,9 @@ theocracy_reform = {
 	icon = "castle"
     
     potential = {
-        NOT = { has_reform = asshai_cult_reform }
-        NOT = { has_reform = bloodless_cult_reform }
-        NOT = { has_reform = white_walker_cult_reform }
         NOT = { has_reform = qohor_city_reform }
         NOT = { has_reform = norvos_city_reform }
+        NOT = { has_reform = the_faith_reform }
     }
     
     allow_normal_conversion = yes
@@ -1052,99 +1068,6 @@ theocracy_reform = {
 		tolerance_own = 1
         missionaries = 1
     }
-    
-    custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
-}
-asshai_cult_reform = {
-	icon = "castle"
-    
-    potential = {
-        has_reform = asshai_cult_reform
-    }
-    
-    allow_normal_conversion = yes
-    legacy_equivalent = asshai_cult_legacy
-    
-    valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    has_devotion = yes
-    
-    modifiers = {
-		technology_cost = -0.1
-	}
-    
-    custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
-}
-bloodless_cult_reform = {
-	icon = "castle"
-    
-    potential = {
-        has_reform = bloodless_cult_reform
-    }
-    
-    allow_normal_conversion = yes
-    legacy_equivalent = bloodless_cult_legacy
-    
-    valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    has_devotion = yes
-    
-    modifiers = {
-		land_morale = 0.1
-	}
-    
-    custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
-}
-winged_dominion_reform = {
-	icon = "castle"
-    
-    potential = {
-        has_reform = winged_dominion_reform
-    }
-    
-    allow_normal_conversion = yes
-    legacy_equivalent = winged_dominion_legacy
-    
-    valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    has_devotion = yes
-    
-    modifiers = {
-		movement_speed = 0.2
-	}
-    
-    custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
-}
-white_walker_cult_reform = {
-	icon = "castle"
-    
-    potential = {
-        has_reform = white_walker_cult_reform
-    }
-    
-    allow_normal_conversion = yes
-    legacy_equivalent = white_walker_cult_legacy
-    
-    valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    rulers_can_be_generals = yes
-    
-    modifiers = {
-		discipline = 0.1
-        land_morale = 0.1
-	}
     
     custom_attributes = {
 		enables_theocracy_ideagroup = yes
@@ -1169,6 +1092,7 @@ the_faith_reform = {
 		tolerance_own = 1
         missionaries = 1
         clergy_influence_modifier = 0.2
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1195,6 +1119,7 @@ qohor_city_reform = {
 		tolerance_own = 1
         missionary_maintenance_cost = -0.1
         clergy_influence_modifier = 0.05
+        max_absolutism = -20
 	}
     
     custom_attributes = {
@@ -1220,52 +1145,7 @@ norvos_city_reform = {
     	tolerance_own = 1
         infantry_power = 0.1
         clergy_influence_modifier = 0.05
-	}
-    
-    custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
-}
-shadow_cult_reform = {
-	icon = "castle"
-    
-    potential = {
-        has_reform = shadow_cult_reform
-    }
-    
-    allow_normal_conversion = yes
-    legacy_equivalent = shadow_cult_legacy
-    
-    valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    has_devotion = yes
-    
-    modifiers = {
-		hostile_attrition = 2
-	}
-    
-    custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
-}
-cult_of_madness_reform = {
-	icon = "castle"
-    
-    potential = {
-        has_reform = cult_of_madness_reform
-    }
-    
-    allow_normal_conversion = yes
-    legacy_equivalent = cult_of_madness_legacy
-    
-    valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    has_devotion = yes
-    
-    modifiers = {
-		all_power_cost = -0.05
+        max_absolutism = -20
 	}
     
     custom_attributes = {
@@ -1297,6 +1177,7 @@ tribe_reform = {
     
     modifiers = {
         stability_cost_modifier = -0.25
+        max_absolutism = -30
     }
     
     custom_attributes = {
@@ -1319,6 +1200,7 @@ wildling_clan_reform = {
     modifiers = {
     	colonists = 1
         global_regiment_recruit_speed = -0.15
+        max_absolutism = -20
 	}
     
     native_mechanic = no
@@ -1350,6 +1232,7 @@ lhazar_clan_reform = {
     modifiers = {
     	production_efficiency = 0.15
         state_maintenance_modifier = -0.1
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1372,6 +1255,7 @@ ibben_clan_reform = {
     modifiers = {
     	naval_morale = 0.1
         naval_maintenance_modifier = -0.1
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1394,6 +1278,7 @@ omber_clan_reform = {
     modifiers = {
 		build_cost = -0.1
         build_time = -0.2
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1416,6 +1301,7 @@ faros_clan_reform = {
     modifiers = {
     	global_regiment_cost = -0.15
         global_regiment_recruit_speed = -0.15
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1437,6 +1323,7 @@ naath_clan_reform = {
     
     modifiers = {
     	tolerance_own = 3
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1459,6 +1346,7 @@ summer_islander_clan_reform = {
     modifiers = {
     	naval_forcelimit_modifier = 0.15
         sailor_maintenance_modifer = -0.1
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1485,6 +1373,7 @@ warband_reform = {
         cavalry_power = 0.1
         cav_to_inf_ratio = 0.5
         reinforce_cost_modifier = -0.1
+        max_absolutism = 20
     }
     
     custom_attributes = {
@@ -1510,6 +1399,7 @@ khalasar_reform = {
 		cavalry_power = 0.1
         cav_to_inf_ratio = 0.5
         loot_amount = 0.33
+        max_absolutism = 20
 	}
     
     custom_attributes = {
@@ -1535,6 +1425,7 @@ jhattar_reform = {
 		cavalry_power = 0.1
         cav_to_inf_ratio = 0.5
         global_missionary_strength = 0.01
+        max_absolutism = 20
 	}
     
     custom_attributes = {
@@ -1596,5 +1487,104 @@ pirate_kingdom_reform = {
 	
 	ai = {
 		factor = 0
+	}
+}
+
+#------------------------------------------------------------
+# Occult
+#------------------------------------------------------------
+shadow_cult_reform = {
+    icon = "castle"
+    
+    potential = {
+        has_reform = shadow_cult_reform
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = shadow_cult_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    modifiers = {
+        innovativeness_gain = 0.33
+        embracement_cost = -0.25
+        max_absolutism = -20
+    }
+
+    custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+}
+necromantic_cult_reform = {
+    icon = "castle"
+    
+    potential = {
+        has_reform = necromantic_cult_reform
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = necromantic_cult_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    modifiers = {
+        global_manpower_modifier = 0.2
+        yearly_corruption = -0.05
+        max_absolutism = 10
+    }
+    
+    custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+}
+ascension_cult_reform = {
+    icon = "castle"
+    
+    potential = {
+        has_reform = ascension_cult_reform
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = ascension_cult_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    modifiers = {
+        governing_capacity_modifier = 0.2
+        stability_cost_modifier = -0.1
+        max_absolutism = -20
+    }
+    
+    custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+}
+
+#------------------------------------------------------------
+# Mythical
+#------------------------------------------------------------
+army_of_the_dead_reform = {
+	icon = "castle"
+    
+    potential = {
+        has_reform = army_of_the_dead_reform
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = army_of_the_dead_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    rulers_can_be_generals = yes
+    maintain_dynasty = yes
+    
+    modifiers = {
+		discipline = 0.1
+        land_morale = 0.1
+        max_absolutism = 50
 	}
 }

@@ -1,11 +1,11 @@
 ######################################################################
 # Worshippers
 ######################################################################
-asoiaf_mother_rhoyne_rebels = {
+mother_rhoyne_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
 	government = any
-	religion = asoiaf_mother_rhoyne
+	religion = mother_rhoyne
 	defection = none				# Will not defect
 	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
 	independence = none				# Does not strive for independence
@@ -42,7 +42,7 @@ asoiaf_mother_rhoyne_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = { religion = asoiaf_mother_rhoyne }
+			NOT = { religion = mother_rhoyne }
 		}
 		modifier = {
 			factor = 0.001
@@ -83,14 +83,14 @@ asoiaf_mother_rhoyne_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			religion = asoiaf_mother_rhoyne
-			owner = { religion = asoiaf_mother_rhoyne }
+			religion = mother_rhoyne
+			owner = { religion = mother_rhoyne }
 		}
 		modifier = {
 			factor = 2.0
-			NOT = { religion = asoiaf_mother_rhoyne }
+			NOT = { religion = mother_rhoyne }
 			any_neighbor_province = {
-	 			religion = asoiaf_mother_rhoyne
+	 			religion = mother_rhoyne
 	 			NOT = { has_province_modifier = "forced_conversion" }
 	 		}
 	 	}
@@ -114,7 +114,7 @@ asoiaf_mother_rhoyne_rebels = {
 	siege_won_effect = {
 		if = {
 			limit = {
-				religion = asoiaf_mother_rhoyne
+				religion = mother_rhoyne
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -125,7 +125,7 @@ asoiaf_mother_rhoyne_rebels = {
 			limit = {
 				religion_group = religion_essos
 			}
-			change_religion = asoiaf_mother_rhoyne
+			change_religion = mother_rhoyne
 			add_province_modifier = {
 				name = "forced_conversion"
 				duration = 730
@@ -153,7 +153,7 @@ asoiaf_mother_rhoyne_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = "asoiaf_mother_rhoyne_rebels_demand"
+	demands_description = "mother_rhoyne_rebels_demand"
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -167,10 +167,10 @@ asoiaf_mother_rhoyne_rebels = {
 		if = {
 			limit = {
 				OR = {
-					religion = asoiaf_mother_rhoyne
+					religion = mother_rhoyne
 					AND = {
-						NOT = { religion = asoiaf_mother_rhoyne }
-						NOT = { dominant_religion = asoiaf_mother_rhoyne }
+						NOT = { religion = mother_rhoyne }
+						NOT = { dominant_religion = mother_rhoyne }
 					}
 				}
 			}
@@ -181,10 +181,10 @@ asoiaf_mother_rhoyne_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion = asoiaf_mother_rhoyne }
-				dominant_religion = asoiaf_mother_rhoyne
+				NOT = { religion = mother_rhoyne }
+				dominant_religion = mother_rhoyne
 			}
-			change_religion = asoiaf_mother_rhoyne
+			change_religion = mother_rhoyne
 			force_converted = yes
 		}
 	}

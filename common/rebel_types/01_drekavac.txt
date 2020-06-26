@@ -1,11 +1,11 @@
 ######################################################################
 # Worshippers
 ######################################################################
-asoiaf_graces_rebels = {
+drekavac_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
 	government = any
-	religion = asoiaf_graces
+	religion = drekavac
 	defection = none				# Will not defect
 	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
 	independence = none				# Does not strive for independence
@@ -42,7 +42,7 @@ asoiaf_graces_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = { religion = asoiaf_graces }
+			NOT = { religion = drekavac }
 		}
 		modifier = {
 			factor = 0.001
@@ -83,14 +83,14 @@ asoiaf_graces_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			religion = asoiaf_graces
-			owner = { religion = asoiaf_graces }
+			religion = drekavac
+			owner = { religion = drekavac }
 		}
 		modifier = {
 			factor = 2.0
-			NOT = { religion = asoiaf_graces }
+			NOT = { religion = drekavac }
 			any_neighbor_province = {
-	 			religion = asoiaf_graces
+	 			religion = drekavac
 	 			NOT = { has_province_modifier = "forced_conversion" }
 	 		}
 	 	}
@@ -114,7 +114,7 @@ asoiaf_graces_rebels = {
 	siege_won_effect = {
 		if = {
 			limit = {
-				religion = asoiaf_graces
+				religion = drekavac
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -123,9 +123,9 @@ asoiaf_graces_rebels = {
 		}
 		if = {
 			limit = {
-				religion_group = religion_essos
+				religion_group = religion_tribal
 			}
-			change_religion = asoiaf_graces
+			change_religion = drekavac
 			add_province_modifier = {
 				name = "forced_conversion"
 				duration = 730
@@ -133,7 +133,7 @@ asoiaf_graces_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion_group = religion_essos }
+				NOT = { religion_group = religion_tribal }
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -153,7 +153,7 @@ asoiaf_graces_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = "asoiaf_graces_rebels_demand"
+	demands_description = "drekavac_rebels_demand"
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -167,10 +167,10 @@ asoiaf_graces_rebels = {
 		if = {
 			limit = {
 				OR = {
-					religion = asoiaf_graces
+					religion = drekavac
 					AND = {
-						NOT = { religion = asoiaf_graces }
-						NOT = { dominant_religion = asoiaf_graces }
+						NOT = { religion = drekavac }
+						NOT = { dominant_religion = drekavac }
 					}
 				}
 			}
@@ -181,10 +181,10 @@ asoiaf_graces_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion = asoiaf_graces }
-				dominant_religion = asoiaf_graces
+				NOT = { religion = drekavac }
+				dominant_religion = drekavac
 			}
-			change_religion = asoiaf_graces
+			change_religion = drekavac
 			force_converted = yes
 		}
 	}

@@ -20,7 +20,7 @@ country_event = {
 		capital_scope = {
 			superregion = westeros_superregion
 		}
-		NOT = { religion = asoiaf_rhllor }
+		NOT = { religion = rhllor }
 		
 		AND = {
 			NOT = { has_ruler_modifier = rhllor_worshippers_banished }
@@ -108,7 +108,7 @@ country_event = {
 	
 	trigger = {
         always = no
-		NOT = { religion = asoiaf_rhllor }
+		NOT = { religion = rhllor }
 		has_ruler_modifier = rhllor_worshippers_accepted
 	}
 
@@ -134,7 +134,7 @@ country_event = {
 			duration = -1
 		}
 		
-		change_religion = asoiaf_rhllor
+		change_religion = rhllor
 		
 		every_country = {
 			limit = {
@@ -178,9 +178,9 @@ country_event = {
 	trigger = {
         always = no
 		any_owned_province = {
-			NOT = { religion = asoiaf_rhllor }
+			NOT = { religion = rhllor }
 		}
-		NOT = { religion = asoiaf_rhllor }
+		NOT = { religion = rhllor }
 		OR = {
 			has_ruler_modifier = rhllor_worshippers_tolerated
 			has_ruler_modifier = rhllor_worshippers_accepted
@@ -193,7 +193,7 @@ country_event = {
 		
 		modifier = { 
 			factor = 0.1
-			religion = asoiaf_rhllor
+			religion = rhllor
 		}
 
 		modifier = { 
@@ -206,8 +206,8 @@ country_event = {
 		name = GOT_RHLLOR.3.option.a
 		
 		random_owned_province = {
-			limit = { NOT = { religion = asoiaf_rhllor } }
-			change_religion = asoiaf_rhllor
+			limit = { NOT = { religion = rhllor } }
+			change_religion = rhllor
 		}
 		
 		ai_chance = {

@@ -1,11 +1,11 @@
 ######################################################################
-# Old God Worshippers
+# Sarnor Worshippers
 ######################################################################
-asoiaf_the_old_gods_rebels = {
+hooded_wayfarer_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
 	government = any
-	religion = asoiaf_the_old_gods
+	religion = hooded_wayfarer
 	defection = none				# Will not defect
 	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
 	independence = none				# Does not strive for independence
@@ -42,7 +42,7 @@ asoiaf_the_old_gods_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = { religion = asoiaf_the_old_gods }
+			NOT = { religion = hooded_wayfarer }
 		}
 		modifier = {
 			factor = 0.001
@@ -83,14 +83,14 @@ asoiaf_the_old_gods_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			religion = asoiaf_the_old_gods
-			owner = { religion = asoiaf_the_old_gods }
+			religion = hooded_wayfarer
+			owner = { religion = hooded_wayfarer }
 		}
 		modifier = {
 			factor = 2.0
-			NOT = { religion = asoiaf_the_old_gods }
+			NOT = { religion = hooded_wayfarer }
 			any_neighbor_province = {
-	 			religion = asoiaf_the_old_gods
+	 			religion = hooded_wayfarer
 	 			NOT = { has_province_modifier = "forced_conversion" }
 	 		}
 	 	}
@@ -114,7 +114,7 @@ asoiaf_the_old_gods_rebels = {
 	siege_won_effect = {
 		if = {
 			limit = {
-				religion = asoiaf_the_old_gods
+				religion = hooded_wayfarer
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -123,9 +123,9 @@ asoiaf_the_old_gods_rebels = {
 		}
 		if = {
 			limit = {
-				religion_group = religion_westeros
+				religion_group = religion_distant_essos
 			}
-			change_religion = asoiaf_the_old_gods
+			change_religion = hooded_wayfarer
 			add_province_modifier = {
 				name = "forced_conversion"
 				duration = 730
@@ -133,7 +133,7 @@ asoiaf_the_old_gods_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion_group = religion_westeros }
+				NOT = { religion_group = religion_distant_essos }
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -153,7 +153,7 @@ asoiaf_the_old_gods_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = "asoiaf_the_old_gods_rebels_demand"
+	demands_description = "hooded_wayfarer_rebels_demand"
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -167,10 +167,10 @@ asoiaf_the_old_gods_rebels = {
 		if = {
 			limit = {
 				OR = {
-					religion = asoiaf_the_old_gods
+					religion = hooded_wayfarer
 					AND = {
-						NOT = { religion = asoiaf_the_old_gods }
-						NOT = { dominant_religion = asoiaf_the_old_gods }
+						NOT = { religion = hooded_wayfarer }
+						NOT = { dominant_religion = hooded_wayfarer }
 					}
 				}
 			}
@@ -181,10 +181,10 @@ asoiaf_the_old_gods_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion = asoiaf_the_old_gods }
-				dominant_religion = asoiaf_the_old_gods
+				NOT = { religion = hooded_wayfarer }
+				dominant_religion = hooded_wayfarer
 			}
-			change_religion = asoiaf_the_old_gods
+			change_religion = hooded_wayfarer
 			force_converted = yes
 		}
 	}

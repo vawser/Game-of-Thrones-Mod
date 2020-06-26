@@ -1013,7 +1013,11 @@ estate_nobility_befriend_rival_of_rival = {
 estate_nobility_restore_legitimacy = {
 	can_select = {
 		NOT = { legitimacy_equivalent = 65 }
-		government = monarchy
+		OR = {
+            government = monarchy
+            government = occult
+            government = mythical
+        }
 		NOT = { has_ruler_modifier = estate_legitimacy_defended }
 		NOT = { has_regency = yes }
 	}

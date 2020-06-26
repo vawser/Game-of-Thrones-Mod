@@ -4,7 +4,11 @@ civil_war = {
 		any_owned_province = {
 			base_tax = 5
 		}
-		is_monarchy_government = yes
+		OR = {
+            government = monarchy
+            government = occult
+            #government = mythical
+        }
 		is_subject = no
 		NOT = { has_country_flag = had_civil_war }
 	}

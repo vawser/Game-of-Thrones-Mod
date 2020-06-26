@@ -35,6 +35,7 @@ noble_house_legacy = {
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    maintain_dynasty = yes
     monarchy = yes
     
     modifiers = {
@@ -58,6 +59,7 @@ royal_house_legacy = {
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
     
+    maintain_dynasty = yes
     monarchy = yes
     
     fixed_rank = 3
@@ -90,7 +92,6 @@ yiti_city_legacy = {
 	nation_designer_cost = 0
     
     monarchy = yes
-    has_meritocracy = yes
     
     modifiers = {
 		improve_relation_modifier = 0.1
@@ -114,7 +115,6 @@ yiti_empire_legacy = {
 	nation_designer_cost = 0
     
     monarchy = yes
-    has_meritocracy = yes
     
     modifiers = {
 		improve_relation_modifier = 0.25
@@ -243,6 +243,11 @@ meereen_city_legacy = {
         max_absolutism = 10
 	}
     
+    conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+    
     custom_attributes = {
 		enables_monarchy_ideagroup = yes
 	}
@@ -265,6 +270,11 @@ yunkai_city_legacy = {
     	global_manpower_modifier = 0.1
         heir_chance = 0.5
         max_absolutism = 10
+	}
+    
+    conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
 	}
     
     custom_attributes = {
@@ -291,6 +301,11 @@ astapor_city_legacy = {
         max_absolutism = 10
 	}
 
+    conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+    
     custom_attributes = {
 		enables_monarchy_ideagroup = yes
 	}
@@ -313,6 +328,11 @@ ghis_city_legacy = {
     	global_manpower_modifier = 0.1
         core_creation = -0.1
         max_absolutism = 10
+	}
+    
+    conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
 	}
     
     custom_attributes = {
@@ -1065,122 +1085,6 @@ theocracy_legacy = {
     
 	ai = { factor = 1 }
 }
-asshai_cult_legacy = {
-	icon = "crown"
-    
-    allow_normal_conversion = no
-	legacy_government = yes
-    
-	valid_for_new_country = yes
-	valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    religion = yes
-    
-    modifiers = {
-    	technology_cost = -0.1
-        max_absolutism = 10
-	}
-    
-    conditional = {
-        allow = {
-            has_dlc = "Common Sense"
-        }
-        has_devotion = yes
-    }
-    
-    custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
-    
-	ai = { factor = 1 }
-}
-bloodless_cult_legacy = {
-	icon = "crown"
-    
-    allow_normal_conversion = no
-	legacy_government = yes
-    
-	valid_for_new_country = yes
-	valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    religion = yes
-    
-    modifiers = {
-    	land_morale = 0.1
-        max_absolutism = 10
-	}
-
-    conditional = {
-        allow = {
-            has_dlc = "Common Sense"
-        }
-        has_devotion = yes
-    }
-    
-    custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
-    
-	ai = { factor = 1 }
-}
-winged_dominion_legacy = {
-	icon = "crown"
-    
-    allow_normal_conversion = no
-	legacy_government = yes
-    
-	valid_for_new_country = yes
-	valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    religion = yes
-    
-    modifiers = {
-    	movement_speed = 0.2
-        max_absolutism = 10
-	}
-    
-    conditional = {
-        allow = {
-            has_dlc = "Common Sense"
-        }
-        has_devotion = yes
-    }
-    
-    custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
-    
-	ai = { factor = 1 }
-}
-white_walker_cult_legacy = {
-	icon = "crown"
-    
-    allow_normal_conversion = no
-	legacy_government = yes
-    
-	valid_for_new_country = yes
-	valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    religion = yes
-    
-    rulers_can_be_generals = yes
-    
-    modifiers = {
-    	discipline = 0.1
-        land_morale = 0.1
-        max_absolutism = 10
-	}
-    
-    custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
-    
-	ai = { factor = 1 }
-}
 the_faith_legacy = {
 	icon = "crown"
 	
@@ -1207,6 +1111,8 @@ the_faith_legacy = {
     modifiers = {
 		tolerance_own = 1
         missionaries = 1
+        clergy_influence_modifier = 0.2
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1238,7 +1144,8 @@ qohor_city_legacy = {
     modifiers = {
     	tolerance_own = 1
         missionary_maintenance_cost = -0.1
-        max_absolutism = 10
+        clergy_influence_modifier = 0.05
+        max_absolutism = -20
 	}
     
     custom_attributes = {
@@ -1269,67 +1176,9 @@ norvos_city_legacy = {
     modifiers = {
     	tolerance_own = 1
         infantry_power = 0.1
-        max_absolutism = 10
+        clergy_influence_modifier = 0.05
+        max_absolutism = -20
 	}
-    
-    custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
-    
-	ai = { factor = 1 }
-}
-shadow_cult_legacy = {
-	icon = "crown"
-    
-    allow_normal_conversion = no
-	legacy_government = yes
-    
-	valid_for_new_country = yes
-	valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    religion = yes
-    
-    modifiers = {
-    	hostile_attrition = 2
-        max_absolutism = 10
-	}
-
-    conditional = {
-        allow = {
-            has_dlc = "Common Sense"
-        }
-        has_devotion = yes
-    }
-    
-    custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
-    
-	ai = { factor = 1 }
-}
-cult_of_madness_legacy = {
-	icon = "crown"
-    
-    allow_normal_conversion = no
-	legacy_government = yes
-    
-	valid_for_new_country = yes
-	valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
-    religion = yes
-    
-    modifiers = {
-    	all_power_cost = -0.1
-	}
-
-    conditional = {
-        allow = {
-            has_dlc = "Common Sense"
-        }
-        has_devotion = yes
-    }
     
     custom_attributes = {
 		enables_theocracy_ideagroup = yes
@@ -1356,6 +1205,7 @@ tribe_legacy = {
     
     modifiers = {
         stability_cost_modifier = -0.25
+        max_absolutism = -30
     }
     
     custom_attributes = {
@@ -1383,6 +1233,7 @@ wildling_clan_legacy = {
     modifiers = {
     	colonists = 1
         global_regiment_recruit_speed = -0.15
+        max_absolutism = -20
 	}
     
     factions = {
@@ -1413,6 +1264,7 @@ lhazar_clan_legacy = {
     modifiers = {
     	production_efficiency = 0.15
         state_maintenance_modifier = -0.1
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1437,6 +1289,7 @@ ibben_clan_legacy = {
     modifiers = {
     	naval_morale = 0.1
         naval_maintenance_modifier = -0.1
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1461,6 +1314,7 @@ omber_clan_legacy = {
     modifiers = {
     	build_cost = -0.1
         build_time = -0.2
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1485,6 +1339,7 @@ faros_clan_legacy = {
     modifiers = {
     	global_regiment_cost = -0.15
         global_regiment_recruit_speed = -0.15
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1508,6 +1363,7 @@ naath_clan_legacy = {
     
     modifiers = {
     	tolerance_own = 3
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1532,6 +1388,7 @@ summer_islander_clan_legacy = {
     modifiers = {
     	naval_forcelimit_modifier = 0.15
         sailor_maintenance_modifer = -0.1
+        max_absolutism = -50
 	}
     
     custom_attributes = {
@@ -1556,7 +1413,7 @@ warband_legacy = {
     modifiers = {
         land_attrition = -0.1
         reinforce_cost_modifier = -0.1
-        max_absolutism = 10
+        max_absolutism = 20
     }
     
     custom_attributes = {
@@ -1581,7 +1438,7 @@ khalasar_legacy = {
     modifiers = {
 		cavalry_power = 0.1
         cav_to_inf_ratio = 0.5
-        max_absolutism = 10
+        max_absolutism = 20
 	}
 
     custom_attributes = {
@@ -1606,7 +1463,7 @@ jhattar_legacy = {
     modifiers = {
 		cavalry_power = 0.1
         cav_to_inf_ratio = 0.5
-        max_absolutism = 10
+        max_absolutism = 20
 	}
     
     custom_attributes = {
@@ -1744,4 +1601,106 @@ pirate_kingdom_legacy = {
 	ai = {
 		factor = 0
 	}
+}
+
+#------------------------------------------------------------
+# Occult
+#------------------------------------------------------------
+shadow_cult_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = no
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    monarchy = yes
+    
+    modifiers = {
+        innovativeness_gain = 0.33
+        embracement_cost = -0.25
+        max_absolutism = -20
+    }
+    
+    custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+    
+	ai = { factor = 1 }
+}
+necromantic_cult_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = no
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    monarchy = yes
+    
+    modifiers = {
+        global_manpower_modifier = 0.2
+        yearly_corruption = -0.05
+        max_absolutism = 10
+    }
+    
+    custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+    
+	ai = { factor = 1 }
+}
+ascension_cult_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = no
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    monarchy = yes
+    
+    modifiers = {
+        governing_capacity_modifier = 0.2
+        stability_cost_modifier = -0.1
+        max_absolutism = -20
+    }
+    
+    custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+    
+	ai = { factor = 1 }
+}
+
+#------------------------------------------------------------
+# Mythical
+#------------------------------------------------------------
+army_of_the_dead_legacy = {
+	icon = "crown"
+    
+    allow_normal_conversion = no
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    monarchy = yes
+    
+    rulers_can_be_generals = yes
+    
+    modifiers = {
+    	discipline = 0.1
+        land_morale = 0.1
+        max_absolutism = 50
+	}
+    
+	ai = { factor = 1 }
 }

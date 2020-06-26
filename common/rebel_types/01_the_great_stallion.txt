@@ -1,11 +1,11 @@
 ######################################################################
 # Great Stallion Worshippers
 ######################################################################
-asoiaf_the_great_stallion_rebels = {
+great_stallion_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
 	government = any
-	religion = asoiaf_the_great_stallion
+	religion = great_stallion
 	defection = none				# Will not defect
 	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
 	independence = none				# Does not strive for independence
@@ -42,7 +42,7 @@ asoiaf_the_great_stallion_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = { religion = asoiaf_the_great_stallion }
+			NOT = { religion = great_stallion }
 		}
 		modifier = {
 			factor = 0.001
@@ -83,14 +83,14 @@ asoiaf_the_great_stallion_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			religion = asoiaf_the_great_stallion
-			owner = { religion = asoiaf_the_great_stallion }
+			religion = great_stallion
+			owner = { religion = great_stallion }
 		}
 		modifier = {
 			factor = 2.0
-			NOT = { religion = asoiaf_the_great_stallion }
+			NOT = { religion = great_stallion }
 			any_neighbor_province = {
-	 			religion = asoiaf_the_great_stallion
+	 			religion = great_stallion
 	 			NOT = { has_province_modifier = "forced_conversion" }
 	 		}
 	 	}
@@ -114,7 +114,7 @@ asoiaf_the_great_stallion_rebels = {
 	siege_won_effect = {
 		if = {
 			limit = {
-				religion = asoiaf_the_great_stallion
+				religion = great_stallion
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -125,7 +125,7 @@ asoiaf_the_great_stallion_rebels = {
 			limit = {
 				religion_group = religion_dothraki
 			}
-			change_religion = asoiaf_the_great_stallion
+			change_religion = great_stallion
 			add_province_modifier = {
 				name = "forced_conversion"
 				duration = 730
@@ -153,7 +153,7 @@ asoiaf_the_great_stallion_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = "asoiaf_the_great_stallion_rebels_demand"
+	demands_description = "great_stallion_rebels_demand"
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -167,10 +167,10 @@ asoiaf_the_great_stallion_rebels = {
 		if = {
 			limit = {
 				OR = {
-					religion = asoiaf_the_great_stallion
+					religion = great_stallion
 					AND = {
-						NOT = { religion = asoiaf_the_great_stallion }
-						NOT = { dominant_religion = asoiaf_the_great_stallion }
+						NOT = { religion = great_stallion }
+						NOT = { dominant_religion = great_stallion }
 					}
 				}
 			}
@@ -181,10 +181,10 @@ asoiaf_the_great_stallion_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion = asoiaf_the_great_stallion }
-				dominant_religion = asoiaf_the_great_stallion
+				NOT = { religion = great_stallion }
+				dominant_religion = great_stallion
 			}
-			change_religion = asoiaf_the_great_stallion
+			change_religion = great_stallion
 			force_converted = yes
 		}
 	}

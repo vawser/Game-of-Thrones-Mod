@@ -169,23 +169,23 @@ estate_clergy_clerical_ministers = {
 				limit = {
 					has_dlc = "Common Sense"
 				}
-				NOT = { religion = asoiaf_rhllor }
-				NOT = { religion = asoiaf_great_shepherd }
-                NOT = { religion = asoiaf_gods_of_ibben }
-                NOT = { religion = asoiaf_moonsingers }
-                NOT = { religion = asoiaf_summer_gods }
-                NOT = { religion = asoiaf_white_walker}
+				NOT = { religion = rhllor }
+				NOT = { religion = great_shepherd }
+                NOT = { religion = ib }
+                NOT = { religion = moonsingers }
+                NOT = { religion = summer_gods }
+                NOT = { religion = cyromancy}
 			}
 			if = {
 				limit = {
 					has_dlc = "Wealth of Nations"
 				}
-				NOT = { religion = asoiaf_mother_rhoyne }
-                NOT = { religion = asoiaf_trios }
-                NOT = { religion = asoiaf_gods_of_lorath }
-                NOT = { religion = asoiaf_gods_of_sarnor }
-                NOT = { religion = asoiaf_stone_cow_of_faros }
-                NOT = { religion = asoiaf_god_of_harmony }
+				NOT = { religion = mother_rhoyne }
+                NOT = { religion = trios }
+                NOT = { religion = remnants_of_boash }
+                NOT = { religion = hooded_wayfarer }
+                NOT = { religion = stone_cow }
+                NOT = { religion = lord_of_harmony }
 			}
 			if = {
 				limit = {
@@ -203,16 +203,16 @@ estate_clergy_clerical_ministers = {
 				limit = {
 					has_dlc = "Third Rome"
 				}
-				NOT = { religion = asoiaf_the_drowned_god }
-                NOT = { religion = asoiaf_the_old_gods }
-                NOT = { religion = asoiaf_lion_of_the_night }
-                NOT = { religion = asoiaf_gods_of_hyrkoon }
+				NOT = { religion = drowned_god }
+                NOT = { religion = old_gods }
+                NOT = { religion = lion_of_the_night }
+                NOT = { religion = gods_of_hyrkoon }
 			}
-            NOT = { religion = asoiaf_bearded_priests }
-            NOT = { religion = asoiaf_graces }
-            NOT = { religion = asoiaf_magic }
-            NOT = { religion = asoiaf_the_great_stallion }
-            NOT = { religion = asoiaf_lady_of_the_waves }
+            NOT = { religion = bearded_priests }
+            NOT = { religion = ghiscari_pantheon }
+            NOT = { religion = cult_of_shadows }
+            NOT = { religion = great_stallion }
+            NOT = { religion = lady_of_the_waves }
             
 		}
 		modifier = {
@@ -236,12 +236,12 @@ estate_clergy_clerical_ministers = {
 		trigger = {
 			has_dlc = "Common Sense"
 			OR = {
-                religion = asoiaf_rhllor
-                religion = asoiaf_great_shepherd
-                religion = asoiaf_gods_of_ibben
-                religion = asoiaf_moonsingers
-                religion = asoiaf_summer_gods
-                religion = asoiaf_white_walker
+                religion = rhllor
+                religion = great_shepherd
+                religion = ib
+                religion = moonsingers
+                religion = summer_gods
+                religion = cyromancy
             }
 		}
 		modifier = {
@@ -252,12 +252,12 @@ estate_clergy_clerical_ministers = {
 		trigger = {
 			has_dlc = "Wealth of Nations"
 			OR = {
-                religion = asoiaf_mother_rhoyne
-                religion = asoiaf_trios
-                religion = asoiaf_gods_of_lorath
-                religion = asoiaf_gods_of_sarnor
-                religion = asoiaf_stone_cow_of_faros
-                religion = asoiaf_god_of_harmony
+                religion = mother_rhoyne
+                religion = trios
+                religion = remnants_of_boash
+                religion = hooded_wayfarer
+                religion = stone_cow
+                religion = lord_of_harmony
             }
 		}
 		modifier = {
@@ -286,10 +286,10 @@ estate_clergy_clerical_ministers = {
 		trigger = {
 			has_dlc = "Third Rome"
 			OR = {
-                religion = asoiaf_the_drowned_god
-                religion = asoiaf_the_old_gods
-                religion = asoiaf_lion_of_the_night
-                religion = asoiaf_gods_of_hyrkoon 
+                religion = drowned_god
+                religion = old_gods
+                religion = lion_of_the_night
+                religion = gods_of_hyrkoon 
             }
 		}
 		modifier = {
@@ -299,11 +299,11 @@ estate_clergy_clerical_ministers = {
     conditional_modifier = {
 		trigger = {
 			OR = {
-                religion = asoiaf_bearded_priests
-                religion = asoiaf_graces
-                religion = asoiaf_magic
-                religion = asoiaf_the_great_stallion
-                religion = asoiaf_lady_of_the_waves
+                religion = bearded_priests
+                religion = ghiscari_pantheon
+                religion = cult_of_shadows
+                religion = great_stallion
+                religion = lady_of_the_waves
             }
 		}
 		modifier = {
@@ -321,17 +321,17 @@ estate_clergy_clerical_ministers = {
 		modifier = {
 			factor = 0.5
 			OR = {
-                religion = asoiaf_rhllor
-                religion = asoiaf_bearded_priests
-                religion = asoiaf_graces
-                religion = asoiaf_great_shepherd
-                religion = asoiaf_gods_of_ibben
-                religion = asoiaf_moonsingers
-                religion = asoiaf_magic
-                religion = asoiaf_summer_gods
-                religion = asoiaf_the_great_stallion
-                religion = asoiaf_lady_of_the_waves
-                religion = asoiaf_white_walker
+                religion = rhllor
+                religion = bearded_priests
+                religion = ghiscari_pantheon
+                religion = great_shepherd
+                religion = ib
+                religion = moonsingers
+                religion = cult_of_shadows
+                religion = summer_gods
+                religion = great_stallion
+                religion = lady_of_the_waves
+                religion = cyromancy
             }
 			num_of_aspects = 3
 		}

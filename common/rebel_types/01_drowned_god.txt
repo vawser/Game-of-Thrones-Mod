@@ -1,11 +1,11 @@
 ######################################################################
-# Worshippers
+# Drowned God Worshippers
 ######################################################################
-asoiaf_gods_of_lorath_rebels = {
+drowned_god_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
 	government = any
-	religion = asoiaf_gods_of_lorath
+	religion = drowned_god
 	defection = none				# Will not defect
 	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
 	independence = none				# Does not strive for independence
@@ -42,7 +42,7 @@ asoiaf_gods_of_lorath_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = { religion = asoiaf_gods_of_lorath }
+			NOT = { religion = drowned_god }
 		}
 		modifier = {
 			factor = 0.001
@@ -83,14 +83,14 @@ asoiaf_gods_of_lorath_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			religion = asoiaf_gods_of_lorath
-			owner = { religion = asoiaf_gods_of_lorath }
+			religion = drowned_god
+			owner = { religion = drowned_god }
 		}
 		modifier = {
 			factor = 2.0
-			NOT = { religion = asoiaf_gods_of_lorath }
+			NOT = { religion = drowned_god }
 			any_neighbor_province = {
-	 			religion = asoiaf_gods_of_lorath
+	 			religion = drowned_god
 	 			NOT = { has_province_modifier = "forced_conversion" }
 	 		}
 	 	}
@@ -114,7 +114,7 @@ asoiaf_gods_of_lorath_rebels = {
 	siege_won_effect = {
 		if = {
 			limit = {
-				religion = asoiaf_gods_of_lorath
+				religion = drowned_god
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -123,9 +123,9 @@ asoiaf_gods_of_lorath_rebels = {
 		}
 		if = {
 			limit = {
-				religion_group = religion_essos
+				religion_group = religion_westeros
 			}
-			change_religion = asoiaf_gods_of_lorath
+			change_religion = drowned_god
 			add_province_modifier = {
 				name = "forced_conversion"
 				duration = 730
@@ -133,7 +133,7 @@ asoiaf_gods_of_lorath_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion_group = religion_essos }
+				NOT = { religion_group = religion_westeros }
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -153,7 +153,7 @@ asoiaf_gods_of_lorath_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = "asoiaf_gods_of_lorath_rebels_demand"
+	demands_description = "drowned_god_rebels_demand"
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -167,10 +167,10 @@ asoiaf_gods_of_lorath_rebels = {
 		if = {
 			limit = {
 				OR = {
-					religion = asoiaf_gods_of_lorath
+					religion = drowned_god
 					AND = {
-						NOT = { religion = asoiaf_gods_of_lorath }
-						NOT = { dominant_religion = asoiaf_gods_of_lorath }
+						NOT = { religion = drowned_god }
+						NOT = { dominant_religion = drowned_god }
 					}
 				}
 			}
@@ -181,10 +181,10 @@ asoiaf_gods_of_lorath_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion = asoiaf_gods_of_lorath }
-				dominant_religion = asoiaf_gods_of_lorath
+				NOT = { religion = drowned_god }
+				dominant_religion = drowned_god
 			}
-			change_religion = asoiaf_gods_of_lorath
+			change_religion = drowned_god
 			force_converted = yes
 		}
 	}

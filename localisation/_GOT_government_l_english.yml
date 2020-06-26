@@ -60,6 +60,8 @@
  tribal_desc: ""
  pirate: "Piratical"
  pirate_desc: ""
+ occult: "Iccykt"
+ occult_desc: ""
  
  #---------------------------------------------
  # Government Types
@@ -123,6 +125,8 @@
  PIRATE_KING: "Pirate King"
  PIRATE_QUEEN: "Pirate Queen"
  PIRATE_LORD: "Pirate Lord"
+ NECROMANCER: "Necromaner"
+ HIGH_PRIEST: "High Priest"
  
  #---------------------------------------------
  # Government Titles
@@ -179,6 +183,9 @@
  WARBAND: "Warband"
  PIRATE_KINGDOM: "Pirate Kingdom"
  PIRATE_REPUBLIC: "Pirate Republic"
+ SHADOW_CULT: "Shadow Cult"
+ NECROMANTIC_CULT: "Necromantic Cult"
+ ASCENSION_CULT: "Ascension Cult"
  
  #---------------------------------------------
  # Mechanics
@@ -200,6 +207,12 @@
  
  pirate_mechanic: "Piratical"
  pirate_mechanic_desc: "This is a Piratical government."
+ 
+ occult_mechanic: "Occult"
+ occult_mechanic_desc: "This is a Occult government."
+ 
+ mythical_mechanic: "Mythical"
+ mythical_mechanic_desc: "This is a Mythical government."
  
  #---------------------------------------------
  # Government Form (Monarchy)
@@ -230,24 +243,24 @@
  yiti_city_legacy_desc: "The local lord of a region of the Yi Ti lands, ruled over by the Yi Ti Emperor."
  
  yiti_empire_reform: "Yitish Empire"
- yiti_empire_reform_desc: ""
+ yiti_empire_reform_desc: "The empire of Yi Ti, situated in the far east of Essos. Once ruled over by a Golden Emperor."
  yiti_empire_legacy: "Yitish Empire"
- yiti_empire_legacy_desc: ""
+ yiti_empire_legacy_desc: "The empire of Yi Ti, situated in the far east of Essos. Once ruled over by a Golden Emperor."
  
  nefer_city_reform: "Neferi City"
- nefer_city_reform_desc: ""
+ nefer_city_reform_desc: "The last remnants of the Neferi Kingdom, having been decimated by the Jogos Nhai."
  nefer_city_legacy: "Neferi City"
- nefer_city_legacy_desc: ""
+ nefer_city_legacy_desc: "The last remnants of the Neferi Kingdom, having been decimated by the Jogos Nhai."
 
  hyrkoon_city_reform: "Hyrkooni City"
- hyrkoon_city_reform_desc: ""
+ hyrkoon_city_reform_desc: "The remnants of the once great Patriarchy of Hyrkoon, high up in the Bone Mountains."
  hyrkoon_city_legacy: "Hyrkooni City"
- hyrkoon_city_legacy_desc: ""
+ hyrkoon_city_legacy_desc: "The remnants of the once great Patriarchy of Hyrkoon, high up in the Bone Mountains."
  
  valyria_city_reform: "Valyrian City"
- valyria_city_reform_desc: "A city in the Slaver's Bay region."
+ valyria_city_reform_desc: "A successor state to the original Valyrian Empire."
  valyria_city_legacy: "Valyrian City"
- valyria_city_legacy_desc: "A city in the Slaver's Bay region."
+ valyria_city_legacy_desc: "A successor state to the original Valyrian Empire."
  
  meereen_city_reform: "Meereenese City"
  meereen_city_reform_desc: "A city in the Slaver's Bay region."
@@ -331,16 +344,6 @@
  lorath_city_reform_desc: "Lorath is one of the poorest of the Free Cities, and after the Century of Blood, weak magisters now administer the city."
  lorath_city_legacy: "Lorathi City"
  lorath_city_legacy_desc: "Lorath is one of the poorest of the Free Cities, and after the Century of Blood, weak magisters now administer the city."
- 
- qohor_city_reform: "Qohorik City"
- qohor_city_reform_desc: "Known as the City of Sorcerers in folklore, Qohor was founded by religious dissidents who abandoned Valyria to practice the worship of their god, the Black Goat of Qohor."
- qohor_city_legacy: "Qohorik City"
- qohor_city_legacy_desc: "Known as the City of Sorcerers in folklore, Qohor was founded by religious dissidents who abandoned Valyria to practice the worship of their god, the Black Goat of Qohor."
- 
- norvos_city_reform: "Norvosi City"
- norvos_city_reform_desc: "The city of Norvos is ruled over by a High Magister, who in advised by a council of religious protectors. These are chosen by the bearded priests."
- norvos_city_legacy: "Norvosi City"
- norvos_city_legacy_desc: "The city of Norvos is ruled over by a High Magister, who in advised by a council of religious protectors. These are chosen by the bearded priests."
 
  saath_city_reform: "Saathi City"
  saath_city_reform_desc: ""
@@ -380,41 +383,21 @@
  theocracy_legacy: "Theocracy"
  theocracy_legacy_desc: "A realm ruled by a religious figurehead."
  
- asshai_cult_reform: "Asshai Cult"
- asshai_cult_reform_desc: ""
- asshai_cult_legacy: "Asshai Cult"
- asshai_cult_legacy_desc: ""
-
- bloodless_cult_reform: "Bloodless Cult"
- bloodless_cult_reform_desc: ""
- bloodless_cult_legacy: "Bloodless Cult"
- bloodless_cult_legacy_desc: ""
- 
- winged_dominion_reform: "Winged Dominion"
- winged_dominion_reform_desc: ""
- winged_dominion_legacy: "Winged Dominion"
- winged_dominion_legacy_desc: ""
- 
- white_walker_cult_reform: "Army of the Dead"
- white_walker_cult_reform_desc: ""
- white_walker_cult_legacy: "Army of the Dead"
- white_walker_cult_legacy_desc: ""
- 
  the_faith_reform: "The Faith"
  the_faith_reform_desc: "The land owned by the Faith, representing the Seven."
  the_faith_legacy: "The Faith"
  the_faith_legacy_desc: "The land owned by the Faith, representing the Seven."
  
- shadow_cult_reform: "Shadow Cult"
- shadow_cult_reform_desc: ""
- shadow_cult_legacy: "Shadow Cult"
- shadow_cult_legacy_desc: ""
+ qohor_city_reform: "Qohorik City"
+ qohor_city_reform_desc: "Known as the City of Sorcerers in folklore, Qohor was founded by religious dissidents who abandoned Valyria to practice the worship of their god, the Black Goat of Qohor."
+ qohor_city_legacy: "Qohorik City"
+ qohor_city_legacy_desc: "Known as the City of Sorcerers in folklore, Qohor was founded by religious dissidents who abandoned Valyria to practice the worship of their god, the Black Goat of Qohor."
  
- cult_of_madness_reform: "Cult of Madness"
- cult_of_madness_reform_desc: ""
- cult_of_madness_legacy: "Cult of Madness"
- cult_of_madness_legacy_desc: ""
- 
+ norvos_city_reform: "Norvosi City"
+ norvos_city_reform_desc: "The city of Norvos is ruled over by a High Magister, who in advised by a council of religious protectors. These are chosen by the bearded priests."
+ norvos_city_legacy: "Norvosi City"
+ norvos_city_legacy_desc: "The city of Norvos is ruled over by a High Magister, who in advised by a council of religious protectors. These are chosen by the bearded priests."
+
  #---------------------------------------------
  # Government Form (Tribal)
  #---------------------------------------------
@@ -487,6 +470,32 @@
  pirate_republic_legacy_desc: "A band of pirates whom are particularly wealthy and influential."
  
  #---------------------------------------------
+ # Occult
+ #---------------------------------------------
+ shadow_cult_reform: "Shadow Cult"
+ shadow_cult_reform_desc: "A realm ruled by a shadow cult."
+ shadow_cult_legacy: "Shadow Cult"
+ shadow_cult_legacy_desc: "A realm ruled by a shadow cult."
+ 
+ necromantic_cult_reform: "Necromantic Cult"
+ necromantic_cult_reform_desc: "A realm ruled by a necromantic cult."
+ necromantic_cult_legacy: "Necromantic Cult"
+ necromantic_cult_legacy_desc: "A realm ruled by a necromantic cult."
+ 
+ ascension_cult_reform: "Ascension Cult"
+ ascension_cult_reform_desc: "A realm ruled by an ascension cult."
+ ascension_cult_legacy: "Ascension Cult"
+ ascension_cult_legacy_desc: "A realm ruled by an ascension cult."
+ 
+ #---------------------------------------------
+ # Mythical
+ #---------------------------------------------
+ army_of_the_dead_reform: "Army of the Dead"
+ army_of_the_dead_reform_desc: "The undead swarm enthralled by the Night King."
+ army_of_the_dead_legacy: "Army of the Dead"
+ army_of_the_dead_legacy_desc: "The undead swarm enthralled by the Night King."
+ 
+ #---------------------------------------------
  # Tiers
  #---------------------------------------------
  tier_monarchy_government_form: "Government Form"
@@ -527,6 +536,15 @@
  tier_pirate_governance: "Piratical Governance"
  tier_pirate_principles: "Piratical Principles"
  tier_pirate_reformation: "Reformation of Government"
+ 
+ tier_occult_government_form: "Government Form"
+ tier_occult_guiding_occult_principle: "Guiding Occult Principle"
+ tier_occult_the_nature_of_our_magic: "The Nature of our Magic"
+ tier_occult_the_magicratic_cadre: "The Magicratic Cadre"
+ tier_occult_absolute_rule_vs_constitutional: "Absolutism & Constitutionalism"
+ tier_occult_question_of_power: "Question of Power"
+ 
+ tier_mythical_government_form: "Government Form"
  
  #---------------------------------------------
  # Monarchy Reforms
@@ -822,6 +840,58 @@
  
  got_strengthen_pirate_unity: "Strengthen Piratical Unity"
  got_strengthen_pirate_unity_desc: "The pirates have been brought together from throughout the world. Let us formalize our bonds and unleash hell upon those that seek to crush us!"
+ 
+ #---------------------------------------------
+ # Occult
+ #---------------------------------------------
+ got_strengthen_shadowfolk: "Shadow Magic"
+ got_strengthen_shadowfolk_desc: "Our guiding principle is based on shadow magic and its influence upon the world."
+ 
+ got_strengthen_bloodless_folk: "Necromantic Magic"
+ got_strengthen_bloodless_folk_desc: "Our guiding principle is based on necromantic magic and the ability to utilise the dead for the living's purpose."
+ 
+ got_strengthen_carcosan_folk: "Transformation Magic"
+ got_strengthen_carcosan_folk_desc: "Our guiding principle is based on transformation magic and its ability to trivalize geographic obstables."
+ 
+ got_outward_influence: "Outward Influence"
+ got_outward_influence_desc: "We must spread the influence of our cult. Once converted, we shall claim these settlements as our own."
+ 
+ got_inward_influence: "Inward Influence"
+ got_inward_influence_desc: "We must focus inwards and use the cult to improve the status of the state."
+ 
+ got_uplift_the_savage: "Uplift the Savage"
+ got_uplift_the_savage_desc: "Occult magic will allow us to uplift the savage and make use of their lands."
+ 
+ got_educate_the_masses: "Educate the Masses"
+ got_educate_the_masses_desc: "The repository of knowledge throughout our lands is vast, but without proper educational istutitions, we risk losing much of it between generations."
+ 
+ got_religious_magicrats: "Religious Magi"
+ got_religious_magicrats_desc: "Give preference to magi that align themselves with the religious side of our nation."
+ 
+ got_mercantile_magicrats: "Mercantile Magi"
+ got_mercantile_magicrats_desc: "Give preference to magi that align themselves towards trade and goods."
+ 
+ got_landed_magicrats: "Landed Magi"
+ got_landed_magicrats_desc: "Give preference to magi that are landed and considered noblemen."
+ 
+ got_centralize_magicrats: "Centralize Magi Administration"
+ got_centralize_magicrats_desc: "Unify our cadre into a more cohesive unit, making it easier to administrate them."
+ 
+ got_absolute_oversight: "Invasive Oversight"
+ got_absolute_oversight_desc: "Personally involve oneself in all matters of the nation to avoid encroaching corruption."
+ 
+ got_regional_concessions: "Regional Concessions"
+ got_regional_concessions_desc: "Grant concessions to regional administrators, allowing them a free hand in rule of distant territories."
+ 
+ got_broaden_cult_influence: "Broaden Influence of Cult"
+ got_broaden_cult_influence_desc: "Enforce the principles of the cult within and without, no matter the cost."
+ 
+ got_devolution_of_cult: "Devolve Cult Administration"
+ got_devolution_of_cult_desc: "Grant individual cults within the nation more autonomy with regards to interpretation of the cult doctrine."
+ 
+ #---------------------------------------------
+ # Mythical
+ #---------------------------------------------
  
  #---------------------------------------------
  # Shared Reforms

@@ -1,0 +1,205 @@
+#-----------------------------------------
+# "Guiding Occult Principle"
+#-----------------------------------------
+got_strengthen_shadowfolk = {
+	icon = "paper_money_map"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		idea_cost = -0.05
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+got_strengthen_bloodless_folk = {
+	icon = "soldiers"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		global_manpower_modifier = 0.1
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+got_strengthen_carcosan_folk = {
+	icon = "people_walking"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		development_cost = -0.1
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+
+#-----------------------------------------
+# "The Nature of our Magic"
+#-----------------------------------------
+got_outward_influence = {
+	icon = "soldiers_2"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		core_creation = -0.1
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+got_inward_influence = {
+	icon = "parliament_hall"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		governing_capacity_modifier = 0.2
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+got_uplift_the_savage = {
+	icon = "landscape"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		colonists = 1
+        global_colonial_growth = 10
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+got_educate_the_masses = {
+	icon = "free_city"
+	allow_normal_conversion = yes
+	
+    modifiers = {
+		global_institution_spread = 0.33
+        idea_cost = -0.05
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+
+#-----------------------------------------
+# "The Magicratic Cadre"
+#-----------------------------------------
+got_religious_magicrats = {
+	icon = "clergyman"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		global_missionary_strength = 0.02
+        clergy_loyalty_modifier = 0.1
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+got_mercantile_magicrats = {
+	icon = "merchant"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		trade_efficiency = 0.1
+        merchants_loyalty_modifier = 0.1
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+got_landed_magicrats = {
+	icon = "nobleman"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+        legitimacy = 1
+		nobles_loyalty_modifier = 0.1
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+got_centralize_magicrats = {
+	icon = "assembly_hall"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		state_maintenance_modifier = -0.25
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+
+#-----------------------------------------
+# "Absolutism & Constitutionalism"
+#-----------------------------------------
+got_absolute_oversight = {
+	icon = "constitution"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		max_absolutism = 10
+        yearly_absolutism = 1
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+got_regional_concessions = {
+	icon = "states_general"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		min_autonomy_in_territories = -0.1
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+
+#-----------------------------------------
+# "Question of Power"
+#-----------------------------------------
+got_broaden_cult_influence = {
+	icon = "tribal_centralize_power"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		unjustified_demands = -0.25
+	}
+    
+	ai = {
+		factor = 1
+	}
+}
+got_devolution_of_cult = {
+	icon = "organising_our_religion_reform"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		years_of_nationalism = -5
+	}
+    
+	ai = {
+		factor = 1
+	}
+}

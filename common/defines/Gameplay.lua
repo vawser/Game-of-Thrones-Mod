@@ -94,12 +94,8 @@ NDefines.NReligion.PIETY_ACTION_COOLDOWN = 5
 --------------------------------
 -- Patriarch Authority
 --------------------------------
-NDefines.NReligion.CONSECRATE_PATRIACH_AUTHORITY_BOOST = 0.05   --5% or so
-NDefines.NReligion.CONSECRATE_PATRIARCH_THRESHOLD = 30          --in development
-NDefines.NReligion.ORTHODOX_ICON_DURATION_MONTHS = 240
-NDefines.NReligion.ORTHODOX_ICON_AUTHORITY_COST = 0.1
-NDefines.NReligion.CONSECRATE_PATRIACH_AUTHORITY_BOOST = 0.05
-NDefines.NReligion.CONSECRATE_PATRIARCH_THRESHOLD = 30
+NDefines.NReligion.CONSECRATE_PATRIACH_AUTHORITY_BOOST = 0.0 -- Disabled
+NDefines.NReligion.CONSECRATE_PATRIARCH_THRESHOLD = 9999 -- Disabled
 NDefines.NReligion.ORTHODOX_ICON_DURATION_MONTHS = 240
 NDefines.NReligion.ORTHODOX_ICON_AUTHORITY_COST = 0.1
 

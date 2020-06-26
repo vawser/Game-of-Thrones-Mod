@@ -13,7 +13,7 @@ religion_westeros = {
     #--------------------------------------------------
     # Faith of the Seven
     #--------------------------------------------------
-	asoiaf_faith_of_the_seven = {
+	faith_of_the_seven = {
 		color = { 1.0 1.0 1.0 }
 		icon = 1
 		country = {
@@ -178,7 +178,7 @@ religion_westeros = {
     #--------------------------------------------------
     # The Drowned God
     #--------------------------------------------------
-	asoiaf_the_drowned_god = {
+	drowned_god = {
 		color = { 0.28 0.28 0.54 }
 		icon = 5
 		country = {
@@ -261,7 +261,7 @@ religion_westeros = {
     #--------------------------------------------------
     # The Old Gods
     #--------------------------------------------------
-	asoiaf_the_old_gods = {
+	old_gods = {
 		color = { 0.65 0.82 0.93 }
 		icon = 2
 		country = {
@@ -359,7 +359,7 @@ religion_essos = {
     #--------------------------------------------------
     # R'hllor
     #--------------------------------------------------
-	asoiaf_rhllor = {
+	rhllor = {
 		color = { 0.81 0.46 0.45 }
 		icon = 3
 		country = {
@@ -395,7 +395,7 @@ religion_essos = {
     #--------------------------------------------------
     # Mother Rhoyne
     #--------------------------------------------------
-	asoiaf_mother_rhoyne = {
+	mother_rhoyne = {
 		color = { 0.47 0.56 0.36  }
 		icon = 7
 		country = {
@@ -414,9 +414,40 @@ religion_essos = {
 	}
 	
     #--------------------------------------------------
+	# Lady of the Waves
+    #--------------------------------------------------
+	lady_of_the_waves = {
+		color = { 0.56 0.57 0.36 }
+		icon = 25
+		country = {
+			naval_forcelimit_modifier = 0.1
+            loot_amount = 0.1
+		}
+		country_as_secondary = {
+			naval_forcelimit_modifier = 0.1
+            loot_amount = 0.1
+		}
+		province = {
+			local_missionary_strength = 0.03
+		}
+		
+		uses_anglican_power = yes
+		
+		aspects = {
+			enforce_rule_action
+            raid_local_villages_action
+            display_wealth_action
+            impress_travelers_action
+            purchase_slaves_action
+            explore_the_high_seas_action
+		}
+		aspects_name = PIRATE_ASPECTS		
+	}
+    
+    #--------------------------------------------------
     # Trios
     #--------------------------------------------------
-	asoiaf_trios = {
+	trios = {
 		color = { 0.36 0.36 0.56 }
 		icon = 8
 		country = {
@@ -434,7 +465,7 @@ religion_essos = {
     #--------------------------------------------------
     # The Bearded Priests
     #--------------------------------------------------
-	asoiaf_bearded_priests = {
+	bearded_priests = {
 		color = { 0.36 0.56 0.54 }
 		icon = 9
 		country = {
@@ -463,7 +494,7 @@ religion_essos = {
     #--------------------------------------------------
     # Remnants of Boash
     #--------------------------------------------------
-	asoiaf_gods_of_lorath = {
+	remnants_of_boash = {
 		color = { 0.56 0.36 0.40 }
 		icon = 10
 		country = {
@@ -481,7 +512,7 @@ religion_essos = {
     #--------------------------------------------------
     # Black Goat
     #--------------------------------------------------
-	asoiaf_black_goat_of_qohor = {
+	black_goat = {
 		color = { 0.49 0.36 0.56 }
 		icon = 6
 		country = {
@@ -507,7 +538,7 @@ religion_essos = {
     #--------------------------------------------------
     # Hooded Wayfarer
     #--------------------------------------------------
-	asoiaf_gods_of_sarnor = {
+	hooded_wayfarer = {
 		color = { 0.43 0.61 0.81  }
 		icon = 11
 		country = {
@@ -526,9 +557,9 @@ religion_essos = {
 }
 
 #--------------------------------------------------
-# Central Essos
+# Ghiscari
 #--------------------------------------------------
-religion_middle_essos = {
+religion_ghiscari = {
 	defender_of_faith = yes
 	can_form_personal_unions = yes
 
@@ -538,7 +569,7 @@ religion_middle_essos = {
     #--------------------------------------------------
 	# Ghiscari Pantheon
     #--------------------------------------------------
-	asoiaf_graces = {
+	ghiscari_pantheon = {
 		color = { 0.81 0.65 0.43 }
 		icon = 12
 		country = {
@@ -565,7 +596,7 @@ religion_middle_essos = {
     #--------------------------------------------------
     # The Great Shepherd
     #--------------------------------------------------
-	asoiaf_great_shepherd = {
+	great_shepherd = {
 		color = { 0.81 0.43 0.52 }
 		icon = 15
 		country = {
@@ -594,10 +625,23 @@ religion_middle_essos = {
         aspects_name = GREAT_SHEPHERD_ASPECTS
 	}
 	
+    crusade_name = RELIGIOUS_CRUSADE
+}
+
+#--------------------------------------------------
+# Ibbish
+#--------------------------------------------------
+religion_ibbish = {
+	defender_of_faith = yes
+	can_form_personal_unions = yes
+
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 18 }
+    
     #--------------------------------------------------
     # Ib
     #--------------------------------------------------
-	asoiaf_gods_of_ibben = {
+	ib = {
 		color = { 0.52 0.45 0.44 }
 		icon = 16
 		country = {
@@ -624,12 +668,14 @@ religion_middle_essos = {
         }
         aspects_name = IB_ASPECTS
 	}
+    
+    crusade_name = RELIGIOUS_CRUSADE
 }
 
 #--------------------------------------------------
-# East Essos
+# Yitish
 #--------------------------------------------------
-religion_distant_essos = {
+religion_yitish = {
 	defender_of_faith = yes
 	can_form_personal_unions = yes
 
@@ -639,7 +685,7 @@ religion_distant_essos = {
     #--------------------------------------------------
     # Lion of the Night
     #--------------------------------------------------
-	asoiaf_lion_of_the_night = {
+	lion_of_the_night = {
 		color = { 0.43 0.81 0.57  }
 		icon = 17
 		country = {
@@ -715,29 +761,24 @@ religion_distant_essos = {
 			}
 		}        
 	}
-	
-    #--------------------------------------------------
-    # Stone Cow of Faros
-    #--------------------------------------------------
-	asoiaf_stone_cow_of_faros = {
-		color = { 0.7 0.43 0.81 }
-		icon = 18
-		country = {
-			tolerance_own = 1
-			war_exhaustion_cost = -0.2
-		}
-		country_as_secondary = {
-			tolerance_own = 1
-			war_exhaustion_cost = -0.2
-		}
-        
-        uses_karma = yes
-	}
-	
+    
+    crusade_name = RELIGIOUS_CRUSADE
+}
+
+#--------------------------------------------------
+# Hyrkooni
+#--------------------------------------------------
+religion_hyrkooni = {
+	defender_of_faith = yes
+	can_form_personal_unions = yes
+
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 18 }
+    
     #--------------------------------------------------
     # Gods of Hyrkoon
     #--------------------------------------------------
-	asoiaf_gods_of_hyrkoon = {
+	gods_of_hyrkoon = {
 		color = { 0.79 0.79 0.43 }
 		icon = 19
 		country = {
@@ -813,11 +854,24 @@ religion_distant_essos = {
             }
         }
 	}
+    
+    crusade_name = RELIGIOUS_CRUSADE
+}
 
+#--------------------------------------------------
+# Jogos Nhai
+#--------------------------------------------------
+religion_jogos_nhai = {
+	defender_of_faith = yes
+	can_form_personal_unions = yes
+
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 18 }
+    
     #--------------------------------------------------
     # Moonsingers
     #--------------------------------------------------
-	asoiaf_moonsingers = {
+	moonsingers = {
 		color = { 0.43 0.55 0.55 }
 		icon = 20
 		country = {
@@ -839,12 +893,25 @@ religion_distant_essos = {
         }
         aspects_name = MOONSINGERS_ASPECTS
 	}
+
+	crusade_name = RELIGIOUS_CRUSADE
+}
+
+#--------------------------------------------------
+# Occult
+#--------------------------------------------------
+religion_occult = {
+	defender_of_faith = yes
+	can_form_personal_unions = no
+	
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 18 }
 	
     #--------------------------------------------------
-    # Occult
+    # Cult of Shadows
     #--------------------------------------------------
-	asoiaf_magic = {
-		color = { 0.47 0.43 0.811  }
+	cult_of_shadows = {
+		color = { 0.3 0.2 0.1  }
 		icon = 21
 		country = {
 			technology_cost = -0.05
@@ -866,67 +933,62 @@ religion_distant_essos = {
         }
         aspects_name = OCCULT_ASPECTS	
 	}
-	
-	crusade_name = RELIGIOUS_CRUSADE
-}
-
-#--------------------------------------------------
-# Summer Islands
-#--------------------------------------------------
-religion_summer = {
-	defender_of_faith = yes
-	can_form_personal_unions = yes
-	
-	flags_with_emblem_percentage = 33 # default == 0
-	flag_emblem_index_range = { 1 18 }
-	
+    
     #--------------------------------------------------
-    # The Summer Gods
+    # Cult of Pallor
     #--------------------------------------------------
-	asoiaf_summer_gods = {
-		color = { 0.43 0.81 0.81 }
-		icon = 22
+    cult_of_pallor = {
+		color = { 0.55 0.5 0.6  }
+		icon = 26
 		country = {
-			naval_forcelimit_modifier = 0.1
-            global_unrest = -1
+			land_morale = 0.1
+			tolerance_heathen = -2
 		}
 		country_as_secondary = {
-			naval_forcelimit_modifier = 0.1
-            global_unrest = -1
-		}		
+			land_morale = 0.1
+			tolerance_heathen = -2
+		}
         
-        uses_church_power = yes
+        uses_anglican_power = yes
         aspects = {
-            blessing_of_strength
-            blessing_of_courage
-            blessing_of_fortitude
-            blessing_of_valor
-            blessing_of_alacrity
-            blessing_of_endurance
-            blessing_of_bounty
-            blessing_of_charisma
-            blessing_of_gallantry
+            occult_inspiration_action
+            devotion_to_the_occult_action
+            conjure_gold_action
+            dazzle_the_masses_action
+            purge_the_feeble_action
+            look_upon_the_forbidden_action
         }
-        aspects_name = SUN_GOD_ASPECTS
+        aspects_name = OCCULT_ASPECTS	
 	}
-	
+    
     #--------------------------------------------------
-    # Lord of Harmony
+    # Cult of Ascension
     #--------------------------------------------------
-	asoiaf_god_of_harmony = {
-		color = { 0.43 0.81 0.70 }
-		icon = 23
+    cult_of_ascension = {
+		color = { 0.7 0.4 0.7  }
+		icon = 27
 		country = {
-			tolerance_own = 3
-			global_unrest = -2
+			movement_speed = 0.25
+			tolerance_heathen = -2
 		}
 		country_as_secondary = {
-			tolerance_own = 3
-			global_unrest = -2
+			movement_speed = 0.25
+			tolerance_heathen = -2
 		}
         
-        fervor = yes
+        uses_anglican_power = yes
+        aspects = {
+            occult_inspiration_action
+            devotion_to_the_occult_action
+            conjure_gold_action
+            dazzle_the_masses_action
+            purge_the_feeble_action
+            look_upon_the_forbidden_action
+        }
+        aspects_name = OCCULT_ASPECTS	
 	}
+    
+	crusade_name = RELIGIOUS_CRUSADE
 }
 
 #--------------------------------------------------
@@ -942,7 +1004,7 @@ religion_dothraki = {
     #--------------------------------------------------
     # The Great Stallion
     #--------------------------------------------------
-	asoiaf_the_great_stallion = {
+	great_stallion = {
 		color = { 0.67 0.81 0.43 }
 		icon = 4
 		country = {
@@ -980,9 +1042,75 @@ religion_tribal = {
 	flag_emblem_index_range = { 1 18 }
 	
     #--------------------------------------------------
+    # Stone Cow of Faros
+    #--------------------------------------------------
+	stone_cow = {
+		color = { 0.7 0.43 0.81 }
+		icon = 18
+		country = {
+			tolerance_own = 1
+			war_exhaustion_cost = -0.2
+		}
+		country_as_secondary = {
+			tolerance_own = 1
+			war_exhaustion_cost = -0.2
+		}
+        
+        uses_karma = yes
+	}
+    
+    #--------------------------------------------------
+    # The Summer Gods
+    #--------------------------------------------------
+	summer_gods = {
+		color = { 0.43 0.81 0.81 }
+		icon = 22
+		country = {
+			naval_forcelimit_modifier = 0.1
+            global_unrest = -1
+		}
+		country_as_secondary = {
+			naval_forcelimit_modifier = 0.1
+            global_unrest = -1
+		}		
+        
+        uses_church_power = yes
+        aspects = {
+            blessing_of_strength
+            blessing_of_courage
+            blessing_of_fortitude
+            blessing_of_valor
+            blessing_of_alacrity
+            blessing_of_endurance
+            blessing_of_bounty
+            blessing_of_charisma
+            blessing_of_gallantry
+        }
+        aspects_name = SUN_GOD_ASPECTS
+	}
+	
+    #--------------------------------------------------
+    # Lord of Harmony
+    #--------------------------------------------------
+	lord_of_harmony = {
+		color = { 0.6 0.5 0.3 }
+		icon = 23
+		country = {
+			tolerance_own = 3
+			global_unrest = -2
+		}
+		country_as_secondary = {
+			tolerance_own = 3
+			global_unrest = -2
+		}
+        
+        fervor = yes
+	}
+    
+    #--------------------------------------------------
 	# Idol Worship
     #--------------------------------------------------
-	asoiaf_tribal = {
+	idol_worship = {
 		color = { 0.30 0.45 0.7 }
 		icon = 24
 		
@@ -1000,36 +1128,45 @@ religion_tribal = {
 	}
 	
     #--------------------------------------------------
-	# Lady of the Waves
+	# Mavka
     #--------------------------------------------------
-	asoiaf_lady_of_the_waves = {
-		color = { 0.56 0.57 0.36 }
-		icon = 25
+	mavka = {
+		color = { 0.5 0.3 0.2 }
+		icon = 28
+		
 		country = {
-			naval_forcelimit_modifier = 0.1
-            loot_amount = 0.1
+			shock_damage = 0.1
+            movement_speed = 0.05
 		}
 		country_as_secondary = {
-			naval_forcelimit_modifier = 0.1
-            loot_amount = 0.1
+			shock_damage = 0.1
+            movement_speed = 0.05
 		}
 		province = {
-			local_missionary_strength = 0.03
+			local_missionary_strength = 0.002
 		}
-		
-		uses_anglican_power = yes
-		
-		aspects = {
-			enforce_rule_action
-            raid_local_villages_action
-            display_wealth_action
-            impress_travelers_action
-            purchase_slaves_action
-            explore_the_high_seas_action
-		}
-		aspects_name = PIRATE_ASPECTS		
 	}
-	
+    
+    #--------------------------------------------------
+	# Drekavac
+    #--------------------------------------------------
+	drekavac = {
+		color = { 0.6 0.4 0.65 }
+		icon = 29
+		
+		country = {
+			core_creation = -0.1
+            global_unrest = -2
+		}
+		country_as_secondary = {
+			core_creation = -0.1
+            global_unrest = -2
+		}
+		province = {
+			local_missionary_strength = 0.002
+		}
+	}
+    
 	crusade_name = RELIGIOUS_CRUSADE
 }
 
@@ -1046,7 +1183,7 @@ religion_mythological = {
     #--------------------------------------------------
     # Cyromancy
     #--------------------------------------------------
-	asoiaf_white_walker = {
+	cyromancy = {
 		color = { 0 0 0 }
 		icon = 13
 		country = {

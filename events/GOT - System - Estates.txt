@@ -239,7 +239,11 @@ country_event = {
 		NOT = { crown_land_share = 11 }
 		OR = {
 			AND = {
-				government = monarchy
+				OR = {
+                    government = monarchy
+                    government = occult
+                    government = mythical
+                }
 				has_estate = estate_nobles
 			}
 			AND = {
@@ -284,7 +288,11 @@ country_event = {
 		custom_tooltip = seize_land_unavailable_from_privilege
 		if = {
 			limit = {
-				government = monarchy
+				OR = {
+                    government = monarchy
+                    government = occult
+                    government = mythical
+                }
 			}
 			set_estate_privilege = estate_nobility_statutory_rights
 		}

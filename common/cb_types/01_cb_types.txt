@@ -5,11 +5,11 @@ cb_undead_conquest = {
     valid_for_subject = no
     
     prerequisites = {
-		has_reform = white_walker_cult_reform
+		has_reform = army_of_the_dead_reform
         is_neighbor_of = FROM
         
         FROM = {
-            NOT = { has_reform = white_walker_cult_reform }
+            NOT = { has_reform = army_of_the_dead_reform }
         }
 	}
     

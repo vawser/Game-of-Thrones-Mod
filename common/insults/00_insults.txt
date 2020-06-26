@@ -111,10 +111,18 @@ insult_heir_hunter = {
 
 insult_monarchy = {
 	trigger = {
-		government = monarchy
+		OR = {
+            government = monarchy
+            government = occult
+            government = mythical
+        }
 		has_regency = no
 		FROM = {
-			government = monarchy
+			OR = {
+                government = monarchy
+                government = occult
+                government = mythical
+            }
 		}
 	}
 }

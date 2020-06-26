@@ -1,11 +1,11 @@
 ######################################################################
 # Summer Worshippers
 ######################################################################
-asoiaf_summer_gods_rebels = {
+summer_gods_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
 	government = any
-	religion = asoiaf_summer_gods
+	religion = summer_gods
 	defection = none				# Will not defect
 	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
 	independence = none				# Does not strive for independence
@@ -42,7 +42,7 @@ asoiaf_summer_gods_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = { religion = asoiaf_summer_gods }
+			NOT = { religion = summer_gods }
 		}
 		modifier = {
 			factor = 0.001
@@ -83,14 +83,14 @@ asoiaf_summer_gods_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			religion = asoiaf_summer_gods
-			owner = { religion = asoiaf_summer_gods }
+			religion = summer_gods
+			owner = { religion = summer_gods }
 		}
 		modifier = {
 			factor = 2.0
-			NOT = { religion = asoiaf_summer_gods }
+			NOT = { religion = summer_gods }
 			any_neighbor_province = {
-	 			religion = asoiaf_summer_gods
+	 			religion = summer_gods
 	 			NOT = { has_province_modifier = "forced_conversion" }
 	 		}
 	 	}
@@ -114,7 +114,7 @@ asoiaf_summer_gods_rebels = {
 	siege_won_effect = {
 		if = {
 			limit = {
-				religion = asoiaf_summer_gods
+				religion = summer_gods
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -123,9 +123,9 @@ asoiaf_summer_gods_rebels = {
 		}
 		if = {
 			limit = {
-				religion_group = religion_summer
+				religion_group = religion_tribal
 			}
-			change_religion = asoiaf_summer_gods
+			change_religion = summer_gods
 			add_province_modifier = {
 				name = "forced_conversion"
 				duration = 730
@@ -133,7 +133,7 @@ asoiaf_summer_gods_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion_group = religion_summer }
+				NOT = { religion_group = religion_tribal }
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -153,7 +153,7 @@ asoiaf_summer_gods_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = "asoiaf_summer_gods_rebels_demand"
+	demands_description = "summer_gods_rebels_demand"
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -167,10 +167,10 @@ asoiaf_summer_gods_rebels = {
 		if = {
 			limit = {
 				OR = {
-					religion = asoiaf_summer_gods
+					religion = summer_gods
 					AND = {
-						NOT = { religion = asoiaf_summer_gods }
-						NOT = { dominant_religion = asoiaf_summer_gods }
+						NOT = { religion = summer_gods }
+						NOT = { dominant_religion = summer_gods }
 					}
 				}
 			}
@@ -181,10 +181,10 @@ asoiaf_summer_gods_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion = asoiaf_summer_gods }
-				dominant_religion = asoiaf_summer_gods
+				NOT = { religion = summer_gods }
+				dominant_religion = summer_gods
 			}
-			change_religion = asoiaf_summer_gods
+			change_religion = summer_gods
 			force_converted = yes
 		}
 	}

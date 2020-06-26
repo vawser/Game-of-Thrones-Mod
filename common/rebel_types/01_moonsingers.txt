@@ -1,11 +1,11 @@
 ######################################################################
 # Worshippers
 ######################################################################
-asoiaf_gods_of_jogos_nhai_rebels = {
+moonsingers_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
 	government = any
-	religion = asoiaf_gods_of_jogos_nhai
+	religion = moonsingers
 	defection = none				# Will not defect
 	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
 	independence = none				# Does not strive for independence
@@ -42,7 +42,7 @@ asoiaf_gods_of_jogos_nhai_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = { religion = asoiaf_gods_of_jogos_nhai }
+			NOT = { religion = moonsingers }
 		}
 		modifier = {
 			factor = 0.001
@@ -83,14 +83,14 @@ asoiaf_gods_of_jogos_nhai_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			religion = asoiaf_gods_of_jogos_nhai
-			owner = { religion = asoiaf_gods_of_jogos_nhai }
+			religion = moonsingers
+			owner = { religion = moonsingers }
 		}
 		modifier = {
 			factor = 2.0
-			NOT = { religion = asoiaf_gods_of_jogos_nhai }
+			NOT = { religion = moonsingers }
 			any_neighbor_province = {
-	 			religion = asoiaf_gods_of_jogos_nhai
+	 			religion = moonsingers
 	 			NOT = { has_province_modifier = "forced_conversion" }
 	 		}
 	 	}
@@ -114,7 +114,7 @@ asoiaf_gods_of_jogos_nhai_rebels = {
 	siege_won_effect = {
 		if = {
 			limit = {
-				religion = asoiaf_gods_of_jogos_nhai
+				religion = moonsingers
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -123,9 +123,9 @@ asoiaf_gods_of_jogos_nhai_rebels = {
 		}
 		if = {
 			limit = {
-				religion_group = religion_distant_essos
+				religion_group = religion_jogos_nhai
 			}
-			change_religion = asoiaf_gods_of_jogos_nhai
+			change_religion = moonsingers
 			add_province_modifier = {
 				name = "forced_conversion"
 				duration = 730
@@ -133,7 +133,7 @@ asoiaf_gods_of_jogos_nhai_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion_group = religion_distant_essos }
+				NOT = { religion_group = religion_jogos_nhai }
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -153,7 +153,7 @@ asoiaf_gods_of_jogos_nhai_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = "asoiaf_gods_of_jogos_nhai_rebels_demand"
+	demands_description = "moonsingers_rebels_demand"
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -167,10 +167,10 @@ asoiaf_gods_of_jogos_nhai_rebels = {
 		if = {
 			limit = {
 				OR = {
-					religion = asoiaf_gods_of_jogos_nhai
+					religion = moonsingers
 					AND = {
-						NOT = { religion = asoiaf_gods_of_jogos_nhai }
-						NOT = { dominant_religion = asoiaf_gods_of_jogos_nhai }
+						NOT = { religion = moonsingers }
+						NOT = { dominant_religion = moonsingers }
 					}
 				}
 			}
@@ -181,10 +181,10 @@ asoiaf_gods_of_jogos_nhai_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion = asoiaf_gods_of_jogos_nhai }
-				dominant_religion = asoiaf_gods_of_jogos_nhai
+				NOT = { religion = moonsingers }
+				dominant_religion = moonsingers
 			}
-			change_religion = asoiaf_gods_of_jogos_nhai
+			change_religion = moonsingers
 			force_converted = yes
 		}
 	}

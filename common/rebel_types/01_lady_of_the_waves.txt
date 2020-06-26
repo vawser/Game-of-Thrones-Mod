@@ -1,11 +1,11 @@
 ######################################################################
 # Worshippers
 ######################################################################
-asoiaf_lady_of_the_waves_rebels = {
+lady_of_the_waves_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
 	government = any
-	religion = asoiaf_lady_of_the_waves
+	religion = lady_of_the_waves
 	defection = none				# Will not defect
 	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
 	independence = none				# Does not strive for independence
@@ -42,7 +42,7 @@ asoiaf_lady_of_the_waves_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = { religion = asoiaf_lady_of_the_waves }
+			NOT = { religion = lady_of_the_waves }
 		}
 		modifier = {
 			factor = 0.001
@@ -83,14 +83,14 @@ asoiaf_lady_of_the_waves_rebels = {
 		}
 		modifier = {
 			factor = 0.0
-			religion = asoiaf_lady_of_the_waves
-			owner = { religion = asoiaf_lady_of_the_waves }
+			religion = lady_of_the_waves
+			owner = { religion = lady_of_the_waves }
 		}
 		modifier = {
 			factor = 2.0
-			NOT = { religion = asoiaf_lady_of_the_waves }
+			NOT = { religion = lady_of_the_waves }
 			any_neighbor_province = {
-	 			religion = asoiaf_lady_of_the_waves
+	 			religion = lady_of_the_waves
 	 			NOT = { has_province_modifier = "forced_conversion" }
 	 		}
 	 	}
@@ -114,7 +114,7 @@ asoiaf_lady_of_the_waves_rebels = {
 	siege_won_effect = {
 		if = {
 			limit = {
-				religion = asoiaf_lady_of_the_waves
+				religion = lady_of_the_waves
 			}
 			add_province_modifier = {
 				name = "religious_violence"
@@ -125,7 +125,7 @@ asoiaf_lady_of_the_waves_rebels = {
 			limit = {
 				religion_group = religion_essos
 			}
-			change_religion = asoiaf_lady_of_the_waves
+			change_religion = lady_of_the_waves
 			add_province_modifier = {
 				name = "forced_conversion"
 				duration = 730
@@ -153,7 +153,7 @@ asoiaf_lady_of_the_waves_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = "asoiaf_lady_of_the_waves_rebels_demand"
+	demands_description = "lady_of_the_waves_rebels_demand"
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -167,10 +167,10 @@ asoiaf_lady_of_the_waves_rebels = {
 		if = {
 			limit = {
 				OR = {
-					religion = asoiaf_lady_of_the_waves
+					religion = lady_of_the_waves
 					AND = {
-						NOT = { religion = asoiaf_lady_of_the_waves }
-						NOT = { dominant_religion = asoiaf_lady_of_the_waves }
+						NOT = { religion = lady_of_the_waves }
+						NOT = { dominant_religion = lady_of_the_waves }
 					}
 				}
 			}
@@ -181,10 +181,10 @@ asoiaf_lady_of_the_waves_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion = asoiaf_lady_of_the_waves }
-				dominant_religion = asoiaf_lady_of_the_waves
+				NOT = { religion = lady_of_the_waves }
+				dominant_religion = lady_of_the_waves
 			}
-			change_religion = asoiaf_lady_of_the_waves
+			change_religion = lady_of_the_waves
 			force_converted = yes
 		}
 	}

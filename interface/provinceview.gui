@@ -277,18 +277,19 @@ guiTypes = {
 
 			editBoxType = {
 				name = "provincename"
-				position = { x = 100 y = -8 }
+				position = { x = 100 y = 0 }
 				textureFile = ""
 				font = "vic_22s"
 				borderSize = {x = 10 y = 8}
-				size = { x=180 y=32}
+				size = { x=300 y=32}
 				text = ""
 				ignore_tab_navigation = no
 			}
 
 			editBoxType = {
 				name = "capitalname"
-				position = { x = 101 y = 13}
+                position = { x = 101 y = -9999}
+				#position = { x = 101 y = 13}
 				textureFile = ""
 				font = "vic_18"
 				borderSize = {x = 10 y = 8}
@@ -308,26 +309,26 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "area_name"
-				position = { x = 100 y = 0}
+				position = { x = 101 y = -9999}
 				textureFile = ""
 				font = "vic_22s"
 				borderSize = {x = 2 y = 2}
 				text = ""
-				maxWidth = 300
+				maxWidth = 500
 				maxHeight = 20
 				format = right
 			}
 
 			instantTextBoxType = {
 				name = "region_name"
-				position = { x = 240 y = 19}
+				#position = { x = 240 y = 19}
+                position = { x = 101 y = -9999}
 				textureFile = ""
 				font = "vic_18"
 				borderSize = {x = 2 y = 2}
 				text = ""
 				maxWidth = 160
 				maxHeight = 20
-				format = right
 			}
 
 			iconType =
@@ -2604,7 +2605,7 @@ guiTypes = {
 			iconType = {
 				name = "banner_bg"
 				spriteType = "GFX_banners_slot"
-				position = { x = 12 y = 419 }
+				position = { x = 12 y = -9999 }
 			}
 
 			guiButtonType = {
@@ -2613,20 +2614,20 @@ guiTypes = {
 				buttonFont = "vic_18"
 				buttonText = "RAISE_MANCHU_BANNERS"
 
-				position = { x = 24 y = 427 }
+				position = { x = 24 y = -9999 }
 			}
 
 			iconType =
 			{
 				name = "manchu_banner"
 				spriteType = "GFX_amount_of_banners"
-				position = { x = 250 y = 416 }
+				position = { x = 250 y = -9999 }
 				scale = 0.85
 			}
 
 			instantTextBoxType = {
 				name = "banner_number"
-				position = { x = 302 y = 431 }
+				position = { x = 302 y = -9999 }
 				textureFile = ""
 				font = "vic_22"
 				borderSize = {x = 2 y = 2}
@@ -2641,7 +2642,7 @@ guiTypes = {
 			iconType = {
 				name = "patriarch_bg"
 				spriteType = "GFX_patriarchy_slot"
-				position = { x = 12 y = 419 }
+				position = { x = 12 y = -9999 }
 			}
 
 			guiButtonType = {
@@ -2650,21 +2651,21 @@ guiTypes = {
 				buttonFont = "vic_18"
 				buttonText = "CONSECRATE_BUTTON"
 
-				position = { x = 30 y = 427 }
+				position = { x = 30 y = -9999 }
 			}
 
 			iconType =
 			{
 				name = "consecrate_patriarch"
 				spriteType = "GFX_patriarch_icon"
-				position = { x = 234 y = 426 }
+				position = { x = 234 y = -9999 }
 			}
 
 			# Ottoman Pasha
 			iconType = {
 				name = "pasha_bg"
 				spriteType = "GFX_patriarchy_slot"
-				position = { x = 12 y = 419 }
+				position = { x = 12 y = -9999 }
 			}
 
 			guiButtonType = {
@@ -2673,14 +2674,14 @@ guiTypes = {
 				buttonFont = "vic_18"
 				buttonText = "ADD_PASHA_BUTTON"
 
-				position = { x = 30 y = 427 }
+				position = { x = 30 y = -9999 }
 			}
 
 			iconType =
 			{
 				name = "add_pasha"
 				spriteType = "GFX_pasha_icon"
-				position = { x = 234 y = 426 }
+				position = { x = 234 y = -9999 }
 			}
 
 			guiButtonType = {
@@ -6004,6 +6005,8 @@ guiTypes = {
 			text = "name"
 			maxWidth = 114
 			maxHeight = 20
+            truncate = yes
+            fixedsize = yes
 			format = left
 		}
 

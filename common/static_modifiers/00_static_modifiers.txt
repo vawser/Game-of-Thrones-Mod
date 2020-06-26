@@ -933,8 +933,7 @@ recovery_motivation = {
 
 militarized_society = {
 	production_efficiency = 0.2
-	global_regiment_cost = -0.2
-    global_regiment_recruit_speed = -0.2
+	special_unit_forcelimit = 0.5 # Unsullied
     land_maintenance_modifier = -0.2
 }
 
@@ -1620,10 +1619,11 @@ innovativeness = {
 	navy_tradition_decay = -0.01
 }
 
+# Unsullied Regiment
 rajput_regiment = {
 	drill_decay_modifier = -0.25
 	reinforce_cost_modifier = -0.5
-	land_morale = 0.05
+	discipline = 0.05
 }
 
 raiding_parties_modifier = {

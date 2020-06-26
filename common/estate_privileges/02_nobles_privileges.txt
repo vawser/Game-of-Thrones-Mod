@@ -879,3 +879,63 @@ estate_nobles_monopoly_of_sugar = {
 		factor = 0
 	}
 }
+
+estate_nobles_unsullied = {
+	icon = privilege_limited_war_support
+	land_share = 5
+	max_absolutism = 0
+	loyalty = 0.05
+	influence = 0.05
+    
+	can_select = {
+        culture_group = culture_ghiscari
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+    benefits = {
+        special_unit_forcelimit = 0.1
+	}
+	mechanics = {
+		enables_rajput_regiments
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 25 }
+				estate_influence = {
+					estate = estate_nobles
+					influence = 75
+				}
+			}
+			NOT = { has_estate_privilege = estate_nobles_unsullied }
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 40 }
+				AND = {
+					NOT = { crown_land_share = 60 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_nobles_unsullied }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 30 }
+				AND = {
+					NOT = { crown_land_share = 50 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_nobles_unsullied }
+		}
+	}
+}

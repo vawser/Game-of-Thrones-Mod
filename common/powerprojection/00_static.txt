@@ -75,6 +75,15 @@ current_age_power_projection = {
 	max = 21
 }
 
+is_hegemon = {
+	power = 25
+}
+
+allied_to_hegemon = {
+	power = -20
+	min = -20
+}
+
 ##################################
 # DYNAMIC, ADDED AND THEN DECAYED
 ##################################
@@ -89,6 +98,12 @@ insulted_rival = {
 	power = 5
 	yearly_decay = 1
 	max = 5
+}
+
+scornfully_insulted_rival = {
+	power = 10
+	yearly_decay = 1
+	max = 10
 }
 
 humiliated_rival = {
@@ -151,12 +166,31 @@ rival_lost_province = {
 	max = 100
 }
 
+spread_revolution_to_enemy = {
+	power = 0.1			# multiplied by development
+	yearly_decay = 1
+	max = 50
+}
+
+spread_revolution_to_us = {
+	power = -0.1			# multiplied by development
+	yearly_decay = 1
+	min = -50
+}
+
+#Use this one when adding power projection when via add_power_projection, unless you have a specific reason to use another
+mission_rewards_power_projection = {
+	max = 100
+	power = 1
+	yearly_decay = 1
+}
+
 ##################################
 # TICKING EVERY MONTH IF TRUE
 ##################################
 
 lacking_rival = {
-	power = 0
+	power = -1
 	min = -60
 }
 

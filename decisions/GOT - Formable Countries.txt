@@ -29,6 +29,13 @@ country_decisions = {
 				country_or_vassal_holds = ROOT
 			}
 		}
+        provinces_to_highlight = {
+            OR = {
+                area = upper_stepstones_area
+                area = central_stepstones_area
+                area = lower_stepstones_area
+            }
+        }
 		effect = {
 			change_tag = J23
 			add_prestige = 200
@@ -73,6 +80,11 @@ country_decisions = {
             }
             total_development = 50
 		}
+        provinces_to_highlight = {
+            owner = {
+                technology_group = wildling
+            }
+        }
 		effect = {
 			change_tag = Z01
 			add_prestige = 200
@@ -113,6 +125,9 @@ country_decisions = {
 				country_or_vassal_holds = ROOT
 			}
 		}
+        provinces_to_highlight = {
+            region = region_sarnor
+        }
 		effect = {
 			change_tag = J22
 			add_prestige = 200
@@ -170,6 +185,9 @@ country_decisions = {
 				country_or_vassal_holds = ROOT
 			}
 		}
+        provinces_to_highlight = {
+            region = region_summer_islands
+        }
 		effect = {
 			change_tag = J14
 			add_prestige = 200
@@ -205,6 +223,9 @@ country_decisions = {
 				country_or_vassal_holds = ROOT
 			}
 		}
+        provinces_to_highlight = {
+            region = region_slavers_bay
+        }
 		effect = {
 			change_tag = J15
 			add_prestige = 200
@@ -241,6 +262,9 @@ country_decisions = {
 				country_or_vassal_holds = ROOT
 			}
 		}
+        provinces_to_highlight = {
+            region = region_hyrkoon
+        }
 		effect = {
 			change_tag = J16
 			add_prestige = 200
@@ -278,6 +302,9 @@ country_decisions = {
 			}
 			owns = 597
 		}
+        provinces_to_highlight = {
+            region = valyrian_peninsula
+        }
 		effect = {
 			change_tag = J17
 			add_prestige = 200
@@ -286,7 +313,7 @@ country_decisions = {
 			set_government_rank = 3
 			set_country_flag = formed_major_formable
             country_event = { 
-				id = GOT_DRAGON_EGGS.99 # Dragon Riders unlocked
+				id = GOT_DRAGON_EGGS.10
 				days = 100
 				random = 150
 			}
@@ -334,6 +361,9 @@ country_decisions = {
 				country_or_vassal_holds = ROOT
 			}
 		}
+        provinces_to_highlight = {
+            region = region_the_north
+        }
 		effect = {
 			change_tag = J07
 			add_prestige = 200
@@ -384,6 +414,13 @@ country_decisions = {
 				country_or_vassal_holds = ROOT
 			}
 		}
+        provinces_to_highlight = {
+            OR = {
+                region = region_riverlands
+                region = region_iron_islands
+                region = region_crownlands
+            }
+        }
 		effect = {
 			change_tag = J08
 			add_prestige = 200
@@ -421,6 +458,9 @@ country_decisions = {
 				country_or_vassal_holds = ROOT
 			}
 		}
+        provinces_to_highlight = {
+            region = region_westerlands
+        }
 		effect = {
 			change_tag = J09
 			add_prestige = 200
@@ -462,6 +502,9 @@ country_decisions = {
 			}
 			
 		}
+        provinces_to_highlight = {
+            region = region_stormlands
+        }
 		effect = {
 			change_tag = J10
 			add_prestige = 200
@@ -499,6 +542,9 @@ country_decisions = {
 				country_or_vassal_holds = ROOT
 			}
 		}
+        provinces_to_highlight = {
+            region = region_vale
+        }
 		effect = {
 			change_tag = J11
 			add_prestige = 200
@@ -540,6 +586,9 @@ country_decisions = {
 				country_or_vassal_holds = ROOT
 			}
 		}
+        provinces_to_highlight = {
+            region = region_dorne
+        }
 		effect = {
 			change_tag = J12
 			add_prestige = 200
@@ -577,6 +626,9 @@ country_decisions = {
 				country_or_vassal_holds = ROOT
 			}
 		}
+        provinces_to_highlight = {
+            region = region_reach
+        }
 		effect = {
 			change_tag = J13
 			add_prestige = 200
@@ -624,6 +676,26 @@ country_decisions = {
             owns_core_province = 857
             owns_core_province = 864
 		}
+        provinces_to_highlight = {
+            OR = {
+                province_id = 851 
+                province_id = 876
+                province_id = 860
+                province_id = 859
+                province_id = 838
+                province_id = 850
+                province_id = 837
+                province_id = 853
+                province_id = 852
+                province_id = 854
+                province_id = 855
+                province_id = 862
+                province_id = 856
+                province_id = 863
+                province_id = 857
+                province_id = 864
+            }
+        }
 		effect = {
 			change_tag = J03
 			add_prestige = 200

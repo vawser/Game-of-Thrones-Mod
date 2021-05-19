@@ -423,31 +423,12 @@ cb_crusade = {
 	valid_for_subject = no
 
 	prerequisites = {
+        has_idea = got_religious_ideas_1
 		NOT = { has_reform = got_religious_permanent_revolution_reform }
 		is_neighbor_of = FROM
 		NOT = { religion_group = FROM }
 		NOT = {	has_matching_religion = FROM }
 		is_revolutionary = no
-	}
-
-	war_goal = superiority_crusade
-}
-
-# Holy War
-cb_crusade_pheasants = {
-	valid_for_subject = no
-	is_triggered_only = yes
-	months = 60
-
-	prerequisites = {
-		NOT = {
-			has_casus_belli = {
-				type = cb_crusade
-				target = from
-			}
-		}
-		NOT = { religion_group = FROM }
-		NOT = {	has_matching_religion = FROM }
 	}
 
 	war_goal = superiority_crusade

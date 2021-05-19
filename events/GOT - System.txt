@@ -25,12 +25,6 @@ country_event = {
         
         if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - GOT_SYSTEM.1.option.a" }
         
-        # Set processor
-        random_country = {
-            limit = { ai = yes }
-            set_country_flag = processor
-        }
-     
         every_province = {
             set_in_empire = no
         }
@@ -833,37 +827,6 @@ country_event = {
     }
 }
 
-# If processor dies, designate another
-country_event = {
-	id = GOT_SYSTEM.5
-	title = GOT_SYSTEM.5.title
-	desc = GOT_SYSTEM.5.desc
-	picture = ASSASSINATION_eventPicture
-	
-    hidden = yes
-
-    trigger = {
-        NOT = {
-            any_country = {
-                has_country_flag = processor
-            }
-        }
-    }
-
-    mean_time_to_happen = {
-        months = 1
-    }
-    
-    option = {
-        name = GOT_SYSTEM.5.option.a
-
-        random_country = {
-            limit = { ai = yes }
-            set_country_flag = processor
-        }
-    }  
-}
-
 # Update Royal House Subjects
 country_event = {
 	id = GOT_SYSTEM.7
@@ -874,7 +837,7 @@ country_event = {
     hidden = yes
     
     trigger = {
-        has_country_flag = processor
+        ai = yes
         has_global_flag = update_royal_subjects
     }
 
@@ -890,22 +853,11 @@ country_event = {
         # Release old royal subjects
         every_country = {
             limit = { 
-                has_reform = noble_house_reform
-                OR = {
-                    is_subject_of_type = royal_subject
-                    is_subject = no
-                }
+                is_subject_of_type = royal_subject
             }
             
             log = "[This.GetName]"
-
-            # Clear old relations
-            every_subject_country = {
-                limit = {
-                    is_subject_of_type = royal_subject
-                }
-                grant_independence = yes
-            }
+            grant_independence = yes
         }
         
         country_event = { id = GOT_SYSTEM.8 days = 1 }
@@ -930,10 +882,6 @@ country_event = {
         every_country = {
             limit = { 
                 has_reform = noble_house_reform
-                OR = {
-                    is_subject_of_type = royal_subject
-                    is_subject = no
-                }
             }
 
             # Add all Noble Houses as subjects to new Royal House

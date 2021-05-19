@@ -8,8 +8,6 @@ divorce_consort_effect = {
 		random_country = {
 			limit = { is_origin_of_consort = ROOT } 
 
-			hidden_effect = { country_event = { id = consort_events.205 days = 1 } } 
-
 			tooltip = {
 				add_opinion = {
 					who = ROOT
@@ -53,7 +51,6 @@ divorce_consort_effect = {
 			if = {
 				limit = { NOT = { any_country = { is_origin_of_consort = ROOT } } }
 				remove_consort = yes
-				country_event = { id = consort_events.206 }
 			}
 		}	
 	
@@ -72,7 +69,6 @@ divorce_consort_effect = {
 			if = {
 				limit = { NOT = { any_country = { is_origin_of_consort = ROOT } } }
 				remove_consort = yes
-				country_event = { id = consort_events.206 }
 			}
 		}
 	}

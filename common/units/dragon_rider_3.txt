@@ -1,0 +1,20 @@
+type = cavalry
+
+maneuver = 3
+
+offensive_fire = 5
+defensive_fire = 5
+
+offensive_shock = 5
+defensive_shock = 5
+
+offensive_morale = 5
+defensive_morale = 5
+
+trigger = {
+    OR = {
+        tag = A10
+        has_reform = daenerys_host_reform
+        has_country_modifier = revival_of_the_dragons
+    }
+}

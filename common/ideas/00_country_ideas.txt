@@ -751,55 +751,6 @@ dragon_ideas = {
 }
 
 #---------------------------------------
-# Pirate
-#---------------------------------------
-pirate_ideas = {
-	start = {
-		global_sailors_modifier = 0.33
-		may_perform_slave_raid = yes
-	}
-	
-	bonus = {
-		galley_power = 0.33
-	}
-	
-	trigger = {
-		government = pirate
-	}
-	free = yes
-	
-	# Arm of Dorne
-	pirate_1 = {
-		blockade_efficiency = 0.5
-	}
-	# Pirate Dens
-	pirate_2 = {
-		global_ship_cost = -0.33
-	}
-	# Essosian Claimants
-	pirate_3 = {
-        naval_tradition_from_battle = 1
-	}
-	# Lady of the Waves
-	pirate_4 = {
-		admiral_cost = -0.5
-        admiral_skill_gain_modifier = 0.5
-	}
-	# Pirate Kings
-	pirate_5 = {
-		navy_tradition = 1
-	}
-	# Rule of the Stepstones
-	pirate_6 = {
-		naval_forcelimit_modifier = 0.15
-	}
-	# Veteran Pirates
-	pirate_7 = {
-		naval_morale = 0.1
-	}
-}
-
-#---------------------------------------
 # Tyrosh
 #---------------------------------------
 tyroshi_ideas = {
@@ -1878,7 +1829,11 @@ yi_ti_ideas = {
 	}
 	
 	trigger = {
-		primary_culture = yitish
+		OR = {
+            primary_culture = high_yitish
+            primary_culture = low_yitish
+            primary_culture = jungle_yitish
+        }
 	}
 	free = yes
 	
@@ -2733,5 +2688,54 @@ ibben_ideas = {
 	# Expert Sailors
 	ibben_7 = {
 		ship_durability = 0.1
+	}
+}
+
+#---------------------------------------
+# Pirate
+#---------------------------------------
+pirate_ideas = {
+	start = {
+		global_sailors_modifier = 0.33
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		galley_power = 0.33
+	}
+	
+	trigger = {
+		government = pirate
+	}
+	free = yes
+	
+	# Arm of Dorne
+	pirate_1 = {
+		blockade_efficiency = 0.5
+	}
+	# Pirate Dens
+	pirate_2 = {
+		global_ship_cost = -0.33
+	}
+	# Essosian Claimants
+	pirate_3 = {
+        naval_tradition_from_battle = 1
+	}
+	# Lady of the Waves
+	pirate_4 = {
+		admiral_cost = -0.5
+        admiral_skill_gain_modifier = 0.5
+	}
+	# Pirate Kings
+	pirate_5 = {
+		navy_tradition = 1
+	}
+	# Rule of the Stepstones
+	pirate_6 = {
+		naval_forcelimit_modifier = 0.15
+	}
+	# Veteran Pirates
+	pirate_7 = {
+		naval_morale = 0.1
 	}
 }

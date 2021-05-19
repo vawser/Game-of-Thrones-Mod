@@ -21,16 +21,6 @@ can_harsh_treatment = {
 }
 
 can_reduce_war_exhaustion = {
-    # Stop AI wasting DIP on WE reduction during war
-    condition = {
-		tooltip = ""
-		potential = {
-            ai = yes
-		}
-		allow = {
-			is_at_war = no
-		}
-	}
 }
 
 can_reduce_inflation = {
@@ -133,7 +123,6 @@ can_colonize_province = {
 }
 
 can_colonize_province_siberian_frontier = {
-    
 }
 
 can_add_seat_in_parliament = {

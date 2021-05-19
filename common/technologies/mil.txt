@@ -1,711 +1,400 @@
 monarch_power = MIL
 
+# applied when a country is ahead of time in this technology
+# no bonus for MIL currently
 ahead_of_time = {
 	land_morale = 0.1
 }
 
+# Pre-era techs
 technology = {
+	# Tech 0
 	year = 100
-    
-    sprite_level = 1
-    
-    land_morale 		= 2.0
-    military_tactics    = 0.5
+	
+	sprite_level = 1
+
+	land_morale 		= 2.0
+    military_tactics    = 0.0
     combat_width        = 0.0
     supply_limit        = 0.0
     maneuver_value      = 0.0
     
-    infantry_fire		= 1.0
-    infantry_shock 	    = 1.0
-    cavalry_fire  	    = 1.0
-    cavalry_shock   	= 2.0
-    artillery_fire 	    = 2.0
-    artillery_shock  	= 1.0
+    infantry_fire		= 0.25
+    infantry_shock 	    = 0.2
+    cavalry_fire  	    = 0.0
+    cavalry_shock   	= 0.8
+    artillery_fire 	    = 0.0
+    artillery_shock  	= 0.0 
+	
+    enable = basic_infantry_1_option_a
+    enable = basic_infantry_1_option_b
+    enable = basic_infantry_1_option_c
     
-    enable = dragon
-    enable = white_walker_wight
+    enable = basic_cavalry_1_option_a
+    enable = basic_cavalry_1_option_b
     
-    enable = westerosi_skirmisher
-    enable = westerosi_militia
-    enable = westerosi_scout_cavalry
-    enable = westerosi_horse_archer
-    enable = westerosi_ram
-    enable = westerosi_trebuchet
+    enable = basic_artillery_1_option_a
+    enable = basic_artillery_1_option_b
     
-    enable = essosian_skirmisher
-    enable = essosian_militia
-    enable = essosian_scout_cavalry
-    enable = essosian_horse_archer
-    enable = essosian_ram
-    enable = essosian_trebuchet
-
-    enable = ghiscari_skirmisher
-    enable = ghiscari_militia
-    enable = ghiscari_scout_cavalry
-    enable = ghiscari_horse_archer
-    enable = ghiscari_ram
-    enable = ghiscari_trebuchet
-    
-    enable = quartheen_skirmisher
-    enable = quartheen_militia
-    enable = quartheen_scout_cavalry
-    enable = quartheen_horse_archer
-    enable = quartheen_ram
-    enable = quartheen_trebuchet
-    
-    enable = naathi_skirmisher
-    enable = naathi_militia
-    enable = naathi_scout_cavalry
-    enable = naathi_horse_archer
-    enable = naathi_ram
-    enable = naathi_trebuchet
-    
-    enable = farosi_skirmisher
-    enable = farosi_militia
-    enable = farosi_scout_cavalry
-    enable = farosi_horse_archer
-    enable = farosi_ram
-    enable = farosi_trebuchet
-    
-    enable = yiti_skirmisher
-    enable = yiti_militia
-    enable = yiti_scout_cavalry
-    enable = yiti_horse_archer
-    enable = yiti_ram
-    enable = yiti_trebuchet
-    
-    enable = hyrkooni_skirmisher
-    enable = hyrkooni_militia
-    enable = hyrkooni_scout_cavalry
-    enable = hyrkooni_horse_archer
-    enable = hyrkooni_ram
-    enable = hyrkooni_trebuchet
-    
-    enable = nefer_skirmisher
-    enable = nefer_militia
-    enable = nefer_scout_cavalry
-    enable = nefer_horse_archer
-    enable = nefer_ram
-    enable = nefer_trebuchet
-    
-    enable = stepstones_skirmisher
-    enable = stepstones_militia
-    enable = stepstones_scout_cavalry
-    enable = stepstones_horse_archer
-    enable = stepstones_ram
-    enable = stepstones_trebuchet
-    
-    enable = ibbenese_skirmisher
-    enable = ibbenese_militia
-    enable = ibbenese_scout_cavalry
-    enable = ibbenese_horse_archer
-    enable = ibbenese_ram
-    enable = ibbenese_trebuchet
-    
-    enable = summer_islanders_skirmisher
-    enable = summer_islanders_militia
-    enable = summer_islanders_scout_cavalry
-    enable = summer_islanders_horse_archer
-    enable = summer_islanders_ram
-    enable = summer_islanders_trebuchet
-    
-    enable = valyrian_skirmisher
-    enable = valyrian_militia
-    enable = valyrian_scout_cavalry
-    enable = valyrian_horse_archer
-    enable = valyrian_ram
-    enable = valyrian_trebuchet
-    
-    enable = asshai_skirmisher
-    enable = asshai_militia
-    enable = asshai_scout_cavalry
-    enable = asshai_horse_archer
-    enable = asshai_ram
-    enable = asshai_trebuchet
-    
-    enable = white_walker_skirmisher
-    enable = white_walker_militia
-    enable = white_walker_scout_cavalry
-    enable = white_walker_horse_archer
-    enable = white_walker_ram
-    enable = white_walker_trebuchet
-    
-    enable = bloodless_skirmisher
-    enable = bloodless_militia
-    enable = bloodless_scout_cavalry
-    enable = bloodless_horse_archer
-    enable = bloodless_ram
-    enable = bloodless_trebuchet
-    
-    enable = dothraki_skirmisher
-    enable = dothraki_militia
-    enable = dothraki_scout_cavalry
-    enable = dothraki_horse_archer
-    enable = dothraki_ram
-    enable = dothraki_trebuchet
-    
-    enable = jogos_nhai_skirmisher
-    enable = jogos_nhai_militia
-    enable = jogos_nhai_scout_cavalry
-    enable = jogos_nhai_horse_archer
-    enable = jogos_nhai_ram
-    enable = jogos_nhai_trebuchet
-    
-    enable = wildling_skirmisher
-    enable = wildling_militia
-    enable = wildling_scout_cavalry
-    enable = wildling_horse_archer
-    enable = wildling_ram
-    enable = wildling_trebuchet
-    
-    enable = mossovi_skirmisher
-    enable = mossovi_militia
-    enable = mossovi_scout_cavalry
-    enable = mossovi_horse_archer
-    enable = mossovi_ram
-    enable = mossovi_trebuchet
-    
-    enable = sothoryosi_skirmisher
-    enable = sothoryosi_militia
-    enable = sothoryosi_scout_cavalry
-    enable = sothoryosi_horse_archer
-    enable = sothoryosi_ram
-    enable = sothoryosi_trebuchet
-    
-    enable = ulthosi_skirmisher
-    enable = ulthosi_militia
-    enable = ulthosi_scout_cavalry
-    enable = ulthosi_horse_archer
-    enable = ulthosi_ram
-    enable = ulthosi_trebuchet
-    
-    enable = fishfolk_skirmisher
-    enable = fishfolk_militia
-    enable = fishfolk_scout_cavalry
-    enable = fishfolk_horse_archer
-    enable = fishfolk_ram
-    enable = fishfolk_trebuchet
-
-    enable = shadowfolk_skirmisher
-    enable = shadowfolk_militia
-    enable = shadowfolk_scout_cavalry
-    enable = shadowfolk_horse_archer
-    enable = shadowfolk_ram
-    enable = shadowfolk_trebuchet
-    
-    enable = stonemen_skirmisher
-    enable = stonemen_militia
-    enable = stonemen_scout_cavalry
-    enable = stonemen_horse_archer
-    enable = stonemen_ram
-    enable = stonemen_trebuchet
-    
-    enable = cannibal_skirmisher
-    enable = cannibal_militia
-    enable = cannibal_scout_cavalry
-    enable = cannibal_horse_archer
-    enable = cannibal_ram
-    enable = cannibal_trebuchet
-    
-    enable = kdathi_skirmisher
-    enable = kdathi_militia
-    enable = kdathi_scout_cavalry
-    enable = kdathi_horse_archer
-    enable = kdathi_ram
-    enable = kdathi_trebuchet
-}
-# 1
-technology = {
-	year = 100
+    enable = dragon_rider_1
+    enable = magi_1
+    enable = undead_magi_1
+    enable = undead_wight_1
+    enable = horse_archer_1
     
     barracks = yes
     drill_square = yes
     supply_depot = yes
     paved_road = yes
+    
     motte_and_bailey = yes
-    castle = yes
+}
+technology = {
+	# Tech 1
+	year = 108
+    
+    infantry_fire = 0.25
+    infantry_shock = 0.25
+}
+
+technology = {
+	# Tech 2
+	year = 114
+
+    cavalry_shock = 0.6
+    cavalry_fire = 0.2
+    maneuver_value = 0.1
+}
+
+technology = {
+	# Tech 3
+	year = 126
+
+    infantry_fire = 0.25
+    infantry_shock = 0.25
+}
+
+technology = {
+	# Tech 4
+	year = 138
+	
+    land_morale = 0.5
+    military_tactics = 0.5
+}
+
+technology = {
+	# Tech 5
+	year = 150
+
+    artillery_fire = 0.6
+    artillery_shock = 0.2
+}
+
+technology = {
+	# Tech 6
+	year = 162
+
+	enable = basic_infantry_2_option_a
+    enable = basic_infantry_2_option_b
+    enable = basic_infantry_2_option_c
+    
+    enable = basic_cavalry_2_option_a
+    enable = basic_cavalry_2_option_b
+    
+    enable = dragon_rider_2
+    enable = magi_2
+    enable = undead_magi_2
+    enable = undead_wight_2
+    enable = horse_archer_2
+}
+
+technology = {
+	# Tech 7
+	year = 174
+	
     military_academy = yes
-    fortress = yes
+}
+
+technology = {
+	# Tech 8
+	year = 186
+	
+    land_morale = 1
+    military_tactics = 0.5
+    
+    castle = yes
+}
+
+technology = {
+	# Tech 9
+	year = 198
+
+    cavalry_shock = 0.7
+    cavalry_fire = 0.2
+    maneuver_value = 0.1
+}
+
+technology = {
+	# Tech 10
+	year = 210
+	
+    infantry_fire = 0.25
+    infantry_shock = 0.25
+}
+
+technology = {
+	# Tech 11
+	year = 222
+
+    artillery_fire = 0.6
+    artillery_shock = 0.2
+}
+
+technology = {
+	# Tech 12
+	year = 234
+	
+	enable = basic_artillery_2_option_a
+    enable = basic_artillery_2_option_b
+}
+
+technology = {
+	# Tech 13
+	year = 246
+
+    infantry_fire = 0.35
+    infantry_shock = 0.35
+}
+
+technology = {
+	# Tech 14
+	year = 258
+
+    cavalry_shock = 0.7
+    cavalry_fire = 0.3
+    maneuver_value = 0.1
+}
+
+technology = {
+	# Tech 15
+	year = 270
+	
+	fortress = yes
+}
+
+technology = {
+	# Tech 16
+	year = 282
+	
+    land_morale = 0.5
+    military_tactics = 0.5
+}
+
+technology = {
+	# Tech 17
+	year = 294
+
+    supply_limit = 0.25
+    combat_width = 2
+}
+
+technology = {
+	# Tech 18
+	year = 306
+
+	enable = basic_infantry_3_option_a
+    enable = basic_infantry_3_option_b
+    enable = basic_infantry_3_option_c
+    
+    enable = magi_3
+    enable = undead_magi_3
+    enable = undead_wight_3
+}
+
+technology = {
+	# Tech 19
+	year = 318
+    
+    artillery_fire = 0.9
+    artillery_shock = 0.3
+}
+
+technology = {
+	# Tech 20
+	year = 330
+
+    land_morale = 1
+    military_tactics = 0.5
+    
     citadel = yes
 }
-# 2
-technology = {
-	year = 110
-    
-    land_morale = 0.2
-    combat_width = 1
-}
-# 3
-technology = {
-	year = 120
-    
-    military_tactics = 0.2
-    supply_limit = 0.1
-}
-# 4
-technology = {
-	year = 130
-    
-    infantry_fire = 0.1
-    infantry_shock = 0.1
-}
-# 5
-technology = {
-	year = 140
-    
-    cavalry_fire = 0.1
-    cavalry_shock = 0.2
-    maneuver_value = 0.1
-}
-# 6
-technology = {
-	year = 150
-    
-    artillery_fire = 0.2
-    artillery_shock = 0.1
-}
-# 7
-technology = {
-	year = 160
-    
-    land_morale = 0.2
-    combat_width = 1
-}
-# 8
-technology = {
-	year = 170
-    
-    military_tactics = 0.2
-    supply_limit = 0.1
-}
-# 9
-technology = {
-	year = 180
-    
-    infantry_fire = 0.1
-    infantry_shock = 0.1
-}
-# 10
-technology = {
-	year = 190
-    
-    cavalry_fire = 0.1
-    cavalry_shock = 0.2
-    maneuver_value = 0.1
-}
-# 11
-technology = {
-	year = 200
-    
-    artillery_fire = 0.2
-    artillery_shock = 0.1
-}
-# 12
-technology = {
-	year = 210
-    
-    land_morale = 0.4
-    combat_width = 2
-}
-# 13
-technology = {
-	year = 220
-    
-    military_tactics = 0.4
-    supply_limit = 0.2
-}
-# 14
-technology = {
-	year = 230
-    
-    infantry_fire = 0.2
-    infantry_shock = 0.2
-}
-# 15
-technology = {
-	year = 240
-    
-    cavalry_fire = 0.2
-    cavalry_shock = 0.4
-    maneuver_value = 0.2
-}
-# 16
-technology = {
-	year = 250
-    
-    artillery_fire = 0.4
-    artillery_shock = 0.2
-}
-# 17
-technology = {
-	year = 260
-    
-    land_morale = 0.4
-    combat_width = 2
-}
-# 18
-technology = {
-	year = 270
-    
-    military_tactics = 0.4
-    supply_limit = 0.2
-}
-# 19
-technology = {
-	year = 280
-    
-    infantry_fire = 0.2
-    infantry_shock = 0.2
-}
-# 20
-technology = {
-	year = 290
-    
-    enable = asshai_magi
-    enable = valyrian_dragon_rider
-    enable = white_walker_magi
-    
-    enable = westerosi_archer
-    enable = westerosi_swordsman
-    enable = westerosi_knight
-    enable = westerosi_lancer
-    enable = westerosi_capped_ram
-    enable = westerosi_reinforced_trebuchet
 
-    enable = essosian_archer
-    enable = essosian_swordsman
-    enable = essosian_knight
-    enable = essosian_lancer
-    enable = essosian_capped_ram
-    enable = essosian_reinforced_trebuchet
-
-    enable = ghiscari_archer
-    enable = ghiscari_swordsman
-    enable = ghiscari_knight
-    enable = ghiscari_lancer
-    enable = ghiscari_capped_ram
-    enable = ghiscari_reinforced_trebuchet
-
-    enable = quartheen_archer
-    enable = quartheen_swordsman
-    enable = quartheen_knight
-    enable = quartheen_lancer
-    enable = quartheen_capped_ram
-    enable = quartheen_reinforced_trebuchet
-
-    enable = naathi_archer
-    enable = naathi_swordsman
-    enable = naathi_knight
-    enable = naathi_lancer
-    enable = naathi_capped_ram
-    enable = naathi_reinforced_trebuchet
-
-    enable = farosi_archer
-    enable = farosi_swordsman
-    enable = farosi_knight
-    enable = farosi_lancer
-    enable = farosi_capped_ram
-    enable = farosi_reinforced_trebuchet
-
-    enable = yiti_archer
-    enable = yiti_swordsman
-    enable = yiti_knight
-    enable = yiti_lancer
-    enable = yiti_capped_ram
-    enable = yiti_reinforced_trebuchet
-
-    enable = hyrkooni_archer
-    enable = hyrkooni_swordsman
-    enable = hyrkooni_knight
-    enable = hyrkooni_lancer
-    enable = hyrkooni_capped_ram
-    enable = hyrkooni_reinforced_trebuchet
-
-    enable = nefer_archer
-    enable = nefer_swordsman
-    enable = nefer_knight
-    enable = nefer_lancer
-    enable = nefer_capped_ram
-    enable = nefer_reinforced_trebuchet
-
-    enable = stepstones_archer
-    enable = stepstones_swordsman
-    enable = stepstones_knight
-    enable = stepstones_lancer
-    enable = stepstones_capped_ram
-    enable = stepstones_reinforced_trebuchet
-
-    enable = ibbenese_archer
-    enable = ibbenese_swordsman
-    enable = ibbenese_knight
-    enable = ibbenese_lancer
-    enable = ibbenese_capped_ram
-    enable = ibbenese_reinforced_trebuchet
-
-    enable = summer_islanders_archer
-    enable = summer_islanders_swordsman
-    enable = summer_islanders_knight
-    enable = summer_islanders_lancer
-    enable = summer_islanders_capped_ram
-    enable = summer_islanders_reinforced_trebuchet
-
-    enable = valyrian_archer
-    enable = valyrian_swordsman
-    enable = valyrian_knight
-    enable = valyrian_lancer
-    enable = valyrian_capped_ram
-    enable = valyrian_reinforced_trebuchet
-
-    enable = asshai_archer
-    enable = asshai_swordsman
-    enable = asshai_knight
-    enable = asshai_lancer
-    enable = asshai_capped_ram
-    enable = asshai_reinforced_trebuchet
-
-    enable = white_walker_archer
-    enable = white_walker_swordsman
-    enable = white_walker_knight
-    enable = white_walker_lancer
-    enable = white_walker_capped_ram
-    enable = white_walker_reinforced_trebuchet
-
-    enable = bloodless_archer
-    enable = bloodless_swordsman
-    enable = bloodless_knight
-    enable = bloodless_lancer
-    enable = bloodless_capped_ram
-    enable = bloodless_reinforced_trebuchet
-
-    enable = dothraki_archer
-    enable = dothraki_swordsman
-    enable = dothraki_knight
-    enable = dothraki_lancer
-    enable = dothraki_capped_ram
-    enable = dothraki_reinforced_trebuchet
-
-    enable = jogos_nhai_archer
-    enable = jogos_nhai_swordsman
-    enable = jogos_nhai_knight
-    enable = jogos_nhai_lancer
-    enable = jogos_nhai_capped_ram
-    enable = jogos_nhai_reinforced_trebuchet
-
-    enable = wildling_archer
-    enable = wildling_swordsman
-    enable = wildling_knight
-    enable = wildling_lancer
-    enable = wildling_capped_ram
-    enable = wildling_reinforced_trebuchet
-
-    enable = mossovi_archer
-    enable = mossovi_swordsman
-    enable = mossovi_knight
-    enable = mossovi_lancer
-    enable = mossovi_capped_ram
-    enable = mossovi_reinforced_trebuchet
-
-    enable = sothoryosi_archer
-    enable = sothoryosi_swordsman
-    enable = sothoryosi_knight
-    enable = sothoryosi_lancer
-    enable = sothoryosi_capped_ram
-    enable = sothoryosi_reinforced_trebuchet
-
-    enable = ulthosi_archer
-    enable = ulthosi_swordsman
-    enable = ulthosi_knight
-    enable = ulthosi_lancer
-    enable = ulthosi_capped_ram
-    enable = ulthosi_reinforced_trebuchet
-
-    enable = fishfolk_archer
-    enable = fishfolk_swordsman
-    enable = fishfolk_knight
-    enable = fishfolk_lancer
-    enable = fishfolk_capped_ram
-    enable = fishfolk_reinforced_trebuchet
-    
-    enable = shadowfolk_archer
-    enable = shadowfolk_swordsman
-    enable = shadowfolk_knight
-    enable = shadowfolk_lancer
-    enable = shadowfolk_capped_ram
-    enable = shadowfolk_reinforced_trebuchet
-    
-    enable = stonemen_archer
-    enable = stonemen_swordsman
-    enable = stonemen_knight
-    enable = stonemen_lancer
-    enable = stonemen_capped_ram
-    enable = stonemen_reinforced_trebuchet
-    
-    enable = cannibal_archer
-    enable = cannibal_swordsman
-    enable = cannibal_knight
-    enable = cannibal_lancer
-    enable = cannibal_capped_ram
-    enable = cannibal_reinforced_trebuchet
-    
-    enable = kdathi_archer
-    enable = kdathi_swordsman
-    enable = kdathi_knight
-    enable = kdathi_lancer
-    enable = kdathi_capped_ram
-    enable = kdathi_reinforced_trebuchet
-    
-    cavalry_fire = 0.2
-    cavalry_shock = 0.4
-    maneuver_value = 0.2
-}
-# 21
 technology = {
-	year = 300
-    
-    artillery_fire = 0.4
-    artillery_shock = 0.2
+	# Tech 21
+	year = 342
+
+    infantry_fire = 0.35
+    infantry_shock = 0.35
 }
-# 22
+
 technology = {
-	year = 310
-    
-    land_morale = 0.6
-    combat_width = 3
-}
-# 23
-technology = {
-	year = 320
-    
-    military_tactics = 0.6
-    supply_limit = 0.3
-}
-# 24
-technology = {
-	year = 330
-    
-    infantry_fire = 0.3
-    infantry_shock = 0.3
-}
-# 25
-technology = {
-	year = 340
-    
+	# Tech 22
+	year = 354
+
+    cavalry_shock = 0.7
     cavalry_fire = 0.3
-    cavalry_shock = 0.6
-    maneuver_value = 0.3
+    maneuver_value = 0.1
 }
-# 26
+
 technology = {
-	year = 350
+	# Tech 23
+	year = 366
     
-    artillery_fire = 0.6
-    artillery_shock = 0.3
+    infantry_fire = 0.35
+    infantry_shock = 0.35
 }
-# 27
+
 technology = {
-	year = 360
+	# Tech 24
+	year = 378
+	
+    enable = basic_cavalry_3_option_a
+    enable = basic_cavalry_3_option_b
     
-    land_morale = 0.6
-    combat_width = 3
+    enable = dragon_rider_3
+    enable = horse_archer_3
 }
-# 28
+
 technology = {
-	year = 370
-    
-    military_tactics = 0.6
-    supply_limit = 0.3
-}
-# 29
-technology = {
-	year = 380
-    
-    infantry_fire = 0.3
-    infantry_shock = 0.3
-}
-# 30
-technology = {
+	# Tech 25
 	year = 390
-    
-    cavalry_fire = 0.3
-    cavalry_shock = 0.6
-    maneuver_value = 0.3
+	
+    supply_limit = 0.25
+    combat_width = 2
 }
-# 31
+
 technology = {
-	year = 400
-    
-    artillery_fire = 0.6
+	# Tech 26
+	year = 402
+
+    infantry_fire = 0.35
+    infantry_shock = 0.35
+}
+
+technology = {
+	# Tech 27
+	year = 414
+
+    artillery_fire = 0.9
     artillery_shock = 0.3
 }
-# 32
+
 technology = {
-	year = 410
-    
-    land_morale = 0.8
-    combat_width = 4
+	# Tech 28
+	year = 426
+	
+    land_morale = 0.5
+    military_tactics = 0.75
 }
-# 33
+
 technology = {
-	year = 420
-    
-    military_tactics = 0.8
-    supply_limit = 0.4
+	# Tech 29
+	year = 438
+
+    supply_limit = 0.25
+    combat_width = 2
 }
-# 34
+
 technology = {
-	year = 430
-    
-    infantry_fire = 0.4
-    infantry_shock = 0.4
-}
-# 35
-technology = {
-	year = 440
-    
-    cavalry_fire = 0.4
-    cavalry_shock = 0.8
-    maneuver_value = 0.4
-}
-# 36
-technology = {
+	# Tech 30
 	year = 450
-    
-    artillery_fire = 0.8
-    artillery_shock = 0.4
+
+    cavalry_shock = 1.2
+    cavalry_fire = 0.5
+    maneuver_value = 0.1
 }
-# 37
+
 technology = {
-	year = 460
-    
-    land_morale = 0.8
-    combat_width = 4
-}
-# 38
-technology = {
-	year = 470
-    
-    military_tactics = 0.8
-    supply_limit = 0.4
-}
-# 39
-technology = {
-	year = 480
+	# Tech 31
+	year = 462
     
     infantry_fire = 0.4
-    infantry_shock = 0.4
+    infantry_shock = 0.45
 }
-# 40
+
 technology = {
-	year = 490
-    
-    cavalry_fire = 0.4
-    cavalry_shock = 0.8
-    maneuver_value = 0.4
+	# Tech 32
+	year = 474
+
+    land_morale = 1
+    military_tactics = 0.75
 }
-# 41
+
 technology = {
-	year = 500
+	# Tech 33
+	year = 486
+
+    supply_limit = 0.25
+    combat_width = 2	
+}
+
+technology = {
+	# Tech 34
+	year = 498
+
+    enable = basic_artillery_3_option_a
+    enable = basic_artillery_3_option_b
     
-    artillery_fire = 0.8
-    artillery_shock = 0.4
+    artillery_fire = 1.5
+    artillery_shock = 0.5
+}
+
+technology = {
+	# Tech 35
+	year = 510
+
+    infantry_fire = 0.7
+    infantry_shock = 0.7
+}
+
+technology = {
+	# Tech 36
+	year = 522
+
+    land_morale = 0.5
+    military_tactics = 1
+}
+
+technology = {
+	# Tech 37
+	year = 534
+
+    cavalry_shock = 1.3
+    cavalry_fire = 0.5
+    maneuver_value = 0.1
+}
+
+technology = {
+	# Tech 38
+	year = 546
+
+    infantry_fire = 0.5
+    infantry_shock = 0.5
+}
+
+technology = {
+	# Tech 39
+	year = 558
+    
+    artillery_fire = 1.5
+    artillery_shock = 0.5
+}
+
+technology = {
+	# Tech 40
+	year = 570
+	
+    land_morale = 1
+    military_tactics = 1
+    combat_width = 2
 }

@@ -1012,7 +1012,7 @@ on_trade_good_changed_estate_privileges_effect = {
     if = {
 		limit = {
 			has_province_modifier = monopoly_of_ironwood_mod
-			NOT = { trade_goods = ironwoo }
+			NOT = { trade_goods = ironwood }
 		}
 		remove_province_modifier = monopoly_of_ironwood_mod
 	}
@@ -1020,7 +1020,7 @@ on_trade_good_changed_estate_privileges_effect = {
 		limit = {
 			from = { has_estate_privilege = estate_commoners_monopoly_of_ironwood }
 			NOT = { has_province_modifier = monopoly_of_ironwood_mod }
-			trade_goods = ironwoo
+			trade_goods = ironwood
 		}
 		remove_province_modifier = monopoly_of_ironwood_mod
     }

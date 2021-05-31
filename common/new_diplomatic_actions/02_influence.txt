@@ -7,6 +7,7 @@ request_royal_submission = {
 	require_acceptance = yes # Whether the recipient gets an option to decline
 	
 	is_visible = {
+        NOT = { tag = AB2 } # Blackfyre should be blocked from this action
 		is_subject = no
         has_reform = noble_house_reform
         
@@ -87,6 +88,7 @@ enforce_royal_submission = {
 		has_reform = royal_house_reform
         
 		FROM = {
+            NOT = { tag = AB2 } # Blackfyre should be blocked from this action
 			is_subject = no
             has_reform = noble_house_reform
 		}

@@ -1,7 +1,7 @@
 divorce_consort_effect = {
 	if = {
 		limit = {
-			NOT = { religion = religion_westeros }
+			NOT = { religion = faith_of_the_seven }
 			has_foreign_consort = yes
 		}
 
@@ -26,7 +26,7 @@ divorce_consort_effect = {
 	#Local consort family expresses anger
 	if = {
 		limit = {
-			NOT = { religion = religion_westeros }
+			NOT = { religion = faith_of_the_seven }
 			has_foreign_consort = no
 			any_owned_province = { has_province_modifier = domain_of_spouses_family }
 		} 
@@ -43,7 +43,7 @@ divorce_consort_effect = {
 
 	#Set aside first wife and select another
 	if = {
-		limit = { NOT = { religion_group = religion_westeros } }
+		limit = { NOT = { religion = faith_of_the_seven } }
 
 		custom_tooltip = divorce.a.tt
 
@@ -60,7 +60,7 @@ divorce_consort_effect = {
 	#Divorce
 	if = {
 		limit = {
-			religion_group = religion_westeros
+			religion = faith_of_the_seven
 		}
 
 		custom_tooltip = divorce.b.tt

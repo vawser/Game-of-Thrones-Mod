@@ -53,16 +53,7 @@ country_event = {
     trigger = {
         NOT = { has_global_flag = white_walkers_empowered }
         tag = WIT
-        OR = {
-            ai = no # Player can do whatever
-            
-            # If any nation gets near them before 280
-            any_country = {
-                is_neighbor_of = ROOT
-            }
-            
-            is_year = 280
-        }
+        current_age = age_of_ice
     }
     
     immediate = {

@@ -113,7 +113,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				culture = FROM
+				FROM = { culture = FROM }
 			}
 		}
 		add_army_professionalism = -0.05
@@ -164,7 +164,7 @@ province_event = {
 }
 
 #The total destruction of X
-country_event = {
+province_event = {
 	id = GOT_ARMY_PROFESSIONALISM.3
 	title = GOT_ARMY_PROFESSIONALISM.3.title
 	desc = GOT_ARMY_PROFESSIONALISM.3.desc
@@ -781,7 +781,7 @@ province_event = {
 			name = "regimental_town"
 			duration = 3650
 		}
-		set_country_flag = regimental_town_flag
+		owner = { set_country_flag = regimental_town_flag }
 	}
 }
 

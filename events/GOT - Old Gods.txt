@@ -87,17 +87,19 @@ province_event = {
 	option = {
 		name = "GOT_OLD_GODS.2.option.a"
 		
-		add_prestige = -10
+		owner = { 
+			add_prestige = -10
 		
-		if = {
-			limit = { has_estate = estate_commoners }
-					
-			add_estate_loyalty = {
-				estate = estate_commoners
-				loyalty = -10
+			if = {
+				limit = { has_estate = estate_commoners }
+						
+				add_estate_loyalty = {
+					estate = estate_commoners
+					loyalty = -10
+				}
 			}
 		}
-			
+
 		ai_chance = {
 			factor = 20
 		}

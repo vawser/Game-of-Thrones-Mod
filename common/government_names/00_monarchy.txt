@@ -18,10 +18,7 @@
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = noble_house_reform
-            has_reform = noble_house_legacy
-        }
+        has_reform = noble_house_reform
 	}
 }
 
@@ -45,10 +42,7 @@ gov_noble_house_dornish = {
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = noble_house_reform
-            has_reform = noble_house_legacy
-        }
+        has_reform = noble_house_reform
         OR = {
 			primary_culture = salt_dornish
 			primary_culture = sand_dornish
@@ -77,10 +71,7 @@ gov_royal_house = {
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = royal_house_reform
-            has_reform = royal_house_legacy
-        }
+        has_reform = royal_house_reform
 	}
 }
 
@@ -104,10 +95,7 @@ gov_qarth_city = {
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = qarth_city_reform
-            has_reform = qarth_city_legacy
-        }
+        has_reform = qarth_city_reform
 	}
 }
 
@@ -131,10 +119,7 @@ gov_yiti_city = {
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = yiti_city_reform
-            has_reform = yiti_city_legacy
-        }
+        has_reform = yiti_city_reform
 	}
 }
 
@@ -158,17 +143,7 @@ gov_yiti_empire = {
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = yiti_empire_reform
-            has_reform = yiti_empire_legacy
-        }
-        OR = {
-            is_emperor_of_china = yes
-            AND = {
-                NOT = { has_dlc = "Mandate of Heaven" }
-                government_rank = 3
-            }
-        }
+        has_reform = yiti_empire_reform
 	}
 }
 
@@ -192,10 +167,7 @@ gov_valyria_city = {
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = valyria_city_reform
-            has_reform = valyria_city_legacy
-        }
+        has_reform = valyria_city_reform
 	}
 }
 
@@ -219,10 +191,7 @@ gov_meereen_city = {
 	}
 	
 	trigger = {
-		OR = {
-            has_reform = meereen_city_reform
-            has_reform = meereen_city_legacy
-        }
+		has_reform = meereen_city_reform
 	}
 }
 
@@ -246,10 +215,7 @@ gov_yunkai_city = {
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = yunkai_city_reform
-            has_reform = yunkai_city_legacy
-        }
+        has_reform = yunkai_city_reform
     }
 }
 
@@ -273,10 +239,7 @@ gov_astapor_city = {
 	}
 	
 	trigger = {
-		OR = {
-            has_reform = astapor_city_reform
-            has_reform = astapor_city_legacy
-        }
+		has_reform = astapor_city_reform
 	}
 }
 
@@ -300,10 +263,7 @@ gov_ghis_city = {
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = ghis_city_reform
-            has_reform = ghis_city_legacy
-        }
+        has_reform = ghis_city_reform
 	}
 }
 
@@ -327,10 +287,7 @@ gov_hyrkoon_clan = {
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = hyrkoon_city_reform
-            has_reform = hyrkoon_city_legacy
-        }
+        has_reform = hyrkoon_city_reform
 	}
 }
 
@@ -354,10 +311,7 @@ gov_nefer_clan = {
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = nefer_city_reform
-            has_reform = nefer_city_legacy
-        }
+        has_reform = nefer_city_reform
 	}
 }
 
@@ -381,9 +335,6 @@ gov_daenerys_host = {
 	}
 	
 	trigger = {
-        OR = {
-            has_reform = daenerys_host_reform
-            has_reform = daenerys_host_legacy
-        }
+        has_reform = daenerys_host_reform
 	}
 }

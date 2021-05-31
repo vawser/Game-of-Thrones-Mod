@@ -15,7 +15,8 @@ hooded_wayfarer_rebels = {
 	resilient = no
 	reinforcing = yes
 	general = yes
-	smart = yes
+	smart = yes	
+	will_relocate = yes	
 	
 	artillery = 0.0
 	infantry = 0.9
@@ -123,7 +124,7 @@ hooded_wayfarer_rebels = {
 		}
 		if = {
 			limit = {
-				religion_group = religion_distant_essos
+				religion_group = religion_essos
 			}
 			change_religion = hooded_wayfarer
 			add_province_modifier = {
@@ -133,7 +134,7 @@ hooded_wayfarer_rebels = {
 		}
 		if = {
 			limit = {
-				NOT = { religion_group = religion_distant_essos }
+				NOT = { religion_group = religion_essos }
 			}
 			add_province_modifier = {
 				name = "religious_violence"

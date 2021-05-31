@@ -30,7 +30,7 @@ vassalaction = {
             FROM = {
                 tag = A02
             }
-            continent = westeros
+            capital_scope = { continent = westeros }
 		}
 		allow = {
 			always = no
@@ -63,7 +63,7 @@ ask_for_tributary_state_action = {
 		potential = {
 			OR = {
 				is_emperor_of_china = yes
-				primary_culture = dothraki
+				primary_culture = dothraki_culture
 				primary_culture = jogos_nhai
 			}
 		}
@@ -77,7 +77,7 @@ ask_for_tributary_state_action = {
 			NOT = {
 				OR = {
 					is_emperor_of_china = yes
-					primary_culture = dothraki
+					primary_culture = dothraki_culture
 					primary_culture = jogos_nhai
 				}
 			}

@@ -27,12 +27,147 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 		}
 		
-		WindowType = {
-			name = "supremacy"
+        WindowType = {
+			name = "age_of_calamity"
 			position = { x= 35 y = -29}
-			upsound = age_of_discovery
+            
+            iconType = {
+				name ="frame"
+				spriteType = "GFX_age_indicator_4"
+				position = { x= 0 y = 7 }
+            }
+			iconType = {
+				name ="icon_age_1"
+				spriteType = "GFX_icon_age_active"
+				position = { x= -15 y = 20 }
+				frame = 1
+            }
+			iconType = {
+				name ="icon_age_2"
+				spriteType = "GFX_icon_age_inactive"
+				position = { x= -15 y = 60 }
+				frame = 2
+            }
+			iconType = {
+				name ="icon_age_3"
+				spriteType = "GFX_icon_age_inactive"
+				position = { x= -15 y = 100 }
+				frame = 3
+            }
+			iconType = {
+				name ="icon_age_4"
+				spriteType = "GFX_icon_age_inactive"
+				position = { x= -15 y = 140 }
+				frame = 4
+            }
+		}
+        
+		WindowType = {
+			name = "age_of_fire"
+			position = { x= 35 y = -29}
+
+            iconType = {
+				name ="frame"
+				spriteType = "GFX_age_indicator_3"
+				position = { x= 0 y = 7 }
+            }
+            iconType = {
+				name ="icon_age_1"
+				spriteType = "GFX_icon_age_inactive"
+				position = { x= -15 y = 20 }
+				frame = 1
+            }
+			iconType = {
+				name ="icon_age_2"
+				spriteType = "GFX_icon_age_active"
+				position = { x= -15 y = 60 }
+				frame = 2
+            }
+			iconType = {
+				name ="icon_age_3"
+				spriteType = "GFX_icon_age_inactive"
+				position = { x= -15 y = 100 }
+				frame = 3
+            }
+			iconType = {
+				name ="icon_age_4"
+				spriteType = "GFX_icon_age_inactive"
+				position = { x= -15 y = 140 }
+				frame = 4
+            }
+
 		}			
 		
+		WindowType = {
+			name = "age_of_rebellion"
+			position = { x= 35 y = -29}
+
+            iconType = {
+				name ="frame"
+				spriteType = "GFX_age_indicator_2"
+				position = { x= 0 y = 7 }
+            }
+            iconType = {
+				name ="icon_age_1"
+				spriteType = "GFX_icon_age_inactive"
+				position = { x= -15 y = 20 }
+				frame = 1
+            }
+			iconType = {
+				name ="icon_age_2"
+				spriteType = "GFX_icon_age_inactive"
+				position = { x= -15 y = 60 }
+				frame = 2
+            }
+			iconType = {
+				name ="icon_age_3"
+				spriteType = "GFX_icon_age_active"
+				position = { x= -15 y = 100 }
+				frame = 3
+            }
+			iconType = {
+				name ="icon_age_4"
+				spriteType = "GFX_icon_age_inactive"
+				position = { x= -15 y = 140 }
+				frame = 4
+            }
+		}	
+        
+        WindowType = {
+			name = "age_of_ice"
+			position = { x= 35 y = -29}
+
+            iconType = {
+				name ="frame"
+				spriteType = "GFX_age_indicator_1"
+				position = { x= 0 y = 7 }
+            }
+            iconType = {
+				name ="icon_age_1"
+				spriteType = "GFX_icon_age_inactive"
+				position = { x= -15 y = 20 }
+				frame = 1
+            }
+			iconType = {
+				name ="icon_age_2"
+				spriteType = "GFX_icon_age_inactive"
+				position = { x= -15 y = 60 }
+				frame = 2
+            }
+			iconType = {
+				name ="icon_age_3"
+				spriteType = "GFX_icon_age_inactive"
+				position = { x= -15 y = 100 }
+				frame = 3
+            }
+			iconType = {
+				name ="icon_age_4"
+				spriteType = "GFX_icon_age_active"
+				position = { x= -15 y = 140 }
+				frame = 4
+            }
+		}
+        
 		instantTextBoxType = {
 			name = "title"
 			position = { x = 86 y =-27 }
@@ -78,7 +213,7 @@ guiTypes = {
 		guiButtonType = {
 			name = "golden_age"
 			quadTextureSprite ="GFX_age_golden_age_button"
-			position = { x = 170 y = 175 }
+			position = { x = 148 y = 140 }
 			buttonText = "START_GOLDEN_AGE"
 			buttonFont = "vic_18"
 		}
@@ -86,20 +221,20 @@ guiTypes = {
 		iconType = {
 			name = "in_golden_age_banner"
 			spriteType = "GFX_golden_age_banner"
-			position = { x = 120 y = 175 }
+			position = { x = 74 y = 130 }
 			alwaystransparent = yes 
 		}
 
 		iconType = {
 			name = "after_golden_age_banner"
 			spriteType = "GFX_golden_age_banner_tattered"
-			position = { x = 120 y = 175 }
+			position = { x = 74 y = 130 }
 			alwaystransparent = yes 
 		}
 
 		instantTextBoxType = {
 			name = "in_or_after_golden_age_text"
-			position = { x = 160 y = 180 }
+			position = { x = 124 y =134 }
 			font = "vic_22s"
 			borderSize = {x = 4 y = 4}
 			text = ""
@@ -139,16 +274,21 @@ guiTypes = {
 			shortcut = "ESCAPE"
 		}
 		
-		listboxType = {
+		listboxType = 
+		{
 			name ="objectives"
 			position = { x = 10 y = 280 }
 			backGround=""
-			size = { x=550 y =340}
+			size = { x=700 y =560}
 			Orientation = "UPPER_LEFT"
+			spacing = 2
 			scrollbartype = "standardlistbox_slider"
 			borderSize = {x = 0 y = 0}
 		}
-		listboxType = {
+
+
+		listboxType = 
+		{
 			name ="abilities"
 			position = { x = 4 y = 244 }
 			backGround=""
@@ -160,21 +300,36 @@ guiTypes = {
 			horizontal = 1
 			alwaystransparent = yes
 		}
-	}
 
+
+	}
+	
+	
+	
+	
+	
 	
 	###### OBJECTIVES ENTRY
 	windowType = {
 		name = "age_objectives_entry"
 		backGround=""
 		position = { x=0 y=0 }	
-		size = { x=600 y= 24 }
+		size = { x=600 y= 54 }
 		moveable = 0
 		dontRender = ""
 		horizontalBorder= ""
 		verticalBorder= ""
 		fullScreen = no
-        
+		
+		#remove
+#		iconType =
+#		{
+#			name ="_entry_bg"
+#			spriteType = "GFX_achievement_entry_bg"
+#			position = { x=-2 y = -4 }
+#			Orientation = "UPPER_LEFT"
+#		}
+		
 		iconType =
 		{
 			name ="icon"
@@ -185,11 +340,11 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "name"
-			position = { x = 16 y = 6 }
+			position = { x = 8 y = 2 }
 			font = "vic_22"
 			borderSize = {x = 0 y = 0}
 			text = "name"	
-			maxWidth = 446
+			maxWidth = 390
 			maxHeight = 32
 			fixedsize = yes
 			format = left			
@@ -197,12 +352,12 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "desc"
-			position = { x = 8 y = -9999 }
+			position = { x = 8 y = 20 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
 			text = "desc"	
-			maxWidth = 446
-			maxHeight = 26
+			maxWidth = 390
+			maxHeight = 24
 			format = left			
 		}
 		## stuff to the right
@@ -211,7 +366,7 @@ guiTypes = {
 		{
 			name ="progress"
 			spriteType = "achievement_progress"
-			position = { x= 469 y = -9999 }
+			position = { x= 469 y = 34 }
 			Orientation = "UPPER_LEFT"
 			
 		}
@@ -220,7 +375,7 @@ guiTypes = {
 		{
 			name ="progress_overlay"
 			spriteType = "GFX_achievement_progress_frame"
-			position = { x= 454 y = -9999 }
+			position = { x= 454 y = 29 }
 			Orientation = "UPPER_LEFT"
 			
 		}
@@ -228,7 +383,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "progress_text"
-			position = { x = 490 y = 8 }
+			position = { x = 470 y = 8 }
 			font = "vic_22"
 			borderSize = {x = 0 y = 0}
 			text = "7/14"	

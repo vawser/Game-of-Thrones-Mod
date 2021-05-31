@@ -176,7 +176,7 @@ province_event = {
 			NOT = { has_province_flag = received_trade_goods }
 			had_province_flag = { flag = received_trade_goods days = 3650 }
 		}
-		has_empty_adjacent_province = no
+		NOT = { has_empty_adjacent_province = yes }
 	}
 	
 	mean_time_to_happen = {

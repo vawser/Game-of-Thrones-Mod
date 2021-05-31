@@ -22,10 +22,7 @@ country_event = {
         modifier = {
             factor = 0.1
             
-            OR = {
-                tag = CRW
-                tag = A10
-            }
+            tag = A10
         }
 	}
 	
@@ -68,7 +65,7 @@ country_event = {
         custom_tooltip = DRAGON_EGGS_LEAD_TT
         
         hidden_effect = {
-            change_variable = { dragon_egg_leads = 1 }
+            change_variable = { which = dragon_egg_leads value = 1 }
         }
 	}
 }
@@ -96,7 +93,7 @@ country_event = {
         custom_tooltip = DRAGON_EGGS_LEAD_TT
         
         hidden_effect = {
-            change_variable = { dragon_egg_leads = 1 }
+            change_variable = { which = dragon_egg_leads value = 1 }
         }
 	}
 }
@@ -273,7 +270,10 @@ country_event = {
         NOT = { has_country_modifier = dragon_eggs }
         NOT = { has_country_modifier = revival_of_the_dragons }
         has_country_flag = looking_for_dragon_eggs
-        check_variable = { dragon_egg_leads = 3 }
+        check_variable = { 
+            which = dragon_egg_leads 
+            value = 3 
+        }
     }
 	
 	option = {
@@ -286,7 +286,7 @@ country_event = {
         
         hidden_effect = {
             clr_country_flag = looking_for_dragon_eggs
-            set_variable = { dragon_egg_leads = 0 }
+            set_variable = { which = dragon_egg_leads value = 0 }
         }
 	}
 }

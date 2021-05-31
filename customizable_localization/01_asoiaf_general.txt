@@ -65,7 +65,11 @@ defined_text = {
     text = {
         localisation_key = string_succession_crisis
         trigger = {
-            government = nomadic
+           	OR = {
+				has_reform = warband_reform
+				has_reform = khalasar_reform
+				has_reform = jhattar_reform
+			}
         }
     } 
     
@@ -80,7 +84,11 @@ defined_text = {
     text = {
         localisation_key = string_khas
         trigger = {
-            government = nomadic
+            OR = {
+				has_reform = warband_reform
+				has_reform = khalasar_reform
+				has_reform = jhattar_reform
+			}
         }
     } 
     text = {
@@ -160,7 +168,7 @@ defined_text = {
     text = {
         localisation_key = string_lords
         trigger = {
-			culture_group = culture_westeros
+			culture_group = culture_andal
             NOT = { tag = A02 }
             NOT = { 
                 primary_culture = sand_dornish
@@ -180,23 +188,21 @@ defined_text = {
         localisation_key = string_chief
         trigger = {
             OR = {
-                culture_group = culture_free_folk
                 culture_group = culture_ibben
                 culture_group = culture_faros
                 culture_group = culture_naathi
-                culture_group = culture_tribal
+                culture_group = culture_sothoryos
+                culture_group = culture_ulthos
                 culture_group = culture_summer_isles
+				culture_group = culture_first_men
                 NOT = { primary_culture = corsairs }
-                primary_culture = skagosi
-                primary_culture = first_men
-                primary_culture = mountain_men
             }
         }
 	}
     text = {
         localisation_key = string_masters
         trigger = {
-			culture_group = culture_central_essos
+			culture_group = culture_ghiscari
         }
 	}
     text = {
@@ -219,9 +225,9 @@ defined_text = {
                 culture_group = culture_hyrkoon
                 culture_group = culture_yi_ti
                 culture_group = culture_nefer
-                culture_group = culture_bloodless_men
+                culture_group = culture_bloodless
                 AND = {
-                    culture_group = culture_westeros
+                    culture_group = culture_rhoynar
                     OR = {
                         primary_culture = sand_dornish
                         primary_culture = salt_dornish
@@ -237,7 +243,7 @@ defined_text = {
             OR = {
                 culture_group = culture_ancient
                 culture_group = culture_qarth
-                culture_group = culture_trader_town
+                primary_culture = trader_town
             }
         }
     }
@@ -261,7 +267,7 @@ defined_text = {
     text = {
         localisation_key = string_ladies
         trigger = {
-			culture_group = culture_westeros
+			culture_group = culture_andal
             NOT = { tag = A02 }
             NOT = { 
                 primary_culture = sand_dornish
@@ -281,23 +287,21 @@ defined_text = {
         localisation_key = string_chiefesses
         trigger = {
             OR = {
-                culture_group = culture_free_folk
                 culture_group = culture_ibben
                 culture_group = culture_faros
                 culture_group = culture_naathi
-                culture_group = culture_tribal
+                culture_group = culture_sothoryos
+                culture_group = culture_ulthos
                 culture_group = culture_summer_isles
+				culture_group = culture_first_men
                 NOT = { primary_culture = corsairs }
-                primary_culture = skagosi
-                primary_culture = first_men
-                primary_culture = mountain_men
             }
         }
 	}
     text = {
         localisation_key = string_mistresses
         trigger = {
-			culture_group = culture_central_essos
+			culture_group = culture_ghiscari
         }
 	}
     text = {
@@ -320,9 +324,9 @@ defined_text = {
                 culture_group = culture_hyrkoon
                 culture_group = culture_yi_ti
                 culture_group = culture_nefer
-                culture_group = culture_bloodless_men
+                culture_group = culture_bloodless
                 AND = {
-                    culture_group = culture_westeros
+                    culture_group = culture_rhoynar
                     OR = {
                         primary_culture = sand_dornish
                         primary_culture = salt_dornish
@@ -338,7 +342,7 @@ defined_text = {
             OR = {
                 culture_group = culture_ancient
                 culture_group = culture_qarth
-                culture_group = culture_trader_town
+                primary_culture = trader_town
             }
         }
     }
@@ -362,7 +366,7 @@ defined_text = {
     text = {
         localisation_key = string_lady
         trigger = {
-			culture_group = culture_westeros
+			culture_group = culture_andal
             NOT = { tag = A02 }
             NOT = { 
                 primary_culture = sand_dornish
@@ -382,23 +386,21 @@ defined_text = {
         localisation_key = string_chiefess
         trigger = {
             OR = {
-                culture_group = culture_free_folk
                 culture_group = culture_ibben
                 culture_group = culture_faros
                 culture_group = culture_naathi
-                culture_group = culture_tribal
+                culture_group = culture_sothoryos
+                culture_group = culture_ulthos
                 culture_group = culture_summer_isles
+				culture_group = culture_first_men
                 NOT = { primary_culture = corsairs }
-                primary_culture = skagosi
-                primary_culture = first_men
-                primary_culture = mountain_men
             }
         }
 	}
     text = {
         localisation_key = string_mistress
         trigger = {
-			culture_group = culture_central_essos
+			culture_group = culture_ghiscari
         }
 	}
     text = {
@@ -421,9 +423,9 @@ defined_text = {
                 culture_group = culture_hyrkoon
                 culture_group = culture_yi_ti
                 culture_group = culture_nefer
-                culture_group = culture_bloodless_men
+                culture_group = culture_bloodless
                 AND = {
-                    culture_group = culture_westeros
+                    culture_group = culture_rhoynar
                     OR = {
                         primary_culture = sand_dornish
                         primary_culture = salt_dornish
@@ -439,7 +441,7 @@ defined_text = {
             OR = {
                 culture_group = culture_ancient
                 culture_group = culture_qarth
-                culture_group = culture_trader_town
+                primary_culture = trader_town
             }
         }
     }
@@ -480,7 +482,11 @@ defined_text = {
 	text = {
         localisation_key = string_khanzada
 		trigger = {
-			government = nomadic
+			OR = {
+				has_reform = warband_reform
+				has_reform = khalasar_reform
+				has_reform = jhattar_reform
+			}
 		}
     }
 	text = {

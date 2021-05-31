@@ -49,8 +49,6 @@ country_event = {
 			is_capital = no
 			is_state = yes
 			is_in_capital_area = yes
-			NOT = { has_estate = estate_nobles }
-			NOT = { has_estate = estate_clergy }
 		}
 		OR = {
 			AND = {
@@ -77,9 +75,7 @@ country_event = {
 				limit = {
 					is_capital = no
 					is_state = yes
-					is_in_capital_area = yes 
-					NOT = { has_estate = estate_merchants }
-					NOT = { has_estate = estate_clergy }
+					is_in_capital_area = yes
 				}
 				save_event_target_as = origin_of_queens_family
 			}
@@ -145,9 +141,7 @@ country_event = {
 					is_capital = no
 					OR = {
 						is_state = yes
-						is_in_capital_area = yes 
-						NOT = { has_estate = estate_merchants }
-						NOT = { has_estate = estate_clergy }
+						is_in_capital_area = yes
 					}
 				}
 				save_event_target_as = origin_of_queens_family
@@ -707,7 +701,6 @@ country_event = {
 			factor = 0.9
 			OR = {
 				ruler_has_personality = charismatic_negotiator_personality
-				ruler_has_personality = silver_tounge_personality
 				ruler_has_personality = well_connected_personality
 			}
 		}
@@ -2496,13 +2489,7 @@ country_event = {
 	option = {
 		trigger = { 
 			consort_age = 52 
-
-			OR = { 
-				religion_group = religion_westeros
-				has_adopted_cult = islam_cult
-				has_adopted_cult = christianity_cult
-				has_adopted_cult = jewish_cult
-			}
+			religion_group = religion_westeros
 		}
 
 		name = GOT_CONSORT.102.option.b 
@@ -3796,7 +3783,6 @@ country_event = {
 		modifier = {
 			factor = 0.8
 			OR = {
-				consort_has_personality = silver_tounge_personality
 				consort_has_personality = well_connected_personality
 			}
 		}

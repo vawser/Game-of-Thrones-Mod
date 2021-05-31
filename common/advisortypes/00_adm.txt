@@ -381,7 +381,7 @@ courtesan = {
         modifier = {
             factor = 0
             
-            NOT = { has_government_attribute = heir }
+            owner = { NOT = { has_government_attribute = heir } }
         }
     }
 	ai_will_do = { factor = 1 }

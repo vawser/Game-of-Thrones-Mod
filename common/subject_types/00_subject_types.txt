@@ -730,7 +730,7 @@ royal_subject = {
     is_voluntary = no
     transfer_trade_power = no
     transfer_trade_if_merchant_republic = no
-    joins_overlords_wars = yes
+    joins_overlords_wars = no
     joins_colonial_wars = no
     can_be_integrated = no
     can_release_and_play = no
@@ -836,12 +836,8 @@ royal_subject = {
 	overlord_opinion_modifier = is_royal_overlord
 	subject_opinion_modifier = is_royal_subject
     
-    modifier_overlord = {
-		modifier = powerful_house
-        
-		trigger = {
-			total_development = 50
-		}
+    modifier_subject = {
+		modifier = royal_subject_bonus
 	}
 }
 

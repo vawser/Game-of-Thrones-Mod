@@ -88,39 +88,6 @@ cb_wildling_feud = {
     war_goal = superiority_wildling_feud
 }
 
-cb_unification_of_yiti = {
-	valid_for_subject = no
-
-	prerequisites = {
-		is_free_or_tributary_trigger = yes
-		OR = {
-			AND = {
-				has_dlc = "Mandate of Heaven"
-				is_emperor_of_china = yes
-			}
-			AND = {
-				NOT = { has_dlc = "Mandate of Heaven" }
-				culture_group = culture_yi_ti
-			}
-		}
-		
-		FROM = {
-			NOT = { is_subject_of = ROOT }
-			OR = {
-				has_dlc = "Mandate of Heaven"
-				culture_group = culture_yi_ti
-			}
-			any_owned_province = {
-				region = region_yi_ti
-			}
-			is_emperor_of_china = no
-		}
-		is_neighbor_of = FROM
-	}
-
-	war_goal = superiority_yitish_unification
-}
-
 cb_pirates = {
 	is_triggered_only = yes
 	months = 120

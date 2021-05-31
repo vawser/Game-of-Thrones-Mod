@@ -1,14 +1,22 @@
-government_rank = 1
-government = monarchy
-add_government_reform = royal_house_reform
-
+#-------------------------------
+# Nation
+#-------------------------------
 technology_group = westerosi
 primary_culture = men_of_the_crownlands
 religion = faith_of_the_seven
-
+government_rank = 3
+government = monarchy
+add_government_reform = royal_house_reform
 capital = 226
 fixed_capital = 226
 
+#-------------------------------
+# Diplomacy
+#-------------------------------
+
+#-------------------------------
+# Rulers
+#-------------------------------
 # War for the Stepstones
 100.1.1 = {
 	monarch = {
@@ -46,6 +54,115 @@ fixed_capital = 226
 	}
 }
 
-101.1.1 = {
+# The Dance of the Dragons
+129.1.1 = {
+	monarch = {
+		name = "Aegon II"
+		dynasty = "Targaryen"
+		adm = 5
+		dip = 5
+		mil = 6
+		birth_date = 107.1.1
+	}
+	
+    queen = {
+        country_of_origin = A10
+        name = "Helaena"
+        dynasty = "Targaryen" 
+        birth_date = 109.1.1
+        death_date = 150.1.1
+        female = yes
+        adm = 2
+        dip = 4
+        mil = 4
+    }
+    
+	heir = {
+		name = "Jaehaerys"
+		monarch_name = "Jaehaerys"
+		dynasty = "Targaryen"
+		birth_date = 123.1.1
+		death_date = 150.1.1
+		claim = 100
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+
+# Blackfyre Rebellion
+195.1.1 = {
+	monarch = {
+		name = "Daeron"
+		dynasty = "Targaryen"
+		adm = 5
+		dip = 3
+		mil = 5
+		birth_date = 154.1.1
+	}
+	
+    queen = {
+        country_of_origin = A09
+        name = "Mariah"
+        dynasty = "Martell" 
+        birth_date = 150.1.1
+        death_date = 250.1.1
+        adm = 3
+        dip = 3
+        mil = 4
+        female = yes
+    }
+    
+	heir = {
+		name = "Baelor"
+		monarch_name = "Baelor Breakspear"
+		dynasty = "Targaryen"
+		birth_date = 170.1.1
+		death_date = 250.1.1
+		claim = 100
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+
+# Robert's Rebellion
+282.1.1 = {
+	monarch = {
+		name = "Aerys 'the Mad'"
+		dynasty = "Targaryen"
+		adm = 0
+		dip = 0
+		mil = 1
+		birth_date = 143.1.1
+	}
+	
+    queen = {
+        country_of_origin = A10
+        name = "Rhaella"
+        dynasty = "Targaryen" 
+        birth_date = 145.1.1
+        death_date = 350.1.1
+        adm = 3
+        dip = 5
+        mil = 4
+        female = yes
+    }
+    
+	heir = {
+		name = "Rhaegar"
+		monarch_name = "Rhaegar"
+		dynasty = "Targaryen"
+		birth_date = 259.1.1
+		death_date = 350.1.1
+		claim = 100
+		adm = 4
+		dip = 3
+		mil = 6
+	}
+}
+
+283.1.1 = {
+    # Extinct
     add_government_reform = noble_house_reform
 }

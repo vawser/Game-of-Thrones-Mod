@@ -37,12 +37,23 @@ country_decisions = {
             }
         }
 		effect = {
-			change_tag = J23
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_minor_formable
+			add_prestige = 100
+			add_stability = 3
+            
+            change_tag = J23 # Kingdom of the Stepstones
+            
+            add_country_modifier = {
+                name = kingdom_of_the_stepstones
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_kingdom_of_the_stepstones_flag
+                set_country_flag = formed_minor_formable
+            }
 		}
 		
 		ai_will_do = {
@@ -86,17 +97,25 @@ country_decisions = {
             }
         }
 		effect = {
-			change_tag = Z01
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_minor_formable
-			hidden_effect = {
-				country_event = {
-					id = GOT_WILDLING.1
-				}
-			}
+            add_prestige = 100
+			add_stability = 3
+            
+            change_tag = Z01 # Freefolk
+            
+            add_country_modifier = {
+                name = the_freefolk
+                duration = -1
+            }
+            
+            # Idea Swap
+            country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            country_event = { id = GOT_WILDLING.1 }
+            
+            hidden_effect = {
+                set_country_flag = is_freefolk_flag
+                set_country_flag = formed_minor_formable
+            }
 		}
 		
 		ai_will_do = {
@@ -129,14 +148,22 @@ country_decisions = {
             region = region_sarnor
         }
 		effect = {
-			change_tag = J22
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			swap_free_idea_group = yes
-            set_country_flag = formed_major_formable
-			hidden_effect = {
+            add_prestige = 100
+			add_stability = 3
+            
+            change_tag = J22 # Kingdom of Sarnor
+            
+            add_country_modifier = {
+                name = kingdom_of_sarnor
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_kingdom_of_sarnor_flag
+                set_country_flag = formed_major_formable
                 546 = {
                     change_province_name = "Sarys"
                 }
@@ -189,12 +216,23 @@ country_decisions = {
             region = region_summer_islands
         }
 		effect = {
-			change_tag = J14
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_minor_formable
+            add_prestige = 100
+			add_stability = 3
+            
+            change_tag = J14 # Summer Islands
+            
+            add_country_modifier = {
+                name = the_summer_islands
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_summer_islands_flag
+                set_country_flag = formed_minor_formable
+			}
 		}
 		
 		ai_will_do = {
@@ -227,12 +265,23 @@ country_decisions = {
             region = region_slavers_bay
         }
 		effect = {
-			change_tag = J15
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_major_formable
+            add_prestige = 100
+			add_stability = 3
+            
+            change_tag = J15 # Ghiscari Empire
+            
+            add_country_modifier = {
+                name = the_ghiscari_empire
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_ghiscari_empire_flag
+                set_country_flag = formed_major_formable
+			}
 		}
 		
 		ai_will_do = {
@@ -266,12 +315,23 @@ country_decisions = {
             region = region_hyrkoon
         }
 		effect = {
-			change_tag = J16
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_minor_formable
+            add_prestige = 100
+			add_stability = 3
+            
+            change_tag = J16 # Patrimony of Hyrkoon
+            
+            add_country_modifier = {
+                name = patrimony_of_hyrkoon
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_patrimony_of_hyrkoon_flag
+                set_country_flag = formed_minor_formable
+			}
 		}
 		
 		ai_will_do = {
@@ -303,34 +363,46 @@ country_decisions = {
 			owns = 597
 		}
         provinces_to_highlight = {
-            region = valyrian_peninsula
+            province_group = valyrian_peninsula
         }
 		effect = {
-			change_tag = J17
-			add_prestige = 200
-			add_stability = -2
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_major_formable
+            add_prestige = 100
+			add_stability = 3
+            
+            change_tag = J17 # New Valyria
+            
+            add_country_modifier = {
+                name = valyria_reborn
+                duration = -1
+            }
+            
+            # Idea Swap
+            country_event = { id = GOT_IDEAGROUPS.100 }
+            
             country_event = { 
 				id = GOT_DRAGON_EGGS.10
 				days = 100
 				random = 150
 			}
-			region_valyria = {
+            
+            region_valyria = {
 				add_claim = ROOT
 			}
+            
             hidden_effect = {
+                set_country_flag = is_new_valyria_flag
+                set_country_flag = formed_major_formable
+
                 every_owned_province = {    
                     limit = {
                         province_group = valyrian_peninsula
                     }
+                    
                     add_base_tax = 3
                     add_base_production = 3
                     add_base_manpower = 3
                 }
 			}
-			
 		}
 		
 		ai_will_do = {
@@ -347,7 +419,11 @@ country_decisions = {
             has_reform = noble_house_reform
 			has_global_flag = shattered_world
 			primary_culture = men_of_the_north
-			NOT = { exists = J07 }
+			NOT = {
+                any_country = {
+                    has_country_flag = is_kingdom_of_the_north_flag
+                }
+            }
 			NOT = {
 				OR = {
 					has_country_flag = formed_major_formable
@@ -365,12 +441,23 @@ country_decisions = {
             region = region_the_north
         }
 		effect = {
-			change_tag = J07
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_minor_formable
+            add_prestige = 100
+			add_stability = 3
+            
+            override_country_name = KINGDOM_OF_THE_NORTH
+            
+            add_country_modifier = {
+                name = kingdom_of_the_north
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_kingdom_of_the_north_flag
+                set_country_flag = formed_minor_formable
+			}
 		}
 		
 		ai_will_do = {
@@ -392,7 +479,11 @@ country_decisions = {
 				primary_culture = men_of_the_crownlands
 				primary_culture = men_of_the_claw_isle
 			}
-			NOT = { exists = J08 }
+			NOT = {
+                any_country = {
+                    has_country_flag = is_kingdom_of_the_isles_and_rivers_flag
+                }
+            }
 			NOT = {
 				OR = {
 					has_country_flag = formed_major_formable
@@ -422,12 +513,23 @@ country_decisions = {
             }
         }
 		effect = {
-			change_tag = J08
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_minor_formable
+			add_prestige = 100
+			add_stability = 3
+            
+            override_country_name = KINGDOM_OF_THE_ISLES_AND_RIVERS
+            
+            add_country_modifier = {
+                name = kingdom_of_the_isles_and_rivers
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_kingdom_of_the_isles_and_rivers_flag
+                set_country_flag = formed_minor_formable
+			}
 		}
 		
 		ai_will_do = {
@@ -444,7 +546,11 @@ country_decisions = {
             has_reform = noble_house_reform
 			has_global_flag = shattered_world
 			primary_culture = men_of_the_westerlands
-			NOT = { exists = J09 }
+			NOT = {
+                any_country = {
+                    has_country_flag = is_kingdom_of_the_rock_flag
+                }
+            }
 			NOT = {
 				OR = {
 					has_country_flag = formed_major_formable
@@ -462,12 +568,23 @@ country_decisions = {
             region = region_westerlands
         }
 		effect = {
-			change_tag = J09
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_minor_formable
+            add_prestige = 100
+			add_stability = 3
+            
+            override_country_name = KINGDOM_OF_THE_ROCK
+            
+            add_country_modifier = {
+                name = kingdom_of_the_rock
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_kingdom_of_the_rock_flag
+                set_country_flag = formed_minor_formable
+			}
 		}
 		
 		ai_will_do = {
@@ -487,7 +604,11 @@ country_decisions = {
 				primary_culture = men_of_the_stormlands
 				primary_culture = men_of_the_crownlands
 			}
-			NOT = { exists = J10 }
+			NOT = {
+                any_country = {
+                    has_country_flag = is_kingdom_of_the_stormlands_flag
+                }
+            }
 			NOT = {
 				OR = {
 					has_country_flag = formed_major_formable
@@ -506,12 +627,23 @@ country_decisions = {
             region = region_stormlands
         }
 		effect = {
-			change_tag = J10
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_minor_formable
+			add_prestige = 100
+			add_stability = 3
+            
+            override_country_name = KINGDOM_OF_THE_STORMLANDS
+            
+            add_country_modifier = {
+                name = kingdom_of_the_stormlands
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_kingdom_of_the_stormlands_flag
+                set_country_flag = formed_minor_formable
+			}
 		}
 		
 		ai_will_do = {
@@ -528,7 +660,11 @@ country_decisions = {
             has_reform = noble_house_reform
 			has_global_flag = shattered_world
 			primary_culture = men_of_the_vale
-			NOT = { exists = J11 }
+			NOT = {
+                any_country = {
+                    has_country_flag = is_kingdom_of_the_mountain_and_the_vale_flag
+                }
+            }
 			NOT = {
 				OR = {
 					has_country_flag = formed_major_formable
@@ -546,12 +682,23 @@ country_decisions = {
             region = region_vale
         }
 		effect = {
-			change_tag = J11
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_minor_formable
+			add_prestige = 100
+			add_stability = 3
+            
+            override_country_name = KINGDOM_OF_THE_MOUNTAIN_AND_THE_VALE
+            
+            add_country_modifier = {
+                name = kingdom_of_the_mountain_and_the_vale
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_kingdom_of_the_mountain_and_the_vale_flag
+                set_country_flag = formed_minor_formable
+			}
 		}
 		
 		ai_will_do = {
@@ -572,7 +719,11 @@ country_decisions = {
 				primary_culture = salt_dornish
 				primary_culture = stone_dornish
 			}
-			NOT = { exists = J12 }
+			NOT = {
+                any_country = {
+                    has_country_flag = is_principality_of_dorne_flag
+                }
+            }
 			NOT = {
 				OR = {
 					has_country_flag = formed_major_formable
@@ -590,12 +741,23 @@ country_decisions = {
             region = region_dorne
         }
 		effect = {
-			change_tag = J12
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_minor_formable
+			add_prestige = 100
+			add_stability = 3
+            
+            override_country_name = PRINCIPALITY_OF_DORNE
+            
+            add_country_modifier = {
+                name = principality_of_dorne
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_principality_of_dorne_flag
+                set_country_flag = formed_minor_formable
+			}
 		}
 		
 		ai_will_do = {
@@ -612,7 +774,11 @@ country_decisions = {
             has_reform = noble_house_reform
 			has_global_flag = shattered_world
 			primary_culture = men_of_the_reach
-			NOT = { exists = J13 }
+			NOT = {
+                any_country = {
+                    has_country_flag = is_kingdom_of_the_reach_flag
+                }
+            }
 			NOT = {
 				OR = {
 					has_country_flag = formed_major_formable
@@ -630,12 +796,23 @@ country_decisions = {
             region = region_reach
         }
 		effect = {
-			change_tag = J13
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_minor_formable
+			add_prestige = 100
+			add_stability = 3
+            
+            override_country_name = KINGDOM_OF_THE_REACH
+            
+            add_country_modifier = {
+                name = kingdom_of_the_reach
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_kingdom_of_the_reach_flag
+                set_country_flag = formed_minor_formable
+			}
 		}
 		
 		ai_will_do = {
@@ -697,12 +874,23 @@ country_decisions = {
             }
         }
 		effect = {
-			change_tag = J03
-			add_prestige = 200
-			add_stability = 6
-			swap_free_idea_group = yes
-			set_government_rank = 3
-			set_country_flag = formed_major_formable
+            add_prestige = 100
+			add_stability = 3
+            
+            change_tag = J03 # Jogos Nhai
+            
+            add_country_modifier = {
+                name = united_the_jhattars
+                duration = -1
+            }
+            
+            # Idea Swap
+            # country_event = { id = GOT_IDEAGROUPS.100 }
+            
+            hidden_effect = {
+                set_country_flag = is_jogos_nhai_flag
+                set_country_flag = formed_major_formable
+			}
 		}
 		
 		ai_will_do = {

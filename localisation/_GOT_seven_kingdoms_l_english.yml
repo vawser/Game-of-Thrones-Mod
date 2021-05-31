@@ -92,13 +92,15 @@
  GOT_SK_SYSTEM.21.desc: "As the former ruler of the Seven Kingdoms, our house has been demoted to simple nobility."
  GOT_SK_SYSTEM.21.option.a: "Damn"
   
- GOT_SK_SYSTEM.30.title: "The End of the [From.GetAdjective] [From.GovernmentName]"
- GOT_SK_SYSTEM.30.desc: "With the fall of [From.Capital.GetCapitalName] the last remnants of the Seven Kingdoms have been crushed. The Iron Throne and the Royal administration are now clearly seen as defunct concepts and the scholar gentry as a class will have to evolve into something else or perish.\nThough the memory of the Seven Kingdoms will live for some time the [Root.GovernmentName] of [Root.GetName] will forever be remembered as the destroyers of the last [From.Monarch.GetTitle] of the Andals."
- GOT_SK_SYSTEM.30.option.a: "Ok."
+ GOT_SK_SYSTEM.30.title: "The Passing of the Throne"
+ GOT_SK_SYSTEM.30.desc: "With the capture of the Iron Throne by [IronThroneHolder.Monarch.GetTitle] [IronThroneHolder.Monarch.GetName], it is time for the lords of Westeros to determine their allegiances."
+ GOT_SK_SYSTEM.30.option.a: "We support [IronThroneHolder.Monarch.GetTitle] [IronThroneHolder.Monarch.GetName]"
+ GOT_SK_SYSTEM.30.option.b: "We reject [IronThroneHolder.Monarch.GetTitle] [IronThroneHolder.Monarch.GetName]"
  
  GOT_SK_SYSTEM.31.title: "Claim the Iron Throne"
- GOT_SK_SYSTEM.31.desc:  "With the fall of [From.Capital.GetCapitalName] the former [From.Monarch.GetTitle] of the Seven Kingdoms has been crushed. Let us claim the mantle of the Iron Throne as our own.
- GOT_SK_SYSTEM.31.option.a: "Hurrah!"
+ GOT_SK_SYSTEM.31.desc: "With the fall of [From.Capital.GetCapitalName] the former [From.Monarch.GetTitle] of the Seven Kingdoms has been crushed. Let us claim the mantle of the Iron Throne as our own."
+ GOT_SK_SYSTEM.31.option.a: "Let us claim the throne as our own"
+ GOT_SK_SYSTEM.31.option.b: "Break the wheel!"
  
  GOT_SK_SYSTEM.32.title: "An Ideology for the Seven Kingdoms"
  GOT_SK_SYSTEM.32.desc: "By assuming the mantle of Sevne Kingdoms we have taken a step into an unbroken tradition. [Root.GetName] has inherited a number of institutions, such as the Red Keep and the concept of royal authority.\nAs the new ruler of the Seven Kingdoms it is up to us to which degree we wish to integrate the former tradition with our own, but embracing the former philosophy would likely both help us rule the vast empire we now claim and strengthen our Royal Authority in the mind of the public."
@@ -429,6 +431,9 @@
  
  sk_gifted_official:"Gifted Official"
  desc_sk_gifted_official:"This state is governed by one of our most gifted official. The beast of his year and a pride of the Citadel."
+ 
+ sk_royal_expediency: "Royal Expediency"
+ desc_sk_royal_expediency: "Our invokation of royal priviledge has upset our nobles, and many will fear for their lands if we continue."
  
  #---------------------
  # Strings

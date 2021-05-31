@@ -6,12 +6,16 @@ country_event = {
 	desc = GOT_WILDLING.1.desc
 	picture = FEAST_eventPicture
 	
-	hidden = yes
 	is_triggered_only = yes
-	major = yes
-	
-	immediate = {
-		every_owned_province = {
+    
+    trigger = {
+        tag = Z01
+    }
+
+	option = {
+        name = GOT_WILDLING.1.option.a
+        
+        every_owned_province = {
 			limit = {
 				has_climate = arctic
 			}
@@ -21,9 +25,5 @@ country_event = {
 				duration = -1
 			}
 		}
-	} 
-	
-	option = {
-        name = GOT_WILDLING.1.option.a
     }
 }

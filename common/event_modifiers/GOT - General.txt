@@ -915,90 +915,6 @@ got_provincial_religious_migration = {
 	local_development_cost = -0.1
 }
 
-# -------------- Seven Kingdoms --------------
-new_iron_throne_holder = {
-	imperial_mandate = 0.05
-}
-
-punitive_ideology = {
-    yearly_absolutism = 2
-    global_autonomy = -0.05
-}
-
-sk_local_trade_regulations = {
-	province_trade_power_value = 2
-	local_tax_modifier = -0.35
-}
-
-sk_local_trade_down_turn = {
-	local_unrest = 2
-}
-
-sk_militia_area = {
-	local_unrest = 6
-}
-
-sk_upset_local_nobles = {
-	local_unrest = 4
-}
-
-sk_false_edicts_modifier = {
-	global_autonomy = 0.12 #Base reduction is high due to government rank 3.
-}
-
-sk_military_protecting_traders = {
-	land_forcelimit_modifier = -0.2
-}
-
-sk_no_law_and_order = {
-	global_tax_modifier = -0.2
-	global_trade_power = -0.2
-}
-
-sk_lowered_taxes_in_state = {
-	local_tax_modifier = -0.2
-}
-
-sk_efficient_taxation = {
-	global_tax_modifier = 0.1
-}
-
-sk_forts_underfunded = {
-	local_defensiveness = -0.5
-}
-
-sk_purging_officials = {
-	meritocracy = -0.5
-	global_tax_modifier = -0.25
-}
-
-sk_order_restored = {
-	local_unrest = -4
-	local_tax_modifier = -0.1
-}
-
-sk_renewing_the_citadel_relationship = {
-	technology_cost = -0.1
-}
-
-sk_unhealthy_political_climate = {
-	meritocracy = -0.5
-	global_autonomy = 0.1
-}
-
-sk_separatist_sentiments = {
-	local_unrest = 10
-}
-
-sk_gifted_official = {
-	trade_goods_size = 0.25
-}
-
-sk_resistance_to_cultural_changes = {
-	local_unrest = 8
-	local_autonomy = 0.1
-}
-
 # -------------- Faith of the Seven --------------
 blessing_of_the_father = {
     legitimacy = 1
@@ -1030,4 +946,68 @@ blessing_of_the_crone = {
 
 blessing_of_the_stranger = {
     idea_cost = -0.1
+}
+
+# -------------- Formables --------------
+kingdom_of_the_stepstones = {
+    privateer_efficiency = 0.33
+}
+
+the_freefolk = {
+    global_unrest = -2
+}
+
+kingdom_of_sarnor = {
+    defensiveness = 0.33
+}
+
+the_summer_islands = {
+    global_trade_goods_size_modifier = 0.1
+}
+
+the_ghiscari_empire = {
+    discipline = 0.05
+}
+
+patrimony_of_hyrkoon = {
+    yearly_absolutism = 0.5
+    max_absolutism = 10
+}
+
+valyria_reborn = {
+    country_admin_power = 1
+    country_diplomatic_power = 1
+    country_military_power = 1
+}
+
+kingdom_of_the_north = {
+    ae_impact = -0.1
+}
+
+kingdom_of_the_isles_and_rivers = {
+    global_trade_power = 0.1
+}
+
+kingdom_of_the_rock = {
+    development_cost = -0.1
+}
+
+kingdom_of_the_stormlands = {
+    army_tradition = 1
+}
+
+kingdom_of_the_mountain_and_the_vale = {
+    unjustified_demands = -0.2
+}
+
+principality_of_dorne = {
+    yearly_corruption = -0.1
+}
+
+kingdom_of_the_reach = {
+    production_efficiency = 0.15
+}
+
+united_the_jhattars = {
+    horde_unity = 1
 }

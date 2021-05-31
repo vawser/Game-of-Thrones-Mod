@@ -1,0 +1,55 @@
+claim_lordly_possessions = {
+	category = dynasty
+	
+	alert_index = 40
+	alert_tooltip = claim_lordly_possessions_tooltip
+	
+	require_acceptance = no # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		has_reform = royal_house_reform
+		FROM = {
+            is_subject_of = ROOT
+			is_subject_of_type = royal_subject
+		}
+	}
+	is_allowed = {
+		has_reform = royal_house_reform
+        NOT = { has_country_modifier = sk_royal_expediency }
+		FROM = {
+            ai = yes # Don't let a player be randomly be annexed by the AI
+            NOT = { total_development = 50 } # Only small houses can be annexed
+            is_subject_of = ROOT
+			is_subject_of_type = royal_subject
+		}
+}
+	on_accept = {
+		ROOT = {
+            add_country_modifier = {
+                name = sk_royal_expediency
+                duration = 3650
+            }
+			inherit = FROM
+		}
+	}
+	on_decline = {
+        
+	}
+	
+	ai_acceptance = {
+		add_entry = {
+			name = AIWEIGHT_BASE
+			limit = {
+				always = yes
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1000
+			}
+		}
+	}
+
+	ai_will_do = {
+		always = yes
+	}
+}

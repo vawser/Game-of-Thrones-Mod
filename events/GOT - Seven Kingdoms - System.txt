@@ -11,6 +11,7 @@ country_event = {
     
     trigger = {
         is_emperor_of_china = yes
+        NOT = { has_country_flag = iron_throne_transition }
     }
     
     option = {
@@ -31,6 +32,7 @@ country_event = {
     
     trigger = {
         is_emperor_of_china = yes
+        NOT = { has_country_flag = iron_throne_transition }
     }
     
     option = {
@@ -125,6 +127,7 @@ country_event = {
     
     trigger = {
         is_emperor_of_china = yes
+        NOT = { has_country_flag = iron_throne_transition }
     }
     
     option = {
@@ -150,6 +153,7 @@ country_event = {
     
     trigger = {
         is_emperor_of_china = yes
+        NOT = { has_country_flag = iron_throne_transition }
     }
     
     option = {
@@ -175,6 +179,7 @@ country_event = {
     
     trigger = {
         is_emperor_of_china = yes
+        NOT = { has_country_flag = iron_throne_transition }
     }
     
     option = {
@@ -253,7 +258,7 @@ country_event = {
     } 
 }
 
-# Dismantled Seven Kingdoms
+# The Passing of the Throne
 country_event = {
 	id = GOT_SK_SYSTEM.30
 	title = GOT_SK_SYSTEM.30.title
@@ -262,23 +267,60 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	major = yes
-	
-	trigger = {
-		FROM = { is_emperor_of_china = yes }
-        NOT = { has_reform = noble_house_reform }
-	}
-	
+    trigger = {
+        is_subject_of_type = royal_subject
+    }
+    
+    immediate = {
+        grant_independence = yes # Free them automatically
+    }
+    
 	option = {
 		name = GOT_SK_SYSTEM.30.option.a
-		add_prestige = 20
-		add_dip_power = 50
-		add_mil_power = 50
-		add_adm_power = 50
         
-        hidden_effect = {
-            dismantle_empire_of_china = yes
-            set_global_flag = empire_of_china_dismantled
+        event_target:IronThroneHolder = {
+            create_subject = {
+                subject_type = royal_subject
+                subject = ROOT
+            }
+        }
+        
+        ai_chance = {
+            factor = 90
+            
+            modifier = {
+                factor = 0.5
+                
+                NOT = {
+                    has_opinion = {
+                        who = event_target:IronThroneHolder
+                        value = -50
+                    }
+                }
+            }
+        }
+	}
+    option = {
+		name = GOT_SK_SYSTEM.30.option.b
+        
+        event_target:IronThroneHolder = {
+            add_casus_belli = {
+                target = ROOT
+                type = cb_royal_conquest
+            }
+        }
+        
+        ai_chance = {
+            factor = 10
+            
+            modifier = {
+                factor = 0
+                
+                has_opinion = {
+                    who = event_target:IronThroneHolder
+                    value = 25
+                }
+            }
         }
 	}
 }
@@ -294,19 +336,66 @@ country_event = {
 	
 	major = yes
 	
-	trigger = {
-		FROM = { is_emperor_of_china = yes }
-        has_reform = noble_house_reform
-	}
-	
 	option = {
 		name = GOT_SK_SYSTEM.31.option.a
+    
+        hidden_effect = {
+            set_country_flag = iron_throne_transition
+            save_global_event_target_as = IronThroneHolder
+        }
         
         set_emperor_of_china = ROOT
 		add_prestige = 20
 		add_dip_power = 50
 		add_mil_power = 50
 		add_adm_power = 50
+        
+        # Peace out all wars to stop glitchiness
+        every_country = {
+            limit = {
+                war_with = ROOT
+            }
+            white_peace = ROOT
+        }
+        
+        # Allow all current subjects to choose whether they become subjects of new holder
+        every_country = {
+            limit = {
+                is_subject_of_type = royal_subject
+            }
+            country_event = { id = GOT_SK_SYSTEM.30 }
+        }
+        
+        ai_chance = {
+            factor = 100
+        }
+	}
+    option = {
+		name = GOT_SK_SYSTEM.31.option.b
+        
+        dismantle_empire_of_china = yes
+		add_prestige = 100
+		add_dip_power = 200
+		add_mil_power = 200
+		add_adm_power = 200
+        
+        every_country = {
+            limit = {
+                is_subject = yes
+                is_subject_of_type = royal_subject
+            }
+            grant_independence = yes
+        }
+        
+        ai_chance = {
+            factor = 100
+            
+            modifier = {
+                factor = 0
+                
+                has_reform = noble_house_reform
+            }
+        }
 	}
 }
 

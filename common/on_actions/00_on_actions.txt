@@ -4,7 +4,7 @@ on_startup = {
 		limit = {
 			is_emperor_of_china = yes
 		}
-		save_global_event_target_as = EmperorOfChina
+		save_global_event_target_as = IronThroneHolder
 	}
     
 	events = {
@@ -181,7 +181,16 @@ on_company_disolved ={
 
 # Country - ROOT = winning country, FROM = location
 on_siege_won_country = {
-
+    if = {
+        limit = {
+            FROM = {
+                province_id = 226
+            }
+        }
+        ROOT = {
+            country_event = { id = GOT_SK_SYSTEM.31 } # "Claim the Iron Throne"
+        }
+    }
     random_events = {
         25 = GOT_ACCOMPLISHMENTS.3      # Strategic Excellence
         25 = GOT_ARMY_PROFESSIONALISM.1 # City Sacked
@@ -556,16 +565,12 @@ on_integrate = {
 
 # Country - ROOT = annexing country, FROM = annexed country
 on_annexed = {
-    events = {
-        GOT_SK_SYSTEM.30 # Seven Kingdoms dismantled
-        GOT_SK_SYSTEM.31 # Claim the Iron Throne
-	}
     on_annexed_estate_privileges_effect = yes
 }
 
 # Country - ROOT = current country, FROM = emperor
 on_chinese_empire_dismantled = {
-    clear_global_event_target = EmperorOfChina
+    clear_global_event_target = IronThroneHolder
 	events = {
 	}
 }
@@ -573,7 +578,7 @@ on_chinese_empire_dismantled = {
 
 # Country - ROOT = old emperor, FROM = new emperor
 on_mandate_of_heaven_gained = {
-    save_global_event_target_as = EmperorOfChina
+    save_global_event_target_as = IronThroneHolder
     add_government_reform = royal_house_reform
 	set_mandate = 60
 	set_meritocracy = 60
@@ -723,7 +728,9 @@ on_siberian_pulse = {
 
 # Country
 on_bi_yearly_pulse = {
-
+    # Cleanup Iron Throne holder change
+    clr_country_flag = iron_throne_transition
+    
 	random_events = {
         100 = GOT_CULTURAL_UPRISING.1
         
@@ -933,7 +940,8 @@ on_thri_yearly_pulse_4 = {
 
 # Country
 on_four_year_pulse = {
-
+    
+   
 	random_events = {
 		100 = GOT_RANDOM_COUNTRY.1 # Envoy falls Ill
 		100 = GOT_RANDOM_COUNTRY.2 # Insulted by a Maester
@@ -1027,7 +1035,7 @@ on_four_year_pulse_4 = {
 
 # Country
 on_five_year_pulse = {
-
+    
 	random_events = {
 		100 = GOT_FAITH_OF_THE_SEVEN.2 # A warrior demands representation!
 		100 = GOT_FAITH_OF_THE_SEVEN.4 # Our Faith Rewarded!

@@ -622,7 +622,7 @@ estate_nobility_build_motte_and_bailey_in_y = {
 	can_select = {
 		any_owned_province = {
 			is_state_core = root
-			NOT = { has_building = motte_and_bailey }
+			has_influencing_fort = no
 			num_free_building_slots = 1
 		}
 	}

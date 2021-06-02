@@ -258,7 +258,7 @@ NDiplomacy = {
 	PEACE_COST_CONCEDE_PROVINCE = 1,				-- Demand colonial area province concession.
 	PEACE_COST_JOIN_EMPIRE = 0.5,
 	PEACE_COST_BECOME_VASSAL = 1,					-- Vassalize a country (scales by province wealth)
-	PEACE_COST_PILLAGE_CAPITAL = 1,					-- Pillage a capital state's dev (scales by province wealth)
+	PEACE_COST_PILLAGE_CAPITAL = 5,					-- Pillage a capital state's dev (scales by province wealth)
 	PEACE_COST_RETURN_CORE = 1,						-- Return a core (scales by province wealth)
 	PEACE_COST_REVOKE_CORE = 0.5,						-- Revoke a core (scales by province wealth)
 	PEACE_COST_RELEASE_ANNEXED = 1,					-- Release annexed nation (scales by province wealth)
@@ -1061,7 +1061,7 @@ NCountry = {
 	FEDERATION_ADVANCEMENT_COHESION_REQUIREMENT = 100.0,
 	FEDERATION_ADVANCEMENT_COHESION_COST = 80.0,
 
-	EXPAND_INFRASTRUCTURE_DEV_LIMIT = 15, 			-- How much dev you need for each improvement.
+	EXPAND_INFRASTRUCTURE_DEV_LIMIT = 5, 			-- How much dev you need for each improvement.
 },
 
 NEconomy = {
@@ -1907,7 +1907,7 @@ NAI = {
 	ESTATE_MAX_WANTED_INFLUENCE = 73.0,
 	ESTATE_MIN_WANTED_CROWNLAND = 33.0,
 	ESTATE_MAX_PRIVILEDGES = 2,
-	MIN_SCORE_TO_CONCENTRATE_DEVELOPMENT = 1.5,
+	MIN_SCORE_TO_CONCENTRATE_DEVELOPMENT = 999, -- Disable for AI
 },
 
 NAIEconomy = {
@@ -2422,9 +2422,9 @@ NGovernment = {
 	GOVERNMENT_REFORM_YEARLY_BASE_PROGRESS = 10.0,
 	GOVERNMENT_REFORM_HISTORIC_AUTONOMY = 0.25,
 	GOVERNMENT_REFORM_CHANGE_PROGRESS_COST = 50.0,
-	GOVERNMENT_REFORM_COST_CENTRALIZE_STATE = 100.0,
+	GOVERNMENT_REFORM_COST_CENTRALIZE_STATE = 25.0,
 	CENTRALIZE_STATE_STATE_COST_LIMIT = 10.0,
-	CENTRALIZE_STATE_REDUCTION = 20.0,
+	CENTRALIZE_STATE_REDUCTION = 10.0,
 	CENTRALIZE_STATE_YEARS = 5,
 	DICTATORSHIP_TO_MONARCHY_REFORM_PENALTY = 4,
 	NATIVE_REFORM_REFORM_PENALTY = 2,

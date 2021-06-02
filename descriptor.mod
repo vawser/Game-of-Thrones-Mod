@@ -1,4 +1,4 @@
-name="A Song of Ice and Fire"
+name="Game of Thrones"
 tags={
 	"Alternative History"
 	"Events"
@@ -118,3 +118,4 @@ replace_path="gfx/sprite_packs"
 replace_path="gfx/loadingscreens"
 supported_version="1.31.*.*"
 path="E:/Users/Xylozi/Documents/Paradox Interactive/Europa Universalis IV/mod/asoiaf_test"
+remote_file_id="276456014"

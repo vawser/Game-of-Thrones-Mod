@@ -1,0 +1,1875 @@
+#--------------------------------------
+# Red Keep
+#--------------------------------------
+gp_red_keep = {
+    type = monument
+    
+	start = 226
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.25
+		}
+		country_modifiers = {
+            yearly_absolutism = 0.25
+            max_absolutism = 10
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.5
+		}
+		country_modifiers = {
+            yearly_absolutism = 0.5
+            max_absolutism = 15
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 1.0
+		}
+		country_modifiers = {
+            yearly_absolutism = 1
+            max_absolutism = 20
+		}
+	}
+}
+
+#--------------------------------------
+# Dragonpit
+#--------------------------------------
+gp_dragonpit = {
+    type = monument
+    
+	start = 226
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_unrest = -1
+		}
+		country_modifiers = {
+            stability_cost_modifier = -0.15
+            prestige = -0.5
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_unrest = -2
+		}
+		country_modifiers = {
+            stability_cost_modifier = -0.25
+            prestige = -0.5
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_unrest = -3
+		}
+		country_modifiers = {
+            stability_cost_modifier = -0.33
+            prestige = -0.5
+		}
+	}
+}
+
+#--------------------------------------
+# Great Sept of Baelor
+#--------------------------------------
+gp_great_sept_of_baelor = {
+    type = monument
+    
+	start = 226
+
+	date = 200.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 0
+
+    # Construction
+	build_trigger = {
+        is_year = 170
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		religion = faith_of_the_seven
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            missionaries = 1
+            global_missionary_strength = 0.01
+            missionary_maintenance_cost = -0.1
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            missionaries = 1
+            global_missionary_strength = 0.02
+            missionary_maintenance_cost = -0.2
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            missionaries = 1
+            global_missionary_strength = 0.03
+            missionary_maintenance_cost = -0.3
+		}
+	}
+}
+
+#--------------------------------------
+# Guildhall of the Alchemists
+#--------------------------------------
+gp_guildhall_of_the_alchemists = {
+    type = monument
+    
+	start = 226
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            infantry_fire = 0.25
+            artillery_fire = 0.25
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            infantry_fire = 0.5
+            artillery_fire = 0.5
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            infantry_fire = 1
+            artillery_fire = 1
+		}
+	}
+}
+
+#--------------------------------------
+# Old Palace
+#--------------------------------------
+gp_old_palace = {
+    type = monument
+    
+	start = 352
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.25
+		}
+		country_modifiers = {
+            prestige = 0.5
+            legitimacy = 0.5
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.33
+		}
+		country_modifiers = {
+            prestige = 0.75
+            legitimacy = 0.75
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.5
+		}
+		country_modifiers = {
+            prestige = 1
+            legitimacy = 1
+		}
+	}
+}
+
+#--------------------------------------
+# Water Gardens
+#--------------------------------------
+gp_water_gardens = {
+    type = monument
+    
+	start = 352
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            diplomatic_reputation = 1
+            improve_relation_modifier = 0.1
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            diplomatic_reputation = 1.5
+            improve_relation_modifier = 0.15
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            diplomatic_reputation = 2
+            improve_relation_modifier = 0.2
+		}
+	}
+}
+
+#--------------------------------------
+# Storm's End
+#--------------------------------------
+gp_storms_end = {
+    type = monument
+    
+	start = 304
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.5
+		}
+		country_modifiers = {
+            fire_damage_received = -0.05
+            shock_damage_received = -0.05
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.75
+		}
+		country_modifiers = {
+            fire_damage_received = -0.1
+            shock_damage_received = -0.1
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 1.0
+		}
+		country_modifiers = {
+            fire_damage_received = -0.15
+            shock_damage_received = -0.15
+		}
+    }
+}
+
+#--------------------------------------
+# Highgarden
+#--------------------------------------
+gp_highgarden = {
+    type = monument
+    
+	start = 267
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_tax_modifier = 0.5
+		}
+		country_modifiers = {
+            advisor_cost = -0.1
+            prestige_decay = -0.01
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_tax_modifier = 0.75
+		}
+		country_modifiers = {
+            advisor_cost = -0.15
+            prestige_decay = -0.015
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_tax_modifier = 1
+		}
+		country_modifiers = {
+            advisor_cost = -0.2
+            prestige_decay = -0.02
+		}
+    }
+}
+
+#--------------------------------------
+# Casterly Rock
+#--------------------------------------
+gp_casterly_rock = {
+    type = monument
+    
+	start = 182
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.5
+		}
+		country_modifiers = {
+            defensiveness = 0.2
+            yearly_corruption = -0.025
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.75
+		}
+		country_modifiers = {
+            defensiveness = 0.3
+            yearly_corruption = -0.05
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 1
+		}
+		country_modifiers = {
+            defensiveness = 0.5
+            yearly_corruption = -0.075
+		}
+    }
+}
+
+#--------------------------------------
+# Riverrun
+#--------------------------------------
+gp_riverrun = {
+    type = monument
+    
+	start = 101
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            province_trade_power_modifier = 0.5
+		}
+		country_modifiers = {
+            production_efficiency = 0.15
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            province_trade_power_modifier = 0.75
+		}
+		country_modifiers = {
+            production_efficiency = 0.2
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            province_trade_power_modifier = 1
+		}
+		country_modifiers = {
+            production_efficiency = 0.25
+		}
+    }
+}
+
+#--------------------------------------
+# Pyke
+#--------------------------------------
+gp_pyke = {
+    type = monument
+    
+	start = 162
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.5
+		}
+		country_modifiers = {
+            sunk_ship_morale_hit_recieved = -0.2
+            own_coast_naval_combat_bonus = 0.5
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.75
+		}
+		country_modifiers = {
+            sunk_ship_morale_hit_recieved = -0.25
+            own_coast_naval_combat_bonus = 0.75
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 1
+		}
+		country_modifiers = {
+            sunk_ship_morale_hit_recieved = -0.3
+            own_coast_naval_combat_bonus = 1.0
+		}
+    }
+}
+
+#--------------------------------------
+# The Eyrie
+#--------------------------------------
+gp_eyrie = {
+    type = monument
+    
+	start = 136
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 1.0
+		}
+		country_modifiers = {
+            global_unrest = -1
+            hostile_attrition = 1
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 2.0
+		}
+		country_modifiers = {
+            global_unrest = -2
+            hostile_attrition = 2
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 3.0
+		}
+		country_modifiers = {
+            global_unrest = -3
+            hostile_attrition = 3
+		}
+    }
+}
+
+#--------------------------------------
+# Harrenhal
+#--------------------------------------
+gp_harrenhal = {
+    type = monument
+    
+	start = 107
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.5
+		}
+		country_modifiers = {
+            administrative_efficiency = 0.05
+            monarch_lifespan = -0.33
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.75
+		}
+		country_modifiers = {
+            administrative_efficiency = 0.075
+            monarch_lifespan = -0.33
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 1.0
+		}
+		country_modifiers = {
+            administrative_efficiency = 0.1
+            monarch_lifespan = -0.33
+		}
+    }
+}
+
+#--------------------------------------
+# Winterfell
+#--------------------------------------
+gp_winterfell = {
+    type = monument
+    
+	start = 47
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.5
+		}
+		country_modifiers = {
+            ae_impact = -0.05
+            tolerance_own = 1
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 0.75
+		}
+		country_modifiers = {
+            ae_impact = -0.075
+            tolerance_own = 1.5
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            local_defensiveness = 1.0
+		}
+		country_modifiers = {
+            ae_impact = -0.1
+            tolerance_own = 2
+		}
+    }
+}
+
+
+#--------------------------------------
+# The Wall
+#--------------------------------------
+gp_the_wall = {
+    type = monument
+    
+	start = 1590
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            garrison_growth = 0.5
+            local_defensiveness = 1.0
+		}
+		country_modifiers = {
+            fort_maintenance_modifier = -0.2
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            garrison_growth = 0.75
+            local_defensiveness = 2.0
+		}
+		country_modifiers = {
+            fort_maintenance_modifier = -0.3
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            garrison_growth = 1.0
+            local_defensiveness = 31.0
+		}
+		country_modifiers = {
+            fort_maintenance_modifier = -0.4
+		}
+	}
+}
+
+#--------------------------------------
+# Citadel
+#--------------------------------------
+gp_citadel = {
+    type = monument
+    
+	start = 286
+
+	date = 100.01.01
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+    
+    build_cost = 0
+	time = {
+		months = 0
+	}
+
+	starting_tier = 1
+
+    # Construction
+	build_trigger = {
+        always = yes
+	}
+	on_built = {
+		
+	}
+	on_destroyed = {
+		
+	}
+    
+    # Conditions
+	can_use_modifiers_trigger = {
+		always = yes
+	}
+	can_upgrade_trigger = {
+		always = yes
+	}
+	keep_trigger = {
+        
+	}
+
+	# Tiers
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            idea_cost = -0.1
+            technology_cost = -0.1
+            advisor_cost = -0.1
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            idea_cost = -0.15
+            technology_cost = -0.15
+            advisor_cost = -0.15
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 360
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+        province_modifiers = {
+            
+		}
+		area_modifier = {
+            
+		}
+		country_modifiers = {
+            idea_cost = -0.2
+            technology_cost = -0.2
+            advisor_cost = -0.2
+		}
+    }
+}

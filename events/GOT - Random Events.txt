@@ -623,21 +623,29 @@ country_event = {
 		
 		random = {
 			chance = 10
-			kill_heir = yes
+            kill_heir = {
+                allow_new_heir = yes
+            }
 		}
 	}
 	option = {
 		name = GOT_RANDOM_COUNTRY.15.option.b
 
+        add_years_of_income = -1
+        
 		random = {
 			chance = 50
-			kill_heir = yes
+            kill_heir = {
+                allow_new_heir = yes
+            }
 		}
 	}
 	option = {
 		name = GOT_RANDOM_COUNTRY.15.option.c
 	
-		kill_heir = yes
+		kill_heir = {
+            allow_new_heir = yes
+        }
 	}
 }
 

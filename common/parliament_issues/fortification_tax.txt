@@ -1,0 +1,40 @@
+fortification_tax = {
+	#Provinces contribute to upkeep of fortifications
+
+	category = 1
+	
+	allow = {
+		num_of_owned_provinces_with = {
+			value = 3
+			OR = {
+				has_building = motte_and_bailey
+				has_building = castle
+				has_building = fortress
+				has_building = citadel
+			}
+		}
+	}
+	
+	effect = {
+	}
+	
+	modifier = {
+		fort_maintenance_modifier = -0.1
+		defensiveness = 0.1
+	}
+
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { motte_and_bailey = 2 }
+			NOT = { castle = 2 }
+			NOT = { fortress = 2 }
+			NOT = { citadel = 2 }
+		}
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}	
+}

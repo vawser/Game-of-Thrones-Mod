@@ -1,0 +1,19 @@
+pay_pa = {
+	trigger = {
+		OR = {
+			AND = {
+				religion = orthodox
+				FROM = { religion = orthodox }
+			}
+		}
+		patriarch_authority = 0.05
+	}
+	
+	effect = {
+		add_patriarch_authority = -0.05
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}

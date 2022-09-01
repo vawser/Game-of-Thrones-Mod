@@ -1,1 +1,1 @@
-Supports Europa Universalis IV version 1.31
+Supports Europa Universalis IV version 1.33

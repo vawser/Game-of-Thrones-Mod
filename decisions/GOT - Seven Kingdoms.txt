@@ -15,50 +15,204 @@ country_decisions = {
 		}
 		allow =  {
             imperial_mandate = 100
-            
-            region_the_north = {
-                type = all
-                owns_core_province = ROOT
+                
+            OR = {
+                NOR = {
+                    is_subject_of = ROOT
+                    NOT = { liberty_desire = 1 }
+                }
+                region_the_north = {
+                    type = all
+                    owned_by = ROOT
+                    is_core = ROOT
+                }
             }
-            region_riverlands = {
-                type = all
-                owns_core_province = ROOT
+            OR = {
+                RIV = {
+                    is_subject_of = ROOT
+                    NOT = { liberty_desire = 1 }
+                }
+                region_riverlands = {
+                    type = all
+                    owned_by = ROOT
+                    is_core = ROOT
+                }
             }
-            region_crownlands = {
-                type = all
-                owns_core_province = ROOT
+            OR = {
+                CRW = {
+                    is_subject_of = ROOT
+                    NOT = { liberty_desire = 1 }
+                }
+                region_crownlands = {
+                    type = all
+                    owned_by = ROOT
+                    is_core = ROOT
+                }
             }
-            region_stormlands = {
-                type = all
-                owns_core_province = ROOT
+            OR = {
+                STM = {
+                    is_subject_of = ROOT
+                    NOT = { liberty_desire = 1 }
+                }
+                region_stormlands = {
+                    type = all
+                    owned_by = ROOT
+                    is_core = ROOT
+                }
             }
-            region_iron_islands = {
-                type = all
-                owns_core_province = ROOT
+            OR = {
+                IRI = {
+                    is_subject_of = ROOT
+                    NOT = { liberty_desire = 1 }
+                }
+                region_iron_islands = {
+                    type = all
+                    owned_by = ROOT
+                    is_core = ROOT
+                }
             }
-            region_vale = {
-                type = all
-                owns_core_province = ROOT
+            OR = {
+                VLE = {
+                    is_subject_of = ROOT
+                    NOT = { liberty_desire = 1 }
+                }
+                region_vale = {
+                    type = all
+                    owned_by = ROOT
+                    is_core = ROOT
+                }
             }
-            region_reach = {
-                type = all
-                owns_core_province = ROOT
+            OR = {
+                REA = {
+                    is_subject_of = ROOT
+                    NOT = { liberty_desire = 1 }
+                }
+                region_reach = {
+                    type = all
+                    owned_by = ROOT
+                    is_core = ROOT
+                }
             }
-            region_westerlands = {
-                type = all
-                owns_core_province = ROOT
+            OR = {
+                WES = {
+                    is_subject_of = ROOT
+                    NOT = { liberty_desire = 1 }
+                }
+                region_westerlands = {
+                    type = all
+                    owned_by = ROOT
+                    is_core = ROOT
+                }
             }
-            region_dorne = {
-                type = all
-                owns_core_province = ROOT
+            OR = {
+                DOR = {
+                    is_subject_of = ROOT
+                    NOT = { liberty_desire = 1 }
+                }
+                region_dorne = {
+                    type = all
+                    owned_by = ROOT
+                    is_core = ROOT
+                }
             }
 		}
 	  	effect = {
-            change_tag = WST
             add_prestige = 100
 			add_stability = 6
 			set_government_rank = 3
 			set_country_flag = formed_major_formable
+            
+            if = {
+                limit = {
+                    NOR = {
+                        is_subject_of = ROOT
+                    }
+                }
+                
+                inherit = NOR
+            }
+            
+            if = {
+                limit = {
+                    RIV = {
+                        is_subject_of = ROOT
+                    }
+                }
+                
+                inherit = RIV
+            }
+            
+            if = {
+                limit = {
+                    CRW = {
+                        is_subject_of = ROOT
+                    }
+                }
+                
+                inherit = CRW
+            }
+            
+            if = {
+                limit = {
+                    STM = {
+                        is_subject_of = ROOT
+                    }
+                }
+                
+                inherit = STM
+            }
+            
+            if = {
+                limit = {
+                    IRI = {
+                        is_subject_of = ROOT
+                    }
+                }
+                
+                inherit = IRI
+            }
+            
+            if = {
+                limit = {
+                    VLE = {
+                        is_subject_of = ROOT
+                    }
+                }
+                
+                inherit = VLE
+            }
+            
+            if = {
+                limit = {
+                    REA = {
+                        is_subject_of = ROOT
+                    }
+                }
+                
+                inherit = REA
+            }
+            
+            if = {
+                limit = {
+                    WES = {
+                        is_subject_of = ROOT
+                    }
+                }
+                
+                inherit = WES
+            }
+            
+            if = {
+                limit = {
+                    DOR = {
+                        is_subject_of = ROOT
+                    }
+                }
+                
+                inherit = DOR
+            }
+            
+            change_tag = WST
 		}
 		ai_will_do = {
 			factor = 1

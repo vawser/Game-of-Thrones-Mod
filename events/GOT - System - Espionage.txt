@@ -127,7 +127,9 @@ country_event = {
 		name = GOT_SPY.6.option.a
 		
 		event_target:current_spied_country = {
-			kill_heir = yes
+            kill_heir = {
+                allow_new_heir = yes
+            }
 		}
 	}
 }

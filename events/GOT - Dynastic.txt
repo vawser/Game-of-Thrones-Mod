@@ -73,7 +73,9 @@ country_event = {
 	
 	option = {
 		name = GOT_DYNASTIC.2.option.a
-		kill_heir = yes
+		kill_heir = {
+            allow_new_heir = yes
+        }
 		random_owned_province = {
 			limit = {
 				NOT = { has_building = temple }
@@ -85,7 +87,9 @@ country_event = {
 	
 	option = {
 		name = GOT_DYNASTIC.2.option.b
-		kill_heir = yes
+		kill_heir = {
+            allow_new_heir = yes
+        }
 		define_heir = {
 			dynasty = ROOT
 			claim = 30
@@ -131,7 +135,9 @@ country_event = {
 	
 	option = {
 		name = GOT_DYNASTIC.3.option.b
-		kill_heir = yes
+		kill_heir = {
+            allow_new_heir = yes
+        }
 	}
 }
 
@@ -400,7 +406,11 @@ country_event = {
 		name = GOT_DYNASTIC.7.option.a
 		add_years_of_income = -0.2
 		random_list = {
-			50 = { kill_heir = yes }
+			50 = { 
+                kill_heir = {
+                    allow_new_heir = yes
+                }
+            }
 			50 = {
 				add_legitimacy = 5
 				add_horde_unity = 5
@@ -411,7 +421,11 @@ country_event = {
 	option = {
 		name = GOT_DYNASTIC.7.option.b
 		random_list = {
-			75 = { kill_heir = yes}
+			75 = {
+                kill_heir = {
+                    allow_new_heir = yes
+                }
+            }
 			25 = {
 				add_legitimacy = 30
 				add_horde_unity = 30
@@ -500,8 +514,12 @@ country_event = {
 		name = GOT_DYNASTIC.9.option.a
 		random_list = {
 			50 = { add_years_of_income = 0.05 }
-			45 = { add_legitimacy = 20}
-			5 = { kill_heir = yes}
+			45 = { add_legitimacy = 20 }
+			5 = {
+                kill_heir = {
+                    allow_new_heir = yes
+                }
+            }
 		}
 	}
 	
@@ -552,12 +570,16 @@ country_event = {
 	}
 	option = {
 		name = GOT_DYNASTIC.10.option.a
-		kill_heir = yes
+		kill_heir = {
+            allow_new_heir = yes
+        }
 		add_stability = -1
 	}
 	option = {
 		name = GOT_DYNASTIC.10.option.b
-		kill_heir = yes
+		kill_heir = {
+            allow_new_heir = yes
+        }
 		add_prestige = -10
 	}
 }
@@ -707,7 +729,9 @@ country_event = {
 	option = {
 		name = GOT_DYNASTIC.14.option.a
         
-		kill_heir = yes
+		kill_heir = {
+            allow_new_heir = yes
+        }
 		define_ruler = {
 		}
 		add_stability = -1
@@ -886,7 +910,9 @@ province_event = {
 	option = {
 		name = GOT_DYNASTIC.18.option.a
 		owner = {
-			kill_heir = yes
+            kill_heir = {
+                allow_new_heir = yes
+            }
 			set_country_flag = murdering_bastard
 		}
 	}
@@ -1208,7 +1234,9 @@ country_event = {
 	
 	option = {
 		name = GOT_DYNASTIC.26.option.b
-		kill_heir = yes
+		kill_heir = {
+            allow_new_heir = yes
+        }
 		add_war_exhaustion = -2
 	}
 }

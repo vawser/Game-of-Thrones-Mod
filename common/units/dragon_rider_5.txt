@@ -1,0 +1,26 @@
+type = cavalry
+
+maneuver = 3
+
+offensive_fire = 7
+defensive_fire = 7
+
+offensive_shock = 7
+defensive_shock = 7
+
+offensive_morale = 7
+defensive_morale = 7
+
+trigger = {
+    OR = {
+        AND = {
+            OR = {
+                tag = CRW
+                tag = A10
+            }
+            NOT = { has_country_flag = death_of_the_dragons }
+        }
+        has_reform = daenerys_host_reform
+        has_country_modifier = revival_of_the_dragons
+    }
+}

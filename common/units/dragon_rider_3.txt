@@ -13,7 +13,13 @@ defensive_morale = 5
 
 trigger = {
     OR = {
-        tag = A10
+        AND = {
+            OR = {
+                tag = CRW
+                tag = A10
+            }
+            NOT = { has_country_flag = death_of_the_dragons }
+        }
         has_reform = daenerys_host_reform
         has_country_modifier = revival_of_the_dragons
     }

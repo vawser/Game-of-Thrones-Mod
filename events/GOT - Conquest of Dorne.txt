@@ -12,8 +12,8 @@ country_event = {
     major = yes
     
 	trigger = {
-        tag = A09
-        is_subject_of = A10
+        tag = DOR
+        is_subject_of = CRW
         start_date = 157.1.1
         NOT = { has_global_flag = dornish_rebellion }
         NOT = { has_global_flag = shattered_world }
@@ -31,7 +31,7 @@ country_event = {
 		name = GOT_CONQUEST_OF_DORNE.1.option.a
 		
         declare_war_with_cb = {
-            who = A10
+            who = CRW
             casus_belli = cb_independence_war
         }
 	}

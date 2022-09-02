@@ -15,7 +15,7 @@ gp_tyrosh = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -48,15 +48,17 @@ gp_tyrosh = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            province_trade_power_modifier = 0.1
 		}
 		area_modifier = {
-            
+            trade_goods_size_modifier = 0.25
 		}
 		country_modifiers = {
-            
+            merchants = 1
+            trade_efficiency = 0.025
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -66,14 +68,18 @@ gp_tyrosh = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            province_trade_power_modifier = 0.25
 		}
 		area_modifier = {
-            province_trade_power_modifier = 0.5
+            trade_goods_size_modifier = 0.5
 		}
 		country_modifiers = {
-            global_trade_goods_size_modifier = 0.1
+            merchants = 1
+            trade_efficiency = 0.05
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -83,14 +89,18 @@ gp_tyrosh = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            province_trade_power_modifier = 0.33
 		}
 		area_modifier = {
-            province_trade_power_modifier = 0.75
+            trade_goods_size_modifier = 0.75
 		}
 		country_modifiers = {
-            global_trade_goods_size_modifier = 0.15
+            merchants = 1
+            trade_efficiency = 0.075
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -100,14 +110,18 @@ gp_tyrosh = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            province_trade_power_modifier = 0.5
 		}
 		area_modifier = {
-            province_trade_power_modifier = 1.0
+            trade_goods_size_modifier = 1.0
 		}
 		country_modifiers = {
-            global_trade_goods_size_modifier = 0.2
+            merchants = 1
+            trade_efficiency = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -129,7 +143,7 @@ gp_lys = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -162,15 +176,17 @@ gp_lys = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_prosperity_growth = 0.1
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            spy_offence = 0.05
+            global_spy_defence = 0.05
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -180,15 +196,18 @@ gp_lys = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_prosperity_growth = 0.25
 		}
 		area_modifier = {
-            local_tax_modifier = 0.5
+            local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-            spy_offence = 0.25
-            global_spy_defence = 0.25
+            spy_offence = 0.1
+            global_spy_defence = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -198,15 +217,18 @@ gp_lys = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_prosperity_growth = 0.33
 		}
 		area_modifier = {
-            local_tax_modifier = 0.75
+            local_tax_modifier = 0.33
 		}
 		country_modifiers = {
-            spy_offence = 0.33
-            global_spy_defence = 0.33
+            spy_offence = 0.15
+            global_spy_defence = 0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -216,15 +238,18 @@ gp_lys = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_prosperity_growth = 0.5
 		}
 		area_modifier = {
-            local_tax_modifier = 1.0
+            local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-            spy_offence = 0.5
-            global_spy_defence = 0.5
+            spy_offence = 0.2
+            global_spy_defence = 0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -246,7 +271,7 @@ gp_myr = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -279,15 +304,17 @@ gp_myr = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            province_trade_power_modifier = 0.1
 		}
 		area_modifier = {
-            
+            trade_goods_size_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            merchants = 1
+            placed_merchant_power = 2
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -297,14 +324,18 @@ gp_myr = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            province_trade_power_modifier = 0.25
 		}
 		area_modifier = {
-            province_trade_power_modifier = 0.5
+            trade_goods_size_modifier = 0.25
 		}
 		country_modifiers = {
-            global_trade_power = 0.15
+            merchants = 1
+            placed_merchant_power = 4
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -314,14 +345,18 @@ gp_myr = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            province_trade_power_modifier = 0.33
 		}
 		area_modifier = {
-            province_trade_power_modifier = 0.75
+            trade_goods_size_modifier = 0.33
 		}
 		country_modifiers = {
-            global_trade_power = 0.2
+            merchants = 1
+            placed_merchant_power = 6
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -331,14 +366,18 @@ gp_myr = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            province_trade_power_modifier = 0.5
 		}
 		area_modifier = {
-            province_trade_power_modifier = 1.0
+            trade_goods_size_modifier = 0.5
 		}
 		country_modifiers = {
-            global_trade_power = 0.25
+            merchants = 1
+            placed_merchant_power = 8
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -360,7 +399,7 @@ gp_volantis = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -393,15 +432,17 @@ gp_volantis = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_development_cost = -0.05
 		}
 		area_modifier = {
-            
+            global_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            merchants = 1
+            trade_steering = 0.05
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -411,15 +452,18 @@ gp_volantis = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
-		}
-		area_modifier = {
+		province_modifiers = {
             local_development_cost = -0.1
 		}
+		area_modifier = {
+            global_tax_modifier = 0.25
+		}
 		country_modifiers = {
-            trade_efficiency = 0.05
-            trade_steering = 0.15
+            merchants = 1
+            trade_steering = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -429,15 +473,18 @@ gp_volantis = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.15
 		}
 		area_modifier = {
-            local_development_cost = -0.2
+            global_tax_modifier = 0.33
 		}
 		country_modifiers = {
-            trade_efficiency = 0.1
-            trade_steering = 0.2
+            merchants = 1
+            trade_steering = 0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -447,15 +494,18 @@ gp_volantis = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.2
 		}
 		area_modifier = {
-            local_development_cost = -0.3
+            global_tax_modifier = 0.5
 		}
 		country_modifiers = {
-            trade_efficiency = 0.15
-            trade_steering = 0.25
+            merchants = 1
+            trade_steering = 0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -477,7 +527,7 @@ gp_temple_of_the_lord_of_light = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -510,15 +560,17 @@ gp_temple_of_the_lord_of_light = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_unrest = -1
 		}
 		area_modifier = {
-            
+            local_monthly_devastation = -0.015
 		}
 		country_modifiers = {
-            
+            missionaries = 1
+            global_missionary_strength = 0.01
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -528,16 +580,18 @@ gp_temple_of_the_lord_of_light = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -2
 		}
 		area_modifier = {
-            
+            local_monthly_devastation = -0.03
 		}
 		country_modifiers = {
             missionaries = 1
-            global_missionary_strength = 0.01
-            warscore_cost_vs_other_religion = -0.1
+            global_missionary_strength = 0.02
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -547,16 +601,18 @@ gp_temple_of_the_lord_of_light = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -3
 		}
 		area_modifier = {
-            
+            local_monthly_devastation = -0.045
 		}
 		country_modifiers = {
             missionaries = 1
-            global_missionary_strength = 0.02
-            warscore_cost_vs_other_religion = -0.2
+            global_missionary_strength = 0.03
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -566,16 +622,18 @@ gp_temple_of_the_lord_of_light = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -4
 		}
 		area_modifier = {
-            
+            local_monthly_devastation = -0.06
 		}
 		country_modifiers = {
             missionaries = 1
-            global_missionary_strength = 0.03
-            warscore_cost_vs_other_religion = -0.3
+            global_missionary_strength = 0.04
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -597,7 +655,7 @@ gp_pentos = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -630,15 +688,17 @@ gp_pentos = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_tax_modifier = 0.1
 		}
 		area_modifier = {
-            
+            local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            improve_relation_modifier = 0.05
+            monthly_favor_modifier = 0.05
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -648,15 +708,18 @@ gp_pentos = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.25
 		}
 		area_modifier = {
-            local_tax_modifier = 0.5
+            local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            diplomatic_reputation = 1
-            diplomatic_upkeep = 1
+            improve_relation_modifier = 0.1
+            monthly_favor_modifier = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -666,15 +729,18 @@ gp_pentos = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.33
 		}
 		area_modifier = {
-            local_tax_modifier = 0.75
+            local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            diplomatic_reputation = 2
-            diplomatic_upkeep = 2
+            improve_relation_modifier = 0.15
+            monthly_favor_modifier = 0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -684,15 +750,18 @@ gp_pentos = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.5
 		}
 		area_modifier = {
-            local_tax_modifier = 1.0
+            local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            diplomatic_reputation = 3
-            diplomatic_upkeep = 3
+            improve_relation_modifier = 0.2
+            monthly_favor_modifier = 0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -714,7 +783,7 @@ gp_titan_of_braavos = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -747,15 +816,17 @@ gp_titan_of_braavos = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_ship_cost = -0.1
 		}
 		area_modifier = {
-            
+            local_sailors_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            navy_tradition = 0.5
+            global_sailors_modifier = 0.05
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -765,15 +836,18 @@ gp_titan_of_braavos = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_ship_cost = -0.25
 		}
 		area_modifier = {
-            
+            local_sailors_modifier = 0.25
 		}
 		country_modifiers = {
-            prestige = 0.5
-            unjustified_demands = -0.1
+            navy_tradition = 1.0
+            global_sailors_modifier = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -783,15 +857,18 @@ gp_titan_of_braavos = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_ship_cost = -0.33
 		}
 		area_modifier = {
-            
+            local_sailors_modifier = 0.33
 		}
 		country_modifiers = {
-            prestige = 0.75
-            unjustified_demands = -0.15
+            navy_tradition = 1.5
+            global_sailors_modifier = 0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -801,15 +878,18 @@ gp_titan_of_braavos = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_ship_cost = -0.5
 		}
 		area_modifier = {
-            
+            local_sailors_modifier = 0.5
 		}
 		country_modifiers = {
-            prestige = 1
-            unjustified_demands = -0.2
+            navy_tradition = 2.0
+            global_sailors_modifier = 0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -831,7 +911,7 @@ gp_hall_of_truth = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -864,15 +944,16 @@ gp_hall_of_truth = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_tax_modifier = 0.1
 		}
 		area_modifier = {
-            
+            local_monthly_devastation = -0.015
 		}
 		country_modifiers = {
-            
+            years_of_nationalism = -2
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -882,15 +963,17 @@ gp_hall_of_truth = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.25
 		}
 		area_modifier = {
-            
+            local_monthly_devastation = -0.03
 		}
 		country_modifiers = {
-            governing_capacity_modifier = 0.1
-            republican_tradition = 0.5
+            years_of_nationalism = -4
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -900,15 +983,17 @@ gp_hall_of_truth = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.33
 		}
 		area_modifier = {
-            
+            local_monthly_devastation = -0.045
 		}
 		country_modifiers = {
-            governing_capacity_modifier = 0.15
-            republican_tradition = 0.75
+            years_of_nationalism = -6
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -918,15 +1003,17 @@ gp_hall_of_truth = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.5
 		}
 		area_modifier = {
-            
+            local_monthly_devastation = -0.06
 		}
 		country_modifiers = {
-            governing_capacity_modifier = 0.2
-            republican_tradition = 1.0
+            years_of_nationalism = -8
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -948,7 +1035,7 @@ gp_iron_bank = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -981,15 +1068,17 @@ gp_iron_bank = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_tax_modifier = 0.1
 		}
 		area_modifier = {
-            
+            local_development_cost = -0.05
 		}
 		country_modifiers = {
-            
+            interest = -0.5
+            inflation_reduction = 0.01
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -999,15 +1088,18 @@ gp_iron_bank = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.25
 		}
 		area_modifier = {
-            
+            local_development_cost = -0.1
 		}
 		country_modifiers = {
-            global_tax_income = 64
-            interest = -1
+            interest = -1.0
+            inflation_reduction = 0.02
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -1017,15 +1109,18 @@ gp_iron_bank = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.33
 		}
 		area_modifier = {
-            
+            local_development_cost = -0.15
 		}
 		country_modifiers = {
-            global_tax_income = 120
-            interest = -2
+            interest = -1.5
+            inflation_reduction = 0.03
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -1035,15 +1130,18 @@ gp_iron_bank = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.5
 		}
 		area_modifier = {
-            
+            local_development_cost = -0.2
 		}
 		country_modifiers = {
-            global_tax_income = 184
-            interest = -3
+            interest = -2.0
+            inflation_reduction = 0.04
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -1065,7 +1163,7 @@ gp_sealords_palace = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -1098,15 +1196,18 @@ gp_sealords_palace = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_ship_cost = -0.1
 		}
 		area_modifier = {
-            
+            local_sailors_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            navy_tradition = 0.5
+            admiral_cost = -0.1
+            admiral_skill_gain_modifier = 0.1
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -1116,16 +1217,19 @@ gp_sealords_palace = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_ship_cost = -0.25
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.5
+            local_sailors_modifier = 0.25
 		}
 		country_modifiers = {
-            navy_tradition = 0.5
-            admiral_cost = -0.25
-            admiral_skill_gain_modifier = 0.5
+            navy_tradition = 1.0
+            admiral_cost = -0.15
+            admiral_skill_gain_modifier = 0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -1135,16 +1239,19 @@ gp_sealords_palace = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_ship_cost = -0.33
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.75
+            local_sailors_modifier = 0.33
 		}
 		country_modifiers = {
-            navy_tradition = 0.75
-            admiral_cost = -0.5
-            admiral_skill_gain_modifier = 0.75
+            navy_tradition = 1.5
+            admiral_cost = -0.2
+            admiral_skill_gain_modifier = 0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -1154,16 +1261,19 @@ gp_sealords_palace = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_ship_cost = -0.5
 		}
 		area_modifier = {
-            local_sailors_modifier = 1
+            local_sailors_modifier = 0.5
 		}
 		country_modifiers = {
-            navy_tradition = 1
-            admiral_cost = -0.75
-            admiral_skill_gain_modifier = 1.0
+            navy_tradition = 2.0
+            admiral_cost = -0.25
+            admiral_skill_gain_modifier = 0.25
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -1185,7 +1295,7 @@ gp_house_of_black_and_white = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -1218,15 +1328,16 @@ gp_house_of_black_and_white = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_unrest = -1
 		}
 		area_modifier = {
-            
+            local_hostile_attrition = 1
 		}
 		country_modifiers = {
-            
+            infantry_power = 0.025
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -1236,14 +1347,17 @@ gp_house_of_black_and_white = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -2
 		}
 		area_modifier = {
-            
+            local_hostile_attrition = 2
 		}
 		country_modifiers = {
-            discipline = 0.05
+            infantry_power = 0.05
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -1253,14 +1367,17 @@ gp_house_of_black_and_white = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -3
 		}
 		area_modifier = {
-            
+            local_hostile_attrition = 3
 		}
 		country_modifiers = {
-            discipline = 0.075
+            infantry_power = 0.075
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -1270,14 +1387,17 @@ gp_house_of_black_and_white = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -4
 		}
 		area_modifier = {
-            
+            local_hostile_attrition = 4
 		}
 		country_modifiers = {
-            discipline = 0.1
+            infantry_power = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -1299,7 +1419,7 @@ gp_lorath = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -1332,15 +1452,17 @@ gp_lorath = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_development_cost = -0.05
 		}
 		area_modifier = {
-            
+            local_build_cost = -0.1
+            local_build_time = -0.1
 		}
 		country_modifiers = {
-            
+            state_maintenance_modifier = -0.1
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -1350,15 +1472,18 @@ gp_lorath = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.1
 		}
 		area_modifier = {
-            development_cost = -0.1
+            local_build_cost = -0.25
+            local_build_time = -0.25
 		}
 		country_modifiers = {
-            build_cost = -0.25
-            build_time = -0.25
+            state_maintenance_modifier = -0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -1368,15 +1493,18 @@ gp_lorath = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.15
 		}
 		area_modifier = {
-            development_cost = -0.2
+            local_build_cost = -0.33
+            local_build_time = -0.33
 		}
 		country_modifiers = {
-            build_cost = -0.33
-            build_time = -0.33
+            state_maintenance_modifier = -0.3
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -1386,15 +1514,18 @@ gp_lorath = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.2
 		}
 		area_modifier = {
-            development_cost = -0.3
+            local_build_cost = -0.5
+            local_build_time = -0.5
 		}
 		country_modifiers = {
-            build_cost = -0.5
-            build_time = -0.5
+            state_maintenance_modifier = -0.4
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -1416,7 +1547,7 @@ gp_norvos = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -1449,15 +1580,16 @@ gp_norvos = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_defensiveness = 0.1
 		}
 		area_modifier = {
-            
+            local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            infantry_shock = 0.25
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -1467,15 +1599,17 @@ gp_norvos = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 0.25
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+            local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            infantry_power = 0.05
-            tolerance_own = 1
+            infantry_shock = 0.5
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -1485,15 +1619,17 @@ gp_norvos = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 0.33
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.75
+            local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            infantry_power = 0.1
-            tolerance_own = 2
+            infantry_shock = 0.75
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -1503,15 +1639,17 @@ gp_norvos = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 0.5
 		}
 		area_modifier = {
-            local_manpower_modifier = 1.0
+            local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            infantry_power = 0.15
-            tolerance_own = 3
+            infantry_shock = 1.0
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -1533,7 +1671,7 @@ gp_qohor = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -1566,15 +1704,16 @@ gp_qohor = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_development_cost = -0.05
 		}
 		area_modifier = {
-            
+            local_production_efficiency = 0.1
 		}
 		country_modifiers = {
-            
+            trade_goods_size_modifier = 0.025
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -1584,15 +1723,17 @@ gp_qohor = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.1
 		}
 		area_modifier = {
-            province_trade_power_modifier = 0.5
+            local_production_efficiency = 0.25
 		}
 		country_modifiers = {
-            production_efficiency = 0.05
-            global_trade_goods_size_modifier = 0.05
+            trade_goods_size_modifier = 0.05
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -1602,15 +1743,17 @@ gp_qohor = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.15
 		}
 		area_modifier = {
-            province_trade_power_modifier = 0.75
+            local_production_efficiency = 0.33
 		}
 		country_modifiers = {
-            production_efficiency = 0.1
-            global_trade_goods_size_modifier = 0.1
+            trade_goods_size_modifier = 0.075
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -1620,15 +1763,17 @@ gp_qohor = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.2
 		}
 		area_modifier = {
-            province_trade_power_modifier = 1
+            local_production_efficiency = 0.5
 		}
 		country_modifiers = {
-            production_efficiency = 0.15
-            global_trade_goods_size_modifier = 0.15
+            trade_goods_size_modifier = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -1650,7 +1795,7 @@ gp_meereen = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -1683,15 +1828,17 @@ gp_meereen = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_defensiveness = 0.1
 		}
 		area_modifier = {
-            
+            local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            land_forcelimit_modifier = 0.05
+            land_maintenance_modifier = -0.05
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -1701,15 +1848,18 @@ gp_meereen = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 0.25
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+            local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            reinforce_cost_modifier = -0.2
-            recover_army_morale_speed = 0.05
+            land_forcelimit_modifier = 0.1
+            land_maintenance_modifier = -0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -1719,15 +1869,18 @@ gp_meereen = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 0.33
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.75
+            local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            reinforce_cost_modifier = -0.25
-            recover_army_morale_speed = 0.1
+            land_forcelimit_modifier = 0.15
+            land_maintenance_modifier = -0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -1737,15 +1890,18 @@ gp_meereen = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 0.5
 		}
 		area_modifier = {
-            local_manpower_modifier = 1
+            local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            reinforce_cost_modifier = -0.3
-            recover_army_morale_speed = 0.15
+            land_forcelimit_modifier = 0.2
+            land_maintenance_modifier = -0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -1767,7 +1923,7 @@ gp_temple_of_the_graces = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -1800,15 +1956,17 @@ gp_temple_of_the_graces = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_unrest = -1
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            missionaries = 1
+            global_missionary_strength = 0.01
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -1818,16 +1976,18 @@ gp_temple_of_the_graces = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -2
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.25
 		}
 		country_modifiers = {
             missionaries = 1
-            global_missionary_strength = 0.01
-            prestige_per_development_from_conversion = 0.1
+            global_missionary_strength = 0.02
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -1837,16 +1997,18 @@ gp_temple_of_the_graces = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -3
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.33
 		}
 		country_modifiers = {
             missionaries = 1
-            global_missionary_strength = 0.02
-            prestige_per_development_from_conversion = 0.2
+            global_missionary_strength = 0.03
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -1856,16 +2018,18 @@ gp_temple_of_the_graces = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -4
 		}
 		area_modifier = {
-            local_manpower_modifier = 1
+            local_tax_modifier = 0.5
 		}
 		country_modifiers = {
             missionaries = 1
-            global_missionary_strength = 0.03
-            prestige_per_development_from_conversion = 0.3
+            global_missionary_strength = 0.04
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -1887,7 +2051,7 @@ gp_yunkai = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -1920,15 +2084,17 @@ gp_yunkai = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_defensiveness = 0.1
 		}
 		area_modifier = {
-            
+            local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            army_tradition_decay = -0.005
+            global_manpower_modifier = 0.05
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -1938,15 +2104,18 @@ gp_yunkai = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 0.25
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+            local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            infantry_cost = -0.1
-            land_morale = 0.05
+            army_tradition_decay = -0.01
+            global_manpower_modifier = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -1956,15 +2125,18 @@ gp_yunkai = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 0.33
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.75
+            local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            infantry_cost = -0.2
-            land_morale = 0.1
+            army_tradition_decay = -0.015
+            global_manpower_modifier = 0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -1974,15 +2146,18 @@ gp_yunkai = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 0.5
 		}
 		area_modifier = {
-            local_manpower_modifier = 1
+            local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            infantry_cost = -0.3
-            land_morale = 0.15
+            army_tradition_decay = -0.02
+            global_manpower_modifier = 0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -2004,7 +2179,7 @@ gp_astapor = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -2037,15 +2212,17 @@ gp_astapor = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_defensiveness = 0.1
 		}
 		area_modifier = {
-            
+            local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            global_regiment_cost = -0.05
+            army_tradition_from_battle = 0.25
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -2055,15 +2232,18 @@ gp_astapor = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 0.25
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+            local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            discipline = 0.05
-            land_maintenance_modifier = -0.1
+            global_regiment_cost = -0.1
+            army_tradition_from_battle = 0.5
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -2073,15 +2253,18 @@ gp_astapor = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 0.33
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.75
+            local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            discipline = 0.075
-            land_maintenance_modifier = -0.15
+            global_regiment_cost = -0.15
+            army_tradition_from_battle = 0.75
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -2091,15 +2274,18 @@ gp_astapor = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 0.5
 		}
 		area_modifier = {
-            local_manpower_modifier = 1
+            local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            discipline = 0.1
-            land_maintenance_modifier = -0.2
+            global_regiment_cost = -0.2
+            army_tradition_from_battle = 1.0
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -2121,7 +2307,7 @@ gp_plaza_of_pride = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -2154,15 +2340,16 @@ gp_plaza_of_pride = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_unrest = -1
 		}
 		area_modifier = {
-            
+            local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            discipline = 0.025
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -2172,16 +2359,17 @@ gp_plaza_of_pride = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -2
 		}
 		area_modifier = {
-            
+            local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            prestige = 0.5
-            global_manpower_modifier = 0.1
-            land_forcelimit_modifier = 0.1
+            discipline = 0.05
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -2191,16 +2379,17 @@ gp_plaza_of_pride = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -3
 		}
 		area_modifier = {
-            
+            local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            prestige = 0.75
-            global_manpower_modifier = 0.15
-            land_forcelimit_modifier = 0.15
+            discipline = 0.075
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -2210,16 +2399,17 @@ gp_plaza_of_pride = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -4
 		}
 		area_modifier = {
-            
+            local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            prestige = 1
-            global_manpower_modifier = 0.2
-            land_forcelimit_modifier = 0.2
+            discipline = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -2241,7 +2431,7 @@ gp_qarth = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -2274,15 +2464,17 @@ gp_qarth = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            institution_growth = 1
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            trade_steering = 0.05
+            global_trade_power = 0.05
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -2292,16 +2484,18 @@ gp_qarth = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            institution_growth = 2
 		}
 		area_modifier = {
-            local_tax_modifier = 0.5
+            local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-            unjustified_demands = -0.1
-            global_trade_power = 0.05
-            global_trade_goods_size_modifier = 0.05
+            trade_steering = 0.1
+            global_trade_power = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -2311,16 +2505,18 @@ gp_qarth = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            institution_growth = 3
 		}
 		area_modifier = {
-            local_tax_modifier = 0.75
+            local_tax_modifier = 0.33
 		}
 		country_modifiers = {
-            unjustified_demands = -0.15
-            global_trade_power = 0.1
-            global_trade_goods_size_modifier = 0.1
+            trade_steering = 0.15
+            global_trade_power = 0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -2330,16 +2526,18 @@ gp_qarth = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            institution_growth = 4
 		}
 		area_modifier = {
-            local_tax_modifier = 1
+            local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-            unjustified_demands = -0.2
-            global_trade_power = 0.15
-            global_trade_goods_size_modifier = 0.15
+            trade_steering = 0.2
+            global_trade_power = 0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -2361,7 +2559,7 @@ gp_house_of_the_undying = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -2394,15 +2592,16 @@ gp_house_of_the_undying = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            allowed_num_of_buildings = 1
 		}
 		area_modifier = {
-            
+            local_monthly_devastation = -0.015
 		}
 		country_modifiers = {
-            
+            all_power_cost = -0.025
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -2412,14 +2611,17 @@ gp_house_of_the_undying = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            allowed_num_of_buildings = 2
 		}
 		area_modifier = {
-            
+            local_monthly_devastation = -0.03
 		}
 		country_modifiers = {
             all_power_cost = -0.05
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -2429,14 +2631,17 @@ gp_house_of_the_undying = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            allowed_num_of_buildings = 3
 		}
 		area_modifier = {
-            
+            local_monthly_devastation = -0.045
 		}
 		country_modifiers = {
-            all_power_cost = -0.1
+            all_power_cost = -0.075
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -2446,14 +2651,17 @@ gp_house_of_the_undying = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            allowed_num_of_buildings = 4
 		}
 		area_modifier = {
-            
+            local_monthly_devastation = -0.06
 		}
 		country_modifiers = {
-            all_power_cost = -0.15
+            all_power_cost = -0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -2475,7 +2683,7 @@ gp_yin = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -2508,15 +2716,17 @@ gp_yin = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_development_cost = -0.05
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            governing_capacity_modifier = 0.05
+            state_maintenance_modifier = -0.1
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -2526,16 +2736,18 @@ gp_yin = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.1
 		}
 		area_modifier = {
-            local_tax_modifier = 0.5
+            local_tax_modifier = 0.25
 		}
 		country_modifiers = {
             governing_capacity_modifier = 0.1
-            global_tax_modifier = 0.1
-            improve_relation_modifier = 0.05
+            state_maintenance_modifier = -0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -2545,16 +2757,18 @@ gp_yin = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.15
 		}
 		area_modifier = {
-            local_tax_modifier = 0.75
+            local_tax_modifier = 0.33
 		}
 		country_modifiers = {
             governing_capacity_modifier = 0.15
-            global_tax_modifier = 0.15
-            improve_relation_modifier = 0.1
+            state_maintenance_modifier = -0.3
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -2564,16 +2778,18 @@ gp_yin = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.2
 		}
 		area_modifier = {
-            local_tax_modifier = 1
+            local_tax_modifier = 0.5
 		}
 		country_modifiers = {
             governing_capacity_modifier = 0.2
-            global_tax_modifier = 0.2
-            improve_relation_modifier = 0.15
+            state_maintenance_modifier = -0.4
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -2595,7 +2811,7 @@ gp_the_five_forts = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -2628,15 +2844,16 @@ gp_the_five_forts = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_defensiveness = 1.0
 		}
 		area_modifier = {
-            
+            local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            hostile_attrition = 1
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -2646,15 +2863,17 @@ gp_the_five_forts = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 1.0
 		}
 		area_modifier = {
-            garrison_growth = 0.5
-            local_hostile_attrition = 1
+            local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            defensiveness = 0.15
+            hostile_attrition = 2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -2664,15 +2883,17 @@ gp_the_five_forts = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 1.0
 		}
 		area_modifier = {
-            garrison_growth = 0.75
-            local_hostile_attrition = 2
+            local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            defensiveness = 0.2
+            hostile_attrition = 3
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -2682,15 +2903,17 @@ gp_the_five_forts = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 1.0
 		}
 		area_modifier = {
-            garrison_growth = 1.0
-            local_hostile_attrition = 3
+            local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            defensiveness = 0.25
+            hostile_attrition = 4
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
     }
 }
@@ -2712,7 +2935,7 @@ gp_asshai = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -2745,15 +2968,16 @@ gp_asshai = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            institution_growth = 1
 		}
 		area_modifier = {
-            
+            allowed_num_of_manufactories = 1
 		}
 		country_modifiers = {
-            
+            technology_cost = -0.025
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -2763,14 +2987,17 @@ gp_asshai = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            institution_growth = 2
 		}
 		area_modifier = {
-            
+            allowed_num_of_manufactories = 2
 		}
 		country_modifiers = {
             technology_cost = -0.05
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -2780,14 +3007,17 @@ gp_asshai = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            institution_growth = 3
 		}
 		area_modifier = {
-            
+            allowed_num_of_manufactories = 3
 		}
 		country_modifiers = {
-            technology_cost = -0.1
+            technology_cost = -0.075
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -2797,14 +3027,17 @@ gp_asshai = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            institution_growth = 4
 		}
 		area_modifier = {
-            
+            allowed_num_of_manufactories = 4
 		}
 		country_modifiers = {
-            technology_cost = -0.15
+            technology_cost = -0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 }
@@ -2826,7 +3059,7 @@ gp_trader_town = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -2859,15 +3092,17 @@ gp_trader_town = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            trade_goods_size_modifier = 0.1
 		}
 		area_modifier = {
-            
+            province_trade_power_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            merchants = 1
+            caravan_power = 0.05
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -2877,16 +3112,18 @@ gp_trader_town = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            trade_goods_size_modifier = 0.25
 		}
 		area_modifier = {
-            province_trade_power_modifier = 0.5
+            province_trade_power_modifier = 0.25
 		}
 		country_modifiers = {
             merchants = 1
             caravan_power = 0.1
-            trade_steering = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -2896,16 +3133,18 @@ gp_trader_town = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            trade_goods_size_modifier = 0.33
 		}
 		area_modifier = {
-            province_trade_power_modifier = 0.75
+            province_trade_power_modifier = 0.33
 		}
 		country_modifiers = {
             merchants = 1
             caravan_power = 0.15
-            trade_steering = 0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -2915,16 +3154,18 @@ gp_trader_town = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            trade_goods_size_modifier = 0.5
 		}
 		area_modifier = {
-            province_trade_power_modifier = 1
+            province_trade_power_modifier = 0.5
 		}
 		country_modifiers = {
             merchants = 1
             caravan_power = 0.2
-            trade_steering = 0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 }
@@ -2946,7 +3187,7 @@ gp_leng_ma = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -2979,15 +3220,17 @@ gp_leng_ma = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_development_cost = -0.05
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            prestige = 0.5
+            diplomats = 1
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -2997,16 +3240,18 @@ gp_leng_ma = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.1
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-            prestige_decay = -0.01
-            accept_vassalization_reasons = 5
-            diplomatic_annexation_cost = -0.1
+            prestige = 1.0
+            diplomats = 1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -3016,16 +3261,18 @@ gp_leng_ma = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.15
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.33
 		}
 		country_modifiers = {
-            prestige_decay = -0.02
-            accept_vassalization_reasons = 10
-            diplomatic_annexation_cost = -0.15
+            prestige = 1.5
+            diplomats = 1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -3035,16 +3282,18 @@ gp_leng_ma = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.2
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-            prestige_decay = -0.03
-            accept_vassalization_reasons = 15
-            diplomatic_annexation_cost = -0.2
+            prestige = 2.0
+            diplomats = 1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 }
@@ -3066,7 +3315,7 @@ gp_tall_trees_town = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -3099,15 +3348,16 @@ gp_tall_trees_town = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_production_efficiency = 0.1
 		}
 		area_modifier = {
-            
+            local_prosperity_growth = 0.1
 		}
 		country_modifiers = {
-            
+            development_cost = -0.05
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -3117,16 +3367,17 @@ gp_tall_trees_town = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_production_efficiency = 0.25
 		}
 		area_modifier = {
-            local_production_efficiency = 0.5
+            local_prosperity_growth = 0.25
 		}
 		country_modifiers = {
-            development_cost = -0.05
-            build_cost = -0.1
-            build_time = -0.1
+            development_cost = -0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -3136,16 +3387,17 @@ gp_tall_trees_town = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_production_efficiency = 0.33
 		}
 		area_modifier = {
-            local_production_efficiency = 0.75
+            local_prosperity_growth = 0.33
 		}
 		country_modifiers = {
-            development_cost = -0.1
-            build_cost = -0.15
-            build_time = -0.15
+            development_cost = -0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -3155,16 +3407,17 @@ gp_tall_trees_town = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_production_efficiency = 0.5
 		}
 		area_modifier = {
-            local_production_efficiency = 1
+            local_prosperity_growth = 0.5
 		}
 		country_modifiers = {
-            development_cost = -0.15
-            build_cost = -0.2
-            build_time = -0.2
+            development_cost = -0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 }
@@ -3219,15 +3472,17 @@ gp_valyria = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_tax_modifier = 0.1
 		}
 		area_modifier = {
-            
+            local_prosperity_growth = 0.1
 		}
 		country_modifiers = {
-            
+            free_policy = 1
+            global_autonomy = -0.025
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -3237,16 +3492,18 @@ gp_valyria = {
 		cost_to_upgrade = {
 			factor = 10000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.25
 		}
 		area_modifier = {
-            
+            local_prosperity_growth = 0.25
 		}
 		country_modifiers = {
-            country_admin_power = 1
-            country_diplomatic_power = 1
-            country_military_power = 1
+            free_policy = 1
+            global_autonomy = -0.05
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -3256,16 +3513,18 @@ gp_valyria = {
 		cost_to_upgrade = {
 			factor = 20000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.33
 		}
 		area_modifier = {
-            
+            local_prosperity_growth = 0.33
 		}
 		country_modifiers = {
-            country_admin_power = 2
-            country_diplomatic_power = 2
-            country_military_power = 2
+            free_policy = 1
+            global_autonomy = -0.075
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -3275,16 +3534,18 @@ gp_valyria = {
 		cost_to_upgrade = {
 			factor = 30000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.5
 		}
 		area_modifier = {
-            
+            local_prosperity_growth = 0.5
 		}
 		country_modifiers = {
-            country_admin_power = 3
-            country_diplomatic_power = 3
-            country_military_power = 3
+            free_policy = 1
+            global_autonomy = -0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 }
@@ -3306,7 +3567,7 @@ gp_vaes_dothrak = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -3339,15 +3600,17 @@ gp_vaes_dothrak = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_unrest = -1
 		}
 		area_modifier = {
-            
+            local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            cavalry_power = 0.025
+            movement_speed = 0.025
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -3357,15 +3620,18 @@ gp_vaes_dothrak = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -2
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+            local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            cavalry_power = 0.1
-            army_tradition_decay = -0.01
+            cavalry_power = 0.05
+            movement_speed = 0.05
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -3375,15 +3641,18 @@ gp_vaes_dothrak = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -3
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.75
+            local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            cavalry_power = 0.15
-            army_tradition_decay = -0.02
+            cavalry_power = 0.075
+            movement_speed = 0.075
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -3393,15 +3662,18 @@ gp_vaes_dothrak = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -4
 		}
 		area_modifier = {
-            local_manpower_modifier = 1
+            local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            cavalry_power = 0.2
-            army_tradition_decay = -0.03
+            cavalry_power = 0.1
+            movement_speed = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 }
@@ -3423,7 +3695,7 @@ gp_palace_with_a_thousand_rooms = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -3456,15 +3728,16 @@ gp_palace_with_a_thousand_rooms = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_tax_modifier = 0.1
 		}
 		area_modifier = {
-            
+            local_autonomy = -0.025
 		}
 		country_modifiers = {
-            
+            min_autonomy_in_territories = -0.025
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -3474,16 +3747,17 @@ gp_palace_with_a_thousand_rooms = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.25
 		}
 		area_modifier = {
-            
+            local_autonomy = -0.05
 		}
 		country_modifiers = {
-            monthly_splendor = 1
-            prestige_decay = -0.01
-            advisor_pool = 1
+            min_autonomy_in_territories = -0.05
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -3493,16 +3767,17 @@ gp_palace_with_a_thousand_rooms = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.33
 		}
 		area_modifier = {
-            
+            local_autonomy = -0.075
 		}
 		country_modifiers = {
-            monthly_splendor = 2
-            prestige_decay = -0.02
-            advisor_pool = 2
+            min_autonomy_in_territories = -0.075
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -3512,16 +3787,17 @@ gp_palace_with_a_thousand_rooms = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_tax_modifier = 0.5
 		}
 		area_modifier = {
-            
+            local_autonomy = -0.1
 		}
 		country_modifiers = {
-            monthly_splendor = 3
-            prestige_decay = -0.03
-            advisor_pool = 3
+            min_autonomy_in_territories = -0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 }
@@ -3543,7 +3819,7 @@ gp_spearhold = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -3576,15 +3852,17 @@ gp_spearhold = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_manpower_modifier = 0.1
 		}
 		area_modifier = {
-            
+            local_sailors_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            navy_tradition = 0.5
+            heavy_ship_power = 0.05
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -3594,16 +3872,18 @@ gp_spearhold = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_manpower_modifier = 0.25
 		}
 		area_modifier = {
-            
+            local_sailors_modifier = 0.25
 		}
 		country_modifiers = {
-            navy_tradition_decay = -0.01
-            heavy_ship_cost = -0.1
+            navy_tradition = 1.0
             heavy_ship_power = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -3613,16 +3893,18 @@ gp_spearhold = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_manpower_modifier = 0.33
 		}
 		area_modifier = {
-            
+            local_sailors_modifier = 0.33
 		}
 		country_modifiers = {
-            navy_tradition_decay = -0.02
-            heavy_ship_cost = -0.15
+            navy_tradition = 1.5
             heavy_ship_power = 0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -3632,16 +3914,18 @@ gp_spearhold = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_manpower_modifier = 0.5
 		}
 		area_modifier = {
-            
+            local_sailors_modifier = 0.5
 		}
 		country_modifiers = {
-            navy_tradition_decay = -0.03
-            heavy_ship_cost = -0.2
+            navy_tradition = 2.0
             heavy_ship_power = 0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 }
@@ -3663,7 +3947,7 @@ gp_kayakayanaya = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -3696,15 +3980,16 @@ gp_kayakayanaya = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_defensiveness = 1.0
 		}
 		area_modifier = {
-            
+            local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            defensiveness = 0.05
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -3714,16 +3999,17 @@ gp_kayakayanaya = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
-		}
-		area_modifier = {
+		province_modifiers = {
             local_defensiveness = 1.0
 		}
+		area_modifier = {
+            local_manpower_modifier = 0.25
+		}
 		country_modifiers = {
-            land_attrition = -0.1
-            global_manpower_modifier = 0.1
-            manpower_recovery_speed = 0.1
+            defensiveness = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -3733,16 +4019,17 @@ gp_kayakayanaya = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 1.0
 		}
 		area_modifier = {
-            local_defensiveness = 2.0
+            local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            land_attrition = -0.15
-            global_manpower_modifier = 0.15
-            manpower_recovery_speed = 0.15
+            defensiveness = 0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -3752,16 +4039,17 @@ gp_kayakayanaya = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_defensiveness = 1.0
 		}
 		area_modifier = {
-            local_defensiveness = 3.0
+            local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            land_attrition = -0.2
-            global_manpower_modifier = 0.2
-            manpower_recovery_speed = 0.2
+            defensiveness = 0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 }
@@ -3783,7 +4071,7 @@ gp_palace_of_sorrow = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -3816,15 +4104,16 @@ gp_palace_of_sorrow = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_unrest = -1
 		}
 		area_modifier = {
-            
+            local_sailors_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            capture_ship_chance = 0.05
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -3834,16 +4123,17 @@ gp_palace_of_sorrow = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -2
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.5
+            local_sailors_modifier = 0.25
 		}
 		country_modifiers = {
             capture_ship_chance = 0.1
-            privateer_efficiency = 0.1
-            embargo_efficiency = 0.1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -3853,16 +4143,17 @@ gp_palace_of_sorrow = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -3
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.75
+            local_sailors_modifier = 0.33
 		}
 		country_modifiers = {
-            capture_ship_chance = 0.2
-            privateer_efficiency = 0.2
-            embargo_efficiency = 0.2
+            capture_ship_chance = 0.15
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -3872,16 +4163,17 @@ gp_palace_of_sorrow = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_unrest = -4
 		}
 		area_modifier = {
-            local_sailors_modifier = 1
+            local_sailors_modifier = 0.5
 		}
 		country_modifiers = {
-            capture_ship_chance = 0.3
-            privateer_efficiency = 0.3
-            embargo_efficiency = 0.3
+            capture_ship_chance = 0.2
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 }
@@ -3903,7 +4195,7 @@ gp_pearl_palace = {
 		months = 0
 	}
 
-	starting_tier = 1
+	starting_tier = 0
 
     # Construction
 	build_trigger = {
@@ -3936,15 +4228,17 @@ gp_pearl_palace = {
 			factor = 0
 		}
 		province_modifiers = {
-            
+            local_development_cost = -0.05
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            
+            prestige = 0.5
+            free_dip_policy = 1
 		}
 		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -3954,16 +4248,18 @@ gp_pearl_palace = {
 		cost_to_upgrade = {
 			factor = 1000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.1
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-            colonists = 1
-            colonist_placement_chance = 0.05
-            global_colonial_growth = 10
+            prestige = 1
+            free_dip_policy = 1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -3973,16 +4269,18 @@ gp_pearl_palace = {
 		cost_to_upgrade = {
 			factor = 2000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.15
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.33
 		}
 		country_modifiers = {
-            colonists = 1
-            colonist_placement_chance = 0.1
-            global_colonial_growth = 20
+            prestige = 1.5
+            free_dip_policy = 1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 	tier_3 = {
@@ -3992,16 +4290,18 @@ gp_pearl_palace = {
 		cost_to_upgrade = {
 			factor = 3000
 		}
-        province_modifiers = {
-            
+		province_modifiers = {
+            local_development_cost = -0.2
 		}
 		area_modifier = {
-            
+            local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-            colonists = 1
-            colonist_placement_chance = 0.15
-            global_colonial_growth = 30
+            prestige = 2
+            free_dip_policy = 1
+		}
+		on_upgraded = {
+            add_prestige = 25
 		}
 	}
 }

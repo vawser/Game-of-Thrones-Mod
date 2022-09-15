@@ -1,0 +1,75 @@
+has_any_estates = {
+	OR = {
+		has_estate = estate_clergy
+		has_estate = estate_merchants
+		has_estate = estate_nobles
+		has_estate = estate_commoners
+		has_estate = estate_tribes
+		has_estate = estate_adventurers
+	}
+}
+
+# Used to determine if the country is strong enough to force 
+# out the rest of the estates for actions that would have them
+# removed.
+crown_stronger_than_estate = {
+	crown_land_share = $estate$
+	estate_loyalty = {
+		estate = $estate$
+		higher_than_influence = yes
+	}
+}
+
+has_clergy_trade_good_trigger = {
+	OR = {
+		trade_goods = wine
+		trade_goods = wool
+        trade_goods = tea
+        trade_goods = coffee
+        trade_goods = cotton
+        trade_goods = candles
+	}
+}
+
+has_merchants_trade_good_trigger = {
+	OR = {
+		trade_goods = salt
+        trade_goods = naval_supplies
+        trade_goods = ivory
+        trade_goods = spices
+        trade_goods = tobacco
+        trade_goods = cocoa
+        trade_goods = slaves
+        trade_goods = tropical_wood
+	}
+}
+
+has_nobles_trade_good_trigger = {
+	OR = {
+        trade_goods = cloth
+		trade_goods = fur
+		trade_goods = copper
+        trade_goods = iron
+        trade_goods = dyes
+        trade_goods = silk
+        trade_goods = sugar
+	}
+}
+
+has_commoners_trade_good_trigger = {
+	OR = {
+		trade_goods = grain
+		trade_goods = fish
+        trade_goods = ironwood
+        trade_goods = fruit
+	}
+}
+
+has_tribes_trade_good_trigger = {
+	OR = {
+        trade_goods = grain
+		trade_goods = copper
+        trade_goods = iron
+        trade_goods = slaves
+	}
+}

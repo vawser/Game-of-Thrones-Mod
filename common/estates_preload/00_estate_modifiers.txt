@@ -84,3 +84,20 @@ estate_tribes = {
 		}
 	}
 }
+
+estate_adventurers = {
+	modifier_definition = {
+		type = loyalty
+		key = adventurers_loyalty_modifier
+		trigger = {
+			has_estate = estate_adventurers
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = adventurers_influence_modifier
+		trigger = {
+			has_estate = estate_adventurers
+		}
+	}
+}

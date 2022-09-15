@@ -1,0 +1,1059 @@
+# INSTRUCTIONS:
+#
+# condition				A diplomatic action can have any number of condition blocks, each with its own
+#						tooltip, potential and allow section
+#
+# 	tooltip					Sets a custom text string similar to the hardcoded limits
+# 							If no tooltip is scripted, the tooltip for the actual trigger will be shown
+#							Note that the custom tooltip is only shown if the allow trigger is NOT met
+#
+# 	potential				Determines if the trigger is applicable or not
+# 	allow					Determines if the action is valid or not
+#
+# effect				A diplomatic action can only have one effect block
+
+# ROOT					actor
+# FROM					target
+
+########################################
+# DIPLOMATIC ACTIONS
+########################################
+# royal_marriage
+# declarewar
+# requestpeace
+# support_independence_action
+# allianceaction
+# embargoaction
+# annexationaction
+# integrationaction
+# vassalaction
+# guaranteeaction
+# warningaction
+# threaten_war
+# milaccess
+# fleet_access
+# offer_fleet_access
+# offermilaccess
+# insultaction
+# giftaction
+# claimaction
+# callaction
+# offerloan
+# warsubsidy
+# sellprov
+# imperial_relations_action
+# imperial_realm_war_action
+# religious_unity_action
+# grant_electorate
+# remove_electorate
+# grant_freecity
+# remove_freecity
+# demand_unlawful_territory_action
+# call_crusade_action
+# excommunicate_action
+# enforce_peace
+# improve_relation
+# fabricate_claim
+# justify_trade_conflict
+# transfer_trade_power
+# infiltrate_administration
+# sabotage_reputation
+# support_rebels
+# sow_discontent
+# agitate_for_liberty
+# form_coalition
+# request_to_join_federation
+# invite_to_federation
+# support_heir
+# break_marriage
+# designate_march
+# ask_for_march
+# sell_ships_action
+# abandon_union
+# takeondebt
+# influence_nation
+# claim_states
+# steer_trade
+# stealmap
+# spy_network
+# invite_to_trade_league
+# request_to_join_trade_league
+# sharemap
+# intervene_in_war
+# break_alliance
+# tributary_state_action
+# ask_for_tributary_state_action
+# knowledge_sharing
+
+royal_marriage = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - royal_marriage"
+        }
+    }
+    
+	condition = {
+		tooltip = MARWAR
+		potential = {
+		}
+		allow = {
+			NOT = { war_with = FROM }
+		}
+	}
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+declarewar = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - declarewar"
+        }
+    }
+    
+    condition = {
+		potential = {
+			tag = A02
+			ai = yes
+		}
+		allow = {
+			FROM = {
+				has_reform = wildling_clan_reform
+			}
+		}
+	}
+}
+
+requestpeace = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - requestpeace"
+        }
+    }
+}
+
+support_independence_action = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - support_independence_action"
+        }
+    }
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+allianceaction = {  
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - allianceaction"
+        }
+    }
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+embargoaction = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - embargoaction"
+        }
+    }
+}
+
+annexationaction = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - annexationaction"
+        }
+    }
+    
+	condition = {
+		tooltip = ANNEX_TOO_LOW
+		potential = {
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		allow = {
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+		}
+	}
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+integrationaction = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - integrationaction"
+        }
+    }
+    
+	condition = {
+		tooltip = INTEGRATETOOLOWDESC
+		potential = {
+			senior_union_with = FROM
+		}
+		allow = {
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+		}
+	}
+    
+    condition = {
+		tooltip = PUINTEGRATIONIMPOSSIBLE
+		potential = {
+			has_government_attribute = cannot_integrate_personal_unions
+		}
+		allow = {
+			NOT = { has_government_attribute = cannot_integrate_personal_unions }
+		}
+	}
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+vassalaction = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - vassalaction"
+        }
+    }
+    
+	condition = {
+		tooltip = VASSALINVALID
+		potential = {
+		}
+		allow = {
+			alliance_with = FROM
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+			FROM = { is_at_war = no }
+		}
+	}
+    
+    condition = {
+		tooltip = NIGHTSWATCH_VASSALISATION
+		potential = {
+            FROM = {
+                tag = A02
+            }
+            capital_scope = { continent = westeros }
+		}
+		allow = {
+			always = no
+		}
+	}
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+guaranteeaction = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - guaranteeaction"
+        }
+    }
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+warningaction = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - warningaction"
+        }
+    }
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+threaten_war = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - threaten_war"
+        }
+    }
+}
+
+milaccess = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - milaccess"
+        }
+    }
+}
+
+fleet_access = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - fleet_access"
+        }
+    }
+}
+
+offer_fleet_access = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - offer_fleet_access"
+        }
+    }
+}
+
+offermilaccess = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - offermilaccess"
+        }
+    }
+}
+
+insultaction = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - insultaction"
+        }
+    }
+}
+
+giftaction = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - giftaction"
+        }
+    }
+}
+
+claimaction = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - claimaction"
+        }
+    }
+}
+
+callaction = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - callaction"
+        }
+    }
+}
+
+offerloan = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - claimaction"
+        }
+    }
+}
+
+warsubsidy = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - claimaction"
+        }
+    }
+}
+
+sellprov = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - sellprov"
+        }
+    }
+}
+
+imperial_relations_action = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - imperial_relations_action"
+        }
+    }
+}
+
+imperial_realm_war_action = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - imperial_realm_war_action"
+        }
+    }
+}
+
+religious_unity_action = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - religious_unity_action"
+        }
+    }
+}
+
+grant_electorate = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - grant_electorate"
+        }
+    }
+}
+
+remove_electorate = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - remove_electorate"
+        }
+    }
+}
+
+grant_freecity = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - grant_freecity"
+        }
+    }
+}
+
+remove_freecity = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - remove_freecity"
+        }
+    }
+}
+
+demand_unlawful_territory_action = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - demand_unlawful_territory_action"
+        }
+    }
+}
+
+call_crusade_action = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - call_crusade_action"
+        }
+    }
+}
+
+excommunicate_action = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - excommunicate_action"
+        }
+    }
+    
+    condition = {
+		potential = {
+			always = yes
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+enforce_peace = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - enforce_peace"
+        }
+    }
+}
+
+improve_relation = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - improve_relation"
+        }
+    }
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+fabricate_claim = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - fabricate_claim"
+        }
+    }
+}
+
+justify_trade_conflict = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - justify_trade_conflict"
+        }
+    }
+}
+
+transfer_trade_power = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - transfer_trade_power"
+        }
+    }
+}
+
+infiltrate_administration = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - infiltrate_administration"
+        }
+    }
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+sabotage_reputation = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - sabotage_reputation"
+        }
+    }
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+support_rebels = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - support_rebels"
+        }
+    }
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+sow_discontent = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - sow_discontent"
+        }
+    }
+}
+
+agitate_for_liberty = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - agitate_for_liberty"
+        }
+    }
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+form_coalition = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - form_coalition"
+        }
+    }
+    
+	condition = {
+		tooltip = MINAGGRESSIVEEXPANSION
+		potential = {	
+		}
+		allow = {
+			has_opinion_modifier = {
+				modifier = aggressive_expansion
+				who = FROM
+				value = -50
+			}		
+			NOT = {
+				has_opinion_modifier = {
+					modifier = aggressive_expansion
+					who = FROM
+					value = -50
+				}
+			}
+		}
+	}
+    
+    condition = {
+		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		potential = {
+            OR = {
+                FROM = { tag = WIT }
+                tag = WIT
+            }
+		}
+		allow = {
+            always = no
+		}
+	}
+}
+
+request_to_join_federation = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - request_to_join_federation"
+        }
+    }
+}
+
+invite_to_federation = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - invite_to_federation"
+        }
+    }
+}
+
+support_heir = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - support_heir"
+        }
+    }
+}
+
+break_marriage = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - break_marriage"
+        }
+    }
+}
+
+designate_march = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - designate_march"
+        }
+    }
+}
+
+ask_for_march = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - ask_for_march"
+        }
+    }
+}
+
+sell_ships_action = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - sell_ships_action"
+        }
+    }
+}
+
+abandon_union_action = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - abandon_union_action"
+        }
+    }
+    
+    condition = {
+		potential = {
+		}
+		allow = {
+			ROOT = {
+				senior_union_with = FROM
+				is_at_war = no
+			}
+		}
+	}
+	condition = {
+		tooltip = PUABANDONINGIMPOSSIBLE
+		potential = {
+			has_government_attribute = cannot_abandon_personal_unions
+		}
+		allow = {
+			NOT = { has_government_attribute = cannot_abandon_personal_unions }
+		}
+	}
+}
+
+takeondebt = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - takeondebt"
+        }
+    }
+}
+
+influence_nation = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - influence_nation"
+        }
+    }
+}
+
+claim_states = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - claim_states"
+        }
+    }
+}
+
+steer_trade = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - steer_trade"
+        }
+    }
+}
+
+stealmap = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - stealmap"
+        }
+    }
+}
+
+spy_network = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - spy_network"
+        }
+    }
+}
+
+invite_to_trade_league = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = invite_to_trade_league }
+            log = "DEBUG - [Root.GetName], [From.GetName] - request_to_join_trade_league"
+        }
+    }
+    
+	condition = {
+		tooltip = NOT_RELEVANT_TRADE_REGION
+		potential = {
+		}
+		allow = {
+			from = {
+				home_trade_node = {
+					trade_share = {
+						country = root
+						share = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+request_to_join_trade_league = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - request_to_join_trade_league"
+        }
+    }
+    
+	condition = {
+		tooltip = NOT_RELEVANT_TRADE_REGION_FROM
+		potential = {
+		}
+		allow = {
+			home_trade_node = {
+				trade_share = {
+					country = from
+					share = 1
+				}
+			}
+		}
+	}
+}
+
+sharemap = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - sharemap"
+        }
+    }
+}
+
+intervene_in_war = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - intervene_in_war"
+        }
+    }
+}
+
+break_alliance = {
+    effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - break_alliance"
+        }
+    }
+}
+
+tributary_state_action = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - tributary_state_action"
+        }
+    }
+}
+
+ask_for_tributary_state_action = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - ask_for_tributary_state_action"
+        }
+    }
+    
+    condition = {
+		tooltip = BLANK
+		potential = {
+			OR = {
+				primary_culture = dothraki_culture
+				primary_culture = jogos_nhai
+			}
+		}
+		allow = {
+			always = yes
+		}
+	}
+	condition = {
+		tooltip = BLANK
+		potential = {
+			NOT = {
+				OR = {
+					primary_culture = dothraki_culture
+					primary_culture = jogos_nhai
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+knowledge_sharing = {
+	effect = {
+        if = { 
+            limit = { has_global_flag = enable_diplomacy_logging }
+            log = "DEBUG - [Root.GetName], [From.GetName] - knowledge_sharing"
+        }
+    }
+}

@@ -110,6 +110,28 @@ reduce_estate_tribes_loyalty_effect = {
 		}
 	}
 }
+add_estate_adventurers_loyalty_effect = {
+	if = {
+		limit = {
+			has_estate = estate_adventurers
+		}
+		add_estate_loyalty = {
+			estate = estate_adventurers
+			loyalty = 10
+		}
+	}
+}
+reduce_estate_adventurers_loyalty_effect = {
+	if = {
+		limit = {
+			has_estate = estate_adventurers
+		}
+		add_estate_loyalty = {
+			estate = estate_adventurers
+			loyalty = -10
+		}
+	}
+}
 
 # Will apply effect if estate is present
 # effect: Will apply effect to each estate present if defined
@@ -168,6 +190,17 @@ each_estate_effect = {
 		]
 		[[tribes_effect]
 			$tribes_effect$
+		]
+	}
+	if = {
+		limit = {
+			has_estate = estate_adventurers
+		}
+		[[effect]
+			$effect$
+		]
+		[[adventurers_effect]
+			$adventurers_effect$
 		]
 	}
 }
@@ -1420,6 +1453,25 @@ spawn_rebels_from_unhappy_estate = {
 				as_if_faction = yes
 			}
 		}
+		1 = {
+			trigger = {
+				owner = {
+					has_estate = estate_adventurers
+					NOT = {
+						estate_loyalty = {
+							estate = estate_adventurers
+							loyalty = 30
+						}
+					}
+				}
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = $size$
+				estate = estate_adventurers
+				as_if_faction = yes
+			}
+		}
 	}
 }
 
@@ -1473,6 +1525,16 @@ pick_random_estate_if_present = {
 			set_country_flag = estate_tribes_$flag$
 			[[estate_action]
 			$estate_action$ = estate_tribes
+			]
+		}
+		1 = { 
+			trigger = {
+				has_estate = estate_adventurers
+				NOT = { has_country_flag = estate_adventurers_$flag$ }
+			}
+			set_country_flag = estate_adventurers_$flag$
+			[[estate_action]
+			$estate_action$ = estate_adventurers
 			]
 		}
 	}

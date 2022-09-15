@@ -2,68 +2,19 @@
 # Leaders can have 1 personality, chance of getting a new one is:
 #  <base chance> * <army tradition gained in battle>
 # Modifiers apply only to the stack lead by the leader.
-#--------------------------------------------------------------------------
-# Army
-#--------------------------------------------------------------------------
-master_of_arms_personality = {
-	allow = {
-		infantry_fraction = 0.2
-		is_admiral = no
-	}
-	infantry_power = 0.1
-}
-galloping_knight_personality = {
-	allow = {
-		is_admiral = no
-		cavalry_fraction = 0.2
-	}
-	cavalry_power = 0.1
-}
-cannoneer_personality = {
-	allow = {
-		is_admiral = no
-		artillery_fraction = 0.01
-	}
-	artillery_power = 0.1
-}
-siege_specialist_personality = {
-	allow = {
-		is_admiral = no
-		artillery_fraction = 0.01
-	}
-	siege_ability = 0.1
-}
-ruthless_personality = {
-	allow = {
-		is_admiral = no
-	}
-	fire_damage = 0.1
-}
-deadly_personality = {
-	allow = {
-		is_admiral = no
-	}
-	shock_damage = 0.1
-}
-strategist_personality = {
-	allow = {
-		is_admiral = no
-	}
-	fire_damage_received = -0.1
-}
-defensive_planner_personality = {
-	allow = {
-		is_admiral = no
-	}
-	shock_damage_received = -0.1
-}
+
+###############################################
+# General Traits
+###############################################
+
 glory_seeker_personality = {
 	allow = {
 		is_admiral = no
 	}
-	prestige_from_land = 1.0
-	army_tradition_from_battle = 1.0
+	prestige_from_land = 0.5
+	army_tradition_from_battle = 0.5
 }
+
 born_to_the_saddle_personality = {
 	allow = {
 		cavalry_fraction = 0.2
@@ -71,78 +22,128 @@ born_to_the_saddle_personality = {
 	}
 	cavalry_flanking = 0.5
 }
+
+defensive_planner_personality = {
+	allow = {
+		is_admiral = no
+	}
+	shock_damage_received = -0.1
+}
+
 battlefield_medic_personality = {
 	allow = {
 		is_admiral = no
 	}
-	reinforce_speed = 0.2
+	reinforce_speed = 0.33
 }
+
+ruthless_personality = {
+	allow = {
+		is_admiral = no
+	}
+	fire_damage = 0.1
+}
+
 inspirational_leader_general_personality = {
 	allow = {
 		is_admiral = no
 	}
-	recover_army_morale_speed = 0.2
+	recover_army_morale_speed = 0.1
 }
+
+master_of_arms_personality = {
+	allow = {
+		infantry_fraction = 0.2
+		is_admiral = no
+	}
+	infantry_power = 0.1
+}
+
 goal_oriented_personality = {
 	allow = {
 		is_admiral = no
 	}
-	movement_speed = 0.2
+	movement_speed = 0.1
 }
+
 hardy_warrior_personality = {
 	allow = {
 		is_admiral = no
 	}
 	land_attrition = -0.2
 }
-critical_personality = {
+
+siege_specialist_personality = {
 	allow = {
 		is_admiral = no
+		artillery_fraction = 0.01 # "any cannons"
 	}
-	discipline = 0.05
-}
-commanding_personality = {
-	allow = {
-		is_admiral = no
-	}
-	land_morale = 0.05
-}
-sapper_personality = {
-	allow = {
-		is_admiral = no
-	}
-	artillery_bonus_vs_fort = 2
-}
-mercurial_personality = {
-	allow = {
-		is_admiral = no
-        num_of_mercenaries = 1
-	}
-	mercenary_discipline = 0.05
-}
-organised_personality = {
-	allow = {
-		is_admiral = no
-	}
-	reserves_organisation = 0.2
-}
-cruel_personality = {
-	allow = {
-		is_admiral = no
-	}
-	reinforce_cost_modifier = -0.2
+	siege_ability = 0.15
 }
 
-#--------------------------------------------------------------------------
-# Navy
-#--------------------------------------------------------------------------
-bombarder_personality = {
+cannoneer_personality = {
 	allow = {
-		heavy_ship_fraction = 0.1
+		is_admiral = no
+		artillery_fraction = 0.01 # "any cannons"
+	}
+	artillery_power = 0.1
+}
+
+
+###############################################
+# Admiral personalities
+###############################################
+
+extortioner_personality = {
+	allow = {
 		is_admiral = yes
 	}
-	heavy_ship_power = 0.1
+	global_ship_trade_power = 0.15
 }
+
+ruthless_blockader_personality = {
+	allow = {
+		is_admiral = yes
+	}
+	blockade_efficiency = 0.25
+}
+
+buccaneer_personality = {
+	allow = {
+		is_admiral = yes
+	}
+	privateer_efficiency = 0.15
+}
+
+prize_hunter_personality = {
+	allow = {
+		is_admiral = yes
+	}
+	capture_ship_chance = 0.2
+}
+
+ironside_personality = {
+	allow = {
+		is_admiral = yes
+	}
+	ship_durability = 0.05
+}
+
+naval_engineer_personality = {
+	allow = {
+		is_admiral = yes
+	}
+	local_ship_repair = 0.25
+}
+
+naval_showman_personality = {
+	allow = {
+		is_admiral = yes
+	}
+	prestige_from_naval = 0.5
+	naval_tradition_from_battle = 0.5
+}
+
 ram_raider_personality = {
 	allow = {
 		is_admiral = yes
@@ -150,89 +151,25 @@ ram_raider_personality = {
 	}
 	galley_power = 0.1
 }
-ironside_personality = {
+
+naval_gunner_personality = {
 	allow = {
+		heavy_ship_fraction = 0.1
 		is_admiral = yes
 	}
-	ship_durability = 0.05
-}
-extortioner_personality = {
-	allow = {
-		is_admiral = yes
-	}
-	trade_efficiency = 0.25
-}
-ruthless_blockader_personality = {
-	allow = {
-		is_admiral = yes
-	}
-	blockade_efficiency = 0.25
-}
-buccaneer_personality = {
-	allow = {
-		is_admiral = yes
-	}
-	privateer_efficiency = 0.25
+	heavy_ship_power = 0.1
 }
 
-prize_hunter_personality = {
-	allow = {
-		is_admiral = yes
-	}
-	capture_ship_chance = 0.05
-}
-naval_engineer_personality = {
-	allow = {
-		is_admiral = yes
-	}
-	local_ship_repair = 0.25
-}
-naval_showman_personality = {
-	allow = {
-		is_admiral = yes
-	}
-	prestige_from_naval = 1
-	naval_tradition_from_battle = 1
-}
 accomplished_sailor_personality = {
 	allow = {
 		is_admiral = yes
 	}
-	movement_speed = 0.2
+	movement_speed = 0.1
 }
+
 level_headed_personality = {
 	allow = {
 		is_admiral = yes
 	}
 	sunk_ship_morale_hit_recieved = -0.1
-}
-ambitious_personality = {
-	allow = {
-		is_admiral = yes
-	}
-	global_naval_engagement_modifier = 0.2
-}
-explorer_personality = {
-	allow = {
-		is_admiral = yes
-	}
-	naval_attrition = -0.2
-}
-fearless_personality = {
-	allow = {
-		is_admiral = yes
-	}
-	naval_morale = 0.05
-}
-swift_personality = {
-	allow = {
-		is_admiral = yes
-	}
-	movement_speed_onto_off_boat_modifier = -0.2
-}
-enduring_personality = {
-	allow = {
-		is_admiral = yes
-	}
-	recover_navy_morale_speed = 0.2
 }

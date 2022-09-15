@@ -1,0 +1,357 @@
+estate_adventurers_advancement_of_adventurers = {
+	icon = privilege_grant_autonomy
+    
+	max_absolutism = -5
+	loyalty = 0.05
+	land_share = 5
+	influence = 0.05
+    
+	can_select = {
+		has_estate = estate_nobles
+	}
+    
+	on_granted = {
+	}
+	penalties = {
+		nobles_loyalty_modifier = -0.05
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+    
+	ai_will_do = {
+		factor = 5
+        
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 25 }
+				estate_influence = {
+					estate = estate_adventurers
+					influence = 75
+				}
+			}
+			NOT = { has_estate_privilege = estate_adventurers_advancement_of_adventurers }
+		}
+
+		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_adventurers_advancement_of_adventurers }
+				}
+                
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_adventurers_advancement_of_adventurers
+				}
+			}
+		}
+        
+		modifier = {
+			factor = 0
+			NOT = { governing_capacity_percentage = 0.5 }
+		}
+        
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 40 }
+				AND = {
+					NOT = { crown_land_share = 60 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_adventurers_advancement_of_adventurers }
+		}
+        
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 30 }
+				AND = {
+					NOT = { crown_land_share = 50 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_adventurers_advancement_of_adventurers }
+		}
+        
+		modifier = {
+			factor = 0.5
+			NOT = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 25
+				}
+			}
+		}
+	}
+}
+estate_adventurers_local_oversight = {
+	icon = privilege_empty_throne
+
+    # Costs
+    max_absolutism = -5
+	land_share = 0
+	loyalty = 0.1
+	influence = 0.1
+    
+	penalties = {
+	}
+	benefits = {
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+estate_adventurers_astute_recruitment = {
+	icon = privilege_limited_war_support
+    
+    # Costs
+    max_absolutism = -5
+	land_share = 5
+	loyalty = 0.05
+	influence = 0.05
+    
+	can_select = {
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	benefits = {
+		mercenary_discipline = 0.05
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+estate_adventurers_encourage_looting = {
+	icon = privilege_give_money
+    
+    # Costs
+    max_absolutism = -5
+	land_share = 0
+	loyalty = 0.05
+	influence = 0.05
+    
+	can_select = {
+	}
+	on_granted = {
+	}
+	penalties = {
+        global_unrest = 1
+	}
+	benefits = {
+		merc_maintenance_modifier = -0.1
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+estate_adventurers_adventurers_in_the_army = {
+	icon = privilege_demand_more_troops
+    
+	max_absolutism = -10
+	influence = 0.2
+	loyalty = -0.1
+    
+	can_select = {
+		army_tradition = 30
+	}
+	on_granted = {
+		add_army_tradition = -30
+	}
+	penalties = {
+		yearly_army_professionalism = -0.01
+	}
+	benefits = {
+		leader_land_manuever = 1
+		land_morale = 0.1
+		general_cost = -0.25
+	}
+    
+	ai_will_do = {
+		factor = 5
+        
+		modifier = {
+			factor = 0
+			NOT = { crown_land_share = 25 }
+			estate_influence = {
+				estate = estate_adventurers
+				influence = 60
+			}
+		}
+	}
+}
+estate_adventurers_pioneer_initiatives = {
+	icon = privilege_grant_new_world_charter
+    
+	max_absolutism = -5
+	loyalty = 0.05
+	influence = 0.05
+    
+	is_valid = {
+		OR = {
+			num_of_colonists = 1
+			num_of_colonies = 1
+		}
+	}
+	penalties = {
+		global_tariffs = -0.10
+	}
+	benefits = {
+		global_colonial_growth = 10
+		colonist_placement_chance = 0.05
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+estate_adventurers_generous_quest_rewards = {
+	icon = privilege_loot
+    
+	max_absolutism = -5
+	loyalty = 0.1
+	influence = 0.1
+	land_share = 5
+    
+	can_select = {
+	}
+	on_granted = {
+		custom_tooltip = BOOST_ADVENTURER_SUCCESS_PRIVILEGE_TT
+	}
+	penalties = {
+		global_tax_modifier = -0.1
+	}
+	benefits = {
+		global_unrest = -1
+		mercenary_manpower = 0.1
+	}
+	cooldown_years = 10
+    
+	ai_will_do = {
+		factor = 10
+        
+		modifier = {
+			factor = 0
+			is_bankrupt = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { crown_land_share = 35 }
+		}
+	}
+}
+estate_adventurers_advisors = {
+	icon = privilege_recruit_minister
+    
+	max_absolutism = -10
+	influence = 0.1
+	loyalty = 0.05
+    
+	penalties = {
+		stability_cost_modifier = 0.25
+	}
+	benefits = {
+		advisor_cost = -0.1
+	}
+    
+	ai_will_do = {
+		factor = 8
+        
+		modifier = {
+			factor = 1.3
+			NOT = { adm = 2 }
+		}
+		modifier = {
+			factor = 0.75
+			adm = 5
+		}
+		modifier = {
+			factor = 1.3
+			NOT = { dip = 2 }
+		}
+		modifier = {
+			factor = 0.75
+			dip = 5
+		}
+		modifier = {
+			factor = 1.3
+			NOT = { mil = 2 }
+		}
+		modifier = {
+			factor = 0.75
+			mil = 5
+		}
+	}
+}
+
+estate_adventurers_sponsor_bandit_hunters = {
+	icon = privilege_spawn_rajput_regiments
+    
+	max_absolutism = -5
+    influence = 0.05
+	loyalty = 0.1
+    
+	penalties = {
+		global_autonomy = 0.05
+	}
+	benefits = {
+		
+	}
+	on_granted = {
+		custom_tooltip = LOCAL_CONCERN_BANDIT_BOOST_TT
+	}
+	ai_will_do = {
+		factor = 5
+	}
+}
+estate_adventurers_hunt_threats = {
+	icon = privilege_skull
+
+    # Costs
+    max_absolutism = -5
+	land_share = 0
+	loyalty = 0.05
+	influence = 0.1
+    
+	cooldown_years = 5
+    
+	can_select = {
+		any_owned_province = {
+            has_any_type_of_local_concern = yes
+        }
+	}
+	on_granted = {
+		random_owned_province = {
+            limit = {
+                has_any_type_of_local_concern = yes
+            }
+            
+            trigger_local_concern_events = yes
+        }
+	}
+	penalties = {
+		global_tax_modifier = -0.1
+	}
+    
+	benefits = {
+	}
+    
+	ai_will_do = {
+		factor = 0
+	}
+}

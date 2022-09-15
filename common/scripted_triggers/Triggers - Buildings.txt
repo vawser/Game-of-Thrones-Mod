@@ -1,0 +1,127 @@
+is_building_permitted = {
+    NOT = { province_id = 1590 } # The Wall
+}
+
+# Building triggers
+has_tax_building_trigger = {
+	OR = {
+		has_building = farm
+	}
+}
+
+has_trade_building_trigger = {
+	OR = {
+		has_building = market
+	}
+}
+
+has_production_building_trigger = {
+	OR = {
+		has_building = mine
+	}
+}
+
+has_manpower_building_trigger = {
+	OR = {
+		has_building = barracks
+	}
+}
+
+has_shipyard_building_trigger = {
+	OR = {
+		has_building = shipyard
+	}
+}
+
+has_dock_building_trigger = {
+	OR = {
+		has_building = dock
+	}
+}
+
+has_forcelimit_building_trigger = {
+	OR = {
+		has_building = drill_square
+	}
+}
+
+has_courthouse_building_trigger = {
+	OR = {	
+		has_building = town_hall
+	}
+}
+
+has_road_building_trigger = {
+	OR = {	
+		has_building = paved_road
+	}
+}
+
+has_supply_building_trigger = {
+	OR = {	
+		has_building = supply_depot
+	}
+}
+
+has_temple_building_trigger = {
+	OR = {	
+		has_building = temple
+	}
+}
+
+has_fort_building_trigger = {
+	OR = {	
+		has_building = motte_and_bailey
+		has_building = castle
+		has_building = fortress
+		has_building = citadel
+	}
+}
+
+has_manufactory_building_trigger = {
+	OR = {	
+		has_building = farmers_guild
+		has_building = foresters_guild
+		has_building = blacksmiths_guild
+		has_building = artisans_guild
+		has_building = tailors_guild
+		has_building = slavers_guild
+	}
+}
+
+has_unique_building_trigger = {
+	OR = {	
+		has_building = grand_palace
+		has_building = merchants_quarter
+		has_building = grand_temple
+		has_building = tourney_grounds
+		has_building = military_academy
+		has_building = naval_academy
+	}
+}
+
+gained_development_from_building = {
+	has_province_flag = built_dev_$building$
+}
+
+gained_development_from_any_building = {
+	OR = {
+		has_province_flag = built_dev_town_hall
+		has_province_flag = built_dev_tavern
+		has_province_flag = built_dev_market
+		has_province_flag = built_dev_farm
+		has_province_flag = built_dev_mine
+		has_province_flag = built_dev_temple
+		has_province_flag = built_dev_dock
+		has_province_flag = built_dev_shipyard
+		has_province_flag = built_dev_barracks
+		has_province_flag = built_dev_drill_square
+		has_province_flag = built_dev_paved_road
+		has_province_flag = built_dev_supply_depot
+		has_province_flag = built_dev_motte_and_bailey
+		has_province_flag = built_dev_castle
+		has_province_flag = built_dev_fortress
+		has_province_flag = built_dev_citadel
+		has_province_flag = built_dev_manufactory
+	}
+}

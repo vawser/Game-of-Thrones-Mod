@@ -1,0 +1,89 @@
+estate_adventurers = {
+	icon = 12
+    color = { 200 150 150 }
+    
+    influence_from_dev_modifier = 0.4
+    
+	independence_government = monarchy
+	starting_reform = autocracy_reform
+	independence_tech_group = westerosi
+    
+	# ----- Conditions -----
+    trigger = {
+        NOT = { has_reform = khalasar_reform }
+        NOT = { has_reform = jhattar_reform }
+    }
+
+	# ----- Country -----
+    country_modifier_happy = {
+        mercenary_cost = -0.2
+        mercenary_manpower = 0.2
+    }
+    country_modifier_neutral = {
+        mercenary_cost = -0.1
+        mercenary_manpower = 0.1
+    }    
+    country_modifier_angry = {
+        mercenary_cost = 0.2
+        mercenary_manpower = -0.2
+    }
+    
+	land_ownership_modifier = {
+		adventurers_loyalty_modifier = 0.2
+	}
+
+	province_independence_weight = {
+		factor = 1
+        
+		modifier = {
+			factor = 1.5
+            
+			development = 20
+		}
+        
+		modifier = {
+			factor = 2
+            
+			NOT = { is_state_core = owner }
+		}
+	}
+
+	# ----- Influence -----
+    base_influence = 5
+    
+    # ----- Loyalty -----
+    loyalty_modifier = {
+		desc = EST_VAL_HIGH_DIP_REP
+        
+		trigger = {
+			diplomatic_reputation = 3
+		}
+		loyalty = 5
+	}	
+	
+	loyalty_modifier = {
+		desc = EST_VAL_LOW_DIP_REP
+        
+		trigger = {
+			NOT = { diplomatic_reputation = 0 }
+		}
+		loyalty = -5
+	}	
+    
+    # ----- Privileges -----
+	privileges = {
+		estate_adventurers_local_oversight
+        estate_adventurers_generous_quest_rewards
+        estate_adventurers_advancement_of_adventurers
+        estate_adventurers_pioneer_initiatives
+        estate_adventurers_adventurers_in_the_army
+        estate_adventurers_advisors
+        estate_adventurers_astute_recruitment
+        estate_adventurers_encourage_looting
+        estate_adventurers_hunt_threats
+        estate_adventurers_sponsor_bandit_hunters
+	}
+
+    # ----- Agendas -----
+	agendas = { }
+}

@@ -1,0 +1,42 @@
+# Spawner 
+has_banned_terrain = {
+    
+}  
+
+# Types
+is_bandit_type_nation = {
+    always = no
+}
+
+# Local Concern Checks
+has_any_local_concern = {
+    OR = {
+        has_province_modifier = lc_level_$TYPE$_1
+        has_province_modifier = lc_level_$TYPE$_2
+        has_province_modifier = lc_level_$TYPE$_3
+    }
+}
+
+has_no_local_concern = {
+    NOT = { has_province_modifier = lc_level_$TYPE$_1 }
+    NOT = { has_province_modifier = lc_level_$TYPE$_2 } 
+    NOT = { has_province_modifier = lc_level_$TYPE$_3 }
+}
+
+has_local_concern_level_1 = {
+    has_province_modifier = lc_level_$TYPE$_1
+}
+has_local_concern_level_2 = {
+    has_province_modifier = lc_level_$TYPE$_2
+}
+has_local_concern_level_3 = {
+    has_province_modifier = lc_level_$TYPE$_3
+}
+
+has_any_type_of_local_concern = {
+    OR = {
+        has_any_local_concern = {
+            TYPE = bandit
+        }
+    }
+}

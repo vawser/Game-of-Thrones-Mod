@@ -340,13 +340,12 @@ on_siege_won_country = {
     # Iron Throne claim
     if = {
         limit = {
+			NOT = { tag = REB }
             FROM = {
                 province_id = 226
             }
         }
-        ROOT = {
-            country_event = { id = GOT_SK_SYSTEM.31 } # "Claim the Iron Throne"
-        }
+        country_event = { id = GOT_SK_SYSTEM.31 } # "Claim the Iron Throne"
     }
     random_events = {
         25 = GOT_ACCOMPLISHMENTS.3      # Strategic Excellence

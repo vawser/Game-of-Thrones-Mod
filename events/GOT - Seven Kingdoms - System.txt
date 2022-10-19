@@ -341,8 +341,19 @@ country_event = {
     
         hidden_effect = {
             set_country_flag = iron_throne_transition
-            save_global_event_target_as = IronThroneHolder
+            save_event_target_as = originalCOU
         }
+
+        # Moving over ruler to The Crownlands
+		switch_tag_with_ruler = {
+			ruler_string = King_of_Andals
+			consort_string = Queen_of_Andals
+			heir_string = Heir_of_Andals
+			new_tag = CRW
+		}
+
+        save_global_event_target_as = IronThroneHolder
+		create_union = event_target:originalCOU
         
         set_emperor_of_china = ROOT
 		add_prestige = 20

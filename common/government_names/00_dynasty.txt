@@ -1,0 +1,158 @@
+gov_noble_house_dornish = {
+	rank = {
+		1 = NOBLE_HOUSE
+        2 = NOBLE_HOUSE
+        3 = NOBLE_HOUSE
+	}
+	
+	ruler_male = {
+		1 = PRINCE
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	ruler_female = {
+		1 = PRINCESS
+		2 = PRINCESS
+		3 = PRINCESS
+	}
+	
+	trigger = {
+        has_reform = noble_house_reform
+        OR = {
+			primary_culture = salt_dornish
+			primary_culture = sand_dornish
+			primary_culture = stone_dornish
+		}
+	}
+}
+
+gov_noble_house = {
+	rank = {
+		1 = NOBLE_HOUSE
+        2 = NOBLE_HOUSE
+        3 = NOBLE_HOUSE
+	}
+	
+	ruler_male = {
+		1 = LORD
+        2 = LORD
+        3 = LORD
+	}
+	
+	ruler_female = {
+		1 = LADY
+        2 = LADY
+        3 = LADY
+	}
+	
+	trigger = {
+        has_reform = noble_house_reform
+	}
+}
+
+gov_great_house_dornish = {
+	rank = {
+		1 = GREAT_HOUSE
+        2 = GREAT_HOUSE
+        3 = GREAT_HOUSE
+	}
+	
+	ruler_male = {
+		1 = PRINCE
+        2 = PRINCE
+        3 = PRINCE
+	}
+	
+	ruler_female = {
+		1 = PRINCESS
+        2 = PRINCESS
+        3 = PRINCESS
+	}
+	
+	trigger = {
+        has_reform = great_house_reform
+		OR = {
+			primary_culture = salt_dornish
+			primary_culture = sand_dornish
+			primary_culture = stone_dornish
+		}
+	}
+}
+
+gov_lord_paramount = {
+	rank = {
+		1 = GREAT_HOUSE
+        2 = GREAT_HOUSE
+        3 = GREAT_HOUSE
+	}
+	
+	ruler_male = {
+		1 = LORD_PARAMOUNT
+		2 = LORD_PARAMOUNT
+		3 = LORD_PARAMOUNT
+	}
+	
+	ruler_female = {
+		1 = LADY_PARAMOUNT
+		2 = LADY_PARAMOUNT
+		3 = LADY_PARAMOUNT
+	}
+	
+	trigger = {
+		has_reform = great_house_reform
+		OR = {
+			tag = STM
+			tag = REA
+			tag = RIV
+		}
+	}
+}
+
+gov_great_house = {
+	rank = {
+		1 = GREAT_HOUSE
+        2 = GREAT_HOUSE
+        3 = GREAT_HOUSE
+	}
+	
+	ruler_male = {
+		1 = LORD
+        2 = LORD
+        3 = LORD
+	}
+	
+	ruler_female = {
+		1 = LADY
+        2 = LADY
+        3 = LADY
+	}
+	
+	trigger = {
+        has_reform = great_house_reform
+	}
+}
+
+gov_royal_house = {
+	rank = {
+		1 = ROYAL_HOUSE
+        2 = ROYAL_HOUSE
+        3 = ROYAL_HOUSE
+	}
+	
+	ruler_male = {
+		1 = KING
+        2 = KING
+        3 = KING
+	}
+	
+	ruler_female = {
+		1 = QUEEN
+        2 = QUEEN
+        3 = QUEEN
+	}
+	
+	trigger = {
+        has_reform = royal_house_reform
+	}
+}

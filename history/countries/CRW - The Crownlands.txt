@@ -5,7 +5,7 @@ technology_group = westerosi
 primary_culture = men_of_the_crownlands
 religion = faith_of_the_seven
 government_rank = 3
-government = monarchy
+government = dynasty
 add_government_reform = royal_house_reform
 capital = 226
 fixed_capital = 226
@@ -17,108 +17,798 @@ fixed_capital = 226
 #-------------------------------
 # Rulers
 #-------------------------------
-# War for the Stepstones
-100.1.1 = {
+# Aegon's I Reign (fixed)
+2.1.1 = {
 	monarch = {
-		name = "Viserys"
+		name = "Aegon I 'the Conqueror'"
 		dynasty = "Targaryen"
-		adm = 4
+		adm = 5
 		dip = 4
-		mil = 2
-		birth_date = 74.1.1
+		mil = 6
 	}
 	
     queen = {
         country_of_origin = F07
-        name = "Alicent"
-        dynasty = "Hightower" 
-        birth_date = 84.1.1
-        death_date = 150.1.1
+        name = "Rhaenys"
+        dynasty = "Targaryen" 
+        death_date = 26.6.4
         adm = 3
-        dip = 0
+        dip = 3
+        mil = 2
+        female = yes
+    }
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+7.3.14 = {
+	heir = {
+		name = "Aenys"
+		monarch_name = "Aenys I"
+		dynasty = "Targaryen"
+		birth_date = 7.3.14
+		death_date = 37.2.19
+		adm = 5
+		dip = 3
+		mil = 4
+		claim = 100
+	}
+}
+
+26.6.4 = {
+	queen = {
+        country_of_origin = F07
+        name = "Visenya"
+        dynasty = "Targaryen" 
+        death_date = 37.2.19
+        adm = 3
+        dip = 3
+        mil = 2
+        female = yes
+    }
+}
+
+# Aenys's I Reign (fixed)
+37.2.19 = {
+	monarch = {
+		name = "Aenys I"
+		dynasty = "Targaryen"
+		adm = 5
+		dip = 3
+		mil = 4
+		birth_date = 7.3.14
+	}
+	
+    queen = {
+        country_of_origin = F07
+        name = "Alyssa"
+        dynasty = "Targaryen" 
+        birth_date = 7.11.2
+		death_date = 42.10.23
+        adm = 4
+        dip = 2
+        mil = 4
+        female = yes
+    }
+	
+	heir = {
+		name = "Aegon"
+		dynasty = "Targaryen"
+		birth_date = 26.7.3
+		death_date = 42.10.23
+		adm = 5
+		dip = 3
+		mil = 4
+		claim = 100
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+# Maegor's I Reign (fixed)
+42.10.23 = {
+	monarch = {
+		name = "Maegor I 'the Cruel'"
+		dynasty = "Targaryen"
+		adm = 3
+		dip = 2
+		mil = 6
+		birth_date = 12.3.14
+	}
+	
+    queen = {
+        country_of_origin = F07
+        name = "Ceryse"
+        dynasty = "Hightower" 
+        birth_date = 2.9.7
+		death_date = 45.5.18
+        adm = 4
+        dip = 2
+        mil = 4
+        female = yes
+    }
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+	add_queen_personality = infertile_personality
+}
+
+45.5.18 = {
+	queen = {
+        name = "Tyanna"
+        dynasty = "Tower" 
+        birth_date = 2.9.7
+		death_date = 47.1.21
+        adm = 3
+        dip = 1
+        mil = 2
+        female = yes
+    }
+	add_queen_personality = infertile_personality
+}
+
+47.1.21 = {
+	queen = {
+		country_of_origin = A10
+        name = "Rhaena"
+        dynasty = "Targaryen" 
+        birth_date = 2.9.7
+		death_date = 48.3.16
+        adm = 4
+        dip = 2
+        mil = 4
+        female = yes
+    }
+	
+	heir = {
+		name = "Aerea"
+		dynasty = "Targaryen"
+		birth_date = 42.9.6
+		death_date = 48.3.16
+		adm = 2
+		dip = 1
+		mil = 3
+		claim = 80
+		female = yes
+	}
+	add_queen_personality = infertile_personality
+}
+
+# Jaehaerys's I Reign (fixed)
+48.3.16 = {
+	monarch = {
+		name = "Jaehaerys I 'the Wise'"
+		dynasty = "Targaryen"
+		adm = 5
+		dip = 5
+		mil = 4
+		birth_date = 34.7.2
+	}
+	
+   queen = {
+		country_of_origin = A10
+        name = "Rhaena"
+        dynasty = "Alysanne" 
+        birth_date = 36.2.18
+		death_date = 100.3.5
+        adm = 5
+        dip = 3
+        mil = 0
+        female = yes
+    }
+	
+	heir = {
+		name = "Aerea"
+		dynasty = "Targaryen"
+		birth_date = 42.9.6
+		death_date = 52.6.2
+		adm = 2
+		dip = 1
+		mil = 3
+		claim = 80
+		female = yes
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+52.6.2 = {
+	heir = {
+		name = "Aegon"
+		dynasty = "Targaryen"
+		birth_date = 52.6.2
+		death_date = 52.6.5
+		adm = 3
+		dip = 3
+		mil = 4
+		claim = 100
+	}
+}
+
+52.6.3 = {
+	heir = {
+		name = "Aerea"
+		dynasty = "Targaryen"
+		birth_date = 42.9.6
+		death_date = 53.2.1
+		adm = 2
+		dip = 1
+		mil = 3
+		claim = 80
+		female = yes
+	}
+}
+
+53.2.1 = {
+	heir = {
+		name = "Daenerys"
+		dynasty = "Targaryen"
+		birth_date = 53.2.1
+		death_date = 55.6.17
+		adm = 4
+		dip = 3
+		mil = 1
+		claim = 80
+		female = yes
+	}
+}
+
+55.6.17 = {
+	heir = {
+		name = "Aemon"
+		dynasty = "Targaryen"
+		birth_date = 53.2.1
+		death_date = 92.3.26
+		adm = 3
+		dip = 5
+		mil = 3
+		claim = 100
+	}
+}
+
+92.3.26 = {
+	heir = {
+		name = "Baelon"
+		dynasty = "Targaryen"
+		birth_date = 57.7.3
+		death_date = 101.4.1
+		adm = 3
+		dip = 4
+		mil = 2
+		claim = 100
+	}
+}
+
+101.4.1 = {
+	heir = {
+		name = "Viserys"
+		monarch_name = "Viserys I"
+		dynasty = "Targaryen"
+		birth_date = 77.2.9
+		death_date = 103.5.27
+		adm = 4
+		dip = 4
+		mil = 2
+		claim = 100
+	}
+}
+
+100.1.1 = {
+	set_variable = {
+		which = DebtCounter
+		value = 855250
+	}
+}
+
+# Viserys's I Reign (fixed)
+103.5.27 = {
+	monarch = {
+		name = "Viserys I"
+		dynasty = "Targaryen"
+		adm = 4
+		dip = 4
+		mil = 2
+		birth_date = 77.2.9
+	}
+	
+    queen = {
+        country_of_origin = F07
+        name = "Aemma"
+        dynasty = "Arryn" 
+        birth_date = 82.8.3
+        death_date = 129.5.2
+        adm = 3
+        dip = 2
         mil = 3
         female = yes
     }
     
 	heir = {
 		name = "Rhaenyra"
-		monarch_name = "Rhaenyra"
 		dynasty = "Targaryen"
 		birth_date = 97.1.1
-		death_date = 150.1.1
+		death_date = 129.5.2
+		adm = 3
+		dip = 5
+		mil = 2
 		claim = 100
-		adm = 0
-		dip = 1
-		mil = 3
         female = yes
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
 	}
 }
 
-# The Dance of the Dragons
-129.1.1 = {
+105.7.20 = {
+	queen = {
+        country_of_origin = F07
+        name = "Alicent"
+        dynasty = "Hightower" 
+        birth_date = 84.1.1
+        death_date = 129.5.2
+        adm = 4
+        dip = 3
+        mil = 1
+        female = yes
+    }
+}
+
+# Aegon's II Reign (fixed)
+129.5.2 = {
 	monarch = {
-		name = "Aegon II"
+		name = "Aegon II 'the Usurper'"
 		dynasty = "Targaryen"
 		adm = 5
-		dip = 5
+		dip = 4
 		mil = 6
-		birth_date = 107.1.1
+		birth_date = 107.7.3
 	}
 	
     queen = {
         country_of_origin = A10
         name = "Helaena"
         dynasty = "Targaryen" 
-        birth_date = 109.1.1
-        death_date = 150.1.1
-        female = yes
+        birth_date = 109.8.6
+        death_date = 130.4.12
         adm = 2
         dip = 4
         mil = 4
+		female = yes
     }
     
 	heir = {
 		name = "Jaehaerys"
-		monarch_name = "Jaehaerys"
 		dynasty = "Targaryen"
-		birth_date = 123.1.1
-		death_date = 150.1.1
-		claim = 100
+		birth_date = 123.9.12
+		death_date = 129.8.9
 		adm = 3
 		dip = 4
 		mil = 3
+		claim = 100
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
 	}
 }
 
-# Blackfyre Rebellion
-195.1.1 = {
+129.8.9 = {
+	heir = {
+		name = "Maelor"
+		dynasty = "Targaryen"
+		birth_date = 127.3.29
+		death_date = 130.6.13
+		adm = 4
+		dip = 2
+		mil = 5
+		claim = 100
+	}
+}
+
+130.6.13 = {
+	heir = {
+		name = "Aegon"
+		monarch_name = "Aegon III"
+		dynasty = "Targaryen"
+		birth_date = 127.3.29
+		death_date = 131.8.24
+		adm = 2
+		dip = 3
+		mil = 5
+		claim = 100
+	}
+}
+
+# Aegon's III Reign (fixed)
+131.8.24 = {
 	monarch = {
+		name = "Aegon III 'the Broken King'"
+		dynasty = "Targaryen"
+		adm = 2
+		dip = 3
+		mil = 5
+		birth_date = 127.3.29
+	}
+	
+	queen = {
+        country_of_origin = A10
+        name = "Jaehaera"
+        dynasty = "Targaryen" 
+        birth_date = 123.2.5
+        death_date = 133.3.18
+        adm = 4
+        dip = 3
+        mil = 5
+		female = yes
+    }
+	
+	heir = {
+		name = "Baela"
+		dynasty = "Targaryen"
+		birth_date = 116.3.29
+		death_date = 134.5.3
+		adm = 2
+		dip = 3
+		mil = 2
+		claim = 80
+		female = yes
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+133.3.18 = {
+	queen = {
+        country_of_origin = A10
+        name = "Daenaera"
+        dynasty = "Targaryen" 
+        birth_date = 127.3.19
+        death_date = 157.8.1
+        adm = 4
+        dip = 3
+        mil = 5
+		female = yes
+    }
+}
+
+134.5.3 = {
+	heir = {
+		name = "Viserys"
+		monarch_name = "Viserys II"
+		dynasty = "Targaryen"
+		birth_date = 116.3.29
+		death_date = 143.9.1
+		adm = 4
+		dip = 0
+		mil = 5
+		claim = 100
+	}
+}
+
+143.9.1 = {
+	heir = {
 		name = "Daeron"
+		monarch_name = "Daeron I"
+		dynasty = "Targaryen"
+		birth_date = 143.9.1
+		death_date = 157.8.1
+		adm = 3
+		dip = 2
+		mil = 5
+		claim = 100
+	}
+}
+
+# Daeron's I Reign (fixed)
+157.8.1 = {
+	monarch = {
+		name = "Daeron I 'the Young Dragon'"
+		dynasty = "Targaryen"
+		adm = 3
+		dip = 2
+		mil = 5
+		birth_date = 143.5.11
+	}
+	
+	heir = {
+		name = "Baelor"
+		monarch_name = "Baelor I"
+		dynasty = "Targaryen"
+		birth_date = 144.2.18
+		death_date = 161.11.6
+		adm = 5
+		dip = 5
+		mil = 3
+		claim = 100
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+# Baelor's I Reign (fixed)
+161.11.6 = {
+	monarch = {
+		name = "Baelor I 'the Blessed'"
+		dynasty = "Targaryen"
+		adm = 5
+		dip = 5
+		mil = 3
+		birth_date = 144.2.18
+	}
+	
+	queen = {
+        country_of_origin = A10
+        name = "Daena"
+        dynasty = "Targaryen" 
+        birth_date = 145.2.28
+        death_date = 171.4.9
+        adm = 3
+        dip = 2
+        mil = 3
+		female = yes
+    }
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+# Viserys's II Reign (fixed)
+171.4.9 = {
+	monarch = {
+		name = "Viserys II"
+		dynasty = "Targaryen"
+		adm = 4
+		dip = 0
+		mil = 5
+		birth_date = 116.3.29
+	}
+	
+	heir = {
+		name = "Aegon"
+		monarch_name = "Aegon IV"
+		dynasty = "Targaryen"
+		birth_date = 135.8.19
+		death_date = 172.3.2
+		adm = 1
+		dip = 4
+		mil = 2
+		claim = 100
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+# Aegon's IV Reign (fixed)
+172.3.2 = {
+	monarch = {
+		name = "Aegon IV"
+		dynasty = "Targaryen"
+		adm = 1
+		dip = 4
+		mil = 2
+		birth_date = 116.3.29
+	}
+	
+	queen = {
+        country_of_origin = A09
+        name = "Naerys"
+        dynasty = "Targaryen" 
+        birth_date = 138.8.6
+        death_date = 184.5.17
+        adm = 3
+        dip = 4
+        mil = 2
+        female = yes
+    }
+	
+	heir = {
+		name = "Daeron"
+		monarch_name = "Daeron II"
+		dynasty = "Targaryen"
+		birth_date = 153.7.9
+		death_date = 184.5.17
+		adm = 5
+		dip = 3
+		mil = 5
+		claim = 100
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+# Daeron's II Reign (fixed)
+184.5.17 = {
+	monarch = {
+		name = "Daeron II 'the Good'"
 		dynasty = "Targaryen"
 		adm = 5
 		dip = 3
 		mil = 5
-		birth_date = 154.1.1
+		birth_date = 153.7.9
 	}
 	
     queen = {
         country_of_origin = A09
-        name = "Mariah"
+        name = "Myriah"
         dynasty = "Martell" 
-        birth_date = 150.1.1
-        death_date = 250.1.1
+        birth_date = 155.3.17
+        death_date = 209.4.6
         adm = 3
-        dip = 3
-        mil = 4
+        dip = 4
+        mil = 2
         female = yes
     }
     
 	heir = {
-		name = "Baelor"
-		monarch_name = "Baelor Breakspear"
+		name = "Baelor 'Breakspear'"
 		dynasty = "Targaryen"
 		birth_date = 170.1.1
-		death_date = 250.1.1
+		death_date = 209.2.8
+		claim = 100
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+209.2.8 = {
+	heir = {
+		name = "Valarr"
+		dynasty = "Targaryen"
+		birth_date = 170.1.1
+		death_date = 209.4.6
+		claim = 100
+		adm = 4
+		dip = 5
+		mil = 2
+	}
+}
+
+# Aerys' I Reign (fixed)
+209.4.6 = {
+	monarch = {
+		name = "Aerys I"
+		dynasty = "Targaryen"
+		adm = 5
+		dip = 3
+		mil = 4
+		birth_date = 174.9.2
+	}
+	
+    queen = {
+        country_of_origin = B23
+        name = "Aelinor"
+        dynasty = "Penrose" 
+        birth_date = 150.1.1
+        death_date = 250.1.1
+        adm = 1
+        dip = 2
+        mil = 1
+        female = yes
+    }
+    
+	heir = {
+		name = "Rhaegel"
+		dynasty = "Targaryen"
+		birth_date = 176.2.18
+		death_date = 215.11.4
+		claim = 100
+		adm = 4
+		dip = 6
+		mil = 4
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+215.11.4 = {
+	heir = {
+		name = "Aelor"
+		dynasty = "Targaryen"
+		birth_date = 198.12.21
+		death_date = 217.8.7
+		claim = 100
+		adm = 2
+		dip = 3
+		mil = 5
+	}
+}
+
+217.8.7 = {
+	heir = {
+		name = "Aelora"
+		dynasty = "Targaryen"
+		birth_date = 198.12.21
+		death_date = 218.3.25
+		claim = 100
+		adm = 2
+		dip = 1
+		mil = 4
+	}
+}
+
+218.3.25 = {
+	heir = {
+		name = "Maekar"
+		monarch_name = "Maekar I"
+		dynasty = "Targaryen"
+		birth_date = 177.10.31
+		death_date = 217.8.7
 		claim = 100
 		adm = 3
 		dip = 4
@@ -126,140 +816,415 @@ fixed_capital = 226
 	}
 }
 
-# Robert's Rebellion
-282.1.1 = {
+# Maekar's I Reign (fixed)
+221.2.8 = {
 	monarch = {
-		name = "Aerys 'the Mad'"
+		name = "Maekar I"
 		dynasty = "Targaryen"
+		adm = 5
+		dip = 4
+		mil = 5
+		birth_date = 177.10.31
+	}
+	
+    queen = {
+        country_of_origin = Y03
+        name = "Dyanna"
+        dynasty = "Dayne"
+        birth_date = 178.8.15
+        death_date = 209.7.4
+        adm = 4
+        dip = 4
+        mil = 1
+        female = yes
+    }
+    
+	heir = {
+		name = "Daeron"
+		dynasty = "Targaryen"
+		birth_date = 190.11.26
+		death_date = 222.6.2
+		claim = 100
+		adm = 4
+		dip = 2
+		mil = 1
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+222.6.2 = {
+	heir = {
+		name = "Aerion"
+		dynasty = "Targaryen"
+		birth_date = 193.2.19
+		death_date = 232.9.5
+		claim = 80
+		adm = 4
+		dip = 2
+		mil = 5
+	}
+}
+
+232.9.5 = {
+	heir = {
+		name = "Aegon"
+		monarch_name = "Aegon V"
+		dynasty = "Targaryen"
+		birth_date = 200.7.1
+		death_date = 259.3.11
+		claim = 100
+		adm = 4
+		dip = 2
+		mil = 5
+	}
+}
+
+# Aegon's V Reign (fixed)
+233.2.8 = {
+	monarch = {
+		name = "Aegon V"
+		dynasty = "Targaryen"
+		adm = 4
+		dip = 2
+		mil = 5
+		birth_date = 200.7.1
+	}
+	
+    queen = {
+        country_of_origin = M41
+        name = "Betha"
+        dynasty = "Blackwood" 
+        birth_date = 201.4.13
+        death_date = 239.8.7
+        adm = 3
+        dip = 4
+        mil = 5
+        female = yes
+    }
+    
+	heir = {
+		name = "Duncan"
+		dynasty = "Targaryen"
+		birth_date = 221.7.3
+		death_date = 239.2.13
+		claim = 100
+		adm = 4
+		dip = 3
+		mil = 5
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+239.2.13 = {
+	heir = {
+		name = "Jaehaerys"
+		monarch_name = "Jaehaerys II"
+		dynasty = "Targaryen"
+		birth_date = 225.3.13
+		death_date = 259.3.11
+		claim = 90
+		adm = 4
+		dip = 5
+		mil = 2
+	}
+}
+
+# Jaehaerys' II Reign (fixed)
+259.3.11 = {
+	monarch = {
+		name = "Jaehaerys II 'the Unlikely'"
+		dynasty = "Targaryen"
+		adm = 4
+		dip = 5
+		mil = 2
+		birth_date = 225.3.13
+	}
+	
+	queen = {
+        country_of_origin = A10
+        name = "Shaera"
+        dynasty = "Blackwood" 
+        birth_date = 226.5.19
+        death_date = 261.8.7
+        adm = 3
+        dip = 4
+        mil = 5
+        female = yes
+    }
+	
+	heir = {
+		name = "Aerys"
+		monarch_name = "Aerys II"
+		dynasty = "Targaryen"
+		birth_date = 244.1.7
+		death_date = 262.7.15
+		claim = 90
 		adm = 0
 		dip = 0
 		mil = 1
-		birth_date = 143.1.1
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+
+
+# Aerys' II Reign
+262.7.15 = {
+	monarch = {
+		name = "Aerys II"
+		dynasty = "Targaryen"
+		adm = 4
+		dip = 2
+		mil = 1
+		birth_date = 244.1.7
 	}
 	
     queen = {
         country_of_origin = A10
         name = "Rhaella"
-        dynasty = "Targaryen" 
-        birth_date = 145.1.1
-        death_date = 350.1.1
-        adm = 3
-        dip = 5
-        mil = 4
+        dynasty = "Targaryen"
+        birth_date = 245.11.4
+        death_date = 283.5.8
+        adm = 4
+        dip = 2
+        mil = 1
         female = yes
     }
     
 	heir = {
 		name = "Rhaegar"
-		monarch_name = "Rhaegar"
 		dynasty = "Targaryen"
-		birth_date = 259.1.1
-		death_date = 350.1.1
+		birth_date = 259.6.2
+		death_date = 283.5.8
 		claim = 100
-		adm = 4
-		dip = 3
-		mil = 6
+		adm = 3
+		dip = 2
+		mil = 4
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
 	}
 }
 
-# Robert's Success
-283.1.1 = {
+281.4.9 = {
+	leader = {
+		name = "Jaime Lannister"
+		type = general
+		birth_date = 266.5.17
+		
+		fire = 2
+		shock = 5
+		manuever = 3
+		siege = 0
+	}
+}
+
+# Robert's I Reign
+283.1.29 = {
 	monarch = {
-		name = "Robert"
+		name = "Robert I"
 		dynasty = "Baratheon"
-		adm = 1
+		adm = 2
 		dip = 3
-		mil = 6
-		birth_date = 263.1.1
+		mil = 5
+		birth_date = 262.9.21
 	}
 	
     queen = {
-        country_of_origin = A01
-        name = "Lyanna"
-        dynasty = "Stark" 
-        birth_date = 266.1.1
-        death_date = 297.1.1
+        country_of_origin = A06
+        name = "Cersei"
+        dynasty = "Lannister" 
+        birth_date = 266.4.10
+        death_date = 298.5.17
         adm = 3
-        dip = 6
-        mil = 0
+        dip = 5
+        mil = 2
         female = yes
     }
     
 	heir = {
 		name = "Stannis"
-		monarch_name = "Stannis"
 		dynasty = "Baratheon"
-		birth_date = 264.1.1
-		death_date = 297.1.1
+		birth_date = 264.7.3
+		death_date = 286.4.2
 		claim = 100
-		adm = 5
+		adm = 4
 		dip = 3
 		mil = 5
 	}
-}
-
-298.1.1 = {
-    heir = {
-		name = "Joffery"
-		monarch_name = "Joffery"
-		dynasty = "Baratheon"
-		birth_date = 282.1.1
-		death_date = 350.1.1
-		claim = 100
-		adm = 0
-		dip = 0
-		mil = 4
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
 	}
 }
 
-299.1.1 = {
-	monarch = {
+286.4.2 = {
+    heir = {
 		name = "Joffery"
+		monarch_name = "Joffery I"
 		dynasty = "Baratheon"
-		adm = 0
-		dip = 0
-		mil = 4
-		birth_date = 282.1.1
-		death_date = 301.1.1
+		birth_date = 286.4.24
+		death_date = 298.5.17
+		claim = 80
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+	
+	leader = {
+		name = "Stannis Baratheon"
+		type = general
+		birth_date = 264.7.3
+		
+		fire = 2
+		shock = 5
+		manuever = 3
+		siege = 1
+	}
+}
+
+# Joffery's I Reign (fixed)
+298.5.17 = {
+	monarch = {
+		name = "Joffery I"
+		dynasty = "Baratheon"
+		adm = 1
+		dip = 1
+		mil = 2
+		birth_date = 286.4.24
+	}
+	
+	heir = {
+		name = "Tommen"
+		dynasty = "Baratheon"
+		adm = 4
+		dip = 3
+		mil = 1
+		birth_date = 291.8.16
+		death_date = 300.1.1
+		claim = 75
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+}
+
+# Tommen's I Reign (fixed)
+# Joffery was poisoned on his wedding day which
+# was the first day of the 4th century (Jan 1, 300)
+# Tommen marries Joffery's wife (Margaery)
+300.1.1 = {
+	monarch = {
+		name = "Tommen I 'the Boy King'"
+		dynasty = "Baratheon"
+		adm = 4
+		dip = 3
+		mil = 1
+		birth_date = 291.8.16
 	}
 	
 	queen = {
         country_of_origin = F20
         name = "Margaery"
         dynasty = "Tyrell" 
-        birth_date = 283.1.1
-        death_date = 303.1.1
-        adm = 4
-        dip = 6
+        birth_date = 300.2.23
+        death_date = 303.7.23
+        adm = 3
+        dip = 4
         mil = 2
         female = yes
     }
 	
 	heir = {
-		name = "Tommen"
+		name = "Myrcella"
 		dynasty = "Baratheon"
-		adm = 4
-		dip = 4
+		adm = 3
+		dip = 5
 		mil = 2
-		birth_date = 287.1.1
-		death_date = 303.1.1
-		claim = 75
+		birth_date = 290.6.14
+		death_date = 303.7.23
+		claim = 25
+	}
+	add_ruler_modifier = {
+		name = got_king_of_andals
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
 	}
 }
 
-304.1.1 = {
+# Cersei's I Reign (fixed)
+303.7.23 = {
 	monarch = {
-		name = "Cersei"
+		name = "Cersei I"
 		dynasty = "Lannister"
-		adm = 4
-		dip = 4
-		mil = 2
-		birth_date = 266.1.1
+		adm = 3
+        dip = 5
+        mil = 2
+		birth_date = 266.4.10
         female = yes
 	}
-    
-    add_country_modifier = {
-        name = eurons_fleet
-        duration = -1
-    }
+}
+
+# Daenerys's I Reign (fixed)
+305.4.11 = {
+	monarch = {
+		name = "Daenerys I"
+		dynasty = "Targaryen"
+		adm = 3
+        dip = 5
+        mil = 2
+		birth_date = 298.2.18
+        female = yes
+	}
+}
+
+# Bran's I Reign (fixed)
+305.4.13 = {
+	monarch = {
+		name = "Bran I"
+		dynasty = "Stark"
+		adm = 5
+        dip = 5
+        mil = 2
+		birth_date = 290.11.23
+        female = yes
+	}
 }

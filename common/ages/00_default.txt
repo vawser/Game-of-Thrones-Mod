@@ -257,6 +257,9 @@ age_of_fire = {
     }
     
 	objectives = {
+		obj_age_2_the_iron_throne = {
+            is_emperor_of_china = yes
+        }
 		age_2_obj_prestigious_capital = {
             capital_scope = {
                 development = 30
@@ -268,96 +271,8 @@ age_of_fire = {
 		age_2_obj_absolute_rule = {
             absolutism = 75
         }
-        age_2_obj_the_iron_throne = {
-            is_emperor_of_china = yes
-        }
-        age_2_obj_masterful_counsel = {
-			AND = {
-                OR = {
-                    wizard = 3
-                    maester = 3
-                    architect = 3
-                    artist = 3
-                    astrologer = 3
-                    bookbinder = 3
-                    brewer = 3
-                    engraver = 3
-                    oracle = 3
-                    gardener = 3
-                    painter = 3
-                    playwright = 3
-                    politician = 3
-                    scribe = 3
-                    poet = 3
-                    farmer = 3
-                    philosopher = 3
-                    treasurer = 3
-                    priest = 3
-                    evangelist = 3
-                    inquisitor = 3
-                    sculptor = 3
-                    courtesan = 3
-                    catchpole = 3
-                    steward = 3
-                    marshal = 3
-                    pilgrim = 3
-                    moneylender = 3
-                }
-                OR = {
-                    cartographer = 3
-                    clothier = 3
-                    cook = 3
-                    diplomat = 3
-                    herald = 3
-                    interpreter = 3
-                    jester = 3
-                    jeweler = 3
-                    messenger = 3
-                    colonist = 3
-                    navigator = 3
-                    trader = 3
-                    forger = 3
-                    poisoner = 3
-                    spicer = 3
-                    wayfarer = 3
-                    shipwright = 3
-                    mariner = 3
-                    governor = 3
-                    merchant = 3
-                    broker = 3
-                    spymaster = 3
-                    swab = 3
-                    seafarer = 3
-                    sea_dog = 3
-                    mate = 3
-                }
-                OR = {
-                    knight = 3
-                    alchemist = 3
-                    apothecarist = 3
-                    armorer = 3
-                    bowyer = 3
-                    engineer = 3
-                    furrier = 3
-                    herbalist = 3
-                    hunter = 3
-                    leatherworker = 3
-                    physician = 3
-                    storyteller = 3
-                    stablemaster = 3
-                    master_at_arms = 3
-                    mason = 3
-                    carpenter = 3
-                    bladesmith = 3
-                    bard = 3
-                    watchman = 3
-                    captain = 3
-                    sapper = 3
-                    planner = 3
-                    custodian = 3
-                    saddler = 3
-                }
-            }
+        obj_age_2_blood_of_old_valyria = {
+			
         }
         age_2_obj_colossal_army = {
             land_forcelimit = 60
@@ -474,37 +389,26 @@ age_of_rebellion = {
 		is_year = 281
 	}
 	
-    papacy = 1.0
+	papacy = 1.0
 	religious_conflicts = yes
-    absolutism = { 
-        harsh_treatment = 1
-		stability = 1
-		decrease_autonomy_command = 1
-		strengthen_government = 2
-		
-		increase_autonomy_command = -2
-		debase_currency = -1
-		execute_rebel_acceptance_command = -10
-		seat_in_parliament = -3
-		war_exhaustion = -1
+	absolutism = {
+		harsh_treatment = 5
+		stability = 0.5
+		decrease_autonomy_command = 2.5
+		strengthen_government = 1
+
+		increase_autonomy_command = -5
+		debase_currency = -2.5
+		execute_rebel_acceptance_command = -20
+		seat_in_parliament = -6
+		war_exhaustion = -0.5
     }
     
 	objectives = {
-		age_3_obj_prestigious_capital = {
-            capital_scope = {
-                development = 30
-                religion = ROOT
-                culture = ROOT
-                NOT = { devastation = 1 }
-            }
-        }
-		age_3_obj_absolute_rule = {
-            absolutism = 75
-        }
-        age_3_obj_the_iron_throne = {
+		 obj_age_3_the_iron_throne = {
             is_emperor_of_china = yes
         }
-        age_3_obj_masterful_counsel = {
+		obj_age_3_masterful_counsel = {
 			AND = {
                 OR = {
                     wizard = 3
@@ -592,15 +496,26 @@ age_of_rebellion = {
                 }
             }
         }
-        age_3_obj_colossal_army = {
+		obj_age_3_prestigious_capital = {
+            capital_scope = {
+                development = 30
+                religion = ROOT
+                culture = ROOT
+                NOT = { devastation = 1 }
+            }
+        }
+		obj_age_3_absolute_rule = {
+            absolutism = 75
+        }
+        obj_age_3_colossal_army = {
             land_forcelimit = 60
             army_size_percentage = 0.8
         }
-        age_3_obj_colossal_navy = {
+        obj_age_3_colossal_navy = {
             naval_forcelimit = 60
             navy_size_percentage = 0.8
         }
-        age_3_obj_inspirational_leader = {
+        obj_age_3_inspirational_leader = {
             has_commanding_three_star = yes
         }
 	}		

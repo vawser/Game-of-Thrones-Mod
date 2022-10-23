@@ -37,6 +37,14 @@ centralize_the_houses_decision = {
 	emperor = {
 		country_admin_power = 1
 	}
+	on_effect = {
+		custom_tooltip = vassalize_rsubjects_decision_tt
+		set_global_flag = eoc_vassalize_tributaries
+	}
+	off_effect = {
+		custom_tooltip = vassalize_rsubjects_decision_ct
+		clr_global_flag = eoc_vassalize_tributaries
+	}
     required_reform = recover_valyrian_blades_decision
 }
 

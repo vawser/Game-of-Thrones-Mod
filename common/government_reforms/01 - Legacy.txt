@@ -49,8 +49,32 @@ noble_house_legacy = {
     
 	ai = { factor = 1 }
 }
-royal_house_legacy = {
+great_house_legacy = {
 	icon = "crown"
+    
+    allow_normal_conversion = no
+	legacy_government = yes
+    
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    maintain_dynasty = yes
+    monarchy = yes
+    
+    modifiers = {
+        prestige = 0.75
+		diplomatic_upkeep = 1
+    }
+
+    custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+    
+	ai = { factor = 1 }
+}
+royal_house_legacy = {
+	icon = "royal_house"
     
     allow_normal_conversion = no
 	legacy_government = yes

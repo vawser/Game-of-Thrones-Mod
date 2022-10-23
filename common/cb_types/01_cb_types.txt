@@ -21,9 +21,11 @@ cb_royal_conquest = {
     
     prerequisites = {
 		has_reform = royal_house_reform
+		always = no
         
         FROM = {
             has_reform = noble_house_reform
+			is_subject = no
             NOT = { has_opinion = { who = ROOT value = 0 } }
         }
 	}
@@ -36,7 +38,8 @@ cb_lordly_feud = {
     
     prerequisites = {
 		has_reform = noble_house_reform
-        
+        always = no
+		
         FROM = {
             has_reform = noble_house_reform
             NOT = { has_opinion = { who = ROOT value = 0 } }
@@ -100,7 +103,11 @@ cb_claim_the_iron_throne = {
     
     prerequisites = {
 		OR = {
-            has_reform = noble_house_reform
+            has_reform = great_house_reform
+			AND = {
+				has_reform = noble_house_reform
+				is_subject = no
+			}
             has_reform = daenerys_host_reform
         }
         FROM = { 
@@ -110,18 +117,4 @@ cb_claim_the_iron_throne = {
 	}
     
     war_goal = take_capital_take_iron_throne
-}
-
-cb_force_royal_subject = {
-	valid_for_subject = no
-
-	prerequisites = {
-		is_emperor_of_china = yes
-		FROM = {
-            has_reform = noble_house_reform
-            NOT = { is_subject_of = ROOT }
-        }
-	}
-	
-	war_goal = take_capital_force_royal_subject
 }

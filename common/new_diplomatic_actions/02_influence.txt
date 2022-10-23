@@ -26,7 +26,7 @@ request_royal_submission = {
 	on_accept = {
 		FROM = {
 			create_subject = {
-				subject_type = royal_subject
+				subject_type = tributary_state
 				subject = ROOT
 			}
 		}
@@ -100,11 +100,11 @@ enforce_royal_submission = {
 			is_subject = no
             has_reform = noble_house_reform
 		}
-}
+	}
 	on_accept = {
 		ROOT = {
 			create_subject = {
-				subject_type = royal_subject
+				subject_type = tributary_state
 				subject = FROM
 			}
 		}

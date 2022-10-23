@@ -7,6 +7,7 @@ kingdom_reform = {
     
     potential = {
         NOT = { has_reform = noble_house_reform }
+        NOT = { has_reform = great_house_reform }
         NOT = { has_reform = royal_house_reform }
         NOT = { has_reform = yiti_city_reform }
         NOT = { has_reform = yiti_empire_reform }
@@ -52,9 +53,33 @@ noble_house_reform = {
     maintain_dynasty = yes
     
     modifiers = {
-		prestige = 0.5
-		diplomatic_upkeep = 1
-        nobles_influence_modifier = 0.05
+		prestige = 0.10
+		diplomatic_upkeep = 2
+		improve_relation_modifier = 0.25
+        governing_capacity_modifier = -0.10
+    }
+}
+great_house_reform = {
+	icon = "castle"
+    
+    potential = {
+        has_reform = great_house_reform
+    }
+    
+    allow_normal_conversion = yes
+    legacy_equivalent = great_house_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    maintain_dynasty = yes
+	
+	fixed_rank = 2
+    
+    modifiers = {
+		prestige = 0.50
+		vassal_income = 0.20
+		accept_vassalization_reasons = 10
+        nobles_influence_modifier = 0.10
     }
     
     custom_attributes = {
@@ -62,11 +87,25 @@ noble_house_reform = {
 	}
 }
 royal_house_reform = {
-	icon = "castle"
+	icon = "royal_house"
     
-    potential = {
-        has_reform = royal_house_reform
-    }
+	potential = {
+		OR = {
+			has_reform = royal_house_reform
+			has_reform = kingdom_of_westeros_reform
+		}
+	}
+	trigger = {
+		if = {
+			limit = {
+				has_dlc = "Mandate of Heaven"
+			}
+			is_emperor_of_china = yes
+		}
+		else = {
+			tag = CRW
+		}
+	}
    
     allow_normal_conversion = yes
     legacy_equivalent = royal_house_legacy
@@ -78,10 +117,9 @@ royal_house_reform = {
     fixed_rank = 3
     
     modifiers = {
-        prestige = 1
-		diplomatic_upkeep = 2
-        governing_capacity = 100
-		nobles_influence_modifier = 0.1
+        prestige = 1.00
+		imperial_mandate = 0.25
+		reduced_liberty_desire = 10
     }
     
     conditional = {
@@ -90,9 +128,53 @@ royal_house_reform = {
 	}
     
     custom_attributes = {
-		enables_monarchy_ideagroup = yes
+		iron_throne_small_council = yes
+		has_royal_subjects = yes
 	}
 }
+kingdom_of_westeros_reform = {
+	icon = "kingdom_of_westeros"
+    
+    potential = {
+        OR = {
+			has_reform = royal_house_reform
+			has_reform = kingdom_of_westeros_reform
+		}
+    }
+	trigger = {
+		if = {
+			limit = {
+				has_dlc = "Mandate of Heaven"
+			}
+			is_emperor_of_china = yes
+		}
+		else = {
+			tag = CRW
+		}
+	}
+   
+    allow_normal_conversion = yes
+    legacy_equivalent = royal_house_legacy
+    
+    valid_for_nation_designer = yes
+	nation_designer_cost = 0
+    
+    fixed_rank = 3
+    
+    modifiers = {
+        prestige = 2.50
+		monarch_admin_power = 2
+		monarch_diplomatic_power = 2
+		governing_capacity_modifier = 0.25
+		administrative_efficiency = 0.25
+    }
+    
+    custom_attributes = {
+		enables_monarchy_ideagroup = yes
+		has_royal_subjects = yes
+	}
+}
+
 yiti_city_reform = {
 	icon = "castle"
     

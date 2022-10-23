@@ -12,7 +12,7 @@ country_event = {
     major = yes
     
 	trigger = {
-        tag = VLE
+        tag = CRW
         start_date = 282.1.1
         NOT = { has_global_flag = roberts_rebellion }
         NOT = { has_global_flag = shattered_world }
@@ -28,11 +28,63 @@ country_event = {
     
 	option = {
 		name = GOT_ROBERTS_REBELLION.1.option.a
+		ai_chance = { factor = 100 }
+		
+		custom_tooltip = GOT_ROBERTS_REBELLION.1.option.a.tt
+		hidden_effect = {
+			NOR = {
+				kill_heir = {}
+				define_heir = {
+					name = "Eddard"
+					dynasty = original_dynasty
+					birth_date = 263.1.7
+					claim = 90
+					adm = 5
+					dip = 6
+					mil = 4
+				}
+				kill_ruler = yes
+			}
+		}
         
-        declare_war_with_cb = {
-            who = CRW
-            casus_belli = cb_independence_war
-        }
+		tooltip = {
+			VLE = {
+				declare_war_with_cb = {
+					who = CRW
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_ROBERTS_REBELLION.1.option.b
+		ai_chance = { factor = 0 }
+        
+        
 	}
 }
 
+country_event = {
+	id = GOT_ROBERTS_REBELLION.2
+	title = GOT_ROBERTS_REBELLION.2.title
+	desc = GOT_ROBERTS_REBELLION.2.desc
+	picture =  BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		is_year = 282
+		is_month = 9
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = GOT_ROBERTS_REBELLION.2.option.a
+	}
+	
+	option = {
+		name = GOT_ROBERTS_REBELLION.2.option.b
+	}
+}

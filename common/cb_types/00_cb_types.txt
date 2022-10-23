@@ -812,15 +812,29 @@ cb_forced_break_alliance = {
 	war_goal = superiority_insult
 }
 
+# Expand the Kingdom
 cb_force_tributary = {
 
 	valid_for_subject = no
 
 	prerequisites = {
 		has_dlc = "Mandate of Heaven"
-        government = tribal
-		FROM = { is_subject = no }
-		is_neighbor_of = FROM
+		is_emperor_of_china = yes
+		FROM = {
+            OR = {
+				has_reform = noble_house_reform
+				has_reform = great_house_reform
+				has_reform = wildling_clan_reform
+				has_reform = nights_watch_reform
+			}
+            NOT = { is_subject_of = ROOT }
+			NOT = { overlord = { is_subject_of = ROOT } }
+        }
+	}
+	
+	attacker_disabled_po = {
+		po_become_vassal
+		po_subjugate_vassal
 	}
 	
 	war_goal = take_capital_force_tributary

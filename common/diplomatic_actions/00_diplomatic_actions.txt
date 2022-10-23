@@ -1011,6 +1011,16 @@ tributary_state_action = {
             log = "DEBUG - [Root.GetName], [From.GetName] - tributary_state_action"
         }
     }
+	
+	condition = {
+		tooltip = "They are a NOT a Westeros house."
+		potential = {
+			FROM = { NOT = { government = dynasty } }
+		}
+		allow = {
+			always = no
+		}
+	}
 }
 
 ask_for_tributary_state_action = {
@@ -1021,27 +1031,10 @@ ask_for_tributary_state_action = {
         }
     }
     
-    condition = {
-		tooltip = BLANK
-		potential = {
-			OR = {
-				primary_culture = dothraki_culture
-				primary_culture = jogos_nhai
-			}
-		}
-		allow = {
-			always = yes
-		}
-	}
 	condition = {
-		tooltip = BLANK
+		tooltip = "They are a NOT a Westeros house."
 		potential = {
-			NOT = {
-				OR = {
-					primary_culture = dothraki_culture
-					primary_culture = jogos_nhai
-				}
-			}
+			FROM = { NOT = { government = dynasty } }
 		}
 		allow = {
 			always = no

@@ -853,7 +853,7 @@ country_event = {
         # Release old royal subjects
         every_country = {
             limit = { 
-                is_subject_of_type = royal_subject
+                is_subject_of_type = tributary_state
             }
             
             log = "[This.GetName]"
@@ -888,7 +888,7 @@ country_event = {
             every_country = {
                 limit = { has_reform = royal_house_reform }
                 create_subject = {
-                    subject_type = royal_subject
+                    subject_type = tributary_state
                     subject = PREV
                 }
             }

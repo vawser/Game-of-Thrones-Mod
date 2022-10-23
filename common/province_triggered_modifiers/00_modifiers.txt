@@ -330,3 +330,17 @@ library_of_the_occult = {
 	tolerance_own = 1
 }
 
+lannister_gold_prov = {
+	potential = {
+		owner = {
+			has_government_attribute = lannister_dip_development
+		}
+	}
+	trigger = {
+		NOT = { development = 25 }
+	}
+	
+	local_development_cost = -0.25
+	local_gold_depletion_chance_modifier = -0.1
+}
+

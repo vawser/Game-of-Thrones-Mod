@@ -1597,12 +1597,65 @@
  GOT_CONQUEST_OF_DORNE.1.desc: "Prince Daeron's conquest of Dorne was swift and merciless, winning little favour from the native Dornish. Now, with Lord Tyrell as their ruler, the people of Dorne threaten to overthrow his rule and strike back at Prince Daeron and House Targaryen for their hubris."
  GOT_CONQUEST_OF_DORNE.1.option.a: "They will pay!"
  
+ 
+ 
+ 
+ #----------------------------------------------------------------------
+ # A Brewing Storm
+ #----------------------------------------------------------------------
+ FALL_OF_THE_DRAGONS.RhaegarDisappointment: "§YPrince [Root.Heir.GetName]§! will be allowed to do as he pleases."
+ FALL_OF_THE_DRAGONS.RobertsRebGain: "§RThis decision will steer the Seven Kingdoms towards Robert's Rebellion.§!"
+ 
+ RobRebCounter:0 "Subject Agitation"
+ 
+ FALL_OF_THE_DRAGONS.1.title: "Lord Whent's Tourney Preparations"
+ FALL_OF_THE_DRAGONS.1.desc: "PLACEHOLDER"
+ FALL_OF_THE_DRAGONS.1.option.a: "I will be sure to attend."
+ FALL_OF_THE_DRAGONS.1.option.b: "House §Y[Root.Monarch.Dynasty.GetName]§! does not leave King's Landing."
+ 
+ FALL_OF_THE_DRAGONS.2.title: "Ambitions of a Prince"
+ FALL_OF_THE_DRAGONS.2.desc: "PLACEHOLDER"
+ FALL_OF_THE_DRAGONS.2.option.a: "Concerning."
+ FALL_OF_THE_DRAGONS.RhaegarPlot: "Rumors are floating of a plot by §YPrince [Root.Heir.GetName]'s§! to remove you as §Y[Root.Monarch.GetTitle]§!."
+ 
+ FALL_OF_THE_DRAGONS.3.title: "The Kingswood Brotherhood"
+ FALL_OF_THE_DRAGONS.3.desc: "PLACEHOLDER"
+ FALL_OF_THE_DRAGONS.3.option.a: "Send some soldiers to kill them all."
+ FALL_OF_THE_DRAGONS.3.option.b: "We can deal with them later."
+ 
+ FALL_OF_THE_DRAGONS.4.title: "Resolution of the Kingswood Brotherhood"
+ FALL_OF_THE_DRAGONS.4.desc: "The outlaw organization known as the Kingswood Brotherhood has been active for a majority of the reign of [Root.Monarch.GetName]. The organization, as the name suggests, operated out of the Kingswood forest just south of King's Landing and has gained recognition over the years by successfully kidnapping several nobles and managing to evade capture by the realm authorities. It become clear that the issue of the Kingswood Brotherhood will not go away unless we diverted the necessary resources to squash the outlaws, and so a detachment of soldiers led by members of the Kingsguard were tasked with their destruction.\n\nAmong the soldiers was a squire by the name of Jaime Lannister, who having distinguished himself was knighted by Arthur Dayne. In these troubling times, it may be a good idea to recruit him to the Kingsguard. However, this will force Jaime to relinquish his inheritance and may anger the Lannisters."
+ FALL_OF_THE_DRAGONS.4.option.a: "Appoint Ser Jaime Lannister to the Kingsguard."
+ FALL_OF_THE_DRAGONS.4.JaimeBecomesKingsguard: "§YJaime Lannister§! will remain as a general, but House Lannister of the §YWesterlands§! will be infuriated."
+ FALL_OF_THE_DRAGONS.4.option.b: "The Lannister boy is better off as a future Lord."
+ FALL_OF_THE_DRAGONS.4.JaimeReturnsToWesterlands: "§YJaime Lannister§! will leave your service and return to Westerlands, pleasing House Lannister of the §YWesterlands§!."
+ 
+ FALL_OF_THE_DRAGONS.5.title: "The Queen of Love and Beauty"
+ FALL_OF_THE_DRAGONS.5.desc: "PLACEHOLDER"
+ FALL_OF_THE_DRAGONS.5.option.a: "Lyanna Stark; Queen of Love and Beauty."
+ FALL_OF_THE_DRAGONS.5.option.b: "Elia Martell; Queen of Love and Beauty."
+ FALL_OF_THE_DRAGONS.5.option.c: "'§Y[Root.Heir.GetName]§!, you're a fool!'"
+ FALL_OF_THE_DRAGONS.5.MarchOnAerys: "Lords loyal to §YPrince [Root.Heir.GetName]§! will rise up in open rebellion to you."
+ 
+ FALL_OF_THE_DRAGONS.6.title: "Abduction of Lyanna Stark"
+ FALL_OF_THE_DRAGONS.6.desc: "Oh no, the table, it's broken!"
+ FALL_OF_THE_DRAGONS.6.option.a: "Jon Arryn, bring me their heads!"
+ FALL_OF_THE_DRAGONS.ExecuteTheStarks: "§Y[NOR.Monarch.GetName] [NOR.Monarch.Dynasty.GetName]§! and §Y[NOR.Heir.GetName] [NOR.Heir.Dynasty.GetName]§! of @NOR [NOR.GetName] will be executed, and §YEddard Stark§! will become §YLord of the North§!.\n§Y[VLE.Heir.GetName] [VLE.Heir.Dynasty.GetName]§! of @VLE [VLE.GetName] will be executed."
+ FALL_OF_THE_DRAGONS.6.option.b: "What a fool you are Rhaegar."
+ FALL_OF_THE_DRAGONS.AerysTheNotMad: "§YPrince [Root.Heir.GetName]§! will no longer be heir to the Iron Throne.\n§GThis decision will avert Robert's Rebellion§!"
+ 
+ FALL_OF_THE_DRAGONS.7.title: "Death of the Starks and Arryns"
+ FALL_OF_THE_DRAGONS.7.desc: "PLACEHOLDER"
+ FALL_OF_THE_DRAGONS.7.option.a: "Call the banners, it's time for war."
+ FALL_OF_THE_DRAGONS.7.option.b: "As the King commands."
  #----------------------------------------------------------------------
  # Robert's Rebellion
  #----------------------------------------------------------------------
  GOT_ROBERTS_REBELLION.1.title: "Robert's Rebellion"
  GOT_ROBERTS_REBELLION.1.desc: "Westeros is on the brink of Civil War. Rhaegar Targaryen, the heir to the Iron Throne, has kidnapped Lyana Stark - the betrothed of the Lord Paramount of the Stormlands, and Daughter of the Lord Paramount of the North. Brandon Stark, her elder brother, and heir to the North, charges south demanding vengeance. The mad King - Aerys, outraged by Brandon's demands had him and his father executed, and calls for Eddard's head as well. Jon Arryn, in response to Aerys, has risen his banners in revolt."
- GOT_ROBERTS_REBELLION.1.option.a: "Down with King Aerys!"
+ GOT_ROBERTS_REBELLION.1.option.a: "Execute the Starks!"
+ GOT_ROBERTS_REBELLION.1.option.a.tt: "§Y[NOR.Monarch.GetName] [NOR.Monarch.Dynasty.GetName]§! and §Y[NOR.Heir.GetName] [NOR.Heir.Dynasty.GetName]§! of @NOR [NOR.GetName] will be executed, and §YEddard Stark§! will become §YLord of the North§!.\n§Y[VLE.Heir.GetName] [VLE.Heir.Dynasty.GetName]§! of @VLE [VLE.GetName] will be executed."
+ GOT_ROBERTS_REBELLION.1.option.b: "What is Rhaegar thinking?"
  
  #----------------------------------------------------------------------
  # The Greyjoy Rebellion

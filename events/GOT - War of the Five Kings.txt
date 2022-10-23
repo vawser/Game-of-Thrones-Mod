@@ -10,8 +10,8 @@ country_event = {
     major = yes
     
 	trigger = {
-        tag = A07
-        start_date = 298.1.1
+        tag = CRW
+        start_date = 298.5.17
         NOT = { has_global_flag = war_of_the_five_kings }
         NOT = { has_global_flag = shattered_world }
     }
@@ -31,7 +31,7 @@ country_event = {
         
         NOR = {
             declare_war_with_cb = {
-                who = STM
+                who = CRW
                 casus_belli = cb_independence_war
             }
         }
@@ -43,7 +43,7 @@ country_event = {
         }
         A39 = {
             declare_war_with_cb = {
-                who = STM
+                who = CRW
                 casus_belli = cb_independence_war
             }
         }

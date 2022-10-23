@@ -10,7 +10,7 @@ claim_lordly_possessions = {
 		has_reform = royal_house_reform
 		FROM = {
             is_subject_of = ROOT
-			is_subject_of_type = royal_subject
+			is_subject_of_type = tributary_state
 		}
 	}
 	is_allowed = {
@@ -20,7 +20,7 @@ claim_lordly_possessions = {
             ai = yes # Don't let a player be randomly be annexed by the AI
             NOT = { total_development = 50 } # Only small houses can be annexed
             is_subject_of = ROOT
-			is_subject_of_type = royal_subject
+			is_subject_of_type = tributary_state
 		}
 }
 	on_accept = {

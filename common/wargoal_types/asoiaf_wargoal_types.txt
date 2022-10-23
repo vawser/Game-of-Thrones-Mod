@@ -225,31 +225,6 @@ superiority_wildling_feud = {
 	war_name = WILDLING_FEUD_NAME
 }
 
-take_capital_force_royal_subject = {
-	type = take_capital
-	
-    attacker = {
-		badboy_factor = 1
-		prestige_factor = 2
-		peace_cost_factor = 1
-	
-		peace_options = {
-			enforce_royal_subject
-		}
-	}
-	defender = {
-		badboy_factor = 0.5
-		prestige_factor = 1
-		peace_cost_factor = 0.5
-        
-        peace_options = {
-			po_demand_provinces
-		}
-	}
-	
-	war_name = ROYAL_SUBJECT_MISSION_WAR_NAME
-}
-
 take_capital_take_iron_throne = {
 	type = take_capital
 	

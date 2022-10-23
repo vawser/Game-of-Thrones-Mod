@@ -10,8 +10,7 @@ monarchy = {
         tier_monarchy_government_form = {
 			reforms = {
                 kingdom_reform
-                noble_house_reform
-                royal_house_reform
+#				kingdom_of_westeros_reform
                 yiti_city_reform
                 yiti_empire_reform
                 qarth_city_reform
@@ -30,6 +29,8 @@ monarchy = {
 				got_enforce_privileges_reform
 				got_quash_noble_power_reform
 				got_enforce_trader_privileges_reform
+				got_maintain_nobles_status_quo_reform
+				got_grant_noble_castle_rights_reform
 				got_volantene_traders_reform
 				got_red_syncretism_reform
 				got_yitish_nobles_reform
@@ -41,6 +42,7 @@ monarchy = {
 		tier_monarchy_bureaucracy = {
 			reforms = {
 				got_centralize_reform
+				got_centralize_empire_reform
 				got_decentralize_reform
 				got_westerosi_recruitment
 				got_jade_signet_reform
@@ -84,6 +86,7 @@ monarchy = {
     legacy_government = {
         kingdom_legacy
         noble_house_legacy
+		great_house_legacy
         royal_house_legacy
         yiti_city_legacy
         yiti_empire_legacy
@@ -97,6 +100,84 @@ monarchy = {
         ghis_city_legacy
         daenerys_host_legacy
     }
+}
+
+dynasty = {
+	color = { 255 102 178 }
+	
+	basic_reform = monarchy_mechanic
+	
+	reform_levels = {
+		tier_dynasty_government_form = {
+			reforms = {
+				noble_house_reform
+				great_house_reform
+				royal_house_reform
+				kingdom_of_westeros_reform
+			}
+		}
+		tier_dynasty_laws_on_demesne = {
+			reforms = {
+				got_expand_administrative_arm_reform
+				got_maintain_status_quo_reform
+				got_decentralize_power_reform
+			}
+		}
+		tier_dynasty_realm_bureaucracy = {
+			reforms = {
+				got_reinforce_the_seven_kingdoms_reform
+				got_reaffirm_the_one_kingdom_reform
+				got_maintain_strong_alliances_reform
+				got_standing_army_reform
+				got_naval_supremacy_reform
+			}
+		}
+		tier_dynasty_house_administration = {
+			reforms = {
+				got_renowned_name_reform
+				got_seasoned_bureaucrats_reform
+				got_astute_diplomats_reform
+				got_house_of_warriors_reform
+				got_righteous_rulers_reform
+				got_natural_schemers_reform
+				got_blood_of_old_valyria_reform
+			}
+		}
+		tier_dynasty_house_religion = {
+			reforms = {
+				got_the_one_true_faith_reform
+				got_holy_family_reform
+				got_strengthen_clergy_reform
+				got_house_before_gods_reform
+				
+			}
+		}
+		tier_dynasty_merchantry_rules = {
+			reforms = {
+				got_empower_the_burghers_reform
+				got_curtail_the_burghers_reform
+				got_embrace_free_trade_reform
+				got_tax_the_merchants_reform
+				got_subsidize_the_goldmines
+				got_lannister_goldmines_reform
+			}
+		}
+		tier_dynasty_deliberative_assembly = {
+			reforms = {
+				noble_decree_reform
+				royal_decree_reform
+				council_of_nobles_reform
+				got_the_kings_peace_reform
+				declare_autocratic_state_reform
+				adopt_republican_ideals_reform
+			}
+		}
+#		tier_dynasty_legitimation_of_authority = {
+#			reforms = {
+#				
+#			}
+#		}
+	}
 }
 
 #--------------------------------------------

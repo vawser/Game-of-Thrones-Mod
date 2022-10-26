@@ -16,8 +16,6 @@ got_enforce_privileges_reform = {
 	modifiers = {
 		global_manpower_modifier = 0.15
 		nobles_influence_modifier = 0.1
-		maratha_exclusive_influence_modifier = 0.1
-		rajput_exclusive_influence_modifier = 0.1
 	}
 	ai = {
 		factor = 1
@@ -43,8 +41,6 @@ got_quash_noble_power_reform = {
 	modifiers = {
 		global_tax_modifier = 0.15
 		nobles_influence_modifier = -0.1
-		maratha_exclusive_influence_modifier = -0.1
-		rajput_exclusive_influence_modifier = -0.1
 	}
 	ai = {
 		factor = 1
@@ -110,8 +106,6 @@ got_grant_noble_castle_rights_reform = {
 	modifiers = {
 		fort_maintenance_modifier = -0.25
 		nobles_influence_modifier = 0.10
-		maratha_exclusive_influence_modifier = 0.10
-		rajput_exclusive_influence_modifier = 0.10
 	}
 	custom_attributes = {
 		on_fort_built_nobles_loyalty = yes	#5 Loyalty
@@ -411,15 +405,6 @@ got_centralize_empire_reform = {
 			centralize_state_no_reform_cost = yes
 			#centralize_state_development = yes
 		}
-	}
-	conditional = {
-		allow = {
-			OR = {
-				has_estate = estate_nobles
-				has_estate = estate_commoners
-			}
-		}
-		estate_can_manage_provinces = yes
 	}
 }
 

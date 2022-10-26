@@ -85,9 +85,6 @@ monarchy = {
     
     legacy_government = {
         kingdom_legacy
-        noble_house_legacy
-		great_house_legacy
-        royal_house_legacy
         yiti_city_legacy
         yiti_empire_legacy
         qarth_city_legacy
@@ -105,7 +102,7 @@ monarchy = {
 dynasty = {
 	color = { 255 102 178 }
 	
-	basic_reform = monarchy_mechanic
+	basic_reform = dynasty_mechanic
 	
 	reform_levels = {
 		tier_dynasty_government_form = {
@@ -178,6 +175,12 @@ dynasty = {
 #			}
 #		}
 	}
+
+	legacy_government = {
+        noble_house_legacy
+		great_house_legacy
+        royal_house_legacy
+    }
 }
 
 #--------------------------------------------

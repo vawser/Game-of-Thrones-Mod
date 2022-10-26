@@ -73,3 +73,23 @@ has_tribes_trade_good_trigger = {
         trade_goods = slaves
 	}
 }
+
+estate_has_special_privileges_active = {
+	# estate_privilege
+	# estate_scope
+	OR = {
+		NOT = { has_estate_privilege = $estate_privilege$ }
+		custom_trigger_tooltip = {
+			tooltip = got_msq_active_$estate_scope$_reform
+			has_government_attribute = estate_special_privileges
+		}
+	}
+}
+
+estate_special_privilege_check = {
+	# estate_scope
+	custom_trigger_tooltip = {
+		tooltip = got_msq_active_$estate_scope$_reform
+		has_government_attribute = estate_special_privileges
+	}
+}

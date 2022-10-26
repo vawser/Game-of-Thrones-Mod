@@ -4,7 +4,26 @@ estate_clergy_land_rights = {
 	max_absolutism = -5
 	loyalty = 0.05
 	influence = 0.05
+	is_valid = {
+		if = {
+			limit = {
+				is_westerosi_government = yes
+			}
+			estate_has_special_privileges_active = {
+				estate_privilege = estate_clergy_land_rights
+				estate_scope = clergy
+			}
+		}
+	}
 	can_select = {
+		if = {
+			limit = {
+				is_westerosi_government = yes
+			}
+			estate_special_privilege_check = {
+				estate_scope = clergy
+			}
+		}
 	}
 	on_granted = {
 	}
@@ -70,7 +89,26 @@ estate_clergy_religious_state = {
 	land_share = 10
 	max_absolutism = -5
 	loyalty = -0.05
+	is_valid = {
+		if = {
+			limit = {
+				is_westerosi_government = yes
+			}
+			estate_has_special_privileges_active = {
+				estate_privilege = estate_clergy_land_rights
+				estate_scope = clergy
+			}
+		}
+	}
 	can_select = {
+		if = {
+			limit = {
+				is_westerosi_government = yes
+			}
+			estate_special_privilege_check = {
+				estate_scope = clergy
+			}
+		}
 	}
 	on_granted = {
 	}
@@ -923,5 +961,30 @@ estate_clergy_monopoly_of_candles = {
 	}
 	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
 		factor = 0
+	}
+}
+
+estate_clergy_empowered_by_monarch = {
+	icon = privilege_royal_authority
+	max_absolutism = -25
+	loyalty = 0.10
+	influence = 0.20
+	is_valid = {
+		has_government_attribute = choose_estate_to_empower
+	}
+	can_select = {
+		always = no
+	}
+	penalties = {
+		min_autonomy = 10
+	}
+	benefits = {
+		country_admin_power = 1
+	}
+	mechanics = {
+		exempt_from_seize_land
+	}
+	ai_will_do = {
+		factor = 1
 	}
 }

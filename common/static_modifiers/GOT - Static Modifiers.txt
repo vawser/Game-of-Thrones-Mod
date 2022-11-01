@@ -1,28 +1,40 @@
 #---------------------------------------
 # Custom
 #---------------------------------------
-nomadic_subject_forcelimit_boost = {
-    land_forcelimit_modifier = 0.1
-}
 
 powerful_house = {
     imperial_mandate = -0.05
+}
+
+#---------------------------------------
+# Subject Modifiers
+#---------------------------------------
+
+feudatory_nation = {
+	development_cost = 0.5
+	core_creation = 0.1
+	governing_capacity = -150
+}
+
+feudatory_subject = {
+	
+}
+
+royal_subject_bonus = {
+    global_tax_income = 12
+}
+
+royal_subject_reinforced_bonuses = {
+	global_manpower_modifier = 0.125
+	global_sailors_modifier = 0.125
+	vassal_forcelimit_bonus = 0.25
+	vassal_income = 0.10
 }
 
 kings_peace_subject_modifier = {
 	reduced_liberty_desire = 10
 }
 
-royal_subject_bonus = {
-    global_tax_income = 12
-	global_tax_modifier = 0.10
-}
-
-royal_subject_reinforced_bonuses = {
-	global_manpower_modifier = 0.20
-	global_sailors_modifier = 0.20
-	land_forcelimit_modifier = 0.10
-	naval_forcelimit_modifier = 0.10
-	vassal_forcelimit_bonus = 0.25
-	vassal_income = 0.10
+nomadic_subject_forcelimit_boost = {
+    land_forcelimit_modifier = 0.1
 }

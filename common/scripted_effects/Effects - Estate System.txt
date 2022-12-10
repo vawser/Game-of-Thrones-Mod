@@ -1331,145 +1331,153 @@ seize_land_effect = {
 }
 
 spawn_rebels_from_unhappy_estate = {
-	random_list = {
-		1 = {
-			trigger = {
-				owner = {
-					has_estate = estate_clergy
-					NOT = {
-						estate_loyalty = {
-							estate = estate_clergy
-							loyalty = 30
-						}
-					}
-				}
-			}
-			owner = {
-				trigger_switch = {
-					on_trigger = religion
-					trios = { PREV = { spawn_rebels = { type = trios_rebels size = $size$ as_if_faction = yes } } }
-					old_gods = { PREV = { spawn_rebels = { type = old_gods_rebels size = $size$ as_if_faction = yes } } }
-					great_stallion = { PREV = { spawn_rebels = { type = great_stallion_rebels size = $size$ as_if_faction = yes } } }
-					drowned_god = { PREV = { spawn_rebels = { type = drowned_god_rebels size = $size$ as_if_faction = yes } } }
-					summer_gods = { PREV = { spawn_rebels = { type = summer_gods_rebels size = $size$ as_if_faction = yes } } }
-					stone_cow = { PREV = { spawn_rebels = { type = stone_cow_rebels size = $size$ as_if_faction = yes } } }
-					rhllor = { PREV = { spawn_rebels = { type = rhllor_rebels size = $size$ as_if_faction = yes } } }
-					mother_rhoyne = { PREV = { spawn_rebels = { type = mother_rhoyne_rebels size = $size$ as_if_faction = yes } } }
-					moonsingers = { PREV = { spawn_rebels = { type = moonsingers_rebels size = $size$ as_if_faction = yes } } }
-					lion_of_the_night = { PREV = { spawn_rebels = { type = lion_of_the_night_rebels size = $size$ as_if_faction = yes } } }
-					lady_of_the_waves = { PREV = { spawn_rebels = { type = lady_of_the_waves_rebels size = $size$ as_if_faction = yes } } }
-					great_shepherd = { PREV = { spawn_rebels = { type = great_shepherd_rebels size = $size$ as_if_faction = yes } } }
-					ghiscari_pantheon = { PREV = { spawn_rebels = { type = ghiscari_pantheon_rebels size = $size$ as_if_faction = yes } } }
-					hooded_wayfarer = { PREV = { spawn_rebels = { type = hooded_wayfarer_rebels size = $size$ as_if_faction = yes } } }
-					remnants_of_boash = { PREV = { spawn_rebels = { type = remnants_of_boash_rebels size = $size$ as_if_faction = yes } } }
-					ib = { PREV = { spawn_rebels = { type = ib_rebels size = $size$ as_if_faction = yes } } }
-					gods_of_hyrkoon = { PREV = { spawn_rebels = { type = gods_of_hyrkoon_rebels size = $size$ as_if_faction = yes } } }
-					lord_of_harmony = { PREV = { spawn_rebels = { type = lord_of_harmony_rebels size = $size$ as_if_faction = yes } } }
-					faith_of_the_seven = { PREV = { spawn_rebels = { type = faith_of_the_seven_rebels size = $size$ as_if_faction = yes } } }
-					black_goat = { PREV = { spawn_rebels = { type = black_goat_rebels size = $size$ as_if_faction = yes } } }
-					bearded_priests = { PREV = { spawn_rebels = { type = bearded_priests_rebels size = $size$ as_if_faction = yes } } }
-                    mavka = { PREV = { spawn_rebels = { type = mavka_rebels size = $size$ as_if_faction = yes } } }
-                    drekavac = { PREV = { spawn_rebels = { type = drekavac_rebels size = $size$ as_if_faction = yes } } }
-                    cult_of_ascension = { PREV = { spawn_rebels = { type = cult_of_ascension_rebels size = $size$ as_if_faction = yes } } }
-                    cult_of_pallor = { PREV = { spawn_rebels = { type = cult_of_pallor_rebels size = $size$ as_if_faction = yes } } }
-                    cult_of_shadows = { PREV = { spawn_rebels = { type = cult_of_shadows_rebels size = $size$ as_if_faction = yes } } }
-                    
-                }
+	if = {
+		limit = {
+			owner = { 
+				NOT = { disabled_rebels_from_seized_land_for_estate = { estate = all } } 
+				NOT = { has_government_attribute = seizing_land_no_rebels }
 			}
 		}
-		1 = {
-			trigger = {
-				owner = {
-					has_estate = estate_merchants
-					NOT = {
-						estate_loyalty = {
-							estate = estate_merchants
-							loyalty = 30
+		random_list = {
+			1 = {
+				trigger = {
+					owner = {
+						has_estate = estate_clergy
+						NOT = {
+							estate_loyalty = {
+								estate = estate_clergy
+								loyalty = 30
+							}
 						}
 					}
 				}
-			}
-			spawn_rebels = {
-				type = particularist_rebels
-				size = $size$
-				estate = estate_merchants
-				as_if_faction = yes
-			}
-		}
-        1 = {
-			trigger = {
 				owner = {
-					has_estate = estate_nobles
-					NOT = {
-						estate_loyalty = {
-							estate = estate_nobles
-							loyalty = 30
-						}
+					trigger_switch = {
+						on_trigger = religion
+						trios = { PREV = { spawn_rebels = { type = trios_rebels size = $size$ as_if_faction = yes } } }
+						old_gods = { PREV = { spawn_rebels = { type = old_gods_rebels size = $size$ as_if_faction = yes } } }
+						great_stallion = { PREV = { spawn_rebels = { type = great_stallion_rebels size = $size$ as_if_faction = yes } } }
+						drowned_god = { PREV = { spawn_rebels = { type = drowned_god_rebels size = $size$ as_if_faction = yes } } }
+						summer_gods = { PREV = { spawn_rebels = { type = summer_gods_rebels size = $size$ as_if_faction = yes } } }
+						stone_cow = { PREV = { spawn_rebels = { type = stone_cow_rebels size = $size$ as_if_faction = yes } } }
+						rhllor = { PREV = { spawn_rebels = { type = rhllor_rebels size = $size$ as_if_faction = yes } } }
+						mother_rhoyne = { PREV = { spawn_rebels = { type = mother_rhoyne_rebels size = $size$ as_if_faction = yes } } }
+						moonsingers = { PREV = { spawn_rebels = { type = moonsingers_rebels size = $size$ as_if_faction = yes } } }
+						lion_of_the_night = { PREV = { spawn_rebels = { type = lion_of_the_night_rebels size = $size$ as_if_faction = yes } } }
+						lady_of_the_waves = { PREV = { spawn_rebels = { type = lady_of_the_waves_rebels size = $size$ as_if_faction = yes } } }
+						great_shepherd = { PREV = { spawn_rebels = { type = great_shepherd_rebels size = $size$ as_if_faction = yes } } }
+						ghiscari_pantheon = { PREV = { spawn_rebels = { type = ghiscari_pantheon_rebels size = $size$ as_if_faction = yes } } }
+						hooded_wayfarer = { PREV = { spawn_rebels = { type = hooded_wayfarer_rebels size = $size$ as_if_faction = yes } } }
+						remnants_of_boash = { PREV = { spawn_rebels = { type = remnants_of_boash_rebels size = $size$ as_if_faction = yes } } }
+						ib = { PREV = { spawn_rebels = { type = ib_rebels size = $size$ as_if_faction = yes } } }
+						gods_of_hyrkoon = { PREV = { spawn_rebels = { type = gods_of_hyrkoon_rebels size = $size$ as_if_faction = yes } } }
+						lord_of_harmony = { PREV = { spawn_rebels = { type = lord_of_harmony_rebels size = $size$ as_if_faction = yes } } }
+						faith_of_the_seven = { PREV = { spawn_rebels = { type = faith_of_the_seven_rebels size = $size$ as_if_faction = yes } } }
+						black_goat = { PREV = { spawn_rebels = { type = black_goat_rebels size = $size$ as_if_faction = yes } } }
+						bearded_priests = { PREV = { spawn_rebels = { type = bearded_priests_rebels size = $size$ as_if_faction = yes } } }
+						mavka = { PREV = { spawn_rebels = { type = mavka_rebels size = $size$ as_if_faction = yes } } }
+						drekavac = { PREV = { spawn_rebels = { type = drekavac_rebels size = $size$ as_if_faction = yes } } }
+						cult_of_ascension = { PREV = { spawn_rebels = { type = cult_of_ascension_rebels size = $size$ as_if_faction = yes } } }
+						cult_of_pallor = { PREV = { spawn_rebels = { type = cult_of_pallor_rebels size = $size$ as_if_faction = yes } } }
+						cult_of_shadows = { PREV = { spawn_rebels = { type = cult_of_shadows_rebels size = $size$ as_if_faction = yes } } }
+						
 					}
 				}
 			}
-			spawn_rebels = {
-                type = noble_rebels
-                size = $size$
-                estate = estate_nobles
-                as_if_faction = yes
-            }
-		}
-        1 = {
-			trigger = {
-				owner = {
-					has_estate = estate_commoners
-					NOT = {
-						estate_loyalty = {
-							estate = estate_commoners
-							loyalty = 30
+			1 = {
+				trigger = {
+					owner = {
+						has_estate = estate_merchants
+						NOT = {
+							estate_loyalty = {
+								estate = estate_merchants
+								loyalty = 30
+							}
 						}
 					}
 				}
+				spawn_rebels = {
+					type = particularist_rebels
+					size = $size$
+					estate = estate_merchants
+					as_if_faction = yes
+				}
 			}
-			spawn_rebels = {
-                type = anti_tax_rebels
-                size = $size$
-                estate = estate_commoners
-                as_if_faction = yes
-            }
-		}
-		1 = {
-			trigger = {
-				owner = {
-					has_estate = estate_tribes
-					NOT = {
-						estate_loyalty = {
-							estate = estate_tribes
-							loyalty = 30
+			1 = {
+				trigger = {
+					owner = {
+						has_estate = estate_nobles
+						NOT = {
+							estate_loyalty = {
+								estate = estate_nobles
+								loyalty = 30
+							}
 						}
 					}
 				}
+				spawn_rebels = {
+					type = noble_rebels
+					size = $size$
+					estate = estate_nobles
+					as_if_faction = yes
+				}
 			}
-			spawn_rebels = {
-				type = pretender_rebels
-				size = $size$
-				estate = estate_tribes
-				as_if_faction = yes
-			}
-		}
-		1 = {
-			trigger = {
-				owner = {
-					has_estate = estate_adventurers
-					NOT = {
-						estate_loyalty = {
-							estate = estate_adventurers
-							loyalty = 30
+			1 = {
+				trigger = {
+					owner = {
+						has_estate = estate_commoners
+						NOT = {
+							estate_loyalty = {
+								estate = estate_commoners
+								loyalty = 30
+							}
 						}
 					}
 				}
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = $size$
+					estate = estate_commoners
+					as_if_faction = yes
+				}
 			}
-			spawn_rebels = {
-				type = pretender_rebels
-				size = $size$
-				estate = estate_adventurers
-				as_if_faction = yes
+			1 = {
+				trigger = {
+					owner = {
+						has_estate = estate_tribes
+						NOT = {
+							estate_loyalty = {
+								estate = estate_tribes
+								loyalty = 30
+							}
+						}
+					}
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = $size$
+					estate = estate_tribes
+					as_if_faction = yes
+				}
+			}
+			1 = {
+				trigger = {
+					owner = {
+						has_estate = estate_adventurers
+						NOT = {
+							estate_loyalty = {
+								estate = estate_adventurers
+								loyalty = 30
+							}
+						}
+					}
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = $size$
+					estate = estate_adventurers
+					as_if_faction = yes
+				}
 			}
 		}
 	}

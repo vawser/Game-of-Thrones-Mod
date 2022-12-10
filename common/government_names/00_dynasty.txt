@@ -1,31 +1,31 @@
-gov_noble_house_dornish = {
-	rank = {
-		1 = NOBLE_HOUSE
-        2 = NOBLE_HOUSE
-        3 = NOBLE_HOUSE
-	}
+# gov_noble_house_dornish = {
+# 	rank = {
+# 		1 = NOBLE_HOUSE
+# 		2 = NOBLE_HOUSE
+# 		3 = NOBLE_HOUSE
+# 	}
 	
-	ruler_male = {
-		1 = PRINCE
-		2 = PRINCE
-		3 = PRINCE
-	}
+# 	ruler_male = {
+# 		1 = PRINCE
+# 		2 = PRINCE
+# 		3 = PRINCE
+# 	}
 	
-	ruler_female = {
-		1 = PRINCESS
-		2 = PRINCESS
-		3 = PRINCESS
-	}
+# 	ruler_female = {
+# 		1 = PRINCESS
+# 		2 = PRINCESS
+# 		3 = PRINCESS
+# 	}
 	
-	trigger = {
-        has_reform = noble_house_reform
-        OR = {
-			primary_culture = salt_dornish
-			primary_culture = sand_dornish
-			primary_culture = stone_dornish
-		}
-	}
-}
+# 	trigger = {
+# 		has_reform = noble_house_reform
+# 		OR = {
+# 			primary_culture = salt_dornish
+# 			primary_culture = sand_dornish
+# 			primary_culture = stone_dornish
+# 		}
+# 	}
+# }
 
 gov_noble_house = {
 	rank = {
@@ -41,6 +41,18 @@ gov_noble_house = {
 	}
 	
 	ruler_female = {
+		1 = LADY
+        2 = LADY
+        3 = LADY
+	}
+
+	consort_male = {
+		1 = LORD
+        2 = LORD
+        3 = LORD
+	}
+
+	consort_female = {
 		1 = LADY
         2 = LADY
         3 = LADY
@@ -65,6 +77,18 @@ gov_great_house_dornish = {
 	}
 	
 	ruler_female = {
+		1 = PRINCESS
+        2 = PRINCESS
+        3 = PRINCESS
+	}
+
+	consort_male = {
+		1 = PRINCE
+        2 = PRINCE
+        3 = PRINCE
+	}
+
+	consort_female = {
 		1 = PRINCESS
         2 = PRINCESS
         3 = PRINCESS
@@ -98,6 +122,18 @@ gov_lord_paramount = {
 		2 = LADY_PARAMOUNT
 		3 = LADY_PARAMOUNT
 	}
+
+	consort_male = {
+		1 = LORD_PARAMOUNT
+		2 = LORD_PARAMOUNT
+		3 = LORD_PARAMOUNT
+	}
+
+	consort_female = {
+		1 = LADY_PARAMOUNT
+		2 = LADY_PARAMOUNT
+		3 = LADY_PARAMOUNT
+	}
 	
 	trigger = {
 		has_reform = great_house_reform
@@ -123,6 +159,18 @@ gov_great_house = {
 	}
 	
 	ruler_female = {
+		1 = LADY
+        2 = LADY
+        3 = LADY
+	}
+
+	consort_male = {
+		1 = LORD
+        2 = LORD
+        3 = LORD
+	}
+
+	consort_female = {
 		1 = LADY
         2 = LADY
         3 = LADY

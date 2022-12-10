@@ -2,7 +2,11 @@ edict_sailor_recruitment = {
     color = { 45 56 124 }
     
 	potential = { 
-        has_port = yes
+        FROM = {
+			any_province_in_state = {
+				has_port = yes
+			}
+		}
     }
 	allow = {
 		always = yes

@@ -14,6 +14,14 @@
  heretic_rebels_demand_desc: "Heretics demand that we let them worship in peace."
  
  #------------------------------------------------------
+ # Government
+ #------------------------------------------------------
+ mechanic_improved_defender_of_faith_yes: "Being Defender of Faith gives the following modifiers:\nTolerance of True Faith: §G+2.00§!\nDiplomatic Reputation: §G+1.00§!\nImprove Relations: §G+15.0%§!"
+ mechanic_on_church_built_clergy_loyalty_yes:1 "Construcing Churches and Cathedrals increases §YClergy§! loyalty by §G+2.0%§! and §G+5.0%§! respectively."
+ mechanic_unlock_special_state_edicts_yes:2 "Has access to special §YState Edicts§!."
+ mechanic_unlock_special_state_edicts:1 "Access to special §YState Edicts§!"
+ 
+ #------------------------------------------------------
  # Meritocracy
  #------------------------------------------------------
  meritocracy: "Meritocracy"
@@ -33,6 +41,19 @@
  MERITOCRACY_AT_LEAST: "Meritocracy is at least"
  ADD_MERITOCRACY_EFFECT: "$DIRECTION$ $VALUE$ Meritocracy.\n"
  SET_MERITOCRACY_EFFECT: "Meritocracy is set to $VALUE|Y$\n"
+
+ #------------------------------------------------------
+ # Common Sense
+ #------------------------------------------------------
+
+ CANNOT_UPGRADE_RANK_SUBJECT:1 "§R- As a $SUBJECTTYPE$, we cannot upgrade our Government Rank.§!\n"
+ CANNOT_UPGRADE_RANK_MAX_RANK:0 "§R- You are already at the maximum Government Rank!§!\n"
+ CANNOT_UPGRADE_RANK_FIXED_RANK:1 "§R- The Government Reform $REFORM|Y$ blocks you from changing your current Government Rank.§!\n"
+ CANNOT_UPGRADE_RANK_FIXED_RANK_GENERIC:0 "§R- You cannot change your current Government Rank.§!\n"
+ CANNOT_UPGRADE_RANK_NEED_DEVELOPMENT:0 "§R- You need at least §Y$AMT$§! total development to increase your Government Rank and you only have §Y$CUR$§!.§W\n"
+ CANNOT_UPGRADE_RANK_NEED_PRESTIGE:0 "§R- You need at least §Y$AMT$§! prestige to increase your Government Rank.§!\n"
+ CANNOT_UPGRADE_RANK_HRE:1 "§R- Within the Holy Roman Empire, only electors are allowed to upgrade their Government Rank, and only up to Kingdom.§!\n"
+ CANNOT_UPGRADE_RANK_HRE_ELECTOR:1 "§R- Electors of the Holy Roman Empire cannot upgrade their Government Rank past Kingdom.§!\n"
  
  #------------------------------------------------------
  # Age
@@ -72,7 +93,7 @@
  IMPERIAL_MANDATE_CURRENT_DESC: "Current Royal Authority gives the following Modifier:\n$MODIFIERDESC$"
  IMPERIAL_MANDATE_BONUS_DESC: "Royal Authority above §Y50§! gives the following Scaled Modifier:\n$MODIFIERDESC$"
  IMPERIAL_MANDATE_PENALTY_DESC: "Royal Authority below §Y50§! gives the following Scaled Modifier:\n$MODIFIERDESC$"
- IMPERIAL_MANDATE_GAIN_DESC: "Gained by:\n -Having a positive Stability.\n -Having Royal Subjects.\n -For each State enjoying Prosperity."
+ IMPERIAL_MANDATE_GAIN_DESC: "Gained by:\n -Having positive Stability.\n -Having Royal Subjects.\n -For each State enjoying Prosperity."
  IMPERIAL_MANDATE_LOSS_DESC: "Lost by:\n -Corruption of the State.\n -Devastated provinces.\n -Having excessive loans."
  CELESTIAL_EMPEROR_BENEFIT: "Being the §YRuler of the Seven Kingdoms§! gives the following abilities to the King to preserve the Kingdom:\n\n"
  CELESTIAL_EMPEROR_BENEFIT_DESC: " -§MKing of the Andals, the Rhoynar, and the First Men§!:\n   -Bonuses from §GHigh§! Royal Authority.\n   -Penalty from §RLow§! Royal Authority.\n -§MLord of the Seven Kingdoms§!:\n   -Must maintain §PBalance of Power§! in the Realm.\n -Uses Meritocracy Mechanics\n -Can enact §YRoyal Edicts§!.\n -Can Enforce Royal Subject on Noble Houses"

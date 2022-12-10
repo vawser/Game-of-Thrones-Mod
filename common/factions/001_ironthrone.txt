@@ -1,0 +1,38 @@
+loyalists = {
+	monarch_power = adm
+	always = yes
+	
+	modifier = {
+		stability_cost_modifier = -0.05
+		imperial_mandate = 0.1 # DLC ONLY
+		yearly_absolutism = 1
+		meritocracy = -0.5 # DLC ONLY
+		yearly_corruption = 0.10
+	}
+}
+
+pragmatists = {
+	monarch_power = dip
+	always = yes
+	
+	modifier = {
+		reduced_liberty_desire = 10
+		relation_with_same_culture_group = 25
+		advisor_cost = -0.33
+		nobles_influence_modifier = 0.20
+		min_autonomy = 5
+	}
+}
+
+militarists = {
+	monarch_power = mil
+	always = yes
+
+	modifier = {
+		land_forcelimit_modifier = 0.25
+		reinforce_cost_modifier = -0.20
+		state_maintenance_modifier = 0.125
+		global_tax_modifier = -0.05
+		production_efficiency = -0.05
+	}
+}

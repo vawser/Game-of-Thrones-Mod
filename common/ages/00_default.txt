@@ -8,139 +8,127 @@ age_of_calamity = {
 		always = yes
 	}
 	
-    papacy = 1.0
+	papacy = 1.0
 	religious_conflicts = yes
-    absolutism = { 
-        harsh_treatment = 1
-		stability = 1
-		decrease_autonomy_command = 1
-		strengthen_government = 2
-		
-		increase_autonomy_command = -2
-		debase_currency = -1
-		execute_rebel_acceptance_command = -10
-		seat_in_parliament = -3
-		war_exhaustion = -1
-    }
-    
+	
 	objectives = {
 		age_1_obj_prestigious_capital = {
-            capital_scope = {
-                development = 30
-                religion = ROOT
-                culture = ROOT
-                NOT = { devastation = 1 }
-            }
-        }
+			capital_scope = {
+				development = 30
+				religion = ROOT
+				culture = ROOT
+				NOT = { devastation = 1 }
+			}
+		}
 		age_1_obj_absolute_rule = {
-            absolutism = 75
-        }
-        age_1_obj_the_iron_throne = {
-            is_emperor_of_china = yes
-        }
-        age_1_obj_masterful_counsel = {
+			absolutism = 75
+		}
+		age_1_obj_the_iron_throne = {
+			is_emperor_of_china = yes
+		}
+		age_1_obj_masterful_counsel = {
 			AND = {
-                OR = {
-                    wizard = 3
-                    maester = 3
-                    architect = 3
-                    artist = 3
-                    astrologer = 3
-                    bookbinder = 3
-                    brewer = 3
-                    engraver = 3
-                    oracle = 3
-                    gardener = 3
-                    painter = 3
-                    playwright = 3
-                    politician = 3
-                    scribe = 3
-                    poet = 3
-                    farmer = 3
-                    philosopher = 3
-                    treasurer = 3
-                    priest = 3
-                    evangelist = 3
-                    inquisitor = 3
-                    sculptor = 3
-                    courtesan = 3
-                    catchpole = 3
-                    steward = 3
-                    marshal = 3
-                    pilgrim = 3
-                    moneylender = 3
-                }
-                OR = {
-                    cartographer = 3
-                    clothier = 3
-                    cook = 3
-                    diplomat = 3
-                    herald = 3
-                    interpreter = 3
-                    jester = 3
-                    jeweler = 3
-                    messenger = 3
-                    colonist = 3
-                    navigator = 3
-                    trader = 3
-                    forger = 3
-                    poisoner = 3
-                    spicer = 3
-                    wayfarer = 3
-                    shipwright = 3
-                    mariner = 3
-                    governor = 3
-                    merchant = 3
-                    broker = 3
-                    spymaster = 3
-                    swab = 3
-                    seafarer = 3
-                    sea_dog = 3
-                    mate = 3
-                }
-                OR = {
-                    knight = 3
-                    alchemist = 3
-                    apothecarist = 3
-                    armorer = 3
-                    bowyer = 3
-                    engineer = 3
-                    furrier = 3
-                    herbalist = 3
-                    hunter = 3
-                    leatherworker = 3
-                    physician = 3
-                    storyteller = 3
-                    stablemaster = 3
-                    master_at_arms = 3
-                    mason = 3
-                    carpenter = 3
-                    bladesmith = 3
-                    bard = 3
-                    watchman = 3
-                    captain = 3
-                    sapper = 3
-                    planner = 3
-                    custodian = 3
-                    saddler = 3
-                }
-            }
-        }
-        age_1_obj_colossal_army = {
-            land_forcelimit = 60
-            army_size_percentage = 0.8
-        }
-        age_1_obj_colossal_navy = {
-            naval_forcelimit = 60
-            navy_size_percentage = 0.8
-        }
-        age_1_obj_inspirational_leader = {
-            has_commanding_three_star = yes
-        }
+				OR = {
+					wizard = 3
+					maester = 3
+					architect = 3
+					artist = 3
+					astrologer = 3
+					bookbinder = 3
+					brewer = 3
+					engraver = 3
+					oracle = 3
+					gardener = 3
+					painter = 3
+					playwright = 3
+					politician = 3
+					scribe = 3
+					poet = 3
+					farmer = 3
+					philosopher = 3
+					treasurer = 3
+					priest = 3
+					evangelist = 3
+					inquisitor = 3
+					sculptor = 3
+					courtesan = 3
+					catchpole = 3
+					steward = 3
+					marshal = 3
+					pilgrim = 3
+					moneylender = 3
+				}
+				OR = {
+					cartographer = 3
+					clothier = 3
+					cook = 3
+					diplomat = 3
+					herald = 3
+					interpreter = 3
+					jester = 3
+					jeweler = 3
+					messenger = 3
+					colonist = 3
+					navigator = 3
+					trader = 3
+					forger = 3
+					poisoner = 3
+					spicer = 3
+					wayfarer = 3
+					shipwright = 3
+					mariner = 3
+					governor = 3
+					merchant = 3
+					broker = 3
+					spymaster = 3
+					swab = 3
+					seafarer = 3
+					sea_dog = 3
+					mate = 3
+				}
+				OR = {
+					knight = 3
+					alchemist = 3
+					apothecarist = 3
+					armorer = 3
+					bowyer = 3
+					engineer = 3
+					furrier = 3
+					herbalist = 3
+					hunter = 3
+					leatherworker = 3
+					physician = 3
+					storyteller = 3
+					stablemaster = 3
+					master_at_arms = 3
+					mason = 3
+					carpenter = 3
+					bladesmith = 3
+					bard = 3
+					watchman = 3
+					captain = 3
+					sapper = 3
+					planner = 3
+					custodian = 3
+					saddler = 3
+				}
+			}
+		}
+		age_1_obj_colossal_army = {
+			land_forcelimit = 60
+			army_size_percentage = 0.8
+		}
+		age_1_obj_colossal_navy = {
+			naval_forcelimit = 60
+			navy_size_percentage = 0.8
+		}
+		age_1_obj_inspirational_leader = {
+			has_commanding_three_star = yes
+		}
 	}		
 
 	abilities = {
-        age_1_development_focus = {
+		age_1_development_focus = {
 			modifier = {
 				development_cost = -0.1
 			}
@@ -148,7 +136,7 @@ age_of_calamity = {
 				factor = 10
 			}
 		}
-        age_1_justified_annexation = {
+		age_1_justified_annexation = {
 			modifier = {
 				ae_impact = -0.1
 			}
@@ -156,7 +144,7 @@ age_of_calamity = {
 				factor = 10
 			}
 		}
-        age_1_prestigeous_traditions = {
+		age_1_prestigeous_traditions = {
 			modifier = {
 				prestige_decay = -0.01
 			}
@@ -164,7 +152,7 @@ age_of_calamity = {
 				factor = 10
 			}
 		}
-        age_1_subdued_people = {
+		age_1_subdued_people = {
 			modifier = {
 				global_unrest = -2
 			}
@@ -172,7 +160,7 @@ age_of_calamity = {
 				factor = 10
 			}
 		}
-        age_1_expanded_trade_networks = {
+		age_1_expanded_trade_networks = {
 			modifier = {
 				global_trade_power = 0.2
 			}
@@ -180,7 +168,7 @@ age_of_calamity = {
 				factor = 10
 			}
 		}
-        age_1_military_drills = {
+		age_1_military_drills = {
 			modifier = {
 				army_tradition = 1.0
 			}
@@ -188,7 +176,7 @@ age_of_calamity = {
 				factor = 10
 			}
 		}
-        age_1_homeland_knowledge = {
+		age_1_homeland_knowledge = {
 			modifier = {
 				attack_bonus_in_capital_terrain = yes
 			}
@@ -196,7 +184,7 @@ age_of_calamity = {
 				factor = 10
 			}
 		}
-        age_1_administrative_efficiency = {
+		age_1_administrative_efficiency = {
 			modifier = {
 				administrative_efficiency = 0.1
 			}
@@ -204,7 +192,7 @@ age_of_calamity = {
 				factor = 100
 			}
 		}
-        age_1_consistent_taxation = {
+		age_1_consistent_taxation = {
 			modifier = {
 				global_tax_modifier = 0.15
 			}
@@ -212,7 +200,7 @@ age_of_calamity = {
 				factor = 100
 			}
 		}
-        age_1_diplomatic_charisma = {
+		age_1_diplomatic_charisma = {
 			modifier = {
 				diplomatic_reputation = 2
 			}
@@ -220,7 +208,7 @@ age_of_calamity = {
 				factor = 100
 			}
 		}
-        age_1_self_governing_settlements = {
+		age_1_self_governing_settlements = {
 			modifier = {
 				ignore_coring_distance = yes
 			}
@@ -241,10 +229,10 @@ age_of_fire = {
 		started_in = 106.1.1
 	}
 	
-    papacy = 1.0
+	papacy = 1.0
 	religious_conflicts = yes
-    absolutism = { 
-        harsh_treatment = 1
+	absolutism = {
+		harsh_treatment = 1
 		stability = 1
 		decrease_autonomy_command = 1
 		strengthen_government = 2
@@ -254,41 +242,128 @@ age_of_fire = {
 		execute_rebel_acceptance_command = -10
 		seat_in_parliament = -3
 		war_exhaustion = -1
-    }
-    
+	}
+	
 	objectives = {
 		obj_age_2_the_iron_throne = {
-            is_emperor_of_china = yes
-        }
-		age_2_obj_prestigious_capital = {
-            capital_scope = {
-                development = 30
-                religion = ROOT
-                culture = ROOT
-                NOT = { devastation = 1 }
-            }
-        }
+			is_emperor_of_china = yes
+			owns = 226
+		}
+		obj_age_3_masterful_counsel = {
+			AND = {
+				OR = {
+					wizard = 3
+					maester = 3
+					architect = 3
+					artist = 3
+					astrologer = 3
+					bookbinder = 3
+					brewer = 3
+					engraver = 3
+					oracle = 3
+					gardener = 3
+					painter = 3
+					playwright = 3
+					politician = 3
+					scribe = 3
+					poet = 3
+					farmer = 3
+					philosopher = 3
+					treasurer = 3
+					priest = 3
+					evangelist = 3
+					inquisitor = 3
+					sculptor = 3
+					courtesan = 3
+					catchpole = 3
+					steward = 3
+					marshal = 3
+					pilgrim = 3
+					moneylender = 3
+				}
+				OR = {
+					cartographer = 3
+					clothier = 3
+					cook = 3
+					diplomat = 3
+					herald = 3
+					interpreter = 3
+					jester = 3
+					jeweler = 3
+					messenger = 3
+					colonist = 3
+					navigator = 3
+					trader = 3
+					forger = 3
+					poisoner = 3
+					spicer = 3
+					wayfarer = 3
+					shipwright = 3
+					mariner = 3
+					governor = 3
+					merchant = 3
+					broker = 3
+					spymaster = 3
+					swab = 3
+					seafarer = 3
+					sea_dog = 3
+					mate = 3
+				}
+				OR = {
+					knight = 3
+					alchemist = 3
+					apothecarist = 3
+					armorer = 3
+					bowyer = 3
+					engineer = 3
+					furrier = 3
+					herbalist = 3
+					hunter = 3
+					leatherworker = 3
+					physician = 3
+					storyteller = 3
+					stablemaster = 3
+					master_at_arms = 3
+					mason = 3
+					carpenter = 3
+					bladesmith = 3
+					bard = 3
+					watchman = 3
+					captain = 3
+					sapper = 3
+					planner = 3
+					custodian = 3
+					saddler = 3
+				}
+			}
+		}
 		age_2_obj_absolute_rule = {
-            absolutism = 75
-        }
-        obj_age_2_blood_of_old_valyria = {
-			
-        }
-        age_2_obj_colossal_army = {
-            land_forcelimit = 60
-            army_size_percentage = 0.8
-        }
-        age_2_obj_colossal_navy = {
-            naval_forcelimit = 60
-            navy_size_percentage = 0.8
-        }
-        age_2_obj_inspirational_leader = {
-            has_commanding_three_star = yes
-        }
+			absolutism = 75
+		}
+		obj_age_2_blood_of_old_valyria = {
+			OR = {
+				dynasty = "Targaryen"
+				dynasty = "Velaryon"
+			}
+			owns_all_provinces = {
+				region = region_valyria
+			}
+		}
+		age_2_obj_colossal_army = {
+			land_forcelimit = 60
+			army_size_percentage = 0.8
+		}
+		age_2_obj_colossal_navy = {
+			naval_forcelimit = 60
+			navy_size_percentage = 0.8
+		}
+		age_2_obj_inspirational_leader = {
+			has_commanding_three_star = yes
+		}
 	}		
 
 	abilities = {
-        age_2_development_focus = {
+		age_2_development_focus = {
 			modifier = {
 				development_cost = -0.1
 			}
@@ -296,7 +371,7 @@ age_of_fire = {
 				factor = 10
 			}
 		}
-        age_2_justified_annexation = {
+		age_2_justified_annexation = {
 			modifier = {
 				ae_impact = -0.1
 			}
@@ -304,7 +379,7 @@ age_of_fire = {
 				factor = 10
 			}
 		}
-        age_2_prestigeous_traditions = {
+		age_2_prestigeous_traditions = {
 			modifier = {
 				prestige_decay = -0.01
 			}
@@ -312,7 +387,7 @@ age_of_fire = {
 				factor = 10
 			}
 		}
-        age_2_subdued_people = {
+		age_2_subdued_people = {
 			modifier = {
 				global_unrest = -2
 			}
@@ -320,7 +395,7 @@ age_of_fire = {
 				factor = 10
 			}
 		}
-        age_2_expanded_trade_networks = {
+		age_2_expanded_trade_networks = {
 			modifier = {
 				global_trade_power = 0.2
 			}
@@ -328,7 +403,7 @@ age_of_fire = {
 				factor = 10
 			}
 		}
-        age_2_military_drills = {
+		age_2_military_drills = {
 			modifier = {
 				army_tradition = 1.0
 			}
@@ -336,7 +411,7 @@ age_of_fire = {
 				factor = 10
 			}
 		}
-        age_2_homeland_knowledge = {
+		age_2_homeland_knowledge = {
 			modifier = {
 				attack_bonus_in_capital_terrain = yes
 			}
@@ -344,7 +419,7 @@ age_of_fire = {
 				factor = 10
 			}
 		}
-        age_2_administrative_efficiency = {
+		age_2_administrative_efficiency = {
 			modifier = {
 				administrative_efficiency = 0.1
 			}
@@ -352,7 +427,7 @@ age_of_fire = {
 				factor = 100
 			}
 		}
-        age_2_consistent_taxation = {
+		age_2_consistent_taxation = {
 			modifier = {
 				global_tax_modifier = 0.15
 			}
@@ -360,7 +435,7 @@ age_of_fire = {
 				factor = 100
 			}
 		}
-        age_2_diplomatic_charisma = {
+		age_2_diplomatic_charisma = {
 			modifier = {
 				diplomatic_reputation = 2
 			}
@@ -368,7 +443,7 @@ age_of_fire = {
 				factor = 100
 			}
 		}
-        age_2_self_governing_settlements = {
+		age_2_self_governing_settlements = {
 			modifier = {
 				ignore_coring_distance = yes
 			}
@@ -383,145 +458,139 @@ age_of_fire = {
 # Age of Rebellion
 #----------------------------------
 age_of_rebellion = {
-	start = 282
+	start = 281
 	
 	can_start = {
 		is_year = 281
 	}
 	
 	papacy = 1.0
-	religious_conflicts = yes
+	
 	absolutism = {
 		harsh_treatment = 5
-		stability = 0.5
-		decrease_autonomy_command = 2.5
-		strengthen_government = 1
+		stability = 1
+		decrease_autonomy_command = 5
+		strengthen_government = 2
 
 		increase_autonomy_command = -5
-		debase_currency = -2.5
-		execute_rebel_acceptance_command = -20
+		debase_currency = -5
+		execute_rebel_acceptance_command = -25
 		seat_in_parliament = -6
-		war_exhaustion = -0.5
-    }
-    
+		war_exhaustion = -2
+	}
+	
 	objectives = {
 		 obj_age_3_the_iron_throne = {
-            is_emperor_of_china = yes
-        }
-		obj_age_3_masterful_counsel = {
-			AND = {
-                OR = {
-                    wizard = 3
-                    maester = 3
-                    architect = 3
-                    artist = 3
-                    astrologer = 3
-                    bookbinder = 3
-                    brewer = 3
-                    engraver = 3
-                    oracle = 3
-                    gardener = 3
-                    painter = 3
-                    playwright = 3
-                    politician = 3
-                    scribe = 3
-                    poet = 3
-                    farmer = 3
-                    philosopher = 3
-                    treasurer = 3
-                    priest = 3
-                    evangelist = 3
-                    inquisitor = 3
-                    sculptor = 3
-                    courtesan = 3
-                    catchpole = 3
-                    steward = 3
-                    marshal = 3
-                    pilgrim = 3
-                    moneylender = 3
-                }
-                OR = {
-                    cartographer = 3
-                    clothier = 3
-                    cook = 3
-                    diplomat = 3
-                    herald = 3
-                    interpreter = 3
-                    jester = 3
-                    jeweler = 3
-                    messenger = 3
-                    colonist = 3
-                    navigator = 3
-                    trader = 3
-                    forger = 3
-                    poisoner = 3
-                    spicer = 3
-                    wayfarer = 3
-                    shipwright = 3
-                    mariner = 3
-                    governor = 3
-                    merchant = 3
-                    broker = 3
-                    spymaster = 3
-                    swab = 3
-                    seafarer = 3
-                    sea_dog = 3
-                    mate = 3
-                }
-                OR = {
-                    knight = 3
-                    alchemist = 3
-                    apothecarist = 3
-                    armorer = 3
-                    bowyer = 3
-                    engineer = 3
-                    furrier = 3
-                    herbalist = 3
-                    hunter = 3
-                    leatherworker = 3
-                    physician = 3
-                    storyteller = 3
-                    stablemaster = 3
-                    master_at_arms = 3
-                    mason = 3
-                    carpenter = 3
-                    bladesmith = 3
-                    bard = 3
-                    watchman = 3
-                    captain = 3
-                    sapper = 3
-                    planner = 3
-                    custodian = 3
-                    saddler = 3
-                }
-            }
-        }
-		obj_age_3_prestigious_capital = {
-            capital_scope = {
-                development = 30
-                religion = ROOT
-                culture = ROOT
-                NOT = { devastation = 1 }
-            }
-        }
+			is_emperor_of_china = yes
+			owns = 226
+		}
+		obj_age_3_the_greatest_house = {
+			allow = {
+				capital_scope = {
+					continent = westeros
+					NOT = { region = region_beyond_the_wall }
+				}
+			}
+			OR = {
+				culture_group = culture_andal
+				culture = crannogmen
+				culture = mountain_men
+				culture = skagosi
+				culture = sand_dornish
+				culture = stone_dornish
+				culture = salt_dornish
+			}
+			has_reform = great_house_reform
+			monthly_income = CRW
+			army_size = CRW
+			navy_size = CRW
+		}
+		obj_age_3_unite_the_wildlings = {
+			allow = {
+				capital_scope = { region = region_beyond_the_wall }
+			}
+			culture = free_folk
+			government_rank = 2
+			custom_trigger_tooltip = {
+				tooltip = obj_age_3_unite_the_wildlings.tt
+				NOT = {
+					calc_true_if = {
+						all_country = {
+							culture = free_folk
+							religion = old_gods
+						}
+						amount = 1
+					}
+				}
+			}
+		}
+		obj_age_3_dominate_the_free_cities = {
+			allow = {
+				capital_scope = { continent = west_essos }
+			}
+			has_reform = republic_reform
+			OR = {
+				all_country = {
+					capital_scope = { continent = west_essos }
+					is_subject_of = ROOT
+				}
+				owns_all_provinces = {
+					continent = west_essos
+				}
+			}
+		}
+		obj_age_3_unite_the_dothraki = {
+			allow = {
+				capital_scope = { continent = central_essos }
+			}
+			culture = dothraki_culture
+			religion = great_stallion
+			custom_trigger_tooltip = {
+				tooltip = obj_age_3_unite_the_dothraki.tt
+				NOT = {
+					calc_true_if = {
+						all_country = {
+							culture = dothraki_culture
+							religion = great_stallion
+						}
+						amount = 1
+					}
+				}
+			}
+		}
+		obj_age_3_ = {
+			allow = {
+				capital_scope = { continent = east_essos }
+			}
+		}
+		obj_age_3_secure_iron = {
+			OR = {
+				production_leader = {
+					trade_goods = iron
+				}
+				production_leader = {
+					trade_goods = naval_supplies
+				}
+			}
+		}
 		obj_age_3_absolute_rule = {
-            absolutism = 75
-        }
-        obj_age_3_colossal_army = {
-            land_forcelimit = 60
-            army_size_percentage = 0.8
-        }
-        obj_age_3_colossal_navy = {
-            naval_forcelimit = 60
-            navy_size_percentage = 0.8
-        }
-        obj_age_3_inspirational_leader = {
-            has_commanding_three_star = yes
-        }
+			absolutism = 75
+		}
+		obj_age_3_colossal_army = {
+			land_forcelimit = 60
+			army_size_percentage = 0.8
+		}
+		obj_age_3_colossal_navy = {
+			naval_forcelimit = 60
+			navy_size_percentage = 0.8
+		}
+		obj_age_3_inspirational_leader = {
+			has_commanding_three_star = yes
+		}
 	}		
 
 	abilities = {
-        age_3_development_focus = {
+		age_3_development_focus = {
 			modifier = {
 				development_cost = -0.1
 			}
@@ -529,7 +598,7 @@ age_of_rebellion = {
 				factor = 10
 			}
 		}
-        age_3_justified_annexation = {
+		age_3_justified_annexation = {
 			modifier = {
 				ae_impact = -0.1
 			}
@@ -537,7 +606,7 @@ age_of_rebellion = {
 				factor = 10
 			}
 		}
-        age_3_prestigeous_traditions = {
+		age_3_prestigeous_traditions = {
 			modifier = {
 				prestige_decay = -0.01
 			}
@@ -545,7 +614,7 @@ age_of_rebellion = {
 				factor = 10
 			}
 		}
-        age_3_subdued_people = {
+		age_3_subdued_people = {
 			modifier = {
 				global_unrest = -2
 			}
@@ -553,7 +622,7 @@ age_of_rebellion = {
 				factor = 10
 			}
 		}
-        age_3_expanded_trade_networks = {
+		age_3_expanded_trade_networks = {
 			modifier = {
 				global_trade_power = 0.2
 			}
@@ -561,7 +630,7 @@ age_of_rebellion = {
 				factor = 10
 			}
 		}
-        age_3_military_drills = {
+		age_3_military_drills = {
 			modifier = {
 				army_tradition = 1.0
 			}
@@ -569,7 +638,7 @@ age_of_rebellion = {
 				factor = 10
 			}
 		}
-        age_3_homeland_knowledge = {
+		age_3_homeland_knowledge = {
 			modifier = {
 				attack_bonus_in_capital_terrain = yes
 			}
@@ -577,7 +646,7 @@ age_of_rebellion = {
 				factor = 10
 			}
 		}
-        age_3_administrative_efficiency = {
+		age_3_administrative_efficiency = {
 			modifier = {
 				administrative_efficiency = 0.1
 			}
@@ -585,7 +654,7 @@ age_of_rebellion = {
 				factor = 100
 			}
 		}
-        age_3_consistent_taxation = {
+		age_3_consistent_taxation = {
 			modifier = {
 				global_tax_modifier = 0.15
 			}
@@ -593,7 +662,7 @@ age_of_rebellion = {
 				factor = 100
 			}
 		}
-        age_3_diplomatic_charisma = {
+		age_3_diplomatic_charisma = {
 			modifier = {
 				diplomatic_reputation = 2
 			}
@@ -601,7 +670,7 @@ age_of_rebellion = {
 				factor = 100
 			}
 		}
-        age_3_self_governing_settlements = {
+		age_3_self_governing_settlements = {
 			modifier = {
 				ignore_coring_distance = yes
 			}
@@ -622,10 +691,10 @@ age_of_ice = {
 		is_year = 300
 	}
 	
-    papacy = 1.0
-	religious_conflicts = yes
-    absolutism = { 
-        harsh_treatment = 1
+	papacy = 1.0
+
+	absolutism = {
+		harsh_treatment = 1
 		stability = 1
 		decrease_autonomy_command = 1
 		strengthen_government = 2
@@ -635,126 +704,126 @@ age_of_ice = {
 		execute_rebel_acceptance_command = -10
 		seat_in_parliament = -3
 		war_exhaustion = -1
-    }
-    
+	}
+	
 	objectives = {
 		age_4_obj_prestigious_capital = {
-            capital_scope = {
-                development = 30
-                religion = ROOT
-                culture = ROOT
-                NOT = { devastation = 1 }
-            }
-        }
+			capital_scope = {
+				development = 30
+				religion = ROOT
+				culture = ROOT
+				NOT = { devastation = 1 }
+			}
+		}
 		age_4_obj_absolute_rule = {
-            absolutism = 75
-        }
-        age_4_obj_the_iron_throne = {
-            is_emperor_of_china = yes
-        }
-        age_4_obj_masterful_counsel = {
+			absolutism = 75
+		}
+		age_4_obj_the_iron_throne = {
+			is_emperor_of_china = yes
+		}
+		age_4_obj_masterful_counsel = {
 			AND = {
-                OR = {
-                    wizard = 3
-                    maester = 3
-                    architect = 3
-                    artist = 3
-                    astrologer = 3
-                    bookbinder = 3
-                    brewer = 3
-                    engraver = 3
-                    oracle = 3
-                    gardener = 3
-                    painter = 3
-                    playwright = 3
-                    politician = 3
-                    scribe = 3
-                    poet = 3
-                    farmer = 3
-                    philosopher = 3
-                    treasurer = 3
-                    priest = 3
-                    evangelist = 3
-                    inquisitor = 3
-                    sculptor = 3
-                    courtesan = 3
-                    catchpole = 3
-                    steward = 3
-                    marshal = 3
-                    pilgrim = 3
-                    moneylender = 3
-                }
-                OR = {
-                    cartographer = 3
-                    clothier = 3
-                    cook = 3
-                    diplomat = 3
-                    herald = 3
-                    interpreter = 3
-                    jester = 3
-                    jeweler = 3
-                    messenger = 3
-                    colonist = 3
-                    navigator = 3
-                    trader = 3
-                    forger = 3
-                    poisoner = 3
-                    spicer = 3
-                    wayfarer = 3
-                    shipwright = 3
-                    mariner = 3
-                    governor = 3
-                    merchant = 3
-                    broker = 3
-                    spymaster = 3
-                    swab = 3
-                    seafarer = 3
-                    sea_dog = 3
-                    mate = 3
-                }
-                OR = {
-                    knight = 3
-                    alchemist = 3
-                    apothecarist = 3
-                    armorer = 3
-                    bowyer = 3
-                    engineer = 3
-                    furrier = 3
-                    herbalist = 3
-                    hunter = 3
-                    leatherworker = 3
-                    physician = 3
-                    storyteller = 3
-                    stablemaster = 3
-                    master_at_arms = 3
-                    mason = 3
-                    carpenter = 3
-                    bladesmith = 3
-                    bard = 3
-                    watchman = 3
-                    captain = 3
-                    sapper = 3
-                    planner = 3
-                    custodian = 3
-                    saddler = 3
-                }
-            }
-        }
-        age_4_obj_colossal_army = {
-            land_forcelimit = 60
-            army_size_percentage = 0.8
-        }
-        age_4_obj_colossal_navy = {
-            naval_forcelimit = 60
-            navy_size_percentage = 0.8
-        }
-        age_4_obj_inspirational_leader = {
-            has_commanding_three_star = yes
-        }
+				OR = {
+					wizard = 3
+					maester = 3
+					architect = 3
+					artist = 3
+					astrologer = 3
+					bookbinder = 3
+					brewer = 3
+					engraver = 3
+					oracle = 3
+					gardener = 3
+					painter = 3
+					playwright = 3
+					politician = 3
+					scribe = 3
+					poet = 3
+					farmer = 3
+					philosopher = 3
+					treasurer = 3
+					priest = 3
+					evangelist = 3
+					inquisitor = 3
+					sculptor = 3
+					courtesan = 3
+					catchpole = 3
+					steward = 3
+					marshal = 3
+					pilgrim = 3
+					moneylender = 3
+				}
+				OR = {
+					cartographer = 3
+					clothier = 3
+					cook = 3
+					diplomat = 3
+					herald = 3
+					interpreter = 3
+					jester = 3
+					jeweler = 3
+					messenger = 3
+					colonist = 3
+					navigator = 3
+					trader = 3
+					forger = 3
+					poisoner = 3
+					spicer = 3
+					wayfarer = 3
+					shipwright = 3
+					mariner = 3
+					governor = 3
+					merchant = 3
+					broker = 3
+					spymaster = 3
+					swab = 3
+					seafarer = 3
+					sea_dog = 3
+					mate = 3
+				}
+				OR = {
+					knight = 3
+					alchemist = 3
+					apothecarist = 3
+					armorer = 3
+					bowyer = 3
+					engineer = 3
+					furrier = 3
+					herbalist = 3
+					hunter = 3
+					leatherworker = 3
+					physician = 3
+					storyteller = 3
+					stablemaster = 3
+					master_at_arms = 3
+					mason = 3
+					carpenter = 3
+					bladesmith = 3
+					bard = 3
+					watchman = 3
+					captain = 3
+					sapper = 3
+					planner = 3
+					custodian = 3
+					saddler = 3
+				}
+			}
+		}
+		age_4_obj_colossal_army = {
+			land_forcelimit = 60
+			army_size_percentage = 0.8
+		}
+		age_4_obj_colossal_navy = {
+			naval_forcelimit = 60
+			navy_size_percentage = 0.8
+		}
+		age_4_obj_inspirational_leader = {
+			has_commanding_three_star = yes
+		}
 	}		
 
 	abilities = {
-        age_4_development_focus = {
+		age_4_development_focus = {
 			modifier = {
 				development_cost = -0.1
 			}
@@ -762,7 +831,7 @@ age_of_ice = {
 				factor = 10
 			}
 		}
-        age_4_justified_annexation = {
+		age_4_justified_annexation = {
 			modifier = {
 				ae_impact = -0.1
 			}
@@ -770,7 +839,7 @@ age_of_ice = {
 				factor = 10
 			}
 		}
-        age_4_prestigeous_traditions = {
+		age_4_prestigeous_traditions = {
 			modifier = {
 				prestige_decay = -0.01
 			}
@@ -778,7 +847,7 @@ age_of_ice = {
 				factor = 10
 			}
 		}
-        age_4_subdued_people = {
+		age_4_subdued_people = {
 			modifier = {
 				global_unrest = -2
 			}
@@ -786,7 +855,7 @@ age_of_ice = {
 				factor = 10
 			}
 		}
-        age_4_expanded_trade_networks = {
+		age_4_expanded_trade_networks = {
 			modifier = {
 				global_trade_power = 0.2
 			}
@@ -794,7 +863,7 @@ age_of_ice = {
 				factor = 10
 			}
 		}
-        age_4_military_drills = {
+		age_4_military_drills = {
 			modifier = {
 				army_tradition = 1.0
 			}
@@ -802,7 +871,7 @@ age_of_ice = {
 				factor = 10
 			}
 		}
-        age_4_homeland_knowledge = {
+		age_4_homeland_knowledge = {
 			modifier = {
 				attack_bonus_in_capital_terrain = yes
 			}
@@ -810,7 +879,7 @@ age_of_ice = {
 				factor = 10
 			}
 		}
-        age_4_administrative_efficiency = {
+		age_4_administrative_efficiency = {
 			modifier = {
 				administrative_efficiency = 0.1
 			}
@@ -818,7 +887,7 @@ age_of_ice = {
 				factor = 100
 			}
 		}
-        age_4_consistent_taxation = {
+		age_4_consistent_taxation = {
 			modifier = {
 				global_tax_modifier = 0.15
 			}
@@ -826,7 +895,7 @@ age_of_ice = {
 				factor = 100
 			}
 		}
-        age_4_diplomatic_charisma = {
+		age_4_diplomatic_charisma = {
 			modifier = {
 				diplomatic_reputation = 2
 			}
@@ -834,7 +903,7 @@ age_of_ice = {
 				factor = 100
 			}
 		}
-        age_4_self_governing_settlements = {
+		age_4_self_governing_settlements = {
 			modifier = {
 				ignore_coring_distance = yes
 			}

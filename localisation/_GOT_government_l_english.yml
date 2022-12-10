@@ -36,10 +36,19 @@
  mechanic_enables_theocracy_ideagroup_yes: "Enables Theocracy Ideagroup: §GYes§!"
  mechanic_enables_tribal_ideagroup_yes: "Enables Tribal Ideagroup: §GYes§!"
  mechanic_enables_nomadic_ideagroup_yes: "Enables Nomadic Ideagroup: §GYes§!"
- mechanic_choose_estate_to_empower_yes: "At the start of your reign, you can decide which §YEstate§! will have priority in governing your demesne. Benefits scale with the Ruler's own Skills."
+
+ mechanic_choose_estate_to_empower_yes: "At the start of your reign, you can decide which §YEstate§! will have priority in governing your demesne."
  mechanic_estate_special_privileges_yes: "Enables special §YPrivileges§! for the §YNobility§!, §YClergy§!, and §YMerchants§! that provide greater benefits compared to the existing Privileges."
- mechanic_lannister_dip_development_yes: "Significantly reduces the §YDevelopment§! cost and increases §YGoods Produced§! for all owned provinces with a Gold Mine."
+ 
+ mechanic_gold_prov_bonus_yes: "Significantly reduces the §YDevelopment§! cost and increases §YGoods Produced§! for owned provinces with a Gold Mine."
  mechanic_strengthen_royal_subjects_yes: "Subjects of the §YRoyal Subject§! type will be strengthened militarily and will receive more bonuses from their own Vassals."
+
+ mechanic_can_make_historical_friendships_yes: "Long-term alliances may eventually develop mutual historical friendships."
+ mechanic_new_regiments_boost_loyalty_yes: "Recruiting regiments will increase the loyalty of the §YNobility§! estate by §G1.0%§! per regiment." 
+
+ mechanic_can_use_assassinations_yes: "Enables the use of the §YAssassination§! espionage action."
+ mechanic_diplo_actions_restriction_yes: "Negotiating §YAlliances§!, forging §YRoyal Marriages§!, and declaring §YWars§! will only be available if all subjects have less than §G50%§! Liberty Desire and §GPositive Opinion§! of you."
+ mechanic_among_us_yes: "The impostor is among us..."
  
  ability_mamluk_mechanic: "Yitish Governance"
  ability_iqta_mechanic: "Westerosi Governance"
@@ -48,6 +57,8 @@
  
  mechanic_native_mechanic_no: "Native Mechanic: §RNo§!"
  mechanic_allow_migration_yes: "Allows Migration: §GYes§!"
+
+ government_reform_enacted_tooltip: "Reform has already been §Yenacted§!"
  
  FACTIONS: "Factions: "
  
@@ -234,17 +245,17 @@
  #---------------------------------------------
  # Government Form (Dynasty)
  #---------------------------------------------
- noble_house_reform: "Minor House"
+ noble_house_reform: "Minor House of Westeros"
  noble_house_reform_desc: "Nobles swearing fealty to a §YGreat House§! of the §YSeven Kingdoms§! with an insignifacnt personal domain hail from a Minor House.\n\nWhile Lords of a Minor House may seem to hold little to no influence due to their rather small demesne, they often form alliances with other Minor Houses and form the backbone of the feudal powerbase."
- noble_house_legacy: "Minor House"
+ noble_house_legacy: "Minor House of Westeros"
  noble_house_legacy_desc: "Nobles swearing fealty to a §YGreat House§! of the §YSeven Kingdoms§! with an insignifacnt personal domain hail from a Minor House.\n\nWhile Lords of a Minor House may seem to hold little to no influence due to their rather small demesne, they often form alliances with other Minor Houses and form the backbone of the feudal powerbase"
  
- great_house_reform: "Great House"
+ great_house_reform: "Great House of Westeros"
  great_house_reform_desc: "Nobles swearing fealty to the §YIron Throne§! whilst having vassals of their own and a considerably large estate hail from a Great House.\n\nSince much of the §YSeven Kingdoms§! is controlled under a feudal system, Lords of Great Houses often have an immense sway in the realm's administration when they command the respect of their men."
- great_house_legacy: "Great House"
+ great_house_legacy: "Great House of Westeros"
  great_house_legacy_desc: "Nobles swearing fealty to the §YIron Throne§! whilst having vassals of their own and a considerably large estate hail from a Great House.\n\nSince much of the §YSeven Kingdoms§! is controlled under a feudal system, Lords of Great Houses often have an immense sway in the realm's administration when they command the respect of their men."
  
- royal_house_reform: "The Royal House"
+ royal_house_reform: "The Royal House of Westeros"
  royal_house_reform_desc: "The Royal House of Westeros is the current dynasty that holds the §YIron Throne§! and rules the §YSeven Kingdoms§!.\n\nThe head of the dynasty is the §MKing of the Andals, the Rhoynar, and the First Men§! and oversees a collective of provinces known as the Crownlands. Much of the realm is governed by subordinate Great Houses, but the Royal House has the ultimate say in any matter."
  royal_house_legacy: "The Royal House"
  royal_house_legacy_desc: "The Royal House of Westeros is the current dynasty that holds the §YIron Throne§! and rules the §YSeven Kingdoms§!.\n\nThe head of the dynasty is the §MKing of the Andals, the Rhoynar, and the First Men§! and oversees a collective of provinces known as the Crownlands. Much of the realm is governed by subordinate Great Houses and the minor Lords swearing fealty to each house, but the Royal House has the ultimate say in any matter."
@@ -539,12 +550,12 @@
  
  tier_dynasty_government_form: "Government Form"                        # 1
  tier_dynasty_laws_on_demesne: "Laws on the Demesne"                    # 2
- tier_dynasty_realm_bureaucracy: "Realm Bureaucracy"                    # 3
+ tier_dynasty_diplomatic_strategy: "Diplomatic Strategy"                # 3
  tier_dynasty_house_administration: "Administration of the House"       # 4
  tier_dynasty_house_religion: "Religion under our Banner"               # 5
  tier_dynasty_merchantry_rules: "Rules on the Merchantry"               # 6
- tier_dynasty_deliberative_assembly: "Deliberative Assembly"            # 7
- tier_dynasty_legitimation_of_authority: "Legitimation of Authority"    # 8
+ tier_dynasty_legitimation_of_authority: "Legitimation of Authority"    # 7
+ tier_dynasty_deliberative_assembly: "Deliberative Assembly"            # 8
  
  tier_republic_government_form: "Government Form"
  tier_republic_republican_virtues: "Republican Virtues"
@@ -613,92 +624,142 @@
  got_reaffirm_the_one_kingdom_reform: "Assert the One Kingdom"
  got_reaffirm_the_one_kingdom_reform_desc: "Since the early days of Aegon the Conqueror, the Seven Kingdoms has functioned as a successful feudal monarchy. Generations of monarchs have come and gone, all the while the Great Houses of Westeros have grown in strength. The concept of a single autocratic regime may seem foreign to the loosely united nobles of Westeros, and no doubt taking steps towards an autocratic society under one house will destablize the realm as a whole. Regardless, we must do what is necessary to secure our reign."
  
- #
+ got_maintain_strong_alliances_reform: "Forge Steadfast Alliances"
+ got_maintain_strong_alliances_reform_desc: "History has shown us that great leaders can rise to prominence and conquer opposing empires. Such leaders are never alone, however, and are often supported by loyal neighboring allies. Alliances can make or break a realm, and it should be our primary duty to ensure our alliances can stand the test of time and the nobles we've come to entrust do not become turncoats in our time of need."
  
- got_maintain_strong_alliances_reform: "Maintain Strong Alliances"
- got_maintain_strong_alliances_reform_desc: "PLACEHOLDER"
+ got_standing_army_reform: "Raise Permanent Armies"
+ got_standing_army_reform_desc: "The most significant component of any powerful realm is the military, specifically the army. No empire can stand the test of time if it cannot raise a professional force to defend its borders. The only thing standing in the road to a permanent army are our most powerful nobles, who may feel threatened by the existence of a large army in control by their overlord."
+ got_standing_army_reform_tt: "§GThis reform compensates for the Land Forcelimit penalty from the base form §YDynasty Mechanic§! §R(-25.0%)§!.§!"
+ got_25_dev_of_subjects_min_tt: "Development at least §Y25%§! of §YSubjects' development§!."
+ got_25_dev_of_subjects_max_tt: "Development at most §Y25%§! of §YSubjects' development§!."
+
+ got_rely_on_levies_reform: "Rely on Levy Forces"
+ got_rely_on_levies_reform_desc: "For generations, our forces have been mainly supplied by the noble lords who swear fealty to us. With the signficant amount of land being controlled by these lords, fielding levy armies is not such a terrible idea and will ensure that our noble vassals remain loyal to us for more generations to come. Those who stand in the way of our realm will feel the full force our vassal armies on the battlefield."
  
- got_standing_army_reform: "Create a Standing Army"
- got_standing_army_reform_desc: "PLACEHOLDER"
- 
- got_naval_supremacy_reform: "Ensure Naval Supremacy"
- got_naval_supremacy_reform_desc: "PLACEHOLDER"
+ got_naval_supremacy_reform: "Dominate the Coastal Waters"
+ got_naval_supremacy_reform_desc: "While it may be an overlooked aspect of the realm, the navy can serve a great purpose for mighty coastal powers. The open sea provides us with an great opportunity to outmaneuver and flank any opposing force by navigating the coastal waters. It may even be necessary to prevent the enemy from attempting such a tactic against us as well, giving us another solid reason to raise a fleet of warships."
+ got_naval_supremacy_reform_tt: "§GThis reform compensates for the Naval Forcelimit penalty from the base form §YDynasty Mechanic§! §R(-25.0%)§!.§!"
  
  #
  
  got_renowned_name_reform: "Renowned Name"
- got_renowned_name_reform_desc: "PLACEHOLDER"
- got_renowed_name_tt: "At least §Y2§! other Countries with our dynasty"
+ got_renowned_name_reform_desc: "Men who understand how the world works do not sit idly by and hope that 'fate' will come by and bring them riches and glory. Fame must be earned, respect must be earned, power must be earned. The greatest of houses understand this power dynamic, carving their path towards greatness through sheer will."
+ got_renowed_name_tt: "At least §Y2§! §YMonarchies§! with our dynasty"
  
  got_seasoned_bureaucrats_reform: "Seasoned Bureaucrats"
- got_seasoned_bureaucrats_reform_desc: "PLACEHOLDER"
+ got_seasoned_bureaucrats_reform_desc: "Cities cannot be governed effectively without the right people in positions of power. The inexperienced magisters will, in due time, cause the collapse of their society without intending. It is the duty of the strong to protect the weak, and that duty falls to us."
  
  got_astute_diplomats_reform: "Astute Diplomats"
- got_astute_diplomats_reform_desc: "PLACEHOLDER"
+ got_astute_diplomats_reform_desc: "Many great soldiers and generals often undermine the power of a skillful diplomat. Wars can be waged by bloody warmongers seeking destruction, or by patient opportunists who make use of reliable alliances to vanquish their foes. We are not the warmongers; we are the opportunists."
  
  got_house_of_warriors_reform: "House of Warriors"
- got_house_of_warriors_reform_desc: "PLACEHOLDER"
+ got_house_of_warriors_reform_desc: "The concept of warfare and the dangers brought with it can be traced back to the origins of society. People are competitive in nature; it is more normal to fight for resources rather than to share them. In the end, the greatest general will have everyone bending the knee to them."
  
  got_righteous_rulers_reform: "Righteous Rulers"
- got_righteous_rulers_reform_desc: ""
+ got_righteous_rulers_reform_desc: "Honor is one of the most important trait any man or woman can have. A cold heart invites dissent from even the most loyal companions, and can result in rebel uprisings. A warm heart, while not appealing to strong-willed characters, can buy the loyalty of your fiercest enemies."
  
  got_natural_schemers_reform: "Natural Schemers"
- got_natural_schemers_reform_desc: "PLACEHOLDER"
+ got_natural_schemers_reform_desc: "When a general wants a thing done, he sends his armies. When a politican wants a thing done, he sends his spies. The world of politics is a dangerous game for those who are unprepared for the intrigue and treachery of the real world. We must ensure our survival, no matter the means."
  
  got_blood_of_old_valyria_reform: "Blood of Old Valyria"
  got_blood_of_old_valyria_reform_desc: "PLACEHOLDER"
- 
- got_lannister_goldmines_reform: "Lannister Goldmines"
- got_lannister_goldmines_reform_desc: "PLACEHOLDER"
  
  #
  
  got_the_one_true_faith_reform: "The One True Faith"
  got_the_one_true_faith_reform_desc: "It is the sacred duty of all House members to ensure that our religion is dominant to the rest. To that end, we must seek out and destroy all heretics or forcibly convert them to our way of life to please the gods."
  
- got_holy_family_reform: "Holy Family"
- got_holy_family_reform_desc: "The faith we follow does not matter; we will not act like savages and viciously murder the heretics in our realm. The most pious act one can do is to respect the faith of our neighboring Lords, whether they follow the Faith of the Seven, the Old Gods, or the Drowned God."
+ got_strengthen_clergy_reform: "Increase Clerical Rights"
+ got_strengthen_clergy_reform_desc: "For centuries, the church brought purpose to the peasants of the realm. In their times of despair, it was faith that brought them back to the fields for another day. Expanding the rights of the clergy will only make it easier for them to execute their holy tasks and help to keep the peasantry in line."
+
+ got_preserve_the_priestdom_reform: "Preserve the Priestdom"
+ got_preserve_the_priestdom_reform_desc: "The clerical ministers in our sphere have helped to ensure the stability of the realm and continuing prosperity of our many cities and farmtowns. They have been a powerful asset to our family for generations with little interference on our behalf. It's best to keep things to way they've been."
  
- got_strengthen_clergy_reform: "Strengthen the Clergy"
- got_strengthen_clergy_reform_desc: "Establishing a clear division between secular and religious authorities is necessary. The priests of our faith are fully capable of acting independently in the interest of the religion as a whole and we should not interfere in their religious affairs."
- 
- got_house_before_gods_reform: "The House Before the Gods"
- got_house_before_gods_reform_desc: "For generations, our religious figures have acted only to further their own self-interested agenda and have not truly upheld the teachings of our faith as they are meant. Our house has been subjected to such imbeciles for far too long; it's time to curtail the Clergy permanetly."
+ got_slacken_clergy_authority_reform: "Slacken the Clergy's Authority"
+ got_slacken_clergy_authority_reform_desc: "The influence clerical ministers hold over the people is great and could possibly be seen as a risk to our own power base should the church authorities in our realm disapprove of our governance. Ensuring they cannot stand in the way of progress will guarantee our safety."
+
+ got_house_before_gods_reform: "Prioritize House Before Gods"
+ got_house_before_gods_reform_desc: "For generations, our religious figures have acted only to further their own self-interested agenda and have not truly upheld the teachings of our faith as they are meant. Our house has been subjected to such imbeciles for far too long; it's time to permanently disempower the clergy."
  
  #
  
- got_empower_the_burghers_reform: "Empower the Burghers"
- got_empower_the_burghers_reform_desc: "PLACEHOLDER"
+ got_empower_the_merchant_class_reform: "Empower the Merchant Class"
+ got_empower_the_merchant_class_reform_desc: "PLACEHOLDER"
+
+ got_safeguard_merchant_privileges_reform: "Safeguard Merchant Privileges"
+ got_safeguard_merchant_privileges_reform_desc: "The privileges afforded to our merchants have kept the balance of power between them and our house in order; we will never truly dominate them and they can never withhold large sums of money from us. This delicate balance of power, while may seem to be dangerous in nature, ensures that both parties get what they need without being threatened by the other."
  
- got_curtail_the_burghers_reform: "Curtail the Burghers"
- got_curtail_the_burghers_reform_desc: "PLACEHOLDER"
- 
+ got_curtail_the_trading_guilds_reform: "Curtail the Trading Guilds"
+ got_curtail_the_trading_guilds_reform_desc: "The merchantry have stood tall for many generations"
+
  got_embrace_free_trade_reform: "Embrace Free Trade"
- got_embrace_free_trade_reform_desc: "PLACEHOLDER"
+ got_embrace_free_trade_reform_desc: "Merchants from all of the world should be able to travel into our lands to engage with our population in trade and commerce. Abandoning the narrowness of mercantalism, the state gains an easier access to foreign thoughts."
+
+ got_mercantilistic_approach_reform: "Adopt Mercantilism"
+ got_mercantilistic_approach_reform_desc: "Free trade implies an equal relation between imports and exports of goods. While beneficial for certain goods, it is of little value for our state. Only through maximizing our exports while minimizing the import from foreign powers, our state can grow its economy."
+
+ got_introduce_regulatory_economics_reform: "Introduce Regulatory Economics"
+ got_introduce_regulatory_economics_reform_desc: "The economy of the state has stayed afloat and, from time to time, even thrived on its own. There has been little need for intervention, however, the economy hasn't always suited our needs. We will have to take command of the economy in our sphere of influence to yield the benefits we desire."
  
- got_tax_the_merchants_reform: "Tax the Merchants"
- got_tax_the_merchants_reform_desc: "PLACEHOLDER"
- 
+ got_develop_the_pastures_reform: "Develop the Pasturelands"
+ got_develop_the_pastures_reform_desc: "A great percentage of the land in our domain is filled with undeveloped pastures which have the potential to be transformed into urban powerhouses. Our resources should be invested in improving and developing the land we already own."
+
  got_subsidize_the_goldmines: "Subsidize the Goldmines"
- got_subsidize_the_goldmines_desc: "PLACEHOLDER"
+ got_subsidize_the_goldmines_desc: "Everyone knows that gold is very valuable and an easy means to gain massive wealth. Gold can be found in small quantities scattered in rivers, but the biggest source of gold is found underground. To effectively exploit this, expensive gold mines must be made. Our prioritization should be the gold mines first."
  
  #
  
- declare_autocratic_state_reform: "Declare Autocratic State"
- declare_autocratic_state_reform_desc: "PLACEHOLDER"
- 
- adopt_republican_ideals_reform: "Adopt Republican Ideals"
- adopt_republican_ideals_reform_desc: "PLACEHOLDER"
- 
- noble_decree_reform: "Noble Decree"
- noble_decree_reform_desc: "PLACEHOLDER"
- 
- council_of_nobles_reform: "Council of Nobles"
- council_of_nobles_reform_desc: "PLACEHOLDER"
- 
+ got_strength_through_the_nobles_reform: "Strength through the Lords"
+ got_strength_through_the_nobles_reform_desc: "The power in the realms of men is derived from the nobility, as a majority of the land is governed by lesser lords and their servants. They've lived in comfort for generations behind their castles and ensured the stability in their sphere of control. As their liege-lord, we must protect their rights for the benefit of the realm."
+
+ got_strength_through_the_gods_reform: "Strength through the Gods"
+ got_strength_through_the_gods_reform_desc: "Clerical ministers serve the realm in a different manner; they provide the necessary guidance to both nobles and commoners alike. Faith in our religion has brought miracles to life, often perceived to be scientifically impossible. As their liege-lord, we must protect their rights for the benefit of the realm."
+
+ got_strength_through_the_merchants_reform: "Strength through the Merchants"
+ got_strength_through_the_merchants_reform_desc: "The merchantry has existed since the concept of society. Trading is a major part of daily life and supports people from all social standings, us included. As their liege-lord, we must protect their rights for the benefit of the realm."
+
+ got_strength_through_the_people_reform: "Strength through the People"
+ got_strength_through_the_people_reform_desc: "While the commoners have often been overlooked and are frequently mistreated by those superior to them, they make up a majority of the population. Positioning ourselves as a metaphorical 'Lord of the People', we can ensure the loyalty of our people and gives us the opportunity to circumvent powerful rivals in our realm. As their liege-lord, we must protect their rights for the benefit of the realm."
+
+ got_lord_of_lords_reform: "Lord of Lords"
+ got_lord_of_lords_reform_desc: "PLACEHOLDER"
+
+ got_lord_of_the_people_reform: "Lord of the People"
+ got_lord_of_the_people_reform_desc: "PLACEHOLDER"
+
  got_the_kings_peace_reform: "Reassert the King's Peace"
  got_the_kings_peace_reform_desc: "The concept of the 'King's Peace' has maintained the continued stability of the realm since Aegon the Conqueror first introduced it after the Conquest. The threat of being branded a traitor has successfully swayed many generations of nobles from resolving disputes on the battlefield and has strengthened both the Crown and the local lords."
- mechanic_has_the_kings_peace_yes: "§YThe King's Peace§!: All subject nations of our §YRoyal Subjects§! will have their §YLiberty Desire§! reduced by §G10§!."
+ mechanic_has_the_kings_peace_yes: "§YThe King's Peace§!: All subject nations of our §YRoyal Subjects§! will have their §YLiberty Desire§! reduced by §G10.00%§!."
+
+ got_declare_autocratic_state_reform: "Declare Autocratic State"
+ got_declare_autocratic_state_reform_desc: "The power dynamic in our realm doesn't offer us enough control, we must seize power from our nobles and declare a centralized autocratic monarchy."
+ 
+ got_adopt_republican_ideals_reform: "Adopt Elective Government"
+ got_adopt_republican_ideals_reform_desc: "For far too long, we have ignored the wishes of our subject lords and peasants. Adopting an Essos-style republican government will benefit everyone, not just our house."
+
+ #
+
+ got_rule_by_noble_decree_reform: "Rule by Noble Decree"
+ got_rule_by_noble_decree_reform_desc: "In the feudal hierarchy, the Lord reigns supreme and only answers to their liege and the gods. In essence, the Lord executes the will of the their liege and must do so without pushback from his own nobles. If our own nobles prevent us from maintaining order, we may strain our relations with our liege."
+ 
+ got_council_of_lords_reform: "Institute Council of Lords"
+ got_council_of_lords_reform_desc: "The interests of our subject lords often coincide with the interests of our realm as a whole. It is, therefore, not surprising that many lords remain loyal to our cause and ensure the integrity of the realm is not disturbed. Their support should come in some official manner, one that can even act on our behalf."
+
+ got_rule_by_royal_decree_reform: "Rule by Royal Decree"
+ got_rule_by_royal_decree_reform_desc: "In the feudal hierarchy, the King reigns supreme and only gods stand above him. This knowledge has been lost and, in practice, the King is expected to satisfy the needs of their lesser lords. The desires of the monarch must now be placed first and our lords second."
+
+ got_empower_small_council_reform: "Institutionalize the Small Council"
+ got_empower_small_council_reform_desc: "Since its humble beginnings with Aegon the Conqueror, the Small Council has served the monarch faithfully for more than a dozens King in succession. They have never failed to execute the King's orders, and have proven to be more than capable in administering the realm in the King's absence. It's time that we institutionalize the powers of the Small Council."
+
+ got_invoke_an_elective_succession_reform: "Invoke an Elective Succession"
+ got_invoke_an_elective_succession_reform_desc: "The traditional succession law of our dynasty ensures that the realm remains unified and under the leadership of our line. However, some of our subject lords wish to have a greater level of influence over the succession of the liege realm. Afterall, our power comes from the loyalty of our vassals. To compromise, an Elective Succession can be established.\n\nThe frequency of the election is dependent on which faction is in power, the Nobles or the Dynasts, and the direction of the realm can greatly differ depending on which faction is in power."
+
+ DIPLO_ACTION_RESTRICTION_TT: "Due to your Government attributes, all subjects have to be loyal and have positive opinion of you."
+
+ nobles: "Nobles"
+ nobles_MECHANIC_TOOLTIP: "Nobles"
+ dynasts: "Dynasts"
+ dynasts_MECHANIC_TOOLTIP: "Dynasts"
  
  #---------------------------------------------
  # Monarchy Reforms

@@ -369,9 +369,9 @@ gov_rhoynish_city = {
 
 gov_nights_watch = {
 	rank = {
-		1 = NIGHTS_WATCH
-		2 = NIGHTS_WATCH
-		3 = NIGHTS_WATCH
+		1 = MILITARY_ORDER
+		2 = MILITARY_ORDER
+		3 = MILITARY_ORDER
 	}
 	
 	ruler_male = {
@@ -387,7 +387,7 @@ gov_nights_watch = {
 	}
 	
 	trigger = {
-        NOT = { tag = A02 }
+        tag = NGT
         has_reform = nights_watch_reform
 	}
 }
@@ -412,7 +412,7 @@ gov_outpost = {
 	}
 	
 	trigger = {
-        NOT = { tag = A02 }
+        NOT = { tag = NGT }
         has_reform = nights_watch_reform
 	}
 }

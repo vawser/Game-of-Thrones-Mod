@@ -453,6 +453,13 @@ on_new_monarch = {
 			duration = -1
 		}
 	}
+	
+	if = {
+		limit = {
+			has_government_attribute = force_general_leader
+		}
+		convert_ruler_to_general = 75
+	}
 
     succession_culture_religion_effect = yes
     

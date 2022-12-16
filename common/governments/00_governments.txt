@@ -219,6 +219,9 @@ republic = {
                 rhoynar_city_reform
                 nights_watch_reform
                 military_dictatorship_reform
+
+				pirate_republic_reform
+				pirate_kingdom_reform
 			}
 		}
         tier_republic_republican_virtues = {
@@ -307,6 +310,9 @@ republic = {
         rhoynar_city_legacy
         nights_watch_legacy
         military_dictatorship_legacy
+
+		pirate_kingdom_legacy
+		pirate_republic_legacy
     }
 }
 
@@ -479,46 +485,46 @@ native = {
 #--------------------------------------------
 # Pirate
 #--------------------------------------------
-pirate = {
-    color = { 10 10 10 }
+# pirate = {
+#     color = { 10 10 10 }
     
-    basic_reform = pirate_mechanic
+#     # basic_reform = pirate_mechanic
     
-    reform_levels = {
-        tier_pirate_government_form = {
-			reforms = {
-                pirate_kingdom_reform
-                pirate_republic_reform
-			}
-		}
-        tier_pirate_governance = {
-			reforms = {
-				got_council_of_captains_reform
-                got_articles_of_agreement_reform
-                got_smugglers_haven_reform
-			}
-		}
-		tier_pirate_principles = {
-			reforms = {
-				got_war_against_the_world_doctrine_reform
-				got_black_market_consortium_reform
-			}
-		}
-		tier_pirate_reformation = {
-			reforms = {
-                got_strengthen_pirate_unity
-				got_become_a_monarchy_reform
-				got_become_a_republic_reform
-				got_become_a_theocracy_reform
-			}
-		}
-    }
+#     reform_levels = {
+#         tier_pirate_government_form = {
+# 			reforms = {
+#                 pirate_kingdom_reform
+#                 pirate_republic_reform
+# 			}
+# 		}
+#         tier_pirate_governance = {
+# 			reforms = {
+# 				got_council_of_captains_reform
+#                 got_articles_of_agreement_reform
+#                 got_smugglers_haven_reform
+# 			}
+# 		}
+# 		tier_pirate_principles = {
+# 			reforms = {
+# 				got_war_against_the_world_doctrine_reform
+# 				got_black_market_consortium_reform
+# 			}
+# 		}
+# 		tier_pirate_reformation = {
+# 			reforms = {
+#                 got_strengthen_pirate_unity
+# 				got_become_a_monarchy_reform
+# 				got_become_a_republic_reform
+# 				got_become_a_theocracy_reform
+# 			}
+# 		}
+#     }
     
-    legacy_government = {
-        pirate_kingdom_legacy
-        pirate_republic_legacy
-    }
-}
+#     legacy_government = {
+#         pirate_kingdom_legacy
+#         pirate_republic_legacy
+#     }
+# }
 
 #--------------------------------------------
 # Occult

@@ -28,18 +28,21 @@ dynasty_mechanic = {
 }
 
 republic_mechanic = {
-    basic_reform = yes
-    
-	republic = yes
+	basic_reform = yes
 	republican_name = yes
-    
-	heir = yes
-	queen = yes
-    
-    duration = 10
-    
-    has_term_election = no
-    election_on_death = yes
+	royal_marriage = no
+	republic = yes
+	duration = 10
+	has_term_election = yes
+
+	modifiers = {
+		merchants_influence_modifier = 0.15
+		max_absolutism = -40
+	}
+	custom_attributes = {
+		enables_republic_ideagroup = yes
+		enables_monarchy_ideagroup = no
+	}
 
 	valid_for_nation_designer = no
 }
@@ -90,35 +93,6 @@ native_mechanic = {
     
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
-}
-
-pirate_mechanic = {
-    basic_reform = yes
-    
-	republican_name = yes
-	royal_marriage = no
-	can_form_trade_league = no
-    
-	republic = yes
-    
-	valid_for_nation_designer = no
-    
-    potential = {	
-		has_dlc = "Golden Century"
-	}
-	
-	nation_designer_trigger = {
-		capital_scope = {
-			has_port = yes
-		}
-	}
-    
-    factions_frame = 9
-	factions = {
-		pr_buccaneers
-		pr_smugglers
-		pr_captains
-	}
 }
 
 occult_mechanic = {

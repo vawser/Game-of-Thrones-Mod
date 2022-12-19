@@ -103,6 +103,59 @@ religious_center = {
 
 	local_missionary_strength = -0.05
 }
+#--------------------------------
+# Castle Black Subsidies
+#--------------------------------
+castle_black_subsidies = {
+	potential = {
+		OR = {
+			exists = NGT
+			any_country = {
+				has_reform = nights_watch_reform
+			}
+		}
+	}
+	trigger = {
+		if = {
+			limit = {
+				province_id = 1590
+			}
+			has_building = the_wall
+		}
+		else_if = {
+			limit = {
+				province_id = 17
+			}
+			has_fort_building_trigger = yes
+		}
+		else = {
+			province_has_current_tech_fort_trigger = yes
+		}
+		OR = {
+			owned_by = NGT
+			owner = {
+				has_reform = nights_watch_reform
+			}
+			owner = {
+				has_reform = watchmen_outpost_reform
+			}
+		}
+	}
+
+	tax_income = 6
+	local_fort_maintenance_modifier = -0.50
+	local_garrison_size = 0.125
+	garrison_growth = 0.05
+
+	on_activation = {
+		if = {
+			limit = {
+				has_province_modifier = abandoned_castle
+			}
+			remove_province_modifier = abandoned_castle
+		}
+	}
+}
 
 #--------------------------------
 # Great Sept of Baelor

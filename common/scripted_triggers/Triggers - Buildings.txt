@@ -78,6 +78,63 @@ has_fort_building_trigger = {
 	}
 }
 
+# Has current fort level
+province_has_current_tech_fort_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = province_has_current_tech_fort_trigger_tt
+		if = {
+			limit = {
+				owner = {
+					NOT = { mil_tech = 7 }
+				}
+			}
+			OR = {
+				has_building = motte_and_bailey
+				has_building = castle
+				has_building = fortress
+				has_building = citadel
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					AND = {
+						mil_tech = 7
+						NOT = { mil_tech = 15 }
+					}
+				}
+			}
+			OR = {
+				has_building = castle
+				has_building = fortress
+				has_building = citadel
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					AND = {
+						mil_tech = 15
+						NOT = { mil_tech = 20 }
+					}
+				}
+			}
+			OR = {
+				has_building = fortress
+				has_building = citadel
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					mil_tech = 20
+				}
+			}
+			has_building = citadel
+		}
+	}
+}
+
 has_manufactory_building_trigger = {
 	OR = {	
 		has_building = farmers_guild

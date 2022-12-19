@@ -387,8 +387,10 @@ gov_nights_watch = {
 	}
 	
 	trigger = {
-        tag = NGT
-        has_reform = nights_watch_reform
+        OR = {
+			tag = NGT
+			has_reform = nights_watch_reform
+		}
 	}
 }
 

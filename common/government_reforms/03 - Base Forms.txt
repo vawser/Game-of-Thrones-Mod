@@ -458,36 +458,78 @@ daenerys_host_reform = {
 #------------------------------------------------------------
 # Republic
 #------------------------------------------------------------
-republic_reform = {
-	icon = "castle"
-    
-    potential = {
-        NOT = { has_reform = merchant_republic_reform }
-        NOT = { has_reform = tyrosh_city_reform }
-        NOT = { has_reform = myr_city_reform }
-        NOT = { has_reform = lys_city_reform }
-        NOT = { has_reform = volantis_city_reform }
-        NOT = { has_reform = pentos_city_reform }
-        NOT = { has_reform = braavos_city_reform }
-        NOT = { has_reform = lorath_city_reform }
-        NOT = { has_reform = saath_city_reform }
-        NOT = { has_reform = trader_city_reform }
-        NOT = { has_reform = andal_city_reform }
-        NOT = { has_reform = expeditionary_company_reform }
-    }
-    
-    allow_normal_conversion = yes
-    legacy_equivalent = republic_legacy
-    
-    valid_for_nation_designer = yes
+oligarchy_reform = {
+	icon = "oligarchic_rulers"
+	allow_normal_conversion = yes
+	duration = 4
+	legacy_equivalent = oligarchic_republic
+
+	valid_for_nation_designer = yes
 	nation_designer_cost = 0
-    
-    modifiers = {
-        global_unrest = -2
-        merchants_influence_modifier = 0.05
-    }
-    
-    custom_attributes = {
+
+	modifiers = {
+		global_tax_modifier = 0.05
+	}
+
+	custom_attributes = {
+		enables_republic_ideagroup = yes
+	}
+
+	ai = {
+		factor = 0.5 #generic
+	}
+}
+
+anocracy_reform = {
+	icon = "tyrant_screaming"
+	allow_normal_conversion = yes
+	duration = 12
+	# legacy_equivalent = anocracy_legacy
+
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+
+	modifiers = {
+		max_absolutism = 20
+		nobles_influence_modifier = 0.10
+		republican_tradition = -0.50
+	}
+
+	custom_attributes = {
+		enables_republic_ideagroup = no
+		enables_monarchy_ideagroup = yes
+	}
+	
+	ai = {
+		factor = 0.5 #generic
+	}
+}
+
+valyrian_citystate_reform = {
+	icon = "valyrian_ruler"
+	allow_normal_conversion = yes
+	duration = 6
+	# legacy_equivalent = valyrian_citystate_legacy
+
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+
+	potential = {
+		capital_scope = {
+			continent = west_essos
+		}
+	}
+	trigger = {
+		capital_scope = {
+			continent = west_essos
+		}
+	}
+
+	modifiers = {
+		all_estate_influence_modifier = 0.10
+	}
+
+	custom_attributes = {
 		enables_republic_ideagroup = yes
 	}
 }
@@ -861,6 +903,7 @@ braavos_city_reform = {
 	}
 	custom_attributes = {
 		enables_republic_ideagroup = yes
+		election_on_death = yes
 		is_merchant_republic = yes
 	}
 }
@@ -1111,9 +1154,8 @@ nights_watch_reform = {
 	legacy_equivalent = nights_watch_legacy
 	lock_level_when_selected = yes
     potential = {
-        has_reform = nights_watch_reform
 		OR = {
-			has_reform = watchmen_outpost_reform
+			has_reform = nights_watch_reform
 			tag = NGT
 			tag = CBK
 			tag = EAS
@@ -1126,11 +1168,7 @@ nights_watch_reform = {
 		}
     }
 	trigger = {
-		NOT = {
-			any_country = {
-				has_reform = nights_watch_reform
-			}
-		}
+		tag = NGT
 	}
     
     valid_for_nation_designer = yes
@@ -1139,8 +1177,10 @@ nights_watch_reform = {
     has_term_election = no
     
     modifiers = {
-		free_land_leader_pool = 1
+		free_land_leader_pool = 2
 		candidate_random_bonus = 1
+		naval_forcelimit = -8
+		nw_rangers_influence = 0.02
 	}
 
 	# conditional = {
@@ -1190,6 +1230,7 @@ watchmen_outpost_reform = {
     	# global_regiment_cost = -0.125
 		# land_forcelimit = 2
 		free_land_leader_pool = 1
+		naval_forcelimit = -8
 	}
 
 	# conditional = {
@@ -1600,6 +1641,9 @@ jhattar_reform = {
 pirate_republic_reform = {
 	icon = "trading_city" 
 	allow_normal_conversion = no
+	potential = {
+		has_reform = pirate_republic_reform
+	}
 
     has_term_election = yes
 	duration = 4
@@ -1626,6 +1670,9 @@ pirate_republic_reform = {
 pirate_kingdom_reform = {
 	icon = "trading_city"
 	allow_normal_conversion = no
+	potential = {
+		has_reform = pirate_kingdom_reform
+	}
     
 	has_term_election = no
 	

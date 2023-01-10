@@ -218,4 +218,37 @@ country_decisions = {
 			factor = 1
 		}
 	}
+
+    show_small_council_countries = {
+		potential = {
+			ai = no
+		}
+		allow = {
+		
+		}
+		effect = {
+			event_target:et_handoftheking = {
+				custom_tooltip = handoftheking_tt
+			}
+			event_target:et_masterofcoin = {
+				custom_tooltip = masterofcoin_tt
+			}
+			event_target:et_masteroflaws = {
+				custom_tooltip = masteroflaws_tt
+			}
+			event_target:et_masterofships = {
+				custom_tooltip = masterofships_tt
+			}
+			event_target:et_masterofwhisperers = {
+				custom_tooltip = masterofwhisperers_tt
+			}
+			event_target:et_lordcommanderkingsguard = {
+				custom_tooltip = lordcommanderkingsguard_tt
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
 }

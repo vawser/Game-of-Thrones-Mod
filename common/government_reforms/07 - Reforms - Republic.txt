@@ -48,22 +48,24 @@ got_republicanism_reform = {
 # "Frequency of Elections"
 #-----------------------------------------
 got_frequent_elections_reform = {
-	icon = "ballot_box"
+	icon = "man_casting_vote"
 	allow_normal_conversion = yes
-
+	potential = {
+	#	NOT = { is_related_to_nights_watch_check = yes }
+	}
 	trigger = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = "NEEDS_REGULAR_ELECTIONS"
-				has_government_attribute = has_term_election
-			}
-			has_reform = got_lottery_reform
-		}
+		# OR = {
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = "NEEDS_REGULAR_ELECTIONS"
+		# 		has_government_attribute = has_term_election
+		# 	}
+		# 	has_reform = got_lottery_reform
+		# }
 	}
     
 	modifiers = {
 		max_absolutism = -10
-		election_cycle = -1
+		election_cycle = -2
 	}
     
 	ai = {
@@ -72,34 +74,85 @@ got_frequent_elections_reform = {
 }
 
 got_consolidation_of_power_reform = {
-	icon = "constitution"
+	icon = "constitution_document"
 	allow_normal_conversion = yes
+	potential = {
+	#	NOT = { is_related_to_nights_watch_check = yes }
+	}
     
 	modifiers = {
 		max_absolutism = 10
-		election_cycle = 1
+		election_cycle = 4
 	}
 }
 
 got_lottery_reform = {
-	icon = "paper_with_seal_3"
+	icon = "electoral_crowd"
 	allow_normal_conversion = yes
     
 	potential = {
-		is_colonial_nation = no
-	}
-    
-	modifiers = {
-		yearly_corruption = -0.1
-	}
-    
-	custom_attributes = {
-		lottery_election = yes
-		election_on_death = yes
+	#	NOT = { is_related_to_nights_watch_check = yes }
 	}
     
 	has_term_election = no
+
+	modifiers = {
+		monarch_lifespan = 0.25
+	}
+	custom_attributes = {
+		lottery_election = yes
+		election_on_death = yes
+		bonus_stats_for_elected_ruler = yes
+	}
     
+	ai = {
+		factor = 1
+	}
+}
+
+got_uphold_life_term_reform = {
+	icon = "armored_knight"
+	allow_normal_conversion = yes
+	potential = {
+	#	is_related_to_nights_watch_check = yes
+	}
+	trigger = {
+	#	is_related_to_nights_watch_check = yes
+	}
+
+	modifiers = {
+		candidate_random_bonus = 1
+		advisor_cost = -0.125
+	}
+
+	ai = {
+		factor = 1
+	}
+}
+
+got_introduce_term_limits_reform = {
+	icon = "gavel_on_paper"
+	allow_normal_conversion = yes
+	potential = {
+	#	is_related_to_nights_watch_check = yes
+	}
+	trigger = {
+	#	is_related_to_nights_watch_check = yes
+	}
+
+	has_term_election = yes
+	duration = 8
+
+	effect = {
+		add_republican_tradition = -20
+	}
+	modifiers = {
+		yearly_corruption = -0.05
+	}
+	custom_attributes = {
+		enables_term_limits = yes
+	}
+
 	ai = {
 		factor = 1
 	}
@@ -111,6 +164,9 @@ got_lottery_reform = {
 got_provincial_governments_reform = {
 	icon = "landscape"
 	allow_normal_conversion = yes
+	potential = {
+		NOT = { is_related_to_nights_watch_check = yes }
+	}
     
 	modifiers = {
 		state_maintenance_modifier = -0.25
@@ -124,6 +180,9 @@ got_provincial_governments_reform = {
 got_administrative_divisions_reform = {
 	icon = "map"
 	allow_normal_conversion = yes
+	potential = {
+		NOT = { is_related_to_nights_watch_check = yes }
+	}
     
 	modifiers = {
 		governing_capacity = 250
@@ -152,6 +211,9 @@ got_administrative_divisions_reform = {
 got_union_of_states_reform = {
 	icon = "merchant_ship"
 	allow_normal_conversion = yes
+	potential = {
+		NOT = { is_related_to_nights_watch_check = yes }
+	}
     
 	modifiers = {
 		global_trade_power = 0.1
@@ -163,6 +225,59 @@ got_union_of_states_reform = {
 			factor = 1.5
 			trade_income_percentage = 0.35
 		}
+	}
+}
+
+got_watchmen_fortline_reform = {
+	icon = "wall_of_ice"
+	allow_normal_conversion = yes
+	potential = {
+		is_related_to_nights_watch_check = yes
+	}
+
+	effect = {
+	#	hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = area_westwatch
+						area = area_eastwatch
+					}
+				}
+				add_province_modifier = {
+					name = bonuses_from_wall_forts_modifier
+					duration = -1
+				}
+			}
+	#	}
+	}
+
+	custom_attributes = {
+		bonuses_from_wall_forts = yes
+	}
+
+	ai = {
+		factor = 1
+	}
+}
+
+got_expand_the_gift_reform = {
+	icon = "farmfields"
+	allow_normal_conversion = yes
+	potential = {
+		is_related_to_nights_watch_check = yes
+	}
+
+	modifiers = {
+		development_cost = -0.05
+		local_tax_modifier = 0.125
+	}
+	custom_attributes = {
+		
+	}
+
+	ai = {
+		factor = 1
 	}
 }
 

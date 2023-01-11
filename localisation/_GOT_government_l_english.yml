@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
  #---------------------------------------------
  # Mechanic Tooltips
  #---------------------------------------------
@@ -38,6 +38,8 @@
  mechanic_enables_theocracy_ideagroup_yes: "Enables Theocracy Ideagroup: §GYes§!"
  mechanic_enables_tribal_ideagroup_yes: "Enables Tribal Ideagroup: §GYes§!"
  mechanic_enables_nomadic_ideagroup_yes: "Enables Nomadic Ideagroup: §GYes§!"
+ mechanic_enables_term_limits: "Term Limits"
+ mechanic_enables_term_limits_yes: "Enables term limits."
 
  mechanic_choose_estate_to_empower_yes: "At the start of your reign, you can decide which §YEstate§! will have priority in governing your demesne."
  mechanic_estate_special_privileges_yes: "Enables special §YPrivileges§! for the §YNobility§!, §YClergy§!, and §YMerchants§! that provide greater benefits compared to the existing Privileges."
@@ -51,6 +53,8 @@
  mechanic_can_use_assassinations_yes: "Enables the use of the §YAssassination§! espionage action."
  mechanic_diplo_actions_restriction_yes: "Negotiating §YAlliances§!, forging §YRoyal Marriages§!, and declaring §YWars§! will only be available if all subjects have less than §G50%§! Liberty Desire and §GPositive Opinion§! of you."
  mechanic_among_us_yes: "The impostor is among us..."
+
+ mechanic_bonuses_from_wall_forts_yes: "Castles along the §YWall§! are reinforced."
  mechanic_force_general_leader_yes: "New rulers become §YGenerals§!."
  
  ability_mamluk_mechanic: "Yitish Governance"
@@ -570,7 +574,7 @@
  tier_republic_government_form: "Government Form"
  tier_republic_republican_virtues: "Republican Virtues"
  tier_republic_frequency_of_elections: "Frequency of Elections"
- tier_republic_regionalism: "Regionalism"
+ tier_republic_regionalism: "Territorial Administration"
  tier_republic_separation_of_power: "Separation of Power"
  tier_republic_consolidation_of_power: "Consolidation of Power"
  tier_republic_guiding_principle_of_administration: "Guiding Principle of Administration"
@@ -872,6 +876,8 @@
  
  got_republicanism_reform: "Republicanism"
  got_republicanism_reform_desc: "This Republic has made itself a guardian of Republican ideals, citizen power and everyone working together for the common good."
+
+ #
  
  got_frequent_elections_reform: "Frequent Elections"
  got_frequent_elections_reform_desc: "Long terms make rulers reckless and the very idea that someone would rule for a long time is contrary to the very idea of a republic. Let us reform our election system to ensure better accountability from our elected officials."
@@ -879,8 +885,16 @@
  got_consolidation_of_power_reform: "Consolidation of Power"
  got_consolidation_of_power_reform_desc: "The current terms for officials are too short to see through larger projects. This only feeds populism and leads to short-sighted policies. Let us reform our election system to allow for longer terms so that our elected officials have the power they need to conduct their office."
  
- got_lottery_reform: "Sortition"
+ got_lottery_reform: "Lottery Election"
  got_lottery_reform_desc: "Elections by majority votes are prone to corruption or worse, populism. We shall employ a complex system of allotment to determine who should lead our Republic by selecting almost at random from among a pool of suitable candidates."
+ 
+ got_uphold_life_term_reform: "Uphold Life Term"
+ got_uphold_life_term_reform_desc: "No matter how controversial the indefinite term may seem, the head of state needs to govern without concern for his position. If they're poised with election campaigns and governing, nothing will be done properly. Instead, we must trust our rulers will do the right and maintain the life term tradition."
+
+ got_introduce_term_limits_reform: "Introduce Term Limits"
+ got_introduce_term_limits_reform_desc: "Even though our republic has been governed by a no-term-limit head of state for generations, it does not serve our best interests. We will be better off with a revolving leadership rather than an elective system that's invoked at the death of the ruler. Some even believe our current elective practice mimics a monarchy too much."
+
+ #
  
  got_provincial_governments_reform: "Provincial Governments"
  got_provincial_governments_reform_desc: "In order for our administration to be efficient we must allow provincial governments the freedom they need to perform their functions. Local elections will ensure that trustworthy individuals can be appointed who would then answer to the central government."
@@ -890,6 +904,14 @@
  
  got_union_of_states_reform: "Union of States"
  got_union_of_states_reform_desc: "Rather than one unified state our country has grown from a large number of states integrated into one confederacy. As our administration grows and evolves we must not infringe on the rights of the member states, doing so would trample on the very principles of our existence."
+
+ got_watchmen_fortline_reform: "Reinforce the Wall"
+ got_watchmen_fortline_reform_desc: "The Night's Watch does not govern land the same was as a noble governs their land. While lands have been gifted to the Night's Watch over many generations for them to expand, the most important chunk of land under their jurisdiction is the Wall and the forts that defend it."
+
+ got_expand_the_gift_reform: "Expand the Gift"
+ got_expand_the_gift_reform_desc: "The Night's Watch was given territory directly to its south, known as 'The Gift' collectively, to bolster its numbers and provide a small economy to maintain their forces. The priority for the Watch has always been the Wall, but we must also govern our southern possessions if we want to remain a strong force to be reckoned with."
+
+ #
  
  got_presidential_reform: "Presidential System"
  got_presidential_reform_desc: "The Chairman or President of our governing body must be elected separately from the legislative branch of government. The president can then appoint or dismiss members of the government."

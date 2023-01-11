@@ -381,15 +381,18 @@ gov_nights_watch = {
     }
 	
 	ruler_female = {
-		1 = LORD_COMMANDER
-        2 = LORD_COMMANDER
-        3 = LORD_COMMANDER
+		1 = LADY_COMMANDER
+        2 = LADY_COMMANDER
+        3 = LADY_COMMANDER
 	}
 	
 	trigger = {
         OR = {
 			tag = NGT
-			has_reform = nights_watch_reform
+			AND = {
+				NOT = { tag = NGT }
+				has_reform = nights_watch_reform
+			}
 		}
 	}
 }

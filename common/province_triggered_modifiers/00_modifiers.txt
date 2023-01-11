@@ -148,12 +148,11 @@ castle_black_subsidies = {
 	garrison_growth = 0.05
 
 	on_activation = {
-		if = {
-			limit = {
-				has_province_modifier = abandoned_castle
-			}
-			remove_province_modifier = abandoned_castle
-		}
+		
+	}
+
+	on_deactivation = {
+		
 	}
 }
 

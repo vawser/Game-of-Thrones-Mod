@@ -1,9 +1,13 @@
 # -------------- Map --------------
 abandoned_castle = {
-    local_build_cost = -0.125
-    local_build_time = -0.25
-    supply_limit_modifier = -0.50
-    picture = "fort_level"
+	supply_limit_modifier = -0.75
+	local_state_maintenance_modifier = 0.33
+	picture = "fort_level"
+}
+
+bonuses_from_wall_forts_modifier = {
+	local_defensiveness = 0.25
+	local_defender_dice_roll_bonus = 2
 }
 
 vicious_tribals = {
@@ -29,85 +33,85 @@ hostile_pirates = {
 the_wall = {
 	local_hostile_movement_speed = -0.5
 	local_defensiveness = 1.0
-    fort_level = 10
+	fort_level = 10
 }
 
 vaes_dothrak = {
-    loot_amount = 1.0
-    raze_power_gain = 1.0
+	loot_amount = 1.0
+	raze_power_gain = 1.0
 }
 
 ucm_meereen = {
-    global_manpower_modifier = 0.25
+	global_manpower_modifier = 0.25
 }
 
 ucm_astapor = {
-    infantry_power = 0.1
+	infantry_power = 0.1
 }
 
 ucm_yunkai = {
-    yearly_corruption = -0.05
+	yearly_corruption = -0.05
 }
 
 ucm_sunspear = {
-    prestige = 1
+	prestige = 1
 }
 
 ucm_highgarden = {
-    global_trade_goods_size_modifier = 0.33
+	global_trade_goods_size_modifier = 0.33
 }
 
 ucm_storms_end = {
-    fort_level = 4
-    local_defensiveness = 1.0
+	fort_level = 4
+	local_defensiveness = 1.0
 }
 
 ucm_kings_landing = {
-    advisor_cost = -0.33
+	advisor_cost = -0.33
 }
 
 ucm_harrenhal = {
-    local_defensiveness = 1.0
+	local_defensiveness = 1.0
 }
 
 ucm_lannisport = {
-    global_trade_power = 0.33
+	global_trade_power = 0.33
 }
 
 ucm_casterly_rock = {
-    advisor_pool = 1
+	advisor_pool = 1
 }
 
 ucm_riverrun = {
-    global_trade_goods_size_modifier = 0.33
+	global_trade_goods_size_modifier = 0.33
 }
 
 ucm_the_twins = {
-    local_defensiveness = 1.0
+	local_defensiveness = 1.0
 }
 
 ucm_pyke = {
-    naval_forcelimit_modifier = 0.33
+	naval_forcelimit_modifier = 0.33
 }
 
 ucm_the_bloody_gate = {
-    fort_level = 2
-    local_defensiveness = 1.0
+	fort_level = 2
+	local_defensiveness = 1.0
 }
 
 ucm_the_eyrie = {
-    fort_level = 4
-    local_defensiveness = 1.0
+	fort_level = 4
+	local_defensiveness = 1.0
 }
 
 ucm_winterfell = {
-    diplomatic_reputation = 1
+	diplomatic_reputation = 1
 }
 
 ucm_fist_of_the_first_men = {
-    all_power_cost = -0.05
+	all_power_cost = -0.05
 }
 
 ucm_oldtown = {
-    technology_cost = -0.05
+	technology_cost = -0.05
 }

@@ -1153,6 +1153,8 @@ nights_watch_reform = {
 	allow_normal_conversion = no
 	legacy_equivalent = nights_watch_legacy
 	lock_level_when_selected = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 35
     potential = {
 		OR = {
 			has_reform = nights_watch_reform
@@ -1171,22 +1173,19 @@ nights_watch_reform = {
 		tag = NGT
 	}
     
-    valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
     has_term_election = no
     
     modifiers = {
 		free_land_leader_pool = 2
-		candidate_random_bonus = 1
 		naval_forcelimit = -8
 		nw_rangers_influence = 0.02
 	}
-
-	# conditional = {
-	# 	allow = { has_dlc = "Rights of Man" }
-	# 	militarised_society = yes
-	# }
+    custom_attributes = {
+		election_on_death = yes
+		locked_government_type = yes
+		force_general_leader = yes
+		elections_increase_factions_influence = yes
+	}
     
 	factions = {
 		nw_stewards
@@ -1194,10 +1193,8 @@ nights_watch_reform = {
 		nw_rangers
 	}
 
-    custom_attributes = {
-		election_on_death = yes
-		force_general_leader = yes
-		locked_government_type = yes
+	ai = {
+		factor = 5
 	}
 }
 
@@ -1206,6 +1203,8 @@ watchmen_outpost_reform = {
 	allow_normal_conversion = no
 	#legacy_equivalent = watchmen_outpost_reform_legacy
 	lock_level_when_selected = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 20
     potential = {
         OR = {
 			has_reform = watchmen_outpost_reform
@@ -1221,27 +1220,20 @@ watchmen_outpost_reform = {
 		}
     }
     
-    valid_for_nation_designer = yes
-	nation_designer_cost = 0
-    
     has_term_election = no
     
     modifiers = {
-    	# global_regiment_cost = -0.125
-		# land_forcelimit = 2
 		free_land_leader_pool = 1
 		naval_forcelimit = -8
 	}
-
-	# conditional = {
-	# 	allow = { has_dlc = "Rights of Man" }
-	# 	militarised_society = yes
-	# }
-    
     custom_attributes = {
 		election_on_death = yes
 		force_general_leader = yes
 		locked_government_type = yes
+	}
+
+	ai = {
+		factor = 5
 	}
 }
 

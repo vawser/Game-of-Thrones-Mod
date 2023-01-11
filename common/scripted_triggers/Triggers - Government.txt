@@ -109,9 +109,17 @@ is_occult_government = {
     government = occult
 }
 
-is_nights_watch_government = {
+is_nights_watch_government = { # Watchmen government
     OR = {
         has_reform = nights_watch_reform
+		tag = NGT
+	}
+}
+
+is_related_to_nights_watch_check = {
+	OR = {
+		has_reform = nights_watch_reform
+		has_reform = watchmen_outpost_reform
     }
 }
 

@@ -16,38 +16,38 @@ cb_undead_conquest = {
     war_goal = superiority_undead_conquest
 }
 
-cb_royal_conquest = {
-    valid_for_subject = no
+# cb_royal_conquest = {
+#     valid_for_subject = no
     
-    prerequisites = {
-		has_reform = royal_house_reform
-		always = no
+#     prerequisites = {
+# 		has_reform = royal_house_reform
+# 		always = no
         
-        FROM = {
-            has_reform = noble_house_reform
-			is_subject = no
-            NOT = { has_opinion = { who = ROOT value = 0 } }
-        }
-	}
+#         FROM = {
+#             has_reform = noble_house_reform
+# 			is_subject = no
+#             NOT = { has_opinion = { who = ROOT value = 0 } }
+#         }
+# 	}
     
-    war_goal = superiority_royal_conquest
-}
+#     war_goal = superiority_royal_conquest
+# }
 
-cb_lordly_feud = {
-    valid_for_subject = yes
+# cb_lordly_feud = {
+#     valid_for_subject = yes
     
-    prerequisites = {
-		has_reform = noble_house_reform
-        always = no
+#     prerequisites = {
+# 		has_reform = noble_house_reform
+#         always = no
 		
-        FROM = {
-            has_reform = noble_house_reform
-            NOT = { has_opinion = { who = ROOT value = 0 } }
-        }
-	}
+#         FROM = {
+#             has_reform = noble_house_reform
+#             NOT = { has_opinion = { who = ROOT value = 0 } }
+#         }
+# 	}
     
-    war_goal = superiority_lordly_feud
-}
+#     war_goal = superiority_lordly_feud
+# }
 
 cb_defend_the_wall = {
     valid_for_subject = no
@@ -98,23 +98,23 @@ cb_pirates = {
 	war_goal = blockade_ports
 }
 
-cb_claim_the_iron_throne = {
-	valid_for_subject = yes
+# cb_claim_the_iron_throne = {
+# 	valid_for_subject = yes
     
-    prerequisites = {
-		OR = {
-            has_reform = great_house_reform
-			AND = {
-				has_reform = noble_house_reform
-				is_subject = no
-			}
-            has_reform = daenerys_host_reform
-        }
-        FROM = { 
-            has_reform = royal_house_reform
-            is_emperor_of_china = yes
-        }
-	}
+#     prerequisites = {
+# 		OR = {
+#             has_reform = great_house_reform
+# 			AND = {
+# 				has_reform = noble_house_reform
+# 				is_subject = no
+# 			}
+#             has_reform = daenerys_host_reform
+#         }
+#         FROM = { 
+#             has_reform = royal_house_reform
+#             is_emperor_of_china = yes
+#         }
+# 	}
     
-    war_goal = take_capital_take_iron_throne
-}
+#     war_goal = take_capital_take_iron_throne
+# }

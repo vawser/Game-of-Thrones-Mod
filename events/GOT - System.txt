@@ -8,29 +8,29 @@ country_event = {
 	
 	is_triggered_only = yes
 	hidden = yes
-    
-    trigger = {
-        NOT = { has_global_flag = completed_global_setup }
-    }
 	
-    immediate = {
-        set_global_flag = completed_global_setup
-    }
-    
+	trigger = {
+		NOT = { has_global_flag = completed_global_setup }
+	}
+	
+	immediate = {
+		set_global_flag = completed_global_setup
+	}
+	
 	option = {
 		name = GOT_SYSTEM.1.option.a
 		
-        # set_global_flag = enable_onaction_logging
-        #set_global_flag = enable_event_logging
-        
-        if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - GOT_SYSTEM.1.option.a" }
-        
-        every_province = {
-            set_in_empire = no
-        }
+		# set_global_flag = enable_onaction_logging
+		#set_global_flag = enable_event_logging
 		
-        # Bookmark flags
-        if = {
+		if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - GOT_SYSTEM.1.option.a" }
+		
+		every_province = {
+			set_in_empire = no
+		}
+		
+		# Bookmark flags
+		if = {
 			limit = {
 				NOT = { is_year = 106 }
 			}
@@ -49,26 +49,26 @@ country_event = {
 	
 	is_triggered_only = yes
 	hidden = yes
-    
-    trigger = {
-        NOT = { has_country_flag = completed_country_setup }
-    }
 	
-    immediate = {
-        country_event = { id = GOT_SYSTEM.3 }
-        country_event = { id = GOT_SYSTEM.4 }
-        
-        add_opinion = {
-            who = WIT
-            modifier = white_walkers
-        }
-        WIT = {
-            add_opinion = {
-                who = ROOT
-                modifier = white_walkers
-            }
-        }
-        
+	trigger = {
+		NOT = { has_country_flag = completed_country_setup }
+	}
+	
+	immediate = {
+		country_event = { id = GOT_SYSTEM.3 }
+		country_event = { id = GOT_SYSTEM.4 }
+		
+		add_opinion = {
+			who = WIT
+			modifier = white_walkers
+		}
+		WIT = {
+			add_opinion = {
+				who = ROOT
+				modifier = white_walkers
+			}
+		}
+		
 		if = {
 			limit = {
 				primary_culture = free_folk
@@ -102,277 +102,277 @@ country_event = {
 			}
 		}
 		
-        # Cleanup ideagroups on later bookmarks
-        if = {
-            limit = { has_idea_group = got_innovation_ideas }
-            remove_idea_group = got_innovation_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_religious_ideas }
-            remove_idea_group = got_religious_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_economic_ideas }
-            remove_idea_group = got_economic_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_expansion_ideas }
-            remove_idea_group = got_expansion_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_administrative_ideas }
-            remove_idea_group = got_administrative_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_harmony_ideas }
-            remove_idea_group = got_harmony_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_law_ideas }
-            remove_idea_group = got_law_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_development_ideas }
-            remove_idea_group = got_development_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_absolutism_ideas }
-            remove_idea_group = got_absolutism_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_cryomancy_ideas }
-            remove_idea_group = got_cryomancy_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_old_gods_ideas }
-            remove_idea_group = got_old_gods_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_faith_of_the_seven_ideas }
-            remove_idea_group = got_faith_of_the_seven_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_drowned_god_ideas }
-            remove_idea_group = got_drowned_god_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_mother_rhoyne_ideas }
-            remove_idea_group = got_mother_rhoyne_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_lion_of_the_night_ideas }
-            remove_idea_group = got_lion_of_the_night_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_great_stallion_ideas }
-            remove_idea_group = got_great_stallion_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_rhllor_ideas }
-            remove_idea_group = got_rhllor_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_trios_ideas }
-            remove_idea_group = got_trios_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_bearded_priests_ideas }
-            remove_idea_group = got_bearded_priests_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_remnants_of_boash_ideas }
-            remove_idea_group = got_remnants_of_boash_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_black_goat_ideas }
-            remove_idea_group = got_black_goat_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_gods_of_hyrkoon_ideas }
-            remove_idea_group = got_gods_of_hyrkoon_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_moonsingers_ideas }
-            remove_idea_group = got_moonsingers_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_lady_of_the_waves_ideas }
-            remove_idea_group = got_lady_of_the_waves_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_sun_god_ideas }
-            remove_idea_group = got_sun_god_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_idol_worship_ideas }
-            remove_idea_group = got_idol_worship_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_occult_ideas }
-            remove_idea_group = got_occult_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_stone_cow_ideas }
-            remove_idea_group = got_stone_cow_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_great_shepherd_ideas }
-            remove_idea_group = got_great_shepherd_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_ib_ideas }
-            remove_idea_group = got_ib_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_hooded_wayfarer_ideas }
-            remove_idea_group = got_hooded_wayfarer_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_lord_of_harmony_ideas }
-            remove_idea_group = got_lord_of_harmony_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_monarchy_ideas }
-            remove_idea_group = got_monarchy_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_republic_ideas }
-            remove_idea_group = got_republic_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_theocracy_ideas }
-            remove_idea_group = got_theocracy_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_tribal_ideas }
-            remove_idea_group = got_tribal_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_nomadic_ideas }
-            remove_idea_group = got_nomadic_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_espionage_ideas }
-            remove_idea_group = got_espionage_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_dynastic_ideas }
-            remove_idea_group = got_dynastic_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_influence_ideas }
-            remove_idea_group = got_influence_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_trade_ideas }
-            remove_idea_group = got_trade_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_exploration_ideas }
-            remove_idea_group = got_exploration_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_maritime_ideas }
-            remove_idea_group = got_maritime_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_assimilation_ideas }
-            remove_idea_group = got_assimilation_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_society_ideas }
-            remove_idea_group = got_society_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_propaganda_ideas }
-            remove_idea_group = got_propaganda_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_naval_bombardment_ideas }
-            remove_idea_group = got_naval_bombardment_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_naval_skirmish_ideas }
-            remove_idea_group = got_naval_skirmish_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_naval_trade_ideas }
-            remove_idea_group = got_naval_trade_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_naval_organisation_ideas }
-            remove_idea_group = got_naval_organisation_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_naval_leadership_ideas }
-            remove_idea_group = got_naval_leadership_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_naval_tactics_ideas }
-            remove_idea_group = got_naval_tactics_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_offensive_ideas }
-            remove_idea_group = got_offensive_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_defensive_ideas }
-            remove_idea_group = got_defensive_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_quality_ideas }
-            remove_idea_group = got_quality_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_quantity_ideas }
-            remove_idea_group = got_quantity_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_professional_army_ideas }
-            remove_idea_group = got_professional_army_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_mercenary_army_ideas }
-            remove_idea_group = got_mercenary_army_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_army_organisation_ideas }
-            remove_idea_group = got_army_organisation_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_army_leadership_ideas }
-            remove_idea_group = got_army_leadership_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_army_tactics_ideas }
-            remove_idea_group = got_army_tactics_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_armaments_ideas }
-            remove_idea_group = got_armaments_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_fortification_ideas }
-            remove_idea_group = got_fortification_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_militarization_ideas }
-            remove_idea_group = got_militarization_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_subjugation_ideas }
-            remove_idea_group = got_subjugation_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_tyranny_ideas }
-            remove_idea_group = got_tyranny_ideas
-        }
-        if = {
-            limit = { has_idea_group = got_imperialism_ideas }
-            remove_idea_group = got_imperialism_ideas
-        }
-        
-        set_country_flag = completed_country_setup
+		# Cleanup ideagroups on later bookmarks
+		if = {
+			limit = { has_idea_group = got_innovation_ideas }
+			remove_idea_group = got_innovation_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_religious_ideas }
+			remove_idea_group = got_religious_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_economic_ideas }
+			remove_idea_group = got_economic_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_expansion_ideas }
+			remove_idea_group = got_expansion_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_administrative_ideas }
+			remove_idea_group = got_administrative_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_harmony_ideas }
+			remove_idea_group = got_harmony_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_law_ideas }
+			remove_idea_group = got_law_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_development_ideas }
+			remove_idea_group = got_development_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_absolutism_ideas }
+			remove_idea_group = got_absolutism_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_cryomancy_ideas }
+			remove_idea_group = got_cryomancy_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_old_gods_ideas }
+			remove_idea_group = got_old_gods_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_faith_of_the_seven_ideas }
+			remove_idea_group = got_faith_of_the_seven_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_drowned_god_ideas }
+			remove_idea_group = got_drowned_god_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_mother_rhoyne_ideas }
+			remove_idea_group = got_mother_rhoyne_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_lion_of_the_night_ideas }
+			remove_idea_group = got_lion_of_the_night_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_great_stallion_ideas }
+			remove_idea_group = got_great_stallion_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_rhllor_ideas }
+			remove_idea_group = got_rhllor_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_trios_ideas }
+			remove_idea_group = got_trios_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_bearded_priests_ideas }
+			remove_idea_group = got_bearded_priests_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_remnants_of_boash_ideas }
+			remove_idea_group = got_remnants_of_boash_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_black_goat_ideas }
+			remove_idea_group = got_black_goat_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_gods_of_hyrkoon_ideas }
+			remove_idea_group = got_gods_of_hyrkoon_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_moonsingers_ideas }
+			remove_idea_group = got_moonsingers_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_lady_of_the_waves_ideas }
+			remove_idea_group = got_lady_of_the_waves_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_sun_god_ideas }
+			remove_idea_group = got_sun_god_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_idol_worship_ideas }
+			remove_idea_group = got_idol_worship_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_occult_ideas }
+			remove_idea_group = got_occult_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_stone_cow_ideas }
+			remove_idea_group = got_stone_cow_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_great_shepherd_ideas }
+			remove_idea_group = got_great_shepherd_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_ib_ideas }
+			remove_idea_group = got_ib_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_hooded_wayfarer_ideas }
+			remove_idea_group = got_hooded_wayfarer_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_lord_of_harmony_ideas }
+			remove_idea_group = got_lord_of_harmony_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_monarchy_ideas }
+			remove_idea_group = got_monarchy_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_republic_ideas }
+			remove_idea_group = got_republic_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_theocracy_ideas }
+			remove_idea_group = got_theocracy_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_tribal_ideas }
+			remove_idea_group = got_tribal_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_nomadic_ideas }
+			remove_idea_group = got_nomadic_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_espionage_ideas }
+			remove_idea_group = got_espionage_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_dynastic_ideas }
+			remove_idea_group = got_dynastic_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_influence_ideas }
+			remove_idea_group = got_influence_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_trade_ideas }
+			remove_idea_group = got_trade_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_exploration_ideas }
+			remove_idea_group = got_exploration_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_maritime_ideas }
+			remove_idea_group = got_maritime_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_assimilation_ideas }
+			remove_idea_group = got_assimilation_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_society_ideas }
+			remove_idea_group = got_society_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_propaganda_ideas }
+			remove_idea_group = got_propaganda_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_naval_bombardment_ideas }
+			remove_idea_group = got_naval_bombardment_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_naval_skirmish_ideas }
+			remove_idea_group = got_naval_skirmish_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_naval_trade_ideas }
+			remove_idea_group = got_naval_trade_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_naval_organisation_ideas }
+			remove_idea_group = got_naval_organisation_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_naval_leadership_ideas }
+			remove_idea_group = got_naval_leadership_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_naval_tactics_ideas }
+			remove_idea_group = got_naval_tactics_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_offensive_ideas }
+			remove_idea_group = got_offensive_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_defensive_ideas }
+			remove_idea_group = got_defensive_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_quality_ideas }
+			remove_idea_group = got_quality_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_quantity_ideas }
+			remove_idea_group = got_quantity_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_professional_army_ideas }
+			remove_idea_group = got_professional_army_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_mercenary_army_ideas }
+			remove_idea_group = got_mercenary_army_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_army_organisation_ideas }
+			remove_idea_group = got_army_organisation_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_army_leadership_ideas }
+			remove_idea_group = got_army_leadership_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_army_tactics_ideas }
+			remove_idea_group = got_army_tactics_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_armaments_ideas }
+			remove_idea_group = got_armaments_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_fortification_ideas }
+			remove_idea_group = got_fortification_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_militarization_ideas }
+			remove_idea_group = got_militarization_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_subjugation_ideas }
+			remove_idea_group = got_subjugation_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_tyranny_ideas }
+			remove_idea_group = got_tyranny_ideas
+		}
+		if = {
+			limit = { has_idea_group = got_imperialism_ideas }
+			remove_idea_group = got_imperialism_ideas
+		}
+		
+		set_country_flag = completed_country_setup
 		
 		if = {
 			limit = {
@@ -386,12 +386,12 @@ country_event = {
 		}
 		
 		
-    }
-    
+	}
+	
 	option = {
 		name = GOT_SYSTEM.2.option.a
 
-        if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - GOT_SYSTEM.2.option.a" }
+		if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - GOT_SYSTEM.2.option.a" }
 	}
 }
 
@@ -404,38 +404,38 @@ country_event = {
 	
 	is_triggered_only = yes
 	hidden = yes
-    
-    immediate = {   
-        if = {
-            limit = {
+	
+	immediate = {   
+		if = {
+			limit = {
 				NOT = { tag = U25 }
-                capital_scope = {
-                    NOT = { continent = westeros }
-                }
-            }
-            add_country_modifier = {
-                name = slavery_permitted
-                duration = -1
-                hidden = yes
-            }
-        }
-        if = {
-            limit = {
+				capital_scope = {
+					NOT = { continent = westeros }
+				}
+			}
+			add_country_modifier = {
+				name = slavery_permitted
+				duration = -1
+				hidden = yes
+			}
+		}
+		if = {
+			limit = {
 				OR = {
 					tag = U25
 					capital_scope = {
 						continent = westeros
 					}
 				}
-            }
-            add_country_modifier = {
-                name = slavery_prohibited
-                duration = -1
-                hidden = yes
-            }
-        }
-    }
-    
+			}
+			add_country_modifier = {
+				name = slavery_prohibited
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	
 	option = {
 		name = GOT_SYSTEM.3.option.a
 	}
@@ -447,384 +447,384 @@ country_event = {
 	desc = GOT_SYSTEM.4.desc
 	picture = ASSASSINATION_eventPicture
 	
-    hidden = yes
-    is_triggered_only = yes
-    
+	hidden = yes
+	is_triggered_only = yes
+	
 	option = {
 		name = GOT_SYSTEM.4.option.a
 		  
 		# Westeros
-        if = {
-            limit = {
-                capital_scope = {
-                    superregion = westeros_superregion
-                }
-            }
-            westeros_superregion = {
-                discover_country = ROOT
-            }
+		if = {
+			limit = {
+				capital_scope = {
+					superregion = westeros_superregion
+				}
+			}
+			westeros_superregion = {
+				discover_country = ROOT
+			}
 			westeros_sea_region = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			west_essos_superregion = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			westeros_wastelands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			essos_west_wastelands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			shivering_sea_region = {
 				undiscover_country = ROOT
 			}
-            # Lakes
-            884 = {
-                discover_country = ROOT
-            }
-            885 = {
-                discover_country = ROOT
-            }      
-            882 = {
-                discover_country = ROOT
-            }        
-            883 = {
-                discover_country = ROOT
-            }        
-            881 = {
-               discover_country = ROOT
-            }          
-            880 = {
-                discover_country = ROOT
-            }
-        }
+			# Lakes
+			884 = {
+				discover_country = ROOT
+			}
+			885 = {
+				discover_country = ROOT
+			}	  
+			882 = {
+				discover_country = ROOT
+			}		
+			883 = {
+				discover_country = ROOT
+			}		
+			881 = {
+			   discover_country = ROOT
+			}		  
+			880 = {
+				discover_country = ROOT
+			}
+		}
 
 		# Free Cities
-        if = {
-            limit = {
-                capital_scope = {
-                    superregion = west_essos_superregion
-                }
-            }
+		if = {
+			limit = {
+				capital_scope = {
+					superregion = west_essos_superregion
+				}
+			}
 			westeros_superregion = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			westeros_sea_region = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			west_essos_superregion = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			westeros_wastelands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			essos_west_wastelands = {
-                discover_country = ROOT
-            }
-            central_essos_superregion = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
+			central_essos_superregion = {
+				discover_country = ROOT
+			}
 			ghiscari_sea_region = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			region_slavers_bay = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			region_valyria = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			region_sarnor = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			omber_sea_region = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			shivering_sea_region = {
 				undiscover_country = ROOT
 			}
-            # Lakes
-            3005 = {
-                discover_country = ROOT
-            }
-            3006 = {
-                discover_country = ROOT
-            }
-            3007 = {
-                discover_country = ROOT
-            }
-            1076 = {
-                discover_country = ROOT
-            }
-        } 
+			# Lakes
+			3005 = {
+				discover_country = ROOT
+			}
+			3006 = {
+				discover_country = ROOT
+			}
+			3007 = {
+				discover_country = ROOT
+			}
+			1076 = {
+				discover_country = ROOT
+			}
+		} 
 
 		# Central Essos
-        if = {
-            limit = {
-                OR = {
-                    technology_group = dothraki
-                    capital_scope = {
-                        superregion = central_essos_superregion
-                    }
-                }
-            }
+		if = {
+			limit = {
+				OR = {
+					technology_group = dothraki
+					capital_scope = {
+						superregion = central_essos_superregion
+					}
+				}
+			}
 			
-            west_essos_superregion = {
-                discover_country = ROOT
-            }
+			west_essos_superregion = {
+				discover_country = ROOT
+			}
 			central_essos_superregion = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			essos_central_wastelands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			essos_east_wastelands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			far_essos_superregion = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			region_thousand_islands = {
-                undiscover_country = ROOT
-            }
+				undiscover_country = ROOT
+			}
 			nefer_sea_region = {
-                undiscover_country = ROOT
-            }
+				undiscover_country = ROOT
+			}
 			region_cannibal_sands = {
-                undiscover_country = ROOT
-            }
+				undiscover_country = ROOT
+			}
 			region_mossovy = {
-                undiscover_country = ROOT
-            }
+				undiscover_country = ROOT
+			}
 			region_shadowlands = {
-                undiscover_country = ROOT
-            }
+				undiscover_country = ROOT
+			}
 			region_bloodlands = {
-                undiscover_country = ROOT
-            }
+				undiscover_country = ROOT
+			}
 			east_sothoryos_sea_area = {
-                discover_country = ROOT
-            }
-            # Lakes
-            3005 = {
-                discover_country = ROOT
-            }
-            3006 = {
-                discover_country = ROOT
-            }
-            3007 = {
-                discover_country = ROOT
-            }
-            1076 = {
-                discover_country = ROOT
-            }
-            3008 = {
-                discover_country = ROOT
-            }
-            3009 = {
-                discover_country = ROOT
-            }
-            1077 = {
-                discover_country = ROOT
-            }
-            1078 = {
-                discover_country = ROOT
-            }
-            1129 = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
+			# Lakes
+			3005 = {
+				discover_country = ROOT
+			}
+			3006 = {
+				discover_country = ROOT
+			}
+			3007 = {
+				discover_country = ROOT
+			}
+			1076 = {
+				discover_country = ROOT
+			}
+			3008 = {
+				discover_country = ROOT
+			}
+			3009 = {
+				discover_country = ROOT
+			}
+			1077 = {
+				discover_country = ROOT
+			}
+			1078 = {
+				discover_country = ROOT
+			}
+			1129 = {
+				discover_country = ROOT
+			}
 		}
 		
 		# Far Essos
-        if = {
-            limit = {
-                capital_scope = {
-                    superregion = far_essos_superregion
-                }
-            }
-            far_essos_superregion = {
-                discover_country = ROOT
-            }
+		if = {
+			limit = {
+				capital_scope = {
+					superregion = far_essos_superregion
+				}
+			}
+			far_essos_superregion = {
+				discover_country = ROOT
+			}
 			region_qarth = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			region_slavers_bay = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			ghiscari_sea_region = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			essos_east_wastelands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			essos_central_wastelands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			east_sothoryos_sea_area = {
-                discover_country = ROOT
-            }
-            1129 = {
-                discover_country = ROOT
-            }
-            1128 = {
-                discover_country = ROOT
-            }
-            1127 = {
-                discover_country = ROOT
-            }
-            
-        } 
+				discover_country = ROOT
+			}
+			1129 = {
+				discover_country = ROOT
+			}
+			1128 = {
+				discover_country = ROOT
+			}
+			1127 = {
+				discover_country = ROOT
+			}
+			
+		} 
 
 		# Asshai and the Mythicals
 		if = {
-            limit = {
-                capital_scope = {
-                    OR = {
-                        region = region_shadowlands
-                        region = region_bloodlands
-                        region = region_mossovy
-                        region = region_thousand_islands
-                        region = region_dry_bones
-                        region = region_carcosa
-                        region = region_cannibal_sands
-                    }
-                }
-            }
-            far_essos_superregion = {
-                discover_country = ROOT
-            }
+			limit = {
+				capital_scope = {
+					OR = {
+						region = region_shadowlands
+						region = region_bloodlands
+						region = region_mossovy
+						region = region_thousand_islands
+						region = region_dry_bones
+						region = region_carcosa
+						region = region_cannibal_sands
+					}
+				}
+			}
+			far_essos_superregion = {
+				discover_country = ROOT
+			}
 			region_qarth = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			region_slavers_bay = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			ghiscari_sea_region = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			essos_east_wastelands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			essos_central_wastelands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			region_gemstone_islands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			region_ulthos = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			ulthos_sea_region = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			ulthos_wastelands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			east_sothoryos_sea_area = {
-                discover_country = ROOT
-            }
-            bloodless_coast_area = {
-                discover_country = ROOT
-            }
-            1129 = {
-                discover_country = ROOT
-            }
-            1128 = {
-                discover_country = ROOT
-            }
-            1127 = {
-                discover_country = ROOT
-            }
-            1600 = {
-                discover_country = ROOT
-            }
-            1443 = {
-                discover_country = ROOT
-            }
-            1113 = {
-                discover_country = ROOT
-            }
-            1112 = {
-                discover_country = ROOT
-            }
-            1098 = {
-                discover_country = ROOT
-            }
-        } 
+				discover_country = ROOT
+			}
+			bloodless_coast_area = {
+				discover_country = ROOT
+			}
+			1129 = {
+				discover_country = ROOT
+			}
+			1128 = {
+				discover_country = ROOT
+			}
+			1127 = {
+				discover_country = ROOT
+			}
+			1600 = {
+				discover_country = ROOT
+			}
+			1443 = {
+				discover_country = ROOT
+			}
+			1113 = {
+				discover_country = ROOT
+			}
+			1112 = {
+				discover_country = ROOT
+			}
+			1098 = {
+				discover_country = ROOT
+			}
+		} 
 		
 		# Summer Islands and Stepstones
-        if = {
-            limit = {
-                capital_scope = {
-                    OR = {
-                        region = region_summer_islands
-                        region = region_stepstones
-                    }
-                }
-            }
-            region_summer_islands = {
-                discover_country = ROOT
-            }
+		if = {
+			limit = {
+				capital_scope = {
+					OR = {
+						region = region_summer_islands
+						region = region_stepstones
+					}
+				}
+			}
+			region_summer_islands = {
+				discover_country = ROOT
+			}
 			summer_islands_sea_region = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			westeros_sea_region = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			westeros_superregion = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			shivering_sea_region = {
-                undiscover_country = ROOT
-            }
+				undiscover_country = ROOT
+			}
 			west_essos_superregion = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			north_essosian_coast_area = {
-                undiscover_country = ROOT
-            }
+				undiscover_country = ROOT
+			}
 			westeros_wastelands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			essos_west_wastelands = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			west_sothoryos_sea_area = {
-                discover_country = ROOT
-            }
-        } 
-        
-        if = {
-            limit = {
-                capital_scope = {
-                    region = region_ibben
-                }
-            }
-            central_essos_superregion = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
+		} 
+		
+		if = {
+			limit = {
+				capital_scope = {
+					region = region_ibben
+				}
+			}
+			central_essos_superregion = {
+				discover_country = ROOT
+			}
 			narrow_sea_area = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			shivering_sea_region = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			nefer_sea_region = {
-                discover_country = ROOT
-            }
+				discover_country = ROOT
+			}
 			region_qarth = {
-                undiscover_country = ROOT
-            }
+				undiscover_country = ROOT
+			}
 			region_valyria = {
-                undiscover_country = ROOT
-            }
+				undiscover_country = ROOT
+			}
 			ghiscari_sea_region = {
-                undiscover_country = ROOT
-            }
+				undiscover_country = ROOT
+			}
 			essos_central_wastelands = {
-                discover_country = ROOT
-            }
-        }  
-    }
+				discover_country = ROOT
+			}
+		}  
+	}
 }
 
 # Update Royal House Subjects
@@ -834,34 +834,34 @@ country_event = {
 	desc = GOT_SYSTEM.7.desc
 	picture = ASSASSINATION_eventPicture
 	
-    hidden = yes
-    
-    trigger = {
-        ai = yes
-        has_global_flag = update_royal_subjects
-    }
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		has_global_flag = update_royal_subjects
+	}
 
-    mean_time_to_happen = {
-        days = 1
-    }
-    
-    option = {
-        name = GOT_SYSTEM.7.option.a
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_SYSTEM.7.option.a
 
-        clr_global_flag = update_royal_subjects
-        
-        # Release old royal subjects
-        every_country = {
-            limit = { 
-                is_subject_of_type = tributary_state
-            }
-            
-            log = "[This.GetName]"
-            grant_independence = yes
-        }
-        
-        country_event = { id = GOT_SYSTEM.8 days = 1 }
-    }  
+		clr_global_flag = update_royal_subjects
+		
+		# Release old royal subjects
+		every_country = {
+			limit = { 
+				is_subject_of_type = tributary_state
+			}
+			
+			log = "[This.GetName]"
+			grant_independence = yes
+		}
+		
+		country_event = { id = GOT_SYSTEM.8 days = 1 }
+	}  
 }
 
 country_event = {
@@ -870,30 +870,30 @@ country_event = {
 	desc = GOT_SYSTEM.8.desc
 	picture = ASSASSINATION_eventPicture
 	
-    hidden = yes
-    is_triggered_only = yes
-    
-    option = {
-        name = GOT_SYSTEM.8.option.a
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_SYSTEM.8.option.a
 
-        clr_global_flag = update_royal_subjects
-        
-        # Release old royal subjects
-        every_country = {
-            limit = { 
-                has_reform = noble_house_reform
-            }
+		clr_global_flag = update_royal_subjects
+		
+		# Release old royal subjects
+		every_country = {
+			limit = { 
+				has_reform = noble_house_reform
+			}
 
-            # Add all Noble Houses as subjects to new Royal House
-            every_country = {
-                limit = { has_reform = royal_house_reform }
-                create_subject = {
-                    subject_type = tributary_state
-                    subject = PREV
-                }
-            }
-        }
-    }  
+			# Add all Noble Houses as subjects to new Royal House
+			every_country = {
+				limit = { has_reform = royal_house_reform }
+				create_subject = {
+					subject_type = tributary_state
+					subject = PREV
+				}
+			}
+		}
+	}  
 }
 
 country_event = {
@@ -903,20 +903,20 @@ country_event = {
 	picture = OVEREXTENSION_eventPicture
 	
 	hidden = no
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+	
 	immediate = {
 		set_country_flag = starting_bonuses
 	}
 	
 	# Normal Start
-    option = {
-        name = GOT_SYSTEM.9.option.a
-    }  
+	option = {
+		name = GOT_SYSTEM.9.option.a
+	}  
 	
 	# Starting Bonus
 	option = {
-        name = GOT_SYSTEM.9.option.b
+		name = GOT_SYSTEM.9.option.b
 		
 		if = {
 			limit = {
@@ -929,5 +929,101 @@ country_event = {
 				duration = 1825
 			}
 		}
-    }
+	}
+}
+
+country_event = {
+	id = GOT_SYSTEM.10
+	title = GOT_SYSTEM.10.title
+	desc = GOT_SYSTEM.10.desc
+	picture = OVEREXTENSION_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = completed_country_setup }
+	}
+	
+	# Normal Start
+	option = {
+		name = GOT_SYSTEM.10.option.a
+		custom_tooltip = "Nothing will be changed, Westeros will remain the same."
+	}  
+	
+	# Starting Bonus
+	option = {
+		name = GOT_SYSTEM.10.option.b
+		every_country = {
+			limit = {
+				is_subject_of = NOR
+				is_subject_of_type = feudatory
+			}
+			every_owned_province = {
+				cede_province = NOR
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = RIV
+				is_subject_of_type = feudatory
+			}
+			every_owned_province = {
+				cede_province = RIV
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = VLE
+				is_subject_of_type = feudatory
+			}
+			every_owned_province = {
+				cede_province = VLE
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = WES
+				is_subject_of_type = feudatory
+			}
+			every_owned_province = {
+				cede_province = WES
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = REA
+				is_subject_of_type = feudatory
+			}
+			every_owned_province = {
+				cede_province = REA
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = STM
+				is_subject_of_type = feudatory
+			}
+			every_owned_province = {
+				cede_province = STM
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = DOR
+				is_subject_of_type = feudatory
+			}
+			every_owned_province = {
+				cede_province = DOR
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = IRI
+				is_subject_of_type = feudatory
+			}
+			every_owned_province = {
+				cede_province = IRI
+			}
+		}
+	}
 }

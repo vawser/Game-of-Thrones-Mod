@@ -106,7 +106,7 @@ royal_house_reform = {
 			tag = CRW
 		}
 	}
-   
+	
     allow_normal_conversion = yes
     legacy_equivalent = royal_house_legacy
     
@@ -115,12 +115,6 @@ royal_house_reform = {
     maintain_dynasty = yes
     
     fixed_rank = 3
-
-	factions = {
-		crw_loyalists
-		crw_pragmatists
-		crw_militarists
-	}
     
     modifiers = {
         prestige = 1.00
@@ -131,6 +125,7 @@ royal_house_reform = {
     conditional = {
 		allow = { has_dlc = "Mandate of Heaven" }
 		has_meritocracy = yes
+		allow_banners = yes
 	}
     
     custom_attributes = {
@@ -533,6 +528,32 @@ valyrian_citystate_reform = {
 		enables_republic_ideagroup = yes
 	}
 }
+
+republican_dictatorship_reform = {
+	allow_normal_conversion = no
+	dictatorship = yes
+	lock_level_when_selected = yes
+	icon = "parliament_hall"
+	potential = {
+		has_reform = republican_dictatorship_reform
+	}
+	valid_for_nation_designer = no
+	legacy_equivalent = republican_dictatorship
+
+	modifiers = {
+		global_autonomy = -0.075
+		land_morale = 0.1
+		max_absolutism = 40
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+	}
+	has_term_election = no
+}
+
 military_dictatorship_reform = {
     icon = "parliament_hall"
     
@@ -1172,8 +1193,8 @@ nights_watch_reform = {
 	trigger = {
 		tag = NGT
 	}
-    
-    has_term_election = no
+
+	has_term_election = no
     
     modifiers = {
 		free_land_leader_pool = 2
@@ -1186,7 +1207,7 @@ nights_watch_reform = {
 		force_general_leader = yes
 		elections_increase_factions_influence = yes
 	}
-    
+
 	factions = {
 		nw_stewards
 		nw_builders
@@ -1636,6 +1657,12 @@ pirate_republic_reform = {
 	potential = {
 		has_reform = pirate_republic_reform
 	}
+	trigger = {
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			crown_stronger_than_estate = { estate = all }
+		}
+	}
 
     has_term_election = yes
 	duration = 4
@@ -1644,14 +1671,20 @@ pirate_republic_reform = {
     
 	modifiers = {
 		republican_tradition = -1
-		max_absolutism = -50
+		max_absolutism = 10
 		naval_forcelimit_modifier = 0.5
 		capture_ship_chance = 0.33
+		state_governing_cost = 0.75
 		may_perform_slave_raid_on_same_religion = yes
+		allowed_marine_fraction = 0.5
 	}
 	
 	custom_attributes = {
+		locked_government_type = yes
 		force_admiral_leader = yes
+		is_pirate_republic_reform = yes
+		elections_increase_factions_influence = yes
+		cannot_become_dictatorship = yes
 	}
 	
 	ai = {

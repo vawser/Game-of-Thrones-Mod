@@ -120,27 +120,27 @@ country_event = {
         
 		if = {
 			limit = {
+				is_tribal = no 
+				government = republic
+				NOT = { republican_tradition = 20 }				
+				# NOT = { is_revolutionary_republic_trigger = yes }
+				has_dlc = "Res Publica"
+				NOT = { has_government_attribute = cannot_become_dictatorship }
+			}
+			add_government_reform = republican_dictatorship_reform	
+		}
+		else_if = {
+			limit = {
 				is_free_city_government = yes
 				NOT = { republican_tradition = 20 }
 			}
 			add_government_reform = military_dictatorship_reform	
 		}
-		if = {
-			limit = {
-				is_tribal = no 
-				government = republic
-				NOT = { republican_tradition = 20 }				
-				NOT = { is_revolutionary_republic_trigger = yes }
-				has_dlc = "Res Publica"
-				NOT = { has_government_attribute = cannot_become_dictatorship }
-			}
-			add_government_reform = presidential_despot_reform	
-		}
 		else_if = {
 			limit = {
 				government = republic
 				NOT = { republican_tradition = 20 }	
-				is_revolutionary_republic_trigger = yes
+				# is_revolutionary_republic_trigger = yes
 			}
 			change_government_to_monarchy = yes
 			add_government_reform = revolutionary_empire_reform
@@ -251,7 +251,7 @@ country_event = {
 	title = GOT_ELECTIONS.101.title
 	desc = {
 		trigger = { NOT = { government = dictatorship } }	
-	desc = GOT_ELECTIONS.101.desc
+		desc = GOT_ELECTIONS.101.desc
 	}
 	desc = {
 		trigger = { government = dictatorship }

@@ -128,18 +128,8 @@ is_pirate_government = {
 }
 
 is_ruler_of_the_seven_kingdoms = {
-	if = {
-		limit = {
-			has_dlc = "Mandate of Heaven"
-		}
-		is_emperor_of_china = yes
-	}
-	else_if = {
-		limit = {
-			NOT = {
-				has_dlc = "Mandate of Heaven"
-			}
-		}
+	OR = {
+		is_emperor = yes
 		has_country_flag = seven_kingdoms_ruler
 	}
 }

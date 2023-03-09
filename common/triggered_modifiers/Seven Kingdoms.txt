@@ -1,7 +1,6 @@
 lost_control_of_kings_landing = {
 	potential = {
-		is_emperor_of_china = yes
-		has_dlc = "Mandate of Heaven"
+		is_emperor = yes
 	}
 
 	trigger = {
@@ -14,20 +13,18 @@ lost_control_of_kings_landing = {
 	imperial_mandate = -0.25
 }
 
-crumbling_authority = {
-	potential = {
-		is_emperor_of_china = yes
-		has_dlc = "Mandate of Heaven"
-	}
+# crumbling_authority = {
+# 	potential = {
+# 		is_emperor = yes
+# 		has_dlc = "Mandate of Heaven"
+# 	}
 
-	trigger = {
-		any_subject_country = {
-            is_subject_of_type = tributary_state
-            liberty_desire = 50
-        } 
-	}
+# 	trigger = {
+# 		any_subject_country = {
+#             is_subject_of_type = tributary_state
+#             liberty_desire = 50
+#         } 
+# 	}
 
-	imperial_mandate = -0.10
-}
-
-
+# 	imperial_mandate = -0.10
+# }

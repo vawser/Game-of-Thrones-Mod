@@ -10,6 +10,12 @@ on_startup = {
 		#save_global_event_target_as = Emperor
 		save_global_event_target_as = IronThroneHolder
 	}
+	if = {
+		limit = {
+			is_emperor_of_china = yes
+		}
+		save_global_event_target_as = YiTiEmperor
+	}
 	
 	# Set the first player nation as the Host Player, which will receive the single-fire player only events in multiplayer.
 	if = {
@@ -1078,35 +1084,23 @@ on_mandate_of_heaven_gained = {
 		limit = {
 			is_emperor_of_china = yes
 		}
-		save_global_event_target_as = IronThroneHolder
+		save_global_event_target_as = YiTiEmperor
 	}
 	
-	add_government_reform = royal_house_reform
+	# add_government_reform = royal_house_reform
 	set_mandate = 60
 	set_meritocracy = 60
-	westeros_superregion = {
-		limit = {
-			NOT = { is_core = ROOT }
-		}
-		add_permanent_claim = ROOT
-	}
+	# westeros_superregion = {
+	# 	limit = {
+	# 		NOT = { is_core = ROOT }
+	# 	}
+	# 	add_permanent_claim = ROOT
+	# }
 	if = {
 		limit = {
 			has_country_modifier = lost_mandate_of_heaven
 		}
 		remove_country_modifier = lost_mandate_of_heaven
-	}
-	country_event = {
-		id = GOT_SK_RANDOM.31
-		days = 365
-	}
-	country_event = {
-		id = GOT_SK_RANDOM.32
-		days = 183
-	}
-	country_event = {
-		id = GOT_SK_SYSTEM.32 #
-		days = 1825
 	}
 }
 
@@ -1117,9 +1111,9 @@ on_mandate_of_heaven_lost = {
 		log = "DEBUG - [Root.GetName], [From.GetName]: on_mandate_of_heaven_lost "
 	}
 	
-	remove_government_reform = royal_house_reform
-	add_government_reform = noble_house_reform
-	set_government_rank = 2
+	# remove_government_reform = royal_house_reform
+	# add_government_reform = noble_house_reform
+	# set_government_rank = 2
 	
 	add_country_modifier = {
 		name = lost_mandate_of_heaven
@@ -1127,12 +1121,12 @@ on_mandate_of_heaven_lost = {
 	}
 	
 	add_stability = -2
-	westeros_superregion = {
-		limit = {
-			is_permanent_claim = ROOT
-		}
-		remove_claim = ROOT
-	}
+	# westeros_superregion = {
+	# 	limit = {
+	# 		is_permanent_claim = ROOT
+	# 	}
+	# 	remove_claim = ROOT
+	# }
 }
 
 # Country

@@ -96,15 +96,10 @@ royal_house_reform = {
 		}
 	}
 	trigger = {
-		# if = {
-		# 	limit = {
-		# 		has_dlc = "Mandate of Heaven"
-		# 	}
-		# 	is_emperor_of_china = yes
-		# }
-		# else = {
+		OR = {
+			is_emperor = yes
 			tag = CRW
-		# }
+		}
 	}
 	
 	allow_normal_conversion = yes
@@ -142,13 +137,8 @@ kingdom_of_westeros_reform = {
 		}
 	}
 	trigger = {
-		if = {
-			limit = {
-				has_dlc = "Mandate of Heaven"
-			}
-			is_emperor_of_china = yes
-		}
-		else = {
+		OR = {
+			is_emperor = yes
 			tag = CRW
 		}
 	}

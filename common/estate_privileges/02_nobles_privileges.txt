@@ -962,6 +962,24 @@ estate_nobles_monopoly_of_sugar = {
 	}
 }
 
+estate_nobles_the_small_council = {
+	icon = privilege_white_knight
+	influence = 0.10
+
+	is_valid = {
+		is_emperor = yes
+	}
+	can_select = {
+		OR = {
+			is_emperor = yes
+			tag = CRW
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
 estate_nobles_the_kingsguard = {
 	icon = privilege_white_knight
 	influence = 0.05

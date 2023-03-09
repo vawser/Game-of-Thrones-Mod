@@ -30,21 +30,19 @@ fixed_capital = 226
     queen = {
         country_of_origin = F07
         name = "Rhaenys"
-        dynasty = "Targaryen" 
+        dynasty = "Targaryen"
+		birth_date = 1.1.1
         death_date = 26.6.4
         adm = 3
         dip = 3
         mil = 2
         female = yes
     }
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
+
+	hre_inheritable = yes
+	set_estate_privilege = estate_nobles_the_small_council
+	set_estate_privilege = estate_nobles_the_kingsguard
 }
 
 7.3.14 = {
@@ -65,7 +63,8 @@ fixed_capital = 226
 	queen = {
         country_of_origin = F07
         name = "Visenya"
-        dynasty = "Targaryen" 
+        dynasty = "Targaryen"
+		birth_date = 1.1.1
         death_date = 37.2.19
         adm = 3
         dip = 3
@@ -107,14 +106,7 @@ fixed_capital = 226
 		mil = 4
 		claim = 100
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 # Maegor's I Reign (fixed)
@@ -139,14 +131,7 @@ fixed_capital = 226
         mil = 4
         female = yes
     }
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 	add_queen_personality = infertile_personality
 }
 
@@ -225,14 +210,7 @@ fixed_capital = 226
 		claim = 80
 		female = yes
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 52.6.2 = {
@@ -350,14 +328,7 @@ fixed_capital = 226
 		claim = 100
         female = yes
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 105.7.20 = {
@@ -407,14 +378,7 @@ fixed_capital = 226
 		mil = 3
 		claim = 100
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 129.8.9 = {
@@ -478,14 +442,7 @@ fixed_capital = 226
 		claim = 80
 		female = yes
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 133.3.18 = {
@@ -552,14 +509,7 @@ fixed_capital = 226
 		mil = 3
 		claim = 100
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 # Baelor's I Reign (fixed)
@@ -584,14 +534,7 @@ fixed_capital = 226
         mil = 3
 		female = yes
     }
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 # Viserys's II Reign (fixed)
@@ -616,14 +559,7 @@ fixed_capital = 226
 		mil = 2
 		claim = 100
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 # Aegon's IV Reign (fixed)
@@ -660,14 +596,7 @@ fixed_capital = 226
 		mil = 5
 		claim = 100
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 # Daeron's II Reign (fixed)
@@ -703,14 +632,7 @@ fixed_capital = 226
 		dip = 3
 		mil = 3
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 209.2.8 = {
@@ -759,14 +681,7 @@ fixed_capital = 226
 		dip = 6
 		mil = 4
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 215.11.4 = {
@@ -842,14 +757,7 @@ fixed_capital = 226
 		dip = 2
 		mil = 1
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 222.6.2 = {
@@ -912,14 +820,7 @@ fixed_capital = 226
 		dip = 3
 		mil = 5
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 239.2.13 = {
@@ -970,17 +871,8 @@ fixed_capital = 226
 		dip = 0
 		mil = 1
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
-
-
 
 # Aerys' II Reign
 262.7.15 = {
@@ -1016,14 +908,7 @@ fixed_capital = 226
 		dip = 2
 		mil = 4
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 281.4.9 = {
@@ -1036,6 +921,8 @@ fixed_capital = 226
 		shock = 5
 		manuever = 3
 		siege = 0
+
+		personality = lord_commander_kingsguard_personality
 	}
 }
 
@@ -1073,14 +960,7 @@ fixed_capital = 226
 		dip = 3
 		mil = 5
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 286.4.2 = {
@@ -1130,14 +1010,7 @@ fixed_capital = 226
 		death_date = 300.1.1
 		claim = 75
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 # Tommen's I Reign (fixed)
@@ -1177,14 +1050,7 @@ fixed_capital = 226
 		death_date = 303.7.23
 		claim = 25
 	}
-	add_ruler_modifier = {
-		name = got_king_of_andals
-		duration = -1
-	}
-	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
-		duration = -1
-	}
+	add_king_titles = yes
 }
 
 # Cersei's I Reign (fixed)

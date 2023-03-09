@@ -1,4 +1,123 @@
 defined_text = {
+	name = GetIfHandOfTheKing
+
+	text = {
+		localisation_key = handoftheking_tt
+		trigger = {
+			has_global_flag = handoftheking_active
+		}
+	}
+	text = {
+		localisation_key = handoftheking_none_tt
+		trigger = {
+			NOT = { has_global_flag = handoftheking_active }
+		}
+	}
+}
+
+defined_text = {
+	name = GetIfMasterOfCoin
+
+	text = {
+		localisation_key = masterofcoin_tt
+		trigger = {
+			has_global_flag = masterofcoin_active
+		}
+	}
+	text = {
+		localisation_key = masterofcoin_none_tt
+		trigger = {
+			NOT = { has_global_flag = masterofcoin_active }
+		}
+	}
+}
+
+defined_text = {
+	name = GetIfMasterOfLaws
+
+	text = {
+		localisation_key = masteroflaws_tt
+		trigger = {
+			has_global_flag = masteroflaws_active
+		}
+	}
+	text = {
+		localisation_key = masteroflaws_none_tt
+		trigger = {
+			NOT = { has_global_flag = masteroflaws_active }
+		}
+	}
+}
+
+defined_text = {
+	name = GetIfMasterOfShips
+
+	text = {
+		localisation_key = masterofships_tt
+		trigger = {
+			has_global_flag = masterofships_active
+		}
+	}
+	text = {
+		localisation_key = masterofships_none_tt
+		trigger = {
+			NOT = { has_global_flag = masterofships_active }
+		}
+	}
+}
+
+defined_text = {
+	name = GetIfMasterOfWhisperers
+
+	text = {
+		localisation_key = masterofwhisperers_tt
+		trigger = {
+			has_global_flag = masterofwhisperers_active
+		}
+	}
+	text = {
+		localisation_key = masterofwhisperers_none_tt
+		trigger = {
+			NOT = { has_global_flag = masterofwhisperers_active }
+		}
+	}
+}
+
+defined_text = {
+	name = GetCurrentCouncilTitle
+	text = {
+		localisation_key = string_handoftheking
+		trigger = {
+			has_country_modifier = got_hand_of_the_king
+		}
+	}
+	text = {
+		localisation_key = string_masterofcoin
+		trigger = {
+			has_country_modifier = got_master_of_coin
+		}
+	}
+	text = {
+		localisation_key = string_masteroflaws
+		trigger = {
+			has_country_modifier = got_master_of_laws
+		}
+	}
+	text = {
+		localisation_key = string_masterofships
+		trigger = {
+			has_country_modifier = got_master_of_ships
+		}
+	}
+	text = {
+		localisation_key = string_masterofwhisperers
+		trigger = {
+			has_country_modifier = got_master_of_whisperers
+		}
+	}
+}
+
+defined_text = {
 	name = GetStateForm
 
 	text = {

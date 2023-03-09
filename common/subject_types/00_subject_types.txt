@@ -31,6 +31,7 @@
 # Forward declaring all subject types so they can refer to each other in triggers etc.
 vassal = {}
 feudatory = {}
+royal_subject = {}
 march = {}
 daimyo_vassal = {}
 personal_union = {}
@@ -111,6 +112,7 @@ default = {
 	manpower_to_overlord = 0.0							# Percent of subject FL to use as base for modifiers
 	sailors_to_overlord = 0.0							# Percent of subject FL to use as base for modifiers
 	military_focus = 1.0								# How much the AI subject should spend etc. on army and forts. 0 should make them spend nothing. Very high values will probably not make a big difference since there will be sanity checks.
+	annex_cost_per_development = 8.0					# annex/integrate cost per development
 
 	relative_power_class = 1 							# See description above
 	should_quit_wars_on_activation = yes
@@ -204,7 +206,7 @@ vassal = {
 	pays_overlord = 1.0
 	forcelimit_to_overlord = 0.1
 
-	relative_power_class = 1
+	relative_power_class = 2
 	should_quit_wars_on_activation = yes
 
 	restoration_cb = cb_disloyal_vassal
@@ -223,6 +225,23 @@ vassal = {
 	}
 	modifier_overlord = {
 		modifier = vassal_subject
+	}
+	modifier_overlord = {
+		modifier = pirate_subject
+		trigger = {
+			has_government_attribute = is_pirate_republic_reform
+			overlord = {
+				has_government_attribute = pirate_vassal_bonus
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = subject_tax_modifier
+		trigger = {
+			overlord = {
+				has_government_attribute = subject_tax_modifier_25
+			}
+		}
 	}
 
 	overlord_opinion_modifier = is_vassal
@@ -243,6 +262,7 @@ feudatory = {
 
 	forcelimit_to_overlord = 0.0
 
+	relative_power_class = 1
 	military_focus = 0.5
 
 	can_fight = {
@@ -275,6 +295,124 @@ feudatory = {
 
 	overlord_opinion_modifier = is_feudatory
 	subject_opinion_modifier = is_feudatory
+}
+
+royal_subject = {
+	copy_from = feudatory
+	# can_have_great_projects_moved_by_overlord = no
+
+	# Triggers:
+	is_potential_overlord = {
+		is_subject = no
+		OR = {
+			has_reform = royal_house_reform
+			has_reform = kingdom_of_westeros_reform
+			AND = {
+				has_reform = great_house_reform
+				religion_group = religion_westeros
+				technology_group = westerosi
+			}
+			has_government_attribute = has_royal_subjects
+		}
+	}
+	
+	# Graphics:
+	sprite = GFX_subject_tributary_state
+	diplomacy_overlord_sprite = GFX_diplomacy_leadtributary
+	diplomacy_subject_sprite = GFX_diplomacy_amtributary
+
+	# Properties:
+	# can_fight_independence_war = no
+	# joins_overlords_wars = no
+	# takes_diplo_slot = no
+	relative_power_class = 1
+	# should_quit_wars_on_activation = no
+	# can_send_tribute = yes
+	can_have_subjects_of_other_types = yes
+	# uses_military_focus = no
+	# overlord_protects_external = yes
+	# can_use_claims = no
+	# # share_rebel_popup = no
+	# can_transfer_in_peace = no
+	# can_set_mil_focus = no
+	# can_send_missionary_to_subject = no
+	# overlord_can_fabricate_for = no
+	# does_overlord_size_count_for_warscore_cost = no
+	# can_concentrate_development = no
+	
+	liberty_desire_development_ratio = 0.15
+	liberty_desire_negative_prestige = 1.0
+	trust_on_start = 0
+	pays_overlord = 0.0
+	
+	can_fight = {
+		independent_nations = yes
+		same_overlord = royal_subject
+		other_overlord = all
+	}
+	can_rival = {
+		independent_nations = yes
+		same_overlord = royal_subject
+		other_overlord = all
+	}
+	can_ally = {
+		independent_nations = yes
+		same_overlord = royal_subject
+		other_overlord = all
+	}
+	can_marry = {
+		independent_nations = yes
+		same_overlord = royal_subject
+		other_overlord = all
+	}
+
+	# Subject Interactions:
+	# (continuous)
+	embargo_rivals = no
+	support_loyalists = yes
+	send_officers = yes
+	divert_trade = yes
+	scutage = no
+	# (immediate)
+	placate_rulers = no
+	customize_subject = no
+	grant_province = no
+	grant_core_claim = no
+	bestow_gifts = yes
+	send_additional_troops = yes
+	demand_artifacts = yes
+	demand_additional_tribute = yes
+	conscript_general = yes
+	knowledge_sharing = no
+	block_settlement_growth = no
+	allow_settlement_growth = no
+	seize_territory = no
+	place_relative_on_throne = no
+	
+	# Modifiers:
+	modifier_subject = clear
+	modifier_subject = {
+		modifier = royal_subject_bonus
+	}
+	modifier_subject = {
+		modifier = royal_subject_reinforced_bonuses
+		trigger = {
+			overlord = {
+				has_government_attribute = strengthen_royal_subjects
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = kings_peace_subject_modifier
+		trigger = {
+			overlord = {
+				has_government_attribute = has_the_kings_peace
+			}
+		}
+	}
+	
+	overlord_opinion_modifier = is_royal_subject
+	subject_opinion_modifier = is_royal_subject
 }
 
 march = {
@@ -319,6 +457,14 @@ march = {
 		}
 		expiration_message_overlord = MARCHTOOLARGE
 		expiration_message_subject = MARCHTOOLARGEUS
+	}
+	modifier_subject = {
+		modifier = subject_tax_modifier
+		trigger = {
+			overlord = {
+				has_government_attribute = subject_tax_modifier_25
+			}
+		}
 	}
 }
 
@@ -436,6 +582,18 @@ personal_union = {
 	modifier_overlord = {
 		modifier = union_subject
 	}
+	modifier_overlord = {
+		trigger = {
+			overlord = { has_government_attribute = personal_union_war_contribution }
+		}
+		modifier = pu_overlord_bonus
+	}
+	modifier_subject = {
+		trigger = {
+			overlord = { has_government_attribute = personal_union_war_contribution }
+		}
+		modifier = pu_subject_bonus
+	}
 
 	overlord_opinion_modifier = in_union
 	subject_opinion_modifier = in_union
@@ -539,12 +697,19 @@ colony = {
 	start_colonial_war = yes
 	increase_tariffs = yes
 	decrease_tariffs = yes
+	enforce_culture = yes
 
 	# Modifiers:
 	modifier_overlord = {
 		modifier = large_colonial_nation
 		trigger = {
 			num_of_cities = 10
+		}
+	}
+	modifier_subject = {
+		modifier = new_world_exploitation_modifier
+		trigger = {
+			overlord = { has_government_attribute = extra_trade_goods_for_colonial_subjects }
 		}
 	}
 
@@ -575,6 +740,7 @@ crown_colony = {
 	takeondebt = yes
 	block_settlement_growth = yes
 	allow_settlement_growth = yes
+	enforce_culture = yes
 	
 	# Modifiers:
 	modifier_overlord = clear
@@ -604,6 +770,7 @@ private_enterprise = {
 	replace_governor = no
 	block_settlement_growth = no
 	allow_settlement_growth = no
+	enforce_culture = yes
 	
 	# Modifiers:	
 	modifier_overlord = clear
@@ -634,6 +801,7 @@ self_governing_colony = {
 	block_settlement_growth = no
 	allow_settlement_growth = no
 	press_sailors = no
+	enforce_culture = yes
 	
 	# Modifiers:	
 	modifier_overlord = clear
@@ -647,7 +815,7 @@ self_governing_colony = {
 }
 
 
-tributary_state = { # CONVERTED INTO ROYAL SUBJECT
+tributary_state = {
 	#If similar subject added check if it needs to be added to these scripted triggers:
 	#is_subject_except_tributary_trigger
 	#is_free_or_tributary_trigger
@@ -659,14 +827,8 @@ tributary_state = { # CONVERTED INTO ROYAL SUBJECT
 		has_dlc = "Mandate of Heaven"
 		is_subject = no
 		OR = {
-			has_reform = royal_house_reform
-			has_reform = kingdom_of_westeros_reform
-			AND = {
-				has_reform = great_house_reform
-				religion_group = religion_westeros
-				technology_group = westerosi
-			}
-#			has_government_attribute = has_tributaries
+			culture_group = culture_yi_ti
+			culture_group = culture_dothraki
 		}
 	}
 	
@@ -677,7 +839,6 @@ tributary_state = { # CONVERTED INTO ROYAL SUBJECT
 
 	# Properties:
 	can_fight_independence_war = no
-	has_power_projection = no
 	joins_overlords_wars = no
 	joins_colonial_wars = no
 	is_voluntary = yes
@@ -700,9 +861,11 @@ tributary_state = { # CONVERTED INTO ROYAL SUBJECT
 	does_overlord_size_count_for_warscore_cost = no
 	can_concentrate_development = no
 	
-	liberty_desire_development_ratio = 0.15
-	liberty_desire_negative_prestige = 1.0
+	liberty_desire_development_ratio = 0.175
 	trust_on_start = 0
+	
+	overlord_opinion_modifier = is_tributary
+	subject_opinion_modifier = is_tributary
 	
 	can_fight = {
 		independent_nations = yes
@@ -726,46 +889,22 @@ tributary_state = { # CONVERTED INTO ROYAL SUBJECT
 	}
 
 	# Subject Interactions:
-	# (continuous)
-	embargo_rivals = no
-	support_loyalists = yes
-	send_officers = yes
-	divert_trade = yes
 	# (immediate)
-	placate_rulers = no
-	customize_subject = no
-	grant_province = no
+	enforce_religion = no
 	grant_core_claim = no
 	bestow_gifts = yes
 	send_additional_troops = yes
 	demand_artifacts = yes
 	demand_additional_tribute = yes
-	conscript_general = yes
-	knowledge_sharing = no
 	block_settlement_growth = no
 	allow_settlement_growth = no
+	placate_rulers = no
+	knowledge_sharing = no
+	# (continuous)
+	embargo_rivals = no
 	
 	# Modifiers:
 	modifier_subject = clear # Tributaries don't get the ordinary subject_nation penalty 
-	modifier_subject = {
-		modifier = royal_subject_bonus
-	}
-	modifier_subject = {
-		modifier = royal_subject_reinforced_bonuses
-		trigger = {
-			overlord = {
-				has_government_attribute = strengthen_royal_subjects
-			}
-		}
-	}
-	modifier_subject = {
-		modifier = kings_peace_subject_modifier
-		trigger = {
-			overlord = {
-				has_government_attribute = has_the_kings_peace
-			}
-		}
-	}
 	modifier_subject = {
 		modifier = tributary_state_behind_overlord_tech_adm
 		trigger = {
@@ -790,9 +929,6 @@ tributary_state = { # CONVERTED INTO ROYAL SUBJECT
 			}
 		}
 	}
-	
-	overlord_opinion_modifier = is_royal_subject
-	subject_opinion_modifier = is_royal_subject
 }
 
 # Completely scripted subject type (no code used). Add any number of these. Check common/new_diplomatic_actions for how to make visible in game.

@@ -6,19 +6,9 @@ on_startup = {
 	}
 	
 	# Set Iron Throne holder
-	if = {
-		limit = {
-			is_emperor_of_china = yes
-		}
-		save_global_event_target_as = IronThroneHolder
-		add_faction = crw_loyalists
-		add_faction = crw_pragmatists
-		add_faction = crw_militarists
-	}
-	
-	# UNUSED - Set Emperor
 	emperor = {
-		save_global_event_target_as = Emperor
+		#save_global_event_target_as = Emperor
+		save_global_event_target_as = IronThroneHolder
 	}
 	
 	# Set the first player nation as the Host Player, which will receive the single-fire player only events in multiplayer.
@@ -445,17 +435,10 @@ on_new_monarch = {
 			OR = {
 				tag = CRW
 				tag = WST
-				is_emperor_of_china = yes
+				is_emperor = yes
 			}
 		}
-		add_ruler_modifier = {
-			name = got_king_of_andals
-			duration = -1
-		}
-		add_ruler_modifier = {
-			name = got_lord_of_seven_kingdoms
-			duration = -1
-		}
+		add_king_titles = yes
 	}
 	
 	if = {
@@ -517,44 +500,53 @@ on_monarch_death = {
 		remove_country_modifier = sought_after_bachelor
 	}
 
-	# Remove country from Small Council
+	# In case of death of current council member, this will clear
+	# all flags and event targets as well as ruler modifiers
+	# Hand of the King
 	if = {
 		limit = {
 			has_country_modifier = got_hand_of_the_king
 		}
 		remove_country_modifier = got_hand_of_the_king
+		clr_global_flag = handoftheking_active
+		clear_global_event_target = et_handoftheking
 	}
+	# Master of Coin
 	if = {
 		limit = {
 			has_country_modifier = got_master_of_coin
 		}
 		remove_country_modifier = got_master_of_coin
+		clr_global_flag = masterofcoin_active
+		clear_global_event_target = et_masterofcoin
 	}
+	# Master of Laws
 	if = {
 		limit = {
 			has_country_modifier = got_master_of_laws
 		}
 		remove_country_modifier = got_master_of_laws
+		clr_global_flag = masteroflaws_active
+		clear_global_event_target = et_masteroflaws
 	}
+	# Master of Ships
 	if = {
 		limit = {
 			has_country_modifier = got_master_of_ships
 		}
 		remove_country_modifier = got_master_of_ships
+		clr_global_flag = masterofships_active
+		clear_global_event_target = et_masterofships
 	}
+	# Master of Whisperers
 	if = {
 		limit = {
 			has_country_modifier = got_master_of_whisperers
 		}
 		remove_country_modifier = got_master_of_whisperers
+		clr_global_flag = masterofwhisperers_active
+		clear_global_event_target = et_masterofwhisperers
 	}
-	if = {
-		limit = {
-			has_country_modifier = got_lord_commander_of_the_kingsguard
-		}
-		remove_country_modifier = got_lord_commander_of_the_kingsguard
-	}
-	
 }
 
 # Country
@@ -837,7 +829,7 @@ on_successive_emperor = {
 	}
 	
 	emperor = {
-		add_imperial_influence = 5
+		save_global_event_target_as = IronThroneHolder
 	}
 }
 
@@ -847,27 +839,27 @@ on_emperor_elected = {
 		limit = { has_global_flag = enable_onaction_logging }
 		log = "DEBUG - [Root.GetName]: on_emperor_elected "
 	}
-	
+
+	emperor = {
+		save_global_event_target_as = Emperor
+	}
+
 	every_elector = {
 		if = {
 			limit = {
 				preferred_emperor = root
 			}
 			change_variable = {
-				which = supported_successive_emperors
+				which = supported_successive_kings
 				value = 1
 			}
 		}
 		else = {
 			set_variable = {
-				which = supported_successive_emperors
+				which = supported_successive_kings
 				value = 0
 			}
 		}
-	}
-
-	emperor = {
-		save_global_event_target_as = Emperor
 	}
 }
 
@@ -1092,10 +1084,6 @@ on_mandate_of_heaven_gained = {
 	add_government_reform = royal_house_reform
 	set_mandate = 60
 	set_meritocracy = 60
-	add_country_modifier = {
-		name = new_iron_throne_holder
-		duration = 9125
-	}
 	westeros_superregion = {
 		limit = {
 			NOT = { is_core = ROOT }
@@ -1144,12 +1132,6 @@ on_mandate_of_heaven_lost = {
 			is_permanent_claim = ROOT
 		}
 		remove_claim = ROOT
-	}
-	if = {
-		limit = {
-			has_country_modifier = new_iron_throne_holder
-		}
-		remove_country_modifier = new_iron_throne_holder
 	}
 }
 

@@ -1,9 +1,4 @@
 # -------------- Seven Kingdoms --------------
-
-new_iron_throne_holder = {
-	imperial_mandate = 0.05
-}
-
 got_king_of_andals = {
 	legitimacy = 1
 	diplomatic_reputation = 1
@@ -16,25 +11,22 @@ got_lord_of_seven_kingdoms = {
 	stability_cost_modifier = -0.025
 }
 
-got_protector_of_realm = {
+got_protector_of_the_realm = {
 	country_military_power = 1
 }
 
 got_hand_of_the_king = {
-	local_unrest = -1
+	prestige = 0.50
+	stability_cost_modifier = -0.075
 }
-
-got_grand_maester = {
-
-}
-
+-
 got_master_of_coin = {
 	tax_income = 12
 	global_tax_modifier = 0.15
 }
 
 got_master_of_laws = {
-	local_unrest = -1
+	local_unrest = -2
 }
 
 got_master_of_ships = {
@@ -43,11 +35,8 @@ got_master_of_ships = {
 }
 
 got_master_of_whisperers = {
-
-}
-
-got_lord_commander_of_the_kingsguard = {
-
+	spy_offence = 0.33
+	global_spy_defence = 0.10
 }
 
 punitive_ideology = {

@@ -1,31 +1,55 @@
-# gov_noble_house_dornish = {
-# 	rank = {
-# 		1 = NOBLE_HOUSE
-# 		2 = NOBLE_HOUSE
-# 		3 = NOBLE_HOUSE
-# 	}
+gov_prince_of_dragonstone = {
+	rank = {
+		1 = PRINCEDOM
+		2 = PRINCEDOM
+		3 = GRAND_PRINCEDOM
+	}
+
+	ruler_male = {
+		1 = KING
+        2 = KING
+        3 = KING
+	}
 	
-# 	ruler_male = {
-# 		1 = PRINCE
-# 		2 = PRINCE
-# 		3 = PRINCE
-# 	}
+	ruler_female = {
+		1 = QUEEN
+        2 = QUEEN
+        3 = QUEEN
+	}
+
+	consort_male = {
+		1 = KINGCONSORT
+		2 = KINGCONSORT
+		3 = KINGCONSORT
+	}
 	
-# 	ruler_female = {
-# 		1 = PRINCESS
-# 		2 = PRINCESS
-# 		3 = PRINCESS
-# 	}
-	
-# 	trigger = {
-# 		has_reform = noble_house_reform
-# 		OR = {
-# 			primary_culture = salt_dornish
-# 			primary_culture = sand_dornish
-# 			primary_culture = stone_dornish
-# 		}
-# 	}
-# }
+	consort_female = {
+		1 = QUEENCONSORT
+		2 = QUEENCONSORT
+		3 = QUEENCONSORT
+	}
+
+	heir_male = {
+		1 = PRINCE
+		2 = PRINCE
+		3 = PRINCE
+	}
+
+	heir_female = {
+		1 = PRINCESS
+		2 = PRINCESS
+		3 = PRINCESS
+	}
+
+	trigger = {
+		has_reform = noble_house_reform
+		tag = A39
+		is_subject_of_type_with_overlord = {
+			who = CRW
+			type = personal_union
+		}
+	}
+}
 
 gov_noble_house = {
 	rank = {
@@ -198,6 +222,30 @@ gov_royal_house = {
 		1 = QUEEN
         2 = QUEEN
         3 = QUEEN
+	}
+
+	consort_male = {
+		1 = KINGCONSORT
+		2 = KINGCONSORT
+		3 = KINGCONSORT
+	}
+	
+	consort_female = {
+		1 = QUEENCONSORT
+		2 = QUEENCONSORT
+		3 = QUEENCONSORT
+	}
+
+	heir_male = {
+		1 = PRINCE
+		2 = PRINCE
+		3 = PRINCE
+	}
+
+	heir_female = {
+		1 = PRINCESS
+		2 = PRINCESS
+		3 = PRINCESS
 	}
 	
 	trigger = {

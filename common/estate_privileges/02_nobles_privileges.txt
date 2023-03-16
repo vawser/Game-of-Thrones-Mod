@@ -996,16 +996,14 @@ estate_nobles_the_kingsguard = {
 		}
 	}
 	on_granted = {
-		add_prestige = 5
 		custom_tooltip = estate_nobles_the_kingsguard.granted_tt
 	}
 	on_revoked = {
-		add_prestige = -10
 		custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
 	}
 	benefits = {
 		land_morale = 0.025
-		free_land_leader_pool = -1
+		free_land_leader_pool = 1
 	}
 	ai_will_do = {
 		factor = 1
@@ -1028,16 +1026,14 @@ estate_nobles_the_queensguard = {
 		}
 	}
 	on_granted = {
-		add_prestige = 5
 		custom_tooltip = estate_nobles_the_queensguard.granted_tt
 	}
 	on_revoked = {
-		add_prestige = -10
 		custom_tooltip = estate_nobles_the_queensguard.revoked_tt
 	}
 	benefits = {
 		land_morale = 0.025
-		free_land_leader_pool = -1
+		free_land_leader_pool = 1
 	}
 	ai_will_do = {
 		factor = 1

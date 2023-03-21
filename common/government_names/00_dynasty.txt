@@ -6,48 +6,20 @@ gov_prince_of_dragonstone = {
 	}
 
 	ruler_male = {
-		1 = KING
-        2 = KING
-        3 = KING
+		1 = CASTELLAN
+        2 = CASTELLAN
+        3 = CASTELLAN
 	}
 	
 	ruler_female = {
-		1 = QUEEN
-        2 = QUEEN
-        3 = QUEEN
-	}
-
-	consort_male = {
-		1 = KINGCONSORT
-		2 = KINGCONSORT
-		3 = KINGCONSORT
-	}
-	
-	consort_female = {
-		1 = QUEENCONSORT
-		2 = QUEENCONSORT
-		3 = QUEENCONSORT
-	}
-
-	heir_male = {
-		1 = PRINCE
-		2 = PRINCE
-		3 = PRINCE
-	}
-
-	heir_female = {
-		1 = PRINCESS
-		2 = PRINCESS
-		3 = PRINCESS
+		1 = CASTELLAN
+        2 = CASTELLAN
+        3 = CASTELLAN
 	}
 
 	trigger = {
-		has_reform = noble_house_reform
+		has_reform = castellany_of_dragonstone_reform
 		tag = A39
-		is_subject_of_type_with_overlord = {
-			who = CRW
-			type = personal_union
-		}
 	}
 }
 
@@ -83,7 +55,10 @@ gov_noble_house = {
 	}
 	
 	trigger = {
-        has_reform = noble_house_reform
+        OR = {
+			has_reform = noble_house_reform
+			has_reform = lord_of_the_tides_reform
+		}
 	}
 }
 

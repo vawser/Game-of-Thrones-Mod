@@ -39,7 +39,7 @@ kingdom_reform = {
 	}
 }
 noble_house_reform = {
-	icon = "castle"
+	icon = "small_castle"
 	
 	potential = {
 		has_reform = noble_house_reform
@@ -59,8 +59,36 @@ noble_house_reform = {
 		governing_capacity_modifier = -0.10
 	}
 }
+lord_of_the_tides_reform = {
+	icon = "lord_of_the_tides"
+	
+	potential = {
+		OR = {
+			has_reform = lord_of_the_tides_reform
+			has_reform = noble_house_reform
+		}
+	}
+
+	trigger = {
+		dynasty = "Velaryon"
+		capital = 220
+	}
+	
+	allow_normal_conversion = yes
+	legacy_equivalent = noble_house_legacy
+	
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	maintain_dynasty = yes
+	
+	modifiers = {
+		naval_forcelimit = 20
+		naval_forcelimit_modifier = 1.0
+		naval_maintenance_modifier = -0.80
+	}
+}
 great_house_reform = {
-	icon = "castle"
+	icon = "majestic_castle"
 	
 	potential = {
 		has_reform = great_house_reform
@@ -87,7 +115,7 @@ great_house_reform = {
 	}
 }
 royal_house_reform = {
-	icon = "royal_house"
+	icon = "kings_landing"
 	
 	potential = {
 		OR = {
@@ -518,16 +546,45 @@ valyrian_citystate_reform = {
 	}
 }
 
+castellany_of_dragonstone_reform = {
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	icon = "small_castle"
+	potential = {
+		has_reform = castellany_of_dragonstone_reform
+	}
+	
+	allow_normal_conversion = yes
+	legacy_equivalent = noble_house_legacy
+	has_term_election = no
+	
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	modifiers = {
+		prestige = 0.25
+		land_morale = 0.10
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+		enables_monarchy_ideagroup = yes
+	}
+}
+
 republican_dictatorship_reform = {
 	allow_normal_conversion = no
 	dictatorship = yes
 	lock_level_when_selected = yes
 	icon = "parliament_hall"
+
 	potential = {
 		has_reform = republican_dictatorship_reform
 	}
+
 	valid_for_nation_designer = no
 	legacy_equivalent = republican_dictatorship
+	has_term_election = no
 
 	modifiers = {
 		global_autonomy = -0.075
@@ -540,18 +597,16 @@ republican_dictatorship_reform = {
 		enables_plutocratic_idea_group = yes
 		enables_aristocratic_idea_group = no
 	}
-	has_term_election = no
 }
 
 military_dictatorship_reform = {
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	icon = "parliament_hall"
-	
+
 	potential = {
 		has_reform = military_dictatorship_reform
 	}
-	
-	allow_normal_conversion = no
-	lock_level_when_selected = yes
 	
 	valid_for_nation_designer = yes
 	legacy_equivalent = military_dictatorship_legacy

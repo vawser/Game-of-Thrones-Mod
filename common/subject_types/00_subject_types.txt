@@ -297,6 +297,46 @@ feudatory = {
 	subject_opinion_modifier = is_feudatory
 }
 
+castellany = {
+	copy_from = feudatory
+
+	# Graphics:
+	sprite = GFX_icon_vassal
+	diplomacy_overlord_sprite = GFX_diplomacy_leadvassal
+	diplomacy_subject_sprite = GFX_diplomacy_amvassal
+
+	# Properties:
+	replace_governor = yes
+	grant_core_claim = no
+	grant_province = no
+	allow_settlement_growth = no
+	block_settlement_growth = no
+	seize_territory = no
+	place_relative_on_throne = no
+
+	base_liberty_desire = -20
+	forcelimit_to_overlord = 1.0
+
+	relative_power_class = 1
+	military_focus = 0.25
+
+	# Modifiers:
+	modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
+	modifier_subject = clear #Ditto
+	modifier_subject = {
+		modifier = subject_nation
+	}
+	modifier_subject = {
+		modifier = feudatory_nation
+	}
+#	modifier_overlord = {
+#		modifier = feudatory_subject # LEFT OUT FOR POSSIBLE FUTURE USE
+#	}
+
+	overlord_opinion_modifier = is_feudatory
+	subject_opinion_modifier = is_feudatory
+}
+
 royal_subject = {
 	copy_from = feudatory
 	# can_have_great_projects_moved_by_overlord = no

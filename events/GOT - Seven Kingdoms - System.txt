@@ -1,119 +1,259 @@
 namespace = GOT_SK_SYSTEM
 
-# War Won
+# New Monarch (King/Queen)
 country_event = {
 	id = GOT_SK_SYSTEM.1
-	title = GOT_SK_SYSTEM.1.title
-	desc = GOT_SK_SYSTEM.1.desc
-	picture = GOOD_WITH_MONARCH_eventPicture
+	title = "GOT_SK_SYSTEM.1.title"
+	desc = {
+		trigger = {
+			is_female = no
+		}
+		desc = "GOT_SK_SYSTEM.1.desc.m"
+	}
+	desc = {
+		trigger = {
+			is_female = yes
+		}
+		desc = "GOT_SK_SYSTEM.1.desc.f"
+	}
+	picture = STREET_SPEECH_eventPicture
 	
 	is_triggered_only = yes
 	
 	trigger = {
 		is_emperor = yes
-		NOT = { has_country_flag = iron_throne_transition }
+		has_regency = no
 	}
 	
 	option = {
 		name = GOT_SK_SYSTEM.1.option.a
-
-		add_imperial_influence = 5
-	}  
+		add_legitimacy = 5
+	}
+	option = {
+		name = GOT_SK_SYSTEM.1.option.b
+		add_prestige = 10
+	}
+	
 }
 
-# War Lost
+# New Heir (Prince/Princess)
 country_event = {
 	id = GOT_SK_SYSTEM.2
 	title = GOT_SK_SYSTEM.2.title
-	desc = GOT_SK_SYSTEM.2.desc
-	picture = BAD_WITH_MONARCH_eventPicture
+	desc = {
+		trigger = {
+			OR = {
+				owns_or_subject_of = 221
+				221 = {
+					owner = {
+						is_part_of_hre = yes
+					}
+				}
+			}
+		}
+		desc = GOT_SK_SYSTEM.2.desc.a
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				OR = {
+					owns_or_subject_of = 221
+					221 = {
+						owner = {
+							is_part_of_hre = yes
+						}
+					}
+				}
+			}
+		}
+		desc = GOT_SK_SYSTEM.2.desc.b
+	}
+	picture = NEW_HEIR_eventPicture
 	
 	is_triggered_only = yes
 	
 	trigger = {
 		is_emperor = yes
-		NOT = { has_country_flag = iron_throne_transition }
+		has_regency = no
 	}
 	
 	option = {
 		name = GOT_SK_SYSTEM.2.option.a
-
-		add_imperial_influence = -10
-	}  
-}
-
-# New Monarch
-country_event = {
-	id = GOT_SK_SYSTEM.3
-	title = GOT_SK_SYSTEM.3.title
-	desc = GOT_SK_SYSTEM.3.desc
-	picture = GOOD_WITH_MONARCH_eventPicture
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		is_emperor = yes
-		is_female = no
-		adm = 3
-		dip = 3
-		mil = 3
-		NOT = {
-			adm = 5
-			dip = 5
-			mil = 5
+		trigger = {
+			OR = {
+				owns_or_subject_of = 221
+				221 = {
+					owner = {
+						is_part_of_hre = yes
+					}
+				}
+			}
+		}
+		add_ruler_modifier = {
+			name = got_prince_of_dragonstone
+			duration = -1
+			desc = ascension_ruler_desc
+		}
+		if = { # Dragonstone exists and is a Castellany
+			limit = {
+				A39 = {
+					owns = 221 # Dragonstone
+					is_part_of_hre = yes
+					is_subject_of_type_with_overlord = {
+						who = ROOT
+						type = castellany
+					}
+				}
+			}
+			custom_tooltip = GOT_SK_SYSTEM.2.CAS1
+			add_legitimacy = 10
+			add_heir_claim = 20
+		}
+		else_if = { # Dragonstone exists but isn't a Castellany
+			limit = {
+				A39 = {
+					owns = 221
+					is_part_of_hre = yes
+					NOT = {
+						is_subject_of_type_with_overlord = {
+							who = ROOT
+							type = castellany
+						}
+					}
+				}
+			}
+			custom_tooltip = GOT_SK_SYSTEM.2.CAS2
+			hidden_effect = {
+				A39 = {
+					change_government = republic
+					add_government_reform = castellany_of_dragonstone_reform
+					set_country_flag = prince_of_dragonstone_flag
+				}
+				create_subject = {
+					subject_type = castellany
+					subject = A39
+				}
+			}
+		}
+		else_if = { # Dragonstone is owned and controlled by us
+			limit = {
+				owns = 221
+			}
+			if = {
+				limit = {
+					A39 = { exists = no }
+				}
+				custom_tooltip = GOT_SK_SYSTEM.2.CAS3a
+				hidden_effect = {
+					221 = { cede_province = A39 }
+					A39 = {
+						change_government = republic
+						add_government_reform = castellany_of_dragonstone_reform
+						set_country_flag = prince_of_dragonstone_flag
+					}
+					create_subject = {
+						subject_type = castellany
+						subject = A39
+					}
+				}
+			}
+			else = {
+				221 = {
+					add_province_modifier = {
+						name = got_local_castellany
+						duration = -1
+					}
+				}
+				custom_tooltip = GOT_SK_SYSTEM.2.CAS3b
+			}
+		}
+		else_if = { # Dragonstone is ruled by a Westeros lord or our subject
+			limit = {
+				221 = {
+					owner = {
+						NOT = { tag = A39 }
+						OR = {
+							is_part_of_hre = yes
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					A39 = { exists = no }
+				}
+				custom_tooltip = GOT_SK_SYSTEM.2.CAS4
+				hidden_effect = {
+					221 = { cede_province = A39 }
+					A39 = {
+						change_government = republic
+						add_government_reform = castellany_of_dragonstone_reform
+						set_country_flag = prince_of_dragonstone_flag
+					}
+					create_subject = {
+						subject_type = castellany
+						subject = A39
+					}
+				}
+			}
+			else = {
+				221 = {
+					cede_province = ROOT
+					add_province_modifier = {
+						name = got_local_castellany
+						duration = -1
+					}
+				}
+				custom_tooltip = GOT_SK_SYSTEM.2.CAS3b 
+			}
 		}
 	}
-	
+
 	option = {
-		name = GOT_SK_SYSTEM.3.option.a
-
-		add_mandate = 10
-	}  
-}
-
-# New Monarch - Female
-country_event = {
-	id = GOT_SK_SYSTEM.4
-	title = GOT_SK_SYSTEM.4.title
-	desc = GOT_SK_SYSTEM.4.desc
-	picture = BAD_WITH_MONARCH_eventPicture
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		is_emperor = yes
-		is_female = yes
+		name = GOT_SK_SYSTEM.2.option.b
+		trigger = {
+			NOT = {
+				OR = {
+					owns_or_subject_of = 221
+					221 = {
+						owner = {
+							is_part_of_hre = yes
+						}
+					}
+				}
+			}
+		}
+		add_ruler_modifier = {
+			name = got_prince_of_westeros
+			duration = -1
+			desc = ascension_ruler_desc
+		}
+		custom_tooltip = GOT_SK_SYSTEM.2.CAS5 # Dragonstone is not ruled by us or a subject
 	}
-	
-	option = {
-		name = GOT_SK_SYSTEM.4.option.a
-
-		add_mandate = -10
-	}  
 }
 
-# New Monarch
+# Remove Castellany from Dragonstone if not subject
 country_event = {
-	id = GOT_SK_SYSTEM.5
-	title = GOT_SK_SYSTEM.5.title
-	desc = GOT_SK_SYSTEM.5.desc
+	id = GOT_SK_SYSTEM.3
+	title = GOT_SK_SYSTEM.10.title
+	desc = GOT_SK_SYSTEM.10.desc
 	picture = GOOD_WITH_MONARCH_eventPicture
-	
-	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
 	
 	trigger = {
-		is_emperor_of_china = yes
-		is_female = no
-		adm = 5
-		dip = 5
-		mil = 5
+		tag = A39
+		NOT = { government = dynasty }
 	}
 	
 	option = {
-		name = GOT_SK_SYSTEM.5.option.a
-
-		add_mandate = 15
-	}  
+		name = GOT_SK_SYSTEM.10.option.a
+		change_government = dynasty
+		add_government_reform = noble_house_reform
+	}
 }
 
 # Swing
@@ -134,12 +274,12 @@ country_event = {
 		name = GOT_SK_SYSTEM.10.option.a
 
 		add_mandate = -10
-	} 
+	}
 	option = {
 		name = GOT_SK_SYSTEM.10.option.b
 
 		add_years_of_income = -1
-	}  
+	}
 }
 
 # Swing
@@ -406,45 +546,5 @@ country_event = {
 			}
 			grant_independence = yes
 		}
-	}
-}
-
-# Ideology for Seven Kingdoms
-country_event = {
-	id = GOT_SK_SYSTEM.32
-	title = GOT_SK_SYSTEM.32.title
-	desc = GOT_SK_SYSTEM.32.desc
-	picture = IMPERIAL_EXAMINATION_eventPicture
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		is_emperor_of_china = yes
-		has_dlc = "Mandate of Heaven"
-		NOT = { has_country_flag = reacted_to_ideology_event }
-	}
-	
-	immediate = {
-		hidden_effect = {
-			set_country_flag = reacted_to_ideology_event
-		}
-	}
-	
-	option = {
-		name = GOT_SK_SYSTEM.32.option.a
-		ai_chance = { factor = 100 }
-		reduce_meritocracy_effect = yes
-		add_stability = -1
-		add_country_modifier = {
-			name = punitive_ideology
-			duration = 7300
-		}
-	}
-	
-	option = {
-		name = GOT_SK_SYSTEM.32.option.b
-		ai_chance = { factor = 0 }
-		add_meritocracy_effect = yes
-		add_mandate_effect = yes
 	}
 }

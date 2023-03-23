@@ -50,25 +50,23 @@
  #---------------------
  # Events
  #---------------------
- GOT_SK_SYSTEM.1.title: "Victory for [Root.Monarch.GetTitle] [Root.Monarch.GetName]"
- GOT_SK_SYSTEM.1.desc: "The [Root.Monarch.GetTitle] diplayed great competence during the recent war, much to the suprise of many nobles. This grants the Royal House more legitimacy and influence amoungst the lesser lords."
- GOT_SK_SYSTEM.1.option.a: "Great"
- 
- GOT_SK_SYSTEM.2.title: "Defeat for [Root.Monarch.GetTitle] [Root.Monarch.GetName]"
- GOT_SK_SYSTEM.2.desc: "The [Root.Monarch.GetTitle] diplayed miserable incompetence during the recent war, meeting the expectations of many nobles. This will reduce the legitimacy of the Royal House and its influence amoungst the lesser lords."
- GOT_SK_SYSTEM.2.option.a: "..."
- 
- GOT_SK_SYSTEM.3.title: "[Root.Monarch.GetTitle] [Root.Monarch.GetName] the Good"
- GOT_SK_SYSTEM.3.desc: "Known for his intellect, [Root.Monarch.GetName] succession to [Root.Monarch.GetTitle] has been met by much of the nobility with much applause, and as such grants the Royal House more legitimacy and influence amoungst the lesser lords."
- GOT_SK_SYSTEM.3.option.a: "Great"
- 
- GOT_SK_SYSTEM.4.title: "[Root.Monarch.GetTitle] [Root.Monarch.GetName]"
- GOT_SK_SYSTEM.4.desc: "As a [Root.Monarch.GetTitle], [Root.Monarch.GetName] succession to the Iron Throne has caused upset amoungst much of the nobility, and as such reduces the legitimacy of the Royal House and its influence amoungst the lesser lords."
- GOT_SK_SYSTEM.4.option.a: "..."
- 
- GOT_SK_SYSTEM.5.title: "[Root.Monarch.GetTitle] [Root.Monarch.GetName] the Great"
- GOT_SK_SYSTEM.5.desc: "Known for his exceptional intellect, [Root.Monarch.GetName] succession to [Root.Monarch.GetTitle] has been met by much of the nobility with much applause, and as such grants the Royal House more legitimacy and influence amoungst the lesser lords."
- GOT_SK_SYSTEM.5.option.a: "Great"
+ GOT_SK_SYSTEM.1.title: "Ascension of [Root.Monarch.GetTitle] [Root.Monarch.GetName]"
+ GOT_SK_SYSTEM.1.desc.m: "Members of House [Root.Monarch.Dynasty.GetName] and the high lords currently in [Root.Capital.GetName] are summoned to the Red Keep due to an emergency. After several hours of seclusion, the news is announced to the commonfolk and word spreads quickly. The speech ends with the unnerving declaration "Long live the King!" as [Root.Monarch.GetTitle] [Root.Monarch.GetName] ascends to the Iron Throne and takes up the responsiblities of [Root.Monarch.GetHerHis] predecessor.\n\nDespite the tragedy, the realm must move forward and we must make preparations for two important events; a funeral for the predecessor and coronation for the successor..."
+ GOT_SK_SYSTEM.1.desc.f: "Members of House [Root.Monarch.Dynasty.GetName] and the high lords currently in [Root.Capital.GetName] are summoned to the Red Keep due to an emergency. After several hours of seclusion, the news is announced to the commonfolk and word spreads quickly. The speech ends with the unnerving declaration "Long live the Queen!" as [Root.Monarch.GetTitle] [Root.Monarch.GetName] ascends to the Iron Throne and takes up the responsiblities of [Root.Monarch.GetHerHis] predecessor.\n\nDespite the tragedy, the realm must move forward and we must make preparations for two important events; a funeral for the predecessor and coronation for the successor..."
+ GOT_SK_SYSTEM.1.option.a: "Huzzah!"
+ GOT_SK_SYSTEM.1.option.b: "The realm must mourn."
+
+ GOT_SK_SYSTEM.2.title: "The Royal Heir, [Root.Heir.GetTitle] [Root.Heir.GetName]"
+ GOT_SK_SYSTEM.2.desc.a: "The succession is secured! We can rest easy knowing that the [Root.Heir.GetTitle] of Dragonstone is safe in our court. However, we must formalize [Root.Heir.GetHerHis] title so all the lords of Westeros address [Root.Heir.GetHerHim] appropriately."
+ GOT_SK_SYSTEM.2.desc.b: "The succession is secured! Despite [221.GetName] not being in our sphere of influence, that cannot allow any lord of Westeros to belittle the royal heir for not being annointed the [Root.Heir.GetTitle] of Dragonstone. For now, [Root.Heir.GetTitle] of Westeros will have to do."
+ GOT_SK_SYSTEM.2.option.a: "[Root.Heir.GetSheHeCap]§! is the [Root.Heir.GetTitle] of Dragonstone!"
+ GOT_SK_SYSTEM.2.option.b: "[Root.Heir.GetSheHeCap]§! is the [Root.Heir.GetTitle] of Westeros!"
+ GOT_SK_SYSTEM.2.CAS1: "The @A39 §YCastellany of [A39.GetName]§! will continue to govern [221.GetName] on behalf of [Root.Heir.GetTitle] [Root.Heir.GetName].\n"
+ GOT_SK_SYSTEM.2.CAS2: "The Lord of [221.GetName] (§Y[221.Owner.Monarch.GetName] [221.Owner.Monarch.Dynasty.GetName]§!) will govern [221.GetName] as a §YCastellany§! on behalf of [Root.Heir.GetTitle] [Root.Heir.GetName].\n"
+ GOT_SK_SYSTEM.2.CAS3a: "The province of [221.GetName] will be released as a subject nation (@A39 §YCastellany of [A39.GetName]§!) and governed by a §YCastellan§! on behalf of [Root.Heir.GetTitle] [Root.Heir.GetName].\n"
+ GOT_SK_SYSTEM.2.CAS3b: "The province of [221.GetName] will be governed by a §YCastellan§! on behalf of [Root.Heir.GetTitle] [Root.Heir.GetName].\n"
+ GOT_SK_SYSTEM.2.CAS4: "The current Lord of [221.GetName] (@[221.Owner.GetTag] §Y[221.Owner.Monarch.GetTitle] of [221.Owner.GetName]§!) will be stripped of [221.Owner.Monarch.GetHerHis] title.\nThe province of [221.GetName] will be released as a subject nation (@A39 §YCastellany of [A39.GetName]§!) and governed by a §YCastellan§! on behalf of [Root.Heir.GetTitle] [Root.Heir.GetName].\n"
+ GOT_SK_SYSTEM.2.CAS5: "Since §Y[221.GetName]§! is not owned by us or a subject house, [Root.Heir.GetTitle] [Root.Heir.GetName] will simply be a §Y[Root.Heir.GetTitle] of Westeros§!."
  
  GOT_SK_SYSTEM.10.title: "Noblilty Upset over Taxation"
  GOT_SK_SYSTEM.10.desc: "Prominent nobles in our subjects have become upset over the level of taxation we demand from them and their peasants. They threaten to distance themselves from the crown unless we agree to reduce taxation down to a more acceptable level."
@@ -102,11 +100,6 @@
  GOT_SK_SYSTEM.31.desc: "With the fall of [From.Capital.GetCapitalName], the former [From.owner.Monarch.GetTitle] of the Seven Kingdoms has been crushed. Let us claim the mantle of the Iron Throne as our own."
  GOT_SK_SYSTEM.31.option.a: "Let us claim the throne as our own"
  GOT_SK_SYSTEM.31.option.b: "Break the wheel!"
- 
- GOT_SK_SYSTEM.32.title: "An Ideology for the Seven Kingdoms"
- GOT_SK_SYSTEM.32.desc: "By assuming the mantle of Seven Kingdoms we have taken a step into an unbroken tradition. [Root.GetName] has inherited a number of institutions, such as the Red Keep and the concept of royal authority.\nAs the new ruler of the Seven Kingdoms it is up to us to which degree we wish to integrate the former tradition with our own, but embracing the former philosophy would likely both help us rule the vast empire we now claim and strengthen our Royal Authority in the mind of the public."
- GOT_SK_SYSTEM.32.option.a: "[Root.Monarch.GetTitle] is King!"
- GOT_SK_SYSTEM.32.option.b: "We will not dishonor the former royal family."
  
  #---------------------
  # Random Events

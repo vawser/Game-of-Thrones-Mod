@@ -317,17 +317,6 @@ integrationaction = {
 			NOT = { has_government_attribute = cannot_integrate_personal_unions }
 		}
 	}
-	condition = {
-		tooltip = PRINCE_OF_DRAGONSTONE_TT
-		potential = {
-			FROM = {
-				has_country_flag = prince_of_dragonstone_flag
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
 	
 	condition = {
 		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
@@ -923,17 +912,6 @@ abandon_union_action = {
 		}
 		allow = {
 			NOT = { has_government_attribute = cannot_abandon_personal_unions }
-		}
-	}
-	condition = {
-		tooltip = PRINCE_OF_DRAGONSTONE_TT
-		potential = {
-			FROM = {
-				has_country_flag = prince_of_dragonstone_flag
-			}
-		}
-		allow = {
-			always = no
 		}
 	}
 }

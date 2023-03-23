@@ -4,8 +4,7 @@ enforce_rule_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        government = republic
-		has_government_attribute = is_pirate_republic_reform
+        OR = { has_reform = pirate_republic_reform has_reform = pirate_kingdom_reform }
 	}
 	trigger = {
 		always = yes
@@ -24,8 +23,7 @@ raid_local_villages_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        government = republic
-		has_government_attribute = is_pirate_republic_reform
+        OR = { has_reform = pirate_republic_reform has_reform = pirate_kingdom_reform }
 	}
 	trigger = {
         always = yes
@@ -44,8 +42,7 @@ display_wealth_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        government = republic
-		has_government_attribute = is_pirate_republic_reform
+        OR = { has_reform = pirate_republic_reform has_reform = pirate_kingdom_reform }
 	}
 	trigger = {
 		always = yes
@@ -64,8 +61,7 @@ impress_travelers_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        government = republic
-		has_government_attribute = is_pirate_republic_reform
+        OR = { has_reform = pirate_republic_reform has_reform = pirate_kingdom_reform }
 	}
 	trigger = {
         num_of_ports = 1
@@ -84,8 +80,7 @@ purchase_slaves_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        government = republic
-		has_government_attribute = is_pirate_republic_reform
+        OR = { has_reform = pirate_republic_reform has_reform = pirate_kingdom_reform }
 	}
 	trigger = {
         always = yes
@@ -104,8 +99,7 @@ explore_the_high_seas_action = {
     
 	potential = {
 		has_dlc = "Rights of Man"
-        government = republic
-		has_government_attribute = is_pirate_republic_reform
+        OR = { has_reform = pirate_republic_reform has_reform = pirate_kingdom_reform }
 	}
 	trigger = {
         num_of_ports = 1

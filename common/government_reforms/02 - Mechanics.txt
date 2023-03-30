@@ -22,9 +22,6 @@ dynasty_mechanic = {
 		land_forcelimit_modifier = -0.25
 		naval_forcelimit_modifier = -0.50
 	}
-	government_abilities = {
-		iqta_mechanic
-	}
 }
 
 republic_mechanic = {
@@ -54,12 +51,23 @@ theocracy_mechanic = {
 	has_devotion = yes
 
     rulers_can_be_generals = no
+	heirs_can_be_generals = no
 	royal_marriage = no
 	heir = yes
+	can_customise_heir = no
     different_religion_acceptance = -20
 	different_religion_group_acceptance = -50
     
 	valid_for_nation_designer = no
+
+	custom_attributes = {
+		enables_theocracy_ideagroup = yes
+	}
+
+	modifiers = {
+		clergy_loyalty_modifier = 0.10
+		clergy_influence_modifier = 0.05
+	}
 }
 
 tribal_mechanic = {

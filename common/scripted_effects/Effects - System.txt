@@ -143,3 +143,155 @@ add_influence_to_mil_faction = {
 		}				
 	}
 }
+
+set_manpower_variable = {
+	export_to_variable = {
+		value = manpower
+		which = $manpower_var$
+	}
+	multiply_variable = {
+		which = $manpower_var$
+		value = 0.5
+	}
+}
+
+transfer_manpower = {
+	hidden_effect = {
+		$giver$ = {
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				$taker$ = {
+					add_manpower = 1
+				}
+				add_manpower = -1
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+		}
+	}
+}
+
+set_treasury_variable = {
+	export_to_variable = {
+		value = treasury
+		which = $treasury_var$
+	}
+	multiply_variable = {
+		which = $treasury_var$
+		value = 0.5
+	}
+	divide_variable = {
+		which = $treasury_var$
+		value = 10
+	}
+	multiply_variable = {
+		which = $treasury_var$
+		value = 10
+	}
+}
+
+set_income_variable = {
+	export_to_variable = {
+		value = years_of_income
+		which = $income_var$
+	}
+	multiply_variable = {
+		which = $income_var$
+		value = $income_multi$
+	}
+	divide_variable = {
+		which = $income_var$
+		value = 10
+	}
+	multiply_variable = {
+		which = $income_var$
+		value = 10
+	}
+}
+
+remove_treasury = {
+	hidden_effect = {
+		$giver$ = {
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				add_treasury = -1
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+			multiply_variable = {
+				which = $variable$
+				value = 100
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				add_treasury = -0.01
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+		}
+	}
+}
+
+transfer_treasury = {
+	hidden_effect = {
+		$giver$ = {
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				$taker$ = {
+					add_treasury = 1
+				}
+				add_treasury = -1
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+			multiply_variable = {
+				which = $variable$
+				value = 100
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				$taker$ = {
+					add_treasury = 0.01
+				}
+				add_treasury = -0.01
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+		}
+	}
+}

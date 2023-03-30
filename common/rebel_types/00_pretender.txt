@@ -58,6 +58,12 @@ pretender_rebels = {
 			}
 		}
 		modifier = {
+			factor = 20
+			owner = {
+				has_disaster = blackfyre_rebellion
+			}
+		}
+		modifier = {
 			factor = 5.0
 			owner = {
 				government = republic
@@ -187,7 +193,7 @@ pretender_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
  	}
@@ -215,10 +221,15 @@ pretender_rebels = {
 			add_legitimacy = 25
 		}
 		if = {
+			limit = { has_disaster = blackfyre_rebellion }
+			set_country_flag = blackfyre_victory
+			end_disaster = blackfyre_rebellion
+			country_event = { id = GOT_BLACKFYRE_REB.100 }
+		}
+		if = {
 			limit = {
-				NOT = {
-					government = tribal
-				}
+				NOT = { government = tribal }
+				NOT = { government = dynasty }
 			}
 			change_government = monarchy
             add_government_reform = kingdom_reform
@@ -231,6 +242,10 @@ pretender_rebels = {
 		if = {
 			limit = { has_heir = yes }
 			kill_heir = yes
+		}
+		if = {
+			limit = { has_consort = yes }
+			kill_consort = yes
 		}
 		if = {
 			limit = { has_disaster = civil_war }

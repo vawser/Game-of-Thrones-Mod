@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
  #------------------------------------------------------
  # Countries
  #------------------------------------------------------
@@ -595,11 +595,14 @@
  APPOINT_CARDINAL_ONLY_CATHOLICS: "§RSeptons can only be appointed in Countries that follow the true Faith of the Seven faith.§!"
  APPOINT_CARDINAL_TOO_MANY_IN_COUNTRY: "§RNo more than $MAX$ Septons can be appointed in the same country.§!"
  APPOINT_CARDINAL_TOO_MANY_IN_WORLD: "§RThere are already enough Septons in the World, Appointing one more would destabilize our God-inspired authority.§!"
- APPOINT_CARDINAL_NO_PROVINCE_AVAILABLE: "§RThere are no suitable Provinces for us to Appoint a Cardinal.§!"
+ APPOINT_CARDINAL_NO_PROVINCE_AVAILABLE: "§RThere are no suitable Provinces for us to Appoint a Septon.§!"
  APPOINT_CARDINAL_NEED_MORE_CASH: "§RAppointing a Septon will cost $REQUIRED$¤ but you only have $AVAILABLE$¤.§!"
- CURIA_APPOINT_CARDINAL:2 "Spend $COST|Y$¤ of your own money to Appoint one of your loyalists as a Septon. This will give us $CORRUPTION|R$ Corruption and increase our Invested influence towards becoming the next Faith Controller by $INFLUENCE|Y$ every year."
+ CURIA_APPOINT_CARDINAL: "Spend $COST|Y$¤ of your own money to Appoint one of your loyalists as a Septon. This will give us $CORRUPTION|R$ Corruption and increase our Invested influence towards becoming the next Faith Controller by $INFLUENCE|Y$ every year."
  CURIA_APPOINT_CARDINAL_SELF_TITLE: "Appoint loyalist Septon"
  CURIA_APPOINT_CARDINAL_SELF_DESC: "Do you want to spend $COST|Y$¤ to Appoint one of your loyalists as a Septon? This will give us $CORRUPTION|R$ Corruption and increase our Invested influence towards becoming the next Faith Controller by $INFLUENCE|Y$ every year."
+ CARDINAL_MAPICON_INSTANT: "$PROVINCE|Y$ is the seat of a septon."
+ CARDINAL_MAPICON_DELAYED: "He is loyal to $COUNTRY|Y$ $FLAG$."
+ APPOINT_CARDINAL_AT_WAR: "§RYou cannot Appoint a Septon in Country with whom you are at war.§!"
  
  # Golden Bull
  # Golden Bulls
@@ -636,8 +639,18 @@
  
  # Papacy
  CARDINAL_NAME: "Septon of $LOC|Y$"
+ CARDINAL_CONTROLLER_ACTIVE_DESC: "This septon belongs to $COUNTRY|Y$."
+ CARDINAL_CONTROLLER_FUTURE_DESC: "This septon belongs to $COUNTRY|Y$ since they have given them $VOTES|Y$ votes so far."
  CARDINAL_TOOLTIP_AMOUNT: "§Y$COUNTRY$§W has §Y$AMOUNT$§W active septons."
+ CARDINAL_TOOLTIP_PAPAL: "§Y$COUNTRY$§W has §Y$AMOUNT$§W faith influence."
+ CARDINAL_TOOLTIP_INVESTED: "§Y$COUNTRY$§W has invested §Y$AMOUNT$§W faith influence in becoming the next faith controller."
  CARDINAL_TOOLTIP_CHANCE: "§Y$COUNTRY$§W has $AMOUNT$ chance of being the next faith controller."
+ CARDINAL_NEW: "§YActive septon§!\nWe control this active septon from $HOME|Y$. Each active septon gives us $BENEFIT$ Faith Influence per year."
+ ADDED_CARDINAL: "§Y$PROVINCE$§! will be the seat of a new Septon."
+ REMOVED_CARDINAL: "§Y$PROVINCE$§! will no longer be the seat of a Septon."
+ HINT_CARDINAL_TITLE: "Septons"
+ HINT_CARDINAL_TEXT: "Septons are randomly assigned to Faith of the Seven provinces in Westeros. Owners of these provinces receive a bonus to their Faith Influence."
+ 
  CONVREL_PAPACY: "The Most Devout cannot convert to another religion."
  CONVREL_PAPACY: "The Most Devout cannot convert to another religion."
  PAPACY_NEXT_CARDINALS: "§YNext Possible Septon§W" 
@@ -651,6 +664,9 @@
  HINT_PAPACY_TEXT: "Faith of the Seven countries can compete for influence with the Great Sept of Baelor. Whoever controls the most Septons is also the Faith Controller. Septons can be swayed to your side by spending Faith Influence."
  NEWPOPE_1: "The Most Devout"
  PAPACY_CARDINALS: "Septons:"
+ HAS_CARDINAL: "Province has an active septon"
+ HAS_CARDINAL_NOT: "Province does not have an active septon" 
+ CARDINAL_NOT_READY: "The Septon has been influenced too recently. We must wait until "
  PAPACY_COST: "Cost:"
  PAPACY_CHANCE: "Chance:"
  PAPACY_LOYALTY: "Loyalty:"
@@ -666,10 +682,11 @@
  PAPACY_IS_DISABLED: "The Most Devout is NOT active"
  ENABLE_PAPACY: "Enable the Most Devout"
  DISABLE_PAPACY: "Disable the Most Devout"
- PAPACYVIEW_CANDIDATE: "There's a §Y$CHANCE$%§W chance that the next septon will come from §Y$COUNTRY$§W. They have a Faith influence of §Y$INFLUENCE$%§W."
+ VOTES_FROM_OTHERS: "Other countries may have invested points in this septon. This will be revealed when the septon becomes an active septon or if he dies."
  
  PAPAL_STATE_NO_INFLUENCE: "The Most Devout does not get Faith Influence or Septons, but instead gains investment towards becoming Faith Controller based on the total number of septons."
  PAPAL_CONTROLLER_DIPACTIONS_DESC: "The Faith controller may take the following diplomatic actions: \n$LIST|Y$"
+ alert_can_vote_for_cardinal_instant: "§YYou can invest in a septon!§W"
  alert_can_vote_for_cardinal_delayed: "You have enough faith influence to invest in a future septons."
  DIPLOMACYACTION_CATEGORY_papacy: "Faith actions"
  IS_NOT_PAPAL_GOV: "$WHO$ has government $GOV$, and that is NOT faith."
@@ -681,6 +698,7 @@
  VOTE_ONE_ON_CARDINAL: "§YLeft click§! to spend $PI|R$ point of Faith Influence to add $PI|G$ vote for this future septon."
  CANT_VOTE_ON_CARDINAL: "You need at least $PI|Y$ point(s) of Faith Influence to vote for this septon."
  ACTIVE_CARDINALS: "The country that has the most loyal active septon will be the faith controller."
+ FUTURE_CARDINALS: "When an active septon dies, a random one of future septons will be chosen to be an active septon. The septon will be loyal to the one who has spent the most points on him."
  PAPAL_INFLUENCE_DESC: "Faith Influence represents our influence with the Most Devout. This can be spent on future septons to make them loyal to us when they one day become active septons."
  NEW_PAPAL_INFLUENCE_DESC: "Faith Influence represents our influence with the Most Devout. The largest cities of seven in countries with large faith influence will be chosen to represent the faith."
  PAPAL_NOT_ALLOW: "§RYou do not meet all the requirements for taking this action.§!"
@@ -689,7 +707,12 @@
  SORT_BY_PAPAL_INFLUENCE: "Sort by faith influence"
  SORT_BY_INVESTED: "Sort by amount of invested faith influence"
  M_VATICAN_BUTTON_DRO: "Faith Influence: §Y$VALUE$§!"
- CARDINAL_TOOLTIP_PAPAL: "§Y$COUNTRY$§W has §Y$AMOUNT$§W faith influence."
+ NO_ACTVIVE_CARDINALS: "No active septons."
+ SORT_BY_NCARDINALS: "Sort by number of active septons"
+ HAVE_LESS_CARDINALS_THAN: "Less than $DATA|Y$ Active Septons\n"
+ HAVE_MORE_CARDINALS_THAN: "At least $DATA|Y$ Active Septons\n"
+ HAVE_LESS_TOTAL_CARDINALS_THAN: "Total septons less than "
+ HAVE_MORE_TOTAL_CARDINALS_THAN: "Total septons at least "
 
  HINT_MOREDIPLOMAT_TEXT: "More Diplomats can be unlocked by selecting the Diplomatic or Aristocratic Idea Groups. Being the Faith Controller or having an Embassy also provides additional Diplomats."
  HINT_PAPACY_TEXT: "Faith of the Seven countries can compete for influence with the Most Devout. Whoever controls the most Septons is also the Faith Controller. Septons can be swayed to your side by spending Faith Influence."
@@ -739,12 +762,51 @@
  ADD_PAPAL_INFLUENCE: "$DIRECTION$ $VALUE$ Faith Influence"
  EXCOM_TARGET_HIGH_REL2: "The Faith State have too good of an opinion of them at ($CURR$) and need to be below $WANT$."
  PAPACYVIEW_CANDIDATE: "There's a §Y$CHANCE$%§W chance that the next septon will come from §Y$COUNTRY$§W. They have a faith influence of §Y$INFLUENCE$%§W."
- CARDINAL_CHANCE_DELAYED: "You have §G$PROVINCES$§W Catholic provinces and a Faith influence of §G$INFLUENCE$%§W. The chance is also modified by the tax in each province."
+ CARDINAL_CHANCE: "Septon Chance"
+ CARDINAL_CHANCE_INSTANT: "There's a §Y$CHANCE$%§W chance that you will get the next septon."
+ CARDINAL_CHANCE_DELAYED: "You have §G$PROVINCES$§W Faith of the Seven provinces and a Faith influence of §G$INFLUENCE$%§W. The chance is also modified by the tax in each province."
  LEDGER_PAPAL_INF: "Faith Inf"
  PAPAL_OPINION_OF_US: "Modified by $VAL$ due to Faith State opinion of us."
 
- CARDINAL_NEW: "§YActive cardinal§!\nWe control this active cardinal from $HOME|Y$. Each active cardinal gives us $BENEFIT$ Faith Influence per year."
+ CARDINAL_X_FROM: "Septon $NAME$ from $LOCATION$"
+ BRIBE_CARDINAL: "It will cost $CASH$ ducats to influence this septon."
+ CARDINAL_BRIBE_DESC:0 "If we are successful, the septon will support us and we gain §G$GAIN$§W prestige. If we should fail, we will lose §R$LOSS$§W."
+ CARDINAL_ALREADY_OURS: "This septoon is already under our control."
+ CANT_AFFORD_BRIBE: "You can't afford the $CASH$ it would cost to influence this septon."
+ curia_controller: "Faith Controller"
+ controlled_cardinals: "Controlled Septons"
+ CARDINAL_TITLE: "Septon"
 
+ NEWACTIVECARDINAL_TITLE: "New Septon Elected"
+ NEWACTIVECARDINAL_SETUP: "When a new active septon is chosen."
+ NEWACTIVECARDINAL_HEADER: "News from the Most Devout"
+ NEWACTIVECARDINAL_1: "A New Septon"
+ NEWACTIVECARDINAL_2: "§Y$PROVINCE$§W is now the seat of a new Septon."
+ NEWACTIVECARDINAL_4: "They have §Y$NCARDINALS$§W active septons now."
+ NEWACTIVECARDINAL_LOG: "New septon from $PROVINCE$"
+ FUTURECARDINALDEAD_TITLE: "Active Septon Dead"
+ FUTURECARDINALDEAD_SETUP: "When a septon has died."
+ FUTURECARDINALDEAD_HEADER: "News from the Most Devout"
+ FUTURECARDINALDEAD_1: "End of a Septon"
+ FUTURECARDINALDEAD_2: "§Y$PROVINCE$§W is no longer the seat of a Septon."
+ FUTURECARDINALDEAD_LOG: "$PROVINCE$ is no longer the seat of a Septon."
+ FUTURECARDINALLOYALTYSTOP_TITLE: "Septon no longer loyal"
+ FUTURECARDINALLOYALTYSTOP_SETUP: "When a septon previously loyal to us changes his loyalty."
+ FUTURECARDINALLOYALTYSTOP_HEADER: "News from the Most Devout"
+ FUTURECARDINALLOYALTYSTOP_1: "A septon is no longer loyal to us!"
+ FUTURECARDINALLOYALTYSTOP_3: "They now have §Y$NUMACTIVE$§! active and §Y$NUMFUTURE$§! future septons loyal to them."
+ FUTURECARDINALLOYALTYSTOP_5: "We have invested §Y$YOURPOINTS$§! faith influence in this septon!"
+ FUTURECARDINALLOYALTYSTOP_LOG: "Septon $NAME$ is no longer loyal to us!"
+
+ NEWACTIVELOYALISTCARDINAL_TITLE: "New Loyalist Septon Elected"
+ NEWACTIVELOYALISTCARDINAL_SETUP: "When a new loyalist septon is chosen."
+ NEWACTIVELOYALISTCARDINAL_HEADER: "News from the Most Devout"
+ NEWACTIVELOYALISTCARDINAL_1: "A New Loyalist Septon"
+ NEWACTIVELOYALISTCARDINAL_2: "§Y$PROVINCE$§W is now the seat of a new Septon."
+ NEWACTIVELOYALISTCARDINAL_4: "They have §Y$NCARDINALS$§W active septon now."
+ NEWACTIVELOYALISTCARDINAL_LOG: "New loyalist cardinal from $PROVINCE$"
+
+ CURIA_APPOINT_CARDINAL_POPE: "Spend $COST|Y$¤ of your own money to Appoint one of your loyalists as Septon. This will give us $CORRUPTION|R$ Corruption."
  #----------------------------------------------------
  # Parliament : Council
  #----------------------------------------------------

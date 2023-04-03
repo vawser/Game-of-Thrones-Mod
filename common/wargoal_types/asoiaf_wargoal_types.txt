@@ -134,7 +134,7 @@ superiority_lordly_feud = {
 		peace_cost_factor = 1
 	
 		peace_options = {
-			po_demand_provinces
+			seize_their_possessions
 		}
 	}
 	defender = {
@@ -143,7 +143,8 @@ superiority_lordly_feud = {
 		peace_cost_factor = 0.5
         
         peace_options = {
-			po_demand_provinces
+			po_form_personal_union
+			seize_their_possessions
 		}
 	}
 	
@@ -250,4 +251,34 @@ take_capital_take_iron_throne = {
 	}
 	
 	war_name = CLAIM_THE_IRON_THRONE_WAR_NAME
+}
+
+loe_jogos_nhai_raid_goal = {
+	type = superiority
+
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 2
+
+		deny_annex = yes
+		
+		peace_options = {
+			po_gold
+		}
+	}
+	
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 1
+
+		peace_options = {
+			po_demand_provinces
+			po_return_cores
+			po_become_tributary_state
+		}
+	}
+
+	war_name = loe_jogos_nhai_raid_goal_name
 }

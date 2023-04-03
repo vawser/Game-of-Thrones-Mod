@@ -975,26 +975,28 @@
  CHANGE_ASPECT_COST: "$COST|Y$ Shrine Power Cost."
  
  #----------------------------------------------------
- # Piety : Barbarism
+ # Piety : Divine Favour
  #----------------------------------------------------
- PIETY_DESCRIPTION: "Barbarism represents the type of behaviour our people display within our realm."
+ PIETY_DESCRIPTION: "Divine Favour represents the type of worship our people display within our realm."
  PIETY_DESCRIPTION_ESTATES: ""
- ADD_PIETY: "$DIRECTION$ $VALUE$ Barbarism"
- 
- positive_piety: "Savage"
- negative_piety: "Civil"
- 
- PIETY_BAD_WAR_EFF: "Declaring war will increase our Barbarism by §Y$VAL$§!."
- PIETY_GOOD_WAR_EFF: "Declaring war will increase our Barbarism by §Y$VAL$§!."
- 
- CURRENT_PIETY: "Current Barbarism"
- CURRENT_PIETY_IS: "Our current Barbarism is $VALUE$"
- USES_PIETY: "$COUNTRY|Y$ uses Barbarism."
- USES_NOT_PIETY: "$COUNTRY|Y$ does NOT use Barbarism."
- 
- PIETY_LESS_THAN: "Barbarism is less than §Y$VAL$§!.\n"
- PIETY_AT_LEAST: "Barbarism is at least §Y$VAL$§!.\n"
- 
+ PIETY_LESS_THAN: "Divine Favour is less than §Y$VAL$§!.\n"
+ PIETY_AT_LEAST: "Divine Favour is at least §Y$VAL$§!.\n"
+ PIETY_TOO_LOW_FOR_LEGALISM: "To be able to '§YEnforce Faithful Adherence§!' we need to be at least $NEED|Y$ towards the Maiden-Made-of-Light. This would impact corruption by $CORRUPTION$."
+ PIETY_LEGALISM_BONUS: "Our tradition of divine favour with the Maiden-Made-of-Light is a great advantage. §YEnforcing faithful Adherence§! will move us by $COST|Y$ towards the Lion Of Night but impact corruption by $CORRUPTION$."
+ PIETY_TOO_HI_FOR_MYSTICISM: "To be able to '§YCall on Religious Followers§!' we need to be at least $NEED|Y$ towards the Lion of Night. This would gives us the following impact:\n$GAIN$"
+ PIETY_MYSTICISM_BONUS: "Our tradition of divine favour with the Lion of Night is a great advantage. §YCalling on Religious Followers§! will move us by $COST|Y$ towards the Maiden-Made-of-Light but offer us $GAIN$"
+ PIETY_MYSTICISM_COOLDOWN: "You can only '§YCall on Religious Followers§!' once every $YEARS|Y$ years.\nYou will be able to do it again in $UNTIL|Y$."
+ PIETY_LEGALISM_COOLDOWN: "You can only '§YEnforce Faithful Adherence§!' once every $YEARS|Y$ years.\nYou will be able to do it again in $UNTIL|Y$."
+ MODIFIER_MONTHLY_PIETY: "Monthly Divine Favour"
+ ADD_PIETY: "$DIRECTION$ $VALUE$ Divine Favour"
+ positive_piety: "Maiden-Made-of-Light"
+ negative_piety: "Lion of Night"
+ PIETY_BAD_WAR_EFF: "Declaring war will increase our Divine Favour with the Lion of the Night by §Y$VAL$§!."
+ PIETY_GOOD_WAR_EFF: "Declaring war will increase our Divine Favour with the Maiden-Made-of-Light by §Y$VAL$§!."
+ CURRENT_PIETY: "Current Divine Favour"
+ CURRENT_PIETY_IS: "Our current Divine Favour is $VALUE$"
+ USES_PIETY: "$COUNTRY|Y$ uses Divine Favour."
+ USES_NOT_PIETY: "$COUNTRY|Y$ does NOT use Divine Favour."
  
  #----------------------------------------------------
  # Government Rank

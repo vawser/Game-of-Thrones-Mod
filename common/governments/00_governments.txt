@@ -99,6 +99,109 @@ monarchy = {
     }
 }
 
+loe_monarchy = {
+    basic_reform = monarchy_mechanic
+
+	color = { 237  152  18 }
+
+	reform_levels = {
+		loe_power_structure = {
+			reforms = {
+				#YiTi#
+				loe_azure_empire
+				#loe_orange_empire Will be added in republic #TBD
+				#loe_yellow_empire Will be added in occult #TBD
+				loe_empire_of_dawn
+				#loe_empire_of_dawn_orange Will be added in republic #TBD
+				loe_independent_yiti
+				loe_union_state
+				#Nefer#
+				loe_secret_city
+				loe_worlds_end
+			}
+		}
+		loe_noble_privileges = {
+			reforms = {
+				got_enforce_privileges_reform
+				got_quash_noble_power_reform
+				#YiTi#
+				loe_guaranteed_autonomy
+				loe_leased_nobility
+				loe_relations_with_empire
+				loe_foreign_nobles
+				#Nefer#
+				loe_landed_necromancers
+			}
+		}
+		loe_bureaucracy = {
+			reforms = {
+				#YiTi#
+				loe_sole_empire
+				loe_myriad_crowned_king
+				loe_frontier_of_empire
+				loe_ancient_bookkeepers
+				#Nefer#
+				loe_level_castes
+			}
+		}
+		loe_military_organisation = {
+			reforms = {
+				#YiTi#
+				loe_foreign_tactics
+				loe_imperial_army
+				#Nefer#
+				loe_neferi_tunnelers
+			}
+		}
+		loe_administration_cadre = {
+			reforms = {
+				got_clergy_in_administration_reform
+				got_of_noble_bearing_reform
+				got_meritocratic_focus_reform
+				#YiTi#
+				loe_homogenous_court
+				#Nefer#
+				loe_fosters_of_truth
+			}
+		}
+		loe_deliberative_assembly = {
+			reforms = {
+				#YiTi#
+				loe_order_of_oracles
+				#Nefer#
+				loe_council_of_banished
+			}
+		}
+		loe_economic_policy = {
+			reforms = {
+				#YiTi#
+				loe_transcontinental_trade
+				loe_imperial_subsidies
+				loe_bureaucratic_economy
+				loe_show_of_wealth
+				#Nefer#
+				loe_necromantic_miners #TBD necromantic slaves in Shadowands
+			}
+		}
+		loe_absolutism_constitutionalism = {
+			reforms = {
+				#YiTi#
+				loe_yitish_absolutism
+				#Nefer#
+				loe_systematic_degradation
+			}
+		}
+		loe_seperation_of_power = {
+			reforms = {
+				#YiTi#
+				loe_godking_of_yiti
+				#Nefer#
+				loe_blood_tax
+			}
+		}
+	}
+}
+
 dynasty = {
 	color = { 255 102 178 }
 	
@@ -478,6 +581,55 @@ tribal = {
         khalasar_legacy
         jhattar_legacy
     }
+}
+
+loe_tribal = {
+	basic_reform = tribal_mechanic
+	color = { 237  152  18 }
+	reform_levels = {
+		loe_tribal_administration = {
+			reforms = {
+				#Jogos#
+				loe_prathama
+				loe_sthaurin
+			}
+		}
+		loe_cultural_values = {
+			reforms = {
+				#Jogos#
+				loe_shared_ancenstry
+				loe_common_enemies
+			}
+		}
+		loe_tribal_religion = {
+			reforms = {
+				#Jogos#
+				loe_peace_among_us
+				loe_absolute_equality
+			}
+		}
+		loe_military_organisation = {
+			reforms = {
+				#Jogos#
+				loe_selective_breeding
+				loe_lessons_zhea
+			}
+		}
+		loe_modernisation = {
+			reforms = {
+				#Jogos#
+				loe_turn_to_sea
+				loe_spill_over_mountains
+				loe_adopt_the_woodlands
+			}
+		}
+		loe_tribal_reformation = {
+			reforms = {
+				#Jogos#
+				loe_perpetual_warfare
+			}
+		}
+	}
 }
 
 #--------------------------------------------

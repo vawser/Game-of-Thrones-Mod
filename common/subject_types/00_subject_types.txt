@@ -1053,3 +1053,58 @@ nomadic_subject = {
 	overlord_opinion_modifier = is_nomadic_subject
 	subject_opinion_modifier = is_nomadic_subject
 }
+
+
+loe_jogos_nhai_tribe = {
+	copy_from = default
+
+	#TBD#
+	sprite = GFX_icon_vassal
+	diplomacy_overlord_sprite = GFX_diplomacy_leadvassal # The one that the overlord sees
+	diplomacy_subject_sprite = GFX_diplomacy_amvassal	# The one that the subject sees
+
+	can_fight_independence_war = no
+	is_voluntary = yes
+	overlord_can_attack = no
+	overlord_can_be_subject = yes
+	can_have_subjects_of_other_types = yes
+	takes_diplo_slot = no
+	can_release_in_peace = no
+	gets_help_with_rebels = yes
+	allows_taking_land_without_independence = yes
+	can_transfer_in_peace = no
+	trust_on_start = 100
+	relative_power_class = 0
+
+	#can_fight = {
+	#	independent_nations = yes
+	#	other_overlord = all
+	#}
+
+	#can_rival = {
+	#	independent_nations = yes
+	#	other_overlord = all
+	#}
+
+	#can_ally = {
+	#	independent_nations = yes
+	#	other_overlord = all
+	#}
+
+	#can_marry = {
+	#	independent_nations = yes
+	#	other_overlord = all
+	#}
+
+	embargo_rivals = no
+
+	placate_rulers = no
+	enforce_culture = yes
+	contribute_to_capital = yes
+
+	modifier_subject = clear
+	modifier_overlord = clear
+
+	overlord_opinion_modifier = loe_jogos_nhai_tribal_opinion
+	subject_opinion_modifier = loe_jogos_nhai_tribal_opinion
+}

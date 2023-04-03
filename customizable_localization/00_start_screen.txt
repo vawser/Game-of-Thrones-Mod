@@ -1,0 +1,55 @@
+# ------------------------------------------------------------------
+# History Description
+# ------------------------------------------------------------------
+defined_text = {
+    name = StartScreenUpLeftDesc
+	random = no
+
+    # East Essos
+	text = {
+        localisation_key = string_start_yiti
+        trigger = {
+			tag = R68
+		}
+    }
+    text = {
+        localisation_key = string_start_jogos
+        trigger = {
+			culture = jogos_nhai
+		}
+    }
+    text = {
+        localisation_key = string_start_nefer
+        trigger = {
+			tag = S14
+		}
+    }
+}
+
+# ------------------------------------------------------------------
+# Mechanics Description
+# ------------------------------------------------------------------
+defined_text = {
+    name = StartScreenUpRightDesc
+	random = no
+
+	# East Essos
+	text = {
+        localisation_key = string_start_yiti_mechanics
+        trigger = {
+			tag = R68
+        }
+    }
+    text = {
+        localisation_key = string_start_jogos_mechanics
+        trigger = {
+			culture = jogos_nhai
+        }
+    }
+    text = {
+        localisation_key = string_start_nefer_mechanics
+        trigger = {
+			tag = S14
+        }
+    }
+}

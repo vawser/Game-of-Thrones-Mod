@@ -1,0 +1,61 @@
+loe_imperial_administration = {
+	potential = {
+		tag = R68
+		NOT = { has_country_flag = loe_imperial_administration_abolished }
+		ai = no
+	}
+	can_start = {
+		always = yes
+	}
+	can_stop = {
+		custom_trigger_tooltip = {
+			tooltip = loe_imperial_administration_tooltip
+			has_country_flag = loe_imperial_administration_abolished
+		}
+	}
+	progress = {
+		modifier = {
+			factor = 1
+			AND = {
+				exists = S04
+				S04 = { NOT = { is_subject_of = R68 } }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			AND = {
+				exists = J21
+				J21 = { NOT = { is_subject_of = R68 } }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy = 90 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy = 75 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy = 50 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy = 25 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { army_size_percentage = 1.25 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { navy_size_percentage = 1.25 }
+		}
+	}
+	can_end = {
+		has_country_flag = loe_imperial_administration_cycle
+	}
+	on_start = yiti.6
+	on_end = yiti.7
+}

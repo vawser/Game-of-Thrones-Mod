@@ -1,0 +1,181 @@
+country_decisions = {
+
+    loe_mapped_morn = {
+        potential = {
+            any_owned_province = {
+                OR = {
+                    region = region_carcosa
+                    region = region_yi_ti
+                }
+            }
+            NOT = { has_country_flag = loe_sent_morn_expedition }
+			NOT = { has_country_flag = loe_mapped_the_mountains_of_morn }
+            ai = no
+        }
+        allow = {
+            if = {
+                limit = { ruler_has_personality = expansionist_personality }
+                treasury = 100
+            }
+            else = { treasury = 500 }
+        }
+        provinces_to_highlight = {
+            province_id =  809
+        }
+        effect = {
+            if = {
+                limit = { ruler_has_personality = expansionist_personality }
+                add_treasury = -100
+                add_prestige = 20
+            }
+            else = { add_treasury = -500 }
+            country_event = {
+                id = far_essos.1
+                days = 730
+                random = 1095
+                tooltip = loe_mapped_morn_tooltip
+            }
+            set_country_flag = loe_sent_morn_expedition
+        }
+    }
+
+    loe_traverse_the_mountains_of_morn_to_yiti = {
+        potential = {
+            has_country_flag = loe_mapped_the_mountains_of_morn
+            ai = no
+        }
+        allow = {
+            is_month = 3
+            NOT = { is_month = 11 }
+            809 = {
+                num_of_units_in_province = { 
+                    who = ROOT
+                    amount = 1
+                }
+            }
+        }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 872
+                province_id = 809
+            }
+        }
+        effect = {
+            hidden_effect = {
+                while = {
+					limit = {
+						809 = { infantry_in_province = 1 }
+					}
+					809 = {
+						kill_units = {
+							who = ROOT
+							type = infantry
+							amount = 1
+						}
+					}
+					872 = { infantry = ROOT }
+					add_treasury = -2
+                }
+				while = {
+					limit = {
+						809 = { cavalry_in_province = 1 }
+					}
+					809 = {
+						kill_units = {
+							who = ROOT
+							type = cavalry
+							amount = 1
+						}
+					}
+					872 = { cavalry = ROOT }
+					add_treasury = -4
+                }
+				while = {
+					limit = {
+						809 = { artillery_in_province = 1 }
+					}
+					809 = {
+						kill_units = {
+							who = ROOT
+							type = artillery
+							amount = 1
+						}
+					}
+					872 = { artillery = ROOT }
+					add_treasury = -10
+                }
+            }
+            custom_tooltip = loe_traverse_the_mountains_of_morn_to_yiti_tooltip
+        }
+    }
+
+    loe_traverse_the_mountains_of_morn_to_carcosa = {
+        potential = {
+            has_country_flag = loe_mapped_the_mountains_of_morn
+            ai = NO
+        }
+        allow = {
+            is_month = 3
+            NOT = { is_month = 11 }
+            872 = {
+                num_of_units_in_province = { 
+                    who = ROOT
+                    amount = 1
+                }
+            }
+        }
+        provinces_to_highlight = {
+            OR = {
+                province_id = 872
+                province_id = 809
+            }
+        }
+        effect = {
+            hidden_effect = {
+                while = {
+					limit = {
+						872 = { infantry_in_province = 1 }
+					}
+					872 = {
+						kill_units = {
+							who = ROOT
+							type = infantry
+							amount = 1
+						}
+					}
+					872 = { infantry = ROOT }
+					add_treasury = -2
+                }
+				while = {
+					limit = {
+						872 = { cavalry_in_province = 1 }
+					}
+					872 = {
+						kill_units = {
+							who = ROOT
+							type = cavalry
+							amount = 1
+						}
+					}
+					872 = { cavalry = ROOT }
+					add_treasury = -4
+                }
+				while = {
+					limit = {
+						872 = { artillery_in_province = 1 }
+					}
+					872 = {
+						kill_units = {
+							who = ROOT
+							type = artillery
+							amount = 1
+						}
+					}
+					872 = { artillery = ROOT }
+					add_treasury = -10
+                }
+            }
+            custom_tooltip = loe_traverse_the_mountains_of_morn_to_carcosa_tooltip
+        }
+    }
+}

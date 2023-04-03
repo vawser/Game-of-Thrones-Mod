@@ -1,0 +1,197 @@
+loe_prathama = {
+    icon = "castle" #TBD
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+	lock_level_when_selected = yes
+	nomad = yes
+	modifiers = {
+		cav_to_inf_ratio = 0.5
+		cavalry_power = 0.15
+		max_absolutism = 30
+	}
+
+	custom_attributes = {
+		enables_nomadic_ideagroup = yes
+		loe_is_jogos_leader = yes #TBD Write we also take manpower from each one and force limit
+		loe_can_prepare_raid = yes #TBD Change it to have this gov requirement
+	}
+}
+
+loe_sthaurin = {
+    icon = "castle" #TBD
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+	lock_level_when_selected = yes
+	nomad = yes
+	modifiers = {
+		cav_to_inf_ratio = 0.5
+		cavalry_power = 0.1
+		max_absolutism = 20
+	}
+
+	custom_attributes = {
+		enables_nomadic_ideagroup = yes
+		loe_is_jogos_follower = yes #TBD
+		loe_can_prepare_raid = yes #TBD Change it to have this gov requirement
+	}
+}
+
+
+loe_shared_ancenstry = {
+    icon = "castle" #TBD
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+
+	modifiers = {
+		#TBD <faction>_influence = 0.1 Moonsinger
+		diplomatic_reputation = 1
+		monthly_favor_modifier = 0.2
+	}
+
+	custom_attributes = {
+		loe_jogos_mutual_assistance_moon = yes #TBD -0.15 dev cost for each Jogos alliance with more dev than us caps at 4 alliances
+	}
+}
+
+loe_common_enemies = {
+    icon = "castle" #TBD
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+
+	modifiers = {
+		#TBD <faction>_influence = 0.1 Jhat
+		diplomatic_reputation = 1
+		land_morale = 0.1
+	}
+
+	custom_attributes = {
+		loe_jogos_mutual_assistance_jhat = yes #TBD -0.1 manpower recovery for each Jogos alliance with more manpower than us caps at 4 alliances
+	}
+}
+
+
+loe_peace_among_us = {
+    icon = "castle" #TBD
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+
+	modifiers = {
+		#TBD <faction>_influence = 0.1 Moonsinger
+		global_institution_spread = 0.33
+		idea_cost = -0.1
+	}
+}
+
+loe_absolute_equality = {
+    icon = "castle" #TBD
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+
+	modifiers = {
+		#TBD <faction>_influence = 0.1 Jhat
+		may_recruit_female_generals = yes
+		female_advisor_chance = 0.5
+		manpower_in_true_faith_provinces = 0.3
+	}
+}
+
+
+loe_selective_breeding = {
+    icon = "castle" #TBD
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+
+	modifiers = {
+		cavalry_power = 0.1
+		cavalry_flanking = 0.5
+	}
+}
+
+loe_lessons_zhea = {
+    icon = "castle" #TBD
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+
+	modifiers = {
+		movement_speed = 0.15
+		land_attrition = -0.25
+	}
+}
+
+
+loe_turn_to_sea = {
+    icon = "castle" #TBD
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+
+	modifiers = {
+		colonists = 1
+		may_perform_slave_raid = yes
+	}
+}
+
+loe_spill_over_mountains = {
+    icon = "castle" #TBD
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+
+	modifiers = {
+		siege_ability = 0.1
+		may_establish_frontier = yes
+	}
+}
+
+loe_adopt_the_woodlands = {
+    icon = "castle" #TBD
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+
+	modifiers = {
+
+	}
+
+	#TBD Copy the become monarchy, but add a modifier that maintains some of the bonuses (with if x_reform then reward:) but with slower reform progress
+}
+
+
+loe_perpetual_warfare = {
+    icon = "castle" #TBD
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+
+	modifiers = {
+		war_exhaustion = 0.02
+		war_taxes_cost_modifier = -1
+	}
+
+	custom_attributes = {
+		loe_raid_dev = yes #TBD Gain dev on occupation, reducing province's dev, works with slave raids
+		loe_simultaneous_wars = yes #TBD Gain bonuses while being at war with different countries
+	}
+}
+
+
+loe_ = {
+    icon = "castle" #TBD
+	potential = {
+		culture_group = culture_jogos_nhai
+	}
+
+	modifiers = {
+		
+	}
+}

@@ -897,4 +897,91 @@ country_decisions = {
 			factor = 1
 		}
 	}
+
+	# ---------------------------------
+	# Empire of the Dawn
+	# ---------------------------------
+	loe_restore_empire_of_the_dawn = {
+		major = yes
+		potential = {
+			OR = {
+				tag = R68
+				culture_group = culture_yi_ti
+			}
+			NOT = { exists = ETD }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_yi_ti
+				region = region_dry_bones
+				area = southern_leng_area
+				area = central_leng_area
+				area = northern_leng_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = loe_restore_empire_of_the_dawn_tooltip
+				the_great_sand_road_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				the_great_steel_road_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				trader_town_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+
+				leviathan_sound_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+
+				kazga_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+
+				nefer_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+
+				nesolat_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+
+				southern_leng_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+
+				central_leng_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+
+				northern_leng_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			is_at_war = no
+			stability = 3
+			religion = lion_of_the_night #TBD Include whole religion group
+		}
+		effect = {
+			change_tag = ETD
+			add_government_reform = loe_empire_of_dawn
+			add_splendor = 200
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

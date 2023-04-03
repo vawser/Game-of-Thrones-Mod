@@ -1,0 +1,1050 @@
+namespace = yiti
+# Default pic:BIG_BOOK_eventPicture #TBD
+##Startup##
+
+country_event = { #TBD Set this in the history files
+	id = yiti.1
+	title = "yiti.1.t"
+	desc = "yiti.1.d"
+	picture = BIG_BOOK_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = loe_imperial_land_5
+				duration = -1
+			}
+			set_emperor_of_china = ROOT
+			every_core_province = {
+				set_local_autonomy = 66
+			}
+			cape_of_yin_area = {
+				kill_units = {
+					who = owner
+					type = infantry
+				}
+				kill_units = {
+					who = owner
+					type = cavalry
+				}
+				kill_units = {
+					who = owner
+					type = artillery
+					
+				}
+			}
+			765 = {
+				infantry = R68
+				infantry = R68
+				infantry = R68
+				infantry = R68
+				infantry = R68
+				infantry = R68
+				infantry = R68
+				infantry = R68
+				infantry = R68
+				infantry = R68
+				infantry = R68
+				infantry = R68
+				infantry = R68
+				cavalry = R68
+				cavalry = R68
+				artillery = R68
+			}
+			add_manpower = 15
+			add_ruler_personality = lawgiver_personality
+		}
+	}
+
+	option = {
+		name = yiti.1.t1
+		custom_tooltip = yiti.1.d1
+	}
+}
+
+##Mission Tree##
+
+country_event = {
+	id = yiti.2
+	title = "yiti.2.t"
+	desc = "yiti.2.d"
+	picture = PROTESTANT_CATHOLIC_DEBATE_eventPicture
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				set_province_flag = loe_own_provinces
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			every_core_province = {
+				clr_province_flag = loe_own_provinces
+			}
+		}
+	}
+
+	option = {
+		name = "yiti.2.t1"
+		
+		change_government_reform_progress = 100
+		
+		custom_tooltip = yiti.2.d1
+		hidden_effect = {
+			R88 = {
+				every_core_province = {
+					add_core = R68
+				}
+			}
+			R77 = {
+				every_core_province = {
+					add_core = R68
+				}
+			}
+			R86 = {
+				every_core_province = {
+					add_core = R68
+				}
+			}
+			R65 = {
+				every_core_province = {
+					add_core = R68
+				}
+			}
+			S04 = {
+				every_core_province = {
+					add_core = R68
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = loe_imperial_administration_abolished }
+			}
+			custom_tooltip = loe_imperial_land_lowered
+			hidden_effect = {
+				country_event = {
+					id = yiti.3
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "yiti.2.t2"
+		inherit = R88
+		inherit = R77
+		inherit = R86
+		inherit = R65
+		inherit = S04
+		custom_tooltip = yiti.2.d2
+		if = {
+			limit = {
+				NOT = { has_country_flag = loe_imperial_administration_abolished }
+			}
+			custom_tooltip = loe_imperial_land_increased
+			hidden_effect = {
+				country_event = {
+					id = yiti.4
+				}
+			}
+		}
+		add_absolutism = 20
+		hidden_effect = {
+			R88 = {
+				every_core_province = {
+					limit = { NOT = { has_province_flag = loe_own_provinces } }
+					add_province_modifier = {
+						name = loe_rapid_imperial_land_expansion
+						duration = 1825
+					}
+				}
+			}
+			R77 = {
+				every_core_province = {
+					limit = { NOT = { has_province_flag = loe_own_provinces } }
+					add_province_modifier = {
+						name = loe_rapid_imperial_land_expansion
+						duration = 1825
+					}
+				}
+			}
+			R86 = {
+				every_core_province = {
+					limit = { NOT = { has_province_flag = loe_own_provinces } }
+					add_province_modifier = {
+						name = loe_rapid_imperial_land_expansion
+						duration = 1825
+					}
+				}
+			}
+			R65 = {
+				every_core_province = {
+					limit = { NOT = { has_province_flag = loe_own_provinces } }
+					add_province_modifier = {
+						name = loe_rapid_imperial_land_expansion
+						duration = 1825
+					}
+				}
+			}
+			S04 = {
+				every_core_province = {
+					limit = { NOT = { has_province_flag = loe_own_provinces } }
+					add_province_modifier = {
+						name = loe_rapid_imperial_land_expansion
+						duration = 1825
+					}
+				}
+			}
+		}
+	}
+}
+
+##Flavour##
+
+country_event = {
+	id = yiti.5
+	title = "yiti.5.t"
+	desc = "yiti.5.d"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		years = 1
+	}
+
+	trigger = {
+		mission_completed = loe_pacify_the_northern_hordes
+		owns_or_non_sovereign_subject_of = 606
+		owns_or_non_sovereign_subject_of = 610
+		owns_or_non_sovereign_subject_of = 613
+	}
+
+	option = {
+		name = "yiti.5.t1"
+		hidden_effect = {
+			region_dry_bones = {
+				limit = {
+					culture = jogos_nhai
+				}
+				change_trade_goods = slaves
+				add_province_modifier = {
+					name = loe_enslavement
+					duration = -1
+				} 
+			}
+			if = {
+				limit = { has_country_modifier = loe_slave_labour }
+				add_country_modifier = {
+					name = loe_increased_slave_labour
+					duration = -1
+				}
+				remove_country_modifier = loe_slave_labour
+			}
+			else = {
+				set_country_flag = loe_increased_slave_rewards
+			}
+		}
+		custom_tooltip =  yiti.5.d1
+	}
+
+	option = {
+		name = "yiti.5.t2"
+		hidden_effect = {
+			region_dry_bones = {
+				limit = {
+					culture = jogos_nhai
+				}
+				add_province_modifier = {
+					name = loe_yiti_breadbasket 
+					duration = -1
+				} 
+			}
+		}
+		custom_tooltip =  yiti.5.d2
+	}
+}
+
+country_event = {
+	id = yiti.8
+	title = "yiti.8.t"
+	desc = "yiti.8.d"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		months = 2
+	}
+	fire_only_once = yes
+	
+	trigger = {
+		tag = R68
+		any_war_enemy_country = {
+			tag = S04
+		}
+	}
+
+	option = {
+		name = "yiti.8.t1"
+		custom_tooltip = yiti.8.d1
+		add_stability = -2
+		866 = {
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				friend = S04
+				leader = Pol
+				leader_dynasty = Qo
+				win = yes
+			}
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+				friend = S04
+				leader = Pol
+				leader_dynasty = Qo
+				win = yes
+			}
+		}
+		781 = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				friend = S04
+				leader = Pol
+				leader_dynasty = Qo
+				win = yes
+			}
+		}
+		783 = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				friend = S04
+				leader = Pol
+				leader_dynasty = Qo
+				win = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = yiti.9
+	title = "yiti.9.t"
+	desc = "yiti.9.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "yiti.9.t1"
+		custom_tooltip = yiti.9.d1
+		add_legitimacy = 25
+	}
+}
+
+country_event = {
+	id = yiti.14
+	title = "yiti.14.t"
+	desc = "yiti.14.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_modifier = loe_jogos_war_yiti }
+	}
+
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = loe_jogos_war_yiti
+				duration = -1
+			}
+		}
+	}
+
+	option = {
+		name = "yiti.14.t1"
+		tooltip = {
+			add_country_modifier = {
+				name = loe_jogos_war_yiti
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = yiti.15
+	title = "yiti.15.t"
+	desc = "yiti.15.d"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = { months = 6 }
+	fire_only_once = yes
+
+	trigger = {
+		mission_completed = loe_pacify_the_northern_hordes
+		is_at_war = no
+	}
+
+	option = {
+		name = "yiti.15.t1"
+		set_country_flag = loe_start_the_show
+		custom_tooltip = yiti.15.d1
+	}
+}
+
+country_event = {
+	id = yiti.16
+	title = "yiti.16.t"
+	desc = "yiti.16.d"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = { months = 6 }
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_modifier = loe_golden_skull_investigation
+	}
+
+	option = {
+		name = "yiti.16.t1"
+		set_country_flag = loe_send_troops_to_search
+		custom_tooltip = yiti.16.d1
+		goto = 682
+	}
+}
+
+country_event = {
+	id = yiti.17
+	title = "yiti.17.t"
+	desc = "yiti.17.d"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = { months = 6 }
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = loe_send_troops_to_search
+		682 = {
+			OR = {
+				num_of_units_in_province = {
+					amount = 10
+					type = infantry
+					who = ROOT
+				}
+				num_of_units_in_province = {
+					amount = 4
+					type = cavalry
+					who = ROOT
+				}
+			}
+		}
+	}
+
+	immediate = {
+		set_country_flag = loe_contact_an_oracle
+		clr_country_flag = loe_send_troops_to_search
+		682 = { 
+			add_province_modifier = {
+				name = loe_do_not_move
+				duration = -1
+			}
+		}
+		717 = { 
+			add_province_modifier = {
+				name = loe_do_not_move
+				duration = -1
+			}
+		}
+		1291 = { 
+			add_province_modifier = {
+				name = loe_do_not_move
+				duration = -1
+			}
+		}
+	}
+
+	option = {
+		name = "yiti.17.t1"
+		custom_tooltip = yiti.17.d1
+		if = {
+			limit = {
+				682 = {
+					num_of_units_in_province = {
+						amount = 10
+						type = infantry
+						who = ROOT
+					}
+				}
+			}
+			682 = {
+				kill_units = {
+					amount = 10
+					type = infantry
+					who = ROOT
+				}
+			}
+		}
+		if = {
+			limit = {
+				682 = {
+					num_of_units_in_province = {
+						amount = 4
+						type = cavalry
+						who = ROOT
+					}
+				}
+			}
+			682 = {
+				kill_units = {
+					amount = 4
+					type = cavalry
+					who = ROOT
+				}
+			}
+		}
+		remove_country_modifier = loe_golden_skull_investigation
+	}
+
+	option = {
+		name = "yiti.17.t2"
+		add_legitimacy = -20
+		remove_country_modifier = loe_golden_skull_investigation
+	}
+
+	after = {
+		682 = { remove_province_modifier = loe_do_not_move }
+		717 = { remove_province_modifier = loe_do_not_move }
+		1291 = { remove_province_modifier = loe_do_not_move }
+		country_event = {
+			id = yiti.18
+			days = 720
+			random = 180
+		}
+	}
+}
+
+country_event = {
+	id = yiti.18
+	title = "yiti.18.t"
+	desc = "yiti.18.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = "yiti.18.t1"
+		define_advisor = {
+			type = oracle
+			name = "Ku Per"
+			skill = 3
+			discount = yes
+			culture = high_yitish
+			religion = moonsingers
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture = jogos_nhai
+				}
+				change_religion = moonsingers
+				add_province_modifier = {
+					name = loe_religious_exemptions
+					duration = -1
+				}
+			}
+		}
+		custom_tooltip = yiti.18.d1
+		tooltip = {
+			add_country_modifier = {
+				name = loe_religious_exemptions
+				duration = -1
+			}
+		}
+		set_ruler_flag = loe_religious_exemptions_ruler
+	}
+
+	option = {
+		name = "yiti.18.t2"
+		define_advisor = {
+			type = oracle
+			name = "Ku Per"
+			skill = 3
+			discount = yes
+			culture = high_yitish
+			religion = moonsingers
+		}
+		set_country_flag = loe_empty_promises
+	}
+
+	option = {
+		name = "yiti.18.t3"
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture = jogos_nhai
+				}
+				add_core = J03
+			}
+		}
+		create_vassal = J03
+		override_country_name = "YJN"
+		switch_tag = J03
+		J03 = {
+			define_ruler = {
+				name = "Ku"
+				dynasty = "Per"
+				adm = 6
+				dip = 3
+				mil = 4
+				age = 25
+				claim = 100
+				male = yes
+				culture = high_yitish
+				religion = moonsingers
+			}
+		}
+	}
+
+	after = {
+		country_event = {
+			id = yiti.19
+			days = 10
+			random = 10
+		}
+	}
+}
+
+country_event = {
+	id = yiti.19
+	title = "yiti.19.t"
+	desc = "yiti.19.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	immediate = {
+		if = { #Vaes Dothrak
+			limit = {
+				709 = {
+					owner = {
+						NOT = { is_subject_of = ROOT }
+						NOT = { tag = ROOT }
+					}
+				}
+			}
+			709 = {
+				owner = {
+					save_global_event_target_as = loe_owns_golden_skull
+				}
+			}
+		}
+		else_if = { #Nomad close to Yi Ti
+			limit = {
+				any_country = {
+					NOT = { is_subject_of = ROOT }
+					NOT = { tag = ROOT }
+					is_nomadic_government = yes
+					capital_scope = {
+						OR = {
+							area = eastern_dothraki_plains_area
+							area = vaes_dothrak_area
+							area = southern_dothraki_plains_area
+							area = western_dothraki_plains_area
+						}
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					NOT = { is_subject_of = ROOT }
+					NOT = { tag = ROOT }
+					is_nomadic_government = yes
+					capital_scope = {
+						OR = {
+							area = eastern_dothraki_plains_area
+							area = vaes_dothrak_area
+							area = southern_dothraki_plains_area
+							area = western_dothraki_plains_area
+						}
+					}
+				}
+				save_global_event_target_as = loe_owns_golden_skull
+			}
+		}
+		else = { #Country in Central Essos
+			random_country = {
+				limit = {
+					capital_scope = {
+						continent = central_essos
+					}
+				}
+				save_global_event_target_as = loe_owns_golden_skull
+			}
+		}
+	}
+
+	option = {
+		name = "yiti.19.t1"
+		custom_tooltip = yiti.19.d1
+		set_country_flag = loe_can_send_team
+	}
+}
+
+country_event = {
+	id = yiti.21
+	title = "yiti.21.t"
+	desc = "yiti.21.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "yiti.21.t1"
+		hidden_effect = {
+			country_event = {
+				id = yiti.22
+				days = 30
+				random = 30
+			}
+			country_event = {
+				id = yiti.23
+				days = 60
+				random = 120
+			}
+		}
+	}
+}
+
+country_event = {
+	id = yiti.22
+	title = "yiti.22.t"
+	desc = "yiti.22.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "yiti.22.t1"
+	}
+}
+
+country_event = {
+	id = yiti.23
+	title = "yiti.23.t"
+	desc = "yiti.23.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "yiti.23.t1"
+		add_manpower = -0.007
+		set_country_flag = loe_found_the_golden_skull
+		hidden_effect = {
+			country_event = {
+				id = yiti.24
+			}
+		}
+	}
+}
+
+country_event = {
+	id = yiti.24
+	title = "yiti.24.t"
+	desc = "yiti.24.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "yiti.24.t1"
+		kill_ruler = yes
+	}
+}
+
+#Last event created
+
+##Functional##
+
+#Decreases Imperial Land Debuff by 1: 66>50>33>25>10
+country_event = {
+	id = yiti.3
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+
+		if = {
+			limit = { has_country_flag = loe_imperial_land_0 }
+			remove_country_modifier = loe_efficient_bureaucracy
+			add_country_modifier = {
+				name = loe_efficient_bureaucracy
+				duration = 1825
+			}
+		}
+		if = {
+			limit = { has_country_modifier = loe_imperial_land_1 }
+			remove_country_modifier = loe_imperial_land_1
+			set_country_flag = loe_imperial_land_0
+		}
+		if = {
+			limit = { has_country_modifier = loe_imperial_land_2 }
+			remove_country_modifier = loe_imperial_land_2
+			add_country_modifier = {
+				name = loe_imperial_land_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = { has_country_modifier = loe_imperial_land_3 }
+			remove_country_modifier = loe_imperial_land_3
+			add_country_modifier = {
+				name = loe_imperial_land_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = { has_country_modifier = loe_imperial_land_4 }
+			remove_country_modifier = loe_imperial_land_4
+			add_country_modifier = {
+				name = loe_imperial_land_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = { has_country_modifier = loe_imperial_land_5 }
+			remove_country_modifier = loe_imperial_land_5
+			add_country_modifier = {
+				name = loe_imperial_land_4
+				duration = -1
+			}
+		}
+	}
+}
+
+#Increases Imperial Land Debuff by 1: 10>25>33>50>66
+country_event = {
+	id = yiti.4
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+
+		if = {
+			limit = { has_country_modifier = loe_imperial_land_5 }
+			remove_country_modifier = loe_insufficient_bureaucracy
+			add_country_modifier = {
+				name = loe_insufficient_bureaucracy
+				duration = 1825
+			}
+		}
+		if = {
+			limit = { has_country_modifier = loe_imperial_land_4 }
+			remove_country_modifier = loe_imperial_land_4
+			add_country_modifier = {
+				name = loe_imperial_land_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = { has_country_modifier = loe_imperial_land_3 }
+			remove_country_modifier = loe_imperial_land_3
+			add_country_modifier = {
+				name = loe_imperial_land_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = { has_country_modifier = loe_imperial_land_2 }
+			remove_country_modifier = loe_imperial_land_2
+			add_country_modifier = {
+				name = loe_imperial_land_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = { has_country_modifier = loe_imperial_land_1 }
+			remove_country_modifier = loe_imperial_land_1
+			add_country_modifier = {
+				name = loe_imperial_land_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = { has_country_flag = loe_imperial_land_0 }
+			add_country_modifier = {
+				name = loe_imperial_land_1
+				duration = -1
+			}
+			clr_country_flag = loe_imperial_land_0
+		}
+	}
+}
+
+country_event = {
+	id = yiti.6
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		country_event = {
+			id = yiti.4
+		}
+		set_country_flag = loe_imperial_administration_cycle
+	}
+}
+
+country_event = {
+	id = yiti.7
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		clr_country_flag = loe_imperial_administration_cycle
+	}
+}
+
+country_event = {
+	id = yiti.10
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		add_legitimacy = 2
+	}
+}
+
+country_event = {
+	id = yiti.11
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	hidden = yes
+	mean_time_to_happen = { months = 1 }
+
+	trigger = {
+		has_country_flag = loe_legitimacy_battle
+		is_at_war = no
+	}
+
+	option = {
+		name = "loe_hidden"
+		clr_country_flag = loe_legitimacy_battle
+	}
+}
+
+country_event = {
+	id = yiti.12
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	hidden = yes
+	mean_time_to_happen = { months = 1 }
+
+	trigger = {
+		capital_scope = {
+			region = region_dry_bones
+		}
+		is_nomadic_government = yes
+		any_war_enemy_country = {
+			tag = R68
+		}
+		NOT = { has_country_flag = loe_jogos_nhai_war }
+	}
+
+	immediate = {
+		set_country_flag = loe_jogos_nhai_war
+		R68 = { set_country_flag = loe_jogos_nhai_war }
+	}
+
+	option = {
+		country_event = {
+			id = jogosnhai.1
+		}
+		#every_country = {
+		#	limit = {
+		#		capital_scope = {
+		#			region = region_dry_bones
+		#		}
+		#		is_nomadic_government = yes
+		#		NOT = {
+		#				any_war_enemy_country = {
+		#				tag = R68
+		#			}
+		#		}
+		#	}
+		#	join_all_defensive_wars_of = ROOT
+		#}
+		R68 = {
+			country_event = {
+				id = yiti.14
+			}
+		}
+	}
+}
+
+country_event = {
+	id = yiti.13
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	hidden = yes
+	mean_time_to_happen = { months = 1 }
+
+	trigger = {
+		has_country_flag = loe_jogos_nhai_war
+		is_at_war = no
+	}
+	option = {
+		clr_country_flag = loe_jogos_nhai_war
+		
+		if = {
+			limit = {
+				has_country_modifier = loe_jogos_war_jogos
+			}
+			remove_country_modifier = loe_jogos_war_jogos
+		}
+		if = {
+			limit = {
+				has_country_modifier = loe_jogos_war_yiti
+			}
+			remove_country_modifier = loe_jogos_war_yiti
+		}
+	}
+}
+
+country_event = {
+	id = yiti.20
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	hidden = yes
+	
+	trigger = {
+		NOT = { has_ruler_flag = loe_religious_exemptions_ruler }
+		any_owned_province = {
+			has_province_modifier = loe_religious_exemptions
+		}
+	}
+
+	option = {
+		name = "loe_hidden"
+		every_owned_province = {
+			remove_province_modifier = loe_religious_exemptions
+		}
+	}
+}

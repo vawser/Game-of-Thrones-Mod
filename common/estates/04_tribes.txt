@@ -14,7 +14,11 @@ estate_tribes = {
     custom_name = {
 		desc = estate_jhats
 		trigger = {
-			has_reform = jhattar_reform
+			OR = {
+				has_reform = jhattar_reform
+				has_reform = loe_prathama
+				has_reform = loe_sthaurin
+			}
 		}
 	}
     
@@ -23,6 +27,7 @@ estate_tribes = {
         OR = {
             has_reform = khalasar_reform
             has_reform = jhattar_reform
+			is_nomad = yes
         }
     }
 
@@ -94,6 +99,7 @@ estate_tribes = {
             OR = {
                 has_reform = khalasar_reform
                 has_reform = jhattar_reform
+				is_nomad = yes
             }
             horde_unity = 75
         }
@@ -106,6 +112,7 @@ estate_tribes = {
             OR = {
                 has_reform = khalasar_reform
                 has_reform = jhattar_reform
+				is_nomad = yes
             }
             NOT = { horde_unity = 50 }
         }

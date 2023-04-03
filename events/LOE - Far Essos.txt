@@ -1,0 +1,31 @@
+namespace = far_essos
+
+country_event = {
+	id = far_essos.1
+	title = "far_essos.1.t"
+	desc = "far_essos.1.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "far_essos.1.t1"
+		set_country_flag = loe_mapped_the_mountains_of_morn
+		add_prestige = 10
+		custom_tooltip = far_essos.1.d1
+	}
+}
+
+country_event = {
+	id = far_essos.1
+	title = "far_essos.2"
+	desc = "far_essos.2"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes #TBD
+
+	option = {
+		name = "far_essos.2.t1"
+		set_country_flag = loe_mapped_the_mountains_of_morn
+		add_prestige = 10
+		custom_tooltip = far_essos.1.d1
+	}
+}

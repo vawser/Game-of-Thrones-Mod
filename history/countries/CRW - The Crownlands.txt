@@ -319,6 +319,7 @@ fixed_capital = 226
     
 	heir = {
 		name = "Rhaenyra"
+		monarch_name = "Rhaenyra I"
 		dynasty = "Targaryen"
 		birth_date = 97.1.1
 		death_date = 129.5.2
@@ -370,6 +371,7 @@ fixed_capital = 226
     
 	heir = {
 		name = "Jaehaerys"
+		monarch_name = "Jaehaerys II"
 		dynasty = "Targaryen"
 		birth_date = 123.9.12
 		death_date = 129.8.9
@@ -384,6 +386,7 @@ fixed_capital = 226
 129.8.9 = {
 	heir = {
 		name = "Maelor"
+		monarch_name = "Maelor I"
 		dynasty = "Targaryen"
 		birth_date = 127.3.29
 		death_date = 130.6.13
@@ -411,7 +414,7 @@ fixed_capital = 226
 # Aegon's III Reign (fixed)
 131.8.24 = {
 	monarch = {
-		name = "Aegon III 'the Broken King'"
+		name = "Aegon III"
 		dynasty = "Targaryen"
 		adm = 2
 		dip = 3
@@ -433,6 +436,7 @@ fixed_capital = 226
 	
 	heir = {
 		name = "Baela"
+		monarch_name = "Baela I"
 		dynasty = "Targaryen"
 		birth_date = 116.3.29
 		death_date = 134.5.3
@@ -490,7 +494,7 @@ fixed_capital = 226
 # Daeron's I Reign (fixed)
 157.8.1 = {
 	monarch = {
-		name = "Daeron I 'the Young Dragon'"
+		name = "Daeron I"
 		dynasty = "Targaryen"
 		adm = 3
 		dip = 2
@@ -528,12 +532,24 @@ fixed_capital = 226
         name = "Daena"
         dynasty = "Targaryen" 
         birth_date = 145.2.28
-        death_date = 171.4.9
+        death_date = 162.1.4
         adm = 3
         dip = 2
         mil = 3
 		female = yes
     }
+
+	heir = {
+		name = "Viserys"
+		monarch_name = "Viserys II"
+		dynasty = "Targaryen"
+		birth_date = 116.3.29
+		death_date = 171.4.9
+		adm = 4
+		dip = 0
+		mil = 5
+		claim = 70
+	}
 	add_king_titles = yes
 }
 
@@ -602,7 +618,7 @@ fixed_capital = 226
 # Daeron's II Reign (fixed)
 184.5.17 = {
 	monarch = {
-		name = "Daeron II 'the Good'"
+		name = "Daeron II"
 		dynasty = "Targaryen"
 		adm = 5
 		dip = 3
@@ -611,10 +627,10 @@ fixed_capital = 226
 	}
 	
     queen = {
-        country_of_origin = A09
+        country_of_origin = DOR
         name = "Myriah"
         dynasty = "Martell" 
-        birth_date = 155.3.17
+        birth_date = 152.3.17
         death_date = 209.4.6
         adm = 3
         dip = 4
@@ -623,9 +639,10 @@ fixed_capital = 226
     }
     
 	heir = {
-		name = "Baelor 'Breakspear'"
+		name = "Baelor"
+		monarch_name = "Baelor II"
 		dynasty = "Targaryen"
-		birth_date = 170.1.1
+		birth_date = 170.1.3
 		death_date = 209.2.8
 		claim = 100
 		adm = 2
@@ -635,16 +652,36 @@ fixed_capital = 226
 	add_king_titles = yes
 }
 
+# Daemon Blackfyre's scheme to claim the throne
+196.2.1 = {
+	add_legitimacy = -40
+}
+
 209.2.8 = {
 	heir = {
 		name = "Valarr"
+		monarch_name = "Valarr I"
 		dynasty = "Targaryen"
-		birth_date = 170.1.1
-		death_date = 209.4.6
-		claim = 100
+		birth_date = 186.3.2
+		death_date = 209.4.5
+		claim = 90
 		adm = 4
 		dip = 5
 		mil = 2
+	}
+}
+
+209.4.5 = {
+	heir = {
+		name = "Aerys"
+		monarch_name = "Aerys I"
+		dynasty = "Targaryen"
+		birth_date = 174.9.2
+		death_date = 209.4.6
+		claim = 80
+		adm = 5
+		dip = 3
+		mil = 4
 	}
 }
 
@@ -673,6 +710,7 @@ fixed_capital = 226
     
 	heir = {
 		name = "Rhaegel"
+		monarch_name = "Rhaegel I"
 		dynasty = "Targaryen"
 		birth_date = 176.2.18
 		death_date = 215.11.4
@@ -687,6 +725,7 @@ fixed_capital = 226
 215.11.4 = {
 	heir = {
 		name = "Aelor"
+		monarch_name = "Aelor I"
 		dynasty = "Targaryen"
 		birth_date = 198.12.21
 		death_date = 217.8.7
@@ -700,6 +739,7 @@ fixed_capital = 226
 217.8.7 = {
 	heir = {
 		name = "Aelora"
+		monarch_name = "Aelora I"
 		dynasty = "Targaryen"
 		birth_date = 198.12.21
 		death_date = 218.3.25
@@ -749,6 +789,7 @@ fixed_capital = 226
     
 	heir = {
 		name = "Daeron"
+		monarch_name = "Daeron III"
 		dynasty = "Targaryen"
 		birth_date = 190.11.26
 		death_date = 222.6.2
@@ -763,6 +804,7 @@ fixed_capital = 226
 222.6.2 = {
 	heir = {
 		name = "Aerion"
+		monarch_name = "Aerion I"
 		dynasty = "Targaryen"
 		birth_date = 193.2.19
 		death_date = 232.9.5
@@ -812,6 +854,7 @@ fixed_capital = 226
     
 	heir = {
 		name = "Duncan"
+		monarch_name = "Duncan I"
 		dynasty = "Targaryen"
 		birth_date = 221.7.3
 		death_date = 239.2.13

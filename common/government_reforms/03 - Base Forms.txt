@@ -546,6 +546,33 @@ valyrian_citystate_reform = {
 	}
 }
 
+royal_city_reform = {
+	icon = "royal_city"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	duration = 4
+	#legacy_equivalent = imperial_city
+
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+
+	potential = {
+		has_reform = royal_city_reform
+	}
+
+	free_city = yes
+	modifiers = {
+		trade_efficiency = 0.1
+		development_cost = -0.20
+		all_estate_influence_modifier = 0.10
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+		enables_republic_ideagroup = yes
+	}
+}
+
 castellany_of_dragonstone_reform = {
 	icon = "small_castle"
 	allow_normal_conversion = no

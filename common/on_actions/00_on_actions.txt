@@ -1895,6 +1895,10 @@ on_become_free_city = {
 		limit = { has_global_flag = enable_onaction_logging }
 		log = "DEBUG - [Root.GetName]: on_become_free_city "
 	}
+
+	events = {
+		royal_cities.1
+	}
 }
 
 # Country
@@ -1902,6 +1906,10 @@ on_remove_free_city = {
 	if = { 
 		limit = { has_global_flag = enable_onaction_logging }
 		log = "DEBUG - [Root.GetName]: on_remove_free_city "
+	}
+
+	events = {
+		royal_cities.2
 	}
 }
 

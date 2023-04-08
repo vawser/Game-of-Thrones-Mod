@@ -593,8 +593,8 @@ NCountry = {
 	CULTURAL_UNION_MIN_RANK = 3,				-- Minimum rank to get cultural union effect with Common Sense.
 	PRIMARY_NATION_BLOCK_CONVERT_CULTURE = 0,	-- Does primary nation of a tag existing block converting culture?
 
-	MIN_DEV_FOR_FREE_CITY = 0,					-- Capital must have at least this much development to be a free city
-	MAX_PROVINCES_FOR_FREE_CITY = 100,			-- A free city cannot have more provinces than this
+	MIN_DEV_FOR_FREE_CITY = 6,					-- Capital must have at least this much development to be a free city
+	MAX_PROVINCES_FOR_FREE_CITY = 1,			-- A free city cannot have more provinces than this
 
 	HRE_RANK = 3,								-- Emperor of the HRE is displayed as this rank (for ruler title only)
 	HRE_MAX_RANK = 1,							-- for members

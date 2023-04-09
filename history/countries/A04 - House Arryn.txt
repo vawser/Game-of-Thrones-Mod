@@ -5,14 +5,19 @@ technology_group = westerosi
 primary_culture = men_of_the_stormlands
 religion = faith_of_the_seven
 government_rank = 2
-government = monarchy
-add_government_reform = noble_house_reform
-capital = 304
-fixed_capital = 304
+government = dynasty
+add_government_reform = great_house_reform
+capital = 136
+fixed_capital = 136
 
 #-------------------------------
 # Diplomacy
 #-------------------------------
+2.1.1 = {
+	elector = yes
+	override_country_name = THEVALE
+	save_global_event_target_as = TheValeGreatHouse
+}
 
 #-------------------------------
 # Rulers
@@ -20,168 +25,186 @@ fixed_capital = 304
 # War for the Stepstones
 100.1.1 = {
 	monarch = {
-		name = "Boremund"
-		dynasty = "Baratheon"
-		adm = 5
-		dip = 5
-		mil = 1
-		birth_date = 47.1.1
-	}
-	
-    queen = {
-        country_of_origin = A07
-        name = "Lia"
-        dynasty = "Baratheon" 
-        birth_date = 60.1.1
-        death_date = 150.1.1
-        adm = 2
-        dip = 6
-        mil = 0
-        female = yes
-    }
-    
-	heir = {
-		name = "Borros"
-		monarch_name = "Ellaria"
-		dynasty = "Baratheon"
-		birth_date = 85.1.1
-		death_date = 150.1.1
-		claim = 100
+		name = "Lady Jyana"
+		dynasty = "Arryn"
 		adm = 4
 		dip = 2
-		mil = 5
+		mil = 3
+		birth_date = 75.1.1
+        regent = yes
+        female = yes
+	}
+
+	heir = {
+		name = "Jeyne"
+		monarch_name = "Jeyne"
+		dynasty = "Arryn"
+		birth_date = 98.1.1
+		death_date = 150.1.1
+		claim = 100
+		adm = 3
+		dip = 1
+		mil = 3
+        female = yes
 	}
 }
 
 # The Dance of the Dragons
 129.1.1 = {
 	monarch = {
-		name = "Borros"
-		dynasty = "Baratheon"
-		adm = 4
-		dip = 2
-		mil = 5
-		birth_date = 85.1.1
-	}
-	
-    queen = {
-        country_of_origin = B36
-        name = "Elenda"
-        dynasty = "Caron" 
-        birth_date = 84.1.1
-        death_date = 150.1.1
+		name = "Jeyne"
+		dynasty = "Arryn"
+		adm = 3
+		dip = 1
+		mil = 3
+		birth_date = 98.1.1
         female = yes
-        adm = 1
-        dip = 3
-        mil = 4
-    }
-    
+	}
+
 	heir = {
-		name = "Cassandra"
-		monarch_name = "Cassandra"
-		dynasty = "Baratheon"
-		birth_date = 114.1.1
+		name = "Harrold"
+		monarch_name = "Harrold"
+		dynasty = "Arryn"
+		birth_date = 88.1.1
 		death_date = 150.1.1
 		claim = 100
-		adm = 5
+		adm = 4
 		dip = 3
-		mil = 4
-        female = yes
+		mil = 5
 	}
 }
 
 # Blackfyre Rebellion
 195.1.1 = {
 	monarch = {
-		name = "Arion"
-		dynasty = "Baratheon"
+		name = "Donnel"
+		dynasty = "Arryn"
 		adm = 4
 		dip = 2
-		mil = 1
-		birth_date = 144.1.1
+		mil = 3
+		birth_date = 157.1.1
 	}
 	
     queen = {
-        country_of_origin = A07
-        name = "Myrielle"
-        dynasty = "Baratheon" 
-        birth_date = 151.1.1
+        country_of_origin = F20
+        name = "Jeona"
+        dynasty = "Tyrell" 
+        birth_date = 154.1.1
         death_date = 250.1.1
         adm = 3
-        dip = 2
-        mil = 4
+        dip = 4
+        mil = 2
         female = yes
     }
     
 	heir = {
-		name = "Axel"
-		monarch_name = "Axel"
-		dynasty = "Baratheon"
-		birth_date = 172.1.1
+		name = "Othor"
+		monarch_name = "Othor"
+		dynasty = "Arryn"
+		birth_date = 175.1.1
 		death_date = 250.1.1
 		claim = 100
-		adm = 6
-		dip = 5
-		mil = 4
+		adm = 5
+		dip = 1
+		mil = 5
 	}
 }
+
+# Jon Arryn
+271.3.9 = {
+	monarch = {
+		name = "Jon"
+		dynasty = "Arryn"
+		adm = 4
+		dip = 6
+		mil = 3
+		birth_date = 219.9.26
+	}
+	
+	heir = {
+		name = "Elbert"
+		dynasty = "Arryn"
+		birth_date = 252.1.1
+		death_date = 350.1.1
+		claim = 100
+		adm = 3
+		dip = 3
+		mil = 1
+	}
+}
+
+
 
 # Robert's Rebellion
 282.1.1 = {
 	monarch = {
-		name = "Robert"
-		dynasty = "Baratheon"
-		adm = 1
-		dip = 3
-		mil = 6
-		birth_date = 263.1.1
+		name = "Jon"
+		dynasty = "Arryn"
+		adm = 4
+		dip = 6
+		mil = 3
+		birth_date = 219.9.26
 	}
 	
     queen = {
-        country_of_origin = A01
-        name = "Lyanna"
-        dynasty = "Stark" 
+        country_of_origin = A03
+        name = "Lysa"
+        dynasty = "Tully" 
         birth_date = 266.1.1
         death_date = 350.1.1
         adm = 3
-        dip = 6
-        mil = 0
+        dip = 3
+        mil = 2
         female = yes
     }
     
 	heir = {
-		name = "Stannis"
-		monarch_name = "Stannis"
-		dynasty = "Baratheon"
-		birth_date = 264.1.1
+		name = "Denys"
+		monarch_name = "Denys 'the Darling'"
+		dynasty = "Arryn"
+		birth_date = 252.1.1
 		death_date = 350.1.1
 		claim = 100
-		adm = 5
+		adm = 3
 		dip = 3
-		mil = 5
+		mil = 1
 	}
 }
 
-# Robert's Success
-283.1.1 = {
+# A Clash of Kings
+299.1.1 = {
 	monarch = {
-		name = "Stannis"
-		dynasty = "Baratheon"
-		adm = 5
-		dip = 3
-		mil = 5
-		birth_date = 264.1.1
+		name = "Lady Lysa"
+		dynasty = "Tully"
+		adm = 0
+		dip = 0
+		mil = 1
+		birth_date = 266.1.1
+        female = yes
+        regent = yes
+	}
+
+	heir = {
+		name = "Robin"
+		monarch_name = "Robin"
+		dynasty = "Arryn"
+		birth_date = 292.1.1
+		death_date = 350.1.1
+		claim = 100
+		adm = 2
+		dip = 2
+		mil = 2
 	}
 }
 
-# War of the Five Kings
-298.1.1 = {
-	monarch = {
-		name = "Renly"
-		dynasty = "Baratheon"
-		adm = 4
-		dip = 4
-		mil = 3
+# The Night King
+304.1.1 = {
+    monarch = {
+		name = "Robin"
+		dynasty = "Arryn"
+		adm = 2
+		dip = 2
+		mil = 2
+		birth_date = 292.1.1
 	}
 }
-

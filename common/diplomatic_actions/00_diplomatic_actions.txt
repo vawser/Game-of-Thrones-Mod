@@ -569,6 +569,16 @@ grant_electorate = {
 			log = "DEBUG - [Root.GetName], [From.GetName] - grant_electorate"
 		}
 	}
+
+	condition = {
+		tooltip = "Disabled mechanic"
+		potential = {
+			always = yes
+		}
+		allow = {
+			always = no
+		}
+	}
 }
 
 remove_electorate = {
@@ -576,6 +586,16 @@ remove_electorate = {
 		if = { 
 			limit = { has_global_flag = enable_diplomacy_logging }
 			log = "DEBUG - [Root.GetName], [From.GetName] - remove_electorate"
+		}
+	}
+
+	condition = {
+		tooltip = "Disabled mechanic"
+		potential = {
+			always = yes
+		}
+		allow = {
+			always = no
 		}
 	}
 }
@@ -670,6 +690,18 @@ fabricate_claim = {
 		if = { 
 			limit = { has_global_flag = enable_diplomacy_logging }
 			log = "DEBUG - [Root.GetName], [From.GetName] - fabricate_claim"
+		}
+	}
+
+	condition = {
+		tooltip = "Nobles houses of Westeros cannot claim each other's lands"
+		potential = {
+			government = dynasty
+			FROM = { government = dynasty }
+			#is_subject_of_type = feudatory
+		}
+		allow = {
+			always = no
 		}
 	}
 }

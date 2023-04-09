@@ -17,7 +17,7 @@ country_decisions = {
             imperial_mandate = 100
                 
             OR = {
-                NOR = {
+                A01 = {
                     is_subject_of = ROOT
                     NOT = { liberty_desire = 1 }
                 }
@@ -28,7 +28,7 @@ country_decisions = {
                 }
             }
             OR = {
-                RIV = {
+                A03 = {
                     is_subject_of = ROOT
                     NOT = { liberty_desire = 1 }
                 }
@@ -50,7 +50,7 @@ country_decisions = {
                 }
             }
             OR = {
-                STM = {
+                A07 = {
                     is_subject_of = ROOT
                     NOT = { liberty_desire = 1 }
                 }
@@ -61,7 +61,7 @@ country_decisions = {
                 }
             }
             OR = {
-                IRI = {
+                M09 = {
                     is_subject_of = ROOT
                     NOT = { liberty_desire = 1 }
                 }
@@ -72,7 +72,7 @@ country_decisions = {
                 }
             }
             OR = {
-                VLE = {
+                A04 = {
                     is_subject_of = ROOT
                     NOT = { liberty_desire = 1 }
                 }
@@ -83,7 +83,7 @@ country_decisions = {
                 }
             }
             OR = {
-                REA = {
+                F20 = {
                     is_subject_of = ROOT
                     NOT = { liberty_desire = 1 }
                 }
@@ -94,7 +94,7 @@ country_decisions = {
                 }
             }
             OR = {
-                WES = {
+                A06 = {
                     is_subject_of = ROOT
                     NOT = { liberty_desire = 1 }
                 }
@@ -105,7 +105,7 @@ country_decisions = {
                 }
             }
             OR = {
-                DOR = {
+                A09 = {
                     is_subject_of = ROOT
                     NOT = { liberty_desire = 1 }
                 }
@@ -124,22 +124,22 @@ country_decisions = {
             
             if = {
                 limit = {
-                    NOR = {
+                    A01 = {
                         is_subject_of = ROOT
                     }
                 }
                 
-                inherit = NOR
+                inherit = A01
             }
             
             if = {
                 limit = {
-                    RIV = {
+                    A03 = {
                         is_subject_of = ROOT
                     }
                 }
                 
-                inherit = RIV
+                inherit = A03
             }
             
             if = {
@@ -154,62 +154,62 @@ country_decisions = {
             
             if = {
                 limit = {
-                    STM = {
+                    A07 = {
                         is_subject_of = ROOT
                     }
                 }
                 
-                inherit = STM
+                inherit = A07
             }
             
             if = {
                 limit = {
-                    IRI = {
+                    M09 = {
                         is_subject_of = ROOT
                     }
                 }
                 
-                inherit = IRI
+                inherit = M09
             }
             
             if = {
                 limit = {
-                    VLE = {
+                    A04 = {
                         is_subject_of = ROOT
                     }
                 }
                 
-                inherit = VLE
+                inherit = A04
             }
             
             if = {
                 limit = {
-                    REA = {
+                    F20 = {
                         is_subject_of = ROOT
                     }
                 }
                 
-                inherit = REA
+                inherit = F20
             }
             
             if = {
                 limit = {
-                    WES = {
+                    A06 = {
                         is_subject_of = ROOT
                     }
                 }
                 
-                inherit = WES
+                inherit = A06
             }
             
             if = {
                 limit = {
-                    DOR = {
+                    A09 = {
                         is_subject_of = ROOT
                     }
                 }
                 
-                inherit = DOR
+                inherit = A09
             }
             
             change_tag = WST

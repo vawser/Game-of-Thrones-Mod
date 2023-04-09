@@ -1,0 +1,672 @@
+assign_overlordship = {
+	category = influence
+	
+	alert_index = 40
+	alert_tooltip = assign_overlordship_tooltip
+	
+	require_acceptance = yes # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		is_emperor = yes
+		FROM = {
+			is_part_of_hre = yes
+			is_elector = no
+		}
+	}
+	is_allowed = {
+		has_reform = royal_house_reform
+		FROM = { is_subject_of_type = feudatory }
+		NOT = { has_country_modifier = got_shifting_tides }
+	}
+	on_accept = {
+		FROM = {
+			overlord = {
+				save_global_event_target_as = great_house
+				every_subject_country = {
+					set_country_flag = potential_feudatory
+				}
+			}
+			country_event = { id = GOT_SK_SYSTEM.4 }
+		}
+		add_country_modifier = {
+			name = got_shifting_tides
+			duration = 365
+		}
+	}
+	on_decline = {
+        
+	}
+	
+	ai_acceptance = {
+		add_entry = {
+			name = AIWEIGHT_POWERF
+			limit = {
+				always = yes
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 20
+			}
+		}
+		add_entry = {
+			name = OPINIONOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheNorthGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = event_target:TheNorthGreatHouse
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
+		add_entry = {
+			name = TRUSTOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheNorthGreatHouse
+					trust = {
+						who = event_target:TheNorthGreatHouse
+						value = 50
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = event_target:TheNorthGreatHouse
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = -0.4
+			}
+		}
+		add_entry = {
+			name = DISLOYAL
+			limit = {
+				FROM = {
+					ai_attitude = {
+						who = event_target:TheNorthGreatHouse
+						attitude = attitude_disloyal
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = LIBERTYDESIRE
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheNorthGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:liberty_desire
+				who = FROM
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = OPINIONOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheRiverlandsGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = event_target:TheRiverlandsGreatHouse
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
+		add_entry = {
+			name = TRUSTOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheRiverlandsGreatHouse
+					trust = {
+						who = event_target:TheRiverlandsGreatHouse
+						value = 50
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = event_target:TheRiverlandsGreatHouse
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = -0.4
+			}
+		}
+		add_entry = {
+			name = DISLOYAL
+			limit = {
+				FROM = {
+					ai_attitude = {
+						who = event_target:TheRiverlandsGreatHouse
+						attitude = attitude_disloyal
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = LIBERTYDESIRE
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheRiverlandsGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:liberty_desire
+				who = FROM
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = OPINIONOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheIronIslandsGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = event_target:TheIronIslandsGreatHouse
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
+		add_entry = {
+			name = TRUSTOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheIronIslandsGreatHouse
+					trust = {
+						who = event_target:TheIronIslandsGreatHouse
+						value = 50
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = event_target:TheIronIslandsGreatHouse
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = -0.4
+			}
+		}
+		add_entry = {
+			name = DISLOYAL
+			limit = {
+				FROM = {
+					ai_attitude = {
+						who = event_target:TheIronIslandsGreatHouse
+						attitude = attitude_disloyal
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = LIBERTYDESIRE
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheIronIslandsGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:liberty_desire
+				who = FROM
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = OPINIONOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheValeGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = event_target:TheValeGreatHouse
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
+		add_entry = {
+			name = TRUSTOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheValeGreatHouse
+					trust = {
+						who = event_target:TheValeGreatHouse
+						value = 50
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = event_target:TheValeGreatHouse
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = -0.4
+			}
+		}
+		add_entry = {
+			name = DISLOYAL
+			limit = {
+				FROM = {
+					ai_attitude = {
+						who = event_target:TheValeGreatHouse
+						attitude = attitude_disloyal
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = LIBERTYDESIRE
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheValeGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:liberty_desire
+				who = FROM
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = OPINIONOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheWesterlandsGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = event_target:TheWesterlandsGreatHouse
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
+		add_entry = {
+			name = TRUSTOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheWesterlandsGreatHouse
+					trust = {
+						who = event_target:TheWesterlandsGreatHouse
+						value = 50
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = event_target:TheWesterlandsGreatHouse
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = -0.4
+			}
+		}
+		add_entry = {
+			name = DISLOYAL
+			limit = {
+				FROM = {
+					ai_attitude = {
+						who = event_target:TheWesterlandsGreatHouse
+						attitude = attitude_disloyal
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = LIBERTYDESIRE
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheWesterlandsGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:liberty_desire
+				who = FROM
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = OPINIONOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheReachGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = event_target:TheReachGreatHouse
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
+		add_entry = {
+			name = TRUSTOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheReachGreatHouse
+					trust = {
+						who = event_target:TheReachGreatHouse
+						value = 50
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = event_target:TheReachGreatHouse
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = -0.4
+			}
+		}
+		add_entry = {
+			name = DISLOYAL
+			limit = {
+				FROM = {
+					ai_attitude = {
+						who = event_target:TheReachGreatHouse
+						attitude = attitude_disloyal
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = LIBERTYDESIRE
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheReachGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:liberty_desire
+				who = FROM
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = OPINIONOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheStormlandsGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = event_target:TheStormlandsGreatHouse
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
+		add_entry = {
+			name = TRUSTOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheStormlandsGreatHouse
+					trust = {
+						who = event_target:TheStormlandsGreatHouse
+						value = 50
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = event_target:TheStormlandsGreatHouse
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = -0.4
+			}
+		}
+		add_entry = {
+			name = DISLOYAL
+			limit = {
+				FROM = {
+					ai_attitude = {
+						who = event_target:TheStormlandsGreatHouse
+						attitude = attitude_disloyal
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = LIBERTYDESIRE
+			limit = {
+				FROM = {
+					is_subject_of = event_target:TheStormlandsGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:liberty_desire
+				who = FROM
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = OPINIONOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:DorneGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = event_target:DorneGreatHouse
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
+		add_entry = {
+			name = TRUSTOVERLORD
+			limit = {
+				FROM = {
+					is_subject_of = event_target:DorneGreatHouse
+					trust = {
+						who = event_target:DorneGreatHouse
+						value = 50
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = event_target:DorneGreatHouse
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = -0.4
+			}
+		}
+		add_entry = {
+			name = DISLOYAL
+			limit = {
+				FROM = {
+					ai_attitude = {
+						who = event_target:DorneGreatHouse
+						attitude = attitude_disloyal
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = LIBERTYDESIRE
+			limit = {
+				FROM = {
+					is_subject_of = event_target:DorneGreatHouse
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:liberty_desire
+				who = FROM
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.2
+			}
+		}
+	}
+
+	ai_will_do = {
+		always = yes
+	}
+}

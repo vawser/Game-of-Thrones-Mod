@@ -2,7 +2,7 @@
 on_startup = {
 	# Set Iron Throne holder
 	emperor = {
-		save_global_event_target_as = IronThroneHolder
+		save_global_event_target_as = IronThrone
 	}
 
 	# Set YiTi Emperor
@@ -884,7 +884,7 @@ on_successive_emperor = {
 	}
 	
 	emperor = {
-		save_global_event_target_as = IronThroneHolder
+		save_global_event_target_as = IronThrone
 	}
 }
 
@@ -1117,7 +1117,7 @@ on_chinese_empire_dismantled = {
 		log = "DEBUG - [Root.GetName], [From.GetName]: on_chinese_empire_dismantled "
 	}
 	
-	clear_global_event_target = IronThroneHolder
+	clear_global_event_target = IronThrone
 	
 }
 

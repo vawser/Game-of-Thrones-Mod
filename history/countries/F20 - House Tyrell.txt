@@ -5,14 +5,19 @@ technology_group = westerosi
 primary_culture = men_of_the_reach
 religion = faith_of_the_seven
 government_rank = 2
-government = monarchy
-add_government_reform = noble_house_reform
+government = dynasty
+add_government_reform = great_house_reform
 capital = 267
 fixed_capital = 267
 
 #-------------------------------
 # Diplomacy
 #-------------------------------
+2.1.1 = {
+	elector = yes
+	override_country_name = THEREACH
+	save_global_event_target_as = TheReachGreatHouse
+}
 
 #-------------------------------
 # Rulers

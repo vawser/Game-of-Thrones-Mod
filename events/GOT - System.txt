@@ -460,9 +460,6 @@ country_event = {
 					superregion = westeros_superregion
 				}
 			}
-			westeros_superregion = {
-				discover_country = ROOT
-			}
 			westeros_sea_region = {
 				discover_country = ROOT
 			}
@@ -477,25 +474,6 @@ country_event = {
 			}
 			shivering_sea_region = {
 				undiscover_country = ROOT
-			}
-			# Lakes
-			884 = {
-				discover_country = ROOT
-			}
-			885 = {
-				discover_country = ROOT
-			}	  
-			882 = {
-				discover_country = ROOT
-			}		
-			883 = {
-				discover_country = ROOT
-			}		
-			881 = {
-			   discover_country = ROOT
-			}		  
-			880 = {
-				discover_country = ROOT
 			}
 		}
 
@@ -955,74 +933,74 @@ country_event = {
 		name = GOT_SYSTEM.10.option.b
 		every_country = {
 			limit = {
-				is_subject_of = NOR
+				is_subject_of = A01
 				is_subject_of_type = feudatory
 			}
 			every_owned_province = {
-				cede_province = NOR
+				cede_province = A01
 			}
 		}
 		every_country = {
 			limit = {
-				is_subject_of = RIV
+				is_subject_of = A03
 				is_subject_of_type = feudatory
 			}
 			every_owned_province = {
-				cede_province = RIV
+				cede_province = A03
 			}
 		}
 		every_country = {
 			limit = {
-				is_subject_of = VLE
+				is_subject_of = A04
 				is_subject_of_type = feudatory
 			}
 			every_owned_province = {
-				cede_province = VLE
+				cede_province = A04
 			}
 		}
 		every_country = {
 			limit = {
-				is_subject_of = WES
+				is_subject_of = A06
 				is_subject_of_type = feudatory
 			}
 			every_owned_province = {
-				cede_province = WES
+				cede_province = A06
 			}
 		}
 		every_country = {
 			limit = {
-				is_subject_of = REA
+				is_subject_of = F20
 				is_subject_of_type = feudatory
 			}
 			every_owned_province = {
-				cede_province = REA
+				cede_province = F20
 			}
 		}
 		every_country = {
 			limit = {
-				is_subject_of = STM
+				is_subject_of = A07
 				is_subject_of_type = feudatory
 			}
 			every_owned_province = {
-				cede_province = STM
+				cede_province = A07
 			}
 		}
 		every_country = {
 			limit = {
-				is_subject_of = DOR
+				is_subject_of = A09
 				is_subject_of_type = feudatory
 			}
 			every_owned_province = {
-				cede_province = DOR
+				cede_province = A09
 			}
 		}
 		every_country = {
 			limit = {
-				is_subject_of = IRI
+				is_subject_of = M09
 				is_subject_of_type = feudatory
 			}
 			every_owned_province = {
-				cede_province = IRI
+				cede_province = M09
 			}
 		}
 	}

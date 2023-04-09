@@ -137,9 +137,15 @@ gov_lord_paramount = {
 	trigger = {
 		has_reform = great_house_reform
 		OR = {
-			tag = STM
-			tag = REA
-			tag = RIV
+			capital_scope = {
+				region = region_stormlands
+			}
+			capital_scope = {
+				region = region_reach
+			}
+			capital_scope = {
+				region = region_riverlands
+			}
 		}
 	}
 }

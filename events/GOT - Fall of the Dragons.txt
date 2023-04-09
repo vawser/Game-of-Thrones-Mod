@@ -202,7 +202,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			NOR = {
+			A01 = {
 				kill_heir = { allow_new_heir = no }
 				define_heir = {
 					name = "Eddard"
@@ -215,11 +215,11 @@ country_event = {
 				}
 				kill_ruler = yes
 			}
-			VLE = {
+			A04 = {
 				kill_heir = { allow_new_heir = no }
 			}
 		}
-		VLE = { country_event = { id = FALL_OF_THE_DRAGONS.7 days = 1 } }
+		A04 = { country_event = { id = FALL_OF_THE_DRAGONS.7 days = 1 } }
 	}
 	
 	option = {
@@ -259,14 +259,14 @@ country_event = {
 				value = 2
 			}
 		}
-		STM = {
+		A07 = {
 			declare_war_with_cb = {
 				who = CRW
 				casus_belli = cb_claim_the_iron_throne
 			}
 		}
-		VLE = { join_all_offensive_wars_of = STM }
-		NOR = { join_all_offensive_wars_of = STM }
+		A04 = { join_all_offensive_wars_of = A07 }
+		A01 = { join_all_offensive_wars_of = A07 }
 	}
 	
 	option = {

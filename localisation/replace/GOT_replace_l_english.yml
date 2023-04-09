@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
  WORLD_YEAR:0 "The world $YEAR$ AC"
  
  #------------------------------------------------------
@@ -6,13 +6,6 @@ l_english:
  #------------------------------------------------------
  KILL_CONSORT_DESCRIPTION:0 "Current Consort (§Y$CONSORTNAME$§W) will die.\n"
  REMOVE_CONSORT_DESCRIPTION:0 "Current Consort (§Y$CONSORTNAME$§W) will be removed.\n"
-
- #------------------------------------------------------
- # Countries
- #------------------------------------------------------
- NOR: "The North"
- NOR_ADJ: "Northmen"
- 
   
  patriot_rebels_demand: "Defect to $DEFECT_COUNTRY$"
  patriot_rebels_demand_desc: "The Loyalists despise our unjust occupation and yearn to return to their native realm of $DEFECT_COUNTRY$"
@@ -61,8 +54,8 @@ l_english:
  CANNOT_UPGRADE_RANK_FIXED_RANK_GENERIC:0 "§R- You cannot change your current Government Rank.§!\n"
  CANNOT_UPGRADE_RANK_NEED_DEVELOPMENT:0 "§R- You need at least §Y$AMT$§! total development to increase your Government Rank and you only have §Y$CUR$§!.§W\n"
  CANNOT_UPGRADE_RANK_NEED_PRESTIGE:0 "§R- You need at least §Y$AMT$§! prestige to increase your Government Rank.§!\n"
- CANNOT_UPGRADE_RANK_HRE:1 "§R- Within the Holy Roman Empire, only electors are allowed to upgrade their Government Rank, and only up to Kingdom.§!\n"
- CANNOT_UPGRADE_RANK_HRE_ELECTOR:1 "§R- Electors of the Holy Roman Empire cannot upgrade their Government Rank past Kingdom.§!\n"
+ CANNOT_UPGRADE_RANK_HRE:1 "§R- Within the Seven Kingdoms, only great houses are allowed to upgrade their Government Rank, and only up to Kingdom.§!\n"
+ CANNOT_UPGRADE_RANK_HRE_ELECTOR:1 "§R- Great Houses of the Seven Kingdoms cannot upgrade their Government Rank past Kingdom.§!\n"
  
  #------------------------------------------------------
  # Age
@@ -751,6 +744,7 @@ l_english:
  CURIACONTROLLEROTHER_TITLE: "Became Faith Controller"
 
  PAPAL_MAX_STORE: "You can store up to §Y$VAL$§! faith influence ($YEAR$ years worth)"
+ IS_POPE: "They are the High Septon's domain."
  IS_PAPAL_CONTROLLER: "The ruler of $NAME$ is Faith Controller."
  ARE_NOT_PAPAL_CONTROLLER: "Are NOT the Faith controller"
  ARE_PAPAL_CONTROLLER: "Are the Faith controller"
@@ -1181,6 +1175,8 @@ l_english:
 
  CURRENT_EMPEROR: "§Y$RULERNAME$§W is the King\n--------------------------------------------------------------\nAs the de jur §YRuler of the Seven Kingdoms§!, the King is empowered to preserve the Seven Kingdoms and the integrity of the Iron Throne through certain decisions:\n\n -§MKing of the Andals, the Rhoynar, and the First Men§!:\n   -Bonuses from §GHigh§! Royal Authority.\n   -Penalty from §RLow§! Royal Authority.\n -§MLord of the Seven Kingdoms§!:\n   -Must maintain §PBalance of Power§! in the Realm.\n -Can enact §YRoyal Reforms§!"
  IS_HRE_EMPEROR: "§Y$RULERNAME$§W of §Y$NAME$§W is King of the Seven Kingdoms."
+ IS_EMPEROR: "Is the King of the SK"
+ ISNT_EMPEROR: "Is NOT the King of the SK"
  EMPEROR_BENEFIT: "Being king gives the following benefits:\n"
  EMPEROR_DIPACTIONS_DESC: "\nThe §YRuler of the Seven Kingdoms§! has access to additional diplomatic actions in order to strengthen the Iron Throne: -§GBureaucratic:§!\n  -Appoint Hand of the King\n  -Appoint Mst. of Coin\n  -Appoint Mst. of Laws\n  -Appoint Mst. of Ships\n  -Appoint Mst. of Whisperers\n -§MDiplomatic:§!\n  -Appoint Lord Protector of the Realm\n  -Demand Unlawful Territory\n  -Enforce Religious Unity\n  -Bestow Royal Grace"
 
@@ -1200,6 +1196,14 @@ l_english:
  HRE_INHERITABLE_DISABLED: "The Seven Kingdoms is now open to election!\nKing's subject houses will use diplomatic relations slots\n"
  renovatio_effect: "Unite the §YSeven Kingdoms§! to one country!"
  vassalize_empire2: "All members of the §YSeven Kingdoms§! who support the reform will become our direct vassals, and those who do not support the reform will leave the kingdom, giving us claim on their lands."
+
+ emperor: "King"
+ states_in_hre: "Houses in the Seven Kingdoms"
+ free_cities_in_hre: "Royal Cities in the Seven Kingdoms"
+ grant_electorate: "Elevated to Great House"
+ removed_our_electorate: "Removed as Great House"
+ removed_electorate_same_religion: "Demoted a Great House"
+ removed_electorate_other_religion: "Demoted a Great House"
  
  HRE_INFLUENCE: "Royal Authority"
  HRE_INFLUENCE_DESC: "Royal Authority represents the amount of control the King exerts over the Lords of the Seven Kingdoms. Authority is needed to enact decrees within the Seven Kingdoms."
@@ -1212,10 +1216,11 @@ l_english:
  IS_ELECTOR: "Is a Great House"
  DIPLO_ELECTOR: "$WHO$ is a Great House: "
 
- HRE_FREE_CITY: "§Y$NAME$§W is a Free City in the Seven Kingdoms."
  HRE_MEMBER_STAT: "$NUM$ Houses"
  HRE_MEMBER_STATES: "Noble Houses"
  HRE_MEMBER: "§Y$NAME$§W is a house of the Seven Kingdoms"
+
+ HRE_JOIN: "Join the Kingdom"
 
  HRE_LEAVE: "Leave the Kingdom"
  HRE_LEAVE_EMPEROR: "The King (§Y$COUNTRY$§W) will gain ownership of the following provinces: $LIST$.\n"
@@ -1235,11 +1240,18 @@ l_english:
  
  HRE_NUM_PRINCES_IMPACT: "There is currently §Y$CURR$§! houses in the Seven Kingdoms out of the §Y$NEED$§! needed to maintain legitimacy. This changes Royal Authority by $VAL$ every month."
  
- free_city_in_hre: "Royal Free City"
+ member_in_hre: "Member of SK"
+ free_city_in_hre: "Royal City"
+ HRE_IS_LESS_THAN: "Less than §Y$SIZE$§! members of SK.\n"
+ HRE_IS_AT_LEAST: "At least §Y$SIZE$§! members of SK.\n"
  IS_NOT_PART_OF_HRE: "Is NOT part of the Seven Kingdoms"
  IS_PART_OF_HRE: "Is part of the Seven Kingdoms"
  PROVINCE_IS_PART_OF_HRE: "$PROVINCENAME$ is part of the Seven Kingdoms"
  PROVINCE_IS_NOT_PART_OF_HRE: "$PROVINCENAME$ is NOT part of the Seven Kingdoms"
+ DIPLO_PART_OF_EMPIRE: "$PART$ is part of the Seven Kingdoms and $EMPEROR$ is the King: "
+ CW_WARNEMPEROR2: "$ENEMY$ is a part of the Kingdom, and $COUNTRY$ will protect them."
+ CW_WARNEMPEROR3: "$ENEMY$ is a royal city in the Kingdom, and $COUNTRY$ will protect them."
+ PEACE_IN_EMPIRE_NO_WAR: "After the landfriede has been declared, no member of the Seven Kingdoms may take hostile actions towards another member."
  
  IMPERIALRELATIONSTITLE: "Bestow Royal Grace"
  IMPERIALRELATIONSNEWDESC: "Do you wish to bestow Royal Grace upon $COUNTRY$? This will cost us §Y$COST$§W Royal Authority but greatly improve our relations."
@@ -1258,7 +1270,7 @@ l_english:
  BENEFIT_FOR_PROVINCE: "Kingdom provinces get:\n$MODIFIER$"
  BENEFIT_FOR_MEMBER: "Houses & Free Cities get:\n$MODIFIER$"
  BENEFIT_FOR_EVERYONE: "All in the Kingdom get:\n$MODIFIER$"
- NUM_OF_PRINCES: "The §Y$TOTAL$§! Lords and §Y$CITIES$§! Free Cities in the Kingdom give the following to the King:\n"
+ NUM_OF_PRINCES: "The §Y$TOTAL$§! Lords and §Y$CITIES$§! Royal Cities in the Kingdom give the following to the King:\n"
  HRE_NUM_MEMBERS: "These are the member states of the Kingdom."
  HRE_NUM_MEMBERS_DELAYED: "More countries might join the Seven Kingdoms if they are threatened by outside powers, and have a friendly attitude towards the King. A high Royal Authority may help to convince them."
  NO_WAR_ON_EMPIRE: "You can not declare war on a member of the Seven Kingdoms, if you are allied with the King in a war."
@@ -1272,10 +1284,10 @@ l_english:
  take_province_hre_desc: "War goal is to take a province that is part of the Seven Kingdoms."
  sent_gift: "Interacted"
  DIPLOMACYACTION_CATEGORY_emperor: "Royal actions"
- GRANTELECTORATETITLE: "Elevate to Great House"
- GRANTELECTORATEDESC: "Elevating this house to the 'Great House' status will make them a §YRoyal Subject§! of the §YSeven Kingdoms§! and they will reign over the subject houses in their respective region."
- REMOVE_ELECTORATE_TITLE: "Demote from Great House"
- REMOVE_ELECTORATE_DESC: "Demoting this house from 'Great House' status will significantly decrease relations and will severely weaken the house."
+ GRANTELECTORATETITLE: "------------------"
+ GRANTELECTORATEDESC: ""
+ REMOVE_ELECTORATE_TITLE: "------------------"
+ REMOVE_ELECTORATE_DESC: ""
  REMOVE_ELECTORATE_ADDITIONAL_EFFECTS: "Furthermore, it would change other Great Houses' opinion of us by $SAME$ if same religion as the removed Great House, $OTHER$ if otherwise.\n\nIt will cost us §Y$IA$§! Royal Authority."
 
  # Free City Stuff # 
@@ -1395,7 +1407,7 @@ l_english:
  DIP_SCORE_EMPEROR: "King: $VAL$\n"
 
  MAPMODE_EMPIRE: "Royal"
- MAPMODE_EMPIRE_DESC: "Colors the provinces that are part of the Seven Kingdoms.\nPurple belongs to the King, brown belongs to a Great House, and blue belongs to a Free City. Green provinces are simply part of the Kingdom.\nYellow-striped provinces are part of the Kingdom, but their Owner is not.\nOrange-striped provinces are part of the Kingdom, but they are subject of a non-Empire overlord.\n"
+ MAPMODE_EMPIRE_DESC: "Colors the provinces that are part of the Seven Kingdoms.\nPurple belongs to the King, brown belongs to a Great House, and blue belongs to a Royal City. Green provinces are simply part of the Kingdom.\nYellow-striped provinces are part of the Kingdom, but their Owner is not.\nOrange-striped provinces are part of the Kingdom, but they are subject of a non-Empire overlord.\n"
  
  IMPREF_SIZE: "Economical Power: $VAL$\n"
  IMPREF_RELIGIOUS: "Theocracy: $VAL$\n"

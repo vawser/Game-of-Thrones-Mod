@@ -257,6 +257,159 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = GOT_SK_SYSTEM.4
+	title = GOT_SK_SYSTEM.4.title
+	desc = GOT_SK_SYSTEM.4.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			event_target:great_house = {
+				elector = no
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = feudatory
+					}
+					grant_independence = yes
+				}
+				restore_country_name = yes
+				add_government_reform = noble_house_reform
+				ROOT = {
+					create_subject = {
+						subject_type = feudatory
+						subject = PREV
+					}
+				}
+				add_opinion = {
+					who = event_target:IronThrone
+					modifier = removed_our_electorate
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = opinion_traitor
+				}
+			}
+			elector = yes
+			add_government_reform = great_house_reform
+			add_opinion = {
+				who = event_target:IronThrone
+				modifier = opinion_grateful
+			}
+			every_country = {
+				limit = {
+					has_country_flag = potential_feudatory
+				}
+				ROOT = {
+					create_subject = {
+						subject_type = feudatory
+						subject = PREV
+					}
+				}
+				clr_country_flag = potential_feudatory
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						region = region_the_north
+					}
+				}
+				override_country_name = THENORTH
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_riverlands
+					}
+				}
+				override_country_name = THERIVERLANDS
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_vale
+					}
+				}
+				override_country_name = THEVALE
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_iron_islands
+					}
+				}
+				override_country_name = THEIRONISLANDS
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_westerlands
+					}
+				}
+				override_country_name = THEWESTERLANDS
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_reach
+					}
+				}
+				override_country_name = THEREACH
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_stormlands
+					}
+				}
+				override_country_name = THESTORMLANDS
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_dorne
+					}
+				}
+				override_country_name = DORNE
+			}
+		}
+	}
+
+	option = {
+		name = GOT_SK_SYSTEM.4.option.a
+		tooltip = {
+			event_target:great_house = {
+				elector = no
+				custom_tooltip = GOT_SK_SYSTEM.4.option.tt
+				restore_country_name = yes
+				add_government_reform = noble_house_reform
+				ROOT = {
+					create_subject = {
+						subject_type = feudatory
+						subject = PREV
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = opinion_traitor
+				}
+			}
+			elector = yes
+			add_government_reform = great_house_reform
+			add_opinion = {
+				who = event_target:IronThrone
+				modifier = opinion_grateful
+			}
+		}
+	}
+
+	after = {
+		clear_global_event_target = great_house
+	}
+}
+
 # Swing
 country_event = {
 	id = GOT_SK_SYSTEM.10
@@ -419,7 +572,7 @@ country_event = {
 	option = {
 		name = GOT_SK_SYSTEM.30.option.a
 		
-		event_target:IronThroneHolder = {
+		event_target:IronThrone = {
 			create_subject = {
 				subject_type = royal_subject
 				subject = ROOT
@@ -434,7 +587,7 @@ country_event = {
 				
 				NOT = {
 					has_opinion = {
-						who = event_target:IronThroneHolder
+						who = event_target:IronThrone
 						value = -50
 					}
 				}
@@ -444,7 +597,7 @@ country_event = {
 	option = {
 		name = GOT_SK_SYSTEM.30.option.b
 		
-		event_target:IronThroneHolder = {
+		event_target:IronThrone = {
 			add_casus_belli = {
 				target = ROOT
 				type = cb_royal_conquest
@@ -458,7 +611,7 @@ country_event = {
 				factor = 0
 				
 				has_opinion = {
-					who = event_target:IronThroneHolder
+					who = event_target:IronThrone
 					value = 25
 				}
 			}
@@ -492,7 +645,7 @@ country_event = {
 			new_tag = CRW
 		}
 		
-		save_global_event_target_as = IronThroneHolder
+		save_global_event_target_as = IronThrone
 		create_union = event_target:originalCOU
 
 		set_emperor = yes

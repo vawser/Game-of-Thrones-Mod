@@ -1342,6 +1342,7 @@ spawn_rebels_from_unhappy_estate = {
 			1 = {
 				trigger = {
 					owner = {
+						NOT = { disabled_rebels_from_seized_land_for_estate = { estate = estate_clergy } }
 						has_estate = estate_clergy
 						NOT = {
 							estate_loyalty = {
@@ -1387,6 +1388,7 @@ spawn_rebels_from_unhappy_estate = {
 			1 = {
 				trigger = {
 					owner = {
+						NOT = { disabled_rebels_from_seized_land_for_estate = { estate = estate_merchants } }
 						has_estate = estate_merchants
 						NOT = {
 							estate_loyalty = {
@@ -1406,6 +1408,7 @@ spawn_rebels_from_unhappy_estate = {
 			1 = {
 				trigger = {
 					owner = {
+						NOT = { disabled_rebels_from_seized_land_for_estate = { estate = estate_nobles } }
 						has_estate = estate_nobles
 						NOT = {
 							estate_loyalty = {
@@ -1425,6 +1428,7 @@ spawn_rebels_from_unhappy_estate = {
 			1 = {
 				trigger = {
 					owner = {
+						NOT = { disabled_rebels_from_seized_land_for_estate = { estate = estate_commoners } }
 						has_estate = estate_commoners
 						NOT = {
 							estate_loyalty = {
@@ -1444,6 +1448,7 @@ spawn_rebels_from_unhappy_estate = {
 			1 = {
 				trigger = {
 					owner = {
+						NOT = { disabled_rebels_from_seized_land_for_estate = { estate = estate_tribes } }
 						has_estate = estate_tribes
 						NOT = {
 							estate_loyalty = {
@@ -1463,6 +1468,7 @@ spawn_rebels_from_unhappy_estate = {
 			1 = {
 				trigger = {
 					owner = {
+						NOT = { disabled_rebels_from_seized_land_for_estate = { estate = estate_adventurers } }
 						has_estate = estate_adventurers
 						NOT = {
 							estate_loyalty = {

@@ -2,6 +2,19 @@ is_building_permitted = {
     NOT = { province_id = 1590 } # The Wall
 }
 
+province_is_a_castle_on_the_wall = {
+	custom_trigger_tooltip = {
+		tooltip = province_is_a_castle_on_the_wall_tt
+		OR = {
+			province_id = 16
+			province_id = 1580
+			province_id = 17
+			province_id = 1584
+			province_id = 18
+		}
+	}
+}
+
 # Building triggers
 has_tax_building_trigger = {
 	OR = {

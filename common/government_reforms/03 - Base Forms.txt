@@ -1353,35 +1353,31 @@ theocracy_reform = {
 		tolerance_own = 1
 		missionaries = 1
 	}
-	
-	custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
 }
 the_faith_reform = {
-	icon = "castle"
-	
+	icon = "papacy"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
 	potential = {
-		has_reform = the_faith_reform
+		tag = FAT
 	}
 	
-	allow_normal_conversion = yes
+	allow_convert = no
 	legacy_equivalent = the_faith_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
-	
-	has_devotion = yes
+
+	papacy = yes
+	fixed_rank = 2
 	
 	modifiers = {
+		prestige_per_development_from_conversion = 0.33
 		tolerance_own = 1
-		missionaries = 1
 		clergy_influence_modifier = 0.2
-		max_absolutism = -50
 	}
 	
 	custom_attributes = {
-		enables_theocracy_ideagroup = yes
 		locked_government_type = yes
 	}
 }
@@ -1406,10 +1402,6 @@ qohor_city_reform = {
 		clergy_influence_modifier = 0.05
 		max_absolutism = -20
 	}
-	
-	custom_attributes = {
-		enables_theocracy_ideagroup = yes
-	}
 }
 norvos_city_reform = {
 	icon = "castle"
@@ -1431,10 +1423,6 @@ norvos_city_reform = {
 		infantry_power = 0.1
 		clergy_influence_modifier = 0.05
 		max_absolutism = -20
-	}
-	
-	custom_attributes = {
-		enables_theocracy_ideagroup = yes
 	}
 }
 

@@ -1,0 +1,199 @@
+namespace = sk_event
+
+# Royal Court (The Province)
+province_event = {
+	id = sk_event.1
+	title = "sk_event.1.title"
+	desc = "sk_event.1.desc"
+	picture = CITY_VIEW_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			country_event = { id = sk_event.2 }
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# Royal Court (SK Member States)
+country_event = {
+	id = sk_event.2
+	title = "sk_event.2.title"
+	desc = "sk_event.2.desc"
+	picture = CITY_VIEW_eventPicture
+	goto = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "hre_event.7.a"
+	}
+}
+
+# Privilege Event for King
+country_event = {
+	id = sk_event.3
+	title = sk_event.3.title
+	desc = sk_event.3.desc
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = revoked_privilege_flag
+		}
+	}
+
+	option = {
+		name = "EVTOPTA9073"
+	}
+}
+
+# Privilege Event for Houses
+country_event = {
+	id = sk_event.4
+	title = sk_event.4.title
+	desc = sk_event.4.desc
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = revoked_privilege_flag
+		}
+	}
+
+	option = {
+		name = "EVTOPTA9074"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					has_opinion = {
+						who = emperor
+						value = 0
+					}
+				}
+			}			
+			
+		}
+		emperor = {
+			create_subject = {
+				subject_type = feudatory
+				subject = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB9074"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_opinion = {
+					who = emperor
+					value = 0
+				}
+			}			
+			
+		}
+		every_owned_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			add_claim = emperor
+		}
+		every_owned_province = {
+			set_in_empire = no
+		}
+		emperor = {
+			add_opinion = { who = ROOT modifier = opinion_left_kingdom }
+		}
+		add_opinion = { who = emperor modifier = opinion_united_kingdom }
+		elector = no
+	
+	}
+}
+
+# Unify Event for King
+country_event = {
+	id = sk_event.5
+	title = "sk_event.5.title"
+	desc = "sk_event.5.desc"
+	picture = COURT_eventPicture
+
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "sk_event.5.option.a"
+		change_tag = WST
+		restore_country_name_effect = yes
+		custom_tooltip = KING_GETS_CORES_TT
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_part_of_hre = yes
+					NOT = { owned_by = FAT }
+					OR = {
+						owned_by = ROOT
+						owner = { is_neighbor_of = ROOT }
+					}
+					NOT = { is_core = ROOT }
+				}
+				add_core = emperor
+			}
+		}
+		every_country = {
+			limit = {
+				is_emperor = no
+				is_part_of_hre = yes
+				num_of_cities = 1
+				NOT = { tag = FAT }
+			}
+			country_event = { id = sk_event.6 }
+		}
+		dismantle_hre = yes
+		set_government_rank = 3
+		add_adm_power = 250
+		if = {
+			limit = {
+				has_custom_ideas = no
+			}
+			country_event = { id = GOT_IDEAGROUPS.100 } #Swap Ideas
+		}
+		swap_non_generic_missions = yes
+	}
+}
+
+# Unify Event for Houses
+country_event = {
+	id = sk_event.6
+	title = "sk_event.6.title"
+	desc = "sk_event.6.desc"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "sk_event.6.option.a"
+		WST = {
+			inherit = ROOT
+		}
+	}
+}

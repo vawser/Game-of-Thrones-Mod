@@ -1,0 +1,157 @@
+king_call_for_reform = {
+	empire = hre
+	potential = {
+		NOT = { has_dlc = "Emperor" }
+	}
+	province = {
+		local_build_cost = -0.05
+		local_development_cost = -0.05
+	}
+	on_effect = {
+		imperial_ban_allowed = yes
+	}
+	off_effect = {
+		imperial_ban_allowed = no
+	}
+	gui_container = nodlc
+}
+
+king_intitute_provincial_governors = {
+	empire = hre
+	required_reform = king_call_for_reform
+	potential = {
+		NOT = { has_dlc = "Emperor" }
+	}
+	all = {
+		yearly_corruption = -0.05
+	}
+	province = {
+		local_state_maintenance_modifier = 0.50
+	}
+	gui_container = nodlc
+}
+
+king_implement_royal_court_of_justice = { 
+	empire = hre
+	required_reform = king_intitute_provincial_governors
+	potential = {
+		NOT = { has_dlc = "Emperor" }
+	}
+	emperor = {
+		reduced_stab_impacts = yes
+		yearly_absolutism = 0.5
+	}
+	all = {
+		monarch_lifespan = 0.1
+	}
+	gui_container = nodlc
+}
+
+king_introduce_the_new_crown_tax = {
+	empire = hre
+	required_reform = king_implement_royal_court_of_justice
+	potential = {
+		NOT = { has_dlc = "Emperor" }
+	}
+	emperor_per_prince = {
+		global_tax_income = 0.20
+	}
+	member = {
+		global_tax_income = -0.20
+	}
+	gui_container = nodlc
+}
+
+king_enforce_the_kings_peace = {
+	empire = hre
+	potential = {
+		NOT = { has_dlc = "Emperor" }
+	}
+	emperor = {
+		imperial_authority = 0.25
+		prestige_decay = -0.005
+	}
+	member = {
+		technology_cost = -0.025
+	}
+	province = {
+		local_institution_spread = 0.1
+	}
+	on_effect = {
+		internal_hre_cb = no
+	}
+	off_effect = {
+		internal_hre_cb = yes
+	}
+	required_reform = king_introduce_the_new_crown_tax
+	gui_container = nodlc
+}
+
+king_curtail_the_estates = {
+	empire = hre
+	required_reform = king_enforce_the_kings_peace
+	potential = {
+		NOT = { has_dlc = "Emperor" }
+	}
+	emperor = {
+		imperial_authority = 0.20
+		all_estate_influence_modifier = -0.10
+	}
+	gui_container = nodlc
+	ai_acceptance_centralize = yes
+}
+
+king_revoke_noble_privileges = {
+	empire = hre
+	required_reform = king_curtail_the_estates
+	war = yes			#this may cause a war, so special AI check needed, to not lose many.
+	discounted_from_foreign_overlord_check = yes
+	potential = {
+		NOT = { has_dlc = "Emperor" }
+	}
+	emperor = {
+		imperial_authority = 0.20
+	}
+	member = {
+		stability_cost_modifier = -0.10
+	}
+	on_effect = {
+		emperor = {
+			country_event = { id = sk_event.3 tooltip = vassalize_effect }
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_emperor = no
+					is_part_of_hre = yes
+					num_of_cities = 1
+					NOT = { is_subject_of_type = castellany }
+					NOT = {
+						is_subject_of_type_with_overlord = {
+							who = ROOT
+							type = feudatory
+						}
+					}
+				}
+				country_event = { id = sk_event.4 }
+			}
+		}
+	}
+	gui_container = nodlc
+	ai_acceptance_centralize = yes
+}
+
+king_unify_westeros = {
+	empire = hre
+	required_reform = king_revoke_noble_privileges
+	potential = {
+		NOT = { has_dlc = "Emperor" }
+	}
+	on_effect = {
+		emperor = {
+			country_event = { id = sk_event.5 tooltip = unify_effect }
+		}
+	}
+	gui_container = nodlc
+	ai_acceptance_centralize = yes
+}

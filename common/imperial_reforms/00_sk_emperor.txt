@@ -1,0 +1,402 @@
+king_call_for_reform = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		local_build_cost = -0.05
+		local_development_cost = -0.05
+	}
+	on_effect = {
+		imperial_ban_allowed = yes
+	}
+	off_effect = {
+		imperial_ban_allowed = no
+	}
+	gui_container = mainline
+}
+
+king_intitute_provincial_governors = {
+	empire = hre
+	required_reform = king_call_for_reform
+	potential = {
+		has_dlc = "Emperor"
+	}
+	all = {
+		yearly_corruption = -0.05
+	}
+	province = {
+		local_state_maintenance_modifier = 0.50
+	}
+	gui_container = mainline
+}
+
+king_expand_royal_laws = {
+	empire = hre
+	required_reform = king_intitute_provincial_governors
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		stability_cost_modifier = -0.05
+	}
+	province = {
+		local_unrest = -1
+	}
+	gui_container = mainline
+}
+
+king_introduce_the_new_crown_tax = {
+	empire = hre
+	required_reform = king_expand_royal_laws
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor_per_prince = {
+		global_tax_income = 0.20
+	}
+	member = {
+		global_tax_income = -0.20
+	}
+	gui_container = mainline
+}
+
+king_land_the_royal_court = {
+	empire = hre
+	required_reform = king_introduce_the_new_crown_tax
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		diplomats = 1
+		free_city_imperial_authority = 0.5
+	}
+	on_effect = {
+		custom_tooltip = "ROYAL_COURT_ESTABLISHED"
+		hidden_effect = {
+			if = {
+				limit = {
+					226 = {
+						is_part_of_hre = yes
+						is_capital = yes
+					}
+				}
+				226 = {
+					province_event = {
+						id = sk_event.1
+					}
+					add_province_triggered_modifier = perpetual_diet
+				}
+			}
+			else = {
+				random_province = {
+					limit = {
+						is_part_of_hre = yes
+						is_capital = yes
+						OR = {
+							AND = {
+								has_dlc = "Art of War"
+								owner = { has_reform = free_city }
+							}
+							AND = {
+								owner = { is_elector = yes }
+								development = 20
+							}
+							development = 30
+						}
+					}
+					province_event = {
+						id = sk_event.1
+					}
+					add_province_triggered_modifier = perpetual_diet
+				}
+			}
+		}
+	}
+	off_effect = {
+		every_province = {
+			remove_province_triggered_modifier = perpetual_diet
+		}
+	}
+	gui_container = mainline
+}
+
+king_establish_mercenary_contracts = {
+	empire = hre
+	required_reform = king_land_the_royal_court
+	potential = {
+		has_dlc = "Emperor"
+	}
+	all = {
+		imperial_mercenary_cost = -0.25
+		mil_advisor_cost = -0.10
+	}
+	gui_container = mainline
+}
+
+king_enforce_the_kings_peace = {
+	empire = hre
+	required_reform = king_establish_mercenary_contracts
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		imperial_authority = 0.25
+		prestige_decay = -0.005
+	}
+	member = {
+		technology_cost = -0.025
+	}
+	province = {
+		local_institution_spread = 0.1
+	}
+	on_effect = {
+		internal_hre_cb = no
+	}
+	off_effect = {
+		internal_hre_cb = yes
+	}
+	gui_container = mainline
+}
+
+king_reform_the_armies = {
+	empire = hre
+	required_reform = king_land_the_royal_court
+	disabled_by = king_implement_royal_court_of_justice
+	potential = {
+		has_dlc = "Emperor"
+	}
+	member = {
+		global_manpower_modifier = 0.25
+	}
+	province = {
+		regiment_recruit_speed = -0.10
+		local_defensiveness = 0.15
+		local_friendly_movement_speed = 0.125
+	}
+	gui_container = left_branch
+	ai_acceptance_decentralize = yes
+}
+
+king_broaden_the_privileges = {
+	empire = hre
+	required_reform = king_reform_the_armies
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor_per_prince = {
+		imperial_authority = 0.005
+	}
+	on_effect = {
+		custom_tooltip = BROADED_PRIVILEGES_EFFECT
+	}
+	gui_container = left_branch
+	ai_acceptance_decentralize = yes
+}
+
+king_empower_the_great_houses = {
+	empire = hre
+	required_reform = king_broaden_the_privileges
+	disables_hre_badboy_points = yes
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		imperial_authority = 0.25
+	}
+	elector_per_prince = {
+		global_tax_income = 0.25
+	}
+	on_effect = {
+		custom_tooltip = EMPOWER_GREATHOUSES_EFFECT
+	}
+	gui_container = left_branch
+	ai_acceptance_decentralize = yes
+}
+
+king_create_legislative_diet = {
+	empire = hre
+	required_reform = king_empower_the_great_houses
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		diplomatic_reputation = 1
+		max_absolutism = -10
+	}
+	province = {
+		local_unrest = -1
+		local_governing_cost = -0.25
+	}
+	gui_container = left_branch
+	ai_acceptance_decentralize = yes
+}
+
+king_introduce_an_elective_monarchy = {
+	empire = hre
+	required_reform = king_create_legislative_diet
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		max_absolutism = -10
+	}
+	elector = {
+		prestige = 0.50
+	}
+	on_effect = {
+		hre_inheritable = no
+	}
+	off_effect = {
+		hre_inheritable = yes
+	}
+	gui_container = left_branch
+	ai_acceptance_decentralize = yes
+}
+
+king_mobilize_the_kingdom = {
+	empire = hre
+	required_reform = king_introduce_an_elective_monarchy
+	potential = {
+		has_dlc = "Emperor"
+	}
+	member = {
+		land_forcelimit_modifier = 0.10
+	}
+	on_effect = {
+		enable_imperial_realm_war = yes
+		custom_tooltip = MOBILIZEKINGDOM_DEFENSE_OF_REALM_MODIFIER
+	}
+	off_effect = {
+		enable_imperial_realm_war = no
+	}
+	gui_container = left_branch
+	ai_acceptance_decentralize = yes
+}
+
+king_implement_royal_court_of_justice = { 
+	empire = hre
+	required_reform = king_land_the_royal_court
+	disabled_by = king_reform_the_armies
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		reduced_stab_impacts = yes
+		yearly_absolutism = 0.5
+	}
+	all = {
+		monarch_lifespan = 0.1
+	}
+	gui_container = right_branch
+	ai_acceptance_centralize = yes
+}
+
+king_expand_the_provincial_governorates = {
+	empire = hre
+	required_reform = king_implement_royal_court_of_justice
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		imperial_authority = 0.10
+		crw_loyalists_influence = 0.1
+	}
+	member = {
+		all_estate_loyalty_equilibrium = -0.05
+	}
+	province = {
+		local_state_maintenance_modifier = 0.50
+		local_governing_cost = 0.10
+	}
+	gui_container = right_branch
+	ai_acceptance_centralize = yes
+}
+
+king_propogate_the_true_faith = {
+	empire = hre
+	required_reform = king_expand_the_provincial_governorates
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		imperial_authority = 0.10
+		warscore_cost_vs_other_religion = -0.25
+	}
+	all = {
+		relation_with_heretics = -50
+		relation_with_heathens = -25
+	}
+	gui_container = right_branch
+	ai_acceptance_centralize = yes
+}
+
+king_curtail_the_estates = {
+	empire = hre
+	required_reform = king_propogate_the_true_faith
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		imperial_authority = 0.20
+		all_estate_influence_modifier = -0.10
+	}
+	gui_container = right_branch
+	ai_acceptance_centralize = yes
+}
+
+king_revoke_noble_privileges = {
+	empire = hre
+	required_reform = king_curtail_the_estates
+	war = yes			#this may cause a war, so special AI check needed, to not lose many.
+	discounted_from_foreign_overlord_check = yes
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		imperial_authority = 0.20
+	}
+	member = {
+		stability_cost_modifier = -0.10
+	}
+	on_effect = {
+		emperor = {
+			country_event = { id = sk_event.3 tooltip = vassalize_effect }
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_emperor = no
+					is_part_of_hre = yes
+					num_of_cities = 1
+					NOT = { tag = FAT }
+					NOT = { is_subject_of_type = castellany }
+					NOT = {
+						is_subject_of_type_with_overlord = {
+							who = ROOT
+							type = feudatory
+						}
+					}
+				}
+				country_event = { id = sk_event.4 }
+			}
+		}
+	}
+	gui_container = right_branch
+	ai_acceptance_centralize = yes
+}
+
+king_unify_westeros = {
+	empire = hre
+	required_reform = king_revoke_noble_privileges
+	potential = {
+		has_dlc = "Emperor"
+	}
+	on_effect = {
+		emperor = {
+			country_event = { id = sk_event.5 tooltip = unify_effect }
+		}
+	}
+	gui_container = right_branch
+	ai_acceptance_centralize = yes
+}

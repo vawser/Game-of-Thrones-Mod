@@ -75,31 +75,6 @@ superiority_undead_conquest = {
 	war_name = UNDEAD_CONQUEST_NAME
 }
 
-superiority_iron_throne = {
-	type = superiority
-	
-    attacker = {
-		badboy_factor = 1
-		prestige_factor = 2
-		peace_cost_factor = 1
-	
-		peace_options = {
-			claim_the_iron_throne
-		}
-	}
-	defender = {
-		badboy_factor = 0.5
-		prestige_factor = 1
-		peace_cost_factor = 0.5
-        
-        peace_options = {
-			po_demand_provinces
-		}
-	}
-
-	war_name = TAKE_THE_IRON_THRONE
-}
-
 superiority_royal_conquest = {
 	type = superiority
 	
@@ -230,13 +205,13 @@ take_capital_take_iron_throne = {
 	type = take_capital
 	
 	attacker = {
-		badboy_factor = 0.5
-		prestige_factor = 1.0
-		peace_cost_factor = 0.5
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 1
 
 		peace_options = {
 			po_demand_provinces
-			po_take_mandate
+			#claim_the_iron_throne
 		}
 	}
 	

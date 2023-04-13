@@ -12,17 +12,6 @@
 #
 # TRIGGERED - Triggered from within the code or by event effects
 # --------------------------------------------------------------
-# A HRE prince has been annexed
-cb_imperial_realm_war = {
-	valid_for_subject = no
-
-	is_triggered_only = yes
-	months = 12
-
-	call_empire_members = yes
-
-	war_goal = superiority_reichskrieg
-}
 
 # Restoration of recently broken PU
 cb_restore_personal_union = {
@@ -83,7 +72,7 @@ cb_disloyal_vassal = {
 	war_goal = take_capital_disloyal
 }
 
-# A HRE prince has been annexed
+# Royal Liberation
 cb_hre_attacked = {
 	valid_for_subject = no
 
@@ -185,6 +174,29 @@ cb_trade_conflict = {
 	months = 24
 
 	war_goal = blockade_ports
+
+	attacker_disabled_po = {
+		po_demand_provinces
+		po_revoke_cores
+		po_release_vassals
+		po_release_annexed
+		po_return_cores
+		po_become_vassal
+		po_subjugate_vassal
+		po_form_personal_union
+		po_become_tributary_state
+		po_subjugate_tributary_state
+		po_transfer_vassals
+	}
+}
+
+cb_trade_conflict_triggered = {
+	valid_for_subject = no
+
+	is_triggered_only = yes
+	months = 24
+
+	war_goal = blockade_ports_mutual
 
 	attacker_disabled_po = {
 		po_demand_provinces
@@ -328,9 +340,6 @@ cb_nationalist = {
 
 	prerequisites = {
 		always = no
-		is_free_or_tributary_trigger = yes
-		culture_group_claim = FROM
-		is_revolutionary = no
 	}
 
 	war_goal = take_province_nationalist
@@ -432,6 +441,7 @@ cb_liberation = {
 # Holy War
 cb_crusade = {
 	valid_for_subject = no
+	holy_war = yes
 
 	prerequisites = {
         has_idea = got_religious_ideas_1
@@ -558,8 +568,8 @@ cb_trade_league_dispute = {
 	}
 }
 
-# Imperial Ban
-cb_imperial_ban = {
+# Royal Ban
+cb_royal_ban = {
 	valid_for_subject = no
 
 	prerequisites = {
@@ -605,7 +615,7 @@ cb_super_badboy = {
 		is_revolutionary = no
 	}
 
-	war_goal = take_capital_punitive
+	war_goal = superiority_punitive
 }
 
 
@@ -818,32 +828,95 @@ cb_forced_break_alliance = {
 	war_goal = superiority_insult
 }
 
-# Expand the Kingdom
-# cb_force_tributary = {
-# 	valid_for_subject = no
+# Force Tributary
+cb_force_tributary = {
 
-# 	prerequisites = {
-# 		has_dlc = "Mandate of Heaven"
-# 		is_emperor_of_china = yes
-# 		FROM = {
-#             OR = {
-# 				has_reform = noble_house_reform
-# 				has_reform = great_house_reform
-# 				has_reform = wildling_clan_reform
-# 				has_reform = nights_watch_reform
-# 			}
-#             NOT = { is_subject_of = ROOT }
-# 			NOT = { overlord = { is_subject_of = ROOT } }
-#         }
-# 	}
+	valid_for_subject = no
+
+	prerequisites = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+		FROM = { is_subject = no }
+		is_neighbor_of = FROM
+		OR = {
+			ai = no
+			AND = {
+				OR = {
+					NOT = { ROOT = { capital_scope = { region = region_yi_ti } } }
+					AND = {
+						ROOT = { capital_scope = { region = region_yi_ti } }
+						NOT = { FROM = { any_owned_province = { region = region_yi_ti } } }
+					}
+				}
+			}
+		}
+	}
 	
-# 	attacker_disabled_po = {
-# 		po_become_vassal
-# 		po_subjugate_vassal
-# 	}
+	war_goal = take_capital_force_tributary
+}
+
+cb_force_tributary_mission = {
+
+	valid_for_subject = no
+
+	is_triggered_only = yes
+	months = 300
 	
-# 	war_goal = take_capital_force_tributary
-# }
+	war_goal = take_capital_force_tributary
+}
+
+# Expand Kingdom
+cb_force_join_hre = {
+	valid_for_subject = no
+
+	prerequisites = {
+		has_dlc = "Emperor"
+		ROOT = {
+			is_emperor = yes
+			hre_reform_passed = emperor_reichsstabilitaet
+			can_use_peace_treaty = {
+				who = FROM
+				treaty = po_join_empire
+			}
+		}
+		FROM = {
+			religion_group = ROOT
+			capital_scope = {
+				same_continent = ROOT
+				is_part_of_hre = no
+			}
+			any_owned_province = {
+				any_neighbor_province = {
+					is_part_of_hre = yes
+				}
+			}
+		}
+	}
+
+	war_goal = take_capital_force_join_hre
+}
+
+# Royal Reconquest
+cb_reintegrate_into_hre = {
+	valid_for_subject = no
+
+	is_triggered_only = yes
+	months = 120
+
+	war_goal = take_capital_reintegrate_into_hre
+}
+
+# Royal Conquest
+cb_imperial_realm_war = {
+	valid_for_subject = no
+
+	is_triggered_only = yes
+	months = 60
+
+	call_empire_members = yes
+
+	war_goal = superiority_reichskrieg
+}
 
 # Force religion on Heathens
 cb_world_crusade = {
@@ -919,4 +992,138 @@ cb_push_back_colonizers = {
 	}
 
 	war_goal = push_back_colonizers
+}
+
+# MOD CASUS BELLIS
+cb_claim_the_iron_throne = {
+	valid_for_subject = no
+	
+	 prerequisites = {
+		OR = {
+			has_reform = great_house_reform
+			AND = {
+				has_reform = noble_house_reform
+				is_subject = no
+			}
+			has_reform = daenerys_host_reform
+		}
+		FROM = { 
+			has_reform = royal_house_reform
+			is_emperor = yes
+		}
+	}
+	
+	war_goal = take_capital_take_iron_throne
+}
+
+# cb_royal_conquest = {
+#	 valid_for_subject = no
+	
+#	 prerequisites = {
+# 		has_reform = royal_house_reform
+# 		always = no
+		
+#		 FROM = {
+#			 has_reform = noble_house_reform
+# 			is_subject = no
+#			 NOT = { has_opinion = { who = ROOT value = 0 } }
+#		 }
+# 	}
+	
+#	 war_goal = superiority_royal_conquest
+# }
+
+# cb_lordly_feud = {
+# 	#valid_for_subject = yes
+	
+# 	prerequisites = {
+# 		has_reform = noble_house_reform
+# 		#always = no
+		
+# 		FROM = {
+# 			has_reform = noble_house_reform
+# 			#NOT = { has_opinion = { who = ROOT value = 0 } }
+# 		}
+# 	}
+
+# 	attacker_disabled_po = {
+# 		po_demand_provinces
+# 		po_become_vassal
+# 	}
+	
+# 	war_goal = superiority_lordly_feud
+# }
+
+cb_undead_conquest = {
+	valid_for_subject = no
+	
+	prerequisites = {
+		has_reform = army_of_the_dead_reform
+		is_neighbor_of = FROM
+		
+		FROM = {
+			NOT = { has_reform = army_of_the_dead_reform }
+		}
+	}
+	
+	war_goal = superiority_undead_conquest
+}
+
+cb_defend_the_wall = {
+	valid_for_subject = no
+	
+	prerequisites = {
+		has_reform = nights_watch_reform
+		
+		FROM = {
+			has_reform = wildling_clan_reform
+		}
+	}
+	
+	war_goal = superiority_defend_the_wall
+}
+
+cb_wildling_assault = {
+	valid_for_subject = no
+	
+	prerequisites = {
+		has_reform = wildling_clan_reform
+		
+		FROM = {
+			NOT = { has_reform = wildling_clan_reform }
+		}
+	}
+	
+	war_goal = superiority_wildling_assault
+}
+
+cb_wildling_feud = {
+	valid_for_subject = no
+	
+	prerequisites = {
+		has_reform = wildling_clan_reform
+		
+		FROM = {
+			has_reform = wildling_clan_reform
+		}
+	}
+	
+	war_goal = superiority_wildling_feud
+}
+
+cb_pirates = {
+	is_triggered_only = yes
+	months = 120
+
+	war_goal = blockade_ports
+}
+
+loe_jogos_nhai_raid = {
+	is_triggered_only = yes
+
+	prerequisites = {
+		culture = jogos_nhai
+	}
+
+	war_goal = loe_jogos_nhai_raid_goal
 }

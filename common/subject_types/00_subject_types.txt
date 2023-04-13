@@ -266,6 +266,11 @@ feudatory = {
 	relative_power_class = 1
 	military_focus = 0.5
 
+	# Subject Interactions:
+	place_relative_on_throne = no
+	seize_territory = no
+	embargo_rivals = no
+
 	can_fight = {
 		same_overlord = feudatory
 		other_overlord = feudatory
@@ -289,6 +294,21 @@ feudatory = {
 	}
 	modifier_subject = {
 		modifier = feudatory_nation
+		trigger = {
+			NOT = { hre_reform_passed = king_broaden_the_privileges }
+			is_part_of_hre = yes
+			overlord = {
+				is_part_of_hre = yes
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = kings_peace_subject_modifier
+		trigger = {
+			overlord = {
+				has_government_attribute = has_the_kings_peace
+			}
+		}
 	}
 #	modifier_overlord = {
 #		modifier = feudatory_subject # LEFT OUT FOR POSSIBLE FUTURE USE
@@ -321,6 +341,10 @@ castellany = {
 	relative_power_class = 1
 	military_focus = 0.25
 
+	# Subject Interactions:
+	send_officers = yes
+	subsidize_armies = yes
+
 	# Modifiers:
 	modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
 	modifier_subject = clear #Ditto
@@ -330,119 +354,6 @@ castellany = {
 	modifier_subject = {
 		modifier = feudatory_nation
 	}
-#	modifier_overlord = {
-#		modifier = feudatory_subject # LEFT OUT FOR POSSIBLE FUTURE USE
-#	}
-
-	overlord_opinion_modifier = is_feudatory
-	subject_opinion_modifier = is_feudatory
-}
-
-royal_subject = {
-	copy_from = feudatory
-	# can_have_great_projects_moved_by_overlord = no
-
-	# Triggers:
-	is_potential_overlord = {
-		is_subject = no
-		OR = {
-			has_reform = royal_house_reform
-			has_reform = kingdom_of_westeros_reform
-			AND = {
-				has_reform = great_house_reform
-				religion_group = religion_westeros
-				technology_group = westerosi
-			}
-			has_government_attribute = has_royal_subjects
-		}
-	}
-	
-	# Graphics:
-	sprite = GFX_subject_tributary_state
-	diplomacy_overlord_sprite = GFX_diplomacy_leadtributary
-	diplomacy_subject_sprite = GFX_diplomacy_amtributary
-
-	# Properties:
-	# can_fight_independence_war = no
-	# joins_overlords_wars = no
-	# takes_diplo_slot = no
-	relative_power_class = 1
-	# should_quit_wars_on_activation = no
-	# can_send_tribute = yes
-	can_have_subjects_of_other_types = yes
-	# uses_military_focus = no
-	# overlord_protects_external = yes
-	# can_use_claims = no
-	# # share_rebel_popup = no
-	# can_transfer_in_peace = no
-	# can_set_mil_focus = no
-	# can_send_missionary_to_subject = no
-	# overlord_can_fabricate_for = no
-	# does_overlord_size_count_for_warscore_cost = no
-	# can_concentrate_development = no
-	
-	liberty_desire_development_ratio = 0.15
-	liberty_desire_negative_prestige = 1.0
-	trust_on_start = 0
-	pays_overlord = 0.0
-	
-	can_fight = {
-		independent_nations = yes
-		same_overlord = royal_subject
-		other_overlord = all
-	}
-	can_rival = {
-		independent_nations = yes
-		same_overlord = royal_subject
-		other_overlord = all
-	}
-	can_ally = {
-		independent_nations = yes
-		same_overlord = royal_subject
-		other_overlord = all
-	}
-	can_marry = {
-		independent_nations = yes
-		same_overlord = royal_subject
-		other_overlord = all
-	}
-
-	# Subject Interactions:
-	# (continuous)
-	embargo_rivals = no
-	support_loyalists = yes
-	send_officers = yes
-	divert_trade = yes
-	scutage = no
-	# (immediate)
-	placate_rulers = no
-	customize_subject = no
-	grant_province = no
-	grant_core_claim = no
-	bestow_gifts = yes
-	send_additional_troops = yes
-	demand_artifacts = yes
-	demand_additional_tribute = yes
-	conscript_general = yes
-	knowledge_sharing = no
-	block_settlement_growth = no
-	allow_settlement_growth = no
-	seize_territory = no
-	place_relative_on_throne = no
-	
-	# Modifiers:
-	modifier_subject = clear
-	modifier_subject = {
-		modifier = royal_subject_bonus
-	}
-	modifier_subject = {
-		modifier = royal_subject_reinforced_bonuses
-		trigger = {
-			overlord = {
-				has_government_attribute = strengthen_royal_subjects
-			}
-		}
-	}
 	modifier_subject = {
 		modifier = kings_peace_subject_modifier
 		trigger = {
@@ -451,9 +362,12 @@ royal_subject = {
 			}
 		}
 	}
-	
-	overlord_opinion_modifier = is_royal_subject
-	subject_opinion_modifier = is_royal_subject
+#	modifier_overlord = {
+#		modifier = feudatory_subject # LEFT OUT FOR POSSIBLE FUTURE USE
+#	}
+
+	overlord_opinion_modifier = is_feudatory
+	subject_opinion_modifier = is_feudatory
 }
 
 march = {
@@ -870,6 +784,7 @@ tributary_state = {
 		OR = {
 			culture_group = culture_yi_ti
 			culture_group = culture_dothraki
+			has_government_attribute = has_tributaries
 		}
 	}
 	

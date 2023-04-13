@@ -1,0 +1,962 @@
+namespace = loe_govmech
+
+#loe_friendly_with_empire 1-2 +50 Opinion of EoC towards ROOT
+#loe_mandate_from_dev 3-6  Mandate gain from ROOT development (decision to show the gains)
+#loe_mandate_from_pu_dev 7-13 Mandate gain from ROOT's PUs' development (decision to show the gains and the number of PU's)
+#loe_increases_skill_over_time 14-15 Event to choose to improve ruler's stats (Max 6 6 6)
+#loe_worldwide_trade 16 Trade efficiency based on continents with a trade note with control of 50%+
+#loe_improve_dev 17 Colonist greatly improves development via event, other buffs at high dev
+#loe_church_power_per_stab 18 Each positive stability grants 0.5 monthly church power
+#loe_increased_metal_output 19 Each province with metals gets +1 goods produced
+
+#loe_friendly_with_empire 1-2
+country_event = {
+	id = loe_govmech.1
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	hidden = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		has_government_attribute = loe_friendly_with_empire
+	}
+
+	option = {
+		name = "loe_hidden"
+		event_target:YiTiEmperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = loe_respect
+			}
+		}
+	}
+}
+
+country_event = {
+	id = loe_govmech.2
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	hidden = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		NOT = { has_government_attribute = loe_friendly_with_empire }
+		event_target:YiTiEmperor = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = loe_respect
+			}
+		}
+	}
+
+	option = {
+		name = "loe_hidden"
+		event_target:YiTiEmperor = {
+			remove_opinion = {
+				who = ROOT
+				modifier = loe_respect
+			}
+		}
+		event_target:YiTiEmperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = loe_lost_respect
+				years = 10
+			}
+		}
+	}
+}
+
+#loe_mandate_from_dev 3-6
+country_event = {
+	id = loe_govmech.3
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	trigger = {
+		has_government_attribute = loe_mandate_from_dev
+		has_country_flag = loe_mandate_cycle
+	}
+
+	option = {
+		name = "loe_hidden"
+		export_to_variable = {
+			which = loe_our_dev
+			value = total_development
+			who = ROOT
+		}
+		set_variable = {
+			which = loe_our_dev_desc
+			value = 0
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = loe_our_dev
+					value = 0
+				}
+			}
+			subtract_variable = {
+				which = loe_our_dev
+				value = 10
+			}
+			change_variable = {
+				which = loe_our_dev_desc
+				value = 1
+			}
+			add_mandate = 0.005
+		}
+		multiply_variable = {            
+			which = loe_our_dev_desc
+			value = 0.005
+		}
+		country_event = {
+			id = loe_govmech.4
+			days = 30
+		}
+	}
+}
+
+country_event = {
+	id = loe_govmech.4
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	trigger = {
+		has_government_attribute = loe_mandate_from_dev
+		has_country_flag = loe_mandate_cycle
+	}
+
+	option = {
+		name = "loe_hidden"
+		export_to_variable = {
+			which = loe_our_dev
+			value = total_development
+			who = ROOT
+		}
+		set_variable = {
+			which = loe_our_dev_desc
+			value = 0
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = loe_our_dev
+					value = 0
+				}
+			}
+			subtract_variable = {
+				which = loe_our_dev
+				value = 10
+			}
+			change_variable = {
+				which = loe_our_dev_desc
+				value = 1
+			}
+			add_mandate = 0.005
+		}
+		multiply_variable = {            
+			which = loe_our_dev_desc
+			value = 0.005
+		}
+		country_event = {
+			id = loe_govmech.3
+			days = 31
+		}
+	}
+}
+
+country_event = {
+	id = loe_govmech.5
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		has_government_attribute = loe_mandate_from_dev
+		NOT = { has_country_flag = loe_mandate_cycle }
+	}
+
+	option = {
+		name = "loe_hidden"
+		set_country_flag = loe_mandate_cycle
+		country_event = {
+			id = loe_govmech.3
+		}
+
+	}
+}
+
+country_event = {
+	id = loe_govmech.6
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		NOT = { has_government_attribute = loe_mandate_from_dev }
+		has_country_flag = loe_mandate_cycle
+	}
+
+	option = {
+		clr_country_flag = loe_mandate_cycle
+	}
+}
+
+#loe_mandate_from_pu_dev 7-13
+country_event = {
+	id = loe_govmech.7
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		overlord = {
+			has_government_attribute = loe_mandate_from_pu_dev
+		}
+		has_country_flag = loe_mandate_cycle_pu
+	}
+
+	option = {
+		name = "loe_hidden"
+		export_to_variable = {
+			which = loe_our_dev
+			value = total_development
+			who = ROOT
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = loe_our_dev
+					value = 0
+				}
+			}
+			subtract_variable = {
+				which = loe_our_dev
+				value = 10
+			}
+			overlord = {
+				add_mandate = 0.015
+			}
+		}
+	}
+}
+
+country_event = {
+	id = loe_govmech.8
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		has_government_attribute = loe_mandate_from_pu_dev
+		has_country_flag = loe_mandate_cycle_pu
+	}
+
+	option = {
+		name = "loe_hidden"
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = personal_union
+			}
+			country_event = {
+				id = loe_govmech.7
+			}
+		}
+		country_event = {
+			id = loe_govmech.9
+			days = 30
+		}
+		country_event = {
+			id = loe_govmech.12
+			days = 31
+		}
+	}
+}
+
+country_event = {
+	id = loe_govmech.9
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		has_government_attribute = loe_mandate_from_pu_dev
+		has_country_flag = loe_mandate_cycle_pu
+	}
+
+	option = {
+		name = "loe_hidden"
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = personal_union
+			}
+			country_event = {
+				id = loe_govmech.7
+			}
+		}
+		country_event = {
+			id = loe_govmech.8
+			days = 31
+		}
+		country_event = {
+			id = loe_govmech.12
+			days = 32
+		}
+	}
+}
+
+country_event = {
+	id = loe_govmech.10
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+	hidden = yes
+
+	trigger = {
+		is_subject = no
+		NOT = { has_government_attribute = loe_mandate_from_pu_dev }
+		has_country_flag = loe_mandate_cycle_pu
+	}
+
+	option = {
+		clr_country_flag = loe_mandate_cycle_pu
+		every_subject_country = {
+			limit = { is_subject_of_type = personal_union }
+			clr_country_flag = loe_mandate_cycle_pu
+		}
+	}
+}
+
+country_event = {
+	id = loe_govmech.11
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+	hidden = yes
+
+	trigger = {
+		has_government_attribute = loe_mandate_from_pu_dev
+		NOT = { has_country_flag = loe_mandate_cycle_pu }
+	}
+
+	option = {
+		set_country_flag = loe_mandate_cycle_pu
+		every_subject_country = {
+			limit = { is_subject_of_type = personal_union }
+			set_country_flag = loe_mandate_cycle_pu
+		}
+		country_event = {
+			id = loe_govmech.8
+		}
+	}
+}
+
+country_event = { 
+	id = loe_govmech.12
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		has_government_attribute = loe_mandate_from_pu_dev
+		has_country_flag = loe_mandate_cycle_pu
+	}
+
+	immediate = {
+		set_variable = {
+			which = loe_pu_count
+			value = 0
+		}
+
+		set_variable = {
+			which = loe_our_dev_desc
+			value = 0
+		}
+	}
+
+	option = {
+		name = "loe_hidden"
+		
+		while = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = personal_union
+					NOT = { has_country_flag = is_counted }
+				}
+			}
+			random_subject_country = {
+				limit = {
+					is_subject_of_type = personal_union
+					NOT = { has_country_flag = is_counted }
+				}
+				set_country_flag = is_counted
+			}
+			change_variable = {
+				which = loe_pu_count
+				value = 1
+			}
+		}
+
+		every_subject_country = {
+			limit = { is_subject_of_type = personal_union }
+			country_event = {
+				id = loe_govmech.13
+			}
+		}
+	}
+
+	after = {
+		every_subject_country = {
+			clr_country_flag = is_counted
+		}
+	}
+}
+
+country_event = {
+	id = loe_govmech.13
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		has_country_flag = loe_mandate_cycle_pu
+	}
+
+	option = {
+		name = "loe_hidden"
+		export_to_variable = {
+			which = loe_our_dev_desc
+			value = total_development
+			who = ROOT
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = loe_our_dev_desc
+					value = 0
+				}
+			}
+			subtract_variable = {
+				which = loe_our_dev_desc
+				value = 10
+			}
+			overlord = {
+				change_variable = {
+					which = loe_our_dev_desc
+					value = 0.015
+				}
+			}
+		}
+	}
+}
+
+#loe_increases_skill_over_time 14-15
+country_event = { #TBD
+	id = loe_govmech.14
+	title = "loe_govmech.14.t"
+	desc = "loe_govmech.14.d"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		years = 10
+	}
+
+	trigger = {
+		has_government_attribute = loe_increases_skill_over_time
+		NOT = { has_ruler_flag = loe_perfect_ruler }
+	}
+
+	option = {
+		name = "loe_govmech.14.t1"
+		trigger = {
+			NOT = { adm = 6 }
+		}
+		random_list = {
+			1 = { change_adm = 1 }
+			2 = {}
+		}
+	}
+
+	option = {
+		name = "loe_govmech.14.t2"
+		trigger = {
+			NOT = { dip = 6 }
+		}
+		random_list = {
+			1 = { change_dip = 1 }
+			2 = {}
+		}
+	}
+
+	option = {
+		name = "loe_govmech.14.t3"
+		trigger = {
+			NOT = { mil = 6 }
+		}
+		random_list = {
+			1 = { change_mil = 1 }
+			2 = {}
+		}
+	}
+
+	option = {
+		name = "loe_govmech.14.t4"
+		trigger = {
+			OR = {
+				NOT = {
+					AND = {
+						adm = 6
+						dip = 6
+					}
+				}
+				NOT = {
+					AND = {
+						adm = 6
+						mil = 6
+					}
+				}
+				NOT = {
+					AND = {
+						dip = 6
+						mil = 6
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				mil = 6
+			}
+			random_list = {
+				1 = {
+					random_list = {
+						1 = { change_adm = 1 }
+						1 = { change_dip = 1 }
+					}
+				}
+				1 = {}
+			}
+		}
+		if = {
+			limit = {
+				dip = 6
+			}
+			random_list = {
+				1 = {
+					random_list = {
+						1 = { change_adm = 1 }
+						1 = { change_mil = 1 }
+					}
+				}
+				1 = {}
+			}
+		}
+		if = {
+			limit = {
+				adm = 6
+			}
+			random_list = {
+				1 = {
+					random_list = {
+						1 = { change_dip = 1 }
+						1 = { change_mil = 1 }
+					}
+				}
+				1 = {}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						adm = 6
+						dip = 6
+						mil = 6
+					}
+				}
+			}
+			random_list = {
+				2 = {
+					random_list = {
+						1 = { change_adm = 1 }
+						1 = { change_dip = 1 }
+						1 = { change_mil = 1 }
+					}
+				}
+				1 = {}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = loe_govmech.14
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+	hidden = yes
+
+	trigger = {
+		NOT = { has_ruler_flag = loe_perfect_ruler }
+		adm = 6
+		dip = 6
+		mil = 6
+	}
+
+	option = {
+		name = "loe_hidden"
+		set_ruler_flag = loe_perfect_ruler
+	}
+}
+
+#loe_worldwide_trade 16
+country_event = { #TBD Test
+	id = loe_govmech.16
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+	hidden = yes
+
+	trigger = {
+		has_government_attribute = loe_worldwide_trade
+	}
+
+	immediate = {
+		set_variable = {
+			which = loe_continents_present
+			value = 0
+		}
+		remove_country_modifier = loe_worldwide_trade1
+		remove_country_modifier = loe_worldwide_trade2
+		remove_country_modifier = loe_worldwide_trade3
+		remove_country_modifier = loe_worldwide_trade4
+		remove_country_modifier = loe_worldwide_trade5
+	}
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				any_trade_node = {
+					superregion = westeros_superregion
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+			}
+			change_variable = {
+				which = loe_continents_present
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				any_trade_node = {
+					superregion = far_essos_superregion
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+			}
+			change_variable = {
+				which = loe_continents_present
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				any_trade_node = {
+					superregion = west_essos_superregion
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+			}
+			change_variable = {
+				which = loe_continents_present
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				any_trade_node = {
+					superregion = central_essos_superregion
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+			}
+			change_variable = {
+				which = loe_continents_present
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				any_trade_node = {
+					superregion = distant_lands_superregion
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+			}
+			change_variable = {
+				which = loe_continents_present
+				value = 1
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				check_variable = {
+					which = loe_continents_present
+					value = 1
+				}
+				NOT = {
+					check_variable = {
+						which = loe_continents_present
+						value = 2
+					}
+				}
+			}
+			add_country_modifier = {
+				name = loe_worldwide_trade1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = loe_continents_present
+					value = 2
+				}
+				NOT = {
+					check_variable = {
+						which = loe_continents_present
+						value = 3
+					}
+				}
+			}
+			add_country_modifier = {
+				name = loe_worldwide_trade2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = loe_continents_present
+					value = 3
+				}
+				NOT = {
+					check_variable = {
+						which = loe_continents_present
+						value = 4
+					}
+				}
+			}
+			add_country_modifier = {
+				name = loe_worldwide_trade3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = loe_continents_present
+					value = 4
+				}
+				NOT = {
+					check_variable = {
+						which = loe_continents_present
+						value = 5
+					}
+				}
+			}
+			add_country_modifier = {
+				name = loe_worldwide_trade4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = loe_continents_present
+					value = 5
+				}
+			}
+			add_country_modifier = {
+				name = loe_worldwide_trade5
+				duration = -1
+			}
+		}
+	}
+}
+
+#loe_improve_dev 17
+province_event = {
+	id = loe_govmech.17
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		months = 3
+	}
+	hidden = yes
+
+	trigger = {
+		has_colonist = yes
+		is_colony = no
+		NOT = { development = 20 }
+	}
+
+	option = {
+		name = "loe_hidden"
+		random_list = {
+			1 = { add_base_manpower = 1 }
+			1 = { add_base_production = 1 }
+			1 = { add_base_tax = 1 }
+		}
+	}
+}
+
+#loe_church_power_per_stab 18
+country_event = {
+	id = loe_govmech.18
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+	hidden = yes
+
+	trigger = {
+		has_government_attribute = loe_church_power_per_stab
+	}
+
+	immediate = {
+		remove_country_modifier = loe_church_power_per_stab1
+		remove_country_modifier = loe_church_power_per_stab2
+		remove_country_modifier = loe_church_power_per_stab3
+	}
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				stability = 1
+				NOT = { stability = 2 }
+			}
+			add_country_modifier = {
+				name = loe_church_power_per_stab1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				stability = 2
+				NOT = { stability = 3 }
+			}
+			add_country_modifier = {
+				name = loe_church_power_per_stab2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_country_modifier = {
+				name = loe_church_power_per_stab3
+				duration = -1
+			}
+		}
+	}
+}
+
+#loe_increased_metal_output 19
+country_event = {
+	id = loe_govmech.19
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+	hidden = yes
+
+	trigger = {
+		any_owned_province = {
+			OR = {
+				trade_goods = silver
+				trade_goods = gold
+				trade_goods = copper
+				trade_goods = iron
+			}
+		}
+	}
+
+	option = {
+		name = "loe_hidden"
+		every_owned_province = {
+			limit = {
+				OR = {
+					trade_goods = silver
+					trade_goods = gold
+					trade_goods = copper
+					trade_goods = iron
+				}
+			}
+			add_province_modifier = {
+				name = loe_neferi_mining
+				duration = -1
+			}
+		}
+	}
+}

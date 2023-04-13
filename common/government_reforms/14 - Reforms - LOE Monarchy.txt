@@ -21,7 +21,7 @@ loe_azure_empire = {
 
 	custom_attributes = {
 		enables_monarchy_ideagroup = yes
-		loe_increased_stab_on_death = yes #TBD
+		loe_increased_stab_on_death = yes
 	}
 }
 
@@ -167,7 +167,6 @@ loe_guaranteed_autonomy = {
 	}
 	
 	modifiers = {
-		harsh_treatment_cost = -0.5
 		nobles_loyalty_modifier = 0.1
 		stability_cost_modifier = -0.25
 	}
@@ -206,7 +205,7 @@ loe_relations_with_empire = {
 	}
 
 	custom_attributes = {
-		loe_friendly_with_empire = yes #TBD
+		loe_friendly_with_empire = yes
 	}
 }
 
@@ -236,7 +235,7 @@ loe_sole_empire = {
 	}
 
 	custom_attributes = {
-		loe_mandate_from_dev = yes #TBD
+		loe_mandate_from_dev = yes
 	}
 }
 
@@ -248,7 +247,7 @@ loe_myriad_crowned_king = {
 	}
 
 	custom_attributes = {
-		loe_mandate_from_pu_dev = yes #TBD
+		loe_mandate_from_pu_dev = yes
 	}
 }
 
@@ -281,23 +280,23 @@ loe_ancient_bookkeepers = {
 }
 
 
-loe_foreign_tactics = {
-    icon = "castle" #TBD
-	potential = {
-		culture_group = culture_yi_ti
-		is_subject = no
-	}
+#loe_foreign_tactics = {
+#    icon = "castle" #TBD
+#	potential = {
+#		culture_group = culture_yi_ti
+#		is_subject = no
+#	}
+#
+#	modifiers = {
+#		military_tactics = 0.1
+#	}
+#
+#	custom_attributes = {
+#		loe_foreign_tactics = yes #TBD Each culture group a bonus but with -0.01 tradition decay
+#	}
+#}
 
-	modifiers = {
-		military_tactics = 0.1
-	}
-
-	custom_attributes = {
-		loe_foreign_tactics = yes #TBD Each culture group a bonus but with -0.01 tradition decay
-	}
-}
-
-loe_imperial_army = { #pride of the empire
+loe_imperial_army = {
     icon = "castle" #TBD
 	potential = {
 		culture_group = culture_yi_ti
@@ -305,7 +304,7 @@ loe_imperial_army = { #pride of the empire
 	}
 
 	modifiers = {
-		infantry_cost = 0.2
+		global_regiment_cost = 0.2
 		discipline = 0.1 #TBD Lower it to 0.05 once I add the celestial reforms
 		force_march_free = yes 
 	}
@@ -328,7 +327,7 @@ loe_homogenous_court = {
 	}
 
 	custom_attributes = {
-		loe_homogenous_court_desc = yes #TBD 3 advisors of yitish culture, +1 diplo
+		loe_homogenous_court_desc = yes
 	}
 }
 
@@ -345,7 +344,7 @@ loe_order_of_oracles = {
 	}
 
 	custom_attributes = {
-		loe_increases_skill_over_time = yes #TBD
+		loe_increases_skill_over_time = yes
 	}
 }
 
@@ -363,7 +362,7 @@ loe_transcontinental_trade = {
 	}
 
 	custom_attributes = {
-		loe_worldwide_trade = yes #TBD Trade efficiency bonus for every continent with atleast 50% in one tradenode
+		loe_worldwide_trade = yes
 	}
 }
 
@@ -446,7 +445,7 @@ loe_godking_of_yiti = {
 		monarch_lifespan = 0.2
 	}
 	custom_attributes = {
-		loe_increased_stab_on_death_plus = yes #TBD
+		loe_increased_stab_on_death_plus = yes
 	}
 }
 
@@ -492,7 +491,7 @@ loe_worlds_end = {
 		culture_group = culture_nefer
 	}
 	trigger = {
-		tag = ETD #Change it for Nefer Kingdom
+		tag = ETD #TBD Change it for Nefer Kingdom
 	}
 	monarchy = yes
 	free_concentrate_development = yes
@@ -566,8 +565,8 @@ loe_fosters_of_truth = {
 
 	modifiers = {
 		yearly_corruption = -0.1
-		global_spy_defence = 1
-		spy_offence = 1
+		global_spy_defence = 0.5
+		spy_offence = 0.5
 	}
 }
 
@@ -579,7 +578,6 @@ loe_council_of_banished = {
 	}
 
 	modifiers = {
-		no_stability_loss_on_monarch_death = yes
 		free_adm_policy = 1
 		free_dip_policy = 1
 		free_mil_policy = 1
@@ -598,7 +596,7 @@ loe_necromantic_miners = {
 	}
 
 	custom_attributes = {
-		loe_increased_metal_output = yes #TBD
+		loe_increased_metal_output = yes
 	}
 }
 
@@ -610,8 +608,8 @@ loe_systematic_degradation = {
 	}
 
 	modifiers = {
-		harsh_treatment_cost = -0.9
-		morale_damage_received = -0.1
+		harsh_treatment_cost = -0.5
+		war_exhaustion = -0.1
 	}
 }
 

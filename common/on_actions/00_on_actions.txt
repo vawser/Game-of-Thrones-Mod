@@ -594,6 +594,19 @@ on_monarch_death = {
 		clr_global_flag = masterofwhisperers_active
 		clear_global_event_target = et_masterofwhisperers
 	}
+	##LOE Changes##
+	if = {
+		limit = {
+			has_government_attribute = loe_increased_stab_on_death
+		}
+		add_stability = -1
+	}
+	if = {
+		limit = {
+			has_government_attribute = loe_increased_stab_on_death_plus
+		}
+		add_stability = -1
+	}
 	events = {
 		##LOE Changes##
 		jogosnhai.4

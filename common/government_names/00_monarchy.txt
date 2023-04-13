@@ -285,3 +285,31 @@ gov_loe_yiti_empire = {
         has_reform = loe_azure_empire
 	}
 }
+
+gov_loe = {
+	rank = {
+		1 = SHADOW_CULT
+        2 = SHADOW_CULT
+        3 = SHADOW_CULT
+	}
+	
+	ruler_male = {
+		1 = GRAND_CULTIST
+        2 = GRAND_CULTIST
+        3 = GRAND_CULTIST
+	}
+	
+	ruler_female = {
+		1 = GRAND_CULTIST
+        2 = GRAND_CULTIST
+        3 = GRAND_CULTIST
+	}
+	
+	trigger = {
+		OR = {
+			has_reform = loe_worlds_end
+			has_reform = loe_secret_city
+		}
+		
+	}
+}

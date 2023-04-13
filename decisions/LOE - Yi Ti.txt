@@ -121,4 +121,32 @@ country_decisions = {
 			clr_country_flag = loe_can_send_team
 		}
 	}
+
+	loe_view_mandate_increase = {
+		potential = {
+			has_government_attribute = loe_mandate_from_dev
+		}
+		allow = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = loe_view_mandate_increase_desc
+		}
+	}
+
+	loe_view_mandate_pu_increase = {
+		potential = {
+			has_government_attribute = loe_mandate_from_pu_dev
+		}
+		allow = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = loe_view_mandate_pu_increase_desc
+		}
+	}
 }

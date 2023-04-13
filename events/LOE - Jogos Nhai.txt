@@ -143,7 +143,7 @@ country_event = { #Does not work if more than 1 nation has more dev
 	}
 }
 
-country_event = {
+country_event = { #TBD Untested
 	id = jogosnhai.6
 	title = "jogosnhai.6.t"
     desc = "jogosnhai.6.d"
@@ -283,7 +283,7 @@ country_event = { #Doesnt let ai go above overlord's dev
 	}
 }
 
-country_event = { #TBD Set starting nations in history files
+country_event = {
 	id = jogosnhai.3
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -383,14 +383,19 @@ country_event = {
 
     option = {
 		name = "loe_hidden"
-		random_war_enemy_country = {
+		random_country = {
 			limit = {
-				controlled_by = ROOT
-				NOT = { has_province_modifier = loe_recently_raided }
+				war_with = ROOT
 			}
-			add_province_modifier = {
-				name = loe_recently_raided
-				duration = 730
+			random_owned_province = {
+				limit = {
+					controlled_by = ROOT
+					NOT = { has_province_modifier = loe_recently_raided }
+				}
+				add_province_modifier = {
+					name = loe_recently_raided
+					duration = 730
+				}
 			}
 		}
 		random_owned_province = {

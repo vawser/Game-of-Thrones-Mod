@@ -669,6 +669,7 @@ country_event = { #TBD Test
 		remove_country_modifier = loe_worldwide_trade3
 		remove_country_modifier = loe_worldwide_trade4
 		remove_country_modifier = loe_worldwide_trade5
+		remove_country_modifier = loe_worldwide_trade6
 	}
 
 	option = {
@@ -676,7 +677,22 @@ country_event = { #TBD Test
 		if = {
 			limit = {
 				any_trade_node = {
-					superregion = westeros_superregion
+					superregion = northern_westeros_superregion
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+			}
+			change_variable = {
+				which = loe_continents_present
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				any_trade_node = {
+					superregion = southern_westeros_superregion
 					trade_share = {
 						country = ROOT
 						share = 50
@@ -829,9 +845,27 @@ country_event = { #TBD Test
 					which = loe_continents_present
 					value = 5
 				}
+				NOT = {
+					check_variable = {
+						which = loe_continents_present
+						value = 6
+					}
+				}
 			}
 			add_country_modifier = {
 				name = loe_worldwide_trade5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = loe_continents_present
+					value = 6
+				}
+			}
+			add_country_modifier = {
+				name = loe_worldwide_trade6
 				duration = -1
 			}
 		}

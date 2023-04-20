@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
  WORLD_YEAR:0 "The world $YEAR$ AC"
  
  #------------------------------------------------------
@@ -98,13 +98,13 @@
  IMPERIAL_MANDATE_PENALTY_DESC: "Golden Mandate below §Y50§! gives the following Scaled Modifier:\n$MODIFIERDESC$"
  IMPERIAL_MANDATE_GAIN_DESC: "Gained by:\n -Having positive Stability.\n -Having Tributaries.\n -For each State enjoying Prosperity."
  IMPERIAL_MANDATE_LOSS_DESC: "Lost by:\n -Corruption of the State.\n -Devastated provinces.\n -Having excessive loans."
- CELESTIAL_EMPEROR_BENEFIT: "Being the §YEmperor of Yi Ti§! gives the following abilities to the Emperor to preserve the Empire:\n\n"
+ CELESTIAL_EMPEROR_BENEFIT: "Being the §YEmperor of Yi Ti§! gives the following abilities to the Emperor to preserve their Empire:\n\n"
  #TBD
  CELESTIAL_EMPEROR_BENEFIT_DESC: " -§MKing of the Andals, the Rhoynar, and the First Men§!:\n   -Bonuses from §GHigh§! Golden Mandate.\n   -Penalty from §RLow§! Golden Mandate.\n -§MLord of the Seven Kingdoms§!:\n   -Must maintain §PBalance of Power§! in the Realm.\n -Uses Meritocracy Mechanics\n -Can enact §YRoyal Edicts§!.\n -Can Enforce Royal Subject on Noble Houses"
  #TBD
  CELESTIAL_EMPEROR_DIPLOMATIC_ACTIONS_DESC: "The §YEmperor of Yi Ti§! has access to additional diplomatic actions to strengthen the Golden Mandate:\n -§YAppoint Lord Protector of the Realm§!\n -§YEstablish Royal Subject§!\n -§YConvert to Vassal§!"
  CELESTIAL_EMPIRE_NO_DIPLOMATIC_ACTIONS: "None"
- CELESTIAL_EMPIRE_PAST_EMPERORS: "Previous Rulers:"
+ CELESTIAL_EMPIRE_PAST_EMPERORS: "Previous Emperors:"
  
  CELESTIALREFORMBYUS_SETUP: "When we, as the Emperor of Yi Ti, enact a reform."
  CELESTIALREFORMBYUS_LOG: "We, as Emperor of Yi Ti, enacted $REFORM$."
@@ -123,12 +123,10 @@
  
  ENACT_DECREE_NOT_EMPEROR: "Only the Emperor of Yi Ti can enact Decrees."
  
- BENEFIT_FOR_EMPEROR: "Emperor gets:\n$MODIFIER$"
- 
  #------------------------------------------------------
  # Tributary Subject
  #------------------------------------------------------
- TRIBUTARY_NOT_HORDE_OR_EASTERN_RELIGION:0 "Only the Azure Emperor, countries in the Eastern religion group and countries with Steppe Nomad Government can establish Tributary States."
+ TRIBUTARY_NOT_HORDE_OR_EASTERN_RELIGION: "Only the Azure Emperor, countries in the Eastern religion group and countries with Steppe Nomad Government can establish Tributary States."
  EST_VAL_CELESTIAL_EMPIRE:0 "YiTi Empire: §Y$VAL$%§!"
  
  #------------------------------------------------------
@@ -1052,7 +1050,7 @@
  EMPEROR_DIPACTIONS_DESC: "\nThe §YRuler of the Seven Kingdoms§! has access to additional diplomatic actions in order to strengthen the Iron Throne: -§GBureaucratic:§!\n  -Appoint Hand of the King\n  -Appoint Mst. of Coin\n  -Appoint Mst. of Laws\n  -Appoint Mst. of Ships\n  -Appoint Mst. of Whisperers\n -§MDiplomatic:§!\n  -Appoint Lord Protector of the Realm\n  -Demand Unlawful Territory\n  -Enforce Religious Unity\n  -Bestow Royal Grace"
 
  perpetual_diet: "The Royal Court"
- desc_perpetual_diet: "The Royal Court of the Seven Kingdoms is in permanent session in [Root.GetCapitalName]. Hosting envoys from the Imperial Estates along with a large number of foreign dignatories, decisions made here are binding and must be acted upon by the Emperor.\n\n§YIf the city were to come under the control of an enemy of the Kingdom, that would be a serious blow to the King's Authority.§!\n"
+ desc_perpetual_diet: "The Royal Court of the Seven Kingdoms is in permanent session in [Root.GetCapitalName]. Hosting envoys from the Royal Houses along with a large number of foreign dignatories, decisions made here are binding and must be acted upon by the King.\n\n§YIf the city were to come under the control of an enemy of the Kingdom, that would be a serious blow to the King's Authority.§!\n"
 
  HRE_INTERNAL_CB_ENABLED: "Allow Internal Kingdom Wars"
  HRE_INTERNAL_CB_DISABLED: "Disallow Internal Kingdom Wars"
@@ -1119,6 +1117,7 @@
  IS_AN_ELECTOR: "$COUNTRY$ is a Great House."
  HRE_ELECTOR: "§Y$NAME$§W is a Great House in the Seven Kingdoms. They would currently support the ruler of §Y$VOTE$§W as king, should the current one die."
  IS_ELECTOR: "Is a Great House"
+ ISNT_ELECTOR: "Is NOT a Great House"
  DIPLO_ELECTOR: "$WHO$ is a Great House: "
 
  HRE_MEMBER_STAT: "$NUM$ Houses"
@@ -1139,8 +1138,8 @@
  HRE_IS_AT_LEAST: "At least §Y$SIZE$§! members of SK.\n"
  IS_NOT_PART_OF_HRE: "Is NOT part of the Seven Kingdoms"
  IS_PART_OF_HRE: "Is part of the Seven Kingdoms"
- IS_EMPEROR: "Is the Ruler of the Seven Kingdoms"
- ISNT_EMPEROR: "Is NOT the Ruler of the Seven Kingdoms"
+ IS_EMPEROR: "Is the King of the SK"
+ ISNT_EMPEROR: "Is NOT the King of the SK"
  PROVINCE_IS_PART_OF_HRE: "$PROVINCENAME$ is part of the Seven Kingdoms"
  PROVINCE_IS_NOT_PART_OF_HRE: "$PROVINCENAME$ is NOT part of the Seven Kingdoms"
  DIPLO_PART_OF_EMPIRE: "$PART$ is part of the Seven Kingdoms and $EMPEROR$ is the King: "

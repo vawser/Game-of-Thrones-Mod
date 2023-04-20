@@ -1,89 +1,395 @@
 defaults_reform = {
-    valid_for_new_country = yes
-    allow_normal_conversion = yes
+	valid_for_new_country = yes
 	allow_convert = yes
-    
-    nation_designer_trigger = { }
-	nation_designer_cost = 0
-    valid_for_nation_designer = yes
-    
-    monarchy = no
-    republic = no
-    religion = no
-    tribal = no
-    nomad = no
-	monastic = no
-    papacy = no
-	dictatorship = no
-    is_elective = no
-    free_city = no
-    
-    has_devotion = no
-	has_meritocracy = no
-    
-    queen = no
-	heir = no
-    republican_name = no
-    royal_marriage = yes
-    maintain_dynasty = no
-    
-	different_religion_acceptance = 0
-	different_religion_group_acceptance = 0
-    
 	rulers_can_be_generals = yes
 	heirs_can_be_generals = yes
-	
-    duration = 10
-	election_on_death = no
-    has_term_election = no
-    
-    fixed_rank = 0
-    min_autonomy = 0
-    start_territory_to_estates = 0.5
-    
-    native_mechanic = no
-    allow_migration = no
-    
-	militarised_society = no
+	fixed_rank = 0
+	republican_name = no
 	claim_states = no
+	religion = no
+	republic = no
+	dictatorship = no
+	is_elective = no
+	queen = no
+	heir = no
 	has_parliament = no
+	has_devotion = no
+	has_meritocracy = no
 	allow_force_tributary = yes
-	has_harem = no
-	has_pashas = no
-	foreign_slave_rulers = no
-	allow_vassal_war = no
-	allow_vassal_alliance = no
-    allow_banners = no
-    
+	duration = 10
+	election_on_death = no
+	monarchy = no
+	tribal = no
+	different_religion_acceptance = 0
+	different_religion_group_acceptance = 0
 	boost_income = no
+	monastic = no
 	can_use_trade_post = no
+	native_mechanic = no
 	can_form_trade_league = no
+	free_city = no
 	is_trading_city = no
 	trade_city_reform = ""
-
-    factions = { }
-    factions_frame = 2
-    
+	maintain_dynasty = no
+	allow_migration = no
+	nation_designer_trigger = { }
+	nation_designer_cost = 0
+	papacy = no
+	has_harem = no
+	has_pashas = no
+	has_janissaries = no
+	allow_vassal_war = no
+	allow_vassal_alliance = no
+	min_autonomy = 0
+	factions_frame = 2
+	factions = { }
+	foreign_slave_rulers = no
+	royal_marriage = yes
+	nomad = no
+	raze_province = no
 	assimilation_cultures = { }
 	states_general_mechanic = { }
-    government_abilities = { }
-    
-    force_admiral_leader = no
+	valid_for_nation_designer = yes
+	allow_normal_conversion = yes
+	force_conversion_gives_global_holy_war_released_modifier = no
+	start_territory_to_estates = 0.8
+	has_term_election = no
+	force_admiral_leader = no
+	force_general_leader = no
 	admirals_become_rulers = no
 	generals_become_rulers = no
-	disallowed_trade_goods = {}
-    
-    uses_revolutionary_zeal = no
+	allow_banners = no
+	uses_revolutionary_zeal = no
 	revolutionary = no
 	revolutionary_client_state = no
-    
-    raze_province = no
-    allow_draft_transport_ships = no
+	allow_draft_transport_ships = no
 	free_concentrate_development = no
-    force_conversion_gives_global_holy_war_released_modifier = no
-	
+	disallowed_trade_goods = {}
 	can_customise_heir = yes
 	allow_cawa = no
 	can_change_primary_culture = yes		
 	allow_carolean = no
+	can_inherit_personal_unions = yes
+	block_cultural_union = no
+	has_cultural_union = no 
+	can_remove_idea_group = yes
+	mercs_do_not_cost_army_professionalism = no
+}
+
+kingdom_legacy = {
+	icon = "crown"
+	
+	allow_normal_conversion = no
+	legacy_government = yes
+	
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	monarchy = yes
+	
+	modifiers = {
+		global_unrest = -1
+		unjustified_demands = -0.1
+	}
+	
+	custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+	
+	ai = { factor = 1 }
+}
+
+republic_legacy = {
+	icon = "crown"
+	
+	allow_normal_conversion = no
+	legacy_government = yes
+	
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	republic = yes
+	duration = 10
+	has_term_election = no
+	
+	modifiers = {
+	   global_unrest = -2
+	}
+	
+	custom_attributes = {
+		enables_republic_ideagroup = yes
+	}
+	
+	ai = { factor = 1 }
+}
+
+theocracy_legacy = {
+	icon = "crown"
+	
+	allow_normal_conversion = no
+	legacy_government = yes
+	
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	religion = yes
+	
+	modifiers = {
+		tolerance_own = 1
+		missionaries = 1
+	}
+	
+	custom_attributes = {
+		enables_theocracy_ideagroup = yes
+	}
+	
+	ai = { factor = 1 }
+}
+
+tribe_legacy = {
+	icon = "crown"
+	
+	allow_normal_conversion = no
+	legacy_government = yes
+	
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	monarchy = yes
+	tribal = yes
+	
+	modifiers = {
+		stability_cost_modifier = -0.25
+		max_absolutism = -30
+	}
+	
+	custom_attributes = {
+		enables_tribal_ideagroup = yes
+	}
+	
+	ai = { factor = 1 }
+}
+
+native_council_legacy = {
+	icon = "shaman"
+	allow_normal_conversion = no
+	legacy_government = yes
+	valid_for_new_country = no
+	allow_convert = no
+	native_mechanic = yes
+	allow_migration = yes
+
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+
+	fixed_rank = 1
+	modifiers = {
+		stability_cost_modifier = -0.33
+		land_maintenance_modifier = -0.25
+		diplomatic_upkeep = -1
+		global_institution_spread = -0.025
+	}
+	ai = {
+		factor = 0
+	}
+}
+
+pirate_republic_legacy = {
+	icon = "trading_city" 
+	allow_normal_conversion = no
+	legacy_government = yes
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+	duration = 4
+	
+	republican_name = yes
+	royal_marriage = no
+	
+	republic = yes
+	can_form_trade_league = no
+
+	nation_designer_trigger = {
+		has_dlc = "Golden Century"
+		capital_scope = {
+			has_port = yes
+		}
+	}
+	
+	potential = {	
+		has_dlc = "Golden Century"
+	}
+	
+	factions_frame = 9
+	factions = {
+		pr_buccaneers
+		pr_smugglers
+		pr_captains
+	}
+	
+	modifiers = {
+		republican_tradition = -1
+		max_absolutism = -50
+		naval_forcelimit_modifier = 0.5
+		capture_ship_chance = 0.33
+		may_perform_slave_raid_on_same_religion = yes
+	}
+	
+	custom_attributes = {
+		force_admiral_leader = yes
+	}
+	
+	ai = {
+		factor = 0
+	}
+}
+
+pirate_kingdom_legacy = {
+	icon = "trading_city"
+	allow_normal_conversion = no
+	legacy_government = yes
+	valid_for_new_country = no
+	valid_for_nation_designer = no
+	has_term_election = no
+	
+	republican_name = yes
+	royal_marriage = no
+	
+	republic = yes
+	
+	potential = {	
+		has_dlc = "Golden Century"
+	}
+	
+	nation_designer_trigger = {
+		capital_scope = {
+			has_port = yes
+		}
+	}
+	
+	factions_frame = 9
+	factions = {
+		pr_buccaneers
+		pr_smugglers
+		pr_captains
+	}
+	
+	modifiers = {
+		republican_tradition = -1
+		max_absolutism = -50
+		naval_forcelimit_modifier = 0.5
+		capture_ship_chance = 0.33
+		pr_captains_influence = 0.1
+		harsh_treatment_cost = -0.2
+		leader_naval_fire = 1
+		may_perform_slave_raid_on_same_religion = yes
+	}
+	
+	custom_attributes = {
+		admirals_become_rulers = yes
+	}
+	
+	ai = {
+		factor = 0
+	}
+}
+
+shadow_cult_legacy = {
+	icon = "crown"
+	
+	allow_normal_conversion = no
+	legacy_government = yes
+	
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	monarchy = yes
+	
+	modifiers = {
+		innovativeness_gain = 0.33
+		embracement_cost = -0.25
+		max_absolutism = -20
+	}
+	
+	custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+	
+	ai = { factor = 1 }
+}
+necromantic_cult_legacy = {
+	icon = "crown"
+	
+	allow_normal_conversion = no
+	legacy_government = yes
+	
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	monarchy = yes
+	
+	modifiers = {
+		global_manpower_modifier = 0.2
+		yearly_corruption = -0.05
+		max_absolutism = 10
+	}
+	
+	custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+	
+	ai = { factor = 1 }
+}
+ascension_cult_legacy = {
+	icon = "crown"
+	
+	allow_normal_conversion = no
+	legacy_government = yes
+	
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	monarchy = yes
+	
+	modifiers = {
+		governing_capacity_modifier = 0.2
+		stability_cost_modifier = -0.1
+		max_absolutism = -20
+	}
+	
+	custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+	
+	ai = { factor = 1 }
+}
+
+army_of_the_dead_legacy = {
+	icon = "crown"
+	
+	allow_normal_conversion = no
+	legacy_government = yes
+	
+	valid_for_new_country = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	monarchy = yes
+	
+	rulers_can_be_generals = yes
+	
+	modifiers = {
+		discipline = 0.1
+		land_morale = 0.1
+		max_absolutism = 50
+	}
+	
+	ai = { factor = 1 }
 }

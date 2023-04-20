@@ -46,7 +46,7 @@ noble_house_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = noble_house_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -75,7 +75,7 @@ lord_of_the_tides_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = noble_house_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -131,7 +131,7 @@ royal_house_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = royal_house_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -171,7 +171,7 @@ kingdom_of_westeros_reform = {
 	}
    
 	allow_normal_conversion = yes
-	legacy_equivalent = royal_house_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -200,7 +200,7 @@ yiti_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = yiti_city_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -223,7 +223,7 @@ yiti_empire_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = yiti_empire_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -249,7 +249,7 @@ qarth_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = qarth_city_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -271,7 +271,7 @@ nefer_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = nefer_city_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -293,7 +293,7 @@ hyrkoon_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = hyrkoon_city_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -315,7 +315,7 @@ valyria_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = valyria_city_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -337,7 +337,7 @@ meereen_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = meereen_city_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -348,10 +348,12 @@ meereen_city_reform = {
 		nobles_influence_modifier = 0.05
 	}
 
-	conditional = {
-		allow = { has_dlc = "Rights of Man" }
-		militarised_society = yes
-	}
+	# conditional = {
+	# 	allow = { has_dlc = "Rights of Man" }
+	# 	government_abilities = {
+	# 		militarization_mechanic
+	# 	}
+	# }
 	
 	custom_attributes = {
 		enables_monarchy_ideagroup = yes
@@ -365,7 +367,7 @@ yunkai_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = yunkai_city_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -376,10 +378,12 @@ yunkai_city_reform = {
 		nobles_influence_modifier = 0.05
 	}
 	
-	conditional = {
-		allow = { has_dlc = "Rights of Man" }
-		militarised_society = yes
-	}
+	# conditional = {
+	# 	allow = { has_dlc = "Rights of Man" }
+	# 	government_abilities = {
+	# 		militarization_mechanic
+	# 	}
+	# }
 	
 	custom_attributes = {
 		enables_monarchy_ideagroup = yes
@@ -393,7 +397,7 @@ astapor_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = astapor_city_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -404,10 +408,12 @@ astapor_city_reform = {
 		nobles_influence_modifier = 0.05
 	}
 	
-	conditional = {
-		allow = { has_dlc = "Rights of Man" }
-		militarised_society = yes
-	}
+	# conditional = {
+	# 	allow = { has_dlc = "Rights of Man" }
+	# 	government_abilities = {
+	# 		militarization_mechanic
+	# 	}
+	# }
 	
 	custom_attributes = {
 		enables_monarchy_ideagroup = yes
@@ -421,7 +427,7 @@ ghis_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = ghis_city_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -432,10 +438,12 @@ ghis_city_reform = {
 		nobles_influence_modifier = 0.05
 	}
 	
-	conditional = {
-		allow = { has_dlc = "Rights of Man" }
-		militarised_society = yes
-	}
+	# conditional = {
+	# 	allow = { has_dlc = "Rights of Man" }
+	# 	government_abilities = {
+	# 		militarization_mechanic
+	# 	}
+	# }
 	
 	custom_attributes = {
 		enables_monarchy_ideagroup = yes
@@ -449,7 +457,7 @@ daenerys_host_reform = {
 	}
 	
 	allow_normal_conversion = no
-	legacy_equivalent = daenerys_host_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -473,7 +481,7 @@ oligarchy_reform = {
 	icon = "oligarchic_rulers"
 	allow_normal_conversion = yes
 	duration = 4
-	legacy_equivalent = oligarchic_republic
+	legacy_equivalent = republic_legacy
 
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -495,7 +503,7 @@ anocracy_reform = {
 	icon = "tyrant_screaming"
 	allow_normal_conversion = yes
 	duration = 12
-	# legacy_equivalent = anocracy_legacy
+	legacy_equivalent = republic_legacy
 
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -520,7 +528,7 @@ valyrian_citystate_reform = {
 	icon = "valyrian_ruler"
 	allow_normal_conversion = yes
 	duration = 6
-	# legacy_equivalent = valyrian_citystate_legacy
+	legacy_equivalent = republic_legacy
 
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -550,7 +558,7 @@ royal_city_reform = {
 	allow_normal_conversion = no
 	lock_level_when_selected = yes
 	duration = 4
-	#legacy_equivalent = imperial_city
+	legacy_equivalent = republic_legacy
 
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -584,7 +592,7 @@ castellany_of_dragonstone_reform = {
 		has_reform = castellany_of_dragonstone_reform
 	}
 	
-	legacy_equivalent = noble_house_legacy
+	legacy_equivalent = republic_legacy
 	has_term_election = no
 	
 	valid_for_nation_designer = yes
@@ -612,7 +620,7 @@ republican_dictatorship_reform = {
 	}
 
 	valid_for_nation_designer = no
-	legacy_equivalent = republican_dictatorship
+	legacy_equivalent = republic_legacy
 	has_term_election = no
 
 	modifiers = {
@@ -638,7 +646,7 @@ military_dictatorship_reform = {
 	}
 	
 	valid_for_nation_designer = yes
-	legacy_equivalent = military_dictatorship_legacy
+	legacy_equivalent = republic_legacy
 	has_term_election = no
 	
 	modifiers = {
@@ -662,7 +670,7 @@ merchant_republic_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = merchant_republic_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -709,7 +717,7 @@ tyrosh_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = tyrosh_city_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -760,7 +768,7 @@ myr_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = myr_city_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -808,7 +816,7 @@ lys_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = lys_city_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -859,7 +867,7 @@ volantis_city_reform = {
 	has_term_election = yes
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = volantis_city_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -912,7 +920,7 @@ pentos_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = pentos_city_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -960,7 +968,7 @@ braavos_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = braavos_city_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1009,7 +1017,7 @@ lorath_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = lorath_city_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1031,7 +1039,7 @@ saath_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = saath_city_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1053,7 +1061,7 @@ trader_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = trader_city_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1104,7 +1112,7 @@ andal_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = andal_city_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1125,7 +1133,7 @@ trading_outpost_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = trading_outpost_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1177,7 +1185,7 @@ expeditionary_company_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = expeditionary_company_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1203,7 +1211,7 @@ rhoynar_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = rhoynar_city_legacy
+	legacy_equivalent = republic_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1245,7 +1253,7 @@ rhoynar_city_reform = {
 nights_watch_reform = {
 	icon = "the_nights_watch"
 	allow_normal_conversion = no
-	legacy_equivalent = nights_watch_legacy
+	legacy_equivalent = republic_legacy
 	lock_level_when_selected = yes
 	valid_for_nation_designer = yes
 	nation_designer_cost = 35
@@ -1295,7 +1303,7 @@ nights_watch_reform = {
 watchmen_outpost_reform = {
 	icon = "the_nights_watch"
 	allow_normal_conversion = no
-	#legacy_equivalent = watchmen_outpost_reform_legacy
+	legacy_equivalent = republic_legacy
 	lock_level_when_selected = yes
 	valid_for_nation_designer = yes
 	nation_designer_cost = 20
@@ -1363,7 +1371,7 @@ the_faith_reform = {
 	}
 	
 	allow_convert = no
-	legacy_equivalent = the_faith_legacy
+	legacy_equivalent = theocracy_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1389,7 +1397,7 @@ qohor_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = qohor_city_legacy
+	legacy_equivalent = theocracy_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1411,7 +1419,7 @@ norvos_city_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = norvos_city_legacy
+	legacy_equivalent = theocracy_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1465,7 +1473,7 @@ wildling_clan_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = wildling_clan_legacy
+	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1497,7 +1505,7 @@ lhazar_clan_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = lhazar_clan_legacy
+	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1520,7 +1528,7 @@ ibben_clan_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = ibben_clan_legacy
+	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1543,7 +1551,7 @@ omber_clan_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = omber_clan_legacy
+	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1566,7 +1574,7 @@ faros_clan_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = faros_clan_legacy
+	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1589,7 +1597,7 @@ naath_clan_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = naath_clan_legacy
+	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1611,7 +1619,7 @@ summer_islander_clan_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = summer_islander_clan_legacy
+	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1635,7 +1643,7 @@ warband_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = warband_legacy
+	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1662,7 +1670,7 @@ khalasar_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = khalasar_legacy
+	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1689,7 +1697,7 @@ jhattar_reform = {
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = jhattar_legacy
+	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0

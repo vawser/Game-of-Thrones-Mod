@@ -39,7 +39,7 @@ loe_azure_empire = {
 #	maintain_dynasty = yes
 #
 #	modifiers = {
-#		attack_bonus_in_capital_terrain = yes	
+#		attack_bonus_in_capital_terrain = 1
 #		merc_maintenance_modifier = -0.5
 #		mercenary_discipline = 0.05
 #		merchants = 1
@@ -92,7 +92,7 @@ loe_empire_of_dawn = {
 #	maintain_dynasty = yes
 #
 #	modifiers = {
-#		attack_bonus_in_capital_terrain = yes	
+#		attack_bonus_in_capital_terrain = 1
 #		merc_maintenance_modifier = -0.5
 #		mercenary_discipline = 0.05
 #		merchants = 2
@@ -120,7 +120,7 @@ loe_independent_yiti = {
 	lock_level_when_selected = yes
 
 	modifiers = {
-		attack_bonus_in_capital_terrain = yes
+		attack_bonus_in_capital_terrain = 1
 		advisor_cost = -0.2
 		prestige_from_land = 0.10
 		global_manpower = 20
@@ -185,11 +185,12 @@ loe_leased_nobility = {
 	}
 
 	modifiers = {
-		imperial_mandate = 0.1
+		nobles_influence_modifier = -0.1
 	}
 
 	custom_attributes = {
 		loe_lease_nobles_event = yes #TBD
+		loe_cant_seize_nobility = yes #TBD
 	}
 }
 
@@ -305,7 +306,7 @@ loe_imperial_army = {
 
 	modifiers = {
 		global_regiment_cost = 0.2
-		discipline = 0.1 #TBD Lower it to 0.05 once I add the celestial reforms
+		discipline = 0.05
 		force_march_free = yes 
 	}
 
@@ -418,11 +419,11 @@ loe_yitish_absolutism = {
 
 	modifiers = {
 		allow_free_estate_privilege_revocation = yes
-		max_absolutism = 20 #TBD replace it with absolutism efficiency
+		max_absolutism_effect = 0.2
 	}
 
 	custom_attributes = {
-		seizing_land_no_rebels = yes #TBD Make it work with every estate
+		seizing_land_no_rebels = yes
 	}
 }
 
@@ -475,7 +476,7 @@ loe_secret_city = {
 
 	modifiers = {
 		development_cost = -0.2
-		attack_bonus_in_capital_terrain = yes
+		attack_bonus_in_capital_terrain = 1
 	}
 
 	custom_attributes = {
@@ -498,7 +499,7 @@ loe_worlds_end = {
 
 	modifiers = {
 		development_cost = -0.2
-		attack_bonus_in_capital_terrain = yes
+		attack_bonus_in_capital_terrain = 1
 	}
 
 	custom_attributes = {
@@ -519,7 +520,7 @@ loe_landed_necromancers = {
 	}
 
 	custom_attributes = {
-		loe_improve_dev = yes #TBD Colonist constantly improves dev via event, higher the dev, bad events happen
+		loe_improve_dev = yes
 	}
 }
 
@@ -535,7 +536,7 @@ loe_level_castes = {
 	}
 
 	custom_attributes = {
-		loe_church_power_per_stab = yes #TBD
+		loe_church_power_per_stab = yes
 	}
 }
 
@@ -552,7 +553,7 @@ loe_neferi_tunnelers = {
 	}
 
 	custom_attributes = {
-		loe_found_new_mines = yes #TBD Has to have a colonist in province
+		loe_found_new_mines = yes
 	}
 }
 

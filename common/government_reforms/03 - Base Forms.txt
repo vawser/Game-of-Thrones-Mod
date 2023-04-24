@@ -42,7 +42,15 @@ noble_house_reform = {
 	icon = "small_castle"
 	
 	potential = {
-		has_reform = noble_house_reform
+		OR = {
+			culture_group = culture_andal
+			culture_group = culture_rhoynar
+			culture_group = culture_first_men
+		}
+	}
+	trigger = {
+		is_emperor = no
+		NOT = { is_elector = yes }
 	}
 	
 	allow_normal_conversion = yes
@@ -53,7 +61,6 @@ noble_house_reform = {
 	maintain_dynasty = yes
 	
 	modifiers = {
-		prestige = 0.10
 		diplomatic_upkeep = 2
 		improve_relation_modifier = 0.25
 		governing_capacity_modifier = -0.10
@@ -64,11 +71,12 @@ lord_of_the_tides_reform = {
 	
 	potential = {
 		OR = {
-			has_reform = lord_of_the_tides_reform
-			has_reform = noble_house_reform
+			culture_group = culture_andal
+			culture_group = culture_rhoynar
+			culture_group = culture_first_men
 		}
+		tag = A43
 	}
-
 	trigger = {
 		dynasty = "Velaryon"
 		capital = 220
@@ -91,11 +99,18 @@ great_house_reform = {
 	icon = "majestic_castle"
 	
 	potential = {
-		has_reform = great_house_reform
+		OR = {
+			culture_group = culture_andal
+			culture_group = culture_rhoynar
+			culture_group = culture_first_men
+		}
+	}
+	trigger = {
+		is_elector = yes
 	}
 	
 	allow_normal_conversion = yes
-	legacy_equivalent = great_house_legacy
+	legacy_equivalent = kingdom_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -104,14 +119,9 @@ great_house_reform = {
 	fixed_rank = 2
 	
 	modifiers = {
-		prestige = 0.50
+		prestige = 0.25
 		vassal_income = 0.20
 		reduced_liberty_desire = 10
-		nobles_influence_modifier = 0.10
-	}
-	
-	custom_attributes = {
-		enables_monarchy_ideagroup = yes
 	}
 }
 royal_house_reform = {
@@ -119,15 +129,13 @@ royal_house_reform = {
 	
 	potential = {
 		OR = {
-			has_reform = royal_house_reform
-			has_reform = kingdom_of_westeros_reform
+			culture_group = culture_andal
+			culture_group = culture_rhoynar
+			culture_group = culture_first_men
 		}
 	}
 	trigger = {
-		OR = {
 			is_emperor = yes
-			tag = CRW
-		}
 	}
 	
 	allow_normal_conversion = yes
@@ -140,7 +148,9 @@ royal_house_reform = {
 	fixed_rank = 3
 	
 	modifiers = {
-		prestige = 1.00
+		global_spy_defence = 0.125
+		crw_loyalists_influence = 0.05
+		papal_influence_from_cardinals = 0.5
 	}
 
 	factions = {
@@ -163,10 +173,7 @@ kingdom_of_westeros_reform = {
 		}
 	}
 	trigger = {
-		OR = {
-			is_emperor = yes
-			tag = CRW
-		}
+		tag = WST
 	}
    
 	allow_normal_conversion = yes

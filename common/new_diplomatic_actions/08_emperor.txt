@@ -8,6 +8,7 @@ remove_from_the_council = {
 
 	is_visible = {
 		is_emperor = yes
+		has_estate_privilege = estate_nobles_the_small_council
 		FROM = {
 			is_part_of_hre = yes
 			OR = {
@@ -29,7 +30,7 @@ remove_from_the_council = {
 					has_country_modifier = got_hand_of_the_king
 				}
 				remove_country_modifier = got_hand_of_the_king
-				clear_global_flag = handoftheking_active
+				clr_global_flag = handoftheking_active
 				clear_global_event_target = et_handoftheking
 			}
 			if = {
@@ -37,7 +38,7 @@ remove_from_the_council = {
 					has_country_modifier = got_master_of_coin
 				}
 				remove_country_modifier = got_master_of_coin
-				clear_global_flag = masterofcoin_active
+				clr_global_flag = masterofcoin_active
 				clear_global_event_target = et_masterofcoin
 			}
 			if = {
@@ -45,7 +46,7 @@ remove_from_the_council = {
 					has_country_modifier = got_master_of_laws
 				}
 				remove_country_modifier = got_master_of_laws
-				clear_global_flag = masteroflaws_active
+				clr_global_flag = masteroflaws_active
 				clear_global_event_target = et_masteroflaws
 			}
 			if = {
@@ -53,7 +54,7 @@ remove_from_the_council = {
 					has_country_modifier = got_master_of_ships
 				}
 				remove_country_modifier = got_master_of_ships
-				clear_global_flag = masterofships_active
+				clr_global_flag = masterofships_active
 				clear_global_event_target = et_masterofships
 			}
 			if = {
@@ -61,7 +62,7 @@ remove_from_the_council = {
 					has_country_modifier = got_master_of_whisperers
 				}
 				remove_country_modifier = got_master_of_whisperers
-				clear_global_flag = masterofwhisperers_active
+				clr_global_flag = masterofwhisperers_active
 				clear_global_event_target = et_masterofwhisperers
 			}
 		}
@@ -78,6 +79,7 @@ appoint_hand_of_the_king = {
 
 	is_visible = {
 		is_emperor = yes
+		has_estate_privilege = estate_nobles_the_small_council
 		FROM = {
 			is_part_of_hre = yes
 			NOT = { has_country_modifier = got_hand_of_the_king }
@@ -91,8 +93,10 @@ appoint_hand_of_the_king = {
 			remove_country_modifier = got_hand_of_the_king
 		}
 		if = {
-			NOT = {
-				has_global_flag = handoftheking_active
+			limit = {
+				NOT = {
+					has_global_flag = handoftheking_active
+				}
 			}
 			set_global_flag = handoftheking_active
 		}
@@ -186,6 +190,7 @@ appoint_master_of_coin = {
 
 	is_visible = {
 		is_emperor = yes
+		has_estate_privilege = estate_nobles_the_small_council
 		FROM = {
 			is_part_of_hre = yes
 			NOT = { has_country_modifier = got_master_of_coin }
@@ -199,8 +204,10 @@ appoint_master_of_coin = {
 			remove_country_modifier = got_master_of_coin
 		}
 		if = {
-			NOT = {
-				has_global_flag = masterofcoin_active
+			limit = {
+				NOT = {
+					has_global_flag = masterofcoin_active
+				}
 			}
 			set_global_flag = masterofcoin_active
 		}
@@ -294,6 +301,7 @@ appoint_master_of_laws = {
 
 	is_visible = {
 		is_emperor = yes
+		has_estate_privilege = estate_nobles_the_small_council
 		FROM = {
 			is_part_of_hre = yes
 			NOT = { has_country_modifier = got_master_of_laws }
@@ -307,8 +315,10 @@ appoint_master_of_laws = {
 			remove_country_modifier = got_master_of_laws
 		}
 		if = {
-			NOT = {
-				has_global_flag = masteroflaws_active
+			limit = {
+				NOT = {
+					has_global_flag = masteroflaws_active
+				}
 			}
 			set_global_flag = masteroflaws_active
 		}
@@ -402,6 +412,7 @@ appoint_master_of_ships = {
 
 	is_visible = {
 		is_emperor = yes
+		has_estate_privilege = estate_nobles_the_small_council
 		FROM = {
 			is_part_of_hre = yes
 			NOT = { has_country_modifier = got_master_of_ships }
@@ -415,8 +426,10 @@ appoint_master_of_ships = {
 			remove_country_modifier = got_master_of_ships
 		}
 		if = {
-			NOT = {
-				has_global_flag = masterofships_active
+			limit = {
+				NOT = {
+					has_global_flag = masterofships_active
+				}
 			}
 			set_global_flag = masterofships_active
 		}
@@ -510,6 +523,7 @@ appoint_master_of_whisperers = {
 
 	is_visible = {
 		is_emperor = yes
+		has_estate_privilege = estate_nobles_the_small_council
 		FROM = {
 			is_part_of_hre = yes
 			NOT = { has_country_modifier = got_master_of_whisperers }
@@ -523,8 +537,10 @@ appoint_master_of_whisperers = {
 			remove_country_modifier = got_master_of_whisperers
 		}
 		if = {
-			NOT = {
-				has_global_flag = masterofwhisperers_active
+			limit = {
+				NOT = {
+					has_global_flag = masterofwhisperers_active
+				}
 			}
 			set_global_flag = masterofwhisperers_active
 		}

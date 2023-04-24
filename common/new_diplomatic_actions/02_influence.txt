@@ -11,11 +11,13 @@ assign_overlordship = {
 		FROM = {
 			is_part_of_hre = yes
 			is_elector = no
+			is_subject_of_type = feudatory
+			overlord = {
+				is_elector = yes
+			}
 		}
 	}
 	is_allowed = {
-		has_reform = royal_house_reform
-		FROM = { is_subject_of_type = feudatory }
 		NOT = { has_country_modifier = got_shifting_tides }
 	}
 	on_accept = {

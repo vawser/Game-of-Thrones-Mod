@@ -5,9 +5,11 @@ namespace = loe_govmech
 #loe_mandate_from_pu_dev 7-13 Mandate gain from ROOT's PUs' development (decision to show the gains and the number of PU's)
 #loe_increases_skill_over_time 14-15 Event to choose to improve ruler's stats (Max 6 6 6)
 #loe_worldwide_trade 16 Trade efficiency based on continents with a trade note with control of 50%+
-#loe_improve_dev 17 Colonist greatly improves development via event, other buffs at high dev
+#loe_improve_dev 17 Colonist greatly improves development via event until 20 dev
 #loe_church_power_per_stab 18 Each positive stability grants 0.5 monthly church power
 #loe_increased_metal_output 19 Each province with metals gets +1 goods produced
+#loe_found_new_mines 20 Non-metal producing provinces with a colonist can get event to produce a metal
+#loe_lease_nobles_event 21 
 
 #loe_friendly_with_empire 1-2
 country_event = {
@@ -484,7 +486,7 @@ country_event = {
 }
 
 #loe_increases_skill_over_time 14-15
-country_event = { #TBD
+country_event = {
 	id = loe_govmech.14
 	title = "loe_govmech.14.t"
 	desc = "loe_govmech.14.d"
@@ -503,10 +505,13 @@ country_event = { #TBD
 		trigger = {
 			NOT = { adm = 6 }
 		}
-		random_list = {
-			1 = { change_adm = 1 }
-			2 = {}
+		hidden_effect = {
+			random_list = {
+				1 = { change_adm = 1 }
+				2 = {}
+			}
 		}
+		custom_tooltip = loe_govmech.14.d1
 	}
 
 	option = {
@@ -514,10 +519,13 @@ country_event = { #TBD
 		trigger = {
 			NOT = { dip = 6 }
 		}
-		random_list = {
-			1 = { change_dip = 1 }
-			2 = {}
+		hidden_effect = {
+			random_list = {
+				1 = { change_dip = 1 }
+				2 = {}
+			}
 		}
+		custom_tooltip = loe_govmech.14.d2
 	}
 
 	option = {
@@ -525,10 +533,13 @@ country_event = { #TBD
 		trigger = {
 			NOT = { mil = 6 }
 		}
-		random_list = {
-			1 = { change_mil = 1 }
-			2 = {}
+		hidden_effect = {
+			random_list = {
+				1 = { change_mil = 1 }
+				2 = {}
+			}
 		}
+		custom_tooltip = loe_govmech.14.d3
 	}
 
 	option = {
@@ -555,69 +566,72 @@ country_event = { #TBD
 				}
 			}
 		}
-		if = {
-			limit = {
-				mil = 6
+		hidden_effect = {
+			if = {
+				limit = {
+					mil = 6
+				}
+				random_list = {
+					1 = {
+						random_list = {
+							1 = { change_adm = 1 }
+							1 = { change_dip = 1 }
+						}
+					}
+					1 = {}
+				}
 			}
-			random_list = {
-				1 = {
-					random_list = {
-						1 = { change_adm = 1 }
-						1 = { change_dip = 1 }
+			if = {
+				limit = {
+					dip = 6
+				}
+				random_list = {
+					1 = {
+						random_list = {
+							1 = { change_adm = 1 }
+							1 = { change_mil = 1 }
+						}
+					}
+					1 = {}
+				}
+			}
+			if = {
+				limit = {
+					adm = 6
+				}
+				random_list = {
+					1 = {
+						random_list = {
+							1 = { change_dip = 1 }
+							1 = { change_mil = 1 }
+						}
+					}
+					1 = {}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							adm = 6
+							dip = 6
+							mil = 6
+						}
 					}
 				}
-				1 = {}
+				random_list = {
+					2 = {
+						random_list = {
+							1 = { change_adm = 1 }
+							1 = { change_dip = 1 }
+							1 = { change_mil = 1 }
+						}
+					}
+					1 = {}
+				}
 			}
 		}
-		if = {
-			limit = {
-				dip = 6
-			}
-			random_list = {
-				1 = {
-					random_list = {
-						1 = { change_adm = 1 }
-						1 = { change_mil = 1 }
-					}
-				}
-				1 = {}
-			}
-		}
-		if = {
-			limit = {
-				adm = 6
-			}
-			random_list = {
-				1 = {
-					random_list = {
-						1 = { change_dip = 1 }
-						1 = { change_mil = 1 }
-					}
-				}
-				1 = {}
-			}
-		}
-		if = {
-			limit = {
-				NOT = {
-					OR = {
-						adm = 6
-						dip = 6
-						mil = 6
-					}
-				}
-			}
-			random_list = {
-				2 = {
-					random_list = {
-						1 = { change_adm = 1 }
-						1 = { change_dip = 1 }
-						1 = { change_mil = 1 }
-					}
-				}
-				1 = {}
-			}
-		}
+		custom_tooltip = loe_govmech.14.d4
 	}
 }
 
@@ -645,7 +659,7 @@ country_event = {
 }
 
 #loe_worldwide_trade 16
-country_event = { #TBD Test
+country_event = {
 	id = loe_govmech.16
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -990,6 +1004,306 @@ country_event = {
 			add_province_modifier = {
 				name = loe_neferi_mining
 				duration = -1
+			}
+		}
+	}
+}
+
+#loe_found_new_mines 20
+province_event = {
+	id = loe_govmech.20
+	title = "loe_govmech.20.t"
+	desc = "loe_govmech.20.d"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		years = 5
+	}
+
+	trigger = {
+		has_colonist = yes
+		is_colony = no
+		NOT = {
+			OR = {
+				trade_goods = silver
+				trade_goods = gold
+				trade_goods = copper
+				trade_goods = iron
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				5 = { set_province_flag = loe_copper }
+				5 = { set_province_flag = loe_iron }
+				2 = { set_province_flag = loe_silver }
+				1 = { set_province_flag = loe_gold }
+			}
+		}
+	}
+
+	option = {
+		name = "loe_govmech.20.t1"
+		trigger = {
+			has_province_flag = loe_copper
+		}
+		change_trade_goods = copper
+		add_province_modifier = {
+			name = loe_new_mine
+			duration = 3650
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = "loe_govmech.20.t2"
+		trigger = {
+			has_province_flag = loe_iron
+		}
+		change_trade_goods = iron
+		add_province_modifier = {
+			name = loe_new_mine
+			duration = 3650
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = "loe_govmech.20.t3"
+		trigger = {
+			has_province_flag = loe_silver
+		}
+		change_trade_goods = silver
+		add_province_modifier = {
+			name = loe_new_mine
+			duration = 3650
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = "loe_govmech.20.t4"
+		trigger = {
+			OR = {
+				has_province_flag = loe_gold
+				owner = { ruler_has_personality = midas_touched_personality }
+			}
+		}
+		highlight = yes
+		change_trade_goods = gold
+		add_province_modifier = {
+			name = loe_new_mine_gold
+			duration = 3650
+		}
+		ai_chance = {
+			factor = 99
+		}
+	}
+}
+
+#loe_lease_nobles_event 21-25 #TBD not thoroughly tested
+country_event = {
+	id = loe_govmech.21
+	title = "loe_govmech.21.t"
+	desc = "loe_govmech.21.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	trigger = {
+		has_government_attribute = loe_lease_nobles_event
+		has_country_flag = loe_lease_cycle
+	}
+
+	immediate = {
+		set_variable = {
+			which = loe_rebel_counter
+			which = loe_rebel_count
+		}
+	}
+
+	option = {
+		name = "loe_govmech.21.t1"
+		add_years_of_income = 1
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+		change_estate_land_share = {
+			estate = estate_nobles
+			share = 5
+		}
+	}
+
+	option = {
+		name = "loe_govmech.21.t2"
+		change_government_reform_progress = 50
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -10
+		}
+		change_variable = {
+			which = loe_rebel_count
+			value = 1
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = loe_rebel_counter
+					value = 1
+				}
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					size = 1
+					win = yes
+					type = noble_rebels
+					estate = estate_nobles
+				}
+			}
+			subtract_variable = {
+				which = loe_rebel_counter
+				value = 1
+			}
+		}
+	}
+
+	after = {
+		country_event = {
+			id = loe_govmech.22
+			days = 3650
+		}
+	}
+}
+
+country_event = {
+	id = loe_govmech.22
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		has_government_attribute = loe_lease_nobles_event
+		has_country_flag = loe_lease_cycle
+	}
+
+	option = {
+		name = "loe_hidden"
+		country_event = {
+			id = loe_govmech.21
+		}
+	}
+}
+
+country_event = {
+	id = loe_govmech.23
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	hidden = yes
+	mean_time_to_happen = {
+		years = 2
+	}
+
+	trigger = {
+		has_government_attribute = loe_lease_nobles_event
+		NOT = { num_of_rebel_armies = 1 }
+		NOT = { has_country_flag = loe_lease_cycle }
+		has_country_flag = loe_nobles_revolted 
+	}
+
+	option = {
+		name = "loe_hidden"
+		country_event = {
+			id = loe_govmech.21
+		}
+		set_country_flag = loe_lease_cycle
+	}
+}
+
+country_event = {
+	id = loe_govmech.24
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	hidden = yes
+
+	trigger = {
+		NOT = { has_government_attribute = loe_lease_nobles_event }
+		has_country_flag = loe_lease_cycle
+	}
+
+	option = {
+		name = "loe_hidden"
+		clr_country_flag = loe_lease_cycle
+		clr_country_flag = loe_nobles_revolted
+	}
+}
+
+country_event = {
+	id = loe_govmech.25
+	title = "loe_govmech.25.t"
+	desc = "loe_govmech.25.d"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	trigger = {
+		has_government_attribute = loe_lease_nobles_event
+		NOT = { has_country_flag = loe_lease_cycle }
+		NOT = { has_country_flag = loe_nobles_revolted }
+	}
+
+	option = {
+		name = "loe_govmech.25.t1"
+		set_country_flag = loe_nobles_revolted
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -50
+		}
+		change_estate_land_share = {
+			estate = estate_nobles
+			share = -20
+		}
+		766 = {
+			spawn_rebels = {
+				size = 2
+				win = yes
+				type = noble_rebels
+				estate = estate_nobles
+			}
+		}
+		820 = {
+			spawn_rebels = {
+				size = 2
+				win = yes
+				type = noble_rebels
+				estate = estate_nobles
+			}
+		}
+		782 = {
+			spawn_rebels = {
+				size = 1
+				win = yes
+				type = noble_rebels
+				estate = estate_nobles
+			}
+		}
+		870 = {
+			spawn_rebels = {
+				size = 1
+				win = yes
+				type = noble_rebels
+				estate = estate_nobles
 			}
 		}
 	}

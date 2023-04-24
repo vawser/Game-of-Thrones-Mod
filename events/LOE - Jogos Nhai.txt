@@ -143,7 +143,7 @@ country_event = { #Does not work if more than 1 nation has more dev
 	}
 }
 
-country_event = { #TBD Untested
+country_event = { #TBD Untested, doesnt peace out properly
 	id = jogosnhai.6
 	title = "jogosnhai.6.t"
     desc = "jogosnhai.6.d"
@@ -158,43 +158,73 @@ country_event = { #TBD Untested
 	}
 
 	immediate = {
-		hidden_effect = {
+		#hidden_effect = {
 			set_variable = {
-				which = loe_total_enemy_dev
+				which = loe_enemy_dev
 				value = 0
-			}
-			every_war_enemy_country = {
-				export_to_variable = {
-					which = loe_enemy_dev
-					value = total_development
-					who = PREV
-				}
-				change_variable = {
-					which = loe_total_enemy_dev
-					which = loe_enemy_dev
-				}
-			}
-			divide_variable = {
-				which = loe_total_enemy_dev
-				value = 10
-			}
-			set_variable = {
-				which = loe_countdown
-				which = loe_total_enemy_dev
 			}
 			while = {
 				limit = {
-					NOT = {
-						check_variable = {
-							which = loe_countdown
-							value = 1
+					any_war_enemy_country = {
+						NOT = { has_country_flag = loe_is_counted }
+					}
+				}
+				random_war_enemy_country = {
+					set_country_flag = loe_is_counted
+					export_to_variable = {
+						which = loe_enemy_dev
+						value = total_development
+					}
+					ROOT = {
+						change_variable = {
+							which = loe_enemy_dev
+							which = PREV
 						}
 					}
 				}
-				subtract_variable = {
+			}
+		#}
+	}
+
+    option = {
+		name = "jogosnhai.6.t1"
+		custom_tooltip = "jogosnhai.6.d1"
+		every_enemy_country = {
+			white_peace = ROOT
+			every_enemy_country = {
+				white_peace = PREV
+			}
+		}
+		multiply_variable = {
+			which = loe_enemy_dev
+			value = 0.1
+		}
+	}
+
+	after = {
+		set_variable = {
+			which = loe_countdown
+			which = loe_enemy_dev
+		}
+		while = {
+			limit = {
+				check_variable = {
 					which = loe_countdown
 					value = 1
 				}
+			}
+			subtract_variable = {
+				which = loe_countdown
+				value = 1
+			}
+			random_owned_province = {
+				random_list = {
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_production = 1 }
+					1 = { add_base_tax = 1 }
+				}
+			}
+			overlord = {
 				random_owned_province = {
 					random_list = {
 						1 = { add_base_manpower = 1 }
@@ -202,7 +232,9 @@ country_event = { #TBD Untested
 						1 = { add_base_tax = 1 }
 					}
 				}
-				overlord = {
+			}
+			overlord = {
+				random_subject_country = {
 					random_owned_province = {
 						random_list = {
 							1 = { add_base_manpower = 1 }
@@ -211,27 +243,7 @@ country_event = { #TBD Untested
 						}
 					}
 				}
-				overlord = {
-					random_subject_country = {
-						random_owned_province = {
-							random_list = {
-								1 = { add_base_manpower = 1 }
-								1 = { add_base_production = 1 }
-								1 = { add_base_tax = 1 }
-							}
-						}
-					}
-				}
 			}
-		}
-	}
-
-    option = {
-		name = "jogosnhai.6.t1"
-		custom_tooltip = "jogosnhai.6.d1"
-		every_enemy_country = {
-			white_peace = ROOT
-			#TBD Add MilAccess if possible
 		}
 	}
 }
@@ -363,7 +375,7 @@ country_event = {
 }
 
 country_event = {
-	id = jogosnhai.9
+	id = jogosnhai.9 #TBD doesnt apply modifier correctly, make it province event
 	title = "loe_hidden"
     desc = "loe_hidden"
 	picture = BIG_BOOK_eventPicture

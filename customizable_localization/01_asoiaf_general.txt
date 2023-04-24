@@ -118,6 +118,22 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetGuardTitle
+	text = {
+		localisation_key = string_kingsguard
+		trigger = {
+			is_female = no
+		}
+	}
+	text = {
+		localisation_key = string_queensguard
+		trigger = {
+			is_female = yes
+		}
+	}
+}
+
+defined_text = {
 	name = GetStateForm
 
 	text = {

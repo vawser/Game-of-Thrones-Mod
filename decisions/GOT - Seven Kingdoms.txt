@@ -1,221 +1,23 @@
 country_decisions = {
-	unite_the_seven_kingdoms = {
-        major = yes
+	enlist_the_lord_commander = {
+		major = yes
 		potential = {
-            is_emperor = yes
-			capital_scope = {
-				continent = westeros
-			}
-            NOT = { tag = WST }
-			NOT = {
-				OR = {
-					has_country_flag = formed_major_formable
-				}
+			is_emperor = yes
+			OR = {
+				has_estate_privilege = estate_nobles_the_kingsguard
+				has_estate_privilege = estate_nobles_the_queensguard
 			}
 		}
-		allow =  {
-            imperial_mandate = 100
-                
-            OR = {
-                A01 = {
-                    is_subject_of = ROOT
-                    NOT = { liberty_desire = 1 }
-                }
-                region_the_north = {
-                    type = all
-                    owned_by = ROOT
-                    is_core = ROOT
-                }
-            }
-            OR = {
-                A03 = {
-                    is_subject_of = ROOT
-                    NOT = { liberty_desire = 1 }
-                }
-                region_riverlands = {
-                    type = all
-                    owned_by = ROOT
-                    is_core = ROOT
-                }
-            }
-            OR = {
-                CRW = {
-                    is_subject_of = ROOT
-                    NOT = { liberty_desire = 1 }
-                }
-                region_crownlands = {
-                    type = all
-                    owned_by = ROOT
-                    is_core = ROOT
-                }
-            }
-            OR = {
-                A07 = {
-                    is_subject_of = ROOT
-                    NOT = { liberty_desire = 1 }
-                }
-                region_stormlands = {
-                    type = all
-                    owned_by = ROOT
-                    is_core = ROOT
-                }
-            }
-            OR = {
-                M09 = {
-                    is_subject_of = ROOT
-                    NOT = { liberty_desire = 1 }
-                }
-                region_iron_islands = {
-                    type = all
-                    owned_by = ROOT
-                    is_core = ROOT
-                }
-            }
-            OR = {
-                A04 = {
-                    is_subject_of = ROOT
-                    NOT = { liberty_desire = 1 }
-                }
-                region_vale = {
-                    type = all
-                    owned_by = ROOT
-                    is_core = ROOT
-                }
-            }
-            OR = {
-                F20 = {
-                    is_subject_of = ROOT
-                    NOT = { liberty_desire = 1 }
-                }
-                region_reach = {
-                    type = all
-                    owned_by = ROOT
-                    is_core = ROOT
-                }
-            }
-            OR = {
-                A06 = {
-                    is_subject_of = ROOT
-                    NOT = { liberty_desire = 1 }
-                }
-                region_westerlands = {
-                    type = all
-                    owned_by = ROOT
-                    is_core = ROOT
-                }
-            }
-            OR = {
-                A09 = {
-                    is_subject_of = ROOT
-                    NOT = { liberty_desire = 1 }
-                }
-                region_dorne = {
-                    type = all
-                    owned_by = ROOT
-                    is_core = ROOT
-                }
-            }
+		allow = {
+			NOT = { num_of_generals_with_traits = 1 }
 		}
-	  	effect = {
-            add_prestige = 100
-			add_stability = 6
-			set_government_rank = 3
-			set_country_flag = formed_major_formable
-            
-            if = {
-                limit = {
-                    A01 = {
-                        is_subject_of = ROOT
-                    }
-                }
-                
-                inherit = A01
-            }
-            
-            if = {
-                limit = {
-                    A03 = {
-                        is_subject_of = ROOT
-                    }
-                }
-                
-                inherit = A03
-            }
-            
-            if = {
-                limit = {
-                    CRW = {
-                        is_subject_of = ROOT
-                    }
-                }
-                
-                inherit = CRW
-            }
-            
-            if = {
-                limit = {
-                    A07 = {
-                        is_subject_of = ROOT
-                    }
-                }
-                
-                inherit = A07
-            }
-            
-            if = {
-                limit = {
-                    M09 = {
-                        is_subject_of = ROOT
-                    }
-                }
-                
-                inherit = M09
-            }
-            
-            if = {
-                limit = {
-                    A04 = {
-                        is_subject_of = ROOT
-                    }
-                }
-                
-                inherit = A04
-            }
-            
-            if = {
-                limit = {
-                    F20 = {
-                        is_subject_of = ROOT
-                    }
-                }
-                
-                inherit = F20
-            }
-            
-            if = {
-                limit = {
-                    A06 = {
-                        is_subject_of = ROOT
-                    }
-                }
-                
-                inherit = A06
-            }
-            
-            if = {
-                limit = {
-                    A09 = {
-                        is_subject_of = ROOT
-                    }
-                }
-                
-                inherit = A09
-            }
-            
-            change_tag = WST
-		}
-		ai_will_do = {
-			factor = 1
+		effect = {
+			create_general = {
+				add_shock = 1
+				add_manuever = 1
+				tradition = 50
+			}
 		}
 	}
+	
 }

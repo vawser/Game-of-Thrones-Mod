@@ -990,15 +990,23 @@ estate_nobles_the_kingsguard = {
 	}
 	can_select = {
 		is_female = no
-		OR = {
 			is_emperor = yes
-			tag = CRW
 		}
-	}
 	on_granted = {
+		add_faction_influence = {
+			faction = crw_militarists
+			influence = 5
+		}
 		custom_tooltip = estate_nobles_the_kingsguard.granted_tt
 	}
 	on_revoked = {
+		add_faction_influence = {
+			faction = crw_militarists
+			influence = -10
+		}
+		custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
+	}
+	on_invalid = {
 		custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
 	}
 	benefits = {
@@ -1020,15 +1028,23 @@ estate_nobles_the_queensguard = {
 	}
 	can_select = {
 		is_female = yes
-		OR = {
 			is_emperor = yes
-			tag = CRW
-		}
 	}
 	on_granted = {
+		add_faction_influence = {
+			faction = crw_militarists
+			influence = 5
+		}
 		custom_tooltip = estate_nobles_the_queensguard.granted_tt
 	}
 	on_revoked = {
+		add_faction_influence = {
+			faction = crw_militarists
+			influence = -10
+		}
+		custom_tooltip = estate_nobles_the_queensguard.revoked_tt
+	}
+	on_invalid = {
 		custom_tooltip = estate_nobles_the_queensguard.revoked_tt
 	}
 	benefits = {

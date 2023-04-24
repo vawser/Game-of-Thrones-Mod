@@ -694,10 +694,10 @@ fabricate_claim = {
 	}
 
 	condition = {
-		tooltip = "Nobles houses of Westeros cannot claim each other's lands"
+		tooltip = "Nobles houses of Westeros cannot fabricate claims on each other's lands"
 		potential = {
-			government = dynasty
-			FROM = { government = dynasty }
+			is_westerosi_government = yes
+			FROM = { is_westerosi_government = yes }
 			#is_subject_of_type = feudatory
 		}
 		allow = {

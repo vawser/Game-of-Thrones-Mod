@@ -552,73 +552,6 @@ country_event = {
 	} 
 }
 
-# The Passing of the Throne
-country_event = {
-	id = GOT_SK_SYSTEM.30
-	title = GOT_SK_SYSTEM.30.title
-	desc = GOT_SK_SYSTEM.30.desc
-	picture = GOOD_WITH_MONARCH_eventPicture
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		is_subject_of_type = royal_subject
-	}
-	
-	immediate = {
-		grant_independence = yes # Free them automatically
-	}
-	
-	option = {
-		name = GOT_SK_SYSTEM.30.option.a
-		
-		event_target:IronThrone = {
-			create_subject = {
-				subject_type = royal_subject
-				subject = ROOT
-			}
-		}
-		
-		ai_chance = {
-			factor = 90
-			
-			modifier = {
-				factor = 0.5
-				
-				NOT = {
-					has_opinion = {
-						who = event_target:IronThrone
-						value = -50
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = GOT_SK_SYSTEM.30.option.b
-		
-		event_target:IronThrone = {
-			add_casus_belli = {
-				target = ROOT
-				type = cb_royal_conquest
-			}
-		}
-		
-		ai_chance = {
-			factor = 10
-			
-			modifier = {
-				factor = 0
-				
-				has_opinion = {
-					who = event_target:IronThrone
-					value = 25
-				}
-			}
-		}
-	}
-}
-
 # Claim the Iron Throne
 country_event = {
 	id = GOT_SK_SYSTEM.31
@@ -660,14 +593,6 @@ country_event = {
 				war_with = ROOT
 			}
 			white_peace = ROOT
-		}
-		
-		# Allow all current subjects to choose whether they become subjects of new holder
-		every_country = {
-			limit = {
-				is_subject_of_type = royal_subject
-			}
-			country_event = { id = GOT_SK_SYSTEM.30 }
 		}
 		
 		ai_chance = {

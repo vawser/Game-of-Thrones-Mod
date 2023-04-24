@@ -103,15 +103,9 @@ got_reinforce_the_seven_kingdoms_reform = {
 			has_reform = kingdom_of_westeros_reform
 		}
 	}
-	trigger = {
-		royal_subject = 3
-	}
 	modifiers = {
 		reduced_liberty_desire = 5
 		max_absolutism = -20
-	}
-	custom_attributes = {
-		strengthen_royal_subjects = yes
 	}
 	ai = {
 		factor = 1
@@ -130,14 +124,6 @@ got_reaffirm_the_one_kingdom_reform = {
 		OR = {
 			has_reform = royal_house_reform
 			has_reform = kingdom_of_westeros_reform
-		}
-	}
-	trigger = {
-		if = {
-			limit = {
-				royal_subject = 3
-			}
-			stability = 1
 		}
 	}
 	modifiers = {

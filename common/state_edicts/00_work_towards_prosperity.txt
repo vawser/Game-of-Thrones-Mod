@@ -1,0 +1,63 @@
+edict_work_towards_prosperity = {
+	potential = {
+		always = yes
+	}
+
+	allow = {
+		if = { # No active disaster
+			limit = {
+				has_any_disaster = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = HAS_DISASTER_TRIGGER
+				has_any_disaster = no
+			}
+		}
+		if = { # Be at Peace
+			limit = {
+				is_at_war = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = AT_PEACE_TRIGGER
+				is_at_war = no
+			}
+		}
+		if = { # Stability at least 3
+			limit = {
+				NOT = { stability = 3 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = STABILITY_AT_LEAST_3_TRIGGER
+				stability = 3
+			}
+		}
+		if = { # No devastation in state
+			limit = {
+				FROM = {
+					any_province_in_state = {
+						devastation = 0.01
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = HAS_DEVASTATION_TRIGGER
+				FROM = {
+					all_province_in_state = {
+						NOT = { devastation = 0.01 }
+					}
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		local_prosperity_growth = 0.01
+		statewide_governing_cost = 0.10
+	}
+
+	color = { 192 117 157 }
+
+	ai_will_do = {
+		factor = 0
+	}
+}

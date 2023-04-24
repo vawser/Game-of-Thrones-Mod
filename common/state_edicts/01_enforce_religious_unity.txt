@@ -1,0 +1,39 @@
+edict_enforce_religious_unity = {
+	potential = {
+		if = { # Only available with 'Expand the Administrative Arm' gov't reform
+			limit = {
+				is_westerosi_government = yes
+			}
+			has_government_attribute = unlock_more_state_edicts
+		}
+		else = {
+			always = yes
+		}
+	}
+	
+	allow = {
+		always = yes
+	}
+	
+	modifier = {
+		local_missionary_strength = 0.01
+	}
+	
+	color = { 162 50 151 }
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			all_province_in_state = {
+				has_missionary = no
+			}
+		}
+		modifier = {
+			factor = 3
+			any_province_in_state = {
+				has_missionary = yes
+			}
+		}
+	}
+}

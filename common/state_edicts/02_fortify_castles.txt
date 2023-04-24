@@ -1,0 +1,47 @@
+edict_reinforce_the_castles = {
+	potential = {
+		always = yes
+	}
+	
+	allow = {
+		if = { # Be at War
+			limit = {
+				is_at_war = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = AT_WAR_TRIGGER
+				is_at_war = yes
+			}
+		}
+		if = { # Have a Fort somewhere
+			limit = {
+				FROM = {
+					all_province_in_state = {
+						NOT = {
+							has_fort_building_trigger = yes
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = HAS_ANY_LEVEL_FORT_TRIGGER
+				FROM = {
+					any_province_in_state = {
+						has_fort_building_trigger = yes
+					}
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		local_hostile_attrition = 1
+		local_defensiveness = 0.33
+	}
+	
+	color = { 153 255 153 }
+    
+	ai_will_do = {
+		factor = 0
+	}
+}

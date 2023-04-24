@@ -1,0 +1,48 @@
+edict_improve_economy = {
+	potential = {
+		always = yes
+	}
+
+	allow = {
+		if = { # No active disaster
+			limit = {
+				has_any_disaster = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = HAS_DISASTER_TRIGGER
+				has_any_disaster = no
+			}
+		}
+		if = { # All provinces controlled by owner
+			limit = {
+				FROM = {
+					any_province_in_state = {
+						owned_by = ROOT
+						NOT = {
+							controlled_by = ROOT
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = PROVINCE_IS_OCCUPIED_TRIGGER
+				FROM = {
+					all_province_in_state = {
+						controlled_by = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		local_build_time = -0.25
+		local_development_cost = -0.10
+	}
+
+	color = { 219 212 13 }
+
+	ai_will_do = {
+		factor = 0
+	}
+}

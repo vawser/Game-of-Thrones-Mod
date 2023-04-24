@@ -1,0 +1,51 @@
+edict_army_enlistment_campaign = {
+	potential = {
+		if = { # Only available with 'Expand the Administrative Arm' gov't reform
+			limit = {
+				is_westerosi_government = yes
+			}
+			has_government_attribute = unlock_more_state_edicts
+		}
+		else = {
+			always = yes
+		}
+	}
+	
+	allow = {
+		if = { # Be at War
+			limit = {
+				is_at_war = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = AT_WAR_TRIGGER
+				is_at_war = yes
+			}
+		}
+	}
+	
+	modifier = {
+		local_manpower_modifier = 0.25
+		regiment_recruit_speed = -0.10
+	}
+	
+	color = { 30 105 25 }
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			owner = {
+				manpower_percentage = 0.4
+			}
+		}
+		modifier = {
+			factor = 3
+			all_province_in_state = {
+				base_manpower = 5
+			}
+			any_province_in_state = {
+				base_manpower = 15
+			}
+		}
+	}
+}

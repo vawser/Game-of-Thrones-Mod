@@ -410,37 +410,36 @@ country_event = {
 	}
 }
 
-# Swing
+# Nobility Taxation
 country_event = {
 	id = GOT_SK_SYSTEM.10
-	title = GOT_SK_SYSTEM.10.title
-	desc = GOT_SK_SYSTEM.10.desc
-	picture = GOOD_WITH_MONARCH_eventPicture
+	title = "GOT_SK_SYSTEM.10.title"
+	desc = "GOT_SK_SYSTEM.10.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
 	
 	is_triggered_only = yes
 	
 	trigger = {
-		is_emperor_of_china = yes
-		NOT = { has_country_flag = iron_throne_transition }
+		is_emperor = yes
 	}
 	
 	option = {
-		name = GOT_SK_SYSTEM.10.option.a
+		name = "GOT_SK_SYSTEM.10.option.a"
 
 		add_mandate = -10
 	}
 	option = {
-		name = GOT_SK_SYSTEM.10.option.b
+		name = "GOT_SK_SYSTEM.10.option.b"
 
 		add_years_of_income = -1
 	}
 }
 
-# Swing
+# Nobility Levies
 country_event = {
 	id = GOT_SK_SYSTEM.11
-	title = GOT_SK_SYSTEM.11.title
-	desc = GOT_SK_SYSTEM.11.desc
+	title = "GOT_SK_SYSTEM.11.title"
+	desc = "GOT_SK_SYSTEM.11.desc"
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
 	is_triggered_only = yes
@@ -451,12 +450,12 @@ country_event = {
 	}
 	
 	option = {
-		name = GOT_SK_SYSTEM.11.option.a
+		name = "GOT_SK_SYSTEM.11.option.a"
 
 		add_mandate = -10
 	} 
 	option = {
-		name = GOT_SK_SYSTEM.11.option.a
+		name = "GOT_SK_SYSTEM.11.option.a"
 		
 		add_yearly_manpower = -1
 	}

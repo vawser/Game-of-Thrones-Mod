@@ -2039,6 +2039,10 @@ on_province_religion_converted = {
 	on_province_religion_converted_estate_privileges_effect = yes
 }
 
+on_province_religion_changed = {
+	#on_province_religion_changed_effect = yes
+}
+
 # province, manually conversion
 on_province_culture_converted = {
 	owner = {
@@ -2053,11 +2057,10 @@ on_province_culture_converted = {
 		1000 = GOT_RULER_IMPROVEMENT.13
 		100000 = 0
 	}
-
+}
 
 # province, general conversion through effects
 on_province_culture_changed = {
-	
 }
 
 # THIS = Province, FROM = Country who Propogated

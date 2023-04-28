@@ -1,7 +1,7 @@
 #------------------------------------------------------------
 # "Increase Tax Income in [agenda_province.GetName]"
 #------------------------------------------------------------
-estate_clergy_develop_x = {
+estate_church_develop_x = {
 	selection_weight = {
 		factor = 1
 	}
@@ -107,7 +107,7 @@ estate_clergy_develop_x = {
     }
     task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
 		add_prestige = 10
@@ -123,7 +123,7 @@ estate_clergy_develop_x = {
 			}
 		}
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -134,7 +134,7 @@ estate_clergy_develop_x = {
 #------------------------------------------------------------
 # "Build a House of Worship in [agenda_province.GetName]"
 #------------------------------------------------------------
-estate_clergy_build_temple_in_y = {
+estate_church_build_temple_in_y = {
 	can_select = {
 		any_owned_province = {
 			is_state_core = root
@@ -226,18 +226,18 @@ estate_clergy_build_temple_in_y = {
     }
     task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
 		if = {
 			limit = {
 				NOT = { crown_land_share = 15 }
 				estate_territory = {
-					estate = estate_clergy
+					estate = estate_church
 					territory = 10
 				}
 			}
-			take_estate_land_share_small = { estate = estate_clergy }
+			take_estate_land_share_small = { estate = estate_church }
 		}
 		else = {
 			event_target:agenda_province = {
@@ -256,7 +256,7 @@ estate_clergy_build_temple_in_y = {
 			}
 		}
 		add_estate_loyalty_modifier = {
-			estate = estate_clergy
+			estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -267,7 +267,7 @@ estate_clergy_build_temple_in_y = {
 #------------------------------------------------------------
 # "Build a Town Hall in [agenda_province.GetName]"
 #------------------------------------------------------------
-estate_clergy_build_town_hall_in_y = {
+estate_church_build_town_hall_in_y = {
 	can_select = {
 		any_owned_province = {
 			is_state_core = root
@@ -359,18 +359,18 @@ estate_clergy_build_town_hall_in_y = {
     }
     task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
 		if = {
 			limit = {
 				NOT = { crown_land_share = 15 }
 				estate_territory = {
-					estate = estate_clergy
+					estate = estate_church
 					territory = 10
 				}
 			}
-			take_estate_land_share_small = { estate = estate_clergy }
+			take_estate_land_share_small = { estate = estate_church }
 		}
 		else = {
 			event_target:agenda_province = {
@@ -389,7 +389,7 @@ estate_clergy_build_town_hall_in_y = {
 			}
 		}
 		add_estate_loyalty_modifier = {
-			estate = estate_clergy
+			estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -400,7 +400,7 @@ estate_clergy_build_town_hall_in_y = {
 #------------------------------------------------------------
 # "Build a Manufactory in [agenda_province.GetName]"
 #------------------------------------------------------------
-estate_clergy_build_manufactory_in_y = {
+estate_church_build_manufactory_in_y = {
 	can_select = {
 		any_owned_province = {
 			is_state_core = root
@@ -538,7 +538,7 @@ estate_clergy_build_manufactory_in_y = {
     }
     task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
 		event_target:agenda_province = {
@@ -560,7 +560,7 @@ estate_clergy_build_manufactory_in_y = {
 			}
 		}
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -571,7 +571,7 @@ estate_clergy_build_manufactory_in_y = {
 #------------------------------------------------------------
 # "Convert [agenda_province.GetName]"
 #------------------------------------------------------------
-estate_clergy_convert_province_x = {
+estate_church_convert_province_x = {
 	can_select = {
 		num_of_missionaries = 1
 		any_owned_province = {
@@ -710,7 +710,7 @@ estate_clergy_convert_province_x = {
 			discount = yes
 		}
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
     }
@@ -722,7 +722,7 @@ estate_clergy_convert_province_x = {
 			}
 		}
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -733,7 +733,7 @@ estate_clergy_convert_province_x = {
 #------------------------------------------------------------
 # "Recover from the Ravages of War"
 #------------------------------------------------------------
-estate_clergy_reduce_war_exhaustion = {
+estate_church_reduce_war_exhaustion = {
 	can_select = {
 		war_exhaustion = 5
 		is_at_war = no
@@ -758,7 +758,7 @@ estate_clergy_reduce_war_exhaustion = {
 	}
     task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
 		add_country_modifier = {
@@ -768,7 +768,7 @@ estate_clergy_reduce_war_exhaustion = {
     }
     failing_effect = {
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -779,7 +779,7 @@ estate_clergy_reduce_war_exhaustion = {
 #------------------------------------------------------------
 # "Stabilize the Country"
 #------------------------------------------------------------
-estate_clergy_recover_stability = {
+estate_church_recover_stability = {
 	can_select = {
 		NOT = { stability = 0 }
 	}
@@ -795,14 +795,14 @@ estate_clergy_recover_stability = {
 	}
     task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
 		add_prestige = 10
     }
     failing_effect = {
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -813,7 +813,7 @@ estate_clergy_recover_stability = {
 #------------------------------------------------------------
 # "Stabilize the Country"
 #------------------------------------------------------------
-estate_clergy_increase_stability = {
+estate_church_increase_stability = {
 	can_select = {
 		NOT = { stability = 2 }
 		stability = 1
@@ -829,14 +829,14 @@ estate_clergy_increase_stability = {
 	}
     task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
 		add_prestige = 10
     }
     failing_effect = {
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -847,7 +847,7 @@ estate_clergy_increase_stability = {
 #------------------------------------------------------------
 # "Reduce Overextension"
 #------------------------------------------------------------
-estate_clergy_reduce_overextension = {
+estate_church_reduce_overextension = {
 	can_select = {
 		overextension_percentage = 0.50
 	}
@@ -871,14 +871,14 @@ estate_clergy_reduce_overextension = {
 	}
     task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
 		add_adm_power = 50
     }
     failing_effect = {
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -889,7 +889,7 @@ estate_clergy_reduce_overextension = {
 #------------------------------------------------------------
 # "Restore Devotion"
 #------------------------------------------------------------
-estate_clergy_restore_devotion = {
+estate_church_restore_devotion = {
 	can_select = {
 		has_dlc = "Common Sense"
 		NOT = { legitimacy_equivalent = 65 }
@@ -914,7 +914,7 @@ estate_clergy_restore_devotion = {
 	}
     task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
 		generate_scaled_advisor_of_type_and_religion_effect = {
@@ -925,7 +925,7 @@ estate_clergy_restore_devotion = {
     }
     failing_effect = {
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -936,7 +936,7 @@ estate_clergy_restore_devotion = {
 #------------------------------------------------------------
 # "Root out Heresy in [agenda_country.GetName]"
 #------------------------------------------------------------
-estate_clergy_root_out_heresy = {
+estate_church_root_out_heresy = {
 	can_select = {
 		cb_on_religious_enemies = yes
 		is_free_or_tributary_trigger = yes
@@ -1052,7 +1052,7 @@ estate_clergy_root_out_heresy = {
 	}
     task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
 		generate_scaled_advisor_of_type_and_religion_effect = {
@@ -1063,7 +1063,7 @@ estate_clergy_root_out_heresy = {
     }
     failing_effect = {
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -1074,7 +1074,7 @@ estate_clergy_root_out_heresy = {
 #------------------------------------------------------------
 # "Root out Heresy in [agenda_country.GetName]"
 #------------------------------------------------------------
-estate_clergy_crush_religious_revolts = {
+estate_church_crush_religious_revolts = {
 	can_select = {
 		num_of_rebel_armies = 1
 		has_spawned_rebels = heretic_rebels
@@ -1104,13 +1104,13 @@ estate_clergy_crush_religious_revolts = {
 	}
 	task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 15
 		}
 	}
     failing_effect = {
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -1121,7 +1121,7 @@ estate_clergy_crush_religious_revolts = {
 #------------------------------------------------------------
 # "Protect our Brethren in [agenda_province.GetName]"
 #------------------------------------------------------------
-estate_clergy_protect_brethren = {
+estate_church_protect_brethren = {
 	can_select = {
 		is_free_or_tributary_trigger = yes
 		is_at_war = no
@@ -1268,16 +1268,16 @@ estate_clergy_protect_brethren = {
 			}
 		}
 		else = {
-			custom_tooltip = estate_clergy_protect_our_religion_effect_tooltip
+			custom_tooltip = estate_church_protect_our_religion_effect_tooltip
 		}
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 15
 		}
 	}
     failing_effect = {
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -1307,7 +1307,7 @@ estate_clergy_protect_brethren = {
 #------------------------------------------------------------
 # "Protect our Brethren in [agenda_province.GetName]"
 #------------------------------------------------------------
-estate_clergy_propagate_religion = {
+estate_church_propagate_religion = {
 	can_select = {
 		has_dlc = "Cradle of Civilization"
 		always = no
@@ -1362,7 +1362,7 @@ estate_clergy_propagate_religion = {
 	}
 	task_requirements = {
 		custom_trigger_tooltip = {
-			tooltip = estate_clergy_propagate_religion_trigger_tooltip
+			tooltip = estate_church_propagate_religion_trigger_tooltip
 			event_target:agenda_trade_node = {
 				all_trade_node_member_province = {
 					OR = {
@@ -1375,7 +1375,7 @@ estate_clergy_propagate_religion = {
 	}
 	task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 15
 		}
 		add_country_modifier = {
@@ -1397,7 +1397,7 @@ estate_clergy_propagate_religion = {
 	}
     failing_effect = {
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -1408,7 +1408,7 @@ estate_clergy_propagate_religion = {
 #------------------------------------------------------------
 # "Improve Relations with the Defender of the [Root.Religion.GetName] Faith"
 #------------------------------------------------------------
-estate_clergy_relations_with_dotf = {
+estate_church_relations_with_dotf = {
 	can_select = {
 		any_country = {
 			religion = root
@@ -1513,13 +1513,13 @@ estate_clergy_relations_with_dotf = {
 	}
 	task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 15
 		}
 	}
     failing_effect = {
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -1530,7 +1530,7 @@ estate_clergy_relations_with_dotf = {
 #------------------------------------------------------------
 # "Hire an Administrative Advisor"
 #------------------------------------------------------------
-estate_clergy_hire_advisor = {
+estate_church_hire_advisor = {
 	can_select = {
 		NOT = {
 			employed_advisor = {
@@ -1549,13 +1549,13 @@ estate_clergy_hire_advisor = {
 	}
     task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
     }
     failing_effect = {
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300
@@ -1566,7 +1566,7 @@ estate_clergy_hire_advisor = {
 #------------------------------------------------------------
 # "Fire our [Root.Adm_Advisor.GetTitle]"
 #------------------------------------------------------------
-estate_clergy_fire_advisor = {
+estate_church_fire_advisor = {
 	can_select = {
 		employed_advisor = {
 			category = ADM
@@ -1612,7 +1612,7 @@ estate_clergy_fire_advisor = {
 	}
     task_completed_effect = {
 		add_estate_loyalty = {
-			estate = estate_clergy
+			estate = estate_church
 			loyalty = 10
 		}
 		clr_country_flag = just_fired_adm_advisor
@@ -1628,7 +1628,7 @@ estate_clergy_fire_advisor = {
 	}
     failing_effect = {
         add_estate_loyalty_modifier = {
-            estate = estate_clergy
+            estate = estate_church
 			desc = EST_VAL_AGENDA_FAILED
 			loyalty = -5
 			duration = 7300

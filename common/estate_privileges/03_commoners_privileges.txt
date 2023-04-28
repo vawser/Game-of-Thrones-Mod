@@ -251,7 +251,7 @@ estate_commoners_religious_tolerance = {
 		NOT = { has_estate_privilege = estate_merchants_enforced_interfaith_dialogue }
 	}
 	can_select = {
-		NOT = { has_estate_privilege = estate_clergy_enforced_one_faith }
+		NOT = { has_estate_privilege = estate_church_enforced_one_faith }
 	}
 	penalties = {
 		clergy_loyalty_modifier = -0.05
@@ -272,7 +272,7 @@ estate_commoners_religious_tolerance = {
 		modifier = {
 			factor = 0.5
 			estate_influence = {
-				estate = estate_clergy
+				estate = estate_church
 				influence = 75
 			}
 		}

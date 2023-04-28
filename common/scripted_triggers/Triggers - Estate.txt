@@ -1,6 +1,6 @@
 has_any_estates = {
 	OR = {
-		has_estate = estate_clergy
+		has_estate = estate_church
 		has_estate = estate_merchants
 		has_estate = estate_nobles
 		has_estate = estate_commoners
@@ -74,22 +74,17 @@ has_tribes_trade_good_trigger = {
 	}
 }
 
-estate_has_special_privileges_active = {
+dynasty_base_privileges_valid = {
 	# estate_privilege
-	# estate_scope
 	OR = {
 		NOT = { has_estate_privilege = $estate_privilege$ }
-		custom_trigger_tooltip = {
-			tooltip = got_msq_active_$estate_scope$_reform
-			has_government_attribute = estate_special_privileges
-		}
+		dynasty_base_privileges_trigger = yes
 	}
 }
 
-estate_special_privilege_check = {
-	# estate_scope
+dynasty_base_privileges_trigger = {
 	custom_trigger_tooltip = {
-		tooltip = got_msq_active_$estate_scope$_reform
-		has_government_attribute = estate_special_privileges
+		tooltip = got_doa_active_privilege_tt
+		has_government_attribute = dynasty_base_privileges
 	}
 }

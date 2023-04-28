@@ -6,23 +6,16 @@ estate_merchants_land_rights = {
 	influence = 0.05
 	is_valid = {
 		if = {
-			limit = {
-				is_westerosi_government = yes
-			}
-			estate_has_special_privileges_active = {
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_valid = {
 				estate_privilege = estate_merchants_land_rights
-				estate_scope = merchants
 			}
 		}
 	}
 	can_select = {
 		if = {
-			limit = {
-				is_westerosi_government = yes
-			}
-			estate_special_privilege_check = {
-				estate_scope = merchants
-			}
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_trigger = yes
 		}
 	}
 	on_granted = {
@@ -91,23 +84,16 @@ estate_merchants_land_of_commerce = {
 	loyalty = -0.05
 	is_valid = {
 		if = {
-			limit = {
-				is_westerosi_government = yes
-			}
-			estate_has_special_privileges_active = {
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_valid = {
 				estate_privilege = estate_merchants_land_rights
-				estate_scope = merchants
 			}
 		}
 	}
 	can_select = {
 		if = {
-			limit = {
-				is_westerosi_government = yes
-			}
-			estate_special_privilege_check = {
-				estate_scope = merchants
-			}
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_trigger = yes
 		}
 	}
 	on_granted = {
@@ -263,7 +249,10 @@ estate_merchants_indebted_to_merchants = {
 	influence = 0.05
 	on_granted = {
 		custom_tooltip = estate_merchants_indebted_to_merchants_effect_tooltip
-		add_mercantilism = -1
+		if = {
+			limit = { NOT = { has_government_attribute = no_mercantilism_loss_from_privilege } }
+			add_mercantilism = -1
+		}
 		tooltip = {
 			add_inflation = 0.5
 		}
@@ -461,7 +450,7 @@ estate_merchants_enforced_interfaith_dialogue = {
 		has_estate_privilege = estate_merchants_enforced_interfaith_dialogue
 	}
 	can_select = {
-		NOT = { has_estate_privilege = estate_clergy_enforced_one_faith }
+		NOT = { has_estate_privilege = estate_church_enforced_one_faith }
 	}
 	penalties = {
 		clergy_loyalty_modifier = -0.1
@@ -1072,30 +1061,5 @@ estate_merchants_monopoly_of_tropical_wood = {
 	}
 	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
 		factor = 0
-	}
-}
-
-estate_merchants_empowered_by_monarch = {
-	icon = privilege_royal_authority
-	max_absolutism = -25
-	loyalty = 0.10
-	influence = 0.20
-	is_valid = {
-		has_government_attribute = choose_estate_to_empower
-	}
-	can_select = {
-		always = no
-	}
-	penalties = {
-		min_autonomy = 10
-	}
-	benefits = {
-		country_diplomatic_power = 1
-	}
-	mechanics = {
-		exempt_from_seize_land
-	}
-	ai_will_do = {
-		factor = 1
 	}
 }

@@ -6,23 +6,16 @@ estate_nobility_land_rights = {
 	influence = 0.05
 	is_valid = {
 		if = {
-			limit = {
-				is_westerosi_government = yes
-			}
-			estate_has_special_privileges_active = {
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_valid = {
 				estate_privilege = estate_nobility_land_rights
-				estate_scope = nobles
 			}
 		}
 	}
 	can_select = {
 		if = {
-			limit = {
-				is_westerosi_government = yes
-			}
-			estate_special_privilege_check = {
-				estate_scope = nobles
-			}
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_trigger = yes
 		}
 	}
 	on_granted = {
@@ -91,23 +84,16 @@ estate_nobility_nobility_primacy = {
 	loyalty = -0.05
 	is_valid = {
 		if = {
-			limit = {
-				is_westerosi_government = yes
-			}
-			estate_has_special_privileges_active = {
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_valid = {
 				estate_privilege = estate_nobility_nobility_primacy
-				estate_scope = nobles
 			}
 		}
 	}
 	can_select = {
 		if = {
-			limit = {
-				is_westerosi_government = yes
-			}
-			estate_special_privilege_check = {
-				estate_scope = nobles
-			}
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_trigger = yes
 		}
 	}
 	on_granted = {
@@ -148,40 +134,6 @@ estate_nobility_nobility_primacy = {
 			factor = 0.8
 			mil = 5
 		}
-	}
-}
-
-estate_nobles_empowered_by_monarch = {
-	icon = privilege_royal_authority
-	land_share = 5
-	max_absolutism = -25
-	loyalty = 0.10
-	influence = 0.20
-	is_valid = {
-		if = {
-			limit = {
-				is_westerosi_government = yes
-			}
-			has_government_attribute = choose_estate_to_empower
-		}
-	}
-	can_select = {
-		always = no
-	}
-	penalties = {
-		min_autonomy = 10
-	}
-	benefits = {
-		country_military_power = 1
-	}
-	modifier_by_land_ownership = {
-		
-	}
-	mechanics = {
-		exempt_from_seize_land
-	}
-	ai_will_do = {
-		factor = 1
 	}
 }
 
@@ -964,17 +916,34 @@ estate_nobles_monopoly_of_sugar = {
 
 estate_nobles_the_small_council = {
 	icon = privilege_iron_throne
+	max_absolutism = -10
+	loyalty = 0.05
 	influence = 0.10
 
 	is_valid = {
 		is_emperor = yes
 	}
 	can_select = {
-		OR = {
-			is_emperor = yes
-			tag = CRW
-		}
+		is_emperor = yes
 	}
+
+	on_granted = {
+		add_prestige = 10
+		custom_tooltip = estate_nobles_the_small_council.granted_tt
+	}
+	on_revoked = {
+		add_prestige = -25
+		custom_tooltip = estate_nobles_the_small_council.revoked_tt
+	}
+	on_invalid = {
+		custom_tooltip = estate_nobles_the_small_council.revoked_tt
+	}
+	modifier_by_land_ownership = {
+		prestige = 0.5
+		imperial_authority_value = 0.1
+		advisor_cost = 0.25
+	}
+
 	ai_will_do = {
 		factor = 1
 	}
@@ -990,8 +959,8 @@ estate_nobles_the_kingsguard = {
 	}
 	can_select = {
 		is_female = no
-			is_emperor = yes
-		}
+		is_emperor = yes
+	}
 	on_granted = {
 		add_faction_influence = {
 			faction = crw_militarists
@@ -1028,7 +997,7 @@ estate_nobles_the_queensguard = {
 	}
 	can_select = {
 		is_female = yes
-			is_emperor = yes
+		is_emperor = yes
 	}
 	on_granted = {
 		add_faction_influence = {

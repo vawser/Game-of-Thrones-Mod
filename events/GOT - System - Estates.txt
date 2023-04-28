@@ -40,7 +40,7 @@ country_event = {
 	}
 
 	after = {
-		clr_country_flag = estate_clergy_present_agenda
+		clr_country_flag = estate_church_present_agenda
 		clr_country_flag = estate_merchants_present_agenda
 		clr_country_flag = estate_nobles_present_agenda
 		clr_country_flag = estate_commoners_present_agenda
@@ -50,9 +50,9 @@ country_event = {
 
 	option = {
 		name = GOT_ESTATE_SYSTEM.2.option.a
-		trigger = { has_country_flag = estate_clergy_present_agenda }
+		trigger = { has_country_flag = estate_church_present_agenda }
         
-		start_estate_agenda = estate_clergy
+		start_estate_agenda = estate_church
         
 		ai_chance = {
 			factor = 1
@@ -61,7 +61,7 @@ country_event = {
 				NOT = {
 					estate_loyalty = {
 						loyalty = 30
-						estate = estate_clergy
+						estate = estate_church
 					}
 				}
 			}
@@ -70,7 +70,7 @@ country_event = {
 				NOT = {
 					estate_loyalty = {
 						loyalty = 20
-						estate = estate_clergy
+						estate = estate_church
 					}
 				}
 			}
@@ -78,7 +78,7 @@ country_event = {
 				factor = 1.5
 				estate_influence = {
 					influence = 70
-					estate = estate_clergy
+					estate = estate_church
 				}
 			}
 		}
@@ -252,13 +252,13 @@ country_event = {
 			}
 			AND = {
 				government = theocracy
-				has_estate = estate_clergy
+				has_estate = estate_church
 			}
 		}
 		NOT = {
             has_estate_privilege = estate_nobility_statutory_rights
             has_estate_privilege = estate_merchants_statutory_rights
-            has_estate_privilege = estate_clergy_statutory_rights
+            has_estate_privilege = estate_church_statutory_rights
         }
 	}
 
@@ -306,7 +306,7 @@ country_event = {
 			limit = {
 				government = theocracy
 			}
-			set_estate_privilege = estate_clergy_statutory_rights
+			set_estate_privilege = estate_church_statutory_rights
 		}
 	}
 

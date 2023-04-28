@@ -14,17 +14,24 @@ has_any_estates = {
 	custom_trigger_tooltip = {
 		tooltip = has_any_estates_tt
 		OR = {
-			has_estate = estate_brahmins
-			has_estate = estate_burghers
 			has_estate = estate_church
-			has_estate = estate_cossacks
-			has_estate = estate_dhimmi
-			has_estate = estate_jains
-			has_estate = estate_maratha
+			has_estate = estate_commoners
 			has_estate = estate_nobles
-			has_estate = estate_nomadic_tribes
-			has_estate = estate_rajput
-			has_estate = estate_vaisyas
+			has_estate = estate_tribes
+			has_estate = estate_adventurers
+		}
+	}
+}
+
+#Country scope
+can_swap_out_of_estate_granting_reform = {
+	OR = {
+		NOT = { has_estate = $estate$ }
+		NOT = {
+			num_of_estate_privileges = {
+				estate = $estate$
+				value = 1
+			}
 		}
 	}
 }

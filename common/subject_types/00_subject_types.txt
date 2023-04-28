@@ -59,6 +59,14 @@ default = {
 	transfer_trade_power = no
 	transfer_trade_if_merchant_republic = no
 	joins_overlords_wars = yes
+	can_be_co_belligerented =  no    #Enemies can force this subject to join its overlord into the defense war. Only used when the subject has the "joins_overlords_wars = no". By default it's "no".
+	can_be_called_to_wars =  no    #Overlord can ask subject to join wars like it could ask allies to join. You would require favors  to call them to wars. Only used when the subject has the "joins_overlords_wars = no". By default it's "no"
+	favors_cost_to_join_offensive_wars = 0   #Defines how much favors the overlord need to invest to call the subject into an offensive war
+	favors_cost_to_join_defensive_wars = 0   #Defines how much favors the overlord need to invest to call the subject into a defensive war
+	opinion_cost_to_join_offensive_wars = 0   #Defines how much opinion the subject loses of the overlord to call the subject into an offensive war. Applied if you do not have Leviathan
+	opinion_cost_to_join_defensive_wars = 0   #Defines how much opinion the subject loses of the overlord to call the subject into a defensive war. Applied if you do not have Leviathan
+	opinion_cost_instead_of_favors_cost = no   #Determines if the subject requires favors or opinion to join a the war. If set "yes" then it requires the aforementioned opinion costs - regardless if Leviathan is active or not. "No" is the default setting
+	opinion_on_subject_integration = -30 #Determines how much opinion they actually lose when a fellow subject gets integrated.
 	joins_colonial_wars = no
 	can_be_integrated = no
 	can_release_and_play = no							# "Release Colony" in SubjectView
@@ -95,6 +103,7 @@ default = {
 	can_concentrate_development = yes
 	can_have_great_projects_moved_by_overlord = yes
 	extend_trading_range = no
+	can_gain_favors = yes
 
 	max_government_rank = 0								# 0 means no limit
 	cities_required_for_bonuses = 0						# How many cities the subject needs before giving bonuses to overlord
@@ -497,9 +506,9 @@ daimyo_vassal = {
 	#(enable)
 	force_seppuku = yes
 	contribute_to_capital = yes
+	conscript_general = yes
 	force_isolation = yes
 	return_land = yes
-	conscript_general = yes
 	#(special)
 	sword_hunt = yes
 	sankin_kotai = yes
@@ -514,14 +523,6 @@ daimyo_vassal = {
 	}
 	modifier_overlord = {
 		modifier = daimyo_subject
-	}
-	
-	
-	modifier_overlord = {
-		modifier = overlord_sword_hunt
-		trigger = {
-			has_country_modifier = subject_sword_hunt
-		}
 	}
 }
 
@@ -645,7 +646,7 @@ colony = {
 	extend_trading_range = yes
 
 	liberty_desire_development_ratio = 0.1
-
+	opinion_on_subject_integration = 0
 	max_government_rank = 1
 	cities_required_for_bonuses = 10
 
@@ -700,6 +701,9 @@ colony = {
 
 crown_colony = {
 	copy_from = colony
+    sprite = GFX_icon_crown_colony
+	diplomacy_overlord_sprite = GFX_icon_diplomacy_lead_crown_colony
+	diplomacy_subject_sprite = GFX_icon_diplomacy_am_crown_colony
 
 	change_colonial_type = yes
 	upgrade_subject_type = yes
@@ -736,6 +740,9 @@ crown_colony = {
 
 private_enterprise = {
 	copy_from = colony
+    sprite = GFX_icon_private_enterprise
+	diplomacy_overlord_sprite = GFX_icon_diplomacy_lead_private_enterprise
+	diplomacy_subject_sprite = GFX_icon_diplomacy_am_private_enterprise
 
 	change_colonial_type = yes
 	upgrade_subject_type = yes
@@ -766,6 +773,9 @@ private_enterprise = {
 
 self_governing_colony = {
 	copy_from = colony
+    sprite = GFX_icon_self_governing_colony
+	diplomacy_overlord_sprite = GFX_icon_diplomacy_lead_self_governing_colony
+	diplomacy_subject_sprite = GFX_icon_diplomacy_am_self_governing_colony
 
 	change_colonial_type = yes
 	upgrade_subject_type = yes

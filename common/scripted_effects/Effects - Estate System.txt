@@ -1293,7 +1293,13 @@ seize_land_effect = {
 							owned_by = ROOT
 						}
 						set_province_flag = seize_land_spawn_unrest_and_rebels
+						if = {
+							limit = {
+								NOT = { has_province_flag = has_estate_unrest_flag }
+							}
 						add_named_unrest = { name = estate_land_seized value = 10 }
+							set_province_flag = has_estate_unrest_flag
+						}
 					}
 				}
 			}

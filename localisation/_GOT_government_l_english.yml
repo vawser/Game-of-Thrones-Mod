@@ -20,6 +20,8 @@
  mechanic_has_harem_yes: ""
  mechanic_has_pashas_yes: "Has Dothraki State Actions: §GYes§!"
  mechanic_allow_banners_yes: "Can Raise Bannermen: §GYes§!"
+
+ mechanic_seizing_land_no_rebels_from_estate_merchants_yes: "Seizing Land from the §YMerchantry§! does not trigger Particularist rebels"
  
  mechanic_monarchy_yes: "Is Monarchy: §GYes§!"
  mechanic_republic_yes: "Is Republic: §GYes§!"
@@ -27,8 +29,8 @@
  mechanic_tribal_yes: "Is Tribal: §GYes§!"
  mechanic_nomad_yes: "Is Nomad: §GYes§!"
  mechanic_monastic_yes: "Is Monastic: §GYes§!"
- mechanic_papacy_yes:  "The Faith: §GYes§!"
- mechanic_dictatorship_yes:  "Is Dictatorship: §GYes§!"
+ mechanic_papacy_yes: "The Faith: §GYes§!"
+ mechanic_dictatorship_yes: "Is Dictatorship: §GYes§!"
 
  mechanic_disables_estates_yes: "Disables all §YEstates§!."
  
@@ -40,16 +42,8 @@
  mechanic_enables_term_limits: "Term Limits"
  mechanic_enables_term_limits_yes: "Enables term limits."
 
- mechanic_unlock_more_state_edicts_yes: "Enables several restricted §YState Edicts§!:\n- §YCentralize the State§!: §G-0.05§! Monthly Autonomy Change\n- §YEnforce Religious Unity§!: §G+1.0%§! Local Missionary Strength\n- §YArmy Enlistment Campaign§!: §G+25.0%§! Local Manpower Modifier & §G-10.0%§! Local Recruitment Time\n- §YNaval Enlistment Campaign§!: §G+25.0%§! Local Sailors Modifier & §G-10.0%§! Local Shipbuilding Time"
- mechanic_estate_special_privileges_yes: "Enables special §YPrivileges§! for the §YNobility§!, §YClergy§!, and §YMerchants§! that provide greater benefits compared to the existing Privileges."
- mechanic_choose_estate_to_empower_yes: "At the start of your reign, you can decide which §YEstate§! will have priority in governing your demesne."
- 
- mechanic_gold_prov_bonus_yes: "Significantly reduces the §YDevelopment§! cost and increases §YGoods Produced§! for owned provinces with a Gold Mine."
-
- mechanic_can_make_historical_friendships_yes: "Long-term alliances may eventually develop mutual historical friendships."
  mechanic_new_regiments_boost_loyalty_yes: "Recruiting regiments will increase the loyalty of the §YNobility§! estate by §G1.0%§! per regiment." 
 
- mechanic_can_use_assassinations_yes: "Enables the use of the §YAssassination§! espionage action."
  mechanic_diplo_actions_restriction_yes: "Negotiating §YAlliances§!, forging §YRoyal Marriages§!, and declaring §YWars§! will only be available if all subjects have less than §G50%§! Liberty Desire and §GPositive Opinion§! of you."
  mechanic_among_us_yes: "The impostor is among us..."
 
@@ -578,14 +572,16 @@
  tier_monarchy_absolute_rule_vs_constitutional: "Absolutism & Constitutionalism"
  tier_monarchy_separation_of_power: "Separation of Power"
  
- tier_dynasty_government_form: "Government Form"                        # 1
- tier_dynasty_laws_on_demesne: "Laws on the Demesne"                    # 2
- tier_dynasty_diplomatic_strategy: "Diplomatic Strategy"                # 3
- tier_dynasty_house_administration: "Administration of the House"       # 4
- tier_dynasty_house_religion: "Religion under our Banner"               # 5
- tier_dynasty_merchantry_rules: "Rules on the Merchantry"               # 6
- tier_dynasty_legitimation_of_authority: "Legitimation of Authority"    # 7
- tier_dynasty_deliberative_assembly: "Deliberative Assembly"            # 8
+ tier_dynasty_government_form: "Power Dynamic"							# 1
+ tier_dynasty_house_administration: "Administration of the House"		# 2
+ tier_dynasty_laws_on_demesne: "Laws on the Demesne"					# 3
+ tier_dynasty_diplomatic_strategy: "Diplomatic Strategy"				# 4
+ tier_dynasty_noble_rights: "Rights of the Nobility"					# 5
+ tier_dynasty_military_composition: "Military Composition"				# 6
+ tier_dynasty_house_religion: "Religion under our Banner"				# 7
+ tier_dynasty_merchantry_rules: "Rules on the Merchantry"				# 8
+ tier_dynasty_governing_cadre: "The Governing Cadre"					# 9
+ tier_dynasty_deliberative_assembly: "Deliberative Assembly"			# 10
  
  tier_republic_government_form: "Government Form"
  tier_republic_republican_virtues: "Republican Virtues"
@@ -630,21 +626,34 @@
  #---------------------------------------------
  # Dynasty Reforms
  #---------------------------------------------
- Royal_Supremacy: "Royal Supremacy"
- westeros_progress.tt: " - Increases progress towards a unified §YWesteros§!"
- westeros_regress.tt: " - Decreases progress towards a unified §YWesteros§!"
+
+ got_renowned_name_reform: "Renowned Name"
+ got_renowned_name_reform_desc: "Men who understand how the world works do not sit idly by and hope that 'fate' will come by and bring them riches and glory. Fame must be earned, respect must be earned, power must be earned. The greatest of houses understand this power dynamic, carving their path towards greatness through sheer will."
+ got_renowed_name_tt: "At least §Y2§! §YMonarchies§! with our dynasty"
+ 
+ got_righteous_rulers_reform: "Righteous Rulers"
+ got_righteous_rulers_reform_desc: "Honor is one of the most important trait any man or woman can have. A cold heart invites dissent from even the most loyal companions, and can result in rebel uprisings. A warm heart, while not appealing to strong-willed characters, can buy the loyalty of your fiercest enemies."
+ 
+ got_natural_schemers_reform: "Natural Schemers"
+ got_natural_schemers_reform_desc: "When a general wants a thing done, he sends his armies. When a politican wants a thing done, he sends his spies. The world of politics is a dangerous game for those who are unprepared for the intrigue and treachery of the real world. We must ensure our survival, no matter the means."
+ mechanic_can_use_assassinations_yes: "Enables the use of the §YAssassination§! espionage action, allowing you to kill landed rulers."
+ 
+ got_blood_of_old_valyria_reform: "Blood of Old Valyria"
+ got_blood_of_old_valyria_reform_desc: "Our lineage descends from the great families of Valyria, who once dominated western Essos before the Doom of Valyria. Though the Valyrian Freehold is long gone, Valyrians can still easily rise again to dominate Westeros and beyond."
+ 
+ #
  
  got_expand_administrative_arm_reform: "Expand the Administrative Arm"
  got_expand_administrative_arm_reform_desc: "Tradition dictates that the lord of a realm must always rely upon the nobility and powerful local figures to uphold the law of the land. But tradition does not govern the people, it only guides them. The law is what we say it is, and we will enforce it with our own appointed governors and officers."
+ mechanic_unlock_more_state_edicts_yes: "Enables several restricted §YState Edicts§!:\n- §YCentralize the State§!: §G-0.05§! Monthly Autonomy Change\n- §YEnforce Religious Unity§!: §G+1.0%§! Local Missionary Strength\n- §YArmy Enlistment Campaign§!: §G+25.0%§! Local Manpower Modifier & §G-10.0%§! Local Recruitment Time\n- §YNaval Enlistment Campaign§!: §G+25.0%§! Local Sailors Modifier & §G-10.0%§! Local Shipbuilding Time"
 
  got_maintain_status_quo_reform: "Maintain the Status Quo"
- got_maintain_status_quo_reform_desc: "Often the rich and powerful of our realm, primarily the nobility, raise concern that power in our domain is too centralized and more responsibilities should be delegated to those individuals. Still others insist that our reach does not extend far enough as is our perceived right. Maintaining the balance of power between our House and the various ambitious parties is key for the stability of our reign."
- got_msq_active_nobles_reform: "Has enabled special §YPrivileges§! for the §YNobility§!."
- got_msq_active_clergy_reform: "Has enabled special §YPrivileges§! for the §YClergy§!."
- got_msq_active_merchants_reform: "Has enabled special §YPrivileges§! for the §YMerchants§!."
+ got_maintain_status_quo_reform_desc: "Often the rich and powerful of our realm, primarily the nobility, raise concern that power in our domain is too centralized and more responsibilities should be delegated to those individuals. Still others insist that our reach does not extend far enough as is our perceived right. Maintaining the balance of power between our House and the various ambitious parties is necessary for the stability of our reign."
 
  got_decentralize_power_reform: "Decentralize our Authority"
  got_decentralize_power_reform_desc: "No autocratic regime manages to stay afloat for very long. Eventually, Kings and high Lords come to rely upon lesser lords and powerful local officers to maintain the stability of their domain. It's high time to expand upon the privileges of our lesser lords to ensure we can rely upon them in our time of need."
+ mechanic_dynasty_base_privileges_yes: "Enables §YPrivileges§! for the §YNobility§!, §YClergy§!, and §YMerchants§! that provide greater benefits when compared to the existing basic privileges."
+ got_doa_active_privilege_tt: "Enacted §YDecentralize our Authority§! reform."
  
  #
  
@@ -654,9 +663,22 @@
  got_reaffirm_the_one_kingdom_reform: "Assert the One Kingdom"
  got_reaffirm_the_one_kingdom_reform_desc: "Since the early days of Aegon the Conqueror, the Seven Kingdoms has functioned as a successful feudal monarchy. Generations of monarchs have come and gone, all the while the Great Houses of Westeros have grown in strength. The concept of a single autocratic regime may seem foreign to the loosely united nobles of Westeros, and no doubt taking steps towards an autocratic society under one house will destablize the realm as a whole. Regardless, we must do what is necessary to secure our reign."
  
+ got_steady_as_she_goes_reform: "Steady As She Goes"
+ got_steady_as_she_goes_reform_desc: "For generations, our house has survived by simply staying out of the major conflicts and focusing on our own development. There's nothing wrong with continuing this policy of pseudo-isolationism, though we should keep our enemies at bay."
+
+ got_expansionism_reform: "Pursue Expansionist Agenda"
+ got_expansionism_reform_desc: "We have achieved all we can in the limited, tedious diplomatic maneuvers we've been making for generations. It's time we change our attitude and pursue an expansionist policy towards our neighbors. What we have not peacefully acquired must be forcefully taken."
+ mechanic_call_feudatories_to_war_yes: "§YFeudatories§! can be called into your wars at the cost of Liberty Desire and their opinion of us."
+
  got_maintain_strong_alliances_reform: "Forge Steadfast Alliances"
  got_maintain_strong_alliances_reform_desc: "History has shown us that great leaders can rise to prominence and conquer opposing empires. Such leaders are never alone, however, and are often supported by loyal neighboring allies. Alliances can make or break a realm, and it should be our primary duty to ensure our alliances can stand the test of time and the nobles we've come to entrust do not become turncoats in our time of need."
+
+ got_strengthen_our_feudatories_reform: "Strengthen Feudatories"
+ got_strengthen_our_feudatories_reform_desc: "Our power stems from the support of our subject lords. To ensure their cooperation and continuing support, we will lower their feudal obligations to us to support their developing local economies."
+ mechanic_strengthen_feudatories_yes: "All of our §YFeudatories§! gain §G+20.0%§! National Tax Modifier and §G+20.0%§! Land Forcelimit Modifier."
  
+ #
+
  got_standing_army_reform: "Raise Permanent Armies"
  got_standing_army_reform_desc: "The most significant component of any powerful realm is the military, specifically the army. No empire can stand the test of time if it cannot raise a professional force to defend its borders. The only thing standing in the road to a permanent army are our most powerful nobles, who may feel threatened by the existence of a large army in control by their overlord."
  got_standing_army_reform_tt: "§GThis reform compensates for the Land Forcelimit penalty from the base form §YDynasty Mechanic§! §R(-25.0%)§!.§!"
@@ -668,31 +690,7 @@
  
  got_naval_supremacy_reform: "Dominate the Coastal Waters"
  got_naval_supremacy_reform_desc: "While it may be an overlooked aspect of the realm, the navy can serve a great purpose for mighty coastal powers. The open sea provides us with an great opportunity to outmaneuver and flank any opposing force by navigating the coastal waters. It may even be necessary to prevent the enemy from attempting such a tactic against us as well, giving us another solid reason to raise a fleet of warships."
- got_naval_supremacy_reform_tt: "§GThis reform compensates for the Naval Forcelimit penalty from the base form §YDynasty Mechanic§! §R(-25.0%)§!.§!"
- 
- #
- 
- got_renowned_name_reform: "Renowned Name"
- got_renowned_name_reform_desc: "Men who understand how the world works do not sit idly by and hope that 'fate' will come by and bring them riches and glory. Fame must be earned, respect must be earned, power must be earned. The greatest of houses understand this power dynamic, carving their path towards greatness through sheer will."
- got_renowed_name_tt: "At least §Y2§! §YMonarchies§! with our dynasty"
- 
- got_seasoned_bureaucrats_reform: "Seasoned Bureaucrats"
- got_seasoned_bureaucrats_reform_desc: "Cities cannot be governed effectively without the right people in positions of power. The inexperienced magisters will, in due time, cause the collapse of their society without intending. It is the duty of the strong to protect the weak, and that duty falls to us."
- 
- got_astute_diplomats_reform: "Astute Diplomats"
- got_astute_diplomats_reform_desc: "Many great soldiers and generals often undermine the power of a skillful diplomat. Wars can be waged by bloody warmongers seeking destruction, or by patient opportunists who make use of reliable alliances to vanquish their foes. We are not the warmongers; we are the opportunists."
- 
- got_house_of_warriors_reform: "House of Warriors"
- got_house_of_warriors_reform_desc: "The concept of warfare and the dangers brought with it can be traced back to the origins of society. People are competitive in nature; it is more normal to fight for resources rather than to share them. In the end, the greatest general will have everyone bending the knee to them."
- 
- got_righteous_rulers_reform: "Righteous Rulers"
- got_righteous_rulers_reform_desc: "Honor is one of the most important trait any man or woman can have. A cold heart invites dissent from even the most loyal companions, and can result in rebel uprisings. A warm heart, while not appealing to strong-willed characters, can buy the loyalty of your fiercest enemies."
- 
- got_natural_schemers_reform: "Natural Schemers"
- got_natural_schemers_reform_desc: "When a general wants a thing done, he sends his armies. When a politican wants a thing done, he sends his spies. The world of politics is a dangerous game for those who are unprepared for the intrigue and treachery of the real world. We must ensure our survival, no matter the means."
- 
- got_blood_of_old_valyria_reform: "Blood of Old Valyria"
- got_blood_of_old_valyria_reform_desc: "PLACEHOLDER"
+ got_naval_supremacy_reform_tt: "§GThis reform compensates for the Naval Forcelimit penalty from the base form §YDynasty Mechanic§! §R(-50.0%)§!.§!"
  
  #
  
@@ -707,32 +705,21 @@
  
  got_slacken_clergy_authority_reform: "Slacken the Clergy's Authority"
  got_slacken_clergy_authority_reform_desc: "The influence clerical ministers hold over the people is great and could possibly be seen as a risk to our own power base should the church authorities in our realm disapprove of our governance. Ensuring they cannot stand in the way of progress will guarantee our safety."
-
- got_house_before_gods_reform: "Prioritize House Before Gods"
- got_house_before_gods_reform_desc: "For generations, our religious figures have acted only to further their own self-interested agenda and have not truly upheld the teachings of our faith as they are meant. Our house has been subjected to such imbeciles for far too long; it's time to permanently disempower the clergy."
  
  #
  
  got_empower_the_merchant_class_reform: "Empower the Merchant Class"
- got_empower_the_merchant_class_reform_desc: "PLACEHOLDER"
-
- got_safeguard_merchant_privileges_reform: "Safeguard Merchant Privileges"
- got_safeguard_merchant_privileges_reform_desc: "The privileges afforded to our merchants have kept the balance of power between them and our house in order; we will never truly dominate them and they can never withhold large sums of money from us. This delicate balance of power, while may seem to be dangerous in nature, ensures that both parties get what they need without being threatened by the other."
+ got_empower_the_merchant_class_reform_desc: "It's due to the merchants and traders in our sphere of influence that we have an economy. They ensure that a constant stream of money finds its way into our state. To empower their privileges and their influence leads to a faster accumulation of our wealth."
  
  got_curtail_the_trading_guilds_reform: "Curtail the Trading Guilds"
- got_curtail_the_trading_guilds_reform_desc: "The merchantry have stood tall for many generations"
+ got_curtail_the_trading_guilds_reform_desc: "The rights and privileges of the merchantry have been too vast for far too long. Wars and expansion of the state are confronted by a lack of support from our own class of merchants. It is time to curtail the rights of the traders and create a centralized hierarchy."
 
- got_embrace_free_trade_reform: "Embrace Free Trade"
- got_embrace_free_trade_reform_desc: "Merchants from all of the world should be able to travel into our lands to engage with our population in trade and commerce. Abandoning the narrowness of mercantalism, the state gains an easier access to foreign thoughts."
-
- got_mercantilistic_approach_reform: "Adopt Mercantilism"
- got_mercantilistic_approach_reform_desc: "Free trade implies an equal relation between imports and exports of goods. While beneficial for certain goods, it is of little value for our state. Only through maximizing our exports while minimizing the import from foreign powers, our state can grow its economy."
-
- got_introduce_regulatory_economics_reform: "Introduce Regulatory Economics"
+ got_introduce_regulatory_economics_reform: "Regulate Local Economy"
  got_introduce_regulatory_economics_reform_desc: "The economy of the state has stayed afloat and, from time to time, even thrived on its own. There has been little need for intervention, however, the economy hasn't always suited our needs. We will have to take command of the economy in our sphere of influence to yield the benefits we desire."
  
  got_develop_the_pastures_reform: "Develop the Pasturelands"
  got_develop_the_pastures_reform_desc: "A great percentage of the land in our domain is filled with undeveloped pastures which have the potential to be transformed into urban powerhouses. Our resources should be invested in improving and developing the land we already own."
+ mechanic_cheaper_developing_pastures_yes: "Provinces with §YFarmlands§! & §YGrasslands§! terrain will have an additional §G-5.0%§! Local Development Cost."
 
  got_subsidize_the_goldmines: "Subsidize the Goldmines"
  got_subsidize_the_goldmines_desc: "Everyone knows that gold is very valuable and an easy means to gain massive wealth. Gold can be found in small quantities scattered in rivers, but the biggest source of gold is found underground. To effectively exploit this, expensive gold mines must be made. Our prioritization should be the gold mines first."
@@ -759,7 +746,7 @@
 
  got_the_kings_peace_reform: "Reassert the King's Peace"
  got_the_kings_peace_reform_desc: "The concept of the 'King's Peace' has maintained the continued stability of the realm since Aegon the Conqueror first introduced it after the Conquest. The threat of being branded a traitor has successfully swayed many generations of nobles from resolving disputes on the battlefield and has strengthened both the Crown and the local lords."
- mechanic_has_the_kings_peace_yes: "§YThe King's Peace§!: All §YFeudatory§! subject nations in the Seven Kingdoms will have §YLiberty Desire§! reduced by §G10.00%§!."
+ mechanic_has_the_kings_peace_yes: "All §YFeudatory§! subject nations in the Seven Kingdoms will have §YLiberty Desire§! reduced by §G10.00%§!."
 
  got_declare_autocratic_state_reform: "Declare Autocratic State"
  got_declare_autocratic_state_reform_desc: "The power dynamic in our realm doesn't offer us enough control, we must seize power from our nobles and declare a centralized autocratic monarchy."
@@ -779,7 +766,7 @@
  got_rule_by_royal_decree_reform_desc: "In the feudal hierarchy, the King reigns supreme and only gods stand above him. This knowledge has been lost and, in practice, the King is expected to satisfy the needs of their lesser lords. The desires of the monarch must now be placed first and our lords second."
 
  got_empower_small_council_reform: "Institutionalize the Small Council"
- got_empower_small_council_reform_desc: "Since its humble beginnings with Aegon the Conqueror, the Small Council has served the monarch faithfully for more than a dozens King in succession. They have never failed to execute the King's orders, and have proven to be more than capable in administering the realm in the King's absence. It's time that we institutionalize the powers of the Small Council."
+ got_empower_small_council_reform_desc: "Since its humble beginnings with Aegon the Conqueror, the Small Council has served the monarch faithfully for more than a dozens King in succession. They have never failed to execute the King's orders, and have proven to be more than capable in administering the realm in the King's absence."
 
  got_invoke_an_elective_succession_reform: "Invoke an Elective Succession"
  got_invoke_an_elective_succession_reform_desc: "The traditional succession law of our dynasty ensures that the realm remains unified and under the leadership of our line. However, some of our subject lords wish to have a greater level of influence over the succession of the liege realm. Afterall, our power comes from the loyalty of our vassals. To compromise, an Elective Succession can be established.\n\nThe frequency of the election is dependent on which faction is in power, the Nobles or the Dynasts, and the direction of the realm can greatly differ depending on which faction is in power."

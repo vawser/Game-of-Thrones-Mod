@@ -1,0 +1,62 @@
+# Call Feudatories into Wars
+call_feudatories_into_wars = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = {
+		has_government_attribute = call_feudatories_to_war
+		FROM = {
+			is_westerosi_government = yes
+			is_subject_of = ROOT
+			is_subject_of_type = feudatory
+		}
+	}
+	is_allowed = {
+		if = {
+			limit = {
+				FROM = { liberty_desire = 50 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = FROM_IS_REBELLIOUS_TT
+				FROM = { NOT = { liberty_desire = 50 } }
+			}
+		}
+		if = {
+			limit = {
+				is_at_war = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = ROOT_IS_NOT_AT_WAR_TT
+				is_at_war = yes
+			}
+		}
+		
+		if = {
+			limit = {
+				FROM = { is_at_war = yes }
+			}
+			custom_trigger_tooltip = {
+				tooltip = FROM_IS_AT_WAR_TT
+				FROM = { is_at_war = no }
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			join_all_offensive_wars_of = ROOT
+			join_all_defensive_wars_of = ROOT
+			add_liberty_desire = 10
+			add_opinion = {
+				who = ROOT
+				modifier = forced_to_join_wars
+			}
+		}
+	}
+	on_decline = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = yes
+	}
+}

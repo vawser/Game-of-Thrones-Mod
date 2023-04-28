@@ -121,7 +121,6 @@ great_house_reform = {
 	modifiers = {
 		prestige = 0.25
 		vassal_income = 0.20
-		reduced_liberty_desire = 10
 	}
 }
 royal_house_reform = {
@@ -167,10 +166,7 @@ kingdom_of_westeros_reform = {
 	icon = "kingdom_of_westeros"
 	
 	potential = {
-		OR = {
-			has_reform = royal_house_reform
 			has_reform = kingdom_of_westeros_reform
-		}
 	}
 	trigger = {
 		tag = WST

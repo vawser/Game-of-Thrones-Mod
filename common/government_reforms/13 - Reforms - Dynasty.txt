@@ -2,342 +2,6 @@
 # Tier 2
 ################
 
-got_expand_administrative_arm_reform = {
-	icon = "the_king"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-	}
-	trigger = {
-		reform_level = 4
-		NOT = { num_of_powerful_estates = 1 }
-	}
-	modifiers = {
-		reform_progress_growth = 0.20
-		all_estate_loyalty_equilibrium = -0.05
-		all_estate_influence_modifier = -0.10
-	}
-	conditional = {
-		allow = { has_dlc = "Mandate of Heaven" }
-		custom_attributes = {
-			unlock_more_state_edicts = yes
-		}
-	}
-	effect = {
-		add_stability = -1
-		change_royal_supremacy_value = {
-			rs_value = 1
-			progress = yes
-		}
-	}
-	removed_effect = {
-		change_royal_supremacy_value = {
-			rs_value = -1
-			regress = yes
-		}
-	}
-	ai = {
-		factor = 1
-		modifier = {
-			factor = 2
-			NOT = { max_manpower = 12 }
-		}
-	}
-}
-
-got_maintain_status_quo_reform = {
-	icon = "council_room"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-	}
-	modifiers = {
-		stability_cost_modifier = -0.05
-		idea_cost = -0.025
-	}
-	custom_attributes = {
-		estate_special_privileges = yes
-	}
-	ai = {
-		factor = 1
-	}
-}
-
-got_decentralize_power_reform = {
-	icon = "decentralize_power"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-	}
-	trigger = {
-		NOT = { absolutism = 50 }
-	}
-	modifiers = {
-		yearly_corruption = 0.25
-		max_absolutism = -15
-		all_estate_loyalty_equilibrium = 0.10
-	}
-	custom_attributes = {
-		choose_estate_to_empower = yes
-	}
-	ai = {
-		factor = 1
-		modifier = {
-			factor = 1.5
-			is_in_deficit = yes
-		}
-	}
-}
-
-################
-# Tier 3
-################
-
-got_reinforce_the_seven_kingdoms_reform = {
-	icon = "westeros_split"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-		OR = {
-			has_reform = royal_house_reform
-			has_reform = kingdom_of_westeros_reform
-		}
-	}
-	modifiers = {
-		reduced_liberty_desire = 5
-		max_absolutism = -20
-	}
-	ai = {
-		factor = 1
-		modifier = {
-			factor = 1.5
-			is_in_deficit = yes
-		}
-	}
-}
-
-got_reaffirm_the_one_kingdom_reform = {
-	icon = "westeros_unified"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-		OR = {
-			has_reform = royal_house_reform
-			has_reform = kingdom_of_westeros_reform
-		}
-	}
-	modifiers = {
-		yearly_absolutism = 0.5
-		reduced_liberty_desire = -10
-		nobles_influence_modifier = -0.1
-	}
-	effect = {
-		add_stability = -1
-		change_royal_supremacy_value = {
-			rs_value = 1
-			progress = yes
-		}
-	}
-	removed_effect = {
-		change_royal_supremacy_value = {
-			rs_value = -1
-			regress = yes
-		}
-	}
-	ai = {
-		factor = 1
-		modifier = {
-			factor = 1.5
-			is_in_deficit = yes
-		}
-	}
-}
-
-got_maintain_strong_alliances_reform = {
-	icon = "loyal_allies"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-		OR = {
-			has_reform = great_house_reform
-			has_reform = noble_house_reform
-		}
-	}
-	trigger = {
-		calc_true_if = {
-			all_country = {
-				alliance_with = ROOT
-				marriage_with = ROOT
-				reverse_has_opinion = {
-					who = ROOT
-					value = 50
-				}
-			}
-			amount = 2
-		}
-	}
-	modifiers = {
-		diplomatic_upkeep = 1
-		monthly_favor_modifier = 0.10
-	}
-	custom_attributes = {
-		can_make_historical_friendships = yes
-	}
-}
-
-got_standing_army_reform = {
-	icon = "strong_retinue"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-		OR = {
-			has_reform = great_house_reform
-			has_reform = noble_house_reform
-		}
-	}
-	trigger = {
-		if = {
-			limit = {
-				has_dlc = "Cradle of Civilization"
-			}
-			army_professionalism = 0.40
-		}
-		else = {
-			OR = {
-				NOT = { num_of_subjects = 3 }
-				variable_arithmetic_trigger = {
-					custom_tooltip = got_25_dev_of_subjects_min_tt
-					export_to_variable = {
-						which = total_dev
-						value = trigger_value:total_own_and_non_tributary_subject_development # 449
-					}
-					export_to_variable = {
-						which = our_dev
-						value = trigger_value:total_development # 83
-					}
-					export_to_variable = {
-						which = sub_dev
-						value = trigger_value:total_own_and_non_tributary_subject_development # 449
-					}
-					subtract_variable = {
-						which = sub_dev # 366
-						which = our_dev
-					}
-					multiply_variable = { # 332
-						which = our_dev
-						value = 4
-					}
-					check_variable = { # 332 >= 366?
-						which = our_dev
-						which = sub_dev
-					}
-				}
-			}
-		}
-	}
-	effect = {
-		custom_tooltip = got_standing_army_reform_tt
-	}
-	modifiers = {
-		land_forcelimit_modifier = 0.25
-		army_tradition_decay = -0.005
-		general_cost = -0.10
-	}
-}
-
-got_rely_on_levies_reform = {
-	icon = "levy_army"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-		OR = {
-			has_reform = great_house_reform
-			has_reform = noble_house_reform
-		}
-	}
-	trigger = {
-		if = {
-			limit = {
-				has_dlc = "Cradle of Civilization"
-			}
-			NOT = { army_professionalism = 0.40 }
-		}
-		else = {
-			OR = {
-				num_of_subjects = 3
-				variable_arithmetic_trigger = {
-					custom_tooltip = got_25_dev_of_subjects_max_tt
-					export_to_variable = {
-						which = total_dev
-						value = trigger_value:total_own_and_non_tributary_subject_development # 449
-					}
-					export_to_variable = {
-						which = our_dev
-						value = trigger_value:total_development # 83
-					}
-					export_to_variable = {
-						which = sub_dev
-						value = trigger_value:total_own_and_non_tributary_subject_development # 449
-					}
-					subtract_variable = {
-						which = sub_dev # 366
-						which = our_dev
-					}
-					multiply_variable = { # 332
-						which = our_dev
-						value = 4
-					}
-					check_variable = { # 332 <= 366?
-						which = sub_dev
-						which = our_dev
-					}
-				}
-			}
-		}
-	}
-	custom_attributes = {
-		new_regiments_boost_loyalty = yes
-	}
-	modifiers = {
-		land_maintenance_modifier = -0.05
-		vassal_income = -0.1
-		vassal_forcelimit_bonus = 1.0
-	}
-}
-
-got_naval_supremacy_reform = {
-	icon = "naval_supremacy"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-		OR = {
-			has_reform = great_house_reform
-			has_reform = noble_house_reform
-		}
-	}
-	trigger = {
-		OR = {
-			num_of_total_ports = 2
-			AND = {
-				navy_size = 6
-				num_of_heavy_ship = 1
-			}
-		}
-	}
-	effect = {
-		custom_tooltip = got_naval_supremacy_reform_tt
-	}
-	modifiers = {
-		naval_forcelimit_modifier = 0.50
-		navy_tradition_decay = -0.005
-		own_coast_naval_combat_bonus = 2.0
-	}
-}
-
-################
-# Tier 4
-################
-
 got_renowned_name_reform = {
 	icon = "renowned_dynasty"
 	allow_normal_conversion = yes
@@ -346,8 +10,16 @@ got_renowned_name_reform = {
 	}
 	trigger = {
 		OR = {
-			has_reform = royal_house_reform
-			has_reform = great_house_reform
+			westeros_government_king = yes
+			if = {
+				limit = {
+					hre_size = 1
+				}
+				is_elector = yes
+			}
+			else = {
+				has_reform = great_house_reform
+			}
 			custom_trigger_tooltip = {
 				tooltip = got_renowed_name_tt
 				calc_true_if = {
@@ -362,80 +34,8 @@ got_renowned_name_reform = {
 		}
 	}
 	modifiers = {
-		prestige_decay = -0.01
-		monthly_heir_claim_increase = 0.20
-	}
-	ai = {
-		factor = 1
-	}
-}
-
-got_seasoned_bureaucrats_reform = {
-	icon = "seasoned_bureaucrats"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-	}
-	trigger = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = government_reform_enacted_tooltip
-				has_reform = got_seasoned_bureaucrats_reform
-			}
-			adm = 4
-		}
-   }
-	modifiers = {
-		monarch_admin_power = 1
-		state_maintenance_modifier = -0.125
-	}
-	ai = {
-		factor = 1
-	}
-}
-
-got_astute_diplomats_reform = {
-	icon = "astute_diplomats"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-	}
-	trigger = {
-		 OR = {
-			custom_trigger_tooltip = {
-				tooltip = government_reform_enacted_tooltip
-				has_reform = got_astute_diplomats_reform
-			}
-			dip = 4
-		 }
-	}
-	modifiers = {
-		monarch_diplomatic_power = 1
-		diplomats = 1
-	}
-	ai = {
-		factor = 1
-	}
-}
-
-got_house_of_warriors_reform = {
-	icon = "house_of_knights"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-	}
-	trigger = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = government_reform_enacted_tooltip
-				has_reform = got_house_of_warriors_reform
-			}
-			mil = 4
-		}
-   }
-	modifiers = {
-		monarch_military_power = 1
-		discipline = 0.025
+		prestige_decay = -0.005
+		monthly_heir_claim_increase = 0.10
 	}
 	ai = {
 		factor = 1
@@ -448,20 +48,19 @@ got_righteous_rulers_reform = {
 	potential = {
 		is_revolutionary = no
 	}
-	trigger = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = government_reform_enacted_tooltip
-				has_reform = got_righteous_rulers_reform
-			}
-			ruler_has_personality = righteous_personality
-		}
-	}
+	# trigger = {
+	# 	OR = {
+	# 		custom_trigger_tooltip = {
+	# 			tooltip = government_reform_enacted_tooltip
+	# 			has_reform = got_righteous_rulers_reform
+	# 		}
+	# 		ruler_has_personality = righteous_personality
+	# 	}
+	# }
 	modifiers = {
-		legitimacy = 0.50
-		meritocracy = 0.25
 		global_unrest = -2
-		all_estate_loyalty_equilibrium = 0.05
+		legitimacy = 0.50
+		commoners_loyalty_modifier = 0.10
 	}
 	ai = {
 		factor = 1
@@ -474,15 +73,15 @@ got_natural_schemers_reform = {
 	potential = {
 		is_revolutionary = no
 	}
-	trigger = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = government_reform_enacted_tooltip
-				has_reform = got_natural_schemers_reform
-			}
-			ruler_has_personality = intricate_web_weaver_personality
-		}
-	}
+	# trigger = {
+	# 	OR = {
+	# 		custom_trigger_tooltip = {
+	# 			tooltip = government_reform_enacted_tooltip
+	# 			has_reform = got_natural_schemers_reform
+	# 		}
+	# 		ruler_has_personality = intricate_web_weaver_personality
+	# 	}
+	# }
 	modifiers = {
 		spy_offence = 0.25
 		global_spy_defence = 0.10
@@ -521,29 +120,380 @@ got_blood_of_old_valyria_reform = {
 }
 
 ################
-# Tier 5
+# Tier 3
 ################
 
-got_strengthen_clergy_reform = {
-	icon = "clerical_ministers"
+got_expand_administrative_arm_reform = {
+	icon = "the_king"
 	allow_normal_conversion = yes
 	potential = {
-		NOT = { has_government_attribute = is_pirate_republic_reform }
+		is_revolutionary = no
+	}
+	trigger = {
+		reform_level = 4
+		NOT = { num_of_powerful_estates = 1 }
+	}
+	modifiers = {
+		reform_progress_growth = 0.20
+		all_estate_loyalty_equilibrium = -0.05
+	}
+	conditional = {
+		allow = { has_dlc = "Mandate of Heaven" }
+		custom_attributes = {
+			unlock_more_state_edicts = yes
+		}
+	}
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 10
+			tag = CRW
+		}
+	}
+}
+
+got_maintain_status_quo_reform = {
+	icon = "council_room"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+	}
+	modifiers = {
+		stability_cost_modifier = -0.125
+		free_adm_policy = 1
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_decentralize_power_reform = {
+	icon = "decentralize_power"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+	}
+	modifiers = {
+		yearly_corruption = 0.10
+		max_absolutism = -5
+	}
+	custom_attributes = {
+		dynasty_base_privileges = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+################
+# Tier 4
+################
+
+got_reinforce_the_seven_kingdoms_reform = {
+	icon = "westeros_split"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+		westeros_government_king = yes
+	}
+	modifiers = {
+		reduced_liberty_desire = 5
+		max_absolutism = -20
+	}
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_in_deficit = yes
+		}
+	}
+}
+
+got_reaffirm_the_one_kingdom_reform = {
+	icon = "westeros_unified"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+		westeros_government_king = yes
+	}
+	modifiers = {
+		yearly_absolutism = 0.5
+		reduced_liberty_desire = -10
+		nobles_influence_modifier = -0.1
+	}
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_in_deficit = yes
+		}
+	}
+}
+
+got_steady_as_she_goes_reform = {
+	icon = "westeros_diplomat"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+		westeros_government_not_king = yes
+	}
+	modifiers = {
+		improve_relation_modifier = 0.15
+		rival_change_cost = 0.10
+	}
+	ai = {
+		factor = 2
+	}
+}
+
+got_expansionism_reform = {
+	icon = "commander_on_horseback"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+		westeros_government_not_king = yes
+	}
+	modifiers = {
+		war_exhaustion = -0.03
+		ae_impact = -0.05
+		reduced_liberty_desire = -10
+	}
+	custom_attributes = {
+		call_feudatories_to_war = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_maintain_strong_alliances_reform = {
+	icon = "loyal_allies"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+		westeros_government_not_king = yes
+	}
+	trigger = {
+		calc_true_if = {
+			all_country = {
+				alliance_with = ROOT
+				reverse_has_opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+			amount = 2
+		}
+	}
+	modifiers = {
+		diplomatic_upkeep = 2
+		envoy_travel_time = -0.25
+		monthly_favor_modifier = 0.10
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_strengthen_our_feudatories_reform = {
+	icon = "organized_military_staff"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+		westeros_government_not_king = yes
+	}
+	trigger = {
+		calc_true_if = {
+			all_country = {
+				is_subject_of = ROOT
+				is_subject_of_type = feudatory
+			}
+			amount = 3
+		}
+	}
+	modifiers = {
+		vassal_income = -0.10
+		reduced_liberty_desire = 5
+	}
+	custom_attributes = {
+		strengthen_feudatories = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+################
+# Tier 6
+################
+
+got_rely_on_levies_reform = {
+	icon = "levy_army"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+	}
+	trigger = {
+		if = {
+			limit = {
+				has_dlc = "Cradle of Civilization"
+			}
+			NOT = { army_professionalism = 0.40 }
+		}
+		else = {
+			OR = {
+				num_of_subjects = 5
+				variable_arithmetic_trigger = {
+					custom_tooltip = got_25_dev_of_subjects_max_tt
+					export_to_variable = {
+						which = total_dev
+						value = trigger_value:total_own_and_non_tributary_subject_development # 449
+					}
+					export_to_variable = {
+						which = our_dev
+						value = trigger_value:total_development # 83
+					}
+					export_to_variable = {
+						which = sub_dev
+						value = trigger_value:total_own_and_non_tributary_subject_development # 449
+					}
+					subtract_variable = {
+						which = sub_dev # 366
+						which = our_dev
+					}
+					multiply_variable = { # 332
+						which = our_dev
+						value = 4
+					}
+					check_variable = { # 332 <= 366?	
+						which = sub_dev
+						which = our_dev
+					}
+				}
+			}
+		}
+	}
+	custom_attributes = {
+		new_regiments_boost_loyalty = yes
+	}
+	modifiers = {
+		land_maintenance_modifier = -0.05
+		vassal_forcelimit_bonus = 1.0
+		nobles_influence_modifier = 0.025
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_standing_army_reform = {
+	icon = "strong_retinue"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+	}
+	trigger = {
+		if = {
+			limit = {
+				has_dlc = "Cradle of Civilization"
+			}
+			army_professionalism = 0.40
+		}
+		else = {
+			OR = {
+				NOT = { num_of_subjects = 5 }
+				variable_arithmetic_trigger = {
+					custom_tooltip = got_25_dev_of_subjects_min_tt
+					export_to_variable = {
+						which = total_dev
+						value = trigger_value:total_own_and_non_tributary_subject_development # 449
+					}
+					export_to_variable = {
+						which = our_dev
+						value = trigger_value:total_development # 83
+					}
+					export_to_variable = {
+						which = sub_dev
+						value = trigger_value:total_own_and_non_tributary_subject_development # 449
+					}
+					subtract_variable = {
+						which = sub_dev # 366
+						which = our_dev
+					}
+					multiply_variable = { # 332
+						which = our_dev
+						value = 4
+					}
+					check_variable = { # 332 >= 366?
+						which = our_dev
+						which = sub_dev
+					}
+				}
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = got_standing_army_reform_tt
+	}
+	modifiers = {
+		land_forcelimit_modifier = 0.25
+		army_tradition_decay = -0.005
+		general_cost = -0.10
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_naval_supremacy_reform = {
+	icon = "naval_supremacy"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+	}
+	trigger = {
+		OR = {
+			num_of_total_ports = 2
+			AND = {
+				navy_size = 6
+				num_of_heavy_ship = 1
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = got_naval_supremacy_reform_tt
+	}
+	modifiers = {
+		naval_forcelimit_modifier = 0.50
+		navy_tradition_decay = -0.005
+		admiral_cost = -0.10
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+################
+# Tier 7
+################
+
+got_slacken_clergy_authority_reform = {
+	icon = "rusty_religious_crown"
+	allow_normal_conversion = yes
+	potential = {
 		OR = {
 			is_revolutionary = no
 			NOT = { has_dlc = "Emperor" }
 		}
 #		has_no_religion_specific_government_available = yes	#This way modders don't have to change this reform explicitly
 	}
-	custom_attributes = {
-		on_church_built_clergy_loyalty = yes
-	}
 	modifiers = {
-		warscore_cost_vs_other_religion = -0.25
-		papal_influence = 0.5
-		yearly_patriarch_authority = 0.01
-		clergy_loyalty_modifier = 0.05
-		clergy_influence_modifier = 0.10
+		tolerance_heretic = 1
+		tolerance_heathen = 1
+		clergy_influence_modifier = -0.1
+	}
+	custom_attributes = {
+		seizing_land_no_rebels_from_estate_church = yes
 	}
 	ai = {
 		factor = 1
@@ -575,94 +525,30 @@ got_preserve_the_priestdom_reform = {
 	}
 	modifiers = {
 		tolerance_own = 2
-		clergy_loyalty_modifier = 0.05
+		papal_influence = 0.5
+		yearly_patriarch_authority = 0.01
 	}
 	ai = {
 		factor = 1
 	}
 }
 
-got_slacken_clergy_authority_reform = {
-	icon = "rundown_church"
+got_strengthen_clergy_reform = {
+	icon = "clerical_ministers"
 	allow_normal_conversion = yes
 	potential = {
-		NOT = { has_government_attribute = is_pirate_republic_reform }
 		OR = {
 			is_revolutionary = no
 			NOT = { has_dlc = "Emperor" }
 		}
 #		has_no_religion_specific_government_available = yes	#This way modders don't have to change this reform explicitly
 	}
-	trigger = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = government_reform_enacted_tooltip
-				has_reform = got_slacken_clergy_authority_reform
-			}
-			estate_influence = {
-				estate = estate_clergy
-				influence = 20
-			}
-		}
-	}
-	effect = {
-		add_estate_loyalty = {
-			estate = estate_clergy
-			loyalty = -10
-		}
-	}
-	modifiers = {
-		global_tax_modifier = 0.15
-		tolerance_heretic = 1
-		tolerance_heathen = 1
-		clergy_influence_modifier = -0.10
-	}
-	ai = {
-		factor = 1
-	}
-}
-
-got_house_before_gods_reform = {
-	icon = "house_before_gods"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-	}
-	trigger = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = government_reform_enacted_tooltip
-				has_reform = got_slacken_clergy_authority_reform
-			}
-			NOT = {
-				estate_influence = {
-					estate = estate_clergy
-					influence = 20
-				}
-			}
-		}
-	}
-	modifiers = {
-		tolerance_own = -1
-		tolerance_heretic = 2
-		tolerance_heathen = 2
-		clergy_influence_modifier = -0.20
-		no_religion_penalty = yes
-	}
-	effect = {
-		change_royal_supremacy_value = {
-			rs_value = 1
-			progress = yes
-		}
-	}
-	removed_effect = {
-		change_royal_supremacy_value = {
-			rs_value = -1
-			regress = yes
-		}
-	}
 	custom_attributes = {
-		seizing_land_no_rebels_from_estate_church = yes
+		on_church_built_clergy_loyalty = yes
+	}
+	modifiers = {
+		warscore_cost_vs_other_religion = -0.25
+		clergy_influence_modifier = 0.10
 	}
 	ai = {
 		factor = 1
@@ -670,115 +556,8 @@ got_house_before_gods_reform = {
 }
 
 ################
-# Tier 6
+# Tier 8
 ################
-
-got_empower_the_merchant_class_reform = {
-	icon = "wealthy_merchant"
-	allow_normal_conversion = yes
-	potential = {
-		OR = {
-			is_revolutionary = no
-			NOT = { has_dlc = "Emperor" }
-		}
-	}
-	modifiers = {
-		global_own_trade_power = 0.125
-		merchants_loyalty_modifier = 0.05
-		merchants_influence_modifier = 0.10
-	}
-	ai = {
-		factor = 1
-	}
-}
-
-got_safeguard_merchant_privileges_reform = {
-	icon = "red_sealed_paper"
-	allow_normal_conversion = yes
-	potential = {
-		OR = {
-			is_revolutionary = no
-			NOT = { has_dlc = "Emperor" }
-		}
-	}
-	modifiers = {
-		merchants = 1
-		merchants_loyalty_modifier = 0.05
-	}
-	ai = {
-		factor = 1
-	}
-}
-
-got_curtail_the_trading_guilds_reform = {
-	icon = "assembly_hall"
-	allow_normal_conversion = yes
-	potential = {
-		OR = {
-			is_revolutionary = no
-			NOT = { has_dlc = "Emperor" }
-		}
-	}
-	modifiers = {
-		yearly_corruption = -0.15
-		merchants_influence_modifier = -0.10
-		interest = -1
-	}
-	custom_attributes = {
-		seizing_land_no_rebels_from_estate_burghers = yes
-		
-	}
-	ai = {
-		factor = 1
-	}
-}
-
-got_embrace_free_trade_reform = {
-	icon = "busy_town"
-	allow_normal_conversion = yes
-	potential = {
-		is_revolutionary = no
-	}
-	custom_attributes = {
-		monarch_power_on_institutions = yes
-	}
-	conditional = {
-		allow = { has_dlc = "Cradle of Civilization" }
-		custom_attributes = {
-			free_improve_inland_routes = yes
-		}
-	}
-	modifiers = {
-		global_foreign_trade_power = 0.20
-		trade_steering = 0.025
-		global_institution_spread = 0.10
-	}
-	ai = {
-		factor = 1
-	}
-}
-
-got_mercantilistic_approach_reform = {
-	icon = "four_gold_coins"
-	allow_normal_conversion = yes
-	potential = {
-		NOT = { has_government_attribute = is_pirate_republic_reform }
-	}
-	trigger = {
-		
-	}
-	modifiers = {
-		mercantilism_cost = -0.1
-		global_own_trade_power = 0.125
-		placed_merchant_power = 3
-	}
-	custom_attributes = {
-		no_mercantilism_loss_from_privilege = yes
-	}
-	ai = {
-		factor = 1
-	}
-}
 
 got_introduce_regulatory_economics_reform = {
 	icon = "red_sealed_paper"
@@ -795,61 +574,15 @@ got_introduce_regulatory_economics_reform = {
 			NOT = {
 				estate_influence = {
 					estate = estate_merchants
-					influence = 30
+					influence = 20
 				}
 			}
 		}  
 	}
-	custom_attributes = {
-		seizing_land_no_rebels_from_estate_burghers = yes
-	}
-	effect = {
-		change_royal_supremacy_value = {
-			rs_value = 1
-			progress = yes
-		}
-		# SPECIAL EVENT - SET INITIAL TRADE POLICY
-		hidden_effect = {
-			country_event = {
-				id = GOT_GOVERNMENT.1
-			}
-		}
-	}
-	removed_effect = {
-		change_royal_supremacy_value = {
-			rs_value = -1
-			regress = yes
-		}
-		hidden_effect = {
-			if = {
-				limit = {
-					has_country_modifier = got_trade_income_bonus
-				}
-				remove_country_modifier = got_trade_income_bonus
-			}
-			if = {
-				limit = {
-					has_country_modifier = got_embargo_bonus
-				}
-				remove_country_modifier = got_embargo_bonus
-			}
-			if = {
-				limit = {
-					has_country_modifier = got_increase_production_bonus
-				}
-				remove_country_modifier = got_increase_production_bonus
-			}
-			if = {
-				limit = {
-					has_country_modifier = got_trade_policy_debuff
-				}
-				remove_country_modifier = got_trade_policy_debuff
-			}
-		}
-	}
 	modifiers = {
+		production_efficiency = 0.10
 		inflation_reduction = 0.05
-		center_of_trade_upgrade_cost = -0.125
+		center_of_trade_upgrade_cost = -0.15
 	}
 	ai = {
 		factor = 1
@@ -863,12 +596,47 @@ got_develop_the_pastures_reform = {
 		NOT = { has_government_attribute = is_pirate_republic_reform }
 	}
 	trigger = {
-	#	full_idea_group = economic_ideas
-		
+		# full_idea_group = economic_ideas
+		any_owned_province = {
+			OR = {
+				has_terrain = farmlands
+				has_terrain = grasslands
+			}
+		}
+	}
+	effect = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						has_terrain = farmlands
+						has_terrain = grasslands
+					}
+				}
+				add_province_modifier = {
+					name = cheaper_pasturelands_development
+					duration = -1
+					hidden = yes
+				}
+			}
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = cheaper_pasturelands_development
+				}
+				remove_province_modifier = cheaper_pasturelands_development
+			}
+		}
 	}
 	modifiers = {
-		development_cost = -0.10
-		global_trade_goods_size_modifier = 0.025
+		production_efficiency = 0.025
+		global_tax_modifier = 0.025
+	}
+	custom_attributes = {
+		cheaper_developing_pastures = yes
 	}
 	ai = {
 		factor = 1
@@ -881,18 +649,13 @@ got_subsidize_the_goldmines = {
 	potential = {
 		is_revolutionary = no
 		OR = {
-			has_reform = great_house_reform
-			has_reform = royal_house_reform
-			has_reform = kingdom_of_westeros_reform
+			westeros_government_not_king = yes
 			dynasty = "Lannister"
 			gold = 1
 		}
 	}
 	trigger = {
 		gold = 1
-	}
-	custom_attributes = {
-		gold_prov_bonus = yes
 	}
 	modifiers = {
 		state_maintenance_modifier = 0.125
@@ -910,7 +673,7 @@ got_subsidize_the_goldmines = {
 }
 
 ################
-# Tier 7
+# Tier 9
 ################
 
 got_strength_through_the_nobles_reform = {
@@ -920,10 +683,8 @@ got_strength_through_the_nobles_reform = {
 		is_revolutionary = no
 	}
 	modifiers = {
-		nobles_influence_modifier = 0.05
-	}
-	custom_attributes = {
-		
+		nobles_loyalty_modifier = 0.05
+		nobles_influence_modifier = 0.10
 	}
 	ai = {
 		factor = 1
@@ -935,13 +696,10 @@ got_strength_through_the_gods_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
-	#	has_reform = royal_house_reform
 	}
 	modifiers = {
-		clergy_influence_modifier = 0.05
-	}
-	custom_attributes = {
-		
+		clergy_loyalty_modifier = 0.05
+		clergy_influence_modifier = 0.10
 	}
 	ai = {
 		factor = 1
@@ -953,13 +711,10 @@ got_strength_through_the_merchants_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
-	#	has_reform = royal_house_reform
 	}
 	modifiers = {
-		merchants_influence_modifier = 0.05
-	}
-	custom_attributes = {
-		
+		merchants_loyalty_modifier = 0.05
+		merchants_influence_modifier = 0.10
 	}
 	ai = {
 		factor = 1
@@ -971,13 +726,10 @@ got_strength_through_the_people_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
-	#	has_reform = royal_house_reform
 	}
 	modifiers = {
-		commoners_influence_modifier = 0.05
-	}
-	custom_attributes = {
-		
+		commoners_loyalty_modifier = 0.05
+		commoners_influence_modifier = 0.10
 	}
 	ai = {
 		factor = 1
@@ -989,7 +741,10 @@ got_the_kings_peace_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
-	#	has_reform = royal_house_reform
+		westeros_government_king = yes
+	}
+	trigger = {
+		hre_reform_passed = king_enforce_the_kings_peace
 	}
 	modifiers = {
 		global_unrest = -2
@@ -1008,28 +763,16 @@ got_declare_autocratic_state_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
+		is_emperor = no
 	}
 	trigger = {
 		NOT = { has_government_attribute_short_desc = locked_government_type }
 		stability = 2
-		if = {
-			limit = {
-				has_reform = royal_house_reform
-			}
-			check_variable = {
-				which = Royal_Supremacy
-				value = 6
-			}
-		}
 		NOT = { has_reform = got_invoke_an_elective_succession_reform }
 	}
 	effect = {
 		add_stability = -3
 		change_government = monarchy
-		if = {
-			limit = { has_reform = royal_house_reform }
-			add_government_reform = kingdom_of_westeros_reform
-		}
 	}
 	ai = {
 		factor = 0
@@ -1041,10 +784,10 @@ got_adopt_republican_ideals_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
+		is_emperor = no
 	}
 	trigger = {
 		NOT = { has_government_attribute_short_desc = locked_government_type }
-		is_emperor = no
 		NOT = { is_lesser_in_union = yes }
 		stability = 2
 		has_reform = got_invoke_an_elective_succession_reform
@@ -1059,7 +802,7 @@ got_adopt_republican_ideals_reform = {
 }
 
 ################
-# Tier 8
+# Tier 10
 ################
 
 got_rule_by_noble_decree_reform = {
@@ -1067,7 +810,7 @@ got_rule_by_noble_decree_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
-	#	NOT = { has_reform = royal_house_reform }
+	#	westeros_government_not_king = yes
 	}
 	custom_attributes = {
 		diet_increases_not_influence = yes
@@ -1075,7 +818,6 @@ got_rule_by_noble_decree_reform = {
 	modifiers = {
 		max_absolutism = 5
 		yearly_absolutism = 0.25
-		nobles_influence_modifier = -0.10
 	}
 	ai = {
 		factor = 1
@@ -1087,7 +829,7 @@ got_rule_by_royal_decree_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
-	#	has_reform = royal_house_reform
+	#	westeros_government_king = yes
 	}
 	custom_attributes = {
 		diet_increases_not_influence = yes
@@ -1095,7 +837,6 @@ got_rule_by_royal_decree_reform = {
 	modifiers = {
 		max_absolutism = 10
 		yearly_absolutism = 0.5
-		nobles_influence_modifier = -0.10
 	}
 	ai = {
 		factor = 1
@@ -1107,7 +848,7 @@ got_council_of_lords_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
-	#	NOT = { has_reform = royal_house_reform }
+	#	westeros_government_not_king = yes
 		OR = {
 			has_reform = great_house_reform
 			has_subject_of_type = feudatory
@@ -1116,8 +857,7 @@ got_council_of_lords_reform = {
 	
 	modifiers = {
 		global_unrest = -1
-		nobles_loyalty_modifier = 0.05
-		nobles_influence_modifier = 0.05
+		idea_cost = -0.05
 	}
 	custom_attributes = {
 		diplo_actions_restriction = yes
@@ -1132,15 +872,14 @@ got_empower_small_council_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
-	#	has_reform = royal_house_reform
+	#	westeros_government_king = yes
 	}
 	custom_attributes = {
 		diplo_actions_restriction = yes
 	}
 	modifiers = {
 		no_stability_loss_on_monarch_death = yes
-		nobles_loyalty_modifier = 0.05
-		nobles_influence_modifier = 0.10
+		idea_cost = -0.05
 	}
 	ai = {
 		factor = 1
@@ -1152,7 +891,7 @@ got_invoke_an_elective_succession_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
-	#	NOT = { has_reform = royal_house_reform }
+	#	westeros_government_not_king = yes
 		OR = {
 			has_reform = great_house_reform
 			has_subject_of_type = feudatory
@@ -1165,7 +904,9 @@ got_invoke_an_elective_succession_reform = {
 		nobles_influence_modifier = 0.10
 	}
 	effect = {
-		change_statists_vs_orangists = 2
+		hidden_effect = {
+			change_statists_vs_orangists = 2
+		}
 	}
 	conditional = {
 		allow = { has_dlc = "Res Publica" }

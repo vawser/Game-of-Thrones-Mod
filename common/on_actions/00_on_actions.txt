@@ -2068,16 +2068,11 @@ on_convert_by_trade_policy = {
 	}
 }
 
-# Province - ROOT = current owner, FROM = old owner
+# root = province, from = old owner
 on_province_owner_change = {
-	if = { 
-		limit = { has_global_flag = enable_onaction_logging }
-		log = "DEBUG - [Root.GetName], [From.GetName]: on_province_owner_change "
-	}
-	
 	on_province_owner_change_estate_privileges_effect = yes
 	on_province_owner_change_update_goods_production = yes
-	on_province_owner_change_update_government_reforms = yes
+	on_province_owner_change_government_effect = yes
 }
 
 # Country
@@ -2907,7 +2902,16 @@ on_colonist_boosting_colony = {
 #ROOT = converted country, FROM = country which force converts ROOT, on_action gets called on Force religion peace and Enforce Religion subject interaction
 on_force_conversion = {}
 
-on_institution_embracement = {}
+on_institution_embracement = {
+	if = {
+		limit = {
+			has_government_attribute = monarch_power_on_institutions
+		}
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+	}
+}
 
 on_national_focus_change = {}
 on_capital_moved = {}
@@ -2963,8 +2967,8 @@ on_defender_of_faith_loss = {
 		limit = { has_global_flag = enable_onaction_logging }
 		log = "DEBUG - [Root.GetName], [From.GetName]: on_defender_of_faith_loss "
 	}
-	
 	clr_country_flag = claimed_defender_of_faith_flag
+	remove_country_modifier = gov_improved_defender_of_faith_mod
 }
 
 # ROOT = country
@@ -2973,8 +2977,16 @@ on_defender_of_faith_claim = {
 		limit = { has_global_flag = enable_onaction_logging }
 		log = "DEBUG - [Root.GetName], [From.GetName]: on_defender_of_faith_claim "
 	}
-	
 	set_country_flag = claimed_defender_of_faith_flag
+	if = {
+		limit = {
+			has_government_attribute = improved_defender_of_faith
+		}
+		add_country_modifier = {
+			name = gov_improved_defender_of_faith_mod
+			duration = -1
+		}
+	}
 }
 
 # ROOT = country

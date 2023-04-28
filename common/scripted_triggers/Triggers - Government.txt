@@ -26,9 +26,32 @@ is_free_city_government = {
 is_westerosi_government = {
 	OR = {
 		has_reform = noble_house_reform
+		has_reform = lord_of_the_tides_reform
 		has_reform = great_house_reform
 		has_reform = royal_house_reform
+	}
+}
+
+westeros_government_not_king = {
+	OR = {
+		has_reform = noble_house_reform
+		has_reform = lord_of_the_tides_reform
+		has_reform = great_house_reform
+	}
+}
+
+westeros_government_king = {
+	if = {
+		limit = {
+			hre_size = 1
+		}
+		is_emperor = yes
+	}
+	else = {
+		OR = {
+		has_reform = royal_house_reform
 		has_reform = kingdom_of_westeros_reform
+		}
 	}
 }
 
@@ -42,8 +65,7 @@ is_yiti_government = {
 is_monarchy_government = {
 	OR = {
 		has_reform = kingdom_reform
-		has_reform = noble_house_reform
-		has_reform = royal_house_reform
+		has_reform = kingdom_of_westeros_reform
 		has_reform = yiti_city_reform
 		has_reform = yiti_empire_reform
 		has_reform = qarth_city_reform

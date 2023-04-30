@@ -28,13 +28,18 @@
  
  #Gov Mechanics#
  mechanic_loe_increased_stab_on_death_yes: "Stability on monarch death:§R -1§! (Stacks)"
+ mechanic_loe_cant_seize_nobility: "Exempt from seizing nobles' land."
  mechanic_loe_cant_seize_nobility_yes: "Can't seize the land of the nobility."
+ mechanic_loe_cant_seize_traders: "Exempt from seizing merchants' land."
+ mechanic_loe_cant_seize_traders_yes: "Can't seize the land of the merchants."
+ mechanic_loe_cant_seize_church: "Exempt from seizing the churches' land."
+ mechanic_loe_cant_seize_church_yes: "Can't seize the land of the church."
  mechanic_loe_lease_nobles_event_yes: "Every 10 years get an event to grant provisional titles to the nobility."
  mechanic_loe_friendly_with_empire_yes: "The emperor of Yi Ti has §G+50§! opinion of us."
  mechanic_loe_mandate_from_dev_yes: "Our development slightly increases mandate growth. You can see the increase under the decisions menu."
  mechanic_loe_mandate_from_pu_dev_yes: "The development of personal unions increases mandate growth. You can see the increase under the decisions menu."
  mechanic_loe_foreign_tactics_yes: "Have the option to learn the tactics of our enemies in exchange for military tradition."
- mechanic_loe_pride_of_the_emperor_yes: "Unlocks new celestial reforms for the army. (TBD - Will come with new paradox update)"
+ mechanic_loe_pride_of_the_emperor_yes: "Unlocks new celestial reforms for the army."
  mechanic_loe_homogenous_court_desc_yes: "Gain §G+1§! monthly monarch power if you have 3 advisors from your primary culture."
  mechanic_loe_increases_skill_over_time_yes: "Unlocks events to increase a ruler's skills."
  mechanic_loe_worldwide_trade_yes: "Gain §G+5%§! trade efficiency for every subcontinent in which we control a trade node."
@@ -53,6 +58,14 @@
  mechanic_loe_increased_metal_output_yes: "Provinces which produce metal have increased output."
  mechanic_loe_blood_sacrifice_yes: "Can sacrifice infrantry to gain random development in provinces."
  
+ loe_estate_cant_seize_nobility: "Exempt from Seize Land"
+ loe_estate_cant_seize_nobility_desc: ""
+ 
+ loe_estate_cant_seize_traders: "Exempt from Seize Land"
+ loe_estate_cant_seize_traders_desc: ""
+ 
+ loe_estate_cant_seize_church: "Exempt from Seize Land"
+ loe_estate_cant_seize_church_desc: ""
  ##Yi Ti##
  AZURE_EMPEROR: "Azure Emperor"
  AZURE_EMPRESS: "Azure Empress"
@@ -68,26 +81,26 @@
  
  loe_guaranteed_autonomy: "Guaranteed Autonomy"
  loe_guaranteed_autonomy_desc: "Guarantee the place of the petty nobility within our administration with the goal of providing lasting stability and securing the status quo."
- loe_leased_nobility: "Noble Provisional Titles"
- loe_leased_nobility_desc: "TBD"
+ loe_leased_nobility: "Provisional Titles"
+ loe_leased_nobility_desc: "Noble Provisional Titles is a radical way of limiting the nobles' power throughout the realm. By confiscating most of their titles, we can choose to lend the titles back temporarily and with a price. Of course, such decisions won't go through without violent reactions from the nobles."
  loe_relations_with_empire: "Relations with the Emperor"
  loe_relations_with_empire_desc: "TBD"
  loe_foreign_nobles: "Foreign Nobles"
  loe_foreign_nobles_desc: "TBD"
  
  loe_sole_empire: "Sole Empire"
- loe_sole_empire_desc: "TBD"
- loe_myriad_crowned_king: "Myriad Crowned King"
- loe_myriad_crowned_king_desc: "TBD"
+ loe_sole_empire_desc: "The empire can convince the common people of its right to rule by building a narrative of a supreme state, the sole state of the world. Through centralisation and expansion, the empire can affirm its hegemonic status."
+ loe_myriad_crowned_king: "Myriad Crowned Emperor"
+ loe_myriad_crowned_king_desc: "A lot of different kingdoms and duchies exist under the protection of our Emperor. By allowing a small amount of internal autonomy we can give the illusion of self-governance and ensure the loyalty of their people towards the legitimacy of the Empire."
  loe_frontier_of_empire: "Frontier of the Empire"
  loe_frontier_of_empire_desc: "TBD"
  loe_ancient_bookkeepers: "Ancient Bookkeepers"
- loe_ancient_bookkeepers_desc: "TBD"
+ loe_ancient_bookkeepers_desc: "Yi Ti was one of the earliest civilizations where literacy arose. The most ancient Yitish records are cherished and jealously guarded. A result of the abundance of ancient knowledge is the easier understanding of new concepts and adoption of technology."
  
  loe_foreign_tactics: "Foreign Tactics"
  loe_foreign_tactics_desc: "TBD"
  loe_imperial_army: "Imperial Army"
- loe_imperial_army_desc: "TBD"
+ loe_imperial_army_desc: "Of old, the god-emperors commanded great loyal armies, able to crush anyone opposing his will. In order to bring such greatness back and create a proper standing army, we must look to increase spending and greatly reform the imperial army."
  
  loe_homogenous_court: "Homogenous Court"
  loe_homogenous_court_desc: "TBD"
@@ -96,7 +109,7 @@
  loe_order_of_oracles_desc: "TBD"
  
  loe_transcontinental_trade: "Global Trade"
- loe_transcontinental_trade_desc: "TBD"
+ loe_transcontinental_trade_desc: "Trading our exotic wares has always been the cornerstone of the Empire's treasury. Thus far we have relied on foreing traders, but now, establishing our own trade network around the world, lets us reap the benefits."
  loe_imperial_subsidies: "Imperial Subsidies"
  loe_imperial_subsidies_desc: "TBD"
  loe_bureaucratic_economy: "Bureaucratic Economy"
@@ -218,17 +231,23 @@
  loe_govmech.14.d4: "§Y66%§! chance of [Root.Monarch.GetName] to gain a random skill."
  
  loe_govmech.20.t: "Ore Vein Found"
- loe_govmech.20.d: "TBD"
+ loe_govmech.20.d: "The Necromancer in charge of [Root.GetName] has reported to us that a recent development project has uncovered a significant ore vein. The necromancer is requesting that we send several detachments of miners so he can start mining the area."
  loe_govmech.20.t1: "Open a new copper mine."
  loe_govmech.20.t2: "Open a new iron mine."
  loe_govmech.20.t3: "Open a new silver mine."
- loe_govmech.20.t4: "Shiny!"
+ loe_govmech.20.t4: "Ooh! Shiny!"
+ loe_govmech.20.t5: "We don't need to repurpose the area."
+ loe_govmech.20.d5: "This event won't trigger again for this province."
  
- loe_govmech.21.t: "Provisional titles of the Nobility"
- loe_govmech.21.d: "TBD"
+ loe_govmech.21.t: "Provisional Titles of the Nobility"
+ loe_govmech.21.d: "A significant amount of time has passed since we last decided on what to do with the Provisional Titles. A notable amount of old nobles have died, automatically transferring their titles to us. It is in our hand whether to sell those titles back to their rightful heirs, or keep them for ourselves."
  loe_govmech.21.t1: "Grant them the titles."
  loe_govmech.21.t2: "Block the sale of titles."
  
- loe_govmech.25.t: "Provisional Noble Titles Act"
- loe_govmech.25.d: "TBD"
- loe_govmech.25.t1: "TBD"
+ loe_govmech.25.t: "Provisional Noble Title Act"
+ loe_govmech.25.d: "The news of the enactment of the new government policy have shaken the Empire. Taken by surprise, some nobles have gathered their personal retinues and are in open rebellion. Loyalists from #TBD Insert province names here# report that the rebels have occupied their cities and forts. Other nobles are still consolidating their power before they attack. This is a perfect opportunity to strike those who leech off the Emperor's power."
+ loe_govmech.25.t1: "They are delaying the inevitable..."
+ loe_govmech.25.d1: "Crushing the rebels early will stop any further rebellions. However, if we let them gather their strength and crush them in battle, we can control them even easier later."
+ #TBD Implement it in code, rebel tag gets -9999 reinforcement rate, on startup nobles have way more land
+ #Add new event to get further land if you defeat more nobles
+ #Create appropiate disaster.

@@ -1063,3 +1063,25 @@ estate_merchants_monopoly_of_tropical_wood = {
 		factor = 0
 	}
 }
+
+loe_estate_cant_seize_traders = {
+	icon = privilege_royal_authority
+	max_absolutism = -5
+	loyalty = 0.1
+	influence  = 0.1
+
+	is_valid = {
+		has_government_attribute = loe_cant_seize_traders
+	}
+	can_select = { always = no }
+
+	can_revoke = { NOT = { has_government_attribute = loe_cant_seize_traders } }
+
+	mechanics = {
+		exempt_from_seize_land
+	}
+
+	ai_will_do = {
+		factor = 0
+	}
+}

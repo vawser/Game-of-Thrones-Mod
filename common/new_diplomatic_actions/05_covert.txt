@@ -165,7 +165,7 @@ loe_prepare_raid = {
 	require_acceptance = no
 
 	is_visible = {
-		culture = jogos_nhai
+		has_government_attribute = loe_can_prepare_raid
 	}
 
 	is_allowed = {
@@ -179,7 +179,6 @@ loe_prepare_raid = {
 				NOT = { culture = jogos_nhai }
 			}
 		}
-        is_at_war = no
 	}
 
 	on_accept = {

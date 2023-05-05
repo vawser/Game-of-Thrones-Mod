@@ -1,232 +1,14 @@
 #----------------------------------
-# Age of Calamity
-#----------------------------------
-age_of_calamity = {
-	start = 100
-	
-	can_start = {
-		always = yes
-	}
-	
-	papacy = 1.0
-	religious_conflicts = yes
-	
-	objectives = {
-		age_1_obj_prestigious_capital = {
-			capital_scope = {
-				development = 30
-				religion = ROOT
-				culture = ROOT
-				NOT = { devastation = 1 }
-			}
-		}
-		age_1_obj_absolute_rule = {
-			absolutism = 75
-		}
-		age_1_obj_the_iron_throne = {
-			is_emperor = yes
-		}
-		age_1_obj_masterful_counsel = {
-			AND = {
-				OR = {
-					wizard = 3
-					maester = 3
-					architect = 3
-					artist = 3
-					astrologer = 3
-					bookbinder = 3
-					brewer = 3
-					engraver = 3
-					oracle = 3
-					gardener = 3
-					painter = 3
-					playwright = 3
-					politician = 3
-					scribe = 3
-					poet = 3
-					farmer = 3
-					philosopher = 3
-					treasurer = 3
-					priest = 3
-					evangelist = 3
-					inquisitor = 3
-					sculptor = 3
-					courtesan = 3
-					catchpole = 3
-					steward = 3
-					marshal = 3
-					pilgrim = 3
-					moneylender = 3
-				}
-				OR = {
-					cartographer = 3
-					clothier = 3
-					cook = 3
-					diplomat = 3
-					herald = 3
-					interpreter = 3
-					jester = 3
-					jeweler = 3
-					messenger = 3
-					colonist = 3
-					navigator = 3
-					trader = 3
-					forger = 3
-					poisoner = 3
-					spicer = 3
-					wayfarer = 3
-					shipwright = 3
-					mariner = 3
-					governor = 3
-					merchant = 3
-					broker = 3
-					spymaster = 3
-					swab = 3
-					seafarer = 3
-					sea_dog = 3
-					mate = 3
-				}
-				OR = {
-					knight = 3
-					alchemist = 3
-					apothecarist = 3
-					armorer = 3
-					bowyer = 3
-					engineer = 3
-					furrier = 3
-					herbalist = 3
-					hunter = 3
-					leatherworker = 3
-					physician = 3
-					storyteller = 3
-					stablemaster = 3
-					master_at_arms = 3
-					mason = 3
-					carpenter = 3
-					bladesmith = 3
-					bard = 3
-					watchman = 3
-					captain = 3
-					sapper = 3
-					planner = 3
-					custodian = 3
-					saddler = 3
-				}
-			}
-		}
-		age_1_obj_colossal_army = {
-			land_forcelimit = 60
-			army_size_percentage = 0.8
-		}
-		age_1_obj_colossal_navy = {
-			naval_forcelimit = 60
-			navy_size_percentage = 0.8
-		}
-		age_1_obj_inspirational_leader = {
-			has_commanding_three_star = yes
-		}
-	}		
-
-	abilities = {
-		age_1_development_focus = {
-			modifier = {
-				development_cost = -0.1
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_1_justified_annexation = {
-			modifier = {
-				ae_impact = -0.1
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_1_prestigeous_traditions = {
-			modifier = {
-				prestige_decay = -0.01
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_1_subdued_people = {
-			modifier = {
-				global_unrest = -2
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_1_expanded_trade_networks = {
-			modifier = {
-				global_trade_power = 0.2
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_1_military_drills = {
-			modifier = {
-				army_tradition = 1.0
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_1_homeland_knowledge = {
-			modifier = {
-				attack_bonus_in_capital_terrain = 1
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_1_administrative_efficiency = {
-			modifier = {
-				administrative_efficiency = 0.1
-			}
-			ai_will_do = {
-				factor = 100
-			}
-		}
-		age_1_consistent_taxation = {
-			modifier = {
-				global_tax_modifier = 0.15
-			}
-			ai_will_do = {
-				factor = 100
-			}
-		}
-		age_1_diplomatic_charisma = {
-			modifier = {
-				diplomatic_reputation = 2
-			}
-			ai_will_do = {
-				factor = 100
-			}
-		}
-		age_1_self_governing_settlements = {
-			modifier = {
-				ignore_coring_distance = yes
-			}
-			ai_will_do = {
-				factor = 100
-			}
-		}
-	}
-}
-
-#----------------------------------
 # Age of Fire
 #----------------------------------
 age_of_fire = {
 	start = 106
 	
 	can_start = {
-		started_in = 106.1.1
+		custom_trigger_tooltip = {
+			tooltip = "Aegon's Conquest has finished"
+			always = yes
+		}
 	}
 	
 	papacy = 1.0
@@ -240,215 +22,261 @@ age_of_fire = {
 		increase_autonomy_command = -2
 		debase_currency = -1
 		execute_rebel_acceptance_command = -10
-		seat_in_parliament = -3
+		automatic_seat_in_parliament = -3
+		manual_seat_in_parliament = -3
 		war_exhaustion = -1
 	}
 	
 	objectives = {
-		obj_age_2_the_iron_throne = {
-			is_emperor = yes
+		obj_king_in_westeros = {
+			allow = {
+				capital_scope = {
+					continent = westeros
+				}
+			}
+			if = {
+				limit = {
+					hre_size = 1
+				}
+				is_emperor = yes
+			}
+			else = {
+				tag = WST
+			}
 			owns = 226
 		}
-		obj_age_3_masterful_counsel = {
-			AND = {
-				OR = {
-					wizard = 3
-					maester = 3
-					architect = 3
-					artist = 3
-					astrologer = 3
-					bookbinder = 3
-					brewer = 3
-					engraver = 3
-					oracle = 3
-					gardener = 3
-					painter = 3
-					playwright = 3
-					politician = 3
-					scribe = 3
-					poet = 3
-					farmer = 3
-					philosopher = 3
-					treasurer = 3
-					priest = 3
-					evangelist = 3
-					inquisitor = 3
-					sculptor = 3
-					courtesan = 3
-					catchpole = 3
-					steward = 3
-					marshal = 3
-					pilgrim = 3
-					moneylender = 3
+		obj_successors_to_the_freehold = {
+			allow = {
+				capital_scope = {
+					superregion = west_essos_superregion
 				}
-				OR = {
-					cartographer = 3
-					clothier = 3
-					cook = 3
-					diplomat = 3
-					herald = 3
-					interpreter = 3
-					jester = 3
-					jeweler = 3
-					messenger = 3
-					colonist = 3
-					navigator = 3
-					trader = 3
-					forger = 3
-					poisoner = 3
-					spicer = 3
-					wayfarer = 3
-					shipwright = 3
-					mariner = 3
-					governor = 3
-					merchant = 3
-					broker = 3
-					spymaster = 3
-					swab = 3
-					seafarer = 3
-					sea_dog = 3
-					mate = 3
+			}
+			custom_trigger_tooltip = {
+				tooltip = "CURRENTLY DISABLED"
+				always = no
+			}
+		}
+		obj_unite_the_dothraki_clans = {
+			allow = {
+				capital_scope = {
+					superregion = central_essos_superregion
 				}
-				OR = {
-					knight = 3
-					alchemist = 3
-					apothecarist = 3
-					armorer = 3
-					bowyer = 3
-					engineer = 3
-					furrier = 3
-					herbalist = 3
-					hunter = 3
-					leatherworker = 3
-					physician = 3
-					storyteller = 3
-					stablemaster = 3
-					master_at_arms = 3
-					mason = 3
-					carpenter = 3
-					bladesmith = 3
-					bard = 3
-					watchman = 3
-					captain = 3
-					sapper = 3
-					planner = 3
-					custodian = 3
-					saddler = 3
+			}
+			custom_trigger_tooltip = {
+				tooltip = "CURRENTLY DISABLED"
+				always = no
+			}
+		}
+		obj_emperor_of_the_yiti = {
+			allow = {
+				capital_scope = {
+					superregion = far_essos_superregion
+				}
+			}
+			is_emperor_of_china = yes
+			imperial_mandate = 50
+		}
+		obj_city_of_wonders = {
+			custom_trigger_tooltip = {
+				tooltip = obj_city_of_wonders_tooltip
+				any_owned_province = {
+					exclude_from_progress = {
+						is_core = ROOT
+						controlled_by = owner
+					}
+					development_discounting_tribal = 25
 				}
 			}
 		}
-		age_2_obj_absolute_rule = {
-			absolutism = 75
-		}
-		obj_age_2_blood_of_old_valyria = {
+		obj_house_of_the_dragon = {
 			OR = {
 				dynasty = "Targaryen"
 				dynasty = "Velaryon"
 			}
-			owns_all_provinces = {
-				region = region_valyria
-			}
-		}
-		age_2_obj_colossal_army = {
-			land_forcelimit = 60
-			army_size_percentage = 0.8
-		}
-		age_2_obj_colossal_navy = {
-			naval_forcelimit = 60
-			navy_size_percentage = 0.8
-		}
-		age_2_obj_inspirational_leader = {
-			has_commanding_three_star = yes
+			# owns_all_provinces = {
+			# 	region = region_valyria
+			# }
 		}
 	}		
 
 	abilities = {
+		ab_divine_right = {
+			modifier = {
+				country_military_power = 1
+				legitimacy = 0.50
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_court_bailiffs = {
+			modifier = {
+				global_unrest = -2
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
 		age_2_development_focus = {
 			modifier = {
 				development_cost = -0.1
 			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_2_justified_annexation = {
-			modifier = {
-				ae_impact = -0.1
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
 			}
 			ai_will_do = {
 				factor = 10
 			}
 		}
-		age_2_prestigeous_traditions = {
+		ab_justified_wars = {
 			modifier = {
-				prestige_decay = -0.01
+				unjustified_demands = -0.125
 			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_2_subdued_people = {
-			modifier = {
-				global_unrest = -2
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_2_expanded_trade_networks = {
-			modifier = {
-				global_trade_power = 0.2
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_2_military_drills = {
-			modifier = {
-				army_tradition = 1.0
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_2_homeland_knowledge = {
-			modifier = {
-				attack_bonus_in_capital_terrain = 1
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_2_administrative_efficiency = {
-			modifier = {
-				administrative_efficiency = 0.1
+			effect = {
+				ages_effect_bonus = { bonus_name = global_empire }
 			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
-		age_2_consistent_taxation = {
+		ab_loyal_subjects = {
+			modifier = {
+				reduced_liberty_desire = 10
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 100
+				modifier = {
+					factor = 0
+					NOT = {
+						any_subject_country = {
+							liberty_desire = 10
+						}
+					}
+				}
+			}
+		}
+		ab_intercontinental_trading = {
+			modifier = {
+				global_own_trade_power = 0.025
+				placed_merchant_power = 5
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_professional_privateers = {
+			modifier = {
+				privateer_efficiency = 0.20
+				blockade_force_required = 0.50
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_improved_logistics = {
+			modifier = {
+				reinforce_speed = 0.33
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_dedicated_bureaucracy = {
+			modifier = {
+				governing_capacity_modifier = 0.10
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_financial_obligations = {
 			modifier = {
 				global_tax_modifier = 0.15
+				vassal_income = 0.20
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
 			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
-		age_2_diplomatic_charisma = {
+		ab_diplomatic_charisma = {
 			modifier = {
 				diplomatic_reputation = 2
 			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
-		age_2_self_governing_settlements = {
+		ab_gold_mines = {
 			modifier = {
-				ignore_coring_distance = yes
+				monthly_gold_inflation_modifier = -0.50
+				gold_depletion_chance_modifier = -0.10
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
 			}
 			ai_will_do = {
 				factor = 100
+			}
+		}
+		ab_organized_levies = {
+			allow = {
+				capital_scope = {
+					continent = westeros
+				}
+			}
+			modifier = {
+				land_morale = 0.05
+				global_manpower_modifier = 0.125
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		ab_legendary_companies = {
+			allow = {
+				capital_scope = {
+					NOT = { continent = westeros }
+				}
+			}
+			modifier = {
+				mercenary_discipline = 0.05
+				mercenary_cost = -0.20
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 50
 			}
 		}
 	}
@@ -480,9 +308,33 @@ age_of_rebellion = {
 	}
 	
 	objectives = {
-		 obj_age_3_the_iron_throne = {
-			is_emperor = yes
+		obj_king_in_westeros = {
+			allow = {
+				capital_scope = {
+					continent = westeros
+				}
+			}
+			if = {
+				limit = {
+					hre_size = 1
+				}
+				is_emperor = yes
+			}
+			else = {
+				tag = WST
+			}
 			owns = 226
+		}
+		obj_emperor_of_the_yiti = {
+			allow = {
+				NOT = {
+					capital_scope = {
+						continent = westeros
+					}
+				}
+			}
+			is_emperor_of_china = yes
+			imperial_mandate = 50
 		}
 		obj_age_3_the_greatest_house = {
 			allow = {
@@ -573,8 +425,8 @@ age_of_rebellion = {
 				}
 			}
 		}
-		obj_age_3_absolute_rule = {
-			absolutism = 75
+		obj_absolutist_government = {
+			absolutism = 100
 		}
 		obj_age_3_colossal_army = {
 			land_forcelimit = 60

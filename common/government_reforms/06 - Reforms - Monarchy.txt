@@ -276,18 +276,6 @@ got_centralize_reform = {
 	}
 	trigger = {
 		if = {
-			limit = { current_age = age_of_calamity }
-			custom_trigger_tooltip = {
-				tooltip = less_than_15_provinces_on_same_continent
-				NOT = {
-					num_of_owned_provinces_with = {
-						same_continent = ROOT
-						value = 15
-					}
-				}
-			}
-		}
-		if = {
 			limit = { current_age = age_of_fire }
 			custom_trigger_tooltip = {
 				tooltip = less_than_25_provinces_on_same_continent
@@ -350,16 +338,6 @@ got_centralize_empire_reform = {
 		}
 	}
 	trigger = {
-		if = {
-			limit = { current_age = age_of_calamity }
-			custom_trigger_tooltip = {
-				tooltip = at_least_15_provinces_on_same_continent
-				num_of_owned_provinces_with = {
-					same_continent = ROOT
-					value = 15
-				}
-			}
-		}
 		if = {
 			limit = { current_age = age_of_fire }
 			custom_trigger_tooltip = {

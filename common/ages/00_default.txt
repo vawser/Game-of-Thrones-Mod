@@ -78,13 +78,13 @@ age_of_fire = {
 		}
 		obj_city_of_wonders = {
 			custom_trigger_tooltip = {
-				tooltip = obj_city_of_wonders_tooltip
+				tooltip = "obj_city_of_wonders_tooltip"
 				any_owned_province = {
 					exclude_from_progress = {
 						is_core = ROOT
 						controlled_by = owner
 					}
-					development_discounting_tribal = 25
+					development_discounting_tribal = 30
 				}
 			}
 		}
@@ -93,11 +93,51 @@ age_of_fire = {
 				dynasty = "Targaryen"
 				dynasty = "Velaryon"
 			}
-			# owns_all_provinces = {
-			# 	region = region_valyria
-			# }
+			owns_all_provinces = {
+				region = region_valyria
+			}
 		}
-	}		
+		obj_big_army = {
+			army_size_percentage = 1.0
+			exclude_from_progress = {
+				land_forcelimit = 60
+			}
+		}
+		obj_merchant_empire = {
+			num_of_trading_bonuses = 2
+		}
+		obj_political_maneuvering = {
+			OR = {
+				adm = 6
+				dip = 6
+				mil = 6
+				custom_trigger_tooltip = {
+					tooltip = "obj_political_maneuvering_tooltip"
+					AND = {
+						adm = 4
+						dip = 4
+						mil = 4
+					}
+				}
+			}
+		}
+		obj_war_of_rivals = {
+			custom_trigger_tooltip = {
+				tooltip = "obj_war_of_rivals_tooltip"
+				any_rival_country = {
+					is_in_war = {
+						participants = ROOT
+					}
+				}
+			}
+		}
+		obj_humiliate_rival = {
+			custom_trigger_tooltip = {
+				tooltip = obj_humiliate_rival_tooltip
+				has_country_flag = humiliated_rival
+			}
+		}
+	}
 
 	abilities = {
 		ab_divine_right = {
@@ -123,7 +163,7 @@ age_of_fire = {
 				factor = 10
 			}
 		}
-		age_2_development_focus = {
+		ab_development_focus = {
 			modifier = {
 				development_cost = -0.1
 			}
@@ -139,7 +179,7 @@ age_of_fire = {
 				unjustified_demands = -0.125
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = global_empire }
+				ages_effect_bonus = { bonus_name = "global_empire" }
 			}
 			ai_will_do = {
 				factor = 100
@@ -292,6 +332,7 @@ age_of_rebellion = {
 		is_year = 281
 	}
 	
+	religious_conflicts = yes
 	papacy = 1.0
 	
 	absolutism = {

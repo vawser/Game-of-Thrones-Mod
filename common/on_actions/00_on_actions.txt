@@ -12,6 +12,16 @@ on_startup = {
 		}
 		save_global_event_target_as = YiTiEmperor
 	}
+
+	# Assigning Age Nation Bonuses
+	if = {
+		limit = { current_age = age_of_fire }
+		age_of_fire_nation_bonus_effect = yes
+	}
+	else_if = {
+		limit = { current_age = age_of_rebellion }
+		age_of_rebellion_nation_bonus_effect = yes
+	}
 	
 	events = {
 		GOT_SYSTEM.1	# Global

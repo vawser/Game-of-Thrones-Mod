@@ -1,0 +1,61 @@
+obj_city_of_wonders_modifier = {
+	potential = {
+		current_age = age_of_fire
+	}
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = "obj_city_of_wonders_tooltip"
+			any_owned_province = {
+				exclude_from_progress = {
+					is_core = ROOT
+					controlled_by = owner
+				}
+				development_discounting_tribal = 30
+			}
+		}
+	}
+	global_tax_modifier = 0.125
+}
+
+obj_house_of_the_dragon_modifier = {
+	potential = {
+		current_age = age_of_fire
+	}
+	trigger = {
+		OR = {
+			dynasty = "Targaryen"
+			dynasty = "Velaryon"
+		}
+		owns_all_provinces = {
+			region = region_valyria
+		}
+	}
+	diplomatic_reputation = 1
+}
+
+obj_merchant_empire_modifier = {
+	potential = {
+		current_age = age_of_fire
+	}
+	trigger = {
+		num_of_trading_bonuses = 2
+	}
+	global_trade_goods_size_modifier = 0.10
+}
+
+obj_war_of_rivals_modifier = {
+	potential = {
+		current_age = age_of_fire
+	}
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = "obj_war_of_rivals_tooltip"
+			any_rival_country = {
+				is_in_war = {
+					participants = ROOT
+				}
+			}
+		}
+	}
+	war_exhaustion = -0.05
+}

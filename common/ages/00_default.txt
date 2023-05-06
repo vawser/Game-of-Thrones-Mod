@@ -378,22 +378,22 @@ age_of_rebellion = {
 		}
 		obj_age_3_dominate_the_free_cities = {
 			allow = {
-				capital_scope = { continent = west_essos }
+				capital_scope = { superregion = west_essos_superregion }
 			}
 			government = republic
 			OR = {
 				all_country = {
-					capital_scope = { continent = west_essos }
+					capital_scope = { superregion = west_essos_superregion }
 					is_subject_of = ROOT
 				}
 				owns_all_provinces = {
-					continent = west_essos
+					superregion = west_essos_superregion
 				}
 			}
 		}
 		obj_age_3_unite_the_dothraki = {
 			allow = {
-				capital_scope = { continent = central_essos }
+				capital_scope = { superregion = central_essos_superregion }
 			}
 			culture = dothraki_culture
 			religion = great_stallion
@@ -412,7 +412,7 @@ age_of_rebellion = {
 		}
 		obj_age_3_ = {
 			allow = {
-				capital_scope = { continent = east_essos }
+				capital_scope = { continent = essos }
 			}
 		}
 		obj_age_3_secure_iron = {

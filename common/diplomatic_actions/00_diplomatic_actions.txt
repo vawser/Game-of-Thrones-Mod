@@ -152,6 +152,25 @@ declarewar = {
 	}
 
 	condition = {
+		tooltip = CANT_FIGHT_NIGHTS_WATCH
+		potential = {
+			FROM = { tag = NGT }
+			if = {
+				limit = {
+					hre_size = 1
+				}
+				is_part_of_hre = yes
+			}
+			else = {
+				is_westerosi_government = yes
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+
+	condition = {
 		tooltip = DIPLO_ACTION_RESTRICTION_TT
 		potential = {
 			has_government_attribute = diplo_actions_restriction

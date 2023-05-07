@@ -9,10 +9,12 @@ namespace = loe_govmech
 #loe_church_power_per_stab 18 Each positive stability grants 0.5 monthly church power
 #loe_increased_metal_output 19 Each province with metals gets +1 goods produced
 #loe_found_new_mines 20 Non-metal producing provinces with a colonist can get event to produce a metal
-#loe_lease_nobles_event 21 
+#loe_lease_nobles_event 21-25 Starts a rebellion,  after that every 10 years event to grant land back
+#loe_estate_cant_seize_[estate] 26 Grants privilege so that you cant reduce estate's land
+
 
 #loe_friendly_with_empire 1-2
-country_event = {
+country_event = { #Adds opinion modifier
 	id = loe_govmech.1
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -37,7 +39,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Removes opinion modifier
 	id = loe_govmech.2
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -76,7 +78,7 @@ country_event = {
 }
 
 #loe_mandate_from_dev 3-6
-country_event = {
+country_event = { #Calculates mandate growth (needed for cycle)
 	id = loe_govmech.3
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -127,7 +129,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Ditto (needed for cycle)
 	id = loe_govmech.4
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -178,7 +180,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Starts the cycle after gov reform is picked
 	id = loe_govmech.5
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -202,7 +204,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Stops the cycle after gov reform is removed
 	id = loe_govmech.6
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -221,8 +223,8 @@ country_event = {
 	}
 }
 
-#loe_mandate_from_pu_dev 7-13
-country_event = {
+#loe_mandate_from_pu_dev 7-13 #TBD Check if these events account if a PU is lost #TBD I think this could be done with less events, improve performance
+country_event = { #Calculates mandate growth (subject event) and adds it to overlord
 	id = loe_govmech.7
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -262,7 +264,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Activates 2 calculation events: event7 adds the mandate(subject event), event12 shows it in overlord's decisions tab(overlord event) (needed for cycle)
 	id = loe_govmech.8
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -296,7 +298,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Ditto (needed for cycle)
 	id = loe_govmech.9
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -330,7 +332,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Stops cycle after gov reform removed (overlord event)
 	id = loe_govmech.10
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -341,7 +343,7 @@ country_event = {
 	hidden = yes
 
 	trigger = {
-		is_subject = no
+		is_subject = no #TBD Is this needed?
 		NOT = { has_government_attribute = loe_mandate_from_pu_dev }
 		has_country_flag = loe_mandate_cycle_pu
 	}
@@ -355,7 +357,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Starts cycle (overlord event)
 	id = loe_govmech.11
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -382,7 +384,7 @@ country_event = {
 	}
 }
 
-country_event = { 
+country_event = { #Calculates PU number and sends them event to calculate mandate shown in decision tab (overlord event)
 	id = loe_govmech.12
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -445,7 +447,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Calculates mandate shown in decision tab (subject event)
 	id = loe_govmech.13
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -486,7 +488,7 @@ country_event = {
 }
 
 #loe_increases_skill_over_time 14-15
-country_event = {
+country_event = { #The more specific the skill you want to gain is, the less chance you got to actually gain it is
 	id = loe_govmech.14
 	title = "loe_govmech.14.t"
 	desc = "loe_govmech.14.d"
@@ -635,8 +637,8 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = loe_govmech.14
+country_event = { #Adds a flag to 6 6 6 ruler
+	id = loe_govmech.15
 	title = "loe_hidden"
 	desc = "loe_hidden"
 	picture = BIG_BOOK_eventPicture
@@ -659,7 +661,7 @@ country_event = {
 }
 
 #loe_worldwide_trade 16
-country_event = {
+country_event = { #Calculate which modifier you should get #TBD if this could be done in a more efficient way #Needs to be updated if new supperegions are added
 	id = loe_govmech.16
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -887,13 +889,13 @@ country_event = {
 }
 
 #loe_improve_dev 17
-province_event = {
+province_event = { #Colonist grants dev when improving provinces
 	id = loe_govmech.17
 	title = "loe_hidden"
 	desc = "loe_hidden"
 	picture = BIG_BOOK_eventPicture
 	mean_time_to_happen = {
-		months = 3
+		years = 1
 	}
 	hidden = yes
 
@@ -914,7 +916,7 @@ province_event = {
 }
 
 #loe_church_power_per_stab 18
-country_event = {
+country_event = { #Calculate which modifier you should get
 	id = loe_govmech.18
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -969,7 +971,7 @@ country_event = {
 }
 
 #loe_increased_metal_output 19
-country_event = {
+country_event = { #Adds modifier to all eligible provinces
 	id = loe_govmech.19
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -988,6 +990,7 @@ country_event = {
 				trade_goods = iron
 			}
 		}
+		has_government_attribute = loe_found_new_mines
 	}
 
 	option = {
@@ -1010,7 +1013,7 @@ country_event = {
 }
 
 #loe_found_new_mines 20
-province_event = {
+province_event = { #Seperate option for each metal for better localisation, need to be changed if more metals are added
 	id = loe_govmech.20
 	title = "loe_govmech.20.t"
 	desc = "loe_govmech.20.d"
@@ -1030,6 +1033,8 @@ province_event = {
 				trade_goods = iron
 			}
 		}
+		NOT = { has_province_flag = loe_checked_mine }
+		owner = { has_government_attribute = loe_increased_metal_output }
 	}
 
 	immediate = {
@@ -1053,6 +1058,9 @@ province_event = {
 			name = loe_new_mine
 			duration = 3650
 		}
+		owner = {
+			add_manpower = -10
+		}
 		ai_chance = {
 			factor = 1
 		}
@@ -1068,6 +1076,9 @@ province_event = {
 			name = loe_new_mine
 			duration = 3650
 		}
+		owner = {
+			add_manpower = -10
+		}
 		ai_chance = {
 			factor = 1
 		}
@@ -1082,6 +1093,9 @@ province_event = {
 		add_province_modifier = {
 			name = loe_new_mine
 			duration = 3650
+		}
+		owner = {
+			add_manpower = -10
 		}
 		ai_chance = {
 			factor = 1
@@ -1102,14 +1116,23 @@ province_event = {
 			name = loe_new_mine_gold
 			duration = 3650
 		}
+		owner = {
+			add_manpower = -10
+		}
 		ai_chance = {
 			factor = 99
 		}
 	}
+
+	option = {
+		name = "loe_govmech.20.t5"
+		set_province_flag = loe_checked_mine
+		custom_tooltip = loe_govmech.20.d5
+	}
 }
 
-#loe_lease_nobles_event 21-25 #TBD not thoroughly tested
-country_event = {
+#loe_lease_nobles_event 21-25
+country_event = { #Event which is shown to players to decide action (needed for cycle)
 	id = loe_govmech.21
 	title = "loe_govmech.21.t"
 	desc = "loe_govmech.21.d"
@@ -1137,7 +1160,7 @@ country_event = {
 		}
 		change_estate_land_share = {
 			estate = estate_nobles
-			share = 5
+			share = 2.5
 		}
 	}
 
@@ -1146,7 +1169,11 @@ country_event = {
 		change_government_reform_progress = 50
 		add_estate_loyalty = {
 			estate = estate_nobles
-			loyalty = -10
+			loyalty = -20
+		}
+		change_estate_land_share = {
+			estate = estate_nobles
+			share = -5
 		}
 		change_variable = {
 			which = loe_rebel_count
@@ -1182,7 +1209,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Workaround because you cant trigger an event within itself (needed for cycle)
 	id = loe_govmech.22
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -1203,7 +1230,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Starts cycle after the first revolts have ended (event 25)
 	id = loe_govmech.23
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -1229,7 +1256,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Stops cycle
 	id = loe_govmech.24
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -1248,7 +1275,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Happens when reform is first picked
 	id = loe_govmech.25
 	title = "loe_govmech.25.t"
 	desc = "loe_govmech.25.d"
@@ -1305,6 +1332,58 @@ country_event = {
 				type = noble_rebels
 				estate = estate_nobles
 			}
+		}
+	}
+}
+
+#loe_estate_cant_seize_[estate] 26
+
+country_event = { #Sets estate privileges for seize exemptions
+	id = loe_govmech.26
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+	hidden = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				has_government_attribute = loe_cant_seize_nobility
+				NOT = { has_estate_privilege = loe_estate_cant_seize_nobility }
+			}
+			AND = {
+				has_government_attribute = loe_cant_seize_traders
+				NOT = { has_estate_privilege = loe_estate_cant_seize_traders }
+			}
+			AND = {
+				has_government_attribute = loe_cant_seize_church
+				NOT = { has_estate_privilege = loe_estate_cant_seize_church }
+			}
+		}
+	}
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_government_attribute = loe_cant_seize_nobility
+			}
+			set_estate_privilege = loe_estate_cant_seize_nobility
+		}
+		if = {
+			limit = {
+				has_government_attribute = loe_cant_seize_traders
+			}
+			set_estate_privilege = loe_estate_cant_seize_traders
+		}
+		if = {
+			limit = {
+				has_government_attribute = loe_cant_seize_church
+			}
+			set_estate_privilege = loe_estate_cant_seize_church
 		}
 	}
 }

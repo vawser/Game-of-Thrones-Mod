@@ -172,7 +172,7 @@ loe_guaranteed_autonomy = {
 	}
 
 	custom_attributes = {
-		loe_cant_seize_nobility = yes #TBD
+		loe_cant_seize_nobility = yes
 	}
 
 }
@@ -189,8 +189,7 @@ loe_leased_nobility = {
 	}
 
 	custom_attributes = {
-		loe_lease_nobles_event = yes #TBD
-		loe_cant_seize_nobility = yes #TBD
+		loe_lease_nobles_event = yes
 	}
 }
 
@@ -450,19 +449,6 @@ loe_godking_of_yiti = {
 	}
 }
 
-
-loe_ = {
-    icon = "castle" #TBD
-	potential = {
-		culture_group = culture_yi_ti
-	}
-
-	modifiers = {
-		
-	}
-}
-
-
 #Nefer#
 
 loe_secret_city = {
@@ -492,7 +478,7 @@ loe_worlds_end = {
 		culture_group = culture_nefer
 	}
 	trigger = {
-		tag = ETD #TBD Change it for Nefer Kingdom
+		government_rank = 2
 	}
 	monarchy = yes
 	free_concentrate_development = yes
@@ -622,16 +608,5 @@ loe_blood_tax = {
 
 	custom_attributes = {
 		loe_blood_sacrifice = yes #TBD Can sacrifice regiments in capital for random dev
-	}
-}
-
-loe_ = {
-    icon = "castle" #TBD
-	potential = {
-		culture_group = culture_nefer
-	}
-
-	modifiers = {
-		
 	}
 }

@@ -1084,3 +1084,25 @@ estate_nobles_unsullied = {
 		}
 	}
 }
+
+loe_estate_cant_seize_nobility = {
+	icon = privilege_royal_authority
+	max_absolutism = -5
+	loyalty = 0.1
+	influence  = 0.1
+
+	is_valid = {
+		has_government_attribute = loe_cant_seize_nobility
+	}
+	can_select = { always = no }
+
+	can_revoke = { NOT = { has_government_attribute = loe_cant_seize_nobility } }
+
+	mechanics = {
+		exempt_from_seize_land
+	}
+
+	ai_will_do = {
+		factor = 0
+	}
+}

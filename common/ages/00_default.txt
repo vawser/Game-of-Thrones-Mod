@@ -319,6 +319,73 @@ age_of_fire = {
 				factor = 50
 			}
 		}
+		loe_yitish_trade = {
+			allow = {
+				765 = {
+					has_trader = ROOT
+				}
+			}
+			modifier = {
+				trade_efficiency = 0.2
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+				add_treasury = 1000
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		loe_braavosi_banking = {
+			allow = {
+				any_ally = {
+					tag = U25
+				}
+			}
+			modifier = {
+				interest = -2
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		loe_slaver_bay_slaves = {
+			allow = {
+				has_discovered = 613
+				has_discovered = 610
+				has_discovered = 606
+				has_country_modifier = slavery_permitted
+			}
+			modifier = {
+				production_efficiency = 0.15
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		loe_study_cult = {
+			allow = {
+				any_owned_province = {
+					religion = cult_of_shadows
+				}
+			}
+			modifier = {
+				religious_unity = -0.1
+				yearly_innovativeness = 0.2
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 50
+			}
+		}
 	}
 }
 

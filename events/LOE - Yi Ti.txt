@@ -2,7 +2,7 @@ namespace = yiti
 # Default pic:BIG_BOOK_eventPicture #TBD
 ##Startup##
 
-country_event = { #TBD Set this in the history files
+country_event = { #TBD Set this in the history files #Set up correct amount of units, give the imperial administration debuff
 	id = yiti.1
 	title = "yiti.1.t"
 	desc = "yiti.1.d"
@@ -16,7 +16,7 @@ country_event = { #TBD Set this in the history files
 				name = loe_imperial_land_5
 				duration = -1
 			}
-			set_emperor_of_china = ROOT
+			add_prestige = -100
 			every_core_province = {
 				set_local_autonomy = 66
 			}
@@ -54,7 +54,7 @@ country_event = { #TBD Set this in the history files
 				artillery = R68
 			}
 			add_manpower = 15
-			add_ruler_personality = lawgiver_personality
+			add_ruler_personality = lawgiver_personality #TBD Define this in history instead
 		}
 	}
 
@@ -81,15 +81,7 @@ country_event = {
 		}
 	}
 
-	after = {
-		hidden_effect = {
-			every_core_province = {
-				clr_province_flag = loe_own_provinces
-			}
-		}
-	}
-
-	option = {
+	option = { #TBD Instead of gaining cores, other buff, maybe +5 relation slots as long as you keep them unintegrated
 		name = "yiti.2.t1"
 		
 		change_government_reform_progress = 100
@@ -203,15 +195,23 @@ country_event = {
 			}
 		}
 	}
+
+	after = {
+	hidden_effect = {
+		every_core_province = {
+			clr_province_flag = loe_own_provinces
+		}
+	}
+}
 }
 
 ##Flavour##
 
-country_event = {
+country_event = { #If you own the cities of slavers bay and won against hordes, have option to enslave them or not #TBD Dont like this event, maybe government reform where you store the province's good into a flag, turn into slaves, and if culture converted, return its trade good
 	id = yiti.5
 	title = "yiti.5.t"
 	desc = "yiti.5.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	mean_time_to_happen = {
 		years = 1
 	}
@@ -268,11 +268,11 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Spawn Orange Emperor's rebellion when fighting Trader Town
 	id = yiti.8
 	title = "yiti.8.t"
 	desc = "yiti.8.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	mean_time_to_happen = {
 		months = 2
 	}
@@ -330,11 +330,11 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Happens when Azure and Orange emperor fight each other for the first time (on_actions)
 	id = yiti.9
 	title = "yiti.9.t"
 	desc = "yiti.9.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	is_triggered_only = yes
 
 	option = {
@@ -344,11 +344,11 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Simulate the Jogos Nhai war, Yiti slow with attrition, Jogos fast and cause devastation
 	id = yiti.14
 	title = "yiti.14.t"
 	desc = "yiti.14.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	is_triggered_only = yes
 
 	trigger = {
@@ -375,11 +375,11 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Be able to start the search of the golden skull via decision
 	id = yiti.15
 	title = "yiti.15.t"
 	desc = "yiti.15.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	mean_time_to_happen = { months = 6 }
 	fire_only_once = yes
 
@@ -395,11 +395,11 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Send soldiers to search, (happens after decision)
 	id = yiti.16
 	title = "yiti.16.t"
 	desc = "yiti.16.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	mean_time_to_happen = { months = 6 }
 	fire_only_once = yes
 	
@@ -415,11 +415,11 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #They fail, kill them or lose legitimacy, continue the chain
 	id = yiti.17
 	title = "yiti.17.t"
 	desc = "yiti.17.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	mean_time_to_happen = { months = 6 }
 	fire_only_once = yes
 
@@ -524,11 +524,11 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Hire Ku Per, continue the chain #TBD Remake this: Let him rule over the Jogos Nhai, or he is very expensive (you need him for the mission to progress)
 	id = yiti.18
 	title = "yiti.18.t"
 	desc = "yiti.18.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	is_triggered_only = yes
 	fire_only_once = yes
 
@@ -606,7 +606,7 @@ country_event = {
 		}
 	}
 
-	after = {
+	after = { #TBD remove this, and add mtth to yiti.19 with trigger to have Ku Per active (reflect this in tooltips)
 		country_event = {
 			id = yiti.19
 			days = 10
@@ -615,11 +615,11 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Ku Per sees where the Golden Skull is, enables decision to send covert team to take it back
 	id = yiti.19
 	title = "yiti.19.t"
 	desc = "yiti.19.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	is_triggered_only = yes
 
 	immediate = {
@@ -690,11 +690,11 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #The operation seems successful, continues the chain
 	id = yiti.21
 	title = "yiti.21.t"
 	desc = "yiti.21.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	is_triggered_only = yes
 
 	option = {
@@ -714,11 +714,11 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Warns the player that the ruler is about to die, continues the chain
 	id = yiti.22
 	title = "yiti.22.t"
 	desc = "yiti.22.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	is_triggered_only = yes
 
 	option = {
@@ -726,11 +726,11 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #The royal guards are killed, you acquire the skull, continues the chain
 	id = yiti.23
 	title = "yiti.23.t"
 	desc = "yiti.23.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	is_triggered_only = yes
 
 	option = {
@@ -745,11 +745,11 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #You die, chain ends
 	id = yiti.24
 	title = "yiti.24.t"
 	desc = "yiti.24.d"
-	picture = BIG_BOOK_eventPicture
+	picture = BIG_BOOK_eventPicture #TBD
 	is_triggered_only = yes
 
 	option = {
@@ -758,12 +758,9 @@ country_event = {
 	}
 }
 
-#Last event created
-
 ##Functional##
 
-#Decreases Imperial Land Debuff by 1: 66>50>33>25>10
-country_event = {
+country_event = { #Decreases Imperial Land Debuff by 1: 66>50>33>25>10
 	id = yiti.3
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -822,8 +819,7 @@ country_event = {
 	}
 }
 
-#Increases Imperial Land Debuff by 1: 10>25>33>50>66
-country_event = {
+country_event = { #Increases Imperial Land Debuff by 1: 10>25>33>50>66
 	id = yiti.4
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -885,7 +881,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Happens when disaster reaches 100, increases debuffs
 	id = yiti.6
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -901,7 +897,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Happens when immediatly after yiti.6 to restart disaster (see disaster file for more info)
 	id = yiti.7
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -914,7 +910,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Add legitimacy when fighting orange or yellow pretenders' rebels (on_actions) #TBD Make sure I included yellow pretenders on on_actions
 	id = yiti.10
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -928,13 +924,13 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Stop giving legitimacy after the intended war is over
 	id = yiti.11
 	title = "loe_hidden"
 	desc = "loe_hidden"
 	picture = BIG_BOOK_eventPicture
 	hidden = yes
-	mean_time_to_happen = { months = 1 }
+	mean_time_to_happen = { days = 1 }
 
 	trigger = {
 		has_country_flag = loe_legitimacy_battle
@@ -947,13 +943,13 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Give respective flags to Jogos and Yiti #TBD Merge 12 and 14 together?
 	id = yiti.12
 	title = "loe_hidden"
 	desc = "loe_hidden"
 	picture = BIG_BOOK_eventPicture
 	hidden = yes
-	mean_time_to_happen = { months = 1 }
+	mean_time_to_happen = { days = 1 }
 
 	trigger = {
 		capital_scope = {
@@ -975,20 +971,6 @@ country_event = {
 		country_event = {
 			id = jogosnhai.1
 		}
-		#every_country = {
-		#	limit = {
-		#		capital_scope = {
-		#			region = region_dry_bones
-		#		}
-		#		is_nomadic_government = yes
-		#		NOT = {
-		#				any_war_enemy_country = {
-		#				tag = R68
-		#			}
-		#		}
-		#	}
-		#	join_all_defensive_wars_of = ROOT
-		#}
 		R68 = {
 			country_event = {
 				id = yiti.14
@@ -997,7 +979,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Removes respective modifiers after jogos-yiti war is over
 	id = yiti.13
 	title = "loe_hidden"
 	desc = "loe_hidden"
@@ -1027,7 +1009,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #Remove religious exemptions Ku Per gave after he controlled the jogos, when he dies or province changes owner
 	id = yiti.20
 	title = "loe_hidden"
 	desc = "loe_hidden"

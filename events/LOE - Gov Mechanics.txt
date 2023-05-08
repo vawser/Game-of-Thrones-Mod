@@ -223,7 +223,7 @@ country_event = { #Stops the cycle after gov reform is removed
 	}
 }
 
-#loe_mandate_from_pu_dev 7-13 #TBD Check if these events account if a PU is lost #TBD I think this could be done with less events, improve performance
+#loe_mandate_from_pu_dev 7-13 #TBD I think this could be done with less events, improve performance
 country_event = { #Calculates mandate growth (subject event) and adds it to overlord
 	id = loe_govmech.7
 	title = "loe_hidden"
@@ -343,7 +343,6 @@ country_event = { #Stops cycle after gov reform removed (overlord event)
 	hidden = yes
 
 	trigger = {
-		is_subject = no #TBD Is this needed?
 		NOT = { has_government_attribute = loe_mandate_from_pu_dev }
 		has_country_flag = loe_mandate_cycle_pu
 	}

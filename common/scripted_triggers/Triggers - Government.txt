@@ -32,14 +32,6 @@ is_westerosi_government = {
 	}
 }
 
-westeros_government_not_king = {
-	OR = {
-		has_reform = noble_house_reform
-		has_reform = lord_of_the_tides_reform
-		has_reform = great_house_reform
-	}
-}
-
 westeros_government_king = {
 	if = {
 		limit = {
@@ -49,9 +41,29 @@ westeros_government_king = {
 	}
 	else = {
 		OR = {
-		has_reform = royal_house_reform
-		has_reform = kingdom_of_westeros_reform
+			has_reform = royal_house_reform
+			has_reform = kingdom_of_westeros_reform
 		}
+	}
+}
+
+westeros_government_great_house = {
+	if = {
+		limit = {
+			hre_size = 1
+		}
+		is_elector = yes
+	}
+	else = {
+		has_reform = great_house_reform
+	}
+}
+
+westeros_government_not_king = {
+	OR = {
+		has_reform = noble_house_reform
+		has_reform = lord_of_the_tides_reform
+		has_reform = great_house_reform
 	}
 }
 
@@ -150,9 +162,30 @@ is_pirate_government = {
 	has_government_attribute = is_pirate_republic_reform
 }
 
-is_ruler_of_the_seven_kingdoms = {
-	OR = {
-		is_emperor = yes
-		has_country_flag = seven_kingdoms_ruler
+sk_centralization = {
+	custom_trigger_tooltip = {
+		tooltip = CENTRALIZATION_TT
+		hre_reform_passed = king_implement_royal_court_of_justice
+	}
+}
+
+sk_decentralization = {
+	custom_trigger_tooltip = {
+		tooltip = DECENTRALIZATION_TT
+		hre_reform_passed = king_reform_the_armies
+	}
+}
+
+sk_not_centralization = {
+	custom_trigger_tooltip = {
+		tooltip = NOT_CENTRALIZATION_TT
+		NOT = { hre_reform_passed = king_implement_royal_court_of_justice }
+	}
+}
+
+sk_not_decentralization = {
+	custom_trigger_tooltip = {
+		tooltip = NOT_DECENTRALIZATION_TT
+		NOT = { hre_reform_passed = king_reform_the_armies }
 	}
 }

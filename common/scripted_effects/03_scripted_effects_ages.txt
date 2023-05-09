@@ -6,6 +6,21 @@ ages_effect_bonus = {
 	custom_tooltip = "ages_effect_tt"
 }
 
+new_age_on_action_effect = {
+	if = {
+		limit = {
+			current_age = age_of_fire
+		}
+		age_of_fire_nation_bonus_effect = yes
+	}
+	else_if = {
+		limit = {
+			current_age = age_of_rebellion
+		}
+		age_of_rebellion_nation_bonus_effect = yes
+	}
+}
+
 age_of_fire_nation_bonus_effect = {
 	Q06 = {
 		add_country_modifier = {

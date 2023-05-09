@@ -107,5 +107,5 @@ tags={
 }
 picture="image.jpg"
 version="1.0"
-supported_version="1.34.*.*"
+supported_version="1.35.*.*"
 remote_file_id="276456014"

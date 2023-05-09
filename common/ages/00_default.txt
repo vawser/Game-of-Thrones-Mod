@@ -38,9 +38,13 @@ age_of_fire = {
 					superregion = west_essos_superregion
 				}
 			}
-			custom_trigger_tooltip = {
-				tooltip = "CURRENTLY DISABLED"
-				always = no
+			government = republic
+			west_essos_superregion = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
 			}
 		}
 		obj_unite_the_dothraki_clans = {
@@ -49,9 +53,19 @@ age_of_fire = {
 					superregion = central_essos_superregion
 				}
 			}
+			culture = dothraki_culture
+			religion = great_stallion
 			custom_trigger_tooltip = {
-				tooltip = "CURRENTLY DISABLED"
-				always = no
+				tooltip = obj_unite_the_dothraki_clans_tooltip
+				NOT = {
+					calc_true_if = {
+						all_country = {
+							culture = dothraki_culture
+							religion = great_stallion
+						}
+						amount = 1
+					}
+				}
 			}
 		}
 		obj_emperor_of_the_yiti = {
@@ -316,8 +330,8 @@ age_of_fire = {
 				trade_efficiency = 0.2
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
 				add_treasury = 1000
+				ages_effect_bonus = { bonus_name = "" }
 			}
 			ai_will_do = {
 				factor = 100
@@ -421,18 +435,93 @@ age_of_rebellion = {
 			}
 			owns = 226
 		}
+		obj_successors_to_the_freehold = {
+			allow = {
+				capital_scope = {
+					superregion = west_essos_superregion
+				}
+			}
+			government = republic
+			west_essos_superregion = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		obj_unite_the_dothraki_clans = {
+			allow = {
+				capital_scope = {
+					superregion = central_essos_superregion
+				}
+			}
+			culture = dothraki_culture
+			religion = great_stallion
+			custom_trigger_tooltip = {
+				tooltip = obj_unite_the_dothraki_clans_tooltip
+				NOT = {
+					calc_true_if = {
+						all_country = {
+							culture = dothraki_culture
+							religion = great_stallion
+						}
+						amount = 1
+					}
+				}
+			}
+		}
 		obj_emperor_of_the_yiti = {
 			allow = {
-				NOT = {
-					capital_scope = {
-						continent = westeros
-					}
+				capital_scope = {
+					superregion = far_essos_superregion
 				}
 			}
 			is_emperor_of_china = yes
 			imperial_mandate = 50
 		}
-		obj_age_3_the_greatest_house = {
+		obj_total_control = {
+			absolutism = 80
+			exclude_from_progress = {
+				NOT = {
+					num_of_estate_privileges = {
+						estate = estate_church
+						value = 3
+					}
+				}
+				NOT = {
+					num_of_estate_privileges = {
+						estate = estate_nobles
+						value = 3
+					}
+				}
+				NOT = {
+					num_of_estate_privileges = {
+						estate = estate_merchants
+						value = 3
+					}
+				}
+				NOT = {
+					num_of_estate_privileges = {
+						estate = estate_commoners
+						value = 3
+					}
+				}
+				NOT = {
+					num_of_estate_privileges = {
+						estate = estate_adventurers
+						value = 3
+					}
+				}
+				NOT = {
+					num_of_estate_privileges = {
+						estate = estate_tribes
+						value = 3
+					}
+				}
+			}
+		}
+		obj_the_greatest_house = {
 			allow = {
 				capital_scope = {
 					continent = westeros
@@ -448,182 +537,304 @@ age_of_rebellion = {
 				culture = stone_dornish
 				culture = salt_dornish
 			}
-			has_reform = great_house_reform
-			monthly_income = CRW
-			army_size = CRW
-			navy_size = CRW
+			westeros_government_great_house = yes
+			monthly_income = event_target:IronThroneKing
+			army_size = event_target:IronThroneKing
+			navy_size = event_target:IronThroneKing
 		}
-		obj_age_3_unite_the_wildlings = {
+		obj_unite_the_wildlings = {
 			allow = {
 				capital_scope = { region = region_beyond_the_wall }
 			}
 			culture = free_folk
 			government_rank = 2
 			custom_trigger_tooltip = {
-				tooltip = obj_age_3_unite_the_wildlings.tt
+				tooltip = obj_unite_the_wildlings_tooltip
 				NOT = {
 					calc_true_if = {
 						all_country = {
 							culture = free_folk
-							religion = old_gods
 						}
 						amount = 1
 					}
 				}
 			}
 		}
-		obj_age_3_dominate_the_free_cities = {
+		obj_trading_economy = {
 			allow = {
-				capital_scope = { superregion = west_essos_superregion }
+				capital_scope = { NOT = { continent = westeros } }
 			}
-			government = republic
-			OR = {
-				all_country = {
-					capital_scope = { superregion = west_essos_superregion }
-					is_subject_of = ROOT
-				}
-				owns_all_provinces = {
-					superregion = west_essos_superregion
-				}
+			trade_income_percentage = 0.5
+		}
+		obj_masterful_counsel = {
+			AND = {
+				has_lvl_3_adm_advisor = yes
+				has_lvl_3_dip_advisor = yes
+				has_lvl_3_mil_advisor = yes
 			}
 		}
-		obj_age_3_unite_the_dothraki = {
-			allow = {
-				capital_scope = { superregion = central_essos_superregion }
-			}
-			culture = dothraki_culture
-			religion = great_stallion
-			custom_trigger_tooltip = {
-				tooltip = obj_age_3_unite_the_dothraki.tt
-				NOT = {
-					calc_true_if = {
-						all_country = {
-							culture = dothraki_culture
-							religion = great_stallion
-						}
-						amount = 1
-					}
-				}
+		obj_bigger_army = {
+			army_size_percentage = 0.90
+			exclude_from_progress = {
+				land_forcelimit = 100
 			}
 		}
-		obj_age_3_ = {
-			allow = {
-				capital_scope = { continent = essos }
-			}
+		obj_one_culture_one_nation = {
+			has_unified_culture_group = yes
 		}
-		obj_age_3_secure_iron = {
-			OR = {
-				production_leader = {
-					trade_goods = iron
-				}
-				production_leader = {
-					trade_goods = naval_supplies
-				}
-			}
-		}
-		obj_absolutist_government = {
-			absolutism = 100
-		}
-		obj_age_3_colossal_army = {
-			land_forcelimit = 60
-			army_size_percentage = 0.8
-		}
-		obj_age_3_colossal_navy = {
-			naval_forcelimit = 60
-			navy_size_percentage = 0.8
-		}
-		obj_age_3_inspirational_leader = {
+		obj_legendary_warrior = {
 			has_commanding_three_star = yes
 		}
-	}		
+		obj_power_of_glory = {
+			power_projection = 50
+		}
+	}
 
 	abilities = {
-		age_3_development_focus = {
+		ab_divine_right = {
 			modifier = {
-				development_cost = -0.1
+				country_military_power = 1
+				legitimacy = 0.50
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
 			}
 			ai_will_do = {
-				factor = 10
+				factor = 100
 			}
 		}
-		age_3_justified_annexation = {
-			modifier = {
-				ae_impact = -0.1
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_3_prestigeous_traditions = {
-			modifier = {
-				prestige_decay = -0.01
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_3_subdued_people = {
+		ab_court_bailiffs = {
 			modifier = {
 				global_unrest = -2
 			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_3_expanded_trade_networks = {
-			modifier = {
-				global_trade_power = 0.2
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
 			}
 			ai_will_do = {
 				factor = 10
 			}
 		}
-		age_3_military_drills = {
+		ab_development_focus = {
 			modifier = {
-				army_tradition = 1.0
+				development_cost = -0.1
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
 			}
 			ai_will_do = {
 				factor = 10
 			}
 		}
-		age_3_homeland_knowledge = {
+		ab_justified_wars = {
 			modifier = {
-				attack_bonus_in_capital_terrain = 1
+				unjustified_demands = -0.125
 			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		age_3_administrative_efficiency = {
-			modifier = {
-				administrative_efficiency = 0.1
+			effect = {
+				ages_effect_bonus = { bonus_name = "global_empire" }
 			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
-		age_3_consistent_taxation = {
+		ab_loyal_subjects = {
+			modifier = {
+				reduced_liberty_desire = 10
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 100
+				modifier = {
+					factor = 0
+					NOT = {
+						any_subject_country = {
+							liberty_desire = 10
+						}
+					}
+				}
+			}
+		}
+		ab_intercontinental_trading = {
+			modifier = {
+				global_own_trade_power = 0.025
+				placed_merchant_power = 5
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_professional_privateers = {
+			modifier = {
+				privateer_efficiency = 0.20
+				blockade_force_required = 0.50
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_improved_logistics = {
+			modifier = {
+				reinforce_speed = 0.33
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_dedicated_bureaucracy = {
+			modifier = {
+				governing_capacity_modifier = 0.10
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_financial_obligations = {
 			modifier = {
 				global_tax_modifier = 0.15
+				vassal_income = 0.20
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
 			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
-		age_3_diplomatic_charisma = {
+		ab_diplomatic_charisma = {
 			modifier = {
 				diplomatic_reputation = 2
 			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
-		age_3_self_governing_settlements = {
+		ab_gold_mines = {
 			modifier = {
-				ignore_coring_distance = yes
+				monthly_gold_inflation_modifier = -0.50
+				gold_depletion_chance_modifier = -0.10
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
 			}
 			ai_will_do = {
 				factor = 100
+			}
+		}
+		ab_organized_levies = {
+			allow = {
+				capital_scope = {
+					continent = westeros
+				}
+			}
+			modifier = {
+				land_morale = 0.05
+				global_manpower_modifier = 0.125
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		ab_legendary_companies = {
+			allow = {
+				capital_scope = {
+					NOT = { continent = westeros }
+				}
+			}
+			modifier = {
+				mercenary_discipline = 0.05
+				mercenary_cost = -0.20
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		ab_yitish_trade = {
+			allow = {
+				765 = {
+					has_trader = ROOT
+				}
+			}
+			modifier = {
+				trade_efficiency = 0.2
+			}
+			effect = {
+				add_treasury = 1000
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_braavosi_banking = {
+			allow = {
+				any_ally = {
+					tag = U25
+				}
+			}
+			modifier = {
+				interest = -2
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_slaver_bay_slaves = {
+			allow = {
+				has_discovered = 613
+				has_discovered = 610
+				has_discovered = 606
+				has_country_modifier = slavery_permitted
+			}
+			modifier = {
+				production_efficiency = 0.15
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_study_cult = {
+			allow = {
+				any_owned_province = {
+					religion = cult_of_shadows
+				}
+			}
+			modifier = {
+				religious_unity = -0.1
+				yearly_innovativeness = 0.2
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "" }
+			}
+			ai_will_do = {
+				factor = 50
 			}
 		}
 	}

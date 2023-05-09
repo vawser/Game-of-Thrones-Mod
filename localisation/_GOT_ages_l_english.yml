@@ -1,6 +1,19 @@
 ﻿l_english:
  ###
  ages_effect_tt: "Effects received until the end of this age:"
+
+ ### FOR ALL AGES ###
+ # Objectives
+ obj_king_in_westeros: "Rightful King in Westeros"
+ obj_king_in_westeros_desc: "Rule the Seven Kingdoms as 'King of the Andals and the First Men' and own King's Landing."
+ obj_successors_to_the_freehold: "Successors to the Valyrian Freehold"
+ obj_successors_to_the_freehold_desc: "Conquer the provinces of West Essos and claim your place as the successor to the Valyrian Freehold."
+ obj_unite_the_dothraki_clans: "The Dothraki Horde"
+ obj_unite_the_dothraki_clans_desc: "Unify all the Dothraki khalasars under one banner."
+ obj_unite_the_dothraki_clans_tooltip: "No country with the following attributes exist:\n   Culture is §YDothraki§!\n   Religion is §YGreat Stallion§!"
+ obj_emperor_of_the_yiti: "Emperor of the YiTi"
+ obj_emperor_of_the_yiti_desc: "Hold the mantle of the YiTish Empire."
+
  #-----------------------------------
  # Age of Fire
  #-----------------------------------
@@ -13,14 +26,6 @@
  age_of_fire_obj_desc: "§YObjective Fulfillment Bonus§!\nCompleting certain objectives will grant you additional bonus modifiers to your country. Conferred bonuses will be active as long as the objective is fulfilled.\n\n§YCity of Wonders§!: §G+12.5%§! National Tax Modifier\n§YHouse of the Dragon§!: §G+1§! Diplomatic Reputation\n§YMerchant Empire§!: §G+10%§! Goods Produced Modifier\n§YWar of Rivals§!: §G-0.05§! Monthly War Exhaustion\n\nNote: The bonuses shift at the beginning of a new age."
 
  # Objectives
- obj_king_in_westeros: "Rightful King in Westeros"
- obj_king_in_westeros_desc: "Rule the Seven Kingdoms as 'King of the Andals and the First Men' and own King's Landing."
- obj_successors_to_the_freehold: "Successors to the Valyrian Freehold"
- obj_successors_to_the_freehold_desc: "Conquer the provinces of West Essos and claim your place as the successor to the Valyrian Freehold."
- obj_unite_the_dothraki_clans: "The Dothraki Horde"
- obj_unite_the_dothraki_clans_desc: "Unify all the Dothraki khalasars under one banner."
- obj_emperor_of_the_yiti: "Emperor of the YiTi"
- obj_emperor_of_the_yiti_desc: "Hold the mantle of the YiTish Empire."
  obj_city_of_wonders: "City of Wonders"
  obj_city_of_wonders_desc: "Own and control a core province with at least §Y30§! development."
  obj_city_of_wonders_tooltip: "Cored Province with §Y30§! development\n"
@@ -67,85 +72,33 @@
  age_of_rebellion: "Age of Rebellion" 
  age_of_rebellion_desc: "As the nobility and common folk alike begin to tire from decades of tyrannical rule, people throughout §YWesteros§! and §YEssos§! are taking up arms against their lieges to either install a different monarch or push them out entirely."
  age_of_rebellion_ico_desc: "§YAge of Rebellion§!\nAs the nobility and common folk alike begin to tire from decades of tyrannical rule, people throughout §YWesteros§! and §YEssos§! are taking up arms against their lieges to either install a different monarch or push them out entirely.\n----------\n(Enables the Religious Conflicts.)\n(Enables the Absolutism mechanics.)\nThis age starts when the year is 281."
- age_of_rebellion_pic_desc: "§YRhaegar Targaryen§! dueling §YRobert Baratheon§!, 283 A.C.\n-------------------------------------------------------------------\nFor generations, §YHouse Targaryen§! has ruled over the Seven Kingdoms uninterrupted. Beginning with the reign of Aegon Targaryen, the Valyrian dragons kept the Targaryen kings in power and all threats to their dynastic throne were easily wiped away.\n\nThe reign of §YAerys II Targaryen§!, dubbed '§Ythe Mad King§!' for his growing insanity, would culminate in the destruction of the Targaryen. The §YWar of the Usurper§!, or more simply known as §YRobert's Rebellion§!, was the result of negligence House Targaryen showed to their subjects. The turning point of the war would be the §YBattle of the Trident§!, where §YRhaegar Targaryen§! faced off against §YRobert Baratheon§!, the latter successfully striking down the former and eventually seizing the Iron Throne for himself."
- loc_legend_nb_text_rebellion: "----- §YNation Bonuses§! -----\nOttomans: §G+33% Siege§!\nPortugal: §G+50 Settlers§!\nDenmark: §G-30% Liberty Desire§!\nVenice: §GShip Trade Power +50%§!\nAragon: §GProvincial Trade Power +50%§!\nCastille: §GMissionary Strength +3%§!\nDelhi: §G-10% Aggressive Expansion§!\nEthiopia: §G-0.50 Yearly Inflation§!\nFlorence: §G-7.5% Idea Cost§!\nHungary: §G+35% Fort Defense§!\nMalacca/Malaya: §GDomestic Trade Power +50%§!\nMing: §G-20% Construction Cost§!\nVijayanagar: §G-50% Leader Cost§!\nSonghai: §G-10% Technology Cost§!\n\nThese bonuses are automatically applied at the start of the age and are automatically removed at the end of the age."
+ age_of_rebellion_pic_desc: "§YRhaegar Targaryen§! dueling §YRobert Baratheon§!, 283 A.C.\n-------------------------------------------------------------------\nFor generations, §YHouse Targaryen§! has ruled over the Seven Kingdoms uninterrupted. Beginning with the reign of Aegon Targaryen, the Valyrian dragons kept the Targaryen kings in power and all threats to their dynastic throne were easily wiped away.\n\nThe reign of §YAerys II Targaryen§!, dubbed '§Ythe Mad King§!' for his growing insanity, would culminate in the destruction of the Targaryens. The §YWar of the Usurper§!, or more simply known as §YRobert's Rebellion§!, was the result of negligence House Targaryen showed to their subjects. The turning point of the war would be the §YBattle of the Trident§!, where §YRhaegar Targaryen§! faced off against §YRobert Baratheon§!, the latter successfully striking down the former and eventually seizing the Iron Throne for himself."
+ loc_legend_nb_text_rebellion: "§YAge Nation Bonus§!\nDepending on the current age, countries will receive nation-specific modifiers until the end of that particular age. Bonuses vary and not every country will have them.\n\n§YThe Night's Watch§!: §G-15%§! Land Maintenance Modifier\n\nThese bonuses are automatically applied at the start of the age and are automatically removed at the end of the age."
  loc_md_rebellion_bonus_info: "§YObjective Fulfillment Bonus§!\nCompleting certain objectives will grant you additional bonus modifiers to your country. Conferred bonuses will be active as long as the objective is fulfilled.\n\n  \n\nNote: The bonuses shift at the beginning of a new age."
  
  # Objectives
- obj_age_3_the_iron_throne: "Rightful King in Westeros"
- obj_age_3_the_iron_throne_desc: "Rule the Seven Kingdoms as 'King of the Andals, the Rhoynar, and the First Men' and own King's Landing."
-
- obj_age_3_the_greatest_house: "The Greatest House"
- obj_age_3_the_greatest_house_desc: "As a §YGreat House§! of the Westeros region, have a greater economy and military than the Crownlands."
-
- obj_age_3_unite_the_wildlings: "King Beyond the Wall"
- obj_age_3_unite_the_wildlings_desc: "Unite all the Wildlings beyond the Wall under one clan and crown yourself their King."
- obj_age_3_unite_the_wildlings.tt: "No country with the following attributes exist:\n   Culture is §YWildling§!\n   Religion is §YOld Gods§!"
-
- obj_age_3_dominate_the_free_cities: "Dominate the Free Cities"
- obj_age_3_dominate_the_free_cities_desc: ""
-
- obj_age_3_unite_the_dothraki: "Unite the Dothraki"
- obj_age_3_unite_the_dothraki_desc: "Be the sole Dothraki nation and own all Dothrai culture provinces."
- obj_age_3_unite_the_dothraki.tt: "No country with the following attributes exist:\n   Culture is §YDothraki§!\n   Religion is §YGreat Stallion§!"
-
- obj_age_3_masterful_counsel: "The Small Council"
- obj_age_3_masterful_counsel_desc: "Employ three Level 3 advisors at your Court."
-
- obj_age_3_secure_iron: "Iron Monopoly"
- obj_age_3_secure_iron_desc: "Gain the trade bonus in Iron or Naval Supplies."
-
- obj_age_3_prestigious_capital: "Prestigious Capital"
- obj_age_3_prestigious_capital_desc: "Have a capital with your religion and culture with 50 development and zero devastation."
-
- obj_absolutist_government: "Absolutist Government"
- obj_absolutist_government_desc: "Obtain 100 Absolutism as a Republic government."
-
- obj_age_3_absolute_rule: "Absolute Rule"
- obj_age_3_absolute_rule_desc: "Obtain 80 Absolutism."
-
- obj_age_3_colossal_army: "Colossal Army"
- obj_age_3_colossal_army_desc: "Have 60 Land Forcelimit and have 80% of your land forcelimit used."
-
- obj_age_3_colossal_navy: "Colossal Army"
- obj_age_3_colossal_navy_desc: "Have 60 Naval Forcelimit and have 80% of your naval forcelimit used."
-
- obj_age_3_inspirational_leader: "Inspirational Leader"
- obj_age_3_inspirational_leader_desc: "Have a 3 star leader in charge of an army."
+ obj_total_control: "Total Control"
+ obj_total_control_desc: "Obtain §Y80§! Absolutism and have no more than §Ytwo§! estate privileges granted to every estate."
+ obj_the_greatest_house: "The Greatest House"
+ obj_the_greatest_house_desc: "As a Great House of the Westeros region, have a greater economy and military than the Crownlands."
+ obj_unite_the_wildlings: "King Beyond the Wall"
+ obj_unite_the_wildlings_desc: "Unite all the Wildling clans north of the Wall and crown yourself their rightful king."
+ obj_unite_the_wildlings_tooltip: "No country with §YWilding§! as the Primary Culture exists."
+ obj_trading_economy: "Trading Economy"
+ obj_trading_economy_desc: "Have §Y50%§! or more of your income generated from trade."
+ obj_masterful_counsel: "Masterful Counsel"
+ obj_masterful_counsel_desc: "Employ three Level 3 or higher advisors at your Court."
+ obj_bigger_army: "That's A Bigger Army"
+ obj_bigger_army_desc: "Have a land force limit of at least §Y100 regiments§! and field an army up to at least §Y90%§! of your country's limit."
+ obj_one_culture_one_nation: "One Culture, One Nation"
+ obj_one_culture_one_nation_desc: "Own all provinces of your culture group."
+ obj_legendary_warrior: "Legendary Warrior"
+ obj_legendary_warrior_desc: "Have a §Y3-star§! leader in charge of an Army or Navy."
+ obj_power_of_glory: "Power of Glory"
+ obj_power_of_glory_desc: "Have a Power Projection of at least §Y50§!."
  
  # Abilities
- age_3_development_focus: "Development Focus"
- age_3_development_focus_desc: ""
  
- age_3_justified_annexation: "Justified Annexation"
- age_3_justified_annexation_desc: ""
- 
- age_3_prestigeous_traditions: "Prestigeous Traditions"
- age_3_prestigeous_traditions_desc: ""
- 
- age_3_subdued_people: "Subdued People"
- age_3_subdued_people_desc: ""
- 
- age_3_expanded_trade_networks: "Expanded Trade Networks"
- age_3_expanded_trade_networks_desc: ""
- 
- age_3_military_drills: "Military Drills"
- age_3_military_drills_desc: ""
- 
- age_3_homeland_knowledge: "Homeland Knowledge"
- age_3_homeland_knowledge_desc: ""
- 
- age_3_administrative_efficiency: "Administrative Efficiency"
- age_3_administrative_efficiency_desc: ""
- 
- age_3_consistent_taxation: "Consistent Taxation"
- age_3_consistent_taxation_desc: ""
- 
- age_3_diplomatic_charisma: "Diplomatic Charisma"
- age_3_diplomatic_charisma_desc: ""
- 
- age_3_self_governing_settlements: "Self-governing Settlements"
- age_3_self_governing_settlements_desc: ""
  
  #-----------------------------------
  # Age of Ice

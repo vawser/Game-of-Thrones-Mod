@@ -8,20 +8,17 @@ ages_effect_bonus = {
 
 new_age_on_action_effect = {
 	if = {
-		limit = {
-			current_age = age_of_fire
-		}
-		age_of_fire_nation_bonus_effect = yes
+		limit = { current_age = age_of_fire }
+		age_of_fire_add_nation_bonus_effect = yes
 	}
 	else_if = {
-		limit = {
-			current_age = age_of_rebellion
-		}
-		age_of_rebellion_nation_bonus_effect = yes
+		limit = { current_age = age_of_rebellion }
+		age_of_fire_remove_nation_bonus_effect = yes
+		age_of_rebellion_add_nation_bonus_effect = yes
 	}
 }
 
-age_of_fire_nation_bonus_effect = {
+age_of_fire_add_nation_bonus_effect = {
 	Q06 = {
 		add_country_modifier = {
 			name = "aof_thenn_bonus"
@@ -39,13 +36,6 @@ age_of_fire_nation_bonus_effect = {
 	F58 = {
 		add_country_modifier = {
 			name = "aof_hightower_bonus"
-			duration = -1
-			hidden = yes
-		}
-	}
-	A07 = {
-		add_country_modifier = {
-			name = "aof_baratheon_bonus"
 			duration = -1
 			hidden = yes
 		}
@@ -87,6 +77,58 @@ age_of_fire_nation_bonus_effect = {
 	}
 }
 
-age_of_rebellion_nation_bonus_effect = {
+age_of_fire_remove_nation_bonus_effect = {
+	Q06 = { remove_country_modifier = "aof_thenn_bonus" }
+	G29 = { remove_country_modifier = "aof_lefford_bonus" }
+	F58 = { remove_country_modifier = "aof_hightower_bonus" }
+	U87 = { remove_country_modifier = "aof_volantis_bonus"}
+	CHA = { remove_country_modifier = "aof_chakko_bonus" }
+	R19 = { remove_country_modifier = "aof_meereen_bonus" }
+	S08 = { remove_country_modifier = "aof_samyriana_bonus" }
+	R53 = { remove_country_modifier = "aof_faros_bonus" }
+}
 
+age_of_rebellion_add_nation_bonus_effect = {
+	A04 = {
+		add_country_modifier = {
+			name = "aor_arryn_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	A07 = {
+		add_country_modifier = {
+			name = "aor_baratheon_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	U92 = {
+		add_country_modifier = {
+			name = "aor_winter_keep_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	U25 = {
+		add_country_modifier = {
+			name = "aor_braavos_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	R23 = {
+		add_country_modifier = {
+			name = "aor_yunkai_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	A43 = {
+		add_country_modifier = {
+			name = "aor_velaryon_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
 }

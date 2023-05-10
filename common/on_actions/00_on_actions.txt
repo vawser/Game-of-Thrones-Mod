@@ -16,7 +16,7 @@ on_startup = {
 	# Assigning Age Nation Bonuses
 	if = {
 		limit = { current_age = age_of_fire }
-		age_of_fire_nation_bonus_effect = yes
+		age_of_fire_add_nation_bonus_effect = yes
 		#TBD Assinging each nation their proper age ability and remove it on on_new_age, add on abilities allowed, so you cant get the modifier twice
 		#R68 = {}
 		#U25 = {}
@@ -27,7 +27,7 @@ on_startup = {
 	}
 	else_if = {
 		limit = { current_age = age_of_rebellion }
-		age_of_rebellion_nation_bonus_effect = yes
+		age_of_rebellion_add_nation_bonus_effect = yes
 	}
 	
 	events = {

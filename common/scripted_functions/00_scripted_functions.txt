@@ -176,9 +176,23 @@ can_have_colonial_nations = {
 
 # Called by can_add_province_to_hre
 is_possible_hre_province = {
-	
+	condition = {
+		tooltip = "APH_ONLY_WESTEROS"
+		potential = {
+		}
+		allow = {
+			continent = westeros
+		}
+	}
 }
 
 will_demand_annexation = {
-	
+	condition = {
+		potential = {
+			is_elector = yes
+		}
+		allow = {
+			NOT = { hre_reform_passed = king_enforce_the_kings_peace }
+		}
+	}
 }

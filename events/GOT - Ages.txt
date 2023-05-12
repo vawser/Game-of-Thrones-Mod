@@ -1,0 +1,1882 @@
+namespace = GOT_AGES
+
+country_event = { #Give a different bonus if you reach max level
+	id = GOT_AGES.1
+	title = "GOT_AGES.1.t"
+	desc = "GOT_AGES.1.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "GOT_AGES.1.t1"
+		add_splendor = 200
+	}
+}
+
+country_event = { #Upgrade National Unrest
+	id = GOT_AGES.2
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_national_unrest_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_national_unrest_4
+			}
+			remove_country_modifier = ab_national_unrest_4
+			add_country_modifier = {
+				name = ab_national_unrest_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_national_unrest_3
+			}
+			remove_country_modifier = ab_national_unrest_3
+			add_country_modifier = {
+				name = ab_national_unrest_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_national_unrest_2
+			}
+			remove_country_modifier = ab_national_unrest_2
+			add_country_modifier = {
+				name = ab_national_unrest_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_national_unrest_1
+			}
+			remove_country_modifier = ab_national_unrest_1
+			add_country_modifier = {
+				name = ab_national_unrest_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_national_unrest_1 }
+				NOT = { has_country_modifier = ab_national_unrest_2 }
+				NOT = { has_country_modifier = ab_national_unrest_3 }
+				NOT = { has_country_modifier = ab_national_unrest_4 }
+				NOT = { has_country_modifier = ab_national_unrest_5 }
+			}
+			add_country_modifier = {
+				name = ab_national_unrest_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade National Unrest
+	id = GOT_AGES.3
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_national_unrest_1
+			}
+			remove_country_modifier = ab_national_unrest_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_national_unrest_2
+			}
+			remove_country_modifier = ab_national_unrest_2
+			add_country_modifier = {
+				name = ab_national_unrest_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_national_unrest_3
+			}
+			remove_country_modifier = ab_national_unrest_3
+			add_country_modifier = {
+				name = ab_national_unrest_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_national_unrest_4
+			}
+			remove_country_modifier = ab_national_unrest_4
+			add_country_modifier = {
+				name = ab_national_unrest_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_national_unrest_5
+			}
+			remove_country_modifier = ab_national_unrest_5
+			add_country_modifier = {
+				name = ab_national_unrest_4
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Upgrade Dev Cost
+	id = GOT_AGES.4
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_dev_cost_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_dev_cost_4
+			}
+			remove_country_modifier = ab_dev_cost_4
+			add_country_modifier = {
+				name = ab_dev_cost_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_dev_cost_3
+			}
+			remove_country_modifier = ab_dev_cost_3
+			add_country_modifier = {
+				name = ab_dev_cost_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_dev_cost_2
+			}
+			remove_country_modifier = ab_dev_cost_2
+			add_country_modifier = {
+				name = ab_dev_cost_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_dev_cost_1
+			}
+			remove_country_modifier = ab_dev_cost_1
+			add_country_modifier = {
+				name = ab_dev_cost_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_dev_cost_1 }
+				NOT = { has_country_modifier = ab_dev_cost_2 }
+				NOT = { has_country_modifier = ab_dev_cost_3 }
+				NOT = { has_country_modifier = ab_dev_cost_4 }
+				NOT = { has_country_modifier = ab_dev_cost_5 }
+			}
+			add_country_modifier = {
+				name = ab_dev_cost_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade Dev Cost
+	id = GOT_AGES.5
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_dev_cost_1
+			}
+			remove_country_modifier = ab_dev_cost_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_dev_cost_2
+			}
+			remove_country_modifier = ab_dev_cost_2
+			add_country_modifier = {
+				name = ab_dev_cost_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_dev_cost_3
+			}
+			remove_country_modifier = ab_dev_cost_3
+			add_country_modifier = {
+				name = ab_dev_cost_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_dev_cost_4
+			}
+			remove_country_modifier = ab_dev_cost_4
+			add_country_modifier = {
+				name = ab_dev_cost_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_dev_cost_5
+			}
+			remove_country_modifier = ab_dev_cost_5
+			add_country_modifier = {
+				name = ab_dev_cost_4
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Upgrade Tax Modifier
+	id = GOT_AGES.6
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_tax_modifier_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_tax_modifier_4
+			}
+			remove_country_modifier = ab_tax_modifier_4
+			add_country_modifier = {
+				name = ab_tax_modifier_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_tax_modifier_3
+			}
+			remove_country_modifier = ab_tax_modifier_3
+			add_country_modifier = {
+				name = ab_tax_modifier_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_tax_modifier_2
+			}
+			remove_country_modifier = ab_tax_modifier_2
+			add_country_modifier = {
+				name = ab_tax_modifier_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_tax_modifier_1
+			}
+			remove_country_modifier = ab_tax_modifier_1
+			add_country_modifier = {
+				name = ab_tax_modifier_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_tax_modifier_1 }
+				NOT = { has_country_modifier = ab_tax_modifier_2 }
+				NOT = { has_country_modifier = ab_tax_modifier_3 }
+				NOT = { has_country_modifier = ab_tax_modifier_4 }
+				NOT = { has_country_modifier = ab_tax_modifier_5 }
+			}
+			add_country_modifier = {
+				name = ab_tax_modifier_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade Tax Modifier
+	id = GOT_AGES.7
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_tax_modifier_1
+			}
+			remove_country_modifier = ab_tax_modifier_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_tax_modifier_2
+			}
+			remove_country_modifier = ab_tax_modifier_2
+			add_country_modifier = {
+				name = ab_tax_modifier_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_tax_modifier_3
+			}
+			remove_country_modifier = ab_tax_modifier_3
+			add_country_modifier = {
+				name = ab_tax_modifier_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_tax_modifier_4
+			}
+			remove_country_modifier = ab_tax_modifier_4
+			add_country_modifier = {
+				name = ab_tax_modifier_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_tax_modifier_5
+			}
+			remove_country_modifier = ab_tax_modifier_5
+			add_country_modifier = {
+				name = ab_tax_modifier_4
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Upgrade Gov Cap
+	id = GOT_AGES.8
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_gov_cap_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_gov_cap_4
+			}
+			remove_country_modifier = ab_gov_cap_4
+			add_country_modifier = {
+				name = ab_gov_cap_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_gov_cap_3
+			}
+			remove_country_modifier = ab_gov_cap_3
+			add_country_modifier = {
+				name = ab_gov_cap_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_gov_cap_2
+			}
+			remove_country_modifier = ab_gov_cap_2
+			add_country_modifier = {
+				name = ab_gov_cap_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_gov_cap_1
+			}
+			remove_country_modifier = ab_gov_cap_1
+			add_country_modifier = {
+				name = ab_gov_cap_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_gov_cap_1 }
+				NOT = { has_country_modifier = ab_gov_cap_2 }
+				NOT = { has_country_modifier = ab_gov_cap_3 }
+				NOT = { has_country_modifier = ab_gov_cap_4 }
+				NOT = { has_country_modifier = ab_gov_cap_5 }
+			}
+			add_country_modifier = {
+				name = ab_gov_cap_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade Gov Cap
+	id = GOT_AGES.9
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_gov_cap_1
+			}
+			remove_country_modifier = ab_gov_cap_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_gov_cap_2
+			}
+			remove_country_modifier = ab_gov_cap_2
+			add_country_modifier = {
+				name = ab_gov_cap_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_gov_cap_3
+			}
+			remove_country_modifier = ab_gov_cap_3
+			add_country_modifier = {
+				name = ab_gov_cap_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_gov_cap_4
+			}
+			remove_country_modifier = ab_gov_cap_4
+			add_country_modifier = {
+				name = ab_gov_cap_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_gov_cap_5
+			}
+			remove_country_modifier = ab_gov_cap_5
+			add_country_modifier = {
+				name = ab_gov_cap_4
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Upgrade AE Impact
+	id = GOT_AGES.10
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_ae_impact_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_ae_impact_4
+			}
+			remove_country_modifier = ab_ae_impact_4
+			add_country_modifier = {
+				name = ab_ae_impact_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_ae_impact_3
+			}
+			remove_country_modifier = ab_ae_impact_3
+			add_country_modifier = {
+				name = ab_ae_impact_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_ae_impact_2
+			}
+			remove_country_modifier = ab_ae_impact_2
+			add_country_modifier = {
+				name = ab_ae_impact_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_ae_impact_1
+			}
+			remove_country_modifier = ab_ae_impact_1
+			add_country_modifier = {
+				name = ab_ae_impact_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_ae_impact_1 }
+				NOT = { has_country_modifier = ab_ae_impact_2 }
+				NOT = { has_country_modifier = ab_ae_impact_3 }
+				NOT = { has_country_modifier = ab_ae_impact_4 }
+				NOT = { has_country_modifier = ab_ae_impact_5 }
+			}
+			add_country_modifier = {
+				name = ab_ae_impact_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade AE Impact
+	id = GOT_AGES.11
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_ae_impact_1
+			}
+			remove_country_modifier = ab_ae_impact_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_ae_impact_2
+			}
+			remove_country_modifier = ab_ae_impact_2
+			add_country_modifier = {
+				name = ab_ae_impact_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_ae_impact_3
+			}
+			remove_country_modifier = ab_ae_impact_3
+			add_country_modifier = {
+				name = ab_ae_impact_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_ae_impact_4
+			}
+			remove_country_modifier = ab_ae_impact_4
+			add_country_modifier = {
+				name = ab_ae_impact_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_ae_impact_5
+			}
+			remove_country_modifier = ab_ae_impact_5
+			add_country_modifier = {
+				name = ab_ae_impact_4
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Upgrade Liberty Desire
+	id = GOT_AGES.12
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_liberty_desire_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_liberty_desire_4
+			}
+			remove_country_modifier = ab_liberty_desire_4
+			add_country_modifier = {
+				name = ab_liberty_desire_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_liberty_desire_3
+			}
+			remove_country_modifier = ab_liberty_desire_3
+			add_country_modifier = {
+				name = ab_liberty_desire_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_liberty_desire_2
+			}
+			remove_country_modifier = ab_liberty_desire_2
+			add_country_modifier = {
+				name = ab_liberty_desire_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_liberty_desire_1
+			}
+			remove_country_modifier = ab_liberty_desire_1
+			add_country_modifier = {
+				name = ab_liberty_desire_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_liberty_desire_1 }
+				NOT = { has_country_modifier = ab_liberty_desire_2 }
+				NOT = { has_country_modifier = ab_liberty_desire_3 }
+				NOT = { has_country_modifier = ab_liberty_desire_4 }
+				NOT = { has_country_modifier = ab_liberty_desire_5 }
+			}
+			add_country_modifier = {
+				name = ab_liberty_desire_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade Liberty Desire
+	id = GOT_AGES.13
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_liberty_desire_1
+			}
+			remove_country_modifier = ab_liberty_desire_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_liberty_desire_2
+			}
+			remove_country_modifier = ab_liberty_desire_2
+			add_country_modifier = {
+				name = ab_liberty_desire_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_liberty_desire_3
+			}
+			remove_country_modifier = ab_liberty_desire_3
+			add_country_modifier = {
+				name = ab_liberty_desire_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_liberty_desire_4
+			}
+			remove_country_modifier = ab_liberty_desire_4
+			add_country_modifier = {
+				name = ab_liberty_desire_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_liberty_desire_5
+			}
+			remove_country_modifier = ab_liberty_desire_5
+			add_country_modifier = {
+				name = ab_liberty_desire_4
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Upgrade Trade Power
+	id = GOT_AGES.14
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_trade_power_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_trade_power_4
+			}
+			remove_country_modifier = ab_trade_power_4
+			add_country_modifier = {
+				name = ab_trade_power_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_trade_power_3
+			}
+			remove_country_modifier = ab_trade_power_3
+			add_country_modifier = {
+				name = ab_trade_power_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_trade_power_2
+			}
+			remove_country_modifier = ab_trade_power_2
+			add_country_modifier = {
+				name = ab_trade_power_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_trade_power_1
+			}
+			remove_country_modifier = ab_trade_power_1
+			add_country_modifier = {
+				name = ab_trade_power_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_trade_power_1 }
+				NOT = { has_country_modifier = ab_trade_power_2 }
+				NOT = { has_country_modifier = ab_trade_power_3 }
+				NOT = { has_country_modifier = ab_trade_power_4 }
+				NOT = { has_country_modifier = ab_trade_power_5 }
+			}
+			add_country_modifier = {
+				name = ab_trade_power_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade Trade Power
+	id = GOT_AGES.15
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_trade_power_1
+			}
+			remove_country_modifier = ab_trade_power_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_trade_power_2
+			}
+			remove_country_modifier = ab_trade_power_2
+			add_country_modifier = {
+				name = ab_trade_power_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_trade_power_3
+			}
+			remove_country_modifier = ab_trade_power_3
+			add_country_modifier = {
+				name = ab_trade_power_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_trade_power_4
+			}
+			remove_country_modifier = ab_trade_power_4
+			add_country_modifier = {
+				name = ab_trade_power_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_trade_power_5
+			}
+			remove_country_modifier = ab_trade_power_5
+			add_country_modifier = {
+				name = ab_trade_power_4
+				duration = -1
+			}
+		}
+	}
+}
+
+#GOT_AGES.16 GOT_AGES.17 Reserved for Diplo Rep #TBD
+
+country_event = { #Upgrade Morale
+	id = GOT_AGES.18
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_morale_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_morale_4
+			}
+			remove_country_modifier = ab_morale_4
+			add_country_modifier = {
+				name = ab_morale_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_morale_3
+			}
+			remove_country_modifier = ab_morale_3
+			add_country_modifier = {
+				name = ab_morale_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_morale_2
+			}
+			remove_country_modifier = ab_morale_2
+			add_country_modifier = {
+				name = ab_morale_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_morale_1
+			}
+			remove_country_modifier = ab_morale_1
+			add_country_modifier = {
+				name = ab_morale_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_morale_1 }
+				NOT = { has_country_modifier = ab_morale_2 }
+				NOT = { has_country_modifier = ab_morale_3 }
+				NOT = { has_country_modifier = ab_morale_4 }
+				NOT = { has_country_modifier = ab_morale_5 }
+			}
+			add_country_modifier = {
+				name = ab_morale_1
+				duration = -1
+			}
+		}
+	}
+}
+
+#
+
+country_event = { #Degrade Morale
+	id = GOT_AGES.19
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_morale_1
+			}
+			remove_country_modifier = ab_morale_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_morale_2
+			}
+			remove_country_modifier = ab_morale_2
+			add_country_modifier = {
+				name = ab_morale_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_morale_3
+			}
+			remove_country_modifier = ab_morale_3
+			add_country_modifier = {
+				name = ab_morale_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_morale_4
+			}
+			remove_country_modifier = ab_morale_4
+			add_country_modifier = {
+				name = ab_morale_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_morale_5
+			}
+			remove_country_modifier = ab_morale_5
+			add_country_modifier = {
+				name = ab_morale_4
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Upgrade Logistics
+	id = GOT_AGES.20
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_logistics_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_logistics_4
+			}
+			remove_country_modifier = ab_logistics_4
+			add_country_modifier = {
+				name = ab_logistics_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_logistics_3
+			}
+			remove_country_modifier = ab_logistics_3
+			add_country_modifier = {
+				name = ab_logistics_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_logistics_2
+			}
+			remove_country_modifier = ab_logistics_2
+			add_country_modifier = {
+				name = ab_logistics_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_logistics_1
+			}
+			remove_country_modifier = ab_logistics_1
+			add_country_modifier = {
+				name = ab_logistics_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_logistics_1 }
+				NOT = { has_country_modifier = ab_logistics_2 }
+				NOT = { has_country_modifier = ab_logistics_3 }
+				NOT = { has_country_modifier = ab_logistics_4 }
+				NOT = { has_country_modifier = ab_logistics_5 }
+			}
+			add_country_modifier = {
+				name = ab_logistics_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade Logistics
+	id = GOT_AGES.21
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_logistics_1
+			}
+			remove_country_modifier = ab_logistics_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_logistics_2
+			}
+			remove_country_modifier = ab_logistics_2
+			add_country_modifier = {
+				name = ab_logistics_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_logistics_3
+			}
+			remove_country_modifier = ab_logistics_3
+			add_country_modifier = {
+				name = ab_logistics_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_logistics_4
+			}
+			remove_country_modifier = ab_logistics_4
+			add_country_modifier = {
+				name = ab_logistics_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_logistics_5
+			}
+			remove_country_modifier = ab_logistics_5
+			add_country_modifier = {
+				name = ab_logistics_4
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Upgrade Mercenary
+	id = GOT_AGES.22
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_mercenary_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_mercenary_4
+			}
+			remove_country_modifier = ab_mercenary_4
+			add_country_modifier = {
+				name = ab_mercenary_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_mercenary_3
+			}
+			remove_country_modifier = ab_mercenary_3
+			add_country_modifier = {
+				name = ab_mercenary_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_mercenary_2
+			}
+			remove_country_modifier = ab_mercenary_2
+			add_country_modifier = {
+				name = ab_mercenary_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_mercenary_1
+			}
+			remove_country_modifier = ab_mercenary_1
+			add_country_modifier = {
+				name = ab_mercenary_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_mercenary_1 }
+				NOT = { has_country_modifier = ab_mercenary_2 }
+				NOT = { has_country_modifier = ab_mercenary_3 }
+				NOT = { has_country_modifier = ab_mercenary_4 }
+				NOT = { has_country_modifier = ab_mercenary_5 }
+			}
+			add_country_modifier = {
+				name = ab_mercenary_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade Mercenary
+	id = GOT_AGES.23
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_mercenary_1
+			}
+			remove_country_modifier = ab_mercenary_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_mercenary_2
+			}
+			remove_country_modifier = ab_mercenary_2
+			add_country_modifier = {
+				name = ab_mercenary_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_mercenary_3
+			}
+			remove_country_modifier = ab_mercenary_3
+			add_country_modifier = {
+				name = ab_mercenary_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_mercenary_4
+			}
+			remove_country_modifier = ab_mercenary_4
+			add_country_modifier = {
+				name = ab_mercenary_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_mercenary_5
+			}
+			remove_country_modifier = ab_mercenary_5
+			add_country_modifier = {
+				name = ab_mercenary_4
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Upgrade Pirates
+	id = GOT_AGES.24
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_pirates_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_pirates_4
+			}
+			remove_country_modifier = ab_pirates_4
+			add_country_modifier = {
+				name = ab_pirates_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_pirates_3
+			}
+			remove_country_modifier = ab_pirates_3
+			add_country_modifier = {
+				name = ab_pirates_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_pirates_2
+			}
+			remove_country_modifier = ab_pirates_2
+			add_country_modifier = {
+				name = ab_pirates_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_pirates_1
+			}
+			remove_country_modifier = ab_pirates_1
+			add_country_modifier = {
+				name = ab_pirates_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_pirates_1 }
+				NOT = { has_country_modifier = ab_pirates_2 }
+				NOT = { has_country_modifier = ab_pirates_3 }
+				NOT = { has_country_modifier = ab_pirates_4 }
+				NOT = { has_country_modifier = ab_pirates_5 }
+			}
+			add_country_modifier = {
+				name = ab_pirates_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade Pirates
+	id = GOT_AGES.25
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_pirates_1
+			}
+			remove_country_modifier = ab_pirates_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_pirates_2
+			}
+			remove_country_modifier = ab_pirates_2
+			add_country_modifier = {
+				name = ab_pirates_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_pirates_3
+			}
+			remove_country_modifier = ab_pirates_3
+			add_country_modifier = {
+				name = ab_pirates_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_pirates_4
+			}
+			remove_country_modifier = ab_pirates_4
+			add_country_modifier = {
+				name = ab_pirates_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_pirates_5
+			}
+			remove_country_modifier = ab_pirates_5
+			add_country_modifier = {
+				name = ab_pirates_4
+				duration = -1
+			}
+		}
+	}
+}
+
+#GOT_AGES.26 GOT_AGES.27 Reserved for Dragons #TBD
+
+country_event = { #Upgrade Banking
+	id = GOT_AGES.28
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_banking_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_banking_4
+			}
+			remove_country_modifier = ab_banking_4
+			add_country_modifier = {
+				name = ab_banking_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_banking_3
+			}
+			remove_country_modifier = ab_banking_3
+			add_country_modifier = {
+				name = ab_banking_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_banking_2
+			}
+			remove_country_modifier = ab_banking_2
+			add_country_modifier = {
+				name = ab_banking_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_banking_1
+			}
+			remove_country_modifier = ab_banking_1
+			add_country_modifier = {
+				name = ab_banking_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_banking_1 }
+				NOT = { has_country_modifier = ab_banking_2 }
+				NOT = { has_country_modifier = ab_banking_3 }
+				NOT = { has_country_modifier = ab_banking_4 }
+				NOT = { has_country_modifier = ab_banking_5 }
+			}
+			add_country_modifier = {
+				name = ab_banking_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade Banking
+	id = GOT_AGES.29
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_banking_1
+			}
+			remove_country_modifier = ab_banking_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_banking_2
+			}
+			remove_country_modifier = ab_banking_2
+			add_country_modifier = {
+				name = ab_banking_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_banking_3
+			}
+			remove_country_modifier = ab_banking_3
+			add_country_modifier = {
+				name = ab_banking_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_banking_4
+			}
+			remove_country_modifier = ab_banking_4
+			add_country_modifier = {
+				name = ab_banking_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_banking_5
+			}
+			remove_country_modifier = ab_banking_5
+			add_country_modifier = {
+				name = ab_banking_4
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Upgrade Slave Trade
+	id = GOT_AGES.30
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_slave_trade_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_slave_trade_4
+			}
+			remove_country_modifier = ab_slave_trade_4
+			add_country_modifier = {
+				name = ab_slave_trade_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_slave_trade_3
+			}
+			remove_country_modifier = ab_slave_trade_3
+			add_country_modifier = {
+				name = ab_slave_trade_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_slave_trade_2
+			}
+			remove_country_modifier = ab_slave_trade_2
+			add_country_modifier = {
+				name = ab_slave_trade_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_slave_trade_1
+			}
+			remove_country_modifier = ab_slave_trade_1
+			add_country_modifier = {
+				name = ab_slave_trade_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_slave_trade_1 }
+				NOT = { has_country_modifier = ab_slave_trade_2 }
+				NOT = { has_country_modifier = ab_slave_trade_3 }
+				NOT = { has_country_modifier = ab_slave_trade_4 }
+				NOT = { has_country_modifier = ab_slave_trade_5 }
+			}
+			add_country_modifier = {
+				name = ab_slave_trade_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade Slave Trade
+	id = GOT_AGES.31
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_slave_trade_1
+			}
+			remove_country_modifier = ab_slave_trade_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_slave_trade_2
+			}
+			remove_country_modifier = ab_slave_trade_2
+			add_country_modifier = {
+				name = ab_slave_trade_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_slave_trade_3
+			}
+			remove_country_modifier = ab_slave_trade_3
+			add_country_modifier = {
+				name = ab_slave_trade_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_slave_trade_4
+			}
+			remove_country_modifier = ab_slave_trade_4
+			add_country_modifier = {
+				name = ab_slave_trade_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_slave_trade_5
+			}
+			remove_country_modifier = ab_slave_trade_5
+			add_country_modifier = {
+				name = ab_slave_trade_4
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Upgrade Occultism
+	id = GOT_AGES.32
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_occultism_5
+			}
+			country_event = {
+				id = GOT_AGES.1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_occultism_4
+			}
+			remove_country_modifier = ab_occultism_4
+			add_country_modifier = {
+				name = ab_occultism_5
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_occultism_3
+			}
+			remove_country_modifier = ab_occultism_3
+			add_country_modifier = {
+				name = ab_occultism_4
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_occultism_2
+			}
+			remove_country_modifier = ab_occultism_2
+			add_country_modifier = {
+				name = ab_occultism_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_occultism_1
+			}
+			remove_country_modifier = ab_occultism_1
+			add_country_modifier = {
+				name = ab_occultism_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_modifier = ab_occultism_1 }
+				NOT = { has_country_modifier = ab_occultism_2 }
+				NOT = { has_country_modifier = ab_occultism_3 }
+				NOT = { has_country_modifier = ab_occultism_4 }
+				NOT = { has_country_modifier = ab_occultism_5 }
+			}
+			add_country_modifier = {
+				name = ab_occultism_1
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Degrade Occultism
+	id = GOT_AGES.33
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "loe_hidden"
+		if = {
+			limit = {
+				has_country_modifier = ab_occultism_1
+			}
+			remove_country_modifier = ab_occultism_1
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_occultism_2
+			}
+			remove_country_modifier = ab_occultism_2
+			add_country_modifier = {
+				name = ab_occultism_1
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_occultism_3
+			}
+			remove_country_modifier = ab_occultism_3
+			add_country_modifier = {
+				name = ab_occultism_2
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_occultism_4
+			}
+			remove_country_modifier = ab_occultism_4
+			add_country_modifier = {
+				name = ab_occultism_3
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = ab_occultism_5
+			}
+			remove_country_modifier = ab_occultism_5
+			add_country_modifier = {
+				name = ab_occultism_4
+				duration = -1
+			}
+		}
+	}
+}

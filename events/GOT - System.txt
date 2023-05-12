@@ -19,26 +19,59 @@ country_event = {
 	
 	option = {
 		name = GOT_SYSTEM.1.option.a
-		
-		# set_global_flag = enable_onaction_logging
-		#set_global_flag = enable_event_logging
+
+		R68 = {
+            country_event = {
+                id = yiti.1
+            }
+        }
+        CHO = {
+            save_global_event_target_as = loe_jhattar
+            save_global_event_target_as = loe_owns_golden_skull
+        }
 		
 		if = { limit = { has_global_flag = enable_event_logging } log = "[Root.GetName] - GOT_SYSTEM.1.option.a" }
 		
-		# every_province = {
-		# 	set_in_empire = no
-		# }
-		
-		# Bookmark flags
 		if = {
-			limit = {
-				NOT = { is_year = 106 }
+			limit = { current_age = age_of_fire }
+			R68 = {
+				add_country_modifier = {
+					name = ab_trade_power_5
+					duration = -1
+				}
 			}
-			set_global_flag = shattered_world
-			set_country_flag = shattered_world_c
+			U25 = {
+				add_country_modifier = {
+					name = ab_banking_5
+					duration = -1
+				}
+			}
+			R27 = {
+				add_country_modifier = {
+					name = ab_slave_trade_5
+					duration = -1
+				}
+			}
+			R23 = {
+				add_country_modifier = {
+					name = ab_slave_trade_5
+					duration = -1
+				}
+			}
+			R19 = {
+				add_country_modifier = {
+					name = ab_slave_trade_5
+					duration = -1
+				}
+			}
+			J02 = {
+				add_country_modifier = {
+					name = ab_occultism_3
+					duration = -1
+				}
+			}
 		}
 	}
-	
 }
 
 country_event = {

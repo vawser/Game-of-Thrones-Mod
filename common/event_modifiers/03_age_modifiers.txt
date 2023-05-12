@@ -1,3 +1,290 @@
+#Permanent Modifiers
+ab_national_unrest_1 = {
+	global_unrest = -1
+}
+ab_national_unrest_2 = {
+	global_unrest = -1
+	harsh_treatment_cost = -0.2
+}
+ab_national_unrest_3 = {
+	global_unrest = -2
+	harsh_treatment_cost = -0.2
+}
+ab_national_unrest_4 = {
+	global_unrest = -2
+	harsh_treatment_cost = -0.4
+}
+ab_national_unrest_5 = {
+	global_unrest = -2
+	harsh_treatment_cost = -0.6
+}
+
+ab_dev_cost_1 = {
+	build_cost = -0.1
+}
+ab_dev_cost_2 = {
+	build_cost = -0.1
+	expand_infrastructure_cost_modifier = -0.25
+}
+ab_dev_cost_3 = {
+	build_cost = -0.1
+	expand_infrastructure_cost_modifier = -0.50
+}
+ab_dev_cost_4 = {
+	build_cost = -0.2
+	expand_infrastructure_cost_modifier = -0.50
+}
+ab_dev_cost_5 = {
+	build_cost = -0.3
+	expand_infrastructure_cost_modifier = -0.50
+}
+
+ab_tax_modifier_1 = {
+	global_tax_income = 15
+}
+ab_tax_modifier_2 = {
+	global_tax_income = 30
+	global_tax_modifier = 0.05
+}
+ab_tax_modifier_3 = {
+	global_tax_income = 45
+	global_tax_modifier = 0.1
+}
+ab_tax_modifier_4 = {
+	global_tax_income = 60
+	global_tax_modifier = 0.15
+}
+ab_tax_modifier_5 = {
+	global_tax_income = 120
+	global_tax_modifier = 0.2
+}
+
+ab_gov_cap_1 = {
+	state_governing_cost_increase = -5
+}
+ab_gov_cap_2 = {
+	state_governing_cost_increase = -5
+	governing_capacity = 50
+}
+ab_gov_cap_3 = {
+	state_governing_cost_increase = -5
+	governing_capacity = 100
+}
+ab_gov_cap_4 = {
+	state_governing_cost_increase = -5
+	governing_capacity = 150
+}
+ab_gov_cap_5 = {
+	state_governing_cost_increase = -10
+	governing_capacity = 200
+}
+
+ab_ae_impact_1 = {
+	ae_impact = -0.025
+}
+ab_ae_impact_2 = {
+	ae_impact = -0.05
+	war_exhaustion = -0.01
+}
+ab_ae_impact_3 = {
+	ae_impact = -0.075
+	war_exhaustion = -0.02
+}
+ab_ae_impact_4 = {
+	ae_impact = -0.1
+	war_exhaustion = -0.05
+}
+ab_ae_impact_5 = {
+	ae_impact = -0.125
+	war_exhaustion = -0.1
+}
+
+ab_liberty_desire_1 = {
+	diplomatic_upkeep = 1
+}
+ab_liberty_desire_2 = {
+	diplomatic_upkeep = 1
+	annexation_relations_impact = -0.25
+}
+ab_liberty_desire_3 = {
+	diplomatic_upkeep = 2
+	annexation_relations_impact = -0.5
+}
+ab_liberty_desire_4 = {
+	diplomatic_upkeep = 2
+	annexation_relations_impact = -0.75
+}
+ab_liberty_desire_5 = {
+	diplomatic_upkeep = 3
+	annexation_relations_impact = -1
+}
+
+ab_trade_power_1 = {
+	trade_steering = 0.05
+}
+ab_trade_power_2 = {
+	trade_steering = 0.1
+	reduced_trade_penalty_on_non_main_tradenode = 0.25
+}
+ab_trade_power_3 = {
+	trade_steering = 0.15
+	reduced_trade_penalty_on_non_main_tradenode = 0.5
+}
+ab_trade_power_4 = {
+	trade_steering = 0.2
+	reduced_trade_penalty_on_non_main_tradenode = 0.75
+}
+ab_trade_power_5 = {
+	trade_steering = 0.25
+	reduced_trade_penalty_on_non_main_tradenode = 1
+}
+
+#ab_diplo_rep_x will be found on opinion_modifiers #TBD
+
+ab_morale_1 = {
+	land_morale = 0.05
+}
+ab_morale_2 = {
+	land_morale = 0.1
+	assault_fort_ability = 0.25
+}
+ab_morale_3 = {
+	land_morale = 0.15
+	assault_fort_ability = 0.5
+}
+ab_morale_4 = {
+	land_morale = 0.2
+	assault_fort_ability = 0.75
+}
+ab_morale_5 = {
+	land_morale = 0.25
+	assault_fort_ability = 1
+}
+
+ab_logistics_1 = {
+	land_attrition = -0.05
+}
+ab_logistics_2 = {
+	land_attrition = -0.1
+	movement_speed = 0.05
+}
+ab_logistics_3 = {
+	land_attrition = -0.1
+	movement_speed = 0.1
+}
+ab_logistics_4 = {
+	land_attrition = -0.15
+	movement_speed = 0.1
+}
+ab_logistics_5 = {
+	land_attrition = -0.15
+	movement_speed = 0.15
+	can_bypass_forts = yes
+}
+
+ab_mercenary_1 = {
+	merc_leader_army_tradition = 0.15
+}
+ab_mercenary_2 = {
+	merc_leader_army_tradition = 0.3
+	merc_independent_from_trade_range = yes
+}
+ab_mercenary_3 = {
+	merc_leader_army_tradition = 0.45
+	merc_independent_from_trade_range = yes
+}
+ab_mercenary_4 = {
+	merc_leader_army_tradition = 0.6
+	merc_independent_from_trade_range = yes
+}
+ab_mercenary_5 = {
+	merc_leader_army_tradition = 0.75
+	merc_independent_from_trade_range = yes
+}
+
+ab_pirates_1 = {
+	privateer_efficiency = 0.1
+}
+ab_pirates_2 = {
+	privateer_efficiency = 0.2
+	global_naval_barrage_cost = -0.25
+}
+ab_pirates_3 = {
+	privateer_efficiency = 0.3
+	global_naval_barrage_cost = -0.5
+}
+ab_pirates_4 = {
+	privateer_efficiency = 0.4
+	global_naval_barrage_cost = -0.75
+}
+ab_pirates_5 = {
+	privateer_efficiency = 0.5
+	global_naval_barrage_cost = -1
+}
+
+#ab_dragons_x will be found on opinion_modifiers and events/GOT - Ages #TBD
+
+ab_banking_1 = {
+	interest = -1
+}
+ab_banking_2 = {
+	interest = -2
+	monthly_favor_modifier = 0.25
+}
+ab_banking_3 = {
+	interest = -3
+	monthly_favor_modifier = 0.5
+}
+ab_banking_4 = {
+	interest = -4
+	monthly_favor_modifier = 0.75
+}
+ab_banking_5 = { #TBD Gov Reform
+	interest = -5
+	monthly_favor_modifier = 1
+}
+
+ab_slave_trade_1 = {
+	global_unrest = 1
+	development_cost = -0.05
+}
+ab_slave_trade_2 = {
+	global_unrest = 2
+	development_cost = -0.1
+}
+ab_slave_trade_3 = {
+	global_unrest = 3
+	development_cost = -0.15
+}
+ab_slave_trade_4 = {
+	global_unrest = 4
+	development_cost = -0.2
+}
+ab_slave_trade_5 = {
+	global_unrest = 5
+	development_cost = -0.25
+}
+
+ab_occultism_1 = {
+	religious_unity = -0.2
+}
+ab_occultism_2 = {
+	religious_unity = -0.4
+}
+ab_occultism_3 = {
+	religious_unity = -0.6
+}
+ab_occultism_4 = {
+	religious_unity = -0.8
+}
+ab_occultism_5 = { #TBD Event to trigger the Others
+	religious_unity = -1
+}
+
+ab_venture_into_unknown = {
+	ignore_coring_distance = yes
+}
+
 # Age of Fire Nation
 aof_thenn_bonus = { infantry_power = 0.125 }
 aof_lefford_bonus = { monthly_gold_inflation_modifier = -0.20 }

@@ -15,27 +15,24 @@ on_startup = {
 
 	# Assigning Age Nation Bonuses
 	if = {
-		limit = { current_age = age_of_fire }
-		age_of_fire_add_nation_bonus_effect = yes
-		#TBD Assinging each nation their proper age ability and remove it on on_new_age, add on abilities allowed, so you cant get the modifier twice
-		#R68 = {}
-		#U25 = {}
-		#R27 = {}
-		#R23 = {}
-		#R19 = {}
-		#J02 = {}
-	}
-	else_if = {
-		limit = { current_age = age_of_rebellion }
-		age_of_rebellion_add_nation_bonus_effect = yes
+		limit = {
+			NOT = { has_global_flag = age_nation_bonuses_applied }
+		}
+		set_global_flag = age_nation_bonuses_applied
+		if = {
+			limit = { current_age = age_of_fire }
+			age_of_fire_add_nation_bonus_effect = yes
+		}
+		else_if = {
+			limit = { current_age = age_of_rebellion }
+			age_of_rebellion_add_nation_bonus_effect = yes
+		}
 	}
 	
+	#Sets up Countries
 	events = {
 		GOT_SYSTEM.1	# Global
 		GOT_SYSTEM.2	# Country
-		# GOT_SYSTEM.10
-		##LOE Changes##
-		loe_startup.1
 	}
 }
 

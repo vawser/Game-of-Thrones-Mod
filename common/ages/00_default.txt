@@ -141,35 +141,46 @@ age_of_fire = {
 	}
 
 	abilities = {
-		ab_divine_right = {
-			modifier = {
-				country_military_power = 1
-				legitimacy = 0.50
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 100
-			}
-		}
 		ab_court_bailiffs = {
 			modifier = {
 				global_unrest = -2
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				ages_effect_bonus = { bonus_name = "absolute_suppression" }
 			}
 			ai_will_do = {
 				factor = 10
 			}
 		}
-		ab_development_focus = {
+		ab_city_founding = {
 			modifier = {
 				development_cost = -0.1
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				show_age_effect_tt = yes
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_feudal_obligations = {
+			modifier = {
+				global_tax_modifier = 0.15
+				vassal_income = 0.20
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "secured_income" }
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_dedicated_bureaucracy = {
+			modifier = {
+				governing_capacity_modifier = 0.10
+			}
+			effect = {
+				show_age_effect_tt = yes
 			}
 			ai_will_do = {
 				factor = 10
@@ -180,7 +191,7 @@ age_of_fire = {
 				unjustified_demands = -0.125
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "global_empire" }
+				ages_effect_bonus = { bonus_name = "righteous_intentions" }
 			}
 			ai_will_do = {
 				factor = 100
@@ -191,7 +202,7 @@ age_of_fire = {
 				reduced_liberty_desire = 10
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				show_age_effect_tt = yes
 			}
 			ai_will_do = {
 				factor = 100
@@ -205,62 +216,16 @@ age_of_fire = {
 				}
 			}
 		}
-		ab_intercontinental_trading = {
+		ab_state_trading = {
 			modifier = {
 				global_own_trade_power = 0.025
 				placed_merchant_power = 5
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				ages_effect_bonus = { bonus_name = "commercial_ethics" }
 			}
 			ai_will_do = {
 				factor = 10
-			}
-		}
-		ab_professional_privateers = {
-			modifier = {
-				privateer_efficiency = 0.20
-				blockade_force_required = 0.50
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		ab_improved_logistics = {
-			modifier = {
-				reinforce_speed = 0.33
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		ab_dedicated_bureaucracy = {
-			modifier = {
-				governing_capacity_modifier = 0.10
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		ab_financial_obligations = {
-			modifier = {
-				global_tax_modifier = 0.15
-				vassal_income = 0.20
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 100
 			}
 		}
 		ab_diplomatic_charisma = {
@@ -268,19 +233,7 @@ age_of_fire = {
 				diplomatic_reputation = 2
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 100
-			}
-		}
-		ab_gold_mines = {
-			modifier = {
-				monthly_gold_inflation_modifier = -0.50
-				gold_depletion_chance_modifier = -0.10
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				show_age_effect_tt = yes
 			}
 			ai_will_do = {
 				factor = 100
@@ -297,94 +250,117 @@ age_of_fire = {
 				global_manpower_modifier = 0.125
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				show_age_effect_tt = yes
 			}
 			ai_will_do = {
 				factor = 50
 			}
 		}
-		ab_legendary_companies = {
-			allow = {
-				capital_scope = {
-					NOT = { continent = westeros }
-				}
-			}
+		ab_improved_logistics = {
 			modifier = {
-				mercenary_discipline = 0.05
-				mercenary_cost = -0.20
+				reinforce_speed = 0.33
+				land_attrition = -0.05
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 50
-			}
-		}
-		ab_yitish_trade = {
-			allow = {
-				765 = {
-					has_trader = ROOT
-				}
-			}
-			modifier = {
-				trade_efficiency = 0.2
-			}
-			effect = {
-				add_treasury = 1000
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 100
-			}
-		}
-		ab_braavosi_banking = {
-			allow = {
-				any_ally = {
-					tag = U25
-				}
-			}
-			modifier = {
-				interest = -2
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				ages_effect_bonus = { bonus_name = "army_scouts" }
 			}
 			ai_will_do = {
 				factor = 10
 			}
 		}
-		ab_slaver_bay_slaves = {
+		ab_legendary_companies = {
+			modifier = {
+				mercenary_discipline = 0.05
+				mercenary_cost = -0.20
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "mercenary" }
+			}
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		ab_professional_privateers = {
+			modifier = {
+				privateer_efficiency = 0.20
+				blockade_force_required = 0.50
+			}
+			effect = {
+				show_age_effect_tt = yes
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_search_the_archives = {
+			modifier = {
+				yearly_innovativeness = 0.2
+			}
+			effect = {
+				show_age_effect_tt = yes
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_invest_in_banking = {
+			modifier = {
+				interest = -1
+			}
+			effect = {
+				show_age_effect_tt = yes
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_expand_slave_trade = {
 			allow = {
-				has_discovered = 613
-				has_discovered = 610
-				has_discovered = 606
 				has_country_modifier = slavery_permitted
 			}
 			modifier = {
 				production_efficiency = 0.15
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				show_age_effect_tt = yes
 			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
 		ab_study_cult = {
-			allow = {
-				any_owned_province = {
-					religion = cult_of_shadows
-				}
-			}
 			modifier = {
-				religious_unity = -0.1
-				yearly_innovativeness = 0.2
+				all_power_cost = -0.01
+				stability_cost_modifier = 0.33
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				show_age_effect_tt = yes
 			}
 			ai_will_do = {
 				factor = 50
+			}
+		}
+		ab_divine_right = {
+			modifier = {
+				country_military_power = 1
+				legitimacy = 0.50
+			}
+			effect = {
+				show_age_effect_tt = yes
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_venture_into_unknown = {
+			modifier = {
+				ignore_coring_distance = yes
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "venture_into_unknown" }
+			}
+			ai_will_do = {
+				factor = 100
 			}
 		}
 	}
@@ -591,35 +567,46 @@ age_of_rebellion = {
 	}
 
 	abilities = {
-		ab_divine_right = {
-			modifier = {
-				country_military_power = 1
-				legitimacy = 0.50
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 100
-			}
-		}
 		ab_court_bailiffs = {
 			modifier = {
 				global_unrest = -2
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				ages_effect_bonus = { bonus_name = "absolute_suppression" }
 			}
 			ai_will_do = {
 				factor = 10
 			}
 		}
-		ab_development_focus = {
+		ab_city_founding = {
 			modifier = {
 				development_cost = -0.1
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				show_age_effect_tt = yes
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_feudal_obligations = {
+			modifier = {
+				global_tax_modifier = 0.15
+				vassal_income = 0.20
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "secured_income" }
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_dedicated_bureaucracy = {
+			modifier = {
+				governing_capacity_modifier = 0.10
+			}
+			effect = {
+				show_age_effect_tt = yes
 			}
 			ai_will_do = {
 				factor = 10
@@ -630,7 +617,7 @@ age_of_rebellion = {
 				unjustified_demands = -0.125
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "global_empire" }
+				ages_effect_bonus = { bonus_name = "righteous_intentions" }
 			}
 			ai_will_do = {
 				factor = 100
@@ -641,7 +628,7 @@ age_of_rebellion = {
 				reduced_liberty_desire = 10
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				show_age_effect_tt = yes
 			}
 			ai_will_do = {
 				factor = 100
@@ -655,62 +642,16 @@ age_of_rebellion = {
 				}
 			}
 		}
-		ab_intercontinental_trading = {
+		ab_state_trading = {
 			modifier = {
 				global_own_trade_power = 0.025
 				placed_merchant_power = 5
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				ages_effect_bonus = { bonus_name = "commercial_ethics" }
 			}
 			ai_will_do = {
 				factor = 10
-			}
-		}
-		ab_professional_privateers = {
-			modifier = {
-				privateer_efficiency = 0.20
-				blockade_force_required = 0.50
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		ab_improved_logistics = {
-			modifier = {
-				reinforce_speed = 0.33
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		ab_dedicated_bureaucracy = {
-			modifier = {
-				governing_capacity_modifier = 0.10
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		ab_financial_obligations = {
-			modifier = {
-				global_tax_modifier = 0.15
-				vassal_income = 0.20
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 100
 			}
 		}
 		ab_diplomatic_charisma = {
@@ -718,19 +659,7 @@ age_of_rebellion = {
 				diplomatic_reputation = 2
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 100
-			}
-		}
-		ab_gold_mines = {
-			modifier = {
-				monthly_gold_inflation_modifier = -0.50
-				gold_depletion_chance_modifier = -0.10
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				show_age_effect_tt = yes
 			}
 			ai_will_do = {
 				factor = 100
@@ -747,94 +676,117 @@ age_of_rebellion = {
 				global_manpower_modifier = 0.125
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				show_age_effect_tt = yes
 			}
 			ai_will_do = {
 				factor = 50
 			}
 		}
-		ab_legendary_companies = {
-			allow = {
-				capital_scope = {
-					NOT = { continent = westeros }
-				}
-			}
+		ab_improved_logistics = {
 			modifier = {
-				mercenary_discipline = 0.05
-				mercenary_cost = -0.20
+				reinforce_speed = 0.33
+				land_attrition = -0.05
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 50
-			}
-		}
-		ab_yitish_trade = {
-			allow = {
-				765 = {
-					has_trader = ROOT
-				}
-			}
-			modifier = {
-				trade_efficiency = 0.2
-			}
-			effect = {
-				add_treasury = 1000
-				ages_effect_bonus = { bonus_name = "" }
-			}
-			ai_will_do = {
-				factor = 100
-			}
-		}
-		ab_braavosi_banking = {
-			allow = {
-				any_ally = {
-					tag = U25
-				}
-			}
-			modifier = {
-				interest = -2
-			}
-			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				ages_effect_bonus = { bonus_name = "army_scouts" }
 			}
 			ai_will_do = {
 				factor = 10
 			}
 		}
-		ab_slaver_bay_slaves = {
+		ab_legendary_companies = {
+			modifier = {
+				mercenary_discipline = 0.05
+				mercenary_cost = -0.20
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "mercenary" }
+			}
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		ab_professional_privateers = {
+			modifier = {
+				privateer_efficiency = 0.20
+				blockade_force_required = 0.50
+			}
+			effect = {
+				show_age_effect_tt = yes
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_search_the_archives = {
+			modifier = {
+				yearly_innovativeness = 0.2
+			}
+			effect = {
+				show_age_effect_tt = yes
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_invest_in_banking = {
+			modifier = {
+				interest = -1
+			}
+			effect = {
+				show_age_effect_tt = yes
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_expand_slave_trade = {
 			allow = {
-				has_discovered = 613
-				has_discovered = 610
-				has_discovered = 606
 				has_country_modifier = slavery_permitted
 			}
 			modifier = {
 				production_efficiency = 0.15
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				show_age_effect_tt = yes
 			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
 		ab_study_cult = {
-			allow = {
-				any_owned_province = {
-					religion = cult_of_shadows
-				}
-			}
 			modifier = {
-				religious_unity = -0.1
-				yearly_innovativeness = 0.2
+				all_power_cost = -0.01
+				stability_cost_modifier = 0.33
 			}
 			effect = {
-				ages_effect_bonus = { bonus_name = "" }
+				show_age_effect_tt = yes
 			}
 			ai_will_do = {
 				factor = 50
+			}
+		}
+		ab_divine_right = {
+			modifier = {
+				country_military_power = 1
+				legitimacy = 0.50
+			}
+			effect = {
+				show_age_effect_tt = yes
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_venture_into_unknown = {
+			modifier = {
+				ignore_coring_distance = yes
+			}
+			effect = {
+				ages_effect_bonus = { bonus_name = "venture_into_unknown" }
+			}
+			ai_will_do = {
+				factor = 100
 			}
 		}
 	}
@@ -847,7 +799,7 @@ age_of_ice = {
 	start = 304
 	
 	can_start = {
-		is_year = 300
+		always = no
 	}
 	
 	papacy = 1.0

@@ -8,10 +8,60 @@ aof_meereen_bonus = { production_efficiency = 0.10 }
 aof_samyriana_bonus = { fort_maintenance_modifier = -0.30 }
 aof_faros_bonus = { reinforce_speed = 0.20 }
 
-# Age of Fire Abilities
-ages_global_empire_modifier = {
-	ae_impact = -0.05
+# Age of Fire Abilities (Age Nodifier)
+am_absolute_suppression_1 = { harsh_treatment_cost = -0.04 }
+am_absolute_suppression_2 = { harsh_treatment_cost = -0.08 }
+am_absolute_suppression_3 = { harsh_treatment_cost = -0.12 }
+am_absolute_suppression_4 = { harsh_treatment_cost = -0.16 }
+am_absolute_suppression_5 = { harsh_treatment_cost = -0.20 }
+
+am_secured_income_1 = { global_tax_income = 15 }
+am_secured_income_2 = { global_tax_income = 30 }
+am_secured_income_3 = { global_tax_income = 45 }
+am_secured_income_4 = { global_tax_income = 60 }
+am_secured_income_5 = { global_tax_income = 120 }
+
+am_righteous_intentions_1 = { ae_impact = -0.025 }
+am_righteous_intentions_2 = { ae_impact = -0.05 }
+am_righteous_intentions_3 = { ae_impact = -0.075 }
+am_righteous_intentions_4 = { ae_impact = -0.1 }
+am_righteous_intentions_5 = { ae_impact = -0.125 }
+
+am_commercial_ethics_1 = {
+	trade_steering = 0.05
+	reduced_trade_penalty_on_non_main_tradenode = 0.025
 }
+am_commercial_ethics_2 = {
+	trade_steering = 0.1
+	reduced_trade_penalty_on_non_main_tradenode = 0.05
+}
+am_commercial_ethics_3 = {
+	trade_steering = 0.15
+	reduced_trade_penalty_on_non_main_tradenode = 0.10
+}
+am_commercial_ethics_4 = {
+	trade_steering = 0.2
+	reduced_trade_penalty_on_non_main_tradenode = 0.15
+}
+am_commercial_ethics_5 = {
+	trade_steering = 0.25
+	reduced_trade_penalty_on_non_main_tradenode = 20
+}
+
+am_army_scouts_1 = { movement_speed = 0.025 }
+am_army_scouts_2 = { movement_speed = 0.05 }
+am_army_scouts_3 = { movement_speed = 0.10 }
+am_army_scouts_4 = { movement_speed = 0.15 can_bypass_forts = yes }
+am_army_scouts_5 = { movement_speed = 0.20 can_bypass_forts = yes }
+
+am_mercenary_1 = { merc_leader_army_tradition = 0.05 }
+am_mercenary_2 = { merc_leader_army_tradition = 0.10 }
+am_mercenary_3 = { merc_leader_army_tradition = 0.20 }
+am_mercenary_4 = { merc_leader_army_tradition = 0.35 }
+am_mercenary_5 = { merc_leader_army_tradition = 0.50 }
+
+am_venture_into_unknown_1 = { range = 0.1 }
+am_venture_into_unknown_2 = { range = 0.15 }
 
 # Age of Rebellion Nation
 aor_arryn_bonus = { cavalry_power = 0.20 }

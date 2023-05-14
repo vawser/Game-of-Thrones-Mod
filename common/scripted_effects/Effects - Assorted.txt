@@ -73,7 +73,7 @@ add_permanent_power_projection = {
 
 succession_culture_religion_effect = {
 	if = {
-        limit = {
+		limit = {
 			has_regency = no
 			NOT = { has_ruler_flag = had_culture_religion_reaction_event_flag }
 			OR = {
@@ -329,5 +329,67 @@ remove_vassalise_cb_effect = {
 			type = cb_vassalize_mission
 			target = event_target:agenda_country
 		}
+	}
+}
+
+# 1.35
+add_prestige_or_monarch_power = {
+	tooltip = {
+		add_prestige = $amount$
+	}
+	custom_tooltip = ME_ADD_PRESTIGE_OR_MONARCHPOWER
+	hidden_effect = {
+		for = {
+			amount = $amount$
+			effect = "
+				if = {
+					limit = {
+						NOT = { prestige = 100 }
+					}
+					add_prestige = 1
+				}
+				else = {
+					add_adm_power = 1
+					add_dip_power = 1
+					add_mil_power = 1
+				}
+			"
+		}
+	}
+}
+
+add_innovativeness_or_monarch_power = {
+	if = {
+		limit = { has_dlc = "Rule Britannia" }
+		tooltip = {
+			change_innovativeness = $amount$
+		}
+		custom_tooltip = ADD_INNOVATIVENESS_OR_MONARCHPOWER
+		if = {
+			limit = { NOT = { innovativeness = 100 } }
+		}
+		hidden_effect = {
+			for = {
+				amount = $amount$
+				effect = "
+					if = {
+						limit = {
+							NOT = { innovativeness = 100 }
+						}
+						change_innovativeness = 1
+					}
+					else = {
+						add_adm_power = 10
+						add_dip_power = 10
+						add_mil_power = 10
+					}
+				"
+			}
+		}
+	}
+	else = {
+		[[adm]add_adm_power = $adm$]
+		[[dip]add_dip_power = $dip$]
+		[[mil]add_mil_power = $mil$]
 	}
 }

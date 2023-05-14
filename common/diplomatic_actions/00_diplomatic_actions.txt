@@ -525,6 +525,17 @@ callaction = {
 			log = "DEBUG - [Root.GetName], [From.GetName] - callaction"
 		}
 	}
+	condition = {
+		tooltip = "They are in the Blackfyre Rebellion."
+		potential = {
+			FROM = {
+				has_disaster = blackfyre_rebellion
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
 }
 
 offerloan = {

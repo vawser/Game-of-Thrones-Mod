@@ -75,29 +75,56 @@ superiority_undead_conquest = {
 	war_name = UNDEAD_CONQUEST_NAME
 }
 
-superiority_royal_conquest = {
-	type = superiority
+take_capital_take_iron_throne = {
+	type = take_capital
 	
 	attacker = {
 		badboy_factor = 1
-		prestige_factor = 2
+		prestige_factor = 1
 		peace_cost_factor = 1
-	
+
 		peace_options = {
-			po_demand_provinces
+			po_seize_the_iron_throne
 		}
 	}
+	
 	defender = {
 		badboy_factor = 0.5
-		prestige_factor = 1
-		peace_cost_factor = 0.5
-        
-        peace_options = {
-			po_demand_provinces
+		prestige_factor = 1.5
+		peace_cost_factor = 2.0
+
+		peace_options = {
+			po_concede_defeat
 		}
 	}
 	
-	war_name = ROYAL_CONQUEST_NAME
+	war_name = SEIZE_THE_IRON_THRONE_WAR_NAME
+}
+
+take_capital_usurp_overlord = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 1
+
+		peace_options = {
+			po_usurp_overlord
+		}
+	}
+	
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1.5
+		peace_cost_factor = 2.0
+
+		peace_options = {
+			po_concede_defeat
+		}
+	}
+	
+	war_name = USURP_OVERLORD_WAR_NAME
 }
 
 superiority_lordly_feud = {
@@ -105,21 +132,26 @@ superiority_lordly_feud = {
 	
 	attacker = {
 		badboy_factor = 1
-		prestige_factor = 2
-		peace_cost_factor = 1
+		prestige_factor = 1.5
+		peace_cost_factor = 0.75
 	
 		peace_options = {
-			seize_their_possessions
+			po_gold
+			po_concede_defeat
+			po_revoke_cores
+			po_trade_power
 		}
 	}
 	defender = {
-		badboy_factor = 0.5
-		prestige_factor = 1
-		peace_cost_factor = 0.5
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 1.0
         
         peace_options = {
-			po_form_personal_union
-			seize_their_possessions
+			po_gold
+			po_concede_defeat
+			po_revoke_cores
+			po_trade_power
 		}
 	}
 	
@@ -199,33 +231,6 @@ superiority_wildling_feud = {
 	}
 	
 	war_name = WILDLING_FEUD_NAME
-}
-
-take_capital_take_iron_throne = {
-	type = take_capital
-	
-	attacker = {
-		badboy_factor = 1
-		prestige_factor = 2
-		peace_cost_factor = 1
-
-		peace_options = {
-			po_demand_provinces
-			#claim_the_iron_throne
-		}
-	}
-	
-	defender = {
-		badboy_factor = 0.5
-		prestige_factor = 1.0
-		peace_cost_factor = 0.5
-
-		peace_options = {
-			po_demand_provinces
-		}
-	}
-	
-	war_name = CLAIM_THE_IRON_THRONE_WAR_NAME
 }
 
 loe_jogos_nhai_raid_goal = {

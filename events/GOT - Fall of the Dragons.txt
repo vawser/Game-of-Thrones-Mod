@@ -215,11 +215,9 @@ country_event = {
 				}
 				kill_ruler = yes
 			}
-			A04 = {
-				kill_heir = { allow_new_heir = no }
-			}
+			A04 = { kill_heir = { allow_new_heir = no } }
 		}
-		A04 = { country_event = { id = FALL_OF_THE_DRAGONS.7 days = 1 } }
+		A04 = { country_event = { id = FALL_OF_THE_DRAGONS.7 days = 2 } }
 	}
 	
 	option = {
@@ -262,7 +260,7 @@ country_event = {
 		A07 = {
 			declare_war_with_cb = {
 				who = CRW
-				casus_belli = cb_claim_the_iron_throne
+				casus_belli = cb_seize_the_iron_throne
 			}
 		}
 		A04 = { join_all_offensive_wars_of = A07 }

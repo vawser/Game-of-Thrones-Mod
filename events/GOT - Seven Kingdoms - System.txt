@@ -23,6 +23,11 @@ country_event = {
 	trigger = {
 		is_emperor = yes
 		has_regency = no
+		NOT = {
+			is_in_war = {
+				casus_belli = cb_seize_the_iron_throne
+			}
+		}
 	}
 	
 	option = {
@@ -75,6 +80,11 @@ country_event = {
 	trigger = {
 		is_emperor = yes
 		has_regency = no
+		NOT = {
+			is_in_war = {
+				casus_belli = cb_seize_the_iron_throne
+			}
+		}
 	}
 	
 	option = {

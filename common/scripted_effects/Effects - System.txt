@@ -24,18 +24,20 @@ switch_tag_with_ruler = {
 		}
 	}
 	switch_tag = $new_tag$
-	set_ruler = $ruler_string$
-	if = {
-		limit = {
-			has_country_flag = consort_exists
+	$new_tag$ = {
+		set_ruler = $ruler_string$
+		if = {
+			limit = {
+				has_country_flag = consort_exists
+			}
+			set_consort = $consort_string$
 		}
-		set_consort = $consort_string$
-	}
-	if = {
-		limit = {
-			has_country_flag = heir_exists
+		if = {
+			limit = {
+				has_country_flag = heir_exists
+			}
+			set_heir = $heir_string$
 		}
-		set_heir = $heir_string$
 	}
 }
 

@@ -25,25 +25,24 @@ po_seize_the_iron_throne = {
 		always = yes
 	}
 	effect = {
-		hidden_effect = {
-			save_event_target_as = originalCOU
-		}
-		switch_tag_with_ruler = { # Change to Crownlands country
+		ROOT = { save_event_target_as = originalCOU  }
+		switch_tag_with_ruler = {
 			ruler_string = King_of_Andals
 			consort_string = Queen_of_Andals
 			heir_string = Heir_of_Andals
-			new_tag = CRW
+			new_tag = FROM
 		}
 		save_global_event_target_as = IronThroneKing
-		create_union = event_target:originalCOU
+		FROM = { create_union = event_target:originalCOU }
 		every_country = {
 			limit = {
 				is_part_of_hre = yes
+				NOT = { tag = ROOT }
 			}
 			add_aggressive_expansion = {
 				who = FROM
-				value = 25
-				apply_calc = yes
+				value = 50
+				apply_calc = no
 			}
 		}
 	}

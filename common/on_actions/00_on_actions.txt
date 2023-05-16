@@ -529,8 +529,6 @@ on_new_consort = {
 		log = "DEBUG - [Root.GetName]: on_new_consort "
 	}
 	
-	country_event = { id = GOT_CONSORT.2 }
-	
 	if = {
 		limit = { has_ruler_flag = had_10_years_anniversary }
 		clr_ruler_flag = had_10_years_anniversary
@@ -546,6 +544,10 @@ on_new_consort = {
 	if = {
 		limit = { has_country_modifier = sought_after_bachelor }
 		remove_country_modifier = sought_after_bachelor
+	}
+
+	events = {
+		GOT_CONSORT.2
 	}
 }
 

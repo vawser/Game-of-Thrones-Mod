@@ -402,18 +402,6 @@ on_province_owner_change_estate_privileges_effect = {
     if = {
 		limit = {
 			owner = {
-				has_estate_privilege = estate_church_monopoly_of_candles
-			}
-			trade_goods = candles
-		}
-		add_province_modifier = {
-			name = monopoly_of_candles_mod
-			duration = -1
-		}
-	}
-    if = {
-		limit = {
-			owner = {
 				has_estate_privilege = estate_merchants_monopoly_of_salt
 			}
 			trade_goods = salt
@@ -765,21 +753,6 @@ on_trade_good_changed_estate_privileges_effect = {
 			trade_goods = cotton
 		}
 		remove_province_modifier = monopoly_of_cotton_mod
-    }
-    if = {
-		limit = {
-			has_province_modifier = monopoly_of_candles_mod
-			NOT = { trade_goods = candles }
-		}
-		remove_province_modifier = monopoly_of_candles_mod
-	}
-	else_if = {
-		limit = {
-			from = { has_estate_privilege = estate_church_monopoly_of_candles }
-			NOT = { has_province_modifier = monopoly_of_candles_mod }
-			trade_goods = candles
-		}
-		remove_province_modifier = monopoly_of_candles_mod
     }
     
     # ----------- Merchants -----------

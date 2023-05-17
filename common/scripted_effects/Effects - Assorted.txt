@@ -41,26 +41,26 @@ reduce_stability_or_adm_power = {
 }
 
 add_stability_or_adm_power_per_stab = {
-    tooltip = {
-        add_stability = $amount$
-    }
-    custom_tooltip = add_stability_or_adm_power_tt
-    hidden_effect = {
-        for = {
-            amount = $amount$
-            effect = "
-                if = {
-                    limit = {
-                        NOT = { stability = 3 }
-                    }
-                    add_stability = 1
-                }
-                else = {
-                    add_adm_power = 50
-                }
-            "
-        }
-    }
+	tooltip = {
+		add_stability = $amount$
+	}
+	custom_tooltip = add_stability_or_adm_power_tt
+	hidden_effect = {
+		for = {
+			amount = $amount$
+			effect = "
+				if = {
+					limit = {
+						NOT = { stability = 3 }
+					}
+					add_stability = 1
+				}
+				else = {
+					add_adm_power = 50
+				}
+			"
+		}
+	}
 }
 
 add_permanent_power_projection = {

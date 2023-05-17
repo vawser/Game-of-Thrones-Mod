@@ -447,30 +447,6 @@ country_event = {
 	option = {
 		name = GOT_SYSTEM.4.option.a
 		  
-		# Westeros
-		if = {
-			limit = {
-				capital_scope = {
-					continent = westeros
-				}
-			}
-			westeros_sea_region = {
-				discover_country = ROOT
-			}
-			west_essos_superregion = {
-				discover_country = ROOT
-			}
-			westeros_wastelands = {
-				discover_country = ROOT
-			}
-			essos_west_wastelands = {
-				discover_country = ROOT
-			}
-			shivering_sea_region = {
-				undiscover_country = ROOT
-			}
-		}
-
 		# Free Cities
 		if = {
 			limit = {
@@ -478,13 +454,25 @@ country_event = {
 					superregion = west_essos_superregion
 				}
 			}
-			westeros = {
+			southern_westeros_superregion = {
 				discover_country = ROOT
 			}
-			westeros_sea_region = {
+			dornish_coast_area = {
 				discover_country = ROOT
 			}
 			west_essos_superregion = {
+				discover_country = ROOT
+			}
+			narrow_sea_region = {
+				discover_country = ROOT
+			}
+			lorathi_coast_area = {
+				discover_country = ROOT
+			}
+			orange_shore_area = {
+				discover_country = ROOT
+			}
+			smoking_sea_area = {
 				discover_country = ROOT
 			}
 			westeros_wastelands = {
@@ -493,27 +481,7 @@ country_event = {
 			essos_west_wastelands = {
 				discover_country = ROOT
 			}
-			central_essos_superregion = {
-				discover_country = ROOT
-			}
-			ghiscari_sea_region = {
-				discover_country = ROOT
-			}
-			region_slavers_bay = {
-				discover_country = ROOT
-			}
-			region_valyria = {
-				discover_country = ROOT
-			}
-			region_sarnor = {
-				discover_country = ROOT
-			}
-			omber_sea_region = {
-				discover_country = ROOT
-			}
-			shivering_sea_region = {
-				undiscover_country = ROOT
-			}
+			
 			# Lakes
 			3005 = {
 				discover_country = ROOT
@@ -558,7 +526,7 @@ country_event = {
 			region_thousand_islands = {
 				undiscover_country = ROOT
 			}
-			nefer_sea_region = {
+			omber_coast_area = {
 				undiscover_country = ROOT
 			}
 			region_cannibal_sands = {
@@ -573,7 +541,7 @@ country_event = {
 			region_bloodlands = {
 				undiscover_country = ROOT
 			}
-			east_sothoryos_sea_area = {
+			gulf_of_grief_area = {
 				discover_country = ROOT
 			}
 			# Lakes
@@ -622,7 +590,7 @@ country_event = {
 			region_slavers_bay = {
 				discover_country = ROOT
 			}
-			ghiscari_sea_region = {
+			ghiscari_sea_area = {
 				discover_country = ROOT
 			}
 			essos_east_wastelands = {
@@ -631,7 +599,16 @@ country_event = {
 			essos_central_wastelands = {
 				discover_country = ROOT
 			}
-			east_sothoryos_sea_area = {
+			coast_of_yiti_area = {
+				discover_country = ROOT
+			}
+			neferi_coast_area = {
+				discover_country = ROOT
+			}
+			bloodsworn_sea_area = {
+				discover_country = ROOT
+			}
+			ulthosi_corridor_area = {
 				discover_country = ROOT
 			}
 			1129 = {
@@ -670,9 +647,6 @@ country_event = {
 			region_slavers_bay = {
 				discover_country = ROOT
 			}
-			ghiscari_sea_region = {
-				discover_country = ROOT
-			}
 			essos_east_wastelands = {
 				discover_country = ROOT
 			}
@@ -685,16 +659,19 @@ country_event = {
 			region_ulthos = {
 				discover_country = ROOT
 			}
-			ulthos_sea_region = {
-				discover_country = ROOT
-			}
 			ulthos_wastelands = {
 				discover_country = ROOT
 			}
-			east_sothoryos_sea_area = {
+			bloodsworn_sea_area = {
 				discover_country = ROOT
 			}
-			bloodless_coast_area = {
+			ulthosi_corridor_area = {
+				discover_country = ROOT
+			}
+			east_ulthosi_sea_area = {
+				discover_country = ROOT
+			}
+			west_ulthosi_sea_area = {
 				discover_country = ROOT
 			}
 			1129 = {
@@ -736,13 +713,19 @@ country_event = {
 			region_summer_islands = {
 				discover_country = ROOT
 			}
-			summer_islands_sea_region = {
+			summer_shoals_area = {
 				discover_country = ROOT
 			}
-			westeros_sea_region = {
+			narrow_sea_region = {
 				discover_country = ROOT
 			}
-			westeros = {
+			dornish_coast_area = {
+				discover_country = ROOT
+			}
+			orange_shore_area = {
+				discover_country = ROOT
+			}
+			southern_westeros_superregion = {
 				discover_country = ROOT
 			}
 			shivering_sea_region = {
@@ -750,9 +733,6 @@ country_event = {
 			}
 			west_essos_superregion = {
 				discover_country = ROOT
-			}
-			north_essosian_coast_area = {
-				undiscover_country = ROOT
 			}
 			westeros_wastelands = {
 				discover_country = ROOT
@@ -774,13 +754,10 @@ country_event = {
 			central_essos_superregion = {
 				discover_country = ROOT
 			}
-			narrow_sea_area = {
+			narrow_sea_region = {
 				discover_country = ROOT
 			}
 			shivering_sea_region = {
-				discover_country = ROOT
-			}
-			nefer_sea_region = {
 				discover_country = ROOT
 			}
 			region_qarth = {
@@ -789,7 +766,7 @@ country_event = {
 			region_valyria = {
 				undiscover_country = ROOT
 			}
-			ghiscari_sea_region = {
+			valyrian_sea_region = {
 				undiscover_country = ROOT
 			}
 			essos_central_wastelands = {

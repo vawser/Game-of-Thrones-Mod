@@ -186,7 +186,6 @@ country_event = {
 		desc = GOT_CULTURE_RELIGION.2.desc_1 #Different Culture - But we have subjects of it
 		trigger = {
 			has_regency = no
-			NOT = { has_government_mechanic = mamluk_mechanic }
 			NOT = { ruler_culture = ROOT }
 			ruler_religion = ROOT
 			any_owned_province = {
@@ -198,7 +197,6 @@ country_event = {
 		desc = GOT_CULTURE_RELIGION.2.desc_2 #Different Culture - And we have no subjects of it
 		trigger = {
 			has_regency = no
-			NOT = { has_government_mechanic = mamluk_mechanic }
 			NOT = { ruler_culture = ROOT }
 			ruler_religion = ROOT
 			NOT = {
@@ -212,7 +210,6 @@ country_event = {
 		desc = GOT_CULTURE_RELIGION.2.desc_3 #Different Heathen Religion
 		trigger = {
 			has_regency = no
-			NOT = { has_government_mechanic = mamluk_mechanic }
 			ruler_culture = ROOT
 			NOT = { ruler_religion = ROOT }
 			NOT = { religion_group = variable:new_ruler_religion }
@@ -222,7 +219,6 @@ country_event = {
 		desc = GOT_CULTURE_RELIGION.2.desc_4 #Different Heretic Religion
 		trigger = {
 			has_regency = no
-			NOT = { has_government_mechanic = mamluk_mechanic }
 			ruler_culture = ROOT
 			NOT = { ruler_religion = ROOT }
 			religion_group = variable:new_ruler_religion
@@ -233,7 +229,6 @@ country_event = {
 		desc = GOT_CULTURE_RELIGION.2.desc_5 #Different Culture and Different Religion
 		trigger = {
 			has_regency = no
-			NOT = { has_government_mechanic = mamluk_mechanic }
 			NOT = { ruler_culture = ROOT }
 			NOT = { ruler_religion = ROOT }
 		}
@@ -245,7 +240,6 @@ country_event = {
 		trigger = {
 			OR = {
 				has_regency = yes
-				has_government_mechanic = mamluk_mechanic
 				AND = {
 					ruler_culture = ROOT
 					ruler_religion = ROOT
@@ -284,7 +278,6 @@ country_event = {
 		name = GOT_CULTURE_RELIGION.2.option.a #Different Culture
 		trigger = {
 			has_regency = no
-			NOT = { has_government_mechanic = mamluk_mechanic }
 			NOT = { ruler_culture = ROOT }
 			ruler_religion = ROOT
 		}
@@ -482,7 +475,6 @@ country_event = {
 		name = GOT_CULTURE_RELIGION.2.option.b #Different Heathen Religion - This is harder to get.
 		trigger = {
 			has_regency = no
-			NOT = { has_government_mechanic = mamluk_mechanic }
 			ruler_culture = ROOT
 			NOT = { ruler_religion = ROOT }
 			NOT = { religion_group = variable:new_ruler_religion }
@@ -711,7 +703,6 @@ country_event = {
 		name = GOT_CULTURE_RELIGION.2.option.c #Different Heretic Religion - This is harder to get (but not as hard as heathen).
 		trigger = {
 			has_regency = no
-			NOT = { has_government_mechanic = mamluk_mechanic }
 			ruler_culture = ROOT
 			NOT = { ruler_religion = ROOT }
 			religion_group = variable:new_ruler_religion
@@ -920,7 +911,6 @@ country_event = {
 		name = GOT_CULTURE_RELIGION.2.option.d #Different Culture and Different Religion
 		trigger = {
 			has_regency = no
-			NOT = { has_government_mechanic = mamluk_mechanic }
 			NOT = { ruler_culture = ROOT }
 			NOT = { ruler_religion = ROOT }
 		}
@@ -1193,7 +1183,6 @@ country_event = {
 		trigger = {
 			OR = {
 				has_regency = yes #It is also possible to enter a regency
-				has_government_mechanic = mamluk_mechanic #It is even possible to suddenly get the Mamluk Government form.
 				AND = {
 					ruler_culture = ROOT
 					ruler_religion = ROOT
@@ -1825,7 +1814,6 @@ country_event = {
 
 	trigger = {
 		NOT = { ruler_culture = ROOT }
-		NOT = { has_government_mechanic = mamluk_mechanic }
 		accepted_culture = new_variable:ruler_culture
 		has_regency = no
 		employed_advisor = {
@@ -1901,7 +1889,6 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_government_mechanic = mamluk_mechanic }
 		NOT = { ruler_culture = ROOT }
 		NOT = { accepted_culture = new_variable:ruler_culture }
 		has_regency = no
@@ -1953,7 +1940,6 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_government_mechanic = mamluk_mechanic }
 		NOT = { ruler_culture = ROOT }
 		NOT = { accepted_culture = new_variable:ruler_culture }
 		has_regency = no
@@ -3555,7 +3541,6 @@ country_event = {
 		is_monarchy_government = yes
 		has_regency = no
 		has_heir = no
-		NOT = { has_government_mechanic = mamluk_mechanic }
 		any_owned_province = {
 			has_owner_culture = no
 		}

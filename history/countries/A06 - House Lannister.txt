@@ -129,21 +129,22 @@ fixed_capital = 182
 		mil = 5
 		birth_date = 242.1.1
 	}
-	save_global_event_target_as = et_handoftheking
-	set_global_flag = handoftheking_active
-	add_country_modifier = {
-		name = got_hand_of_the_king
-		duration = -1
-	}
 
 	heir = {
 		name = "Jaime"
 		dynasty = "Lannister"
-		birth_date = 273.1.1
+		birth_date = 266.5.2
 		death_date = 350.1.1
 		claim = 100
 		adm = 3
 		dip = 5
 		mil = 5
+	}
+
+	save_global_event_target_as = et_handoftheking
+	set_global_flag = handoftheking_active
+	add_country_modifier = {
+		name = got_hand_of_the_king
+		duration = -1
 	}
 }

@@ -938,10 +938,15 @@ estate_nobles_the_small_council = {
 	on_invalid = {
 		custom_tooltip = estate_nobles_the_small_council.revoked_tt
 	}
-	modifier_by_land_ownership = {
-		prestige = 0.5
-		imperial_authority_value = 0.1
-		advisor_cost = 0.25
+	mechanics = {
+		exempt_from_seize_land
+	}
+	influence_scaled_conditional_modifier = {
+		trigger = { always = yes }
+		modifier = {
+			prestige = 0.5
+			advisor_cost = 0.25
+		}
 	}
 
 	ai_will_do = {
@@ -980,6 +985,7 @@ estate_nobles_the_kingsguard = {
 	}
 	benefits = {
 		land_morale = 0.025
+		crw_militarists_influence = 0.01
 		free_land_leader_pool = 1
 	}
 	ai_will_do = {
@@ -1018,6 +1024,7 @@ estate_nobles_the_queensguard = {
 	}
 	benefits = {
 		land_morale = 0.025
+		crw_militarists_influence = 0.01
 		free_land_leader_pool = 1
 	}
 	ai_will_do = {

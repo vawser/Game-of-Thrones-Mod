@@ -4,7 +4,7 @@ country_event = {
 	id = GOT_BLACKFYRE_REB.1
 	title = GOT_BLACKFYRE_REB.1.title
 	desc = GOT_BLACKFYRE_REB.1.desc
-	picture = CIVIL_WAR_eventPicture
+	picture = KINGS_LANDING_eventPicture
 	
 	major = yes
 	is_triggered_only = yes
@@ -66,7 +66,7 @@ country_event = {
 	option = {
 		name = GOT_BLACKFYRE_REB.1.option.a
 		ai_chance = { factor = 100 }
-		add_stability = -1
+		reduce_stability_or_adm_power = yes
 		add_legitimacy = -10
 		custom_tooltip = GOT_BLACKFYRE_REB.1.tt
 		hidden_effect = {
@@ -116,8 +116,8 @@ country_event = {
 		add_stability_or_adm_power_per_stab = { amount = 2 }
 		add_legitimacy = 25
 		add_permanent_power_projection = {
-			type = mission_rewards_power_projection
-			amount = 20
+			type = crushed_blackfyre_reb
+			amount = 10
 		}
 		hidden_effect = {
 			remove_country_modifier = blackfyre_reb_ai_boost
@@ -544,8 +544,8 @@ country_event = {
 		name = GOT_BLACKFYRE_REB.11.option.a
 		goto = fyrereb_prov_et
 		ai_chance = { factor = 100 }
-		add_legitimacy = -20
 		reduce_stability_or_adm_power = yes
+		add_legitimacy = -20
 		if = {
 			limit = { num_of_subjects = 1 }
 			every_subject_country = {

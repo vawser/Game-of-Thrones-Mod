@@ -13,31 +13,21 @@ add_or_extend_province_modifier_effect = {
 add_stability_or_adm_power = {
 	if = {
 		limit = {
-			stability = 3
-		}
-		add_adm_power = 50
-	}
-	if = {
-		limit = {
 			NOT = { stability = 3 }
 		}
 		add_stability = 1
 	}
+	else = { add_adm_power = 50 }
 }
 
 reduce_stability_or_adm_power = {
-	if = {
-		limit = {
-			NOT = { stability = -2 }
-		}
-		add_adm_power = -50
-	}
 	if = {
 		limit = {
 			stability = -2
 		}
 		add_stability = -1
 	}
+	else = { add_adm_power = -50 }
 }
 
 add_stability_or_adm_power_per_stab = {

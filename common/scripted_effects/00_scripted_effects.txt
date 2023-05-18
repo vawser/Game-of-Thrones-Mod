@@ -104,3 +104,27 @@ on_alliance_broken_effect = {
 	# 	}
 	# }
 }
+
+#Credits for that script goes to Stiopa
+for = {
+	[[custom_tooltip]custom_tooltip = $custom_tooltip$]
+	hidden_effect = {
+		set_variable = {
+			which = ForLoopCounter
+			value = $amount$
+		}	
+		while = {
+			limit = {
+				check_variable = {
+					which = ForLoopCounter
+					value = 1
+				}
+			}
+			$effect$
+			subtract_variable = {
+				which = ForLoopCounter
+				value = 1
+			}
+		}
+	}
+}

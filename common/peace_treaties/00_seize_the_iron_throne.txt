@@ -33,7 +33,13 @@ po_seize_the_iron_throne = {
 			new_tag = FROM
 		}
 		save_global_event_target_as = IronThroneKing
-		FROM = { create_union = event_target:originalCOU }
+		FROM = {
+			create_union = event_target:originalCOU
+			add_country_modifier = {
+				name = "got_administrative_burdens"
+				duration = 18250
+			}
+		}
 		every_country = {
 			limit = {
 				is_part_of_hre = yes

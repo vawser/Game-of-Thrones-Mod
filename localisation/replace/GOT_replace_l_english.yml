@@ -1007,6 +1007,9 @@
  # HRE
  #---------------------------------------------------------
  HRE_HRE: "The Seven Kingdoms"
+
+ MODIFIER_IMPERIAL_AUTHORITY: "Royal Authority Growth Modifier"
+ MODIFIER_IMPERIAL_AUTHORITY_VALUE: "Royal Authority Modifier"
  
  ENABLE_HRE_LEAGUES: "The §YProtestant§! and §YCatholic§! Leagues will be enabled."
  DISABLE_HRE_LEAGUES: "The §YProtestant§! and §YCatholic§! Leagues will be disabled."
@@ -1069,7 +1072,7 @@
  cb_force_join_hre: "Expand Kingdom"
  cb_force_join_hre_desc: "They must be part of the Kingdom!"
  FORCE_JOIN_HRE_WAR_NAME: "$ORDER$$FIRST$-$SECOND$ War of Royal Conquest"
- take_capital_force_join_hre_desc: "All provinces of $COUNTRY|Y$ and its subjects that can join the Seven Kingdoms in $CONTINENT|Y$ will become part of the kingdom. The King will gain $AUTHORITY|G$ Imperial Authority."
+ take_capital_force_join_hre_desc: "All provinces of $COUNTRY|Y$ and its subjects that can join the Seven Kingdoms in $CONTINENT|Y$ will become part of the kingdom. The King will gain $AUTHORITY|G$ Royal Authority."
  take_capital_force_join_hre_no_gain_desc: "All provinces of $COUNTRY|Y$ and its subjects that can join the Seven Kingdoms in $CONTINENT|Y$ will become part of the kingdom."
  #
  cb_reintegrate_into_hre: "Royal Reconquest"
@@ -1172,7 +1175,7 @@
  PEACE_IN_EMPIRE_NO_WAR: "After unification has been declared, no member of the Seven Kingdoms may take hostile actions towards another member."
  SENDGIFTTITLE: "Interact"
  SENDGIFTDESC: "Interact with the targeted realm."
- improved_imperial_relations: "Improved imperial relations"
+ improved_imperial_relations: "Improved royal relations"
  sent_gift: "Interacted"
  DIPLOMACYACTION_CATEGORY_emperor: "Royal actions"
 
@@ -1181,7 +1184,7 @@
  FREE_CITY: "Royal City"
  HRE_NUM_FREE_CITIES: "$NUM$ Royal Cities"
  HRE_FREE_CITY: "§Y$NAME$§W is a Royal City in the Seven Kingdoms."
- FREE_CITIES_IA: "The §Y$NUM$§! Royal Cities in the Empire increase Imperial Authority by $VAL$ every month."
+ FREE_CITIES_IA: "The §Y$NUM$§! Royal Cities in the Empire increase Royal Authority by $VAL$ every month."
  free_cities_in_hre: "Royal Cities in the Holy Roman Empire"
  GRANTFREECITYTITLE: "Grant Royal City Status"
  GRANTFREECITYDESC: "Granting them Royal City status will strengthen their economy and increase their contribution to the King, but we will be required to protect them from attack."
@@ -1370,6 +1373,7 @@
  DEMAND_REVOKE_REFORM: "Revoke Royal Reform"
 
  IMP_AUTH_DECLINE_BY: "The Royal Authority would be reduced by $VAL|R$."
+ EXTEND_REGENCY_IMPERIAL_AUTHORITY_HIT: "Since you are the King, you will also suffer a reduction in Royal Authority of $IAHIT|Y$."
 
  # Diplo Actions
  GRANTELECTORATETITLE: "------------------"

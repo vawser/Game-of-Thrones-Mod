@@ -311,7 +311,7 @@ patriarch_authority_global = {
 pasha_state = {
 	local_governing_cost = -0.2
 	min_local_autonomy = 20
-	state_maintenance_modifier = -0.33
+	local_state_maintenance_modifier = -0.33
 	local_autonomy = -0.1
 	local_tolerance_of_heathens = 10
 }
@@ -633,7 +633,6 @@ positive_stability = {
 	yearly_corruption = -0.02
 	global_institution_spread = 0.05
 	yearly_harmony = 0.25
-    monarch_lifespan = 0.1 # +30% max
 }
 
 privateering = {
@@ -648,7 +647,6 @@ negative_stability = {
 	devotion = 1
 	caravan_power = 0.05
 	yearly_harmony = 0.25
-    monarch_lifespan = 0.1 # -30% max
 }
 
 positive_mandate = {	# 100% strength at 100 mandate, 0% at 50 mandate
@@ -1971,7 +1969,7 @@ galleass_ship = {
 caravel_ship = {
 	movement_speed_in_fleet_modifier = 1 
 	naval_attrition = -0.25
-	global_ship_trade_power = 0.33
+	ship_trade_power_modifier = 0.33
 }
 
 voc_indiamen_ship = {
@@ -2007,7 +2005,7 @@ innovativeness = {
 rajput_regiment = {
 	drill_decay_modifier = -0.25
 	reinforce_cost_modifier = -0.5
-	discipline = 0.05
+	land_morale = 0.05
 }
 
 raiding_parties_modifier = {
@@ -2068,7 +2066,7 @@ expanded_infrastructure = {
 	ship_recruit_speed = -0.15
 	local_defensiveness = 0.05
 	garrison_growth = 0.05
-	local_development_cost = -0.25
+	local_development_cost = -0.15
 	local_production_efficiency = 0.05
 	local_tax_modifier = 0.1
 	local_manpower_modifier = 0.05

@@ -28,6 +28,17 @@ on_startup = {
 			age_of_rebellion_add_nation_bonus_effect = yes
 		}
 	}
+
+	# Kingsroad Benefit
+	if = {
+		limit = {
+			NOT = { has_global_flag = kingsroad_bonuses }
+		}
+		set_global_flag = kingsroad_bonuses
+		kingsroad = {
+			add_province_triggered_modifier = kingsroad_province_bonus
+		}
+	}
 	
 	#Sets up Countries
 	events = {
@@ -3074,6 +3085,7 @@ on_slacken_start = {
 	add_country_modifier = {
 		name = slackening_modifier
 		duration = -1
+		hidden = yes
 	}
 }
 on_slacken_stop = {

@@ -194,6 +194,29 @@ castle_black_subsidies = {
 }
 
 #--------------------------------
+# The Kingsroad
+#--------------------------------
+kingsroad_province_bonus = {
+	potential = {
+		always = yes
+	}
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = "kingsroad_war_tt"
+			owner = {
+				is_at_war = no
+			}
+		}
+	}
+	
+	local_friendly_movement_speed = 0.25
+	supply_limit_modifier = 0.10
+
+	on_activation = { }
+	on_deactivation = { }
+}
+
+#--------------------------------
 # Great Sept of Baelor
 #--------------------------------
 great_sept_of_baelor = {

@@ -6,9 +6,8 @@ crw_loyalists = {
 	always = yes
 	
 	modifier = {
-		stability_cost_modifier = -0.05
 		imperial_authority_value = 0.1
-		yearly_absolutism = 1
+		yearly_absolutism = 0.5
 		yearly_corruption = 0.10
 	}
 }
@@ -18,8 +17,7 @@ crw_pragmatists = {
 	always = yes
 	
 	modifier = {
-		reduced_liberty_desire = 10
-		relation_with_same_culture_group = 25
+		improve_relation_modifier = 0.20
 		advisor_cost = -0.33
 		min_autonomy = 5
 	}
@@ -30,7 +28,6 @@ crw_militarists = {
 	always = yes
 
 	modifier = {
-		land_forcelimit_modifier = 0.20
 		land_maintenance_modifier = -0.125
 		reinforce_cost_modifier = -0.25
 		state_maintenance_modifier = 1.0

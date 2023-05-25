@@ -1,0 +1,54 @@
+namespace = royal_cities
+
+# Royal City status gained
+country_event = {
+	id = royal_cities.1
+	title = royal_cities.1.title
+	desc = royal_cities.1.desc
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			change_government_to_republic = yes
+			add_government_reform = royal_city_reform
+		}
+	}
+	
+	option = {
+		name = free_cities.1.a
+		tooltip = {
+			change_government_to_republic = yes
+			add_government_reform = royal_city_reform
+		}
+	}
+}
+
+# Royal City status lost
+country_event = {
+	id = royal_cities.2
+	title = free_cities.2.t
+	desc = free_cities.2.d
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			remove_government_reform = free_city
+			add_government_reform = oligarchy_reform
+			remove_country_modifier = fc_hre_privileges
+			remove_country_modifier = fc_city_league
+			clr_country_flag = fc_city_league_flag
+		}
+	}
+	
+	option = {
+		name = free_cities.2.a
+		tooltip = { 
+			remove_government_reform = free_city
+			add_government_reform = oligarchy_reform
+		}
+	}
+}

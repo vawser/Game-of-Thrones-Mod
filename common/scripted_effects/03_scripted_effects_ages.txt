@@ -1,0 +1,191 @@
+ages_effect_bonus = {
+	if = {
+		limit = {
+			has_country_modifier = am_$bonus_name$_4
+		}
+		hidden_effect = {
+			remove_country_modifier = am_$bonus_name$_4
+		}
+		custom_tooltip = "ages_perm_effect_upgrade_tt"
+		add_country_modifier = {
+			name = am_$bonus_name$_5
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_modifier = am_$bonus_name$_3
+		}
+		hidden_effect = {
+			remove_country_modifier = am_$bonus_name$_3
+		}
+		custom_tooltip = "ages_perm_effect_upgrade_tt"
+		add_country_modifier = {
+			name = am_$bonus_name$_4
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_modifier = am_$bonus_name$_2
+		}
+		hidden_effect = {
+			remove_country_modifier = am_$bonus_name$_2
+		}
+		custom_tooltip = "ages_perm_effect_upgrade_tt"
+		add_country_modifier = {
+			name = am_$bonus_name$_3
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_modifier = am_$bonus_name$_1
+		}
+		hidden_effect = {
+			remove_country_modifier = am_$bonus_name$_1
+		}
+		custom_tooltip = "ages_perm_effect_upgrade_tt"
+		add_country_modifier = {
+			name = am_$bonus_name$_2
+			duration = -1
+		}
+	}
+	else = {
+		custom_tooltip = "ages_perm_effect_tt"
+		add_country_modifier = {
+			name = am_$bonus_name$_1
+			duration = -1
+		}
+	}
+	custom_tooltip = "ages_effect_tt"
+}
+
+show_age_effect_tt = { custom_tooltip = "ages_effect_tt" }
+
+new_age_on_action_effect = {
+	if = {
+		limit = { current_age = age_of_fire }
+		age_of_fire_add_nation_bonus_effect = yes
+	}
+	else_if = {
+		limit = { current_age = age_of_rebellion }
+		age_of_fire_remove_nation_bonus_effect = yes
+		age_of_rebellion_add_nation_bonus_effect = yes
+	}
+}
+
+age_of_fire_add_nation_bonus_effect = {
+	Q06 = {
+		add_country_modifier = {
+			name = "aof_thenn_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	G29 = {
+		add_country_modifier = {
+			name = "aof_lefford_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	F58 = {
+		add_country_modifier = {
+			name = "aof_hightower_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	U87 = {
+		add_country_modifier = {
+			name = "aof_volantis_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	CHA = {
+		add_country_modifier = {
+			name = "aof_chakko_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	R19 = {
+		add_country_modifier = {
+			name = "aof_meereen_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	S08 = {
+		add_country_modifier = {
+			name = "aof_samyriana_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	R53 = {
+		add_country_modifier = {
+			name = "aof_faros_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+}
+
+age_of_fire_remove_nation_bonus_effect = {
+	Q06 = { remove_country_modifier = "aof_thenn_bonus" }
+	G29 = { remove_country_modifier = "aof_lefford_bonus" }
+	F58 = { remove_country_modifier = "aof_hightower_bonus" }
+	U87 = { remove_country_modifier = "aof_volantis_bonus"}
+	CHA = { remove_country_modifier = "aof_chakko_bonus" }
+	R19 = { remove_country_modifier = "aof_meereen_bonus" }
+	S08 = { remove_country_modifier = "aof_samyriana_bonus" }
+	R53 = { remove_country_modifier = "aof_faros_bonus" }
+}
+
+age_of_rebellion_add_nation_bonus_effect = {
+	A04 = {
+		add_country_modifier = {
+			name = "aor_arryn_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	A07 = {
+		add_country_modifier = {
+			name = "aor_baratheon_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	U92 = {
+		add_country_modifier = {
+			name = "aor_winter_keep_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	U25 = {
+		add_country_modifier = {
+			name = "aor_braavos_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	R23 = {
+		add_country_modifier = {
+			name = "aor_yunkai_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+	A43 = {
+		add_country_modifier = {
+			name = "aor_velaryon_bonus"
+			duration = -1
+			hidden = yes
+		}
+	}
+}

@@ -1,15 +1,15 @@
 # Governments
 is_primitive_government = {
-    OR = {
-        has_reform = khalasar_reform
-        has_reform = jhattar_reform
-        has_reform = wildling_clan_reform
-    }
+	OR = {
+		has_reform = khalasar_reform
+		has_reform = jhattar_reform
+		has_reform = wildling_clan_reform
+	}
 }
 
 is_free_city_government = {
-    OR = {
-        has_reform = tyrosh_city_reform
+	OR = {
+		has_reform = tyrosh_city_reform
 		has_reform = myr_city_reform
 		has_reform = lys_city_reform
 		has_reform = volantis_city_reform
@@ -20,101 +20,172 @@ is_free_city_government = {
 		has_reform = norvos_city_reform
 		has_reform = saath_city_reform
 		has_reform = andal_city_reform
-    }
+	}
 }
 
 is_westerosi_government = {
-    OR = {
-        has_reform = noble_house_reform
-        has_reform = royal_house_reform
-    }
+	OR = {
+		has_reform = noble_house_reform
+		has_reform = lord_of_the_tides_reform
+		has_reform = great_house_reform
+		has_reform = royal_house_reform
+	}
+}
+
+westeros_government_king = {
+	if = {
+		limit = {
+			hre_size = 1
+		}
+		is_emperor = yes
+	}
+	else = {
+		OR = {
+			has_reform = royal_house_reform
+			has_reform = kingdom_of_westeros_reform
+		}
+	}
+}
+
+westeros_government_great_house = {
+	if = {
+		limit = {
+			hre_size = 1
+		}
+		is_elector = yes
+	}
+	else = {
+		has_reform = great_house_reform
+	}
+}
+
+westeros_government_not_king = {
+	OR = {
+		has_reform = noble_house_reform
+		has_reform = lord_of_the_tides_reform
+		has_reform = great_house_reform
+	}
 }
 
 is_yiti_government = {
-    OR = {
-        has_reform = yiti_city_reform
-        has_reform = yiti_empire_reform
-    }
+	OR = {
+		has_reform = yiti_city_reform
+		has_reform = yiti_empire_reform
+	}
 }
 
 is_monarchy_government = {
-    OR = {
-        has_reform = kingdom_reform
-        has_reform = noble_house_reform
-        has_reform = royal_house_reform
-        has_reform = yiti_city_reform
-        has_reform = yiti_empire_reform
-        has_reform = qarth_city_reform
-        has_reform = nefer_city_reform
-        has_reform = hyrkoon_city_reform
-        has_reform = valyria_city_reform
-        has_reform = meereen_city_reform
-        has_reform = yunkai_city_reform
-        has_reform = astapor_city_reform
-        has_reform = ghis_city_reform
-    }
+	OR = {
+		has_reform = kingdom_reform
+		has_reform = kingdom_of_westeros_reform
+		has_reform = yiti_city_reform
+		has_reform = yiti_empire_reform
+		has_reform = qarth_city_reform
+		has_reform = nefer_city_reform
+		has_reform = hyrkoon_city_reform
+		has_reform = valyria_city_reform
+		has_reform = meereen_city_reform
+		has_reform = yunkai_city_reform
+		has_reform = astapor_city_reform
+		has_reform = ghis_city_reform
+	}
 }
 
 is_republic_government = {
-    OR = {
-        has_reform = tyrosh_city_reform
-        has_reform = myr_city_reform
-        has_reform = lys_city_reform
-        has_reform = volantis_city_reform
-        has_reform = pentos_city_reform
-        has_reform = braavos_city_reform
-        has_reform = lorath_city_reform
-        has_reform = saath_city_reform
-        has_reform = trader_city_reform
-        has_reform = andal_city_reform
-        has_reform = expeditionary_company_reform
-        has_reform = trading_outpost_reform
-        has_reform = merchant_republic_reform
-        has_reform = republic_reform
-        has_reform = military_dictatorship_reform
-    }
+	OR = {
+		has_reform = tyrosh_city_reform
+		has_reform = myr_city_reform
+		has_reform = lys_city_reform
+		has_reform = volantis_city_reform
+		has_reform = pentos_city_reform
+		has_reform = braavos_city_reform
+		has_reform = lorath_city_reform
+		has_reform = saath_city_reform
+		has_reform = trader_city_reform
+		has_reform = andal_city_reform
+		has_reform = expeditionary_company_reform
+		has_reform = trading_outpost_reform
+		has_reform = merchant_republic_reform
+		has_reform = military_dictatorship_reform
+	}
 }
 
 is_theocracy_government = {
-    OR = {
-        has_reform = theocracy_reform
-        has_reform = the_faith_reform
-        has_reform = qohor_city_reform
-        has_reform = norvos_city_reform
-    }
+	OR = {
+		has_reform = theocracy_reform
+		has_reform = the_faith_reform
+		has_reform = qohor_city_reform
+		has_reform = norvos_city_reform
+	}
 }
 
 is_tribal_government = {
-    OR = {
-        has_reform = tribe_reform
-        has_reform = wildling_clan_reform
-        has_reform = lhazar_clan_reform
-        has_reform = ibben_clan_reform
-        has_reform = omber_clan_reform
-        has_reform = faros_clan_reform
-        has_reform = naath_clan_reform
-        has_reform = summer_islander_clan_reform
-    }
+	OR = {
+		has_reform = tribe_reform
+		has_reform = wildling_clan_reform
+		has_reform = lhazar_clan_reform
+		has_reform = ibben_clan_reform
+		has_reform = omber_clan_reform
+		has_reform = faros_clan_reform
+		has_reform = naath_clan_reform
+		has_reform = summer_islander_clan_reform
+	}
 }
 
 is_nomadic_government = {
-    OR = {
-        has_reform = warband_reform
-        has_reform = khalasar_reform
-        has_reform = jhattar_reform
-    }
+	OR = {
+		has_reform = warband_reform
+		has_reform = khalasar_reform
+		has_reform = jhattar_reform
+	}
 }
 
 is_occult_government = {
-    government = occult
+	government = occult
 }
 
-is_nights_watch_government = {
-    OR = {
-        has_reform = nights_watch_reform
-    }
+is_nights_watch_government = { # Watchmen government
+	OR = {
+		has_reform = nights_watch_reform
+		tag = NGT
+	}
+}
+
+is_related_to_nights_watch_check = {
+	OR = {
+		has_reform = nights_watch_reform
+		has_reform = watchmen_outpost_reform
+	}
 }
 
 is_pirate_government = {
-    government = pirate
+	has_government_attribute = is_pirate_republic_reform
+}
+
+sk_centralization = {
+	custom_trigger_tooltip = {
+		tooltip = CENTRALIZATION_TT
+		hre_reform_passed = king_implement_royal_court_of_justice
+	}
+}
+
+sk_decentralization = {
+	custom_trigger_tooltip = {
+		tooltip = DECENTRALIZATION_TT
+		hre_reform_passed = king_reform_the_armies
+	}
+}
+
+sk_not_centralization = {
+	custom_trigger_tooltip = {
+		tooltip = NOT_CENTRALIZATION_TT
+		NOT = { hre_reform_passed = king_implement_royal_court_of_justice }
+	}
+}
+
+sk_not_decentralization = {
+	custom_trigger_tooltip = {
+		tooltip = NOT_DECENTRALIZATION_TT
+		NOT = { hre_reform_passed = king_reform_the_armies }
+	}
 }

@@ -1,9 +1,8 @@
 
 government_rank = 1
 
-government = monarchy
-add_government_reform = noble_house_reform
-
+government = dynasty
+add_government_reform = lord_of_the_tides_reform
 
 technology_group = westerosi
 primary_culture = men_of_the_crownlands
@@ -20,6 +19,13 @@ capital = 220
         dip = 2
         mil = 3
         birth_date = 67.1.1
+    }
+
+    220 = {
+        create_flagship = {
+            type = heavy_ship
+            name = "Pride of Driftmark"
+        }
     }
 }
 
@@ -86,13 +92,15 @@ capital = 220
 # War of the Ninepenny Kings
 260.1.1 = {
     monarch = {
-        name = "Sebaston"
+        name = "Lucerys"
         dynasty = "Velaryon"
         adm = 0
         dip = 4
         mil = 4
         birth_date = 220.1.1
     }
+    save_global_event_target_as = et_masterofships
+    set_global_flag = masterofships_active
 }
 
 # Robert's Rebellion

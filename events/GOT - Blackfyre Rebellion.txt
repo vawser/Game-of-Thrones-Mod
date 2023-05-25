@@ -1,0 +1,635 @@
+namespace = GOT_BLACKFYRE_REB
+
+country_event = {
+	id = GOT_BLACKFYRE_REB.1
+	title = GOT_BLACKFYRE_REB.1.title
+	desc = GOT_BLACKFYRE_REB.1.desc
+	picture = KINGS_LANDING_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						area = chyterring_brook_area
+						area = farring_cross_area
+					}
+					is_core = ROOT
+					base_tax = 5
+					is_capital = no
+				}
+				if = {
+					limit = { owner = { ai = yes } }
+					spawn_rebels = {
+						type = 	pretender_rebels
+						size = 2
+						leader = "Daemon"
+						leader_dynasty = "Blackfyre"
+						win = no
+					}
+				}
+				else = {
+					spawn_rebels = {
+						type = 	pretender_rebels
+						size = 3
+						leader = "Daemon"
+						leader_dynasty = "Blackfyre"
+						win = yes
+					}
+				}
+				add_local_autonomy = 100
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						area = rooks_rest_area
+						area = antlers_area
+					}
+					NOT = { province_id = 215 } # South Crackclaw Point
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1.5
+				}
+			}
+		}
+		set_country_flag = had_blackfyre_rebellion
+	}
+	
+	option = {
+		name = GOT_BLACKFYRE_REB.1.option.a
+		ai_chance = { factor = 100 }
+		reduce_stability_or_adm_power = yes
+		add_legitimacy = -10
+		custom_tooltip = GOT_BLACKFYRE_REB.1.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = {
+					name = blackfyre_reb_ai_boost
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+# The Rebellion Concludes
+country_event = {
+	id = GOT_BLACKFYRE_REB.100
+	title = GOT_BLACKFYRE_REB.100.title
+	desc = GOT_BLACKFYRE_REB.100.desc
+	picture = CIVIL_WAR_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = fyrereb_counter
+			clr_country_flag = instability_check_flag
+			clr_country_flag = blackfyre_uprising_in_capital
+			every_owned_province = {
+				limit = {
+					has_province_flag = fyrereb_prov
+				}
+				clr_province_flag = fyrereb_prov
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA3096"
+		ai_chance = { factor = 100 }
+		add_stability_or_adm_power_per_stab = { amount = 2 }
+		add_legitimacy = 25
+		add_permanent_power_projection = {
+			type = crushed_blackfyre_reb
+			amount = 10
+		}
+		hidden_effect = {
+			remove_country_modifier = blackfyre_reb_ai_boost
+		}
+	}
+}
+
+# Supporters Among the Lords
+country_event = {
+	id = GOT_BLACKFYRE_REB.2
+	title = GOT_BLACKFYRE_REB.2.title
+	desc = GOT_BLACKFYRE_REB.2.desc
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_neighbor_country = {
+			NOT = { has_country_flag = sent_help_to_targaryen }
+			NOT = { has_country_flag = sent_help_to_blackfyre }
+			NOT = { tag = FAT }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_neighbor_country = {
+				limit = {
+					NOT = { has_country_flag = sent_help_to_targaryen }
+					NOT = { has_country_flag = sent_help_to_blackfyre }
+				}
+				set_country_flag = sent_help_to_targaryen
+				save_event_target_as = targaryen_helper
+				set_treasury_variable = {
+					treasury_var = targaryen_money_support
+				}
+				set_manpower_variable = {
+					manpower_var = targaryen_manpower_support
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = GOT_BLACKFYRE_REB.2.option.a
+		ai_chance = { factor = 100 }
+		event_target:targaryen_helper = {
+			transfer_treasury = {
+				variable = targaryen_money_support
+				giver = event_target:targaryen_helper
+				taker = ROOT
+			}
+			custom_tooltip = targaryen_reb_support_money_tt
+			transfer_manpower = {
+				variable = targaryen_manpower_support
+				giver = event_target:targaryen_helper
+				taker = ROOT
+			}
+			custom_tooltip = targaryen_reb_support_manpower_tt
+		}
+		add_opinion = {
+			who = event_target:targaryen_helper
+			modifier = did_not_support_rebels
+		}
+		add_trust = {
+			who = event_target:targaryen_helper
+			value = 10
+		} 
+	}
+}
+
+# Traitors Among the Lords
+country_event = {
+	id = GOT_BLACKFYRE_REB.3
+	title = GOT_BLACKFYRE_REB.3.title
+	desc = GOT_BLACKFYRE_REB.3.desc
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_neighbor_country = {
+			NOT = { has_country_flag = sent_help_to_blackfyre }
+			NOT = { has_country_flag = sent_help_to_targaryen }
+			NOT = { tag = FAT }
+			any_neighbor_province = {
+				NOT = { province_id = 306 } # Castle of Summerhall
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_neighbor_country = {
+				limit = {
+					NOT = { has_country_flag = sent_help_to_blackfyre }
+					NOT = { has_country_flag = sent_help_to_targaryen }
+					NOT = { tag = FAT }
+					any_neighbor_province = {
+						NOT = { province_id = 306 } # Castle of Summerhall
+					}
+				}
+				set_country_flag = sent_help_to_blackfyre
+				save_event_target_as = blackfyre_helper
+				set_treasury_variable = {
+					treasury_var = blackfyre_money_support
+				}
+			}
+			random_owned_province = {
+				limit = {
+					any_neighbor_province = {
+						owned_by = event_target:blackfyre_helper
+					}
+				}
+				save_event_target_as = fyrereb_prov_et
+			}
+		}
+	}
+
+	option = {
+		name = GOT_BLACKFYRE_REB.3.option.a
+		goto = fyrereb_prov_et
+		ai_chance = { factor = 100 }
+		event_target:blackfyre_helper = {
+			remove_treasury = {
+				variable = blackfyre_money_support
+				giver = event_target:blackfyre_helper
+			}
+			custom_tooltip = blackfyre_reb_support_money_tt
+		}
+		random_owned_province = {
+			limit = {
+				any_neighbor_province = {
+					owned_by = event_target:blackfyre_helper
+				}
+			}
+			pretender_rebels = 1
+		}
+		add_trust = {
+			who = event_target:blackfyre_helper
+			value = -10
+		}
+		add_opinion = {
+			who = event_target:blackfyre_helper
+			modifier = supported_rebels
+		}
+	}
+}
+
+# City Request Autonomy
+country_event = {
+	id = GOT_BLACKFYRE_REB.4
+	title = GOT_BLACKFYRE_REB.4.title
+	desc = GOT_BLACKFYRE_REB.4.desc
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			is_core = ROOT
+			NOT = { has_province_flag = fyrereb_prov }
+			NOT = { province_id = 306 } # Castle of Summerhall
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_core = ROOT
+					NOT = { has_province_flag = fyrereb_prov }
+					NOT = { province_id = 306 } # Castle of Summerhall
+				}
+				save_event_target_as = fyrereb_prov_et
+				set_province_flag = fyrereb_prov
+			}
+		}
+	}
+	
+	option = {
+		name = GOT_BLACKFYRE_REB.4.option.a
+		goto = fyrereb_prov_et
+		ai_chance = { factor = 80 }
+		add_adm_power = -50
+		event_target:fyrereb_prov_et = {
+			add_province_modifier = {
+				name = loyalist_stronghold
+				duration = 365
+			}
+			add_local_autonomy = 50
+		}
+	}
+
+	option = {
+		name = GOT_BLACKFYRE_REB.4.option.b
+		ai_chance = { factor = 20 }
+		add_adm_power = -25
+		event_target:fyrereb_prov_et = {
+			add_province_modifier = {
+				name = ignored_local_request
+				duration = 1825
+			}
+		}
+	}
+}
+
+# Traitors in Court
+country_event = {
+	id = GOT_BLACKFYRE_REB.5
+	title = GOT_BLACKFYRE_REB.5.title
+	desc = GOT_BLACKFYRE_REB.5.desc
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { legitimacy = 70 }
+		has_country_flag = instability_check_flag
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = GOT_BLACKFYRE_REB.5.option.a
+		ai_chance = { factor = 100 }
+		add_prestige = -5
+		add_legitimacy = -10
+	}
+}
+
+# Army Deserters
+country_event = {
+	id = GOT_BLACKFYRE_REB.6
+	title = GOT_BLACKFYRE_REB.6.title
+	desc = GOT_BLACKFYRE_REB.6.desc
+	picture = LAND_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_modifier = paid_to_fight }
+		NOT = { has_country_modifier = army_desertions }
+		manpower_percentage = 0.01
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = GOT_BLACKFYRE_REB.6.option.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 0.45 }
+			}
+		}
+		add_years_of_income = -0.45
+		add_country_modifier = {
+			name = "paid_to_fight"
+			duration = 180
+		}		
+	}
+	option = {
+		name = GOT_BLACKFYRE_REB.6.option.b
+		ai_chance = { factor = 10 }
+		add_country_modifier = {
+			name = "army_desertions"
+			duration = 365
+		}
+		add_prestige = -25
+		add_yearly_manpower = -0.33
+	}
+}
+
+# Rebellious Towns
+country_event = {
+	id = GOT_BLACKFYRE_REB.10
+	title = GOT_BLACKFYRE_REB.10.title
+	desc = GOT_BLACKFYRE_REB.10.desc
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			NOT = { has_country_flag = instability_check_flag }
+			has_country_flag = blackfyre_uprising_in_capital
+		}
+		any_owned_province = {
+			is_core = ROOT
+			has_siege = no
+			NOT = { has_rebel_faction = pretender_rebels }
+			NOT = { has_province_flag = fyrereb_prov }
+			NOT = { province_id = 306 } # Castle of Summerhall
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = blackfyre_uprising_in_capital }
+			}
+			NOT = {
+				check_variable = {
+					which = blackfyre_province_counter
+					value = 3
+				}
+			}
+		}
+		OR = {
+			NOT = { has_country_flag = fyrereb_counter }
+			had_country_flag = {
+				flag = fyrereb_counter
+				days = 55
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_core = ROOT
+					has_siege = no
+					NOT = { has_rebel_faction = pretender_rebels }
+					NOT = { has_province_flag = fyrereb_prov }
+					NOT = { province_id = 306 } # Castle of Summerhall
+				}
+				save_event_target_as = fyrereb_prov_et
+				set_province_flag = fyrereb_prov
+			}
+			change_variable = {
+				which = blackfyre_province_counter
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = fyrereb_counter
+			}
+			clr_country_flag = fyrereb_counter
+		}
+		set_country_flag = fyrereb_counter
+	}
+
+	option = {
+		name = GOT_BLACKFYRE_REB.10.option.a
+		ai_chance = { factor = 100 }
+		add_prestige = -5
+		event_target:fyrereb_prov_et = {
+			add_local_autonomy = 75
+		}
+	}
+
+	option = {
+		name = GOT_BLACKFYRE_REB.10.option.b
+		ai_chance = { factor = 0 }
+		goto = fyrereb_prov_et
+		event_target:fyrereb_prov_et = {
+			random_list = {
+				50 = {
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 1
+					}
+				}
+				50 = {
+					add_province_modifier = {
+						name = imposed_will
+						duration = 1825
+					}
+				}
+			}
+		}
+	}
+}
+
+# Instability in the Crownlands
+country_event = {
+	id = GOT_BLACKFYRE_REB.11
+	title = GOT_BLACKFYRE_REB.11.title
+	desc = GOT_BLACKFYRE_REB.11.desc
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = instability_check_flag }
+		check_variable = {
+			which = blackfyre_province_counter
+			value = 3
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = instability_check_flag
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = GOT_BLACKFYRE_REB.11.option.a
+		goto = fyrereb_prov_et
+		ai_chance = { factor = 100 }
+		reduce_stability_or_adm_power = yes
+		add_legitimacy = -20
+		if = {
+			limit = { num_of_subjects = 1 }
+			every_subject_country = {
+				add_liberty_desire = 50
+			}
+		}
+	}
+}
+
+# Uprising in the Capital
+country_event = {
+	id = GOT_BLACKFYRE_REB.20
+	title = GOT_BLACKFYRE_REB.20.title
+	desc = GOT_BLACKFYRE_REB.20.desc
+	picture = LAND_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { 
+			has_country_flag = blackfyre_uprising_in_capital
+		}
+		had_country_flag = {
+			flag = had_blackfyre_rebellion
+			days = 365
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_country_flag = blackfyre_uprising_in_capital
+	}
+
+	option = {
+		name = GOT_BLACKFYRE_REB.20.option.a
+		ai_chance = { factor = 100 }
+		add_yearly_manpower = -0.66
+		add_years_of_income = -0.50
+		add_legitimacy = -10
+		if = {
+			limit = {
+				capital_scope = {
+					controlled_by = owner
+					has_siege = no
+				}
+			}
+			capital_scope = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1.5
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				capital_scope = {
+					controlled_by = owner
+					has_siege = yes
+				}
+			}
+			capital_scope = {
+				change_siege = 3
+			}
+		}
+		else = {
+			reduce_stability_or_adm_power = yes
+		}
+		if = {
+			limit = {
+				ai = no
+				306 = { # Castle of Summerhall
+					has_siege = no
+					controlled_by = ROOT
+				}
+			}
+			306 = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1.75
+				}
+			}
+		}
+	}	
+}

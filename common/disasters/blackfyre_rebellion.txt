@@ -1,0 +1,100 @@
+blackfyre_rebellion = {
+	potential = {
+		NOT = { is_year = 197 }
+		OR = {
+			tag = CRW
+			is_emperor = yes
+		}
+		dynasty = "Targaryen"
+		num_of_cities = 5
+		any_owned_province = {
+			is_core = ROOT 
+			development = 10
+			is_capital = no
+		}
+		government = dynasty
+		is_free_or_tributary_trigger = yes
+		uses_doom = no
+		NOT = { has_country_flag = had_blackfyre_rebellion }
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		current_age = age_of_fire
+		has_regency = no
+		dynasty = "Targaryen"
+	}
+	
+	can_stop = {
+		OR = {
+			has_any_disaster = yes
+			dynasty = "Blackfyre"
+			heir_dynasty = "Blackfyre"
+			has_regency = yes
+			is_lesser_in_union = yes
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 100
+			NOT = { legitimacy = 90 }
+		}
+		modifier = {
+			factor = 20
+			NOT = { stability = 3 }
+		}
+		modifier = {
+			factor = 20
+			NOT = { stability = 2 }
+		}
+		modifier = {
+			factor = 20
+			NOT = { stability = 1 }
+		}
+		modifier = {
+			factor = 5
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 5
+			NOT = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 50
+				}
+			}
+		}
+	}
+	
+	can_end = {
+		NOT = { num_of_rebel_armies = 1 }
+	}
+
+	modifier = {
+		legitimacy = -2.0
+		imperial_authority_value = -0.50
+		global_unrest = 10
+	}	
+	
+	on_start = GOT_BLACKFYRE_REB.1
+	on_end = GOT_BLACKFYRE_REB.100
+	
+	on_monthly = {
+		events = {
+			GOT_BLACKFYRE_REB.10		# Rebellious Towns
+			GOT_BLACKFYRE_REB.11		# Instability in the Crownlands
+			GOT_BLACKFYRE_REB.20		# Nearly total collapse
+		}
+		random_events = { 
+		 	1000 = 0
+			150 = GOT_BLACKFYRE_REB.2	# Supporters Among the Lords
+			100 = GOT_BLACKFYRE_REB.3	# Traitors Among the Lords
+			200 = GOT_BLACKFYRE_REB.4	# City Request Autonomy
+			200 = GOT_BLACKFYRE_REB.5	# Traitors in Court
+		 	100 = GOT_BLACKFYRE_REB.6	# Army Deserters
+			
+		}
+	}
+}
+

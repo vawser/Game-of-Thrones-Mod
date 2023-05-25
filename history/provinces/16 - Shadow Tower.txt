@@ -5,9 +5,9 @@ owner = SWT
 controller = SWT
 add_core = SWT
 
-base_tax = 1
+base_tax = 2
 base_production = 1
-base_manpower = 1
+base_manpower = 2
 
 culture = men_of_the_north
 religion = old_gods
@@ -15,10 +15,15 @@ religion = old_gods
 trade_goods = fish
 hre = no
 
+discovered_by = westerosi
+discovered_by = wildling
+
 add_building = castle
 
 106.1.1 = {
-    owner = A02
-    controller = A02
-    add_core = A02
+    owner = NGT
+    controller = NGT
+    add_core = NGT
+
+    add_province_triggered_modifier = castle_black_subsidies
 }

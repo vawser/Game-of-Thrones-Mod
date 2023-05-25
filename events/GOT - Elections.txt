@@ -1,0 +1,767 @@
+namespace = GOT_ELECTIONS
+
+# On Term Election
+country_event = {
+	id = GOT_ELECTIONS.100
+	title = GOT_ELECTIONS.100.title
+    desc = GOT_ELECTIONS.100.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_states_general_mechanic = yes }
+		NOT = { has_government_attribute = lottery_election }
+		NOT = { has_reform = military_dictatorship_reform }
+        NOT = { has_reform = volantis_city_reform }
+        NOT = { has_reform = got_admiralty_reform }
+	}
+
+	option = {
+		name = GOT_ELECTIONS.100.option.a
+		ai_chance = { factor = 20 }
+		define_ruler = {
+			adm = 4
+			dip = 1
+			mil = 1
+		}
+        if = {
+			limit = { has_government_attribute = elections_increase_factions_influence }
+			add_influence_to_adm_faction = {
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_government_attribute = elections_influence_estates }
+			add_estate_loyalty_by_class_adm = {
+				loyalty = 10
+			}
+		}
+        #add_republican_tradition = 5
+        
+        hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
+	}
+	option = {
+		name = GOT_ELECTIONS.100.option.b
+		ai_chance = { factor = 20 }
+		define_ruler = {
+			adm = 1
+			dip = 4
+			mil = 1
+		}
+		if = {
+			limit = { has_government_attribute = elections_increase_factions_influence }
+			add_influence_to_dip_faction = {
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_government_attribute = elections_influence_estates }
+			add_estate_loyalty_by_class_dip = {
+				loyalty = 10
+			}
+		}
+        #add_republican_tradition = 5
+        
+        hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
+	}
+	option = {
+		name = GOT_ELECTIONS.100.option.c
+		ai_chance = { factor = 20 }
+		define_ruler = {
+			adm = 1
+			dip = 1
+			mil = 4
+		}
+		if = {
+			limit = { has_government_attribute = elections_increase_factions_influence }
+			add_influence_to_mil_faction = {
+				influence = 20
+			}
+		}
+		if = {
+			limit = { has_government_attribute = elections_influence_estates }
+			add_estate_loyalty_by_class_mil = {
+				loyalty = 10
+			}
+		}
+        #add_republican_tradition = 5
+        
+        hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
+	}
+    option = {
+		name = GOT_ELECTIONS.100.option.d
+		trigger = {
+			has_regency = no
+		}
+		ai_chance = { 
+			factor = 60
+			modifier = {
+				factor = 0
+				NOT = { republican_tradition = 25 }
+			}	
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 50 }
+			}				
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 75 }
+			}	
+			modifier = {
+				factor = 2.0
+				republican_tradition = 90
+			}		
+		}
+		custom_tooltip = remains_ruler
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
+        
+		if = {
+			limit = {
+				is_tribal = no 
+				government = republic
+				NOT = { republican_tradition = 20 }				
+				# NOT = { is_revolutionary_republic_trigger = yes }
+				has_dlc = "Res Publica"
+				NOT = { has_government_attribute = cannot_become_dictatorship }
+			}
+			add_government_reform = republican_dictatorship_reform	
+		}
+		else_if = {
+			limit = {
+				is_free_city_government = yes
+				NOT = { republican_tradition = 20 }
+			}
+			add_government_reform = military_dictatorship_reform	
+		}
+		else_if = {
+			limit = {
+				government = republic
+				NOT = { republican_tradition = 20 }	
+				# is_revolutionary_republic_trigger = yes
+			}
+			change_government_to_monarchy = yes
+			add_government_reform = revolutionary_empire_reform
+		}
+		if = {
+			limit = {
+				is_tribal = no  
+				government = republic
+				NOT = { republican_tradition = 20 }
+				NOT = { has_dlc = "Res Publica" }
+				NOT = { has_government_attribute = cannot_become_dictatorship }
+			}
+			change_government_to_monarchy = yes
+			#set_legacy_government = despotic_monarchy
+		}
+		if = {
+			limit = {
+				has_country_flag = strengthened_signoria_flag
+			}
+			custom_tooltip = strengthened_signoria_election_tt
+			clr_country_flag = strengthened_signoria_flag
+		}
+		else = {
+			if = {
+				limit = {
+					has_country_flag = increased_election_cost
+				}
+				add_scaled_republican_tradition = -15
+				clr_country_flag = increased_election_cost
+			}
+			else = {
+				add_scaled_republican_tradition = -10
+			}
+		}
+		# random_list = {
+		# 	10 = {
+		# 		add_adm_power = 50
+		# 	}
+		# 	10 = {
+		# 		add_dip_power = 50
+		# 	}
+		# 	10 = {
+		# 		add_mil_power = 50
+		# 	}
+		# }
+        if = {
+			limit = {
+				has_government_attribute = reelection_depowers_estates
+			}
+			add_estate_influence_modifier = {
+				estate = all
+				influence = -10
+				duration = 1460
+				desc = REELCTION_DEPOWER_ESTATES
+			}
+		}
+		if = {
+			limit = { has_government_attribute = elections_influence_estates }
+			add_estate_loyalty = {
+				estate = all
+				loyalty = 5
+			}
+		}
+		if = {
+			limit = { has_government_attribute = reelection_increases_absolutism }
+			tooltip = {
+				add_absolutism = 10
+			}
+			custom_tooltip = ADD_ABSOLUTISM_BASED_ON_ELECTION_TERM
+			hidden_effect = {
+				for_variable_amount = {
+					variable = election_term
+					effect = "
+						add_absolutism = 10
+					"
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = election_term
+					value = 1
+				}
+			}
+		}
+	}
+    option = {
+		name = GOT_ELECTIONS.100.option.e
+		trigger = {
+			has_government_attribute = enables_nepotism
+		}
+		ai_chance = { factor = 10 }
+		add_scaled_republican_tradition = -4
+        define_ruler = {
+            mil = -2
+            adm = -2
+            dip = -2
+            min_age = 30
+            max_age = 50
+            name = "lastname"
+            random_gender = yes # Allows random gender for republics
+        }
+	}
+}
+
+# On Death election
+country_event = {
+	id = GOT_ELECTIONS.101
+	title = GOT_ELECTIONS.101.title
+	desc = {
+		trigger = { NOT = { government = dictatorship } }	
+		desc = GOT_ELECTIONS.101.desc
+	}
+	desc = {
+		trigger = { government = dictatorship }
+		desc = GOT_ELECTIONS.101d.desc
+	}
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_reform = volantis_city_reform }
+        NOT = { has_states_general_mechanic = yes }
+		NOT = { has_government_attribute = lottery_election }
+        NOT = { has_reform = got_admiralty_reform }
+        NOT = { has_reform = military_dictatorship_reform }
+	}
+	
+	option = {
+		name = GOT_ELECTIONS.101.option.a
+
+		define_ruler = {
+			adm = 4
+			dip = 1
+			mil = 1
+			hide_skills = yes
+		}
+        
+		if = {
+			limit = { has_estate = estate_commoners }
+			add_estate_loyalty = {
+				estate = estate_commoners
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = { has_government_attribute = elections_increase_factions_influence }
+			add_influence_to_adm_faction = {
+				influence = 20
+			}
+		}
+        
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = GOT_ELECTIONS.101.option.b
+
+		define_ruler = {
+			adm = 1
+			dip = 4
+			mil = 1
+			hide_skills = yes
+		}
+        
+		if = {
+			limit = { has_estate = estate_merchants }
+			add_estate_loyalty = {
+				estate = estate_merchants
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = { has_government_attribute = elections_increase_factions_influence }
+			add_influence_to_dip_faction = {
+				influence = 20
+			}
+		}
+        
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = GOT_ELECTIONS.101.option.c
+
+		define_ruler = {
+			adm = 1
+			dip = 1
+			mil = 4
+			hide_skills = yes
+		}
+        
+		if = {
+			limit = { has_estate = estate_nobles }
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = { has_government_attribute = elections_increase_factions_influence }
+			add_influence_to_mil_faction = {
+				influence = 20
+			}
+		}
+
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# On Replace Governor
+country_event = {
+	id = GOT_ELECTIONS.102
+	title = GOT_ELECTIONS.102.title
+	desc = GOT_ELECTIONS.102.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOT_ELECTIONS.102.option.a
+		ai_chance = { factor = 20 }
+		FROM = {
+			define_ruler = {
+                adm = 4
+                dip = 1
+                mil = 1
+                hide_skills = yes
+            }
+			set_ruler_flag = appointed_by_overlord
+            
+            add_republican_tradition = 5
+            
+            hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
+		}
+	}
+	option = {
+		name = GOT_ELECTIONS.102.option.b
+		ai_chance = { factor = 20 }
+		FROM = {
+			define_ruler = {
+                adm = 1
+                dip = 4
+                mil = 1
+                hide_skills = yes
+            }
+			set_ruler_flag = appointed_by_overlord
+            
+            add_republican_tradition = 5
+            
+            hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
+		}
+	}
+	option = {
+		name = GOT_ELECTIONS.102.option.c
+		ai_chance = { factor = 20 }
+		FROM = {
+			define_ruler = {
+                adm = 1
+                dip = 1
+                mil = 4
+                hide_skills = yes
+            }
+			set_ruler_flag = appointed_by_overlord
+            
+            add_republican_tradition = 5
+            
+            hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
+		}
+	}
+}
+
+# Ruled by Despot
+country_event = {
+	id = GOT_ELECTIONS.103
+	title = GOT_ELECTIONS.103.title
+	desc = GOT_ELECTIONS.103.desc
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	trigger = {
+		government = republic
+		is_colonial_nation = no
+		OR = {
+			AND = {
+				NOT = { republican_tradition = 40 }
+				has_dlc = "Res Publica"
+			}
+			NOT = { republican_tradition = 1 }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			NOT = { republican_tradition = 30 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { republican_tradition = 20 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { republican_tradition = 10 }
+		}		
+		modifier = {
+			factor = 0.01
+			NOT = { republican_tradition = 1 }
+		}			
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_government_reform = military_dictatorship_reform
+		}
+	}
+	
+	option = {
+		name = GOT_ELECTIONS.103.option.a
+		tooltip = {
+			add_government_reform = military_dictatorship_reform
+		}
+	}
+}
+
+# Lottery Election
+country_event = {
+	id = GOT_ELECTIONS.200
+	title = GOT_ELECTIONS.200.title
+	desc = GOT_ELECTIONS.200.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_government_attribute = lottery_election
+	}
+	
+	immediate = {
+		hidden_effect = {
+			define_exiled_ruler = {
+                exiled_as = lottery_candidate_a_@ROOT
+                random_gender = yes
+                min_age = 50
+                max_age = 75
+                adm = 2
+                dip = -1
+                mil = -1
+                option = 0
+            }
+            define_exiled_ruler = {
+                exiled_as = lottery_candidate_b_@ROOT
+                min_age = 50
+                max_age = 75
+                adm = -1
+                dip = 2
+                mil = -1
+                random_gender = yes
+                option = 1
+            }
+            define_exiled_ruler = {
+                exiled_as = lottery_candidate_c_@ROOT
+                min_age = 50
+                max_age = 75
+                adm = -1
+                dip = -1
+                mil = 2
+                random_gender = yes
+                option = 2
+            }
+		}
+	}
+	
+	after = {
+		clear_exiled_ruler = lottery_candidate_a_@ROOT
+		clear_exiled_ruler = lottery_candidate_b_@ROOT
+		clear_exiled_ruler = lottery_candidate_c_@ROOT
+	}
+	
+	option = {
+		name = GOT_ELECTIONS.200.option.a
+		ai_chance = {
+			factor = 0
+		}
+		set_ruler = lottery_candidate_a_@ROOT
+		add_republican_tradition = -25
+		custom_tooltip = lottery_candidate_bonus_one
+	}
+	option = {
+		name = GOT_ELECTIONS.200.option.b
+		ai_chance = {
+			factor = 0
+		}
+		set_ruler = lottery_candidate_b_@ROOT
+		add_republican_tradition = -25
+		custom_tooltip = lottery_candidate_bonus_one
+	}
+	option = {
+		name = GOT_ELECTIONS.200.option.c
+		ai_chance = {
+			factor = 0
+		}
+		set_ruler = lottery_candidate_c_@ROOT
+		add_republican_tradition = -25
+		custom_tooltip = lottery_candidate_bonus_one
+	}
+	option = { # lottery
+		name = GOT_ELECTIONS.200.option.d
+		ai_chance = {
+			factor = 90
+		}
+		random_list = {
+			33 = { 
+				set_ruler = lottery_candidate_a_@ROOT 
+			}
+			33 = { 
+				set_ruler = lottery_candidate_b_@ROOT 
+			}
+			33 = { 
+				set_ruler = lottery_candidate_c_@ROOT 
+			}
+		}
+		custom_tooltip = lottery_candidate_bonus_plural
+	}
+	option = {
+		name = GOT_ELECTIONS.200.option.e
+		trigger = {
+			has_government_attribute = enables_nepotism
+		}
+		ai_chance = { factor = 10 }
+        
+        add_republican_tradition = -15
+		
+		define_ruler = {
+            min_age = 30
+            max_age = 50
+            mil = -1
+            adm = -1
+            dip = -1
+            name = "lastname"
+            random_gender = yes
+        }
+	}
+}
+
+# State's General Term Election Cycle
+country_event = {
+	id = GOT_ELECTIONS.300
+	title = GOT_ELECTIONS.300.title
+	desc = GOT_ELECTIONS.300.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_states_general_mechanic = yes
+		OR = {
+			is_lesser_in_union = no
+			is_statists_in_power = yes
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			define_exiled_ruler = {
+                exiled_as = dynasty_candidate_a_@ROOT
+                min_age = 50
+				max_age = 60
+				adm = 3
+				dip = 4
+				mil = 3
+                option = 0
+            }
+            define_exiled_ruler = {
+                exiled_as = dynasty_candidate_b_@ROOT
+                min_age = 32
+				max_age = 42
+				adm = 3
+				dip = 2
+				mil = 2
+                option = 1
+            }
+            define_exiled_ruler = {
+                exiled_as = dynasty_candidate_c_@ROOT
+                min_age = 18
+				max_age = 25
+				adm = 1
+				dip = 1
+				mil = 1
+                option = 2
+            }
+		}
+	}
+	
+	after = {
+		clear_exiled_ruler = dynasty_candidate_a_@ROOT
+		clear_exiled_ruler = dynasty_candidate_b_@ROOT
+		clear_exiled_ruler = dynasty_candidate_c_@ROOT
+	}
+
+	option = {
+		name = GOT_ELECTIONS.300.option.a
+		trigger = { 
+			
+		}
+		set_ruler = dynasty_candidate_a_@ROOT
+		change_statists_vs_orangists = -0.40
+	}
+	option = {
+		name = GOT_ELECTIONS.300.option.b
+		trigger = { 
+			
+		}
+		set_ruler = dynasty_candidate_b_@ROOT
+		change_statists_vs_orangists = -0.30
+	}
+	option = {
+		name = GOT_ELECTIONS.300.option.c
+		trigger = { 
+			
+		}
+		set_ruler = dynasty_candidate_c_@ROOT
+		change_statists_vs_orangists = -0.20
+	}
+	option = {
+		name = GOT_ELECTIONS.300.option.d
+		trigger = { 
+			
+		}
+		custom_tooltip = remains_ruler_tt
+		add_legitimacy = -20
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
+		change_statists_vs_orangists = 0.30
+	}
+}
+
+# State's General Death Election Cycle
+country_event = {
+	id = GOT_ELECTIONS.301
+	title = GOT_ELECTIONS.301.title
+	desc = GOT_ELECTIONS.301.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_states_general_mechanic = yes
+		OR = {
+			is_lesser_in_union = no
+			is_statists_in_power = yes
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			define_exiled_ruler = {
+                exiled_as = dynasty_candidate_a_@ROOT
+                min_age = 50
+				max_age = 60
+				adm = 4
+				dip = 3
+				mil = 3
+                option = 0
+            }
+            define_exiled_ruler = {
+                exiled_as = dynasty_candidate_b_@ROOT
+                min_age = 32
+				max_age = 42
+				adm = 3
+				dip = 2
+				mil = 2
+                option = 1
+            }
+            define_exiled_ruler = {
+                exiled_as = dynasty_candidate_c_@ROOT
+                min_age = 18
+				max_age = 25
+				adm = 1
+				dip = 1
+				mil = 1
+                option = 2
+            }
+		}
+	}
+	
+	after = {
+		clear_exiled_ruler = dynasty_candidate_a_@ROOT
+		clear_exiled_ruler = dynasty_candidate_b_@ROOT
+		clear_exiled_ruler = dynasty_candidate_c_@ROOT
+	}
+
+	option = {
+		name = GOT_ELECTIONS.301.option.a
+		trigger = { 
+			
+		}
+		set_ruler = dynasty_candidate_a_@ROOT
+		change_statists_vs_orangists = -0.40
+	}
+	option = {
+		name = GOT_ELECTIONS.301.option.b
+		trigger = { 
+			
+		}
+		set_ruler = dynasty_candidate_b_@ROOT
+		change_statists_vs_orangists = -0.30
+	}
+	option = {
+		name = GOT_ELECTIONS.301.option.c
+		trigger = { 
+			
+		}
+		set_ruler = dynasty_candidate_c_@ROOT
+		change_statists_vs_orangists = -0.20
+	}
+}

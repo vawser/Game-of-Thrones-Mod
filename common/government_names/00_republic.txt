@@ -369,9 +369,9 @@ gov_rhoynish_city = {
 
 gov_nights_watch = {
 	rank = {
-		1 = NIGHTS_WATCH
-		2 = NIGHTS_WATCH
-		3 = NIGHTS_WATCH
+		1 = MILITARY_ORDER
+		2 = MILITARY_ORDER
+		3 = MILITARY_ORDER
 	}
 	
 	ruler_male = {
@@ -381,14 +381,19 @@ gov_nights_watch = {
     }
 	
 	ruler_female = {
-		1 = LORD_COMMANDER
-        2 = LORD_COMMANDER
-        3 = LORD_COMMANDER
+		1 = LADY_COMMANDER
+        2 = LADY_COMMANDER
+        3 = LADY_COMMANDER
 	}
 	
 	trigger = {
-        NOT = { tag = A02 }
-        has_reform = nights_watch_reform
+        OR = {
+			tag = NGT
+			AND = {
+				NOT = { tag = NGT }
+				has_reform = nights_watch_reform
+			}
+		}
 	}
 }
 
@@ -400,19 +405,19 @@ gov_outpost = {
 	}
 	
 	ruler_male = {
-		1 = LORD_COMMANDER
-        2 = LORD_COMMANDER
-        3 = LORD_COMMANDER
+		1 = COMMANDER
+        2 = COMMANDER
+        3 = COMMANDER
     }
 	
 	ruler_female = {
-		1 = LORD_COMMANDER
-        2 = LORD_COMMANDER
-        3 = LORD_COMMANDER
+		1 = COMMANDER
+        2 = COMMANDER
+        3 = COMMANDER
 	}
 	
 	trigger = {
-        NOT = { tag = A02 }
-        has_reform = nights_watch_reform
+        NOT = { tag = NGT }
+        has_reform = watchmen_outpost_reform
 	}
 }

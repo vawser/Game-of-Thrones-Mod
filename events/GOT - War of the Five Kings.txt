@@ -10,8 +10,8 @@ country_event = {
     major = yes
     
 	trigger = {
-        tag = A07
-        start_date = 298.1.1
+        tag = CRW
+        start_date = 298.5.17
         NOT = { has_global_flag = war_of_the_five_kings }
         NOT = { has_global_flag = shattered_world }
     }
@@ -29,21 +29,21 @@ country_event = {
         
         kill_ruler = yes # Kill Robert
         
-        NOR = {
+        A01 = {
             declare_war_with_cb = {
-                who = STM
+                who = CRW
                 casus_belli = cb_independence_war
             }
         }
-        IRI = {
+        M09 = {
             declare_war_with_cb = {
-                who = NOR
+                who = A01
                 casus_belli = cb_lordly_feud
             }
         }
         A39 = {
             declare_war_with_cb = {
-                who = STM
+                who = CRW
                 casus_belli = cb_independence_war
             }
         }
@@ -61,7 +61,7 @@ country_event = {
     major = yes
     
 	trigger = {
-        tag = STM
+        tag = A07
         start_date = 299.1.1
         NOT = { has_global_flag = war_of_the_five_kings } 
         NOT = { has_global_flag = shattered_world }
@@ -78,21 +78,21 @@ country_event = {
 	option = {
 		name = GOT_WAR_OF_THE_FIVE_KINGS.2.option.a
         
-        NOR = {
+        A01 = {
             declare_war_with_cb = {
-                who = STM
+                who = A07
                 casus_belli = cb_independence_war
             }
         }
-        IRI = {
+        M09 = {
             declare_war_with_cb = {
-                who = NOR
+                who = A01
                 casus_belli = cb_lordly_feud
             }
         }
         A39 = {
             declare_war_with_cb = {
-                who = STM
+                who = A07
                 casus_belli = cb_independence_war
             }
         }

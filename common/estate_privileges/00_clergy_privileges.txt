@@ -1,10 +1,22 @@
-estate_clergy_land_rights = {
+estate_church_land_rights = {
 	icon = privilege_grant_autonomy
 	land_share = 5
 	max_absolutism = -5
 	loyalty = 0.05
 	influence = 0.05
+	is_valid = {
+		if = {
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_valid = {
+				estate_privilege = estate_church_land_rights
+			}
+		}
+	}
 	can_select = {
+		if = {
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_trigger = yes
+		}
 	}
 	on_granted = {
 	}
@@ -32,11 +44,11 @@ estate_clergy_land_rights = {
 			OR = {
 				NOT = { crown_land_share = 25 }
 				estate_influence = {
-					estate = estate_clergy
+					estate = estate_church
 					influence = 75
 				}
 			}
-			NOT = { has_estate_privilege = estate_clergy_land_rights }
+			NOT = { has_estate_privilege = estate_church_land_rights }
 		}
 		modifier = {
 			factor = 0
@@ -50,7 +62,7 @@ estate_clergy_land_rights = {
 					NOT = { crown_land_share = 60 }
 				}
 			}
-			NOT = { has_estate_privilege = estate_clergy_land_rights }
+			NOT = { has_estate_privilege = estate_church_land_rights }
 		}
 		modifier = {
 			factor = 0.8
@@ -60,17 +72,29 @@ estate_clergy_land_rights = {
 					NOT = { crown_land_share = 50 }
 				}
 			}
-			NOT = { has_estate_privilege = estate_clergy_land_rights }
+			NOT = { has_estate_privilege = estate_church_land_rights }
 		}
 	}
 }
 
-estate_clergy_religious_state = {
+estate_church_religious_state = {
 	icon = privilege_seek_support_of_clergy
 	land_share = 10
 	max_absolutism = -5
 	loyalty = -0.05
+	is_valid = {
+		if = {
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_valid = {
+				estate_privilege = estate_church_land_rights
+			}
+		}
+	}
 	can_select = {
+		if = {
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_trigger = yes
+		}
 	}
 	on_granted = {
 	}
@@ -86,11 +110,11 @@ estate_clergy_religious_state = {
 			OR = {
 				NOT = { crown_land_share = 30 }
 				estate_influence = {
-					estate = estate_clergy
+					estate = estate_church
 					influence = 75
 				}
 			}
-			NOT = { has_estate_privilege = estate_clergy_religious_state }
+			NOT = { has_estate_privilege = estate_church_religious_state }
 		}
 		modifier = {
 			factor = 0.8
@@ -100,7 +124,7 @@ estate_clergy_religious_state = {
 					NOT = { crown_land_share = 55 }
 				}
 			}
-			NOT = { has_estate_privilege = estate_clergy_religious_state }
+			NOT = { has_estate_privilege = estate_church_religious_state }
 		}
 		modifier = {
 			factor = 1.25
@@ -113,7 +137,7 @@ estate_clergy_religious_state = {
 	}
 }
 
-estate_clergy_independent_inquisition = {
+estate_church_independent_inquisition = {
 	icon = privilege_empty_throne
 	max_absolutism = -5
 	influence = 0.1
@@ -137,7 +161,7 @@ estate_clergy_independent_inquisition = {
 	}
 }
 
-estate_clergy_far_east_mission = {
+estate_church_far_east_mission = {
 	icon = privilege_new_world_mission
 	max_absolutism = -5
 	loyalty = 0.05
@@ -158,7 +182,7 @@ estate_clergy_far_east_mission = {
 	}
 }
 
-estate_clergy_clerical_ministers = {
+estate_church_clerical_ministers = {
 	icon = privilege_recruit_minister
 	max_absolutism = -5
 	influence = 0.10
@@ -338,7 +362,7 @@ estate_clergy_clerical_ministers = {
 	}
 }
 
-estate_clergy_clerical_oversight = {
+estate_church_clerical_oversight = {
 	icon = privilege_tolerance_heathen
 	max_absolutism = -10
 	loyalty = 0.1
@@ -352,7 +376,7 @@ estate_clergy_clerical_oversight = {
 	}
 }
 
-estate_clergy_inwards_perfection = {
+estate_church_inwards_perfection = {
 	icon = privilege_grant_autonomy
 	land_share = 5
 	max_absolutism = -5
@@ -360,7 +384,7 @@ estate_clergy_inwards_perfection = {
 	influence = 0.05
 
 	can_select = {
-		NOT = { has_estate_privilege = estate_clergy_for_the_faith }
+		NOT = { has_estate_privilege = estate_church_for_the_faith }
 	}
 	on_granted = {
 	}
@@ -377,7 +401,7 @@ estate_clergy_inwards_perfection = {
 	}
 }
 
-estate_clergy_enforced_one_faith = {
+estate_church_enforced_one_faith = {
 	icon = privilege_recruit_inouisitor
 	max_absolutism = -5
 	loyalty = 0.1
@@ -399,14 +423,14 @@ estate_clergy_enforced_one_faith = {
 	}
 	cooldown_years = 20
 	on_cooldown_expires = {
-		remove_estate_privilege = estate_clergy_enforced_one_faith
+		remove_estate_privilege = estate_church_enforced_one_faith
 	}
 	ai_will_do = {
 		factor = 0
 	}
 }
 
-estate_clergy_for_the_faith = {
+estate_church_for_the_faith = {
 	icon = privilege_recruit_inouisitor
 	max_absolutism = -5
 	is_valid = {
@@ -423,13 +447,13 @@ estate_clergy_for_the_faith = {
 		any_known_country = {
 			NOT = { religion = root }
 		}
-		NOT = { has_estate_privilege = estate_clergy_inwards_perfection }
+		NOT = { has_estate_privilege = estate_church_inwards_perfection }
 	}
 	on_granted = {
-		custom_tooltip = estate_clergy_for_the_faith_effect_tooltip
+		custom_tooltip = estate_church_for_the_faith_effect_tooltip
 	}
 	on_revoked = {
-		custom_tooltip = estate_clergy_for_the_faith_effect_tooltip
+		custom_tooltip = estate_church_for_the_faith_effect_tooltip
 	}
 	conditional_modifier = {
 		trigger = {
@@ -439,7 +463,7 @@ estate_clergy_for_the_faith = {
 			}
 		}
 		modifier = {
-			clergy_loyalty_modifier = 0.1
+			church_loyalty_modifier = 0.1
 			land_morale = 0.1
 		}
 	}
@@ -458,7 +482,7 @@ estate_clergy_for_the_faith = {
 			NOT = { has_country_modifier = recently_annexed_other_religion_timer }
 		}
 		modifier = {
-			clergy_loyalty_modifier = -0.1
+			church_loyalty_modifier = -0.1
 			land_morale = -0.1
 		}
 		is_bad = yes
@@ -470,12 +494,12 @@ estate_clergy_for_the_faith = {
 	}
 }
 
-estate_clergy_statutory_rights = {
+estate_church_statutory_rights = {
 	icon = privilege_grant_autonomy
 	max_absolutism = -5
 	influence = 0.1
 	is_valid = {
-		has_estate_privilege = estate_clergy_statutory_rights
+		has_estate_privilege = estate_church_statutory_rights
 	}
 	on_granted = {
 		change_estate_land_share = {
@@ -494,7 +518,7 @@ estate_clergy_statutory_rights = {
 	cooldown_years = 20
 }
 
-estate_clergy_monopoly_of_wine = {
+estate_church_monopoly_of_wine = {
 	icon = privilege_make_generous_donation
     
 	max_absolutism = -2
@@ -559,14 +583,14 @@ estate_clergy_monopoly_of_wine = {
 	}
 	cooldown_years = 10
 	on_cooldown_expires = {
-		remove_estate_privilege = estate_clergy_monopoly_of_wine
+		remove_estate_privilege = estate_church_monopoly_of_wine
 	}
 	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
 		factor = 0
 	}
 }
 
-estate_clergy_monopoly_of_wool = {
+estate_church_monopoly_of_wool = {
 	icon = privilege_make_generous_donation
     
 	max_absolutism = -2
@@ -631,14 +655,14 @@ estate_clergy_monopoly_of_wool = {
 	}
 	cooldown_years = 10
 	on_cooldown_expires = {
-		remove_estate_privilege = estate_clergy_monopoly_of_wool
+		remove_estate_privilege = estate_church_monopoly_of_wool
 	}
 	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
 		factor = 0
 	}
 }
 
-estate_clergy_monopoly_of_tea = {
+estate_church_monopoly_of_tea = {
 	icon = privilege_make_generous_donation
     
 	max_absolutism = -2
@@ -703,14 +727,14 @@ estate_clergy_monopoly_of_tea = {
 	}
 	cooldown_years = 10
 	on_cooldown_expires = {
-		remove_estate_privilege = estate_clergy_monopoly_of_tea
+		remove_estate_privilege = estate_church_monopoly_of_tea
 	}
 	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
 		factor = 0
 	}
 }
 
-estate_clergy_monopoly_of_coffee = {
+estate_church_monopoly_of_coffee = {
 	icon = privilege_make_generous_donation
     
 	max_absolutism = -2
@@ -775,14 +799,14 @@ estate_clergy_monopoly_of_coffee = {
 	}
 	cooldown_years = 10
 	on_cooldown_expires = {
-		remove_estate_privilege = estate_clergy_monopoly_of_coffee
+		remove_estate_privilege = estate_church_monopoly_of_coffee
 	}
 	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
 		factor = 0
 	}
 }
 
-estate_clergy_monopoly_of_cotton = {
+estate_church_monopoly_of_cotton = {
 	icon = privilege_make_generous_donation
     
 	max_absolutism = -2
@@ -847,81 +871,31 @@ estate_clergy_monopoly_of_cotton = {
 	}
 	cooldown_years = 10
 	on_cooldown_expires = {
-		remove_estate_privilege = estate_clergy_monopoly_of_cotton
+		remove_estate_privilege = estate_church_monopoly_of_cotton
 	}
 	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
 		factor = 0
 	}
 }
 
-estate_clergy_monopoly_of_candles = {
-	icon = privilege_make_generous_donation
-    
-	max_absolutism = -2
+loe_estate_cant_seize_church = {
+	icon = privilege_royal_authority
+	max_absolutism = -5
 	loyalty = 0.1
-    
+	influence  = 0.1
+
 	is_valid = {
-		has_dlc = "Emperor"
-		any_owned_province = {
-			trade_goods = candles
-		}
+		has_government_attribute = loe_cant_seize_church
 	}
-	can_select = {
-        
+	can_select = { always = no }
+
+	can_revoke = { NOT = { has_government_attribute = loe_cant_seize_church } }
+
+	mechanics = {
+		exempt_from_seize_land
 	}
-	on_granted = {
-		add_mercantilism = 1
-		add_years_of_owned_provinces_production_income = {
-			years = 8
-			trigger = {
-				trade_goods = candles
-			}
-			custom_tooltip = MONOPOLY_INCOME_CANDLES_DESC
-		}
-		custom_tooltip = NO_INCOME_CANDLES_TT
-		hidden_effect = {
-			every_owned_province = {
-				limit = {
-					trade_goods = candles
-				}
-				add_province_modifier = {
-					name = monopoly_of_candles_mod
-					duration = -1
-				}
-			}
-		}
-	}
-	on_revoked = {
-		custom_tooltip = RESTORE_INCOME_CANDLES_TT
-		hidden_effect = {
-			every_owned_province = {
-				limit = {
-					has_province_modifier = monopoly_of_candles_mod
-				}
-				remove_province_modifier = monopoly_of_candles_mod
-			}
-		}
-	}
-	on_invalid = {
-		custom_tooltip = RESTORE_INCOME_CANDLES_TT
-		hidden_effect = {
-			every_owned_province = {
-				limit = {
-					has_province_modifier = monopoly_of_candles_mod
-				}
-				remove_province_modifier = monopoly_of_candles_mod
-			}
-		}
-	}
-	penalties = {
-	}
-	benefits = {
-	}
-	cooldown_years = 10
-	on_cooldown_expires = {
-		remove_estate_privilege = estate_clergy_monopoly_of_candles
-	}
-	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+
+	ai_will_do = {
 		factor = 0
 	}
 }

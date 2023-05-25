@@ -1,0 +1,274 @@
+namespace = FALL_OF_THE_DRAGONS
+
+# Planning for the Tourney
+country_event = {
+	id = FALL_OF_THE_DRAGONS.1
+	title = FALL_OF_THE_DRAGONS.1.title
+	desc = FALL_OF_THE_DRAGONS.1.desc
+	picture = TOURNAMENT_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CRW
+		start_date = 281.4.9
+		NOT = { has_global_flag = shattered_world }
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.1.option.a
+		ai_chance = { factor = 100 }
+		add_prestige = -5
+	}
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.1.option.b
+		ai_chance = { factor = 0 }
+		add_prestige = 10
+	}
+	
+	after = {
+		country_event = { id = FALL_OF_THE_DRAGONS.2 days = 21 }
+	}
+}
+
+# Ambitions of a Prince (Scheme to remove Aerys II or not)
+country_event = {
+	id = FALL_OF_THE_DRAGONS.2
+	title = FALL_OF_THE_DRAGONS.2.title
+	desc = FALL_OF_THE_DRAGONS.2.desc
+	picture = TOURNAMENT_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.2.option.a
+		ai_chance = { factor = 100 }
+		custom_tooltip = FALL_OF_THE_DRAGONS.RhaegarPlot
+		custom_tooltip = FALL_OF_THE_DRAGONS.RobertsRebGain
+		hidden_effect = {
+			change_variable = {
+				which = RobRebCounter
+				value = 1
+			}
+		}
+	}
+}
+
+# Kingswood Brotherhood (Kill them all or let them be)
+country_event = {
+	id = FALL_OF_THE_DRAGONS.3
+	title = FALL_OF_THE_DRAGONS.3.title
+	desc = FALL_OF_THE_DRAGONS.3.desc
+	picture = TOURNAMENT_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CRW
+		start_date = 281.4.9
+		is_year = 281
+		is_month = 5
+		NOT = { has_global_flag = shattered_world }
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.3.option.a
+		ai_chance = { factor = 100 }
+		country_event = { id = FALL_OF_THE_DRAGONS.4 days = 14 }
+	}
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.3.option.b
+		ai_chance = { factor = 0 }
+		229 = {
+			spawn_rebels = {
+				type = lc_bandit_rebels
+				size = 2
+			}
+		}
+	}
+}
+
+# Resolution of the Kingswood Brotherhood (Jaime becoming a Kingsguard or staying a regular knight)
+country_event = {
+	id = FALL_OF_THE_DRAGONS.4
+	title = FALL_OF_THE_DRAGONS.4.title
+	desc = FALL_OF_THE_DRAGONS.4.desc
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.4.option.a
+		custom_tooltip = FALL_OF_THE_DRAGONS.4.JaimeBecomesKingsguard
+	}
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.4.option.b
+		custom_tooltip = FALL_OF_THE_DRAGONS.4.JaimeReturnsToWesterlands
+	}
+}
+
+# Queen of Love and Beauty (Rhaegar chooses Lyanna [historical] or wife [alt] as love and beauty queen)
+country_event = {
+	id = FALL_OF_THE_DRAGONS.5
+	title = FALL_OF_THE_DRAGONS.5.title
+	desc = FALL_OF_THE_DRAGONS.5.desc
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CRW
+		start_date = 281.4.9
+		is_year = 281
+		is_month = 11
+		NOT = { has_global_flag = shattered_world }
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.5.option.a
+		ai_chance = { factor = 100 }
+		custom_tooltip = FALL_OF_THE_DRAGONS.RobertsRebGain
+		hidden_effect = {
+			change_variable = {
+				which = RobRebCounter
+				value = 1
+			}
+		}
+	}
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.5.option.b
+		ai_chance = { factor = 0 }
+	}
+}
+
+# The Abduction of Lyanna Stark (start the rebellion)
+country_event = {
+	id = FALL_OF_THE_DRAGONS.6
+	title = FALL_OF_THE_DRAGONS.6.title
+	desc = FALL_OF_THE_DRAGONS.6.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	major = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CRW
+		start_date = 281.4.9
+		is_year = 282
+		is_month = 0
+		NOT = { has_global_flag = shattered_world }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.6.option.a
+		ai_chance = { factor = 100 }
+		trigger = {
+			check_variable = {
+				which = RobRebCounter
+				value = 1
+			}
+		}
+		highlight = yes
+		custom_tooltip = FALL_OF_THE_DRAGONS.RhaegarDisappointment
+		custom_tooltip = FALL_OF_THE_DRAGONS.ExecuteTheStarks
+		custom_tooltip = FALL_OF_THE_DRAGONS.RobertsRebGain
+		hidden_effect = {
+			change_variable = {
+				which = RobRebCounter
+				value = 1
+			}
+		}
+		hidden_effect = {
+			A01 = {
+				kill_heir = { allow_new_heir = no }
+				define_heir = {
+					name = "Eddard"
+					dynasty = original_dynasty
+					birth_date = 263.1.7
+					claim = 90
+					adm = 5
+					dip = 6
+					mil = 4
+				}
+				kill_ruler = yes
+			}
+			A04 = { kill_heir = { allow_new_heir = no } }
+		}
+		A04 = { country_event = { id = FALL_OF_THE_DRAGONS.7 days = 2 } }
+	}
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.6.option.b
+		ai_chance = { factor = 0 }
+		custom_tooltip = FALL_OF_THE_DRAGONS.AerysTheNotMad
+		hidden_effect = {
+			remove_heir = {}
+		}
+		define_heir = {
+			name = "Viserys"
+			dynasty = ROOT
+			birth_date = 276.3.17
+		}
+	}
+}
+
+# Jon Arryn has the decision to officially start the Rebellion (AI will always start it)
+country_event = {
+	id = FALL_OF_THE_DRAGONS.7
+	title = FALL_OF_THE_DRAGONS.7.title
+	desc = FALL_OF_THE_DRAGONS.7.desc
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	major = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.7.option.a
+		ai_chance = { factor = 100 }
+		highlight = yes
+		trigger = {
+			check_variable = {
+				which = RobRebCounter
+				value = 2
+			}
+		}
+		A07 = {
+			declare_war_with_cb = {
+				who = CRW
+				casus_belli = cb_seize_the_iron_throne
+			}
+		}
+		A04 = { join_all_offensive_wars_of = A07 }
+		A01 = { join_all_offensive_wars_of = A07 }
+	}
+	
+	option = {
+		name = FALL_OF_THE_DRAGONS.7.option.b
+		ai_chance = { factor = 0 }
+	}
+}

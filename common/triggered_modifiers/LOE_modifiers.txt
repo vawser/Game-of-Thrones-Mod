@@ -1,0 +1,24 @@
+loe_homogenous_court_mod = {
+	potential = {
+		has_government_attribute = loe_homogenous_court_desc
+	}
+	
+	trigger = {
+		employed_advisor = {
+			category = adm
+			culture = ROOT
+		}
+		employed_advisor = {
+			category = dip
+			culture = ROOT
+		}
+		employed_advisor = {
+			category = mil
+			culture = ROOT
+		}
+	}
+	
+	country_admin_power = 1
+	country_diplomatic_power = 1
+	country_military_power = 1
+}

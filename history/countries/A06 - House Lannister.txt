@@ -5,14 +5,19 @@ technology_group = westerosi
 primary_culture = men_of_the_westerlands
 religion = faith_of_the_seven
 government_rank = 2
-government = monarchy
-add_government_reform = noble_house_reform
+government = dynasty
+add_government_reform = great_house_reform
 capital = 182
 fixed_capital = 182
 
 #-------------------------------
 # Diplomacy
 #-------------------------------
+2.1.1 = {
+	elector = yes
+	override_country_name = THEWESTERLANDS
+	save_global_event_target_as = TheWesterlandsGreatHouse
+}
 
 #-------------------------------
 # Rulers
@@ -115,8 +120,7 @@ fixed_capital = 182
 	}
 }
 
-# Robert's Rebellion
-282.1.1 = {
+267.8.3 = {
 	monarch = {
 		name = "Tywin"
 		dynasty = "Lannister"
@@ -127,15 +131,20 @@ fixed_capital = 182
 	}
 
 	heir = {
-		name = "Jamie"
-		monarch_name = "Jamie"
+		name = "Jaime"
 		dynasty = "Lannister"
-		birth_date = 273.1.1
+		birth_date = 266.5.2
 		death_date = 350.1.1
 		claim = 100
 		adm = 3
 		dip = 5
 		mil = 5
 	}
-}
 
+	save_global_event_target_as = et_handoftheking
+	set_global_flag = handoftheking_active
+	add_country_modifier = {
+		name = got_hand_of_the_king
+		duration = -1
+	}
+}

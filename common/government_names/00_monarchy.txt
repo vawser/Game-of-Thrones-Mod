@@ -1,81 +1,4 @@
-﻿gov_noble_house = {
-	rank = {
-		1 = NOBLE_HOUSE
-        2 = NOBLE_HOUSE
-        3 = NOBLE_HOUSE
-	}
-	
-	ruler_male = {
-		1 = LORD
-        2 = LORD
-        3 = LORD
-	}
-	
-	ruler_female = {
-		1 = LADY
-        2 = LADY
-        3 = LADY
-	}
-	
-	trigger = {
-        has_reform = noble_house_reform
-	}
-}
-
-gov_noble_house_dornish = {
-	rank = {
-		1 = NOBLE_HOUSE
-        2 = NOBLE_HOUSE
-        3 = NOBLE_HOUSE
-	}
-	
-	ruler_male = {
-		1 = PRINCE
-		2 = PRINCE
-		3 = PRINCE
-	}
-	
-	ruler_female = {
-		1 = PRINCESS
-		2 = PRINCESS
-		3 = PRINCESS
-	}
-	
-	trigger = {
-        has_reform = noble_house_reform
-        OR = {
-			primary_culture = salt_dornish
-			primary_culture = sand_dornish
-			primary_culture = stone_dornish
-		}
-	}
-}
-
-gov_royal_house = {
-	rank = {
-		1 = ROYAL_HOUSE
-        2 = ROYAL_HOUSE
-        3 = ROYAL_HOUSE
-	}
-	
-	ruler_male = {
-		1 = KING
-        2 = KING
-        3 = KING
-	}
-	
-	ruler_female = {
-		1 = QUEEN
-        2 = QUEEN
-        3 = QUEEN
-	}
-	
-	trigger = {
-        has_reform = royal_house_reform
-	}
-}
-
-gov_qarth_city = {
+﻿gov_qarth_city = {
 	rank = {
 		1 = QARTH
         2 = QARTH
@@ -336,5 +259,57 @@ gov_daenerys_host = {
 	
 	trigger = {
         has_reform = daenerys_host_reform
+	}
+}
+
+gov_loe_yiti_empire = {
+	rank = {
+		1 = YITI_EMPIRE
+        2 = YITI_EMPIRE
+        3 = YITI_EMPIRE
+	}
+	
+	ruler_male = {
+		1 = AZURE_EMPEROR
+        2 = AZURE_EMPEROR
+        3 = AZURE_EMPEROR
+	}
+	
+	ruler_female = {
+		1 = AZURE_EMPRESS
+        2 = AZURE_EMPRESS
+        3 = AZURE_EMPRESS
+	}
+	
+	trigger = {
+        has_reform = loe_azure_empire
+	}
+}
+
+gov_loe = {
+	rank = {
+		1 = SHADOW_CULT
+        2 = SHADOW_CULT
+        3 = SHADOW_CULT
+	}
+	
+	ruler_male = {
+		1 = GRAND_CULTIST
+        2 = GRAND_CULTIST
+        3 = GRAND_CULTIST
+	}
+	
+	ruler_female = {
+		1 = GRAND_CULTIST
+        2 = GRAND_CULTIST
+        3 = GRAND_CULTIST
+	}
+	
+	trigger = {
+		OR = {
+			has_reform = loe_worlds_end
+			has_reform = loe_secret_city
+		}
+		
 	}
 }

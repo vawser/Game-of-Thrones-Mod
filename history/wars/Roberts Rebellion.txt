@@ -1,29 +1,29 @@
-# name = "Robert's Rebellion"
+name = "War of the Usurper"
 
-# war_goal = {
-	# type = take_the_iron_throne
-	# casus_belli = cb_iron_throne_rebellion
-	# tag = A10
-# }
+war_goal = {
+	type = take_capital_take_iron_throne
+	casus_belli = cb_seize_the_iron_throne
+	tag = A10
+}
 
-# 282.1.1 = {
-	# add_attacker = A07
-    # add_attacker = A03
-    # add_attacker = A01
-    # add_attacker = A04
-    
-	# add_defender = A10
-    # add_defender = A09
-    # add_defender = F20
-# }
+282.2.27 = {
+	add_attacker = A07
+	add_attacker = A03
+	add_attacker = A01
+	add_attacker = A04
 
-# 285.1.1 = {
-	# rem_attacker = A07
-    # rem_attacker = A03
-    # rem_attacker = A01
-    # rem_attacker = A04
-    
-	# rem_defender = A10
-    # rem_defender = A09
-    # rem_defender = F20
-# }
+	add_defender = A10
+	add_defender = A09
+	add_defender = F20
+}
+
+283.1.29 = {
+	rem_attacker = A07
+	rem_attacker = A03
+	rem_attacker = A01
+	rem_attacker = A04
+
+	rem_defender = A10
+	rem_defender = A09
+	rem_defender = F20
+}

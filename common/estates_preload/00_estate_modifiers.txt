@@ -1,18 +1,52 @@
 #Define estate loyalty and influence modifiers here
 
-estate_clergy = {
+estate_church = {
 	modifier_definition = {
 		type = loyalty
-		key = clergy_loyalty_modifier
+		key = church_loyalty_modifier
 		trigger = {
-			has_estate = estate_clergy
+			has_estate = estate_church
 		}
 	}
 	modifier_definition = {
 		type = influence
-		key = clergy_influence_modifier
+		key = church_influence_modifier
 		trigger = {
-			has_estate = estate_clergy
+			has_estate = estate_church
+		}
+	}
+
+	modifier_definition = {
+		type = privileges
+		key = church_privilege_slots
+		trigger = {
+			has_estate = estate_church
+		}
+	}
+}
+
+estate_nobles = {
+	modifier_definition = {
+		type = loyalty
+		key = nobles_loyalty_modifier
+		trigger = {
+			has_estate = estate_nobles
+		}
+	}
+	
+	modifier_definition = {
+		type = influence
+		key = nobles_influence_modifier
+		trigger = {
+			has_estate = estate_nobles
+		}
+	}
+
+	modifier_definition = {
+		type = privileges
+		key = nobles_privilege_slots
+		trigger = {
+			has_estate = estate_nobles
 		}
 	}
 }
@@ -32,21 +66,12 @@ estate_merchants = {
 			has_estate = estate_merchants
 		}
 	}
-}
 
-estate_nobles = {
 	modifier_definition = {
-		type = loyalty
-		key = nobles_loyalty_modifier
+		type = privileges
+		key = merchants_privilege_slots
 		trigger = {
-			has_estate = estate_nobles
-		}
-	}
-	modifier_definition = {
-		type = influence
-		key = nobles_influence_modifier
-		trigger = {
-			has_estate = estate_nobles
+			has_estate = estate_merchants
 		}
 	}
 }
@@ -66,6 +91,13 @@ estate_commoners = {
 			has_estate = estate_commoners
 		}
 	}
+	modifier_definition = {
+		type = privileges
+		key = commoners_privilege_slots
+		trigger = {
+			has_estate = estate_merchants
+		}
+	}
 }
 
 estate_tribes = {
@@ -83,6 +115,13 @@ estate_tribes = {
 			has_estate = estate_tribes
 		}
 	}
+	modifier_definition = {
+		type = privileges
+		key = tribes_privilege_slots
+		trigger = {
+			has_estate = estate_merchants
+		}
+	}
 }
 
 estate_adventurers = {
@@ -98,6 +137,13 @@ estate_adventurers = {
 		key = adventurers_influence_modifier
 		trigger = {
 			has_estate = estate_adventurers
+		}
+	}
+	modifier_definition = {
+		type = privileges
+		key = cadventurers_privilege_slots
+		trigger = {
+			has_estate = estate_merchants
 		}
 	}
 }

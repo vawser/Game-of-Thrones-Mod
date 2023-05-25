@@ -4,11 +4,19 @@
 got_enforce_privileges_reform = {
 	icon = "people_walking"
 	allow_normal_conversion = yes
-	
+	potential = {
+		is_revolutionary = no
+		NOT = {
+			OR = {
+				has_reform = royal_house_reform
+				has_reform = kingdom_of_westeros_reform
+			}
+		}
+	}
 	modifiers = {
 		global_manpower_modifier = 0.15
+		nobles_influence_modifier = 0.1
 	}
-    
 	ai = {
 		factor = 1
 		modifier = {
@@ -21,12 +29,19 @@ got_enforce_privileges_reform = {
 got_quash_noble_power_reform = {
 	icon = "king_2"
 	allow_normal_conversion = yes
-	
+	potential = {
+		is_revolutionary = no
+		NOT = {
+			OR = {
+				has_reform = royal_house_reform
+				has_reform = kingdom_of_westeros_reform
+			}
+		}
+	}
 	modifiers = {
-		global_tax_modifier = 0.1
+		global_tax_modifier = 0.15
 		nobles_influence_modifier = -0.1
 	}
-    
 	ai = {
 		factor = 1
 		modifier = {
@@ -41,12 +56,21 @@ got_enforce_trader_privileges_reform = {
 	allow_normal_conversion = yes
     
 	potential = {
-        estate_influence = {
+        is_revolutionary = no
+		NOT = {
+			OR = {
+				has_reform = royal_house_reform
+				has_reform = kingdom_of_westeros_reform
+			}
+		}
+	}
+    trigger = {
+		estate_influence = {
             estate = estate_merchants
             influence = 40
         }
 	}
-    
+	
 	modifiers = {
 		trade_range_modifier = 0.3
 		trade_efficiency = 0.05
@@ -64,6 +88,65 @@ got_enforce_trader_privileges_reform = {
 				trade_income_percentage = 0.25
 			}
 		}
+	}
+}
+
+got_grant_noble_castle_rights_reform = {
+	icon = "castle"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+		NOT = {
+			OR = {
+				has_reform = royal_house_reform
+				has_reform = kingdom_of_westeros_reform
+			}
+		}
+	}
+	modifiers = {
+		fort_maintenance_modifier = -0.25
+		nobles_influence_modifier = 0.10
+	}
+	custom_attributes = {
+		on_fort_built_nobles_loyalty = yes	#5 Loyalty
+	}
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			num_of_owned_provinces_with = {
+				OR = {
+					has_building = motte_and_bailey
+					has_building = castle
+					has_building = fortress
+					has_building = citadel
+				}
+				value = 5
+			}
+		}
+	}
+}
+
+got_maintain_nobles_status_quo_reform = {
+	icon = "conciliarism_reform"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+		NOT = {
+			OR = {
+				has_reform = royal_house_reform
+				has_reform = kingdom_of_westeros_reform
+			}
+		}
+	}
+	modifiers = {
+		stability_cost_modifier = -0.1
+	}
+	custom_attributes = {
+		free_noble_levies = yes
+	}
+	ai = {
+		factor = 1
 	}
 }
 
@@ -162,7 +245,10 @@ got_kingsguard_reform = {
 	allow_normal_conversion = yes
     
 	potential = {
-		has_reform = royal_house_reform
+		OR = {
+			has_reform = royal_house_reform
+			has_reform = kingdom_of_westeros_reform
+		}
 	}
     
 	modifiers = {
@@ -182,33 +268,187 @@ got_kingsguard_reform = {
 got_centralize_reform = {
 	icon = "paper_with_seal_3"
 	allow_normal_conversion = yes
-    
+	potential = {
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+	}
+	trigger = {
+		if = {
+			limit = { current_age = age_of_fire }
+			custom_trigger_tooltip = {
+				tooltip = less_than_25_provinces_on_same_continent
+				NOT = {
+					num_of_owned_provinces_with = {
+						same_continent = ROOT
+						value = 25
+					}
+				}
+			}
+		}
+		if = {
+			limit = { current_age = age_of_rebellion }
+			custom_trigger_tooltip = {
+				tooltip = less_than_35_provinces_on_same_continent
+				NOT = {
+					num_of_owned_provinces_with = {
+						same_continent = ROOT
+						value = 35
+					}
+				}
+			}
+		}
+		if = {
+			limit = { current_age = age_of_ice }
+			custom_trigger_tooltip = {
+				tooltip = less_than_50_provinces_on_same_continent
+				NOT = {
+					num_of_owned_provinces_with = {
+						same_continent = ROOT
+						value = 50
+					}
+				}
+			}
+		}
+	}
+	modifiers = {
+		development_cost_modifier = -0.05
+		global_prosperity_growth = 0.5
+		all_estate_loyalty_equilibrium = -0.05
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Leviathan"
+		}
+		custom_attributes = {
+			centralize_state_no_reform_cost = yes
+			#centralize_state_development = yes
+		}
+	}
+}
+
+got_centralize_empire_reform = {
+	icon = "paper_with_seal_3"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+	}
+	trigger = {
+		if = {
+			limit = { current_age = age_of_fire }
+			custom_trigger_tooltip = {
+				tooltip = at_least_25_provinces_on_same_continent
+				num_of_owned_provinces_with = {
+					same_continent = ROOT
+					value = 25
+				}
+			}
+		}
+		if = {
+			limit = { current_age = age_of_rebellion }
+			custom_trigger_tooltip = {
+				tooltip = at_least_35_provinces_on_same_continent
+				num_of_owned_provinces_with = {
+					same_continent = ROOT
+					value = 35
+				}
+			}
+		}
+		if = {
+			limit = { current_age = age_of_ice }
+			custom_trigger_tooltip = {
+				tooltip = at_least_50_provinces_on_same_continent
+				num_of_owned_provinces_with = {
+					same_continent = ROOT
+					value = 50
+				}
+			}
+		}
+	}
 	modifiers = {
 		global_autonomy = -0.05
+		autonomy_change_time = -0.25
+		culture_conversion_cost = -0.1
+		all_estate_loyalty_equilibrium = -0.05
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Leviathan"
+		}
+		custom_attributes = {
+			centralize_state_no_reform_cost = yes
+			#centralize_state_development = yes
+		}
 	}
 }
 
 got_decentralize_reform = {
 	icon = "map"
 	allow_normal_conversion = yes
-
-	modifiers = {
-		num_accepted_cultures = 2
+	potential = {
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+		num_of_owned_provinces_with = {
+			same_continent = ROOT
+			value = 35
+		}
 	}
-    
-	ai = {
-		factor = 1
-		modifier = {
-			factor = 0.25
-			NOT = {
-				any_owned_province = {
-					has_owner_accepted_culture = no
-					has_owner_culture = no
-				}
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = at_least_50_provinces_on_same_continent
+			num_of_owned_provinces_with = {
+				same_continent = ROOT
+				value = 50
 			}
 		}
 	}
+	modifiers = {
+		num_accepted_cultures = 2
+		min_autonomy = 2.5
+		governing_cost = -0.25
+		all_estate_loyalty_equilibrium = 0.10
+	}
+	ai = {
+		factor = 1
+	}
 }
+
+#got_centralize_reform = {
+#	icon = "paper_with_seal_3"
+#	allow_normal_conversion = yes
+#    
+#	modifiers = {
+#		global_autonomy = -0.05
+#	}
+#}
+
+#got_decentralize_reform = {
+#	icon = "map"
+#	allow_normal_conversion = yes
+#
+#	modifiers = {
+#		num_accepted_cultures = 2
+#	}
+#    
+#	ai = {
+#		factor = 1
+#		modifier = {
+#			factor = 0.25
+#			NOT = {
+#				any_owned_province = {
+#					has_owner_accepted_culture = no
+#					has_owner_culture = no
+#				}
+#			}
+#		}
+#	}
+#}
 
 got_westerosi_recruitment = {
 	icon = "siddhi_recruitment"
@@ -217,7 +457,7 @@ got_westerosi_recruitment = {
 	potential = {
         technology_group = westerosi
 		any_owned_province = {
-            NOT = { superregion = westeros_superregion }
+            NOT = { continent = westeros }
         }
 	}
     
@@ -259,8 +499,8 @@ got_clergy_in_administration_reform = {
 	modifiers = {
 		free_adm_policy = 1
 		
-		clergy_influence_modifier = 0.1
-		clergy_loyalty_modifier = 0.05
+		church_influence_modifier = 0.1
+		church_loyalty_modifier = 0.05
 	}
     
 	ai = {
@@ -268,7 +508,7 @@ got_clergy_in_administration_reform = {
 		modifier = {
 			factor = 0.1
 			estate_influence = {
-                estate = estate_clergy
+                estate = estate_church
                 influence = 90
             }
 		}

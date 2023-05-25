@@ -24,17 +24,272 @@ switch_tag_with_ruler = {
 		}
 	}
 	switch_tag = $new_tag$
-	set_ruler = $ruler_string$
-	if = {
-		limit = {
-			has_country_flag = consort_exists
+	$new_tag$ = {
+		set_ruler = $ruler_string$
+		if = {
+			limit = {
+				has_country_flag = consort_exists
+			}
+			set_consort = $consort_string$
 		}
-		set_consort = $consort_string$
+		if = {
+			limit = {
+				has_country_flag = heir_exists
+			}
+			set_heir = $heir_string$
+		}
+	}
+}
+
+add_king_titles = {
+	add_ruler_modifier = {
+		name = got_lord_of_seven_kingdoms
+		duration = -1
+	}
+	add_ruler_modifier = {
+		name = got_protector_of_the_realm
+		duration = -1
+	}
+}
+
+add_influence_to_adm_faction = {
+	if = {
+		limit = { 
+			has_faction = crw_loyalists 
+		}
+		add_faction_influence = {
+			faction = crw_loyalists
+			influence = $influence$
+		}				
 	}
 	if = {
-		limit = {
-			has_country_flag = heir_exists
+		limit = { 
+			has_faction = nw_rangers 
 		}
-		set_heir = $heir_string$
+		add_faction_influence = {
+			faction = nw_rangers
+			influence = $influence$
+		}				
+	}
+	if = {
+		limit = { 
+			has_faction = sedentary_chieftains 
+		}
+		add_faction_influence = {
+			faction = sedentary_chieftains
+			influence = $influence$
+		}				
+	}
+}
+
+add_influence_to_dip_faction = {
+	if = {
+		limit = { 
+			has_faction = crw_pragmatists 
+		}
+		add_faction_influence = {
+			faction = crw_pragmatists
+			influence = $influence$
+		}				
+	}
+	if = {
+		limit = { 
+			has_faction = nw_builders 
+		}
+		add_faction_influence = {
+			faction = nw_builders
+			influence = $influence$
+		}				
+	}
+	if = {
+		limit = { 
+			has_faction = mercantile_chieftains 
+		}
+		add_faction_influence = {
+			faction = mercantile_chieftains
+			influence = $influence$
+		}				
+	}
+}
+
+add_influence_to_mil_faction = {
+	if = {
+		limit = { 
+			has_faction = crw_militarists 
+		}
+		add_faction_influence = {
+			faction = crw_militarists
+			influence = $influence$
+		}				
+	}
+	if = {
+		limit = { 
+			has_faction = nw_rangers 
+		}
+		add_faction_influence = {
+			faction = nw_rangers
+			influence = $influence$
+		}				
+	}
+	if = {
+		limit = { 
+			has_faction = warlike_chieftains 
+		}
+		add_faction_influence = {
+			faction = warlike_chieftains
+			influence = $influence$
+		}				
+	}
+}
+
+set_manpower_variable = {
+	export_to_variable = {
+		value = manpower
+		which = $manpower_var$
+	}
+	multiply_variable = {
+		which = $manpower_var$
+		value = 0.5
+	}
+}
+
+transfer_manpower = {
+	hidden_effect = {
+		$giver$ = {
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				$taker$ = {
+					add_manpower = 1
+				}
+				add_manpower = -1
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+		}
+	}
+}
+
+set_treasury_variable = {
+	export_to_variable = {
+		value = treasury
+		which = $treasury_var$
+	}
+	multiply_variable = {
+		which = $treasury_var$
+		value = 0.5
+	}
+	divide_variable = {
+		which = $treasury_var$
+		value = 10
+	}
+	multiply_variable = {
+		which = $treasury_var$
+		value = 10
+	}
+}
+
+set_income_variable = {
+	export_to_variable = {
+		value = years_of_income
+		which = $income_var$
+	}
+	multiply_variable = {
+		which = $income_var$
+		value = $income_multi$
+	}
+	divide_variable = {
+		which = $income_var$
+		value = 10
+	}
+	multiply_variable = {
+		which = $income_var$
+		value = 10
+	}
+}
+
+remove_treasury = {
+	hidden_effect = {
+		$giver$ = {
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				add_treasury = -1
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+			multiply_variable = {
+				which = $variable$
+				value = 100
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				add_treasury = -0.01
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+		}
+	}
+}
+
+transfer_treasury = {
+	hidden_effect = {
+		$giver$ = {
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				$taker$ = {
+					add_treasury = 1
+				}
+				add_treasury = -1
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+			multiply_variable = {
+				which = $variable$
+				value = 100
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				$taker$ = {
+					add_treasury = 0.01
+				}
+				add_treasury = -0.01
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+		}
 	}
 }

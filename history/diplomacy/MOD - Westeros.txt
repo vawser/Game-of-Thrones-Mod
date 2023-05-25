@@ -1,56 +1,38 @@
 #--------------------------------
-# Westeros Vassals
-#--------------------------------
-# Stark -> House Magnar
-dependency = {
-	subject_type = "vassal"
-	first = NOR
-	second = Q01
-	start_date = 106.1.1
-	end_date = 899.1.1
-}
-
-#--------------------------------
 # Westeros Marriages
 #--------------------------------
-royal_marriage = {
-	first = DOR
-	second = U44
-	start_date = 281.1.1
-	end_date = 290.1.1
-}
 
 #--------------------------------
 # Baratheon Alliances (Robert's Rebellion)
 #--------------------------------
 # Baratheon -> Stark
 alliance = {
-	first = STM
-	second = NOR
+	first = A07
+	second = A01
 	start_date = 281.1.1
 	end_date = 289.1.1
 }
 
 # Arryn -> Stark
 alliance = {
-	first = VLE
-	second = NOR
+	first = A04
+	second = A01
 	start_date = 281.1.1
 	end_date = 289.1.1
 }
 
 # Arryn -> Baratheon
 alliance = {
-	first = VLE
-	second = STM
+	first = A04
+	second = A07
 	start_date = 281.1.1
 	end_date = 289.1.1
 }
 
 # Arryn -> Tully
 alliance = {
-	first = VLE
-	second = RIV
+	first = A04
+	second = A03
 	start_date = 281.1.1
 	end_date = 289.1.1
 }
@@ -58,7 +40,7 @@ alliance = {
 # Targaryen -> Tyrell
 alliance = {
 	first = CRW
-	second = REA
+	second = F20
 	start_date = 281.1.1
 	end_date = 289.1.1
 }
@@ -66,7 +48,7 @@ alliance = {
 # Targaryen -> Martell
 alliance = {
 	first = CRW
-	second = DOR
+	second = A09
 	start_date = 281.1.1
 	end_date = 289.1.1
 }
@@ -76,16 +58,16 @@ alliance = {
 #--------------------------------
 # Renly -> Tyrell
 alliance = {
-	first = STM
-	second = REA
+	first = A07
+	second = F20
 	start_date = 298.1.1
 	end_date = 999.1.1
 }
 
 # Stark -> Tully
 alliance = {
-	first = NOR
-	second = RIV
+	first = A01
+	second = A03
 	start_date = 299.1.1
 	end_date = 999.1.1
 }
@@ -94,25 +76,25 @@ alliance = {
 # The Night King
 #--------------------------------
 alliance = {
-	first = NOR
-	second = A02
+	first = A01
+	second = NGT
 	start_date = 304.1.1
 	end_date = 999.1.1
 }
 alliance = {
-	first = NOR
+	first = A01
 	second = DAE
 	start_date = 304.1.1
 	end_date = 999.1.1
 }
 alliance = {
-	first = NOR
-	second = VLE
+	first = A01
+	second = A04
 	start_date = 304.1.1
 	end_date = 999.1.1
 }
 alliance = {
-	first = NOR
+	first = A01
 	second = M09
 	start_date = 304.1.1
 	end_date = 999.1.1
@@ -144,7 +126,7 @@ dependency = {
 # Daenerys alliances
 alliance = {
 	first = DAE
-	second = A02
+	second = NGT
 	start_date = 304.1.1
 	end_date = 999.1.1
 }

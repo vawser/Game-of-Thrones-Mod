@@ -1,0 +1,152 @@
+country_decisions = {
+
+	loe_colonize_dry_bones = {
+		potential = {
+			OR = {
+				tag = R68
+				tag = J03
+			}
+			leviathan_sound_area = {
+				any_province = {
+					is_empty = yes
+				}
+			}
+			kazga_area = {
+				any_province = {
+					is_empty = yes
+				}
+			}
+			nesolat_area = {
+				any_province = {
+					is_empty = yes
+				}
+			}
+		}
+		allow = {
+			ROOT = {
+				any_owned_province = {
+					has_empty_adjacent_province = yes
+				}
+			}
+			treasury = 200
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = leviathan_sound_area
+				area = kazga_area
+				area = nesolat_area
+			}
+			is_empty = yes
+			any_neighbor_province = {
+				owned_by = R68
+			}
+		}
+		effect = {
+			ROOT = {
+				random_owned_province = {
+					limit = {
+						has_empty_adjacent_province = yes
+					}
+					if = {
+						limit = { ROOT = { ai = no } }
+						random_empty_neighbor_province = {
+							create_colony = 800
+						}
+					}
+					else = {
+						random_empty_neighbor_province = {
+							create_colony = 999
+						}
+					}
+				}
+			}
+			add_treasury = -200
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_of_loans = 1
+			}
+		}
+	}
+
+	loe_search_for_the_skull = {
+		major = yes
+		potential = {
+			has_country_flag = loe_start_the_show
+		}
+		allow = {
+			dip_power = 200
+		}
+		effect = {
+			clr_country_flag = loe_start_the_show
+			add_dip_power = -200
+			add_years_of_income = -1
+			custom_tooltip = loe_search_for_the_skull_tooltip
+			add_country_modifier = {
+				name = loe_golden_skull_investigation
+				duration = -1
+			}
+		}
+	}
+
+	loe_can_send_team_decision = {
+		major = yes
+		potential = {
+			has_country_flag = loe_can_send_team
+		}
+		allow = {
+			has_spy_network_in = {
+				who = event_target:loe_owns_golden_skull
+				value = 90
+			}
+		}
+		provinces_to_highlight = {
+			is_capital_of = event_target:loe_owns_golden_skull
+		}
+		effect = {
+			add_treasury = -250
+			hidden_effect = {
+				country_event = {
+					id = yiti.21
+					days = 60
+					random = 120
+				}
+			}
+			add_spy_network_in = {
+				who = event_target:loe_owns_golden_skull
+				value = -90
+			}
+			clr_country_flag = loe_can_send_team
+		}
+	}
+
+	loe_view_mandate_increase = {
+		potential = {
+			has_government_attribute = loe_mandate_from_dev
+		}
+		allow = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = loe_view_mandate_increase_desc
+		}
+	}
+
+	loe_view_mandate_pu_increase = {
+		potential = {
+			has_government_attribute = loe_mandate_from_pu_dev
+		}
+		allow = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = loe_view_mandate_pu_increase_desc
+		}
+	}
+}

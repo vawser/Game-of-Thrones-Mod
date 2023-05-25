@@ -157,6 +157,42 @@ assassinate_leader = {
 	}
 }
 
+#---------------------------------------
+# Prepare Raid
+#---------------------------------------
+loe_prepare_raid = {
+	category = covert
+	require_acceptance = no
+
+	is_visible = {
+		has_government_attribute = loe_can_prepare_raid
+	}
+
+	is_allowed = {
+		has_spy_network_in = {
+			who = FROM
+			value = 30
+		}
+		FROM = {
+			AND = { 
+				has_truce = no
+				NOT = { culture = jogos_nhai }
+			}
+		}
+	}
+
+	on_accept = {
+		declare_war_with_cb = {
+			who = FROM
+			casus_belli = loe_jogos_nhai_raid
+		}
+	}
+
+	ai_will_do = {
+		always = yes
+	}
+}
+
 
 
 

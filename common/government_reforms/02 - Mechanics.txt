@@ -1,6 +1,5 @@
 monarchy_mechanic = {
     basic_reform = yes
-    
 	monarchy = yes
     
 	heir = yes
@@ -9,18 +8,38 @@ monarchy_mechanic = {
 	valid_for_nation_designer = no
 }
 
-republic_mechanic = {
+dynasty_mechanic = {
     basic_reform = yes
-    
-	republic = yes
+	monarchy = yes
     
 	heir = yes
 	queen = yes
-    
-    duration = 10
-    
-    has_term_election = no
-    election_on_death = yes
+
+	valid_for_nation_designer = no
+
+	modifiers = {
+		nobles_influence_modifier = 0.05
+		land_forcelimit_modifier = -0.25
+		naval_forcelimit_modifier = -0.50
+	}
+}
+
+republic_mechanic = {
+	basic_reform = yes
+	republican_name = yes
+	royal_marriage = no
+	republic = yes
+	duration = 10
+	has_term_election = yes
+
+	modifiers = {
+		merchants_influence_modifier = 0.15
+		max_absolutism = -40
+	}
+	custom_attributes = {
+		enables_republic_ideagroup = yes
+		enables_monarchy_ideagroup = no
+	}
 
 	valid_for_nation_designer = no
 }
@@ -32,12 +51,23 @@ theocracy_mechanic = {
 	has_devotion = yes
 
     rulers_can_be_generals = no
+	heirs_can_be_generals = no
 	royal_marriage = no
 	heir = yes
+	can_customise_heir = no
     different_religion_acceptance = -20
 	different_religion_group_acceptance = -50
     
 	valid_for_nation_designer = no
+
+	custom_attributes = {
+		enables_theocracy_ideagroup = yes
+	}
+
+	modifiers = {
+		church_loyalty_modifier = 0.10
+		church_influence_modifier = 0.05
+	}
 }
 
 tribal_mechanic = {
@@ -71,35 +101,6 @@ native_mechanic = {
     
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
-}
-
-pirate_mechanic = {
-    basic_reform = yes
-    
-	republican_name = yes
-	royal_marriage = no
-	can_form_trade_league = no
-    
-	republic = yes
-    
-	valid_for_nation_designer = no
-    
-    potential = {	
-		has_dlc = "Golden Century"
-	}
-	
-	nation_designer_trigger = {
-		capital_scope = {
-			has_port = yes
-		}
-	}
-    
-    factions_frame = 9
-	factions = {
-		pr_buccaneers
-		pr_smugglers
-		pr_captains
-	}
 }
 
 occult_mechanic = {

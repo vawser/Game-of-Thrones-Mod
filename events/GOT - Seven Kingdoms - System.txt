@@ -1,197 +1,474 @@
 namespace = GOT_SK_SYSTEM
 
-# War Won
+# New Monarch (King/Queen)
 country_event = {
 	id = GOT_SK_SYSTEM.1
-	title = GOT_SK_SYSTEM.1.title
-	desc = GOT_SK_SYSTEM.1.desc
-	picture = GOOD_WITH_MONARCH_eventPicture
+	title = "GOT_SK_SYSTEM.1.title"
+	desc = {
+		trigger = {
+			is_female = no
+		}
+		desc = "GOT_SK_SYSTEM.1.desc.m"
+	}
+	desc = {
+		trigger = {
+			is_female = yes
+		}
+		desc = "GOT_SK_SYSTEM.1.desc.f"
+	}
+	picture = STREET_SPEECH_eventPicture
 	
-    is_triggered_only = yes
-    
-    trigger = {
-        is_emperor_of_china = yes
-        NOT = { has_country_flag = iron_throne_transition }
-    }
-    
-    option = {
-        name = GOT_SK_SYSTEM.1.option.a
-
-        add_mandate = 10
-    }  
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+		has_regency = no
+		NOT = {
+			is_in_war = {
+				casus_belli = cb_seize_the_iron_throne
+			}
+		}
+	}
+	
+	option = {
+		name = "GOT_SK_SYSTEM.1.option.a"
+		add_legitimacy = 5
+	}
+	option = {
+		name = "GOT_SK_SYSTEM.1.option.b"
+		add_prestige = 10
+	}
+	
 }
 
-# War Lost
+# New Heir (Prince/Princess)
 country_event = {
 	id = GOT_SK_SYSTEM.2
-	title = GOT_SK_SYSTEM.2.title
-	desc = GOT_SK_SYSTEM.2.desc
-	picture = BAD_WITH_MONARCH_eventPicture
+	title = "GOT_SK_SYSTEM.2.title"
+	desc = {
+		trigger = {
+			OR = {
+				owns_or_subject_of = 221
+				221 = {
+					owner = {
+						is_part_of_hre = yes
+					}
+				}
+			}
+		}
+		desc = "GOT_SK_SYSTEM.2.desc.a"
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				OR = {
+					owns_or_subject_of = 221
+					221 = {
+						owner = {
+							is_part_of_hre = yes
+						}
+					}
+				}
+			}
+		}
+		desc = "GOT_SK_SYSTEM.2.desc.b"
+	}
+	picture = NEW_HEIR_eventPicture
 	
-    is_triggered_only = yes
-    
-    trigger = {
-        is_emperor_of_china = yes
-        NOT = { has_country_flag = iron_throne_transition }
-    }
-    
-    option = {
-        name = GOT_SK_SYSTEM.2.option.a
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+		has_regency = no
+		NOT = {
+			is_in_war = {
+				casus_belli = cb_seize_the_iron_throne
+			}
+		}
+	}
+	
+	option = {
+		name = "GOT_SK_SYSTEM.2.option.a"
+		trigger = {
+			OR = {
+				owns_or_subject_of = 221
+				221 = {
+					owner = {
+						is_part_of_hre = yes
+					}
+				}
+			}
+		}
+		add_ruler_modifier = {
+			name = got_prince_of_dragonstone
+			duration = -1
+			desc = ascension_ruler_desc
+		}
+		if = { # Dragonstone exists and is a Castellany
+			limit = {
+				A39 = {
+					owns = 221 # Dragonstone
+					is_part_of_hre = yes
+					is_subject_of_type_with_overlord = {
+						who = ROOT
+						type = castellany
+					}
+				}
+			}
+			custom_tooltip = GOT_SK_SYSTEM.2.CAS1
+			add_legitimacy = 10
+			add_heir_claim = 20
+		}
+		else_if = { # Dragonstone exists but isn't a Castellany
+			limit = {
+				A39 = {
+					owns = 221
+					is_part_of_hre = yes
+					NOT = {
+						is_subject_of_type_with_overlord = {
+							who = ROOT
+							type = castellany
+						}
+					}
+				}
+			}
+			custom_tooltip = GOT_SK_SYSTEM.2.CAS2
+			hidden_effect = {
+				A39 = {
+					change_government = republic
+					add_government_reform = castellany_of_dragonstone_reform
+					set_country_flag = prince_of_dragonstone_flag
+				}
+				create_subject = {
+					subject_type = castellany
+					subject = A39
+				}
+			}
+		}
+		else_if = { # Dragonstone is owned and controlled by us
+			limit = {
+				owns = 221
+			}
+			if = {
+				limit = {
+					A39 = { exists = no }
+				}
+				custom_tooltip = GOT_SK_SYSTEM.2.CAS3a
+				hidden_effect = {
+					221 = { cede_province = A39 }
+					A39 = {
+						change_government = republic
+						add_government_reform = castellany_of_dragonstone_reform
+						set_country_flag = prince_of_dragonstone_flag
+					}
+					create_subject = {
+						subject_type = castellany
+						subject = A39
+					}
+				}
+			}
+			else = {
+				221 = {
+					add_province_modifier = {
+						name = got_local_castellany
+						duration = -1
+					}
+				}
+				custom_tooltip = GOT_SK_SYSTEM.2.CAS3b
+			}
+		}
+		else_if = { # Dragonstone is ruled by a Westeros lord or our subject
+			limit = {
+				221 = {
+					owner = {
+						NOT = { tag = A39 }
+						OR = {
+							is_part_of_hre = yes
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					A39 = { exists = no }
+				}
+				custom_tooltip = GOT_SK_SYSTEM.2.CAS4
+				hidden_effect = {
+					221 = { cede_province = A39 }
+					A39 = {
+						change_government = republic
+						add_government_reform = castellany_of_dragonstone_reform
+						set_country_flag = prince_of_dragonstone_flag
+					}
+					create_subject = {
+						subject_type = castellany
+						subject = A39
+					}
+				}
+			}
+			else = {
+				221 = {
+					cede_province = ROOT
+					add_province_modifier = {
+						name = got_local_castellany
+						duration = -1
+					}
+				}
+				custom_tooltip = GOT_SK_SYSTEM.2.CAS3b 
+			}
+		}
+	}
 
-        add_mandate = -10
-    }  
+	option = {
+		name = "GOT_SK_SYSTEM.2.option.b"
+		trigger = {
+			NOT = {
+				OR = {
+					owns_or_subject_of = 221
+					221 = {
+						owner = {
+							is_part_of_hre = yes
+						}
+					}
+				}
+			}
+		}
+		add_ruler_modifier = {
+			name = got_prince_of_westeros
+			duration = -1
+			desc = ascension_ruler_desc
+		}
+		custom_tooltip = GOT_SK_SYSTEM.2.CAS5 # Dragonstone is not ruled by us or a subject
+	}
 }
 
-# New Monarch
+# Remove Castellany from Dragonstone if not subject
 country_event = {
 	id = GOT_SK_SYSTEM.3
-	title = GOT_SK_SYSTEM.3.title
-	desc = GOT_SK_SYSTEM.3.desc
+	title = "GOT_SK_SYSTEM.10.title"
+	desc = "GOT_SK_SYSTEM.10.desc"
 	picture = GOOD_WITH_MONARCH_eventPicture
-	
-    is_triggered_only = yes
-    
-    trigger = {
-        is_emperor_of_china = yes
-        is_female = no
-        adm = 3
-        dip = 3
-        mil = 3
-        NOT = {
-            adm = 5
-            dip = 5
-            mil = 5
-        }
-    }
-    
-    option = {
-        name = GOT_SK_SYSTEM.3.option.a
 
-        add_mandate = 10
-    }  
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		tag = A39
+		NOT = { is_subject_of_type = castellany }
+		NOT = { government = dynasty }
+	}
+	
+	option = {
+		name = "GOT_SK_SYSTEM.10.option.a"
+		change_government = dynasty
+		add_government_reform = noble_house_reform
+	}
 }
 
-# New Monarch - Female
 country_event = {
 	id = GOT_SK_SYSTEM.4
-	title = GOT_SK_SYSTEM.4.title
-	desc = GOT_SK_SYSTEM.4.desc
-	picture = BAD_WITH_MONARCH_eventPicture
-	
-    is_triggered_only = yes
-    
-    trigger = {
-        is_emperor_of_china = yes
-        is_female = yes
-    }
-    
-    option = {
-        name = GOT_SK_SYSTEM.4.option.a
-
-        add_mandate = -10
-    }  
-}
-
-# New Monarch
-country_event = {
-	id = GOT_SK_SYSTEM.5
-	title = GOT_SK_SYSTEM.5.title
-	desc = GOT_SK_SYSTEM.5.desc
+	title = "GOT_SK_SYSTEM.4.title"
+	desc = "GOT_SK_SYSTEM.4.desc"
 	picture = GOOD_WITH_MONARCH_eventPicture
-	
-    is_triggered_only = yes
-    
-    trigger = {
-        is_emperor_of_china = yes
-        is_female = no
-        adm = 5
-        dip = 5
-        mil = 5
-    }
-    
-    option = {
-        name = GOT_SK_SYSTEM.5.option.a
 
-        add_mandate = 15
-    }  
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			event_target:great_house = {
+				elector = no
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = feudatory
+					}
+					grant_independence = yes
+				}
+				restore_country_name = yes
+				add_government_reform = noble_house_reform
+				ROOT = {
+					create_subject = {
+						subject_type = feudatory
+						subject = PREV
+					}
+				}
+				add_opinion = {
+					who = event_target:IronThroneKing
+					modifier = removed_our_electorate
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = opinion_traitor
+				}
+			}
+			elector = yes
+			add_government_reform = great_house_reform
+			add_opinion = {
+				who = event_target:IronThroneKing
+				modifier = opinion_grateful
+			}
+			every_country = {
+				limit = {
+					has_country_flag = potential_feudatory
+				}
+				ROOT = {
+					create_subject = {
+						subject_type = feudatory
+						subject = PREV
+					}
+				}
+				clr_country_flag = potential_feudatory
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						region = region_the_north
+					}
+				}
+				override_country_name = THENORTH
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_riverlands
+					}
+				}
+				override_country_name = THERIVERLANDS
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_vale
+					}
+				}
+				override_country_name = THEVALE
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_iron_islands
+					}
+				}
+				override_country_name = THEIRONISLANDS
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_westerlands
+					}
+				}
+				override_country_name = THEWESTERLANDS
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_reach
+					}
+				}
+				override_country_name = THEREACH
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_stormlands
+					}
+				}
+				override_country_name = THESTORMLANDS
+			}
+			else_if = {
+				limit = {
+					capital_scope = {
+						region = region_dorne
+					}
+				}
+				override_country_name = DORNE
+			}
+		}
+	}
+
+	option = {
+		name = "GOT_SK_SYSTEM.4.option.a"
+		tooltip = {
+			event_target:great_house = {
+				elector = no
+				restore_country_name = yes
+				add_government_reform = noble_house_reform
+				ROOT = {
+					create_subject = {
+						subject_type = feudatory
+						subject = PREV
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = opinion_traitor
+				}
+			}
+			elector = yes
+			custom_tooltip = "GOT_SK_SYSTEM.4.option.tt"
+			add_government_reform = great_house_reform
+			add_opinion = {
+				who = event_target:IronThroneKing
+				modifier = opinion_grateful
+			}
+		}
+	}
+
+	after = {
+		clear_global_event_target = great_house
+	}
 }
 
-# Swing
+# Nobility Taxation
 country_event = {
 	id = GOT_SK_SYSTEM.10
-	title = GOT_SK_SYSTEM.10.title
-	desc = GOT_SK_SYSTEM.10.desc
-	picture = GOOD_WITH_MONARCH_eventPicture
+	title = "GOT_SK_SYSTEM.10.title"
+	desc = "GOT_SK_SYSTEM.10.desc"
+	picture = BAD_WITH_MONARCH_eventPicture
 	
-    is_triggered_only = yes
-    
-    trigger = {
-        is_emperor_of_china = yes
-        NOT = { has_country_flag = iron_throne_transition }
-    }
-    
-    option = {
-        name = GOT_SK_SYSTEM.10.option.a
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	option = {
+		name = "GOT_SK_SYSTEM.10.option.a"
 
-        add_mandate = -10
-    } 
-    option = {
-        name = GOT_SK_SYSTEM.10.option.b
+		add_mandate = -10
+	}
+	option = {
+		name = "GOT_SK_SYSTEM.10.option.b"
 
-        add_years_of_income = -1
-    }  
+		add_years_of_income = -1
+	}
 }
 
-# Swing
+# Nobility Levies
 country_event = {
 	id = GOT_SK_SYSTEM.11
-	title = GOT_SK_SYSTEM.11.title
-	desc = GOT_SK_SYSTEM.11.desc
+	title = "GOT_SK_SYSTEM.11.title"
+	desc = "GOT_SK_SYSTEM.11.desc"
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
-    is_triggered_only = yes
-    
-    trigger = {
-        is_emperor_of_china = yes
-        NOT = { has_country_flag = iron_throne_transition }
-    }
-    
-    option = {
-        name = GOT_SK_SYSTEM.11.option.a
-
-        add_mandate = -10
-    } 
-    option = {
-        name = GOT_SK_SYSTEM.11.option.a
-
-        add_yearly_manpower = -1
-    }  
-}
-
-# Swing
-country_event = {
-	id = GOT_SK_SYSTEM.12
-	title = GOT_SK_SYSTEM.12.title
-	desc = GOT_SK_SYSTEM.12.desc
-	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
 	
-    is_triggered_only = yes
-    
-    trigger = {
-        is_emperor_of_china = yes
-        NOT = { has_country_flag = iron_throne_transition }
-    }
-    
-    option = {
-        name = GOT_SK_SYSTEM.12.option.a
+	trigger = {
+		is_emperor_of_china = yes
+		NOT = { has_country_flag = iron_throne_transition }
+	}
+	
+	option = {
+		name = "GOT_SK_SYSTEM.11.option.a"
 
-        add_mandate = -10
-    } 
-    option = {
-        name = GOT_SK_SYSTEM.12.option.a
-
-        add_corruption = 2
-    }  
+		add_mandate = -10
+	} 
+	option = {
+		name = "GOT_SK_SYSTEM.11.option.a"
+		
+		add_yearly_manpower = -1
+	}
 }
 
 # Add Royal House to new claimant
@@ -201,29 +478,29 @@ country_event = {
 	desc = GOT_SK_SYSTEM.20.desc
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
-    trigger = {
-        is_emperor_of_china = yes
-        has_reform = noble_house_reform
-        NOT = { has_reform = royal_house_reform }
-    }
-    
-    mean_time_to_happen = {
+	trigger = {
+		is_emperor = yes
+		has_reform = noble_house_reform
+		NOT = { has_reform = royal_house_reform }
+	}
+	
+	mean_time_to_happen = {
 		days = 1
 	}
-    
-    immediate = {
-        change_government = monarchy
-        remove_government_reform = noble_house_reform
-        add_government_reform = royal_house_reform
-    }
-    
-    option = {
-        name = GOT_SK_SYSTEM.20.option.a
+	
+	immediate = {
+		change_government = monarchy
+		remove_government_reform = noble_house_reform
+		add_government_reform = royal_house_reform
+	}
+	
+	option = {
+		name = GOT_SK_SYSTEM.20.option.a
 
-        tooltip = {
-            add_government_reform = royal_house_reform
-        }
-    } 
+		tooltip = {
+			add_government_reform = royal_house_reform
+		}
+	} 
 }
 
 # Remove Royal House from old claimant
@@ -233,96 +510,29 @@ country_event = {
 	desc = GOT_SK_SYSTEM.21.desc
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
-    trigger = {
-        is_emperor_of_china = no
-        has_reform = royal_house_reform
-        NOT = { has_reform = noble_house_reform }
-    }
-    
-    mean_time_to_happen = {
+	trigger = {
+		is_emperor = no
+		has_reform = royal_house_reform
+		NOT = { has_reform = noble_house_reform }
+	}
+	
+	mean_time_to_happen = {
 		days = 1
 	}
-    
-    immediate = {
-        change_government = monarchy
-        remove_government_reform = royal_house_reform
-        add_government_reform = noble_house_reform
-    }
-    
-    option = {
-        name = GOT_SK_SYSTEM.21.option.a
-
-        tooltip = {
-            add_government_reform = noble_house_reform
-        }
-    } 
-}
-
-# The Passing of the Throne
-country_event = {
-	id = GOT_SK_SYSTEM.30
-	title = GOT_SK_SYSTEM.30.title
-	desc = GOT_SK_SYSTEM.30.desc
-	picture = GOOD_WITH_MONARCH_eventPicture
 	
-	is_triggered_only = yes
+	immediate = {
+		change_government = monarchy
+		remove_government_reform = royal_house_reform
+		add_government_reform = noble_house_reform
+	}
 	
-    trigger = {
-        is_subject_of_type = royal_subject
-    }
-    
-    immediate = {
-        grant_independence = yes # Free them automatically
-    }
-    
 	option = {
-		name = GOT_SK_SYSTEM.30.option.a
-        
-        event_target:IronThroneHolder = {
-            create_subject = {
-                subject_type = royal_subject
-                subject = ROOT
-            }
-        }
-        
-        ai_chance = {
-            factor = 90
-            
-            modifier = {
-                factor = 0.5
-                
-                NOT = {
-                    has_opinion = {
-                        who = event_target:IronThroneHolder
-                        value = -50
-                    }
-                }
-            }
-        }
-	}
-    option = {
-		name = GOT_SK_SYSTEM.30.option.b
-        
-        event_target:IronThroneHolder = {
-            add_casus_belli = {
-                target = ROOT
-                type = cb_royal_conquest
-            }
-        }
-        
-        ai_chance = {
-            factor = 10
-            
-            modifier = {
-                factor = 0
-                
-                has_opinion = {
-                    who = event_target:IronThroneHolder
-                    value = 25
-                }
-            }
-        }
-	}
+		name = GOT_SK_SYSTEM.21.option.a
+
+		tooltip = {
+			add_government_reform = noble_house_reform
+		}
+	} 
 }
 
 # Claim the Iron Throne
@@ -333,121 +543,64 @@ country_event = {
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
 	is_triggered_only = yes
-	
 	major = yes
-	
+
 	option = {
 		name = GOT_SK_SYSTEM.31.option.a
-    
-        hidden_effect = {
-            set_country_flag = iron_throne_transition
-            save_event_target_as = originalCOU
-        }
-
-        # Moving over ruler to The Crownlands
-		switch_tag_with_ruler = {
-			ruler_string = King_of_Andals
-			consort_string = Queen_of_Andals
-			heir_string = Heir_of_Andals
-			new_tag = CRW
-		}
-
-        save_global_event_target_as = IronThroneHolder
-		create_union = event_target:originalCOU
-        
-        set_emperor_of_china = ROOT
-		add_prestige = 20
-		add_dip_power = 50
-		add_mil_power = 50
-		add_adm_power = 50
-        
-        # Peace out all wars to stop glitchiness
-        every_country = {
-            limit = {
-                war_with = ROOT
-            }
-            white_peace = ROOT
-        }
-        
-        # Allow all current subjects to choose whether they become subjects of new holder
-        every_country = {
-            limit = {
-                is_subject_of_type = royal_subject
-            }
-            country_event = { id = GOT_SK_SYSTEM.30 }
-        }
-        
-        ai_chance = {
-            factor = 100
-        }
-	}
-    option = {
-		name = GOT_SK_SYSTEM.31.option.b
-        
-        dismantle_empire_of_china = yes
-		add_prestige = 100
-		add_dip_power = 200
-		add_mil_power = 200
-		add_adm_power = 200
-        
-        every_country = {
-            limit = {
-                is_subject = yes
-                is_subject_of_type = royal_subject
-            }
-            grant_independence = yes
-        }
-        
-        ai_chance = {
-            factor = 100
-            
-            modifier = {
-                factor = 0
-                
-                has_reform = noble_house_reform
-            }
-        }
-	}
-}
-
-country_event = {
-	id = GOT_SK_SYSTEM.32
-	title = GOT_SK_SYSTEM.32.title
-	desc = GOT_SK_SYSTEM.32.desc
-	picture = IMPERIAL_EXAMINATION_eventPicture
 	
-	is_triggered_only = yes
-	
-	trigger = {
-		is_emperor_of_china = yes
-		has_dlc = "Mandate of Heaven"
-		NOT = { has_country_flag = reacted_to_ideology_event }
-	}
-	
-	immediate = {
 		hidden_effect = {
-			set_country_flag = reacted_to_ideology_event
+			set_country_flag = iron_throne_transition
+			save_event_target_as = originalCOU
 		}
-	}
-	
-	option = {
-		name = GOT_SK_SYSTEM.32.option.a
+		
+		tooltip = { add_prestige = 10 }
+
+		custom_tooltip = sk31_change_tag_tt
+		hidden_effect = {
+			# Moving over ruler to The Crownlands
+			switch_tag_with_ruler = {
+				ruler_string = King_of_Andals
+				consort_string = Queen_of_Andals
+				heir_string = Heir_of_Andals
+				new_tag = CRW
+			}
+		}
+		custom_tooltip = sk31_union_tag_tt
+		hidden_effect = {
+			set_country_flag = iron_throne_transition # Event Trigger blocker
+			save_global_event_target_as = IronThroneKing # Global Variable
+			create_union = event_target:originalCOU # Get PU over old country
+			set_emperor = yes
+			add_prestige = 10
+		}
+
+		# Peace out all wars to stop glitchiness
+		every_country = {
+			limit = {
+				war_with = ROOT
+			}
+			white_peace = ROOT
+		}
+		
 		ai_chance = {
 			factor = 100
 		}
-        reduce_meritocracy_effect = yes
-		add_stability = -1
-        add_country_modifier = {
-            name = punitive_ideology
-            duration = 7300
-        }
 	}
+	
 	option = {
-		name = GOT_SK_SYSTEM.32.option.b
+		name = GOT_SK_SYSTEM.31.option.b
 		ai_chance = {
-			factor = 0
+			factor = 100
+			
+			modifier = {
+				factor = 0
+				is_westerosi_government = yes
+			}
 		}
-		add_meritocracy_effect = yes
-		add_mandate_effect = yes
+		
+		dismantle_hre = yes
+		add_dip_power = 200
+		add_mil_power = 200
+		add_adm_power = 200
 	}
 }

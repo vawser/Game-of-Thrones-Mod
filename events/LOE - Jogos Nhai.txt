@@ -1,0 +1,421 @@
+namespace = jogosnhai
+
+##Startup##
+
+##Flavour##
+
+country_event = {
+	id = jogosnhai.1
+	title = "jogosnhai.1.t"
+    desc = "jogosnhai.1.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+    option = {
+		name = "jogosnhai.1.t1"
+		add_country_modifier = {
+			name = loe_jogos_war_jogos
+			duration = -1
+		}
+		capital_scope = {
+			cavalry = ROOT
+			cavalry = ROOT
+			cavalry = ROOT
+			cavalry = ROOT
+			cavalry = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = jogosnhai.2
+	title = "jogosnhai.2.t"
+    desc = "jogosnhai.2.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+    option = {
+		name = "jogosnhai.2.t1"
+		grant_independence = yes
+		every_ally = {
+			break_alliance = ROOT
+		}
+		add_country_modifier = {
+			name = loe_isolated
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Does not work if more than 1 nation has more dev
+	id = jogosnhai.4
+	title = "jogosnhai.4.t"
+    desc = "jogosnhai.4.d"
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+
+	trigger = {
+		has_government_attribute = loe_is_jogos_leader
+	}
+
+	immediate = {
+		clear_global_event_target = loe_jhattar
+		clr_ruler_flag = loe_new_prathama
+		every_country = {
+			limit = {
+				has_country_flag = loe_not_enough_dev
+			}
+			clr_country_flag = loe_not_enough_dev
+		}
+	}
+
+    option = {
+		name = "jogosnhai.4.t1"
+		custom_tooltip = "jogosnhai.4.d1"
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_subject_of_type = loe_jogos_nhai_tribe
+					OR = {
+						NOT = { has_country_flag = loe_not_enough_dev }
+						NOT = { has_ruler_flag = loe_new_prathama }					
+					}
+				}
+				if = {
+					limit = {
+						total_development = ROOT
+					}
+					set_ruler_flag = loe_new_prathama
+				}
+				else = {
+					set_country_flag = loe_not_enough_dev
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_ruler_flag = loe_new_prathama
+						is_subject_of_type = loe_jogos_nhai_tribe
+					}
+				}
+				set_country_flag = loe_not_enough_dev
+				add_government_reform = loe_sthaurin
+				random_country = {
+					limit = {
+						has_ruler_flag = loe_new_prathama
+						is_subject_of_type = loe_jogos_nhai_tribe
+					}
+					save_global_event_target_as = loe_jhattar
+					add_government_reform = loe_prathama
+					grant_independence = yes
+				}
+			}
+			else = {
+				set_ruler_flag = loe_new_prathama
+				save_global_event_target_as = loe_jhattar
+				add_absolutism = 10
+				add_stability = 1
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				ROOT = {
+					NOT = { has_ruler_flag = loe_new_prathama }
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = loe_not_enough_dev
+					is_subject = yes
+				}
+				grant_independence = yes
+				country_event = {
+					id = jogosnhai.3
+				}
+			}
+			country_event = {
+				id = jogosnhai.3
+			}
+		}
+	}
+}
+
+country_event = { #TBD Untested, doesnt peace out properly
+	id = jogosnhai.6
+	title = "jogosnhai.6.t"
+    desc = "jogosnhai.6.d"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		war_score = 50
+		has_country_modifier = loe_raid
+	}
+
+	immediate = {
+		#hidden_effect = {
+			set_variable = {
+				which = loe_enemy_dev
+				value = 0
+			}
+			while = {
+				limit = {
+					any_war_enemy_country = {
+						NOT = { has_country_flag = loe_is_counted }
+					}
+				}
+				random_war_enemy_country = {
+					set_country_flag = loe_is_counted
+					export_to_variable = {
+						which = loe_enemy_dev
+						value = total_development
+					}
+					ROOT = {
+						change_variable = {
+							which = loe_enemy_dev
+							which = PREV
+						}
+					}
+				}
+			}
+		#}
+	}
+
+    option = {
+		name = "jogosnhai.6.t1"
+		custom_tooltip = "jogosnhai.6.d1"
+		every_enemy_country = {
+			white_peace = ROOT
+			every_enemy_country = {
+				white_peace = PREV
+			}
+		}
+		multiply_variable = {
+			which = loe_enemy_dev
+			value = 0.1
+		}
+	}
+
+	after = {
+		set_variable = {
+			which = loe_countdown
+			which = loe_enemy_dev
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = loe_countdown
+					value = 1
+				}
+			}
+			subtract_variable = {
+				which = loe_countdown
+				value = 1
+			}
+			random_owned_province = {
+				random_list = {
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_production = 1 }
+					1 = { add_base_tax = 1 }
+				}
+			}
+			overlord = {
+				random_owned_province = {
+					random_list = {
+						1 = { add_base_manpower = 1 }
+						1 = { add_base_production = 1 }
+						1 = { add_base_tax = 1 }
+					}
+				}
+			}
+			overlord = {
+				random_subject_country = {
+					random_owned_province = {
+						random_list = {
+							1 = { add_base_manpower = 1 }
+							1 = { add_base_production = 1 }
+							1 = { add_base_tax = 1 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+##Mission Tree##
+
+##Functional##
+
+country_event = { #Doesnt let ai go above overlord's dev
+	id = jogosnhai.5
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	hidden = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		is_subject_of_type = loe_jogos_nhai_tribe
+		total_development = event_target:loe_jhattar
+		ai = yes
+		overlord = {
+			ai = yes
+		}
+	}
+
+	option = {
+		name = "loe_hidden"
+		random_owned_province = {
+			limit = {
+				development = 4
+			}
+			random_list = {
+				1 = { add_base_manpower = -1 }
+				1 = { add_base_production = -1 }
+				1 = { add_base_tax = -1 }
+			}
+		}
+		overlord = {
+			random_owned_province = {
+				random_list = {
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_production = 1 }
+					1 = { add_base_tax = 1 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = jogosnhai.3
+	title = "loe_hidden"
+	desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	hidden = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		culture_group = culture_jogos_nhai
+		NOT = { has_country_modifier = loe_isolated }
+		NOT = { has_government_attribute = loe_is_jogos_leader }
+		is_subject = no
+	}
+
+	option = {
+		name = "loe_hidden"
+		every_country = {
+			limit = {
+				has_government_attribute = loe_is_jogos_leader
+			}
+			create_subject = {
+				subject_type = loe_jogos_nhai_tribe
+				subject = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = jogosnhai.7
+	title = "loe_hidden"
+    desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+	hidden = yes
+
+	trigger = {
+		is_in_war = {
+			casus_belli = loe_jogos_nhai_raid
+		}
+	}
+
+    option = {
+		name = "loe_hidden"
+		add_country_modifier = {
+			name = loe_raid
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = jogosnhai.8
+	title = "loe_hidden"
+    desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+	hidden = yes
+
+	trigger = {
+		NOT = {
+			is_in_war = {
+				casus_belli = loe_jogos_nhai_raid
+			}
+		}
+	}
+
+    option = {
+		remove_country_modifier = loe_raid
+	}
+}
+
+country_event = {
+	id = jogosnhai.9 #TBD doesnt apply modifier correctly, make it province event
+	title = "loe_hidden"
+    desc = "loe_hidden"
+	picture = BIG_BOOK_eventPicture
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		has_country_modifier = loe_raid
+		any_war_enemy_country = {
+			any_owned_province = {
+				controlled_by = ROOT
+				NOT = { has_province_modifier = loe_recently_raided }
+			}
+		}
+	}
+
+    option = {
+		name = "loe_hidden"
+		random_country = {
+			limit = {
+				war_with = ROOT
+			}
+			random_owned_province = {
+				limit = {
+					controlled_by = ROOT
+					NOT = { has_province_modifier = loe_recently_raided }
+				}
+				add_province_modifier = {
+					name = loe_recently_raided
+					duration = 730
+				}
+			}
+		}
+		random_owned_province = {
+			random_list = {
+				1 = { add_base_manpower = 1 }
+				1 = { add_base_production = 1 }
+				1 = { add_base_tax = 1 }
+			}
+		}
+	}
+}

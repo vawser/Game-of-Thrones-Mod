@@ -1,7 +1,28 @@
+######################################
+# Defense of the Kingdom
+######################################
+
+defense_of_the_kingdom_modifier = {
+	potential = {
+		has_dlc = "Emperor"
+		OR = {
+			is_emperor = yes
+			is_elector = yes
+		}
+		hre_reform_passed = king_mobilize_the_kingdom
+	}
+	trigger = {
+		any_country = {
+			war_with = ROOT
+			NOT = { is_part_of_hre = yes }
+		}
+	}
+	war_taxes_cost_modifier = -1.0
+}
+
 lost_control_of_kings_landing = {
 	potential = {
-		is_emperor_of_china = yes
-		has_dlc = "Mandate of Heaven"
+		is_emperor = yes
 	}
 
 	trigger = {
@@ -11,23 +32,5 @@ lost_control_of_kings_landing = {
 		}
 	}
 
-	imperial_mandate = -0.05
+	imperial_authority_value = -1.0
 }
-
-crumbling_authority = {
-	potential = {
-		is_emperor_of_china = yes
-		has_dlc = "Mandate of Heaven"
-	}
-
-	trigger = {
-		any_subject_country = {
-            is_subject_of_type = royal_subject
-            liberty_desire = 50
-        } 
-	}
-
-	imperial_mandate = -0.05
-}
-
-

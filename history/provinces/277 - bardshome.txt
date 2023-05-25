@@ -1,22 +1,23 @@
 # 277 - bardshome.txt
 is_city = yes
 
-owner = F26
-controller = F26
-add_core = F26
+owner = F69
+controller = F69
+add_core = F69
 
 base_tax = 3
-base_production = 3
-base_manpower = 2
+base_production = 4
+base_manpower = 3
 
 culture = men_of_the_reach
 religion = faith_of_the_seven
 
-trade_goods = wine
-hre = no
+trade_goods = grain
+hre = yes
 
-106.1.1 = {
-    owner = REA
-    controller = REA
-    add_core = REA
+discovered_by = westerosi
+
+add_permanent_province_modifier = {
+	name = granary_of_westeros
+	duration = -1
 }

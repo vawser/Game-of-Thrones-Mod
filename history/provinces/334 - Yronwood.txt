@@ -5,20 +5,19 @@ owner = Y14
 controller = Y14
 add_core = Y14
 
-base_tax = 4
-base_production = 4
-base_manpower = 3
+base_tax = 1
+base_production = 3
+base_manpower = 2
 
 culture = stone_dornish
 religion = faith_of_the_seven
 
-trade_goods = copper
-hre = no
+trade_goods = salt
+hre = yes
 
-center_of_trade = 1
+discovered_by = westerosi
 
-106.1.1 = {
-    owner = DOR
-    controller = DOR
-    add_core = DOR
+add_permanent_province_modifier = {
+	name = local_trading_hub
+	duration = -1
 }

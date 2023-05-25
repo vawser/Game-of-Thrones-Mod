@@ -17,7 +17,7 @@ northmen_ideas = {
 			primary_culture = crannogmen
 			primary_culture = skagosi
 		}
-		NOT = { tag = A02 }
+		NOT = { tag = NGT }
 	}
 	free = yes
 	
@@ -647,8 +647,8 @@ white_walker_ideas = {
 #---------------------------------------
 nights_watch_ideas = {
 	start = {
-		global_regiment_cost = -0.25
-        global_regiment_recruit_speed = -0.25
+		global_regiment_cost = -0.125
+        fort_maintenance_modifier = -0.33
 	}
 	
 	bonus = {
@@ -657,7 +657,7 @@ nights_watch_ideas = {
 	
 	trigger = {
         OR = {
-            tag = A02
+            tag = NGT
             tag = EAS
             tag = CBK
             tag = SWT
@@ -2705,7 +2705,8 @@ pirate_ideas = {
 	}
 	
 	trigger = {
-		government = pirate
+		government = republic
+		has_government_attribute = is_pirate_republic_reform
 	}
 	free = yes
 	

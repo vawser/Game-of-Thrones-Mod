@@ -1,0 +1,130 @@
+for_variable_amount = {
+    set_variable = {
+        which = ForLoopCounter
+        which = $variable$
+    }
+
+    while = {
+        limit = {
+            check_variable = {
+                which = ForLoopCounter
+                value = 1
+            }
+        }
+        $effect$
+        subtract_variable = {
+            which = ForLoopCounter
+            value = 1
+        }
+    }
+}
+
+increase_issue_passed_counter = {
+	hidden_effect = {
+		change_variable = {
+			which = issues_passed
+			value = 1
+		}
+	}
+}
+
+on_colony_finished_effect = {
+	# if = {
+	# 	limit = {
+	# 		owner = {
+	# 			OR = {
+	# 				has_country_modifier = colonial_venture_act_modifier
+	# 				has_country_flag = can_select_trade_goods_for_colonies
+	# 				has_government_attribute = selectable_trade_goods_for_colonies
+	# 			}
+	# 			NOT = { has_country_flag = eng_disabled_colonial_ventures }
+	# 		}
+	# 		NOT = { has_province_flag = had_trade_good_change_event }
+	# 	}
+	# 	set_province_flag = had_trade_good_change_event
+	# 	province_event = {
+	# 		id = flavor_gbr.200
+	# 	}
+	# }
+}
+
+on_alliance_broken_effect = {
+	# if = {
+	# 	limit = { has_country_modifier = mng_trade_access_in_china_modifier }
+	# 	remove_country_modifier = mng_trade_access_in_china_modifier
+	# }
+	# if = {
+	# 	limit = { has_country_modifier = rus_russian_caucasian_alliance FROM = { has_country_modifier = rus_russian_caucasian_alliance } }
+	# 	remove_country_modifier = rus_russian_caucasian_alliance
+	# 	FROM = { remove_country_modifier = rus_russian_caucasian_alliance }
+	# }
+	# if = {
+	# 	limit = { has_country_modifier = gbr_english_dutch_trade_partners FROM = { has_country_modifier = gbr_english_dutch_trade_partners } }
+	# 	remove_country_modifier = gbr_english_dutch_trade_partners
+	# 	FROM = { remove_country_modifier = gbr_english_dutch_trade_partners }
+	# }
+	# if = {
+	# 	limit = {
+	# 		has_saved_global_event_target = tur_ottoman_trade_partner
+	# 		OR = {
+	# 			tag = event_target:tur_ottoman_trade_partner
+	# 			FROM = { tag = event_target:tur_ottoman_trade_partner }
+	# 		}
+	# 	}
+	# 	if = {
+	# 		limit = { tag = event_target:tur_ottoman_trade_partner }
+	# 		if = {
+	# 			limit = { has_country_modifier = tur_ottoman_venetian_trade_deal_modifier }
+	# 			remove_country_modifier = tur_ottoman_venetian_trade_deal_modifier
+	# 		}
+	# 		every_owned_province = {
+	# 			limit = { has_province_modifier = tur_ottoman_venetian_trade_deal_modifier_prov }
+	# 			remove_province_modifier = tur_ottoman_venetian_trade_deal_modifier_prov
+	# 		}
+	# 	}
+	# 	FROM = {
+	# 		if = {
+	# 			limit = { tag = event_target:tur_ottoman_trade_partner }
+	# 			if = {
+	# 				limit = { has_country_modifier = tur_ottoman_venetian_trade_deal_modifier }
+	# 				remove_country_modifier = tur_ottoman_venetian_trade_deal_modifier
+	# 			}
+	# 			every_owned_province = {
+	# 				limit = { has_province_modifier = tur_ottoman_venetian_trade_deal_modifier_prov }
+	# 				remove_province_modifier = tur_ottoman_venetian_trade_deal_modifier_prov
+	# 			}
+	# 		}
+	# 	}
+	# 	clear_global_event_target = tur_ottoman_trade_partner
+	# }
+	# FROM = {
+	# 	if = {
+	# 		limit = { has_country_modifier = mng_trade_access_in_china_modifier }
+	# 		remove_country_modifier = mng_trade_access_in_china_modifier
+	# 	}
+	# }
+}
+
+#Credits for that script goes to Stiopa
+for = {
+	[[custom_tooltip]custom_tooltip = $custom_tooltip$]
+	hidden_effect = {
+		set_variable = {
+			which = ForLoopCounter
+			value = $amount$
+		}	
+		while = {
+			limit = {
+				check_variable = {
+					which = ForLoopCounter
+					value = 1
+				}
+			}
+			$effect$
+			subtract_variable = {
+				which = ForLoopCounter
+				value = 1
+			}
+		}
+	}
+}

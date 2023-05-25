@@ -1,24 +1,24 @@
 interaction = {
-    key = sale_of_titles
-    random_seed = crown_land_share
+	key = sale_of_titles
+	random_seed = crown_land_share
 	cooldown_months = 60
 
-    trigger = {
-        crown_land_share = 0.1
-        NOT = { num_of_rebel_armies = 1 }
+	trigger = {
+		crown_land_share = 0.1
+		NOT = { num_of_rebel_armies = 1 }
 		NOT = { num_of_rebel_controlled_provinces = 1 }
 		hidden_trigger = { has_any_estates = yes }
-    }
-    effect = {
-        add_years_of_estate_land_income = 2
-        
-        custom_tooltip = ESTATES_SALE_OF_TITLES_DESC
-        give_estate_land_share_gigantic = { estate = all }
-        add_estate_loyalty = {
-            estate = all
-            loyalty = 10
-            short = yes
-        }
+	}
+	effect = {
+		add_years_of_estate_land_income = 2
+		
+		custom_tooltip = ESTATES_SALE_OF_TITLES_DESC
+		give_estate_land_share_gigantic = { estate = all }
+		add_estate_loyalty = {
+			estate = all
+			loyalty = 10
+			short = yes
+		}
 		if = {
 			limit = {
 				has_country_flag = recent_land_distribution
@@ -26,7 +26,7 @@ interaction = {
 			clr_country_flag = recent_land_distribution
 		}
 		set_country_flag = recent_land_distribution
-    }
+	}
 	ai_will_do = {
 		factor = 25
 		modifier = {
@@ -110,23 +110,23 @@ interaction = {
 }
 
 interaction = {
-    key = summon_the_council
-    random_seed = random
+	key = summon_the_council
+	random_seed = random
 	cooldown_months = 60
 
-    trigger = {
-        NOT = { has_any_active_estate_agenda = yes }
+	trigger = {
+		NOT = { has_any_active_estate_agenda = yes }
 		hidden_trigger = { has_any_estates = yes }
 		NOT = { has_government_attribute = blocked_call_diet }
-    }
+	}
 
-    effect = {
-        custom_tooltip = ESTATES_SUMMON_THE_DIET_DESC
-        hidden_effect = {
-	        country_event = { id = GOT_ESTATE_SYSTEM.2 }
-        }
-        custom_tooltip = SEPERATOR_TOOLTIP
-        
+	effect = {
+		custom_tooltip = ESTATES_SUMMON_THE_DIET_DESC
+		hidden_effect = {
+			country_event = { id = GOT_ESTATE_SYSTEM.2 }
+		}
+		custom_tooltip = SEPERATOR_TOOLTIP
+		
 		if = {
 			limit = {
 				has_country_flag = recent_estate_agenda
@@ -135,35 +135,38 @@ interaction = {
 		}
 		set_country_flag = recent_estate_agenda
 
-        add_estate_influence_modifier = {
-            estate = all
-            desc = EST_VAL_COUNCIL_SUMMONED
-            duration = 7300
-            influence = 5
-            short = yes
-        }
-        add_estate_loyalty = {
-            estate = all
-            loyalty = 5
-            short = yes
-        }
-    }
+		if = {
+			limit = { NOT = { has_government_attribute = diet_increases_not_influence } }
+			add_estate_influence_modifier = {
+				estate = all
+				desc = EST_VAL_DIET_SUMMONED
+				duration = 7300
+				influence = 5
+				short = yes
+			}
+		}
+		add_estate_loyalty = {
+			estate = all
+			loyalty = 5
+			short = yes
+		}
+	}
 	ai_will_do = {
 		factor = 0 # AI won't do agendas
 	}
 }
 
 interaction = {
-    key = seize_land
-    random_seed = random
+	key = seize_land
+	random_seed = random
 	cooldown_months = 60
 
-    trigger = {
+	trigger = {
 		hidden_trigger = { has_any_estates = yes }
-        NOT = { crown_land_share = 100 }
-        NOT = { num_of_rebel_armies = 1 }
+		NOT = { crown_land_share = 100 }
+		NOT = { num_of_rebel_armies = 1 }
 		NOT = { num_of_rebel_controlled_provinces = 1 }
-        
+		
 		if = {
 			limit = {
 				OR = {
@@ -171,10 +174,10 @@ interaction = {
 					AND = {
 						has_estate = estate_nobles
 						OR = {
-                            government = monarchy
-                            government = occult
-                            government = mythical
-                        }
+							government = monarchy
+							government = occult
+							government = mythical
+						}
 					}
 				}
 			}
@@ -195,22 +198,18 @@ interaction = {
 		else_if = {
 			limit = {
 				OR = {
-					has_estate_privilege = estate_clergy_statutory_rights
+					has_estate_privilege = estate_church_statutory_rights
 					AND = {
-						has_estate = estate_clergy
+						has_estate = estate_church
 						government = theocracy
 					}
 				}
 			}
-			NOT = { has_estate_privilege = estate_clergy_statutory_rights }
+			NOT = { has_estate_privilege = estate_church_statutory_rights }
 		}
-        is_at_war = no
-    }
-    effect = {
-        custom_tooltip = ESTATES_SEIZE_LAND_DESC
-        take_estate_land_share_massive = { estate = all }
-		custom_tooltip = SEPERATOR_TOOLTIP
-		
+		is_at_war = no
+	}
+	effect = {
 		if = {
 			limit = {
 				has_country_flag = recent_land_seizure
@@ -219,33 +218,43 @@ interaction = {
 		}
 		set_country_flag = recent_land_seizure
 
-        add_estate_loyalty = {
-            estate = all
-            loyalty = -20
-            short = yes
-        }
-		custom_tooltip = seize_land_rebels_tt
+		custom_tooltip = ESTATES_SEIZE_LAND_DESC
+		take_estate_land_share_massive = { estate = all }
+		custom_tooltip = SEPERATOR_TOOLTIP
+
 		if = {
 			limit = {
-				NOT = {
-					estate_loyalty = {
-						estate = all
-						loyalty = 50
-					}
-				}
-				estate_loyalty = {
-					estate = all
-					loyalty = 30
-				}
+				has_government_attribute = seizing_land_loyalty
+			}
+			add_estate_loyalty = {
+				estate = all
+				loyalty = -15
+				short = yes
 			}
 		}
-		else_if = { 
+		else = {
+			add_estate_loyalty = {
+				estate = all
+				loyalty = -20
+				short = yes
+			}
+		}
+		custom_tooltip = ESTATES_SEIZE_LAND_EXCEPTION_DESC
+		if = {
+			limit = { NOT = { has_government_attribute = seizing_land_no_rebels } }
+			custom_tooltip = seize_land_rebels_tt
+		}
+		if = { 
 			limit = {
 				NOT = {
 					estate_loyalty = {
 						estate = all
-						loyalty = 30
+						loyalty = 49.99
 					}
+				}
+				estate_influence = {
+					estate = all
+					influence = 1
 				}
 			}
 			spawn_rebels_seize_land_switch = yes

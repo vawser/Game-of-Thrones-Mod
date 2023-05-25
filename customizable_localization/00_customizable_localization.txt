@@ -1,1 +1,20 @@
+defined_text = {
+    name = GetTribeDesc
 
+    text = {
+        localisation_key = estate_jhats_desc
+        trigger = {
+            OR = {
+				has_reform = loe_prathama
+				has_reform = loe_sthaurin
+            }
+        }
+    }
+
+	    text = {
+        localisation_key = estate_tribes_desc_default
+        trigger = {
+			always = yes
+        }
+    }
+}

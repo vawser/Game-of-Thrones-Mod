@@ -2,6 +2,19 @@ is_building_permitted = {
     NOT = { province_id = 1590 } # The Wall
 }
 
+province_is_a_castle_on_the_wall = {
+	custom_trigger_tooltip = {
+		tooltip = province_is_a_castle_on_the_wall_tt
+		OR = {
+			province_id = 16
+			province_id = 1580
+			province_id = 17
+			province_id = 1584
+			province_id = 18
+		}
+	}
+}
+
 # Building triggers
 has_tax_building_trigger = {
 	OR = {
@@ -75,6 +88,63 @@ has_fort_building_trigger = {
 		has_building = castle
 		has_building = fortress
 		has_building = citadel
+	}
+}
+
+# Has current fort level
+province_has_current_tech_fort_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = province_has_current_tech_fort_trigger_tt
+		if = {
+			limit = {
+				owner = {
+					NOT = { mil_tech = 7 }
+				}
+			}
+			OR = {
+				has_building = motte_and_bailey
+				has_building = castle
+				has_building = fortress
+				has_building = citadel
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					AND = {
+						mil_tech = 7
+						NOT = { mil_tech = 15 }
+					}
+				}
+			}
+			OR = {
+				has_building = castle
+				has_building = fortress
+				has_building = citadel
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					AND = {
+						mil_tech = 15
+						NOT = { mil_tech = 20 }
+					}
+				}
+			}
+			OR = {
+				has_building = fortress
+				has_building = citadel
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					mil_tech = 20
+				}
+			}
+			has_building = citadel
+		}
 	}
 }
 

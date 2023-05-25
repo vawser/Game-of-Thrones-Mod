@@ -1,0 +1,625 @@
+remove_from_the_council = {
+	category = emperor
+
+	alert_index = 40
+	alert_tooltip = remove_from_the_council_alert_tooltip
+
+	require_acceptance = no
+
+	is_visible = {
+		is_emperor = yes
+		has_estate_privilege = estate_nobles_the_small_council
+		FROM = {
+			is_part_of_hre = yes
+			OR = {
+				has_country_modifier = got_hand_of_the_king
+				has_country_modifier = got_master_of_coin
+				has_country_modifier = got_master_of_laws
+				has_country_modifier = got_master_of_ships
+				has_country_modifier = got_master_of_whisperers
+			}
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		FROM = {
+			if = {
+				limit = {
+					has_country_modifier = got_hand_of_the_king
+				}
+				remove_country_modifier = got_hand_of_the_king
+				clr_global_flag = handoftheking_active
+				clear_global_event_target = et_handoftheking
+			}
+			if = {
+				limit = {
+					has_country_modifier = got_master_of_coin
+				}
+				remove_country_modifier = got_master_of_coin
+				clr_global_flag = masterofcoin_active
+				clear_global_event_target = et_masterofcoin
+			}
+			if = {
+				limit = {
+					has_country_modifier = got_master_of_laws
+				}
+				remove_country_modifier = got_master_of_laws
+				clr_global_flag = masteroflaws_active
+				clear_global_event_target = et_masteroflaws
+			}
+			if = {
+				limit = {
+					has_country_modifier = got_master_of_ships
+				}
+				remove_country_modifier = got_master_of_ships
+				clr_global_flag = masterofships_active
+				clear_global_event_target = et_masterofships
+			}
+			if = {
+				limit = {
+					has_country_modifier = got_master_of_whisperers
+				}
+				remove_country_modifier = got_master_of_whisperers
+				clr_global_flag = masterofwhisperers_active
+				clear_global_event_target = et_masterofwhisperers
+			}
+		}
+	}
+}
+
+appoint_hand_of_the_king = {
+	category = emperor
+
+	alert_index = 40
+	alert_tooltip = appoint_hand_of_the_king_alert_tooltip
+
+	require_acceptance = yes
+
+	is_visible = {
+		is_emperor = yes
+		has_estate_privilege = estate_nobles_the_small_council
+		FROM = {
+			is_part_of_hre = yes
+			NOT = { has_country_modifier = got_hand_of_the_king }
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		event_target:et_handoftheking = {
+			remove_country_modifier = got_hand_of_the_king
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = handoftheking_active
+				}
+			}
+			set_global_flag = handoftheking_active
+		}
+		FROM = {
+			save_global_event_target_as = et_handoftheking
+			add_country_modifier = {
+				name = got_hand_of_the_king
+				duration = -1
+			}
+		}
+	}
+	on_decline = {
+
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 0.4
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = diplomatic_reputation
+			limit = { }
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 3
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+		}
+		add_entry = {
+			name = AIWEIGHT_POWERF
+			export_to_variable = {
+				variable_name = ai_value
+				value = 100
+			}
+		}
+		add_entry = {
+			name = AIWEIGHT_EXPECTS
+			limit = {
+				FROM = { has_reform = great_house_reform }
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1000
+			}
+		}
+	}
+	ai_will_do = {
+		always = yes
+	}
+}
+
+appoint_master_of_coin = {
+	category = emperor
+
+	alert_index = 40
+	alert_tooltip = appoint_master_of_coin_alert_tooltip
+
+	require_acceptance = yes
+
+	is_visible = {
+		is_emperor = yes
+		has_estate_privilege = estate_nobles_the_small_council
+		FROM = {
+			is_part_of_hre = yes
+			NOT = { has_country_modifier = got_master_of_coin }
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		event_target:et_masterofcoin = {
+			remove_country_modifier = got_master_of_coin
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = masterofcoin_active
+				}
+			}
+			set_global_flag = masterofcoin_active
+		}
+		FROM = {
+			save_global_event_target_as = et_masterofcoin
+			add_country_modifier = {
+				name = got_master_of_coin
+				duration = -1
+			}
+		}
+	}
+	on_decline = {
+
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 0.4
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = diplomatic_reputation
+			limit = { }
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 3
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+		}
+		add_entry = {
+			name = AIWEIGHT_POWERL
+			export_to_variable = {
+				variable_name = ai_value
+				value = 10
+			}
+		}
+		add_entry = {
+			name = AIWEIGHT_EXPECTS
+			limit = {
+				FROM = { has_reform = great_house_reform }
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1000
+			}
+		}
+	}
+	ai_will_do = {
+		always = yes
+	}
+}
+
+appoint_master_of_laws = {
+	category = emperor
+
+	alert_index = 40
+	alert_tooltip = appoint_master_of_laws_alert_tooltip
+
+	require_acceptance = yes
+
+	is_visible = {
+		is_emperor = yes
+		has_estate_privilege = estate_nobles_the_small_council
+		FROM = {
+			is_part_of_hre = yes
+			NOT = { has_country_modifier = got_master_of_laws }
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		event_target:et_masteroflaws = {
+			remove_country_modifier = got_master_of_laws
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = masteroflaws_active
+				}
+			}
+			set_global_flag = masteroflaws_active
+		}
+		FROM = {
+			save_global_event_target_as = et_masteroflaws
+			add_country_modifier = {
+				name = got_master_of_laws
+				duration = -1
+			}
+		}
+	}
+	on_decline = {
+
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 0.4
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = diplomatic_reputation
+			limit = { }
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 3
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+		}
+		add_entry = {
+			name = AIWEIGHT_POWERL
+			export_to_variable = {
+				variable_name = ai_value
+				value = 10
+			}
+		}
+		add_entry = {
+			name = AIWEIGHT_EXPECTS
+			limit = {
+				FROM = { has_reform = great_house_reform }
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1000
+			}
+		}
+	}
+	ai_will_do = {
+		always = yes
+	}
+}
+
+appoint_master_of_ships = {
+	category = emperor
+
+	alert_index = 40
+	alert_tooltip = appoint_master_of_ships_desc
+
+	require_acceptance = yes
+
+	is_visible = {
+		is_emperor = yes
+		has_estate_privilege = estate_nobles_the_small_council
+		FROM = {
+			is_part_of_hre = yes
+			NOT = { has_country_modifier = got_master_of_ships }
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		event_target:et_masterofships = {
+			remove_country_modifier = got_master_of_ships
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = masterofships_active
+				}
+			}
+			set_global_flag = masterofships_active
+		}
+		FROM = {
+			save_global_event_target_as = et_masterofships
+			add_country_modifier = {
+				name = got_master_of_ships
+				duration = -1
+			}
+		}
+	}
+	on_decline = {
+
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 0.4
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = diplomatic_reputation
+			limit = { }
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 3
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+		}
+		add_entry = {
+			name = AIWEIGHT_POWERF
+			export_to_variable = {
+				variable_name = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = AIWEIGHT_EXPECTS
+			limit = {
+				FROM = { has_reform = great_house_reform }
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1000
+			}
+		}
+	}
+	ai_will_do = {
+		always = yes
+	}
+}
+
+appoint_master_of_whisperers = {
+	category = emperor
+
+	alert_index = 40
+	alert_tooltip = appoint_master_of_whisperers_alert_tooltip
+
+	require_acceptance = yes
+
+	is_visible = {
+		is_emperor = yes
+		has_estate_privilege = estate_nobles_the_small_council
+		FROM = {
+			is_part_of_hre = yes
+			NOT = { has_country_modifier = got_master_of_whisperers }
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		event_target:et_masterofwhisperers = {
+			remove_country_modifier = got_master_of_whisperers
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = masterofwhisperers_active
+				}
+			}
+			set_global_flag = masterofwhisperers_active
+		}
+		FROM = {
+			save_global_event_target_as = et_masterofwhisperers
+			add_country_modifier = {
+				name = got_master_of_whisperers
+				duration = -1
+			}
+		}
+	}
+	on_decline = {
+
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 0.4
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = diplomatic_reputation
+			limit = { }
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 3
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+		}
+		add_entry = {
+			name = AIWEIGHT_POWERF
+			export_to_variable = {
+				variable_name = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = AIWEIGHT_EXPECTS
+			limit = {
+				FROM = { has_reform = great_house_reform }
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1000
+			}
+		}
+	}
+	ai_will_do = {
+		always = yes
+	}
+}

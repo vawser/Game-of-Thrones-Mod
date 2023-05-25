@@ -1,0 +1,191 @@
+estate_church = {
+	icon = 1
+    color = { 200 150 0 }
+    
+    contributes_to_curia_treasury = yes
+    
+	influence_from_dev_modifier = 1.0
+    
+    # ----- Names -----
+    custom_name = {
+		desc = estate_seers
+		trigger = {
+			has_reform = wildling_clan_reform
+		}
+	}
+    custom_name = {
+		desc = estate_stewards
+		trigger = {
+			has_reform = nights_watch_reform
+		}
+	}
+    
+	# ----- Conditions -----
+	trigger = {
+		NOT = { has_government_attribute = disables_estate_church }
+		NOT = { has_reform = khalasar_reform }
+        NOT = { has_reform = jhattar_reform }
+		NOT = { has_reform = nights_watch_reform }
+		is_nomad = no
+	}
+
+	# ----- Country -----
+	country_modifier_happy = {
+		tolerance_own = 2
+		global_missionary_strength = 0.03
+		global_tax_modifier = 0.1
+	}
+	country_modifier_neutral = {
+		tolerance_own = 1
+		global_missionary_strength = 0.015
+		global_tax_modifier = 0.05
+	}	
+	country_modifier_angry = {
+        tolerance_own = -2
+		global_missionary_strength = -0.03
+		global_tax_modifier = -0.1
+	}
+
+	land_ownership_modifier = {
+		church_loyalty_modifier = 0.2
+	}
+
+	province_independence_weight = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			NOT = { religion_group = owner }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { religion = owner }
+		}
+		modifier = {
+			factor = 0.67
+			NOT = { is_state_core = owner }
+		}
+		modifier = {
+			factor = 1.2
+			base_tax = 10
+		}
+	}
+
+	# ----- Influence -----
+	base_influence = 10
+	
+    influence_modifier = {
+		desc = EST_VAL_THEOCRACY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_theocracy_ideas
+		}
+		influence = 5
+	}
+    
+    influence_modifier = {
+		desc = EST_VAL_RELIGIOUS_IDEAGROUP
+		trigger = {
+			full_idea_group = got_religious_ideas
+		}
+		influence = 5
+	}
+
+	# ----- Loyalty -----
+	loyalty_modifier = {
+		desc = EST_VAL_RELIGIOUS_UNITY_LOY
+		trigger = {
+			NOT = { religious_unity = 0.5 }
+			religious_unity = 0.3
+		}
+		loyalty = -3
+	}
+	
+	loyalty_modifier = {
+		desc = EST_VAL_RELIGIOUS_UNITY_LOY
+		trigger = {
+			NOT = { religious_unity = 0.3 }
+			religious_unity = 0.15
+		}
+		loyalty = -6
+	}
+	
+	loyalty_modifier = {
+		desc = EST_VAL_RELIGIOUS_UNITY_LOY
+		trigger = {
+			NOT = { religious_unity = 0.15 }
+		}
+		loyalty = -9
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_RELIGIOUS_IDEAGROUP
+		trigger = {
+			full_idea_group = got_religious_ideas
+		}
+		loyalty = 5
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_THEOCRACY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_theocracy_ideas
+		}
+		loyalty = 5
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_INNOVATION_IDEAGROUP
+		trigger = {
+			full_idea_group = got_innovation_ideas
+		}
+		loyalty = -5
+	}
+    
+    loyalty_modifier = {
+		desc = EST_VAL_HARMONY_IDEAGROUP
+		trigger = {
+			full_idea_group = got_harmony_ideas
+		}
+		loyalty = -5
+	}
+
+    # ----- Privileges -----
+	privileges = {
+		estate_church_land_rights
+		estate_church_religious_state
+		estate_church_independent_inquisition
+		estate_church_far_east_mission
+		estate_church_clerical_ministers
+		estate_church_clerical_oversight
+		estate_church_inwards_perfection
+		estate_church_enforced_one_faith
+		estate_church_for_the_faith
+		estate_church_statutory_rights
+        estate_church_monopoly_of_wine
+        estate_church_monopoly_of_wool
+        estate_church_monopoly_of_tea
+        estate_church_monopoly_of_coffee
+        estate_church_monopoly_of_cotton
+		loe_estate_cant_seize_church
+	}
+
+    # ----- Agenda -----
+	agendas = {
+		estate_church_develop_x
+		estate_church_build_temple_in_y
+		estate_church_build_town_hall_in_y
+		estate_church_build_manufactory_in_y
+		estate_church_convert_province_x
+		estate_church_reduce_war_exhaustion
+		estate_church_recover_stability
+		estate_church_increase_stability
+		estate_church_reduce_overextension
+		estate_church_restore_devotion
+		estate_church_root_out_heresy
+		estate_church_crush_religious_revolts
+		estate_church_protect_brethren
+		estate_church_propagate_religion
+		estate_church_relations_with_dotf
+		estate_church_hire_advisor
+		estate_church_fire_advisor
+	}
+}

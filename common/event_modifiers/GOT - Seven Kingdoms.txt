@@ -1,7 +1,63 @@
 # -------------- Seven Kingdoms --------------
-new_iron_throne_holder = {
-	imperial_mandate = 0.05
+got_lord_of_seven_kingdoms = {
+	stability_cost_modifier = -0.025
+	all_power_cost = -0.01
 }
+
+got_protector_of_the_realm = {
+	free_land_leader_pool = 2
+	country_military_power = 1
+}
+
+got_prince_of_dragonstone = {
+	monthly_heir_claim_increase = 0.10
+}
+
+got_prince_of_westeros = {
+	monthly_heir_claim_increase = 0.05
+}
+
+got_hand_of_the_king = {
+	prestige = 0.50
+	stability_cost_modifier = -0.075
+}
+
+got_master_of_coin = {
+	tax_income = 12
+	global_tax_modifier = 0.15
+}
+
+got_master_of_laws = {
+	local_unrest = -2
+}
+
+got_master_of_ships = {
+	naval_forcelimit = 10
+	naval_forcelimit_modifier = 0.15
+}
+
+got_master_of_whisperers = {
+	spy_offence = 0.33
+	global_spy_defence = 0.10
+}
+
+got_local_castellany = {
+	local_warscore_cost_modifier = 0.125
+	fort_level = 1
+}
+
+got_shifting_tides = {
+	diplomatic_reputation = -2
+}
+
+got_administrative_burdens = {
+	global_tax_modifier = -0.33
+	governing_capacity_modifier = -0.50
+	state_maintenance_modifier = 2.5
+	imperial_authority = -0.50
+}
+
+#-------
 
 punitive_ideology = {
     yearly_absolutism = 2

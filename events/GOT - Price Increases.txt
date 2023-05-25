@@ -712,36 +712,6 @@ country_event = {
 	}
 }
 
-# Demand for Candles!
-country_event = {
-	id = GOT_PRICE_INCREASE.24
-	title = "GOT_PRICE_INCREASE.24.title"
-	desc = "GOT_PRICE_INCREASE.24.desc"
-	picture = TRADEGOODS_eventPicture
-	
-	major = yes
-	is_triggered_only = yes
-
-    trigger = {
-        ai = no
-    }
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = "GOT_PRICE_INCREASE.24.option.a"
-		
-        random_list = {
-            20 = { change_price = { trade_goods = candles key = got_candles_boost value = 0.05 duration = 9125 } }
-            20 = { change_price = { trade_goods = candles key = got_candles_boost value = 0.1 duration = 9125 } }
-            20 = { change_price = { trade_goods = candles key = got_candles_boost value = 0.15 duration = 9125 } }
-            20 = { change_price = { trade_goods = candles key = got_candles_boost value = 0.2 duration = 9125 } }
-            20 = { change_price = { trade_goods = candles key = got_candles_boost value = 0.25 duration = 9125 } }
-        }
-	}
-}
-
 # Demand for Fruit
 country_event = {
 	id = GOT_PRICE_INCREASE.25

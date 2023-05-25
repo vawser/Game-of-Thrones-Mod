@@ -1,4 +1,4 @@
-# 1584 - ByThePool.txt
+# 1584 - Woodswatch-By-The-Pool.txt
 is_city = yes
 
 owner = WOO
@@ -15,8 +15,19 @@ religion = old_gods
 trade_goods = grain
 hre = no
 
+capital = "Woodswatch Castle"
+discovered_by = westerosi
+discovered_by = wildling
+
+add_permanent_province_modifier = {
+    name = abandoned_castle
+    duration = -1
+}
+
 106.1.1 = {
-    owner = A02
-    controller = A02
-    add_core = A02
+    owner = NGT
+    controller = NGT
+    add_core = NGT
+
+    add_province_triggered_modifier = castle_black_subsidies
 }

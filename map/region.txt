@@ -27,10 +27,10 @@ region_beyond_the_wall = {
 
 region_nights_watch = {
 	areas = {
-		area_shadow_tower
-		area_castle_black
-		area_the_gift
 		area_the_wall
+		area_westwatch
+		area_eastwatch
+		area_the_gift
 	}
 }
 
@@ -635,93 +635,77 @@ region_gemstone_islands = {
 #--------------------------------------
 # Sea Regions
 #--------------------------------------
+# Sunset Sea Superregion
+west_sunset_sea_region = {
+	areas = {
+		north_sunset_sea_area
+		south_sunset_sea_area
+	}
+}
+east_sunset_sea_region = {
+	areas = {
+		east_sunset_sea_area
+		sunset_sea_coast_area
+	}
+}
+# Summer Sea Superregion
 summer_sea_region = {
 	areas = {
-		north_summer_sea_area
-		south_summer_sea_area
-	}
-}
-
-bloodless_ocean_region = {
-	areas = {
-		bloodless_ocean_area
-		bloodless_coast_area
-	}
-}
-
-shivering_sea_region = {
-	areas = {
-		west_shivering_sea_area
-		east_shivering_sea_area
-	}
-}
-
-westeros_sea_region = {
-	areas = {
-		west_westerosi_coast_area
-		east_westerosi_coast_area
-		south_westerosi_coast_area
-		narrow_sea_area
-		stepstones_sea_area
-	}
-}
-
-free_cities_sea_region = {
-	areas = {
-		narrow_sea_area
-		stepstones_sea_area
-		volantis_coast_area
-		north_essosian_coast_area
-	}
-}
-
-ibben_sea_region = {
-	areas = {
-		ibben_coast_area
-	}
-}
-
-omber_sea_region = {
-	areas = {
-		omber_coast_area
-	}
-}
-
-ghiscari_sea_region = {
-	areas = {
-		valyrian_sea_area
-		ghis_coast_area
-	}
-}
-
-yi_ti_sea_region = {
-	areas = {
-		yi_ti_sea_area
-	}
-}
-
-nefer_sea_region = {
-	areas = {
-		thousand_islands_coast_area
-	}
-}
-
-summer_islands_sea_region = {
-	areas = {
+		distant_summer_waters_area
+		mid_summer_waters_area
+		dornish_coast_area
 		summer_shoals_area
 	}
 }
-
 sothoryos_sea_region = {
 	areas = {
-		east_sothoryos_sea_area
+		west_sothoryos_coast_area
 		west_sothoryos_sea_area
+		north_sothoryos_coast_area
 	}
 }
-
-ulthos_sea_region = {
+valyrian_sea_region = {
 	areas = {
-		ulthos_sea_area
+		orange_shore_area
+		smoking_sea_area
+		gulf_of_grief_area
+		ghiscari_sea_area
+	}
+}
+narrow_sea_region = {
+	areas = {
+		vale_corridor
+		central_channel_area
+		sea_of_myrth_area
+		stepstones_sea_area
+	}
+}
+# Shivering Sea Superregion
+shivering_sea_region = {
+	areas = {
+		shivering_sea_coast_area
+		west_shivering_sea_area
+		lorathi_coast_area
+		omber_coast_area
+		ibben_coast_area
+		east_shivering_sea_area
+		neferi_coast_area
+	}
+}
+# Jade Sea Superregion
+west_jade_sea_region = {
+	areas = {
+		east_sothoryos_coast_area
+		coast_of_yiti_area
+		ulthosi_corridor_area
+		west_ulthosi_sea_area
+	}
+}
+east_jade_sea_region = {
+	areas = {
+		east_ulthosi_sea_area
+		bloodsworn_sea_area
+		distant_sunset_waters_area
 	}
 }
 

@@ -6,23 +6,22 @@ controller = F20
 add_core = F20
 
 base_tax = 10
-base_production = 10
+base_production = 8
 base_manpower = 9
 
 culture = men_of_the_reach
 religion = faith_of_the_seven
 
 trade_goods = grain
-hre = no
+hre = yes
 
-add_building = castle
-add_building = town_hall
-add_cardinal = yes
-
+discovered_by = westerosi
 center_of_trade = 1
 
-106.1.1 = {
-    owner = REA
-    controller = REA
-    add_core = REA
+add_building = castle
+add_cardinal = yes
+
+add_permanent_province_modifier = {
+	name = granary_of_westeros
+	duration = -1
 }

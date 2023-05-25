@@ -25,22 +25,17 @@ town_hall = {
 	cost = 300
 	time = 12
 
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-	modifier = {
-        local_development_cost = -0.1
-        local_governing_cost = -0.25
+	build_trigger = {
+		is_building_permitted = yes
 	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - town_hall "
-        }
-        
-        add_development_from_building = {
+	modifier = {
+		local_development_cost = -0.1
+		local_governing_cost = -0.25
+	}
+	
+	on_built = {
+		add_development_from_building = {
 			building = town_hall
 			type = tax
 			value = 1
@@ -55,7 +50,7 @@ town_hall = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -66,22 +61,17 @@ tavern = {
 	cost = 100
 	time = 12
 
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-	modifier = {
-        local_unrest = -1
-        local_culture_conversion_cost = -0.25
+	build_trigger = {
+		is_building_permitted = yes
 	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - tavern "
-        }
-        
-        add_development_from_building = {
+	modifier = {
+		local_unrest = -1
+		local_culture_conversion_cost = -0.25
+	}
+	
+	on_built = {
+		add_development_from_building = {
 			building = tavern
 			type = tax
 			value = 1
@@ -96,7 +86,7 @@ tavern = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -107,21 +97,16 @@ market = {
 	cost = 150
 	time = 12
 
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-	modifier = {
-        province_trade_power_modifier = 0.25
+	build_trigger = {
+		is_building_permitted = yes
 	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - market "
-        }
-        
-        add_development_from_building = {
+	modifier = {
+		province_trade_power_modifier = 0.25
+	}
+	
+	on_built = {
+		add_development_from_building = {
 			building = market
 			type = production
 			value = 1
@@ -136,7 +121,7 @@ market = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1.5
 	}
@@ -147,21 +132,16 @@ farm = {
 	cost = 100
 	time = 12
 
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-	modifier = {
-        local_tax_modifier = 0.25
+	build_trigger = {
+		is_building_permitted = yes
 	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - farm "
-        }
-        
-        add_development_from_building = {
+	modifier = {
+		local_tax_modifier = 0.25
+	}
+	
+	on_built = {
+		add_development_from_building = {
 			building = farm
 			type = tax
 			value = 1
@@ -176,7 +156,7 @@ farm = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -187,21 +167,16 @@ mine = {
 	cost = 100
 	time = 12
 
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-	modifier = {
-        local_production_efficiency = 0.25
+	build_trigger = {
+		is_building_permitted = yes
 	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - mine "
-        }
-        
-        add_development_from_building = {
+	modifier = {
+		local_production_efficiency = 0.25
+	}
+	
+	on_built = {
+		add_development_from_building = {
 			building = mine
 			type = production
 			value = 1
@@ -216,7 +191,7 @@ mine = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -227,25 +202,41 @@ temple = {
 	cost = 200
 	time = 12
 
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-	modifier = {
-        local_missionary_strength = 0.03
-        local_state_maintenance_modifier = -0.25
+	build_trigger = {
+		is_building_permitted = yes
 	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - temple "
-        }
-        
-        add_development_from_building = {
+	modifier = {
+		local_missionary_strength = 0.03
+		local_state_maintenance_modifier = -0.25
+	}
+	
+	on_built = {
+		add_development_from_building = {
 			building = temple
 			type = tax
 			value = 1
+		}
+		if = {
+			limit = {
+				FROM = { has_government_attribute = on_church_built_clergy_loyalty }
+			}
+			FROM = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 2
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_government_attribute = temples_modifier }
+				owned_by = FROM 
+			}
+			add_province_modifier = {
+				name = gov_expanded_temple_rights_mod
+				duration = -1
+			}
 		}
 	}
 	on_destroyed = {
@@ -254,10 +245,22 @@ temple = {
 			type = tax
 			value = 1
 		}
+		if = {
+			limit = {
+				FROM = { has_government_attribute = on_church_built_clergy_loyalty }
+			}
+			FROM = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = -2
+				}
+			}
+		}
+		remove_province_modifier = gov_expanded_temple_rights_mod
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -268,22 +271,17 @@ dock = {
 	cost = 200
 	time = 12
 
-    build_trigger = {
-        is_building_permitted = yes
+	build_trigger = {
+		is_building_permitted = yes
 		has_port = yes
 	}
-    
+	
 	modifier = {
-        local_sailors_modifier = 0.25
+		local_sailors_modifier = 0.25
 	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - dock "
-        }
-        
-        add_development_from_building = {
+	on_built = {
+		add_development_from_building = {
 			building = dock
 			type = manpower
 			value = 1
@@ -298,7 +296,7 @@ dock = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -309,24 +307,19 @@ shipyard = {
 	cost = 200
 	time = 12
 
-    build_trigger = {
-        is_building_permitted = yes
+	build_trigger = {
+		is_building_permitted = yes
 		has_port = yes
 	}
-    
+	
 	modifier = {
-        naval_forcelimit = 2
+		naval_forcelimit = 2
 		ship_recruit_speed = -0.25
 		local_ship_repair = 0.25
 	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - shipyard "
-        }
-        
-        add_development_from_building = {
+	on_built = {
+		add_development_from_building = {
 			building = shipyard
 			type = manpower
 			value = 1
@@ -341,7 +334,7 @@ shipyard = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -352,21 +345,16 @@ barracks = {
 	cost = 100
 	time = 12
 
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-	modifier = {
-        local_manpower_modifier = 0.25
+	build_trigger = {
+		is_building_permitted = yes
 	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - barracks "
-        }
-        
-        add_development_from_building = {
+	modifier = {
+		local_manpower_modifier = 0.25
+	}
+	
+	on_built = {
+		add_development_from_building = {
 			building = barracks
 			type = manpower
 			value = 1
@@ -381,7 +369,7 @@ barracks = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -392,22 +380,17 @@ drill_square = {
 	cost = 200
 	time = 12
 
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-	modifier = {
-        land_forcelimit = 2
-        regiment_recruit_speed = -0.25
+	build_trigger = {
+		is_building_permitted = yes
 	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - drill_square "
-        }
-        
-        add_development_from_building = {
+	modifier = {
+		land_forcelimit = 2
+		regiment_recruit_speed = -0.25
+	}
+	
+	on_built = {
+		add_development_from_building = {
 			building = drill_square
 			type = manpower
 			value = 1
@@ -422,7 +405,7 @@ drill_square = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -433,22 +416,17 @@ paved_road = {
 	cost = 300
 	time = 12
 
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-	modifier = {
-        local_friendly_movement_speed = 0.5
-        local_governing_cost = -0.1
+	build_trigger = {
+		is_building_permitted = yes
 	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - paved_road "
-        }
-        
-        add_development_from_building = {
+	modifier = {
+		local_friendly_movement_speed = 0.5
+		local_governing_cost = -0.1
+	}
+	
+	on_built = {
+		add_development_from_building = {
 			building = paved_road
 			type = manpower
 			value = 1
@@ -463,7 +441,7 @@ paved_road = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -474,21 +452,16 @@ supply_depot = {
 	cost = 200
 	time = 12
 
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-	modifier = {
-        supply_limit_modifier = 0.25
+	build_trigger = {
+		is_building_permitted = yes
 	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - supply_depot "
-        }
-        
-        add_development_from_building = {
+	modifier = {
+		supply_limit_modifier = 0.25
+	}
+	
+	on_built = {
+		add_development_from_building = {
 			building = supply_depot
 			type = manpower
 			value = 1
@@ -503,7 +476,7 @@ supply_depot = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -516,17 +489,67 @@ supply_depot = {
 motte_and_bailey = {
 	cost = 250
 	time = 12
+	
+	on_built = {
+		if = {
+			limit = {
+				FROM = { NOT = { mil_tech = 8 } has_government_attribute = on_fort_built_nobles_loyalty }
+			}
+			FROM = {
+				if = {
+					limit = {
+						has_estate = estate_nobles
+					}
+					add_estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 5
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_government_attribute = bonuses_from_wall_forts }
+				NOT = { has_province_modifier = bonuses_from_wall_forts_modifier }
+				province_is_a_castle_on_the_wall = yes
+			}
+			add_province_modifier = {
+				name = bonuses_from_wall_forts_modifier
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_province_modifier = abandoned_castle
+				province_is_a_castle_on_the_wall = yes
+			}
+			remove_province_modifier = abandoned_castle
+		}
+	}
 
-    onmap = yes
+	on_destroyed = {
+		if = {
+			limit = {
+				NOT = { has_province_modifier = abandoned_castle }
+				province_is_a_castle_on_the_wall = yes
+			}
+			add_permanent_province_modifier = {
+				name = abandoned_castle
+				duration = -1
+			}
+		}
+	}
+
+	onmap = yes
 	influencing_fort = yes
-    
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
+	
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
 	modifier = {
-        fort_level = 1
-        local_hostile_movement_speed = -0.1
+		fort_level = 1
+		local_hostile_movement_speed = -0.1
 	}
 	
 	ai_will_do = {
@@ -538,18 +561,68 @@ motte_and_bailey = {
 castle = {
 	cost = 500
 	time = 12
-    make_obsolete = motte_and_bailey
-    
-    onmap = yes
+	make_obsolete = motte_and_bailey
+	
+	on_built = {
+		if = {
+			limit = {
+				FROM = { NOT = { mil_tech = 15 } has_government_attribute = on_fort_built_nobles_loyalty }
+			}
+			FROM = {
+				if = {
+					limit = {
+						has_estate = estate_nobles
+					}
+					add_estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 5
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_government_attribute = bonuses_from_wall_forts }				
+				NOT = { has_province_modifier = bonuses_from_wall_forts_modifier }
+				province_is_a_castle_on_the_wall = yes
+			}
+			add_province_modifier = {
+				name = bonuses_from_wall_forts_modifier
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_province_modifier = abandoned_castle
+				province_is_a_castle_on_the_wall = yes
+			}
+			remove_province_modifier = abandoned_castle
+		}
+	}
+
+	on_destroyed = {
+		if = {
+			limit = {
+				NOT = { has_province_modifier = abandoned_castle }
+				province_is_a_castle_on_the_wall = yes
+			}
+			add_permanent_province_modifier = {
+				name = abandoned_castle
+				duration = -1
+			}
+		}
+	}
+	
+	onmap = yes
 	influencing_fort = yes
-    
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
+	
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
 	modifier = {
-        fort_level = 2
-        local_hostile_movement_speed = -0.2
+		fort_level = 2
+		local_hostile_movement_speed = -0.2
 	}
 	
 	ai_will_do = {
@@ -561,18 +634,68 @@ castle = {
 fortress = {
 	cost = 750
 	time = 12
-    make_obsolete = castle
-    
-    onmap = yes
+	make_obsolete = castle
+	
+	on_built = {
+		if = {
+			limit = {
+				FROM = { NOT = { mil_tech = 20 } has_government_attribute = on_fort_built_nobles_loyalty }
+			}
+			FROM = {
+				if = {
+					limit = {
+						has_estate = estate_nobles
+					}
+					add_estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 5
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_government_attribute = bonuses_from_wall_forts }
+				NOT = { has_province_modifier = bonuses_from_wall_forts_modifier }
+				province_is_a_castle_on_the_wall = yes
+			}
+			add_province_modifier = {
+				name = bonuses_from_wall_forts_modifier
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_province_modifier = abandoned_castle
+				province_is_a_castle_on_the_wall = yes
+			}
+			remove_province_modifier = abandoned_castle
+		}
+	}
+
+	on_destroyed = {
+		if = {
+			limit = {
+				NOT = { has_province_modifier = abandoned_castle }
+				province_is_a_castle_on_the_wall = yes
+			}
+			add_permanent_province_modifier = {
+				name = abandoned_castle
+				duration = -1
+			}
+		}
+	}
+	
+	onmap = yes
 	influencing_fort = yes
-    
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
+	
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
 	modifier = {
-        fort_level = 3
-        local_hostile_movement_speed = -0.3
+		fort_level = 3
+		local_hostile_movement_speed = -0.3
 	}
 	
 	ai_will_do = {
@@ -585,18 +708,68 @@ fortress = {
 citadel = {
 	cost = 1000
 	time = 12
-    make_obsolete = fortress
-    
-    onmap = yes
-    influencing_fort = yes
-    
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
+	make_obsolete = fortress
+	
+	on_built = {
+		if = {
+			limit = {
+				FROM = { has_government_attribute = on_fort_built_nobles_loyalty }
+			}
+			FROM = {
+				if = {
+					limit = {
+						has_estate = estate_nobles
+					}
+					add_estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 5
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_government_attribute = bonuses_from_wall_forts }
+				NOT = { has_province_modifier = bonuses_from_wall_forts_modifier }
+				province_is_a_castle_on_the_wall = yes
+			}
+			add_province_modifier = {
+				name = bonuses_from_wall_forts_modifier
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				has_province_modifier = abandoned_castle
+				province_is_a_castle_on_the_wall = yes
+			}
+			remove_province_modifier = abandoned_castle
+		}
+	}
+
+	on_destroyed = {
+		if = {
+			limit = {
+				NOT = { has_province_modifier = abandoned_castle }
+				province_is_a_castle_on_the_wall = yes
+			}
+			add_permanent_province_modifier = {
+				name = abandoned_castle
+				duration = -1
+			}
+		}
+	}
+	
+	onmap = yes
+	influencing_fort = yes
+	
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
 	modifier = {
-        fort_level = 4
-        local_hostile_movement_speed = -0.4
+		fort_level = 4
+		local_hostile_movement_speed = -0.4
 	}
 	
 	ai_will_do = {
@@ -610,31 +783,31 @@ citadel = {
 cot = {
 	cost = 1000
 	time = 12
-    
+	
 	build_trigger = {
-        is_building_permitted = yes
-        NOT = {
-            any_province_in_state = {
-                province_has_center_of_trade_of_level = 1
-            }
-        }
-        NOT = {
-            any_province_in_state = {
-                has_construction = building 
-            }
-        }
-        NOT = {
-            any_province_in_state = {
-                has_building = cot
-            }
-        }
-    }
-    
-    on_built = {
-        center_of_trade = 1
-        hidden_effect = { remove_building = cot }
-    }
-    
+		is_building_permitted = yes
+		NOT = {
+			any_province_in_state = {
+				province_has_center_of_trade_of_level = 1
+			}
+		}
+		NOT = {
+			any_province_in_state = {
+				has_construction = building 
+			}
+		}
+		NOT = {
+			any_province_in_state = {
+				has_building = cot
+			}
+		}
+	}
+	
+	on_built = {
+		center_of_trade = 1
+		hidden_effect = { remove_building = cot }
+	}
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -643,7 +816,7 @@ cot = {
 manufactory = {
 	cost = 500
 	time = 12
-    
+	
 	modifier = {
 		trade_goods_size = 1.0
 	}
@@ -652,29 +825,24 @@ manufactory = {
 # Farmers Guild
 # grain, fish, tea, coffee, cotton, sugar, tobacco, cocoa
 farmers_guild = {
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-    manufactory = {
-        grain
-        fish
-        tea
-        coffee
-        cotton
-        sugar
-        tobacco
-        cocoa
-        fruit
-    }
+	build_trigger = {
+		is_building_permitted = yes
+	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - farmers_guild "
-        }
-        
-        add_development_from_building = {
+	manufactory = {
+		grain
+		fish
+		tea
+		coffee
+		cotton
+		sugar
+		tobacco
+		cocoa
+		fruit
+	}
+	
+	on_built = {
+		add_development_from_building = {
 			building = manufactory
 			type = production
 			value = 2
@@ -689,7 +857,7 @@ farmers_guild = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -698,23 +866,18 @@ farmers_guild = {
 # Foresters Guild
 # naval_supplies, ironwood, tropical_wood
 foresters_guild = {
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-    manufactory = {
-        naval_supplies
-        ironwood
-        tropical_wood
-    }
+	build_trigger = {
+		is_building_permitted = yes
+	}
 	
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - foresters_guild "
-        }
-        
-        add_development_from_building = {
+	manufactory = {
+		naval_supplies
+		ironwood
+		tropical_wood
+	}
+	
+	on_built = {
+		add_development_from_building = {
 			building = manufactory
 			type = production
 			value = 2
@@ -729,7 +892,7 @@ foresters_guild = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -738,22 +901,17 @@ foresters_guild = {
 # Blacksmiths Guild
 # iron, copper
 blacksmiths_guild = {
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-    manufactory = {
-        iron
-        copper
-    }
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
+	manufactory = {
+		iron
+		copper
+	}
 
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - blacksmiths_guild "
-        }
-        
-        add_development_from_building = {
+	on_built = {
+		add_development_from_building = {
 			building = manufactory
 			type = production
 			value = 2
@@ -768,36 +926,30 @@ blacksmiths_guild = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
 }
 
 # Artisans Guild
-# wine, ivory, spices, silk, dyes, candles, salt
+# wine, ivory, spices, silk, dyes, salt
 artisans_guild = {
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-    manufactory = {
-        wine
-        ivory
-        spices
-        silk
-        dyes
-        candles
-        salt
-    }
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
+	manufactory = {
+		wine
+		ivory
+		spices
+		silk
+		dyes
+		salt
+	}
 
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - artisans_guild "
-        }
-        
-        add_development_from_building = {
+	on_built = {
+		add_development_from_building = {
 			building = manufactory
 			type = production
 			value = 2
@@ -812,7 +964,7 @@ artisans_guild = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -821,23 +973,18 @@ artisans_guild = {
 # Tailors Guild
 # wool, cloth, fur
 tailors_guild = {
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
-    manufactory = {
-        wool
-        cloth
-        fur
-    }
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
+	manufactory = {
+		wool
+		cloth
+		fur
+	}
 
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - tailors_guild "
-        }
-        
-        add_development_from_building = {
+	on_built = {
+		add_development_from_building = {
 			building = manufactory
 			type = production
 			value = 2
@@ -852,7 +999,7 @@ tailors_guild = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -861,22 +1008,17 @@ tailors_guild = {
 # Slavers Guild
 # slaves
 slavers_guild = {
-    build_trigger = {
-        is_building_permitted = yes
-        owner = { has_country_modifier = slavery_permitted }
-    }
-    
-    manufactory = {
-        slaves
-    }
+	build_trigger = {
+		is_building_permitted = yes
+		owner = { has_country_modifier = slavery_permitted }
+	}
+	
+	manufactory = {
+		slaves
+	}
 
-    on_built = {
-        if = { 
-			limit = { has_global_flag = enable_building_logging }
-			log = "DEBUG - [Root.GetName] - on_built - slavers_guild "
-        }
-        
-        add_development_from_building = {
+	on_built = {
+		add_development_from_building = {
 			building = manufactory
 			type = production
 			value = 2
@@ -891,7 +1033,7 @@ slavers_guild = {
 	}
 	on_obsolete = {
 	}
-    
+	
 	ai_will_do = {
 		factor = 1
 	}
@@ -904,19 +1046,19 @@ slavers_guild = {
 grand_palace = {
 	cost = 5000
 	time = 12
-    one_per_country = yes
-    
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
+	one_per_country = yes
+	
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
 	modifier = {
-        legitimacy = 1
-        republican_tradition = 1
-        devotion = 1
-        horde_unity = 1
-        meritocracy = 1
-        statewide_governing_cost = -0.25
+		legitimacy = 1
+		republican_tradition = 1
+		devotion = 1
+		horde_unity = 1
+		meritocracy = 1
+		statewide_governing_cost = -0.25
 	}
 	
 	ai_will_do = {
@@ -928,15 +1070,15 @@ grand_palace = {
 merchants_quarter = {
 	cost = 5000
 	time = 12
-    one_per_country = yes
-    
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
+	one_per_country = yes
+	
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
 	modifier = {
-        merchants = 1
-        global_own_trade_power = 0.2
+		merchants = 1
+		global_own_trade_power = 0.2
 	}
 	
 	ai_will_do = {
@@ -948,15 +1090,53 @@ merchants_quarter = {
 grand_temple = {
 	cost = 5000
 	time = 12
-    one_per_country = yes
-    
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
+	one_per_country = yes
+	
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
 	modifier = {
-        global_missionary_strength = 0.03
-        missionaries = 1
+		global_missionary_strength = 0.03
+		missionaries = 1
+	}
+
+	on_built = {
+		if = {
+			limit = {
+				FROM = { has_government_attribute = on_church_built_clergy_loyalty }
+			}
+			FROM = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 5
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_government_attribute = temples_modifier }
+				owned_by = FROM 
+			}
+			add_province_modifier = {
+				name = gov_expanded_temple_rights_mod
+				duration = -1
+			}
+		}
+	}
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = { has_government_attribute = on_church_built_clergy_loyalty }
+			}
+			FROM = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = -5
+				}
+			}
+		}
+		remove_province_modifier = gov_expanded_temple_rights_mod
 	}
 	
 	ai_will_do = {
@@ -968,15 +1148,15 @@ grand_temple = {
 tourney_grounds = {
 	cost = 5000
 	time = 12
-    one_per_country = yes
-    
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
+	one_per_country = yes
+	
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
 	modifier = {
-        diplomatic_reputation = 1
-        improve_relation_modifier = 0.2
+		diplomatic_reputation = 1
+		improve_relation_modifier = 0.2
 	}
 	
 	ai_will_do = {
@@ -988,15 +1168,15 @@ tourney_grounds = {
 military_academy = {
 	cost = 5000
 	time = 12
-    one_per_country = yes
-    
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
+	one_per_country = yes
+	
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
 	modifier = {
-        army_tradition_from_battle = 1.0
-        army_tradition = 1
+		army_tradition_from_battle = 1.0
+		army_tradition = 1
 	}
 	
 	ai_will_do = {
@@ -1008,15 +1188,15 @@ military_academy = {
 naval_academy = {
 	cost = 5000
 	time = 12
-    one_per_country = yes
-    
-    build_trigger = {
-        is_building_permitted = yes
-    }
-    
+	one_per_country = yes
+	
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
 	modifier = {
-        naval_tradition_from_trade = 1.0
-        navy_tradition = 1
+		naval_tradition_from_trade = 1.0
+		navy_tradition = 1
 	}
 	
 	ai_will_do = {

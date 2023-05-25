@@ -1,0 +1,215 @@
+#AVIALABLE CUSTOM LOCALISATION KEYS
+#When adding new custom loc keys, add them to the appropriate category (or add a new one) and describe them. Name the strings "String_X" where x is its content.
+# To not display anything, you can use 'localisation_key = ""'
+# Please add one example sentence for each key.
+
+#As this list grow organize with categories.
+#Current loc keys in this file:
+#StartScreenUpLeft
+#StartScreenUpRight
+#StartScreenDownLeft
+#StartScreenDownRight
+
+# ------------------------------------------------------------------
+# General Title
+# ------------------------------------------------------------------
+defined_text = {
+    name = StartScreenTitle
+	random = no
+	
+    text = {
+        localisation_key = string_screen_title
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+# ------------------------------------------------------------------
+# History Description
+# ------------------------------------------------------------------
+defined_text = {
+    name = StartScreenUpLeftDesc
+	random = no
+
+    # East Essos
+	text = {
+		localisation_key = string_start_yiti
+		trigger = {
+			tag = R68
+		}
+	}
+	text = {
+		localisation_key = string_start_jogos
+		trigger = {
+			culture = jogos_nhai
+		}
+	}
+	text = {
+		localisation_key = string_start_nefer
+		trigger = {
+			tag = S14
+		}
+	}
+
+    # Westeros
+	text = {
+        localisation_key = string_start_stark
+        trigger = {
+			tag = A01
+		}
+    }
+	text = {
+        localisation_key = string_start_arryn
+        trigger = {
+			tag = A04
+		}
+    }
+    text = {
+        localisation_key = string_start_tully
+        trigger = {
+			tag = A03
+		}
+    }
+    text = {
+        localisation_key = string_start_lannister
+        trigger = {
+			tag = A06
+		}
+    }
+    text = {
+        localisation_key = string_start_tyrell
+        trigger = {
+			tag = F20
+		}
+    }
+    text = {
+        localisation_key = string_start_baratheon
+        trigger = {
+			tag = A07
+		}
+    }
+    text = {
+        localisation_key = string_start_martell
+        trigger = {
+			tag = A09
+		}
+    }
+    text = {
+        localisation_key = string_start_targaryen
+        trigger = {
+			tag = A10
+		}
+    }
+    text = {
+        localisation_key = string_start_greyjoy
+        trigger = {
+			tag = M09
+		}
+    }
+    
+	text = {
+        localisation_key = string_start_tag_generic
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+# ------------------------------------------------------------------
+# Mechanics Description
+# ------------------------------------------------------------------
+defined_text = {
+    name = StartScreenUpRightDesc
+	random = no
+
+    # East Essos
+	text = {
+		localisation_key = string_start_yiti_mechanics
+		trigger = {
+			tag = R68
+		}
+	}
+	text = {
+		localisation_key = string_start_jogos_mechanics
+		trigger = {
+			culture = jogos_nhai
+		}
+	}
+	text = {
+		localisation_key = string_start_nefer_mechanics
+		trigger = {
+			tag = S14
+		}
+	}
+	
+	text = {
+        localisation_key = string_start_mechanics
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+# ------------------------------------------------------------------
+# Disabled
+# ------------------------------------------------------------------
+defined_text = {
+    name = StartScreenUpRightTitle
+	random = no
+
+    text = {
+        localisation_key = string_start_religion_mechanic_title
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text = {
+    name = StartScreenDownLeftTitle
+	random = no
+
+    text = {
+        localisation_key = string_start_culture_government_title
+		trigger = {
+			always = yes
+		}
+    }
+}
+
+defined_text = {
+    name = StartScreenDownRightTitle
+	random = no
+
+	text = {
+        localisation_key = string_start_no_special_region_title
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text = {
+    name = StartScreenDownLeftDesc
+	random = no
+
+    text = {
+        localisation_key = string_government_culture_explanation
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text = {
+    name = StartScreenDownRightDesc
+	random = no
+
+	text = {
+        localisation_key = string_start_no_special_region_description
+        trigger = {
+			always = yes
+        }
+    }
+}

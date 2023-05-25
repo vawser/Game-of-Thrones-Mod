@@ -36,9 +36,14 @@ improve_inland_routes = {
 	can_select = {
 		FROM = {
 			has_trader = ROOT
-			trade_share = {
-				country = ROOT
-				share = 50
+		}
+		if = {
+			limit = { NOT = { has_government_attribute = free_improve_inland_routes } }
+			FROM = {
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
 			}
 		}
 	}
@@ -46,9 +51,14 @@ improve_inland_routes = {
 	can_maintain = {
 		FROM = {
 			has_trader = ROOT
-			trade_share = {
-				country = ROOT
-				share = 40
+		}
+		if = {
+			limit = { NOT = { has_government_attribute = free_improve_inland_routes } }
+			FROM = {
+				trade_share = {
+					country = ROOT
+					share = 40
+				}
 			}
 		}
 	}

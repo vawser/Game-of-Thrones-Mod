@@ -1,0 +1,611 @@
+#Yi Ti#
+
+loe_azure_empire = {
+    icon = "castle" #TBD
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		culture_group = culture_yi_ti
+		is_emperor_of_china = yes
+	}
+	monarchy = yes
+	maintain_dynasty = yes
+	has_meritocracy = yes
+
+	modifiers = {
+		diplomatic_upkeep = 2
+		stability_cost_modifier = 0.25
+		advisor_cost = -0.2
+		diplomatic_reputation = 3
+	}
+
+	custom_attributes = {
+		enables_monarchy_ideagroup = yes
+		loe_increased_stab_on_death = yes
+	}
+}
+
+#YELLOW EMPIRE WILL BE IN loe_occult
+
+#loe_orange_empire = { #TBD Move it to loe_republic
+#   icon = "castle" #TBD
+#	valid_for_nation_designer = yes
+#	nation_designer_cost = 0
+#	potential = {
+#		tag = S04
+#	}
+#	monarchy = yes
+#	lock_level_when_selected = yes
+#	maintain_dynasty = yes
+#
+#	modifiers = {
+#		attack_bonus_in_capital_terrain = 1
+#		merc_maintenance_modifier = -0.5
+#		mercenary_discipline = 0.05
+#		merchants = 1
+#		trade_efficiency = 0.2
+#	}
+#
+#	custom_attributes = {
+#		enables_monarchy_ideagroup = yes
+#	}
+#}
+
+loe_empire_of_dawn = {
+	icon = "castle" #TBD
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		culture_group = culture_yi_ti
+	}
+	trigger = {
+		tag = ETD
+	}
+	monarchy = yes
+	maintain_dynasty = yes
+	has_meritocracy = yes
+
+	modifiers = {
+		diplomatic_upkeep = 3
+		advisor_cost = -0.33
+		diplomatic_reputation = 4
+		monarch_lifespan = 0.2
+		imperial_mandate = 0.1
+
+	}
+
+	custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+}
+
+#loe_empire_of_dawn_orange = { #TBD Move it to loe_republic
+#	icon = "castle" #TBD
+#	valid_for_nation_designer = yes
+#	nation_designer_cost = 0
+#	potential = {
+#		culture_group = culture_yi_ti
+#		has_reform = loe_orange_empire
+#	}
+#	monarchy = yes
+#	lock_level_when_selected = yes
+#	maintain_dynasty = yes
+#
+#	modifiers = {
+#		attack_bonus_in_capital_terrain = 1
+#		merc_maintenance_modifier = -0.5
+#		mercenary_discipline = 0.05
+#		merchants = 2
+#		trade_efficiency = 0.33
+#		mercantilism_cost = -0.75
+#		imperial_mandate = 0.1
+#
+#	}
+#
+#	custom_attributes = {
+#		enables_monarchy_ideagroup = yes
+#	}
+#}
+
+loe_independent_yiti = {
+    icon = "castle"
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		culture_group = culture_yi_ti
+		is_subject = no
+		is_emperor_of_china = no
+	}
+	monarchy = yes
+	lock_level_when_selected = yes
+
+	modifiers = {
+		attack_bonus_in_capital_terrain = 1
+		advisor_cost = -0.2
+		prestige_from_land = 0.10
+		global_manpower = 20
+	}
+
+	custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+}
+
+
+loe_union_state = {
+    icon = "crown"
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		culture_group = culture_yi_ti
+		is_subject = yes
+		overlord = {
+			is_emperor_of_china = yes
+		}
+	}
+	monarchy = yes
+	lock_level_when_selected = yes
+
+	modifiers = {
+		global_unrest = -2
+		advisor_cost = -0.2
+		diplomatic_reputation = 1
+	}
+
+	custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+}
+
+
+loe_guaranteed_autonomy = {
+    icon = "royal_court"
+	potential = {
+		culture_group = culture_yi_ti
+		is_emperor_of_china = yes
+	}
+	
+	modifiers = {
+		nobles_loyalty_modifier = 0.1
+		stability_cost_modifier = -0.25
+	}
+
+	custom_attributes = {
+		loe_cant_seize_nobility = yes
+	}
+
+}
+
+loe_leased_nobility = {
+    icon = "paper_with_seal"
+	potential = {
+		culture_group = culture_yi_ti
+		is_emperor_of_china = yes
+	}
+
+	modifiers = {
+		nobles_influence_modifier = -0.1
+	}
+
+	custom_attributes = {
+		loe_lease_nobles_event = yes
+	}
+}
+
+loe_relations_with_empire = {
+    icon = "royal_favoritism"
+	potential = {
+		culture_group = culture_yi_ti
+		is_emperor_of_china = no
+	}
+
+	modifiers = {
+		monthly_favor_modifier = 0.1
+	}
+
+	custom_attributes = {
+		loe_friendly_with_empire = yes
+	}
+}
+
+loe_foreign_nobles = {
+    icon = "tribal_centralize_power"
+	potential = {
+		culture_group = culture_yi_ti
+		is_subject = yes
+		overlord = {
+			is_emperor_of_china = yes
+		}
+	}
+
+	modifiers = {
+		years_of_nationalism = -5
+		global_unrest = -2
+		max_absolutism = -20
+	}
+}
+
+
+loe_sole_empire = {
+    icon = "map_2"
+	potential = {
+		culture_group = culture_yi_ti
+		is_emperor_of_china = yes
+	}
+
+	custom_attributes = {
+		loe_mandate_from_dev = yes
+	}
+}
+
+loe_myriad_crowned_king = {
+    icon = "war_map"
+	potential = {
+		culture_group = culture_yi_ti
+		is_emperor_of_china = yes
+	}
+
+	custom_attributes = {
+		loe_mandate_from_pu_dev = yes
+	}
+}
+
+loe_frontier_of_empire = {
+    icon = "native_land_tradition_reform"
+	potential = {
+		culture_group = culture_yi_ti
+		is_subject = yes
+		overlord = {
+			is_emperor_of_china = yes
+		}
+	}
+
+	modifiers = {
+		global_manpower_modifier = 0.2
+		core_creation = -0.1
+	}
+}
+
+loe_ancient_bookkeepers = {
+    icon = "consulate_of_the_sea"
+	potential = {
+		culture_group = culture_yi_ti
+	}
+
+	modifiers = {
+		technology_cost = -0.1
+		innovativeness_gain = 0.5
+	}
+}
+
+
+#loe_foreign_tactics = {
+#    icon = "castle" #TBD
+#	potential = {
+#		culture_group = culture_yi_ti
+#		is_subject = no
+#	}
+#
+#	modifiers = {
+#		military_tactics = 0.1
+#	}
+#
+#	custom_attributes = {
+#		loe_foreign_tactics = yes #TBD Each culture group a bonus but with -0.01 tradition decay
+#	}
+#}
+
+loe_imperial_army = {
+    icon = "chinese_soldier"
+	potential = {
+		culture_group = culture_yi_ti
+		is_emperor_of_china = yes
+	}
+
+	modifiers = {
+		global_regiment_cost = 0.2
+		discipline = 0.05
+		force_march_free = yes 
+	}
+
+	custom_attributes = {
+		loe_pride_of_the_emperor = yes #TBD Can use celestial reforms to upgrade this
+	}
+}
+
+
+loe_homogenous_court = {
+    icon = "general_eastern_administrative"
+	potential = {
+		culture_group = culture_yi_ti
+	}
+
+	modifiers = {
+		advisor_pool = 2
+		culture_conversion_cost = -0.2
+	}
+
+	custom_attributes = {
+		loe_homogenous_court_desc = yes
+	}
+}
+
+
+loe_order_of_oracles = {
+    icon = "japanese_divine_empire"
+	potential = {
+		culture_group = culture_yi_ti
+	}
+
+	modifiers = {
+		monarch_lifespan = 0.2
+		global_spy_defence = 0.5
+	}
+
+	custom_attributes = {
+		loe_increases_skill_over_time = yes
+	}
+}
+
+
+loe_transcontinental_trade = {
+    icon = "war_ship"
+	potential = {
+		culture_group = culture_yi_ti
+		is_emperor_of_china = yes
+	}
+
+	modifiers = {
+		trade_range_modifier = 0.5
+		global_ship_trade_power = 1
+	}
+
+	custom_attributes = {
+		loe_worldwide_trade = yes
+	}
+}
+
+loe_imperial_subsidies = {
+    icon = "paper_money_map"
+	potential = {
+		culture_group = culture_yi_ti
+		is_subject = yes
+		overlord = {
+			is_emperor_of_china = yes
+		}
+	}
+
+	modifiers = {
+		production_efficiency = 0.2
+		build_cost = -0.25
+	}
+}
+
+loe_bureaucratic_economy = {
+    icon = "asian_scripture"
+	potential = {
+		culture_group = culture_yi_ti
+	}
+
+	modifiers = {
+		global_tax_modifier = 0.25
+		inflation_action_cost = -0.5
+		min_autonomy_in_territories = -0.1
+	}
+}
+
+loe_show_of_wealth = {
+    icon = "sakdina_system_reform"
+	potential = {
+		culture_group = culture_yi_ti
+		is_subject = no
+	}
+
+	modifiers = {
+		diplomatic_reputation = 3
+		culture_conversion_cost = -0.2
+		global_prosperity_growth = 0.1
+	}
+}
+
+
+loe_yitish_absolutism = {
+    icon = "royal_favoritism"
+	potential = {
+		culture_group = culture_yi_ti
+	}
+
+	modifiers = {
+		allow_free_estate_privilege_revocation = yes
+		max_absolutism_effect = 0.2
+	}
+
+	custom_attributes = {
+		seizing_land_no_rebels = yes
+	}
+}
+
+
+loe_godking_of_yiti = {
+    icon = "celestial_empire"
+	potential = {
+		culture_group = culture_yi_ti
+		is_emperor_of_china = yes
+		
+	}
+	trigger = {
+		absolutism = 100
+	}
+	
+	raze_province = yes
+	free_concentrate_development = yes
+
+	modifiers = {
+		monarch_lifespan = 0.2
+	}
+	custom_attributes = {
+		loe_increased_stab_on_death_plus = yes
+	}
+}
+
+#Nefer#
+
+loe_secret_city = {
+    icon = "castle" #TBD
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		culture_group = culture_nefer
+	}
+	monarchy = yes
+
+	modifiers = {
+		development_cost = -0.2
+		attack_bonus_in_capital_terrain = 1
+	}
+
+	custom_attributes = {
+		enables_monarchy_ideagroup = yes
+	}
+}
+
+loe_worlds_end = {
+    icon = "castle" #TBD
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		culture_group = culture_nefer
+	}
+	trigger = {
+		government_rank = 2
+	}
+	monarchy = yes
+	free_concentrate_development = yes
+
+	modifiers = {
+		development_cost = -0.2
+		attack_bonus_in_capital_terrain = 1
+	}
+
+	custom_attributes = {
+		enables_monarchy_ideagroup = yes
+		loe_can_establish_underground_cities = yes #TBD
+	}
+}
+
+
+loe_landed_necromancers = {
+    icon = "monks"
+	potential = {
+		culture_group = culture_nefer
+	}
+
+	modifiers = {
+		colonists = 1
+	}
+
+	custom_attributes = {
+		loe_improve_dev = yes
+	}
+}
+
+
+loe_level_castes = {
+    icon = "national_assembly"
+	potential = {
+		culture_group = culture_nefer
+	}
+
+	modifiers = {
+		tolerance_own = 2
+	}
+
+	custom_attributes = {
+		loe_church_power_per_stab = yes
+	}
+}
+
+
+loe_neferi_tunnelers = {
+    icon = "strenght_of_the_khalsa"
+	potential = {
+		culture_group = culture_nefer
+	}
+
+	modifiers = {
+		defensiveness = 0.1
+		siege_ability = 0.1
+	}
+
+	custom_attributes = {
+		loe_found_new_mines = yes
+	}
+}
+
+
+loe_fosters_of_truth = {
+    icon = "black_market_consortium"
+	potential = {
+		culture_group = culture_nefer
+	}
+
+	modifiers = {
+		yearly_corruption = -0.1
+		global_spy_defence = 0.5
+		spy_offence = 0.5
+	}
+}
+
+
+loe_council_of_banished = {
+    icon = "cossacks"
+	potential = {
+		culture_group = culture_nefer
+	}
+
+	modifiers = {
+		free_adm_policy = 1
+		free_dip_policy = 1
+		free_mil_policy = 1
+	}
+}
+
+
+loe_necromantic_miners = {
+    icon = "fist_in_air"
+	potential = {
+		culture_group = culture_nefer
+	}
+
+	modifiers = {
+		gold_depletion_chance_modifier = -1
+	}
+
+	custom_attributes = {
+		loe_increased_metal_output = yes
+	}
+}
+
+
+loe_systematic_degradation = {
+    icon = "devshirme_system"
+	potential = {
+		culture_group = culture_nefer
+	}
+
+	modifiers = {
+		harsh_treatment_cost = -0.5
+		war_exhaustion = -0.1
+	}
+}
+
+loe_blood_tax = {
+    icon = "absolute_shogunate" #TBD
+	potential = {
+		culture_group = culture_nefer
+	}
+
+	custom_attributes = {
+		loe_blood_sacrifice = yes #TBD Can sacrifice regiments in capital for random dev
+	}
+}

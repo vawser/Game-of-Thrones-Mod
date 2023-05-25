@@ -7,11 +7,19 @@ estate_adventurers = {
 	independence_government = monarchy
 	starting_reform = autocracy_reform
 	independence_tech_group = westerosi
+
+	# ----- Names -----
+    custom_name = {
+		desc = estate_adventurers_nomad
+		trigger = {
+			is_nomad = yes
+		}
+	}
     
 	# ----- Conditions -----
     trigger = {
-        NOT = { has_reform = khalasar_reform }
-        NOT = { has_reform = jhattar_reform }
+		NOT = { has_reform = nights_watch_reform }
+		NOT = { government = dynasty }
     }
 
 	# ----- Country -----

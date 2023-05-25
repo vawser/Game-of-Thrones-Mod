@@ -6,17 +6,18 @@ controller = G29
 add_core = G29
 
 base_tax = 8
-base_production = 8
+base_production = 6
 base_manpower = 3
 
 culture = men_of_the_westerlands
 religion = faith_of_the_seven
 
 trade_goods = gold
-hre = no
+hre = yes
 
-106.1.1 = {
-    owner = WES
-    controller = WES
-    add_core = WES
+discovered_by = westerosi
+
+add_permanent_province_modifier = {
+	name = local_trading_hub
+	duration = -1
 }

@@ -1,0 +1,235 @@
+gov_prince_of_dragonstone = {
+	rank = {
+		1 = PRINCEDOM
+		2 = PRINCEDOM
+		3 = GRAND_PRINCEDOM
+	}
+
+	ruler_male = {
+		1 = CASTELLAN
+        2 = CASTELLAN
+        3 = CASTELLAN
+	}
+	
+	ruler_female = {
+		1 = CASTELLAN
+        2 = CASTELLAN
+        3 = CASTELLAN
+	}
+
+	trigger = {
+		has_reform = castellany_of_dragonstone_reform
+		tag = A39
+	}
+}
+
+gov_noble_house = {
+	rank = {
+		1 = NOBLE_HOUSE
+        2 = NOBLE_HOUSE
+        3 = NOBLE_HOUSE
+	}
+	
+	ruler_male = {
+		1 = LORD
+        2 = LORD
+        3 = LORD
+	}
+	
+	ruler_female = {
+		1 = LADY
+        2 = LADY
+        3 = LADY
+	}
+
+	consort_male = {
+		1 = LORD
+        2 = LORD
+        3 = LORD
+	}
+
+	consort_female = {
+		1 = LADY
+        2 = LADY
+        3 = LADY
+	}
+	
+	trigger = {
+        OR = {
+			has_reform = noble_house_reform
+			has_reform = lord_of_the_tides_reform
+		}
+	}
+}
+
+gov_great_house_dornish = {
+	rank = {
+		1 = GREAT_HOUSE
+        2 = GREAT_HOUSE
+        3 = GREAT_HOUSE
+	}
+	
+	ruler_male = {
+		1 = PRINCE
+        2 = PRINCE
+        3 = PRINCE
+	}
+	
+	ruler_female = {
+		1 = PRINCESS
+        2 = PRINCESS
+        3 = PRINCESS
+	}
+
+	consort_male = {
+		1 = PRINCE
+        2 = PRINCE
+        3 = PRINCE
+	}
+
+	consort_female = {
+		1 = PRINCESS
+        2 = PRINCESS
+        3 = PRINCESS
+	}
+	
+	trigger = {
+        has_reform = great_house_reform
+		OR = {
+			primary_culture = salt_dornish
+			primary_culture = sand_dornish
+			primary_culture = stone_dornish
+		}
+	}
+}
+
+gov_lord_paramount = {
+	rank = {
+		1 = GREAT_HOUSE
+        2 = GREAT_HOUSE
+        3 = GREAT_HOUSE
+	}
+	
+	ruler_male = {
+		1 = LORD_PARAMOUNT
+		2 = LORD_PARAMOUNT
+		3 = LORD_PARAMOUNT
+	}
+	
+	ruler_female = {
+		1 = LADY_PARAMOUNT
+		2 = LADY_PARAMOUNT
+		3 = LADY_PARAMOUNT
+	}
+
+	consort_male = {
+		1 = LORD_PARAMOUNT
+		2 = LORD_PARAMOUNT
+		3 = LORD_PARAMOUNT
+	}
+
+	consort_female = {
+		1 = LADY_PARAMOUNT
+		2 = LADY_PARAMOUNT
+		3 = LADY_PARAMOUNT
+	}
+	
+	trigger = {
+		has_reform = great_house_reform
+		OR = {
+			capital_scope = {
+				region = region_stormlands
+			}
+			capital_scope = {
+				region = region_reach
+			}
+			capital_scope = {
+				region = region_riverlands
+			}
+		}
+	}
+}
+
+gov_great_house = {
+	rank = {
+		1 = GREAT_HOUSE
+        2 = GREAT_HOUSE
+        3 = GREAT_HOUSE
+	}
+	
+	ruler_male = {
+		1 = LORD
+        2 = LORD
+        3 = LORD
+	}
+	
+	ruler_female = {
+		1 = LADY
+        2 = LADY
+        3 = LADY
+	}
+
+	consort_male = {
+		1 = LORD
+        2 = LORD
+        3 = LORD
+	}
+
+	consort_female = {
+		1 = LADY
+        2 = LADY
+        3 = LADY
+	}
+	
+	trigger = {
+        has_reform = great_house_reform
+	}
+}
+
+gov_royal_house = {
+	rank = {
+		1 = ROYAL_HOUSE
+        2 = ROYAL_HOUSE
+        3 = ROYAL_HOUSE
+	}
+	
+	ruler_male = {
+		1 = KING
+        2 = KING
+        3 = KING
+	}
+	
+	ruler_female = {
+		1 = QUEEN
+        2 = QUEEN
+        3 = QUEEN
+	}
+
+	consort_male = {
+		1 = KINGCONSORT
+		2 = KINGCONSORT
+		3 = KINGCONSORT
+	}
+	
+	consort_female = {
+		1 = QUEENCONSORT
+		2 = QUEENCONSORT
+		3 = QUEENCONSORT
+	}
+
+	heir_male = {
+		1 = PRINCE
+		2 = PRINCE
+		3 = PRINCE
+	}
+
+	heir_female = {
+		1 = PRINCESS
+		2 = PRINCESS
+		3 = PRINCESS
+	}
+	
+	trigger = {
+        has_reform = royal_house_reform
+	}
+}

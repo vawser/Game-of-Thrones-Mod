@@ -1,0 +1,29 @@
+# Province
+on_province_owner_change_government_effect = {
+	if = {
+		limit = {
+			owner = {
+				has_government_attribute = cheaper_developing_pastures
+			}
+			OR = {
+				has_terrain = farmlands
+				has_terrain = grasslands
+			}
+		}
+		add_province_modifier = {
+			name = cheaper_pasturelands_development
+			duration = -1
+			#hidden = yes
+		}
+	}
+	if = {
+		limit = {
+			owner = { has_government_attribute = temples_modifier }
+			has_tax_building_trigger = yes
+		}
+		add_province_modifier = {
+			name = gov_expanded_temple_rights_mod
+			duration = -1
+		}
+	}
+}

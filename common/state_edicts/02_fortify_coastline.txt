@@ -1,0 +1,31 @@
+edict_defend_the_coastline = {
+	potential = { 
+        FROM = { # Have a coastal province
+			any_province_in_state = {
+				has_port = yes
+			}
+		}
+    }
+
+	allow = {
+		if = { # Be at War
+			limit = {
+				is_at_war = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = AT_WAR_TRIGGER
+				is_at_war = yes
+			}
+		}
+	}
+	
+	modifier = {
+		local_own_coast_naval_combat_bonus = 1
+	}
+
+	color = { 153 204 255 }
+
+	ai_will_do = {
+		factor = 0
+	}
+}

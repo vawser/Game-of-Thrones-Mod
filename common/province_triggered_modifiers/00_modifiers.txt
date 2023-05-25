@@ -105,6 +105,118 @@ religious_center = {
 }
 
 #--------------------------------
+# Perpetual Diet
+#--------------------------------
+perpetual_diet = {
+	potential = {
+	}
+	
+	trigger = {
+		owner = {
+			is_part_of_hre = yes
+		}
+		controller = {
+			OR = {
+				is_part_of_hre = yes
+				NOT = { war_with = emperor }
+			}
+		}
+	}
+
+	prestige = 0.5
+	local_development_cost = -0.05
+	is_imperial_modifier = yes
+
+	on_activation = {
+		emperor = {
+			remove_country_modifier = diet_occupied
+		}
+	}
+	
+	on_deactivation = {
+		emperor = {
+			add_country_modifier = { name = diet_occupied duration = -1 }
+		}
+	}
+}
+
+#--------------------------------
+# Castle Black Subsidies
+#--------------------------------
+castle_black_subsidies = {
+	potential = {
+		OR = {
+			exists = NGT
+			any_country = {
+				has_reform = nights_watch_reform
+			}
+		}
+	}
+	trigger = {
+		if = {
+			limit = {
+				province_id = 1590
+			}
+			has_building = the_wall
+		}
+		else_if = {
+			limit = {
+				province_id = 17
+			}
+			has_fort_building_trigger = yes
+		}
+		else = {
+			province_has_current_tech_fort_trigger = yes
+		}
+		OR = {
+			owned_by = NGT
+			owner = {
+				has_reform = nights_watch_reform
+			}
+			owner = {
+				has_reform = watchmen_outpost_reform
+			}
+		}
+	}
+
+	tax_income = 6
+	local_fort_maintenance_modifier = -0.50
+	local_garrison_size = 0.125
+	garrison_growth = 0.05
+
+	on_activation = {
+		
+	}
+
+	on_deactivation = {
+		
+	}
+}
+
+#--------------------------------
+# The Kingsroad
+#--------------------------------
+kingsroad_province_bonus = {
+	potential = {
+		always = yes
+	}
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = "kingsroad_war_tt"
+			owner = {
+				is_at_war = no
+			}
+		}
+	}
+	
+	local_friendly_movement_speed = 0.25
+	supply_limit_modifier = 0.10
+
+	on_activation = { }
+	on_deactivation = { }
+}
+
+#--------------------------------
 # Great Sept of Baelor
 #--------------------------------
 great_sept_of_baelor = {
@@ -329,4 +441,3 @@ library_of_the_occult = {
 	missionaries = 1
 	tolerance_own = 1
 }
-

@@ -4,7 +4,19 @@ estate_merchants_land_rights = {
 	max_absolutism = -5
 	loyalty = 0.05
 	influence = 0.05
+	is_valid = {
+		if = {
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_valid = {
+				estate_privilege = estate_merchants_land_rights
+			}
+		}
+	}
 	can_select = {
+		if = {
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_trigger = yes
+		}
 	}
 	on_granted = {
 	}
@@ -70,7 +82,19 @@ estate_merchants_land_of_commerce = {
 	land_share = 10
 	max_absolutism = -5
 	loyalty = -0.05
+	is_valid = {
+		if = {
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_valid = {
+				estate_privilege = estate_merchants_land_rights
+			}
+		}
+	}
 	can_select = {
+		if = {
+			limit = { is_westerosi_government = yes }
+			dynasty_base_privileges_trigger = yes
+		}
 	}
 	on_granted = {
 	}
@@ -225,7 +249,10 @@ estate_merchants_indebted_to_merchants = {
 	influence = 0.05
 	on_granted = {
 		custom_tooltip = estate_merchants_indebted_to_merchants_effect_tooltip
-		add_mercantilism = -1
+		if = {
+			limit = { NOT = { has_government_attribute = no_mercantilism_loss_from_privilege } }
+			add_mercantilism = -1
+		}
 		tooltip = {
 			add_inflation = 0.5
 		}
@@ -423,10 +450,10 @@ estate_merchants_enforced_interfaith_dialogue = {
 		has_estate_privilege = estate_merchants_enforced_interfaith_dialogue
 	}
 	can_select = {
-		NOT = { has_estate_privilege = estate_clergy_enforced_one_faith }
+		NOT = { has_estate_privilege = estate_church_enforced_one_faith }
 	}
 	penalties = {
-		clergy_loyalty_modifier = -0.1
+		church_loyalty_modifier = -0.1
 	}
 	benefits = {
 		tolerance_heathen = 2
@@ -1033,6 +1060,28 @@ estate_merchants_monopoly_of_tropical_wood = {
 		remove_estate_privilege = estate_merchants_monopoly_of_tropical_wood
 	}
 	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}
+
+loe_estate_cant_seize_traders = {
+	icon = privilege_royal_authority
+	max_absolutism = -5
+	loyalty = 0.1
+	influence  = 0.1
+
+	is_valid = {
+		has_government_attribute = loe_cant_seize_traders
+	}
+	can_select = { always = no }
+
+	can_revoke = { NOT = { has_government_attribute = loe_cant_seize_traders } }
+
+	mechanics = {
+		exempt_from_seize_land
+	}
+
+	ai_will_do = {
 		factor = 0
 	}
 }

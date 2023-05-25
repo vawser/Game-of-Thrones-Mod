@@ -1,6 +1,6 @@
 has_any_estates = {
 	OR = {
-		has_estate = estate_clergy
+		has_estate = estate_church
 		has_estate = estate_merchants
 		has_estate = estate_nobles
 		has_estate = estate_commoners
@@ -27,7 +27,6 @@ has_clergy_trade_good_trigger = {
         trade_goods = tea
         trade_goods = coffee
         trade_goods = cotton
-        trade_goods = candles
 	}
 }
 
@@ -71,5 +70,20 @@ has_tribes_trade_good_trigger = {
 		trade_goods = copper
         trade_goods = iron
         trade_goods = slaves
+	}
+}
+
+dynasty_base_privileges_valid = {
+	# estate_privilege
+	OR = {
+		NOT = { has_estate_privilege = $estate_privilege$ }
+		dynasty_base_privileges_trigger = yes
+	}
+}
+
+dynasty_base_privileges_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = got_doa_active_privilege_tt
+		has_government_attribute = dynasty_base_privileges
 	}
 }

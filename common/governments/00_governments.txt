@@ -10,8 +10,7 @@ monarchy = {
         tier_monarchy_government_form = {
 			reforms = {
                 kingdom_reform
-                noble_house_reform
-                royal_house_reform
+				kingdom_of_westeros_reform
                 yiti_city_reform
                 yiti_empire_reform
                 qarth_city_reform
@@ -30,6 +29,8 @@ monarchy = {
 				got_enforce_privileges_reform
 				got_quash_noble_power_reform
 				got_enforce_trader_privileges_reform
+				got_maintain_nobles_status_quo_reform
+				got_grant_noble_castle_rights_reform
 				got_volantene_traders_reform
 				got_red_syncretism_reform
 				got_yitish_nobles_reform
@@ -41,6 +42,7 @@ monarchy = {
 		tier_monarchy_bureaucracy = {
 			reforms = {
 				got_centralize_reform
+				got_centralize_empire_reform
 				got_decentralize_reform
 				got_westerosi_recruitment
 				got_jade_signet_reform
@@ -83,19 +85,209 @@ monarchy = {
     
     legacy_government = {
         kingdom_legacy
-        noble_house_legacy
-        royal_house_legacy
-        yiti_city_legacy
-        yiti_empire_legacy
-        qarth_city_legacy
-        nefer_city_legacy
-        hyrkoon_city_legacy
-        valyria_city_legacy
-        meereen_city_legacy
-        yunkai_city_legacy
-        astapor_city_legacy
-        ghis_city_legacy
-        daenerys_host_legacy
+    }
+}
+
+loe_monarchy = {
+    basic_reform = monarchy_mechanic
+
+	color = { 237  152  18 }
+
+	reform_levels = {
+		loe_power_structure = {
+			reforms = {
+				#YiTi#
+				loe_azure_empire
+				#loe_orange_empire Will be added in republic #TBD
+				#loe_yellow_empire Will be added in occult #TBD
+				loe_empire_of_dawn
+				#loe_empire_of_dawn_orange Will be added in republic #TBD
+				loe_independent_yiti
+				loe_union_state
+				#Nefer#
+				loe_secret_city
+				loe_worlds_end
+			}
+		}
+		loe_noble_privileges = {
+			reforms = {
+				got_enforce_privileges_reform
+				got_quash_noble_power_reform
+				#YiTi#
+				loe_guaranteed_autonomy
+				loe_leased_nobility
+				loe_relations_with_empire
+				loe_foreign_nobles
+				#Nefer#
+				loe_landed_necromancers
+			}
+		}
+		loe_bureaucracy = {
+			reforms = {
+				#YiTi#
+				loe_sole_empire
+				loe_myriad_crowned_king
+				loe_frontier_of_empire
+				loe_ancient_bookkeepers
+				#Nefer#
+				loe_level_castes
+			}
+		}
+		loe_military_organisation = {
+			reforms = {
+				#YiTi#
+				#loe_foreign_tactics Implement later as general reform
+				loe_imperial_army
+				#Nefer#
+				loe_neferi_tunnelers
+			}
+		}
+		loe_administration_cadre = {
+			reforms = {
+				got_clergy_in_administration_reform
+				got_of_noble_bearing_reform
+				got_meritocratic_focus_reform
+				#YiTi#
+				loe_homogenous_court
+				#Nefer#
+				loe_fosters_of_truth
+			}
+		}
+		loe_deliberative_assembly = {
+			reforms = {
+				#YiTi#
+				loe_order_of_oracles
+				#Nefer#
+				loe_council_of_banished
+			}
+		}
+		loe_economic_policy = {
+			reforms = {
+				#YiTi#
+				loe_transcontinental_trade
+				loe_imperial_subsidies
+				loe_bureaucratic_economy
+				loe_show_of_wealth
+				#Nefer#
+				loe_necromantic_miners
+			}
+		}
+		loe_absolutism_constitutionalism = {
+			reforms = {
+				#YiTi#
+				loe_yitish_absolutism
+				#Nefer#
+				loe_systematic_degradation
+			}
+		}
+		loe_seperation_of_power = {
+			reforms = {
+				#YiTi#
+				loe_godking_of_yiti
+				#Nefer#
+				loe_blood_tax
+			}
+		}
+	}
+}
+
+dynasty = {
+	color = { 255 102 178 }
+	
+	basic_reform = dynasty_mechanic
+	
+	reform_levels = {
+		tier_dynasty_government_form = {
+			reforms = {
+				noble_house_reform
+				lord_of_the_tides_reform
+				great_house_reform
+				royal_house_reform
+			}
+		}
+		tier_dynasty_house_administration = {
+			reforms = {
+				got_renowned_name_reform
+				got_righteous_rulers_reform
+				got_natural_schemers_reform
+				got_blood_of_old_valyria_reform
+			}
+		}
+		tier_dynasty_laws_on_demesne = {
+			reforms = {
+				got_expand_administrative_arm_reform
+				got_maintain_status_quo_reform
+				got_decentralize_power_reform
+			}
+		}
+		tier_dynasty_diplomatic_strategy = {
+			reforms = {
+				got_reinforce_the_seven_kingdoms_reform
+				got_reaffirm_the_one_kingdom_reform
+				got_steady_as_she_goes_reform
+				got_expansionism_reform
+				got_maintain_strong_alliances_reform
+				got_strengthen_our_feudatories_reform
+			}
+		}
+		tier_dynasty_noble_rights = {
+			reforms = {
+				enforce_privileges_reform
+				grant_noble_castle_rights_reform
+				maintain_nobles_status_quo_reform
+				quash_noble_power_reform
+			}
+		}
+		tier_dynasty_military_composition = {
+			reforms = {
+				got_rely_on_levies_reform
+				got_standing_army_reform
+				got_naval_supremacy_reform
+			}
+		}
+		tier_dynasty_house_religion = {
+			reforms = {
+				got_slacken_clergy_authority_reform
+				secure_clergy_power_reform
+				got_preserve_the_priestdom_reform
+				got_strengthen_clergy_reform
+			}
+		}
+		tier_dynasty_merchantry_rules = {
+			reforms = {
+				got_curtail_the_trading_guilds_reform
+				got_empower_the_merchant_class_reform
+				got_introduce_regulatory_economics_reform
+				war_economy_reform
+				got_develop_the_pastures_reform
+				got_subsidize_the_goldmines
+			}
+		}
+		tier_dynasty_governing_cadre = {
+			reforms = {
+				got_strength_through_the_nobles_reform
+				got_strength_through_the_gods_reform
+				got_strength_through_the_merchants_reform
+				got_strength_through_the_people_reform
+				got_the_kings_peace_reform
+				#got_declare_autocratic_state_reform
+				#got_adopt_republican_ideals_reform
+
+			}
+		}
+		tier_dynasty_deliberative_assembly = {
+			reforms = {
+				got_rule_by_noble_decree_reform
+				got_rule_by_royal_decree_reform
+				got_council_of_lords_reform
+				got_empower_small_council_reform
+				got_invoke_an_elective_succession_reform
+			}
+		}
+	}
+
+	legacy_government = {
+        kingdom_legacy
     }
 }
 
@@ -110,7 +302,10 @@ republic = {
     reform_levels = {
         tier_republic_government_form = {
 			reforms = {
-                republic_reform
+				oligarchy_reform
+				anocracy_reform
+				royal_city_reform
+				valyrian_citystate_reform
                 merchant_republic_reform
                 trading_outpost_reform
                 tyrosh_city_reform
@@ -126,7 +321,13 @@ republic = {
                 expeditionary_company_reform
                 rhoynar_city_reform
                 nights_watch_reform
+				watchmen_outpost_reform
                 military_dictatorship_reform
+				republican_dictatorship_reform
+				castellany_of_dragonstone_reform
+
+				pirate_republic_reform
+				pirate_kingdom_reform
 			}
 		}
         tier_republic_republican_virtues = {
@@ -141,6 +342,8 @@ republic = {
 				got_frequent_elections_reform
 				got_consolidation_of_power_reform
 				got_lottery_reform
+				got_uphold_life_term_reform
+				got_introduce_term_limits_reform
 			}
 		}
 		tier_republic_regionalism = {
@@ -149,6 +352,8 @@ republic = {
 				got_administrative_divisions_reform
 				got_union_of_states_reform
 				got_penal_colonies_reform
+				got_watchmen_fortline_reform
+				got_expand_the_gift_reform
 			}
 		}
 		tier_republic_separation_of_power = {
@@ -197,24 +402,9 @@ republic = {
 
     legacy_government = {
         republic_legacy
-        merchant_republic_legacy
-        trading_outpost_legacy
-        tyrosh_city_legacy
-        myr_city_legacy
-        lys_city_legacy
-        volantis_city_legacy
-        pentos_city_legacy
-        braavos_city_legacy
-        lorath_city_legacy
-        qohor_city_legacy
-        norvos_city_legacy
-        saath_city_legacy
-        trader_city_legacy
-        andal_city_legacy
-        expeditionary_company_legacy
-        rhoynar_city_legacy
-        nights_watch_legacy
-        military_dictatorship_legacy
+
+		pirate_kingdom_legacy
+		pirate_republic_legacy
     }
 }
 
@@ -297,9 +487,6 @@ theocracy = {
     
     legacy_government = {
         theocracy_legacy
-        the_faith_legacy
-        qohor_city_legacy
-		norvos_city_legacy
     }
 }
 
@@ -359,17 +546,59 @@ tribal = {
     
     legacy_government = {
         tribe_legacy
-        wildling_clan_legacy
-        lhazar_clan_legacy
-        ibben_clan_legacy
-        omber_clan_legacy
-        faros_clan_legacy
-        naath_clan_legacy
-        summer_islander_clan_legacy
-        warband_legacy
-        khalasar_legacy
-        jhattar_legacy
     }
+}
+
+loe_tribal = {
+	basic_reform = tribal_mechanic
+	color = { 237  152  18 }
+	reform_levels = {
+		loe_tribal_administration = {
+			reforms = {
+				#Jogos#
+				loe_prathama
+				loe_sthaurin
+			}
+		}
+		loe_cultural_values = {
+			reforms = {
+				#Jogos#
+				loe_shared_ancenstry
+				loe_common_enemies
+			}
+		}
+		loe_tribal_religion = {
+			reforms = {
+				#Jogos#
+				loe_peace_among_us
+				loe_absolute_equality
+			}
+		}
+		loe_military_organisation = {
+			reforms = {
+				#Jogos#
+				loe_selective_breeding
+				loe_lessons_zhea
+			}
+		}
+		loe_modernisation = {
+			reforms = {
+				#Jogos#
+				loe_turn_to_sea
+				loe_spill_over_mountains
+				loe_adopt_the_woodlands
+			}
+		}
+		loe_tribal_reformation = {
+			reforms = {
+				got_become_a_monarchy_reform
+ 				got_become_a_republic_reform
+ 				got_become_a_theocracy_reform
+				#Jogos#
+				loe_perpetual_warfare
+			}
+		}
+	}
 }
 
 #--------------------------------------------
@@ -387,46 +616,46 @@ native = {
 #--------------------------------------------
 # Pirate
 #--------------------------------------------
-pirate = {
-    color = { 10 10 10 }
+# pirate = {
+#     color = { 10 10 10 }
     
-    basic_reform = pirate_mechanic
+#     # basic_reform = pirate_mechanic
     
-    reform_levels = {
-        tier_pirate_government_form = {
-			reforms = {
-                pirate_kingdom_reform
-                pirate_republic_reform
-			}
-		}
-        tier_pirate_governance = {
-			reforms = {
-				got_council_of_captains_reform
-                got_articles_of_agreement_reform
-                got_smugglers_haven_reform
-			}
-		}
-		tier_pirate_principles = {
-			reforms = {
-				got_war_against_the_world_doctrine_reform
-				got_black_market_consortium_reform
-			}
-		}
-		tier_pirate_reformation = {
-			reforms = {
-                got_strengthen_pirate_unity
-				got_become_a_monarchy_reform
-				got_become_a_republic_reform
-				got_become_a_theocracy_reform
-			}
-		}
-    }
+#     reform_levels = {
+#         tier_pirate_government_form = {
+# 			reforms = {
+#                 pirate_kingdom_reform
+#                 pirate_republic_reform
+# 			}
+# 		}
+#         tier_pirate_governance = {
+# 			reforms = {
+# 				got_council_of_captains_reform
+#                 got_articles_of_agreement_reform
+#                 got_smugglers_haven_reform
+# 			}
+# 		}
+# 		tier_pirate_principles = {
+# 			reforms = {
+# 				got_war_against_the_world_doctrine_reform
+# 				got_black_market_consortium_reform
+# 			}
+# 		}
+# 		tier_pirate_reformation = {
+# 			reforms = {
+#                 got_strengthen_pirate_unity
+# 				got_become_a_monarchy_reform
+# 				got_become_a_republic_reform
+# 				got_become_a_theocracy_reform
+# 			}
+# 		}
+#     }
     
-    legacy_government = {
-        pirate_kingdom_legacy
-        pirate_republic_legacy
-    }
-}
+#     legacy_government = {
+#         pirate_kingdom_legacy
+#         pirate_republic_legacy
+#     }
+# }
 
 #--------------------------------------------
 # Occult

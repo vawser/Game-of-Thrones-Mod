@@ -14,7 +14,7 @@ country_event = {
 	
 	trigger = {
 		always = no
-		A02 = {
+		NGT = {
 			exists = yes
 			has_opinion = {
 				who = ROOT
@@ -22,7 +22,7 @@ country_event = {
 			}
 		}
 		has_opinion = {
-			who = A02
+			who = NGT
 			value = 0
 		}
 		capital_scope = {
@@ -35,7 +35,7 @@ country_event = {
 		
 		add_manpower = -1
 		
-		A02 = { 
+		NGT = { 
 			add_opinion = { 
 				who = ROOT modifier = helped_the_nights_watch 
 			} 
@@ -49,7 +49,7 @@ country_event = {
 	option = {
 		name = "GOT_NIGHTS_WATCH.1.option.b"
 		
-		A02 = { 
+		NGT = { 
 			add_opinion = { 
 				who = ROOT modifier = refused_the_nights_watch 
 			} 

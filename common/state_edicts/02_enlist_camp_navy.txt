@@ -1,0 +1,53 @@
+edict_naval_enlistment_campaign = {
+	potential = {
+		if = { # Only available with 'Expand the Administrative Arm' gov't reform
+			limit = {
+				is_westerosi_government = yes
+			}
+			has_government_attribute = unlock_more_state_edicts
+		}
+		FROM = {
+			any_province_in_state = {
+				has_port = yes
+			}
+		}
+	}
+	
+	allow = {
+		if = { # Be at War
+			limit = {
+				is_at_war = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = AT_WAR_TRIGGER
+				is_at_war = yes
+			}
+		}
+	}
+	
+	modifier = {
+		local_sailors_modifier = 0.25
+		ship_recruit_speed = -0.10
+	}
+	
+	color = { 39 81 145 }
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			owner = {
+				sailors_percentage = 0.4
+			}
+		}
+		modifier = {
+			factor = 3
+			all_province_in_state = {
+				development = 6
+			}
+			any_province_in_state = {
+				development = 12
+			}
+		}
+	}
+}

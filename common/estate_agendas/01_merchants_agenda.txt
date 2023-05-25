@@ -908,7 +908,6 @@ estate_merchants_build_manufactory_in_y = {
 							trade_goods = spices
 							trade_goods = silk
 							trade_goods = dyes
-                            trade_goods = candles
                             trade_goods = salt
 						}
 					}
@@ -2512,7 +2511,7 @@ estate_merchants_trade_post_in_west_essos = {
 	can_select = {
 		is_at_war = no
 		capital_scope = {
-			superregion = westeros_superregion
+			continent = westeros
 		}
 		num_of_ports = 6
 		NOT = {
@@ -2614,7 +2613,7 @@ estate_merchants_trade_post_in_central_essos = {
 		is_at_war = no
 		capital_scope = {
 			OR = {
-                superregion = westeros_superregion
+                continent = westeros
                 superregion = west_essos_superregion
             }
 		}
@@ -2718,7 +2717,7 @@ estate_merchants_trade_post_in_far_essos = {
 		is_at_war = no
 		capital_scope = {
 			OR = {
-                superregion = westeros_superregion
+                continent = westeros
                 superregion = west_essos_superregion
                 superregion = central_essos_superregion
             }
@@ -2823,7 +2822,7 @@ estate_merchants_silk_trade = {
 		is_at_war = no
 		any_owned_province = {
 			OR = {
-                superregion = westeros_superregion
+                continent = westeros
                 superregion = west_essos_superregion
                 superregion = central_essos_superregion
                 superregion = far_essos_superregion
@@ -2888,7 +2887,7 @@ estate_merchants_spice_trade = {
 		is_at_war = no
 		any_owned_province = {
 			OR = {
-                superregion = westeros_superregion
+                continent = westeros
                 superregion = west_essos_superregion
                 superregion = central_essos_superregion
                 superregion = far_essos_superregion
@@ -2953,7 +2952,7 @@ estate_merchants_tea_trade = {
 		is_at_war = no
 		any_owned_province = {
 			OR = {
-                superregion = westeros_superregion
+                continent = westeros
                 superregion = west_essos_superregion
                 superregion = central_essos_superregion
                 superregion = far_essos_superregion

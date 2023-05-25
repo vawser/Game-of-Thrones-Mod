@@ -1,0 +1,90 @@
+﻿l_english:
+ # Diplomatic Action Tooltips
+ CANT_FIGHT_NIGHTS_WATCH: "§Y[NGT.GetName]§! protects Westeros from the Wildlings and the White Walkers, so we cannot fight them."
+ # Weights
+ AIWEIGHT_BASE: "Base Value"
+ AIWEIGHT_PRESTIGE: "Prestige"
+ AIWEIGHT_OPINION: "Opinion of Us"
+ AIWEIGHT_POWERF: "Offering powerful position"
+ AIWEIGHT_POWERL: "Offering powerless position"
+ AIWEIGHT_EXPECTS: "Expects council seat"
+ OPINIONOVERLORD: "Opinion of overlord"
+ TRUSTOVERLORD: "Trust of overlord"
+ LOYAL: "Loyal attitude towards overlord"
+ DISLOYAL: "Disloyal attitude towards overlord"
+ LIBERTYDESIRE: "Current liberty desire"
+
+ # Alliance Actions
+ call_feudatories_into_wars: "Call Feudatories to War"
+ call_feudatories_into_wars_title: "Call Feudatories to War"
+ call_feudatories_into_wars_desc: "As demanded by the oaths taken by our feudal subjects, §YFeudatories§! are expected to accept any call to arms by us. Due to their oath, [From.Monarch.GetTitle] [From.Monarch.GetName] [From.Monarch.Dynasty.GetName] will join us in our wars, both offensive and defensive.\n\nTheir §YLiberty Desire§! will increase by §R10.0%§! and their opinion of us will be temporarily reduced by §R25§!."
+ call_feudatories_into_wars_tooltip: "Call [From.Monarch.GetTitle] [From.Monarch.GetName] to our wars."
+
+ # Influence Actions
+ assign_overlordship: "Assign Overlordship"
+ assign_overlordship_title: "Assign Overlordship"
+ assign_overlordship_desc: "§YHouse [From.Monarch.Dynasty.GetName]§! will be elevated to §YGreat House§! status, in the process demoting their overlord, §YHouse [From.Overlord.Monarch.Dynasty.GetName]§!, and forcing them into the subjugation of [From.Monarch.GetTitle] [From.Monarch.GetName]. All §YFeudatory§! subjects of House [From.Overlord.Monarch.Dynasty.GetName] will transfer over to [From.Monarch.GetTitle] [From.Monarch.GetName] (@[From.GetTag] House [From.GetName]).\n\nThis move will greatly upset House [From.Overlord.Monarch.Dynasty.GetName] and there may be a period of instability in the region until [From.Monarch.GetTitle] [From.Monarch.GetName] can subdue his new subjects."
+ assign_overlordship_tooltip: "Elevate House [From.Monarch.Dynasty.GetName] to Great House."
+ assign_overlordship_alert_tooltip: "Elevate House [From.Monarch.Dynasty.GetName] to Great House."
+
+ # Dynasty Actions
+ gift_domain: "Gift Domain"
+ gift_domain_title: "Gift Domain"
+ gift_domain_desc: "We will grant our old seat in [From.Capital.GetName] to a relative. This will allow us to focus entirely on governing the Seven Kingdoms from our new seat in [Root.Capital.GetName] and we won't have to worry about the administrative problems from [From.Capital.GetName] any longer."
+ gift_domain_tooltip: "Gift [From.Capital.GetName] to a house member."
+ gift_domain_alert_tooltip: "Gift [From.Capital.GetName] to a house member."
+ 
+ # Emperor Actions
+ remove_from_the_council: "Remove from the Council"
+ remove_from_the_council_title: "Remove from the Council"
+ remove_from_the_council_desc: "§Y[From.Monarch.GetTitle] [From.Monarch.GetName]§! will be removed from his position as [From.GetCurrentCouncilTitle]."
+ remove_from_the_council_tooltip: "Remove [From.Monarch.GetName] from the Small Council."
+ remove_from_the_council_alert_tooltip: "Remove [From.Monarch.GetName] from the Small Council."
+
+ appoint_hand_of_the_king: "Appoint Hand of the King"
+ appoint_hand_of_the_king_title: "Appoint Hand of the King"
+ appoint_hand_of_the_king_desc: "§Y[From.Monarch.GetTitle] [From.Monarch.GetName]§! of §YHouse [From.Monarch.Dynasty.GetName]§! will be granted a seat on the Small Council, serving as the Hand of the King. If there is currently a noble serving in this role, they will be removed from office."
+ appoint_hand_of_the_king_tooltip: "Appoint [From.Monarch.GetName] the Hand of the King."
+ appoint_hand_of_the_king_alert_tooltip: "Appoint [From.Monarch.GetName] the Hand of the King."
+
+ appoint_master_of_coin: "Appoint Mst. of Coin"
+ appoint_master_of_coin_title: "Appoint Mst. of Coin"
+ appoint_master_of_coin_desc: "§Y[From.Monarch.GetTitle] [From.Monarch.GetName]§! of §YHouse [From.Monarch.Dynasty.GetName]§! will be granted a seat on the Small Council, serving as the Master of Coin. If there is currently a noble serving in this role, they will be removed from office."
+ appoint_master_of_coin_tooltip: "Appoint [From.Monarch.GetName] the Master of Coin."
+ appoint_master_of_coin_alert_tooltip: "Appoint [From.Monarch.GetName] the Master of Coin."
+
+ appoint_master_of_laws: "Appoint Mst. of Laws"
+ appoint_master_of_laws_title: "Appoint Mst. of Laws"
+ appoint_master_of_laws_desc: "§Y[From.Monarch.GetTitle] [From.Monarch.GetName]§! of §YHouse [From.Monarch.Dynasty.GetName]§! will be granted a seat on the Small Council, serving as the Master of Laws.  If there is currently a noble serving in this role, they will be removed from office."
+ appoint_master_of_laws_tooltip: "Appoint [From.Monarch.GetName] the Master of Laws."
+ appoint_master_of_laws_alert_tooltip: "Appoint [From.Monarch.GetName] the Master of Laws."
+
+ appoint_master_of_ships: "Appoint Mst. of Ships"
+ appoint_master_of_ships_title: "Appoint Mst. of Ships"
+ appoint_master_of_ships_desc: "§Y[From.Monarch.GetTitle] [From.Monarch.GetName]§! of §YHouse [From.Monarch.Dynasty.GetName]§! will be granted a seat on the Small Council, serving as the Master of Ships.  If there is currently a noble serving in this role, they will be removed from office."
+ appoint_master_of_ships_tooltip: "Appoint [From.Monarch.GetName] the Master of Ships."
+ appoint_master_of_ships_alert_tooltip: "Appoint [From.Monarch.GetName] the Master of Ships."
+
+ appoint_master_of_whisperers: "Appoint Mst. of Whisperers"
+ appoint_master_of_whisperers_title: "Appoint Mst. of Whisperers"
+ appoint_master_of_whisperers_desc: "§Y[From.Monarch.GetTitle] [From.Monarch.GetName]§! of §YHouse [From.Monarch.Dynasty.GetName]§! will be granted a seat on the Small Council, serving as the Master of Whisperers.  If there is currently a noble serving in this role, they will be removed from office."
+ appoint_master_of_whisperers_tooltip: "Appoint [From.Monarch.GetName] the Master of Whisperers."
+ appoint_master_of_whisperers_alert_tooltip: "Appoint [From.Monarch.GetName] the Master of Whisperers."
+
+ # Actions
+ establish_cult: "Establish Cult"
+ establish_cult_title: "Establish Cult"
+ establish_cult_desc: "Establish a cult in §Y[From.GetName]§!, changing one of their provinces to §Y[Root.Religion.GetName]§!." 
+ establish_cult_tooltip: "Establish a cult in §Y[From.GetName]§!, changing one of their provinces to §Y[Root.Religion.GetName]§!." 
+ establish_cult_alert_tooltip: "Establish Cult"
+ 
+ assassinate_leader: "Assassinate Ruler"
+ assassinate_leader_title: "Assassinate Ruler"
+ assassinate_leader_desc: "Attempt to assassinate [From.Monarch.GetName], the [From.Monarch.GetTitle] of §Y[From.GetName]§!.\n\nIf discovered, [From.GetName] will gain the §YAssassination§! opinion modifier against you." 
+ assassinate_leader_tooltip: "Attempt to assassinate [From.Monarch.GetName], the [From.Monarch.GetTitle] of §Y[From.GetName]§!.\n\nIf discovered, [From.GetName] will gain the §YAssassination§! opinion modifier against you." 
+ assassinate_leader_alert_tooltip: "Assassinate Ruler"
+ 
+ PRINCE_OF_DRAGONSTONE_TT: "Our heir is the §YPrince of Dragonstone§!."
+ WHITE_WALKER_BLOCKED_ACTION_TT: "White Walkers do not conduct diplomacy."
+ ALREADY_SENT_ASSASSIN_TT: "No assassination plot on going against [Root.GetName]."
+ HIGH_RELATIONS_ACCESS_TT: "[From.GetName] must have an opinion of [Root.GetName] of 150 or higher."

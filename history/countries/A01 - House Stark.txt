@@ -5,14 +5,19 @@ technology_group = westerosi
 primary_culture = men_of_the_north
 religion = old_gods
 government_rank = 2
-government = monarchy
-add_government_reform = noble_house_reform
+government = dynasty
+add_government_reform = great_house_reform
 capital = 47
 fixed_capital = 47
 
 #-------------------------------
 # Diplomacy
 #-------------------------------
+2.1.1 = {
+	elector = yes
+	override_country_name = THENORTH
+	save_global_event_target_as = TheNorthGreatHouse
+}
 
 #-------------------------------
 # Rulers
@@ -53,95 +58,147 @@ fixed_capital = 47
 	}
 }
 
-# The Dance of Dragons
-129.1.1 = {
+# Lord Cregan Stark
+121.2.3 = {
 	monarch = {
 		name = "Cregan"
 		dynasty = "Stark"
 		adm = 4
 		dip = 3
-		mil = 4
-		birth_date = 108.1.1
+		mil = 6
+		birth_date = 108.3.5
 	}
-    
+}
+
+128.2.23 = {
 	heir = {
 		name = "Rickon"
 		monarch_name = "Rickon"
 		dynasty = "Stark"
 		birth_date = 128.1.1
-		death_date = 150.1.1
+		death_date = 157.12.29
 		claim = 100
-		adm = 4
-		dip = 5
-		mil = 6
+		adm = 3
+		dip = 2
+		mil = 4
 	}
 }
 
-# Blackfyre Rebellion
-195.1.1 = {
-	monarch = {
-		name = "Jonnel 'One-Eye'"
+157.12.29 = {
+	heir = {
+		name = "Jonnel"
+		monarch_name = "Jonnel I"
 		dynasty = "Stark"
-		adm = 4
+		birth_date = 150.4.17
+		death_date = 173.1.3
+		claim = 100
+		adm = 2
+		dip = 4
+		mil = 3
+	}
+}
+
+# Lord Jonnel Stark
+173.2.12 = {
+	monarch = {
+		name = "Jonnel I"
+		dynasty = "Stark"
+		adm = 2
+		dip = 4
+		mil = 3
+		birth_date = 150.4.17
+	}
+
+	heir = {
+		name = "Edric"
+		monarch_name = "Edric I"
+		dynasty = "Stark"
+		birth_date = 151.3.26
+		death_date = 178.5.3
+		claim = 100
+		adm = 3
+		dip = 1
+		mil = 4
+	}
+}
+
+178.5.3 = {
+	heir = {
+		name = "Barthogan"
+		monarch_name = "Barthogan I"
+		dynasty = "Stark"
+		birth_date = 158.4.2
+		death_date = 184.2.3
+		claim = 100
+		adm = 0
 		dip = 2
-		mil = 5
-		birth_date = 145.1.1
+		mil = 4
+	}
+}
+
+# Lord Barthogan Stark
+184.2.3 = {
+	monarch = {
+		name = "Barthogan I"
+		dynasty = "Stark"
+		adm = 0
+		dip = 2
+		mil = 4
+		birth_date = 158.4.2
+	}
+
+	heir = {
+		name = "Brandon"
+		monarch_name = "Brandon III"
+		dynasty = "Stark"
+		birth_date = 160.1.1
+		death_date = 195.6.1
+		claim = 100
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+
+# Lord Brandon Stark
+195.6.1 = {
+	monarch = {
+		name = "Brandon III"
+		dynasty = "Stark"
+		adm = 3
+		dip = 2
+		mil = 3
+		birth_date = 160.1.1
+	}
+}
+
+# Lord Rickard Stark of Winterfell
+262.7.9 = {
+	monarch = {
+		name = "Rickard"
+		dynasty = "Stark"
+		adm = 2
+		dip = 5
+		mil = 4
+		birth_date = 237.1.1
 	}
 	
     queen = {
-        country_of_origin = A01
-        name = "Sansa"
+        name = "Lyarra"
         dynasty = "Stark" 
-        birth_date = 152.1.1
-        death_date = 250.1.1
+        birth_date = 239.3.4
+		death_date = 282.2.27
         adm = 2
         dip = 3
-        mil = 0
+        mil = 2
         female = yes
     }
     
 	heir = {
-		name = "Barthogand"
-		monarch_name = "Barthogand Blacksword"
+		name = "Brandon"
 		dynasty = "Stark"
-		birth_date = 158.1.1
-		death_date = 250.1.1
-		claim = 100
-		adm = 1
-		dip = 3
-		mil = 6
-	}
-}
-
-# Robert's Rebellion
-282.1.1 = {
-	monarch = {
-		name = "Eddard"
-		dynasty = "Stark"
-		adm = 4
-		dip = 4
-		mil = 5
-		birth_date = 263.1.1
-	}
-	
-    queen = {
-        name = "Catelyn"
-        dynasty = "Tully" 
-        birth_date = 264.1.1
-        death_date = 350.1.1
-        adm = 4
-        dip = 4
-        mil = 1
-        female = yes
-		country_of_origin = A03
-    }
-    
-	heir = {
-		name = "Benjen"
-		monarch_name = "Benjen"
-		dynasty = "Stark"
-		birth_date = 267.1.1
-		death_date = 350.1.1
+		birth_date = 262.3.7
+		death_date = 282.2.27
 		claim = 100
 		adm = 3
 		dip = 3
@@ -149,8 +206,43 @@ fixed_capital = 47
 	}
 }
 
-# A Clash of Kings
-299.1.1 = {
+# Lord Eddard Stark of Winterfell (fixed)
+282.2.27 = {
+	monarch = {
+		name = "Eddard"
+		dynasty = "Stark"
+		adm = 5
+		dip = 6
+		mil = 4
+		birth_date = 263.1.7
+	}
+	
+    queen = {
+        name = "Catelyn"
+        dynasty = "Tully" 
+        birth_date = 265.4.15
+		death_date = 299.5.17
+        adm = 2
+        dip = 3
+        mil = 2
+        female = yes
+    }
+    
+	heir = {
+		name = "Robb"
+		monarch_name = "Robb 'the Young Wolf'"
+		dynasty = "Stark"
+		birth_date = 267.1.1
+		death_date = 299.5.17
+		claim = 100
+		adm = 2
+		dip = 3
+		mil = 6
+	}
+}
+
+# Lord Robb Stark of Winterfell (fixed)
+299.5.17 = {
 	monarch = {
 		name = "Robb 'the Young Wolf'"
 		dynasty = "Stark"
@@ -159,30 +251,30 @@ fixed_capital = 47
 		mil = 6
 		birth_date = 283.1.1
 	}
-	
-    queen = {
-        country_of_origin = M15
-        name = "Roslin"
-        dynasty = "Frey" 
-        birth_date = 283.1.1
-        death_date = 350.1.1
-        adm = 1
-        dip = 2
-        mil = 0
-        female = yes
-    }
-    
 	heir = {
 		name = "Brandon"
-		monarch_name = "Brandon"
+		monarch_name = "Brandon II"
 		dynasty = "Stark"
-		birth_date = 291.1.1
-		death_date = 350.1.1
+		birth_date = 200.1.1
+		death_date = 299.9.27
 		claim = 100
 		adm = 4
 		dip = 5
 		mil = 2
 	}
+}
+
+299.7.28 = {
+	 queen = {
+        name = "Jeyne"
+        dynasty = "Westerling" 
+        birth_date = 283.5.2
+        death_date = 299.9.27
+        adm = 3
+        dip = 4
+        mil = 1
+        female = yes
+    }
 }
 
 # The Night King

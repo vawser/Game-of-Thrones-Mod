@@ -1,0 +1,61 @@
+# Seize the Iron Throne
+po_seize_the_iron_throne = {
+	category = 6
+	power_projection = humiliated_rival
+	power_cost_base = 1.0
+	prestige_base = 0.5
+	ae_base = 0.0
+	requires_is_allowed = yes
+	
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 100.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	
+	is_visible = {
+		always = yes
+	}
+	is_allowed = {
+		always = yes
+	}
+	effect = {
+		ROOT = { save_event_target_as = originalCOU  }
+		switch_tag_with_ruler = {
+			ruler_string = King_of_Andals
+			consort_string = Queen_of_Andals
+			heir_string = Heir_of_Andals
+			new_tag = FROM
+		}
+		save_global_event_target_as = IronThroneKing
+		FROM = {
+			create_union = event_target:originalCOU
+			add_country_modifier = {
+				name = "got_administrative_burdens"
+				duration = 18250
+			}
+		}
+		every_country = {
+			limit = {
+				is_part_of_hre = yes
+				NOT = { tag = ROOT }
+			}
+			add_aggressive_expansion = {
+				who = FROM
+				value = 50
+				apply_calc = no
+			}
+		}
+	}
+	ai_weight = {
+		export_to_variable = {
+			variable_name = ai_value
+			value = 100
+		}
+	}
+}

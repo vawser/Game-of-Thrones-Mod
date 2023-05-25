@@ -1,7 +1,7 @@
 
 government_rank = 1
 
-government = monarchy
+government = dynasty
 add_government_reform = noble_house_reform
 
 
@@ -93,6 +93,12 @@ capital = 345
         mil = 3
         birth_date = 233.1.1
     }
+    save_global_event_target_as = et_masterofwhisperers
+	set_global_flag = masterofwhisperers_active
+	add_country_modifier = {
+		name = got_master_of_whisperers
+		duration = -1
+	}
 }
 
 # Robert's Rebellion

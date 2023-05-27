@@ -134,25 +134,37 @@ superiority_lordly_feud = {
 		badboy_factor = 1
 		prestige_factor = 1.5
 		peace_cost_factor = 0.75
+
+		allowed_provinces = { is_core = ROOT }
+		allowed_provinces_are_eligible = yes
 	
 		peace_options = {
+			po_demand_provinces
 			po_gold
 			po_concede_defeat
 			po_revoke_cores
 			po_trade_power
 		}
+
+		prov_desc = ALL_CORES
 	}
 	defender = {
 		badboy_factor = 1
 		prestige_factor = 2
 		peace_cost_factor = 1.0
+		
+		allowed_provinces = { is_core = FROM }
+		allowed_provinces_are_eligible = yes
         
         peace_options = {
+			po_demand_provinces
 			po_gold
 			po_concede_defeat
 			po_revoke_cores
 			po_trade_power
 		}
+
+		prov_desc = ALL_CORES
 	}
 	
 	war_name = LORDLY_FEUD_NAME

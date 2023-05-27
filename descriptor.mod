@@ -1,4 +1,4 @@
-name="Game of Thrones"
+name="Westeros Universalis: A Game of Thrones"
 replace_path="common/advisortypes"
 replace_path="common/ages"
 replace_path="common/ai_army"
@@ -106,7 +106,7 @@ replace_path="missions"
 tags={
 	"Alternative History"
 }
-picture="image.jpg"
+picture="thumbnail.png"
 version="1.0"
 supported_version="1.35.*.*"
 remote_file_id="276456014"

@@ -1,0 +1,225 @@
+world_trade = {
+	bonus = {
+		global_trade_power = 0.125
+	}
+
+	trade_company_efficiency = 0.1
+
+	historical_start_date = 250.1.1
+	historical_start_province = 470
+	
+	history = {
+		OR = {
+			AND = {
+				is_year = 255
+				superregion = west_essos_superregion
+				NOT = { owner = { technology_group = dothraki } }
+			}
+			AND = {
+				is_year = 270
+				OR = {
+					superregion = southern_westeros_superregion
+					superregion = central_essos_superregion
+				}
+				NOT = { owner = { technology_group = dothraki } }
+			}
+			AND = {
+				is_year = 285
+				OR = {
+					superregion = northern_westeros_superregion
+					superregion = far_essos_superregion
+				}
+				NOT = { owner = { technology_group = wildling } }
+			}
+			AND = {
+				is_year = 300
+				NOT = { owner = { technology_group = wildling } }
+			}
+		}
+	}
+
+	can_start = {
+		is_year = 250
+		is_institution_enabled = high_engineering
+		superregion = west_essos_superregion
+		is_island = no
+		OR = {
+			province_has_center_of_trade_of_level = 3
+			province_has_center_of_trade_of_level = 2
+			is_capital = yes
+			AND = {
+				is_year = 275 #fallback
+				province_has_center_of_trade_of_level = 1
+			}
+		}
+	}
+
+	start_chance = 5
+	on_start = mastery_events.2
+	
+	can_embrace = {
+		if = {
+			limit = {
+				owner = { has_reform = wildling_clan_reform } 
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_wildling_clan_block"
+				NOT = { owner = { has_country_flag = feudal_structure_block } }
+			}
+		}
+	}
+	
+	embracement_speed = {
+		modifier = {
+			factor = 2
+			scale = yes
+			potential = {
+				owner = { has_institution = world_trade }
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_embraced_world_trade"
+				owner = { has_institution = world_trade }
+			}
+		}
+		modifier = {
+			factor = 0.6
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = "tt_friendly_border_world_trade"
+				any_friendly_coast_border_province = {
+					world_trade = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.3
+			scale = yes
+			potential = {
+				NOT = {
+					any_friendly_coast_border_province = {
+						has_port = yes
+						world_trade = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_neighbor_embraced_world_trade"
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+					world_trade = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			scale = yes
+			potential = {
+				NOT = {
+					any_friendly_coast_border_province = {
+						has_port = no
+						world_trade = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_neighbor_port_embraced_world_trade"
+				has_port = yes
+				any_neighbor_province = {
+					world_trade = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.4
+			scale = yes
+			potential = {
+				province_has_center_of_trade_of_level = 1
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tooltip_center_of_trade_3_spread"
+				province_has_center_of_trade_of_level = 3
+			}
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
+			potential = {
+				province_has_center_of_trade_of_level = 1
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tooltip_center_of_trade_spread"
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		modifier = {
+			factor = 0.4 #Not scaled
+			province_trade_power = 15
+		}
+		modifier = {
+			factor = 0.8 #Not Scaled
+			province_trade_power = 30
+		}
+		modifier = {
+			factor = 1.2 #Not Scaled
+			province_trade_power = 40
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
+			potential = {
+				is_year = 300
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_natural_progression_world_trade"
+				is_year = 300
+				development = 5
+			}
+		}
+		modifier = {
+			factor = 5
+			scale = yes
+			potential = {
+				owner = {
+					is_colonial_nation = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_colonial_overlord_world_trade"
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					is_colonial_nation = yes
+					overlord = { has_institution = world_trade }
+				}
+			}
+		}
+	}
+	
+	ai_will_do = {
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+

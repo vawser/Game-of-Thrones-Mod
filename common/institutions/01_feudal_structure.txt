@@ -1,0 +1,159 @@
+feudal_structure = {
+
+	bonus = {
+		free_leader_pool = 1
+	}
+
+	trade_company_efficiency = 0.2
+
+
+	history = {
+		is_year = 0
+		OR = {
+			AND = { #If this is changed costs for Nation Designer may also need to be changed.
+				OR = {
+					continent = westeros
+					continent = essos
+				}
+				owner = {
+					is_playing_custom_nation = yes
+					OR = {
+						technology_group = westerosi
+						technology_group = essosian
+						technology_group = yiti
+					}
+				}
+			}
+			AND = {
+				owner = { is_playing_custom_nation = no }
+				OR = {
+					culture = mountain_men
+					culture = crannogmen
+					culture = skagosi
+					culture_group = culture_andal
+					culture_group = culture_rhoynar
+				}
+			}
+			AND = {
+				superregion = central_essos_superregion
+				owner = { NOT = { has_reform = khalasar_reform } }
+			}
+			owner = {
+				AND = {
+					NOT = { government = tribal }
+					NOT = { government = native }
+					NOT = { technology_group = wildling }
+					NOT = { technology_group = summer_islanders }
+				}
+			}
+			AND = {
+				is_year = 300
+				NOT = { owner = { technology_group = wildling } }
+			}
+		}
+	}
+	
+	# no need for events, as its there from the start.
+	#can_start = {	is_year = 0	}
+	#start_chance = 100
+	#on_start = mastery_events.1
+
+	can_embrace = {
+		if = {
+			limit = {
+				owner = { has_reform = wildling_clan_reform } 
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_wildling_clan_block"
+				NOT = { owner = { has_country_flag = feudal_structure_block } }
+			}
+		}
+	}
+
+	embracement_speed = {
+		modifier = {
+			factor = 2
+			scale = yes
+			potential = {
+				owner = { has_institution = feudal_structure }
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_embraced_feudal_structure"
+				owner = { has_institution = feudal_structure }
+			}
+		}
+		modifier = {
+			factor = 0.6
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = "tt_friendly_border_feudal_structure"
+				any_friendly_coast_border_province = {
+					feudal_structure = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.15
+			scale = yes
+			potential = {
+				NOT = {
+					any_friendly_coast_border_province = {
+						feudal_structure = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_neighbor_embraced_feudal_structure"
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+					feudal_structure = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			scale = yes
+			potential = {
+				owner = {
+					is_colonial_nation = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_colonial_overlord_feudal_structure"
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					is_colonial_nation = yes
+					overlord = { has_institution = feudal_structure }
+				}
+			}
+		}
+	}
+	
+	ai_will_do = { #Cost of embracing institution must be lower than this factor * last month's regular income, and higher if loans are needed. (Or it has a more than long term goal...)
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}

@@ -1,0 +1,551 @@
+namespace = mastery_events
+
+########################################
+# Feudal Structure
+########################################
+# no event needed, available from the start
+
+########################################
+# Crop Rotation
+########################################
+# no event needed, available from the start
+
+#######################################
+# High Engineering
+#######################################
+country_event = {
+	id = mastery_events.1
+	title = "mastery_events.1.title"
+	desc = "mastery_events.1.desc"
+	picture = INVENTION_eventPicture
+	
+	is_triggered_only = yes
+
+	goto = institution_origin
+	
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
+	}
+
+	option = {
+		name = "mastery_events.1.option.a"
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = "mastery_events.1.tt"
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_high_engineering"
+				duration = -1
+				hidden = yes
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = mastery_events.11 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+					is_primitive = no
+				}
+				country_event = { id = mastery_events.12 }
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = mastery_events.11
+	title = "mastery_events.1.title"
+	desc = "mastery_events.11.desc"
+	picture = INVENTION_eventPicture
+
+	goto = institution_origin
+	
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "mastery_events.1.option.a"
+		custom_tooltip = "mastery_events.1.tt"
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = mastery_events.12
+	title = "mastery_events.1.title"
+	desc = "mastery_events.12.desc"
+	picture = INVENTION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = no			#
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "mastery_events.1.option.a"
+		custom_tooltip = "mastery_events.1.tt"
+	}
+}
+
+#######################################
+# World Trade
+#######################################
+country_event = {
+	id = mastery_events.2
+	title = "mastery_events.2.title"
+	desc = "mastery_events.2.desc"
+	picture = INVENTION_eventPicture
+	
+	is_triggered_only = yes
+
+	goto = institution_origin
+	
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
+	}
+
+	option = {
+		name = "mastery_events.2.option.a"
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = "mastery_events.2.tt"
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_world_trade"
+				duration = -1
+				hidden = yes
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = mastery_events.21 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+					is_primitive = no
+				}
+				country_event = { id = mastery_events.22 }
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = mastery_events.21
+	title = "mastery_events.2.title"
+	desc = "mastery_events.21.desc"
+	picture = INVENTION_eventPicture
+
+	goto = institution_origin
+	
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "mastery_events.2.option.a"
+		custom_tooltip = "mastery_events.2.tt"
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = mastery_events.22
+	title = "mastery_events.2.title"
+	desc = "mastery_events.22.desc"
+	picture = INVENTION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "mastery_events.2.option.a"
+		custom_tooltip = "mastery_events.2.tt"
+	}
+}
+
+#######################################
+# Manufacturing
+#######################################
+country_event = {
+	id = mastery_events.3
+	title = "mastery_events.3.title"
+	desc = "mastery_events.3.desc"
+	picture = INVENTION_eventPicture
+	
+	is_triggered_only = yes
+
+	goto = institution_origin
+	
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
+	}
+
+	option = {
+		name = "mastery_events.3.option.a"
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = "mastery_events.3.tt"
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_manufacturing"
+				duration = -1
+				hidden = yes
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = mastery_events.31 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+					is_primitive = no
+				}
+				country_event = { id = mastery_events.32 }
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = mastery_events.31
+	title = "mastery_events.2.title"
+	desc = "mastery_events.31.desc"
+	picture = INVENTION_eventPicture
+
+	goto = institution_origin
+	
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "mastery_events.3.option.a"
+		custom_tooltip = "mastery_events.3.tt"
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = mastery_events.32
+	title = "mastery_events.2.title"
+	desc = "mastery_events.32.desc"
+	picture = INVENTION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "mastery_events.3.option.a"
+		custom_tooltip = "mastery_events.3.tt"
+	}
+}
+
+#######################################
+# Printing Press
+#######################################
+country_event = {
+	id = mastery_events.4
+	title = "mastery_events.4.title"
+	desc = "mastery_events.4.desc"
+	picture = INVENTION_eventPicture
+	
+	is_triggered_only = yes
+
+	goto = institution_origin
+	
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
+	}
+
+	option = {
+		name = "mastery_events.4.option.a"
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = "mastery_events.4.tt"
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_the_printing_press"
+				duration = -1
+				hidden = yes
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = mastery_events.41 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+					is_primitive = no
+				}
+				country_event = { id = mastery_events.42 }
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = mastery_events.41
+	title = "mastery_events.2.title"
+	desc = "mastery_events.41.desc"
+	picture = INVENTION_eventPicture
+
+	goto = institution_origin
+	
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "mastery_events.4.option.a"
+		custom_tooltip = "mastery_events.4.tt"
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = mastery_events.42
+	title = "mastery_events.2.title"
+	desc = "mastery_events.42.desc"
+	picture = INVENTION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "mastery_events.4.option.a"
+		custom_tooltip = "mastery_events.4.tt"
+	}
+}
+
+#######################################
+# Early Industrialization
+#######################################
+country_event = {
+	id = mastery_events.5
+	title = "mastery_events.5.title"
+	desc = "mastery_events.5.desc"
+	picture = INVENTION_eventPicture
+	
+	is_triggered_only = yes
+
+	goto = institution_origin
+	
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
+
+	immediate = {
+		hidden_effect = {
+			from = { save_event_target_as = institution_origin }
+		}
+	}
+
+	option = {
+		name = "mastery_events.5.option.a"
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 20
+		custom_tooltip = "mastery_events.5.tt"
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_early_industrialization"
+				duration = -1
+				hidden = yes
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					knows_country = ROOT
+				}
+				country_event = { id = mastery_events.51 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					NOT = { knows_country = ROOT }
+					is_primitive = no
+				}
+				country_event = { id = mastery_events.52 }
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = mastery_events.51
+	title = "mastery_events.2.title"
+	desc = "mastery_events.51.desc"
+	picture = INVENTION_eventPicture
+
+	goto = institution_origin
+	
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "mastery_events.5.option.a"
+		custom_tooltip = "mastery_events.5.tt"
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = mastery_events.52
+	title = "mastery_events.2.title"
+	desc = "mastery_events.52.desc"
+	picture = INVENTION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "mastery_events.5.option.a"
+		custom_tooltip = "mastery_events.5.tt"
+	}
+}

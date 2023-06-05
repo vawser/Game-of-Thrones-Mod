@@ -19,9 +19,8 @@ country_event = {
 	desc = "mastery_events.1.desc"
 	picture = INVENTION_eventPicture
 	
-	is_triggered_only = yes
-
 	goto = institution_origin
+	is_triggered_only = yes
 	
 	trigger = { always = yes }
 	mean_time_to_happen = { days = 1 }
@@ -34,10 +33,10 @@ country_event = {
 
 	option = {
 		name = "mastery_events.1.option.a"
+		add_prestige = 20
 		add_adm_power = 100
 		add_dip_power = 100
 		add_mil_power = 100
-		add_prestige = 20
 		custom_tooltip = "mastery_events.1.tt"
 		FROM = {
 			add_permanent_province_modifier = {
@@ -68,25 +67,17 @@ country_event = {
 	}
 }
 
-
 country_event = {
 	id = mastery_events.11
 	title = "mastery_events.1.title"
-	desc = "mastery_events.11.desc"
+	desc = "mastery_events.1.desc"
 	picture = INVENTION_eventPicture
 
 	goto = institution_origin
-	
 	is_triggered_only = yes
-	
 
-	trigger = {
-		always = yes			#
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = "mastery_events.1.option.a"
@@ -102,15 +93,9 @@ country_event = {
 	picture = INVENTION_eventPicture
 
 	is_triggered_only = yes
-	
 
-	trigger = {
-		always = no			#
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = "mastery_events.1.option.a"
@@ -125,11 +110,10 @@ country_event = {
 	id = mastery_events.2
 	title = "mastery_events.2.title"
 	desc = "mastery_events.2.desc"
-	picture = INVENTION_eventPicture
-	
-	is_triggered_only = yes
+	picture = TRADEGOODS_eventPicture
 
 	goto = institution_origin
+	is_triggered_only = yes
 	
 	trigger = { always = yes }
 	mean_time_to_happen = { days = 1 }
@@ -142,10 +126,10 @@ country_event = {
 
 	option = {
 		name = "mastery_events.2.option.a"
+		add_prestige = 20
 		add_adm_power = 100
 		add_dip_power = 100
 		add_mil_power = 100
-		add_prestige = 20
 		custom_tooltip = "mastery_events.2.tt"
 		FROM = {
 			add_permanent_province_modifier = {
@@ -176,25 +160,17 @@ country_event = {
 	}
 }
 
-
 country_event = {
 	id = mastery_events.21
 	title = "mastery_events.2.title"
-	desc = "mastery_events.21.desc"
-	picture = INVENTION_eventPicture
+	desc = "mastery_events.2.desc"
+	picture = TRADEGOODS_eventPicture
 
 	goto = institution_origin
-	
 	is_triggered_only = yes
-	
 
-	trigger = {
-		always = yes
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = "mastery_events.2.option.a"
@@ -207,18 +183,12 @@ country_event = {
 	id = mastery_events.22
 	title = "mastery_events.2.title"
 	desc = "mastery_events.22.desc"
-	picture = INVENTION_eventPicture
+	picture = TRADEGOODS_eventPicture
 
 	is_triggered_only = yes
-	
 
-	trigger = {
-		always = no
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = "mastery_events.2.option.a"
@@ -227,13 +197,13 @@ country_event = {
 }
 
 #######################################
-# Manufacturing
+# Printing Press
 #######################################
 country_event = {
 	id = mastery_events.3
 	title = "mastery_events.3.title"
 	desc = "mastery_events.3.desc"
-	picture = INVENTION_eventPicture
+	picture = BIG_BOOK_eventPicture
 	
 	is_triggered_only = yes
 
@@ -250,14 +220,14 @@ country_event = {
 
 	option = {
 		name = "mastery_events.3.option.a"
+		add_prestige = 20
 		add_adm_power = 100
 		add_dip_power = 100
 		add_mil_power = 100
-		add_prestige = 20
 		custom_tooltip = "mastery_events.3.tt"
 		FROM = {
 			add_permanent_province_modifier = {
-				name = "birthplace_of_manufacturing"
+				name = "birthplace_of_the_printing_press"
 				duration = -1
 				hidden = yes
 			}
@@ -287,22 +257,15 @@ country_event = {
 
 country_event = {
 	id = mastery_events.31
-	title = "mastery_events.2.title"
-	desc = "mastery_events.31.desc"
-	picture = INVENTION_eventPicture
+	title = "mastery_events.3.title"
+	desc = "mastery_events.3.desc"
+	picture = BIG_BOOK_eventPicture
 
 	goto = institution_origin
-	
 	is_triggered_only = yes
-	
 
-	trigger = {
-		always = yes
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = "mastery_events.3.option.a"
@@ -313,20 +276,14 @@ country_event = {
 #Far away travellers...
 country_event = {
 	id = mastery_events.32
-	title = "mastery_events.2.title"
+	title = "mastery_events.3.title"
 	desc = "mastery_events.32.desc"
-	picture = INVENTION_eventPicture
+	picture = BIG_BOOK_eventPicture
 
 	is_triggered_only = yes
-	
 
-	trigger = {
-		always = no
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = "mastery_events.3.option.a"
@@ -335,13 +292,13 @@ country_event = {
 }
 
 #######################################
-# Printing Press
+# Manufacturing
 #######################################
 country_event = {
 	id = mastery_events.4
 	title = "mastery_events.4.title"
 	desc = "mastery_events.4.desc"
-	picture = INVENTION_eventPicture
+	picture = IMPORTANT_STATUE_eventPicture
 	
 	is_triggered_only = yes
 
@@ -358,14 +315,14 @@ country_event = {
 
 	option = {
 		name = "mastery_events.4.option.a"
+		add_prestige = 20
 		add_adm_power = 100
 		add_dip_power = 100
 		add_mil_power = 100
-		add_prestige = 20
 		custom_tooltip = "mastery_events.4.tt"
 		FROM = {
 			add_permanent_province_modifier = {
-				name = "birthplace_of_the_printing_press"
+				name = "birthplace_of_manufacturing"
 				duration = -1
 				hidden = yes
 			}
@@ -395,22 +352,15 @@ country_event = {
 
 country_event = {
 	id = mastery_events.41
-	title = "mastery_events.2.title"
-	desc = "mastery_events.41.desc"
-	picture = INVENTION_eventPicture
+	title = "mastery_events.4.title"
+	desc = "mastery_events.4.desc"
+	picture = IMPORTANT_STATUE_eventPicture
 
 	goto = institution_origin
-	
 	is_triggered_only = yes
-	
 
-	trigger = {
-		always = yes
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = "mastery_events.4.option.a"
@@ -421,20 +371,14 @@ country_event = {
 #Far away travellers...
 country_event = {
 	id = mastery_events.42
-	title = "mastery_events.2.title"
+	title = "mastery_events.4.title"
 	desc = "mastery_events.42.desc"
-	picture = INVENTION_eventPicture
+	picture = IMPORTANT_STATUE_eventPicture
 
 	is_triggered_only = yes
-	
 
-	trigger = {
-		always = no
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = "mastery_events.4.option.a"
@@ -449,7 +393,7 @@ country_event = {
 	id = mastery_events.5
 	title = "mastery_events.5.title"
 	desc = "mastery_events.5.desc"
-	picture = INVENTION_eventPicture
+	picture = CITY_VIEW_eventPicture
 	
 	is_triggered_only = yes
 
@@ -466,10 +410,10 @@ country_event = {
 
 	option = {
 		name = "mastery_events.5.option.a"
+		add_prestige = 20
 		add_adm_power = 100
 		add_dip_power = 100
 		add_mil_power = 100
-		add_prestige = 20
 		custom_tooltip = "mastery_events.5.tt"
 		FROM = {
 			add_permanent_province_modifier = {
@@ -503,22 +447,15 @@ country_event = {
 
 country_event = {
 	id = mastery_events.51
-	title = "mastery_events.2.title"
-	desc = "mastery_events.51.desc"
-	picture = INVENTION_eventPicture
+	title = "mastery_events.5.title"
+	desc = "mastery_events.5.desc"
+	picture = CITY_VIEW_eventPicture
 
 	goto = institution_origin
-	
 	is_triggered_only = yes
-	
 
-	trigger = {
-		always = yes
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = "mastery_events.5.option.a"
@@ -529,20 +466,14 @@ country_event = {
 #Far away travellers...
 country_event = {
 	id = mastery_events.52
-	title = "mastery_events.2.title"
+	title = "mastery_events.5.title"
 	desc = "mastery_events.52.desc"
-	picture = INVENTION_eventPicture
+	picture = CITY_VIEW_eventPicture
 
 	is_triggered_only = yes
-	
 
-	trigger = {
-		always = no
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
+	trigger = { always = yes }
+	mean_time_to_happen = { days = 1 }
 
 	option = {
 		name = "mastery_events.5.option.a"

@@ -51,6 +51,7 @@ country_event = {
 	immediate = {
 		country_event = { id = GOT_SYSTEM.3 }
 		country_event = { id = GOT_SYSTEM.4 }
+		country_event = { id = GOT_SYSTEM.11 }
 		
 		add_opinion = {
 			who = WIT
@@ -635,5 +636,38 @@ country_event = {
 				cede_province = M09
 			}
 		}
+	}
+}
+
+country_event = { #Warn about incomplete #TBD Remove when done
+	id = GOT_SYSTEM.11
+	title = GOT_SYSTEM.11.title
+	desc = GOT_SYSTEM.11.desc
+	picture = OVEREXTENSION_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = completed_country_setup }
+		OR = {
+			tag = R68
+			tag = R88
+			tag = R77
+			tag = R65
+			tag = S04
+			tag = CHO
+			tag = MAK
+			tag = EKH
+			tag = GHA
+			tag = AKN
+			tag = VIC
+			tag = NHO
+			tag = YUR
+			tag = S14
+		}
+	}
+	
+	option = {
+		name = GOT_SYSTEM.11.option.a
 	}
 }

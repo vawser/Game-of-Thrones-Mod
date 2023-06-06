@@ -371,12 +371,12 @@ king_revoke_noble_privileges = {
 					num_of_cities = 1
 					NOT = { tag = FAT }
 					NOT = { is_subject_of_type = castellany }
-					NOT = {
-						is_subject_of_type_with_overlord = {
-							who = ROOT
-							type = feudatory
-						}
-					}
+					# NOT = {
+					# 	is_subject_of_type_with_overlord = {
+					# 		who = ROOT
+					# 		type = feudatory
+					# 	}
+					# }
 				}
 				country_event = { id = sk_event.4 }
 			}

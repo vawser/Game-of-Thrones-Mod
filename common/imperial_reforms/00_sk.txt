@@ -1,4 +1,4 @@
-king_call_for_reform = {
+king_call_for_reform_nodlc = {
 	empire = hre
 	potential = {
 		NOT = { has_dlc = "Emperor" }
@@ -16,9 +16,9 @@ king_call_for_reform = {
 	gui_container = nodlc
 }
 
-king_intitute_provincial_governors = {
+king_intitute_provincial_governors_nodlc = {
 	empire = hre
-	required_reform = king_call_for_reform
+	required_reform = king_call_for_reform_nodlc
 	potential = {
 		NOT = { has_dlc = "Emperor" }
 	}
@@ -31,9 +31,9 @@ king_intitute_provincial_governors = {
 	gui_container = nodlc
 }
 
-king_implement_royal_court_of_justice = { 
+king_implement_royal_court_of_justice_nodlc = { 
 	empire = hre
-	required_reform = king_intitute_provincial_governors
+	required_reform = king_intitute_provincial_governors_nodlc
 	potential = {
 		NOT = { has_dlc = "Emperor" }
 	}
@@ -47,9 +47,9 @@ king_implement_royal_court_of_justice = {
 	gui_container = nodlc
 }
 
-king_introduce_the_new_crown_tax = {
+king_introduce_the_new_crown_tax_nodlc = {
 	empire = hre
-	required_reform = king_implement_royal_court_of_justice
+	required_reform = king_implement_royal_court_of_justice_nodlc
 	potential = {
 		NOT = { has_dlc = "Emperor" }
 	}
@@ -62,8 +62,9 @@ king_introduce_the_new_crown_tax = {
 	gui_container = nodlc
 }
 
-king_enforce_the_kings_peace = {
+king_enforce_the_kings_peace_nodlc = {
 	empire = hre
+	required_reform = king_introduce_the_new_crown_tax_nodlc
 	potential = {
 		NOT = { has_dlc = "Emperor" }
 	}
@@ -83,13 +84,12 @@ king_enforce_the_kings_peace = {
 	off_effect = {
 		internal_hre_cb = yes
 	}
-	required_reform = king_introduce_the_new_crown_tax
 	gui_container = nodlc
 }
 
-king_curtail_the_estates = {
+king_curtail_the_estates_nodlc = {
 	empire = hre
-	required_reform = king_enforce_the_kings_peace
+	required_reform = king_enforce_the_kings_peace_nodlc
 	potential = {
 		NOT = { has_dlc = "Emperor" }
 	}
@@ -101,9 +101,9 @@ king_curtail_the_estates = {
 	ai_acceptance_centralize = yes
 }
 
-king_revoke_noble_privileges = {
+king_revoke_noble_privileges_nodlc = {
 	empire = hre
-	required_reform = king_curtail_the_estates
+	required_reform = king_curtail_the_estates_nodlc
 	war = yes			#this may cause a war, so special AI check needed, to not lose many.
 	discounted_from_foreign_overlord_check = yes
 	potential = {
@@ -126,12 +126,12 @@ king_revoke_noble_privileges = {
 					is_part_of_hre = yes
 					num_of_cities = 1
 					NOT = { is_subject_of_type = castellany }
-					NOT = {
-						is_subject_of_type_with_overlord = {
-							who = ROOT
-							type = feudatory
-						}
-					}
+					# NOT = {
+					# 	is_subject_of_type_with_overlord = {
+					# 		who = ROOT
+					# 		type = feudatory
+					# 	}
+					# }
 				}
 				country_event = { id = sk_event.4 }
 			}
@@ -141,9 +141,9 @@ king_revoke_noble_privileges = {
 	ai_acceptance_centralize = yes
 }
 
-king_unify_westeros = {
+king_unify_westeros_nodlc = {
 	empire = hre
-	required_reform = king_revoke_noble_privileges
+	required_reform = king_revoke_noble_privileges_nodlc
 	potential = {
 		NOT = { has_dlc = "Emperor" }
 	}

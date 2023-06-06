@@ -7,16 +7,27 @@ country_decisions = {
 				has_estate_privilege = estate_nobles_the_kingsguard
 				has_estate_privilege = estate_nobles_the_queensguard
 			}
+			NOT = { has_ruler_flag = lc_is_field_general }
 		}
 		allow = {
-			NOT = { num_of_generals_with_traits = 1 }
+			OR = {
+				NOT = { num_of_generals = 2 }
+				NOT = { num_of_generals_with_traits = 1 }
+			}
+			NOT = {
+				has_leader_with = {
+					general = yes
+					total_pips = 12
+				}
+			}
+			NOT = { has_country_modifier = got_lc_is_general }
 		}
 		effect = {
-			create_general = {
-				add_shock = 1
-				add_manuever = 1
-				tradition = 50
+			country_event = {
+				id = decision_event.1
+				tooltip = "lord_commander_decision_tt"
 			}
+			set_ruler_flag = lc_is_field_general
 		}
 	}
 	

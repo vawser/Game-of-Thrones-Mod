@@ -18,3 +18,38 @@ the_wall = {
 	}
 }
 
+# Paved Road
+paved_road = {
+	cost = 300
+	time = 12
+
+	build_trigger = {
+		is_building_permitted = yes
+	}
+	
+	modifier = {
+		local_friendly_movement_speed = 0.5
+		local_governing_cost = -0.1
+	}
+	
+	on_built = {
+		add_development_from_building = {
+			building = paved_road
+			type = manpower
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = paved_road
+			type = manpower
+			value = 1
+		}
+	}
+	on_obsolete = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}

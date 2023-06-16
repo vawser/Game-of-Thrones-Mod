@@ -5821,111 +5821,159 @@ guiTypes = {
 		fullscreen = no
         
         # ------------ Row 1
-        iconType = {
-			name = "row_1_banner"
-			position = { x = 10 y = 0 }
-			spriteType = "GFX_sk_green_banner_small"
+		iconType = {
+			name = "production_banner"
+			position = { x = 4 y = 0 }
+			spriteType = "GFX_banner_left_3"
 		}
-		
+
 		instantTextBoxType={
-			name = "title_row_1"
-			position = {x = 175 y = 10 }
+			name = "title_production"
+			position = {x = 42 y = 9 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 160
+			maxHeight = 18
+			text = "PRODUCTION"
+		}
+
+		iconType ={
+			name ="production_icon"
+			spriteType = "GFX_macro_buildings_category_strip"
+			position = { x = 15 y = 3}
+			frame = 4
+		}
+
+		checkboxType = {
+			name = "build_workshop"
+			position = { x = 9 y = 32 }
+			quadTextureSprite = "GFX_town_hall"
+        }
+
+		instantTextBoxType={
+			name = "workshop_cost"
+			position = {x = 9 y = 82 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
-			maxWidth = 64
+			maxWidth = 128
 			maxHeight = 18
-			text = "Civic"
+			text = "2000¤"	
 		}
-        
+
 		checkboxType = {
-			name = "build_town_hall"
-			position = { x = 15 y = 40 }
+			name = "build_windmill"
+			position = { x = 61 y = 32 }
+			quadTextureSprite = "GFX_town_hall"
+        }
+
+		instantTextBoxType={
+			name = "windmill_cost"
+			position = {x = 61 y = 82 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}	
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"	
+		}
+
+		iconType = {
+			name = "workshop_to_windmill_arrow"
+			position = { x = 53 y = 41 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
+
+		checkboxType = {
+			name = "build_factory"
+			position = { x = 113 y = 32 }
+			quadTextureSprite = "GFX_town_hall"
+        }
+
+		instantTextBoxType={
+			name = "factory_cost"
+			position = {x = 113 y = 82 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}	
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"	
+		}
+
+		iconType = {
+			name = "windmill_to_factory_arrow"
+			position = { x = 105 y = 41 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
+
+		iconType = {
+			name = "government_banner"
+			position = { x = 188 y = 0 }
+			spriteType = "GFX_banner_right_3"
+		}
+
+		instantTextBoxType={
+			name = "title_government"
+			position = {x = 241 y = 9 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 120
+			maxHeight = 18
+			text = "GOVERNMENT"
+		}
+
+		iconType ={
+			name ="government_icon"
+			spriteType = "GFX_macro_buildings_category_strip"
+			position = { x = 213 y = 2}
+			frame = 2
+		}
+
+		checkboxType = {
+			name = "build_courthouse"
+			position = { x = 216 y = 32 }
 			quadTextureSprite = "GFX_town_hall" #Placeholder, real sprite is decided by game (based on button name).
 		}
 
 		instantTextBoxType={
+			name = "courthouse_cost"
+			position = {x = 216 y = 82 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}	
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"	
+		}
+        
+        checkboxType = {
+			name = "build_town_hall"
+			position = { x = 268 y = 32 }
+			quadTextureSprite = "GFX_town_hall"
+		}
+
+		instantTextBoxType={
 			name = "town_hall_cost"
-			position = {x = 15 y = 90 }
+			position = {x = 268 y = 82 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128
 			maxHeight = 18
 			text = "2000¤"	
 		}
-		
-        checkboxType = {
-			name = "build_tavern"
-			position = { x = 75 y = 40 }
+
+		iconType = {
+			name = "courthouse_to_town_hall_arrow"
+			position = { x = 260 y = 41 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
+
+		checkboxType = {
+			name = "build_governors_manor"
+			position = { x = 320 y = 32 }
 			quadTextureSprite = "GFX_town_hall"
 		}
 
 		instantTextBoxType={
-			name = "tavern_cost"
-			position = {x = 75 y = 90 }
-			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 128
-			maxHeight = 18
-			text = "2000¤"	
-		}
-        
-        checkboxType = {
-			name = "build_market"
-			position = { x = 135 y = 40 }
-			quadTextureSprite = "GFX_town_hall"
-		}
-
-		instantTextBoxType={
-			name = "market_cost"
-			position = {x = 135 y = 90 }
-			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 128
-			maxHeight = 18
-			text = "2000¤"	
-		}
-        
-        checkboxType = {
-			name = "build_farm"
-			position = { x = 195 y = 40 }
-			quadTextureSprite = "GFX_town_hall"
-		}
-
-		instantTextBoxType={
-			name = "farm_cost"
-			position = {x = 195 y = 90 }
-			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 128
-			maxHeight = 18
-			text = "2000¤"	
-		}
-        
-        checkboxType = {
-			name = "build_mine"
-			position = { x = 255 y = 40 }
-			quadTextureSprite = "GFX_town_hall"
-		}
-
-		instantTextBoxType={
-			name = "mine_cost"
-			position = {x = 255 y = 90 }
-			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 128
-			maxHeight = 18
-			text = "2000¤"	
-		}
-        
-        checkboxType = {
-			name = "build_temple"
-			position = { x = 315 y = 40 }
-			quadTextureSprite = "GFX_town_hall"
-		}
-
-		instantTextBoxType={
-			name = "temple_cost"
-			position = {x = 315 y = 90 }
+			name = "governors_manor_cost"
+			position = {x = 320 y = 82 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128
@@ -5934,15 +5982,38 @@ guiTypes = {
 		}
         
         # ------------ Row 2
+		iconType = {
+			name = "trade_banner"
+			position = { x = 4 y = 97 }
+			spriteType = "GFX_banner_left_4"
+		}
+		
+		instantTextBoxType={
+			name = "title_trade"
+			position = {x = 44 y = 106 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 120
+			maxHeight = 18
+			text = "TRADE"
+		}
+
+		iconType ={
+			name ="trade_icon"
+			spriteType = "GFX_macro_buildings_category_strip"
+			position = { x = 15 y = 100}
+			frame = 1
+		}
+		
         checkboxType = {
-			name = "build_dock"
-			position = { x = 15 y = 115 }
+			name = "build_merchants_hub"
+			position = { x = 9 y = 129 }
 			quadTextureSprite = "GFX_town_hall"
-        }
+		}
 
 		instantTextBoxType={
-			name = "dock_cost"
-			position = {x = 15 y = 165 }
+			name = "merchants_hub_cost"
+			position = {x = 9 y = 179 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128
@@ -5951,14 +6022,103 @@ guiTypes = {
 		}
         
         checkboxType = {
-			name = "build_shipyard"
-			position = { x = 75 y = 115 }
+			name = "build_marketplace"
+			position = { x = 61 y = 129 }
 			quadTextureSprite = "GFX_town_hall"
 		}
 
 		instantTextBoxType={
-			name = "shipyard_cost"
-			position = {x = 75 y = 165 }
+			name = "marketplace_cost"
+			position = {x = 61 y = 179 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}	
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"	
+		}
+
+		iconType = {
+			name = "merchants_hub_to_marketplace_arrow"
+			position = { x = 53 y = 138 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
+        
+        checkboxType = {
+			name = "build_trade_depot"
+			position = { x = 113 y = 129 }
+			quadTextureSprite = "GFX_town_hall"
+		}
+
+		instantTextBoxType={
+			name = "trade_depot_cost"
+			position = {x = 113 y = 179 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}	
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"	
+		}
+
+		iconType = {
+			name = "marketplace_to_trade_depot_arrow"
+			position = { x = 105 y = 138 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
+        
+        checkboxType = {
+			name = "build_stock_exchange"
+			position = { x = 165 y = 129 }
+			quadTextureSprite = "GFX_town_hall"
+		}
+
+		instantTextBoxType={
+			name = "stock_exchange_cost"
+			position = {x = 165 y = 179 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}	
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"	
+		}
+
+		iconType = {
+			name = "trade_depot_to_stock_exchange_arrow"
+			position = { x = 157 y = 138 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
+
+        iconType = {
+			name = "religion_banner"
+			position = { x = 240 y = 97 }
+			spriteType = "GFX_banner_right_2"
+		}
+
+		instantTextBoxType={
+			name = "title_religion"
+			position = {x = 290 y = 106 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 120
+			maxHeight = 18
+			text = "Religion"
+		}
+
+		iconType ={
+			name ="religion_icon"
+			spriteType = "GFX_macro_buildings_category_strip"
+			position = { x = 261 y = 100}
+			frame = 10
+		}
+
+		checkboxType = {
+			name = "build_church"
+			position = { x = 268 y = 129 }
+			quadTextureSprite = "GFX_town_hall" #Placeholder, real sprite is decided by game (based on button name).
+		}
+
+		instantTextBoxType={
+			name = "church_cost"
+			position = {x = 268 y = 179 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128
@@ -5967,144 +6127,215 @@ guiTypes = {
 		}
         
         checkboxType = {
-			name = "build_barracks"
-			position = { x = 135 y = 115 }
+			name = "build_cathedral"
+			position = { x = 320 y = 129 }
 			quadTextureSprite = "GFX_town_hall"
 		}
 
 		instantTextBoxType={
-			name = "barracks_cost"
-			position = {x = 135 y = 165 }
+			name = "cathedral_cost"
+			position = {x = 320 y = 179 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128
 			maxHeight = 18
 			text = "2000¤"	
 		}
-        
-        checkboxType = {
-			name = "build_drill_square"
-			position = { x = 195 y = 115 }
-			quadTextureSprite = "GFX_town_hall"
-		}
 
-		instantTextBoxType={
-			name = "drill_square_cost"
-			position = {x = 195 y = 165 }
-			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 128
-			maxHeight = 18
-			text = "2000¤"	
-		}
-        
-        checkboxType = {
-			name = "build_paved_road"
-			position = { x = 255 y = 115 }
-			quadTextureSprite = "GFX_town_hall"
-		}
-
-		instantTextBoxType={
-			name = "paved_road_cost"
-			position = {x = 255 y = 165 }
-			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 128
-			maxHeight = 18
-			text = "2000¤"	
-		}
-        
-        checkboxType = {
-			name = "build_supply_depot"
-			position = { x = 315 y = 115 }
-			quadTextureSprite = "GFX_town_hall"
-		}
-
-		instantTextBoxType={
-			name = "supply_depot_cost"
-			position = {x = 315 y = 165 }
-			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 128
-			maxHeight = 18
-			text = "2000¤"	
+		iconType = {
+			name = "church_to_cathedral_arrow"
+			position = { x = 312 y = 138 }
+			spriteType = "GFX_building_upgrade_icon"
 		}
         
         # ------------ Row 3
         iconType = {
-			name = "row_3_banner"
-			position = { x = 10 y = 180 }
-			spriteType = "GFX_sk_green_banner_small"
+			name = "unique_banner"
+			position = { x = 4 y = 194 }
+			spriteType = "GFX_banner_left_3"
 		}
 		
 		instantTextBoxType={
-			name = "title_row_3"
-			position = {x = 150 y = 190 }
+			name = "title_unique"
+			position = {x = 44 y = 203 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 120
 			maxHeight = 18
-			text = "Commerce"
+			text = "Special"
 		}	
-        
-        checkboxType = {
-			name = "build_manufactory"
-			position = { x = 135 y = 216 }
-			quadTextureSprite = "GFX_town_hall"
+
+		iconType ={
+			name ="unique_icon"
+			spriteType = "GFX_macro_buildings_category_strip"
+			position = { x = 15 y = 197}
+			frame = 11
+		}
+
+		checkboxType = {
+			name = "build_grand_palace"
+			position = { x = 9 y = 226 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
 		}
 
 		instantTextBoxType={
-			name = "manufactory_cost"
-			position = {x = 135 y = 266 }
+			name = "grand_palace_cost"
+			position = {x = 9 y = 276 }
 			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
+			borderSize = {x = 0 y = 0}
 			maxWidth = 128
 			maxHeight = 18
-			text = "2000¤"	
+			text = "2000¤"
 		}
-        
-        checkboxType = {
-			name = "build_cot"
-			position = { x = 195 y = 216 }
-			quadTextureSprite = "GFX_town_hall"
+
+		checkboxType = {
+			name = "build_tourney_grounds"
+			position = { x = 61 y = 226 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
 		}
 
 		instantTextBoxType={
-			name = "cot_cost"
-			position = {x = 195 y = 266 }
+			name = "tourney_grounds_cost"
+			position = {x = 61 y = 276 }
 			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
+			borderSize = {x = 0 y = 0}
 			maxWidth = 128
 			maxHeight = 18
-			text = "2000¤"	
+			text = "2000¤"
+		}
+
+		checkboxType = {
+			name = "build_coastal_defence"
+			position = { x = 113 y = 226 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+		}
+
+		instantTextBoxType={
+			name = "coastal_defence_cost"
+			position = {x = 113 y = 276 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+
+		iconType = {
+			name = "taxation_banner"
+			position = { x = 188 y = 194 }
+			spriteType = "GFX_banner_right_3"
+		}
+
+		instantTextBoxType={
+			name = "title_taxation"
+			position = {x = 241 y = 203 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 80
+			maxHeight = 18
+			text = "TAXATION"
+		}
+
+		iconType ={
+			name ="taxation_icon"
+			spriteType = "GFX_macro_buildings_category_strip"
+			position = { x = 213 y = 197}
+			frame = 6
+		}
+
+		checkboxType = {
+			name = "build_constable_quarters"
+			position = { x = 216 y = 226 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+		}
+
+		instantTextBoxType={
+			name = "constable_quarters_cost"
+			position = {x = 216 y = 276 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+
+		checkboxType = {
+			name = "build_tax_office"
+			position = { x = 268 y = 226 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+		}
+
+		instantTextBoxType={
+			name = "tax_office_cost"
+			position = {x = 268 y = 276 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+
+		iconType = {
+			name = "constable_quarters_to_tax_office_arrow"
+			position = { x = 260 y = 235 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
+
+		checkboxType = {
+			name = "build_treasury"
+			position = { x = 320 y = 226 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+		}
+
+		instantTextBoxType={
+			name = "treasury_cost"
+			position = {x = 320 y = 276 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+
+		iconType = {
+			name = "tax_office_to_treasury_arrow"
+			position = { x = 312 y = 235 }
+			spriteType = "GFX_building_upgrade_icon"
 		}
         
         # ------------ Row 4
-        iconType = {
-			name = "row_4_banner"
-			position = { x = 10 y = 280 }
-			spriteType = "GFX_sk_green_banner_small"
+		iconType = {
+			name = "defense_banner"
+			position = { x = 4 y = 291 }
+			spriteType = "GFX_banner_left_4"
 		}
-		
+
 		instantTextBoxType={
-			name = "title_row_4"
-			position = {x = 150 y = 290 }
+			name = "title_defense"
+			position = {x = 44 y = 300 }
 			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 120
+			borderSize = {x = 0 y = 0}
+			maxWidth = 160
 			maxHeight = 18
-			text = "Fortifications"
-		}	
+			text = "DEFENSE"
+		}
+
+		iconType ={
+			name ="defense_icon"
+			spriteType = "GFX_macro_buildings_category_strip"
+			position = { x = 15 y = 294}
+			frame = 7
+		}
         
         checkboxType = {
 			name = "build_motte_and_bailey"
-			position = { x = 75 y = 318 }
+			position = { x = 9 y = 323 }
 			quadTextureSprite = "GFX_town_hall"
         }
 
 		instantTextBoxType={
 			name = "motte_and_bailey_cost"
-			position = {x = 75 y = 368 }
+			position = {x = 9 y = 373 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128
@@ -6114,164 +6345,289 @@ guiTypes = {
         
         checkboxType = {
 			name = "build_castle"
-			position = { x = 135 y = 318 }
+			position = { x = 61 y = 323 }
 			quadTextureSprite = "GFX_town_hall"
 		}
 
 		instantTextBoxType={
 			name = "castle_cost"
-			position = {x = 135 y = 368 }
+			position = {x = 61 y = 373 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128
 			maxHeight = 18
 			text = "2000¤"	
 		}
+
+		iconType = {
+			name = "motte_and_bailey_to_castle_arrow"
+			position = { x = 53 y = 332 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
         
         checkboxType = {
 			name = "build_fortress"
-			position = { x = 195 y = 318 }
+			position = { x = 113 y = 323 }
 			quadTextureSprite = "GFX_town_hall"
 		}
 
 		instantTextBoxType={
 			name = "fortress_cost"
-			position = {x = 195 y = 368 }
+			position = {x = 113 y = 373 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128
 			maxHeight = 18
 			text = "2000¤"	
 		}
+
+		iconType = {
+			name = "castle_to_fortress_arrow"
+			position = { x = 105 y = 332 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
         
         checkboxType = {
 			name = "build_citadel"
-			position = { x = 255 y = 318 }
+			position = { x = 165 y = 323 }
 			quadTextureSprite = "GFX_town_hall"
 		}
 
 		instantTextBoxType={
 			name = "citadel_cost"
-			position = {x = 255 y = 368 }
+			position = {x = 165 y = 373 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
 			maxWidth = 128
 			maxHeight = 18
 			text = "2000¤"	
 		}
-        
-        
-        # ------------ Row 5
-        iconType = {
-			name = "row_5_banner"
-			position = { x = 10 y = 380 }
-			spriteType = "GFX_sk_green_banner_small"
-		}
-		
-		instantTextBoxType={
-			name = "title_row_5"
-			position = {x = 150 y = 390 }
-			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 120
-			maxHeight = 18
-			text = "Grand Projects"
-		}	
-        
-        checkboxType = {
-			name = "build_grand_palace"
-			position = { x = 15 y = 420 }
-			quadTextureSprite = "GFX_town_hall"
-        }
 
-		instantTextBoxType={
-			name = "grand_palace_cost"
-			position = {x = 15 y = 470 }
-			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 128
-			maxHeight = 18
-			text = "2000¤"	
+		iconType = {
+			name = "fortress_to_citadel_arrow"
+			position = { x = 157 y = 332 }
+			spriteType = "GFX_building_upgrade_icon"
 		}
-        
-        checkboxType = {
-			name = "build_merchants_quarter"
-			position = { x = 75 y = 420 }
-			quadTextureSprite = "GFX_town_hall"
+
+		iconType = {
+			name = "manufactory_banner"
+			position = { x = 240 y = 291 }
+			spriteType = "GFX_banner_right_2"
 		}
 
 		instantTextBoxType={
-			name = "merchants_quarter_cost"
-			position = {x = 75 y = 470 }
+			name = "title_manufactory"
+			position = {x = 284 y = 300 }
 			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 128
+			borderSize = {x = 0 y = 0}
+			maxWidth = 160
 			maxHeight = 18
-			text = "2000¤"	
+			text = "Manufactory"
+		}
+
+		iconType ={
+			name ="manufactory_icon"
+			spriteType = "GFX_macro_buildings_category_strip"
+			position = { x = 255 y = 294}
+			frame = 8
 		}
         
-        checkboxType = {
-			name = "build_grand_temple"
-			position = { x = 135 y = 420 }
-			quadTextureSprite = "GFX_town_hall"
+		checkboxType = {
+			name = "build_manufactory"
+			position = { x = 268 y = 322 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
 		}
 
 		instantTextBoxType={
-			name = "grand_temple_cost"
-			position = {x = 135 y = 470 }
+			name = "manufactory_cost"
+			position = {x = 268 y = 372 }
 			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
+			borderSize = {x = 0 y = 0}
 			maxWidth = 128
 			maxHeight = 18
-			text = "2000¤"	
+			text = "2000¤"
 		}
-        
-        checkboxType = {
-			name = "build_tourney_grounds"
-			position = { x = 195 y = 420 }
-			quadTextureSprite = "GFX_town_hall"
+
+		checkboxType = {
+			name = "build_food_silo"
+			position = { x = 320 y = 322 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
 		}
 
 		instantTextBoxType={
-			name = "tourney_grounds_cost"
-			position = {x = 195 y = 470 }
+			name = "food_silo_cost"
+			position = {x = 320 y = 372 }
 			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
+			borderSize = {x = 0 y = 0}
 			maxWidth = 128
 			maxHeight = 18
-			text = "2000¤"	
+			text = "2000¤"
 		}
         
-        checkboxType = {
-			name = "build_military_academy"
-			position = { x = 255 y = 420 }
-			quadTextureSprite = "GFX_town_hall"
+		iconType = {
+			name = "army_banner"
+			position = { x = 4 y = 388 }
+			spriteType = "GFX_banner_left_3"
 		}
 
 		instantTextBoxType={
-			name = "military_academy_cost"
-			position = {x = 255 y = 470 }
+			name = "title_army"
+			position = {x = 40 y = 397 }
 			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
-			maxWidth = 128
+			borderSize = {x = 0 y = 0}
+			maxWidth = 200
 			maxHeight = 18
-			text = "2000¤"	
+			text = "ARMY"
 		}
-        
-        checkboxType = {
-			name = "build_naval_academy"
-			position = { x = 315 y = 420 }
-			quadTextureSprite = "GFX_town_hall"
+
+		iconType ={
+			name ="army_icon"
+			spriteType = "GFX_macro_buildings_category_strip"
+			position = { x = 15 y = 391}
+			frame = 5
+		}
+
+		checkboxType = {
+			name = "build_barracks"
+			position = { x = 9 y = 420 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
 		}
 
 		instantTextBoxType={
-			name = "naval_academy_cost"
-			position = {x = 315 y = 470 }
+			name = "barracks_cost"
+			position = {x = 9 y = 470 }
 			font = "vic_18"
-			borderSize = {x = 0 y = 0}	
+			borderSize = {x = 0 y = 0}
 			maxWidth = 128
 			maxHeight = 18
-			text = "2000¤"	
+			text = "2000¤"
+		}
+
+		checkboxType = {
+			name = "build_training_fields"
+			position = { x = 61 y = 420 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+		}
+
+		instantTextBoxType={
+			name = "training_fields_cost"
+			position = {x = 61 y = 470 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+
+		iconType = {
+			name = "barracks_to_training_fields_arrow"
+			position = { x = 53 y = 429 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
+
+		checkboxType = {
+			name = "build_regimental_camp"
+			position = { x = 113 y = 420 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+		}
+
+		instantTextBoxType={
+			name = "regimental_camp_cost"
+			position = {x = 113 y = 470 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+
+		iconType = {
+			name = "training_fields_to_regimental_camp_arrow"
+			position = { x = 105 y = 429 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
+
+		iconType = {
+			name = "navy_banner"
+			position = { x = 188 y = 388 }
+			spriteType = "GFX_banner_right_3"
+		}
+
+		instantTextBoxType={
+			name = "title_navy"
+			position = {x = 241 y = 397 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 200
+			maxHeight = 18
+			text = "NAVY"
+		}
+
+		iconType ={
+			name ="navy_icon"
+			spriteType = "GFX_macro_buildings_category_strip"
+			position = { x = 213 y = 391}
+			frame = 3
+		}
+
+		checkboxType = {
+			name = "build_dock"
+			position = { x = 216 y = 420 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+		}
+
+		instantTextBoxType={
+			name = "dock_cost"
+			position = {x = 216 y = 470 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+
+		checkboxType = {
+			name = "build_shipyard"
+			position = { x = 268 y = 420 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+		}
+
+		instantTextBoxType={
+			name = "shipyard_cost"
+			position = {x = 268 y = 470 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+
+		iconType = {
+			name = "dock_to_shipyard_arrow"
+			position = { x = 260 y = 429 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
+
+		checkboxType = {
+			name = "build_grand_shipyard"
+			position = { x = 320 y = 420 }
+			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+		}
+
+		instantTextBoxType={
+			name = "grand_shipyard_cost"
+			position = {x = 320 y = 470 }
+			font = "vic_18"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 128
+			maxHeight = 18
+			text = "2000¤"
+		}
+
+		iconType = {
+			name = "shipyard_to_grand_shipyard_arrow"
+			position = { x = 312 y = 429 }
+			spriteType = "GFX_building_upgrade_icon"
 		}
 	}
     

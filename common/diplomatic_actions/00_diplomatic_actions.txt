@@ -714,17 +714,17 @@ fabricate_claim = {
 		}
 	}
 
-	condition = {
-		tooltip = "Nobles houses of Westeros cannot fabricate claims on each other's lands"
-		potential = {
-			is_westerosi_government = yes
-			FROM = { is_westerosi_government = yes }
-			#is_subject_of_type = feudatory
-		}
-		allow = {
-			always = no
-		}
-	}
+	# condition = {
+	# 	tooltip = "Nobles houses of Westeros cannot fabricate claims on each other's lands"
+	# 	potential = {
+	# 		is_westerosi_government = yes
+	# 		FROM = { is_westerosi_government = yes }
+	# 		#is_subject_of_type = feudatory
+	# 	}
+	# 	allow = {
+	# 		always = no
+	# 	}
+	# }
 }
 
 justify_trade_conflict = {

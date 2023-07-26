@@ -1,0 +1,173 @@
+early_industrialization = {
+	bonus = {
+		global_tax_modifier = 0.15
+		production_efficiency = 0.10
+	}
+
+	trade_company_efficiency = 1.8
+
+	historical_start_date = 400.1.1
+	historical_start_province = 765
+	
+	history = {
+		OR = {
+			AND = {
+				is_year = 400
+				region = region_yi_ti
+			}
+			AND = {
+				is_year = 425
+				superregion = far_essos_superregion
+			}
+			AND = {
+				is_year = 435
+				superregion = central_essos_superregion
+			}
+			AND = {
+				is_year = 440
+				superregion = west_essos_superregion
+			}
+			AND = {
+				is_year = 445
+				superregion = southern_westeros_superregion
+			}
+			AND = {
+				is_year = 450
+				NOT = { owner = { technology_group = wildling } }
+			}
+		}
+	}
+
+	can_start = {
+		is_year = 400
+		is_institution_enabled = the_printing_press
+		is_in_capital_area = yes
+		is_island = no
+		is_state = yes
+		development = 25
+		manufacturing = 100
+		the_printing_press = 100
+	}
+
+	start_chance = 100
+	on_start = mastery_events.5
+	
+	can_embrace = {
+		if = {
+			limit = {
+				owner = { has_reform = wildling_clan_reform } 
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_wildling_clan_block"
+				NOT = { owner = { has_country_flag = feudal_structure_block } }
+			}
+		}
+	}
+	
+	embracement_speed = {
+		modifier = {
+			factor = 2
+			scale = yes
+			potential = {
+				owner = { has_institution = early_industrialization }
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_embraced_early_industrialization"
+				owner = { has_institution = early_industrialization }
+			}
+		}
+		modifier = {
+			factor = 0.6
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = "tt_friendly_border_early_industrialization"
+				any_friendly_coast_border_province = {
+					early_industrialization = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.3
+			scale = yes
+			potential = {
+				NOT = {
+					any_friendly_coast_border_province = {
+						early_industrialization = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_neighbor_embraced_early_industrialization"
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+					early_industrialization = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			custom_trigger_tooltip = {
+				tooltip = "tt_province_has_furnace"
+				has_building = furnace
+			}
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
+			potential = {
+				is_year = 450
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_natural_progression_early_industrialization"
+				is_year = 450
+				development = 5
+			}
+		}
+		modifier = {
+			factor = 5
+			scale = yes
+			potential = {
+				owner = {
+					is_colonial_nation = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = "tt_colonial_overlord_early_industrialization"
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					is_colonial_nation = yes
+					overlord = { has_institution = early_industrialization }
+				}
+			}
+		}
+	}
+	
+	ai_will_do = {
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+

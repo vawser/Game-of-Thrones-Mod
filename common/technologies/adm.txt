@@ -6,285 +6,537 @@ ahead_of_time = {
 	yearly_corruption = -0.05
 }
 
-# Pre-era techs
 technology = {
 	# Tech 0
-	year = 120
+	year = 140
 	
-    # Government Legacies
-    kingdom_legacy = yes
-    republic_legacy = yes
-    theocracy_legacy = yes
-    tribe_legacy = yes
-    native_council_legacy = yes
-    pirate_kingdom_legacy = yes
-    pirate_republic_legacy = yes
-    shadow_cult_legacy = yes
-    necromantic_cult_legacy = yes
-    ascension_cult_legacy = yes
-    army_of_the_dead_legacy = yes
-    
-    # Actions
-    may_support_rebels = yes
-    may_force_march = yes
 }
 
 technology = {
 	# Tech 1
-	year = 140
+	year = 160
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.15
+	}
 
-	town_hall = yes
-    tavern = yes
-    farm = yes
-    temple = yes
+	production_efficiency = 0.02
+	farmstead = yes
 }
 
 technology = {
 	# Tech 2
-	year = 160
+	year = 180
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.30
+	}
+
+	# Church
+	church = yes
+}
+
+# The 32 big techs from here on
+
+technology = {
+	# Tech 3
+	year = 193
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+	}
+
+	may_support_rebels = yes
+	production_efficiency = 0.02
+}
+
+technology = {
+	# Tech 4
+	year = 206
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+	}
 
 	allowed_idea_groups = 1
 }
 
 technology = {
-	# Tech 3
-	year = 180
-
-	production_efficiency = 0.05
-}
-
-technology = {
-	# Tech 4
-	year = 193
-
-	governing_capacity = 50
-}
-
-technology = {
 	# Tech 5
-	year = 206
+	year = 219
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.15
+	}
+
+	# Workshops
+	workshop = yes
+	production_efficiency = 0.02
+}
+
+technology = {
+	# Tech 6
+	year = 232
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.30
+	}
+
+	governing_capacity = 25
+	constable_quarters = yes
+}
+
+technology = {
+	# Tech 7
+	year = 245
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+	}
 
 	allowed_idea_groups = 2
 }
 
 technology = {
-	# Tech 6
-	year = 219
-
-	production_efficiency = 0.05
-}
-
-technology = {
-	# Tech 7
-	year = 232
-	
-    grand_temple = yes
-}
-
-technology = {
 	# Tech 8
-	year = 245
-
+	year = 258
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+	}
+	
+	# Town Hall
 	governing_capacity = 50
+	courthouse = yes
 }
 
 technology = {
 	# Tech 9
-	year = 258
-    
-    governing_capacity = 50
+	year = 271
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.15
+	}
+	
+	production_efficiency = 0.02
 }
 
 technology = {
 	# Tech 10
-	year = 271
-    
-    production_efficiency = 0.05
+	year = 297
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.30
+	}
+	
+	cathedral = yes
 }
 
 technology = {
 	# Tech 11
-	year = 297
-    
-     governing_capacity = 50
-}
-
-technology = {
-	# Tech 12
 	year = 310
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.15
+	}
 
 	allowed_idea_groups = 3
 }
 
 technology = {
-	# Tech 13
+	# Tech 12
 	year = 323
-    
-    production_efficiency = 0.05
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.30
+	}
+	
+	# Governor's Manor
+	governors_manor = yes
+	governing_capacity = 50
+}
+
+technology = {
+	# Tech 13
+	year = 336
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+	}
+	
+	may_force_march = yes
 }
 
 technology = {
 	# Tech 14
-	year = 336
-    
-    governing_capacity = 50
+	year = 349
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+	}
+	
+	tax_office = yes
+	governing_capacity = 25
 }
 
 technology = {
 	# Tech 15
-	year = 349
-	
-    grand_palace = yes
-}
-
-technology = {
-	# Tech 16
 	year = 362
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+	}
 
 	allowed_idea_groups = 4
 }
 
 technology = {
-	# Tech 17
+	# Tech 16
 	year = 375
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.15
+	}
 
-    administrative_efficiency = 0.05
-    development_cost_modifier = -0.05
+
+	production_efficiency = 0.02
+}
+
+technology = {
+	# Tech 17
+	year = 388
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.30
+	}
+
+	administrative_efficiency = 0.10
+	development_cost_modifier = -0.10
+	grand_palace = yes
 }
 
 technology = {
 	# Tech 18
-	year = 388
+	year = 401
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+	}
 
-    production_efficiency = 0.05
+	town_hall = yes
+	governing_capacity = 50
 }
 
 technology = {
 	# Tech 19
-	year = 401
-
-    governing_capacity = 50
-}
-
-technology = {
-	# Tech 20
 	year = 414
-    
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.15
+	}
+	
 	allowed_idea_groups = 5
 }
 
 technology = {
-	# Tech 21
+	# Tech 20
 	year = 427
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.30
+	}
+	
+	furnace = yes
+	production_efficiency = 0.02
+}
 
-    production_efficiency = 0.05
+technology = {
+	# Tech 21
+	year = 440
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
+	
+	treasury = yes
+	governing_capacity = 50
 }
 
 technology = {
 	# Tech 22
-	year = 440
-	
-    governing_capacity = 50
+	year = 453
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
+
+	production_efficiency = 0.02
 }
 
 technology = {
 	# Tech 23
-	year = 453
-
-    production_efficiency = 0.05
-}
-
-technology = {
-	# Tech 24
 	year = 466
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
 	allowed_idea_groups = 6
 }
 
 technology = {
-	# Tech 25
+	# Tech 24
 	year = 479
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    administrative_efficiency = 0.05
-    development_cost_modifier = -0.05
+	administrative_efficiency = 0.05
+	development_cost_modifier = -0.05
+}
+
+technology = {
+	# Tech 25
+	year = 492
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
+
+	production_efficiency = 0.02
 }
 
 technology = {
 	# Tech 26
-	year = 492
+	year = 505
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    production_efficiency = 0.05
+	governing_capacity = 50
+	governors_manor = yes
 }
 
 technology = {
 	# Tech 27
-	year = 505
-
-    governing_capacity = 50
-}
-
-technology = {
-	# Tech 28
 	year = 518
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
 	allowed_idea_groups = 7
 }
 
 technology = {
-	# Tech 29
+	# Tech 28
 	year = 531
-    
-    administrative_efficiency = 0.1
-    development_cost_modifier = -0.1
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
+	
+	administrative_efficiency = 0.05
+	development_cost_modifier = -0.0
+}
+
+technology = {
+	# Tech 29
+	year = 544
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
+
+	governing_capacity = 50
 }
 
 technology = {
 	# Tech 30
-	year = 544
+	year = 557
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    governing_capacity = 50
+	production_efficiency = 0.02
 }
 
 technology = {
 	# Tech 31
-	year = 557
-
-    production_efficiency = 0.05
-}
-
-technology = {
-	# Tech 32
 	year = 570
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
 	allowed_idea_groups = 8
 }
 
 technology = {
-	# Tech 33
+	# Tech 32
 	year = 583
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    administrative_efficiency = 0.1
-    development_cost_modifier = -0.1
+	administrative_efficiency = 0.1
+	development_cost_modifier = -0.1
+}
+
+technology = {
+	# Tech 33
+	year = 596
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
+
+	governing_capacity = 100
 }
 
 technology = {
 	# Tech 34
-	year = 596
+	year = 609
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    governing_capacity = 100
+	production_efficiency = 0.02
 }
 
 technology = {
 	# Tech 35
-	year = 609
-
-    production_efficiency = 0.1
-}
-
-technology = {
-	# Tech 36
 	year = 622
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    administrative_efficiency = 0.1
-    development_cost_modifier = -0.1
+	governing_capacity = 250
+	allowed_idea_groups = 9
 }

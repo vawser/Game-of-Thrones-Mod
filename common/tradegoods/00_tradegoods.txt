@@ -882,13 +882,13 @@ coal = {
 	trigger = {
 		OR = {
 			development_discounting_tribal = 20
-			owner = { innovativeness = 20 }
+			owner = { early_industrialization = 20 }
 		}
 		provincial_institution_progress = {
-			which = enlightenment
+			which = early_industrialization
 			value = 100
 		}
-		owner = { has_institution = enlightenment }
+		owner = { has_institution = early_industrialization }
 	}
 	
 	modifier = {

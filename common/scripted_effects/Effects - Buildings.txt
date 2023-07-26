@@ -1,3 +1,35 @@
+add_dev_from_building = {
+	if = {
+		limit = {
+			FROM = { full_idea_group = got_economic_ideas }
+			NOT = { gained_development_from_building = { building = $building$ } }
+		}
+		add_base_$type$ = $value$
+		hidden_effect = {
+			set_province_flag = built_eco_dev_$building$
+		}
+	}
+}
+
+remove_dev_from_building = {
+	if = {
+		limit = {
+			FROM = { full_idea_group = got_economic_ideas }
+			gained_development_from_building = { building = $building$ }
+		}
+		add_base_$type$ = -$value$
+		if = {
+			limit = {
+				NOT = { base_$type$ = 1 }
+			}
+			set_base_$type$ = 1
+		}
+		hidden_effect = {
+			clr_province_flag = built_eco_dev_$building$
+		}
+	}
+}
+
 #Province effect - used for buildings
 add_development_from_building = {
 	if = {
@@ -67,276 +99,4 @@ unlock_development_from_building = {
             clr_country_flag = improve_development_on_buildings_built
         }
     ]
-}
-
-#---------------------------
-# Province scope
-#---------------------------
-# ADM
-add_town_hall = {
-    add_building = town_hall
-}
-add_tavern = {
-    add_building = tavern
-}
-add_market = {
-    add_building = market
-}
-add_farm = {
-    add_building = farm
-}
-add_mine = {
-    add_building = mine
-}
-add_temple = {
-    add_building = temple
-}
-add_dock = {
-    add_building = dock
-}
-add_shipyard = {
-    add_building = shipyard
-}
-add_barracks = {
-    add_building = barracks
-}
-add_drill_square = {
-    add_building = drill_square
-}
-add_paved_road = {
-    add_building = paved_road
-}
-add_supply_depot = {
-    add_building = supply_depot
-}
-add_farmers_guild = {
-    add_building = farmers_guild
-}
-add_foresters_guild = {
-    add_building = foresters_guild
-}
-add_blacksmiths_guild = {
-    add_building = blacksmiths_guild
-}
-add_artisans_guild = {
-    add_building = artisans_guild
-}
-add_tailors_guild = {
-    add_building = tailors_guild
-}
-add_slavers_guild = {
-    add_building = slavers_guild
-}
-
-# Fort
-add_fort = {
-    if = {
-        limit = {
-            has_building = fortress
-            owner = { mil_tech = 20 }
-        }
-        add_building = citadel
-    }
-    else_if = {
-        limit = {
-            has_building = castle
-            owner = { mil_tech = 15 }
-        }
-        add_building = fortress
-    }
-    else_if = {
-        limit = {
-            has_building = motte_and_bailey
-            owner = { mil_tech = 8 }
-        }
-        add_building = castle
-    }
-    else = {
-        add_building = motte_and_bailey
-    }
-}
-
-remove_all_buildings = {
-    if = {
-        limit = {
-            has_building = town_hall
-        }
-        remove_building = town_hall
-    }
-    
-    if = {
-        limit = {
-            has_building = tavern
-        }
-        remove_building = tavern
-    }
-    
-    if = {
-        limit = {
-            has_building = market
-        }
-        remove_building = market
-    }
-    
-    if = {
-        limit = {
-            has_building = farm
-        }
-        remove_building = farm
-    }
-    
-    if = {
-        limit = {
-            has_building = mine
-        }
-        remove_building = mine
-    }
-    
-    if = {
-        limit = {
-            has_building = temple
-        }
-        remove_building = temple
-    }
-    
-    if = {
-        limit = {
-            has_building = dock
-        }
-        remove_building = dock
-    }
-    
-    if = {
-        limit = {
-            has_building = shipyard
-        }
-        remove_building = shipyard
-    }
-    
-    if = {
-        limit = {
-            has_building = barracks
-        }
-        remove_building = barracks
-    }
-    
-    if = {
-        limit = {
-            has_building = drill_square
-        }
-        remove_building = drill_square
-    }
-    
-    if = {
-        limit = {
-            has_building = paved_road
-        }
-        remove_building = paved_road
-    }
-    
-    if = {
-        limit = {
-            has_building = supply_depot
-        }
-        remove_building = supply_depot
-    }
-    
-    if = {
-        limit = {
-            has_building = citadel
-        }
-        remove_building = citadel
-    }
-    else_if = {
-        limit = {
-            has_building = fortress
-        }
-        remove_building = fortress
-    }
-    else_if = {
-        limit = {
-            has_building = castle
-        }
-        remove_building = castle
-    }
-    else_if = {
-        limit = {
-            has_building = motte_and_bailey
-        }
-        remove_building = motte_and_bailey
-    }
-    
-    if = {
-        limit = {
-            has_building = farmers_guild
-        }
-        remove_building = farmers_guild
-    }
-    if = {
-        limit = {
-            has_building = foresters_guild
-        }
-        remove_building = foresters_guild
-    }
-    if = {
-        limit = {
-            has_building = blacksmiths_guild
-        }
-        remove_building = blacksmiths_guild
-    }
-    if = {
-        limit = {
-            has_building = artisans_guild
-        }
-        remove_building = artisans_guild
-    }
-    if = {
-        limit = {
-            has_building = tailors_guild
-        }
-        remove_building = tailors_guild
-    }
-    if = {
-        limit = {
-            has_building = slavers_guild
-        }
-        remove_building = slavers_guild
-    }
-    
-    if = {
-        limit = {
-            has_building = grand_palace
-        }
-        remove_building = grand_palace
-    }
-    if = {
-        limit = {
-            has_building = merchants_quarter
-        }
-        remove_building = merchants_quarter
-    }
-    if = {
-        limit = {
-            has_building = grand_temple
-        }
-        remove_building = grand_temple
-    }
-    if = {
-        limit = {
-            has_building = tourney_grounds
-        }
-        remove_building = tourney_grounds
-    }
-    if = {
-        limit = {
-            has_building = military_academy
-        }
-        remove_building = military_academy
-    }
-    if = {
-        limit = {
-            has_building = naval_academy
-        }
-        remove_building = naval_academy
-    }
 }

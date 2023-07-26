@@ -328,10 +328,14 @@
  INSTITUTIONS_HEADER: "§YMasteries§!"
  INSTITUTION_CURRENTLY_GROWING: "The Masteries of $NAME$ is currently growing in this province."
  INSTITUTION_JUST_ONE_GROWING: "Only one Mastery can grow in a province at a time."
+ DATE_EARLIERST_FOR_INSTI: "This is the earliest date that this mastery can appear and spread through the world."
  
- BIRTHPLACE_OF_INSTITUTION: "$PROV$ is a prolific source of §Y$NAME$§!"
- INSTITUTION_PENALTY_INFO: "The penalty for not having $NAME$ is now $CURR$, but will grow up to $MAX$ by §Y+1%§! each year when active."
- INSTITUTION_PENALTY_INFO_FULL: "The penalty for not having $NAME$ is $CURR$."
+ #BIRTHPLACE_OF_INSTITUTION: "$PROV$ is a prolific source of §Y$NAME$§!"
+ INSTITUTION_PENALTY_INFO: "Haven't embraced $NAME|Y$: $PENALTY$\n"
+ INSTITUTION_GREAT_POWER_BONUS: "Penalty from missing $NUM|Y$ Masteries: $BONUS$"
+ LEDGER_GREAT_POWER_SCORE_DETERMINED_BY: "Great Power Rating is Development modified by Masteries Penalty"
+ LEDGER_INSTITUTIONS_PENALTY: "Masteries Penalty"
+ GREATPOWERWIN_TECH: "Masteries"
  
  INSTI_NOT_YET: "This mastery has not yet been created in the world."
  INSTITUTION_SPREAD_HELP: "Masteries spread between provinces over time. You can also increase the development to directly spread a mastery."
@@ -769,6 +773,10 @@
  #----------------------------------------------------
  # Buildings
  #----------------------------------------------------
+ building_wharf_desc: "This building helps with the spread of §YManufactoring§! mastery."
+ building_plantations_desc: "This building helps with the spread of §YManufactoring§! mastery."
+ building_furnace_desc: "This building helps with the spread of §YEarly Industrialization§! mastery."
+ 
  building_native_earthwork: "Earthwork"
  building_native_palisade: "Palisade Walls"
  building_native_fortified_house: "Fotified House"

@@ -1,7 +1,7 @@
 #Yi Ti#
 
 loe_azure_empire = {
-    icon = "castle" #TBD
+    icon = "azure_empire"
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
 	potential = {
@@ -22,6 +22,7 @@ loe_azure_empire = {
 	custom_attributes = {
 		enables_monarchy_ideagroup = yes
 		loe_increased_stab_on_death = yes
+		locked_government_type = yes
 	}
 }
 
@@ -52,7 +53,7 @@ loe_azure_empire = {
 #}
 
 loe_empire_of_dawn = {
-	icon = "castle" #TBD
+	icon = "golden_empire"
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
 	potential = {
@@ -76,6 +77,7 @@ loe_empire_of_dawn = {
 
 	custom_attributes = {
 		enables_monarchy_ideagroup = yes
+		locked_government_type = yes
 	}
 }
 
@@ -404,7 +406,7 @@ loe_show_of_wealth = {
 	modifiers = {
 		diplomatic_reputation = 3
 		culture_conversion_cost = -0.2
-		global_prosperity_growth = 0.1
+		global_prosperity_growth = 0.5
 	}
 }
 

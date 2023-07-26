@@ -28,4 +28,20 @@ country_decisions = {
 			}
 		}
 	}
+	permit_westerosi_ideas = {
+		major = yes
+		potential = {
+			technology_group = wildling
+			has_country_flag = feudal_structure_block
+		}
+		allow = {
+			stability = 1
+		}
+		effect = {
+			custom_tooltip = "tt_permit_westerosi_ideas"
+			clr_country_flag = feudal_structure_block
+			add_stability = -2
+			add_adm_power = -250
+		}
+	}
 }

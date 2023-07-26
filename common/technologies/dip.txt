@@ -9,337 +9,591 @@ ahead_of_time = {
 # Pre-era techs
 technology = {
 	# Tech 0
-	year = 120
+	year = 140
 	
 	num_accepted_cultures   = 2
-    global_colonial_growth	= 40
+	global_colonial_growth	= 40
 	range					= 500
 	trade_range				= 500
-    trade_efficiency        = 0.0
-    naval_maintenance       = 0.0
+	trade_efficiency		= 0.0
+	naval_maintenance	   = 0.0
 	naval_morale			= 2.0
 	
 	allow_client_states = yes
 	may_build_flagships = yes
-    
+	
 	merchants = yes
 	may_fabricate_claims = yes
 	
 	enable = ship_carrack
-    enable = ship_holk
-    enable = ship_galley
-    enable = ship_cog
-    
-    enable = ship_braavosi_holk
-    enable = ship_ironwood_carrack
-    
-    market = yes
-    mine = yes
-    dock = yes
-    shipyard = yes
+	enable = ship_holk
+	enable = ship_galley
+	enable = ship_cog
+	
+	enable = ship_braavosi_holk
+	enable = ship_ironwood_carrack
+
+	slavers_guild = yes
+	food_silo = yes
 }
 
 technology = {
 	# Tech 1
-	year = 140
-
+	year = 160
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.15
+	}
+	
+	merchants_hub = yes
 	trade_efficiency = 0.05
 }
 
 technology = {
 	# Tech 2
-	year = 160
+	year = 180
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.30
+	}
 
 	naval_morale = 0.25
-    naval_engagement_width = 5
+	naval_engagement_width = 5
 }
 
 technology = {
 	# Tech 3
-	year = 180
+	year = 193
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+	}
 
+	dock = yes
 	trade_efficiency = 0.05
-    
-    may_steal_maps = yes
+	may_steal_maps = yes
 }
 
 technology = {
 	# Tech 4
-	year = 193
+	year = 206
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+	}
 	
-    num_accepted_cultures = 1
+	num_accepted_cultures = 1
 }
 
 technology = {
 	# Tech 5
-	year = 206
+	year = 219
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.15
+	}
 	
+	wharf = yes
 	naval_morale = 0.25
-    naval_engagement_width = 5
+	naval_engagement_width = 5
 }
 
 technology = {
 	# Tech 6
-	year = 219
+	year = 232
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.30
+	}
 
+	marketplace = yes
 	trade_efficiency = 0.05
 }
 
 technology = {
 	# Tech 7
-	year = 232
+	year = 245
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+	}
+
+	windmill = yes
 	
-    farmers_guild = yes
-    foresters_guild = yes
-    blacksmiths_guild = yes
-    tailors_guild = yes
-    artisans_guild = yes
-    merchants_quarter = yes
-    slavers_guild = yes
-    cot = yes
-    naval_academy = yes
-    tourney_grounds = yes
+	foresters_guild = yes
+	tailors_guild = yes
+	artisans_guild = yes
+	blacksmiths_guild = yes
 }
 
 technology = {
 	# Tech 8
-	year = 245
+	year = 258
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+	}
 
-    num_accepted_cultures = 1
-    may_study_technology = yes
+	num_accepted_cultures = 1
+	may_study_technology = yes
 }
 
 technology = {
 	# Tech 9
-	year = 258
+	year = 271
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.15
+	}
 
-    naval_morale = 0.25
-    naval_engagement_width = 5
+	naval_morale = 0.25
+	naval_engagement_width = 5
 }
 
 technology = {
 	# Tech 10
-	year = 271
+	year = 297
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.30
+	}
 	
-    trade_efficiency = 0.05
-    may_sabotage_recruitment = yes
+	plantations = yes
+	trade_efficiency = 0.05
+	may_sabotage_recruitment = yes
 }
 
 technology = {
 	# Tech 11
-	year = 297
+	year = 310
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.15
+	}
 
-    naval_morale = 0.25
+	naval_morale = 0.25
 }
 
 technology = {
 	# Tech 12
-	year = 310
+	year = 323
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.30
+	}
 
-    trade_range = 50
-    range = 50
-    
-    may_slander_merchants = yes
+	trade_range = 50
+	range = 50
+	
+	may_slander_merchants = yes
 }
 
 technology = {
 	# Tech 13
-	year = 323
+	year = 336
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+	}
 
-    trade_efficiency = 0.05
-    may_sow_discontent = yes
+	trade_depot = yes
+	trade_efficiency = 0.05
+	may_sow_discontent = yes
 }
 
 technology = {
 	# Tech 14
-	year = 336
+	year = 349
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+	}
 
-    naval_morale = 0.25
-    naval_engagement_width = 5
+	naval_morale = 0.25
+	naval_engagement_width = 5
 }
 
 technology = {
 	# Tech 15
-	year = 349
+	year = 362
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+	}
 	
 	trade_range = 50
-    range = 50
+	range = 50
 }
 
 technology = {
 	# Tech 16
-	year = 362
+	year = 375
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.15
+	}
 
-    num_accepted_cultures = 1
-    may_sabotage_reputation = yes
+	num_accepted_cultures = 1
+	may_sabotage_reputation = yes
 }
 
 technology = {
 	# Tech 17
-	year = 375
+	year = 388
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.30
+	}
 
-    naval_maintenance = 0.1
-    trade_range = 100
-    range = 100
-    global_colonial_growth = 10
+	naval_maintenance = 0.1
+	trade_range = 100
+	range = 100
+	global_colonial_growth = 10
 }
 
 technology = {
 	# Tech 18
-	year = 388
-
-    trade_efficiency = 0.05
-    may_corrupt_officials = yes
+	year = 401
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+	}
+	
+	factory = yes
+	trade_efficiency = 0.05
+	may_corrupt_officials = yes
 }
 
 technology = {
 	# Tech 19
-	year = 401
+	year = 414
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.15
+	}
 
-    naval_morale = 0.25
-    naval_engagement_width = 5
+	naval_morale = 0.25
+	naval_engagement_width = 5
 }
 
 technology = {
 	# Tech 20
-	year = 414
+	year = 427
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.30
+	}
 
-    num_accepted_cultures = 1
+	num_accepted_cultures = 1
 }
 
 technology = {
 	# Tech 21
-	year = 427
+	year = 440
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    trade_efficiency = 0.05
-    may_agitate_for_liberty = yes
+	stock_exchange = yes
+	trade_efficiency = 0.05
+	may_agitate_for_liberty = yes
 }
 
 technology = {
 	# Tech 22
-	year = 440
+	year = 453
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    enable = ship_reinforced_carrack
-    enable = ship_reinforced_holk
-    enable = ship_reinforced_galley
-    enable = ship_reinforced_cog
-    
-    enable = ship_reinforced_braavosi_holk
-    enable = ship_reinforced_ironwood_carrack
-    
-    naval_morale = 0.25
-    naval_engagement_width = 5
+	enable = ship_reinforced_carrack
+	enable = ship_reinforced_holk
+	enable = ship_reinforced_galley
+	enable = ship_reinforced_cog
+	
+	enable = ship_reinforced_braavosi_holk
+	enable = ship_reinforced_ironwood_carrack
+	
+	naval_morale = 0.25
+	naval_engagement_width = 5
 }
 
 technology = {
 	# Tech 23
-	year = 453
+	year = 466
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    trade_efficiency = 0.05
+	trade_efficiency = 0.05
 	may_infiltrate_administration = yes
 }
 
 technology = {
 	# Tech 24
-	year = 466
+	year = 479
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    num_accepted_cultures = 1
+	num_accepted_cultures = 1
 }
 
 technology = {
 	# Tech 25
-	year = 479
+	year = 492
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    naval_maintenance = 0.1
-    trade_range = 100
-    range = 100
-    global_colonial_growth = 10
+	naval_maintenance = 0.1
+	trade_range = 100
+	range = 100
+	global_colonial_growth = 10
 }
 
 technology = {
 	# Tech 26
-	year = 492
+	year = 505
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 	
-    trade_efficiency = 0.05
+	trade_efficiency = 0.05
 }
 
 technology = {
 	# Tech 27
-	year = 505
+	year = 518
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    naval_morale = 0.25
-    naval_engagement_width = 5
+	naval_morale = 0.25
+	naval_engagement_width = 5
 }
 
 technology = {
 	# Tech 28
-	year = 518
+	year = 531
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    num_accepted_cultures = 1
+	num_accepted_cultures = 1
 }
 
 technology = {
 	# Tech 29
-	year = 531
+	year = 544
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    naval_maintenance = 0.2
-    trade_range = 100
-    range = 100
-    global_colonial_growth = 10
+	naval_maintenance = 0.2
+	trade_range = 100
+	range = 100
+	global_colonial_growth = 10
 }
 
 technology = {
 	# Tech 30
-	year = 544
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    naval_morale = 0.5
+	naval_morale = 0.5
 }
 
 technology = {
 	# Tech 31
-	year = 557
+	year = 570
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    trade_efficiency = 0.05
+	trade_efficiency = 0.05
 }
 
 technology = {
 	# Tech 32
-	year = 570
+	year = 583
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 	
-    num_accepted_cultures = 1
+	num_accepted_cultures = 1
 }
 
 technology = {
 	# Tech 33
-	year = 583
+	year = 596
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    naval_maintenance = 0.2
-    trade_range = 100
-    range = 100
-    global_colonial_growth = 10
+	naval_maintenance = 0.2
+	trade_range = 100
+	range = 100
+	global_colonial_growth = 10
 }
 
 technology = {
 	# Tech 34
-	year = 596
+	year = 609
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    naval_morale = 0.5
-    naval_engagement_width = 5
+	naval_morale = 0.5
+	naval_engagement_width = 5
 }
 
 technology = {
 	# Tech 35
-	year = 609
-
-    trade_efficiency = 0.1
-}
-
-technology = {
-	# Tech 36
 	year = 622
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
-    naval_maintenance = 0.2
-    trade_range = 100
-    range = 100
-    global_colonial_growth = 10
+	trade_efficiency = 0.1
+	naval_maintenance = 0.2
+	trade_range = 100
+	range = 100
+	global_colonial_growth = 10
 }

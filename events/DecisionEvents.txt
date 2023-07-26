@@ -1,0 +1,159 @@
+namespace = decision_event
+
+# Enlist Lord Commander
+country_event = {
+	id = decision_event.1
+	title = "decision_event.1.title"
+	desc = "decision_event.1.desc"
+	picture = IRON_THRONE_eventPicture
+	
+	is_triggered_only = yes
+
+	immediate = {
+		set_saved_name = {
+			key = lc_general_name
+			type = advisor
+			scope = ROOT
+		}
+	}
+
+	option = {
+		name = "decision_event.1.option.a"
+		ai_chance = { factor = 100 }
+		add_country_modifier = {
+			name = "got_lc_is_general"
+			duration = 1825
+		}
+		if = {
+			limit = {
+				has_estate_privilege = estate_nobles_the_kingsguard
+			}
+			random_list = {
+				35 = { # Terrible
+					custom_tooltip = "lc_2_pips_tt"
+					hidden_effect = {
+						define_general = {
+							name = "lc_general_name"
+							fire = 1
+							shock = 1
+							manuever = 0
+							trait = lord_commander_kingsguard_personality
+						}
+					}
+				}
+				30 = { # Below Average
+					custom_tooltip = "lc_4_pips_tt"
+					hidden_effect = {
+						define_general = {
+							name = "lc_general_name"
+							fire = 1
+							shock = 2
+							manuever = 1
+							trait = lord_commander_kingsguard_personality
+						}
+					}
+				}
+				20 = { # Average
+					custom_tooltip = "lc_5_pips_tt"
+					hidden_effect = {
+						define_general = {
+							name = "lc_general_name"
+							fire = 2
+							shock = 2
+							manuever = 1
+							trait = lord_commander_kingsguard_personality
+						}
+					}
+				}
+				10 = { # Above Average
+					custom_tooltip = "lc_8_pips_tt"
+					hidden_effect = {
+						define_general = {
+							name = "lc_general_name"
+							fire = 2
+							shock = 3
+							manuever = 2
+							siege = 1
+							trait = lord_commander_kingsguard_personality
+						}
+					}
+				}
+				5 = { # Excellent
+					custom_tooltip = "lc_11_pips_tt"
+					hidden_effect = {
+						define_general = {
+							name = "lc_general_name"
+							fire = 2
+							shock = 4
+							manuever = 3
+							siege = 2
+							trait = lord_commander_kingsguard_personality
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_estate_privilege = estate_nobles_the_queensguard
+			}
+			random_list = {
+				35 = { # Terrible
+					define_general = {
+						name = "lc_general_name"
+						fire = 1
+						shock = 1
+						manuever = 0
+						trait = lord_commander_queensguard_personality
+					}
+				}
+				30 = { # Below Average
+					define_general = {
+						name = "lc_general_name"
+						fire = 1
+						shock = 2
+						manuever = 1
+						trait = lord_commander_queensguard_personality
+					}
+				}
+				20 = { # Average
+					define_general = {
+						name = "lc_general_name"
+						fire = 2
+						shock = 2
+						manuever = 1
+						trait = lord_commander_queensguard_personality
+					}
+				}
+				10 = { # Above Average
+					define_general = {
+						name = "lc_general_name"
+						fire = 2
+						shock = 3
+						manuever = 2
+						trait = lord_commander_queensguard_personality
+					}
+				}
+				5 = { # Excellent
+					define_general = {
+						name = "lc_general_name"
+						fire = 2
+						shock = 4
+						manuever = 3
+						siege = 1
+						trait = lord_commander_queensguard_personality
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "decision_event.1.option.b"
+		ai_chance = { factor = 0 }
+	}
+
+	after = {
+		clear_saved_name = lc_general_name
+	}
+}

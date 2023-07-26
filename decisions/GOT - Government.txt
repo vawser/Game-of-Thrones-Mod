@@ -22,17 +22,17 @@ country_decisions = {
 			clr_country_flag = forced_reelection_flag
 			set_country_flag = forced_reelection_flag
 			set_country_flag = increased_election_cost
-			if = {
-				limit = { NOT = { has_government_attribute = is_pirate_republic_reform } } 
-				country_event = {
-					id = 700
-				}
-			}
-			else = {
-				country_event = {
-					id = pirates.1
-				}
-			}
+			# if = {
+				# limit = { NOT = { has_government_attribute = is_pirate_republic_reform } } 
+				# country_event = {
+					# id = 700
+				# }
+			# }
+			# else = {
+				# country_event = {
+					# id = pirates.1
+				# }
+			# }
 			custom_tooltip = force_reelection_ct
 		}
 		ai_will_do = {

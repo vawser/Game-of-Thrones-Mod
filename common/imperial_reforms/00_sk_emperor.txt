@@ -94,10 +94,10 @@ king_land_the_royal_court = {
 						is_part_of_hre = yes
 						is_capital = yes
 						OR = {
-							AND = {
-								has_dlc = "Art of War"
-								owner = { has_reform = free_city }
-							}
+							# AND = {
+								# has_dlc = "Art of War"
+								# owner = { has_reform = free_city }
+							# }
 							AND = {
 								owner = { is_elector = yes }
 								development = 20
@@ -371,12 +371,12 @@ king_revoke_noble_privileges = {
 					num_of_cities = 1
 					NOT = { tag = FAT }
 					NOT = { is_subject_of_type = castellany }
-					NOT = {
-						is_subject_of_type_with_overlord = {
-							who = ROOT
-							type = feudatory
-						}
-					}
+					# NOT = {
+					# 	is_subject_of_type_with_overlord = {
+					# 		who = ROOT
+					# 		type = feudatory
+					# 	}
+					# }
 				}
 				country_event = { id = sk_event.4 }
 			}

@@ -9,24 +9,14 @@ ahead_of_time = {
 # Pre-era techs
 technology = {
 	# Tech 0
-	year = 120
+	year = 140
 	
 	sprite_level = 1
 
-    may_drill = yes
-    
-	land_morale 		= 2.0
-    military_tactics    = 0.0
-    combat_width        = 0.0
-    supply_limit        = 0.0
-    maneuver_value      = 0.0
-    
     infantry_fire		= 0.25
-    infantry_shock 	    = 0.2
-    cavalry_fire  	    = 0.0
+    infantry_shock 	    = 0.20
     cavalry_shock   	= 0.8
-    artillery_fire 	    = 0.0
-    artillery_shock  	= 0.0 
+    land_morale 		= 2.0
 	
     # Unique
     enable = dragon_rider_1
@@ -228,7 +218,11 @@ technology = {
 }
 technology = {
 	# Tech 1
-	year = 140
+	year = 160
+    expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.15
+	}
     
     infantry_fire = 0.25
     infantry_shock = 0.25
@@ -236,7 +230,13 @@ technology = {
 
 technology = {
 	# Tech 2
-	year = 160
+	year = 180
+    expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.30
+	}
+
+    may_drill = yes
 
     cavalry_shock = 0.6
     cavalry_fire = 0.2
@@ -245,7 +245,11 @@ technology = {
 
 technology = {
 	# Tech 3
-	year = 180
+	year = 193
+    expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+	}
 
     infantry_fire = 0.25
     infantry_shock = 0.25
@@ -253,7 +257,11 @@ technology = {
 
 technology = {
 	# Tech 4
-	year = 193
+	year = 206
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+	}
 	
     land_morale = 0.5
     military_tactics = 0.5
@@ -261,7 +269,12 @@ technology = {
 
 technology = {
 	# Tech 5
-	year = 206
+	year = 219
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.15
+	}
 
     artillery_fire = 0.6
     artillery_shock = 0.2
@@ -269,7 +282,14 @@ technology = {
 
 technology = {
 	# Tech 6
-	year = 219
+	year = 232
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.30
+	}
+
+	barracks = yes
 
     # Unique
     enable = dragon_rider_2
@@ -468,13 +488,25 @@ technology = {
 
 technology = {
 	# Tech 7
-	year = 232
+	year = 245
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+	}
+
+	coastal_defence = yes
 	
 }
 
 technology = {
 	# Tech 8
-	year = 245
+	year = 258
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+	}
 	
     land_morale = 1
     military_tactics = 0.5
@@ -484,7 +516,14 @@ technology = {
 
 technology = {
 	# Tech 9
-	year = 258
+	year = 271
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.15
+	}
+	shipyard = yes
 
     cavalry_shock = 0.7
     cavalry_fire = 0.2
@@ -493,7 +532,13 @@ technology = {
 
 technology = {
 	# Tech 10
-	year = 271
+	year = 297
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.30
+	}
 	
     infantry_fire = 0.25
     infantry_shock = 0.25
@@ -501,7 +546,16 @@ technology = {
 
 technology = {
 	# Tech 11
-	year = 297
+	year = 310
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.15
+	}
+
+	training_fields = yes
 
     artillery_fire = 0.3
     artillery_shock = 0.1
@@ -509,15 +563,30 @@ technology = {
 
 technology = {
 	# Tech 12
-	year = 310
+	year = 323
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.30
+	}
     
+	tourney_grounds = yes
     artillery_fire = 0.3
     artillery_shock = 0.1
 }
 
 technology = {
 	# Tech 13
-	year = 323
+	year = 336
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+	}
 
     infantry_fire = 0.35
     infantry_shock = 0.35
@@ -525,7 +594,14 @@ technology = {
 
 technology = {
 	# Tech 14
-	year = 336
+	year = 349
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+	}
 
     cavalry_shock = 0.7
     cavalry_fire = 0.3
@@ -534,14 +610,29 @@ technology = {
 
 technology = {
 	# Tech 15
-	year = 349
+	year = 362
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+	}
 	
 	fortress = yes
 }
 
 technology = {
 	# Tech 16
-	year = 362
+	year = 375
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.15
+	}
 	
     land_morale = 0.5
     military_tactics = 0.5
@@ -549,7 +640,17 @@ technology = {
 
 technology = {
 	# Tech 17
-	year = 375
+	year = 388
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.30
+	}
+
+	grand_shipyard = yes
 
     supply_limit = 0.25
     combat_width = 2
@@ -557,7 +658,15 @@ technology = {
 
 technology = {
 	# Tech 18
-	year = 388
+	year = 401
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+	}
 
 	# Unique
     enable = dragon_rider_3
@@ -756,7 +865,18 @@ technology = {
 
 technology = {
 	# Tech 19
-	year = 401
+	year = 414
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.15
+	}
+
+	regimental_camp = yes
     
     artillery_fire = 0.9
     artillery_shock = 0.3
@@ -764,7 +884,16 @@ technology = {
 
 technology = {
 	# Tech 20
-	year = 414
+	year = 427
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.30
+	}
 
     land_morale = 1
     military_tactics = 0.5
@@ -774,7 +903,16 @@ technology = {
 
 technology = {
 	# Tech 21
-	year = 427
+	year = 440
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
     infantry_fire = 0.35
     infantry_shock = 0.35
@@ -782,7 +920,16 @@ technology = {
 
 technology = {
 	# Tech 22
-	year = 440
+	year = 453
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
     cavalry_shock = 0.7
     cavalry_fire = 0.3
@@ -791,7 +938,16 @@ technology = {
 
 technology = {
 	# Tech 23
-	year = 453
+	year = 466
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
     
     infantry_fire = 0.35
     infantry_shock = 0.35
@@ -799,7 +955,16 @@ technology = {
 
 technology = {
 	# Tech 24
-	year = 466
+	year = 479
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
     
 	# Unique
     enable = dragon_rider_4
@@ -998,7 +1163,16 @@ technology = {
 
 technology = {
 	# Tech 25
-	year = 479
+	year = 492
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 	
     supply_limit = 0.25
     combat_width = 2
@@ -1006,7 +1180,16 @@ technology = {
 
 technology = {
 	# Tech 26
-	year = 492
+	year = 505
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
     infantry_fire = 0.35
     infantry_shock = 0.35
@@ -1014,7 +1197,16 @@ technology = {
 
 technology = {
 	# Tech 27
-	year = 505
+	year = 518
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
     artillery_fire = 0.9
     artillery_shock = 0.3
@@ -1022,7 +1214,16 @@ technology = {
 
 technology = {
 	# Tech 28
-	year = 518
+	year = 531
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 	
     land_morale = 0.5
     military_tactics = 0.75
@@ -1030,7 +1231,16 @@ technology = {
 
 technology = {
 	# Tech 29
-	year = 531
+	year = 544
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
     supply_limit = 0.25
     combat_width = 2
@@ -1038,7 +1248,16 @@ technology = {
 
 technology = {
 	# Tech 30
-	year = 544
+	year = 557
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
     cavalry_shock = 1.2
     cavalry_fire = 0.5
@@ -1047,7 +1266,16 @@ technology = {
 
 technology = {
 	# Tech 31
-	year = 557
+	year = 570
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
     
     infantry_fire = 0.4
     infantry_shock = 0.45
@@ -1055,7 +1283,16 @@ technology = {
 
 technology = {
 	# Tech 32
-	year = 570
+	year = 583
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
     land_morale = 1
     military_tactics = 0.75
@@ -1063,7 +1300,16 @@ technology = {
 
 technology = {
 	# Tech 33
-	year = 583
+	year = 596
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
     supply_limit = 0.25
     combat_width = 2	
@@ -1071,7 +1317,16 @@ technology = {
 
 technology = {
 	# Tech 34
-	year = 596
+	year = 609
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
     # Unique
     enable = dragon_rider_5
@@ -1270,16 +1525,20 @@ technology = {
 
 technology = {
 	# Tech 35
-	year = 609
+	year = 622
+	expects_institution = {
+		feudal_structure = 0.50
+		crop_rotation = 0.50
+		high_engineering = 0.50
+		world_trade = 0.50
+		the_printing_press = 0.50
+		manufacturing = 0.50
+		early_industrialization = 0.50
+	}
 
     infantry_fire = 0.7
     infantry_shock = 0.7
-}
 
-technology = {
-	# Tech 36
-	year = 622
-
-    land_morale = 0.5
+	land_morale = 0.5
     military_tactics = 1
 }

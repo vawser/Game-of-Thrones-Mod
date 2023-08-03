@@ -60,13 +60,13 @@ default = {
 	transfer_trade_if_merchant_republic = no
 	joins_overlords_wars = yes
 	can_be_co_belligerented =  no    #Enemies can force this subject to join its overlord into the defense war. Only used when the subject has the "joins_overlords_wars = no". By default it's "no".
-	can_be_called_to_wars =  no    #Overlord can ask subject to join wars like it could ask allies to join. You would require favors  to call them to wars. Only used when the subject has the "joins_overlords_wars = no". By default it's "no"
+	must_accept_cta_from_overlord =  no    #Overlord can ask subject to join wars like it could ask allies to join. You would require favors  to call them to wars. Only used when the subject has the "joins_overlords_wars = no". By default it's "no"
 	favors_cost_to_join_offensive_wars = 0   #Defines how much favors the overlord need to invest to call the subject into an offensive war
 	favors_cost_to_join_defensive_wars = 0   #Defines how much favors the overlord need to invest to call the subject into a defensive war
 	opinion_cost_to_join_offensive_wars = 0   #Defines how much opinion the subject loses of the overlord to call the subject into an offensive war. Applied if you do not have Leviathan
 	opinion_cost_to_join_defensive_wars = 0   #Defines how much opinion the subject loses of the overlord to call the subject into a defensive war. Applied if you do not have Leviathan
 	opinion_cost_instead_of_favors_cost = no   #Determines if the subject requires favors or opinion to join a the war. If set "yes" then it requires the aforementioned opinion costs - regardless if Leviathan is active or not. "No" is the default setting
-	opinion_on_subject_integration = -30 #Determines how much opinion they actually lose when a fellow subject gets integrated.
+	opinion_on_subject_integration = 30 #Determines how much opinion they actually lose when a fellow subject gets integrated.
 	joins_colonial_wars = no
 	can_be_integrated = no
 	can_release_and_play = no							# "Release Colony" in SubjectView
@@ -175,6 +175,9 @@ default = {
 	allow_settlement_growth = yes
 	change_colonial_type = no
 	upgrade_subject_type = no
+	seize_court_resources = no
+	request_extra_levies = no
+	grant_administrative_autonomy = no
 
 	# (special)
 	sword_hunt = no
@@ -453,6 +456,15 @@ march = {
 		trigger = {
 			overlord = {
 				has_government_attribute = subject_tax_modifier_25
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = same_religion_subject_bonus_mod
+		trigger = {
+			overlord = {
+				has_government_attribute = same_religion_subject_bonus
+				religion = PREV
 			}
 		}
 	}

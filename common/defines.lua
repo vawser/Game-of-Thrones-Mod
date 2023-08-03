@@ -132,7 +132,7 @@ NDiplomacy = {
 	JOIN_HRE_DEVELOPMENT_CAP_VASSAL = 200,			-- Max cap of development of vassals to join the empire
 	IMPERIAL_REFORM_COST = 50,						-- Minium Cost of enacting a new reform.
 	IMPERIAL_REFORM_AUTHORITY_ACCEPTANCE = 1,		-- How much acceptance for each authority above IMPERIAL_REFORM_COST
-	CELESTIAL_EMPIRE_REFORM_COST = 80,				-- Mandate cost of enacting a new reform for the Emperor of China.
+	CELESTIAL_EMPIRE_REFORM_COST = 70,				-- Mandate cost of enacting a new reform for the Emperor of China.
 	CELESTIAL_EMPIRE_REFORM_STABILITY_COST = 1,		-- Stability cost of enacting a new reform for the Emperor of China
 	CELESTIAL_EMPIRE_REFORM_MIN_VALUE = 80,		-- Minimum value of Mandate above which new reforms can be enacted.
 	DEFENDER_OF_FAITH_COST = 500, 					-- _DDEF_DEFENDER_OF_FAITH_COST_
@@ -502,7 +502,7 @@ NCountry = {
 	SPLENDOR_ABILITY_COST = 800,
 	PROSPERITY_MONTHLY_DECLINE = -2,				-- monthly tick
 	PROSPERITY_INCREASE_SIZE= 1,				-- if diceroll of d20< monarch stat, while possible ot increase
-	CORRUPTION_FROM_BANNERS = 5,
+	CORRUPTION_FROM_BANNERS = 0.1,
 	FORCE_CONVERT_COOLDOWN_DURATION = 10,				-- Years
 
 
@@ -845,7 +845,7 @@ NCountry = {
 	POPULATION_GROWTH = 0.03, 						-- _CDEF_POPULATION_GROWTH_; Base population growth.
 	COLONIAL_GROWTH_PENALTY = 100, 					-- growth penalty for low colonial maintenance
 	BANKRUPTCY_COLONIAL_GROWTH_PENALTY = -200, 		-- growth penalty for bankruptcy
-	MAX_NATIONALISM = 10,
+	MAX_NATIONALISM = 30,
 	MIN_NATIONALISM = -30,
 	YEARS_OF_NATIONALISM = 30, 						-- _CDEF_YEARS_OF_NATIONALISM_; Years of Nationalism
 	YEARS_UNTIL_BROKEN = 2, 						-- _CDEF_YEARS_UNTIL_BROKEN_; Years until rebel held capital results in broken country.
@@ -915,6 +915,12 @@ NCountry = {
 	LIBERTY_DESIRE_ROYAL_MARRIAGE = -5,				-- Liberty desire from having RM with overlord
 	LIBERTY_DESIRE_SCUTAGE_OFF = 25,				-- Liberty desire from turning off scutage
 	LOST_INDEPENDANCE_WAR_LIBERTY_DESIRE = -50,		-- How much liberty desire is decreased when an independance war ends
+
+	REQUEST_EXTRA_LEVIES_MAX_LIBERTY_DESIRE = 25,
+	REQUEST_EXTRA_LEVIES_COOLDOWN_MONTHS = 60,
+
+	SEIZE_COURT_RESOURCES_MAX_LIBERTY_DESIRE = 25,
+	SEIZE_COURT_RESOURCES_COOLDOWN_MONTHS = 60,
 
 	MIN_LIBERTY_DESIRE = 0,							-- Min total (effective) liberty desire
 	MAX_LIBERTY_DESIRE = 100,						-- Max total (effective) liberty desire

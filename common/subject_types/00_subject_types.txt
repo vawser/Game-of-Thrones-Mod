@@ -269,13 +269,11 @@ feudatory = {
 
 	# Properties:
 	joins_overlords_wars = no
-	# can_be_called_to_wars = yes
-	# opinion_cost_instead_of_favors_cost = yes
-	# opinion_cost_to_join_offensive_wars = 40
-	# opinion_cost_to_join_defensive_wars = 20
-	# can_be_co_belligerented = yes
-	# favors_cost_to_join_offensive_wars = 20
-	# favors_cost_to_join_defensive_wars = 10
+	must_accept_cta_from_overlord = yes
+	favors_cost_to_join_offensive_wars = 20
+	favors_cost_to_join_defensive_wars = 10
+	opinion_cost_to_join_offensive_wars = 60
+	opinion_cost_to_join_defensive_wars = 30
 	overlord_protects_external = yes					# Whether overlord always gets called (declinable) against countries without the same overlord. When this is 'no' overlord will only join if the defender would have been blocked (by its subject type) from attacking the attacker.
 	overlord_enforce_peace_attacking = yes				# Whether the overlord can enforce peace on the subject's enemy even when the subject is the attacker
 	can_be_annexed = no
@@ -291,9 +289,14 @@ feudatory = {
 	military_focus = 1.2
 
 	# Subject Interactions:
+	scutage = no
+	embargo_rivals = no
+	
+	enforce_religion = no
 	place_relative_on_throne = no
 	seize_territory = no
-	embargo_rivals = no
+	seize_court_resources = yes
+	grant_administrative_autonomy = yes
 
 	can_fight = {
 		independent_nations = yes
@@ -365,6 +368,7 @@ castellany = {
 	diplomacy_subject_sprite = GFX_diplomacy_amvassal
 
 	# Properties:
+	joins_overlords_wars = yes
 	replace_governor = yes
 	grant_core_claim = no
 	grant_province = no

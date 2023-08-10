@@ -1,0 +1,124 @@
+wildling_society_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 5
+
+	powers = {
+		wildling_cohesion = {
+			max = 100
+			default = 10
+			reset_on_new_ruler = no
+			base_monthly_growth = 0.10
+			show_before_interactions = yes
+			
+			scaled_modifier = {
+				modifier = {
+					monthly_wildling_cohesion = -0.25
+				}
+			}
+			scaled_modifier = {
+				start_value = 50
+				end_value = 100
+				modifier = {
+					global_unrest = -2
+					reform_progress_growth = 0.33
+					global_manpower_modifier = 0.50
+				}
+			}
+			reverse_scaled_modifier = {
+				start_value = 0
+				end_value = 50
+				modifier = {
+					global_unrest = 8
+					reform_progress_growth = -0.25
+					global_manpower_modifier = -0.50
+				}
+			}
+			on_min_reached = {
+				kill_ruler = yes
+			}
+		}
+	}
+
+	interactions = {
+		rally_local_clans = {
+			gui = wildling_society_gov_mech
+			cost_type = wildling_cohesion
+			cost = 50
+			trigger = {
+				calc_true_if = {
+					amount = 2
+					all_country = {
+						has_reform = wildling_clan_reform
+					}
+				}
+			}
+			effect = {
+				every_country = {
+					limit = {
+						has_reform = wildling_clan_reform
+						knows_country = ROOT
+					}
+					add_trust = {
+						who = ROOT
+						value = 5
+					}
+				}
+			}
+			cooldown_years = 0
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					is_at_war = no
+				}
+				modifier = {
+					factor = 10
+					is_in_important_war = yes
+					has_government_power = {
+						mechanic_type = wildling_society_mechanic
+						power_type = wildling_cohesion
+						value = 95
+					}
+				}
+				modifier = {
+					factor = 2
+					not = { 
+						has_leaders = {
+							value = 1
+							type = general
+							include_monarch = no
+							include_heir = no
+						}
+					}
+				}
+				modifier = {
+					factor = 2
+					not = { 
+						has_leaders = {
+							value = 2
+							type = general
+							include_monarch = no
+							include_heir = no
+						}
+					}
+				}
+				modifier = {
+					factor = 2
+					not = { 
+						has_leader_with = {
+							general = yes
+							total_pips = 6
+						}
+					}
+				}
+				modifier = {
+					factor = 0.1
+					has_leader_with = {
+						general = yes
+						total_pips = 11
+					}
+				}
+			}
+		}
+	}
+}

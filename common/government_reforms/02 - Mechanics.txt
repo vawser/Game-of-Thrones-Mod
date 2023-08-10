@@ -71,15 +71,16 @@ theocracy_mechanic = {
 }
 
 tribal_mechanic = {
-    basic_reform = yes
-    
 	tribal = yes
 	monarchy = yes
-    
-	heir = yes
-	queen = no
-
+	basic_reform = yes
 	valid_for_nation_designer = no
+	heir = yes
+	queen = yes
+
+	modifiers = {
+		max_absolutism = -40
+	}
 }
 
 native_mechanic = {

@@ -1442,6 +1442,8 @@ tribe_reform = {
 	
 	potential = {
 		NOT = { has_reform = wildling_clan_reform }
+		NOT = { has_reform = new_wildling_clan_reform }
+		NOT = { has_reform = kingdom_beyond_the_wall_reform }
 		NOT = { has_reform = lhazar_clan_reform }
 		NOT = { has_reform = ibben_clan_reform }
 		NOT = { has_reform = omber_clan_reform }
@@ -1469,7 +1471,7 @@ wildling_clan_reform = {
 	icon = "wildlings"
 	
 	potential = {
-		primary_culture = free_folk
+		is_wildling_culture = yes
 		capital_scope = { region = region_beyond_the_wall }
 	}
 	
@@ -1492,13 +1494,58 @@ wildling_clan_reform = {
 		mercantile_chieftains
 		warlike_chieftains
 	}
-	
+
+	government_abilities = {
+		wildling_society_mechanic
+	}
+
 	custom_attributes = {
 		enables_tribal_ideagroup = yes
+	}
+}
+new_wildling_clan_reform = {
+	icon = "clan_chief"
+	
+	potential = {
+		is_wildling_culture = yes
+		capital_scope = { region = region_beyond_the_wall }
+	}
+	
+	allow_normal_conversion = yes
+	legacy_equivalent = tribe_legacy
+	
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	modifiers = {
+		land_forcelimit_modifier = 0.33
+		relation_with_same_culture = -25
 	}
 
 	government_abilities = {
 		wildling_society_mechanic
+	}
+	
+	custom_attributes = {
+		enables_tribal_ideagroup = yes
+	}
+}
+kingdom_beyond_the_wall_reform = {
+	icon = "king_beyond_the_wall"
+	
+	potential = {
+		is_wildling_culture = yes
+		capital_scope = { region = region_beyond_the_wall }
+	}
+	
+	allow_normal_conversion = yes
+	legacy_equivalent = tribe_legacy
+	
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	modifiers = {
+		
 	}
 }
 lhazar_clan_reform = {

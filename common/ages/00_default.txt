@@ -522,14 +522,14 @@ age_of_rebellion = {
 			allow = {
 				capital_scope = { region = region_beyond_the_wall }
 			}
-			culture = free_folk
+			is_wildling_culture = yes
 			government_rank = 2
 			custom_trigger_tooltip = {
 				tooltip = obj_unite_the_wildlings_tooltip
 				NOT = {
 					calc_true_if = {
 						all_country = {
-							culture = free_folk
+							is_wildling_culture = yes
 						}
 						amount = 1
 					}

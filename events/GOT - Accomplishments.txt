@@ -56,7 +56,11 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		FROM = { NOT = { tag = REB } }
+		FROM = { 
+            owner = { 
+                NOT = { tag = REB } 
+            } 
+        }
 	}
 	
 	option = {

@@ -1455,17 +1455,6 @@ barracks = {
 				add_manpower = 1
 			}
 		}
-		if = {
-			limit = {
-				FROM = {
-					mission_completed = jap_tanegashima_teppo
-					has_dlc = "Cradle of Civilization" 
-				}
-			}
-			FROM = {
-				add_army_professionalism = 0.001
-			}
-		}
 		add_development_from_building = {
 			building = barracks
 			type = manpower
@@ -1484,17 +1473,6 @@ barracks = {
 			}
 			FROM = {
 				add_manpower = -1
-			}
-		}
-		if = {
-			limit = {
-				FROM = {
-					mission_completed = jap_tanegashima_teppo
-					has_dlc = "Cradle of Civilization" 
-				}
-			}
-			FROM = {
-				add_army_professionalism = -0.001
 			}
 		}
 		remove_development_from_building = {
@@ -1592,17 +1570,6 @@ training_fields = {
 		# update_improved_military_buildings_modifier = {
 		# 	building = training_fields
 		# }
-		if = {
-			limit = {
-				FROM = {
-					mission_completed = jap_tanegashima_teppo
-					has_dlc = "Cradle of Civilization" 
-				}
-			}
-			FROM = {
-				add_army_professionalism = 0.001
-			}
-		}
 	}
 	on_destroyed = {
 		if = {
@@ -1618,17 +1585,6 @@ training_fields = {
 		# update_improved_military_buildings_modifier = {
 		# 	building = training_fields
 		# }
-		if = {
-			limit = {
-				FROM = {
-					mission_completed = jap_tanegashima_teppo
-					has_dlc = "Cradle of Civilization" 
-				}
-			}
-			FROM = {
-				add_army_professionalism = -0.001
-			}
-		}
 		remove_development_from_building = {
 			building = training_fields
 			type = manpower
@@ -1685,17 +1641,6 @@ regimental_camp = {
 		# update_improved_military_buildings_modifier = {
 		# 	building = regimental_camp
 		# }
-		if = {
-			limit = {
-				FROM = {
-					mission_completed = jap_tanegashima_teppo
-					has_dlc = "Cradle of Civilization" 
-				}
-			}
-			FROM = {
-				add_army_professionalism = 0.001
-			}
-		}
 	}
 	on_destroyed = {
 		remove_development_from_building = {
@@ -1706,17 +1651,6 @@ regimental_camp = {
 		# update_improved_military_buildings_modifier = {
 		# 	building = regimental_camp
 		# }
-		if = {
-			limit = {
-				FROM = {
-					mission_completed = jap_tanegashima_teppo
-					has_dlc = "Cradle of Civilization" 
-				}
-			}
-			FROM = {
-				add_army_professionalism = -0.001
-			}
-		}
 	}
 	on_obsolete = {
 	}

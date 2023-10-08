@@ -216,7 +216,7 @@ estate_commoners_build_tavern_in_y = {
 	can_select = {
 		any_owned_province = {
 			is_state_core = root
-			NOT = { has_building = tavern }
+			NOT = { has_courthouse_building_trigger = yes }
 			num_free_building_slots = 1
 		}
 	}
@@ -228,7 +228,7 @@ estate_commoners_build_tavern_in_y = {
 				any_owned_province = {
 					is_state_core = root
 					base_tax = 10
-					NOT = { has_building = tavern }
+					NOT = { has_courthouse_building_trigger = yes }
                     num_free_building_slots = 1
 				}
 			}
@@ -238,7 +238,7 @@ estate_commoners_build_tavern_in_y = {
 			any_owned_province = {
 				is_state_core = root
 				base_tax = 20
-				NOT = { has_building = tavern }
+				NOT = { has_courthouse_building_trigger = yes }
                     
 			}
 		}
@@ -253,7 +253,7 @@ estate_commoners_build_tavern_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
-				NOT = { has_building = tavern }
+				NOT = { has_courthouse_building_trigger = yes }
                 num_free_building_slots = 1
 			}
 			save_event_target_as = agenda_province
@@ -262,7 +262,7 @@ estate_commoners_build_tavern_in_y = {
 			limit = {
 				is_state_core = root
 				base_tax = 10
-				NOT = { has_building = tavern }
+				NOT = { has_courthouse_building_trigger = yes }
                 num_free_building_slots = 1
 			}
 			save_event_target_as = agenda_province
@@ -271,7 +271,7 @@ estate_commoners_build_tavern_in_y = {
 			limit = {
 				is_state_core = root
 				base_tax = 20
-				NOT = { has_building = tavern }
+				NOT = { has_courthouse_building_trigger = yes }
                 num_free_building_slots = 1
 			}
 			save_event_target_as = agenda_province
@@ -287,7 +287,7 @@ estate_commoners_build_tavern_in_y = {
 	}
     task_requirements = {
 		event_target:agenda_province = {
-            has_building = tavern
+            has_courthouse_building_trigger = yes
         }
     }
     task_completed_effect = {
@@ -337,7 +337,7 @@ estate_commoners_build_farm_in_y = {
 	can_select = {
 		any_owned_province = {
 			is_state_core = root
-			NOT = { has_building = farm }
+			NOT = { has_tax_building_trigger = yes }
 			num_free_building_slots = 1
 		}
 	}
@@ -349,7 +349,7 @@ estate_commoners_build_farm_in_y = {
 				any_owned_province = {
 					is_state_core = root
 					base_tax = 10
-					NOT = { has_building = farm }
+					NOT = { has_tax_building_trigger = yes }
                     num_free_building_slots = 1
 				}
 			}
@@ -359,7 +359,7 @@ estate_commoners_build_farm_in_y = {
 			any_owned_province = {
 				is_state_core = root
 				base_tax = 20
-				NOT = { has_building = farm }
+				NOT = { has_tax_building_trigger = yes }
                     
 			}
 		}
@@ -374,7 +374,7 @@ estate_commoners_build_farm_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
-				NOT = { has_building = farm }
+				NOT = { has_tax_building_trigger = yes }
                 num_free_building_slots = 1
 			}
 			save_event_target_as = agenda_province
@@ -383,7 +383,7 @@ estate_commoners_build_farm_in_y = {
 			limit = {
 				is_state_core = root
 				base_tax = 10
-				NOT = { has_building = farm }
+				NOT = { has_tax_building_trigger = yes }
                 num_free_building_slots = 1
 			}
 			save_event_target_as = agenda_province
@@ -392,7 +392,7 @@ estate_commoners_build_farm_in_y = {
 			limit = {
 				is_state_core = root
 				base_tax = 20
-				NOT = { has_building = farm }
+				NOT = { has_tax_building_trigger = yes }
                 num_free_building_slots = 1
 			}
 			save_event_target_as = agenda_province
@@ -408,7 +408,7 @@ estate_commoners_build_farm_in_y = {
 	}
     task_requirements = {
 		event_target:agenda_province = {
-            has_building = farm
+            has_tax_building_trigger = yes
         }
     }
     task_completed_effect = {

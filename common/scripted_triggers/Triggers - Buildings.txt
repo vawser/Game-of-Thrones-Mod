@@ -18,67 +18,85 @@ province_is_a_castle_on_the_wall = {
 # Building triggers
 has_tax_building_trigger = {
 	OR = {
-		has_building = farm
+		has_building = constable_quarters
+		has_building = tax_office
+		has_building = treasury
 	}
 }
 
 has_trade_building_trigger = {
 	OR = {
-		has_building = market
+		has_building = merchants_hub
+		has_building = marketplace
+		has_building = trade_depot
+		has_building = stock_exchange
 	}
 }
 
 has_production_building_trigger = {
 	OR = {
-		has_building = mine
+		has_building = workshop
+		has_building = windmill
+		has_building = factory
 	}
 }
 
 has_manpower_building_trigger = {
 	OR = {
 		has_building = barracks
+		has_building = training_fields
+		has_building = regimental_camp
 	}
 }
 
 has_shipyard_building_trigger = {
 	OR = {
+		has_building = dock
 		has_building = shipyard
+		has_building = grand_shipyard
 	}
 }
 
 has_dock_building_trigger = {
 	OR = {
 		has_building = dock
+		has_building = shipyard
+		has_building = grand_shipyard
 	}
 }
 
 has_forcelimit_building_trigger = {
 	OR = {
-		has_building = drill_square
+		has_building = barracks
+		has_building = training_fields
+		has_building = regimental_camp
 	}
 }
 
 has_courthouse_building_trigger = {
 	OR = {	
+		has_building = courthouse
 		has_building = town_hall
+		has_building = governors_manor
 	}
 }
 
 has_road_building_trigger = {
-	OR = {	
-		has_building = paved_road
-	}
+	# OR = {	
+		# has_building = paved_road
+	# }
 }
 
 has_supply_building_trigger = {
-	OR = {	
-		has_building = supply_depot
-	}
+	# OR = {	
+		# has_building = supply_depot
+	# }
 }
 
 has_temple_building_trigger = {
 	OR = {	
-		has_building = temple
+		has_building = church
+		has_building = cathedral
 	}
 }
 

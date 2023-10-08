@@ -621,6 +621,7 @@ war_taxes = {
 stability = {
 	global_trade_power = 0.01			#1% chance each step.
 	global_spy_defence = 0.05				#-15 to +15% modifier
+	sedentary_chieftains_influence = 0.04
 }
 
 positive_stability = {
@@ -731,8 +732,9 @@ bankruptcy = {
 
 
 war = {
-	warlike_chieftains_influence = 0.02
+	warlike_chieftains_influence = 0.06
 	crw_militarists_influence = 0.05
+	monthly_wildling_cohesion = 0.10
 }
 
 peace = {
@@ -740,9 +742,9 @@ peace = {
 	monthly_fervor_increase = 1
 	global_autonomy = -0.1
 	global_institution_spread = 0.1
-	sedentary_chieftains_influence = 0.03
-	mercantile_chieftains_influence = 0.01
+	sedentary_chieftains_influence = 0.06
 	crw_militarists_influence = -0.03
+	monthly_wildling_cohesion = -0.05
 }
 
 unconditional_surrender = {
@@ -764,7 +766,7 @@ war_exhaustion = {
 	sailors_recovery_speed = -0.01
 	siege_ability = -0.01
 	global_trade_goods_size_modifier = -0.02
-    sedentary_chieftains_influence = 0.02
+	warlike_chieftains_influence = -0.08
 }
 
 doom = {
@@ -799,6 +801,7 @@ mercantilism = {
 	global_prov_trade_power_modifier = 2.0
 	embargo_efficiency = 1
     merchants_loyalty_modifier = 0.1
+	mercantile_chieftains_influence = 0.10
 }
 
 army_tradition = {
@@ -809,6 +812,7 @@ army_tradition = {
     nobles_loyalty_modifier = 0.05
 	allowed_tercio_fraction = 0.1
 	allowed_samurai_fraction = 0.1
+	warlike_chieftains_influence = 1.0
 }
 
 navy_tradition = {
@@ -821,6 +825,7 @@ navy_tradition = {
     merchants_loyalty_modifier = 0.05
 	allowed_geobukseon_fraction = 0.5
 	allowed_galleass_fraction = 0.5
+	mercantile_chieftains_influence = 0.10
 }
 
 positive_piety = {
@@ -905,7 +910,7 @@ num_of_marriages = {
 }
 
 num_of_provinces = {
-	
+	mercantile_chieftains_influence = 0.01
 }
 
 # Multiplied by the amount of papal influence
@@ -1146,7 +1151,6 @@ total_blockaded = {
 
 uncontested_cores = {
 	prestige = -0.1
-    
     warlike_chieftains_influence = 0.02
 }
 
@@ -2110,15 +2114,18 @@ num_accepted_cultures = {
 }
 
 ruler_adm = {
-
+	sedentary_chieftains_influence = 0.01
+	monthly_wildling_cohesion = 0.02
 }
 
 ruler_dip = {
-
+	mercantile_chieftains_influence = 0.01
+	monthly_wildling_cohesion = 0.02
 }
 
 ruler_mil = {
-
+	warlike_chieftains_influence = 0.01
+	monthly_wildling_cohesion = 0.02
 }
 
 heir_adm = {

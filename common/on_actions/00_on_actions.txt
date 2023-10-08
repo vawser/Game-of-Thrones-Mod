@@ -770,6 +770,7 @@ on_heir_death = {
 		limit = { has_ruler_flag = heir_went_on_grand_tour }
 		clr_ruler_flag = heir_went_on_grand_tour
 	}
+	on_heir_disinherited_or_death_effect = yes
 }
 
 # Country
@@ -3137,5 +3138,5 @@ on_royal_marriage = { #ROOT - Marraige sender, FROM - marriage accepter
 }
 
 on_heir_disinherited = {
-
+	on_heir_disinherited_or_death_effect = yes
 }

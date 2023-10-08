@@ -72,41 +72,36 @@ nw_rangers = {
 # Wildling Nations
 ###############################
 
-warlike_chieftains = {
-	monarch_power = MIL
+sedentary_chieftains = {
+	monarch_power = ADM
 	always = yes
-    
+	
 	modifier = {
-		global_manpower_modifier = 0.15
-		army_tradition = 0.1
-		land_maintenance_modifier = -0.15
-		trade_efficiency = -0.20
-		diplomatic_reputation = -1
+		diplomatic_reputation = 1
+		stability_cost_modifier = -0.10
+		reform_progress_growth = 0.15
+		land_morale = -0.05
 	}
 }
 
 mercantile_chieftains = {
 	monarch_power = DIP
 	always = yes
-    
+	
 	modifier = {
-		trade_efficiency = 0.2
-		global_ship_trade_power = 0.2
-		global_sailors_modifier = 0.2
-		global_manpower_modifier = -0.1
-		navy_tradition = 0.1
+		production_efficiency = 0.10
+		global_trade_goods_size_modifier = 0.125
 	}
 }
 
-sedentary_chieftains = {
-	monarch_power = ADM
+warlike_chieftains = {
+	monarch_power = MIL
 	always = yes
-    
+	
 	modifier = {
-		global_manpower_modifier = -0.15
-		production_efficiency = 0.2
-		global_trade_goods_size_modifier = 0.25
-		development_cost = -0.15
-		diplomatic_reputation = 1
+		land_morale = 0.10
+		land_forcelimit_modifier = 0.50
+		loot_amount = 0.33
+		reform_progress_growth = -0.20
 	}
 }

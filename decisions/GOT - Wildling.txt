@@ -11,10 +11,14 @@ country_decisions = {
 		}
 		effect = {
 			add_years_of_income = -1
-			
 			add_ruler_modifier = {
 				name = commissioned_runestone
 				duration = -1
+			}
+			add_government_power = {
+				mechanic_type = wildling_society_mechanic
+				power_type = wildling_cohesion
+				value = 5
 			}
 		}
 		
@@ -42,6 +46,11 @@ country_decisions = {
 			clr_country_flag = feudal_structure_block
 			add_stability = -2
 			add_adm_power = -250
+			add_government_power = {
+				mechanic_type = wildling_society_mechanic
+				power_type = wildling_cohesion
+				value = -10
+			}
 		}
 	}
 }

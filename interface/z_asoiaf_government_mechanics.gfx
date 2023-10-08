@@ -1,0 +1,24 @@
+spriteTypes = {
+	### Wildling Society ###
+	progressbartype = {
+		name = "GFX_wildling_society_power_bar"
+		color = { 1.0 0.0 0.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/government_mechanics/wildling_society_progress_bar.dds"
+		textureFile2 = "gfx/interface/government_mechanics/wildling_society_progress_bar_empty.dds"
+		size = { x = 260 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+
+	spriteType = {
+		name = "GFX_wildling_society_frame"
+		texturefile = "gfx/interface/government_mechanics/wildling_society.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GFX_unify_clans_button"
+		texturefile = "gfx/interface/government_mechanics/unify_clans_button.dds"
+	}
+}

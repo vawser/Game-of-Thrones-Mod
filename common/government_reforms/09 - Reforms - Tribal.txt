@@ -1,6 +1,59 @@
 #-----------------------------------------
+# "Core Tenets"
+#-----------------------------------------
+got_look_to_the_future_reform = {
+	icon = "war_chieftains"
+	allow_normal_conversion = yes
+	potential = {
+		has_reform = wildling_clan_reform
+	}
+	trigger = {
+		OR = {
+			custom_trigger_tooltip = {
+				tooltip = government_reform_enacted_tooltip
+				has_reform = got_look_to_the_future_reform
+			}
+			faction_in_power = sedentary_chieftains
+			faction_in_power = mercantile_chieftains
+		}
+	}
+	modifiers = {
+		monthly_wildling_cohesion = -0.15
+		monthly_reform_progress = 0.10
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_maintain_traditionalist_ways_reform = {
+	icon = "war_charge"
+	allow_normal_conversion = yes
+	potential = {
+		has_reform = wildling_clan_reform
+	}
+	trigger = {
+		OR = {
+			custom_trigger_tooltip = {
+				tooltip = government_reform_enacted_tooltip
+				has_reform = got_maintain_traditionalist_ways_reform
+			}
+			faction_in_power = warlike_chieftains
+		}
+	}
+	modifiers = {
+		sedentary_chieftains_influence = -0.10
+		legitimacy = 0.25
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+#-----------------------------------------
 # "Cultural Values"
 #-----------------------------------------
+
 got_martial_society_reform = {
 	allow_normal_conversion = yes
 	icon = "tribal_martial_society"
@@ -153,5 +206,38 @@ got_tribal_unity_reform = {
 	}
 }
 
+#-----------------------------------------
+# "Tribal Reformation"
+#-----------------------------------------
+got_retain_tribal_hierarchy_reform = {
+	icon = "wildling_hut_highlighted"
+	allow_normal_conversion = yes
+	potential = {
+		has_reform = wildling_clan_reform
+	}
+	trigger = {
+		
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
 
-				
+got_centralize_the_clan_reform = {
+	icon = "clan_chief_highlighted"
+	allow_normal_conversion = yes
+	potential = {
+		has_reform = wildling_clan_reform
+	}
+	trigger = {
+		
+	}
+	effect = {
+		lose_reforms = 4
+		add_government_reform = new_wildling_clan_reform
+	}
+	ai = {
+		factor = 1
+	}
+}

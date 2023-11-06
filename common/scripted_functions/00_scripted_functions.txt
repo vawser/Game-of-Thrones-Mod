@@ -141,6 +141,9 @@ can_colonize_province_siberian_frontier = {
 can_add_seat_in_parliament = {
 }
 
+can_remove_seat_in_parliament = {
+}
+
 can_add_estate = {
 }
 
@@ -195,4 +198,20 @@ will_demand_annexation = {
 			NOT = { hre_reform_passed = king_enforce_the_kings_peace }
 		}
 	}
+}
+
+can_join_hre = {
+	condition = {
+		tooltip = "PERMANENTLY_LEFT_HRE"
+		potential = {
+		}
+		allow = {
+			NOT = {
+				has_country_flag = permanently_left_hre_flag
+			}
+		}
+	}
+}
+
+can_leave_hre = {
 }

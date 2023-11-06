@@ -2737,7 +2737,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "current_edict_effect"
-				position = { x = 90 y = 152 }
+				position = { x = 100 y = 153 }
 				textureFile = ""
 				font = "vic_18"
 				borderSize = {x = 2 y = 2}
@@ -2824,8 +2824,15 @@ guiTypes = {
 			smoothListboxType = {
 				name = "stateviews_listbox"
 				backGround = ""
-				position = { x = 12 y = 420 }
-				size = { x = 458 y = 300 }
+				position = { x = 12 y = 414 }
+				if_resolution = {
+					max_height = 899
+					size = { x = 458 y = 155 }
+				}
+				if_resolution = {
+					min_height = 900
+					size = { x = 458 y = 246 }
+				}			
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				scrollbartype = "standardlistbox_slider"
@@ -2851,7 +2858,7 @@ guiTypes = {
 				name = "great_projects_window"
 				backGround=""
 				position = { x=15 y=-105 }
-				size = { x=475 y=220 }
+				size = { x=475 y=210 }
 				dontRender = ""
 				horizontalBorder= ""
 				verticalBorder= ""
@@ -2880,7 +2887,7 @@ guiTypes = {
 				
 				smoothListboxType = {
 					name = "great_projects_list"
-					position = { x = 7 y = 59 }
+					position = { x = 7 y = 55 }
 					backGround=""
 					size = { x = 300 y = 180 }
 					spacing = 2
@@ -6747,6 +6754,11 @@ guiTypes = {
 			maxHeight = 20
 			format = left
 		}
+		guiButtonType = {
+			name = "name_overlay"
+			position = { x = 31 y = 6 }
+			quadTextureSprite = "GFX_state_view_invisible_button_114x20"
+		}
 
 		guiButtonType =
 		{
@@ -6784,7 +6796,7 @@ guiTypes = {
 		{
 			name ="religion"
 			spriteType = "GFX_icon_religion_small"
-			position = { x= 216 y = 4 }
+			position = { x= 214 y = 0 }
 		}
 
 		instantTextBoxType = {
@@ -6844,7 +6856,7 @@ guiTypes = {
 		name = "state_edict_entry"
 		backGround=""
 		position = { x=0 y=0 }
-		size = { x=300 y= 70 }
+		size = { x=300 y= 50 }
 		moveable = 0
 		dontRender = ""
 		horizontalBorder= ""
@@ -6853,7 +6865,7 @@ guiTypes = {
 
 		iconType = {
 			name = "edict_icon"
-			position = { x = 0 y = 2 }
+			position = { x = -3 y = -6 }
 			spriteType = "GFX_no_edict"
 		}
 
@@ -6867,7 +6879,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "edicts_eff"
-			position = { x = 63 y = 30 }
+			position = { x = 52 y = 30 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 2 y = 2}
@@ -6916,7 +6928,7 @@ guiTypes = {
 				name = "edicts_listbox"
 				backGround = ""
 				position = { x = 500 y = 51 }
-				size = { x = 380 y = 420 }
+				size = { x = 380 y = 450 }
 				horizontal = 0
 				scrollbartype = "standardlistbox_slider"
 				borderSize = {x = 0 y = 0}

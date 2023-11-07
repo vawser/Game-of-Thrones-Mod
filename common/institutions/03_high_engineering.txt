@@ -8,7 +8,9 @@ high_engineering = {
 
 	historical_start_date = 200.1.1
 	historical_start_province = 304
-	
+		
+	effect = { }
+
 	history = {
 		OR = {
 			AND = {
@@ -60,7 +62,10 @@ high_engineering = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = "tt_wildling_clan_block"
-				NOT = { owner = { has_country_flag = feudal_structure_block } }
+				OR = {
+					NOT = { owner = { has_country_flag = feudal_structure_block } }
+					owner = { has_government_attribute = masteries_spread_for_wildlings }
+				}
 			}
 		}
 	}

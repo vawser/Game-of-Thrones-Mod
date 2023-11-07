@@ -7,19 +7,19 @@ got_look_to_the_future_reform = {
 	potential = {
 		has_reform = wildling_clan_reform
 	}
-	trigger = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = government_reform_enacted_tooltip
-				has_reform = got_look_to_the_future_reform
-			}
-			faction_in_power = sedentary_chieftains
-			faction_in_power = mercantile_chieftains
-		}
-	}
+	# trigger = {
+	# 	OR = {
+	# 		custom_trigger_tooltip = {
+	# 			tooltip = government_reform_enacted_tooltip
+	# 			has_reform = got_look_to_the_future_reform
+	# 		}
+	# 		faction_in_power = sedentary_chieftains
+	# 		faction_in_power = mercantile_chieftains
+	# 	}
+	# }
 	modifiers = {
-		monthly_wildling_cohesion = -0.15
-		monthly_reform_progress = 0.10
+		monthly_wildling_cohesion = -0.05
+		relation_with_same_culture = -20
 	}
 	ai = {
 		factor = 1
@@ -32,15 +32,15 @@ got_maintain_traditionalist_ways_reform = {
 	potential = {
 		has_reform = wildling_clan_reform
 	}
-	trigger = {
-		OR = {
-			custom_trigger_tooltip = {
-				tooltip = government_reform_enacted_tooltip
-				has_reform = got_maintain_traditionalist_ways_reform
-			}
-			faction_in_power = warlike_chieftains
-		}
-	}
+	# trigger = {
+	# 	OR = {
+	# 		custom_trigger_tooltip = {
+	# 			tooltip = government_reform_enacted_tooltip
+	# 			has_reform = got_maintain_traditionalist_ways_reform
+	# 		}
+	# 		faction_in_power = warlike_chieftains
+	# 	}
+	# }
 	modifiers = {
 		sedentary_chieftains_influence = -0.10
 		legitimacy = 0.25
@@ -54,10 +54,77 @@ got_maintain_traditionalist_ways_reform = {
 # "Cultural Values"
 #-----------------------------------------
 
+got_wildling_settlers_reform = {
+	allow_normal_conversion = yes
+	icon = "tribal_civil_society"
+	potential = {
+		has_reform = got_look_to_the_future_reform
+	}
+	modifiers = {
+		colonists = 1
+		monthly_wildling_cohesion = -0.02
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_trading_with_the_crows_reform = {
+	allow_normal_conversion = yes
+	icon = "tribal_civil_society"
+	potential = {
+		has_reform = got_look_to_the_future_reform
+	}
+	modifiers = {
+		trade_efficiency = 0.10
+		monthly_wildling_cohesion = -0.02
+	}
+	custom_attributes = {
+		masteries_spread_for_wildlings = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_counseled_governance_reform = {
+	allow_normal_conversion = yes
+	icon = "tribal_civil_society"
+	potential = {
+		has_reform = got_look_to_the_future_reform
+	}
+	modifiers = {
+		advisor_cost = -0.125
+		monthly_wildling_cohesion = -0.02
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_wildling_alliances_reform = {
+	allow_normal_conversion = yes
+	icon = "tribal_martial_society"
+	potential = {
+		has_reform = got_maintain_traditionalist_ways_reform
+	}
+	modifiers = {
+		diplomatic_upkeep = 2
+	}
+	custom_attributes = {
+		alliances_increase_clan_cohesion = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
+
 got_martial_society_reform = {
 	allow_normal_conversion = yes
 	icon = "tribal_martial_society"
-    
+	potential = {
+		NOT = { has_reform = wildling_clan_reform }
+	}
 	modifiers = {
 		global_manpower_modifier = 0.2
 	}
@@ -76,7 +143,9 @@ got_martial_society_reform = {
 got_civil_society_reform = {
 	allow_normal_conversion = yes
 	icon = "tribal_civil_society"
-    
+    potential = {
+		NOT = { has_reform = wildling_clan_reform }
+	}
 	modifiers = {
 		global_tax_modifier = 0.05
 		yearly_corruption = -0.05

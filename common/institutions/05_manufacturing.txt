@@ -7,7 +7,9 @@ manufacturing = {
 
 	historical_start_date = 300.1.1
 	historical_start_province = 226
-	
+		
+	effect = { }
+
 	history = {
 		OR = {
 			AND = {
@@ -96,7 +98,10 @@ manufacturing = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = "tt_wildling_clan_block"
-				NOT = { owner = { has_country_flag = feudal_structure_block } }
+				OR = {
+					NOT = { owner = { has_country_flag = feudal_structure_block } }
+					owner = { has_government_attribute = masteries_spread_for_wildlings }
+				}
 			}
 		}
 	}

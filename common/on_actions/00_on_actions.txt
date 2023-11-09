@@ -486,6 +486,15 @@ on_new_monarch = {
 		}
 		add_king_titles = yes
 	}
+
+	if = {
+		limit = {
+			has_government_attribute = empower_wildling_faction_on_death
+		}
+		country_event = {
+			id = tribalgov.1
+		}
+	}
 	
 	if = {
 		limit = {

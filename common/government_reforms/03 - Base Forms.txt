@@ -1477,6 +1477,25 @@ tribe_reform = {
 		enables_tribal_ideagroup = yes
 	}
 }
+stateless_society = {
+	icon = "fist_in_air"
+	allow_normal_conversion = no
+	valid_for_nation_designer = yes
+	lock_level_when_selected = yes
+	nation_designer_cost = 0
+	modifiers = {
+		governing_capacity_modifier = -0.99
+		defensiveness = 0.75
+		land_morale = 0.15
+	}
+	ai = {
+		factor = 1
+		modifier = {
+			factor = -1
+			num_of_cities = 2
+		}
+	}
+}
 wildling_clan_reform = {
 	icon = "wildlings"
 	
@@ -1530,7 +1549,9 @@ new_wildling_clan_reform = {
 	
 	modifiers = {
 		land_forcelimit_modifier = 0.33
-		relation_with_same_culture = -25
+		stability_cost_modifier = -0.10
+		monthly_wildling_cohesion = 0.25
+		relation_with_same_culture = -40
 	}
 
 	government_abilities = {

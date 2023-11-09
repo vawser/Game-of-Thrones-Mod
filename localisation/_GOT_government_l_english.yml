@@ -53,7 +53,7 @@
  mechanic_allow_migration_yes: "Allows Migration: §GYes§!"
 
  # Tribal Custom Attribs
- mechanic_masteries_spread_for_wildlings_yes: "§YMasteries§! can spread in our provinces regardless of if we permitted it."
+ mechanic_masteries_spread_for_wildlings_yes: "§YMasteries§! will spread in our provinces regardless of if we have permitted it."
  mechanic_alliances_increase_clan_cohesion_yes: "Having at least §YTwo§! alliances with Wildling clans will increase our Clan Cohesion by §G0.10§! monthly."
 
  government_reform_enacted_tooltip: "Reform has already been §Yenacted§!"
@@ -609,11 +609,13 @@
  tier_theocracy_faith_and_the_world: "Our Faith and the World"
  
  tier_tribal_government_form: "Power Dynamic"
- tier_tribal_core_tenets: "Core Tenets"
+ tier_tribal_junior_leaders: "Leadership of Our People"
+ tier_tribal_guiding_principle: "Guiding Principles"
  tier_tribal_clan_doctrine: "Clan Doctrine"
- tier_tribal_tribal_religion: "Tribal Religion"
+ tier_tribal_tribal_religion: "Religious Tolerance"
+ tier_tribal_tribal_military: "Military Composition"
  tier_tribal_tribal_modernization: "Modernization"
- tier_tribal_tribal_reformation: "Tribal Reformation"
+ tier_tribal_tribal_reformation: "Organizational Structuring"
  
  tier_pirate_government_form: "Government Form"
  tier_pirate_governance: "Piratical Governance"
@@ -1062,25 +1064,45 @@
  # Tribal Reforms
  #---------------------------------------------
 
+ got_chieftains_principle_reform: "Chieftain's Principle"
+ got_chieftains_principle_reform_desc: "Civilizations time and time again have proven that without a strong leader to unite behind, their people will either succumb to expansionist forces. To guarantee our continuing stability, we must ensure that, in all levels of our clan, the people are working towards §RMY§! objectives."
+
+ got_council_of_chiefs_reform: "Council of Chiefs"
+ got_council_of_chiefs_reform_desc: "Dividing the powers and responsibilities of the clan leader to junior chieftains will not only alleviate the stress induced from the role of the leadership, but will also ensure the needs of the whole are taken into account at all times."
+ mechanic_empower_wildling_faction_on_death_yes: "The ascension of a new ruler will prompt you to empower one of your §YFactions§! for the initial phase of the reign."
+
+ got_warparty_reform: "United Wildling Warparty"
+ got_warparty_reform_desc: "By combining forces with other wildling clans, whether they be our allies or subjects, we can ensure the protection of our unified peoples from outside forces who wish to do us harm. This way, we can ensure both our safety and the safety of our brethern outside of our direct influence.\n\n§GNote: The bonus will still apply if you have a mix of alliances and subjects that meet the requirements:\n - Having two §YWildling§! allies and one §YWildling§! subject.\n - Having two §YWildling§! subjects and one §YWildling§! ally.§!"
+ mechanic_wildling_warparty_bonus_yes: "Having at least §Y3§! Wildling Allies or Subjects will grant us §G+10%§! Land Morale and §G+50%§! Land Forcelimit Modifier."
+
+ got_figurehead_leader_reform: "Titular Chief"
+ got_figurehead_leader_reform_desc: "The purpose of a centralized figure in our clan isn't one that is necessary. We have no need to follow one single leader when we live in a decentralized institution. Instead, they'll symbolically represent our clan's unity without the power to cause change in our society.\n\n§RNote: You will NOT be able to change your §YBase Reform§! or the §YGovernment Type§! while this reform is active.§!"
+
+ #
+ 
  got_look_to_the_future_reform: "Evolving Society"
- got_look_to_the_future_reform_desc: "For generations, our ancestors have upheld our ancient way of life and kept Westerosi influence at bay. But times are changing and we must embrace the change if we're to survive the coming turbulence.\n\n§RThis reform will take you down the §Y"Centralization"§! path of the Wildling Society, allowing us to eventually unify the free folk under one banner.§!"
+ got_look_to_the_future_reform_desc: "For generations, our ancestors have upheld our ancient way of life and kept Westerosi influence at bay. But times are changing and we must embrace the change if we're to survive the coming turbulence.\n\nThis reform will take you down the §Y"Centralization"§! path of the Wildling Society, allowing us to eventually unify the free folk under one banner.\n\n§RNote: You will NOT be able to change this reform later.§!"
  
  got_maintain_traditionalist_ways_reform: "True Wildling Society"
- got_maintain_traditionalist_ways_reform_desc: "Many may think that the right way forward is to reform our way of life and adopt a societal structure similar to that of the Westerosi peoples down south. That's not how we've survived for thousands of years, so we will continue with our normal way of life.\n\n§RThis reform will take you down the §Y"Decentralization"§! path of the Wildling Society, allowing us to build up our independent cultural identity.§!"
+ got_maintain_traditionalist_ways_reform_desc: "Many may think that the right way forward is to reform our way of life and adopt a societal structure similar to that of the Westerosi peoples down south. That's not how we've survived for thousands of years, so we will continue with our normal way of life.\n\nThis reform will take you down the §Y"Decentralization"§! path of the Wildling Society, allowing us to build up our independent cultural identity.\n\n§RNote: You will NOT be able to change this reform later.§!"
 
  #
 
  got_wildling_settlers_reform: "Clan Towns"
- got_wildling_settlers_reform_desc: "PLACEHOLDER"
+ got_wildling_settlers_reform_desc: "For generations our people have relied upon migrating from one area to another in order to live off the land. We'll need to move away from our migratory behavior and begin permanently settling the lands nearby if we're to expand our dominion to new heights."
 
  got_trading_with_the_crows_reform: "Crowtrading"
- got_trading_with_the_crows_reform_desc: "PLACEHOLDER"
+ got_trading_with_the_crows_reform_desc: "The conflict between our people and the crows to the south has gone on for far too long. We need to allow communications between our two societies in order to successfully modernize and get with the times."
+ got_trading_with_the_crows_reform_tt: "This reform will reveal all provinces in §YThe North§! and §YThe Night's Watch§!."
 
  got_counseled_governance_reform: "Counseled Governance"
  got_counseled_governance_reform_desc: "PLACEHOLDER"
 
  got_wildling_alliances_reform: "Wildling Alliances"
  got_wildling_alliances_reform_desc: "PLACEHOLDER"
+
+ got_raiding_doctrine_reform: "Raiding Doctrine"
+ got_raiding_doctrine_reform_desc: "PLACEHOLDER"
 
  got_martial_society_reform: "Martial Society"
  got_martial_society_reform_desc: "Martial values have always been important in our society and as we expand a militarized society is what we must continue to build and preserve at the core of our state."

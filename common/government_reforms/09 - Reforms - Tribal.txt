@@ -1,4 +1,84 @@
 #-----------------------------------------
+# "Junior Leaders"
+#-----------------------------------------
+got_chieftains_principle_reform = {
+	icon = "tormund"
+	allow_normal_conversion = yes
+	trigger = {
+		OR = {
+			legitimacy = 90
+			custom_trigger_tooltip = {
+				tooltip = government_reform_enacted_tooltip
+				has_reform = got_chieftains_principle_reform
+			}
+		}
+	}
+	modifiers = {
+		vassal_income = 0.20
+		yearly_absolutism = 0.5
+		yearly_corruption = -0.03
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_council_of_chiefs_reform = {
+	icon = "war_chieftains"
+	allow_normal_conversion = yes
+	potential = {
+		has_factions = yes
+	}
+	trigger = {
+		has_factions = yes
+	}
+	modifiers = {
+		same_culture_advisor_cost = -0.33
+		max_absolutism = -10
+		monthly_wildling_cohesion = 0.25
+	}
+	custom_attributes = {
+		empower_wildling_faction_on_death = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+# Wildling-only
+got_warparty_reform = {
+	icon = "war_charge"
+	allow_normal_conversion = yes
+	potential = { is_wildling_culture = yes }
+	trigger = {
+		
+	}
+	modifiers = {
+		army_tradition_from_battle = 0.33
+		warlike_chieftains_influence = 0.10
+	}
+	custom_attributes = {
+		wildling_warparty_bonus = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_figurehead_leader_reform = {
+	icon = "spiritual_leader"
+	allow_normal_conversion = yes
+	modifiers = {
+		country_admin_power = 1
+		global_unrest = -2
+		stability_cost_modifier = 0.05
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+#-----------------------------------------
 # "Core Tenets"
 #-----------------------------------------
 got_look_to_the_future_reform = {

@@ -49,13 +49,15 @@ wildling_society_mechanic = {
 				custom_tooltip = ousted_clan_ruler_tt
 				add_corruption = 5
 				add_prestige = -50
-				if = {
-					limit = {
-						has_heir = yes
+				hidden_effect = {
+					if = {
+						limit = {
+							has_heir = yes
+						}
+						kill_heir = { allow_new_heir = no }
 					}
-					kill_heir = { allow_new_heir = no }
+					kill_ruler = yes
 				}
-				kill_ruler = yes
 			}
 		}
 	}

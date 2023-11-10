@@ -132,6 +132,14 @@ is_tribal_government = {
 	}
 }
 
+is_wildling_government = {
+	OR = {
+		has_reform = wildling_clan_reform
+		has_reform = new_wildling_clan_reform
+		has_reform = kingdom_beyond_the_wall_reform
+	}
+}
+
 is_nomadic_government = {
 	OR = {
 		has_reform = warband_reform

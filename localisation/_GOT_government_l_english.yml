@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
  #---------------------------------------------
  # Mechanic Tooltips
  #---------------------------------------------
@@ -53,8 +53,13 @@
  mechanic_allow_migration_yes: "Allows Migration: §GYes§!"
 
  # Tribal Custom Attribs
+ mechanic_empower_wildling_faction_on_death_yes: "The ascension of a new ruler will prompt you to empower one of your §YFactions§! for the initial phase of the reign."
+ mechanic_wildling_warparty_bonus_yes: "Having at least §Y3§! Wildling Allies or Subjects will grant us §G+10%§! Land Morale and §G+50%§! Land Forcelimit Modifier."
  mechanic_masteries_spread_for_wildlings_yes: "§YMasteries§! will spread in our provinces regardless of if we have permitted it."
  mechanic_alliances_increase_clan_cohesion_yes: "Having at least §YTwo§! alliances with Wildling clans will increase our Clan Cohesion by §G0.10§! monthly."
+ mechanic_opinion_bump_with_nights_watch_yes: "Permanently increases opinion of §YThe Night's Watch§! by §G25§!"
+ mechanic_wildling_rivarly_bonus_yes: "Having at least §YTwo§! rivalries with a Wildling clan in your §YCulture Group§! but outside your own §YCulture§! will provide §G+2.5§! Prestige yearly."
+ mechanic_battle_victory_clan_cohesion_increase_yes: "Winning battles will increase our §YClan Cohesion§! by §G1§!, if the §YClan Cohesion§! government mechanic is active."
 
  government_reform_enacted_tooltip: "Reform has already been §Yenacted§!"
  
@@ -476,7 +481,7 @@
  wildling_clan_legacy: "Wildling Clan"
  wildling_clan_legacy_desc: "Having lived north of the Wall for hundreds of generations, the §YFree Folk§! recognize no inherent or hereditary political authority except for leaders whom they choose to follow.\n\nThe designated §MChieftain§! of the tribe often leads them through trival times, engaging in skirmishes with neighboring wildling clans and the §YThe Night's Watch§!."
 
- new_wildling_clan_reform: "Free Folk State"
+ new_wildling_clan_reform: "Free Folk Polity"
  new_wildling_clan_reform_desc: "Through careful guidance, our clan has managed to survive through enough hardships to finally accept heavy reform to our way of life. By adopting a structure similar to the §YWesterosi§! houses, we can begin the modernization process."
 
  kingdom_beyond_the_wall_reform: "Kingdom Beyond the Wall"
@@ -1069,11 +1074,9 @@
 
  got_council_of_chiefs_reform: "Council of Chiefs"
  got_council_of_chiefs_reform_desc: "Dividing the powers and responsibilities of the clan leader to junior chieftains will not only alleviate the stress induced from the role of the leadership, but will also ensure the needs of the whole are taken into account at all times."
- mechanic_empower_wildling_faction_on_death_yes: "The ascension of a new ruler will prompt you to empower one of your §YFactions§! for the initial phase of the reign."
 
  got_warparty_reform: "United Wildling Warparty"
  got_warparty_reform_desc: "By combining forces with other wildling clans, whether they be our allies or subjects, we can ensure the protection of our unified peoples from outside forces who wish to do us harm. This way, we can ensure both our safety and the safety of our brethern outside of our direct influence.\n\n§GNote: The bonus will still apply if you have a mix of alliances and subjects that meet the requirements:\n - Having two §YWildling§! allies and one §YWildling§! subject.\n - Having two §YWildling§! subjects and one §YWildling§! ally.§!"
- mechanic_wildling_warparty_bonus_yes: "Having at least §Y3§! Wildling Allies or Subjects will grant us §G+10%§! Land Morale and §G+50%§! Land Forcelimit Modifier."
 
  got_figurehead_leader_reform: "Titular Chief"
  got_figurehead_leader_reform_desc: "The purpose of a centralized figure in our clan isn't one that is necessary. We have no need to follow one single leader when we live in a decentralized institution. Instead, they'll symbolically represent our clan's unity without the power to cause change in our society.\n\n§RNote: You will NOT be able to change your §YBase Reform§! or the §YGovernment Type§! while this reform is active.§!"
@@ -1081,28 +1084,35 @@
  #
  
  got_look_to_the_future_reform: "Evolving Society"
- got_look_to_the_future_reform_desc: "For generations, our ancestors have upheld our ancient way of life and kept Westerosi influence at bay. But times are changing and we must embrace the change if we're to survive the coming turbulence.\n\nThis reform will take you down the §Y"Centralization"§! path of the Wildling Society, allowing us to eventually unify the free folk under one banner.\n\n§RNote: You will NOT be able to change this reform later.§!"
+ got_look_to_the_future_reform_desc: "For generations, our ancestors have upheld our ancient way of life and kept Westerosi influence at bay. But times are changing and we must embrace the change if we're to survive the coming turbulence.\n\nThis reform will take you down the §Y"Centralization"§! path of the Wildling society, allowing us to eventually unify the free folk under one banner.\n\n§RNote: You will NOT be able to change this reform later.§!"
  
  got_maintain_traditionalist_ways_reform: "True Wildling Society"
- got_maintain_traditionalist_ways_reform_desc: "Many may think that the right way forward is to reform our way of life and adopt a societal structure similar to that of the Westerosi peoples down south. That's not how we've survived for thousands of years, so we will continue with our normal way of life.\n\nThis reform will take you down the §Y"Decentralization"§! path of the Wildling Society, allowing us to build up our independent cultural identity.\n\n§RNote: You will NOT be able to change this reform later.§!"
+ got_maintain_traditionalist_ways_reform_desc: "Many may think that the right way forward is to reform our way of life and adopt a societal structure similar to that of the Westerosi peoples down south. That's not how we've survived for thousands of years, so we will continue with our normal way of life.\n\nThis reform will take you down the §Y"Decentralization"§! path of the Wildling society, allowing us to build up our independent cultural identity.\n\n§RNote: You will NOT be able to change this reform later.§!"
+ figurehead_leader_lock_tt: "The §YTitular Chief§! reform is NOT active."
+
+ got_generic_principle_reform: "Steady Onwards"
+ got_generic_principle_reform_desc: "We will keep our way of living as it is, without making any changes."
 
  #
 
- got_wildling_settlers_reform: "Clan Towns"
+ got_clan_towns_reforms: "Clan Towns"
+ got_clan_towns_reforms_desc: "Expanding our current holdings and urbanizing the lands that we are in control of should be our top priority. It's obvious how important infrastructure is to the powerbase of any society, take the Great City of Braavos for example."
+
+ got_wildling_settlers_reform: "Permanent Settlement"
  got_wildling_settlers_reform_desc: "For generations our people have relied upon migrating from one area to another in order to live off the land. We'll need to move away from our migratory behavior and begin permanently settling the lands nearby if we're to expand our dominion to new heights."
 
  got_trading_with_the_crows_reform: "Crowtrading"
  got_trading_with_the_crows_reform_desc: "The conflict between our people and the crows to the south has gone on for far too long. We need to allow communications between our two societies in order to successfully modernize and get with the times."
  got_trading_with_the_crows_reform_tt: "This reform will reveal all provinces in §YThe North§! and §YThe Night's Watch§!."
 
- got_counseled_governance_reform: "Counseled Governance"
- got_counseled_governance_reform_desc: "PLACEHOLDER"
-
  got_wildling_alliances_reform: "Wildling Alliances"
- got_wildling_alliances_reform_desc: "PLACEHOLDER"
+ got_wildling_alliances_reform_desc: "Despite our differences with neighboring clans, one thing we can all agree upon is that we are stronger when we fight together. Our priority should be to create an defensive umbrella against any and all invaders."
 
- got_raiding_doctrine_reform: "Raiding Doctrine"
- got_raiding_doctrine_reform_desc: "PLACEHOLDER"
+ got_feud_with_wildlings_reform: "One People, One Clan"
+ got_feud_with_wildlings_reform_desc: "There are many... let's say 'inferior' wildling clans outside of our influence. It's our duty to ensure that the free folk are kept under one banner and ruled by an iron fist in order to teach them discipline."
+ 
+ got_feud_with_crows_reform: "Feud with Crows"
+ got_feud_with_crows_reform_desc: "The age old rivarly between the Free Folk and the Westerosi people will never go away. Our two societies are simply too far apart to every intermingle, therefore we will kill as many crows as is humanly."
 
  got_martial_society_reform: "Martial Society"
  got_martial_society_reform_desc: "Martial values have always been important in our society and as we expand a militarized society is what we must continue to build and preserve at the core of our state."
@@ -1112,17 +1122,38 @@
 
  #
  
+ got_preserve_the_old_gods_reform: "The Olds Gods"
+ got_preserve_the_old_gods_reform_desc: "The old gods are nameless and numerous. The free folk who live beyond the Wall believe that the gods are everywhere—in the rocks, streams, birds, and beasts—and that they take the deceased down into the earth and trees. We must not abandon our roots, our old ways of life."
+
+ got_preserve_the_new_gods_reform: "The New Gods"
+ got_preserve_the_new_gods_reform_desc: "The Faith originated six thousand years before the War of the Five Kings in the continent of Essos, specifically in Andalos where, according to legend, the "God of Seven" manifested before the Andal people. Afterward the Andals sailed west and their invasion of Westeros began. We must not abandon our roots, our old ways of life."
+
  got_religious_societies_reform: "Religious Society"
  got_religious_societies_reform_desc: "While clan loyalties can take us far our expansion has made us the masters of more peoples than we once did. A strongly religious society can withstand expansion in both time and space more efficiently and will give us the cohesion we need."
  
  got_lip_service_reform: "Lip Service"
  got_lip_service_reform_desc: "While it is important to observe religious practices to maintain our legitimacy we should not get bogged down in the principles of righteous rule and morality. Pragmatism will take us longer and allow us to support a larger state and army."
  
- got_centralize_tribal_power_reform: "Centralize Power"
- got_centralize_tribal_power_reform_desc:0 "We are too reliant on the loyalties of the clans and tribes within our state. Let us instead start to build up institutional loyalty and divide the responsibilities of the state between formal offices under our ruler."
- 
- got_retain_tribal_hierarchy_reform: "Retain Tribal Hierarchy"
- got_retain_tribal_hierarchy_reform_desc: "Any form of modernization must preserve the ancient hierarchies of the clans and tribes within our nation. Without the support of these groups our country will not be able to expand and thrive as it has up to now."
+ #
+
+ got_brutes_and_steel_reform: "Brutes and Steel"
+ got_brutes_and_steel_reform_desc: "The good ol' strategy of raw steel and angry men has never failed as has been proven time and time again. This is the strategy that has kept us alive until now and this is the strategy that will continue to safeguard us until the end of time."
+
+ got_cavalry_horde_reform: "The Mounted Horde"
+ got_cavalry_horde_reform_desc: "To use the mounted soldiers as support is very effective; to use them as the main force is ingenious. A massive cavalry horde can bring terror to any enemy on the battlefield, and is second only to the Valyrian dragons of old in effectiveness."
+
+ got_clan_war_council_reform: "Clan War Council"
+ got_clan_war_council_reform_desc: "A bit unconventional in nature, a dedicated Clan War Council can help to better guide our warriors in battle. Instead of having subordinate clan leaders make their own plans in war, all battle actions are coordinated through the war council to determine the most efficient plan prior to the engagements."
+
+ got_precision_raiding_reform: "Organized Raiding Parties"
+ got_precision_raiding_reform_desc: "The most effective force is one that is focused on raiding and pillaging. We don't need to inflict maximum damage in battle; we just need to ensure all the available loot is taken back home. The richer we are, the more powerful we will become."
+
+ #
+ got_reinforce_tribal_hierarchy_reform: "Reinforce Tribal Hierarchy"
+ got_reinforce_tribal_hierarchy_reform_desc: "Any form of modernization must preserve the ancient hierarchies of the clans and tribes within our nation. Without the support of these groups our country will not be able to expand and thrive as it has up to now."
+
+ got_centralize_the_clan_reform: "Centralize the Clan"
+ got_centralize_the_clan_reform_desc: "Our slow process of reform has brought us to this pinnacle moment in our clan's society. In order to progress into the future and ensure our clan's survival, we must incorporate Westerosi aspects of government into our clan structure to secure our rise to power."
  
  got_barbaric_despoilers_reform: "Barbaric Despoilers"
  got_barbaric_despoilers_reform_desc: "In war, nothing is truly sacred. To fight is to live, and the strongest should seize whatever they covet."
@@ -1132,11 +1163,14 @@
  
  #
 
- got_retain_tribal_hierarchy_reform: "Retain Tribal Hierarchy"
- got_maintain_old_traditions_reform_desc: "PLACEHOLDER"
+ got_centralize_tribal_power_reform: "Centralize Power"
+ got_centralize_tribal_power_reform_desc: "We are too reliant on the loyalties of the clans and tribes within our state. Let us instead start to build up institutional loyalty and divide the responsibilities of the state between formal offices under our ruler."
 
- got_centralize_the_clan_reform: "Centralize the Clan"
- got_centralize_the_clan_reform_desc: "Our slow process of reform has brought us to this pinnacle moment in our clan's society. In order to progress into the future and ensure our clan's survival, we must incorporate Westerosi aspects of government into our clan structure to secure our rise to power."
+ got_counseled_governance_reform: "Counseled Governance"
+ got_counseled_governance_reform_desc: "PLACEHOLDER"
+
+ got_introduce_the_estates_reform: "The Estates"
+ got_introduce_the_estates_reform_desc: "PLACEHOLDER"
  
  #---------------------------------------------
  # Pirate

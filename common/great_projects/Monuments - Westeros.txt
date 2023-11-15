@@ -1799,7 +1799,16 @@ gp_the_wall = {
 
 	#can we build it?
 	build_trigger = {
-		
+		custom_trigger_tooltip = {
+			tooltip = "gp_the_wall_tt"
+			owner = {
+				OR = {
+					tag = NGT
+					has_reform = nights_watch_reform
+					has_reform = watchmen_outpost_reform
+				}
+			}
+		}
 	}
 
 	#what to do when it's built
@@ -1873,6 +1882,7 @@ gp_the_wall = {
 			
 		}
 	}
+
 	tier_1 = {
 		#time to upgrade to this level (0 for tier 0)
 		upgrade_time = {
@@ -1904,6 +1914,7 @@ gp_the_wall = {
 			tooltip = { add_building = the_wall }
 		}
 	}
+
 	tier_2 = {
 		#time to upgrade to this level (0 for tier 0)
 		upgrade_time = {
@@ -1936,6 +1947,7 @@ gp_the_wall = {
 		on_upgraded = {
 		}
 	}
+
 	tier_3 = {
 		#time to upgrade to this level (0 for tier 0)
 		upgrade_time = {

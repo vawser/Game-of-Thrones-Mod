@@ -1526,7 +1526,7 @@ wildling_clan_reform = {
 	}
 
 	government_abilities = {
-		wildling_society_mechanic
+		clan_cohesion_mechanic
 	}
 
 	custom_attributes = {
@@ -1549,14 +1549,14 @@ new_wildling_clan_reform = {
 	
 	modifiers = {
 		land_forcelimit_modifier = 0.33
-		stability_cost_modifier = -0.10
-		monthly_wildling_cohesion = 0.25
+		monthly_clan_cohesion = 0.25
 		relation_with_same_culture = -40
 	}
 
-	government_abilities = {
-		wildling_society_mechanic
-	}
+
+	# government_abilities = {
+	# 	freefolk_unity_mechanic
+	# }
 	
 	custom_attributes = {
 		enables_tribal_ideagroup = yes

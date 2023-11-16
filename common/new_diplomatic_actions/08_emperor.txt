@@ -67,6 +67,10 @@ remove_from_the_council = {
 			}
 		}
 	}
+
+	ai_will_do = {
+		always = no
+	}
 }
 
 appoint_hand_of_the_king = {
@@ -161,7 +165,11 @@ appoint_hand_of_the_king = {
 			name = AIWEIGHT_POWERF
 			export_to_variable = {
 				variable_name = ai_value
-				value = 100
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 50
 			}
 		}
 		add_entry = {
@@ -171,6 +179,10 @@ appoint_hand_of_the_king = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
 				value = 1000
 			}
 		}
@@ -272,7 +284,11 @@ appoint_master_of_coin = {
 			name = AIWEIGHT_POWERL
 			export_to_variable = {
 				variable_name = ai_value
-				value = 10
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 50
 			}
 		}
 		add_entry = {
@@ -282,6 +298,10 @@ appoint_master_of_coin = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
 				value = 1000
 			}
 		}
@@ -383,7 +403,11 @@ appoint_master_of_laws = {
 			name = AIWEIGHT_POWERL
 			export_to_variable = {
 				variable_name = ai_value
-				value = 10
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 50
 			}
 		}
 		add_entry = {
@@ -393,6 +417,10 @@ appoint_master_of_laws = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
 				value = 1000
 			}
 		}
@@ -494,6 +522,10 @@ appoint_master_of_ships = {
 			name = AIWEIGHT_POWERF
 			export_to_variable = {
 				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
 				value = 50
 			}
 		}
@@ -504,6 +536,10 @@ appoint_master_of_ships = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
 				value = 1000
 			}
 		}
@@ -605,6 +641,10 @@ appoint_master_of_whisperers = {
 			name = AIWEIGHT_POWERF
 			export_to_variable = {
 				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
 				value = 50
 			}
 		}
@@ -615,6 +655,10 @@ appoint_master_of_whisperers = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
 				value = 1000
 			}
 		}

@@ -311,6 +311,7 @@ country_event = {
 			every_country = {
 				limit = {
 					has_country_flag = potential_feudatory
+					is_subject = no
 				}
 				ROOT = {
 					create_subject = {
@@ -318,7 +319,6 @@ country_event = {
 						subject = PREV
 					}
 				}
-				clr_country_flag = potential_feudatory
 			}
 			if = {
 				limit = {
@@ -417,6 +417,12 @@ country_event = {
 
 	after = {
 		clear_global_event_target = great_house
+		every_country = {
+			limit = {
+				has_country_flag = potential_feudatory
+			}
+			clr_country_flag = potential_feudatory
+		}
 	}
 }
 

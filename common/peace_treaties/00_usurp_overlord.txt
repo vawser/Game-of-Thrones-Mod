@@ -4,12 +4,12 @@ po_usurp_overlord = {
 	power_projection = humiliated_rival
 	power_cost_base = 1.0
 	prestige_base = 0.5
-	ae_base = 0.35
+	ae_base = 0.3
 	requires_is_allowed = yes
 	
 	warscore_cost = {
 		all_provinces = 0.0
-		no_provinces = 100.0
+		no_provinces = 80.0
 		owner_keeps = 0.0
 		conquered = 0.0
 		returned_core = 0.0
@@ -40,47 +40,72 @@ po_usurp_overlord = {
 				}
 			}
 			if = { # Dynamically Rename the Country
-				limit = { has_saved_global_event_target = TheNorthGreatHouse }
+				limit = {
+					has_saved_global_event_target = TheNorthGreatHouse
+					event_target:TheNorthGreatHouse = { war_with = ROOT }
+				}
 				restore_country_name = yes
 				ROOT = { override_country_name = THENORTH save_global_event_target_as = TheNorthGreatHouse }
 			}
 			else_if = {
-				limit = { has_saved_global_event_target = TheRiverlandsGreatHouse }
+				limit = {
+					has_saved_global_event_target = TheRiverlandsGreatHouse
+					event_target:TheRiverlandsGreatHouse = { war_with = ROOT }
+				}
 				restore_country_name = yes
 				ROOT = { override_country_name = THERIVERLANDS save_global_event_target_as = TheRiverlandsGreatHouse }
 			}
 			else_if = {
-				limit = { has_saved_global_event_target = TheValeGreatHouse }
+				limit = {
+					has_saved_global_event_target = TheValeGreatHouse
+					event_target:TheValeGreatHouse = { war_with = ROOT }
+				}
 				restore_country_name = yes
 				ROOT = { override_country_name = THEVALE save_global_event_target_as = TheValeGreatHouse }
 			}
 			else_if = {
-				limit = { has_saved_global_event_target = TheWesterlandsGreatHouse }
+				limit = {
+					has_saved_global_event_target = TheWesterlandsGreatHouse
+					event_target:TheWesterlandsGreatHouse = { war_with = ROOT }
+				}
 				restore_country_name = yes
 				ROOT = { override_country_name = THEWESTERLANDS save_global_event_target_as = TheWesterlandsGreatHouse }
 			}
 			else_if = {
-				limit = { has_saved_global_event_target = TheStormlandsGreatHouse }
+				limit = {
+					has_saved_global_event_target = TheStormlandsGreatHouse
+					event_target:TheStormlandsGreatHouse = { war_with = ROOT }
+				}
 				restore_country_name = yes
 				ROOT = { override_country_name = THESTORMLANDS save_global_event_target_as = TheStormlandsGreatHouse }
 			}
 			else_if = {
-				limit = { has_saved_global_event_target = TheReachGreatHouse }
+				limit = {
+					has_saved_global_event_target = TheReachGreatHouse
+					event_target:TheReachGreatHouse = { war_with = ROOT }
+				}
 				restore_country_name = yes
 				ROOT = { override_country_name = THEREACH save_global_event_target_as = TheReachGreatHouse }
 			}
 			else_if = {
-				limit = { has_saved_global_event_target = DorneGreatHouse }
+				limit = {
+					has_saved_global_event_target = DorneGreatHouse
+					event_target:DorneGreatHouse = { war_with = ROOT }
+				}
 				restore_country_name = yes
 				ROOT = { override_country_name = DORNE save_global_event_target_as = DorneGreatHouse }
 			}
 			else_if = {
-				limit = { has_saved_global_event_target = TheIronIslandsGreatHouse }
+				limit = {
+					has_saved_global_event_target = TheIronIslandsGreatHouse
+					event_target:TheIronIslandsGreatHouse = { war_with = ROOT }
+				}
 				restore_country_name = yes
 				ROOT = { override_country_name = THEIRONISLANDS save_global_event_target_as = TheIronIslandsGreatHouse }
 			}
 		}
 		elector = yes
+		add_stability = 1
 		add_government_reform = great_house_reform
 		create_subject = {
 			subject_type = feudatory

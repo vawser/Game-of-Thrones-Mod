@@ -106,12 +106,17 @@ take_capital_usurp_overlord = {
 	
 	attacker = {
 		badboy_factor = 1
-		prestige_factor = 1
+		prestige_factor = 1.25
 		peace_cost_factor = 1
+
+		allowed_provinces = { is_core = ROOT }
+		allowed_provinces_are_eligible = yes
 
 		peace_options = {
 			po_usurp_overlord
 		}
+
+		prov_desc = ALL_CORES
 	}
 	
 	defender = {
@@ -119,9 +124,14 @@ take_capital_usurp_overlord = {
 		prestige_factor = 1.5
 		peace_cost_factor = 2.0
 
+		allowed_provinces = { is_core = ROOT }
+		allowed_provinces_are_eligible = yes
+
 		peace_options = {
 			po_concede_defeat
 		}
+
+		prov_desc = ALL_CORES
 	}
 	
 	war_name = USURP_OVERLORD_WAR_NAME

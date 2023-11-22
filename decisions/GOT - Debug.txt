@@ -1,5 +1,16 @@
 country_decisions = {
 
+	enable_global_debug = {
+		potential = {
+			always = yes
+		}
+		allow = {
+			ai = no
+		}
+		effect = {
+			set_global_flag = enable_onaction_logging
+		}
+	}
 	test_decision_1 = {
 		potential = {
 			ai = no
@@ -29,13 +40,20 @@ country_decisions = {
     test_decision_2 = {
 		potential = {
 			ai = no
-			always = no
+			always = yes
 		}
 		allow = {
 			always = yes
 		}
 		effect = {
-			hre_inheritable = no
+			every_subject_country = {
+				ROOT = {
+					add_favors = {
+						who = PREV
+						amount = 50
+					}
+				}
+			}
 		}
 		
 		ai_will_do = {
@@ -45,13 +63,20 @@ country_decisions = {
     test_decision_3 = {
 		potential = {
 			ai = no
-			always = no
+			always = yes
 		}
 		allow = {
 			always = yes
 		}
 		effect = {
-			hre_inheritable = yes
+			every_ally = {
+				ROOT = {
+					add_favors = {
+						who = PREV
+						amount = 50
+					}
+				}
+			}
 		}
 		
 		ai_will_do = {

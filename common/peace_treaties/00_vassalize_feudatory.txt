@@ -1,0 +1,73 @@
+# Usurp Overlord
+po_vassalize_feudatory = {
+	category = 6
+	power_projection = humiliated_rival
+	power_cost_base = 1.0
+	prestige_base = 1
+	ae_base = 1
+	requires_is_allowed = yes
+	
+	warscore_cost = {
+		all_provinces = 1.0
+		no_provinces = 0.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	
+	is_visible = {
+		always = yes
+	}
+	is_allowed = {
+		if = {
+			limit = {
+				NOT = { overlord = { FROM = { is_subject_of = PREV } } }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = "PO_VF_NOT_SAME_OVERLORD"
+			overlord = { FROM = { is_subject_of = PREV } }
+		}
+		if = {
+			limit = {
+				FROM = { westeros_government_great_house = yes }
+			}
+			custom_trigger_tooltip = {
+				tooltip = "PO_VF_NOT_GREAT_HOUSE"
+				NOT = { FROM = { westeros_government_great_house = yes } }
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				any_country = {
+					is_subject_of = FROM
+				}
+			}
+			FROM = {
+				every_subject_country = {
+					ROOT = {
+						create_subject = {
+							subject_type = vassal
+							who = PREV
+						}
+					}
+				}
+			}
+		}
+		create_subject = {
+			subject_type = vassal
+			who = FROM
+		}
+	}
+	ai_weight = {
+		export_to_variable = {
+			variable_name = ai_value
+			value = 100
+		}
+	}
+}

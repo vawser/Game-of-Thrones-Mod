@@ -118,6 +118,16 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetIfHouse
+	text = {
+		localisation_key = string_house
+		trigger = {
+			westeros_government_not_king_nor_great_house = yes
+		}
+	}
+}
+
+defined_text = {
 	name = GetGuardTitle
 	text = {
 		localisation_key = string_kingsguard

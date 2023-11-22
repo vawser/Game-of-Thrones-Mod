@@ -1,0 +1,59 @@
+# Used for 'Usurp Overlord' casus belli aftermath
+assign_temp_overlord_flag_effect = {
+	if = {
+		limit = {
+			has_saved_global_event_target = TheNorthGreatHouse
+			event_target:TheNorthGreatHouse = { war_with = ROOT }
+		}
+		set_country_flag = orgOverlord_TheNorth
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = TheRiverlandsGreatHouse
+			event_target:TheRiverlandsGreatHouse = { war_with = ROOT }
+		}
+		set_country_flag = orgOverlord_TheRiverlands
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = TheValeGreatHouse
+			event_target:TheValeGreatHouse = { war_with = ROOT }
+		}
+		set_country_flag = orgOverlord_TheVale
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = TheWesterlandsGreatHouse
+			event_target:TheWesterlandsGreatHouse = { war_with = ROOT }
+		}
+		set_country_flag = orgOverlord_TheWesterlands
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = TheStormlandsGreatHouse
+			event_target:TheStormlandsGreatHouse = { war_with = ROOT }
+		}
+		set_country_flag = orgOverlord_TheStormlands
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = TheReachGreatHouse
+			event_target:TheReachGreatHouse = { war_with = ROOT }
+		}
+		set_country_flag = orgOverlord_TheReach
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = DorneGreatHouse
+			event_target:DorneGreatHouse = { war_with = ROOT }
+		}
+		set_country_flag = orgOverlord_Dorne
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = TheIronIslandsGreatHouse
+			event_target:TheIronIslandsGreatHouse = { war_with = ROOT }
+		}
+		set_country_flag = orgOverlord_TheIronIslands
+	}
+}

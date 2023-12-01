@@ -55,19 +55,21 @@ westeros_government_great_house = {
 	}
 }
 
-westeros_government_not_king = {
+# Dual check to see if a country is on the council
+# checks for either country modifier or country flag
+is_on_the_small_council = {
 	OR = {
-		has_reform = noble_house_reform
-		has_reform = lord_of_the_tides_reform
-		has_reform = great_house_reform
+		has_council_position = { sm_council_position = handoftheking }
+		has_council_position = { sm_council_position = masterofcoin }
+		has_council_position = { sm_council_position = masteroflaws }
+		has_council_position = { sm_council_position = masterofships }
+		has_council_position = { sm_council_position = masterofwhisperers }
 	}
 }
 
-westeros_government_not_king_nor_great_house = {
-	OR = {
-		has_reform = noble_house_reform
-		has_reform = lord_of_the_tides_reform
-	}
+# Checks to see if you are on the Small Council
+has_council_position = {
+	has_country_flag = $sm_council_position$_cactive
 }
 
 is_yiti_government = {

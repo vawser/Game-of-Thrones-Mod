@@ -11,13 +11,7 @@ remove_from_the_council = {
 		has_estate_privilege = estate_nobles_the_small_council
 		FROM = {
 			is_part_of_hre = yes
-			OR = {
-				has_country_modifier = got_hand_of_the_king
-				has_country_modifier = got_master_of_coin
-				has_country_modifier = got_master_of_laws
-				has_country_modifier = got_master_of_ships
-				has_country_modifier = got_master_of_whisperers
-			}
+			is_on_the_small_council = yes
 		}
 	}
 	is_allowed = {
@@ -25,46 +19,11 @@ remove_from_the_council = {
 	}
 	on_accept = {
 		FROM = {
-			if = {
-				limit = {
-					has_country_modifier = got_hand_of_the_king
-				}
-				remove_country_modifier = got_hand_of_the_king
-				clr_global_flag = handoftheking_active
-				clear_global_event_target = et_handoftheking
-			}
-			if = {
-				limit = {
-					has_country_modifier = got_master_of_coin
-				}
-				remove_country_modifier = got_master_of_coin
-				clr_global_flag = masterofcoin_active
-				clear_global_event_target = et_masterofcoin
-			}
-			if = {
-				limit = {
-					has_country_modifier = got_master_of_laws
-				}
-				remove_country_modifier = got_master_of_laws
-				clr_global_flag = masteroflaws_active
-				clear_global_event_target = et_masteroflaws
-			}
-			if = {
-				limit = {
-					has_country_modifier = got_master_of_ships
-				}
-				remove_country_modifier = got_master_of_ships
-				clr_global_flag = masterofships_active
-				clear_global_event_target = et_masterofships
-			}
-			if = {
-				limit = {
-					has_country_modifier = got_master_of_whisperers
-				}
-				remove_country_modifier = got_master_of_whisperers
-				clr_global_flag = masterofwhisperers_active
-				clear_global_event_target = et_masterofwhisperers
-			}
+			clear_council_position_cf = { sm_council_position = handoftheking }
+			clear_council_position_cf = { sm_council_position = masterofcoin }
+			clear_council_position_cf = { sm_council_position = masteroflaws }
+			clear_council_position_cf = { sm_council_position = masterofships }
+			clear_council_position_cf = { sm_council_position = masterofwhisperers }
 		}
 	}
 
@@ -86,31 +45,14 @@ appoint_hand_of_the_king = {
 		has_estate_privilege = estate_nobles_the_small_council
 		FROM = {
 			is_part_of_hre = yes
-			NOT = { has_country_modifier = got_hand_of_the_king }
+			NOT = { has_council_position = { sm_council_position = handoftheking } }
 		}
 	}
 	is_allowed = {
 		always = yes
 	}
 	on_accept = {
-		event_target:et_handoftheking = {
-			remove_country_modifier = got_hand_of_the_king
-		}
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = handoftheking_active
-				}
-			}
-			set_global_flag = handoftheking_active
-		}
-		FROM = {
-			save_global_event_target_as = et_handoftheking
-			add_country_modifier = {
-				name = got_hand_of_the_king
-				duration = -1
-			}
-		}
+		FROM = { set_council_position = { sm_council_position = handoftheking } }
 	}
 	on_decline = {
 
@@ -205,31 +147,14 @@ appoint_master_of_coin = {
 		has_estate_privilege = estate_nobles_the_small_council
 		FROM = {
 			is_part_of_hre = yes
-			NOT = { has_country_modifier = got_master_of_coin }
+			NOT = { has_council_position = { sm_council_position = masterofcoin } }
 		}
 	}
 	is_allowed = {
 		always = yes
 	}
 	on_accept = {
-		event_target:et_masterofcoin = {
-			remove_country_modifier = got_master_of_coin
-		}
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = masterofcoin_active
-				}
-			}
-			set_global_flag = masterofcoin_active
-		}
-		FROM = {
-			save_global_event_target_as = et_masterofcoin
-			add_country_modifier = {
-				name = got_master_of_coin
-				duration = -1
-			}
-		}
+		FROM = { set_council_position = { sm_council_position = masterofcoin } }
 	}
 	on_decline = {
 
@@ -324,31 +249,14 @@ appoint_master_of_laws = {
 		has_estate_privilege = estate_nobles_the_small_council
 		FROM = {
 			is_part_of_hre = yes
-			NOT = { has_country_modifier = got_master_of_laws }
+			NOT = { has_council_position = { sm_council_position = masteroflaws } }
 		}
 	}
 	is_allowed = {
 		always = yes
 	}
 	on_accept = {
-		event_target:et_masteroflaws = {
-			remove_country_modifier = got_master_of_laws
-		}
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = masteroflaws_active
-				}
-			}
-			set_global_flag = masteroflaws_active
-		}
-		FROM = {
-			save_global_event_target_as = et_masteroflaws
-			add_country_modifier = {
-				name = got_master_of_laws
-				duration = -1
-			}
-		}
+		FROM = { set_council_position = { sm_council_position = masteroflaws } }
 	}
 	on_decline = {
 
@@ -443,31 +351,14 @@ appoint_master_of_ships = {
 		has_estate_privilege = estate_nobles_the_small_council
 		FROM = {
 			is_part_of_hre = yes
-			NOT = { has_country_modifier = got_master_of_ships }
+			NOT = { has_council_position = { sm_council_position = masterofships } }
 		}
 	}
 	is_allowed = {
 		always = yes
 	}
 	on_accept = {
-		event_target:et_masterofships = {
-			remove_country_modifier = got_master_of_ships
-		}
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = masterofships_active
-				}
-			}
-			set_global_flag = masterofships_active
-		}
-		FROM = {
-			save_global_event_target_as = et_masterofships
-			add_country_modifier = {
-				name = got_master_of_ships
-				duration = -1
-			}
-		}
+		FROM = { set_council_position = { sm_council_position = masterofships } }
 	}
 	on_decline = {
 
@@ -562,31 +453,14 @@ appoint_master_of_whisperers = {
 		has_estate_privilege = estate_nobles_the_small_council
 		FROM = {
 			is_part_of_hre = yes
-			NOT = { has_country_modifier = got_master_of_whisperers }
+			NOT = { has_council_position = { sm_council_position = masterofwhisperers } }
 		}
 	}
 	is_allowed = {
 		always = yes
 	}
 	on_accept = {
-		event_target:et_masterofwhisperers = {
-			remove_country_modifier = got_master_of_whisperers
-		}
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = masterofwhisperers_active
-				}
-			}
-			set_global_flag = masterofwhisperers_active
-		}
-		FROM = {
-			save_global_event_target_as = et_masterofwhisperers
-			add_country_modifier = {
-				name = got_master_of_whisperers
-				duration = -1
-			}
-		}
+		FROM = { set_council_position = { sm_council_position = masterofwhisperers } }
 	}
 	on_decline = {
 

@@ -568,51 +568,11 @@ on_monarch_death = {
 
 	# In case of death of current council member, this will clear
 	# all flags and event targets as well as ruler modifiers
-	# Hand of the King
-	if = {
-		limit = {
-			has_country_modifier = got_hand_of_the_king
-		}
-		remove_country_modifier = got_hand_of_the_king
-		clr_global_flag = handoftheking_active
-		clear_global_event_target = et_handoftheking
-	}
-	# Master of Coin
-	if = {
-		limit = {
-			has_country_modifier = got_master_of_coin
-		}
-		remove_country_modifier = got_master_of_coin
-		clr_global_flag = masterofcoin_active
-		clear_global_event_target = et_masterofcoin
-	}
-	# Master of Laws
-	if = {
-		limit = {
-			has_country_modifier = got_master_of_laws
-		}
-		remove_country_modifier = got_master_of_laws
-		clr_global_flag = masteroflaws_active
-		clear_global_event_target = et_masteroflaws
-	}
-	# Master of Ships
-	if = {
-		limit = {
-			has_country_modifier = got_master_of_ships
-		}
-		remove_country_modifier = got_master_of_ships
-		clr_global_flag = masterofships_active
-		clear_global_event_target = et_masterofships
-	}
-	# Master of Whisperers
-	if = {
-		limit = {
-			has_country_modifier = got_master_of_whisperers
-		}
-		remove_country_modifier = got_master_of_whisperers
-		clr_global_flag = masterofwhisperers_active
-		clear_global_event_target = et_masterofwhisperers
-	}
+	clear_council_position_cf = { sm_council_position = handoftheking }
+	clear_council_position_cf = { sm_council_position = masterofcoin }
+	clear_council_position_cf = { sm_council_position = masteroflaws }
+	clear_council_position_cf = { sm_council_position = masterofships }
+	clear_council_position_cf = { sm_council_position = masterofwhisperers }
 	##LOE Changes##
 	if = {
 		limit = {

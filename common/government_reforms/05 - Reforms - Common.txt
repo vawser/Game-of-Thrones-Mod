@@ -439,6 +439,31 @@ got_penal_colonies_reform = {
 #-----------------------------------------
 # Switch Government
 #-----------------------------------------
+got_become_dynasty_government_reform = {
+	icon = "king_2"
+	allow_normal_conversion = yes
+	trigger = {
+		NOT = { has_government_attribute_short_desc = locked_government_type }
+		is_emperor = no
+		NOT = { is_lesser_in_union = yes }
+		if = {
+			limit = { government = tribal }
+			custom_trigger_tooltip = {
+				tooltip = "figurehead_leader_lock_tt"
+				NOT = { has_reform = got_figurehead_leader_reform }
+			}
+		}
+	}
+    
+	effect = {
+		lose_reforms = 6
+		change_government = dynasty
+	}
+	ai = {
+		factor = 0
+	}
+}
+
 got_become_a_monarchy_reform = {
 	icon = "king_2_highlighted"
 	allow_normal_conversion = yes

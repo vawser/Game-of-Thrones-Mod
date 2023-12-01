@@ -492,11 +492,23 @@ got_brutes_and_steel_reform = {
 	modifiers = {
 		leader_land_shock = 2
 		shock_damage = 0.05
-		movement_speed = 0.10
+		morale_damage = 0.05
 	}
 	
 	ai = {
 		factor = 1
+		modifier = {
+			factor = 2.5
+			is_wildling_culture = yes
+		}
+		modifier = {
+			factor = 4
+			OR = {
+				culture = wildlings_thenns
+				culture = wildlings_cave_dweller_clans
+				culture = wildlings_ice_river_clans
+			}
+		}
 	}
 }
 
@@ -504,6 +516,7 @@ got_cavalry_horde_reform = {
 	allow_normal_conversion = yes
 	icon = "cavalry_horde"
 	modifiers = {
+		movement_speed = 0.10
 		cav_to_inf_ratio = 0.20
 		cavalry_cost = -0.15
 	}
@@ -521,13 +534,20 @@ got_clan_war_council_reform = {
 	icon = "clan_war_council"
 	modifiers = {
 		discipline = 0.05
-		army_tradition_from_battle = 0.50
+		reinforce_speed = 0.125
 	}
 	custom_attributes = {
 		battle_victory_clan_cohesion_increase = yes
 	}
 	ai = {
 		factor = 1
+		modifier = {
+			factor = 4
+			OR = {
+				culture = wildlings_foresters
+				culture = wildlings_frostfangers
+			}
+		}
 	}
 }
 
@@ -535,12 +555,16 @@ got_precision_raiding_reform = {
 	allow_normal_conversion = yes
 	icon = "small_raiding_party"
 	modifiers = {
-		reinforce_speed = 0.15
 		siege_ability = 0.125
+		loot_amount = 0.25
 		available_province_loot = 0.33
 	}
 	ai = {
 		factor = 1
+		modifier = {
+			factor = 2.5
+			is_wildling_culture = yes
+		}
 	}
 }
 
@@ -551,14 +575,6 @@ got_precision_raiding_reform = {
 got_reinforce_tribal_hierarchy_reform = {
 	icon = "retain_tribal_hierarchy"
 	allow_normal_conversion = yes
-
-	potential = {
-		OR = {
-			has_reform = khalasar_reform
-			has_reform = jhattar_reform
-			has_reform = wildling_clan_reform
-		}
-	}
     
 	modifiers = {
 		legitimacy = 0.5
@@ -576,6 +592,32 @@ got_reinforce_tribal_hierarchy_reform = {
 				}
 			}
 		}
+	}
+}
+
+got_centralize_the_clan_reform = {
+	icon = "clan_chief_highlighted"
+	allow_normal_conversion = yes
+	potential = {
+		is_wildling_government = yes
+	}
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = "figurehead_leader_lock_tt"
+			NOT = { has_reform = got_figurehead_leader_reform }
+		}
+	}
+	modifiers = {
+		monthly_clan_cohesion = -0.33
+		legitimacy = -1.0
+		monthly_reform_progress = -0.50
+	}
+	effect = {
+		custom_tooltip = adopt_free_folk_polity_reform_tt
+		hidden_effect = { add_government_reform = new_wildling_clan_reform }
+	}
+	ai = {
+		factor = 1
 	}
 }
 
@@ -618,27 +660,6 @@ got_tribal_unity_reform = {
     
 	ai = {
 		factor = 2
-	}
-}
-
-got_centralize_the_clan_reform = {
-	icon = "clan_chief_highlighted"
-	allow_normal_conversion = yes
-	potential = {
-		has_reform = wildling_clan_reform
-	}
-	trigger = {
-		custom_trigger_tooltip = {
-			tooltip = "figurehead_leader_lock_tt"
-			NOT = { has_reform = got_figurehead_leader_reform }
-		}
-	}
-	effect = {
-		#lose_reforms = 4
-		add_government_reform = new_wildling_clan_reform
-	}
-	ai = {
-		factor = 1
 	}
 }
 

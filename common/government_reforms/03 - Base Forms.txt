@@ -1514,7 +1514,6 @@ wildling_clan_reform = {
 	
 	modifiers = {
 		capped_by_forcelimit = yes
-		loot_amount = 0.33
 		relation_with_same_culture = 20
 		diplomatic_upkeep = -2
 	}
@@ -1530,6 +1529,7 @@ wildling_clan_reform = {
 	}
 
 	custom_attributes = {
+		cannot_fabricate_claims = yes
 		enables_tribal_ideagroup = yes
 	}
 }
@@ -1549,7 +1549,6 @@ new_wildling_clan_reform = {
 	
 	modifiers = {
 		land_forcelimit_modifier = 0.33
-		monthly_clan_cohesion = 0.25
 		relation_with_same_culture = -40
 	}
 
@@ -1559,16 +1558,16 @@ new_wildling_clan_reform = {
 		warlike_chieftains
 	}
 
-	# government_abilities = {
-	# 	freefolk_unity_mechanic
-	# }
+	government_abilities = {
+		clan_cohesion_mechanic
+	}
 	
 	custom_attributes = {
 		enables_tribal_ideagroup = yes
 	}
 }
 kingdom_beyond_the_wall_reform = {
-	icon = "clan_chief_highlighted"
+	icon = "the_king_beyond_the_wall"
 	
 	potential = {
 		is_wildling_culture = yes
@@ -1582,7 +1581,10 @@ kingdom_beyond_the_wall_reform = {
 	nation_designer_cost = 0
 	
 	modifiers = {
-		
+		liberty_desire_from_subject_development = -0.66
+		vassal_forcelimit_bonus = 1.0
+		monarch_admin_power = 1
+		monarch_diplomatic_power = 1
 	}
 }
 lhazar_clan_reform = {

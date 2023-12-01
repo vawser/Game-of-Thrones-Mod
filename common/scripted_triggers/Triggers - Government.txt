@@ -45,6 +45,36 @@ westeros_government_king = {
 	}
 }
 
+westeros_government_not_king = {
+	if = {
+		limit = { hre_size = 1 }
+		is_part_of_hre = yes
+		is_emperor = no
+	}
+	else = {
+		OR = {
+			has_reform = noble_house_reform
+			has_reform = lord_of_the_tides_reform
+			has_reform = great_house_reform
+		}
+	}
+}
+
+westeros_government_not_king_nor_great_house = {
+	if = {
+		limit = { hre_size = 1 }
+		is_part_of_hre = yes
+		is_emperor = no
+		is_elector = no
+	}
+	else = {
+		OR = {
+			has_reform = noble_house_reform
+			has_reform = lord_of_the_tides_reform
+		}
+	}
+}
+
 westeros_government_great_house = {
 	if = {
 		limit = { hre_size = 1 }

@@ -881,3 +881,144 @@ assign_overlordship = {
 		always = no
 	}
 }
+
+call_feudatory_to_war = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = feudatory
+		}
+	}
+	is_allowed = {
+		if = { # Be at War
+			limit = {
+				is_at_war = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = ROOT_IS_NOT_AT_WAR_TT
+				is_at_war = yes
+			}
+		}
+		if = { # Subject be at Peace
+			limit = {
+				FROM = { is_at_war = yes }
+			}
+			custom_trigger_tooltip = {
+				tooltip = FROM_IS_AT_WAR_TT
+				FROM = { is_at_war = no }
+			}
+		}
+		if = { # Subject not disloyal
+			limit = {
+				FROM = { liberty_desire = 50 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = FROM_IS_REBELLIOUS_TT
+				NOT = { FROM = { liberty_desire = 50 } }
+			}
+		}
+		if = { # Subject not allied with Enemy
+			limit = {
+				any_war_enemy_country = {
+					FROM = { alliance_with = PREV }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ALLIED_WITH_ENEMY
+				all_war_enemy_countries = {
+					FROM = { NOT = { alliance_with = PREV } }
+				}
+			}
+		}
+		if = { # Subject has favors (defensive war)
+			limit = {
+				FROM = {
+					NOT = {
+						owes_favors = {
+							who = ROOT
+							value = 10
+						}
+					}
+				}
+				is_in_war = {
+					defender_leader = ROOT
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = FROM_MUST_OWE_10_FAVORS_DEFENSIVE_WAR_TT
+				FROM = {
+					owes_favors = {
+						who = ROOT
+						value = 10
+					}
+				}
+			}
+		}
+		if = { # Subject has favors (offensive war)
+			limit = {
+				FROM = {
+					NOT = {
+						owes_favors = {
+							who = ROOT
+							value = 20
+						}
+					}
+				}
+				NOT = {
+					is_in_war = {
+						defender_leader = ROOT
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = FROM_MUST_OWE_20_FAVORS_TT
+				FROM = {
+					owes_favors = {
+						who = ROOT
+						value = 20
+					}
+				}
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			ROOT = {
+				add_favors = {
+					who = PREV
+					amount = -10
+				}
+			}
+			join_all_defensive_wars_of = ROOT
+		}
+		if = {
+			limit = {
+				FROM = {
+					owes_favors = {
+						who = ROOT
+						value = 10
+					}
+				}
+			}
+			FROM = {
+				ROOT = {
+					add_favors = {
+						who = PREV
+						amount = -10
+					}
+				}
+				join_all_offensive_wars_of = ROOT
+			}
+		}
+	}
+	on_decline = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = yes
+	}
+}

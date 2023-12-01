@@ -14,25 +14,45 @@
 # General Title
 # ------------------------------------------------------------------
 defined_text = {
-    name = StartScreenTitle
+	name = StartScreenTitle
 	random = no
 	
-    text = {
-        localisation_key = string_screen_title
-        trigger = {
+	
+	text = {
+		localisation_key = string_screen_title
+		trigger = {
 			always = yes
-        }
-    }
+		}
+	}
 }
 
-# ------------------------------------------------------------------
-# History Description
-# ------------------------------------------------------------------
+# Country Title 
 defined_text = {
-    name = StartScreenUpLeftDesc
+	name = StartScreenUpLeftTitle
 	random = no
 
-    # East Essos
+	text = {
+		localisation_key = string_start_title_the_targaryens
+		trigger = {
+			tag = CRW
+			started_in = 196.2.26
+			dynasty = "Targaryen"
+		}
+	}
+	text = {
+		localisation_key = string_start_title_fallback
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+# Country Description
+defined_text = {
+	name = StartScreenUpLeftDesc
+	random = no
+
+	# East Essos
 	text = {
 		localisation_key = string_start_yiti
 		trigger = {
@@ -52,84 +72,109 @@ defined_text = {
 		}
 	}
 
-    # Westeros
+	# Westeros
 	text = {
-        localisation_key = string_start_stark
-        trigger = {
+		localisation_key = string_start_the_targaryens
+		trigger = {
+			tag = CRW
+			NOT = { is_year = 197 }
+		}
+	}
+	text = {
+		localisation_key = string_start_stark
+		trigger = {
 			tag = A01
 		}
-    }
+	}
 	text = {
-        localisation_key = string_start_arryn
-        trigger = {
+		localisation_key = string_start_arryn
+		trigger = {
 			tag = A04
 		}
-    }
-    text = {
-        localisation_key = string_start_tully
-        trigger = {
+	}
+	text = {
+		localisation_key = string_start_tully
+		trigger = {
 			tag = A03
 		}
-    }
-    text = {
-        localisation_key = string_start_lannister
-        trigger = {
+	}
+	text = {
+		localisation_key = string_start_lannister
+		trigger = {
 			tag = A06
 		}
-    }
-    text = {
-        localisation_key = string_start_tyrell
-        trigger = {
+	}
+	text = {
+		localisation_key = string_start_tyrell
+		trigger = {
 			tag = F20
 		}
-    }
-    text = {
-        localisation_key = string_start_baratheon
-        trigger = {
+	}
+	text = {
+		localisation_key = string_start_baratheon
+		trigger = {
 			tag = A07
 		}
-    }
-    text = {
-        localisation_key = string_start_martell
-        trigger = {
+	}
+	text = {
+		localisation_key = string_start_martell
+		trigger = {
 			tag = A09
 		}
-    }
-    text = {
-        localisation_key = string_start_targaryen
-        trigger = {
+	}
+	text = {
+		localisation_key = string_start_targaryen
+		trigger = {
 			tag = A10
 		}
-    }
-    text = {
-        localisation_key = string_start_greyjoy
-        trigger = {
+	}
+	text = {
+		localisation_key = string_start_greyjoy
+		trigger = {
 			tag = M09
 		}
-    }
-    
+	}
+	
 	text = {
-        localisation_key = string_start_tag_generic
+		localisation_key = string_start_tag_generic
 		trigger = {
 			always = yes
 		}
 	}
 }
 
-# ------------------------------------------------------------------
-# Mechanics Description
-# ------------------------------------------------------------------
+# Religion Title
 defined_text = {
-    name = StartScreenUpRightDesc
+	name = StartScreenUpRightTitle
 	random = no
 
-    # East Essos
 	text = {
-		localisation_key = string_start_yiti_mechanics
+        localisation_key = string_start_religion_mechanic_title_plural
+        trigger = {
+			tag_with_plural_name_trigger = yes
+        }
+    }
+	text = {
+		localisation_key = string_start_religion_mechanic_title
 		trigger = {
-			tag = R68
+			always = yes
 		}
 	}
+}
+
+# Religion Description
+defined_text = {
+	name = StartScreenUpRightDesc
+	random = no
+
+	text = {
+		localisation_key = string_start_religion_the_faith
+		trigger = {
+			religion = faith_of_the_seven
+		}
+	}
+
+	# East Essos
 	text = {
 		localisation_key = string_start_jogos_mechanics
 		trigger = {
@@ -144,72 +189,349 @@ defined_text = {
 	}
 	
 	text = {
-        localisation_key = string_start_mechanics
-        trigger = {
-			always = yes
-        }
-    }
-}
-
-# ------------------------------------------------------------------
-# Disabled
-# ------------------------------------------------------------------
-defined_text = {
-    name = StartScreenUpRightTitle
-	random = no
-
-    text = {
-        localisation_key = string_start_religion_mechanic_title
-        trigger = {
-			always = yes
-        }
-    }
-}
-
-defined_text = {
-    name = StartScreenDownLeftTitle
-	random = no
-
-    text = {
-        localisation_key = string_start_culture_government_title
+		localisation_key = string_start_mechanics
 		trigger = {
 			always = yes
 		}
-    }
+	}
 }
 
+#Describing the bonuses from this religion (not really a dynamic key, just used to make the texts more modular and easier to edit).
 defined_text = {
-    name = StartScreenDownRightTitle
+	name = start_religion_intro
+	random = no
+	text = {
+		localisation_key = string_start_religion_intro_text
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+# Government Title
+defined_text = {
+	name = StartScreenDownLeftTitle
 	random = no
 
 	text = {
-        localisation_key = string_start_no_special_region_title
-        trigger = {
+		localisation_key = string_start_crownlands_government_title
+		trigger = {
+			westeros_government_king = yes
+		}
+	}
+	text = {
+		localisation_key = string_start_great_house_government_title
+		trigger = {
+			westeros_government_great_house = yes
+		}
+	}
+	text = {
+		localisation_key = string_start_house_government_title
+		trigger = {
+			westeros_government_not_king_nor_great_house = yes
+		}
+	}
+	text = {
+		localisation_key = string_start_culture_government_title
+		trigger = {
 			always = yes
-        }
-    }
+		}
+	}
+}
+
+# Government Description
+defined_text = {
+	name = StartScreenDownLeftDesc
+	random = no
+
+	text = {
+		localisation_key = string_start_yiti_mechanics
+		trigger = {
+			tag = R68
+		}
+	}
+	text = {
+		localisation_key = string_government_culture_explanation
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+#Base Government Explanation
+defined_text  = {
+	name = startup_government_explanation
+	random = no
+	
+	text = {
+		localisation_key = string_start_government_dynasty
+		trigger = {
+			government = dynasty
+		}
+	}
+	text = {
+		localisation_key = string_start_government_monarchy_regency
+		trigger = {
+			#has_regency = yes
+			government = monarchy
+		}
+	}
+	text = {
+		localisation_key = string_start_government_monarchy
+		trigger = {
+			government = monarchy
+		}
+	}
+	text = {
+		localisation_key = string_start_government_republic
+		trigger = {
+			government = republic
+		}
+	}
+	text = {
+		localisation_key = string_start_government_papacy
+		trigger = {
+			has_reform = papacy_reform
+		}
+	}
+	text = {
+		localisation_key = string_start_government_theocracy
+		trigger = {
+			government = theocracy
+		}
+	}
+	text = {
+		localisation_key = string_start_government_native_councils_plural
+		trigger = {
+			tag_with_plural_name_trigger = yes
+			OR = {
+				has_reform = siberian_tribe
+				government = native
+			}
+	   }
+	}
+	text = {
+		localisation_key = string_start_government_native_councils
+		trigger = {
+			OR = {
+				has_reform = siberian_tribe
+				government = native
+			}
+	   }
+	}
 }
 
 defined_text = {
-    name = StartScreenDownLeftDesc
+	name = startup_king_of_sk_explanation
+	random = no
+
+	text = {
+		localisation_key = string_start_hereditary_royal_house
+		trigger = {
+			westeros_government_king = yes
+			NOT = { hre_reform_passed = king_introduce_an_elective_monarchy }
+		}
+	}
+	text = {
+		localisation_key = string_start_elective_royal_house
+		trigger = {
+			westeros_government_king = yes
+			hre_reform_passed = king_introduce_an_elective_monarchy
+		}
+	}
+	text = {
+		localisation_key = string_start_monarchy
+	}
+}
+
+#DLC Content Explanation
+#Consorts
+defined_text  = {
+    name = startup_consorts_explanation
 	random = no
 
     text = {
-        localisation_key = string_government_culture_explanation
+        localisation_key = string_start_consorts
         trigger = {
-			always = yes
+			OR = {
+				government = dynasty
+				government = monarchy
+			}
+			NOT = { has_reform = iqta }
+			NOT = { has_reform = steppe_horde }
+			NOT = { has_reform = mamluk_government }
+			has_dlc = "Rights of Man"
+        }
+    }
+	text = {
+        localisation_key = string_start_consorts_no #Empty string
+        trigger = {
+			NOT = { has_dlc = "Rights of Man" }
         }
     }
 }
 
+#Culture specific Mechanics
 defined_text = {
-    name = StartScreenDownRightDesc
+	name = startup_culture_explanation
 	random = no
 
 	text = {
-        localisation_key = string_start_no_special_region_description
-        trigger = {
+		localisation_key = string_manchu_culture
+		trigger = {
+			primary_culture = manchu
+			has_dlc = "Mandate of Heaven"
+		}
+	}
+	text = {
+		localisation_key = string_no_special_culture
+		trigger = {
 			always = yes
-        }
-    }
+		}
+	}
+}
+
+# Environment Title
+defined_text = {
+	name = StartScreenDownRightTitle
+	random = no
+
+	text = {
+		localisation_key = string_start_westeros
+		trigger = {
+			capital_scope = {
+				continent = westeros
+			}
+		}
+	}
+	text = {
+		localisation_key = string_start_west_essos
+		trigger = {
+			capital_scope = {
+				superregion = west_essos_superregion
+			}
+		}
+	}
+	text = {
+		localisation_key = string_start_central_essos
+		trigger = {
+			capital_scope = {
+				superregion = central_essos_superregion
+			}
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_no_special_region_title
+		trigger = {
+			always = yes
+		}
+	}
+	
+}
+
+defined_text = {
+	name = capital_continent_title
+	random = no
+
+   
+	text = {
+		localisation_key = westeros #Asia
+		trigger = {
+			capital_scope = {
+				continent = westeros
+			}
+		}
+	}
+	text = {
+		localisation_key = west_essos_superregion #Europe
+		trigger = {
+			capital_scope = {
+				superregion = west_essos_superregion
+			}
+		}
+	}
+	
+	text = {
+		localisation_key = central_essos_superregion
+		trigger = {
+			capital_scope = {
+				superregion = central_essos_superregion
+			}
+		}
+	}
+	
+	text = {
+		localisation_key = far_essos_superregion
+		trigger = {
+			capital_scope = {
+				superregion = far_essos_superregion
+			}
+		}
+	}
+
+	text = {
+		localisation_key = summer_islands
+		trigger = {
+			capital_scope = {
+				continent = summer_islands
+			}
+		}
+	}
+	
+	text = {
+		localisation_key = sothoyros
+		trigger = {
+			capital_scope = {
+				continent = sothoyros
+			}
+		}
+	}
+	
+	text = {
+		localisation_key = ulthos
+		trigger = {
+			capital_scope = {
+				continent = ulthos
+			}
+		}
+	}
+}
+
+# Environment Description
+defined_text = {
+	name = StartScreenDownRightDesc
+	random = no
+
+	text = {
+		localisation_key = string_start_westeros_description
+		trigger = {
+			capital_scope = {
+				continent = westeros
+			}
+		}
+	}
+	text = {
+		localisation_key = string_start_no_special_region_description
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+# HRE (SK) Description Trigger
+defined_text = {
+	name = westeros_sk_mechanic_description
+	text = {
+		localisation_key = string_start_westeros_dlc_seven_kingdoms_mechanic_description
+		trigger = {
+			has_dlc = Emperor
+		}
+	}
+	text = {
+		localisation_key = string_start_westeros_no_dlc_seven_kingdoms_mechanic_description
+		trigger = {
+			NOT = { has_dlc = Emperor }
+		}
+	}
 }

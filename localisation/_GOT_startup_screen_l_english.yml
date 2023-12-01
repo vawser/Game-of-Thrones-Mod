@@ -3,8 +3,13 @@
  LEDGER_MECHANICS: "Mechanics"
 
  # Titles
- string_screen_title:0 "[Root.GetName], [GetYear]"
+ string_screen_title: "[Root.GetName], [GetYear]"
 
+ # Country Title
+ string_start_title_the_targaryens: "House Targaryen and The Blackfyre Rebellion"
+
+ # Country Description
+ string_start_the_targaryens: "It's been nearly two centuries after the dragonlord §YAegon the Conqueror§! subdued Six of the Seven Kingdoms in what's now known as §YAegon's Conquest§!. While the unsuccessful attempt at subjugating the Dornish people meant the continent wouldn't be fully united under their grip, there was no debate that §YHouse Targaryen§! was the undisputed master of mainland Westeros.\n\nHaving dealt with a major civil war only seventy years ago, House Targaryen has had a relatively long period of dynastic stability in their house. Though the birth of several bastard children theatens to shake the integrity of the house once more as the likelihood of a pretender uprising only increases tensions between the Targaryen royals.\n\nNow, in the year of §Y196 A.D.§!, the threat of civil war looms around the corner. Whispers of §YDaemon Blackfyre§!, a legitimized bastard son of the late King Aegon IV Targaryen, intent on claiming the crown of the Seven Kingdoms and marching upon King's Landing to seize the throne for himself are spreading throughout our court rapidly. Having been knighted by his late father and being gifted §Y'Blackfyre'§!, one of the Valyrian steel swords of House Targaryen, started talk that Daemon should be king, threatening the natural line of succession. While we don't know the validity of these rumors, such talks should not be disregarded so easily and we should prepare for the worst.\n\nAs the rightful §YKing of the Seven Kingdoms§! and the §YProtector of the Realm§!, it is our duty to ensure the security and continuing stability by eliminating all threats to the Crown even if the threat comes from within our own family."
  # History
  string_start_tag_generic:0 "Some would say that the [Root.GovernmentName] of §Y[Root.GetName]§! is a country with an insignificant past. While this is clearly more jealousy than truth, our past is not as important as the glorious future in store for our people."
  string_start_stark: "§YHouse Stark§! of Winterfell is one of the Great Houses of Westeros and the principal noble house of the north. In days of old they ruled as Kings of Winter, but since Aegon's Conquest they have been Wardens of the North and ruled as Lords of Winterfell. Their seat, Winterfell, is an ancient castle renowned for its strength."
@@ -17,6 +22,31 @@
  string_start_tyrell: "§YHouse Tyrell§! of Highgarden is one of the Great Houses of the Seven Kingdoms, being Lords Paramount of the Mander and the liege lords of the Reach. A large, wealthy house, its wealth is only surpassed among the Great Houses by House Lannister, and the Tyrells can field the greatest armies. Additionally, if they call the ships of the Redwyne fleet, the lords of the Shield Islands, and the coastal lords, they can command a navy that equals if not surpasses the royal fleet of King's Landing. \n\nHighgarden is an ancient seat of rule and the heart of chivalry in the Seven Kingdoms; the Tyrells style themselves 'Defenders of the Marches' and 'High Marshals of the Reach', and traditionally, they have been Wardens of the South in addition to Lords Paramount of the Mander."
  string_start_baratheon: "§YHouse Baratheon§! of Storm's End is one of the Great Houses of Westeros, and is the principal house in the stormlands, which they rule as Lords Paramount of the Stormlands. Their seat, Storm's End, is an ancient castle raised by the Storm Kings from the now-extinct House Durrandon. The Baratheon sigil is a crowned black stag on a field of gold."
 
+ # Religion Title
+ string_start_religion_mechanic_title_plural: "The [Root.GetName] follow the [Root.Religion.GetName]"
+ string_start_religion_mechanic_title: "[Root.GetName] follows the [Root.Religion.GetName]"
+ # Religion Description
+ string_start_religion_the_faith: "[Root.start_religion_intro]\n\nThe Faith of the Seven, also simply regarded as §YThe Faith§!, is led by a §YHigh Septon§! and a council of highest-ranking septons commonly known as §YThe Most Devout§!. Followers of the Faith accrue §YFaith Influence§! over time, which can be used to secure the §YFaith Controller§! or to get favors from The Most Devout."
+ string_start_religion_intro_text: "The §Y[Root.Religion.GetName]§! religion gives the following modifiers:\n[Root.Religion.GetCountryModifiers]"
+
+ # Government Title
+ string_start_crownlands_government_title: "The [Root.GovernmentName] of the Seven Kingdoms"
+ string_start_great_house_government_title: "The Lord of [Root.GetName]"
+ string_start_house_government_title: "House of [Root.GetName]"
+
+ # Government Description
+ string_start_government_dynasty: "[Root.GovernmentName]s are §YDynasties§!.\nWhile they adhere to similar succession laws as traditional monarchies, dynastic governments are bound more strictly by their subjects' interests and, therefore, are more decentralized in nature. The §YDynast§! is succeeded by a designated §YHeir§!, who will always be a member of the same dynasty regardless of their relation to the current dynast. In the event of a dynast's premature death, a §YRegency Council§! will govern the realm until the heir has reached the age of maturity.\n\n[Root.startup_consorts_explanation][Root.startup_king_of_sk_explanation]"
+ string_start_hereditary_royal_house: "£DLC_emp The §YRuler of the Seven Kingdoms§! is a hereditary position, held by the §YRoyal House of Westeros§! and often associated with the entity known as §YThe Crownlands§!. The succession is fixed, meaning the heir will always hail from the same dynasty unless they are overthrown.\n\n"
+ string_start_elective_royal_house: "£DLC_emp The §YRuler of the Seven Kingdoms§! is an elected position, which can be held by any member of the Seven Kingdoms. The §YGreat Houses§! of the kingdom elects the successor upon the death of the current ruler."
+ # Environment Title
+ string_start_westeros: "Westeros and the Seven Kingdoms"
+ string_start_west_essos: "West Essos and the Free Cities"
+ string_start_central_essos: "The Dothraki Hordes of Essos"
+ string_start_far_essos: "The YiTi and the Far East"
+ # Environment Description
+ string_start_westeros_description: "The continent of Westeros is home to the disunited polity known as the §YSeven Kingdoms§!. House Targaryen established the kingdom during §YAegon's Conquest§! and has since then solidified their control over the entirety of the continent. Governing from the their seat in the §YCrownlands§!, the King of the Seven Kingdoms is empowered by all of the §YGreat Houses§! of Westeros who, in turn, protects them from both internal and external threats.\n\nDue to the decentralized nature of the kingdom, §YFeudatories§! are able to conduct diplomacy and wage war with each other without the interference of their overlords and the King except in extreme situations. In such cases, the King himself may demand an end to the hostilities or may join the fight on either side.\n\n[Root.westeros_sk_mechanic_description]To the far North, the §YFree Folk§! clans clash was the §YNight's Watch§! in a millennia long feud which many people have forgotten the root cause for. The wildlings, being primitive in nature, do not kneel to a superior lord in the same manner as the Westerosi lords do and, as such, are not bound by noble traditions. Some believe in the old myths of the §YWhite Walker§!, also regarded as 'The Others', who supposedly exist further North than the wildling clans. Due to their unnatural characteristics in these myths, a majority of the folk living on the continent don't believe them to be a credible threat."
+ string_start_westeros_dlc_seven_kingdoms_mechanic_description: "£DLC_emp  Despite having been established under a decentralized structure, the §YSeven Kingdoms§! can progressively take certain measures to reform into a different organizational model. The King passively gains §YRoyal Authority§!, displaying their dominance over Westerosi politics. The authority can be used to pass §YRoyal Reforms§!, shaping the Seven Kingdoms into the King's own image. This effectively allows the King to go down two different paths; §YCentralize§! the disunited domains into one unified Monarchy, or §YDecentralize§! the kingdom further but improve the collective economy and defense of the entire continent.\n\n"
+ string_start_westeros_no_dlc_seven_kingdoms_mechanic_description: "Despite having been established under a decentralized structure, the §YSeven Kingdoms§! can progressively take certain measures to reform into a centralized model. The King passively gains §YRoyal Authority§!, displaying their dominance over Westerosi politics. The authority can be used to pass §YRoyal Reforms§!, allowing the King to slowly implement centralization to the fractured kingdom. Eventually, the disunited domains can be merged under one unified Monarchy.\n\n"
  # Mechanics
  string_start_mechanics: ""
 

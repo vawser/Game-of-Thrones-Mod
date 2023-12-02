@@ -61,7 +61,7 @@ noble_house_reform = {
 	maintain_dynasty = yes
 	
 	is_eligible_for_hre_emperor = yes
-    
+	
 	modifiers = {
 		diplomatic_upkeep = 2
 		improve_relation_modifier = 0.25
@@ -92,7 +92,7 @@ lord_of_the_tides_reform = {
 	maintain_dynasty = yes
 	
 	is_eligible_for_hre_emperor = yes
-    
+	
 	modifiers = {
 		naval_forcelimit = 20
 		naval_forcelimit_modifier = 1.0
@@ -123,7 +123,7 @@ great_house_reform = {
 	fixed_rank = 2
 	
 	is_eligible_for_hre_emperor = yes
-    
+	
 	modifiers = {
 		prestige = 0.25
 		vassal_income = 0.20
@@ -151,7 +151,7 @@ royal_house_reform = {
 	maintain_dynasty = yes
 	
 	is_eligible_for_hre_emperor = yes
-    
+	
 	fixed_rank = 3
 	
 	modifiers = {
@@ -188,7 +188,7 @@ kingdom_of_westeros_reform = {
 	fixed_rank = 3
 	
 	is_eligible_for_hre_emperor = yes
-    
+	
 	modifiers = {
 		prestige = 2.50
 		monarch_admin_power = 2
@@ -1541,8 +1541,13 @@ new_wildling_clan_reform = {
 		capital_scope = { region = region_beyond_the_wall }
 	}
 	
-	allow_normal_conversion = yes
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	legacy_equivalent = tribe_legacy
+
+	trigger = {
+		has_reform = new_wildling_clan_reform
+	}
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -1572,9 +1577,11 @@ kingdom_beyond_the_wall_reform = {
 	potential = {
 		is_wildling_culture = yes
 		capital_scope = { region = region_beyond_the_wall }
+		always = no
 	}
 	
-	allow_normal_conversion = yes
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes

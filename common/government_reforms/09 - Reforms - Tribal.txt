@@ -31,9 +31,6 @@ got_chieftains_principle_reform = {
 got_council_of_chiefs_reform = {
 	icon = "war_chieftains"
 	allow_normal_conversion = yes
-	potential = {
-		has_factions = yes
-	}
 	trigger = {
 		has_factions = yes
 	}
@@ -100,6 +97,9 @@ got_figurehead_leader_reform = {
 		global_unrest = -2
 		stability_cost_modifier = 0.05
 	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
 	ai = {
 		factor = 1
 		modifier = {
@@ -115,9 +115,10 @@ got_figurehead_leader_reform = {
 got_look_to_the_future_reform = {
 	icon = "changing_tides"
 	allow_normal_conversion = yes
+	lock_level_when_selected = yes
 	potential = {
 		is_wildling_government = yes
-		NOT = { has_reform = got_maintain_traditionalist_ways_reform }
+		#NOT = { has_reform = got_maintain_traditionalist_ways_reform }
 	}
 	trigger = {
 		OR = {
@@ -127,7 +128,6 @@ got_look_to_the_future_reform = {
 			}
 			faction_in_power = sedentary_chieftains
 			faction_in_power = mercantile_chieftains
-			#always = yes
 		}
 		custom_trigger_tooltip = {
 			tooltip = "figurehead_leader_lock_tt"
@@ -158,9 +158,10 @@ got_look_to_the_future_reform = {
 got_maintain_traditionalist_ways_reform = {
 	icon = "wildlings"
 	allow_normal_conversion = yes
+	lock_level_when_selected = yes
 	potential = {
 		is_wildling_government = yes
-		NOT = { has_reform = got_look_to_the_future_reform }
+		#NOT = { has_reform = got_look_to_the_future_reform }
 	}
 	trigger = {
 		OR = {
@@ -170,7 +171,6 @@ got_maintain_traditionalist_ways_reform = {
 			}
 			faction_in_power = warlike_chieftains
 			faction_in_power = mercantile_chieftains
-			#always = yes
 		}
 	}
 	modifiers = {
@@ -336,7 +336,7 @@ got_feud_with_wildlings_reform = {
 		has_reform = got_maintain_traditionalist_ways_reform
 	}
 	modifiers = {
-		global_unrest = 2
+		global_unrest = -2
 		province_warscore_cost = -0.10
 		relation_with_same_culture = -20
 		relation_with_same_culture_group = -10
@@ -380,7 +380,7 @@ got_martial_society_reform = {
 	modifiers = {
 		global_manpower_modifier = 0.2
 	}
-    
+	
 	ai = {
 		factor = 1
 		modifier = {
@@ -395,14 +395,14 @@ got_martial_society_reform = {
 got_civil_society_reform = {
 	allow_normal_conversion = yes
 	icon = "tribal_civil_society"
-    potential = {
+	potential = {
 		NOT = { is_wildling_government = yes }
 	}
 	modifiers = {
 		global_tax_modifier = 0.05
 		yearly_corruption = -0.05
 	}
-    
+	
 	ai = {
 		factor = 1
 		modifier = {
@@ -575,13 +575,13 @@ got_precision_raiding_reform = {
 got_reinforce_tribal_hierarchy_reform = {
 	icon = "retain_tribal_hierarchy"
 	allow_normal_conversion = yes
-    
+	
 	modifiers = {
 		legitimacy = 0.5
 		horde_unity = 1
 		war_exhaustion = -0.02
 	}
-    
+	
 	ai = {
 		factor = 1
 		modifier = {
@@ -613,6 +613,13 @@ got_centralize_the_clan_reform = {
 		monthly_reform_progress = -0.50
 	}
 	effect = {
+		add_legitimacy = -25
+		add_horde_unity = -25
+		add_government_power = {
+			mechanic_type = clan_cohesion_mechanic
+			power_type = clan_cohesion
+			value = -50
+		}
 		custom_tooltip = adopt_free_folk_polity_reform_tt
 		hidden_effect = { add_government_reform = new_wildling_clan_reform }
 	}
@@ -624,7 +631,7 @@ got_centralize_the_clan_reform = {
 got_barbaric_despoilers_reform = {
 	icon = "rioting_burning_2"
 	allow_normal_conversion = yes
-    
+	
 	potential = {
 		OR = {
 			has_reform = khalasar_reform
@@ -632,11 +639,11 @@ got_barbaric_despoilers_reform = {
 		}
 		has_dlc = "The Cossacks"
 	}
-    
+	
 	modifiers = {
 		raze_power_gain = 0.33
 	}
-    
+	
 	ai = {
 		factor = 2
 	}
@@ -645,7 +652,7 @@ got_barbaric_despoilers_reform = {
 got_tribal_unity_reform = {
 	icon = "fist_in_air"
 	allow_normal_conversion = yes
-    
+	
 	potential = {
 		OR = {
 			has_reform = khalasar_reform
@@ -653,11 +660,11 @@ got_tribal_unity_reform = {
 		}
 		has_dlc = "The Cossacks"
 	}
-    
+	
 	modifiers = {
 		horde_unity = 2
 	}
-    
+	
 	ai = {
 		factor = 2
 	}

@@ -5,9 +5,13 @@ country_decisions = {
 			NOT = { has_ruler_modifier = commissioned_runestone }
 		}
 		allow = {
-			technology_group = wildling
 			years_of_income = 1
 			NOT = { has_ruler_modifier = commissioned_runestone }
+			has_government_power = {
+				mechanic_type = clan_cohesion_mechanic
+				power_type = clan_cohesion
+				value = 5
+			}
 		}
 		effect = {
 			add_years_of_income = -1

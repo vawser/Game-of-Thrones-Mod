@@ -61,7 +61,7 @@ noble_house_reform = {
 	maintain_dynasty = yes
 	
 	is_eligible_for_hre_emperor = yes
-    
+	
 	modifiers = {
 		diplomatic_upkeep = 2
 		improve_relation_modifier = 0.25
@@ -92,7 +92,7 @@ lord_of_the_tides_reform = {
 	maintain_dynasty = yes
 	
 	is_eligible_for_hre_emperor = yes
-    
+	
 	modifiers = {
 		naval_forcelimit = 20
 		naval_forcelimit_modifier = 1.0
@@ -123,7 +123,7 @@ great_house_reform = {
 	fixed_rank = 2
 	
 	is_eligible_for_hre_emperor = yes
-    
+	
 	modifiers = {
 		prestige = 0.25
 		vassal_income = 0.20
@@ -151,7 +151,7 @@ royal_house_reform = {
 	maintain_dynasty = yes
 	
 	is_eligible_for_hre_emperor = yes
-    
+	
 	fixed_rank = 3
 	
 	modifiers = {
@@ -188,7 +188,7 @@ kingdom_of_westeros_reform = {
 	fixed_rank = 3
 	
 	is_eligible_for_hre_emperor = yes
-    
+	
 	modifiers = {
 		prestige = 2.50
 		monarch_admin_power = 2
@@ -1477,6 +1477,25 @@ tribe_reform = {
 		enables_tribal_ideagroup = yes
 	}
 }
+stateless_society = {
+	icon = "fist_in_air"
+	allow_normal_conversion = no
+	valid_for_nation_designer = yes
+	lock_level_when_selected = yes
+	nation_designer_cost = 0
+	modifiers = {
+		governing_capacity_modifier = -0.99
+		defensiveness = 0.75
+		land_morale = 0.15
+	}
+	ai = {
+		factor = 1
+		modifier = {
+			factor = -1
+			num_of_cities = 2
+		}
+	}
+}
 wildling_clan_reform = {
 	icon = "wildlings"
 	
@@ -1496,7 +1515,7 @@ wildling_clan_reform = {
 	modifiers = {
 		capped_by_forcelimit = yes
 		relation_with_same_culture = 20
-		available_province_loot = 0.50
+		diplomatic_upkeep = -2
 	}
 	
 	factions = {
@@ -1506,10 +1525,11 @@ wildling_clan_reform = {
 	}
 
 	government_abilities = {
-		wildling_society_mechanic
+		clan_cohesion_mechanic
 	}
 
 	custom_attributes = {
+		cannot_fabricate_claims = yes
 		enables_tribal_ideagroup = yes
 	}
 }
@@ -1521,19 +1541,30 @@ new_wildling_clan_reform = {
 		capital_scope = { region = region_beyond_the_wall }
 	}
 	
-	allow_normal_conversion = yes
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	legacy_equivalent = tribe_legacy
+
+	trigger = {
+		has_reform = new_wildling_clan_reform
+	}
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
 	
 	modifiers = {
 		land_forcelimit_modifier = 0.33
-		relation_with_same_culture = -25
+		relation_with_same_culture = -40
+	}
+
+	factions = {
+		sedentary_chieftains
+		mercantile_chieftains
+		warlike_chieftains
 	}
 
 	government_abilities = {
-		wildling_society_mechanic
+		clan_cohesion_mechanic
 	}
 	
 	custom_attributes = {
@@ -1541,21 +1572,26 @@ new_wildling_clan_reform = {
 	}
 }
 kingdom_beyond_the_wall_reform = {
-	icon = "king_beyond_the_wall"
+	icon = "the_king_beyond_the_wall"
 	
 	potential = {
 		is_wildling_culture = yes
 		capital_scope = { region = region_beyond_the_wall }
+		always = no
 	}
 	
-	allow_normal_conversion = yes
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
 	
 	modifiers = {
-		
+		liberty_desire_from_subject_development = -0.66
+		vassal_forcelimit_bonus = 1.0
+		monarch_admin_power = 1
+		monarch_diplomatic_power = 1
 	}
 }
 lhazar_clan_reform = {
@@ -1768,7 +1804,7 @@ jhattar_reform = {
 	
 	modifiers = {
 		cavalry_power = 0.1
-		cav_to_inf_ratio = 0.5
+		cav_to_inf_ratio = 0.50
 		global_missionary_strength = 0.01
 		max_absolutism = 20
 	}

@@ -4,13 +4,13 @@ defined_text = {
 	text = {
 		localisation_key = handoftheking_tt
 		trigger = {
-			has_global_flag = handoftheking_active
+			has_global_flag = handoftheking_gactive
 		}
 	}
 	text = {
 		localisation_key = handoftheking_none_tt
 		trigger = {
-			NOT = { has_global_flag = handoftheking_active }
+			NOT = { has_global_flag = handoftheking_gactive }
 		}
 	}
 }
@@ -21,13 +21,13 @@ defined_text = {
 	text = {
 		localisation_key = masterofcoin_tt
 		trigger = {
-			has_global_flag = masterofcoin_active
+			has_global_flag = masterofcoin_gactive
 		}
 	}
 	text = {
 		localisation_key = masterofcoin_none_tt
 		trigger = {
-			NOT = { has_global_flag = masterofcoin_active }
+			NOT = { has_global_flag = masterofcoin_gactive }
 		}
 	}
 }
@@ -38,13 +38,13 @@ defined_text = {
 	text = {
 		localisation_key = masteroflaws_tt
 		trigger = {
-			has_global_flag = masteroflaws_active
+			has_global_flag = masteroflaws_gactive
 		}
 	}
 	text = {
 		localisation_key = masteroflaws_none_tt
 		trigger = {
-			NOT = { has_global_flag = masteroflaws_active }
+			NOT = { has_global_flag = masteroflaws_gactive }
 		}
 	}
 }
@@ -55,13 +55,13 @@ defined_text = {
 	text = {
 		localisation_key = masterofships_tt
 		trigger = {
-			has_global_flag = masterofships_active
+			has_global_flag = masterofships_gactive
 		}
 	}
 	text = {
 		localisation_key = masterofships_none_tt
 		trigger = {
-			NOT = { has_global_flag = masterofships_active }
+			NOT = { has_global_flag = masterofships_gactive }
 		}
 	}
 }
@@ -72,13 +72,13 @@ defined_text = {
 	text = {
 		localisation_key = masterofwhisperers_tt
 		trigger = {
-			has_global_flag = masterofwhisperers_active
+			has_global_flag = masterofwhisperers_gactive
 		}
 	}
 	text = {
 		localisation_key = masterofwhisperers_none_tt
 		trigger = {
-			NOT = { has_global_flag = masterofwhisperers_active }
+			NOT = { has_global_flag = masterofwhisperers_gactive }
 		}
 	}
 }
@@ -88,31 +88,41 @@ defined_text = {
 	text = {
 		localisation_key = string_handoftheking
 		trigger = {
-			has_country_modifier = got_hand_of_the_king
+			has_ruler_modifier = got_handoftheking
 		}
 	}
 	text = {
 		localisation_key = string_masterofcoin
 		trigger = {
-			has_country_modifier = got_master_of_coin
+			has_ruler_modifier = got_masterofcoin
 		}
 	}
 	text = {
 		localisation_key = string_masteroflaws
 		trigger = {
-			has_country_modifier = got_master_of_laws
+			has_ruler_modifier = got_masteroflaws
 		}
 	}
 	text = {
 		localisation_key = string_masterofships
 		trigger = {
-			has_country_modifier = got_master_of_ships
+			has_ruler_modifier = got_masterofships
 		}
 	}
 	text = {
 		localisation_key = string_masterofwhisperers
 		trigger = {
-			has_country_modifier = got_master_of_whisperers
+			has_ruler_modifier = got_masterofwhisperers
+		}
+	}
+}
+
+defined_text = {
+	name = GetIfHouse
+	text = {
+		localisation_key = string_house
+		trigger = {
+			westeros_government_not_king_nor_great_house = yes
 		}
 	}
 }

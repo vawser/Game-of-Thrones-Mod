@@ -27,3 +27,181 @@ on_province_owner_change_government_effect = {
 		}
 	}
 }
+
+on_war_ended_scripted_effect = {
+	# Ensure that if a feudatory rises up but fails, they
+	# become a feudatory again instead of a regular vassal
+	if = {
+		limit = {
+			westeros_government_great_house = yes
+			FROM = {
+				is_subject_of_type_with_overlord = {
+					who = ROOT
+					type = vassal
+				}
+			}
+		}
+		create_subject = {
+			subject_type = feudatory
+			subject = FROM
+		}
+	}
+
+	# Used for 'Usurp Overlord' casus belli aftermath
+	on_war_ended_usurp_overlord_effect = yes
+}
+
+# Used for 'Usurp Overlord' casus belli aftermath
+on_war_ended_usurp_overlord_effect = {
+	if = {
+		limit = {
+			NOT = { FROM = { is_subject_of = ROOT } }
+			NOT = { ROOT = { is_subject_of = FROM } }
+		}
+		feudatory_assignment_effect = { country_tag = ROOT }
+		feudatory_assignment_effect = { country_tag = FROM }
+	}
+
+	# KEEP AT THE BOTTOM
+	original_overlord_flag_clear_effect = yes
+	FROM = { original_overlord_flag_clear_effect = yes }
+}
+
+# Used for 'Usurp Overlord' casus belli aftermath
+original_overlord_flag_clear_effect = {
+	if = {
+		limit = {
+			has_country_flag = orgOverlord_TheNorth
+		}
+		clr_country_flag = orgOverlord_TheNorth
+	}
+	else_if = {
+		limit = {
+			has_country_flag = orgOverlord_TheRiverlands
+		}
+		clr_country_flag = orgOverlord_TheRiverlands
+	}
+	else_if = {
+		limit = {
+			has_country_flag = orgOverlord_TheVale
+		}
+		clr_country_flag = orgOverlord_TheVale
+	}
+	else_if = {
+		limit = {
+			has_country_flag = orgOverlord_TheWesterlands
+		}
+		clr_country_flag = orgOverlord_TheWesterlands
+	}
+	else_if = {
+		limit = {
+			has_country_flag = orgOverlord_TheStormlands
+		}
+		clr_country_flag = orgOverlord_TheStormlands
+	}
+	else_if = {
+		limit = {
+			has_country_flag = orgOverlord_TheReach
+		}
+		clr_country_flag = orgOverlord_TheReach
+	}
+	else_if = {
+		limit = {
+			has_country_flag = orgOverlord_Dorne
+		}
+		clr_country_flag = orgOverlord_Dorne
+	}
+	else_if = {
+		limit = {
+			has_country_flag = orgOverlord_TheIronIslands
+		}
+		clr_country_flag = orgOverlord_TheIronIslands
+	}
+	
+}
+
+# Used for 'Usurp Overlord' casus belli aftermath
+feudatory_assignment_effect = {
+	$country_tag$ = {
+		if = {
+			limit = { has_country_flag = orgOverlord_TheNorth }
+			clr_country_flag = orgOverlord_TheNorth
+			event_target:TheNorthGreatHouse = {
+				create_subject = {
+					subject_type = feudatory
+					subject = $country_tag$
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = orgOverlord_TheRiverlands }
+			clr_country_flag = orgOverlord_TheRiverlands
+			event_target:TheRiverlandsGreatHouse = {
+				create_subject = {
+					subject_type = feudatory
+					subject = $country_tag$
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = orgOverlord_TheVale }
+			clr_country_flag = orgOverlord_TheVale
+			event_target:TheValeGreatHouse = {
+				create_subject = {
+					subject_type = feudatory
+					subject = $country_tag$
+				}
+			}
+		}
+		else_if = {
+			limit = { 	has_country_flag = orgOverlord_TheWesterlands }
+			clr_country_flag = orgOverlord_TheWesterlands
+			event_target:TheWesterlandsGreatHouse = {
+				create_subject = {
+					subject_type = feudatory
+					subject = $country_tag$
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = orgOverlord_TheStormlands }
+			clr_country_flag = orgOverlord_TheStormlands
+			event_target:TheStormlandsGreatHouse = {
+				create_subject = {
+					subject_type = feudatory
+					subject = $country_tag$
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = orgOverlord_TheReach }
+			clr_country_flag = orgOverlord_TheReach
+			event_target:TheReachGreatHouse = {
+				create_subject = {
+					subject_type = feudatory
+					subject = $country_tag$
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = orgOverlord_Dorne }
+			clr_country_flag = orgOverlord_Dorne
+			event_target:DorneGreatHouse = {
+				create_subject = {
+					subject_type = feudatory
+					subject = $country_tag$
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = orgOverlord_TheIronIslands }
+			clr_country_flag = orgOverlord_TheIronIslands
+			event_target:TheIronIslandsGreatHouse = {
+				create_subject = {
+					subject_type = feudatory
+					subject = $country_tag$
+				}
+			}
+		}
+	}
+}

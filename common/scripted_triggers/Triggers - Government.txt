@@ -34,9 +34,7 @@ is_westerosi_government = {
 
 westeros_government_king = {
 	if = {
-		limit = {
-			hre_size = 1
-		}
+		limit = { hre_size = 1 }
 		is_emperor = yes
 	}
 	else = {
@@ -47,11 +45,39 @@ westeros_government_king = {
 	}
 }
 
+westeros_government_not_king = {
+	if = {
+		limit = { hre_size = 1 }
+		is_part_of_hre = yes
+		is_emperor = no
+	}
+	else = {
+		OR = {
+			has_reform = noble_house_reform
+			has_reform = lord_of_the_tides_reform
+			has_reform = great_house_reform
+		}
+	}
+}
+
+westeros_government_not_king_nor_great_house = {
+	if = {
+		limit = { hre_size = 1 }
+		is_part_of_hre = yes
+		is_emperor = no
+		is_elector = no
+	}
+	else = {
+		OR = {
+			has_reform = noble_house_reform
+			has_reform = lord_of_the_tides_reform
+		}
+	}
+}
+
 westeros_government_great_house = {
 	if = {
-		limit = {
-			hre_size = 1
-		}
+		limit = { hre_size = 1 }
 		is_elector = yes
 	}
 	else = {
@@ -59,12 +85,21 @@ westeros_government_great_house = {
 	}
 }
 
-westeros_government_not_king = {
+# Dual check to see if a country is on the council
+# checks for either country modifier or country flag
+is_on_the_small_council = {
 	OR = {
-		has_reform = noble_house_reform
-		has_reform = lord_of_the_tides_reform
-		has_reform = great_house_reform
+		has_council_position = { sm_council_position = handoftheking }
+		has_council_position = { sm_council_position = masterofcoin }
+		has_council_position = { sm_council_position = masteroflaws }
+		has_council_position = { sm_council_position = masterofships }
+		has_council_position = { sm_council_position = masterofwhisperers }
 	}
+}
+
+# Checks to see if you are on the Small Council
+has_council_position = {
+	has_country_flag = $sm_council_position$_cactive
 }
 
 is_yiti_government = {
@@ -129,6 +164,14 @@ is_tribal_government = {
 		has_reform = faros_clan_reform
 		has_reform = naath_clan_reform
 		has_reform = summer_islander_clan_reform
+	}
+}
+
+is_wildling_government = {
+	OR = {
+		has_reform = wildling_clan_reform
+		has_reform = new_wildling_clan_reform
+		has_reform = kingdom_beyond_the_wall_reform
 	}
 }
 

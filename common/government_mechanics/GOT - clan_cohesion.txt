@@ -1,0 +1,65 @@
+clan_cohesion_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 5
+
+	powers = {
+		clan_cohesion = {
+			gui = clan_cohesion_gov_mech
+			max = 100
+			default = 10
+			reset_on_new_ruler = no
+			base_monthly_growth = 0.10
+			show_before_interactions = yes
+			
+			scaled_modifier = {
+				modifier = {
+					monthly_clan_cohesion = -0.25
+				}
+			}
+			scaled_modifier = {
+				start_value = 50
+				end_value = 100
+				modifier = {
+					reform_progress_growth = 0.33
+					global_manpower_modifier = 0.50
+				}
+			}
+			reverse_scaled_modifier = {
+				start_value = 0
+				end_value = 50
+				modifier = {
+					reform_progress_growth = -0.25
+					global_manpower_modifier = -0.50
+				}
+			}
+			range_modifier = {
+				trigger = {
+					has_government_attribute = alliances_increase_clan_cohesion
+					calc_true_if = {
+						all_ally = {
+							is_wildling_culture = yes
+						}
+						amount = 2
+					}
+				}
+				modifier = {
+					monthly_clan_cohesion = 0.10
+				}
+			}
+			on_min_reached = {
+				custom_tooltip = ousted_clan_ruler_tt
+				add_corruption = 5
+				add_prestige = -50
+				hidden_effect = {
+					if = {
+						limit = {
+							has_heir = yes
+						}
+						kill_heir = { allow_new_heir = no }
+					}
+					kill_ruler = yes
+				}
+			}
+		}
+	}
+}

@@ -137,6 +137,7 @@ declarewar = {
 			limit = { has_global_flag = enable_diplomacy_logging }
 			log = "DEBUG - [Root.GetName], [From.GetName] - declarewar"
 		}
+		assign_temp_overlord_flag_effect = yes # Used for 'Usurp Overlord' casus belli aftermath
 	}
 	
 	condition = {
@@ -682,6 +683,25 @@ enforce_peace = {
 			log = "DEBUG - [Root.GetName], [From.GetName] - enforce_peace"
 		}
 	}
+
+	condition = {
+		tooltip = ENFORCE_PEACE_KING_RESTRICTION_TT
+		potential = {
+			westeros_government_king = yes
+			FROM = { westeros_government_not_king = yes }
+		}
+		allow = {
+			FROM = {
+				any_war_enemy_country = {
+					has_opinion = {
+						who = ROOT
+						value = 0
+					}
+					alliance_with = ROOT
+				}
+			}
+		}
+	}
 }
 
 improve_relation = {
@@ -711,6 +731,16 @@ fabricate_claim = {
 		if = { 
 			limit = { has_global_flag = enable_diplomacy_logging }
 			log = "DEBUG - [Root.GetName], [From.GetName] - fabricate_claim"
+		}
+	}
+
+	condition = {
+		tooltip = GOVT_REFORM_CANNOT_FABRICATE
+		potential = {
+			has_government_attribute = cannot_fabricate_claims
+		}
+		allow = {
+			always = no
 		}
 	}
 

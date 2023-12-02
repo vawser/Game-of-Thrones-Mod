@@ -1,6 +1,7 @@
 ﻿l_english:
  # Diplomatic Action Tooltips
  CANT_FIGHT_NIGHTS_WATCH: "§Y[NGT.GetName]§! protects Westeros from the Wildlings and the White Walkers, so we cannot fight them."
+ ALLIED_WITH_ENEMY: "§R- §Y[From.GetName]§! is allied to our war enemy.§!"
  # Weights
  AIWEIGHT_BASE: "Base Value"
  AIWEIGHT_PRESTIGE: "Prestige"
@@ -20,8 +21,16 @@
  assign_overlordship: "Assign Overlordship"
  assign_overlordship_title: "Assign Overlordship"
  assign_overlordship_desc: "§YHouse [From.Monarch.Dynasty.GetName]§! will be elevated to §YGreat House§! status, in the process demoting their overlord, §YHouse [From.Overlord.Monarch.Dynasty.GetName]§!, and forcing them into the subjugation of [From.Monarch.GetTitle] [From.Monarch.GetName]. All §YFeudatory§! subjects of House [From.Overlord.Monarch.Dynasty.GetName] will transfer over to [From.Monarch.GetTitle] [From.Monarch.GetName] (@[From.GetTag] House [From.GetName]).\n\nThis move will greatly upset House [From.Overlord.Monarch.Dynasty.GetName] and there may be a period of instability in the region until [From.Monarch.GetTitle] [From.Monarch.GetName] can subdue his new subjects."
- assign_overlordship_tooltip: "Elevate House [From.Monarch.Dynasty.GetName] to Great House."
- assign_overlordship_alert_tooltip: "Elevate House [From.Monarch.Dynasty.GetName] to Great House."
+ assign_overlordship_tooltip: "Offer to elevate House [From.Monarch.Dynasty.GetName] to a Great House status."
+ assign_overlordship_alert_tooltip: "An offer to become one of the §YGreat Houses§!"
+ assign_overlordship_dialog: "[This.GetName] has offered us the overlordship of our local region, elevating us to the status of a Great House of Westeros."
+
+ call_feudatory_to_war: "Call Feudatory to War"
+ call_feudatory_to_war_title: "Call Feudatory to War"
+ call_feudatory_to_war_desc: "Use our favors to with §YHouse [From.GetName]§! in order to call them into all of ours wars, either defensive or offensive."
+ call_feudatory_to_war_tooltip: "Call in House [From.GetName] to our war(s)."
+ call_feudatory_to_war_alert_tooltip: "A request to join our overlord's wars"
+ call_feudatory_to_war_dialog: "[This.GetName] has requested we join their wars."
 
  # Dynasty Actions
  gift_domain: "Gift Domain"
@@ -81,6 +90,8 @@
  assassinate_leader_alert_tooltip: "Assassinate Ruler"
  
  PRINCE_OF_DRAGONSTONE_TT: "Our heir is the §YPrince of Dragonstone§!."
+ ENFORCE_PEACE_KING_RESTRICTION_TT: "As the §YRuler of the Seven Kingdoms§!, we can only intervene if we are allied with the opposing country."
+ GOVT_REFORM_CANNOT_FABRICATE: "Your §YGovernment Reform(s)§! prevents you from fabricating claims."
  WHITE_WALKER_BLOCKED_ACTION_TT: "White Walkers do not conduct diplomacy."
  ALREADY_SENT_ASSASSIN_TT: "No assassination plot on going against [Root.GetName]."
  HIGH_RELATIONS_ACCESS_TT: "[From.GetName] must have an opinion of [Root.GetName] of 150 or higher."

@@ -5,9 +5,13 @@ country_decisions = {
 			NOT = { has_ruler_modifier = commissioned_runestone }
 		}
 		allow = {
-			technology_group = wildling
 			years_of_income = 1
 			NOT = { has_ruler_modifier = commissioned_runestone }
+			has_government_power = {
+				mechanic_type = clan_cohesion_mechanic
+				power_type = clan_cohesion
+				value = 5
+			}
 		}
 		effect = {
 			add_years_of_income = -1
@@ -16,8 +20,8 @@ country_decisions = {
 				duration = -1
 			}
 			add_government_power = {
-				mechanic_type = wildling_society_mechanic
-				power_type = wildling_cohesion
+				mechanic_type = clan_cohesion_mechanic
+				power_type = clan_cohesion
 				value = 5
 			}
 		}
@@ -39,17 +43,25 @@ country_decisions = {
 			has_country_flag = feudal_structure_block
 		}
 		allow = {
+			has_reform = got_look_to_the_future_reform
 			stability = 1
+			has_government_power = {
+				mechanic_type = clan_cohesion_mechanic
+				power_type = clan_cohesion
+				value = 70
+			}
 		}
 		effect = {
 			custom_tooltip = "tt_permit_westerosi_ideas"
 			clr_country_flag = feudal_structure_block
 			add_stability = -2
 			add_adm_power = -250
+			add_dip_power = -250
+			add_mil_power = -250
 			add_government_power = {
-				mechanic_type = wildling_society_mechanic
-				power_type = wildling_cohesion
-				value = -10
+				mechanic_type = clan_cohesion_mechanic
+				power_type = clan_cohesion
+				value = -20
 			}
 		}
 	}

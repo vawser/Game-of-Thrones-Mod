@@ -2825,7 +2825,14 @@ guiTypes = {
 				name = "stateviews_listbox"
 				backGround = ""
 				position = { x = 12 y = 420 }
-				size = { x = 458 y = 300 }
+				if_resolution = {
+					max_height = 899
+					size = { x = 458 y = 209 }
+				}
+				if_resolution = {
+					min_height = 900
+					size = { x = 458 y = 300 }
+				}			
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				scrollbartype = "standardlistbox_slider"
@@ -6746,6 +6753,11 @@ guiTypes = {
 			maxWidth = 114
 			maxHeight = 20
 			format = left
+		}
+		guiButtonType = {
+			name = "name_overlay"
+			position = { x = 31 y = 6 }
+			quadTextureSprite = "GFX_state_view_invisible_button_114x20"
 		}
 
 		guiButtonType =

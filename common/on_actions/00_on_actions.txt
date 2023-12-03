@@ -239,6 +239,17 @@ on_battle_won_country = {
 		
 		add_horde_unity = 5
 	}
+	if = {
+		limit = {
+			has_government_attribute = battle_victory_clan_cohesion_increase
+			has_government_mechanic = clan_cohesion_mechanic
+		}
+		add_government_power = {
+			mechanic_type = clan_cohesion_mechanic
+			power_type = clan_cohesion
+			value = 0.5
+		}
+	}
 	
 	random_events = {
 		1000 = GOT_RULER_IMPROVEMENT.1
@@ -486,12 +497,14 @@ on_new_monarch = {
 		}
 		add_king_titles = yes
 	}
-	
+
 	if = {
 		limit = {
-			has_government_attribute = force_general_leader
+			has_government_attribute = empower_wildling_faction_on_death
 		}
-		convert_ruler_to_general = 100
+		country_event = {
+			id = tribalgov.1
+		}
 	}
 
 	succession_culture_religion_effect = yes
@@ -548,51 +561,11 @@ on_monarch_death = {
 
 	# In case of death of current council member, this will clear
 	# all flags and event targets as well as ruler modifiers
-	# Hand of the King
-	if = {
-		limit = {
-			has_country_modifier = got_hand_of_the_king
-		}
-		remove_country_modifier = got_hand_of_the_king
-		clr_global_flag = handoftheking_active
-		clear_global_event_target = et_handoftheking
-	}
-	# Master of Coin
-	if = {
-		limit = {
-			has_country_modifier = got_master_of_coin
-		}
-		remove_country_modifier = got_master_of_coin
-		clr_global_flag = masterofcoin_active
-		clear_global_event_target = et_masterofcoin
-	}
-	# Master of Laws
-	if = {
-		limit = {
-			has_country_modifier = got_master_of_laws
-		}
-		remove_country_modifier = got_master_of_laws
-		clr_global_flag = masteroflaws_active
-		clear_global_event_target = et_masteroflaws
-	}
-	# Master of Ships
-	if = {
-		limit = {
-			has_country_modifier = got_master_of_ships
-		}
-		remove_country_modifier = got_master_of_ships
-		clr_global_flag = masterofships_active
-		clear_global_event_target = et_masterofships
-	}
-	# Master of Whisperers
-	if = {
-		limit = {
-			has_country_modifier = got_master_of_whisperers
-		}
-		remove_country_modifier = got_master_of_whisperers
-		clr_global_flag = masterofwhisperers_active
-		clear_global_event_target = et_masterofwhisperers
-	}
+	clear_council_position_cf = { sm_council_position = handoftheking }
+	clear_council_position_cf = { sm_council_position = masterofcoin }
+	clear_council_position_cf = { sm_council_position = masteroflaws }
+	clear_council_position_cf = { sm_council_position = masterofships }
+	clear_council_position_cf = { sm_council_position = masterofwhisperers }
 	##LOE Changes##
 	if = {
 		limit = {
@@ -770,7 +743,7 @@ on_heir_death = {
 		limit = { has_ruler_flag = heir_went_on_grand_tour }
 		clr_ruler_flag = heir_went_on_grand_tour
 	}
-	on_heir_disinherited_or_death_effect = yes
+	#on_heir_disinherited_or_death_effect = yes
 }
 
 # Country
@@ -2348,6 +2321,12 @@ on_musketeer_raised = {
 on_samurai_raised = {
 }
 
+on_qizilbash_raised = {
+}
+
+on_mamluks_raised = {
+}
+
 on_geobukseon_raised = {
 }
 
@@ -3118,7 +3097,12 @@ on_scorch_earth  = { #ROOT - scorching country, FROM - scorched province
 }
 
 on_war_ended = { #ROOT - Winer FROM - Loser
-	
+	if = { 
+		limit = { has_global_flag = enable_onaction_logging }
+		log = "DEBUG - [Root.GetName], [From.GetName]: on_war_ended "
+	}
+
+	on_war_ended_scripted_effect = yes
 }
 
 on_alliance_broken = { #ROOT - Original alliance creator, FROM - Alliance accepter
@@ -3138,5 +3122,9 @@ on_royal_marriage = { #ROOT - Marraige sender, FROM - marriage accepter
 }
 
 on_heir_disinherited = {
-	on_heir_disinherited_or_death_effect = yes
+	#on_heir_disinherited_or_death_effect = yes
+}
+
+on_overrun = { #ROOT - winner, FROM - loser, on stackwipe
+
 }

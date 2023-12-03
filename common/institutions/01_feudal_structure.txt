@@ -6,6 +6,7 @@ feudal_structure = {
 
 	trade_company_efficiency = 0.2
 
+	effect = { }
 
 	history = {
 		is_year = 0
@@ -65,7 +66,10 @@ feudal_structure = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = "tt_wildling_clan_block"
-				NOT = { owner = { has_country_flag = feudal_structure_block } }
+				OR = {
+					NOT = { owner = { has_country_flag = feudal_structure_block } }
+					owner = { has_government_attribute = masteries_spread_for_wildlings }
+				}
 			}
 		}
 	}

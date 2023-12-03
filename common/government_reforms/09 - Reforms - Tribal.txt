@@ -1,11 +1,124 @@
-#-----------------------------------------
-# "Core Tenets"
-#-----------------------------------------
-got_look_to_the_future_reform = {
+################
+# Tier 2
+################
+
+got_chieftains_principle_reform = {
+	icon = "tormund"
+	allow_normal_conversion = yes
+	trigger = {
+		OR = {
+			legitimacy = 90
+			custom_trigger_tooltip = {
+				tooltip = government_reform_enacted_tooltip
+				has_reform = got_chieftains_principle_reform
+			}
+		}
+	}
+	modifiers = {
+		vassal_income = 0.20
+		yearly_absolutism = 0.5
+		yearly_corruption = -0.03
+	}
+	ai = {
+		factor = 5
+		modifier = {
+			factor = 0
+			is_subject = yes
+		}
+	}
+}
+
+got_council_of_chiefs_reform = {
 	icon = "war_chieftains"
 	allow_normal_conversion = yes
+	trigger = {
+		has_factions = yes
+	}
+	modifiers = {
+		same_culture_advisor_cost = -0.33
+		max_absolutism = -10
+		monthly_clan_cohesion = 0.25
+	}
+	custom_attributes = {
+		empower_wildling_faction_on_death = yes
+	}
+	ai = {
+		factor = 2
+		modifier = {
+			factor = 5
+			has_factions = yes
+		}
+	}
+}
+
+# Wildling-only
+got_warparty_reform = {
+	icon = "war_charge"
+	allow_normal_conversion = yes
+	potential = { is_wildling_government = yes }
+	modifiers = {
+		army_tradition_from_battle = 0.33
+		warlike_chieftains_influence = 0.10
+	}
+	custom_attributes = {
+		wildling_warparty_bonus = yes
+	}
+	ai = {
+		factor = 5 # unique
+		modifier = {
+			factor = 10
+			calc_true_if = {
+				amount = 2
+				all_ally = {
+					is_wildling_culture = yes
+				}
+			}
+			calc_true_if = {
+				amount = 1
+				all_subject_country = {
+					is_wildling_culture = yes
+				}
+			}
+		}
+	}
+}
+
+got_figurehead_leader_reform = {
+	icon = "spiritual_leader"
+	allow_normal_conversion = yes
+	trigger = {
+		if = {
+			limit = { is_wildling_culture = yes }
+			NOT = { has_reform = got_look_to_the_future_reform }
+		}
+	}
+	modifiers = {
+		country_admin_power = 1
+		global_unrest = -2
+		stability_cost_modifier = 0.05
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 10
+			is_subject = yes
+		}
+	}
+}
+
+################
+# Tier 3
+################
+got_look_to_the_future_reform = {
+	icon = "changing_tides"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
 	potential = {
-		has_reform = wildling_clan_reform
+		is_wildling_government = yes
+		#NOT = { has_reform = got_maintain_traditionalist_ways_reform }
 	}
 	trigger = {
 		OR = {
@@ -16,21 +129,39 @@ got_look_to_the_future_reform = {
 			faction_in_power = sedentary_chieftains
 			faction_in_power = mercantile_chieftains
 		}
+		custom_trigger_tooltip = {
+			tooltip = "figurehead_leader_lock_tt"
+			NOT = { has_reform = got_figurehead_leader_reform }
+		}
 	}
 	modifiers = {
-		monthly_wildling_cohesion = -0.15
-		monthly_reform_progress = 0.10
+		monthly_clan_cohesion = -0.05
+		relation_with_same_culture = -20
 	}
 	ai = {
 		factor = 1
+		modifier = {
+			factor = 10
+			OR = {
+				tag = u92 # Winter Keep (Craster)
+				tag = Q06 # The Thenns
+				tag = U94 # Iceguard (Giants)
+			}
+		}
+		modifier = {
+			factor = 2
+			total_development = 10
+		}
 	}
 }
 
 got_maintain_traditionalist_ways_reform = {
-	icon = "war_charge"
+	icon = "wildlings"
 	allow_normal_conversion = yes
+	lock_level_when_selected = yes
 	potential = {
-		has_reform = wildling_clan_reform
+		is_wildling_government = yes
+		#NOT = { has_reform = got_look_to_the_future_reform }
 	}
 	trigger = {
 		OR = {
@@ -39,10 +170,11 @@ got_maintain_traditionalist_ways_reform = {
 				has_reform = got_maintain_traditionalist_ways_reform
 			}
 			faction_in_power = warlike_chieftains
+			faction_in_power = mercantile_chieftains
 		}
 	}
 	modifiers = {
-		sedentary_chieftains_influence = -0.10
+		mercantile_chieftains_influence = -0.10
 		legitimacy = 0.25
 	}
 	ai = {
@@ -50,18 +182,205 @@ got_maintain_traditionalist_ways_reform = {
 	}
 }
 
-#-----------------------------------------
-# "Cultural Values"
-#-----------------------------------------
+got_generic_principle_reform = {
+	icon = "paper_money_map"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { is_wildling_government = yes }
+	}
+	modifiers = {
+		prestige = 0.10
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+################
+# Tier 4
+################
+
+got_clan_towns_reforms = {
+	allow_normal_conversion = yes
+	icon = "clan_towns"
+	potential = {
+		is_wildling_government = yes
+		OR = {
+			NOT = { has_reform_on_level = 2 }
+			has_reform = got_look_to_the_future_reform
+		}
+	}
+	trigger = {
+		has_reform = got_look_to_the_future_reform
+	}
+	modifiers = {
+		global_tax_modifier = 0.125
+		development_cost_in_primary_culture = -0.10
+		monthly_clan_cohesion = -0.02
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_wildling_settlers_reform = {
+	allow_normal_conversion = yes
+	icon = "self_governing_colony_government"
+	potential = {
+		is_wildling_government = yes
+		OR = {
+			NOT = { has_reform_on_level = 2 }
+			has_reform = got_look_to_the_future_reform
+		}
+	}
+	trigger = {
+		has_reform = got_look_to_the_future_reform
+	}
+	modifiers = {
+		global_colonial_growth = 10
+		colonist_placement_chance = 0.025
+		monthly_clan_cohesion = -0.02
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_trading_with_the_crows_reform = {
+	allow_normal_conversion = yes
+	icon = "with_the_watch"
+	potential = {
+		is_wildling_government = yes
+		OR = {
+			NOT = { has_reform_on_level = 2 }
+			has_reform = got_look_to_the_future_reform
+		}
+	}
+	trigger = {
+		has_reform = got_look_to_the_future_reform
+	}
+	modifiers = {
+		trade_efficiency = 0.10
+		monthly_clan_cohesion = -0.02
+	}
+	effect = {
+		hidden_effect = {
+			add_opinion = {
+				who = NGT
+				modifier = opinion_westeros_bump
+			}
+			reverse_add_opinion = {
+				who = NGT
+				modifier = opinion_westeros_bump
+			}
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			remove_opinion = {
+				who = NGT
+				modifier = opinion_westeros_bump
+			}
+			reverse_remove_opinion = {
+				who = NGT
+				modifier = opinion_westeros_bump
+			}
+		}
+	}
+	custom_attributes = {
+		opinion_bump_with_nights_watch = yes
+		masteries_spread_for_wildlings = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_wildling_alliances_reform = {
+	allow_normal_conversion = yes
+	icon = "wildling_allies"
+	potential = {
+		is_wildling_government = yes
+		OR = {
+			NOT = { has_reform_on_level = 2 }
+			has_reform = got_maintain_traditionalist_ways_reform
+		}
+	}
+	trigger = {
+		has_reform = got_maintain_traditionalist_ways_reform
+	}
+	modifiers = {
+		diplomatic_upkeep = 1
+		relation_with_same_culture = 20
+		relation_with_same_culture_group = 10
+	}
+	custom_attributes = {
+		alliances_increase_clan_cohesion = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_feud_with_wildlings_reform = {
+	allow_normal_conversion = yes
+	icon = "feud_with_wildlings"
+	potential = {
+		is_wildling_government = yes
+		OR = {
+			NOT = { has_reform_on_level = 2 }
+			has_reform = got_maintain_traditionalist_ways_reform
+		}
+	}
+	trigger = {
+		has_reform = got_maintain_traditionalist_ways_reform
+	}
+	modifiers = {
+		global_unrest = -2
+		province_warscore_cost = -0.10
+		relation_with_same_culture = -20
+		relation_with_same_culture_group = -10
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_feud_with_crows_reform = {
+	allow_normal_conversion = yes
+	icon = "feud_with_the_crows"
+	potential = {
+		is_wildling_government = yes
+		OR = {
+			NOT = { has_reform_on_level = 2 }
+			has_reform = got_maintain_traditionalist_ways_reform
+		}
+	}
+	trigger = {
+		has_reform = got_maintain_traditionalist_ways_reform
+	}
+	modifiers = {
+		land_morale = 0.05
+		warscore_from_battles_modifier = 0.25
+	}
+	custom_attributes = {
+		wildling_rivarly_bonus = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
 
 got_martial_society_reform = {
 	allow_normal_conversion = yes
 	icon = "tribal_martial_society"
-    
+	potential = {
+		NOT = { is_wildling_government = yes }
+	}
 	modifiers = {
 		global_manpower_modifier = 0.2
 	}
-    
+	
 	ai = {
 		factor = 1
 		modifier = {
@@ -76,12 +395,14 @@ got_martial_society_reform = {
 got_civil_society_reform = {
 	allow_normal_conversion = yes
 	icon = "tribal_civil_society"
-    
+	potential = {
+		NOT = { is_wildling_government = yes }
+	}
 	modifiers = {
 		global_tax_modifier = 0.05
 		yearly_corruption = -0.05
 	}
-    
+	
 	ai = {
 		factor = 1
 		modifier = {
@@ -95,18 +416,46 @@ got_civil_society_reform = {
 	}
 }
 
-#-----------------------------------------
-# "Tribal Religion"
-#-----------------------------------------
-got_religious_societies_reform = {
-	icon = "tribal_religious_society"
+################
+# Tier 5
+################
+got_preserve_the_old_gods_reform = {
+	icon = "weirwood_tree"
 	allow_normal_conversion = yes
-    
-	modifiers = {
-		stability_cost_modifier = -0.1
-		religious_unity = 0.15
+	potential = {
+		religion = old_gods
 	}
-    
+	modifiers = {
+		tolerance_own = 1
+		yearly_patriarch_authority = 0.01
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_preserve_the_new_gods_reform = {
+	icon = "the_new_gods"
+	allow_normal_conversion = yes
+	potential = {
+		religion = faith_of_the_seven
+	}
+	modifiers = {
+		tolerance_own = 1
+		papal_influence = 0.5
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_religious_societies_reform = {
+	icon = "religious_society"
+	allow_normal_conversion = yes
+	modifiers = {
+		stability_cost_modifier = -0.10
+		global_missionary_strength = 0.02
+	}
 	ai = {
 		factor = 1
 		modifier = {
@@ -121,36 +470,118 @@ got_religious_societies_reform = {
 }
 
 got_lip_service_reform = {
-	icon = "tribal_lip_service"
+	icon = "lip_service"
 	allow_normal_conversion = yes
-    
 	modifiers = {
-		land_maintenance_modifier = -0.1
+		global_tax_modifier = 0.025
+		land_maintenance_modifier = -0.05
+		religious_unity = -0.10
+	}
+	ai = {
+		factor = 1
 	}
 }
 
-#-----------------------------------------
-# "Modernization"
-#-----------------------------------------
-got_centralize_tribal_power_reform = {
-	icon = "tribal_centralize_power"
+################
+# Tier 6
+################
+
+got_brutes_and_steel_reform = {
 	allow_normal_conversion = yes
-    
+	icon = "brutes_and_steel"
 	modifiers = {
-		core_creation = -0.05
-		stability_cost_modifier = -0.05
+		leader_land_shock = 2
+		shock_damage = 0.05
+		morale_damage = 0.05
+	}
+	
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 2.5
+			is_wildling_culture = yes
+		}
+		modifier = {
+			factor = 4
+			OR = {
+				culture = wildlings_thenns
+				culture = wildlings_cave_dweller_clans
+				culture = wildlings_ice_river_clans
+			}
+		}
 	}
 }
 
-got_retain_tribal_hierarchy_reform = {
+got_cavalry_horde_reform = {
+	allow_normal_conversion = yes
+	icon = "cavalry_horde"
+	modifiers = {
+		movement_speed = 0.10
+		cav_to_inf_ratio = 0.20
+		cavalry_cost = -0.15
+	}
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 10
+			culture = dothraki_culture
+		}
+	}
+}
+
+got_clan_war_council_reform = {
+	allow_normal_conversion = yes
+	icon = "clan_war_council"
+	modifiers = {
+		discipline = 0.05
+		reinforce_speed = 0.125
+	}
+	custom_attributes = {
+		battle_victory_clan_cohesion_increase = yes
+	}
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 4
+			OR = {
+				culture = wildlings_foresters
+				culture = wildlings_frostfangers
+			}
+		}
+	}
+}
+
+got_precision_raiding_reform = {
+	allow_normal_conversion = yes
+	icon = "small_raiding_party"
+	modifiers = {
+		siege_ability = 0.125
+		loot_amount = 0.25
+		available_province_loot = 0.33
+	}
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 2.5
+			is_wildling_culture = yes
+		}
+	}
+}
+
+################
+# Tier 7
+################
+
+got_reinforce_tribal_hierarchy_reform = {
 	icon = "retain_tribal_hierarchy"
 	allow_normal_conversion = yes
-    
+	
 	modifiers = {
-		governing_capacity = 150
-		max_absolutism = 10
+		legitimacy = 0.5
+		horde_unity = 1
+		war_exhaustion = -0.02
 	}
-    
+	
 	ai = {
 		factor = 1
 		modifier = {
@@ -164,10 +595,43 @@ got_retain_tribal_hierarchy_reform = {
 	}
 }
 
+got_centralize_the_clan_reform = {
+	icon = "clan_chief_highlighted"
+	allow_normal_conversion = yes
+	potential = {
+		is_wildling_government = yes
+	}
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = "figurehead_leader_lock_tt"
+			NOT = { has_reform = got_figurehead_leader_reform }
+		}
+	}
+	modifiers = {
+		monthly_clan_cohesion = -0.33
+		legitimacy = -1.0
+		monthly_reform_progress = -0.50
+	}
+	effect = {
+		add_legitimacy = -25
+		add_horde_unity = -25
+		add_government_power = {
+			mechanic_type = clan_cohesion_mechanic
+			power_type = clan_cohesion
+			value = -50
+		}
+		custom_tooltip = adopt_free_folk_polity_reform_tt
+		hidden_effect = { add_government_reform = new_wildling_clan_reform }
+	}
+	ai = {
+		factor = 1
+	}
+}
+
 got_barbaric_despoilers_reform = {
 	icon = "rioting_burning_2"
 	allow_normal_conversion = yes
-    
+	
 	potential = {
 		OR = {
 			has_reform = khalasar_reform
@@ -175,11 +639,11 @@ got_barbaric_despoilers_reform = {
 		}
 		has_dlc = "The Cossacks"
 	}
-    
+	
 	modifiers = {
 		raze_power_gain = 0.33
 	}
-    
+	
 	ai = {
 		factor = 2
 	}
@@ -188,7 +652,7 @@ got_barbaric_despoilers_reform = {
 got_tribal_unity_reform = {
 	icon = "fist_in_air"
 	allow_normal_conversion = yes
-    
+	
 	potential = {
 		OR = {
 			has_reform = khalasar_reform
@@ -196,46 +660,37 @@ got_tribal_unity_reform = {
 		}
 		has_dlc = "The Cossacks"
 	}
-    
+	
 	modifiers = {
 		horde_unity = 2
 	}
-    
+	
 	ai = {
 		factor = 2
 	}
 }
 
-#-----------------------------------------
-# "Tribal Reformation"
-#-----------------------------------------
-got_retain_tribal_hierarchy_reform = {
-	icon = "wildling_hut_highlighted"
+################
+# Tier 8
+################
+got_counseled_governance_reform = {
 	allow_normal_conversion = yes
-	potential = {
-		has_reform = wildling_clan_reform
+	icon = "wildlings_and_watchers"
+	modifiers = {
+		advisor_cost = -0.05
+		stability_cost_modifier = -0.025
 	}
-	trigger = {
-		
-	}
-	
 	ai = {
 		factor = 1
 	}
 }
 
-got_centralize_the_clan_reform = {
-	icon = "clan_chief_highlighted"
+got_centralize_tribal_power_reform = {
+	icon = "tribal_centralize_power"
 	allow_normal_conversion = yes
-	potential = {
-		has_reform = wildling_clan_reform
-	}
-	trigger = {
-		
-	}
-	effect = {
-		lose_reforms = 4
-		add_government_reform = new_wildling_clan_reform
+	modifiers = {
+		core_creation = -0.05
+		governing_capacity = 100
 	}
 	ai = {
 		factor = 1

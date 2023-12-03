@@ -118,6 +118,7 @@ in_capital_state = {
 	local_institution_spread = 0.05
 	local_state_maintenance_modifier = -0.5
 	local_governing_cost = -1.0
+	local_has_qizilbash = yes
 }
 
 coastal = {
@@ -179,6 +180,7 @@ land_province = {
 	local_manpower_modifier = 0.25			#25% of manpower.
 	local_has_musketeers = yes
 	local_has_streltsy = yes
+	local_has_mamluks = yes
 }
 
 mild_winter = {
@@ -634,6 +636,7 @@ positive_stability = {
 	yearly_corruption = -0.02
 	global_institution_spread = 0.05
 	yearly_harmony = 0.25
+	monthly_clan_cohesion = 0.10
 }
 
 privateering = {
@@ -648,6 +651,7 @@ negative_stability = {
 	devotion = 1
 	caravan_power = 0.05
 	yearly_harmony = 0.25
+	monthly_clan_cohesion = 0.20
 }
 
 positive_mandate = {	# 100% strength at 100 mandate, 0% at 50 mandate
@@ -734,7 +738,7 @@ bankruptcy = {
 war = {
 	warlike_chieftains_influence = 0.06
 	crw_militarists_influence = 0.05
-	monthly_wildling_cohesion = 0.10
+	monthly_clan_cohesion = 0.10
 }
 
 peace = {
@@ -744,7 +748,7 @@ peace = {
 	global_institution_spread = 0.1
 	sedentary_chieftains_influence = 0.06
 	crw_militarists_influence = -0.03
-	monthly_wildling_cohesion = -0.05
+	monthly_clan_cohesion = -0.05
 }
 
 unconditional_surrender = {
@@ -864,13 +868,12 @@ defender_of_faith_refused_cta = {
 }
 
 emperor = {
-	#spy_offence = 0.1					#minor bonus on spies.
-	diplomatic_reputation = 1
-	advisor_pool = 2
-	diplomatic_upkeep = 1
-	#free_leader_pool = 1
 	prestige = 1
-	legitimacy = 0.50
+	advisor_pool = 2
+	#diplomatic_reputation = 1
+	diplomatic_upkeep = 1
+	general_cost = -0.33
+	special_unit_forcelimit = 0.10
 }
 
 states_in_hre = {							#bonuses for each non-free city with capital in HRE.. as emperor
@@ -1008,6 +1011,7 @@ corruption = {
     commoners_loyalty_modifier = 0.1
     tribes_loyalty_modifier = 0.1
 	monthly_heir_claim_increase = 0.025
+	monthly_clan_cohesion = -1.0
 }
 
 root_out_corruption = {
@@ -1186,6 +1190,39 @@ federation_leader = {
 	land_morale = 0.1
 }
 
+pronoia_base_overlord_modifiers = {
+	# land_forcelimit = -5
+	# pronoia_amount_check_influence = 1 #used for exporting, invisible by default
+}
+
+pronoia_base_modifiers = {
+	core_creation = 1
+	overextension_impact_modifier = 1
+	administrative_efficiency = -0.2
+	global_manpower = 5
+	global_manpower_modifier = 0.5 
+	global_regiment_cost = -0.5
+}
+
+BYZ_pronoia_buff_army_tradition_modifier = {
+	army_tradition = 0.2
+}
+
+BYZ_pronoia_land_forcelimit_penalty = {
+	land_forcelimit = -5
+}
+
+BYZ_extra_forcelimit_for_pronoiars = {
+	land_forcelimit = 5
+}
+
+BYZ_army_trad = {
+	army_tradition = 3
+}
+
+BYZ_discipline = {
+	discipline = 0.05
+}
 
 tributary_state_behind_overlord_tech_adm = {
 	adm_tech_cost_modifier = -0.05
@@ -1268,6 +1305,12 @@ musketeers_modifier = {
 samurai_modifier = {
 }
 
+qizilbash_modifier = {
+}
+
+mamluks_modifier = {
+}
+
 geobukseon_modifier = {
 }
 
@@ -1296,6 +1339,7 @@ power_projection = {
 	devotion = 0.5
 	horde_unity = 0.5
 	republican_tradition = 0.2
+	monthly_clan_cohesion = 0.50
 }
 
 power_projection_25 = {
@@ -1429,6 +1473,11 @@ same_religion_subject_bonus_mod = {
 	manpower_in_true_faith_provinces = 0.25
 	global_sailors_modifier = 0.25
 	production_efficiency = 0.15
+}
+
+eyalet_modifier = {
+	global_manpower = -5
+	land_forcelimit	= -5
 }
 
 #scales to amount of up-to-date forts compared to total development
@@ -1921,7 +1970,7 @@ hussars_regiment = {
 
 marine_regiment = {
     regiment_disembark_speed = 2
-    shock_damage_received = 0.1
+	shock_damage_received = 0.1
 }
 
 banner_regiment = {
@@ -1932,7 +1981,7 @@ banner_regiment = {
 }
 
 streltsy_regiment = {
-    fire_damage = 0.1
+	fire_damage = 0.1
 	fire_damage_received = -0.1
 }
 
@@ -1948,6 +1997,17 @@ samurai_regiment = {
 	discipline = 0.05
 	morale_damage_received = -0.1
 	reinforce_cost_modifier = 0.5
+}
+
+qizilbash_regiment = {
+	fire_damage_received = -0.05
+	land_maintenance_modifier = -0.25
+}
+
+mamluks_regiment = {
+	drill_gain_modifier = 1
+	morale_damage = 0.1
+	reinforce_speed = 0.33 
 }
 
 geobukseon_ship = {
@@ -2050,10 +2110,12 @@ over_governing_capacity_modifier = {
 	administrative_efficiency = -0.5
 }
 
-# At 1000% below capacity, this modifier will be fully used
+#Scales with used capacity, being at full capacity means 100% of the modifier
 under_governing_capacity_modifier = {
 }
-
+#Scales with unused capacity, eing at full capacity means 0% of the modifier
+reverse_under_governing_capacity_modifier = {
+}
 
 lost_hegemony = {
 	all_power_cost	= 0.10
@@ -2115,17 +2177,17 @@ num_accepted_cultures = {
 
 ruler_adm = {
 	sedentary_chieftains_influence = 0.01
-	monthly_wildling_cohesion = 0.02
+	monthly_clan_cohesion = 0.02
 }
 
 ruler_dip = {
 	mercantile_chieftains_influence = 0.01
-	monthly_wildling_cohesion = 0.02
+	monthly_clan_cohesion = 0.02
 }
 
 ruler_mil = {
 	warlike_chieftains_influence = 0.01
-	monthly_wildling_cohesion = 0.02
+	monthly_clan_cohesion = 0.02
 }
 
 heir_adm = {
@@ -2176,7 +2238,7 @@ negative_imperial_authority_member = {
 
 slackening_modifier = {
     yearly_army_professionalism = -0.05
-    manpower_recovery_speed = 1
+    manpower_recovery_speed = 2
 }
 
 royal_council_meeting_mod = {
@@ -2212,5 +2274,56 @@ average_global_autonomy = { #100% autonomy => 100% modifier
 }
 
 reverse_average_global_autonomy = { #100% autonomy => 0% modifier
+
+}
+
+adur_burzhen_mihr_mod = {
+	country_diplomatic_power = 1
+	development_cost = -0.1
+	#monthly_asha_vahishta = -0.5
+	religion = yes
+}
+
+adur_farnbag_mod = {
+	country_admin_power = 1
+	reform_progress_growth = 0.1
+	#monthly_asha_vahishta = -0.5
+	religion = yes
+}
+
+adur_gushnasp_mod = {
+	country_military_power = 1
+	own_territory_dice_roll_bonus = 1
+	#monthly_asha_vahishta = -0.5
+	religion = yes
+}
+
+culturally_influencing_countries = {
+	#influence_to_vassal_elevation_cost = 20
+	#monthly_persian_influence = -0.2
+}
+
+culturally_influencing_countries_same_culture = {
+	#influence_to_vassal_elevation_cost = 20
+}
+
+culturally_influenced_country = {
+	relation_with_same_religion = 10
+	reverse_relation_with_same_religion = 10
+}
+
+manpower_percentage = {
+
+}
+
+reverse_manpower_percentage = {
+
+}
+
+sailors_percentage = {
+
+}
+
+reverse_sailors_percentage = {
 
 }

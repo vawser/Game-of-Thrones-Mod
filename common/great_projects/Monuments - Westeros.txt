@@ -2,175 +2,83 @@
 # Red Keep
 #--------------------------------------
 gp_red_keep = {
-	type = monument
-	
 	start = 226
-
-	date = 2.01.01
+	date = 2.1.1
+	time = { months = 12 }
+	build_cost = 250
 	can_be_moved = no
-	
-	build_cost = 0
-	time = {
-		months = 0
-	}
-
+	move_days_per_unit_distance = 10
 	starting_tier = 2
-
-	# Construction
-	build_trigger = {
-		always = yes
-	}
-	on_built = {
-		
-	}
-	on_destroyed = {
-		
-	}
-	
-	# Conditions
-	can_use_modifiers_trigger = {
-		always = yes
-	}
-	can_upgrade_trigger = {
-		always = yes
-	}
-	keep_trigger = {
-		
-	}
-
-	# Tiers
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-			local_defensiveness = 0.1
-			local_manpower = 0.1
-		}
-		area_modifier = {
-			
-		}
-		country_modifiers = {
-			yearly_absolutism = 0.25
-			max_absolutism = 5
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_defensiveness = 0.25
-			local_manpower = 0.25
-		}
-		area_modifier = {
-			
-		}
-		country_modifiers = {
-			yearly_absolutism = 0.5
-			max_absolutism = 10
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2000
-		}
-		province_modifiers = {
-			local_defensiveness = 0.33
-			local_manpower = 0.33
-		}
-		area_modifier = {
-			
-		}
-		country_modifiers = {
-			yearly_absolutism = 0.75
-			max_absolutism = 15
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-	tier_3 = {
-		upgrade_time = {
-			months = 360
-		}
-		cost_to_upgrade = {
-			factor = 3000
-		}
-		province_modifiers = {
-			local_defensiveness = 0.5
-			local_manpower = 0.5
-		}
-		area_modifier = {
-			
-		}
-		country_modifiers = {
-			yearly_absolutism = 1.0
-			max_absolutism = 20
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-}
-
-#--------------------------------------
-# Dragonpit
-#--------------------------------------
-gp_dragonpit = {
 	type = monument
-	
-	start = 226
 
-	date = 100.01.01
-	can_be_moved = no
-	move_days_per_unit_distance = 10
-	
-	build_cost = 0
-	time = {
-		months = 0
-	}
-
-	starting_tier = 0
-
-	# Construction
 	build_trigger = {
-		always = yes
+		if = {
+			limit = { hre_size = 1 }
+			custom_trigger_tooltip = {
+				tooltip = "gp_red_keep_tt"
+				owner = { westeros_government_king = yes }
+			}
+		}
+		else = {
+			owner = {
+				government = monarchy
+				government_rank = 3
+			}
+		}
 	}
 	on_built = {
-		
+		if = {
+			limit = {
+				NOT = { has_province_modifier = city_watch_dlc }
+			}
+			add_province_modifier = {
+				name = city_watch_dlc
+				duration = -1
+			}
+		}
 	}
 	on_destroyed = {
-		
+		if = {
+			limit = {
+				has_province_modifier = city_watch_dlc
+			}
+			remove_province_modifier = city_watch_dlc
+		}
 	}
 	
-	# Conditions
-	can_use_modifiers_trigger = {
-		always = yes
-	}
 	can_upgrade_trigger = {
-		always = yes
+		if = {
+			limit = { hre_size = 1 }
+			custom_trigger_tooltip = {
+				tooltip = "gp_red_keep_tt"
+				owner = { westeros_government_king = yes }
+			}
+		}
+		else = {
+			owner = {
+				government = monarchy
+				government_rank = 3
+			}
+		}
+	}
+	can_use_modifiers_trigger = {
+		if = {
+			limit = { hre_size = 1 }
+			custom_trigger_tooltip = {
+				tooltip = "gp_red_keep_tt"
+				owner = { westeros_government_king = yes }
+			}
+		}
+		else = {
+			owner = {
+				government = monarchy
+				government_rank = 3
+			}
+		}
 	}
 	keep_trigger = {
-		
 	}
 
-	# Tiers
 	tier_0 = {
 		upgrade_time = {
 			months = 0
@@ -179,141 +87,16 @@ gp_dragonpit = {
 			factor = 0
 		}
 		province_modifiers = {
-			local_unrest = -1
 		}
 		area_modifier = {
-			local_state_maintenance_modifier = -0.1
+		}
+		region_modifier = {
 		}
 		country_modifiers = {
-			stability_cost_modifier = -0.05
+			prestige_decay = 0.005
+			max_absolutism = -10
 		}
 		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_unrest = -2
-		}
-		area_modifier = {
-			local_state_maintenance_modifier = -0.25
-		}
-		country_modifiers = {
-			stability_cost_modifier = -0.1
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2000
-		}
-		province_modifiers = {
-			local_unrest = -3
-		}
-		area_modifier = {
-			local_state_maintenance_modifier = -0.33
-		}
-		country_modifiers = {
-			stability_cost_modifier = -0.15
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-	tier_3 = {
-		upgrade_time = {
-			months = 360
-		}
-		cost_to_upgrade = {
-			factor = 3000
-		}
-		province_modifiers = {
-			local_unrest = -4
-		}
-		area_modifier = {
-			local_state_maintenance_modifier = -0.5
-		}
-		country_modifiers = {
-			stability_cost_modifier = -0.2
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-}
-
-#--------------------------------------
-# Great Sept of Baelor
-#--------------------------------------
-gp_great_sept_of_baelor = {
-	type = monument
-	
-	start = 27
-
-	date = 167.6.2
-	can_be_moved = no
-	move_days_per_unit_distance = 10
-	
-	build_cost = 0
-	time = {
-		months = 0
-	}
-
-	starting_tier = 1
-
-	# Construction
-	build_trigger = {
-		is_year = 167
-	}
-	on_built = {
-		
-	}
-	on_destroyed = {
-		
-	}
-	
-	# Conditions
-	can_use_modifiers_trigger = {
-		religion = faith_of_the_seven
-	}
-	can_upgrade_trigger = {
-		always = yes
-	}
-	keep_trigger = {
-		
-	}
-
-	# Tiers
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.1
-		}
-		area_modifier = {
-			
-		}
-		country_modifiers = {
-			missionaries = 1
-			global_missionary_strength = 0.01
-		}
-		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -325,16 +108,16 @@ gp_great_sept_of_baelor = {
 		}
 		province_modifiers = {
 			local_tax_modifier = 0.25
+			local_governing_cost_increase = -5
 		}
 		area_modifier = {
-			
+		}
+		region_modifier = {
 		}
 		country_modifiers = {
-			missionaries = 1
-			global_missionary_strength = 0.02
+			max_absolutism = 5
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -342,81 +125,80 @@ gp_great_sept_of_baelor = {
 			months = 240
 		}
 		cost_to_upgrade = {
-			factor = 2000
+			factor = 2500
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.33
+			province_trade_power_modifier = 0.25
+			local_tax_modifier = 0.50
+			local_governing_cost_increase = -10
 		}
 		area_modifier = {
-			
+		}
+		region_modifier = {
+			local_autonomy = -0.025
 		}
 		country_modifiers = {
-			missionaries = 2
-			global_missionary_strength = 0.03
+			prestige_decay = -0.005
+			max_absolutism = 10
+		}
+		on_upgraded = {
 		}
 	}
 	tier_3 = {
 		upgrade_time = {
-			months = 360
+			months = 480
 		}
 		cost_to_upgrade = {
-			factor = 3000
+			factor = 5000
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.5
+			province_trade_power_modifier = 0.5
+			local_tax_modifier = 1.0
+			local_governing_cost_increase = -15
 		}
 		area_modifier = {
-			
+		}
+		region_modifier = {
+			local_autonomy = -0.05
 		}
 		country_modifiers = {
-			missionaries = 3
-			global_missionary_strength = 0.04
+			prestige_decay = -0.01
+			diplomatic_reputation = 1
+			imperial_authority = 0.25
+			max_absolutism = 20
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 }
 
 #--------------------------------------
-# Guildhall of the Alchemists
+# The Seven Gates
 #--------------------------------------
-gp_guildhall_of_the_alchemists = {
-	type = monument
-	
+gp_seven_gates = {
 	start = 226
-
-	date = 100.01.01
+	date = 2.1.1
+	time = { months = 0 }
+	build_cost = 0
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-	
-	build_cost = 0
-	time = {
-		months = 0
-	}
+	starting_tier = 1
+	type = monument
 
-	starting_tier = 0
-
-	# Construction
 	build_trigger = {
-		always = yes
 	}
 	on_built = {
-		
 	}
 	on_destroyed = {
-		
 	}
 	
-	# Conditions
-	can_use_modifiers_trigger = {
-		always = yes
-	}
 	can_upgrade_trigger = {
-		always = yes
+		
+	}
+	can_use_modifiers_trigger = {
+		
 	}
 	keep_trigger = {
-		
 	}
 
 	# Tiers
@@ -428,16 +210,16 @@ gp_guildhall_of_the_alchemists = {
 			factor = 0
 		}
 		province_modifiers = {
-			trade_goods_size_modifier = 0.1
+			local_defensiveness = -0.25
+			local_fort_maintenance_modifier = 0.50
 		}
 		area_modifier = {
-			
 		}
 		country_modifiers = {
-			fire_damage = 0.05
+		}
+		region_modifier = {
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -448,16 +230,16 @@ gp_guildhall_of_the_alchemists = {
 			factor = 1000
 		}
 		province_modifiers = {
-			trade_goods_size_modifier = 0.25
+			local_defensiveness = 0.10
 		}
 		area_modifier = {
-			
+			local_manpower_modifier = 0.05
+		}
+		region_modifier = {
 		}
 		country_modifiers = {
-			fire_damage = 0.1
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -465,39 +247,325 @@ gp_guildhall_of_the_alchemists = {
 			months = 240
 		}
 		cost_to_upgrade = {
-			factor = 2000
+			factor = 2500
 		}
 		province_modifiers = {
-			trade_goods_size_modifier = 0.33
+			local_garrison_size = 0.10
+			local_defensiveness = 0.20
 		}
 		area_modifier = {
-			
+			local_manpower_modifier = 0.10
+		}
+		region_modifier = {
 		}
 		country_modifiers = {
-			fire_damage = 0.15
+			rival_border_fort_maintenance = -0.10
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_3 = {
 		upgrade_time = {
-			months = 360
+			months = 480
 		}
 		cost_to_upgrade = {
-			factor = 3000
+			factor = 5000
 		}
 		province_modifiers = {
-			trade_goods_size_modifier = 0.5
+			fort_level = 1
+			local_garrison_size = 0.25
+			local_defensiveness = 0.30
 		}
 		area_modifier = {
-			
+			local_manpower_modifier = 0.20
+		}
+		region_modifier = {
 		}
 		country_modifiers = {
-			fire_damage = 0.2
+			rival_border_fort_maintenance = -0.20
 		}
 		on_upgraded = {
-			add_prestige = 25
+		}
+	}
+}
+
+#--------------------------------------
+# Great Sept of Baelor
+#--------------------------------------
+gp_great_sept_of_baelor = {
+	start = 27
+	date = 167.6.2
+	time = { months = 0 }
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+	starting_tier = 1
+	type = monument
+
+	build_trigger = {
+		is_year = 167
+	}
+	on_built = {
+	}
+	on_destroyed = {
+	}
+
+	can_upgrade_trigger = {
+		province_is_or_accepts_religion = {
+			religion = faith_of_the_seven
+		}
+	}
+	can_use_modifiers_trigger = {
+		province_is_or_accepts_religion = {
+			religion = faith_of_the_seven
+		}
+	}
+	keep_trigger = {
+		# province_is_or_accepts_religion = {
+		# 	religion = faith_of_the_seven
+		# }
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		region_modifier = {
+		}
+		country_modifiers = {
+			prestige_decay = 0.005
+			legitimacy = -0.5
+			devotion = -0.5
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_tax_modifier = 0.10
+			local_unrest = -1
+		}
+		area_modifier = {
+		}
+		region_modifier = {
+		}
+		country_modifiers = {
+			legitimacy = 0.25
+			devotion = 0.25
+		}
+		on_upgraded = {
+			if = {
+				limit = {
+					has_cardinal = no
+				}
+				add_cardinal = yes
+			}
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_tax_modifier = 0.25
+			local_unrest = -2
+		}
+		area_modifier = {
+		}
+		region_modifier = {
+		}
+		country_modifiers = {
+			legitimacy = 0.5
+			devotion = 0.5
+			global_missionary_strength = 0.01
+		}
+		on_upgraded = {
+			if = {
+				limit = {
+					has_cardinal = no
+				}
+				add_cardinal = yes
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_tax_modifier = 0.50
+			local_unrest = -4
+		}
+		area_modifier = {
+		}
+		region_modifier = {
+		}
+		country_modifiers = {
+			legitimacy = 1.0
+			devotion = 1.0
+			missionaries = 1
+			global_missionary_strength = 0.02
+		}
+		on_upgraded = {
+			if = {
+				limit = {
+					has_cardinal = no
+				}
+				add_cardinal = yes
+			}
+		}
+	}
+}
+
+#--------------------------------------
+# Stone Drum
+#--------------------------------------
+gp_stone_drum = {
+	start = 221
+	date = 2.1.1
+	time = { months = 0 }
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+	starting_tier = 1
+	type = monument
+
+	build_trigger = {
+	}
+	on_built = {
+	}
+	on_destroyed = {
+	}
+	
+	can_upgrade_trigger = {
+		owner = {
+			OR = {
+				ruler_has_personality = conqueror_personality
+				monthly_mil = 8
+				national_focus = MIL
+			}
+		}
+	}
+	can_use_modifiers_trigger = {
+		owner = {
+			OR = {
+				ruler_has_personality = conqueror_personality
+				monthly_mil = 8
+				national_focus = MIL
+			}
+		}
+	}
+	keep_trigger = {
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+			block_slave_raid = yes
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+		}
+		region_modifier = {
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			block_slave_raid = yes
+			local_defender_dice_roll_bonus = 1
+		}
+		area_modifier = {
+		}
+		region_modifier = {
+		}
+		country_modifiers = {
+			reinforce_cost_modifier = -0.10
+		}
+		on_upgraded = {
+			owner = { add_army_tradition_or_mil_power = { amount = 10 } }
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			block_slave_raid = yes
+			local_defender_dice_roll_bonus = 2
+		}
+		area_modifier = {
+		}
+		region_modifier = {
+		}
+		country_modifiers = {
+			reinforce_cost_modifier = -0.10
+			mil_advisor_cost = -0.15
+			military_tactics = 0.25
+		}
+		on_upgraded = {
+			owner = { add_army_tradition_or_mil_power = { amount = 10 } }
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			block_slave_raid = yes
+			local_defender_dice_roll_bonus = 2
+			local_own_coast_naval_combat_bonus = 1
+		}
+		area_modifier = {
+		}
+		region_modifier = {
+		}
+		country_modifiers = {
+			reinforce_cost_modifier = -0.20
+			free_mil_policy = 1
+			mil_advisor_cost = -0.30
+			military_tactics = 0.25
+		}
+		on_upgraded = {
+			owner = { add_army_tradition_or_mil_power = { amount = 20 } }
 		}
 	}
 }

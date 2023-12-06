@@ -1,0 +1,37 @@
+province_is_or_accepts_religion_group = { 
+	custom_trigger_tooltip = {
+		tooltip = province_is_or_accepts_$religion_group$_tt
+		OR = {
+			AND = {
+				religion_group = $religion_group$
+				has_owner_religion = yes
+			}
+			AND = {
+				owner = { secondary_religion_group = $religion_group$ }
+				OR = {
+					religion_group = $religion_group$
+					has_owner_religion = yes
+				}
+			}
+		}
+	}
+}
+
+province_is_or_accepts_religion = {
+	custom_trigger_tooltip = {
+		tooltip = province_is_or_accepts_$religion$_tt
+		OR = {
+			AND = {
+				religion = $religion$
+				has_owner_religion = yes
+			}
+			AND = {
+				owner = { secondary_religion = $religion$ }
+				OR = {
+					religion = $religion$
+					has_owner_religion = yes
+				}
+			}
+		}
+	}
+}

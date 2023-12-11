@@ -339,7 +339,10 @@ feudatory = {
 		modifier = kings_peace_subject_modifier
 		trigger = {
 			overlord = {
-				has_government_attribute = has_the_kings_peace
+				custom_trigger_tooltip = {
+					tooltip = "overlord_has_has_the_kings_peace"
+					has_government_attribute = has_the_kings_peace
+				}
 			}
 		}
 	}
@@ -347,7 +350,29 @@ feudatory = {
 		modifier = strengthen_feudatories_modifier
 		trigger = {
 			overlord = {
-				has_government_attribute = strengthen_feudatories
+				custom_trigger_tooltip = {
+					tooltip = "overlord_has_strengthen_feudatories"
+					has_government_attribute = strengthen_feudatories
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = the_iron_fleet_modifier
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = "subject_has_a_port"
+				any_owned_province = { has_port = yes }
+			}
+			overlord = {
+				custom_trigger_tooltip = {
+					tooltip = "overlord_has_the_pyke_monument"
+					any_owned_province = {
+						has_great_project = {
+							type = gp_pyke
+						}
+					}
+				}
 			}
 		}
 	}

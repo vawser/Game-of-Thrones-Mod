@@ -194,7 +194,7 @@ gp_winterfell = {
 		}
 		province_modifiers = {
 			local_defensiveness = 0.15
-			garrison_size = 0.10
+			local_garrison_size = 0.10
 		}
 		area_modifier = {
 		}
@@ -227,7 +227,7 @@ gp_winterfell = {
 		}
 		province_modifiers = {
 			local_defensiveness = 0.30
-			garrison_size = 0.10
+			local_garrison_size = 0.10
 			local_hostile_attrition = 1
 		}
 		area_modifier = {
@@ -262,7 +262,7 @@ gp_winterfell = {
 		}
 		province_modifiers = {
 			local_defensiveness = 0.50
-			garrison_size = 0.20
+			local_garrison_size = 0.20
 			local_hostile_attrition = 2
 		}
 		area_modifier = {
@@ -457,7 +457,6 @@ gp_pyke = {
 			hostile_disembark_speed = 0.50
 		}
 		country_modifiers = {
-			navy_tradition_decay = -0.002
 			vassal_naval_forcelimit_bonus = 0.33
 		}
 		conditional_modifier = {
@@ -593,7 +592,6 @@ gp_riverrun = {
 			local_defensiveness = 0.10
 		}
 		area_modifier = {
-			province_trade_power_modifier = 0.10
 		}
 		country_modifiers = {
 			trade_efficiency = 0.025
@@ -623,7 +621,7 @@ gp_riverrun = {
 			local_defensiveness = 0.20
 		}
 		area_modifier = {
-			province_trade_power_modifier = 0.15
+			province_trade_power_modifier = 0.10
 		}
 		country_modifiers = {
 			trade_efficiency = 0.05
@@ -982,7 +980,7 @@ gp_harrenhal = {
 	build_cost = 250
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-	starting_tier = 1
+	starting_tier = 0
 	type = monument
 
 	build_trigger = {
@@ -1007,14 +1005,14 @@ gp_harrenhal = {
 			factor = 0
 		}
 		province_modifiers = {
-			local_manpower_modifier = 0.1
+			local_defensiveness = -0.10
+			local_governing_cost_increase = 20
+			local_fort_maintenance_modifier = 0.25
 		}
 		area_modifier = {
-			local_defensiveness = 1.0
 		}
 		country_modifiers = {
-			administrative_efficiency = 0.025
-			monarch_lifespan = -0.5
+			monarch_lifespan = -0.15
 		}
 		on_upgraded = {
 		}
@@ -1027,14 +1025,24 @@ gp_harrenhal = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_manpower_modifier = 0.25
+			local_defensiveness = 0.05
+			local_governing_cost_increase = 10
 		}
 		area_modifier = {
-			local_defensiveness = 1.0
 		}
 		country_modifiers = {
-			administrative_efficiency = 0.05
-			monarch_lifespan = -0.5
+			monarch_lifespan = -0.10
+			prestige_decay = -0.002
+		}
+		conditional_modifier = {
+			trigger = {
+				owner = {
+					dynasty = "Hoare"
+				}
+			}
+			modifier = {
+				legitimacy = 0.25
+			}
 		}
 		on_upgraded = {
 		}
@@ -1044,39 +1052,67 @@ gp_harrenhal = {
 			months = 240
 		}
 		cost_to_upgrade = {
-			factor = 2000
+			factor = 2500
 		}
 		province_modifiers = {
-			local_manpower_modifier = 0.33
+			local_hostile_attrition = 1
+			local_defensiveness = 0.10
+			local_governing_cost_increase = 5
 		}
 		area_modifier = {
-			local_defensiveness = 1.0
 		}
 		country_modifiers = {
-			administrative_efficiency = 0.075
-			monarch_lifespan = -0.5
+			administrative_efficiency = 0.025
+			monarch_lifespan = -0.05
+			prestige_decay = -0.005
+		}
+		conditional_modifier = {
+			trigger = {
+				owner = {
+					dynasty = "Hoare"
+				}
+			}
+			modifier = {
+				legitimacy = 0.5
+			}
 		}
 		on_upgraded = {
 		}
 	}
 	tier_3 = {
 		upgrade_time = {
-			months = 360
+			months = 480
 		}
 		cost_to_upgrade = {
-			factor = 3000
+			factor = 5000
 		}
 		province_modifiers = {
-			local_manpower_modifier = 0.5
+			local_hostile_attrition = 2
+			local_defensiveness = 0.20
 		}
 		area_modifier = {
-			local_defensiveness = 1.0
 		}
 		country_modifiers = {
-			administrative_efficiency = 0.1
-			monarch_lifespan = -0.5
+			administrative_efficiency = 0.05
+			prestige_decay = -0.01
+			no_stability_loss_on_monarch_death = yes
+		}
+		conditional_modifier = {
+			trigger = {
+				owner = {
+					dynasty = "Hoare"
+				}
+			}
+			modifier = {
+				legitimacy = 1.0
+			}
 		}
 		on_upgraded = {
+			owner = {
+				change_adm = 1
+				change_dip = 1
+				change_mil = 1
+			}
 		}
 	}
 }
@@ -1353,7 +1389,7 @@ gp_seven_gates = {
 			factor = 5000
 		}
 		province_modifiers = {
-			fort_level = 1
+			fort_level = 2
 			local_garrison_size = 0.25
 			local_defensiveness = 0.30
 		}
@@ -1436,7 +1472,6 @@ gp_great_sept_of_baelor = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.10
 			local_unrest = -1
 		}
 		area_modifier = {
@@ -1464,7 +1499,7 @@ gp_great_sept_of_baelor = {
 			factor = 2500
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.25
+			tax_income = 3
 			local_unrest = -2
 		}
 		area_modifier = {
@@ -1493,7 +1528,7 @@ gp_great_sept_of_baelor = {
 			factor = 5000
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.50
+			tax_income = 6
 			local_unrest = -4
 		}
 		area_modifier = {
@@ -1652,25 +1687,18 @@ gp_stone_drum = {
 }
 
 #--------------------------------------
-# Old Palace
+# Highgarden
 #--------------------------------------
-gp_old_palace = {
-	type = monument
-	
-	start = 352
-
-	date = 100.01.01
+gp_highgarden = {
+	start = 267
+	date = 2.1.1
+	time = { months = 12 }
+	build_cost = 250
 	can_be_moved = no
 	move_days_per_unit_distance = 10
+	starting_tier = 1
+	type = monument
 	
-	build_cost = 0
-	time = {
-		months = 0
-	}
-
-	starting_tier = 0
-
-	# Construction
 	build_trigger = {
 	}
 	on_built = {
@@ -1678,18 +1706,13 @@ gp_old_palace = {
 	on_destroyed = {
 	}
 	
-	# Conditions
 	can_use_modifiers_trigger = {
-		always = yes
 	}
 	can_upgrade_trigger = {
-		always = yes
 	}
 	keep_trigger = {
-		
 	}
 
-	# Tiers
 	tier_0 = {
 		upgrade_time = {
 			months = 0
@@ -1698,17 +1721,14 @@ gp_old_palace = {
 			factor = 0
 		}
 		province_modifiers = {
-			local_defensiveness = 0.1
+			local_defensiveness = -0.10
+			local_fort_maintenance_modifier = 0.25
 		}
 		area_modifier = {
-			
 		}
 		country_modifiers = {
-			prestige = 0.25
-			legitimacy = 0.25
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -1719,145 +1739,28 @@ gp_old_palace = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_defensiveness = 0.25
-		}
-		area_modifier = {
-			
-		}
-		country_modifiers = {
-			prestige = 0.5
-			legitimacy = 0.5
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2000
-		}
-		province_modifiers = {
-			local_defensiveness = 0.33
-		}
-		area_modifier = {
-			
-		}
-		country_modifiers = {
-			prestige = 0.75
-			legitimacy = 0.75
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-	tier_3 = {
-		upgrade_time = {
-			months = 360
-		}
-		cost_to_upgrade = {
-			factor = 3000
-		}
-		province_modifiers = {
-			local_defensiveness = 0.5
-		}
-		area_modifier = {
-			
-		}
-		country_modifiers = {
-			prestige = 1.0
-			legitimacy = 1.0
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-}
-
-#--------------------------------------
-# Water Gardens
-#--------------------------------------
-gp_water_gardens = {
-	type = monument
-	
-	start = 352
-
-	date = 100.01.01
-	can_be_moved = no
-	move_days_per_unit_distance = 10
-	
-	build_cost = 0
-	time = {
-		months = 0
-	}
-
-	starting_tier = 0
-
-	# Construction
-	build_trigger = {
-		always = yes
-	}
-	on_built = {
-		
-	}
-	on_destroyed = {
-		
-	}
-	
-	# Conditions
-	can_use_modifiers_trigger = {
-		always = yes
-	}
-	can_upgrade_trigger = {
-		always = yes
-	}
-	keep_trigger = {
-		
-	}
-
-	# Tiers
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
+			local_defensiveness = 0.15
 			local_development_cost = -0.05
 		}
 		area_modifier = {
-			
 		}
 		country_modifiers = {
-			diplomatic_reputation = 0.5
 			improve_relation_modifier = 0.05
 		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_development_cost = -0.1
-		}
-		area_modifier = {
-			
-		}
-		country_modifiers = {
-			diplomatic_reputation = 1.0
-			improve_relation_modifier = 0.1
+		conditional_modifier = {
+			trigger = {
+				owner = {
+					OR = {
+						dynasty = "Gardener"
+						dynasty = "Tyrell"
+					}
+				}
+			}
+			modifier = {
+				legitimacy = 0.25
+			}
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -1865,41 +1768,67 @@ gp_water_gardens = {
 			months = 240
 		}
 		cost_to_upgrade = {
-			factor = 2000
+			factor = 2500
 		}
 		province_modifiers = {
-			local_development_cost = -0.15
+			local_defensiveness = 0.30
+			local_development_cost = -0.05
 		}
 		area_modifier = {
-			
+			trade_goods_size = 0.5
 		}
 		country_modifiers = {
-			diplomatic_reputation = 1.5
-			improve_relation_modifier = 0.15
+			improve_relation_modifier = 0.10
+			advisor_cost = -0.05
+		}
+		conditional_modifier = {
+			trigger = {
+				owner = {
+					OR = {
+						dynasty = "Gardener"
+						dynasty = "Tyrell"
+					}
+				}
+			}
+			modifier = {
+				legitimacy = 0.5
+			}
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_3 = {
 		upgrade_time = {
-			months = 360
+			months = 480
 		}
 		cost_to_upgrade = {
-			factor = 3000
+			factor = 5000
 		}
 		province_modifiers = {
-			local_development_cost = -0.2
+			local_defensiveness = 0.50
+			local_development_cost = -0.10
 		}
 		area_modifier = {
-			
+			trade_goods_size = 1
 		}
 		country_modifiers = {
-			diplomatic_reputation = 2
-			improve_relation_modifier = 0.2
+			improve_relation_modifier = 0.25
+			advisor_cost = -0.10
+		}
+		conditional_modifier = {
+			trigger = {
+				owner = {
+					OR = {
+						dynasty = "Gardener"
+						dynasty = "Tyrell"
+					}
+				}
+			}
+			modifier = {
+				legitimacy = 1.0
+			}
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 }
@@ -1908,168 +1837,29 @@ gp_water_gardens = {
 # Storm's End
 #--------------------------------------
 gp_storms_end = {
-	type = monument
-	
 	start = 304
-
-	date = 100.01.01
+	date = 2.1.1
+	time = { months = 12 }
+	build_cost = 250
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-	
-	build_cost = 0
-	time = {
-		months = 0
-	}
-
-	starting_tier = 0
-
-	# Construction
-	build_trigger = {
-		always = yes
-	}
-	on_built = {
-		
-	}
-	on_destroyed = {
-		
-	}
-	
-	# Conditions
-	can_use_modifiers_trigger = {
-		always = yes
-	}
-	can_upgrade_trigger = {
-		always = yes
-	}
-	keep_trigger = {
-		
-	}
-
-	# Tiers
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-			local_manpower_modifier = 0.1
-		}
-		area_modifier = {
-			local_defensiveness = 1.0
-		}
-		country_modifiers = {
-			land_morale = 0.025
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_manpower_modifier = 0.25
-		}
-		area_modifier = {
-			local_defensiveness = 1.0
-		}
-		country_modifiers = {
-			land_morale = 0.05
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2000
-		}
-		province_modifiers = {
-			local_manpower_modifier = 0.33
-		}
-		area_modifier = {
-			local_defensiveness = 1.0
-		}
-		country_modifiers = {
-			land_morale = 0.075
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-	tier_3 = {
-		upgrade_time = {
-			months = 360
-		}
-		cost_to_upgrade = {
-			factor = 3000
-		}
-		province_modifiers = {
-			local_manpower_modifier = 0.5
-		}
-		area_modifier = {
-			local_defensiveness = 1.0
-		}
-		country_modifiers = {
-			land_morale = 0.1
-		}
-		on_upgraded = {
-			add_prestige = 25
-		}
-	}
-}
-
-#--------------------------------------
-# Highgarden
-#--------------------------------------
-gp_highgarden = {
+	starting_tier = 2
 	type = monument
 	
-	start = 267
-
-	date = 100.01.01
-	can_be_moved = no
-	move_days_per_unit_distance = 10
-	
-	build_cost = 0
-	time = {
-		months = 0
-	}
-
-	starting_tier = 0
-
-	# Construction
 	build_trigger = {
-		always = yes
 	}
 	on_built = {
-		
 	}
 	on_destroyed = {
-		
 	}
 	
-	# Conditions
 	can_use_modifiers_trigger = {
-		always = yes
 	}
 	can_upgrade_trigger = {
-		always = yes
 	}
 	keep_trigger = {
-		
 	}
 
-	# Tiers
 	tier_0 = {
 		upgrade_time = {
 			months = 0
@@ -2078,17 +1868,14 @@ gp_highgarden = {
 			factor = 0
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.25
+			local_defensiveness = -0.10
+			local_fort_maintenance_modifier = 0.25
 		}
 		area_modifier = {
-			
 		}
 		country_modifiers = {
-			advisor_cost = -0.025
-			prestige_decay = -0.01
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -2099,17 +1886,25 @@ gp_highgarden = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.5
+			local_defensiveness = 0.15
+			blockade_force_required = 0.5
 		}
 		area_modifier = {
-			
 		}
 		country_modifiers = {
-			advisor_cost = -0.05
-			prestige_decay = -0.015
+			manpower_in_own_culture_provinces = 0.05
+		}
+		conditional_modifier = {
+			trigger = {
+				owner = {
+					dynasty = "Baratheon"
+				}
+			}
+			modifier = {
+				legitimacy = 0.25
+			}
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -2117,41 +1912,61 @@ gp_highgarden = {
 			months = 240
 		}
 		cost_to_upgrade = {
-			factor = 2000
+			factor = 2500
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.75
+			local_defensiveness = 0.30
+			blockade_force_required = 0.5
 		}
 		area_modifier = {
-			
+			local_tax_modifier = 0.05
 		}
 		country_modifiers = {
-			advisor_cost = -0.075
-			prestige_decay = -0.02
+			manpower_in_own_culture_provinces = 0.10
+			general_cost = -0.05
+		}
+		conditional_modifier = {
+			trigger = {
+				owner = {
+					dynasty = "Baratheon"
+				}
+			}
+			modifier = {
+				legitimacy = 0.5
+			}
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_3 = {
 		upgrade_time = {
-			months = 360
+			months = 480
 		}
 		cost_to_upgrade = {
-			factor = 3000
+			factor = 5000
 		}
 		province_modifiers = {
-			local_tax_modifier = 1.0
+			local_defensiveness = 0.50
+			blockade_force_required = 1
 		}
 		area_modifier = {
-			
+			local_tax_modifier = 0.10
 		}
 		country_modifiers = {
-			advisor_cost = -0.1
-			prestige_decay = -0.025
+			manpower_in_own_culture_provinces = 0.25
+			general_cost = -0.10
+		}
+		conditional_modifier = {
+			trigger = {
+				owner = {
+					dynasty = "Baratheon"
+				}
+			}
+			modifier = {
+				legitimacy = 1.0
+			}
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 }
@@ -2160,44 +1975,29 @@ gp_highgarden = {
 # Citadel
 #--------------------------------------
 gp_citadel = {
-	type = monument
-	
 	start = 286
-
-	date = 100.01.01
+	date = 2.1.1
+	time = { months = 12 }
+	build_cost = 250
 	can_be_moved = no
 	move_days_per_unit_distance = 10
+	starting_tier = 2
+	type = monument
 	
-	build_cost = 0
-	time = {
-		months = 0
-	}
-
-	starting_tier = 0
-
-	# Construction
 	build_trigger = {
-		always = yes
 	}
 	on_built = {
-		
 	}
 	on_destroyed = {
-		
 	}
 	
-	# Conditions
 	can_use_modifiers_trigger = {
-		always = yes
 	}
 	can_upgrade_trigger = {
-		always = yes
 	}
 	keep_trigger = {
-		
 	}
 
-	# Tiers
 	tier_0 = {
 		upgrade_time = {
 			months = 0
@@ -2206,16 +2006,12 @@ gp_citadel = {
 			factor = 0
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.1
 		}
 		area_modifier = {
-			local_prosperity_growth = 0.025
 		}
 		country_modifiers = {
-			all_power_cost = -0.025
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -2226,16 +2022,14 @@ gp_citadel = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.25
+			tax_income = 6
 		}
 		area_modifier = {
-			local_prosperity_growth = 0.05
+			local_institution_spread = 0.05
 		}
 		country_modifiers = {
-			all_power_cost = -0.05
 		}
 		on_upgraded = {
-			add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -2246,16 +2040,26 @@ gp_citadel = {
 			factor = 2000
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.33
+			tax_income = 12
+			province_trade_power_modifier = 0.10
 		}
 		area_modifier = {
-			local_prosperity_growth = 0.075
+			local_prosperity_growth = 0.05
+			local_institution_spread = 0.10
 		}
 		country_modifiers = {
-			all_power_cost = -0.075
+			governing_capacity_modifier = 0.10
+			yearly_innovativeness = 0.05
 		}
 		on_upgraded = {
-			add_prestige = 25
+			owner = {
+				add_innovativeness_or_monarch_power = {
+					amount = 5
+					adm = 50
+					dip = 50
+					mil = 50
+				}
+			}
 		}
 	}
 	tier_3 = {
@@ -2266,16 +2070,168 @@ gp_citadel = {
 			factor = 3000
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.5
+			tax_income = 24
+			province_trade_power_modifier = 0.20
+			local_center_of_trade_upgrade_cost = -0.25
 		}
 		area_modifier = {
-			local_prosperity_growth = 0.1
+			local_prosperity_growth = 0.10
+			local_institution_spread = 0.20
 		}
 		country_modifiers = {
-			all_power_cost = -0.1
+			all_power_cost = -0.025
+			governing_capacity_modifier = 0.10
+			yearly_innovativeness = 0.10
 		}
 		on_upgraded = {
-			add_prestige = 25
+			owner = {
+				add_innovativeness_or_monarch_power = {
+					amount = 5
+					adm = 50
+					dip = 50
+					mil = 50
+				}
+			}
+		}
+	}
+}
+
+#--------------------------------------
+# Old Palace
+#--------------------------------------
+gp_old_palace = {
+	start = 352
+	date = 2.1.1
+	time = { months = 12 }
+	build_cost = 250
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+	starting_tier = 2
+	type = monument
+	
+	build_trigger = {
+	}
+	on_built = {
+	}
+	on_destroyed = {
+	}
+	
+	can_use_modifiers_trigger = {
+	}
+	can_upgrade_trigger = {
+	}
+	keep_trigger = {
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+			local_defensiveness = -0.10
+			local_fort_maintenance_modifier = 0.25
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.10
+			allowed_num_of_buildings = 1
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			prestige_decay = -0.002
+			envoy_travel_time = -0.10
+		}
+		conditional_modifier = {
+			trigger = {
+				owner = {
+					dynasty = "Martell"
+				}
+			}
+			modifier = {
+				legitimacy = 0.25
+			}
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_defensiveness = 0.20
+			allowed_num_of_buildings = 1
+		}
+		area_modifier = {
+			local_unrest = -1
+		}
+		country_modifiers = {
+			prestige_decay = -0.005
+			envoy_travel_time = -0.25
+		}
+		conditional_modifier = {
+			trigger = {
+				owner = {
+					dynasty = "Martell"
+				}
+			}
+			modifier = {
+				legitimacy = 0.5
+			}
+		}
+		on_upgraded = {
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.30
+			allowed_num_of_buildings = 1
+		}
+		area_modifier = {
+			local_unrest = -2
+		}
+		country_modifiers = {
+			prestige_decay = -0.01
+			envoy_travel_time = -0.33
+			diplomatic_reputation = 1
+		}
+		conditional_modifier = {
+			trigger = {
+				owner = {
+					dynasty = "Martell"
+				}
+			}
+			modifier = {
+				legitimacy = 1.0
+			}
+		}
+		on_upgraded = {
 		}
 	}
 }

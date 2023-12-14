@@ -273,6 +273,18 @@ annexationaction = {
 			log = "DEBUG - [Root.GetName], [From.GetName] - annexationaction"
 		}
 	}
+
+	condition = {
+		tooltip = "You cannot annex Feudatory subjects."
+		potential = {
+			FROM = {
+				is_subject_of_type = feudatory
+			}
+		}
+		allow = {
+			tag = CRW
+		}
+	}
 	
 	condition = {
 		tooltip = ANNEX_TOO_LOW
@@ -691,13 +703,16 @@ enforce_peace = {
 			FROM = { westeros_government_not_king = yes }
 		}
 		allow = {
-			FROM = {
-				any_war_enemy_country = {
-					has_opinion = {
-						who = ROOT
-						value = 0
+			OR = {
+				hre_reform_passed = king_expand_royal_laws
+				FROM = {
+					any_war_enemy_country = {
+						has_opinion = {
+							who = ROOT
+							value = 0
+						}
+						alliance_with = ROOT
 					}
-					alliance_with = ROOT
 				}
 			}
 		}

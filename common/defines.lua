@@ -560,10 +560,10 @@ NCountry = {
 
 	EMBRACE_INSTITUTION_COST = 2.5,				-- 2.5 per development (autonomy modified)
 	MAXIMUM_CONDOTTIERI = 20,					-- Base number of units you can rent out
-	CORRUPTION_COST = 0.05,						-- cost for monthly combat per development
-	STATE_MAINTENANCE_DEV_FACTOR = 0.007,		-- per dev
+	CORRUPTION_COST = 0.125,					-- cost for monthly combat per development
+	STATE_MAINTENANCE_DEV_FACTOR = 0.011,		-- per dev
 	STATE_MAINTENANCE_DISTANCE_FACTOR = 0.001,	-- distance
-	STATE_MAINTENANCE_CONTINENT_FACTOR = 0.25,	-- different continet
+	STATE_MAINTENANCE_CONTINENT_FACTOR = 0.33,	-- different continet
 	STATE_MAINTENANCE_CULTURE_FACTOR = 0.25,		-- non accepted culture
 
 	ALLOW_ZERO_BASE_VALUES = 0,						-- Affects base tax, base manpower, and base production
@@ -697,7 +697,7 @@ NCountry = {
 	PIETY_PERCENTAGE_AT_NEW_RULER = 0.0,			-- percentage of piety kept at new ruler.
 	PIETY_INCREASE_AT_GOOD_WAR = 0.25,
 	PIETY_DECREASE_AT_BAD_WAR = 0.25,
-	ADVISOR_COST_INCREASE_PER_YEAR = 0.005,			-- yearly increase in price in percent,
+	ADVISOR_COST_INCREASE_PER_YEAR = 0.002,			-- yearly increase in price in percent,
 	SCRIPTED_ADVISOR_DISCOUNT = 0.5,				-- Multiplier on cost for advisors scripted with discount=yes
 	MINIMUM_ADVISOR_DURATION = 10, 					-- _CDEF_MINIMUM_ADVISOR_DURATION_
 	MINIMUM_ADVISOR_DURATION_CHANCE_VALUE = 15,		-- Higher value here gives lower daily death chance after MINIMUM_ADVISOR_DURATION

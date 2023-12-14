@@ -59,22 +59,47 @@ capital = 299
     }
 }
 
-# Blackfyre Rebellion
-196.1.1 = {
+# Ronnel Penrose (fixed)
+189.9.23 = {
     monarch = {
-        name = "Tobho"
+        name = "Ronnel I"
         dynasty = "Penrose"
         adm = 2
-        dip = 2
-        mil = 5
-        birth_date = 162.1.1
+        dip = 4
+        mil = 2
+        birth_date = 146.4.9
     }
+
+    queen = {
+        country_of_origin = CRW
+        name = "Elaena"
+        dynasty = "Targaryen"
+        birth_date = 150.7.2
+        death_date = 206.8.3
+        adm = 5
+        dip = 4
+        mil = 2
+        female = yes
+    }
+
+    heir = {
+        name = "Robin"
+        monarch_name = "Robin I"
+        dynasty = "Penrose"
+        birth_date = 187.5.3
+        death_date = 206.8.3
+        adm = 3
+        dip = 2
+        mil = 0
+        claim = 100
+    }
+
+    set_council_position = { sm_council_position = masterofcoin }
 }
 
-# After Spring
-211.1.1 = {
+206.8.3 = {
     monarch = {
-        name = "Harmen"
+        name = "Robin I"
         dynasty = "Penrose"
         adm = 5
         dip = 1

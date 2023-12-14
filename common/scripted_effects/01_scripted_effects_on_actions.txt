@@ -1,3 +1,25 @@
+on_startup_great_projects_effect = {
+	if = {
+		limit = {
+			NOT = { has_dlc = "Leviathan" }
+		}
+		226 = {
+			add_province_modifier = {
+				name = city_watch_no_dlc
+				duration = -1
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_dlc = "Leviathan" }
+		}
+		27 = {
+			add_province_triggered_modifier = great_sept_of_baelor
+		}
+	}
+}
+
 # Province
 on_province_owner_change_government_effect = {
 	if = {

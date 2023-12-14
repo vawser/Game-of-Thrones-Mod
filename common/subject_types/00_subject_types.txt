@@ -276,7 +276,7 @@ feudatory = {
 	opinion_cost_to_join_defensive_wars = 30
 	overlord_protects_external = yes					# Whether overlord always gets called (declinable) against countries without the same overlord. When this is 'no' overlord will only join if the defender would have been blocked (by its subject type) from attacking the attacker.
 	overlord_enforce_peace_attacking = yes				# Whether the overlord can enforce peace on the subject's enemy even when the subject is the attacker
-	can_be_annexed = no
+	#can_be_annexed = no
 	can_have_subjects_of_other_types = yes
 	takes_diplo_slot = no
 	separatists_become_subjects = yes
@@ -339,7 +339,10 @@ feudatory = {
 		modifier = kings_peace_subject_modifier
 		trigger = {
 			overlord = {
-				has_government_attribute = has_the_kings_peace
+				custom_trigger_tooltip = {
+					tooltip = "overlord_has_has_the_kings_peace"
+					has_government_attribute = has_the_kings_peace
+				}
 			}
 		}
 	}
@@ -347,7 +350,29 @@ feudatory = {
 		modifier = strengthen_feudatories_modifier
 		trigger = {
 			overlord = {
-				has_government_attribute = strengthen_feudatories
+				custom_trigger_tooltip = {
+					tooltip = "overlord_has_strengthen_feudatories"
+					has_government_attribute = strengthen_feudatories
+				}
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = the_iron_fleet_modifier
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = "subject_has_a_port"
+				any_owned_province = { has_port = yes }
+			}
+			overlord = {
+				custom_trigger_tooltip = {
+					tooltip = "overlord_has_the_pyke_monument"
+					any_owned_province = {
+						has_great_project = {
+							type = gp_pyke
+						}
+					}
+				}
 			}
 		}
 	}
@@ -369,6 +394,7 @@ castellany = {
 
 	# Properties:
 	joins_overlords_wars = yes
+	can_be_annexed = no
 	replace_governor = yes
 	grant_core_claim = no
 	grant_province = no

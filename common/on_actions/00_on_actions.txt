@@ -11,7 +11,6 @@ on_startup = {
 			is_emperor_of_china = yes
 		}
 		save_global_event_target_as = YiTiEmperor
-		save_global_event_target_as = emperor_of_china
 	}
 
 	# Assigning Age Nation Bonuses
@@ -40,11 +39,14 @@ on_startup = {
 			add_province_triggered_modifier = kingsroad_province_bonus
 		}
 	}
+
+	on_startup_great_projects_effect = yes
 	
 	#Sets up Countries
 	events = {
 		GOT_SYSTEM.1	# Global
 		GOT_SYSTEM.2	# Country
+		yiti.1			# YiTi startup
 	}
 }
 
@@ -306,13 +308,13 @@ on_battle_won_unit = {
 
     if = { #Orange Yitish Rebellion Fight
         limit = {
-			event_target:emperor_of_china = { has_country_flag = loe_legitimacy_battle }
+			event_target:YiTiEmperor = { has_country_flag = loe_legitimacy_battle }
 			is_ruler_commanding_unit = yes
 			unit_owner = {
 				is_emperor_of_china = yes
 			}
         }
-		event_target:emperor_of_china = { country_event = { id = yiti.10 } }
+		event_target:YiTiEmperor = { country_event = { id = yiti.10 } }
     }
 }
 
@@ -336,9 +338,9 @@ on_battle_lost_unit = {
 		
 		if = {
 			limit = { 
-				event_target:emperor_of_china = { NOT = { has_country_flag = loe_legitimacy_battle } }
+				event_target:YiTiEmperor = { NOT = { has_country_flag = loe_legitimacy_battle } }
 			}
-			event_target:emperor_of_china = {
+			event_target:YiTiEmperor = {
 				country_event = { id = yiti.9 }
 				set_country_flag = loe_legitimacy_battle
 			}

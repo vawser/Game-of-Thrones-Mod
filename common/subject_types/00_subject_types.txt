@@ -276,7 +276,7 @@ feudatory = {
 	opinion_cost_to_join_defensive_wars = 30
 	overlord_protects_external = yes					# Whether overlord always gets called (declinable) against countries without the same overlord. When this is 'no' overlord will only join if the defender would have been blocked (by its subject type) from attacking the attacker.
 	overlord_enforce_peace_attacking = yes				# Whether the overlord can enforce peace on the subject's enemy even when the subject is the attacker
-	can_be_annexed = no
+	#can_be_annexed = no
 	can_have_subjects_of_other_types = yes
 	takes_diplo_slot = no
 	separatists_become_subjects = yes
@@ -394,6 +394,7 @@ castellany = {
 
 	# Properties:
 	joins_overlords_wars = yes
+	can_be_annexed = no
 	replace_governor = yes
 	grant_core_claim = no
 	grant_province = no

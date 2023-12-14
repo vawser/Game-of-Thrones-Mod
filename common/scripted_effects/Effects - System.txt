@@ -61,7 +61,8 @@ clear_council_position_gf = {
 		clr_global_flag = $sm_council_position$_gactive
 		event_target:et_$sm_council_position$ = {
 			clr_country_flag = $sm_council_position$_cactive
-			remove_country_modifier = got_$sm_council_position$
+			custom_tooltip = clr_$sm_council_position$_tt
+			hidden_effect = { remove_country_modifier = got_$sm_council_position$ }
 		}
 		clear_global_event_target = et_$sm_council_position$
 	}
@@ -75,7 +76,8 @@ clear_council_position_cf = {
 		clr_global_flag = $sm_council_position$_gactive
 		event_target:et_$sm_council_position$ = {
 			clr_country_flag = $sm_council_position$_cactive
-			remove_country_modifier = got_$sm_council_position$
+			custom_tooltip = clr_$sm_council_position$_tt
+			hidden_effect = { remove_country_modifier = got_$sm_council_position$ }
 		}
 		clear_global_event_target = et_$sm_council_position$
 	}

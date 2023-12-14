@@ -1,19 +1,163 @@
-custom_icon = {
-	name = display_small_council
+custom_button = {
+	name = display_small_council_btn
 	potential = {
-		# OR = {
-		# 	AND = {
-		# 		is_elector = no
-		# 		is_emperor = yes
-		# 	}
-		# 	AND = {
-		# 		is_elector = no
-		# 		is_emperor = no
-		# 		is_part_of_hre = yes
-		# 	}
-		# 	is_part_of_hre = yes
-		# }
-		always = yes
+		event_target:IronThroneKing = {
+			has_estate_privilege = estate_nobles_the_small_council
+		}
 	}
-	tooltip = "estate_nobles_the_small_council_desc"
+	trigger = {  }
+	effect = {
+		custom_tooltip = "open_small_council_menu_tt"
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = displaying_small_council_ui
+				}
+			}
+			set_global_flag = displaying_small_council_ui
+		}
+		else_if = {
+			limit = {
+				has_global_flag = displaying_small_council_ui
+			}
+			clr_global_flag = displaying_small_council_ui
+		}
+	}
+	tooltip = "the_small_council_breakdown"
+}
+
+custom_button = {
+	name = fire_all_councillors
+	potential = {
+		has_global_flag = displaying_small_council_ui
+		westeros_government_king = yes
+	}
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = "fire_councillors_trigger_tt"
+			any_country = { is_on_the_small_council = yes }
+		}
+	}
+	effect = {
+		clear_council_all = yes
+	}
+	tooltip = "fire_councillors_effect_tt"
+}
+
+custom_icon = {
+	name = small_council_ui
+	potential = {
+		has_global_flag = displaying_small_council_ui
+	}
+	tooltip = ""
+}
+
+custom_shield = {
+	name = handoftheking_shield
+	tooltip = "handoftheking_tt"
+	global_event_target = et_handoftheking
+	open_country = yes
+	potential = {
+		has_global_flag = displaying_small_council_ui
+		has_saved_global_event_target = et_handoftheking
+	}
+	trigger = {  }
+	effect = {  }
+}
+
+custom_icon = {
+	name = empty_handoftheking
+	tooltip = "handoftheking_none_tt"
+	potential = {
+		has_global_flag = displaying_small_council_ui
+		NOT = { has_saved_global_event_target = et_handoftheking }
+	}
+}
+
+custom_shield = {
+	name = masterofcoin_shield
+	tooltip = "masterofcoin_tt"
+	global_event_target = et_masterofcoin
+	open_country = yes
+	potential = {
+		has_global_flag = displaying_small_council_ui
+		has_saved_global_event_target = et_masterofcoin
+	}
+	trigger = {  }
+	effect = {  }
+}
+
+custom_icon = {
+	name = empty_masterofcoin
+	tooltip = "masterofcoin_none_tt"
+	potential = {
+		has_global_flag = displaying_small_council_ui
+		NOT = { has_saved_global_event_target = et_masterofcoin }
+	}
+}
+
+custom_shield = {
+	name = masteroflaws_shield
+	tooltip = "masteroflaws_tt"
+	global_event_target = et_masteroflaws
+	open_country = yes
+	potential = {
+		has_global_flag = displaying_small_council_ui
+		has_saved_global_event_target = et_masteroflaws
+	}
+	trigger = {  }
+	effect = {  }
+}
+
+custom_icon = {
+	name = empty_masteroflaws
+	tooltip = "masteroflaws_none_tt"
+	potential = {
+		has_global_flag = displaying_small_council_ui
+		NOT = { has_saved_global_event_target = et_masteroflaws }
+	}
+}
+
+custom_shield = {
+	name = masterofships_shield
+	tooltip = "masterofships_tt"
+	global_event_target = et_masterofships
+	open_country = yes
+	potential = {
+		has_global_flag = displaying_small_council_ui
+		has_saved_global_event_target = et_masterofships
+	}
+	trigger = {  }
+	effect = {  }
+}
+
+custom_icon = {
+	name = empty_masterofships
+	tooltip = "masterofships_none_tt"
+	potential = {
+		has_global_flag = displaying_small_council_ui
+		NOT = { has_saved_global_event_target = et_masterofships }
+	}
+}
+
+custom_shield = {
+	name = masterofwhisperers_shield
+	tooltip = "masterofwhisperers_tt"
+	global_event_target = et_masterofwhisperers
+	open_country = yes
+	potential = {
+		has_global_flag = displaying_small_council_ui
+		has_saved_global_event_target = et_masterofwhisperers
+	}
+	trigger = {  }
+	effect = {  }
+}
+
+custom_icon = {
+	name = empty_masterofwhisperers
+	tooltip = "masterofwhisperers_none_tt"
+	potential = {
+		has_global_flag = displaying_small_council_ui
+		NOT = { has_saved_global_event_target = et_masterofwhisperers }
+	}
 }

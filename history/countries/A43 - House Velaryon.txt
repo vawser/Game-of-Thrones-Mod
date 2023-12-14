@@ -10,144 +10,275 @@ religion = faith_of_the_seven
 
 capital = 220
 
-# Shattered World
-100.1.1 = {
-    monarch = {
-        name = "Arthur"
-        dynasty = "Velaryon"
-        adm = 5
-        dip = 2
-        mil = 3
-        birth_date = 67.1.1
-    }
+# Aethan Velaryon (fixed)
+2.1.1 = {
+	monarch = {
+		name = "Aethan I"
+		dynasty = "Velaryon"
+		adm = 2
+		dip = 4
+		mil = 4
+		birth_date = 1.1.1
+	}
 
-    220 = {
-        create_flagship = {
-            type = heavy_ship
-            name = "Pride of Driftmark"
-        }
-    }
+	queen = {
+		country_of_origin = A42
+		name = "Alarra"
+		dynasty = "Massey"
+		birth_date = 1.1.1
+		death_date = 41.9.2
+		adm = 3
+		dip = 2
+		mil = 3
+		female = yes
+	}
+
+	heir = {
+		name = "Daemon"
+		monarch_name = "Daemon II"
+		dynasty = "Velaryon"
+		birth_date = 1.1.1
+		death_date = 45.2.8
+		adm = 4
+		dip = 2
+		mil = 5
+	}
+
+	set_council_position = { sm_council_position = masterofships }
+
+	220 = {
+		create_flagship = {
+			type = heavy_ship
+			name = "Pride of Driftmark"
+		}
+	}
 }
 
-# War for the Stepstones
-106.1.1 = {
-    monarch = {
-        name = "Rupert"
-        dynasty = "Velaryon"
-        adm = 3
-        dip = 5
-        mil = 1
-        birth_date = 68.1.1
-    }
+# Daemon Velaryon (fixed)
+45.2.8 = {
+	monarch = {
+		name = "Daemon II"
+		dynasty = "Velaryon"
+		adm = 4
+		dip = 2
+		mil = 5
+		birth_date = 1.1.1
+	}
+
+	queen = {
+		country_of_origin = H06
+		name = "Rima"
+		dynasty = "Royce"
+		birth_date = 5.9.12
+		death_date = 82.3.1
+		adm = 2
+		dip = 1
+		mil = 2
+		female = yes
+	}
+
+	heir = {
+		name = "Corwyn"
+		monarch_name = "Corwyn I"
+		dynasty = "Velaryon"
+		birth_date = 8.1.7
+		death_date = 52.7.3
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+
+	set_council_position = { sm_council_position = masterofships }
 }
 
-# The Dance of Dragons
-129.1.1 = {
-    monarch = {
-        name = "Rafe"
-        dynasty = "Velaryon"
-        adm = 4
-        dip = 0
-        mil = 0
-        birth_date = 108.1.1
-    }
+52.7.3 = {
+	heir = {
+		name = "Jorgen"
+		monarch_name = "Jorgen I"
+		dynasty = "Velaryon"
+		birth_date = 9.4.9
+		death_date = 63.8.2
+		adm = 1
+		dip = 1
+		mil = 0
+	}
 }
 
-# Conquest of Dorne
-157.1.1 = {
-    monarch = {
-        name = "Wolfe"
-        dynasty = "Velaryon"
-        adm = 2
-        dip = 1
-        mil = 5
-        birth_date = 106.1.1
-    }
+63.8.2 = {
+	heir = {
+		name = "Victor"
+		monarch_name = "Victor I"
+		dynasty = "Velaryon"
+		birth_date = 12.11.2
+		death_date = 79.8.2
+		adm = 1
+		dip = 1
+		mil = 0
+	}
 }
 
-# Blackfyre Rebellion
-196.1.1 = {
-    monarch = {
-        name = "Guncer"
-        dynasty = "Velaryon"
-        adm = 1
-        dip = 5
-        mil = 1
-        birth_date = 164.1.1
-    }
+79.8.2 = {
+	heir = {
+		name = "Corlys"
+		monarch_name = "Corlys I"
+		dynasty = "Velaryon"
+		birth_date = 53.3.9
+		death_date = 82.3.1
+		adm = 4
+		dip = 5
+		mil = 6
+	}
 }
 
-# After Spring
+# Corlys Velaryon (fixed)
+82.3.1 = {
+	monarch = {
+		name = "Corlys I"
+		dynasty = "Velaryon"
+		birth_date = 53.2.27
+		adm = 4
+		dip = 5
+		mil = 6
+	}
+
+	set_council_position = { sm_council_position = masterofships }
+}
+
+90.9.2 = {
+	queen = {
+		country_of_origin = CRW
+		name = "Rhaenys"
+		dynasty = "Targaryen"
+		birth_date = 74.7.7
+		adm = 4
+		dip = 5
+		mil = 3
+		female = yes
+	}
+}
+
+# Alyn Velaryon (fixed)
+132.3.6 = {
+	monarch = {
+		name = "Alyn I"
+		dynasty = "Velaryon"
+		adm = 2
+		dip = 1
+		mil = 5
+		birth_date = 115.5.8
+	}
+	
+	set_council_position = { sm_council_position = masterofships }
+}
+
+132.9.3 = {
+	queen = {
+		country_of_origin = CRW
+		name = "Baela"
+		dynasty = "Targaryen"
+		birth_date = 116.6.2
+		death_date = 175.4.1
+		adm = 3
+		dip = 4
+		mil = 1
+		female = yes
+	}
+}
+
+134.12.14 = {
+	heir = {
+		name = "Laena"
+		monarch_name = "Laena I"
+		dynasty = "Velaryon"
+		birth_date = 134.12.14
+		death_date = 175.4.1
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+}
+
+# Lucerys Velaryon (fixed)
+175.4.1 = {
+	monarch = {
+		name = "Lucerys I"
+		dynasty = "Velaryon"
+		adm = 2
+		dip = 1
+		mil = 5
+		birth_date = 138.7.2
+	}
+
+	set_council_position = { sm_council_position = masterofships }
+}
+
 211.1.1 = {
-    monarch = {
-        name = "Theomor"
-        dynasty = "Velaryon"
-        adm = 3
-        dip = 1
-        mil = 2
-        birth_date = 162.1.1
-    }
+	monarch = {
+		name = "Theomor"
+		dynasty = "Velaryon"
+		adm = 3
+		dip = 1
+		mil = 2
+		birth_date = 162.1.1
+	}
+
+	set_council_position = { sm_council_position = masterofships }
 }
 
-# War of the Ninepenny Kings
 260.1.1 = {
-    monarch = {
-        name = "Lucerys"
-        dynasty = "Velaryon"
-        adm = 0
-        dip = 4
-        mil = 4
-        birth_date = 220.1.1
-    }
+	monarch = {
+		name = "Lucerys"
+		dynasty = "Velaryon"
+		adm = 0
+		dip = 4
+		mil = 4
+		birth_date = 220.1.1
+	}
 
-    set_council_position = { sm_council_position = masterofships }
+	set_council_position = { sm_council_position = masterofships }
 }
 
-# Robert's Rebellion
 282.1.1 = {
-    monarch = {
-        name = "Marghaz"
-        dynasty = "Velaryon"
-        adm = 5
-        dip = 5
-        mil = 4
-        birth_date = 238.1.1
-    }
+	monarch = {
+		name = "Marghaz"
+		dynasty = "Velaryon"
+		adm = 5
+		dip = 5
+		mil = 4
+		birth_date = 238.1.1
+	}
 }
 
-# The Greyjoy Rebellion
 289.1.1 = {
-    monarch = {
-        name = "Annara"
-        dynasty = "Velaryon"
-        adm = 3
-        dip = 5
-        mil = 2
-        birth_date = 231.1.1
-    }
+	monarch = {
+		name = "Annara"
+		dynasty = "Velaryon"
+		adm = 3
+		dip = 5
+		mil = 2
+		birth_date = 231.1.1
+	}
 }
 
-# War of the Five Kings
 298.1.1 = {
-    monarch = {
-        name = "Benfrey"
-        dynasty = "Velaryon"
-        adm = 5
-        dip = 0
-        mil = 0
-        birth_date = 249.1.1
-    }
+	monarch = {
+		name = "Benfrey"
+		dynasty = "Velaryon"
+		adm = 5
+		dip = 0
+		mil = 0
+		birth_date = 249.1.1
+	}
 }
 
-# The Night King
 304.1.1 = {
-    monarch = {
-        name = "Ezzelnyo"
-        dynasty = "Velaryon"
-        adm = 5
-        dip = 4
-        mil = 5
-        birth_date = 259.1.1
-    }
+	monarch = {
+		name = "Ezzelnyo"
+		dynasty = "Velaryon"
+		adm = 5
+		dip = 4
+		mil = 5
+		birth_date = 259.1.1
+	}
 }
 

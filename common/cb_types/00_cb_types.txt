@@ -1038,7 +1038,7 @@ cb_seize_the_iron_throne = {
 
 cb_usurp_overlord = {
 	prerequisites = {
-		has_reform = noble_house_reform
+		westeros_government_not_king_nor_great_house = yes
 		is_subject_of_type = feudatory
 		is_subject_of = FROM
 		OR = {
@@ -1065,9 +1065,10 @@ cb_usurp_overlord = {
 
 cb_lordly_feud = {
 	prerequisites = {
-		has_reform = noble_house_reform
+		westeros_government_not_king_nor_great_house = yes
 		FROM = {
-			westeros_government_not_king = yes
+			westeros_government_not_king_nor_great_house = yes
+			NOT = { alliance_with = ROOT }
 			NOT = { overlord_of = ROOT }
 			NOT = {
 				border_distance = {

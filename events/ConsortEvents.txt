@@ -88,7 +88,7 @@ country_event = {
 
 	option = {
 		name = GOT_CONSORT.1.option.a #
-		custom_tooltip = GOT_CONSORT.1.option.a.tt #The Queens Family will expect special treatment.
+		custom_tooltip = GOT_CONSORT.1.a.tt #The Queens Family will expect special treatment.
 		add_years_of_income = 0.15
 		event_target:origin_of_queens_family = {
 			add_province_modifier = {
@@ -238,7 +238,7 @@ country_event = {
 		trigger_switch = {
 			on_trigger = has_country_flag
 			develop_seat_province = {
-				custom_tooltip = GOT_CONSORT.3.option.a.tt.1
+				custom_tooltip = GOT_CONSORT.3.a.tt.1
 				random_owned_province = {
 					limit = {
 						has_province_modifier = domain_of_spouses_family
@@ -249,12 +249,12 @@ country_event = {
 				clr_country_flag = develop_seat_province
 			}
 			pay_money = {
-				custom_tooltip = GOT_CONSORT.3.option.a.tt.2
+				custom_tooltip = GOT_CONSORT.3.a.tt.2
 				add_years_of_income = -0.25
 				clr_country_flag = pay_money
 			}
 			pay_legitimacy_or_give_noble_influence = {
-				custom_tooltip = GOT_CONSORT.3.option.a.tt.3
+				custom_tooltip = GOT_CONSORT.3.a.tt.3
 				if = {
 					limit = {
 						has_dlc = "The Cossacks"
@@ -280,7 +280,7 @@ country_event = {
 				clr_country_flag = pay_legitimacy_or_give_noble_influence
 			}
 			kick_advisor = {
-				custom_tooltip = GOT_CONSORT.3.option.a.tt.4
+				custom_tooltip = GOT_CONSORT.3.a.tt.4
 				kill_advisor = random
 				add_adm_power = -50
 				clr_country_flag = kick_advisor
@@ -290,14 +290,14 @@ country_event = {
 					limit = {
 						army_tradition = 50
 					}
-					custom_tooltip = GOT_CONSORT.3.option.a.tt.5
+					custom_tooltip = GOT_CONSORT.3.a.tt.5
 					add_army_tradition = -20
 				}
 				if = {
 					limit = {
 						NOT = { army_tradition = 50 } #Fallback
 					}
-					custom_tooltip = GOT_CONSORT.3.option.a.tt.6b
+					custom_tooltip = GOT_CONSORT.3.a.tt.6b
 					add_corruption = 1
 				}
 				clr_country_flag = pay_mil_trad
@@ -310,7 +310,7 @@ country_event = {
 							navy_tradition = 50
 						}
 					}
-					custom_tooltip = GOT_CONSORT.3.option.a.tt.6
+					custom_tooltip = GOT_CONSORT.3.a.tt.6
 					add_navy_tradition = -20
 				}
 				if = {
@@ -318,17 +318,17 @@ country_event = {
 						NOT = { num_of_ports = 5 } #fallback
 						NOT = { navy_tradition = 50 } #fallback
 					}
-					custom_tooltip = GOT_CONSORT.3.option.a.tt.6b
+					custom_tooltip = GOT_CONSORT.3.a.tt.6b
 					add_corruption = 1
 				}
 				clr_country_flag = pay_nav_trad
 			}
 		}
-		custom_tooltip = GOT_CONSORT.3.option.a.tt.0
+		custom_tooltip = GOT_CONSORT.3.a.tt.0
 	}
 	option = {
 		name = GOT_CONSORT.3.option.b
-		custom_tooltip = GOT_CONSORT.3.option.b.tt
+		custom_tooltip = GOT_CONSORT.3.b.tt
 		set_ruler_flag = refused_to_help_spouses_family
 		add_prestige = -10
 		random_owned_province = {
@@ -407,7 +407,7 @@ country_event = {
 		trigger_switch = {
 			on_trigger = has_country_flag
 			in_laws_fund_development = {
-				custom_tooltip = GOT_CONSORT.4.option.a.tt.1
+				custom_tooltip = GOT_CONSORT.4.a.tt.1
 				random_owned_province = {
 					limit = {
 						is_state = yes
@@ -418,12 +418,12 @@ country_event = {
 				clr_country_flag = in_laws_fund_development
 			}
 			in_laws_provide_money = {
-				custom_tooltip = GOT_CONSORT.4.option.a.tt.2
+				custom_tooltip = GOT_CONSORT.4.a.tt.2
 				add_years_of_income = 0.15
 				clr_country_flag = in_laws_provide_money
 			}
 			in_laws_provide_mil_advisor = {
-				custom_tooltip = GOT_CONSORT.4.option.a.tt.3
+				custom_tooltip = GOT_CONSORT.4.a.tt.3
 				if = {
 					limit = {
 						monthly_income = 35
@@ -445,7 +445,7 @@ country_event = {
 				clr_country_flag = in_laws_provide_mil_advisor
 			}
 			in_laws_provide_dip_advisor = {
-				custom_tooltip = GOT_CONSORT.4.option.a.tt.4
+				custom_tooltip = GOT_CONSORT.4.a.tt.4
 				if = {
 					limit = {
 						monthly_income = 35
@@ -466,7 +466,7 @@ country_event = {
 				}
 			}
 			in_laws_provide_help_with_nobility = {
-				custom_tooltip = GOT_CONSORT.4.option.a.tt.5
+				custom_tooltip = GOT_CONSORT.4.a.tt.5
 				if = {
 					limit = {
 						has_dlc = "The Cossacks"
@@ -490,7 +490,7 @@ country_event = {
 				clr_country_flag = in_laws_provide_help_with_nobility
 			}
 			in_laws_provide_adm_advisor = {
-				custom_tooltip = GOT_CONSORT.4.option.a.tt.6
+				custom_tooltip = GOT_CONSORT.4.a.tt.6
 				if = {
 					limit = {
 						monthly_income = 35
@@ -512,12 +512,12 @@ country_event = {
 				clr_country_flag = pay_nav_trad
 			}
 		}
-		custom_tooltip = GOT_CONSORT.4.option.a.tt.0
+		custom_tooltip = GOT_CONSORT.4.a.tt.0
 	}
 	option = {
 		name = GOT_CONSORT.4.option.b #Refuse
 		add_prestige = 5
-		custom_tooltip = GOT_CONSORT.4.option.b.tt
+		custom_tooltip = GOT_CONSORT.4.b.tt
 	}
 }
 
@@ -569,7 +569,7 @@ country_event = {
 		trigger_switch = {
 			on_trigger = has_country_flag
 			develop_seat_province = {
-				custom_tooltip = GOT_CONSORT.3.option.a.tt.1
+				custom_tooltip = GOT_CONSORT.3.a.tt.1
 				random_owned_province = {
 					limit = {
 						has_province_modifier = domain_of_spouses_family
@@ -582,12 +582,12 @@ country_event = {
 				clr_country_flag = develop_seat_province
 			}
 			pay_money = {
-				custom_tooltip = GOT_CONSORT.3.option.a.tt.2
+				custom_tooltip = GOT_CONSORT.3.a.tt.2
 				add_years_of_income = -0.35
 				clr_country_flag = pay_money
 			}
 			pay_legitimacy_or_give_noble_influence = {
-				custom_tooltip = GOT_CONSORT.3.option.a.tt.3
+				custom_tooltip = GOT_CONSORT.3.a.tt.3
 				if = {
 					limit = {
 						has_dlc = "The Cossacks"
@@ -612,7 +612,7 @@ country_event = {
 				clr_country_flag = pay_legitimacy_or_give_noble_influence
 			}
 			kick_advisor = {
-				custom_tooltip = GOT_CONSORT.3.option.a.tt.4
+				custom_tooltip = GOT_CONSORT.3.a.tt.4
 				kill_advisor = random
 				add_adm_power = -75
 				clr_country_flag = kick_advisor
@@ -622,14 +622,14 @@ country_event = {
 					limit = {
 						army_tradition = 50
 					}
-					custom_tooltip = GOT_CONSORT.3.option.a.tt.5
+					custom_tooltip = GOT_CONSORT.3.a.tt.5
 					add_army_tradition = -25
 				}
 				if = {
 					limit = {
 						NOT = { army_tradition = 50 } #Fallback
 					}
-					custom_tooltip = GOT_CONSORT.3.option.a.tt.6b
+					custom_tooltip = GOT_CONSORT.3.a.tt.6b
 					add_corruption = 1
 				}
 				clr_country_flag = pay_mil_trad
@@ -642,7 +642,7 @@ country_event = {
 							navy_tradition = 50
 						}
 					}
-					custom_tooltip = GOT_CONSORT.3.option.a.tt.6
+					custom_tooltip = GOT_CONSORT.3.a.tt.6
 					add_navy_tradition = -25
 				}
 				if = {
@@ -650,17 +650,17 @@ country_event = {
 						NOT = { num_of_ports = 5 } #fallback
 						NOT = { navy_tradition = 50 } #fallback
 					}
-					custom_tooltip = GOT_CONSORT.3.option.a.tt.6b
+					custom_tooltip = GOT_CONSORT.3.a.tt.6b
 					add_corruption = 1
 				}
 				clr_country_flag = pay_nav_trad
 			}
 		}
-		custom_tooltip = GOT_CONSORT.3.option.a.tt.0
+		custom_tooltip = GOT_CONSORT.3.a.tt.0
 	}
 	option = {
 		name = GOT_CONSORT.5.option.b #Refuse
-		custom_tooltip = GOT_CONSORT.5.option.b.tt
+		custom_tooltip = GOT_CONSORT.5.b.tt
 		set_ruler_flag = refused_to_help_consort_regents_family
 		add_prestige = -10
 		random_owned_province = {
@@ -818,7 +818,7 @@ country_event = {
 
 	option = {
 		name = GOT_CONSORT.51.option.a # This is what kin means
-		custom_tooltip = GOT_CONSORT.51.option.a.tt #The Consort's family will hear of the plesantries
+		custom_tooltip = GOT_CONSORT.51.a.tt #The Consort's family will hear of the plesantries
 		add_dip_power = 10
 
 		event_target:origin_country_of_consort = {
@@ -869,7 +869,7 @@ country_event = {
 
 	option = {
 		name = GOT_CONSORT.52.option.a # The Consort is beyond reproach
-		custom_tooltip = GOT_CONSORT.52.option.a.tt
+		custom_tooltip = GOT_CONSORT.52.a.tt
 
 		add_country_modifier = {
 			name = "heretic_royalty"
@@ -878,7 +878,7 @@ country_event = {
 	}
 	option = {
 		name = GOT_CONSORT.52.option.b # Attempt divorce
-		custom_tooltip = GOT_CONSORT.52.option.b.tt
+		custom_tooltip = GOT_CONSORT.52.b.tt
 
 		divorce_consort_effect = yes
 	}
@@ -926,7 +926,7 @@ country_event = {
 
 	option = {
 		name = GOT_CONSORT.53.option.a # The Consort has our trust
-		custom_tooltip = GOT_CONSORT.53.option.a.tt
+		custom_tooltip = GOT_CONSORT.53.a.tt
 		add_adm_power = -35
 
 		remove_advisor_by_category = MIL
@@ -934,7 +934,7 @@ country_event = {
 
 	option = {
 		name = GOT_CONSORT.53.option.b # The ruler openly doubt their consort
-		custom_tooltip = GOT_CONSORT.53.option.b.tt
+		custom_tooltip = GOT_CONSORT.53.b.tt
 		add_ruler_modifier = {
 			name = "without_spouse_advice"
 			duration = 1825
@@ -1367,7 +1367,7 @@ country_event = {
 
 	option = { # throw the consort a feast!
 		name = GOT_CONSORT.55.option.a
-		custom_tooltip = GOT_CONSORT.55.option.a.tt
+		custom_tooltip = GOT_CONSORT.55.a.tt
 		add_adm_power = -35
 		add_treasury = -25
 
@@ -1379,7 +1379,7 @@ country_event = {
 
 	option = { # the consort will get used to their new life eventually
 		name = GOT_CONSORT.55.option.b
-		custom_tooltip = GOT_CONSORT.55.option.b.tt
+		custom_tooltip = GOT_CONSORT.55.b.tt
 		set_consort_flag = no_party_for_consort
 	}
 }
@@ -1440,7 +1440,7 @@ country_event = {
 			}
 		}
 		name = GOT_CONSORT.56.option.a 
-		custom_tooltip = GOT_CONSORT.56.option.a.tt
+		custom_tooltip = GOT_CONSORT.56.a.tt
 
 		set_ruler_flag = asked_foreign_in_laws_for_help
 		set_country_flag = asked_consort_for_money
@@ -1451,7 +1451,7 @@ country_event = {
 	option = {
 		trigger = { NOT = { adm_power = 500 } }
 		name = GOT_CONSORT.56.option.b 
-		custom_tooltip = GOT_CONSORT.56.option.b.tt
+		custom_tooltip = GOT_CONSORT.56.b.tt
 
 		set_ruler_flag = asked_foreign_in_laws_for_help
 		set_country_flag = asked_consort_for_adm
@@ -1462,7 +1462,7 @@ country_event = {
 	option = {
 		trigger = { NOT = { dip_power = 500 } }
 		name = GOT_CONSORT.56.option.c
-		custom_tooltip = GOT_CONSORT.56.option.c.tt
+		custom_tooltip = GOT_CONSORT.56.c.tt
 
 		set_ruler_flag = asked_foreign_in_laws_for_help
 		set_country_flag = asked_consort_for_dip
@@ -2156,7 +2156,7 @@ country_event = {
 
 	option = {
 		name = GOT_CONSORT.101.option.a 
-		custom_tooltip = GOT_CONSORT.101.option.a.tt 
+		custom_tooltip = GOT_CONSORT.101.a.tt 
 
 		if = {
 			limit = { has_ruler_flag = boy_child }
@@ -2247,7 +2247,7 @@ country_event = {
 
 	option = {
 		name = GOT_CONSORT.101.option.b 
-		custom_tooltip = GOT_CONSORT.101.option.b.tt
+		custom_tooltip = GOT_CONSORT.101.b.tt
 
 		clr_ruler_flag = girl_child
 		clr_ruler_flag = boy_child
@@ -2307,7 +2307,7 @@ country_event = {
 		}
 
 		name = GOT_CONSORT.102.option.a 
-		custom_tooltip = GOT_CONSORT.102.option.a.tt
+		custom_tooltip = GOT_CONSORT.102.a.tt
 
 		if = {
 			limit = { has_ruler_flag = boy_child }
@@ -2401,7 +2401,7 @@ country_event = {
 		trigger = { consort_age = 52 } 
 
 		name = GOT_CONSORT.102.option.a 
-		custom_tooltip = GOT_CONSORT.102.option.a.tt
+		custom_tooltip = GOT_CONSORT.102.a.tt
 
 		if = {
 			limit = { has_ruler_flag = boy_child }
@@ -2498,7 +2498,7 @@ country_event = {
 		}
 
 		name = GOT_CONSORT.102.option.b 
-		custom_tooltip = GOT_CONSORT.102.option.b.tt
+		custom_tooltip = GOT_CONSORT.102.b.tt
 
 		if = {
 			limit = { has_ruler_flag = boy_child }
@@ -2591,7 +2591,7 @@ country_event = {
 	#Do nothing
 	option = {
 		name = GOT_CONSORT.101.option.b 
-		custom_tooltip = GOT_CONSORT.101.option.b.tt
+		custom_tooltip = GOT_CONSORT.101.b.tt
 		clr_ruler_flag = girl_child
 		clr_ruler_flag = boy_child
 		clr_ruler_flag = mil_child
@@ -2636,7 +2636,7 @@ country_event = {
 
 	option = {
 		name = GOT_CONSORT.103.option.b 
-		custom_tooltip = GOT_CONSORT.103.option.b.tt
+		custom_tooltip = GOT_CONSORT.103.b.tt
 
 		if = {
 			limit = { has_ruler_flag = male_cousin }
@@ -2664,7 +2664,7 @@ country_event = {
 	#Give it time 
 	option = {
 		name = GOT_CONSORT.103.option.c 
-		custom_tooltip = GOT_CONSORT.103.option.c.tt
+		custom_tooltip = GOT_CONSORT.103.c.tt
 
 		add_prestige = -10
 
@@ -2769,7 +2769,7 @@ country_event = {
 			}
 		}
 		name = GOT_CONSORT.104.option.a 
-		custom_tooltip = GOT_CONSORT.104.option.a.tt
+		custom_tooltip = GOT_CONSORT.104.a.tt
 
 		add_adm_power = -40
 		change_heir_adm = 1
@@ -2788,7 +2788,7 @@ country_event = {
 			}
 		}
 		name = GOT_CONSORT.104.option.b 
-		custom_tooltip = GOT_CONSORT.104.option.b.tt
+		custom_tooltip = GOT_CONSORT.104.b.tt
 
 		add_dip_power = -40
 		change_heir_dip = 1
@@ -2807,14 +2807,14 @@ country_event = {
 			}
 		}
 		name = GOT_CONSORT.104.option.c 
-		custom_tooltip = GOT_CONSORT.104.option.c.tt
+		custom_tooltip = GOT_CONSORT.104.c.tt
 		add_mil_power = -40
 		change_heir_mil = 1
 	}
 
 	#None 
 	option = {
-		name = GOT_CONSORT.104.d 
+		name = GOT_CONSORT.104.option.d 
 		custom_tooltip = GOT_CONSORT.104.d.tt
 	}
 }
@@ -2889,7 +2889,7 @@ country_event = {
 
 	option = { # we have received gifts
 		name = GOT_CONSORT.301.option.a
-		custom_tooltip = GOT_CONSORT.301.option.a.tt
+		custom_tooltip = GOT_CONSORT.301.a.tt
 		add_treasury = 50
 
 		clr_consort_flag = home_province_lost
@@ -2963,7 +2963,7 @@ country_event = {
 
 	option = { # we have received gifts
 		name = GOT_CONSORT.302.option.a
-		custom_tooltip = GOT_CONSORT.302.option.a.tt
+		custom_tooltip = GOT_CONSORT.302.a.tt
 		add_treasury = 50
 
 		clr_consort_flag = home_province_lost
@@ -3711,13 +3711,13 @@ country_event = {
 
 	option = { # Encourage these ideas...
 		name = GOT_CONSORT.309.option.a
-		custom_tooltip = GOT_CONSORT.309.option.a.tt
+		custom_tooltip = GOT_CONSORT.309.a.tt
 		country_event = { id = GOT_CONSORT.310 days = 60 }
 	}
 
 	option = { # Do nothing!
 		name = GOT_CONSORT.309.option.b
-		custom_tooltip = GOT_CONSORT.309.option.b.tt
+		custom_tooltip = GOT_CONSORT.309.b.tt
 		set_consort_flag = "consort_decided_to_not_pursue_the_throne"
 	}
 }
@@ -3927,7 +3927,7 @@ country_event = {
 	#Yes new advisor
 	option = {
 		name = GOT_CONSORT.312.option.a
-		custom_tooltip = GOT_CONSORT.312.option.a.tt
+		custom_tooltip = GOT_CONSORT.312.a.tt
 
 		if = {
 			limit = { has_ruler_flag = consort_adm_advisor }
@@ -4003,7 +4003,7 @@ country_event = {
 	option = {
 		trigger = { has_ruler_flag = consort_adm_advisor }
 		name = GOT_CONSORT.312.option.b
-		custom_tooltip = GOT_CONSORT.312.option.b.tt
+		custom_tooltip = GOT_CONSORT.312.b.tt
 
 		add_adm_power = 50	
 		clr_ruler_flag = consort_adm_advisor	
@@ -4012,7 +4012,7 @@ country_event = {
 	option = {
 		trigger = { has_ruler_flag = consort_dip_advisor }
 		name = GOT_CONSORT.312.option.c
-		custom_tooltip = GOT_CONSORT.312.option.c.tt
+		custom_tooltip = GOT_CONSORT.312.c.tt
 
 		add_dip_power = 50		
 		clr_ruler_flag = consort_dip_advisor
@@ -4066,7 +4066,7 @@ country_event = {
 
 	option = {
 		name = GOT_CONSORT.313.option.a
-		custom_tooltip = GOT_CONSORT.313.option.a.tt
+		custom_tooltip = GOT_CONSORT.313.a.tt
 
 		add_war_exhaustion = -2
 	}
@@ -4174,7 +4174,7 @@ country_event = {
 	#Let it continue
 	option = {
 		name = GOT_CONSORT.314.option.a
-		custom_tooltip = GOT_CONSORT.314.option.a.tt
+		custom_tooltip = GOT_CONSORT.314.a.tt
 
 		if = {
 			limit = { can_heir_be_child_of_consort = yes has_female_consort = yes }
@@ -4197,7 +4197,7 @@ country_event = {
 	#Pay off
 	option = {
 		name = GOT_CONSORT.314.option.b
-		custom_tooltip = GOT_CONSORT.314.option.b.tt
+		custom_tooltip = GOT_CONSORT.314.b.tt
 
 		hidden_effect = {
 			if = {
@@ -4245,7 +4245,7 @@ country_event = {
 	#Execution
 	option = {
 		name = GOT_CONSORT.314.option.c
-		custom_tooltip = GOT_CONSORT.314.option.c.tt
+		custom_tooltip = GOT_CONSORT.314.c.tt
 
 		hidden_effect = {
 			if = {

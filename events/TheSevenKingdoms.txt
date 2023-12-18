@@ -1,11 +1,22 @@
+########################################
+# Events for The Seven Kingdoms
+#
+# Written by Emperor Nuclear
+########################################
+#
+# Table of Contents
+#
+# 1-6 : SK Reform Events
+# 10-20 : Diplo Action Events
+# 100-110 : On Action Events
+########################################
+
 namespace = sk_event
 
 # Royal Court (The Province)
+# Basic Reform
 province_event = {
 	id = sk_event.1
-	title = "sk_event.1.title"
-	desc = "sk_event.1.desc"
-	picture = CITY_VIEW_eventPicture
 	
 	is_triggered_only = yes
 	hidden = yes
@@ -25,6 +36,7 @@ province_event = {
 }
 
 # Royal Court (SK Member States)
+# Basic Reform
 country_event = {
 	id = sk_event.2
 	title = "sk_event.2.title"
@@ -40,6 +52,7 @@ country_event = {
 }
 
 # Privilege Event for King
+# Cent. Reform
 country_event = {
 	id = sk_event.3
 	title = sk_event.3.title
@@ -61,6 +74,7 @@ country_event = {
 }
 
 # Privilege Event for Houses
+# Cent. Reform
 country_event = {
 	id = sk_event.4
 	title = sk_event.4.title
@@ -131,6 +145,7 @@ country_event = {
 }
 
 # Unify Event for King
+# Cent. Reform
 country_event = {
 	id = sk_event.5
 	title = "sk_event.5.title"
@@ -183,6 +198,7 @@ country_event = {
 }
 
 # Unify Event for Houses
+# Cent. Reform
 country_event = {
 	id = sk_event.6
 	title = "sk_event.6.title"
@@ -196,5 +212,458 @@ country_event = {
 		WST = {
 			inherit = ROOT
 		}
+	}
+}
+
+# Assign Overlordship
+# Diplomatic Action
+country_event = {
+	id = sk_event.10
+	title = "sk_event.10.title"
+	desc = "sk_event.10.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			# Removes the old Great House's status
+			event_target:great_house = {
+				elector = no
+				every_subject_country = {
+					limit = { has_country_flag = potential_feudatory }
+					grant_independence = yes
+				}
+				restore_country_name = yes
+				add_government_reform = noble_house_reform
+				ROOT = {
+					create_subject = {
+						subject_type = feudatory
+						subject = PREV
+					}
+				}
+				add_opinion = {
+					who = event_target:IronThroneKing
+					modifier = removed_our_electorate
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = opinion_traitor
+				}
+			}
+			# Elector assignment for hardcoded functions
+			elector = yes
+			add_government_reform = great_house_reform
+			add_opinion = {
+				who = event_target:IronThroneKing
+				modifier = opinion_grateful
+			}
+			# Feudatory subjects will transfer over
+			every_country = {
+				limit = { has_country_flag = potential_feudatory }
+				ROOT = {
+					create_subject = {
+						subject_type = feudatory
+						subject = PREV
+					}
+				}
+			}
+			# Will reassign region designations appropriately
+			if = {
+				limit = { event_target:great_house = { tag = event_target:TheNorthGreatHouse } }
+				save_global_event_target_as = TheNorthGreatHouse
+				override_country_name = THENORTH
+			}
+			else_if = {
+				limit = { event_target:great_house = { tag = event_target:TheRiverlandsGreatHouse } }
+				save_global_event_target_as = TheRiverlandsGreatHouse
+				override_country_name = THERIVERLANDS
+			}
+			else_if = {
+				limit = { event_target:great_house = { tag = event_target:TheValeGreatHouse } }
+				save_global_event_target_as = TheValeGreatHouse
+				override_country_name = THEVALE
+			}
+			else_if = {
+				limit = { event_target:great_house = { tag = event_target:TheIronIslandsGreatHouse } }
+				save_global_event_target_as = TheIronIslandsGreatHouse
+				override_country_name = THEIRONISLANDS
+			}
+			else_if = {
+				limit = { event_target:great_hosue = { tag = event_target:TheWesterlandsGreatHouse } }
+				save_global_event_target_as = TheWesterlandsGreatHouse
+				override_country_name = THEWESTERLANDS
+			}
+			else_if = {
+				limit = { event_target:great_house = { tag = event_target:TheReachGreatHouse } }
+				save_global_event_target_as = TheReachGreatHouse
+				override_country_name = THEREACH
+			}
+			else_if = {
+				limit = { event_target:great_house = { tag = event_target:TheStormlandsGreatHouse } }
+				save_global_event_target_as = TheStormlandsGreatHouse
+				override_country_name = THESTORMLANDS
+			}
+			else_if = {
+				limit = { event_target:great_house = { tag = event_target:DorneGreatHouse } }
+				save_global_event_target_as = DorneGreatHouse
+				override_country_name = DORNE
+			}
+		}
+	}
+
+	option = {
+		name = "sk_event.10.option.a"
+		tooltip = {
+			event_target:great_house = {
+				elector = no
+				restore_country_name = yes
+				add_government_reform = noble_house_reform
+				ROOT = {
+					create_subject = {
+						subject_type = feudatory
+						subject = PREV
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = opinion_traitor
+				}
+			}
+			elector = yes
+			custom_tooltip = "sk_event.10.option.tt"
+			add_government_reform = great_house_reform
+			add_opinion = {
+				who = event_target:IronThroneKing
+				modifier = opinion_grateful
+			}
+		}
+	}
+
+	after = {
+		clear_global_event_target = great_house
+		every_country = {
+			limit = { has_country_flag = potential_feudatory }
+			clr_country_flag = potential_feudatory
+		}
+	}
+}
+
+# New Monarch (King/Queen)
+# On Actions
+country_event = {
+	id = sk_event.101
+	title = "sk_event.101.title"
+	desc = "sk_event.101.desc"
+	picture = STREET_SPEECH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+		has_regency = no
+		NOT = { is_in_war = { casus_belli = cb_seize_the_iron_throne } }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_reform = royal_house_reform }
+			}
+			change_government = dynasty
+			add_government_reform = royal_house_reform
+		}
+	}
+	
+	option = {
+		name = "sk_event.101.option.a"
+		add_legitimacy = 5
+	}
+	option = {
+		name = "sk_event.101.option.b"
+		add_prestige = 10
+	}
+}
+
+# New Heir (Prince/Princess)
+# On Actions
+country_event = {
+	id = sk_event.102
+	title = "sk_event.102.title"
+	desc = {
+		trigger = {
+			OR = {
+				owns_or_subject_of = 221
+				221 = { owner = { is_part_of_hre = yes } }
+			}
+		}
+		desc = "sk_event.102.desc.a"
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				OR = {
+					owns_or_subject_of = 221
+					221 = { owner = { is_part_of_hre = yes } }
+				}
+			}
+		}
+		desc = "sk_event.102.desc.b"
+	}
+	picture = NEW_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+		has_regency = no
+		NOT = { is_in_war = { casus_belli = cb_seize_the_iron_throne } }
+	}
+	
+	option = {
+		name = "sk_event.102.option.a"
+		trigger = {
+			OR = {
+				owns_or_subject_of = 221
+				221 = { owner = { is_part_of_hre = yes } }
+			}
+		}
+		add_ruler_modifier = {
+			name = got_prince_of_dragonstone
+			duration = -1
+			desc = ascension_ruler_desc
+		}
+		if = { # Dragonstone exists and is a Castellany
+			limit = {
+				A39 = {
+					owns = 221 # Dragonstone
+					is_part_of_hre = yes
+					is_subject_of_type_with_overlord = {
+						who = ROOT
+						type = castellany
+					}
+				}
+			}
+			custom_tooltip = sk_event.102.CAS1
+			add_legitimacy = 10
+			add_heir_claim = 20
+		}
+		else_if = { # Dragonstone exists but isn't a Castellany
+			limit = {
+				A39 = {
+					owns = 221
+					is_part_of_hre = yes
+					NOT = {
+						is_subject_of_type_with_overlord = {
+							who = ROOT
+							type = castellany
+						}
+					}
+				}
+			}
+			custom_tooltip = sk_event.102.CAS2
+			hidden_effect = {
+				A39 = {
+					change_government = republic
+					add_government_reform = castellany_of_dragonstone_reform
+					set_country_flag = prince_of_dragonstone_flag
+				}
+				create_subject = {
+					subject_type = castellany
+					subject = A39
+				}
+			}
+		}
+		else_if = { # Dragonstone is owned and controlled by us
+			limit = {
+				owns = 221
+			}
+			if = {
+				limit = {
+					A39 = { exists = no }
+				}
+				custom_tooltip = sk_event.102.CAS3a
+				hidden_effect = {
+					221 = { cede_province = A39 }
+					A39 = {
+						change_government = republic
+						add_government_reform = castellany_of_dragonstone_reform
+						set_country_flag = prince_of_dragonstone_flag
+					}
+					create_subject = {
+						subject_type = castellany
+						subject = A39
+					}
+				}
+			}
+			else = {
+				221 = {
+					add_province_modifier = {
+						name = got_local_castellany
+						duration = -1
+					}
+				}
+				custom_tooltip = sk_event.102.CAS3b
+			}
+		}
+		else_if = { # Dragonstone is ruled by a Westeros lord or our subject
+			limit = {
+				221 = {
+					owner = {
+						NOT = { tag = A39 }
+						OR = {
+							is_part_of_hre = yes
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					A39 = { exists = no }
+				}
+				custom_tooltip = sk_event.102.CAS4
+				hidden_effect = {
+					221 = { cede_province = A39 }
+					A39 = {
+						change_government = republic
+						add_government_reform = castellany_of_dragonstone_reform
+						set_country_flag = prince_of_dragonstone_flag
+					}
+					create_subject = {
+						subject_type = castellany
+						subject = A39
+					}
+				}
+			}
+			else = {
+				221 = {
+					cede_province = ROOT
+					add_province_modifier = {
+						name = got_local_castellany
+						duration = -1
+					}
+				}
+				custom_tooltip = sk_event.102.CAS3b 
+			}
+		}
+	}
+
+	option = {
+		name = "sk_event.102.option.b"
+		trigger = {
+			NOT = {
+				OR = {
+					owns_or_subject_of = 221
+					221 = {
+						owner = {
+							is_part_of_hre = yes
+						}
+					}
+				}
+			}
+		}
+		add_ruler_modifier = {
+			name = got_prince_of_westeros
+			duration = -1
+			desc = ascension_ruler_desc
+		}
+		custom_tooltip = sk_event.102.CAS5 # Dragonstone is not ruled by us or a subject
+	}
+}
+
+# Remove Castellany from Dragonstone if not subject
+# Passive Checker
+country_event = {
+	id = sk_event.103
+	title = "sk_event.103.title"
+	desc = "sk_event.103.desc"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		tag = A39
+		NOT = { is_subject_of_type = castellany }
+		NOT = { government = dynasty }
+	}
+	
+	option = {
+		name = "sk_event.103.option.a"
+		change_government = dynasty
+		add_government_reform = noble_house_reform
+	}
+}
+
+# Claim the Iron Throne
+# On Actions
+country_event = {
+	id = sk_event.110
+	title = sk_event.110.title
+	desc = sk_event.110.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = sk_event.110.option.a
+	
+		hidden_effect = {
+			set_country_flag = iron_throne_transition
+			save_event_target_as = originalCOU
+		}
+		
+		tooltip = { add_prestige = 10 }
+
+		custom_tooltip = sk9_change_tag_tt
+		hidden_effect = {
+			# Moving over ruler to The Crownlands
+			switch_tag_with_ruler = {
+				ruler_string = King_of_Andals
+				consort_string = Queen_of_Andals
+				heir_string = Heir_of_Andals
+				new_tag = CRW
+			}
+		}
+		custom_tooltip = sk9_union_tag_tt
+		hidden_effect = {
+			set_country_flag = iron_throne_transition # Event Trigger blocker
+			save_global_event_target_as = IronThroneKing # Global Variable
+			create_union = event_target:originalCOU # Get PU over old country
+			set_emperor = yes
+			add_prestige = 10
+		}
+
+		# Peace out all wars to stop glitchiness
+		every_country = {
+			limit = {
+				war_with = ROOT
+			}
+			white_peace = ROOT
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = sk_event.110.option.b
+		ai_chance = {
+			factor = 100
+			
+			modifier = {
+				factor = 0
+				is_westerosi_government = yes
+			}
+		}
+		
+		dismantle_hre = yes
+		add_dip_power = 200
+		add_mil_power = 200
+		add_adm_power = 200
 	}
 }

@@ -398,7 +398,7 @@ on_siege_won_country = {
 			is_in_war = { casus_belli = cb_seize_the_iron_throne }
 			FROM = { province_id = 226 }
 		}
-		country_event = { id = GOT_SK_SYSTEM.31 } # "Claim the Iron Throne"
+		country_event = { id = sk_event.110 } # "Claim the Iron Throne"
 	}
 	random_events = {
 		25 = GOT_ACCOMPLISHMENTS.3	  # Strategic Excellence
@@ -516,7 +516,7 @@ on_new_monarch = {
 		GOT_DOTHRAKI.1
 		GOT_DAENERYS.100
 		GOT_DYNASTIC.21
-		GOT_SK_SYSTEM.1
+		sk_event.101
 	}
 }
 
@@ -836,7 +836,7 @@ on_new_heir = {
 	}
 
 	events = {
-		GOT_SK_SYSTEM.2
+		sk_event.102
 	}
 }
 
@@ -1719,9 +1719,6 @@ on_five_year_pulse = {
 		200 = GOT_ABSOLUTISM.1
 		200 = GOT_ABSOLUTISM.2
 		200 = GOT_ABSOLUTISM.3
-
-		1000 = GOT_SK_SYSTEM.10
-		1000 = GOT_SK_SYSTEM.11
 		
 		10000 = 0
 	}

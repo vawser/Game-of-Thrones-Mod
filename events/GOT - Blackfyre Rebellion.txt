@@ -18,13 +18,13 @@ country_event = {
 			random_owned_province = {
 				limit = {
 					OR = {
-						area = chyterring_brook_area
+						province_id = 222 # Bramsfort
 						area = farring_cross_area
 					}
 					is_core = ROOT
-					base_tax = 5
 					is_capital = no
 				}
+				add_local_autonomy = 50
 				if = {
 					limit = { owner = { ai = yes } }
 					spawn_rebels = {
@@ -32,7 +32,6 @@ country_event = {
 						size = 2
 						leader = "Daemon"
 						leader_dynasty = "Blackfyre"
-						win = no
 					}
 				}
 				else = {
@@ -44,7 +43,6 @@ country_event = {
 						win = yes
 					}
 				}
-				add_local_autonomy = 100
 			}
 			random_owned_province = {
 				limit = {
@@ -54,6 +52,7 @@ country_event = {
 					}
 					NOT = { province_id = 215 } # South Crackclaw Point
 				}
+				add_local_autonomy = 50
 				spawn_rebels = {
 					type = pretender_rebels
 					size = 1.5

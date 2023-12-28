@@ -1488,6 +1488,9 @@ stateless_society = {
 		defensiveness = 0.75
 		land_morale = 0.15
 	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
 	ai = {
 		factor = 1
 		modifier = {
@@ -1504,13 +1507,12 @@ wildling_clan_reform = {
 		capital_scope = { region = region_beyond_the_wall }
 	}
 	
-	allow_normal_conversion = yes
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	legacy_equivalent = tribe_legacy
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
-
-	allow_migration = yes
 	
 	modifiers = {
 		capped_by_forcelimit = yes
@@ -1529,8 +1531,10 @@ wildling_clan_reform = {
 	}
 
 	custom_attributes = {
-		cannot_fabricate_claims = yes
+		allow_migration = yes
 		enables_tribal_ideagroup = yes
+		locked_government_type = yes
+		cannot_fabricate_claims = yes
 	}
 }
 new_wildling_clan_reform = {
@@ -1592,6 +1596,10 @@ kingdom_beyond_the_wall_reform = {
 		vassal_forcelimit_bonus = 1.0
 		monarch_admin_power = 1
 		monarch_diplomatic_power = 1
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
 	}
 }
 lhazar_clan_reform = {

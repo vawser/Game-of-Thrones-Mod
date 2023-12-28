@@ -25,6 +25,7 @@ assign_overlordship = {
 			overlord = {
 				save_global_event_target_as = great_house
 				every_subject_country = {
+					limit = { is_subject_of_type = feudatory }
 					set_country_flag = potential_feudatory
 				}
 				every_country = {
@@ -38,7 +39,7 @@ assign_overlordship = {
 					white_peace = PREV
 				}
 			}
-			country_event = { id = GOT_SK_SYSTEM.4 }
+			country_event = { id = sk_event.10 }
 		}
 		add_country_modifier = {
 			name = got_shifting_tides

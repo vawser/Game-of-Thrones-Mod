@@ -136,6 +136,7 @@ estate_church_develop_x = {
 #------------------------------------------------------------
 estate_church_build_temple_in_y = {
 	can_select = {
+		adm_tech = 2
 		any_owned_province = {
 			is_state_core = root
 			AND = {
@@ -269,6 +270,7 @@ estate_church_build_temple_in_y = {
 #------------------------------------------------------------
 estate_church_build_town_hall_in_y = {
 	can_select = {
+		adm_tech = 8
 		any_owned_province = {
 			is_state_core = root
 			AND = {
@@ -402,6 +404,7 @@ estate_church_build_town_hall_in_y = {
 #------------------------------------------------------------
 estate_church_build_manufactory_in_y = {
 	can_select = {
+		dip_tech = 7
 		any_owned_province = {
 			is_state_core = root
 			root_can_build_manufactory_here_trigger = yes

@@ -158,9 +158,11 @@ country_event = {
 				save_event_target_as = targaryen_helper
 				set_treasury_variable = {
 					treasury_var = targaryen_money_support
+					percent_amount = 0.5
 				}
 				set_manpower_variable = {
 					manpower_var = targaryen_manpower_support
+					percent_amount = 0.5
 				}
 			}
 		}
@@ -178,14 +180,14 @@ country_event = {
 				variable = targaryen_money_support
 				giver = event_target:targaryen_helper
 				taker = ROOT
+				custom_tooltip = targaryen_reb_support_money_tt
 			}
-			custom_tooltip = targaryen_reb_support_money_tt
 			transfer_manpower = {
 				variable = targaryen_manpower_support
 				giver = event_target:targaryen_helper
 				taker = ROOT
+				custom_tooltip = targaryen_reb_support_manpower_tt
 			}
-			custom_tooltip = targaryen_reb_support_manpower_tt
 		}
 		add_opinion = {
 			who = event_target:targaryen_helper

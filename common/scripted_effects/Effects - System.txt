@@ -193,6 +193,44 @@ add_influence_to_mil_faction = {
 	}
 }
 
+set_treasury_variable = {
+	export_to_variable = {
+		value = treasury
+		which = $treasury_var$
+	}
+	multiply_variable = {
+		which = $treasury_var$
+		value = $percent_amount$
+	}
+	divide_variable = {
+		which = $treasury_var$
+		value = 10
+	}
+	multiply_variable = {
+		which = $treasury_var$
+		value = 10
+	}
+}
+
+set_income_variable = {
+	export_to_variable = {
+		value = years_of_income
+		which = $income_var$
+	}
+	multiply_variable = {
+		which = $income_var$
+		value = $percent_amount$
+	}
+	divide_variable = {
+		which = $income_var$
+		value = 10
+	}
+	multiply_variable = {
+		which = $income_var$
+		value = 10
+	}
+}
+
 set_manpower_variable = {
 	export_to_variable = {
 		value = manpower
@@ -200,7 +238,7 @@ set_manpower_variable = {
 	}
 	multiply_variable = {
 		which = $manpower_var$
-		value = 0.5
+		value = $percent_amount$
 	}
 }
 
@@ -225,81 +263,9 @@ transfer_manpower = {
 			}
 		}
 	}
-}
-
-set_treasury_variable = {
-	export_to_variable = {
-		value = treasury
-		which = $treasury_var$
-	}
-	multiply_variable = {
-		which = $treasury_var$
-		value = 0.5
-	}
-	divide_variable = {
-		which = $treasury_var$
-		value = 10
-	}
-	multiply_variable = {
-		which = $treasury_var$
-		value = 10
-	}
-}
-
-set_income_variable = {
-	export_to_variable = {
-		value = years_of_income
-		which = $income_var$
-	}
-	multiply_variable = {
-		which = $income_var$
-		value = $income_multi$
-	}
-	divide_variable = {
-		which = $income_var$
-		value = 10
-	}
-	multiply_variable = {
-		which = $income_var$
-		value = 10
-	}
-}
-
-remove_treasury = {
-	hidden_effect = {
-		$giver$ = {
-			while = {
-				limit = {
-					check_variable = {
-						which = $variable$
-						value = 1
-					}
-				}
-				add_treasury = -1
-				subtract_variable = {
-					which = $variable$
-					value = 1
-				}
-			}
-			multiply_variable = {
-				which = $variable$
-				value = 100
-			}
-			while = {
-				limit = {
-					check_variable = {
-						which = $variable$
-						value = 1
-					}
-				}
-				add_treasury = -0.01
-				subtract_variable = {
-					which = $variable$
-					value = 1
-				}
-			}
-		}
-	}
+	[[custom_tooltip]
+		custom_tooltip = $custom_tooltip$
+	]
 }
 
 transfer_treasury = {
@@ -343,4 +309,47 @@ transfer_treasury = {
 			}
 		}
 	}
+	[[custom_tooltip]
+		custom_tooltip = $custom_tooltip$
+	]
+}
+
+remove_treasury = {
+	hidden_effect = {
+		$giver$ = {
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				add_treasury = -1
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+			multiply_variable = {
+				which = $variable$
+				value = 100
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				add_treasury = -0.01
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+		}
+	}
+	[[custom_tooltip]
+		custom_tooltip = $custom_tooltip$
+	]
 }

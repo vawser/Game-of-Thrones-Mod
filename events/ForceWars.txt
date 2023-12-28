@@ -1,0 +1,76 @@
+namespace = force_wars
+
+# Forces the AI Royal Subjects to fight one another occasionally. 
+# The AI doesn't like to declare, so this forces a war when the player isn't directly involved.
+country_event = {
+	id = force_wars.1
+	title = "force_wars.1.title"
+	desc = "force_wars.1.desc"
+	picture = BATTLE_eventPicture
+
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		is_at_war = no
+		westeros_government_not_king_nor_great_house = yes
+		any_country = {
+			ai = yes
+			is_at_war = no
+			westeros_government_not_king_nor_great_house = yes
+			has_casus_belli = {
+				type = cb_lordly_feud
+				target = ROOT
+			}
+			NOT = { had_recent_war = 5 }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = {
+					ai = yes
+					is_at_war = no
+					has_casus_belli = {
+						type = cb_lordly_feud
+						target = ROOT
+					}
+					westeros_government_not_king_nor_great_house = yes
+					NOT = { had_recent_war = 5 }
+				}
+				save_event_target_as = war_country
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_lordly_feud
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "force_wars.1.option.a"
+		tooltip = {
+			random_country = {
+				limit = {
+					ai = yes
+					is_at_war = no
+					has_casus_belli = {
+						type = cb_lordly_feud
+						target = ROOT
+					}
+					westeros_government_not_king_nor_great_house = yes
+					NOT = { had_recent_war = 5 }
+				}
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_lordly_feud
+				}
+			}
+		}
+	}
+}

@@ -51,7 +51,7 @@ got_frequent_elections_reform = {
 	icon = "man_casting_vote"
 	allow_normal_conversion = yes
 	potential = {
-	#	NOT = { is_related_to_nights_watch_check = yes }
+	#	NOT = { is_nights_watch_government = yes }
 	}
 	trigger = {
 		# OR = {
@@ -77,7 +77,7 @@ got_consolidation_of_power_reform = {
 	icon = "constitution_document"
 	allow_normal_conversion = yes
 	potential = {
-	#	NOT = { is_related_to_nights_watch_check = yes }
+	#	NOT = { is_nights_watch_government = yes }
 	}
     
 	modifiers = {
@@ -91,7 +91,7 @@ got_lottery_reform = {
 	allow_normal_conversion = yes
     
 	potential = {
-	#	NOT = { is_related_to_nights_watch_check = yes }
+	#	NOT = { is_nights_watch_government = yes }
 	}
     
 	has_term_election = no
@@ -114,10 +114,10 @@ got_uphold_life_term_reform = {
 	icon = "armored_knight"
 	allow_normal_conversion = yes
 	potential = {
-	#	is_related_to_nights_watch_check = yes
+	#	is_nights_watch_government = yes
 	}
 	trigger = {
-	#	is_related_to_nights_watch_check = yes
+	#	is_nights_watch_government = yes
 	}
 
 	modifiers = {
@@ -134,10 +134,10 @@ got_introduce_term_limits_reform = {
 	icon = "gavel_on_paper"
 	allow_normal_conversion = yes
 	potential = {
-	#	is_related_to_nights_watch_check = yes
+	#	is_nights_watch_government = yes
 	}
 	trigger = {
-	#	is_related_to_nights_watch_check = yes
+	#	is_nights_watch_government = yes
 	}
 
 	has_term_election = yes
@@ -165,7 +165,7 @@ got_provincial_governments_reform = {
 	icon = "landscape"
 	allow_normal_conversion = yes
 	potential = {
-		NOT = { is_related_to_nights_watch_check = yes }
+		NOT = { is_nights_watch_government = yes }
 	}
     
 	modifiers = {
@@ -181,7 +181,7 @@ got_administrative_divisions_reform = {
 	icon = "map"
 	allow_normal_conversion = yes
 	potential = {
-		NOT = { is_related_to_nights_watch_check = yes }
+		NOT = { is_nights_watch_government = yes }
 	}
     
 	modifiers = {
@@ -212,7 +212,7 @@ got_union_of_states_reform = {
 	icon = "merchant_ship"
 	allow_normal_conversion = yes
 	potential = {
-		NOT = { is_related_to_nights_watch_check = yes }
+		NOT = { is_nights_watch_government = yes }
 	}
     
 	modifiers = {
@@ -232,7 +232,7 @@ got_watchmen_fortline_reform = {
 	icon = "wall_of_ice"
 	allow_normal_conversion = yes
 	potential = {
-		is_related_to_nights_watch_check = yes
+		is_nights_watch_government = yes
 	}
 
 	effect = {
@@ -265,7 +265,7 @@ got_expand_the_gift_reform = {
 	icon = "farmfields"
 	allow_normal_conversion = yes
 	potential = {
-		is_related_to_nights_watch_check = yes
+		is_nights_watch_government = yes
 	}
 
 	modifiers = {

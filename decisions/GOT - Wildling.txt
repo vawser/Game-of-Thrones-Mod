@@ -65,4 +65,39 @@ country_decisions = {
 			}
 		}
 	}
+	centralize_our_clan = {
+		major = yes
+		potential = {
+			has_reform = wildling_clan_reform
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = "figurehead_leader_lock_tt"
+				NOT = { has_reform = got_figurehead_leader_reform }
+			}
+			custom_trigger_tooltip = {
+				tooltip = "reform_progress_betwee_6_and_7_tt"
+				has_reform_on_level = 5
+				NOT = { has_reform_on_level = 6 }
+			}
+		}
+		effect = {
+			add_legitimacy = -25
+			add_horde_unity = -25
+			add_government_power = {
+				mechanic_type = clan_cohesion_mechanic
+				power_type = clan_cohesion
+				value = -50
+			}
+			custom_tooltip = adopt_free_folk_polity_reform_tt
+			add_country_modifier = {
+				name = centralizing_our_clan
+				duration = 365
+			}
+			hidden_effect = { add_government_reform = new_wildling_clan_reform }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

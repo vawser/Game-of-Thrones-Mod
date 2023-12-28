@@ -571,7 +571,6 @@ got_precision_raiding_reform = {
 ################
 # Tier 7
 ################
-
 got_reinforce_tribal_hierarchy_reform = {
 	icon = "retain_tribal_hierarchy"
 	allow_normal_conversion = yes
@@ -595,33 +594,12 @@ got_reinforce_tribal_hierarchy_reform = {
 	}
 }
 
-got_centralize_the_clan_reform = {
-	icon = "clan_chief_highlighted"
+got_centralize_tribal_power_reform = {
+	icon = "tribal_centralize_power"
 	allow_normal_conversion = yes
-	potential = {
-		is_wildling_government = yes
-	}
-	trigger = {
-		custom_trigger_tooltip = {
-			tooltip = "figurehead_leader_lock_tt"
-			NOT = { has_reform = got_figurehead_leader_reform }
-		}
-	}
 	modifiers = {
-		monthly_clan_cohesion = -0.33
-		legitimacy = -1.0
-		monthly_reform_progress = -0.50
-	}
-	effect = {
-		add_legitimacy = -25
-		add_horde_unity = -25
-		add_government_power = {
-			mechanic_type = clan_cohesion_mechanic
-			power_type = clan_cohesion
-			value = -50
-		}
-		custom_tooltip = adopt_free_folk_polity_reform_tt
-		hidden_effect = { add_government_reform = new_wildling_clan_reform }
+		core_creation = -0.05
+		governing_capacity = 100
 	}
 	ai = {
 		factor = 1
@@ -667,32 +645,5 @@ got_tribal_unity_reform = {
 	
 	ai = {
 		factor = 2
-	}
-}
-
-################
-# Tier 8
-################
-got_counseled_governance_reform = {
-	allow_normal_conversion = yes
-	icon = "wildlings_and_watchers"
-	modifiers = {
-		advisor_cost = -0.05
-		stability_cost_modifier = -0.025
-	}
-	ai = {
-		factor = 1
-	}
-}
-
-got_centralize_tribal_power_reform = {
-	icon = "tribal_centralize_power"
-	allow_normal_conversion = yes
-	modifiers = {
-		core_creation = -0.05
-		governing_capacity = 100
-	}
-	ai = {
-		factor = 1
 	}
 }

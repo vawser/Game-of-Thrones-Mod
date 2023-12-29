@@ -7,11 +7,16 @@ remove_from_the_council = {
 	require_acceptance = no
 
 	is_visible = {
-		is_emperor = yes
-		has_estate_privilege = estate_nobles_the_small_council
+		OR = {
+			is_emperor = yes
+			has_council_position = { sm_council_position = handoftheking }
+		}
+		event_target:IronThroneKing = { has_estate_privilege = estate_nobles_the_small_council }
 		FROM = {
 			is_part_of_hre = yes
 			is_on_the_small_council = yes
+			is_emperor = no
+			NOT = { tag = FAT }
 		}
 	}
 	is_allowed = {
@@ -38,10 +43,12 @@ appoint_hand_of_the_king = {
 
 	is_visible = {
 		is_emperor = yes
-		has_estate_privilege = estate_nobles_the_small_council
+		event_target:IronThroneKing = { has_estate_privilege = estate_nobles_the_small_council }
 		FROM = {
 			is_part_of_hre = yes
 			NOT = { has_council_position = { sm_council_position = handoftheking } }
+			is_emperor = no
+			NOT = { tag = FAT }
 		}
 	}
 	is_allowed = {
@@ -139,11 +146,16 @@ appoint_master_of_coin = {
 	require_acceptance = yes
 
 	is_visible = {
-		is_emperor = yes
-		has_estate_privilege = estate_nobles_the_small_council
+		OR = {
+			is_emperor = yes
+			has_council_position = { sm_council_position = handoftheking }
+		}
+		event_target:IronThroneKing = { has_estate_privilege = estate_nobles_the_small_council }
 		FROM = {
 			is_part_of_hre = yes
 			NOT = { has_council_position = { sm_council_position = masterofcoin } }
+			is_emperor = no
+			NOT = { tag = FAT }
 		}
 	}
 	is_allowed = {
@@ -241,11 +253,16 @@ appoint_master_of_laws = {
 	require_acceptance = yes
 
 	is_visible = {
-		is_emperor = yes
-		has_estate_privilege = estate_nobles_the_small_council
+		OR = {
+			is_emperor = yes
+			has_council_position = { sm_council_position = handoftheking }
+		}
+		event_target:IronThroneKing = { has_estate_privilege = estate_nobles_the_small_council }
 		FROM = {
 			is_part_of_hre = yes
 			NOT = { has_council_position = { sm_council_position = masteroflaws } }
+			is_emperor = no
+			NOT = { tag = FAT }
 		}
 	}
 	is_allowed = {
@@ -338,16 +355,21 @@ appoint_master_of_ships = {
 	category = emperor
 
 	alert_index = 40
-	alert_tooltip = appoint_master_of_ships_desc
+	alert_tooltip = appoint_master_of_ships_alert_tooltip
 
 	require_acceptance = yes
 
 	is_visible = {
-		is_emperor = yes
-		has_estate_privilege = estate_nobles_the_small_council
+		OR = {
+			is_emperor = yes
+			has_council_position = { sm_council_position = handoftheking }
+		}
+		event_target:IronThroneKing = { has_estate_privilege = estate_nobles_the_small_council }
 		FROM = {
 			is_part_of_hre = yes
 			NOT = { has_council_position = { sm_council_position = masterofships } }
+			is_emperor = no
+			NOT = { tag = FAT }
 		}
 	}
 	is_allowed = {
@@ -445,11 +467,16 @@ appoint_master_of_whisperers = {
 	require_acceptance = yes
 
 	is_visible = {
-		is_emperor = yes
-		has_estate_privilege = estate_nobles_the_small_council
+		OR = {
+			is_emperor = yes
+			has_council_position = { sm_council_position = handoftheking }
+		}
+		event_target:IronThroneKing = { has_estate_privilege = estate_nobles_the_small_council }
 		FROM = {
 			is_part_of_hre = yes
 			NOT = { has_council_position = { sm_council_position = masterofwhisperers } }
+			is_emperor = no
+			NOT = { tag = FAT }
 		}
 	}
 	is_allowed = {

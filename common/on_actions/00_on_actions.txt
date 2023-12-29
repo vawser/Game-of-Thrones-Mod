@@ -563,11 +563,7 @@ on_monarch_death = {
 
 	# In case of death of current council member, this will clear
 	# all flags and event targets as well as ruler modifiers
-	clear_council_position_cf = { sm_council_position = handoftheking }
-	clear_council_position_cf = { sm_council_position = masterofcoin }
-	clear_council_position_cf = { sm_council_position = masteroflaws }
-	clear_council_position_cf = { sm_council_position = masterofships }
-	clear_council_position_cf = { sm_council_position = masterofwhisperers }
+	clear_council_country = yes
 	##LOE Changes##
 	if = {
 		limit = {

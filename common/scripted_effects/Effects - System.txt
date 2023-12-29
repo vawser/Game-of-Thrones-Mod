@@ -92,6 +92,16 @@ clear_council_all = {
 	clear_council_position_gf = { sm_council_position = masterofwhisperers }
 }
 
+# Effect to remove a country from the Small Council
+# (country scope)
+clear_council_country = {
+	clear_council_position_cf = { sm_council_position = handoftheking }
+	clear_council_position_cf = { sm_council_position = masterofcoin }
+	clear_council_position_cf = { sm_council_position = masteroflaws }
+	clear_council_position_cf = { sm_council_position = masterofships }
+	clear_council_position_cf = { sm_council_position = masterofwhisperers }
+}
+
 add_king_titles = {
 	add_ruler_modifier = {
 		name = got_lord_of_seven_kingdoms

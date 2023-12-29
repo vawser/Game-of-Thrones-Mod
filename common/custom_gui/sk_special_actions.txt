@@ -27,6 +27,28 @@ custom_button = {
 }
 
 custom_button = {
+	name = resign_from_the_council
+	potential = {
+		has_global_flag = displaying_small_council_ui
+		is_on_the_small_council = yes
+	}
+	trigger = { }
+	effect = {
+		hidden_effect = {
+			clear_council_country = yes
+			random = {
+				chance = 33
+				reverse_add_opinion = {
+					who = event_target:IronThroneKing
+					modifier = insulted
+				}
+			}
+		}
+	}
+	tooltip = "resign_from_council_effect_tt"
+}
+
+custom_button = {
 	name = fire_all_councillors
 	potential = {
 		has_global_flag = displaying_small_council_ui

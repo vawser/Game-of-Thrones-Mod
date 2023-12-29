@@ -17,6 +17,9 @@ namespace = sk_event
 # Basic Reform
 province_event = {
 	id = sk_event.1
+	title = "hidden_event.ti"
+	desc = "hidden_event.de"
+	picture = BIG_BOOK_eventPicture
 	
 	is_triggered_only = yes
 	hidden = yes
@@ -576,9 +579,11 @@ country_event = {
 # Passive Checker
 country_event = {
 	id = sk_event.103
-	title = "sk_event.103.title"
-	desc = "sk_event.103.desc"
-	picture = GOOD_WITH_MONARCH_eventPicture
+	title = "hidden_event.ti"
+	desc = "hidden_event.de"
+	picture = BIG_BOOK_eventPicture
+
+	hidden = yes
 
 	mean_time_to_happen = {
 		days = 1

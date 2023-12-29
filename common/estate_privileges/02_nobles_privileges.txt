@@ -935,12 +935,12 @@ estate_nobles_the_small_council = {
 		add_prestige = -25
 		custom_tooltip = estate_nobles_the_small_council.revoked_tt
 		clr_global_flag = displaying_small_council_ui
-		hidden_effect = { clear_council_all = yes }
+		hidden_effect = { clear_council_global = yes }
 	}
 	on_invalid = {
 		custom_tooltip = estate_nobles_the_small_council.revoked_tt
 		clr_global_flag = displaying_small_council_ui
-		hidden_effect = { clear_council_all = yes }
+		hidden_effect = { clear_council_global = yes }
 	}
 	mechanics = {
 		exempt_from_seize_land

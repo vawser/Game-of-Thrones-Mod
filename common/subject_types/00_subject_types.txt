@@ -31,6 +31,7 @@
 # Forward declaring all subject types so they can refer to each other in triggers etc.
 vassal = {}
 feudatory = {}
+castellany = {}
 march = {}
 daimyo_vassal = {}
 personal_union = {}
@@ -280,6 +281,7 @@ feudatory = {
 	can_have_subjects_of_other_types = yes
 	takes_diplo_slot = no
 	separatists_become_subjects = yes
+	can_gain_favors = yes
 
 	forcelimit_to_overlord = 0.0
 

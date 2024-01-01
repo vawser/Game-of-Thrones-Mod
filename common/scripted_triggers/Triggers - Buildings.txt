@@ -15,16 +15,17 @@ province_is_a_castle_on_the_wall = {
 	}
 }
 
-# Building triggers
-has_tax_building_trigger = {
+# Generic Trigger to check if province
+# has any building from a category
+has_any_production_building = {
 	OR = {
-		has_building = constable_quarters
-		has_building = tax_office
-		has_building = treasury
+		has_building = workshop
+		has_building = windmill
+		has_building = factory
 	}
 }
 
-has_trade_building_trigger = {
+has_any_trade_building = {
 	OR = {
 		has_building = merchants_hub
 		has_building = marketplace
@@ -33,39 +34,24 @@ has_trade_building_trigger = {
 	}
 }
 
-has_production_building_trigger = {
-	OR = {
-		has_building = workshop
-		has_building = windmill
-		has_building = factory
+has_any_special_building = {
+	OR = {	
+		has_building = grand_palace
+		has_building = tourney_grounds
+		has_building = coastal_defence
 	}
 }
 
-has_manpower_building_trigger = {
-	OR = {
-		has_building = barracks
-		has_building = training_fields
-		has_building = regimental_camp
+has_any_defense_building = {
+	OR = {	
+		has_building = motte_and_bailey
+		has_building = castle
+		has_building = fortress
+		has_building = citadel
 	}
 }
 
-has_shipyard_building_trigger = {
-	OR = {
-		has_building = dock
-		has_building = shipyard
-		has_building = grand_shipyard
-	}
-}
-
-has_dock_building_trigger = {
-	OR = {
-		has_building = dock
-		has_building = shipyard
-		has_building = grand_shipyard
-	}
-}
-
-has_forcelimit_building_trigger = {
+has_any_army_building = {
 	OR = {
 		has_building = barracks
 		has_building = training_fields
@@ -73,11 +59,45 @@ has_forcelimit_building_trigger = {
 	}
 }
 
-has_courthouse_building_trigger = {
+has_any_government_building = {
 	OR = {	
 		has_building = courthouse
 		has_building = town_hall
 		has_building = governors_manor
+	}
+}
+
+has_any_religion_building = {
+	OR = {	
+		has_building = church
+		has_building = cathedral
+	}
+}
+
+has_any_taxation_building = {
+	OR = {
+		has_building = constable_quarters
+		has_building = tax_office
+		has_building = treasury
+	}
+}
+
+has_any_manufactory_building = {
+	OR = {	
+		has_building = farmstead
+		has_building = foresters_guild
+		has_building = blacksmiths_guild
+		has_building = artisans_guild
+		has_building = tailors_guild
+		has_building = slavers_guild
+	}
+}
+
+has_any_navy_building = {
+	OR = {
+		has_building = dock
+		has_building = shipyard
+		has_building = grand_shipyard
 	}
 }
 
@@ -91,22 +111,6 @@ has_supply_building_trigger = {
 	# OR = {	
 		# has_building = supply_depot
 	# }
-}
-
-has_temple_building_trigger = {
-	OR = {	
-		has_building = church
-		has_building = cathedral
-	}
-}
-
-has_fort_building_trigger = {
-	OR = {	
-		has_building = motte_and_bailey
-		has_building = castle
-		has_building = fortress
-		has_building = citadel
-	}
 }
 
 # Has current fort level
@@ -163,28 +167,6 @@ province_has_current_tech_fort_trigger = {
 			}
 			has_building = citadel
 		}
-	}
-}
-
-has_manufactory_building_trigger = {
-	OR = {	
-		has_building = farmstead
-		has_building = foresters_guild
-		has_building = blacksmiths_guild
-		has_building = artisans_guild
-		has_building = tailors_guild
-		has_building = slavers_guild
-	}
-}
-
-has_unique_building_trigger = {
-	OR = {	
-		has_building = grand_palace
-		has_building = merchants_quarter
-		has_building = grand_temple
-		has_building = tourney_grounds
-		has_building = military_academy
-		has_building = naval_academy
 	}
 }
 

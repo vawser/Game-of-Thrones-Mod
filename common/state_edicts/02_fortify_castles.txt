@@ -18,7 +18,7 @@ edict_reinforce_the_castles = {
 				FROM = {
 					all_province_in_state = {
 						NOT = {
-							has_fort_building_trigger = yes
+							has_any_defense_building = yes
 						}
 					}
 				}
@@ -27,7 +27,7 @@ edict_reinforce_the_castles = {
 				tooltip = HAS_ANY_LEVEL_FORT_TRIGGER
 				FROM = {
 					any_province_in_state = {
-						has_fort_building_trigger = yes
+						has_any_defense_building = yes
 					}
 				}
 			}

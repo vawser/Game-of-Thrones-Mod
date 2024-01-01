@@ -139,7 +139,7 @@ estate_merchants_build_a_market_in_y = {
 		dip_tech = 6
 		any_owned_province = {
 			is_state_core = root
-			NOT = { has_trade_building_trigger = yes }
+			NOT = { has_any_trade_building = yes }
 			num_free_building_slots = 1
 		}
 	}
@@ -154,7 +154,7 @@ estate_merchants_build_a_market_in_y = {
 						province_has_center_of_trade_of_level = 1
 						province_trade_power = 10
 					}
-					NOT = { has_trade_building_trigger = yes }
+					NOT = { has_any_trade_building = yes }
                     num_free_building_slots = 1
 				}
 			}
@@ -167,7 +167,7 @@ estate_merchants_build_a_market_in_y = {
 					province_has_center_of_trade_of_level = 2
 					province_trade_power = 20
 				}
-				NOT = { has_trade_building_trigger = yes }
+				NOT = { has_any_trade_building = yes }
                     
 			}
 		}
@@ -182,7 +182,7 @@ estate_merchants_build_a_market_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
-				NOT = { has_trade_building_trigger = yes }
+				NOT = { has_any_trade_building = yes }
                 num_free_building_slots = 1
 			}
 			save_event_target_as = agenda_province
@@ -194,7 +194,7 @@ estate_merchants_build_a_market_in_y = {
 					province_has_center_of_trade_of_level = 1
 					province_trade_power = 10
 				}
-				NOT = { has_trade_building_trigger = yes }
+				NOT = { has_any_trade_building = yes }
                 num_free_building_slots = 1
 			}
 			save_event_target_as = agenda_province
@@ -206,7 +206,7 @@ estate_merchants_build_a_market_in_y = {
 					province_has_center_of_trade_of_level = 2
 					province_trade_power = 20
 				}
-				NOT = { has_trade_building_trigger = yes }
+				NOT = { has_any_trade_building = yes }
                 num_free_building_slots = 1
 			}
 			save_event_target_as = agenda_province
@@ -222,7 +222,7 @@ estate_merchants_build_a_market_in_y = {
 	}
     task_requirements = {
 		event_target:agenda_province = {
-            has_trade_building_trigger = yes
+            has_any_trade_building = yes
         }
     }
     task_completed_effect = {

@@ -140,7 +140,7 @@ estate_church_build_temple_in_y = {
 		any_owned_province = {
 			is_state_core = root
 			AND = {
-                NOT = { has_temple_building_trigger = yes }
+                NOT = { has_any_religion_building = yes }
                 num_free_building_slots = 1
             }
 		}
@@ -154,7 +154,7 @@ estate_church_build_temple_in_y = {
 					is_state_core = root
 					base_tax = 4
 					AND = {
-                        NOT = { has_temple_building_trigger = yes }
+                        NOT = { has_any_religion_building = yes }
                         num_free_building_slots = 1
                     }
 				}
@@ -166,7 +166,7 @@ estate_church_build_temple_in_y = {
 				is_state_core = root
 				base_tax = 7
 				AND = {
-                    NOT = { has_temple_building_trigger = yes }
+                    NOT = { has_any_religion_building = yes }
                     num_free_building_slots = 1
                 }
 			}
@@ -183,7 +183,7 @@ estate_church_build_temple_in_y = {
 			limit = {
 				is_state_core = root
 				AND = {
-                    NOT = { has_temple_building_trigger = yes }
+                    NOT = { has_any_religion_building = yes }
                     num_free_building_slots = 1
                 }
 			}
@@ -194,7 +194,7 @@ estate_church_build_temple_in_y = {
 				is_state_core = root
 				base_tax = 4
 				AND = {
-                    NOT = { has_temple_building_trigger = yes }
+                    NOT = { has_any_religion_building = yes }
                     num_free_building_slots = 1
                 }
 			}
@@ -205,7 +205,7 @@ estate_church_build_temple_in_y = {
 				is_state_core = root
 				base_tax = 7
 				AND = {
-                    NOT = { has_temple_building_trigger = yes }
+                    NOT = { has_any_religion_building = yes }
                     num_free_building_slots = 1
                 }
 			}
@@ -222,7 +222,7 @@ estate_church_build_temple_in_y = {
 	}
     task_requirements = {
 		event_target:agenda_province = {
-            has_temple_building_trigger = yes
+            has_any_religion_building = yes
         }
     }
     task_completed_effect = {

@@ -279,7 +279,7 @@ country_event = {
 			OR = {
 				is_in_capital_area = yes
 				fort_level = 2
-				has_manpower_building_trigger = yes
+				has_any_army_building = yes
 			}
 			NOT = { has_province_modifier = soldiers_stimulating_local_economy }
 		}
@@ -305,7 +305,7 @@ country_event = {
 					is_capital = no
 					OR = {
 						fort_level = 2
-						has_manpower_building_trigger = yes
+						has_any_army_building = yes
 					}
 				}
 				save_event_target_as = soldier_province
@@ -738,7 +738,7 @@ province_event = {
 
 	trigger = {
         has_dlc = "Cradle of Civilization"
-		has_manpower_building_trigger = yes
+		has_any_army_building = yes
 		is_capital = no
 		NOT = { has_province_flag = regimental_town_flag }
 		NOT = { has_province_modifier = regimental_town }

@@ -21,10 +21,12 @@ province_event = {
 	option = {
 		name = "banditry.1.option.a"
 		owner = { add_prestige = -1 }
+		ai_chance = { factor = 10 }
 	}
 
 	option = {
 		name = "banditry.1.option.b"
+		ai_chance = { factor = 90 }
 	}
 }
 
@@ -46,6 +48,7 @@ province_event = {
 	option = {
 		name = "banditry.2.option.a"
 		owner = { add_prestige = 5 }
+		ai_chance = { factor = 100 }
 	}
 }
 
@@ -73,12 +76,20 @@ province_event = {
 		name = "banditry.11.option.a"
 		owner = { add_prestige = -1 }
 		add_nationalism = 10
+		ai_chance = { factor = 10 }
 	}
 
 	option = {
 		name = "banditry.11.option.b"
 		owner = { add_years_of_income = -0.75 }
 		reduce_crime_lvl = { amount = 2 }
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				NOT = { owner = { years_of_income = 0.75 } }
+			}
+		}
 	}
 }
 
@@ -111,12 +122,20 @@ province_event = {
 			33 = { add_base_production = -1 }
 			33 = { add_base_manpower = -1 }
 		}
+		ai_chance = { factor = 10 }
 	}
 
 	option = {
 		name = "banditry.12.option.b"
 		owner = { add_years_of_income = -1.0 }
 		reduce_crime_lvl = { amount = 2 }
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				NOT = { owner = { years_of_income = 1.0 } }
+			}
+		}
 	}
 }
 
@@ -144,12 +163,20 @@ province_event = {
 		name = "banditry.13.option.a"
 		owner = { add_prestige = -1 }
 		add_unrest = 6
+		ai_chance = { factor = 10 }
 	}
 
 	option = {
 		name = "banditry.13.option.b"
 		owner = { add_years_of_income = -0.90 }
 		reduce_crime_lvl = { amount = 2 }
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				NOT = { owner = { years_of_income = 0.90 } }
+			}
+		}
 	}
 }
 
@@ -181,12 +208,20 @@ province_event = {
 			limit = { province_has_center_of_trade_of_level = 1 }
 			add_center_of_trade_level = -1
 		}
+		ai_chance = { factor = 10 }
 	}
 
 	option = {
 		name = "banditry.14.option.b"
 		owner = { add_years_of_income = -0.65 }
 		reduce_crime_lvl = { amount = 2 }
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				NOT = { owner = { years_of_income = 0.65 } }
+			}
+		}
 	}
 }
 
@@ -223,12 +258,20 @@ province_event = {
 			limit = { province_has_center_of_trade_of_level = 2 }
 			add_center_of_trade_level = -1
 		}
+		ai_chance = { factor = 10 }
 	}
 
 	option = {
 		name = "banditry.15.option.b"
 		owner = { add_years_of_income = -0.95 }
 		reduce_crime_lvl = { amount = 2 }
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				NOT = { owner = { years_of_income = 0.95 } }
+			}
+		}
 	}
 }
 
@@ -253,6 +296,7 @@ province_event = {
 	option = {
 		name = "banditry.16.option.a"
 		owner = { add_prestige = -1 }
+		ai_chance = { factor = 10 }
 	}
 
 	option = {
@@ -266,6 +310,13 @@ province_event = {
 			event_target:banditprovince = {
 				owner = { add_years_of_income = -0.85 }
 				reduce_crime_lvl = { amount = 2 }
+			}
+		}
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				NOT = { owner = { years_of_income = 0.85 } }
 			}
 		}
 	}
@@ -289,6 +340,7 @@ province_event = {
 	option = {
 		name = "banditry.17.option.a"
 		owner = { add_prestige = -1 }
+		ai_chance = { factor = 10 }
 	}
 
 	option = {
@@ -305,5 +357,6 @@ province_event = {
 		}
 		clear_criminal_activity = { type = bandits }
 		add_devastation = -10
+		ai_chance = { factor = 90 }
 	}
 }

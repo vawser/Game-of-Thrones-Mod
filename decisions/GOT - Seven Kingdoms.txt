@@ -3,10 +3,7 @@ country_decisions = {
 		major = yes
 		potential = {
 			is_emperor = yes
-			OR = {
-				has_estate_privilege = estate_nobles_the_kingsguard
-				has_estate_privilege = estate_nobles_the_queensguard
-			}
+			has_estate_privilege = estate_nobles_the_small_council
 			NOT = { has_ruler_flag = lc_is_field_general }
 		}
 		allow = {

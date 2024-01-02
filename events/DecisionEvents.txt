@@ -26,7 +26,8 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_estate_privilege = estate_nobles_the_kingsguard
+				has_estate_privilege = estate_nobles_the_small_council
+				is_female = no
 			}
 			random_list = {
 				35 = { # Terrible
@@ -95,7 +96,8 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				has_estate_privilege = estate_nobles_the_queensguard
+				has_estate_privilege = estate_nobles_the_small_council
+				is_female = yes
 			}
 			random_list = {
 				35 = { # Terrible

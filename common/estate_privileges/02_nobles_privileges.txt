@@ -917,7 +917,7 @@ estate_nobles_monopoly_of_sugar = {
 estate_nobles_the_small_council = {
 	icon = privilege_iron_throne
 	max_absolutism = -10
-	loyalty = 0.05
+	loyalty = 0.10
 	influence = 0.10
 
 	is_valid = {
@@ -927,26 +927,52 @@ estate_nobles_the_small_council = {
 		is_emperor = yes
 	}
 	can_revoke = {
-		ai = no
+		hidden_trigger = { ai = no }
 	}
 
 	on_granted = {
-		add_prestige = 10
 		custom_tooltip = estate_nobles_the_small_council.granted_tt
+		if = {
+			limit = { is_female = no }
+			custom_tooltip = estate_nobles_the_kingsguard.granted_tt
+		}
+		if = {
+			limit ={ is_female = yes }
+			custom_tooltip = estate_nobles_the_queensguard.granted_tt
+		}
 	}
 	on_revoked = {
 		add_prestige = -25
 		custom_tooltip = estate_nobles_the_small_council.revoked_tt
+		if = {
+			limit = { is_female = no }
+			custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
+		}
+		if = {
+			limit ={ is_female = yes }
+			custom_tooltip = estate_nobles_the_queensguard.revoked_tt
+		}
 		clr_global_flag = displaying_small_council_ui
 		hidden_effect = { clear_council_global = yes }
 	}
 	on_invalid = {
 		custom_tooltip = estate_nobles_the_small_council.revoked_tt
+		if = {
+			limit = { is_female = no }
+			custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
+		}
+		if = {
+			limit ={ is_female = yes }
+			custom_tooltip = estate_nobles_the_queensguard.revoked_tt
+		}
 		clr_global_flag = displaying_small_council_ui
 		hidden_effect = { clear_council_global = yes }
 	}
 	mechanics = {
 		exempt_from_seize_land
+	}
+	benefits = {
+		crw_militarists_influence = 0.01
 	}
 	influence_scaled_conditional_modifier = {
 		trigger = { always = yes }
@@ -958,84 +984,6 @@ estate_nobles_the_small_council = {
 
 	ai_will_do = {
 		factor = 10
-	}
-}
-
-estate_nobles_the_kingsguard = {
-	icon = privilege_white_knight
-	influence = 0.05
-
-	is_valid = {
-		is_westerosi_government = yes
-		is_female = no
-	}
-	can_select = {
-		is_female = no
-		is_emperor = yes
-	}
-	on_granted = {
-		add_faction_influence = {
-			faction = crw_militarists
-			influence = 5
-		}
-		custom_tooltip = estate_nobles_the_kingsguard.granted_tt
-	}
-	on_revoked = {
-		add_faction_influence = {
-			faction = crw_militarists
-			influence = -10
-		}
-		custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
-	}
-	on_invalid = {
-		custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
-	}
-	benefits = {
-		land_morale = 0.025
-		crw_militarists_influence = 0.01
-		free_land_leader_pool = 1
-	}
-	ai_will_do = {
-		factor = 1
-	}
-}
-
-estate_nobles_the_queensguard = {
-	icon = privilege_white_knight
-	influence = 0.05
-
-	is_valid = {
-		is_westerosi_government = yes
-		is_female = yes
-	}
-	can_select = {
-		is_female = yes
-		is_emperor = yes
-	}
-	on_granted = {
-		add_faction_influence = {
-			faction = crw_militarists
-			influence = 5
-		}
-		custom_tooltip = estate_nobles_the_queensguard.granted_tt
-	}
-	on_revoked = {
-		add_faction_influence = {
-			faction = crw_militarists
-			influence = -10
-		}
-		custom_tooltip = estate_nobles_the_queensguard.revoked_tt
-	}
-	on_invalid = {
-		custom_tooltip = estate_nobles_the_queensguard.revoked_tt
-	}
-	benefits = {
-		land_morale = 0.025
-		crw_militarists_influence = 0.01
-		free_land_leader_pool = 1
-	}
-	ai_will_do = {
-		factor = 1
 	}
 }
 

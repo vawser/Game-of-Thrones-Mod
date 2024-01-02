@@ -1,0 +1,309 @@
+# 1 : Spawn Bandits
+# 2 : Clear Bandits
+# 11-20 : Flavor Events
+namespace = banditry
+
+# Spawn Banditry
+province_event = {
+	id = banditry.1
+	title = "banditry.1.title"
+	desc = "banditry.1.desc"
+	picture = VILLAGE_RAIDED_eventPicture
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_criminal_activity = { type = bandits }
+			add_devastation = 25
+		}
+	}
+
+	option = {
+		name = "banditry.1.option.a"
+		owner = { add_prestige = -1 }
+	}
+
+	option = {
+		name = "banditry.1.option.b"
+	}
+}
+
+# Despawn Banditry
+province_event = {
+	id = banditry.2
+	title = "banditry.2.title"
+	desc = "banditry.2.desc"
+	picture = STREET_SPEECH_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			clear_criminal_activity = { type = bandits }
+		}
+	}
+
+	option = {
+		name = "banditry.2.option.a"
+		owner = { add_prestige = 5 }
+	}
+}
+
+# Raid in the Public Square
+province_event = {
+	id = banditry.11
+	title = "banditry.11.title"
+	desc = "banditry.11.desc"
+	picture = VILLAGE_RAIDED_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			add_province_modifier = {
+				name = public_square_raided
+				duration = 1825
+			}
+			add_devastation = 20
+			increase_crime_lvl_small = yes
+		}
+	}
+
+	option = {
+		name = "banditry.11.option.a"
+		owner = { add_prestige = -1 }
+		add_nationalism = 10
+	}
+
+	option = {
+		name = "banditry.11.option.b"
+		owner = { add_years_of_income = -0.75 }
+		reduce_crime_lvl = { amount = 2 }
+	}
+}
+
+# Raid on the Townsman Hearthstones
+province_event = {
+	id = banditry.12
+	title = "banditry.12.title"
+	desc = "banditry.12.desc"
+	picture = VILLAGE_RAIDED_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			add_province_modifier = {
+				name = town_hearths_raided
+				duration = 1825
+			}
+			add_devastation = 20
+			increase_crime_lvl_small = yes
+		}
+	}
+
+	option = {
+		name = "banditry.12.option.a"
+		owner = { add_prestige = -1 }
+		add_local_autonomy = 25
+		random_list = {
+			33 = { add_base_tax = -1 }
+			33 = { add_base_production = -1 }
+			33 = { add_base_manpower = -1 }
+		}
+	}
+
+	option = {
+		name = "banditry.12.option.b"
+		owner = { add_years_of_income = -1.0 }
+		reduce_crime_lvl = { amount = 2 }
+	}
+}
+
+# Raid on the City Granaries
+province_event = {
+	id = banditry.13
+	title = "banditry.13.title"
+	desc = "banditry.13.desc"
+	picture = VILLAGE_RAIDED_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			add_province_modifier = {
+				name = city_granaries_raided
+				duration = 1825
+			}
+			add_devastation = 20
+			increase_crime_lvl_small = yes
+		}
+	}
+
+	option = {
+		name = "banditry.13.option.a"
+		owner = { add_prestige = -1 }
+		add_unrest = 6
+	}
+
+	option = {
+		name = "banditry.13.option.b"
+		owner = { add_years_of_income = -0.90 }
+		reduce_crime_lvl = { amount = 2 }
+	}
+}
+
+# Raid on the City Port
+province_event = {
+	id = banditry.14
+	title = "banditry.14.title"
+	desc = "banditry.14.desc"
+	picture = HARBOUR_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			add_province_modifier = {
+				name = city_port_raided
+				duration = 1825
+			}
+			add_devastation = 20
+			increase_crime_lvl_small = yes
+		}
+	}
+
+	option = {
+		name = "banditry.14.option.a"
+		owner = { add_prestige = -1 }
+		add_unrest = 2
+		if = {
+			limit = { province_has_center_of_trade_of_level = 1 }
+			add_center_of_trade_level = -1
+		}
+	}
+
+	option = {
+		name = "banditry.14.option.b"
+		owner = { add_years_of_income = -0.65 }
+		reduce_crime_lvl = { amount = 2 }
+	}
+}
+
+# Raid on our Trading Routes
+province_event = {
+	id = banditry.15
+	title = "banditry.15.title"
+	desc = "banditry.15.desc"
+	picture = VILLAGE_RAIDED_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			add_province_modifier = {
+				name = trade_route_raided
+				duration = 1825
+			}
+			add_devastation = 20
+			increase_crime_lvl_small = yes
+		}
+	}
+
+	option = {
+		name = "banditry.15.option.a"
+		owner = { add_prestige = -1 }
+		add_trade_modifier = {
+			who = ROOT
+			duration = 1825
+			power = -5
+			key = merchant_recalled
+		}
+		if = {
+			limit = { province_has_center_of_trade_of_level = 2 }
+			add_center_of_trade_level = -1
+		}
+	}
+
+	option = {
+		name = "banditry.15.option.b"
+		owner = { add_years_of_income = -0.95 }
+		reduce_crime_lvl = { amount = 2 }
+	}
+}
+
+province_event = {
+	id = banditry.16
+	title = "banditry.16.title"
+	desc = "banditry.16.desc"
+	picture = VILLAGE_RAIDED_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			add_province_modifier = {
+				name = neighboring_bandits
+				duration = 1825
+			}
+			add_devastation = 10
+		}
+	}
+
+	option = {
+		name = "banditry.16.option.a"
+		owner = { add_prestige = -1 }
+	}
+
+	option = {
+		name = "banditry.16.option.b"
+		goto = banditprovince
+		tooltip = {
+			owner = { add_years_of_income = -0.85 }
+			reduce_crime_lvl = { amount = 2 }
+		}
+		hidden_effect = {
+			event_target:banditprovince = {
+				owner = { add_years_of_income = -0.85 }
+				reduce_crime_lvl = { amount = 2 }
+			}
+		}
+	}
+}
+
+province_event = {
+	id = banditry.17
+	title = "banditry.17.title"
+	desc = "banditry.17.desc"
+	picture = VILLAGE_RAIDED_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_criminal_activity = { type = bandits }
+			add_devastation = 25
+		}
+	}
+
+	option = {
+		name = "banditry.17.option.a"
+		owner = { add_prestige = -1 }
+	}
+
+	option = {
+		name = "banditry.17.option.b"
+		highlight = yes
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = "banditry.17.option.b.tt"
+				num_of_units_in_province = {
+					amount = 1
+					who = owner
+				}
+			}
+		}
+		clear_criminal_activity = { type = bandits }
+		add_devastation = -10
+	}
+}

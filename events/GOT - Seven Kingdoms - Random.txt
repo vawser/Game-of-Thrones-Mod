@@ -33,7 +33,7 @@ country_event = {
 			random_owned_province = { #But rather here
 				limit = {
 					is_capital = no
-					has_trade_building_trigger = yes
+					has_any_trade_building = yes
 					NOT = { has_province_modifier = sk_local_trade_regulations }
 					NOT = { has_province_modifier = sk_local_trade_down_turn }
 				}
@@ -52,7 +52,7 @@ country_event = {
 				limit = {
 					is_capital = no
 					has_port = yes
-					has_trade_building_trigger = yes
+					has_any_trade_building = yes
 					NOT = { has_province_modifier = sk_local_trade_regulations }
 					NOT = { has_province_modifier = sk_local_trade_down_turn }
 				}

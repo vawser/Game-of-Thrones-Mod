@@ -1280,8 +1280,6 @@ on_monthly_pulse = {
 		limit = { has_global_flag = enable_onaction_logging }
 		log = "DEBUG - [Root.GetName]: on_monthly_pulse "
 	}
-	
-	update_ambient_objects = yes
 }
 
 on_yearly_pulse = {
@@ -1289,14 +1287,8 @@ on_yearly_pulse = {
 		limit = { has_global_flag = enable_onaction_logging }
 		log = "DEBUG - [Root.GetName]: on_yearly_pulse "
 	}
-	
-	# Local Concern
-	random_events = {
-		# Local Concern events
-		100 = got_lc_bandits.2 
-		
-		1000 = 0
-	}
+
+	on_yearly_pulse_spawn_clear_bandits_effect = yes
 }
 on_yearly_pulse_2 = {
 	if = { 
@@ -1304,6 +1296,11 @@ on_yearly_pulse_2 = {
 		log = "DEBUG - [Root.GetName]: on_yearly_pulse_2 "
 	}
 	
+	# 50% chance of firing a bandit event yearly
+	random = {
+		chance = 50
+		on_yearly_pulse_bandits_events_effect = yes
+	}
 }
 on_yearly_pulse_3 = {
 	if = { 

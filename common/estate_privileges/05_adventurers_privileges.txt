@@ -313,7 +313,6 @@ estate_adventurers_sponsor_bandit_hunters = {
 		
 	}
 	on_granted = {
-		custom_tooltip = LOCAL_CONCERN_BANDIT_BOOST_TT
 	}
 	ai_will_do = {
 		factor = 5
@@ -331,18 +330,8 @@ estate_adventurers_hunt_threats = {
 	cooldown_years = 5
     
 	can_select = {
-		any_owned_province = {
-            has_any_type_of_local_concern = yes
-        }
 	}
 	on_granted = {
-		random_owned_province = {
-            limit = {
-                has_any_type_of_local_concern = yes
-            }
-            
-            trigger_local_concern_events = yes
-        }
 	}
 	penalties = {
 		global_tax_modifier = -0.1

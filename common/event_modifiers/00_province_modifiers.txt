@@ -45,3 +45,52 @@ marshes_of_the_neck = {
 cheaper_pasturelands_development = {
 	local_development_cost = -0.05
 }
+
+# Bandits
+anticrime_campaign = {
+	local_unrest = -2
+}
+
+public_square_raided = {
+	local_unrest = 2
+
+	picture = "lc_level_1"
+}
+
+town_hearths_raided = {
+	local_unrest = 1
+	local_monthly_devastation = 0.25
+	local_governing_cost = 0.33
+
+	picture = "lc_level_1"
+}
+
+city_granaries_raided = {
+	local_unrest = 1
+	local_development_cost = 0.125
+	local_production_efficiency = -0.20
+
+	picture = "lc_level_1"
+}
+
+city_port_raided = {
+	local_unrest = 1
+	local_institution_spread = -0.10
+	hostile_disembark_speed = -0.33
+
+	picture = "lc_level_1"
+}
+
+trade_route_raided = {
+	local_unrest = 1
+	province_trade_power_modifier = -0.33
+
+	picture = "lc_level_1"
+}
+
+neighboring_bandits = {
+	local_unrest = 2
+	local_monthly_devastation = 0.10
+
+	picture = "lc_level_2"
+}

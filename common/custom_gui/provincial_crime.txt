@@ -1,0 +1,21 @@
+custom_button = {
+	name = criminal_rating
+	potential = { }
+	trigger = { hidden_trigger = { owned_by = FROM } }
+	effect = {
+		if = {
+			limit = {
+				owned_by = FROM
+				NOT = { has_province_modifier = anticrime_campaign }
+				has_any_crime_lvl = yes
+			}
+			FROM = { add_years_of_income = -1.35 }
+			decrease_crime_lvl_medium = yes
+			add_province_modifier = {
+				name = "anticrime_campaign"
+				duration = 1825
+			}
+		}
+	}
+	tooltip = "criminal_rating_tt"
+}

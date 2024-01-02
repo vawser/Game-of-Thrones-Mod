@@ -69,12 +69,21 @@
  resign_from_council_effect_tt: "You will resign from your position on the §MSmall Council§!.\n@[Root.GetTag] §Y[Root.GetIfHouse][Root.GetName]§! gives up its seat on the council.\n\nThere is a §Y33%§! chance §Y[IronThroneKing.Monarch.GetTitle] [IronThroneKing.Monarch.GetName] [IronThroneKing.Monarch.Dynasty.GetName]§! will be insulted by this move, reducing their opinion of you by §R-50§!."
  sovereign_specialactions_tt: "The §YSovereign of the Seven Kingdoms§! has access to additional diplomatic actions to strengthen the throne: -§GBureaucratic:§!\n  -Appoint Hand of the King\n  -Appoint Mst. of Coin\n  -Appoint Mst. of Laws\n  -Appoint Mst. of Ships\n  -Appoint Mst. of Whisperers\n -§MDiplomatic:§!\n  -Appoint Lord Protector of the Realm\n  -Enforce Religious Unity\n  -Grant Royal City Status\n  -Demand Unlawful Territory\n  -Invite to Kingdom\n  -Bestow Royal Grace"
 
+ criminal_rating_tt: "Criminal Rating in [Root.GetName]: [Root.GetCriminalRating]\n--------------\nWhile §YUnrest§! and §YAutonomy§! can easily be managed by a competent administrator, the §YCriminal Rating§! of a city is not so easily influenced. It can have long-term effects on the management of the province. Though, in some cases, collaborating with §YCrime Syndicates§! may be more beneficial than attempting to root them out.\n[Root.GetCrimeActivity]"
+
  # Scripted Effects
  clr_handoftheking_tt: "§Y[et_handoftheking.Monarch.GetName]§! will be removed from the Council."
  clr_masterofcoin_tt: "§Y[et_masterofcoin.Monarch.GetName]§! will be removed from the Council."
  clr_masteroflaws_tt: "§Y[et_masteroflaws.Monarch.GetName]§! will be removed from the Council."
  clr_masterofships_tt: "§Y[et_masterofships.Monarch.GetName]§! will be removed from the Council."
  clr_masterofwhisperers_tt: "§Y[et_masterofwhisperers.Monarch.GetName]§! will be removed from the Council."
+
+ set_criminal_activity_bandits: "§lBanditry§! will become active in [Root.GetName]"
+ set_criminal_activity_street_gangs: "§RStreet Gangs§! will become active in [Root.GetName]"
+ set_criminal_activity_syndicate: "§VSyndicates§! will become active in [Root.GetName]"
+ clr_criminal_activity_bandits: "§lBanditry§! will no longer be active in [Root.GetName]"
+ clr_criminal_activity_street_gangs: "§RStreet Gangs§! will no longer be active in [Root.GetName]"
+ clr_criminal_activity_syndicate: "§VSyndicates§! will no longer be active in [Root.GetName]"
 
  # Scripted Triggers
  has_lvl_3_adm_advisor_tooltip: "Employs a skill level §Y3§! Administrative advisor or better."

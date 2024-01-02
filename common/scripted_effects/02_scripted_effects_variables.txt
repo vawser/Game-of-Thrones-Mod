@@ -1,0 +1,223 @@
+set_treasury_variable = {
+	export_to_variable = {
+		value = treasury
+		which = $treasury_var$
+	}
+	multiply_variable = {
+		which = $treasury_var$
+		value = $percent_amount$
+	}
+	divide_variable = {
+		which = $treasury_var$
+		value = 10
+	}
+	multiply_variable = {
+		which = $treasury_var$
+		value = 10
+	}
+}
+
+set_income_variable = {
+	export_to_variable = {
+		value = years_of_income
+		which = $income_var$
+	}
+	multiply_variable = {
+		which = $income_var$
+		value = $percent_amount$
+	}
+	divide_variable = {
+		which = $income_var$
+		value = 10
+	}
+	multiply_variable = {
+		which = $income_var$
+		value = 10
+	}
+}
+
+set_manpower_variable = {
+	export_to_variable = {
+		value = manpower
+		which = $manpower_var$
+	}
+	multiply_variable = {
+		which = $manpower_var$
+		value = $percent_amount$
+	}
+}
+
+transfer_manpower = {
+	hidden_effect = {
+		$giver$ = {
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				$taker$ = {
+					add_manpower = 1
+				}
+				add_manpower = -1
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+		}
+	}
+	[[custom_tooltip]
+		custom_tooltip = $custom_tooltip$
+	]
+}
+
+transfer_treasury = {
+	hidden_effect = {
+		$giver$ = {
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				$taker$ = {
+					add_treasury = 1
+				}
+				add_treasury = -1
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+			multiply_variable = {
+				which = $variable$
+				value = 100
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				$taker$ = {
+					add_treasury = 0.01
+				}
+				add_treasury = -0.01
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+		}
+	}
+	[[custom_tooltip]
+		custom_tooltip = $custom_tooltip$
+	]
+}
+
+remove_treasury = {
+	hidden_effect = {
+		$giver$ = {
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				add_treasury = -1
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+			multiply_variable = {
+				which = $variable$
+				value = 100
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = $variable$
+						value = 1
+					}
+				}
+				add_treasury = -0.01
+				subtract_variable = {
+					which = $variable$
+					value = 1
+				}
+			}
+		}
+	}
+	[[custom_tooltip]
+		custom_tooltip = $custom_tooltip$
+	]
+}
+
+# Criminal Rating Mechanic
+
+# Increase by 25
+increase_crime_lvl_huge = {
+	change_crime_lvl = { amount = 25 }
+}
+# Increase by 10
+increase_crime_lvl_large = {
+	change_crime_lvl = { amount = 10 }
+}
+# Increase by 5
+increase_crime_lvl_medium = {
+	change_crime_lvl = { amount = 5 }
+}
+# Increase by 1
+increase_crime_lvl_small = {
+	change_crime_lvl = { amount = 1 }
+}
+# Decrease by 25
+decrease_crime_lvl_huge = {
+	reduce_crime_lvl = { amount = 25 }
+}
+# Decrease by 10
+decrease_crime_lvl_large = {
+	reduce_crime_lvl = { amount = 10 }
+}
+# Decrease by 5
+decrease_crime_lvl_medium = {
+	reduce_crime_lvl = { amount = 5 }
+}
+# Decrease by 1
+decrease_crime_lvl_huge = {
+	reduce_crime_lvl = { amount = 1 }
+}
+
+# Custom effect to change crime lvl
+change_crime_lvl = {
+	change_variable = {
+		which = crime_lvl
+		value = $amount$
+	}
+}
+
+# Strictly use when reducing crime lvl
+# to prevent negative values
+reduce_crime_lvl = {
+	tooltip = {
+		change_crime_lvl = { amount = -$amount$ }
+	}
+	for = {
+		amount = $amount$
+		effect = "
+			if = {
+				limit = { has_any_crime_lvl = yes }
+				change_variable = {
+					which = crime_lvl
+					value = -1
+				}
+			}
+		"
+	}
+}

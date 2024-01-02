@@ -1,0 +1,28 @@
+# # Criminal Rating Mechanic
+
+# type : bandits, street gangs, syndicate
+has_criminal_activity = {
+	has_province_flag = criminal_activity_$type$
+}
+
+has_no_criminal_activity = {
+	NOT = { has_province_flag = criminal_activity_$type$ }
+}
+
+has_any_criminal_activity = {
+	OR = {
+		has_criminal_activity = { type = bandits }
+		has_criminal_activity = { type = street_gangs }
+		has_criminal_activity = { type = syndicate }
+	}
+}
+
+has_no_any_criminal_activity = {
+	NOT = {
+		OR = {
+			has_criminal_activity = { type = bandits }
+			has_criminal_activity = { type = street_gangs }
+			has_criminal_activity = { type = syndicate }
+		}
+	}
+}

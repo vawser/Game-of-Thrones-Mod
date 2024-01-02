@@ -1012,3 +1012,68 @@ defined_text = {
 		}
 	}
 }
+
+# Criminal Rating Mechanic
+defined_text = {
+	name = GetCriminalRating
+	random = no
+
+	text = {
+		localisation_key = "string_showcrime"
+		trigger = {
+			check_variable = {
+				which = crime_lvl
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = "string_nocrime"
+		trigger = {
+			is_variable_equal = {
+				which = crime_lvl
+				value = 0
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetCrimeActivity
+	random = no
+
+	text = {
+		localisation_key = "string_criminal_activity"
+		trigger = { has_any_criminal_activity = yes }
+	}
+}
+
+defined_text = {
+	name = GetIfHasBandits
+	random = no
+
+	text = {
+		localisation_key = "string_has_bandits"
+		trigger = { has_criminal_activity = { type = bandits } }
+	}
+}
+
+defined_text = {
+	name = GetIfHasStreetGangs
+	random = no
+
+	text = {
+		localisation_key = "string_has_street_gangs"
+		trigger = { has_criminal_activity = { type = street_gangs } }
+	}
+}
+
+defined_text = {
+	name = GetIfHasSyndicates
+	random = no
+	
+	text = {
+		localisation_key = "string_has_syndicates"
+		trigger = { has_criminal_activity = { type = syndicates } }
+	}
+}

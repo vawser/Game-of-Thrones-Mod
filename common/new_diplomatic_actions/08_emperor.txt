@@ -48,6 +48,7 @@ appoint_hand_of_the_king = {
 			is_part_of_hre = yes
 			NOT = { has_council_position = { sm_council_position = handoftheking } }
 			is_emperor = no
+			has_regency = no
 			NOT = { tag = FAT }
 		}
 	}
@@ -120,7 +121,7 @@ appoint_hand_of_the_king = {
 		add_entry = {
 			name = AIWEIGHT_EXPECTS
 			limit = {
-				FROM = { has_reform = great_house_reform }
+				FROM = { westeros_government_great_house = yes }
 			}
 			export_to_variable = {
 				variable_name = ai_value
@@ -133,7 +134,20 @@ appoint_hand_of_the_king = {
 		}
 	}
 	ai_will_do = {
-		always = yes
+		OR = {
+			NOT = {
+				has_opinion = {
+					who = event_target:et_handoftheking
+					value = 10
+				}
+			}
+			NOT = {
+				trust = {
+					who = event_target:et_handoftheking
+					value = 30
+				}
+			}
+		}
 	}
 }
 
@@ -155,6 +169,7 @@ appoint_master_of_coin = {
 			is_part_of_hre = yes
 			NOT = { has_council_position = { sm_council_position = masterofcoin } }
 			is_emperor = no
+			has_regency = no
 			NOT = { tag = FAT }
 		}
 	}
@@ -227,7 +242,7 @@ appoint_master_of_coin = {
 		add_entry = {
 			name = AIWEIGHT_EXPECTS
 			limit = {
-				FROM = { has_reform = great_house_reform }
+				FROM = { westeros_government_great_house = yes }
 			}
 			export_to_variable = {
 				variable_name = ai_value
@@ -240,7 +255,24 @@ appoint_master_of_coin = {
 		}
 	}
 	ai_will_do = {
-		always = yes
+		if = {
+			limit = { ai = yes }
+			NOT = { has_council_position = { sm_council_position = handoftheking } }
+		}
+		OR = {
+			NOT = {
+				has_opinion = {
+					who = event_target:et_masterofcoin
+					value = 10
+				}
+			}
+			NOT = {
+				trust = {
+					who = event_target:et_masterofcoin
+					value = 30
+				}
+			}
+		}
 	}
 }
 
@@ -262,6 +294,7 @@ appoint_master_of_laws = {
 			is_part_of_hre = yes
 			NOT = { has_council_position = { sm_council_position = masteroflaws } }
 			is_emperor = no
+			has_regency = no
 			NOT = { tag = FAT }
 		}
 	}
@@ -334,7 +367,7 @@ appoint_master_of_laws = {
 		add_entry = {
 			name = AIWEIGHT_EXPECTS
 			limit = {
-				FROM = { has_reform = great_house_reform }
+				FROM = { westeros_government_great_house = yes }
 			}
 			export_to_variable = {
 				variable_name = ai_value
@@ -347,7 +380,24 @@ appoint_master_of_laws = {
 		}
 	}
 	ai_will_do = {
-		always = yes
+		if = {
+			limit = { ai = yes }
+			NOT = { has_council_position = { sm_council_position = handoftheking } }
+		}
+		OR = {
+			NOT = {
+				has_opinion = {
+					who = event_target:et_masteroflaws
+					value = 10
+				}
+			}
+			NOT = {
+				trust = {
+					who = event_target:et_masteroflaws
+					value = 30
+				}
+			}
+		}
 	}
 }
 
@@ -369,6 +419,7 @@ appoint_master_of_ships = {
 			is_part_of_hre = yes
 			NOT = { has_council_position = { sm_council_position = masterofships } }
 			is_emperor = no
+			has_regency = no
 			NOT = { tag = FAT }
 		}
 	}
@@ -441,7 +492,7 @@ appoint_master_of_ships = {
 		add_entry = {
 			name = AIWEIGHT_EXPECTS
 			limit = {
-				FROM = { has_reform = great_house_reform }
+				FROM = { westeros_government_great_house = yes }
 			}
 			export_to_variable = {
 				variable_name = ai_value
@@ -454,7 +505,31 @@ appoint_master_of_ships = {
 		}
 	}
 	ai_will_do = {
-		always = yes
+		if = {
+			limit = { ai = yes }
+			NOT = { has_council_position = { sm_council_position = handoftheking } }
+		}
+		OR = {
+			NOT = {
+				has_opinion = {
+					who = event_target:et_masterofships
+					value = 10
+				}
+			}
+			NOT = {
+				trust = {
+					who = event_target:et_masterofships
+					value = 30
+				}
+			}
+		}
+		FROM = {
+			any_owned_province = { has_port = yes }
+			OR = {
+				navy_size = 8
+				navy_size_percentage = 0.50
+			}
+		}
 	}
 }
 
@@ -476,6 +551,7 @@ appoint_master_of_whisperers = {
 			is_part_of_hre = yes
 			NOT = { has_council_position = { sm_council_position = masterofwhisperers } }
 			is_emperor = no
+			has_regency = no
 			NOT = { tag = FAT }
 		}
 	}
@@ -548,7 +624,7 @@ appoint_master_of_whisperers = {
 		add_entry = {
 			name = AIWEIGHT_EXPECTS
 			limit = {
-				FROM = { has_reform = great_house_reform }
+				FROM = { westeros_government_great_house = yes }
 			}
 			export_to_variable = {
 				variable_name = ai_value
@@ -561,6 +637,23 @@ appoint_master_of_whisperers = {
 		}
 	}
 	ai_will_do = {
-		always = yes
+		if = {
+			limit = { ai = yes }
+			NOT = { has_council_position = { sm_council_position = handoftheking } }
+		}
+		OR = {
+			NOT = {
+				has_opinion = {
+					who = event_target:et_masterofwhisperers
+					value = 10
+				}
+			}
+			NOT = {
+				trust = {
+					who = event_target:et_masterofwhisperers
+					value = 30
+				}
+			}
+		}
 	}
 }

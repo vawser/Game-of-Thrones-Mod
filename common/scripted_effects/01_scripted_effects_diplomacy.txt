@@ -1,4 +1,5 @@
-# Used for 'Usurp Overlord' casus belli aftermath
+# Used for 'Usurp Overlord' casus belli declaration
+# Assigns the country tag to the rebel country
 assign_temp_overlord_flag_effect = {
 	if = {
 		limit = {
@@ -55,5 +56,42 @@ assign_temp_overlord_flag_effect = {
 			event_target:TheIronIslandsGreatHouse = { war_with = ROOT }
 		}
 		set_country_flag = orgOverlord_TheIronIslands
+	}
+}
+
+# Used for 'Usurp Overlord' casus belli aftermath
+# Removes the country tag from the rebel country
+remove_temp_overlord_flag_effect = {
+	if = {
+		limit = { has_country_flag = orgOverlord_TheNorth }
+		clr_country_flag = orgOverlord_TheNorth
+	}
+	else_if = {
+		limit = { has_country_flag = orgOverlord_TheRiverlands }
+		clr_country_flag = orgOverlord_TheRiverlands
+	}
+	else_if = {
+		limit = { has_country_flag = orgOverlord_TheVale }
+		clr_country_flag = orgOverlord_TheVale
+	}
+	else_if = {
+		limit = { has_country_flag = orgOverlord_TheWesterlands }
+		clr_country_flag = orgOverlord_TheWesterlands
+	}
+	else_if = {
+		limit = { has_country_flag = orgOverlord_TheStormlands }
+		clr_country_flag = orgOverlord_TheStormlands
+	}
+	else_if = {
+		limit = { has_country_flag = orgOverlord_TheReach }
+		clr_country_flag = orgOverlord_TheReach
+	}
+	else_if = {
+		limit = { has_country_flag = orgOverlord_Dorne }
+		clr_country_flag = orgOverlord_Dorne
+	}
+	else_if = {
+		limit = { has_country_flag = orgOverlord_TheIronIslands }
+		clr_country_flag = orgOverlord_TheIronIslands
 	}
 }

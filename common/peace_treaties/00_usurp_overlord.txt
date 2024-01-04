@@ -47,7 +47,7 @@ po_usurp_overlord = {
 			who = FROM
 		}
 		# Cleanup Code
-		original_overlord_flag_clear_effect = yes # Clear region country flags
+		remove_temp_overlord_flag_effect = yes # Clear region country flags
 		every_subject_country = { # Convert existing vassals to feudatories
 			limit = {
 				is_subject_of_type = vassal

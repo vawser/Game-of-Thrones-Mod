@@ -11,15 +11,7 @@ got_renowned_name_reform = {
 	trigger = {
 		OR = {
 			westeros_government_king = yes
-			if = {
-				limit = {
-					hre_size = 1
-				}
-				is_elector = yes
-			}
-			else = {
-				has_reform = great_house_reform
-			}
+			westeros_government_great_house = yes
 			custom_trigger_tooltip = {
 				tooltip = got_renowed_name_tt
 				calc_true_if = {
@@ -856,9 +848,6 @@ got_council_of_lords_reform = {
 		global_unrest = -1
 		idea_cost = -0.05
 	}
-	custom_attributes = {
-		diplo_actions_restriction = yes
-	}
 	ai = {
 		factor = 1
 	}
@@ -870,9 +859,6 @@ got_empower_small_council_reform = {
 	potential = {
 		is_revolutionary = no
 	#	westeros_government_king = yes
-	}
-	custom_attributes = {
-		diplo_actions_restriction = yes
 	}
 	modifiers = {
 		no_stability_loss_on_monarch_death = yes

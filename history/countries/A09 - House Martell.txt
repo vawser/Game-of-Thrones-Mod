@@ -10,6 +10,10 @@ add_government_reform = great_house_reform
 capital = 352
 fixed_capital = 352
 
+historical_friend = Y14
+historical_friend = Y11
+historical_friend = Y01
+
 #-------------------------------
 # Diplomacy
 #-------------------------------
@@ -17,6 +21,22 @@ fixed_capital = 352
 	elector = yes
 	override_country_name = DORNE
 	save_global_event_target_as = DorneGreatHouse
+
+	every_subject_country = {
+		limit = {
+			OR = {
+				tag = Y14
+				tag = Y11
+				tag = Y01
+			}
+		}
+		ROOT = {
+			add_favors = {
+				who = PREV
+				amount = 10
+			}
+		}
+	}
 }
 
 #-------------------------------

@@ -10,6 +10,11 @@ add_government_reform = great_house_reform
 capital = 267
 fixed_capital = 267
 
+historical_friend = F69
+historical_friend = F66
+historical_friend = F58
+historical_friend = F27
+
 #-------------------------------
 # Diplomacy
 #-------------------------------
@@ -17,6 +22,23 @@ fixed_capital = 267
 	elector = yes
 	override_country_name = THEREACH
 	save_global_event_target_as = TheReachGreatHouse
+
+	every_subject_country = {
+		limit = {
+			OR = {
+				tag = F69
+				tag = F66
+				tag = F58
+				tag = F27
+			}
+		}
+		ROOT = {
+			add_favors = {
+				who = PREV
+				amount = 10
+			}
+		}
+	}
 }
 
 #-------------------------------

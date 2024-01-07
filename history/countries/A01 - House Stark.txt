@@ -10,8 +10,13 @@ add_government_reform = great_house_reform
 capital = 47
 fixed_capital = 47
 
-historical_friend = I33
+historical_friend = NGT
 historical_friend = I36
+historical_friend = I33
+historical_friend = I25
+historical_friend = I01
+
+historical_rival = I21
 
 #-------------------------------
 # Diplomacy
@@ -20,6 +25,23 @@ historical_friend = I36
 	elector = yes
 	override_country_name = THENORTH
 	save_global_event_target_as = TheNorthGreatHouse
+
+	every_subject_country = {
+		limit = {
+			OR = {
+				tag = I36
+				tag = I33
+				tag = I25
+				tag = I01
+			}
+		}
+		ROOT = {
+			add_favors = {
+				who = PREV
+				amount = 10
+			}
+		}
+	}
 }
 
 #-------------------------------

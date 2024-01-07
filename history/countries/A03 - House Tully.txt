@@ -10,6 +10,10 @@ add_government_reform = great_house_reform
 capital = 101
 fixed_capital = 101
 
+historical_friend = M33
+historical_friend = M19
+historical_friend = M16
+
 #-------------------------------
 # Diplomacy
 #-------------------------------
@@ -17,6 +21,22 @@ fixed_capital = 101
 	elector = yes
 	override_country_name = THERIVERLANDS
 	save_global_event_target_as = TheRiverlandsGreatHouse
+
+	every_subject_country = {
+		limit = {
+			OR = {
+				tag = M33
+				tag = M19
+				tag = M16
+			}
+		}
+		ROOT = {
+			add_favors = {
+				who = PREV
+				amount = 10
+			}
+		}
+	}
 }
 
 #-------------------------------

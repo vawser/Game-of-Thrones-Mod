@@ -10,6 +10,9 @@ add_government_reform = great_house_reform
 capital = 182
 fixed_capital = 182
 
+historical_friend = G32
+historical_friend = G29
+
 #-------------------------------
 # Diplomacy
 #-------------------------------
@@ -17,6 +20,21 @@ fixed_capital = 182
 	elector = yes
 	override_country_name = THEWESTERLANDS
 	save_global_event_target_as = TheWesterlandsGreatHouse
+
+	every_subject_country = {
+		limit = {
+			OR = {
+				tag = G32
+				tag = G29
+			}
+		}
+		ROOT = {
+			add_favors = {
+				who = PREV
+				amount = 10
+			}
+		}
+	}
 }
 
 #-------------------------------

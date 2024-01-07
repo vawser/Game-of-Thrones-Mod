@@ -120,7 +120,7 @@ declarewar = {
 			}
 			else = { is_westerosi_government = yes }
 		}
-		allow = { }
+		allow = { always = no }
 	}
 	condition = {
 		tooltip = BOTH_COUNTRIES_RIVALRY
@@ -192,7 +192,7 @@ allianceaction = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 
@@ -237,7 +237,7 @@ royal_marriage = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 
@@ -250,7 +250,7 @@ guaranteeaction = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 
@@ -272,9 +272,7 @@ fabricate_claim = {
 		potential = {
 			has_government_attribute = cannot_fabricate_claims
 		}
-		allow = {
-			always = no
-		}
+		allow = { NOT = { has_government_attribute = cannot_fabricate_claims } }
 	}
 
 	condition = {
@@ -385,7 +383,7 @@ annexationaction = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 
@@ -430,7 +428,7 @@ integrationaction = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 
@@ -455,9 +453,8 @@ vassalaction = {
 		tooltip = NIGHTSWATCH_VASSALISATION
 		potential = {
 			FROM = { tag = NGT }
-			capital_scope = { continent = westeros }
 		}
-		allow = { }
+		allow = { always = no }
 	}
 	
 	condition = {
@@ -468,7 +465,7 @@ vassalaction = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 
@@ -521,7 +518,7 @@ form_coalition = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 
@@ -640,9 +637,7 @@ support_independence_action = {
 				tag = WIT
 			}
 		}
-		allow = {
-			always = no
-		}
+		allow = { always = no }
 	}
 }
 
@@ -659,7 +654,7 @@ warningaction = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 
@@ -691,9 +686,7 @@ callaction = {
 				has_disaster = blackfyre_rebellion
 			}
 		}
-		allow = {
-			always = no
-		}
+		allow = { always = no }
 	}
 }
 
@@ -727,21 +720,15 @@ grant_electorate = {
 		potential = {
 			always = yes
 		}
-		allow = {
-			always = no
-		}
+		allow = { always = no }
 	}
 }
 
 remove_electorate = {
 	condition = {
 		tooltip = "Disabled mechanic"
-		potential = {
-			always = yes
-		}
-		allow = {
-			always = no
-		}
+		potential = { always = yes }
+		allow = { always = no }
 	}
 }
 
@@ -774,7 +761,7 @@ improve_relation = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 
@@ -795,7 +782,7 @@ infiltrate_administration = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 
@@ -808,7 +795,7 @@ sabotage_reputation = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 
@@ -821,7 +808,7 @@ support_rebels = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 
@@ -838,7 +825,7 @@ agitate_for_liberty = {
 				tag = WIT
 			}
 		}
-		allow = { }
+		allow = { always = no }
 	}
 }
 

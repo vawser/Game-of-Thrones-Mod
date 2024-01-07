@@ -55,16 +55,26 @@ custom_button = {
 		westeros_government_king = yes
 	}
 	trigger = {
-		custom_trigger_tooltip = {
-			tooltip = "fire_councillors_trigger_tt"
-			any_country = { is_on_the_small_council = yes }
-		}
+		hidden_trigger = { any_country = { is_on_the_small_council = yes } }
+		# custom_trigger_tooltip = {
+		# 	tooltip = "fire_councillors_trigger_tt"
+		# 	any_country = { is_on_the_small_council = yes }
+		# }
 	}
 	effect = {
-		clear_council_global = yes
+		hidden_effect = { clear_council_global = yes }
 	}
 	tooltip = "fire_councillors_effect_tt"
 }
+
+# custom_text_box = {
+# 	name = fire_all_councillors_text
+# 	potential = {
+# 		has_global_flag = displaying_small_council_ui
+# 		westeros_government_king = yes
+# 	}
+# 	tooltip = "fire_councillors_effect_tt"
+# }
 
 custom_icon = {
 	name = sovereign_diploactions

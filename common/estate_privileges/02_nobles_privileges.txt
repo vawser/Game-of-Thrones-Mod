@@ -917,7 +917,7 @@ estate_nobles_monopoly_of_sugar = {
 estate_nobles_the_small_council = {
 	icon = privilege_iron_throne
 	max_absolutism = -10
-	loyalty = 0.10
+	loyalty = 0.05
 	influence = 0.10
 
 	is_valid = {
@@ -925,54 +925,65 @@ estate_nobles_the_small_council = {
 	}
 	can_select = {
 		is_emperor = yes
+		if = {
+			limit = { has_dlc = "Emperor" }
+			NOT = { hre_reform_passed = king_curtail_the_estates }
+		}
+		else = { NOT = { hre_reform_passed = king_curtail_the_estates_nodlc } }
 	}
-	can_revoke = {
-		hidden_trigger = { ai = no }
-	}
+	can_revoke = no
 
 	on_granted = {
-		custom_tooltip = estate_nobles_the_small_council.granted_tt
+		if = {
+			limit = { hre_size = 1 }
+			custom_tooltip = estate_nobles_the_small_council.granted_tt
+		}
 		if = {
 			limit = { is_female = no }
 			custom_tooltip = estate_nobles_the_kingsguard.granted_tt
 		}
 		if = {
-			limit ={ is_female = yes }
+			limit = { is_female = yes }
 			custom_tooltip = estate_nobles_the_queensguard.granted_tt
 		}
 	}
 	on_revoked = {
-		add_prestige = -25
-		custom_tooltip = estate_nobles_the_small_council.revoked_tt
+		if = {
+			limit = { hre_size = 1 }
+			custom_tooltip = estate_nobles_the_small_council.revoked_tt
+		}
 		if = {
 			limit = { is_female = no }
 			custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
 		}
 		if = {
-			limit ={ is_female = yes }
+			limit = { is_female = yes }
 			custom_tooltip = estate_nobles_the_queensguard.revoked_tt
 		}
 		clr_global_flag = displaying_small_council_ui
 		hidden_effect = { clear_council_global = yes }
 	}
 	on_invalid = {
-		custom_tooltip = estate_nobles_the_small_council.revoked_tt
+		if = {
+			limit = { hre_size = 1 }
+			custom_tooltip = estate_nobles_the_small_council.revoked_tt
+		}
 		if = {
 			limit = { is_female = no }
 			custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
 		}
 		if = {
-			limit ={ is_female = yes }
+			limit = { is_female = yes }
 			custom_tooltip = estate_nobles_the_queensguard.revoked_tt
 		}
 		clr_global_flag = displaying_small_council_ui
 		hidden_effect = { clear_council_global = yes }
 	}
 	mechanics = {
-		exempt_from_seize_land
+		can_give_agendas_without_interaction
 	}
 	benefits = {
-		crw_militarists_influence = 0.01
+		crw_loyalists_influence = 0.02
 	}
 	influence_scaled_conditional_modifier = {
 		trigger = { always = yes }

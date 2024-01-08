@@ -20,10 +20,6 @@ country_event = {
 	option = {
 		name = "decision_event.1.option.a"
 		ai_chance = { factor = 100 }
-		add_country_modifier = {
-			name = "got_lc_is_general"
-			duration = 1825
-		}
 		if = {
 			limit = {
 				has_estate_privilege = estate_nobles_the_small_council
@@ -38,8 +34,18 @@ country_event = {
 							fire = 1
 							shock = 1
 							manuever = 0
+							siege = 0
 							trait = lord_commander_kingsguard_personality
 						}
+					}
+					modifier = {
+						factor = 2
+						army_tradition = 1
+						NOT = { army_tradition = 10 }
+					}
+					modifier = {
+						factor = 0
+						army_tradition = 30
 					}
 				}
 				30 = { # Below Average
@@ -50,8 +56,18 @@ country_event = {
 							fire = 1
 							shock = 2
 							manuever = 1
+							siege = 0
 							trait = lord_commander_kingsguard_personality
 						}
+					}
+					modifier = {
+						factor = 2
+						army_tradition = 20
+						NOT = { army_tradition = 30 }
+					}
+					modifier = {
+						factor = 0
+						army_tradition = 40
 					}
 				}
 				20 = { # Average
@@ -62,8 +78,18 @@ country_event = {
 							fire = 2
 							shock = 2
 							manuever = 1
+							siege = 0
 							trait = lord_commander_kingsguard_personality
 						}
+					}
+					modifier = {
+						factor = 2
+						army_tradition = 30
+						NOT = { army_tradition = 50 }
+					}
+					modifier = {
+						factor = 0
+						army_tradition = 50
 					}
 				}
 				10 = { # Above Average
@@ -90,6 +116,10 @@ country_event = {
 							siege = 2
 							trait = lord_commander_kingsguard_personality
 						}
+					}
+					modifier = {
+						factor = 10
+						army_tradition = 60
 					}
 				}
 			}
@@ -153,6 +183,7 @@ country_event = {
 	option = {
 		name = "decision_event.1.option.b"
 		ai_chance = { factor = 0 }
+		clr_ruler_flag = enlist_lc_decision_flag
 	}
 
 	after = {

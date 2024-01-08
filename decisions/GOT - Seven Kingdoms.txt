@@ -4,7 +4,10 @@ country_decisions = {
 		potential = {
 			is_emperor = yes
 			has_estate_privilege = estate_nobles_the_small_council
-			NOT = { has_ruler_flag = lc_is_field_general }
+			custom_trigger_tooltip = {
+				tooltip = "NOT_ENLISTED_LC"
+				NOT = { has_ruler_flag = enlist_lc_decision_flag }
+			}
 		}
 		allow = {
 			OR = {
@@ -17,14 +20,13 @@ country_decisions = {
 					total_pips = 12
 				}
 			}
-			NOT = { has_country_modifier = got_lc_is_general }
 		}
 		effect = {
 			country_event = {
 				id = decision_event.1
 				tooltip = "lord_commander_decision_tt"
 			}
-			set_ruler_flag = lc_is_field_general
+			set_ruler_flag = enlist_lc_decision_flag
 		}
 	}
 	

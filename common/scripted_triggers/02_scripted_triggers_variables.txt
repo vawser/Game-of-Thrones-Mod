@@ -138,6 +138,13 @@ has_any_crime_lvl = {
 	}
 }
 
+has_no_crime_lvl = {
+	is_variable_equal = {
+		which = crime_lvl
+		value = 0
+	}
+}
+
 current_crime_lvl = {
 	check_variable = {
 		which = crime_lvl

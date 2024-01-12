@@ -1,6 +1,14 @@
 custom_button = {
 	name = criminal_rating
-	potential = { }
+	potential = { NOT = { has_any_crime_lvl = yes } }
+	trigger = { hidden_trigger = { owned_by = FROM } }
+	effect = {  }
+	tooltip = "criminal_rating_tt"
+}
+
+custom_button = {
+	name = criminal_rating_active
+	potential = { has_any_crime_lvl = yes }
 	trigger = { hidden_trigger = { owned_by = FROM } }
 	effect = {
 		if = {

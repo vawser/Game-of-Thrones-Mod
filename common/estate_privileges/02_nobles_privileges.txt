@@ -19,11 +19,18 @@ estate_nobility_land_rights = {
 		}
 	}
 	on_granted = {
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+	}
+	benefits = {
 	}
 	penalties = {
 	}
-	benefits = {
-		governing_capacity = 100
+	modifier_by_land_ownership = {
+		governing_capacity = 400
+		governing_cost = 0.10
 	}
 	ai_will_do = {
 		factor = 5
@@ -52,7 +59,21 @@ estate_nobility_land_rights = {
 		}
 		modifier = {
 			factor = 0
-			NOT = { num_of_territories = 1 }
+			NOT = { governing_capacity_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_church_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_church_land_rights
+				}
+			}
 		}
 		modifier = {
 			factor = 0.8
@@ -74,6 +95,36 @@ estate_nobility_land_rights = {
 			}
 			NOT = { has_estate_privilege = estate_nobility_land_rights }
 		}
+		modifier = {
+			factor = 0.8
+			is_absolutism_active = yes
+		}
+		#Cap usage percentage
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_merchants_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_tribes_land_rights
+		}
 	}
 }
 
@@ -82,6 +133,7 @@ estate_nobility_nobility_primacy = {
 	land_share = 10
 	max_absolutism = -5
 	loyalty = -0.05
+	influence = 0.10
 	is_valid = {
 		if = {
 			limit = { is_dynasty_government = yes }
@@ -97,11 +149,14 @@ estate_nobility_nobility_primacy = {
 		}
 	}
 	on_granted = {
-	}
-	penalties = {
+		add_legitimacy_equivalent = {
+			amount = 5
+			republican_tradition = 5
+		}
 	}
 	benefits = {
 		country_military_power = 1
+		nobles_privilege_slots = 1
 	}
 	ai_will_do = {
 		factor = 12
@@ -145,12 +200,12 @@ estate_nobility_officer_corp = {
 		army_tradition = 30
 	}
 	on_granted = {
-		add_army_tradition = -15
+		add_army_tradition = -5
 	}
 	penalties = {
 	}
 	benefits = {
-		general_cost = -0.25
+		general_cost = -0.10
 		army_tradition_decay = -0.005
 	}
 	ai_will_do = {
@@ -167,6 +222,9 @@ estate_nobility_levies = {
 	}
 	can_select = {
 		
+	}
+	on_granted = {
+		add_mil_power = 25
 	}
 	modifier_by_land_ownership = {
 		global_tax_modifier = -0.10
@@ -277,7 +335,7 @@ estate_nobility_advisors = {
 		stability_cost_modifier = 0.1
 	}
 	benefits = {
-		mil_advisor_cost = -0.25
+		mil_advisor_cost = -0.15
 	}
 	ai_will_do = {
 		factor = 10
@@ -312,48 +370,196 @@ estate_nobility_strong_duchies = {
 	loyalty = 0.1
 	influence = 0.1
 	is_valid = {
-		has_estate_privilege = estate_nobility_strong_duchies
-		OR = {
-			any_subject_country = {
-				is_march = yes
+		any_subject_country = {
+			OR = {
+				is_subject_of_type = vassal
+				is_subject_of_type = client_vassal
+				is_subject_of_type = march
+				is_subject_of_type = client_march
+				is_subject_of_type = personal_union
 			}
-			vassal = 1
 		}
 	}
 	can_select = {
-		if = {
-			limit = {
-				has_dlc = "Art of War"
-			}
-			custom_trigger_tooltip = {
-				tooltip = estate_nobility_strong_duchies_trigger_tooltip
-				calc_true_if = {
-					amount = 2
-					all_subject_country = {
-						OR = {
-							is_march = yes
-							is_vassal = yes
-						}
+		custom_trigger_tooltip = {
+			tooltip = estate_nobles_strong_duchies_trigger_tooltip
+			calc_true_if = {
+				amount = 2
+				all_subject_country = {
+					OR = {
+						is_subject_of_type = vassal
+						is_subject_of_type = client_vassal
+						is_subject_of_type = march
+						is_subject_of_type = client_march
+						is_subject_of_type = personal_union
 					}
 				}
 			}
-		}
-		else = {
-			vassal = 2
 		}
 	}
 	penalties = {
 	}
 	benefits = {
-		diplomatic_upkeep = 3
-		reduced_liberty_desire_on_same_continent = 10
+		diplomatic_upkeep = 2
+		reduced_liberty_desire = 10
+	}
+	conditional_modifier = {
+		trigger = { has_government_attribute = buffed_strong_duchies }
+		modifier = {
+			nobles_loyalty_modifier = 0.05
+		}
 	}
 	ai_will_do = {
-		factor = 1
-		modifier = { #will lose it via invalid sooner or later
-			factor = 10
-			has_estate_privilege = estate_nobility_strong_duchies
+		factor = 2
+		modifier = {
+			factor = 3
+			calc_true_if = {
+				amount = 1
+				all_subject_country = {
+					OR = {
+						is_march = yes
+						is_vassal = yes
+					}
+				}
+			}
 		}
+		modifier = {
+			factor = 2
+			calc_true_if = {
+				amount = 2
+				all_subject_country = {
+					OR = {
+						is_march = yes
+						is_vassal = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+estate_nobles_feudatory_annexation = {
+	icon = privilege_better_integration
+	max_absolutism = 5
+	influence = -0.05
+	loyalty = -0.10
+	is_valid = {
+		any_subject_country = {
+			is_subject_of_type = feudatory
+		}
+	}
+	can_select = {
+		custom_trigger_tooltip = {
+			tooltip = "estate_nobles_feudatory_annexation_trigger_tt"
+			any_subject_country = {
+				is_subject_of_type = feudatory
+				capital_scope = { continent = westeros }
+			}
+		}
+	}
+	on_granted = {
+		custom_tooltip = "enable_feudal_consolidation_tt"
+		hidden_effect = {
+			every_subject_country = {
+				limit = { is_subject_of_type = feudatory capital_scope = { continent = westeros } }
+				add_opinion = {
+					who = ROOT
+					modifier = feudal_consolidation_opinion
+				}
+			}
+		}
+	}
+	on_revoked = {
+		custom_tooltip = "disable_feudal_consolidation_tt"
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					has_opinion_modifier = { who = ROOT modifier = feudal_consolidation_opinion }
+				}
+				remove_opinion = {
+					who = ROOT
+					modifier = feudal_consolidation_opinion
+				}
+			}
+		}
+	}
+	on_invalid = {
+		custom_tooltip = "disable_feudal_consolidation_tt"
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					has_opinion_modifier = { who = ROOT modifier = feudal_consolidation_opinion }
+				}
+				remove_opinion = {
+					who = ROOT
+					modifier = feudal_consolidation_opinion
+				}
+			}
+		}
+	}
+	penalties = {
+		reduced_liberty_desire = -10
+	}
+	benefits = {
+		diplomats = 1
+	}
+	conditional_modifier = {
+		trigger = { has_faction = crw_loyalists }
+		modifier = {
+			crw_loyalists_influence = 0.05
+		}
+	}
+	conditional_modifier = {
+		trigger = { NOT = { has_faction = crw_loyalists } }
+		modifier = {
+			yearly_absolutism = 0.50
+		}
+	}
+	cooldown_years = 10
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+estate_nobles_better_integration = {
+	icon = privilege_better_integration
+	max_absolutism = -10
+	influence = 0.05
+	loyalty = 0
+	is_valid = {
+		any_subject_country = {
+			OR = {
+				is_subject_of_type = vassal
+				is_subject_of_type = client_vassal
+				is_subject_of_type = daimyo_vassal
+				is_subject_of_type = personal_union
+			}
+		}
+	}
+	can_select = {
+	}
+	on_granted = {
+		disable_annexation_penalty = yes
+	}
+	on_revoked = {
+		enable_annexation_penalty = yes
+	}
+	on_invalid = {
+		enable_annexation_penalty = yes
+	}
+	penalties = {
+		reduced_liberty_desire = -15
+	}
+	benefits = {
+		diplomatic_annexation_cost = -0.05
+	}
+	cooldown_years = 10
+	#conditional_modifier = {
+	#	trigger = { has_government_mechanic = ottoman_decadence_mechanic }
+	#	modifier = { monthly_ottoman_decadence = 0.02 }
+	#}
+	ai_will_do = {
+		factor = 10
 	}
 }
 
@@ -370,11 +576,9 @@ estate_nobility_supremacy_over_crown = {
 	benefits = {
 		church_loyalty_modifier = 0.1
 		merchants_loyalty_modifier = 0.1
-#		commoners_loyalty_modifier = 0.1
 		tribes_loyalty_modifier = 0.1
 		church_influence_modifier = 0.1
 		merchants_influence_modifier = 0.1
-#		commoners_influence_modifier = 0.1
 		tribes_influence_modifier = 0.1
 	}
 	mechanics = {
@@ -914,87 +1118,384 @@ estate_nobles_monopoly_of_sugar = {
 	}
 }
 
-estate_nobles_the_small_council = {
-	icon = privilege_iron_throne
-	max_absolutism = -10
-	loyalty = 0.05
-	influence = 0.10
-
+estate_nobles_monopoly_of_ironwood = {
+	icon = privilege_make_generous_donation
+    
+	max_absolutism = -2
+	loyalty = 0.1
+    
 	is_valid = {
-		is_emperor = yes
+		has_dlc = "Emperor"
+		any_owned_province = {
+			trade_goods = ironwood
+		}
 	}
 	can_select = {
-		is_emperor = yes
-		if = {
-			limit = { has_dlc = "Emperor" }
-			NOT = { hre_reform_passed = king_curtail_the_estates }
-		}
-		else = { NOT = { hre_reform_passed = king_curtail_the_estates_nodlc } }
+        
 	}
-	can_revoke = no
-
 	on_granted = {
-		if = {
-			limit = { hre_size = 1 }
-			custom_tooltip = estate_nobles_the_small_council.granted_tt
+		add_mercantilism = 1
+		add_years_of_owned_provinces_production_income = {
+			years = 8
+			trigger = {
+				trade_goods = ironwood
+			}
+			custom_tooltip = MONOPOLY_INCOME_IRONWOOD_DESC
 		}
-		if = {
-			limit = { is_female = no }
-			custom_tooltip = estate_nobles_the_kingsguard.granted_tt
-		}
-		if = {
-			limit = { is_female = yes }
-			custom_tooltip = estate_nobles_the_queensguard.granted_tt
+		custom_tooltip = NO_INCOME_IRONWOOD_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = ironwood
+				}
+				add_province_modifier = {
+					name = monopoly_of_ironwood_mod
+					duration = -1
+				}
+			}
 		}
 	}
 	on_revoked = {
-		if = {
-			limit = { hre_size = 1 }
-			custom_tooltip = estate_nobles_the_small_council.revoked_tt
+		custom_tooltip = RESTORE_INCOME_IRONWOOD_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_ironwood_mod
+				}
+				remove_province_modifier = monopoly_of_ironwood_mod
+			}
 		}
-		if = {
-			limit = { is_female = no }
-			custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
-		}
-		if = {
-			limit = { is_female = yes }
-			custom_tooltip = estate_nobles_the_queensguard.revoked_tt
-		}
-		clr_global_flag = displaying_small_council_ui
-		hidden_effect = { clear_council_global = yes }
 	}
 	on_invalid = {
-		if = {
-			limit = { hre_size = 1 }
-			custom_tooltip = estate_nobles_the_small_council.revoked_tt
+		custom_tooltip = RESTORE_INCOME_IRONWOOD_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_ironwood_mod
+				}
+				remove_province_modifier = monopoly_of_ironwood_mod
+			}
 		}
-		if = {
-			limit = { is_female = no }
-			custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
-		}
-		if = {
-			limit = { is_female = yes }
-			custom_tooltip = estate_nobles_the_queensguard.revoked_tt
-		}
-		clr_global_flag = displaying_small_council_ui
-		hidden_effect = { clear_council_global = yes }
 	}
-	mechanics = {
-		can_give_agendas_without_interaction
+	penalties = {
 	}
 	benefits = {
-		crw_loyalists_influence = 0.02
 	}
-	influence_scaled_conditional_modifier = {
-		trigger = { always = yes }
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_nobles_monopoly_of_ironwood
+	}
+	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}
+
+estate_nobles_monopoly_of_grain = {
+	icon = privilege_make_generous_donation
+    
+	max_absolutism = -2
+	loyalty = 0.1
+    
+	is_valid = {
+		has_dlc = "Emperor"
+		any_owned_province = {
+			trade_goods = grain
+		}
+	}
+	can_select = {
+        
+	}
+	on_granted = {
+		add_mercantilism = 1
+		add_years_of_owned_provinces_production_income = {
+			years = 8
+			trigger = {
+				trade_goods = grain
+			}
+			custom_tooltip = MONOPOLY_INCOME_GRAIN_DESC
+		}
+		custom_tooltip = NO_INCOME_GRAIN_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = grain
+				}
+				add_province_modifier = {
+					name = monopoly_of_grain_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	on_revoked = {
+		custom_tooltip = RESTORE_INCOME_GRAIN_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_grain_mod
+				}
+				remove_province_modifier = monopoly_of_grain_mod
+			}
+		}
+	}
+	on_invalid = {
+		custom_tooltip = RESTORE_INCOME_GRAIN_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_grain_mod
+				}
+				remove_province_modifier = monopoly_of_grain_mod
+			}
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_nobles_monopoly_of_grain
+	}
+	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}
+
+estate_nobles_royal_court_tasks = {
+	icon = privilege_build_jain_temple
+	loyalty = 0.0
+	influence = 0.05
+	max_absolutism = -5
+	is_valid = {
+		has_dlc = "Domination"
+	}
+	can_select = {
+		if = {
+			limit = { has_estate_privilege = estate_rajput_royal_court_tasks }
+			NOT = { has_estate_privilege = estate_rajput_royal_court_tasks }
+		}
+		if = {
+			limit = { has_estate_privilege = estate_maratha_royal_court_tasks }
+			NOT = { has_estate_privilege = estate_maratha_royal_court_tasks }
+		}
+	}
+	on_granted = {
+		scaling_with_influence_privilege_tooltip = {
+			loyalty_factor = yes
+			loyal_tt = "grant_court_positions_loyal"
+			neutral_tt = "grant_court_positions_neutral"
+			disloyal_tt = "grant_court_positions_disloyal"
+		}
+	}
+	on_revoked = {
+		scaling_with_influence_privilege_tooltip = {
+			loyalty_factor = yes
+			loyal_tt = "grant_court_positions_loyal"
+			neutral_tt = "grant_court_positions_neutral"
+			disloyal_tt = "grant_court_positions_disloyal"
+		}
+	}
+	influence_scaled_conditional_modifier = {	#Modifier that are applied if the specified conditions are true. At 100% Influence you gain 100% of the modifier.
+		trigger = {
+			NOT = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 30
+				}
+			}
+		}
 		modifier = {
-			prestige = 0.5
-			advisor_cost = 0.25
+			prestige_decay = 0.01
+		}
+	}
+	influence_scaled_conditional_modifier = {	#Modifier that are applied if the specified conditions are true. At 100% Influence you gain 100% of the modifier.
+		trigger = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 30
+			}
+			NOT = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 60
+				}
+			}
+		}
+		modifier = {
+			prestige_decay = -0.005
+		}
+	}
+	influence_scaled_conditional_modifier = {	#Modifier that are applied if the specified conditions are true. At 100% Influence you gain 100% of the modifier.
+		trigger = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 60
+			}
+		}
+		modifier = {
+			prestige_decay = -0.01
+		}
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_nobles_peasant_drills = {
+	icon = privilege_infantry
+	loyalty = -0.05
+	influence = 0.0
+	land_share = 0.0
+	max_absolutism = 0.0
+
+	is_valid = {
+		has_dlc = "Cradle of Civilization"
+	}
+	can_select = {
+		is_dynasty_government = yes
+	}
+	
+	on_granted = {
+		scaling_with_influence_privilege_tooltip = {
+			no_loyalty_factor = yes
+			tooltip = "peasant_drills_loyalty_scale_tt"
+		}
+	}
+	on_revoked = {
+		scaling_with_influence_privilege_tooltip = {
+			no_loyalty_factor = yes
+			tooltip = "peasant_drills_loyalty_scale_tt"
 		}
 	}
 
+	benefits = {
+		drill_gain_modifier = 1.0
+		drill_decay_modifier = -0.125
+	}
+	influence_scaled_conditional_modifier = {
+		modifier = {
+			nobles_loyalty_modifier = -0.20
+		}
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_nobles_peasant_drills
+	}
 	ai_will_do = {
-		factor = 10
+		factor = 1
+	}
+}
+
+estate_nobles_raise_emergency_soldiers = {
+	icon = privilege_land_force_limit
+	loyalty = -0.05
+	influence = 0.0
+	land_share = 0.0
+	max_absolutism = 0.0
+	
+	on_granted = {
+		capital_scope = {
+			build_to_forcelimit = {
+				infantry = 0.20
+			}
+		}
+	}
+	benefits = {
+		reinforce_speed = 0.125
+	}
+	penalties = {
+		land_morale = -0.025
+	}
+
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_nobles_raise_emergency_soldiers
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+estate_nobles_development_of_castles = {
+	icon = privilege_fort
+	loyalty = 0.1
+	influence = 0.05
+	max_absolutism = -5
+	is_valid = {
+		has_dlc = "Domination"
+	}
+	on_granted = {
+		custom_tooltip = estate_nobles_development_of_castles_gt
+		tooltip = {
+			add_province_modifier = {
+				name = estate_nobles_development_of_castles_mod
+				duration = -1
+			}
+		}
+		custom_tooltip = estate_nobles_development_of_castles_at
+		tooltip = {
+			add_province_modifier = {
+				name = estate_nobles_development_of_castles_ramparts_mod
+				duration = -1
+			}
+		}
+	}
+	on_revoked = {
+		custom_tooltip = estate_nobles_development_of_castles_rt
+	}
+	on_granted_province = {
+		if = {
+			limit = {
+				has_any_defense_building = yes
+			}
+			add_province_modifier = {
+				name = estate_nobles_development_of_castles_mod
+				duration = -1
+				hidden = yes
+			}
+		}
+		if = {
+			limit = {
+				has_building = coastal_defence
+			}
+			add_province_modifier = {
+				name = estate_nobles_development_of_castles_ramparts_mod
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	on_invalid_province = {
+		if = {
+			limit = { has_province_modifier = estate_nobles_development_of_castles_mod }
+			remove_province_modifier = estate_nobles_development_of_castles_mod
+		}
+		if = {
+			limit = { has_province_modifier = estate_nobles_development_of_castles_ramparts_mod }
+			remove_province_modifier = estate_nobles_development_of_castles_ramparts_mod
+		}
+	}
+	on_revoked_province = {
+		if = {
+			limit = { has_province_modifier = estate_nobles_development_of_castles_mod }
+			remove_province_modifier = estate_nobles_development_of_castles_mod
+		}
+		if = {
+			limit = { has_province_modifier = estate_nobles_development_of_castles_ramparts_mod }
+			remove_province_modifier = estate_nobles_development_of_castles_ramparts_mod
+		}
+	}
+
+	benefits = {
+		rival_border_fort_maintenance = -0.05
+		max_hostile_attrition = 1
+	}
+	mechanics = {
+		no_estate_crownland_loss_from_developing
+	}
+	ai_will_do = {
+		factor = 0
 	}
 }
 
@@ -1077,5 +1578,89 @@ loe_estate_cant_seize_nobility = {
 
 	ai_will_do = {
 		factor = 0
+	}
+}
+
+estate_nobles_the_small_council = {
+	icon = privilege_iron_throne
+	max_absolutism = -10
+	loyalty = 0.05
+	influence = 0.10
+
+	is_valid = {
+		is_emperor = yes
+	}
+	can_select = {
+		is_emperor = yes
+		if = {
+			limit = { has_dlc = "Emperor" }
+			NOT = { hre_reform_passed = king_curtail_the_estates }
+		}
+		else = { NOT = { hre_reform_passed = king_curtail_the_estates_nodlc } }
+	}
+	can_revoke = no
+
+	on_granted = {
+		if = {
+			limit = { hre_size = 1 }
+			custom_tooltip = estate_nobles_the_small_council.granted_tt
+		}
+		if = {
+			limit = { is_female = no }
+			custom_tooltip = estate_nobles_the_kingsguard.granted_tt
+		}
+		if = {
+			limit = { is_female = yes }
+			custom_tooltip = estate_nobles_the_queensguard.granted_tt
+		}
+	}
+	on_revoked = {
+		if = {
+			limit = { hre_size = 1 }
+			custom_tooltip = estate_nobles_the_small_council.revoked_tt
+		}
+		if = {
+			limit = { is_female = no }
+			custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
+		}
+		if = {
+			limit = { is_female = yes }
+			custom_tooltip = estate_nobles_the_queensguard.revoked_tt
+		}
+		clr_global_flag = displaying_small_council_ui
+		hidden_effect = { clear_council_global = yes }
+	}
+	on_invalid = {
+		if = {
+			limit = { hre_size = 1 }
+			custom_tooltip = estate_nobles_the_small_council.revoked_tt
+		}
+		if = {
+			limit = { is_female = no }
+			custom_tooltip = estate_nobles_the_kingsguard.revoked_tt
+		}
+		if = {
+			limit = { is_female = yes }
+			custom_tooltip = estate_nobles_the_queensguard.revoked_tt
+		}
+		clr_global_flag = displaying_small_council_ui
+		hidden_effect = { clear_council_global = yes }
+	}
+	mechanics = {
+		can_give_agendas_without_interaction
+	}
+	benefits = {
+		crw_loyalists_influence = 0.02
+	}
+	influence_scaled_conditional_modifier = {
+		trigger = { always = yes }
+		modifier = {
+			prestige = 0.5
+			advisor_cost = 0.25
+		}
+	}
+
+	ai_will_do = {
+		factor = 10
 	}
 }

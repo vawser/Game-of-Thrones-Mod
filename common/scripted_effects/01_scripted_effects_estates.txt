@@ -59,3 +59,25 @@ each_estate_effect = {
 	}
 }
 
+scaling_with_loyalty_privilege_tooltip = {
+	custom_tooltip = scaling_with_estate_loyalty_tt
+	custom_tooltip = $tooltip$
+}
+
+scaling_with_influence_privilege_tooltip = {
+	custom_tooltip = scaling_with_estate_influence_tt
+	[[loyalty_factor]
+		# Loyal TT Section
+		custom_tooltip = when_loyal_tt
+		custom_tooltip = $loyal_tt$
+		# Neutral TT Section
+		custom_tooltip = when_neutral_tt
+		custom_tooltip = $neutral_tt$
+		# Disloyal TT Section
+		custom_tooltip = when_disloyal_tt
+		custom_tooltip = $disloyal_tt$
+	]
+	[[no_loyalty_factor]
+		custom_tooltip = $tooltip$
+	]
+}

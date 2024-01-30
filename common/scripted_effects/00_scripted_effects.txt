@@ -105,6 +105,23 @@ on_alliance_broken_effect = {
 	# }
 }
 
+#Country effect
+enable_annexation_penalty = {
+	custom_tooltip = enable_annexation_penalty_tt
+	hidden_effect = {
+		clr_country_flag = no_integrate_penalty
+	}
+}
+
+#Country effect
+disable_annexation_penalty = {
+	custom_tooltip = disable_annexation_penalty_tt
+	hidden_effect = {
+		set_country_flag = no_integrate_penalty
+		remove_country_modifier = annexers_legacy
+	}
+}
+
 #Credits for that script goes to Stiopa
 for = {
 	[[custom_tooltip]custom_tooltip = $custom_tooltip$]

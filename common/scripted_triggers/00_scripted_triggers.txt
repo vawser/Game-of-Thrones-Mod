@@ -35,3 +35,10 @@ province_is_or_accepts_religion = {
 		}
 	}
 }
+
+is_absolutism_active = {
+	OR = {
+		current_age = age_of_rebellion
+		current_age = age_of_ice
+	}
+}

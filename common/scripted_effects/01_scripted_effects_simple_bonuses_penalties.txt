@@ -10,6 +10,15 @@ add_or_extend_province_modifier_effect = {
 	}
 }
 
+#Country effect
+add_legitimacy_equivalent = {
+	add_legitimacy = $amount$
+	add_horde_unity = $amount$
+	add_devotion = $amount$
+	add_meritocracy = $amount$
+	add_republican_tradition = $republican_tradition$	#This one is special because of how much republics scale with it
+}
+
 add_stability_or_adm_power = {
 	if = {
 		limit = {

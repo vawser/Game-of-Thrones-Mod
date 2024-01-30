@@ -1,26 +1,7 @@
 estate_church = {
 	icon = 1
-    color = { 200 150 0 }
-    
-    contributes_to_curia_treasury = yes
-    
-	influence_from_dev_modifier = 1.0
-    
-    # ----- Names -----
-    custom_name = {
-		desc = estate_seers
-		trigger = {
-			has_reform = wildling_clan_reform
-		}
-	}
-    custom_name = {
-		desc = estate_stewards
-		trigger = {
-			has_reform = nights_watch_reform
-		}
-	}
-    
-	# ----- Conditions -----
+
+	# If true, country will get estate
 	trigger = {
 		NOT = { has_government_attribute = disables_estate_church }
 		NOT = { has_reform = khalasar_reform }
@@ -30,7 +11,7 @@ estate_church = {
 		is_nomad = no
 	}
 
-	# ----- Country -----
+	# These scale with loyalty & power
 	country_modifier_happy = {
 		tolerance_own = 2
 		global_missionary_strength = 0.03
@@ -71,9 +52,15 @@ estate_church = {
 		}
 	}
 
-	# ----- Influence -----
+	# Influence modifiers
 	base_influence = 10
-	
+	influence_modifier = {
+		desc = EST_VAL_ACTIVE_SEPTON
+		influence = 5
+		trigger = {
+			num_of_cardinals = 1
+		}
+	}
     influence_modifier = {
 		desc = EST_VAL_THEOCRACY_IDEAGROUP
 		trigger = {
@@ -81,7 +68,6 @@ estate_church = {
 		}
 		influence = 5
 	}
-    
     influence_modifier = {
 		desc = EST_VAL_RELIGIOUS_IDEAGROUP
 		trigger = {
@@ -90,7 +76,22 @@ estate_church = {
 		influence = 5
 	}
 
-	# ----- Loyalty -----
+	# Loyalty modifiers
+	loyalty_modifier = {
+		desc = EST_VAL_NOCRIME
+		trigger = {
+			all_owned_province = { has_no_crime_lvl = yes }
+		}
+		loyalty = 5
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_LOWCRIME
+		trigger = {
+			any_owned_province = { has_any_crime_lvl = yes }
+			all_owned_province = { NOT = { current_crime_lvl = { amount = 10 } } }
+		}
+		loyalty = 2.5
+	}
 	loyalty_modifier = {
 		desc = EST_VAL_RELIGIOUS_UNITY_LOY
 		trigger = {
@@ -99,7 +100,6 @@ estate_church = {
 		}
 		loyalty = -3
 	}
-	
 	loyalty_modifier = {
 		desc = EST_VAL_RELIGIOUS_UNITY_LOY
 		trigger = {
@@ -108,7 +108,6 @@ estate_church = {
 		}
 		loyalty = -6
 	}
-	
 	loyalty_modifier = {
 		desc = EST_VAL_RELIGIOUS_UNITY_LOY
 		trigger = {
@@ -116,7 +115,6 @@ estate_church = {
 		}
 		loyalty = -9
 	}
-    
     loyalty_modifier = {
 		desc = EST_VAL_RELIGIOUS_IDEAGROUP
 		trigger = {
@@ -124,7 +122,6 @@ estate_church = {
 		}
 		loyalty = 5
 	}
-    
     loyalty_modifier = {
 		desc = EST_VAL_THEOCRACY_IDEAGROUP
 		trigger = {
@@ -132,7 +129,6 @@ estate_church = {
 		}
 		loyalty = 5
 	}
-    
     loyalty_modifier = {
 		desc = EST_VAL_INNOVATION_IDEAGROUP
 		trigger = {
@@ -140,7 +136,6 @@ estate_church = {
 		}
 		loyalty = -5
 	}
-    
     loyalty_modifier = {
 		desc = EST_VAL_HARMONY_IDEAGROUP
 		trigger = {
@@ -149,14 +144,33 @@ estate_church = {
 		loyalty = -5
 	}
 
-    # ----- Privileges -----
+	#Alternative naming of estates
+	custom_name = {
+		desc = estate_seers
+		trigger = {
+			has_reform = wildling_clan_reform
+		}
+	}
+    custom_name = {
+		desc = estate_stewards
+		trigger = {
+			has_reform = nights_watch_reform
+		}
+	}
+
+	contributes_to_curia_treasury = yes
+	color = { 200 150 0 }
+
 	privileges = {
 		estate_church_land_rights
 		estate_church_religious_state
+		estate_church_tolerance_towards_the_faith
 		estate_church_independent_inquisition
 		estate_church_far_east_mission
 		estate_church_clerical_ministers
 		estate_church_clerical_oversight
+		estate_church_one_faith_one_culture
+		estate_church_religious_diplomats
 		estate_church_inwards_perfection
 		estate_church_enforced_one_faith
 		estate_church_for_the_faith
@@ -169,7 +183,6 @@ estate_church = {
 		loe_estate_cant_seize_church
 	}
 
-    # ----- Agenda -----
 	agendas = {
 		estate_church_develop_x
 		estate_church_build_temple_in_y
@@ -189,4 +202,6 @@ estate_church = {
 		estate_church_hire_advisor
 		estate_church_fire_advisor
 	}
+
+	influence_from_dev_modifier = 1.0
 }

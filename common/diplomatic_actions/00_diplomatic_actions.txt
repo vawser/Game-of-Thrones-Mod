@@ -373,7 +373,9 @@ annexationaction = {
 	condition = {
 		tooltip = "You cannot annex Feudatory subjects."
 		potential = { FROM = { is_subject_of_type = feudatory } }
-		allow = { tag = CRW }
+		allow = {
+			has_estate_privilege = estate_nobles_feudatory_annexation
+		}
 	}
 	condition = {
 		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT

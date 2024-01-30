@@ -2443,6 +2443,18 @@ on_dependency_gained = {
 		log = "DEBUG - [Root.GetName], [From.GetName]: on_dependency_gained "
 	}
 	
+	if = {
+		limit = {
+			has_estate_privilege = estate_nobles_feudatory_annexation
+			FROM = { is_subject_of_type = feudatory }
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = feudal_consolidation_opinion
+			}
+		}
+	}
 }
 
 # ROOT = Overlord, FROM = Minor
@@ -2452,6 +2464,22 @@ on_dependency_lost = {
 		log = "DEBUG - [Root.GetName], [From.GetName]: on_dependency_lost "
 	}
 
+	if = {
+		limit = {
+			FROM = {
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = feudal_consolidation_opinion
+				}
+			}
+		}
+		FROM = {
+			remove_opinion = {
+				who = ROOT
+				modifier = feudal_consolidation_opinion
+			}
+		}
+	}
 }
 
 # ROOT = New vassal, FROM = Overlord

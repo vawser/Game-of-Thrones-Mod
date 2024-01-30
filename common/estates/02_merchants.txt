@@ -1,24 +1,7 @@
 estate_merchants = {
 	icon = 3
-    color = { 35 35 150 }
 
-	influence_from_dev_modifier = 1.0
-    
-    # ----- Names -----
-    custom_name = {
-		desc = estate_traders
-		trigger = {
-			has_reform = wildling_clan_reform
-		}
-	}
-    custom_name = {
-		desc = estate_builders
-		trigger = {
-			has_reform = nights_watch_reform
-		}
-	}
-    
-	# ----- Conditions -----
+	# If true, country will get estate
 	trigger = {
         NOT = { has_reform = khalasar_reform }
         NOT = { has_reform = jhattar_reform }
@@ -27,7 +10,6 @@ estate_merchants = {
 		is_nomad = no
 	}
     
-	# ----- Country -----
 	# These scale with loyalty & power
 	country_modifier_happy = {
         trade_steering = 0.2
@@ -84,50 +66,89 @@ estate_merchants = {
 		}
 	}
 
-	# ----- Influence -----
+	# Influence modifiers
 	base_influence = 10
+    influence_modifier = {
+		desc = EST_VAL_REPUBLIC_IDEAGROUP
+		trigger = {
+			full_idea_group = got_republic_ideas
+		}
+		influence = 5
+	}
+    influence_modifier = {
+		desc = EST_VAL_TRADE_IDEAGROUP
+		trigger = {
+			full_idea_group = got_trade_ideas
+		}
+		influence = 5
+	}
+    influence_modifier = {
+		desc = EST_VAL_EXPLORATION_IDEAGROUP
+		trigger = {
+			full_idea_group = got_exploration_ideas
+		}
+		influence = 5
+	}
+    influence_modifier = {
+		desc = EST_VAL_NAVAL_TRADE_IDEAGROUP
+		trigger = {
+			full_idea_group = got_naval_trade_ideas
+		}
+		influence = 5
+	}
+    influence_modifier = {
+		desc = EST_VAL_EXPANSION_IDEAGROUP
+		trigger = {
+			full_idea_group = got_expansion_ideas
+		}
+		influence = 5
+	}
+	influence_modifier = {
+		desc = EST_VAL_VERY_HIGH_TRADE_INCOME
+		trigger = {
+			trade_income_percentage = 0.75
+		}	
+		influence = 10
+	}
+	influence_modifier = {
+		desc = EST_VAL_HIGH_TRADE_INCOME
+		trigger = {
+			trade_income_percentage = 0.5
+			NOT = { trade_income_percentage = 0.75 }
+		}	
+		influence = 5
+	}
+	influence_modifier = {
+		desc = EST_VAL_LOW_TRADE_INCOME
+		trigger = {
+			NOT = { trade_income_percentage = 0.25 }
+		}	
+		influence = -5
+	}
+	influence_modifier = {
+		desc = EST_VAL_WORLDPORT
+		trigger = {
+			any_owned_province = { province_has_center_of_trade_of_level = 3 }
+		}
+		influence = 10
+	}
 	
-    influence_modifier = {
-		desc = EST_VAL_REPUBLIC_IDEAGROUP
+    # Loyalty modifiers
+	loyalty_modifier = {
+		desc = EST_VAL_NOCRIME
 		trigger = {
-			full_idea_group = got_republic_ideas
+			all_owned_province = { has_no_crime_lvl = yes }
 		}
-		influence = 5
+		loyalty = 5
 	}
-    
-    influence_modifier = {
-		desc = EST_VAL_TRADE_IDEAGROUP
+	loyalty_modifier = {
+		desc = EST_VAL_LOWCRIME
 		trigger = {
-			full_idea_group = got_trade_ideas
+			any_owned_province = { has_any_crime_lvl = yes }
+			all_owned_province = { NOT = { current_crime_lvl = { amount = 10 } } }
 		}
-		influence = 5
+		loyalty = 2.5
 	}
-    
-    influence_modifier = {
-		desc = EST_VAL_EXPLORATION_IDEAGROUP
-		trigger = {
-			full_idea_group = got_exploration_ideas
-		}
-		influence = 5
-	}
-    
-    influence_modifier = {
-		desc = EST_VAL_NAVAL_TRADE_IDEAGROUP
-		trigger = {
-			full_idea_group = got_naval_trade_ideas
-		}
-		influence = 5
-	}
-    
-    influence_modifier = {
-		desc = EST_VAL_EXPANSION_IDEAGROUP
-		trigger = {
-			full_idea_group = got_expansion_ideas
-		}
-		influence = 5
-	}
-    
-    # ----- Loyalty -----
     loyalty_modifier = {
 		desc = EST_VAL_REPUBLIC_IDEAGROUP
         
@@ -136,7 +157,6 @@ estate_merchants = {
 		}
 		loyalty = 5
 	}
-    
     loyalty_modifier = {
 		desc = EST_VAL_TRADE_IDEAGROUP
         
@@ -145,7 +165,6 @@ estate_merchants = {
 		}
 		loyalty = 5
 	}
-    
     loyalty_modifier = {
 		desc = EST_VAL_EXPLORATION_IDEAGROUP
         
@@ -154,7 +173,6 @@ estate_merchants = {
 		}
 		loyalty = 5
 	}
-    
     loyalty_modifier = {
 		desc = EST_VAL_NAVAL_TRADE_IDEAGROUP
         
@@ -163,7 +181,6 @@ estate_merchants = {
 		}
 		loyalty = 5
 	}
-    
     loyalty_modifier = {
 		desc = EST_VAL_EXPANSION_IDEAGROUP
         
@@ -172,7 +189,6 @@ estate_merchants = {
 		}
 		loyalty = 5
 	}
-    
     loyalty_modifier = {
 		desc = EST_VAL_ABSOLUTISM_IDEAGROUP
         
@@ -181,7 +197,6 @@ estate_merchants = {
 		}
 		loyalty = -5
 	}
-    
     loyalty_modifier = {
 		desc = EST_VAL_DYNASTIC_IDEAGROUP
         
@@ -190,7 +205,6 @@ estate_merchants = {
 		}
 		loyalty = -5
 	}
-    
     loyalty_modifier = {
 		desc = EST_VAL_RELIGIOUS_IDEAGROUP
         
@@ -199,8 +213,23 @@ estate_merchants = {
 		}
 		loyalty = -5
 	}
+
+	#Alternative naming of estates
+    custom_name = {
+		desc = estate_traders
+		trigger = {
+			has_reform = wildling_clan_reform
+		}
+	}
+    custom_name = {
+		desc = estate_builders
+		trigger = {
+			has_reform = nights_watch_reform
+		}
+	}
+
+	color = { 35 35 150 }
     
-	# ----- Privileges -----
 	privileges = {
 		estate_merchants_land_rights
 		estate_merchants_land_of_commerce
@@ -212,6 +241,7 @@ estate_merchants = {
 		estate_merchants_free_enterprise
 		estate_merchants_exclusive_trade_rights
 		estate_merchants_control_over_monetary_policy
+		estate_burghers_promote_burgher_bookkeeping
 		estate_merchants_private_trade_fleets
 		estate_merchants_enforced_interfaith_dialogue
 		estate_merchants_statutory_rights
@@ -263,4 +293,6 @@ estate_merchants = {
 		estate_merchants_hire_advisor
 		estate_merchants_fire_advisor
 	}
+
+	influence_from_dev_modifier = 1.0
 }

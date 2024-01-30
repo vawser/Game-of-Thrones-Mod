@@ -23,7 +23,10 @@ estate_merchants_land_rights = {
 	penalties = {
 	}
 	benefits = {
-		governing_capacity = 100
+	}
+	modifier_by_land_ownership = {
+		governing_capacity = 400
+		governing_cost = 0.10
 	}
 	ai_will_do = {
 		factor = 5
@@ -408,6 +411,40 @@ estate_merchants_control_over_monetary_policy = {
 				num_of_loans = 15
 			}
 		}
+	}
+}
+
+estate_burghers_promote_burgher_bookkeeping = {
+	icon = privilege_investigate_corruption
+	loyalty = 0.0
+	influence = 0.1
+	max_absolutism = -5
+	is_valid = {
+		has_dlc = "Domination"
+	}
+	loyalty_scaled_conditional_modifier = {
+		trigger = { always = yes }
+		modifier = {
+			inflation_action_cost = -0.5
+			interest = -0.5
+			state_maintenance_modifier = -0.25
+		}
+	}
+	on_granted = {
+		
+	}
+	on_revoked = {
+		
+	}
+	on_invalid = {
+		
+	}
+	#conditional_modifier = {
+	#	trigger = { has_government_mechanic = ottoman_decadence_mechanic }
+	#	modifier = { monthly_ottoman_decadence = 0.02 }
+	#}
+	ai_will_do = {
+		factor = 10
 	}
 }
 

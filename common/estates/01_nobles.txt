@@ -1,50 +1,30 @@
 estate_nobles = {
 	icon = 2
-    color = { 200 0 50 }
-    
-    influence_from_dev_modifier = 1.0
-    
-    # ----- Names -----
-    custom_name = {
-		desc = estate_chieftains
-		trigger = {
-			has_reform = wildling_clan_reform
-		}
-	}
-    custom_name = {
-		desc = estate_rangers
-		trigger = {
-			has_reform = nights_watch_reform
-		}
-	}
-    
-	# ----- Conditions -----
+
+	# If true, country will get estate
 	trigger = {
 		NOT = { has_government_attribute = disables_estate_nobles }
 		NOT = { has_reform = khalasar_reform }
-        NOT = { has_reform = jhattar_reform }
+		NOT = { has_reform = jhattar_reform }
 		NOT = { has_reform = nights_watch_reform }
 		NOT = { has_reform = wildling_clan_reform }
 		is_nomad = no
 	}
 
-	# ----- Country -----
+	# These scale with loyalty & power
 	country_modifier_happy = {
-		global_manpower_modifier = 0.1
-        army_tradition = 1
-        leader_cost = -0.5
+		manpower_recovery_speed = 0.2
+		land_maintenance_modifier = -0.1
 	}
 	country_modifier_neutral = {
-		global_manpower_modifier = 0.05
-        army_tradition = 0.5
-        leader_cost = -0.25
-	}	
+		manpower_recovery_speed = 0.2
+	}
 	country_modifier_angry = {
-		global_manpower_modifier = -0.1
-        army_tradition = -1
-        leader_cost = 0.5
-	}	
-    
+		manpower_recovery_speed = -0.1
+		land_maintenance_modifier = 0.1
+		monthly_support_heir_gain = -0.2
+		global_unrest = 2
+	}
 	land_ownership_modifier = {
 		nobles_loyalty_modifier = 0.2
 	}
@@ -70,34 +50,30 @@ estate_nobles = {
 		}
 	}
 
-	# ----- Influence -----
+	# Influence modifiers
 	base_influence = 10
-	
-    influence_modifier = {
+	influence_modifier = {
 		desc = EST_VAL_MONARCHY_IDEAGROUP
 		trigger = {
 			full_idea_group = got_monarchy_ideas
 		}
 		influence = 5
 	}
-    
-    influence_modifier = {
+	influence_modifier = {
 		desc = EST_VAL_AUTONOMY_IDEAGROUP
 		trigger = {
 			full_idea_group = got_autonomy_ideas
 		}
 		influence = 5
 	}
-    
-    influence_modifier = {
+	influence_modifier = {
 		desc = EST_VAL_DYNASTIC_IDEAGROUP
 		trigger = {
 			full_idea_group = got_dynastic_ideas
 		}
 		influence = 5
 	}
-    
-    influence_modifier = {
+	influence_modifier = {
 		desc = EST_VAL_INFLUENCE_IDEAGROUP
 		trigger = {
 			full_idea_group = got_influence_ideas
@@ -105,88 +81,134 @@ estate_nobles = {
 		influence = 5
 	}
 	
-	# ----- Loyalty -----
-    loyalty_modifier = {
+	# Loyalty Modifiers
+	loyalty_modifier = {
+		desc = EST_VAL_NOCRIME
+		trigger = {
+			all_owned_province = { has_no_crime_lvl = yes }
+		}
+		loyalty = 5
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_LOWCRIME
+		trigger = {
+			any_owned_province = { has_any_crime_lvl = yes }
+			all_owned_province = { NOT = { current_crime_lvl = { amount = 10 } } }
+		}
+		loyalty = 2.5
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_LOCAL_CONSORT
+		trigger = {
+			has_dlc = "Rights of Man"
+			has_consort = yes
+			is_origin_of_consort = ROOT
+		}
+		loyalty = 5
+	}
+	loyalty_modifier = {
 		desc = EST_VAL_MONARCHY_IDEAGROUP
 		trigger = {
 			full_idea_group = got_monarchy_ideas
 		}
 		loyalty = 5
 	}
-    
-    loyalty_modifier = {
+	loyalty_modifier = {
 		desc = EST_VAL_AUTONOMY_IDEAGROUP
 		trigger = {
 			full_idea_group = got_autonomy_ideas
 		}
 		loyalty = 5
 	}
-    
-    loyalty_modifier = {
+	loyalty_modifier = {
 		desc = EST_VAL_DYNASTIC_IDEAGROUP
 		trigger = {
 			full_idea_group = got_dynastic_ideas
 		}
 		loyalty = 5
 	}
-    
-    loyalty_modifier = {
+	loyalty_modifier = {
 		desc = EST_VAL_HARMONY_IDEAGROUP
 		trigger = {
 			full_idea_group = got_harmony_ideas
 		}
 		loyalty = -5
 	}
-    
-    loyalty_modifier = {
+	loyalty_modifier = {
 		desc = EST_VAL_RELIGIOUS_IDEAGROUP
 		trigger = {
 			full_idea_group = got_religious_ideas
 		}
 		loyalty = -5
 	}
-    
-    loyalty_modifier = {
+	loyalty_modifier = {
 		desc = EST_VAL_INNOVATION_IDEAGROUP
 		trigger = {
 			full_idea_group = got_innovation_ideas
 		}
 		loyalty = -5
 	}
-    
-    loyalty_modifier = {
+	loyalty_modifier = {
 		desc = EST_VAL_TRADE_IDEAGROUP
 		trigger = {
 			full_idea_group = got_trade_ideas
 		}
 		loyalty = -5
 	}
-    
-	# ----- Privileges -----
+
+	#Alternative naming of estates
+	custom_name = {
+		desc = estate_chieftains
+		trigger = {
+			has_reform = wildling_clan_reform
+		}
+	}
+	custom_name = {
+		desc = estate_rangers
+		trigger = {
+			has_reform = nights_watch_reform
+		}
+	}
+
+	color = { 200 0 50 }
+	
 	privileges = {
 		estate_nobility_land_rights
 		estate_nobility_nobility_primacy
 		estate_nobility_officer_corp
 		estate_nobility_levies
 		estate_nobility_advisors
-		estate_nobles_the_small_council
 		estate_nobility_right_of_counsel
 		estate_nobility_strong_duchies
 		estate_nobility_supremacy_over_crown
+		estate_nobles_strong_duchies
+		estate_nobles_royal_court_tasks
+		estate_nobles_development_of_castles
+		estate_nobles_feudatory_annexation
+		estate_nobles_better_integration
+		estate_nobles_peasant_drills
+		estate_nobles_raise_emergency_soldiers
 		estate_nobles_unsullied
 		estate_nobility_statutory_rights
+		estate_nobles_monopoly_of_cloth
+		estate_nobles_monopoly_of_fur
+		estate_nobles_monopoly_of_copper
+		estate_nobles_monopoly_of_iron
 		estate_nobles_monopoly_of_grain
 		estate_nobles_monopoly_of_ironwood
+		estate_nobles_monopoly_of_dyes
+		estate_nobles_monopoly_of_silk
+		estate_nobles_monopoly_of_sugar
+		estate_nobles_the_small_council
 		loe_estate_cant_seize_nobility
 	}
 
-    # ----- Agendas -----
 	agendas = {
 		estate_nobility_develop_x
 		estate_nobility_build_a_barracks_in_y
-        #estate_nobility_build_a_paved_road_in_y
-        #estate_nobility_build_a_supply_depot_in_y
-        estate_nobility_build_motte_and_bailey_in_y
+		#estate_nobility_build_a_paved_road_in_y
+		#estate_nobility_build_a_supply_depot_in_y
+		estate_nobility_build_motte_and_bailey_in_y
 		estate_nobility_get_allies
 		estate_nobility_befriend_rival_of_rival
 		estate_nobility_restore_legitimacy
@@ -211,4 +233,6 @@ estate_nobles = {
 		estate_nobility_hire_advisor
 		estate_nobility_fire_advisor
 	}
+
+	influence_from_dev_modifier = 1.0
 }

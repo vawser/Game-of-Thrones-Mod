@@ -90,14 +90,7 @@ province_event = {
 		owner = { 
 			add_prestige = -10
 		
-			if = {
-				limit = { has_estate = estate_commoners }
-						
-				add_estate_loyalty = {
-					estate = estate_commoners
-					loyalty = -10
-				}
-			}
+			
 		}
 
 		ai_chance = {
@@ -264,14 +257,7 @@ province_event = {
 		owner = {
 			add_treasury = -100
 			add_prestige = 10
-			if = {
-				limit = { has_estate = estate_commoners }
-						
-				add_estate_loyalty = {
-					estate = estate_commoners
-					loyalty = 5
-				}
-			}
+			
 		}
 		
 		ai_chance = {

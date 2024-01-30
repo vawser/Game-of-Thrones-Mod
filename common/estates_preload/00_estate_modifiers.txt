@@ -76,30 +76,6 @@ estate_merchants = {
 	}
 }
 
-estate_commoners = {
-	modifier_definition = {
-		type = loyalty
-		key = commoners_loyalty_modifier
-		trigger = {
-			has_estate = estate_commoners
-		}
-	}
-	modifier_definition = {
-		type = influence
-		key = commoners_influence_modifier
-		trigger = {
-			has_estate = estate_commoners
-		}
-	}
-	modifier_definition = {
-		type = privileges
-		key = commoners_privilege_slots
-		trigger = {
-			has_estate = estate_merchants
-		}
-	}
-}
-
 estate_tribes = {
 	modifier_definition = {
 		type = loyalty

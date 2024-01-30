@@ -21,14 +21,7 @@ country_event = {
 		add_war_exhaustion = 1
 		add_manpower = -0.05
 		
-		if = {
-			limit = { has_estate = estate_commoners }
-						
-			add_estate_loyalty = {
-				estate = estate_commoners
-				loyalty = -5
-			}
-		}
+		
 	}
 }
 
@@ -52,14 +45,7 @@ country_event = {
 		name = GOT_OVEREXTENSION.2.option.a
 		add_stability = -1
 		
-		if = {
-			limit = { has_estate = estate_commoners }
-						
-			add_estate_loyalty = {
-				estate = estate_commoners
-				loyalty = -10
-			}
-		}
+		
 	}
 }
 

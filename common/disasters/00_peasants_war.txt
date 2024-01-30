@@ -16,10 +16,6 @@ peasant_war = {
 		has_any_disaster = no
 		NOT = { manpower_percentage = 0.1 }
 		NOT = { stability = 0 }
-        estate_influence = {
-            estate = estate_commoners
-            influence = 40
-        }	
 	}
 	
 	can_stop = {
@@ -33,20 +29,6 @@ peasant_war = {
 		modifier = {
 			factor = 1
 			war_exhaustion = 10
-		}
-        modifier = {
-			factor = 1
-			estate_influence = {
-                estate = estate_commoners
-                influence = 60
-            }	
-		}
-        modifier = {
-			factor = 1
-			estate_influence = {
-                estate = estate_commoners
-                influence = 80
-            }	
 		}
 		modifier = {
 			factor = 1

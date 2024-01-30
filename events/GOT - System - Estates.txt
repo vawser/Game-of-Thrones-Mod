@@ -43,7 +43,6 @@ country_event = {
 		clr_country_flag = estate_church_present_agenda
 		clr_country_flag = estate_merchants_present_agenda
 		clr_country_flag = estate_nobles_present_agenda
-		clr_country_flag = estate_commoners_present_agenda
 		clr_country_flag = estate_tribes_present_agenda
 		clear_estate_agenda_cache = ROOT
 	}
@@ -150,42 +149,6 @@ country_event = {
 				estate_influence = {
 					influence = 70
 					estate = estate_nobles
-				}
-			}
-		}
-	}
-	
-	option = {
-		name = GOT_ESTATE_SYSTEM.2.option.d
-		trigger = { has_country_flag = estate_commoners_present_agenda }
-        
-		start_estate_agenda = estate_commoners
-        
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 1.5
-				NOT = {
-					estate_loyalty = {
-						loyalty = 30
-						estate = estate_commoners
-					}
-				}
-			}
-			modifier = {
-				factor = 2
-				NOT = {
-					estate_loyalty = {
-						loyalty = 20
-						estate = estate_commoners
-					}
-				}
-			}
-			modifier = {
-				factor = 1.5
-				estate_influence = {
-					influence = 70
-					estate = estate_commoners
 				}
 			}
 		}

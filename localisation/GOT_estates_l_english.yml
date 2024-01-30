@@ -6,7 +6,6 @@
  estate_church_ownership: "Clergy Ownership"
  estate_merchants_ownership: "Merchant Ownership"
  estate_nobles_ownership: "Nobility Ownership"
- estate_commoners_ownership: "Commoner Ownership"
  estate_tribes_ownership: "Tribal Ownership"
  estate_adventurers_ownership: "Adventurer Ownership"
  
@@ -24,7 +23,7 @@
  EXCEPT_ESTATE_FROM_SIEZE_LAND_TT: "This estate will not be affected by §YSeize Land§!."
  
  clergy_target: "Clergy"
- merchants_target: "Merchants
+ merchants_target: "Merchants"
  nobility_target: "Nobility"
  commoners_target: "Commoners"
  tribals_target: "Tribals"
@@ -49,7 +48,6 @@
  #-----------------------------------------
  # Loyalty
  #-----------------------------------------
- EST_VAL_LEGITIMACY: "Legitimacy: §Y$VAL$§!"
  EST_VAL_FULL_NAVAL_LEADERSHIP: "Naval Leadership: §Y$VAL$§!"
  EST_VAL_FULL_ARMY_LEADERSHIP: "Army Leadership: §Y$VAL$§!"
  EST_VAL_COUNCIL_REQUEST_SUCCESSFUL: "Acted on the council's request: §Y$VAL$§!"
@@ -61,6 +59,9 @@
  EST_VAL_POSITIVE_STABILITY: "Positive Stability: §Y$VAL$§!"
  EST_VAL_NEGATIVE_STABILITY: "Negative Stability: §Y$VAL$§!"
 
+ EST_VAL_LOCAL_CONSORT: "Noble Consort: "
+ EST_VAL_NOCRIME: "No Criminal Activity: "
+ EST_VAL_LOWCRIME: "Low Criminal Activity: "
  #-----------------------------------------
  # Influence Modifiers
  #-----------------------------------------
@@ -161,6 +162,9 @@
  EST_VAL_ESTABLISHING_OUTPOSTS: "Establishing Outposts: §Y$VAL$§!"
  EST_VAL_CONDUCTED_RANGING: "Conducted Ranging: §Y$VAL$§!"
  EST_VAL_COUNCIL_SUMMONED: "Council Summoned: §Y$VAL$§!"
+
+ EST_VAL_ACTIVE_SEPTON: "Active Septon: §Y+$VAL$%§!"
+ EST_VAL_WORLDPORT: "World Port: §Y+$VAL$%§!"
  
  #-----------------------------------------
  # Monopolies
@@ -555,19 +559,6 @@
  estate_nobility_fire_advisor: "Fire our [Root.Mil_Advisor.GetTitle]"
  estate_nobility_fire_advisor_desc: "[Root.Mil_Advisor.GetTitle] [Root.Mil_Advisor.GetName] has insulted the [Root.GetMerchantsName]. They demand that we fire [Root.Mil_Advisor.GetHerHim]!"
 
- # ------------ Commoners ------------ 
- estate_commoners_develop_x: "Develop [agenda_province.GetName]"
- estate_commoners_develop_x_desc: "The [Root.GetCommonersName] request that we invest in the prosperity of their lands in [agenda_province.GetName]."
- 
- estate_commoners_three_privileges: "Extend Common Privileges"
- estate_commoners_three_privileges_desc: "The [Root.GetCommonersName] complain at the constant infringements on their rights they claim to suffer at the hands of the [Root.Monarch.GetTitle]. They demand reassurance of their position in the form of greater privileges being bestowed upon them."
- 
- estate_commoners_hire_advisor: "Hire an Administrative Advisor"
- estate_commoners_hire_advisor_desc: "The [Root.GetCommonersName] desire the [Root.Monarch.GetTitle] to hire a new administrative advisor."
- 
- estate_commoners_fire_advisor: "Fire our [Root.Adm_Advisor.GetTitle]"
- estate_commoners_fire_advisor_desc: "[Root.Adm_Advisor.GetTitle] [Root.Adm_Advisor.GetName] has insulted the [Root.GetCommonersName]. They demand that we fire [Root.Adm_Advisor.GetHerHim]!"
- 
  # ------------ Tribes ------------ 
  estate_tribes_raze_a_province: "Raze our Enemies"
  estate_tribes_raze_a_province_desc: "The warriors of the [Root.GetTribesName] thirst for loot! They demand that we plunder our enemies!"

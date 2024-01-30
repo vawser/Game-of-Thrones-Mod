@@ -1,0 +1,61 @@
+# Will apply effect if estate is present
+# effect: Will apply effect to each estate present if defined
+# <estate>_effect: Will apply effect to specific estate present if defined
+each_estate_effect = {
+	if = {
+		limit = {
+			has_estate = estate_church
+		}
+		[[effect]
+			$effect$
+		]
+		[[clergy_effect]
+			$clergy_effect$
+		]
+	}
+	if = {
+		limit = {
+			has_estate = estate_nobles
+		}
+		[[effect]
+			$effect$
+		]
+		[[nobles_effect]
+			$nobles_effect$
+		]
+	}
+	if = {
+		limit = {
+			has_estate = estate_merchants
+		}
+		[[effect]
+			$effect$
+		]
+		[[merchants_effect]
+			$merchants_effect$
+		]
+	}
+	if = {
+		limit = {
+			has_estate = estate_tribes
+		}
+		[[effect]
+			$effect$
+		]
+		[[tribes_effect]
+			$tribes_effect$
+		]
+	}
+	if = {
+		limit = {
+			has_estate = estate_adventurers
+		}
+		[[effect]
+			$effect$
+		]
+		[[adventurers_effect]
+			$adventurers_effect$
+		]
+	}
+}
+

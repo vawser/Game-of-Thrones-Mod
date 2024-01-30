@@ -1064,6 +1064,150 @@ estate_merchants_monopoly_of_tropical_wood = {
 	}
 }
 
+estate_merchants_monopoly_of_fruit = {
+	icon = privilege_make_generous_donation
+    
+	max_absolutism = -2
+	loyalty = 0.1
+    
+	is_valid = {
+		has_dlc = "Emperor"
+		any_owned_province = {
+			trade_goods = fruit
+		}
+	}
+	can_select = {
+        
+	}
+	on_granted = {
+		add_mercantilism = 1
+		add_years_of_owned_provinces_production_income = {
+			years = 8
+			trigger = {
+				trade_goods = fruit
+			}
+			custom_tooltip = MONOPOLY_INCOME_FRUIT_DESC
+		}
+		custom_tooltip = NO_INCOME_FRUIT_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = fruit
+				}
+				add_province_modifier = {
+					name = monopoly_of_fruit_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	on_revoked = {
+		custom_tooltip = RESTORE_INCOME_FRUIT_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_fruit_mod
+				}
+				remove_province_modifier = monopoly_of_fruit_mod
+			}
+		}
+	}
+	on_invalid = {
+		custom_tooltip = RESTORE_INCOME_FRUIT_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_fruit_mod
+				}
+				remove_province_modifier = monopoly_of_fruit_mod
+			}
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_merchants_monopoly_of_fruit
+	}
+	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}
+
+estate_merchants_monopoly_of_fish = {
+	icon = privilege_make_generous_donation
+    
+	max_absolutism = -2
+	loyalty = 0.1
+    
+	is_valid = {
+		has_dlc = "Emperor"
+		any_owned_province = {
+			trade_goods = fish
+		}
+	}
+	can_select = {
+        
+	}
+	on_granted = {
+		add_mercantilism = 1
+		add_years_of_owned_provinces_production_income = {
+			years = 8
+			trigger = {
+				trade_goods = fish
+			}
+			custom_tooltip = MONOPOLY_INCOME_FISH_DESC
+		}
+		custom_tooltip = NO_INCOME_FISH_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = fish
+				}
+				add_province_modifier = {
+					name = monopoly_of_fish_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	on_revoked = {
+		custom_tooltip = RESTORE_INCOME_FISH_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_fish_mod
+				}
+				remove_province_modifier = monopoly_of_fish_mod
+			}
+		}
+	}
+	on_invalid = {
+		custom_tooltip = RESTORE_INCOME_FISH_TT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = monopoly_of_fish_mod
+				}
+				remove_province_modifier = monopoly_of_fish_mod
+			}
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_merchants_monopoly_of_fish
+	}
+	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}
+
 loe_estate_cant_seize_traders = {
 	icon = privilege_royal_authority
 	max_absolutism = -5

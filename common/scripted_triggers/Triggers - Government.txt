@@ -1,88 +1,36 @@
-# Governments
-is_primitive_government = {
-	OR = {
-		has_reform = khalasar_reform
-		has_reform = jhattar_reform
-		has_reform = wildling_clan_reform
-	}
-}
-
-is_free_city_government = {
-	OR = {
-		has_reform = tyrosh_city_reform
-		has_reform = myr_city_reform
-		has_reform = lys_city_reform
-		has_reform = volantis_city_reform
-		has_reform = pentos_city_reform
-		has_reform = braavos_city_reform
-		has_reform = lorath_city_reform
-		has_reform = qohor_city_reform
-		has_reform = norvos_city_reform
-		has_reform = saath_city_reform
-		has_reform = andal_city_reform
-	}
-}
-
-is_westerosi_government = {
-	OR = {
-		has_reform = noble_house_reform
-		has_reform = lord_of_the_tides_reform
-		has_reform = great_house_reform
-		has_reform = royal_house_reform
-	}
-}
-
-westeros_government_king = {
-	if = {
-		limit = { hre_size = 1 }
-		is_emperor = yes
-	}
-	else = {
-		OR = {
-			has_reform = royal_house_reform
-			has_reform = kingdom_of_westeros_reform
-		}
-	}
-}
-
-westeros_government_not_king = {
-	if = {
-		limit = { hre_size = 1 }
-		is_part_of_hre = yes
-		is_emperor = no
-	}
-	else = {
-		OR = {
-			has_reform = noble_house_reform
-			has_reform = lord_of_the_tides_reform
-			has_reform = great_house_reform
-		}
-	}
-}
-
-westeros_government_not_king_nor_great_house = {
-	if = {
-		limit = { hre_size = 1 }
-		is_part_of_hre = yes
-		is_emperor = no
-		is_elector = no
-	}
-	else = {
-		OR = {
-			has_reform = noble_house_reform
-			has_reform = lord_of_the_tides_reform
-		}
-	}
-}
-
-westeros_government_great_house = {
-	if = {
-		limit = { hre_size = 1 }
-		is_elector = yes
-	}
-	else = {
-		has_reform = great_house_reform
-	}
+# Government Types
+# Generic government_type trigger for custom governments; use this for simplicity
+government_type = {
+	[[monarchy]
+		is_monarchy_government = yes
+	]
+	[[dynasty]
+		is_dynasty_government = yes
+	]
+	[[republic]
+		is_republic_government = yes
+	]
+	[[free_city]
+		is_free_city_government = yes
+	]
+	[[theocracy]
+		is_theocracy_government = yes
+	]
+	[[tribal]
+		is_tribal_government = yes
+	]
+	[[wildling]
+		is_wildling_government = yes
+	]
+	[[primitive]
+		is_primitive_government = yes
+	]
+	[[occult]
+		is_occult_government = yes
+	]
+	[[mythical]
+		has_reform = army_of_the_dead_reform
+	]
 }
 
 # Dual check to see if a country is on the council
@@ -102,12 +50,7 @@ has_council_position = {
 	has_country_flag = $sm_council_position$_cactive
 }
 
-is_yiti_government = {
-	OR = {
-		has_reform = yiti_city_reform
-		has_reform = yiti_empire_reform
-	}
-}
+# Government Triggers
 
 is_monarchy_government = {
 	OR = {
@@ -123,6 +66,25 @@ is_monarchy_government = {
 		has_reform = yunkai_city_reform
 		has_reform = astapor_city_reform
 		has_reform = ghis_city_reform
+	}
+}
+
+is_dynasty_government = {
+	custom_trigger_tooltip = {
+		tooltip = "government_dynasty"
+		OR = {
+			has_reform = noble_house_reform
+			has_reform = lord_of_the_tides_reform
+			has_reform = great_house_reform
+			has_reform = royal_house_reform
+		}
+	}
+}
+
+is_yiti_government = {
+	OR = {
+		has_reform = yiti_city_reform
+		has_reform = yiti_empire_reform
 	}
 }
 
@@ -145,6 +107,22 @@ is_republic_government = {
 	}
 }
 
+is_free_city_government = {
+	OR = {
+		has_reform = tyrosh_city_reform
+		has_reform = myr_city_reform
+		has_reform = lys_city_reform
+		has_reform = volantis_city_reform
+		has_reform = pentos_city_reform
+		has_reform = braavos_city_reform
+		has_reform = lorath_city_reform
+		has_reform = qohor_city_reform
+		has_reform = norvos_city_reform
+		has_reform = saath_city_reform
+		has_reform = andal_city_reform
+	}
+}
+
 is_theocracy_government = {
 	OR = {
 		has_reform = theocracy_reform
@@ -164,6 +142,14 @@ is_tribal_government = {
 		has_reform = faros_clan_reform
 		has_reform = naath_clan_reform
 		has_reform = summer_islander_clan_reform
+	}
+}
+
+is_primitive_government = {
+	OR = {
+		has_reform = khalasar_reform
+		has_reform = jhattar_reform
+		has_reform = wildling_clan_reform
 	}
 }
 
@@ -199,27 +185,77 @@ is_pirate_government = {
 	has_government_attribute = is_pirate_republic_reform
 }
 
+# Specific triggers to check
+# status in the Seven Kingdoms
+westeros_government_king = {
+	if = {
+		limit = { hre_size = 1 }
+		is_emperor = yes
+	}
+	else = {
+		OR = {
+			has_reform = royal_house_reform
+			has_reform = kingdom_of_westeros_reform
+		}
+	}
+}
+westeros_government_not_king = {
+	if = {
+		limit = { hre_size = 1 }
+		is_part_of_hre = yes
+		is_emperor = no
+	}
+	else = {
+		OR = {
+			has_reform = noble_house_reform
+			has_reform = lord_of_the_tides_reform
+			has_reform = great_house_reform
+		}
+	}
+}
+westeros_government_not_king_nor_great_house = {
+	if = {
+		limit = { hre_size = 1 }
+		is_part_of_hre = yes
+		is_emperor = no
+		is_elector = no
+	}
+	else = {
+		OR = {
+			has_reform = noble_house_reform
+			has_reform = lord_of_the_tides_reform
+		}
+	}
+}
+westeros_government_great_house = {
+	if = {
+		limit = { hre_size = 1 }
+		is_elector = yes
+	}
+	else = {
+		has_reform = great_house_reform
+	}
+}
+
+# SK Mechanic Triggers
 sk_centralization = {
 	custom_trigger_tooltip = {
 		tooltip = CENTRALIZATION_TT
 		hre_reform_passed = king_implement_royal_court_of_justice
 	}
 }
-
 sk_decentralization = {
 	custom_trigger_tooltip = {
 		tooltip = DECENTRALIZATION_TT
 		hre_reform_passed = king_reform_the_armies
 	}
 }
-
 sk_not_centralization = {
 	custom_trigger_tooltip = {
 		tooltip = NOT_CENTRALIZATION_TT
 		NOT = { hre_reform_passed = king_implement_royal_court_of_justice }
 	}
 }
-
 sk_not_decentralization = {
 	custom_trigger_tooltip = {
 		tooltip = NOT_DECENTRALIZATION_TT

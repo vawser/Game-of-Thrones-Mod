@@ -6,7 +6,7 @@ estate_church_land_rights = {
 	influence = 0.05
 	is_valid = {
 		if = {
-			limit = { is_westerosi_government = yes }
+			limit = { is_dynasty_government = yes }
 			dynasty_base_privileges_valid = {
 				estate_privilege = estate_church_land_rights
 			}
@@ -14,7 +14,7 @@ estate_church_land_rights = {
 	}
 	can_select = {
 		if = {
-			limit = { is_westerosi_government = yes }
+			limit = { is_dynasty_government = yes }
 			dynasty_base_privileges_trigger = yes
 		}
 	}
@@ -84,7 +84,7 @@ estate_church_religious_state = {
 	loyalty = -0.05
 	is_valid = {
 		if = {
-			limit = { is_westerosi_government = yes }
+			limit = { is_dynasty_government = yes }
 			dynasty_base_privileges_valid = {
 				estate_privilege = estate_church_land_rights
 			}
@@ -92,7 +92,7 @@ estate_church_religious_state = {
 	}
 	can_select = {
 		if = {
-			limit = { is_westerosi_government = yes }
+			limit = { is_dynasty_government = yes }
 			dynasty_base_privileges_trigger = yes
 		}
 	}

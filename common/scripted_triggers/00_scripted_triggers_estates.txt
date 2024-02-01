@@ -22,6 +22,23 @@ has_any_estates = {
 	}
 }
 
+has_enabled_estate_action = {
+	has_country_flag = enable_estate_action_$estate_action$
+}
+
+estate_action_off_cooldown = {
+	custom_trigger_tooltip = {
+		tooltip = CAN_USE_ESTATE_ACTION_EVERY_$days$
+		OR = {
+			NOT = { has_country_flag = $estate_action$_flag }
+			had_country_flag = {
+				flag = $estate_action$_flag
+				days = $days$
+			}
+		}
+	}
+}
+
 #Country scope
 can_swap_out_of_estate_granting_reform = {
 	OR = {

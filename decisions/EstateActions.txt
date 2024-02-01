@@ -1,0 +1,33 @@
+country_decisions = {
+	estate_merchants_recruit_trade_specialist = {
+		color = { 195 160 20 }
+		potential = {
+			has_enabled_estate_action = {
+				estate_action = RECRUIT_TRADE_SPECIALIST
+			}
+			has_estate = estate_merchants
+		}
+		allow = {
+			# has_not_any_estate_disaster_active = yes
+			estate_influence = {
+				estate = estate_merchants
+				influence = 40
+			}
+			estate_action_off_cooldown = {
+				estate_action = RECRUIT_TRADE_SPECIALIST
+				days = 10950
+			}
+		}
+		effect = {
+			set_estate_action_cooldown = {
+				estate_action = RECRUIT_TRADE_SPECIALIST
+			}
+			estate_action = {
+				estate_action = RECRUIT_TRADE_SPECIALIST
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

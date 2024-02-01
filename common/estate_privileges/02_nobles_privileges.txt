@@ -148,12 +148,6 @@ estate_nobility_nobility_primacy = {
 			dynasty_base_privileges_trigger = yes
 		}
 	}
-	on_granted = {
-		add_legitimacy_equivalent = {
-			amount = 5
-			republican_tradition = 5
-		}
-	}
 	benefits = {
 		country_military_power = 1
 		nobles_privilege_slots = 1
@@ -225,6 +219,7 @@ estate_nobility_levies = {
 	}
 	on_granted = {
 		add_mil_power = 25
+		add_yearly_manpower = 0.15
 	}
 	modifier_by_land_ownership = {
 		global_tax_modifier = -0.10
@@ -328,7 +323,7 @@ estate_nobility_levies = {
 
 estate_nobility_advisors = {
 	icon = privilege_recruit_minister
-	max_absolutism = -5
+	max_absolutism = -10
 	influence = 0.1
 	loyalty = 0.05
 	penalties = {

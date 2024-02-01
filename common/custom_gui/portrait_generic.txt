@@ -1,0 +1,595 @@
+# Ruler images
+custom_icon = {
+	name = ruler_image_generic
+	potential = {
+		has_generic_ruler_culture_portrait = yes
+	}
+	# Infant (Neutral)
+	frame = {
+		number = 1
+		trigger = {
+			ruler_age = 0
+			NOT = { ruler_age = 3 }
+		}
+	}
+	# Male Child (Young - 16)
+	frame = {
+		number = 2
+		trigger = {
+			ruler_age = 3
+			NOT = { ruler_age = 8 }
+			is_female = no
+		}
+	}
+	frame = {
+		number = 4
+		trigger = {
+			ruler_age = 8
+			NOT = { ruler_age = 12 }
+			is_female = no
+		}
+	}
+	frame = {
+		number = 5
+		trigger = {
+			ruler_age = 12
+			NOT = { ruler_age = 16 }
+			is_female = no
+		}
+	}
+	# Female Children (Young - 16)
+	frame = {
+		number = 3
+		trigger = {
+			ruler_age = 3
+			NOT = { ruler_age = 8 }
+			is_female = yes
+		}
+	}
+	frame = {
+		number = 6
+		trigger = {
+			ruler_age = 8
+			NOT = { ruler_age = 12 }
+			is_female = yes
+		}
+	}
+	frame = {
+		number = 7
+		trigger = {
+			ruler_age = 12
+			NOT = { ruler_age = 16 }
+			is_female = yes
+		}
+	}
+	# Male Adults (16 - 36)
+	frame = {
+		number = 8
+		trigger = {
+			ruler_age = 16
+			NOT = { ruler_age = 22 }
+			is_female = no
+		}
+	}
+	frame = {
+		number = 9
+		trigger = {
+			ruler_age = 22
+			NOT = { ruler_age = 28 }
+			is_female = no
+		}
+	}
+	frame = {
+		number = 10
+		trigger = {
+			ruler_age = 28
+			NOT = { ruler_age = 36 }
+			is_female = no
+		}
+	}
+	# Female Adults (16 - 36)
+	frame = {
+		number = 11
+		trigger = {
+			ruler_age = 16
+			NOT = { ruler_age = 22 }
+			is_female = yes
+		}
+	}
+	frame = {
+		number = 12
+		trigger = {
+			ruler_age = 22
+			NOT = { ruler_age = 28 }
+			is_female = yes
+		}
+	}
+	frame = {
+		number = 13
+		trigger = {
+			ruler_age = 28
+			NOT = { ruler_age = 36 }
+			is_female = yes
+		}
+	}
+	# Male Adults (36 - 48)
+	frame = {
+		number = 14
+		trigger = {
+			ruler_age = 36
+			NOT = { ruler_age = 42 }
+			is_female = no
+		}
+	}
+	frame = {
+		number = 15
+		trigger = {
+			ruler_age = 42
+			NOT = { ruler_age = 48 }
+			is_female = no
+		}
+	}
+	# Female Adults (36 - 48)
+	frame = {
+		number = 16
+		trigger = {
+			ruler_age = 36
+			NOT = { ruler_age = 42 }
+			is_female = yes
+		}
+	}
+	frame = {
+		number = 17
+		trigger = {
+			ruler_age = 42
+			NOT = { ruler_age = 48 }
+			is_female = yes
+		}
+	}
+	# Male Adults (48+)
+	frame = {
+		number = 18
+		trigger = {
+			ruler_age = 48
+			NOT = { ruler_age = 54 }
+			is_female = no
+		}
+	}
+	frame = {
+		number = 19
+		trigger = {
+			ruler_age = 54
+			NOT = { ruler_age = 62 }
+			is_female = no
+		}
+	}
+	frame = {
+		number = 20
+		trigger = {
+			ruler_age = 62
+			is_female = no
+		}
+	}
+	# Female Adults (48+)
+	frame = {
+		number = 21
+		trigger = {
+			ruler_age = 48
+			NOT = { ruler_age = 54 }
+			is_female = yes
+		}
+	}
+	frame = {
+		number = 22
+		trigger = {
+			ruler_age = 54
+			NOT = { ruler_age = 62 }
+			is_female = yes
+		}
+	}
+	frame = {
+		number = 23
+		trigger = {
+			ruler_age = 62
+			is_female = yes
+		}
+	}
+}
+
+# Heir images
+custom_icon = {
+	name = heir_image_generic
+	potential = {
+		has_heir = yes
+		has_generic_heir_culture_portrait = yes
+	}
+	# Infant (Neutral)
+	frame = {
+		number = 1
+		trigger = {
+			heir_age = 0
+			NOT = { heir_age = 3 }
+		}
+	}
+	# Male Child (Young - 16)
+	frame = {
+		number = 2
+		trigger = {
+			heir_age = 3
+			NOT = { heir_age = 8 }
+			has_female_heir = no
+		}
+	}
+	frame = {
+		number = 4
+		trigger = {
+			heir_age = 8
+			NOT = { heir_age = 12 }
+			has_female_heir = no
+		}
+	}
+	frame = {
+		number = 5
+		trigger = {
+			heir_age = 12
+			NOT = { heir_age = 16 }
+			has_female_heir = no
+		}
+	}
+	# Female Children (Young - 16)
+	frame = {
+		number = 3
+		trigger = {
+			heir_age = 3
+			NOT = { heir_age = 8 }
+			has_female_heir = yes
+		}
+	}
+	frame = {
+		number = 6
+		trigger = {
+			heir_age = 8
+			NOT = { heir_age = 12 }
+			has_female_heir = yes
+		}
+	}
+	frame = {
+		number = 7
+		trigger = {
+			heir_age = 12
+			NOT = { heir_age = 16 }
+			has_female_heir = yes
+		}
+	}
+	# Male Adults (16 - 36)
+	frame = {
+		number = 8
+		trigger = {
+			heir_age = 16
+			NOT = { heir_age = 22 }
+			has_female_heir = no
+		}
+	}
+	frame = {
+		number = 9
+		trigger = {
+			heir_age = 22
+			NOT = { heir_age = 28 }
+			has_female_heir = no
+		}
+	}
+	frame = {
+		number = 10
+		trigger = {
+			heir_age = 28
+			NOT = { heir_age = 36 }
+			has_female_heir = no
+		}
+	}
+	# Female Adults (16 - 36)
+	frame = {
+		number = 11
+		trigger = {
+			heir_age = 16
+			NOT = { heir_age = 22 }
+			has_female_heir = yes
+		}
+	}
+	frame = {
+		number = 12
+		trigger = {
+			heir_age = 22
+			NOT = { heir_age = 28 }
+			has_female_heir = yes
+		}
+	}
+	frame = {
+		number = 13
+		trigger = {
+			heir_age = 28
+			NOT = { heir_age = 36 }
+			has_female_heir = yes
+		}
+	}
+	# Male Adults (36 - 48)
+	frame = {
+		number = 14
+		trigger = {
+			heir_age = 36
+			NOT = { heir_age = 42 }
+			has_female_heir = no
+		}
+	}
+	frame = {
+		number = 15
+		trigger = {
+			heir_age = 42
+			NOT = { heir_age = 48 }
+			has_female_heir = no
+		}
+	}
+	# Female Adults (36 - 48)
+	frame = {
+		number = 16
+		trigger = {
+			heir_age = 36
+			NOT = { heir_age = 42 }
+			has_female_heir = yes
+		}
+	}
+	frame = {
+		number = 17
+		trigger = {
+			heir_age = 42
+			NOT = { heir_age = 48 }
+			has_female_heir = yes
+		}
+	}
+	# Male Adults (48+)
+	frame = {
+		number = 18
+		trigger = {
+			heir_age = 48
+			NOT = { heir_age = 54 }
+			has_female_heir = no
+		}
+	}
+	frame = {
+		number = 19
+		trigger = {
+			heir_age = 54
+			NOT = { heir_age = 62 }
+			has_female_heir = no
+		}
+	}
+	frame = {
+		number = 20
+		trigger = {
+			heir_age = 62
+			has_female_heir = no
+		}
+	}
+	# Female Adults (48+)
+	frame = {
+		number = 21
+		trigger = {
+			heir_age = 48
+			NOT = { heir_age = 54 }
+			has_female_heir = yes
+		}
+	}
+	frame = {
+		number = 22
+		trigger = {
+			heir_age = 54
+			NOT = { heir_age = 62 }
+			has_female_heir = yes
+		}
+	}
+	frame = {
+		number = 23
+		trigger = {
+			heir_age = 62
+			has_female_heir = yes
+		}
+	}
+}
+
+# Consort images
+custom_icon = {
+	name = consort_image_generic
+	potential = {
+		has_consort = yes
+		has_generic_consort_culture_portrait = yes
+	}
+	# Infant (Neutral)
+	frame = {
+		number = 1
+		trigger = {
+			consort_age = 0
+			NOT = { consort_age = 3 }
+		}
+	}
+	# Male Child (Young - 16)
+	frame = {
+		number = 2
+		trigger = {
+			consort_age = 3
+			NOT = { consort_age = 8 }
+			has_female_consort = no
+		}
+	}
+	frame = {
+		number = 4
+		trigger = {
+			consort_age = 8
+			NOT = { consort_age = 12 }
+			has_female_consort = no
+		}
+	}
+	frame = {
+		number = 5
+		trigger = {
+			consort_age = 12
+			NOT = { consort_age = 16 }
+			has_female_consort = no
+		}
+	}
+	# Female Children (Young - 16)
+	frame = {
+		number = 3
+		trigger = {
+			consort_age = 3
+			NOT = { consort_age = 8 }
+			has_female_consort = yes
+		}
+	}
+	frame = {
+		number = 6
+		trigger = {
+			consort_age = 8
+			NOT = { consort_age = 12 }
+			has_female_consort = yes
+		}
+	}
+	frame = {
+		number = 7
+		trigger = {
+			consort_age = 12
+			NOT = { consort_age = 16 }
+			has_female_consort = yes
+		}
+	}
+	# Male Adults (16 - 36)
+	frame = {
+		number = 8
+		trigger = {
+			consort_age = 16
+			NOT = { consort_age = 22 }
+			has_female_consort = no
+		}
+	}
+	frame = {
+		number = 9
+		trigger = {
+			consort_age = 22
+			NOT = { consort_age = 28 }
+			has_female_consort = no
+		}
+	}
+	frame = {
+		number = 10
+		trigger = {
+			consort_age = 28
+			NOT = { consort_age = 36 }
+			has_female_consort = no
+		}
+	}
+	# Female Adults (16 - 36)
+	frame = {
+		number = 11
+		trigger = {
+			consort_age = 16
+			NOT = { consort_age = 22 }
+			has_female_consort = yes
+		}
+	}
+	frame = {
+		number = 12
+		trigger = {
+			consort_age = 22
+			NOT = { consort_age = 28 }
+			has_female_consort = yes
+		}
+	}
+	frame = {
+		number = 13
+		trigger = {
+			consort_age = 28
+			NOT = { consort_age = 36 }
+			has_female_consort = yes
+		}
+	}
+	# Male Adults (36 - 48)
+	frame = {
+		number = 14
+		trigger = {
+			consort_age = 36
+			NOT = { consort_age = 42 }
+			has_female_consort = no
+		}
+	}
+	frame = {
+		number = 15
+		trigger = {
+			consort_age = 42
+			NOT = { consort_age = 48 }
+			has_female_consort = no
+		}
+	}
+	# Female Adults (36 - 48)
+	frame = {
+		number = 16
+		trigger = {
+			consort_age = 36
+			NOT = { consort_age = 42 }
+			has_female_consort = yes
+		}
+	}
+	frame = {
+		number = 17
+		trigger = {
+			consort_age = 42
+			NOT = { consort_age = 48 }
+			has_female_consort = yes
+		}
+	}
+	# Male Adults (48+)
+	frame = {
+		number = 18
+		trigger = {
+			consort_age = 48
+			NOT = { consort_age = 54 }
+			has_female_consort = no
+		}
+	}
+	frame = {
+		number = 19
+		trigger = {
+			consort_age = 54
+			NOT = { consort_age = 62 }
+			has_female_consort = no
+		}
+	}
+	frame = {
+		number = 20
+		trigger = {
+			consort_age = 62
+			has_female_consort = no
+		}
+	}
+	# Female Adults (48+)
+	frame = {
+		number = 21
+		trigger = {
+			consort_age = 48
+			NOT = { consort_age = 54 }
+			has_female_consort = yes
+		}
+	}
+	frame = {
+		number = 22
+		trigger = {
+			consort_age = 54
+			NOT = { consort_age = 62 }
+			has_female_consort = yes
+		}
+	}
+	frame = {
+		number = 23
+		trigger = {
+			consort_age = 62
+			has_female_consort = yes
+		}
+	}
+}

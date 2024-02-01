@@ -42,3 +42,30 @@ is_absolutism_active = {
 		current_age = age_of_ice
 	}
 }
+
+# Unique Portrait Triggers
+has_unique_ruler_culture_portrait = {
+	OR = {
+		ruler_culture = men_of_the_westerlands
+	}
+}
+has_unique_heir_culture_portraits = {
+	OR = {
+		heir_culture = men_of_the_westerlands
+	}
+}
+has_unique_consort_culture_portraits = {
+	OR = {
+		consort_culture = men_of_the_westerlands
+	}
+}
+# Generic Portrait Triggers
+has_generic_ruler_culture_portrait = {
+	NOT = { has_unique_ruler_culture_portrait = yes }
+}
+has_generic_heir_culture_portrait = {
+	NOT = { has_unique_heir_culture_portraits = yes }
+}
+has_generic_consort_culture_portrait = {
+	NOT = { has_unique_consort_culture_portraits = yes }
+}

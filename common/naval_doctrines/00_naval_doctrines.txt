@@ -1,65 +1,91 @@
-fleet_in_being =
-{
+fleet_in_being = {
 	can_select = {
 		is_primitive = no
 	}
 	
+	cost = 0.1
 	country_modifier = {
+		max_flagships = 1
 		naval_maintenance_modifier = -0.15
 	}
+	effect = {}
+	removed_effect = {}
 	
 	button_gfx = 1
 }
 
-free_oarsmen =
-{
+free_oarsmen = {
 	can_select = {
 		is_primitive = no
 	}
 
+	cost = 0.1
 	country_modifier = {
-		galley_power = 0.15
+		galley_power = 0.125
 	}
+	effect = {}
+	removed_effect = {}
 	
 	button_gfx = 2
 }
 
-merchant_navy =
-{
+merchant_navy = {
 	can_select = {
 		is_primitive = no
 	}
 
+	cost = 0.1
 	country_modifier = {
 		global_ship_trade_power = 0.33
 	}
+	effect = {}
+	removed_effect = {}
 	
 	button_gfx = 3
 }
 
-ship_boarding =
-{
+ship_boarding = {
 	can_select = {
 		is_primitive = no
 	}
 
+	cost = 0.1
 	country_modifier = {
 		capture_ship_chance = 0.33
 	}
+	effect = {}
+	removed_effect = {}
 	
 	button_gfx = 4
 }
 
-wooden_wall =
-{
+wooden_wall = {
 	can_select = {
-		is_primitive = no
+		NOT = { tag = A43 }
 	}
 
+	cost = 0.1
 	country_modifier = {
 		own_coast_naval_combat_bonus = 1.0
 	}
+	effect = {}
+	removed_effect = {}
 
 	button_gfx = 5
 }
 
+driftmark_admiralty = {
+	can_select = {
+		tag = A43
+	}
+
+	cost = 0.1
+	country_modifier = {
+		leader_naval_manuever = 2
+		admiral_cost = -0.15
+	}
+	effect = {}
+	removed_effect = {}
+
+	button_gfx = 11
+}

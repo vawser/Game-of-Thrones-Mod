@@ -1,9 +1,9 @@
 estate_church_land_rights = {
 	icon = privilege_grant_autonomy
+	loyalty = 0.05
+	influence = 0.05
 	land_share = 5
 	max_absolutism = -5
-	loyalty = 0.05
-	influence = 0.10
 	is_valid = {
 		if = {
 			limit = { is_dynasty_government = yes }
@@ -19,6 +19,10 @@ estate_church_land_rights = {
 		}
 	}
 	on_granted = {
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
 	}
 	benefits = {
 	}
@@ -125,10 +129,11 @@ estate_church_land_rights = {
 }
 
 estate_church_religious_state = {
-	icon = privilege_seek_support_of_clergy
+	icon = privilege_admin_power
+	loyalty = -0.05
+	influence = 0.10
 	land_share = 10
 	max_absolutism = -5
-	loyalty = -0.05
 	is_valid = {
 		if = {
 			limit = { is_dynasty_government = yes }
@@ -142,12 +147,6 @@ estate_church_religious_state = {
 			limit = { is_dynasty_government = yes }
 			dynasty_base_privileges_trigger = yes
 		}
-	}
-	on_granted = {
-		add_adm_power = 50
-	}
-	penalties = {
-		stability_cost_modifier = 0.025
 	}
 	benefits = {
 		country_admin_power = 1
@@ -187,46 +186,27 @@ estate_church_religious_state = {
 	}
 }
 
-estate_church_tolerance_towards_the_faith = {
-	icon = estate_church_union_of_the_churches
-	loyalty = -0.10
-	influence = 0
-	max_absolutism = -10
-	is_valid = {
-		NOT = { religion = faith_of_the_seven }
-	}
-	on_granted = {
-		custom_tooltip = "The Faith will receive an opinion boost of +125 with us."
-		hidden_effect = {
-			FAT = {
-				add_opinion = {
-					who = ROOT
-					modifier = BYZ_union_of_the_churches_op
-				}
-			}
-		}
-	}
-	benefits = {
-		tolerance_heretic = 2
-	}
-	penalties = {
-		tolerance_own = -4
-		stability_cost_modifier = 0.05
-	}
-	ai_will_do = {
-		factor = 5
-		modifier = {
-			factor = 0.25
-			is_absolutism_active = yes
-		}
-	}
-}
-
 estate_church_independent_inquisition = {
-	icon = privilege_empty_throne
-	max_absolutism = -5
-	influence = 0.05
+	icon = privilege_recruit_minister
 	loyalty = 0.05
+	influence = 0.10
+	land_share = 0
+	max_absolutism = -5
+	on_granted = {
+		enable_estate_action = {
+			estate_action = RECRUIT_THEOLOGIAN
+		}
+	}
+	on_revoked = {
+		disable_estate_action = {
+			estate_action = RECRUIT_THEOLOGIAN
+		}
+	}
+	on_invalid = {
+		disable_estate_action = {
+			estate_action = RECRUIT_THEOLOGIAN
+		}
+	}
 	benefits = {
 		adm_advisor_cost = -0.15
 	}
@@ -242,6 +222,103 @@ estate_church_independent_inquisition = {
 		modifier = {
 			factor = 3
 			uses_meritocracy = yes
+		}
+	}
+}
+
+estate_church_faith_emissary = {
+	icon = privilege_send_emissary_to_pope
+	loyalty = 0
+	influence = 0.05
+	land_share = 0
+	max_absolutism = -5
+	is_valid = {
+		religion = faith_of_the_seven
+		NOT = { tag = FAT }
+	}
+	can_select = {
+		papal_influence = 20
+		num_of_cardinals = 1
+	}
+	on_granted = {
+		add_papal_influence = -5
+	}
+	penalties = {
+		curia_powers_cost = 0.05
+	}
+	benefits = {
+		papal_influence = 1
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			owns = 286
+		}
+		# modifier = {
+		# 	factor = 0
+		# 	OR = {
+		# 		tag = A09
+		# 		tag = A06
+		# 	}
+		# }
+		modifier = {
+			factor = 0
+			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 0.75
+			NOT = {
+				reverse_has_opinion = {
+					who = FAT
+					value = 50
+				}
+			}
+		}
+	}
+}
+
+estate_church_extraordinary_tithe = {
+	icon = privilege_missionary
+	loyalty = 0
+	influence = 0.10
+	land_share = 0
+	max_absolutism = -5
+
+	modifier_by_land_ownership = {
+		missionary_maintenance_cost = -0.66
+		global_unrest = 2
+	}
+	on_granted = {
+		add_adm_power = 25
+	}
+	mechanics = {
+		exempt_from_seize_land
+	}
+
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_church_clerical_oversight = {
+	icon = privilege_tolerance_heathen
+	max_absolutism = -10
+	loyalty = 0.1
+	influence = 0.1
+	can_select = {
+		NOT = { has_estate_privilege = estate_nobility_right_of_counsel }
+		NOT = { has_estate_privilege = estate_merchants_free_enterprise }
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			is_absolutism_active = yes
 		}
 	}
 }
@@ -264,204 +341,6 @@ estate_church_far_east_mission = {
 	}
 	ai_will_do = {
 		factor = 0
-	}
-}
-
-estate_church_clerical_ministers = {
-	icon = privilege_recruit_minister
-	max_absolutism = -5
-	influence = 0.10
-    
-	conditional_modifier = {
-		trigger = {
-			if = {
-				limit = {
-					has_dlc = "Common Sense"
-				}
-				NOT = { religion = rhllor }
-				NOT = { religion = great_shepherd }
-                NOT = { religion = ib }
-                NOT = { religion = moonsingers }
-                NOT = { religion = summer_gods }
-                NOT = { religion = cyromancy}
-			}
-			if = {
-				limit = {
-					has_dlc = "Wealth of Nations"
-				}
-				NOT = { religion = mother_rhoyne }
-                NOT = { religion = trios }
-                NOT = { religion = remnants_of_boash }
-                NOT = { religion = hooded_wayfarer }
-                NOT = { religion = stone_cow }
-                NOT = { religion = lord_of_harmony }
-			}
-			if = {
-				limit = {
-					has_dlc = "Cradle of Civilization"
-				}
-				#  NOT = { religion_group = muslim }
-			}
-			if = {
-				limit = {
-					has_dlc = "Mandate of Heaven"
-				}
-				#  NOT = { religion = confucianism }
-			}
-			if = {
-				limit = {
-					has_dlc = "Third Rome"
-				}
-				NOT = { religion = drowned_god }
-                NOT = { religion = old_gods }
-                NOT = { religion = lion_of_the_night }
-                NOT = { religion = gods_of_hyrkoon }
-			}
-            NOT = { religion = bearded_priests }
-            NOT = { religion = ghiscari_pantheon }
-            NOT = { religion = cult_of_shadows }
-            NOT = { religion = great_stallion }
-            NOT = { religion = lady_of_the_waves }
-            
-		}
-		modifier = {
-			missionary_maintenance_cost = -0.2
-		}
-	}
-	# conditional_modifier = {
-		# trigger = {
-			# has_dlc = "Common Sense"
-			# OR = {
-				# religion = buddhism
-				# religion = vajrayana
-				# religion = mahayana
-			# }
-		# }
-		# modifier = {
-			# yearly_karma_decay = 0.005
-		# }
-	# }
-	conditional_modifier = {
-		trigger = {
-			has_dlc = "Common Sense"
-			OR = {
-                religion = rhllor
-                religion = great_shepherd
-                religion = ib
-                religion = moonsingers
-                religion = summer_gods
-                religion = cyromancy
-            }
-		}
-		modifier = {
-			church_power_modifier = 0.1
-		}
-	}
-	conditional_modifier = {
-		trigger = {
-			has_dlc = "Wealth of Nations"
-			OR = {
-                religion = mother_rhoyne
-                religion = trios
-                religion = remnants_of_boash
-                religion = hooded_wayfarer
-                religion = stone_cow
-                religion = lord_of_harmony
-            }
-		}
-		modifier = {
-			monthly_fervor_increase = 0.5
-		}
-	}
-	# conditional_modifier = {
-		# trigger = {
-			# has_dlc = "Cradle of Civilization"
-			# religion_group = muslim
-		# }
-		# modifier = {
-			# monthly_piety = 0.001
-		# }
-	# }
-	# conditional_modifier = {
-		# trigger = {
-			# has_dlc = "Mandate of Heaven"
-			# religion = confucianism
-		# }
-		# modifier = {
-			# yearly_harmony = 0.25
-		# }
-	# }
-	conditional_modifier = {
-		trigger = {
-			has_dlc = "Third Rome"
-			OR = {
-                religion = drowned_god
-                religion = old_gods
-                religion = lion_of_the_night
-                religion = gods_of_hyrkoon 
-            }
-		}
-		modifier = {
-			yearly_patriarch_authority = 0.005
-		}
-	}
-    conditional_modifier = {
-		trigger = {
-			OR = {
-                religion = bearded_priests
-                religion = ghiscari_pantheon
-                religion = cult_of_shadows
-                religion = great_stallion
-                religion = lady_of_the_waves
-            }
-		}
-		modifier = {
-			church_power_modifier = 0.1
-		}
-	}
-    
-	penalties = {
-	}
-	benefits = {
-	}
-	ai_will_do = {
-		factor = 10
-        
-		modifier = {
-			factor = 0.5
-			OR = {
-                religion = rhllor
-                religion = bearded_priests
-                religion = ghiscari_pantheon
-                religion = great_shepherd
-                religion = ib
-                religion = moonsingers
-                religion = cult_of_shadows
-                religion = summer_gods
-                religion = great_stallion
-                religion = lady_of_the_waves
-                religion = cyromancy
-            }
-			num_of_aspects = 3
-		}
-	}
-}
-
-estate_church_clerical_oversight = {
-	icon = privilege_tolerance_heathen
-	max_absolutism = -10
-	loyalty = 0.1
-	influence = 0.1
-	penalties = {
-	}
-	benefits = {
-	}
-	ai_will_do = {
-		factor = 10
-		modifier = {
-			factor = 0
-			is_absolutism_active = yes
-		}
 	}
 }
 
@@ -579,12 +458,6 @@ estate_church_one_faith_one_culture = {
 			church_influence_modifier = -0.2
 		}
 	}
-	
-	
-	#conditional_modifier = {
-	#	trigger = { has_government_mechanic = ottoman_decadence_mechanic }
-	#	modifier = { monthly_ottoman_decadence = 0.02 }
-	#}
 	cooldown_years = 15
 	ai_will_do = {
 		factor = 10
@@ -644,10 +517,6 @@ estate_church_religious_diplomats = {
 			church_influence_modifier = -0.15
 		}
 	}
-	#conditional_modifier = {
-	#	trigger = { has_government_mechanic = ottoman_decadence_mechanic }
-	#	modifier = { monthly_ottoman_decadence = 0.02 }
-	#}
 	ai_will_do = {
 		factor = 1	#The privilege is a little bit too niche to be really usable for the AI
 	}
@@ -677,10 +546,6 @@ estate_church_enforced_one_faith = {
 	on_cooldown_expires = {
 		remove_estate_privilege = estate_church_enforced_one_faith
 	}
-	#conditional_modifier = {
-	#	trigger = { has_government_mechanic = ottoman_decadence_mechanic }
-	#	modifier = { monthly_ottoman_decadence = 0.02 }
-	#}
 	ai_will_do = {
 		factor = 0
 	}
@@ -696,16 +561,36 @@ estate_church_inwards_perfection = {
 	can_select = {
 		NOT = { has_estate_privilege = estate_church_for_the_faith }
 	}
+	can_revoke = {
+		is_at_war = no
+	}
 	on_granted = {
 	}
 	modifier_by_land_ownership = {
-		development_cost = -0.15
+		development_cost = -0.33
+		global_tax_modifier = 0.45
+		production_efficiency = 0.45
+		global_monthly_devastation = -0.20
+		core_creation = 1
+		province_warscore_cost = 2
 	}
 	penalties = {
 		stability_cost_to_declare_war = 1
 	}
 	benefits = {
+		tolerance_own = 2
 	}
+	mechanics = {
+		exempt_from_seize_land
+	}
+	conditional_modifier = {
+		trigger = { ai = yes }	#I know, this one is cheating. It would be better to teach the AI to not dow, but whatev
+		modifier = {
+			can_not_declare_war = yes
+		}
+		is_bad = yes
+	}
+	cooldown_years = 25
 	ai_will_do = {
 		factor = 1
 	}
@@ -731,10 +616,10 @@ estate_church_for_the_faith = {
 		NOT = { has_estate_privilege = estate_church_inwards_perfection }
 	}
 	on_granted = {
-		custom_tooltip = estate_church_for_the_faith_effect_tooltip
+		custom_tooltip = estate_church_for_the_faith_effect_tt
 	}
 	on_revoked = {
-		custom_tooltip = estate_church_for_the_faith_effect_tooltip
+		custom_tooltip = estate_church_for_the_faith_effect_tt
 	}
 	conditional_modifier = {
 		trigger = {
@@ -745,7 +630,7 @@ estate_church_for_the_faith = {
 		}
 		modifier = {
 			church_loyalty_modifier = 0.1
-			land_morale = 0.1
+			land_morale = 0.05
 		}
 	}
 	conditional_modifier = {
@@ -759,12 +644,10 @@ estate_church_for_the_faith = {
 					}
 				}
 			}
-			NOT = { has_country_modifier = recently_force_converted_protagonist_timer }
-			NOT = { has_country_modifier = recently_annexed_other_religion_timer }
 		}
 		modifier = {
 			church_loyalty_modifier = -0.1
-			land_morale = -0.1
+			land_morale = -0.05
 		}
 		is_bad = yes
 	}
@@ -775,28 +658,179 @@ estate_church_for_the_faith = {
 	}
 }
 
-estate_church_statutory_rights = {
-	icon = privilege_grant_autonomy
+estate_church_clerical_education = {
+	icon = privilege_technology
+	loyalty = 0.0
+	influence = 0.05
 	max_absolutism = -5
-	influence = 0.1
 	is_valid = {
-		has_estate_privilege = estate_church_statutory_rights
+		has_dlc = "Domination"
 	}
-	on_granted = {
-		change_estate_land_share = {
-			estate = all
-			share = -30
+	can_select = {
+		if = {
+			limit = { has_estate = estate_brahmins }
+			NOT = { has_estate_privilege = estate_brahmins_clerical_education }
+		}
+		if = {
+			limit = { has_estate = estate_dhimmi }
+			NOT = { has_estate_privilege = estate_dhimmi_dhimmi_education }
 		}
 	}
+	on_granted = {
+		scaling_with_influence_privilege_tooltip = {
+			loyalty_factor = yes
+			loyal_tt = "clerical_education_loyal"
+			neutral_tt = "clerical_education_neutral"
+			disloyal_tt = "clerical_education_disloyal"
+		}
+	}
+	on_revoked = {
+		scaling_with_influence_privilege_tooltip = {
+			loyalty_factor = yes
+			loyal_tt = "clerical_education_loyal"
+			neutral_tt = "clerical_education_neutral"
+			disloyal_tt = "clerical_education_disloyal"
+		}
+	}
+	influence_scaled_conditional_modifier = {	#Modifier that are applied if the specified conditions are true. At 100% Influence you gain 100% of the modifier.
+		trigger = {
+			NOT = {
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 30
+				}
+			}
+		}
+		modifier = {
+			reform_progress_growth = -0.25
+		}
+	}
+	influence_scaled_conditional_modifier = {	#Modifier that are applied if the specified conditions are true. At 100% Influence you gain 100% of the modifier.
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 30
+			}
+			NOT = {
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 60
+				}
+			}
+		}
+		modifier = {
+			reform_progress_growth = 0.1
+		}
+	}
+	influence_scaled_conditional_modifier = {	#Modifier that are applied if the specified conditions are true. At 100% Influence you gain 100% of the modifier.
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+		}
+		modifier = {
+			reform_progress_growth = 0.25
+		}
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			NOT = {
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				estate_influence = {
+					estate = estate_church
+					influence = 50
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			is_absolutism_active = yes
+		}
+	}
+}
+
+estate_church_donation_right = {
+	icon = privilege_make_generous_donation
+	loyalty = 0.0
+	influence = 0.05
+	max_absolutism = -5
+	is_valid = {
+		has_dlc = "Domination"
+	}
+	loyalty_scaled_conditional_modifier = {
+		trigger = {
+			always = yes
+		}
+		modifier = {
+			missionary_maintenance_cost = -1
+			prestige_per_development_from_conversion = 0.5
+		}
+	}
+	on_granted = {
+		scaling_with_loyalty_privilege_tooltip = {
+			tooltip = "estate_church_donation_right_tt"
+		}
+		enable_estate_action = {
+			estate_action = MAKE_GENEROUS_DONATION
+		}
+	}
+	on_invalid = {
+		scaling_with_loyalty_privilege_tooltip = {
+			tooltip = "estate_church_donation_right_tt"
+		}
+		disable_estate_action = {
+			estate_action = MAKE_GENEROUS_DONATION
+		}
+	}
+	on_revoked = {
+		scaling_with_loyalty_privilege_tooltip = {
+			tooltip = "estate_church_donation_right_tt"
+		}
+		disable_estate_action = {
+			estate_action = MAKE_GENEROUS_DONATION
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0.1
+			is_absolutism_active = yes
+		}
+	}
+}
+
+estate_church_sanctuaries = {
+	icon = privilege_promoto_dhimmi_nobles
+	max_absolutism = -5
+	loyalty = 0.05
+	influence = 0.05
+	is_valid = {
+		religion = faith_of_the_seven
+	}
+	can_select = {
+		religion = faith_of_the_seven
+	}
+	on_granted = {
+		custom_tooltip = estate_church_influence_temples_tt
+	}
 	penalties = {
-		min_autonomy = 25
 	}
 	benefits = {
 	}
 	ai_will_do = {
-		factor = 0
+		factor = 10
 	}
-	cooldown_years = 20
 }
 
 estate_church_monopoly_of_wine = {
@@ -1157,6 +1191,30 @@ estate_church_monopoly_of_cotton = {
 	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
 		factor = 0
 	}
+}
+
+estate_church_statutory_rights = {
+	icon = privilege_grant_autonomy
+	max_absolutism = -5
+	influence = 0.1
+	is_valid = {
+		has_estate_privilege = estate_church_statutory_rights
+	}
+	on_granted = {
+		change_estate_land_share = {
+			estate = all
+			share = -30
+		}
+	}
+	penalties = {
+		min_autonomy = 25
+	}
+	benefits = {
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	cooldown_years = 20
 }
 
 loe_estate_cant_seize_church = {

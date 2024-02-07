@@ -142,6 +142,45 @@ estate_merchants_land_of_commerce = {
 	}
 }
 
+estate_merchants_commercial_board_of_advice = {
+	icon = privilege_recruit_minister
+	max_absolutism = -10
+	influence = 0.1
+	loyalty = 0.05
+	on_granted = {
+		enable_estate_action = {
+			estate_action = RECRUIT_TRADE_SPECIALIST
+		}
+	}
+	on_revoked = {
+		disable_estate_action = {
+			estate_action = RECRUIT_TRADE_SPECIALIST
+		}
+	}
+	on_invalid = {
+		disable_estate_action = {
+			estate_action = RECRUIT_TRADE_SPECIALIST
+		}
+	}
+	penalties = {
+		stability_cost_modifier = 0.1
+	}
+	benefits = {
+		dip_advisor_cost = -0.15
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 1.25
+			NOT = { dip = 2 }
+		}
+		modifier = {
+			factor = 0.8
+			dip = 5
+		}
+	}
+}
+
 estate_merchants_admirals = {
 	icon = privilege_admiral
 	max_absolutism = -5
@@ -200,42 +239,21 @@ estate_merchants_patronage_of_the_arts = {
 	}
 }
 
-estate_merchants_commercial_board_of_advice = {
-	icon = privilege_recruit_minister
+estate_merchants_free_enterprise = {
+	icon = privilege_comission_merchant_ships_for_war
 	max_absolutism = -10
+	loyalty = 0.1
 	influence = 0.1
-	loyalty = 0.05
-	on_granted = {
-		enable_estate_action = {
-			estate_action = RECRUIT_TRADE_SPECIALIST
-		}
-	}
-	on_revoked = {
-		disable_estate_action = {
-			estate_action = RECRUIT_TRADE_SPECIALIST
-		}
-	}
-	on_invalid = {
-		disable_estate_action = {
-			estate_action = RECRUIT_TRADE_SPECIALIST
-		}
+	can_select = {
+		NOT = { has_estate_privilege = estate_church_clerical_oversight }
+		NOT = { has_estate_privilege = estate_nobility_right_of_counsel }
 	}
 	penalties = {
-		stability_cost_modifier = 0.1
 	}
 	benefits = {
-		dip_advisor_cost = -0.15
 	}
 	ai_will_do = {
 		factor = 10
-		modifier = {
-			factor = 1.25
-			NOT = { dip = 2 }
-		}
-		modifier = {
-			factor = 0.8
-			dip = 5
-		}
 	}
 }
 
@@ -259,73 +277,6 @@ estate_merchants_far_east_charter = {
 	}
 	ai_will_do = {
 		factor = 1
-	}
-}
-
-estate_merchants_indebted_to_merchants = {
-	icon = privilege_give_money
-	max_absolutism = -5
-	loyalty = 0.05
-	influence = 0.05
-	on_granted = {
-		custom_tooltip = estate_merchants_indebted_to_merchants_effect_tooltip
-		if = {
-			limit = { NOT = { has_government_attribute = no_mercantilism_loss_from_privilege } }
-			add_mercantilism = -1
-		}
-		tooltip = {
-			add_inflation = 0.5
-		}
-		hidden_effect = {
-			add_loan = {
-				fixed_interest = 1
-				duration = 60
-				estate_loan = yes
-			}
-			add_loan = {
-				fixed_interest = 1
-				duration = 60
-				estate_loan = yes
-			}
-			add_loan = {
-				fixed_interest = 1
-				duration = 60
-				estate_loan = yes
-			}
-			add_loan = {
-				fixed_interest = 1
-				duration = 60
-				estate_loan = yes
-			}
-			add_loan = {
-				fixed_interest = 1
-				duration = 60
-				estate_loan = yes
-			}
-		}
-	}
-	penalties = {
-		trade_efficiency = -0.05
-		build_time = 0.10
-	}
-	benefits = {
-	}
-	ai_will_do = {
-		factor = 0
-	}
-}
-
-estate_merchants_free_enterprise = {
-	icon = privilege_comission_merchant_ships_for_war
-	max_absolutism = -10
-	loyalty = 0.1
-	influence = 0.1
-	penalties = {
-	}
-	benefits = {
-	}
-	ai_will_do = {
-		factor = 10
 	}
 }
 
@@ -404,65 +355,56 @@ estate_merchants_exclusive_trade_rights = {
 	}
 }
 
-estate_merchants_control_over_monetary_policy = {
+estate_merchants_indebted_to_merchants = {
 	icon = privilege_give_money
-	max_absolutism = -10
-	influence = 0.05
+	max_absolutism = -5
 	loyalty = 0.05
-	is_valid = {
-		has_dlc = "Emperor"
-	}
-	penalties = {
-		all_power_cost = 0.05
-	}
-	benefits = {
-		inflation_reduction = 0.15
-		interest = -0.5
-		production_efficiency = 0.05
-	}
-	ai_will_do = {
-		factor = 1
-		modifier = {
-			factor = 10
-			OR = {
-				inflation = 15
-				num_of_loans = 15
+	influence = 0.05
+	on_granted = {
+		custom_tooltip = estate_merchants_indebted_to_merchants_effect_tooltip
+		if = {
+			limit = { NOT = { has_government_attribute = no_mercantilism_loss_from_privilege } }
+			add_mercantilism = -1
+		}
+		tooltip = {
+			add_inflation = 0.5
+		}
+		hidden_effect = {
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+				estate_loan = yes
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+				estate_loan = yes
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+				estate_loan = yes
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+				estate_loan = yes
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+				estate_loan = yes
 			}
 		}
 	}
-}
-
-estate_burghers_promote_burgher_bookkeeping = {
-	icon = privilege_investigate_corruption
-	loyalty = 0.0
-	influence = 0.1
-	max_absolutism = -5
-	is_valid = {
-		has_dlc = "Domination"
+	penalties = {
+		trade_efficiency = -0.05
+		build_time = 0.10
 	}
-	loyalty_scaled_conditional_modifier = {
-		trigger = { always = yes }
-		modifier = {
-			inflation_action_cost = -0.5
-			interest = -0.5
-			state_maintenance_modifier = -0.25
-		}
+	benefits = {
 	}
-	on_granted = {
-		
-	}
-	on_revoked = {
-		
-	}
-	on_invalid = {
-		
-	}
-	#conditional_modifier = {
-	#	trigger = { has_government_mechanic = ottoman_decadence_mechanic }
-	#	modifier = { monthly_ottoman_decadence = 0.02 }
-	#}
 	ai_will_do = {
-		factor = 10
+		factor = 0
 	}
 }
 
@@ -494,6 +436,37 @@ estate_merchants_private_trade_fleets = {
 	}
 }
 
+estate_merchants_control_over_monetary_policy = {
+	icon = privilege_give_money
+	max_absolutism = -10
+	influence = 0.05
+	loyalty = 0.05
+	is_valid = {
+		has_dlc = "Emperor"
+	}
+	on_granted = {
+		add_inflation = -0.50
+	}
+	penalties = {
+		all_power_cost = 0.025
+	}
+	benefits = {
+		inflation_reduction = 0.20
+		interest = -0.5
+		production_efficiency = 0.05
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 10
+			OR = {
+				inflation = 15
+				num_of_loans = 15
+			}
+		}
+	}
+}
+
 estate_merchants_enforced_interfaith_dialogue = {
 	icon = privilege_promoto_dhimmi_nobles
 	max_absolutism = -5
@@ -517,30 +490,6 @@ estate_merchants_enforced_interfaith_dialogue = {
 	ai_will_do = {
 		factor = 0
 	}
-}
-
-estate_merchants_statutory_rights = {
-	icon = privilege_grant_autonomy
-	max_absolutism = -5
-	influence = 0.1
-	is_valid = {
-		has_estate_privilege = estate_merchants_statutory_rights
-	}
-	on_granted = {
-		change_estate_land_share = {
-			estate = all
-			share = -30
-		}
-	}
-	penalties = {
-		min_autonomy = 25
-	}
-	benefits = {
-	}
-	ai_will_do = {
-		factor = 0
-	}
-	cooldown_years = 20
 }
 
 estate_merchants_monopoly_of_salt = {
@@ -1261,6 +1210,30 @@ estate_merchants_monopoly_of_fish = {
 	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
 		factor = 0
 	}
+}
+
+estate_merchants_statutory_rights = {
+	icon = privilege_grant_autonomy
+	max_absolutism = -5
+	influence = 0.1
+	is_valid = {
+		has_estate_privilege = estate_merchants_statutory_rights
+	}
+	on_granted = {
+		change_estate_land_share = {
+			estate = all
+			share = -30
+		}
+	}
+	penalties = {
+		min_autonomy = 25
+	}
+	benefits = {
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	cooldown_years = 20
 }
 
 loe_estate_cant_seize_traders = {

@@ -454,12 +454,34 @@ church = {
 			type = tax
 			value = 1
 		}
+		if = {
+			limit = {
+				FROM = {
+					religion = faith_of_the_seven
+					has_estate_privilege = estate_church_sanctuaries
+				}
+			}
+			FROM = {
+				add_papal_influence = 3
+			}
+		}
 	}
 	on_destroyed = {
 		remove_development_from_building = {
 			building = church
 			type = tax
 			value = 1
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = faith_of_the_seven
+					has_estate_privilege = estate_church_sanctuaries
+				}
+			}
+			FROM = {
+				add_papal_influence = -3
+			}
 		}
 	}
 	on_obsolete = {
@@ -509,6 +531,17 @@ cathedral = {
 				duration = -1
 			}
 		}
+		if = {
+			limit = {
+				FROM = {
+					religion = faith_of_the_seven
+					has_estate_privilege = estate_church_sanctuaries
+				}
+			}
+			FROM = {
+				add_papal_influence = 3
+			}
+		}
 	}
 	on_destroyed = {
 		if = {
@@ -520,6 +553,17 @@ cathedral = {
 					estate = estate_church
 					loyalty = -5
 				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = faith_of_the_seven
+					has_estate_privilege = estate_church_sanctuaries
+				}
+			}
+			FROM = {
+				add_papal_influence = -3
 			}
 		}
 		remove_province_modifier = gov_expanded_temple_rights_mod

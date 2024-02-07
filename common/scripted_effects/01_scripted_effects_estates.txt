@@ -85,6 +85,8 @@ scaling_with_influence_privilege_tooltip = {
 # Parameters:
 #############
 # RECRUIT_TRADE_SPECIALIST
+# RECRUIT_THEOLOGIAN
+# MAKE_GENEROUS_DONATION
 estate_action = {
 	estate_action_$estate_action$ = yes
 }
@@ -229,5 +231,52 @@ estate_action_RECRUIT_TRADE_SPECIALIST = {
 	add_estate_loyalty = {
 		estate = estate_merchants
 		loyalty = -10
+	}
+}
+
+estate_action_RECRUIT_CAPTAIN = {
+	generate_estate_advisor = {
+		estate = estate_nobles
+		type = captain
+	}
+	#add_estate_influence_modifier = {
+	#	estate = estate_nobles
+	#	desc = EST_VAL_NOBLES_MINISTER
+	#	influence = 15
+	#	duration = 10950
+	#}
+	add_estate_loyalty = {
+		estate = estate_nobles
+		loyalty = -10
+	}
+}
+
+estate_action_RECRUIT_THEOLOGIAN = {
+	if = {
+		limit = {
+			religion = faith_of_the_seven
+		}
+		generate_estate_advisor = {
+			estate = estate_church
+			type = priest
+		}
+	}
+	else = {
+		generate_estate_advisor = {
+			estate = estate_church
+			type = inquisitor
+		}
+	}
+	add_estate_loyalty = {
+		estate = estate_merchants
+		loyalty = -10
+	}
+}
+
+estate_action_MAKE_GENEROUS_DONATION = {
+	add_years_of_income = -0.25
+	add_estate_loyalty = {
+		estate = estate_church
+		loyalty = 10
 	}
 }

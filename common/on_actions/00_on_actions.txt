@@ -346,6 +346,29 @@ on_battle_lost_unit = {
 			}
 		}
     }
+	if = {
+		limit = {
+			NOT = { is_year = 197 }
+			general_with_name = "Daemon Blackfyre"
+			enemy_unit = {
+				unit_owner = { tag = CRW }
+				is_ruler_commanding_unit = yes
+			}
+		}
+		CRW = {
+			set_country_flag = daemon_defeated_flag
+			every_owned_province = {
+				#limit = { has_rebel_faction = REB }
+				clear_rebels = yes
+			}
+			every_owned_province = {
+				limit = { controlled_by = REB }
+				change_controller = CRW
+			}
+			end_disaster = blackfyre_rebellion
+			country_event = { id = GOT_BLACKFYRE_REB.100 }
+		}
+	}
 }
 
 # Province - ROOT = location, FROM = country doing it

@@ -1,9 +1,14 @@
 ﻿l_english:
- WORLD_YEAR:0 "The world $YEAR$ AC"
+ WORLD_YEAR: "The world $YEAR$ AC"
 
- when_loyal_tt:0 "§GWhen Loyal (above 60%) and 100% Influence§!:"
- when_neutral_tt:0 "§YWhen Neutral (30% - 60%) and 100% Influence§!:"
- when_disloyal_tt:0 "§RWhen Disloyal (below 30%) and 100% Influence§!:"
+ when_loyal_tt: "§GWhen Loyal (above 60%) and 100% Influence§!:"
+ when_neutral_tt: "§YWhen Neutral (30% - 60%) and 100% Influence§!:"
+ when_disloyal_tt: "§RWhen Disloyal (below 30%) and 100% Influence§!:"
+ 
+ # Culture
+ CUL_BENEFIT_PROV: "\n$CUL$ gives the following effect(s):\n$EFF$"
+ CUL_BENEFIT_PROV_X: "\nOwned provinces of the §Y$CUL$§! culture have the following effect(s):\n$EFF$"
+ CUL_BENEFIT_COUNTRY: "\nWhen §Y$CUL$§! is primary culture, it gives the following effect(s) to our country:\n$EFF$"
  
  #------------------------------------------------------
  # Basic Mechanics
@@ -1032,6 +1037,9 @@
 
  MODIFIER_IMPERIAL_AUTHORITY: "Royal Authority Growth Modifier"
  MODIFIER_IMPERIAL_AUTHORITY_VALUE: "Royal Authority Modifier"
+
+ opinion_annex_part_of_empire: "Annexed a member of the Seven Kingdoms"
+ FABRICATE_CLAIM_INSIDE_HRE:1 "Inside SK: $VAL|-=1%$\n"
  
  ENABLE_HRE_LEAGUES: "The §YProtestant§! and §YCatholic§! Leagues will be enabled."
  DISABLE_HRE_LEAGUES: "The §YProtestant§! and §YCatholic§! Leagues will be disabled."

@@ -53,7 +53,14 @@ appoint_hand_of_the_king = {
 		}
 	}
 	is_allowed = {
-		always = yes
+		if = {
+			limit = { ai = yes any_country = { has_guarantee_on_council = { sm_council_position = handoftheking } }
+			custom_trigger_tooltip = {
+				tooltip = "guaranteed_handoftheking_tt"
+				FROM = { has_guarantee_on_council = { sm_council_position = handoftheking } }
+			}
+		}
+		else = { always = yes }
 	}
 	on_accept = {
 		FROM = { set_council_position = { sm_council_position = handoftheking } }
@@ -174,7 +181,14 @@ appoint_master_of_coin = {
 		}
 	}
 	is_allowed = {
-		always = yes
+		if = {
+			limit = { ai = yes any_country = { has_guarantee_on_council = { sm_council_position = masterofcoin } }
+			custom_trigger_tooltip = {
+				tooltip = "guaranteed_masterofcoin_tt"
+				FROM = { has_guarantee_on_council = { sm_council_position = masterofcoin } }
+			}
+		}
+		else = { always = yes }
 	}
 	on_accept = {
 		FROM = { set_council_position = { sm_council_position = masterofcoin } }
@@ -299,7 +313,14 @@ appoint_master_of_laws = {
 		}
 	}
 	is_allowed = {
-		always = yes
+		if = {
+			limit = { ai = yes any_country = { has_guarantee_on_council = { sm_council_position = masteroflaws } }
+			custom_trigger_tooltip = {
+				tooltip = "guaranteed_masteroflaws_tt"
+				FROM = { has_guarantee_on_council = { sm_council_position = masteroflaws } }
+			}
+		}
+		else = { always = yes }
 	}
 	on_accept = {
 		FROM = { set_council_position = { sm_council_position = masteroflaws } }
@@ -424,7 +445,14 @@ appoint_master_of_ships = {
 		}
 	}
 	is_allowed = {
-		always = yes
+		if = {
+			limit = { ai = yes any_country = { has_guarantee_on_council = { sm_council_position = masterofships } }
+			custom_trigger_tooltip = {
+				tooltip = "guaranteed_masterofships_tt"
+				FROM = { has_guarantee_on_council = { sm_council_position = masterofships } }
+			}
+		}
+		else = { always = yes }
 	}
 	on_accept = {
 		FROM = { set_council_position = { sm_council_position = masterofships } }
@@ -556,7 +584,14 @@ appoint_master_of_whisperers = {
 		}
 	}
 	is_allowed = {
-		always = yes
+		if = {
+			limit = { ai = yes any_country = { has_guarantee_on_council = { sm_council_position = masterofwhisperers } }
+			custom_trigger_tooltip = {
+				tooltip = "guaranteed_masterofwhisperers_tt"
+				FROM = { has_guarantee_on_council = { sm_council_position = masterofwhisperers } }
+			}
+		}
+		else = { always = yes }
 	}
 	on_accept = {
 		FROM = { set_council_position = { sm_council_position = masterofwhisperers } }

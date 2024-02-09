@@ -194,18 +194,38 @@ castle_black_subsidies = {
 }
 
 #--------------------------------
-# The Kingsroad
+# High Tide and Spicetown
 #--------------------------------
-kingsroad_province_bonus = {
+high_tide_bonus = {
 	potential = {
-		always = yes
+		province_id = 220 # Only for Driftmark
 	}
 	trigger = {
 		custom_trigger_tooltip = {
+			tooltip = "lord_of_the_tides_reform_tt"
+			owner = { has_reform = lord_of_the_tides_reform }
+		}
+	}
+
+	trade_goods_size = 1.0
+	local_sailors = 2500
+	local_sailors_modifier = 0.33
+
+	on_activation = { }
+	on_deactivation = { }
+
+	picture = "castle_high_tide"
+}
+
+#--------------------------------
+# The Kingsroad
+#--------------------------------
+kingsroad_province_bonus = {
+	potential = { }
+	trigger = {
+		custom_trigger_tooltip = {
 			tooltip = "kingsroad_war_tt"
-			owner = {
-				is_at_war = no
-			}
+			owner = { is_at_war = no }
 		}
 	}
 	

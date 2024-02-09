@@ -33,8 +33,7 @@ government_type = {
 	]
 }
 
-# Dual check to see if a country is on the council
-# checks for either country modifier or country flag
+# Checks to see if a country is on the council
 is_on_the_small_council = {
 	OR = {
 		has_council_position = { sm_council_position = handoftheking }
@@ -48,6 +47,21 @@ is_on_the_small_council = {
 # Checks to see if you are on the Small Council
 has_council_position = {
 	has_country_flag = $sm_council_position$_cactive
+}
+
+# Checks to see if you are guaranteed any position on the Small Council
+is_guaranteed_on_council = {
+	OR = {
+		has_government_attribute = guaranteed_handoftheking
+		has_government_attribute = guaranteed_masterofcoin
+		has_government_attribute = guaranteed_masteroflaws
+		has_government_attribute = guaranteed_masterofships
+		has_government_attribute = guaranteed_masterofwhisperers
+	}
+}
+# Checks to see if you are guaranteed a position on the Small Council
+has_guarantee_on_council = {
+	has_government_attribute = guaranteed_$sm_council_position$
 }
 
 # Government Triggers

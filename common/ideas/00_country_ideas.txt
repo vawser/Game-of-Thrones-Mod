@@ -301,6 +301,55 @@ stormlander_ideas = {
 	}
 }
 
+velaryon_ideas = {
+	start = {
+		diplomatic_reputation = 1
+		global_sailors_modifier = 0.10
+	}
+
+	bonus = {
+		governing_capacity_modifier = 0.20
+	}
+
+	trigger = {
+		tag = A43
+	}
+	free = yes
+
+	# "Gatekeepers of Blackwater Bay"
+	velaryon_id1 = {
+		own_coast_naval_combat_bonus = 1
+	}
+    # "The Driftwood Throne"
+	velaryon_id2 = {
+		legitimacy = 0.25
+		global_unrest = -1
+	}
+    # "Valryian Ancestry"
+	velaryon_id3 = {
+		same_culture_advisor_cost = -0.33
+	}
+    # "Evolving Fleet"
+	velaryon_id4 = {
+		ship_durability = 0.05
+		light_ship_power = 0.10
+	}
+    # "Narrow Sea Mariners"
+	velaryon_id5 = {
+		sailors_recovery_speed = 0.25
+		naval_attrition = -0.10
+	}
+    # "Natural-Born Sailors"
+	velaryon_id6 = {
+		recover_navy_morale_speed = 0.10
+	}
+    # "Our Place in the Sea"
+	velaryon_id7 = {
+		naval_forcelimit_modifier = 0.10
+		max_flagships = 1
+	}
+}
+
 #---------------------------------------
 # The Crownlands
 #---------------------------------------

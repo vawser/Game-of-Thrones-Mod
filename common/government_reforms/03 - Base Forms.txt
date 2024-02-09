@@ -60,7 +60,7 @@ noble_house_reform = {
 	nation_designer_cost = 0
 	maintain_dynasty = yes
 	
-	is_eligible_for_hre_emperor = yes
+	#is_eligible_for_hre_emperor = yes
 	
 	modifiers = {
 		diplomatic_upkeep = 2
@@ -72,12 +72,7 @@ lord_of_the_tides_reform = {
 	icon = "lord_of_the_tides"
 	
 	potential = {
-		OR = {
-			culture_group = culture_andal
-			culture_group = culture_rhoynar
-			culture_group = culture_first_men
-		}
-		tag = A43
+		is_or_was_tag = { tag = A43 }
 	}
 	trigger = {
 		dynasty = "Velaryon"
@@ -91,12 +86,16 @@ lord_of_the_tides_reform = {
 	nation_designer_cost = 0
 	maintain_dynasty = yes
 	
-	is_eligible_for_hre_emperor = yes
+	#is_eligible_for_hre_emperor = yes
 	
 	modifiers = {
 		naval_forcelimit = 20
-		naval_forcelimit_modifier = 1.0
-		naval_maintenance_modifier = -0.80
+		naval_forcelimit_modifier = 0.50
+		naval_maintenance_modifier = -0.33
+	}
+
+	custom_attributes = {
+		guaranteed_masterofships = yes
 	}
 }
 great_house_reform = {
@@ -122,7 +121,7 @@ great_house_reform = {
 	
 	fixed_rank = 2
 	
-	is_eligible_for_hre_emperor = yes
+	#is_eligible_for_hre_emperor = yes
 	
 	modifiers = {
 		prestige = 0.25
@@ -150,7 +149,7 @@ royal_house_reform = {
 	nation_designer_cost = 0
 	maintain_dynasty = yes
 	
-	is_eligible_for_hre_emperor = yes
+	#is_eligible_for_hre_emperor = yes
 	
 	fixed_rank = 3
 	
@@ -173,7 +172,7 @@ kingdom_of_westeros_reform = {
 	icon = "kingdom_of_westeros"
 	
 	potential = {
-			has_reform = kingdom_of_westeros_reform
+		has_reform = kingdom_of_westeros_reform
 	}
 	trigger = {
 		tag = WST
@@ -187,7 +186,7 @@ kingdom_of_westeros_reform = {
 	
 	fixed_rank = 3
 	
-	is_eligible_for_hre_emperor = yes
+	#is_eligible_for_hre_emperor = yes
 	
 	modifiers = {
 		prestige = 2.50

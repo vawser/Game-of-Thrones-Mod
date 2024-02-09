@@ -11,16 +11,16 @@ custom_button = {
 		if = {
 			limit = {
 				NOT = {
-					has_global_flag = displaying_small_council_ui
+					has_country_flag = displaying_small_council_ui
 				}
 			}
-			set_global_flag = displaying_small_council_ui
+			set_country_flag = displaying_small_council_ui
 		}
 		else_if = {
 			limit = {
-				has_global_flag = displaying_small_council_ui
+				has_country_flag = displaying_small_council_ui
 			}
-			clr_global_flag = displaying_small_council_ui
+			clr_country_flag = displaying_small_council_ui
 		}
 	}
 	tooltip = "the_small_council_breakdown"
@@ -29,7 +29,7 @@ custom_button = {
 custom_button = {
 	name = resign_from_the_council
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		is_on_the_small_council = yes
 	}
 	trigger = { }
@@ -51,7 +51,7 @@ custom_button = {
 custom_button = {
 	name = fire_all_councillors
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		westeros_government_king = yes
 	}
 	trigger = {
@@ -70,7 +70,7 @@ custom_button = {
 custom_text_box = {
 	name = small_council_info_tt
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		#westeros_government_king = yes
 	}
 	tooltip = ""
@@ -87,7 +87,7 @@ custom_icon = {
 custom_icon = {
 	name = small_council_ui
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 	}
 	tooltip = ""
 }
@@ -98,7 +98,7 @@ custom_shield = {
 	global_event_target = et_handoftheking
 	open_country = yes
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		has_saved_global_event_target = et_handoftheking
 	}
 	trigger = {  }
@@ -109,7 +109,7 @@ custom_icon = {
 	name = empty_handoftheking
 	tooltip = "handoftheking_none_tt"
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		NOT = { has_saved_global_event_target = et_handoftheking }
 	}
 }
@@ -120,7 +120,7 @@ custom_shield = {
 	global_event_target = et_masterofcoin
 	open_country = yes
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		has_saved_global_event_target = et_masterofcoin
 	}
 	trigger = {  }
@@ -131,7 +131,7 @@ custom_icon = {
 	name = empty_masterofcoin
 	tooltip = "masterofcoin_none_tt"
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		NOT = { has_saved_global_event_target = et_masterofcoin }
 	}
 }
@@ -142,7 +142,7 @@ custom_shield = {
 	global_event_target = et_masteroflaws
 	open_country = yes
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		has_saved_global_event_target = et_masteroflaws
 	}
 	trigger = {  }
@@ -153,7 +153,7 @@ custom_icon = {
 	name = empty_masteroflaws
 	tooltip = "masteroflaws_none_tt"
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		NOT = { has_saved_global_event_target = et_masteroflaws }
 	}
 }
@@ -164,7 +164,7 @@ custom_shield = {
 	global_event_target = et_masterofships
 	open_country = yes
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		has_saved_global_event_target = et_masterofships
 	}
 	trigger = {  }
@@ -175,7 +175,7 @@ custom_icon = {
 	name = empty_masterofships
 	tooltip = "masterofships_none_tt"
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		NOT = { has_saved_global_event_target = et_masterofships }
 	}
 }
@@ -186,7 +186,7 @@ custom_shield = {
 	global_event_target = et_masterofwhisperers
 	open_country = yes
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		has_saved_global_event_target = et_masterofwhisperers
 	}
 	trigger = {  }
@@ -197,7 +197,7 @@ custom_icon = {
 	name = empty_masterofwhisperers
 	tooltip = "masterofwhisperers_none_tt"
 	potential = {
-		has_global_flag = displaying_small_council_ui
+		has_country_flag = displaying_small_council_ui
 		NOT = { has_saved_global_event_target = et_masterofwhisperers }
 	}
 }

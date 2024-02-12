@@ -1,0 +1,62 @@
+bribe_for_support = {
+	category = relation
+
+	alert_index = 39
+	alert_tooltip = bribe_for_support_alert_tooltip
+
+	require_acceptance = no
+
+	is_visible = {
+		OR = { # Only used by the two nations in question
+			has_country_flag = petition_for_great_house_subject
+			has_country_flag = petition_for_great_house_overlord
+		}
+		if = { # Only when specific incident is active
+			limit = { active_imperial_incident = any }
+			active_imperial_incident = incident_change_great_house
+		}
+		else = { always = no }
+		# Can't use on overlord obviously
+		FROM = { NOT = { overlord_of = ROOT } ai = yes }
+	}
+	is_allowed = {
+		NOT = {
+			reverse_has_opinion_modifier = {
+				who = FROM
+				modifier = bribed_for_support
+			}
+		}
+		monthly_income = FROM
+	}
+	on_accept = {
+		set_income_variable_with_tag = {
+			income_var = briber_income
+			percent_amount = 1.0
+			tag = FROM
+		}
+		transfer_treasury = {
+			giver = ROOT
+			taker = FROM
+			variable = briber_income
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = bribed_for_support
+				months = 12
+			}
+			every_subject_country = {
+				limit = { is_subject_of_type = feudatory }
+				add_opinion = {
+					who = ROOT
+					modifier = bribed_for_support
+					months = 12
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		always = no
+	}
+}

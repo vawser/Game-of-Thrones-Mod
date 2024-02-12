@@ -29,5 +29,39 @@ country_decisions = {
 			set_ruler_flag = enlist_lc_decision_flag
 		}
 	}
-	
+	press_for_great_house_status = {
+		major = yes
+		potential = {
+			is_part_of_hre = yes
+			is_elector = no
+			is_subject_of_type = feudatory
+			NOT = { has_ruler_flag = pressed_for_great_house }
+		}
+		allow = {
+			NOT = { active_imperial_incident = any }
+			overlord = {
+				OR = {
+					root = { total_development = PREV }
+					root = {
+						AND = {
+							army_strength = {
+								who = PREV
+								value = 1.50
+							}
+							monthly_income = PREV
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			hidden_effect = {
+				set_country_flag = petition_for_great_house_subject
+				overlord = { set_country_flag = petition_for_great_house_overlord }
+				set_ruler_flag = pressed_for_great_house
+			}
+			set_imperial_incident = incident_change_great_house
+			custom_tooltip = "vote_bribe_tt"
+		}
+	}
 }

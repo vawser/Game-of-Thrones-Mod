@@ -36,6 +36,26 @@ set_income_variable = {
 	}
 }
 
+set_income_variable_with_tag = {
+	export_to_variable = {
+		value = years_of_income
+		which = $income_var$
+		who = $tag$
+	}
+	multiply_variable = {
+		which = $income_var$
+		value = $percent_amount$
+	}
+	divide_variable = {
+		which = $income_var$
+		value = 10
+	}
+	multiply_variable = {
+		which = $income_var$
+		value = 10
+	}
+}
+
 set_manpower_variable = {
 	export_to_variable = {
 		value = manpower

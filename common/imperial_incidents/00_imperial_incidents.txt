@@ -1,2 +1,98 @@
 # default options are 0-based
 # In console, can use imperial_incident [key] to immediately begin an incident
+incident_change_great_house = {
+	event = sk_event.200
+	default_option = 1
+
+	can_stop = {
+		event_target:feudatory_overtaker = {
+			NOT = { total_development = event_target:feudatory_overlord }
+			NOT = {
+				AND = {
+					army_strength = {
+						who = PREV
+						value = 1.50
+					}
+					monthly_income = PREV
+				}
+			}
+		}
+	}
+
+	0 = { # Accept their demands
+		factor = 1
+		modifier = { # vote for themsevles
+			factor = 1000
+			tag = event_target:potential_greathouse
+		}
+		modifier = {
+			factor = 100
+			has_opinion_modifier = {
+				who = event_target:potential_greathouse
+				modifier = bribed_for_support
+			}
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				alliance_with = event_target:potential_greathouse
+				has_opinion = {
+					who = event_target:potential_greathouse
+					value = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			#is_elector = yes
+			OR = {
+				is_rival = event_target:current_greathouse
+				is_enemy = event_target:current_greathouse
+				ai_attitude = {
+					who = event_target:current_greathouse
+					attitude = attitude_hostile
+				}
+				ai_attitude = {
+					who = event_target:current_greathouse
+					attitude = attitude_rivalry
+				}
+				ai_attitude = {
+					who = event_target:current_greathouse
+					attitude = attitude_outraged
+				}
+			}
+		}
+		modifier = { # will not vote against themselves
+			factor = 0
+			tag = event_target:current_greathouse
+		}
+	}
+	1 = { # Reject their demands
+		factor = 1
+		modifier = { # vote for themsevles
+			factor = 1000
+			tag = event_target:current_greathouse
+		}
+		modifier = {
+			factor = 100
+			has_opinion_modifier = {
+				who = event_target:current_greathouse
+				modifier = bribed_for_support
+			}
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				alliance_with = event_target:current_greathouse
+				has_opinion = {
+					who = event_target:current_greathouse
+					value = 100
+				}
+			}
+		}
+		modifier = { # will not vote against themselves
+			factor = 0
+			tag = event_target:potential_greathouse
+		}
+	}
+}

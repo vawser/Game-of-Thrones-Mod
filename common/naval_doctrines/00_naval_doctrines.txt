@@ -1,12 +1,12 @@
-fleet_in_being = {
+wugot_fleet_in_being = {
 	can_select = {
 		is_primitive = no
 	}
 	
 	cost = 0.1
 	country_modifier = {
-		max_flagships = 1
-		naval_maintenance_modifier = -0.15
+		sailors_recovery_speed = 0.10
+		naval_maintenance_modifier = -0.125
 	}
 	effect = {}
 	removed_effect = {}
@@ -14,14 +14,14 @@ fleet_in_being = {
 	button_gfx = 1
 }
 
-free_oarsmen = {
+wugot_free_oarsmen = {
 	can_select = {
 		is_primitive = no
 	}
 
 	cost = 0.1
 	country_modifier = {
-		galley_power = 0.125
+		galley_power = 0.15
 	}
 	effect = {}
 	removed_effect = {}
@@ -29,7 +29,7 @@ free_oarsmen = {
 	button_gfx = 2
 }
 
-merchant_navy = {
+wugot_merchant_navy = {
 	can_select = {
 		is_primitive = no
 	}
@@ -44,7 +44,7 @@ merchant_navy = {
 	button_gfx = 3
 }
 
-ship_boarding = {
+wugot_ship_boarding = {
 	can_select = {
 		is_primitive = no
 	}
@@ -59,9 +59,9 @@ ship_boarding = {
 	button_gfx = 4
 }
 
-wooden_wall = {
+wugot_wooden_wall = {
 	can_select = {
-		NOT = { tag = A43 }
+		tag = CRW
 	}
 
 	cost = 0.1
@@ -74,7 +74,29 @@ wooden_wall = {
 	button_gfx = 5
 }
 
-driftmark_admiralty = {
+ironborn_sailors = {
+	can_select = {
+		OR = {
+			tag = M09
+			tag = M12
+			tag = M07
+			tag = M06
+			tag = M03
+		}
+	}
+
+	cost = 0.1
+	country_modifier = {
+		privateer_efficiency = 0.33
+		coast_raid_range = 2
+	}
+	effect = {}
+	removed_effect = {}
+
+	button_gfx = 10
+}
+
+velaryon_admiralty = {
 	can_select = {
 		tag = A43
 	}
@@ -82,7 +104,8 @@ driftmark_admiralty = {
 	cost = 0.1
 	country_modifier = {
 		leader_naval_manuever = 2
-		admiral_cost = -0.15
+		admiral_cost = -0.10
+		free_navy_leader_pool = 1
 	}
 	effect = {}
 	removed_effect = {}

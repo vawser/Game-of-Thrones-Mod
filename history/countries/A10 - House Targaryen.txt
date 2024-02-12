@@ -5,14 +5,10 @@ technology_group = westerosi
 primary_culture = men_of_the_crownlands
 religion = faith_of_the_seven
 government_rank = 3
-government = monarchy
+government = dynasty
 add_government_reform = royal_house_reform
 capital = 226
 fixed_capital = 226
-
-#-------------------------------
-# Diplomacy
-#-------------------------------
 
 #-------------------------------
 # Rulers
@@ -28,9 +24,10 @@ fixed_capital = 226
 	}
 	
     queen = {
-        country_of_origin = F58
+        country_of_origin = CRW
         name = "Rhaenys"
-        dynasty = "Targaryen" 
+        dynasty = "Targaryen"
+		birth_date = 1.1.1
         death_date = 26.6.4
         adm = 3
         dip = 3
@@ -55,9 +52,10 @@ fixed_capital = 226
 
 26.6.4 = {
 	queen = {
-        country_of_origin = F58
+        country_of_origin = CRW
         name = "Visenya"
-        dynasty = "Targaryen" 
+        dynasty = "Targaryen"
+		birth_date = 1.1.1
         death_date = 37.2.19
         adm = 3
         dip = 3
@@ -78,9 +76,9 @@ fixed_capital = 226
 	}
 	
     queen = {
-        country_of_origin = F58
+        country_of_origin = A43
         name = "Alyssa"
-        dynasty = "Targaryen" 
+        dynasty = "Velaryon" 
         birth_date = 7.11.2
 		death_date = 42.10.23
         adm = 4
@@ -286,7 +284,7 @@ fixed_capital = 226
 # Viserys's I Reign (fixed)
 103.5.27 = {
 	monarch = {
-		name = "Viserys"
+		name = "Viserys I"
 		dynasty = "Targaryen"
 		adm = 4
 		dip = 4
@@ -299,7 +297,7 @@ fixed_capital = 226
         name = "Aemma"
         dynasty = "Arryn" 
         birth_date = 82.8.3
-        death_date = 129.5.2
+        death_date = 105.7.20
         adm = 3
         dip = 2
         mil = 3
@@ -308,6 +306,7 @@ fixed_capital = 226
     
 	heir = {
 		name = "Rhaenyra"
+		monarch_name = "Rhaenyra I"
 		dynasty = "Targaryen"
 		birth_date = 97.1.1
 		death_date = 129.5.2
@@ -358,6 +357,7 @@ fixed_capital = 226
     
 	heir = {
 		name = "Jaehaerys"
+		monarch_name = "Jaehaerys II"
 		dynasty = "Targaryen"
 		birth_date = 123.9.12
 		death_date = 129.8.9
@@ -371,6 +371,7 @@ fixed_capital = 226
 129.8.9 = {
 	heir = {
 		name = "Maelor"
+		monarch_name = "Maelor I"
 		dynasty = "Targaryen"
 		birth_date = 127.3.29
 		death_date = 130.6.13
@@ -398,7 +399,7 @@ fixed_capital = 226
 # Aegon's III Reign (fixed)
 131.8.24 = {
 	monarch = {
-		name = "Aegon III 'the Broken King'"
+		name = "Aegon III"
 		dynasty = "Targaryen"
 		adm = 2
 		dip = 3
@@ -420,6 +421,7 @@ fixed_capital = 226
 	
 	heir = {
 		name = "Baela"
+		monarch_name = "Baela I"
 		dynasty = "Targaryen"
 		birth_date = 116.3.29
 		death_date = 134.5.3
@@ -476,7 +478,7 @@ fixed_capital = 226
 # Daeron's I Reign (fixed)
 157.8.1 = {
 	monarch = {
-		name = "Daeron I 'the Young Dragon'"
+		name = "Daeron I"
 		dynasty = "Targaryen"
 		adm = 3
 		dip = 2
@@ -513,12 +515,24 @@ fixed_capital = 226
         name = "Daena"
         dynasty = "Targaryen" 
         birth_date = 145.2.28
-        death_date = 171.4.9
+        death_date = 162.1.4
         adm = 3
         dip = 2
         mil = 3
 		female = yes
     }
+
+	heir = {
+		name = "Viserys"
+		monarch_name = "Viserys II"
+		dynasty = "Targaryen"
+		birth_date = 116.3.29
+		death_date = 171.4.9
+		adm = 4
+		dip = 0
+		mil = 5
+		claim = 70
+	}
 }
 
 # Viserys's II Reign (fixed)
@@ -581,22 +595,47 @@ fixed_capital = 226
 	}
 }
 
+181.8.10 = {
+	leader = {
+		name = "Weslar Crane"
+		type = general
+		birth_date = 159.4.23
+		death_date = 201.8.21
+		
+		fire = 3
+		shock = 4
+		manuever = 2
+		siege = 0
+
+		personality = lord_commander_kingsguard_personality
+	}
+}
+
 # Daeron's II Reign (fixed)
 184.5.17 = {
 	monarch = {
-		name = "Daeron II 'the Good'"
+		name = "Daeron II"
 		dynasty = "Targaryen"
 		adm = 5
 		dip = 3
 		mil = 5
 		birth_date = 153.7.9
+
+		leader = {
+			name = "Daeron II Targaryen"
+			type = general
+			fire = 1
+			shock = 5
+			manuever = 3
+			siege = 2
+		}
 	}
 	
     queen = {
         country_of_origin = A09
         name = "Myriah"
         dynasty = "Martell" 
-        birth_date = 155.3.17
+        birth_date = 152.3.17
         death_date = 209.4.6
         adm = 3
         dip = 4
@@ -605,27 +644,52 @@ fixed_capital = 226
     }
     
 	heir = {
-		name = "Baelor 'Breakspear'"
+		name = "Baelor"
+		monarch_name = "Baelor II"
 		dynasty = "Targaryen"
-		birth_date = 170.1.1
+		birth_date = 170.1.3
 		death_date = 209.2.8
 		claim = 100
 		adm = 2
 		dip = 3
 		mil = 3
+
+		leader = {
+			name = "Baelor Targaryen"
+			type = general
+			fire = 0
+			shock = 3
+			manuever = 4
+			siege = 1
+		}
 	}
 }
 
 209.2.8 = {
 	heir = {
 		name = "Valarr"
+		monarch_name = "Valarr I"
 		dynasty = "Targaryen"
-		birth_date = 170.1.1
-		death_date = 209.4.6
-		claim = 100
+		birth_date = 186.3.2
+		death_date = 209.4.5
+		claim = 90
 		adm = 4
 		dip = 5
 		mil = 2
+	}
+}
+
+209.4.5 = {
+	heir = {
+		name = "Aerys"
+		monarch_name = "Aerys I"
+		dynasty = "Targaryen"
+		birth_date = 174.9.2
+		death_date = 209.4.6
+		claim = 80
+		adm = 5
+		dip = 3
+		mil = 4
 	}
 }
 
@@ -654,6 +718,7 @@ fixed_capital = 226
     
 	heir = {
 		name = "Rhaegel"
+		monarch_name = "Rhaegel I"
 		dynasty = "Targaryen"
 		birth_date = 176.2.18
 		death_date = 215.11.4
@@ -667,6 +732,7 @@ fixed_capital = 226
 215.11.4 = {
 	heir = {
 		name = "Aelor"
+		monarch_name = "Aelor I"
 		dynasty = "Targaryen"
 		birth_date = 198.12.21
 		death_date = 217.8.7
@@ -680,6 +746,7 @@ fixed_capital = 226
 217.8.7 = {
 	heir = {
 		name = "Aelora"
+		monarch_name = "Aelora I"
 		dynasty = "Targaryen"
 		birth_date = 198.12.21
 		death_date = 218.3.25
@@ -729,6 +796,7 @@ fixed_capital = 226
     
 	heir = {
 		name = "Daeron"
+		monarch_name = "Daeron III"
 		dynasty = "Targaryen"
 		birth_date = 190.11.26
 		death_date = 222.6.2
@@ -742,6 +810,7 @@ fixed_capital = 226
 222.6.2 = {
 	heir = {
 		name = "Aerion"
+		monarch_name = "Aerion I"
 		dynasty = "Targaryen"
 		birth_date = 193.2.19
 		death_date = 232.9.5
@@ -791,6 +860,7 @@ fixed_capital = 226
     
 	heir = {
 		name = "Duncan"
+		monarch_name = "Duncan I"
 		dynasty = "Targaryen"
 		birth_date = 221.7.3
 		death_date = 239.2.13
@@ -851,15 +921,13 @@ fixed_capital = 226
 	}
 }
 
-
-
 # Aerys' II Reign
 262.7.15 = {
 	monarch = {
-		name = "Aerys II 'the Mad King'"
+		name = "Aerys II"
 		dynasty = "Targaryen"
-		adm = 0
-		dip = 0
+		adm = 4
+		dip = 2
 		mil = 1
 		birth_date = 244.1.7
 	}
@@ -878,6 +946,7 @@ fixed_capital = 226
     
 	heir = {
 		name = "Rhaegar"
+		monarch_name = "Rhaegar I"
 		dynasty = "Targaryen"
 		birth_date = 259.6.2
 		death_date = 283.5.8
@@ -888,13 +957,23 @@ fixed_capital = 226
 	}
 }
 
-283.1.1 = {
-    # Extinct
-    add_government_reform = noble_house_reform
+281.4.9 = {
+	leader = {
+		name = "Jaime Lannister"
+		type = general
+		birth_date = 266.5.17
+		
+		fire = 2
+		shock = 5
+		manuever = 3
+		siege = 0
+
+		personality = lord_commander_kingsguard_personality
+	}
 }
 
 # Robert's I Reign
-283.5.8 = {
+283.1.29 = {
 	monarch = {
 		name = "Robert I"
 		dynasty = "Baratheon"
@@ -918,6 +997,7 @@ fixed_capital = 226
     
 	heir = {
 		name = "Stannis"
+		monarch_name = "Stannis I"
 		dynasty = "Baratheon"
 		birth_date = 264.7.3
 		death_date = 286.4.2
@@ -964,34 +1044,26 @@ fixed_capital = 226
 		birth_date = 286.4.24
 	}
 	
-	queen = {
-        country_of_origin = F20
-        name = "Margaery"
-        dynasty = "Tyrell" 
-        birth_date = 283.8.29
-        death_date = 300.2.23
-        adm = 3
-        dip = 4
-        mil = 2
-        female = yes
-    }
-	
 	heir = {
 		name = "Tommen"
+		monarch_name = "Tommen I"
 		dynasty = "Baratheon"
 		adm = 4
 		dip = 3
 		mil = 1
 		birth_date = 291.8.16
-		death_date = 300.2.23
+		death_date = 300.1.1
 		claim = 75
 	}
 }
 
 # Tommen's I Reign (fixed)
-300.2.23 = {
+# Joffery was poisoned on his wedding day which
+# was the first day of the 4th century (Jan 1, 300)
+# Tommen marries Joffery's wife (Margaery)
+300.1.1 = {
 	monarch = {
-		name = "Tommen I"
+		name = "Tommen I 'the Boy King'"
 		dynasty = "Baratheon"
 		adm = 4
 		dip = 3
@@ -1003,7 +1075,7 @@ fixed_capital = 226
         country_of_origin = F20
         name = "Margaery"
         dynasty = "Tyrell" 
-        birth_date = 300.2.23
+        birth_date = 283.2.23
         death_date = 303.7.23
         adm = 3
         dip = 4
@@ -1013,6 +1085,7 @@ fixed_capital = 226
 	
 	heir = {
 		name = "Myrcella"
+		monarch_name = "Myrcella I"
 		dynasty = "Baratheon"
 		adm = 3
 		dip = 5
@@ -1021,6 +1094,7 @@ fixed_capital = 226
 		death_date = 303.7.23
 		claim = 25
 	}
+	add_king_titles = yes
 }
 
 # Cersei's I Reign (fixed)

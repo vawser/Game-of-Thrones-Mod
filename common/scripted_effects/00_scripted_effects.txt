@@ -1,3 +1,6 @@
+# Contains effects for on_actions as well
+
+# For loop effect
 for_variable_amount = {
     set_variable = {
         which = ForLoopCounter
@@ -105,6 +108,172 @@ on_alliance_broken_effect = {
 	# }
 }
 
+on_startup_great_projects_effect = {
+	if = {
+		limit = {
+			NOT = { has_dlc = "Leviathan" }
+		}
+		226 = {
+			add_province_modifier = {
+				name = city_watch_no_dlc
+				duration = -1
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_dlc = "Leviathan" }
+		}
+		27 = {
+			add_province_triggered_modifier = great_sept_of_baelor
+		}
+	}
+}
+
+on_yearly_pulse_spawn_clear_bandits_effect = {
+	# Spawn in Bandits
+	random_owned_province = {
+		limit = {
+			unrest = 6
+			has_no_criminal_activity = { type = bandits }
+		}
+		province_event = { id = banditry.1 }
+	}
+	# Clear Bandits
+	random_owned_province = {
+		limit = {
+			NOT = { current_crime_lvl = { amount = 5 } }
+			has_criminal_activity = { type = bandits }
+		}
+		province_event = { id = banditry.2 }
+	}
+}
+
+on_yearly_pulse_bandits_events_effect = {
+	random_owned_province = {
+		limit = { has_criminal_activity = { type = bandits } }
+		random_list = {
+			20 = {
+				trigger = {
+					NOT = { has_province_modifier = public_square_raided }
+				}
+				province_event = { id = banditry.11 }
+			}
+			10 = {
+				trigger = {
+					NOT = { has_province_modifier = town_hearths_raided }
+				}
+				modifier = {
+					factor = 2
+					development = 10
+				}
+				province_event = { id = banditry.12 }
+			}
+			10 = {
+				trigger = {
+					NOT = { has_province_modifier = city_granaries_raided }
+					has_building = food_silo
+				}
+				province_event = { id = banditry.13 }
+			}
+			10 = {
+				trigger = {
+					has_port = yes
+					NOT = { has_province_modifier = city_port_raided }
+				}
+				modifier = {
+					factor = 2
+					base_production = 4
+				}
+				modifier = {
+					factor = 0
+					has_any_navy_building = yes
+				}
+				province_event = { id = banditry.14 }
+			}
+			10 = {
+				trigger = {
+					NOT = { has_province_modifier = trade_route_raided }
+				}
+				modifier = {
+					factor = 2
+					province_trade_power = 5
+				}
+				modifier = {
+					factor = 2
+					province_trade_power = 10
+				}
+				province_event = { id = banditry.15 }
+			}
+			20 = {
+				trigger = { current_crime_lvl = { amount = 15 } }
+				modifier = {
+					factor = 2
+					current_crime_lvl = { amount = 25 }
+				}
+				modifier = {
+					factor = 4
+					current_crime_lvl = { amount = 40 }
+				}
+				save_event_target_as = banditprovince
+				random_neighbor_province = {
+					limit = { owned_by = ROOT }
+					province_event = { id = banditry.16 }
+				}
+			}
+			20 = {
+				trigger = { current_crime_lvl = { amount = 25 } }
+				modifier = {
+					factor = 4
+					current_crime_lvl = { amount = 50 }
+				}
+				save_event_target_as = banditprovince
+				random_neighbor_province = {
+					limit = { owned_by = ROOT }
+					province_event = { id = banditry.17 }
+				}
+			}
+		}
+	}
+}
+
+# Province
+on_province_owner_change_government_effect = {
+	if = {
+		limit = {
+			owner = {
+				has_government_attribute = cheaper_developing_pastures
+			}
+			OR = {
+				has_terrain = farmlands
+				has_terrain = grasslands
+			}
+		}
+		add_province_modifier = {
+			name = cheaper_pasturelands_development
+			duration = -1
+			#hidden = yes
+		}
+	}
+	if = {
+		limit = {
+			owner = { has_government_attribute = temples_modifier }
+			has_any_taxation_building = yes
+		}
+		add_province_modifier = {
+			name = gov_expanded_temple_rights_mod
+			duration = -1
+		}
+	}
+}
+
+# Used for 'Usurp Overlord' casus belli aftermath
+on_war_ended_usurp_overlord_effect = {
+	# KEEP AT THE BOTTOM
+	remove_temp_overlord_flag_effect = yes
+	FROM = { remove_temp_overlord_flag_effect = yes }
+}
+
 #Country effect
 enable_annexation_penalty = {
 	custom_tooltip = enable_annexation_penalty_tt
@@ -120,6 +289,46 @@ disable_annexation_penalty = {
 		set_country_flag = no_integrate_penalty
 		remove_country_modifier = annexers_legacy
 	}
+}
+
+reveal_map = {
+	reveal_westeros = yes
+	reveal_west_essos = yes
+}
+
+reveal_westeros = {
+	region_beyond_the_wall = { discover_country = ROOT }
+	region_nights_watch = { discover_country = ROOT }
+	region_the_north = { discover_country = ROOT }
+	region_riverlands = { discover_country = ROOT }
+	region_crownlands = { discover_country = ROOT }
+	region_stormlands = { discover_country = ROOT }
+	region_vale = { discover_country = ROOT }
+	region_reach = { discover_country = ROOT }
+	region_westerlands = { discover_country = ROOT }
+	region_dorne = { discover_country = ROOT }
+	narrow_sea_region = { discover_country = ROOT }
+	sunset_sea_coast_area = { discover_country = ROOT }
+	shivering_sea_coast_area = { discover_country = ROOT }
+	dornish_coast_area = { discover_country = ROOT }
+}
+
+reveal_west_essos = {
+	region_stepstones = { discover_country = ROOT }
+	region_tyrosh = { discover_country = ROOT }
+	region_lys = { discover_country = ROOT }
+	region_volantis = { discover_country = ROOT }
+	region_rhoyne = { discover_country = ROOT }
+	region_myr = { discover_country = ROOT }
+	region_pentos = { discover_country = ROOT }
+	region_braavos = { discover_country = ROOT }
+	region_lorath = { discover_country = ROOT }
+	region_norvos = { discover_country = ROOT }
+	region_qohor = { discover_country = ROOT }
+	region_sarnor = { discover_country = ROOT }
+	narrow_sea_region = { discover_country = ROOT }
+	orange_shore_area = { discover_country = ROOT }
+	lorathi_coast_area = { discover_country = ROOT }
 }
 
 #Credits for that script goes to Stiopa

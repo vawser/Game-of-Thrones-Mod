@@ -181,6 +181,19 @@ remove_treasury = {
 
 # Criminal Rating Mechanic
 
+# type : bandits, street_gangs, syndicates
+set_criminal_activity = {
+	custom_tooltip = set_criminal_activity_$type$
+	increase_crime_lvl_large = yes
+	set_province_flag = criminal_activity_$type$
+}
+
+clear_criminal_activity = {
+	custom_tooltip = clr_criminal_activity_$type$
+	decrease_crime_lvl_large = yes
+	clr_province_flag = criminal_activity_$type$
+}
+
 # Increase by 25
 increase_crime_lvl_huge = {
 	change_crime_lvl = { amount = 25 }

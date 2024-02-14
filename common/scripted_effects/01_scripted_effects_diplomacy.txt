@@ -96,6 +96,74 @@ remove_temp_overlord_flag_effect = {
 	}
 }
 
+# Used for 'Usurp Overlord' casus belli
+reassign_great_house_usurp_overlord_effect = {
+	if = { # Dynamically Rename the Country
+		limit = {
+			has_saved_global_event_target = TheNorthGreatHouse
+			event_target:TheNorthGreatHouse = { war_with = ROOT }
+		}
+		restore_country_name = yes
+		ROOT = { override_country_name = THENORTH save_global_event_target_as = TheNorthGreatHouse }
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = TheRiverlandsGreatHouse
+			event_target:TheRiverlandsGreatHouse = { war_with = ROOT }
+		}
+		restore_country_name = yes
+		ROOT = { override_country_name = THERIVERLANDS save_global_event_target_as = TheRiverlandsGreatHouse }
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = TheValeGreatHouse
+			event_target:TheValeGreatHouse = { war_with = ROOT }
+		}
+		restore_country_name = yes
+		ROOT = { override_country_name = THEVALE save_global_event_target_as = TheValeGreatHouse }
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = TheWesterlandsGreatHouse
+			event_target:TheWesterlandsGreatHouse = { war_with = ROOT }
+		}
+		restore_country_name = yes
+		ROOT = { override_country_name = THEWESTERLANDS save_global_event_target_as = TheWesterlandsGreatHouse }
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = TheStormlandsGreatHouse
+			event_target:TheStormlandsGreatHouse = { war_with = ROOT }
+		}
+		restore_country_name = yes
+		ROOT = { override_country_name = THESTORMLANDS save_global_event_target_as = TheStormlandsGreatHouse }
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = TheReachGreatHouse
+			event_target:TheReachGreatHouse = { war_with = ROOT }
+		}
+		restore_country_name = yes
+		ROOT = { override_country_name = THEREACH save_global_event_target_as = TheReachGreatHouse }
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = DorneGreatHouse
+			event_target:DorneGreatHouse = { war_with = ROOT }
+		}
+		restore_country_name = yes
+		ROOT = { override_country_name = DORNE save_global_event_target_as = DorneGreatHouse }
+	}
+	else_if = {
+		limit = {
+			has_saved_global_event_target = TheIronIslandsGreatHouse
+			event_target:TheIronIslandsGreatHouse = { war_with = ROOT }
+		}
+		restore_country_name = yes
+		ROOT = { override_country_name = THEIRONISLANDS save_global_event_target_as = TheIronIslandsGreatHouse }
+	}
+}
+
 reassign_great_house_effect = {
 	if = { # Dynamically Rename the Country
 		limit = {

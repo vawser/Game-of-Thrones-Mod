@@ -1,0 +1,98 @@
+﻿l_french:
+ #-----------------------------------------
+ # Nobility
+ #-----------------------------------------
+ estate_nobles: "Nobility"
+ estate_nobles_desc: "Lords and ladies of the realm comprise our nobility. Fickle creatures, nobles will only follow orders once they've been paid off, or if they're particularly deranged, had somebody killed off."
+ 
+ estate_chieftains: "Chieftains"
+ estate_rangers: "Rangers"
+ 
+ nobles_loyalty_modifier: "[Country.GetNoblesName] Loyalty Equilibrium"
+ nobles_influence_modifier: "[Country.GetNoblesName] Influence"
+ 
+ # ------------ Privileges ------------ 
+ estate_nobility_land_rights: "$ESTATE_NAME$ Land Rights"
+ estate_nobility_land_rights_desc: "The greatest nobles of the nation, both lords and ladies alike, are those with the greatest claim to its lands. A landless noble is no true noble, and our [Root.GetNoblesName] deserve the recognition of their claims to the land."
+ 
+ estate_nobility_nobility_primacy: "Primacy of the $ESTATE_NAME$"
+ estate_nobility_nobility_primacy_desc: "Giving the [Root.GetNoblesName] free rein over our military would strengthen our capacities considerably, even if it may cost us dearly in compensating their contributions."
+ 
+ estate_nobility_officer_corp: "$ESTATE_NAME$ in Officer Corps"
+ estate_nobility_officer_corp_desc: "The [Root.GetNoblesName] are experienced in the art of leading men. It is only sensible that they should be the ones to lead our armies."
+ 
+ estate_nobility_levies: "Increased Levies"
+ estate_nobility_levies_desc: "Levies from the [Root.GetNoblesName] provide the majority of our nation's armies. An arrangement can be made for them to provide us with more men in return for other compensation."
+
+ estate_nobility_advisors: "Aristocratic Counselors"
+ estate_nobility_advisors_desc: "There can be no better source of advice than the [Root.GetNoblesName], who are able more than anyone else to dedicate themselves to the cultivation of their minds."
+
+ estate_nobility_right_of_counsel: "Right of Counsel"
+ estate_nobility_right_of_counsel_desc: "The [Root.GetNoblesName] must have the right to speak to the [Root.Monarch.GetTitle] openly and freely, without fear of repercussions."
+ 
+ estate_nobility_strong_duchies: "Strong Duchies"
+ estate_nobility_strong_duchies_desc: "Westeros is a decentralized land in which local dukes and counts have considerable independence from the [Root.Monarch.GetTitle]. This system has its benefits but makes maintaining the primacy of royal power a significant challenge."
+ estate_nobility_strong_duchies_trigger_tooltip: "§Y[Root.GetName]§! has at least 2 vassals or marches."
+
+ grant_court_positions_loyal: "Prestige Decay: §G-1.0%§!"
+ grant_court_positions_neutral: "Prestige Decay: §G-0.5%§!"
+ grant_court_positions_disloyal: "Prestige Decay: §R+1.0%§!"
+
+ estate_nobles_feudatory_annexation: "Feudal Consolidation"
+ estate_nobles_feudatory_annexation_desc: "Despite having relied upon the traditional system of power whereby lesser nobles own and govern a piece of land in our domain, the process of centralization necessitates the removal of the old hierarchy and the implementation of a new system of governance. When we are in total control, we'll be able to reign fire over our enemies."
+ enable_feudal_consolidation_tt: "Enables annexation of §YFeudatory§! subjects.\nEvery §YFeudatory§! subject will gain a permanent §R-25§! opinion malus towards us."
+ disable_feudal_consolidation_tt: "Disables annexation of §YFeudatory§! subjects.\nEvery §YFeudatory§! subject will lose the permanent §R-25§! opinion malus towards us."
+ estate_nobles_feudatory_annexation_trigger_tt: "At least §Y1§! Subject country:\n Is a §YFeudatory§! subject type\n Capital is on the continent §YWesteros§!"
+
+ estate_nobles_peasant_drills: "Peasant Drilling"
+ estate_nobles_peasant_drills_desc: "We must train our measly ragtag force of peace fighters into professional soldiers in preparation for future offensives. The [Root.GetNoblesName], however, may not appreciate our efforts at nationalizing the army."
+ peasant_drills_loyalty_scale_tt: "[Root.GetNoblesName] Loyalty Equilibrium: §R-20.0%§!"
+
+ estate_nobles_raise_emergency_soldiers: "Enlist Noble Retinues"
+ estate_nobles_raise_emergency_soldiers_desc: "Our situation is dire. We've exhausted a lot of our resources and yet cannot muster a large enough force to combat our enemies. Turning to the [Root.GetNoblesName] may be our best option now."
+ 
+ estate_nobility_supremacy_over_crown: "Supremacy over the [Root.GetStateForm]"
+ estate_nobility_supremacy_over_crown_desc: "With the scales tipping towards the decentralization of power, the Estates are increasingly able to dictate their priorities to the [Root.Monarch.GetTitle], leaving [Root.Monarch.GetHerHim] little choice but to agree to their will."
+ estate_nobility_supremacy_over_crown_effect_tooltip: "§YEstates§! can give §YAgendas§! without the §YCouncil§! having been summoned."
+ 
+ estate_nobility_statutory_rights: "Estates Statutory Rights"
+ estate_nobility_statutory_rights_desc: "In return for their support in a moment of need, the [Root.Monarch.GetTitle] has agreed to grant the Estates considerable rights that place stringent limitations on [Root.Monarch.GetHerHis] authority."
+ 
+ estate_nobles_monopoly_of_cloth: "Monopoly on Cloth"
+ estate_nobles_monopoly_of_cloth_desc: "The [Root.GetNoblesName] shall be granted a monopoly over the production of cloth."
+ 
+ estate_nobles_monopoly_of_fur: "Monopoly on Fur"
+ estate_nobles_monopoly_of_fur_desc: "The [Root.GetNoblesName] shall be granted a monopoly over the production of fur."
+ 
+ estate_nobles_monopoly_of_copper: "Monopoly on Copper"
+ estate_nobles_monopoly_of_copper_desc: "The [Root.GetNoblesName] shall be granted a monopoly over the production of copper."
+ 
+ estate_nobles_monopoly_of_iron: "Monopoly on Iron"
+ estate_nobles_monopoly_of_iron_desc: "The [Root.GetNoblesName] shall be granted a monopoly over the production of iron."
+ 
+ estate_nobles_monopoly_of_dyes: "Monopoly on Dyes"
+ estate_nobles_monopoly_of_dyes_desc: "The [Root.GetNoblesName] shall be granted a monopoly over the production of dyes."
+ 
+ estate_nobles_monopoly_of_silk: "Monopoly on Silk"
+ estate_nobles_monopoly_of_silk_desc: "The [Root.GetNoblesName] shall be granted a monopoly over the production of silk."
+ 
+ estate_nobles_monopoly_of_sugar: "Monopoly on Sugar"
+ estate_nobles_monopoly_of_sugar_desc: "The [Root.GetNoblesName] shall be granted a monopoly over the production of sugar."
+
+ estate_nobles_monopoly_of_grain: "Monopoly on Grain"
+ estate_nobles_monopoly_of_grain_desc: "The [Root.GetNoblesName] shall be granted a monopoly over the production of grain."
+ 
+ estate_nobles_monopoly_of_ironwood: "Monopoly on Ironwood"
+ estate_nobles_monopoly_of_ironwood_desc: "The [Root.GetNoblesName] shall be granted a monopoly over the production of ironwood."
+
+ estate_nobles_the_small_council: "The Small Council"
+ estate_nobles_the_small_council_desc: "All sovereigns want to reign absolute, but no empire can survive without an efficient government. The Small Council serves as this administrative body, governing in the absence of the §YSovereign of the Seven Kingdoms§! when necessary to ensure the Kingdom's survival."
+ estate_nobles_the_small_council.granted_tt: "The §YSmall Council§! will be instated."
+ estate_nobles_the_small_council.revoked_tt: "The §YSmall Council§! will be dissolved."
+ estate_nobles_the_kingsguard.granted_tt: "The §YLord Commander of the Kingsguard§! can be enlisted as a General, if we don't have any generals with traits."
+ estate_nobles_the_kingsguard.revoked_tt: "The §YLord Commander of the Kingsguard§! can no longer be enlisted in our service as a General."
+ estate_nobles_the_queensguard.granted_tt: "The §YLord Commander of the Queensguard§! can be enlisted as a General, if we don't have any generals with traits."
+ estate_nobles_the_queensguard.revoked_tt: "The §YLord Commander of the Queensguard§! can no longer be enlisted in our service as a General."
+
+ estate_nobles_unsullied: "The Unsullied"
+ estate_nobles_unsullied_desc: "The Unsullied are eunuch slave soldiers, trained from a young age in Astapor to unquestioning obedience and martial prowess. Sold by the century or the thousand, they are used as guards all over the Free Cities. They make excellent guards, do not loot, and will never rape."

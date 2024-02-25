@@ -124,7 +124,15 @@ declarewar = {
 	}
 	condition = {
 		tooltip = BOTH_COUNTRIES_RIVALRY
-		potential = { westeros_government_king = yes }
+		potential = {
+			westeros_government_king = yes
+			FROM = { westeros_government_not_king = yes }
+			if = {
+				limit = { has_dlc = "Emperor" }
+				NOT = { hre_reform_passed = king_expand_royal_laws }
+			}
+			else = { NOT = { hre_reform_passed = king_implement_royal_court_of_justice_nodlc } }
+		}
 		allow = {
 			is_rival = FROM
 			is_enemy = FROM
@@ -205,7 +213,11 @@ enforce_peace = {
 		}
 		allow = {
 			OR = {
-				hre_reform_passed = king_expand_royal_laws
+				if = {
+					limit = { has_dlc = "Emperor" }
+					hre_reform_passed = king_expand_royal_laws
+				}
+				else = { hre_reform_passed = king_implement_royal_court_of_justice_nodlc }
 				FROM = {
 					any_war_enemy_country = {
 						has_opinion = {

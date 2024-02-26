@@ -40,6 +40,21 @@ defined_text = {
 		}
 	}
 	text = {
+		localisation_key = string_start_beyond_the_wall
+		trigger = {
+			OR = {
+				AND = {
+					is_nights_watch_government = yes
+					capital_scope = { region = region_nights_watch }
+				}
+				AND = {
+					is_wildling_government = yes
+					capital_scope = { region = region_beyond_the_wall }
+				}
+			}
+		}
+	}
+	text = {
 		localisation_key = string_start_title_fallback
 		trigger = {
 			always = yes
@@ -78,6 +93,12 @@ defined_text = {
 		trigger = {
 			tag = CRW
 			NOT = { is_year = 197 }
+		}
+	}
+	text = {
+		localisation_key = string_start_nights_watch
+		trigger = {
+			tag = NGT
 		}
 	}
 	text = {
@@ -174,6 +195,14 @@ defined_text = {
 		}
 	}
 
+	text = {
+		localisation_key = string_start_religion_old_gods
+		trigger = {
+			religion = old_gods
+		}
+	}
+
+
 	# East Essos
 	text = {
 		localisation_key = string_start_jogos_mechanics
@@ -248,6 +277,12 @@ defined_text = {
 		localisation_key = string_start_yiti_mechanics
 		trigger = {
 			tag = R68
+		}
+	}
+	text = {
+		localisation_key = string_government_nights_watch_mechanics
+		trigger = {
+			tag = NGT
 		}
 	}
 	text = {

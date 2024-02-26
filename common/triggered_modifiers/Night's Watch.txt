@@ -1,55 +1,29 @@
-the_nights_watch_supported = {
-	potential = {
-        NOT = { has_global_flag = shattered_world }
-		has_reform = nights_watch_reform
-	}
-	
-	trigger = {
-        any_country = {
-            OR = {
-                has_reform = noble_house_reform
-                has_reform = royal_house_reform
-            }
-            has_opinion = {
-                who = ROOT
-                value = 150
-            }
-        }
-	}
-	
-	global_regiment_recruit_speed = -0.1
-    land_forcelimit_modifier = 0.1
-    land_maintenance_modifier = -0.1
-    manpower_recovery_speed = 0.1
-}
-
-the_nights_watch_abandoned = {
+supporting_the_watch = {
 	potential = {
 		NOT = { has_global_flag = shattered_world }
 		has_reform = nights_watch_reform
 	}
 	
 	trigger = {
-        NOT = {
-            any_country = {
-                OR = {
-                    has_reform = noble_house_reform
-                    has_reform = royal_house_reform
-                }
-                has_opinion = {
-                    who = ROOT
-                    value = 0
-                }
+		any_known_country = {
+            custom_trigger_tooltip = {
+                tooltip = "dynasty_government_tt"
+                government_type = { dynasty = yes }
             }
-        }
+			OR = {
+				historical_friend_with = ROOT
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+                has_opinion_modifier = {
+                    who = ROOT
+                    modifier = helped_the_nights_watch
+                }
+			}
+		}
 	}
 	
-	global_regiment_recruit_speed = 0.1
-    land_forcelimit_modifier = -0.1
-    land_maintenance_modifier = 0.1
-    manpower_recovery_speed = -0.1
-	global_manpower_modifier = -0.1
+	manpower_recovery_speed = 0.33
+    reinforce_cost_modifier = -0.20
 }
-
-
-

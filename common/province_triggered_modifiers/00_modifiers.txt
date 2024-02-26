@@ -147,22 +147,16 @@ castle_black_subsidies = {
 	potential = {
 		OR = {
 			exists = NGT
-			any_country = {
-				has_reform = nights_watch_reform
-			}
+			any_country = { has_reform = nights_watch_reform }
 		}
 	}
 	trigger = {
 		if = {
-			limit = {
-				province_id = 1590
-			}
+			limit = { province_id = 1590 }
 			has_building = the_wall
 		}
 		else_if = {
-			limit = {
-				province_id = 17
-			}
+			limit = { province_id = 17 }
 			has_any_defense_building = yes
 		}
 		else = {
@@ -170,27 +164,18 @@ castle_black_subsidies = {
 		}
 		OR = {
 			owned_by = NGT
-			owner = {
-				has_reform = nights_watch_reform
-			}
-			owner = {
-				has_reform = watchmen_outpost_reform
-			}
+			owner = { has_reform = nights_watch_reform }
+			owner = { has_reform = watchmen_outpost_reform }
 		}
 	}
 
 	tax_income = 6
-	local_fort_maintenance_modifier = -0.50
+	local_fort_maintenance_modifier = -0.66
 	local_garrison_size = 0.125
 	garrison_growth = 0.05
 
-	on_activation = {
-		
-	}
-
-	on_deactivation = {
-		
-	}
+	on_activation = { }
+	on_deactivation = { }
 }
 
 #--------------------------------

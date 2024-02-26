@@ -696,8 +696,8 @@ white_walker_ideas = {
 #---------------------------------------
 nights_watch_ideas = {
 	start = {
-		global_regiment_cost = -0.125
-        fort_maintenance_modifier = -0.33
+		defensiveness = 0.10
+        rival_border_fort_maintenance = -0.33
 	}
 	
 	bonus = {
@@ -719,33 +719,36 @@ nights_watch_ideas = {
 	}
 	free = yes
 	
-    # "Guardsmen of the Wall"
-	nights_watch_1 = {
-		defensiveness = 1.0
+	# "Black Brothers, One and All"
+	nights_watch_id1 = {
+		recover_army_morale_speed = 0.125
 	}
-    # "Enemies of the Wildlings"
-	nights_watch_2 = {
-        infantry_power = 0.1
+	# "Men of the Wall"
+	nights_watch_id2 = {
+		hostile_attrition = 1
 	}
-	# "The Rangers"
-	nights_watch_3 = {
-		discipline = 0.05
+	# "Order of Stewards"
+	nights_watch_id3 = {
+		development_cost = -0.10
+		supply_limit_modifier = 0.33
 	}
-	# "The Stewards"
-	nights_watch_4 = {
-		development_cost = -0.2
+	# "Order of Builders"
+	nights_watch_id4 = {
+		build_time = -0.10
 	}
-	# "The Builders"
-	nights_watch_5 = {
-		build_cost = -0.1
+	# "Northern Outposts"
+	nights_watch_id5 = {
+		diplomatic_upkeep = 2
+		global_colonial_growth = 10
 	}
-	# "Outcasts and Runaways"
-	nights_watch_6 = {
-		manpower_recovery_speed = 0.1
+	# "Order of Rangers"
+	nights_watch_id6 = {
+		land_morale = 0.10
 	}
 	# "Sworn to Serve"
-	nights_watch_7 = {
-		land_maintenance_modifier = -0.1
+	nights_watch_id7 = {
+		shock_damage = 0.125
+		shock_damage_received = -0.10
 	}
 }
 

@@ -1,0 +1,33 @@
+custom_button = {
+	name = truce_icon
+	potential = {  }
+	trigger = {  }
+	effect = {
+		# To display tt for neutral countries
+		every_country = {
+			limit = { has_country_flag = truce_flag_with_@ROOT }
+			custom_tooltip = "cannot_declare_war_on_us_tt"
+		}
+		hidden_effect = {
+			if = {
+				# Cannot target self
+				limit = { NOT = { tag = FROM } }
+				if = {
+					# Remove neutrality
+					limit = {
+						has_country_flag = truce_flag_with_@FROM
+						FROM = { has_country_flag = truce_flag_with_@ROOT }
+					}
+					clr_country_flag = truce_flag_with_@FROM
+					FROM = { clr_country_flag = truce_flag_with_@ROOT }
+				}
+				# Add neutrality
+				else = {
+					set_country_flag = truce_flag_with_@FROM
+					FROM = { set_country_flag = truce_flag_with_@ROOT }
+				}
+			}
+		}
+	}
+	tooltip = "neutrality_button_tt"
+}

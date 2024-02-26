@@ -138,6 +138,11 @@ declarewar = {
 			is_enemy = FROM
 		}
 	}
+	condition = {
+		tooltip = "Neutrality Pact prevents war."
+		potential = { has_country_flag = truce_flag_with_@FROM }
+		allow = { always = no }
+	}
 	effect = {
 		# Used for 'Usurp Overlord' casus belli aftermath
 		assign_temp_overlord_flag_effect = yes

@@ -67,6 +67,18 @@ set_manpower_variable = {
 	}
 }
 
+set_manpower_variable_with_tag = {
+	export_to_variable = {
+		value = manpower
+		which = $manpower_var$
+		who = $tag$
+	}
+	multiply_variable = {
+		which = $manpower_var$
+		value = $percent_amount$
+	}
+}
+
 transfer_manpower = {
 	hidden_effect = {
 		$giver$ = {

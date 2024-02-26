@@ -183,26 +183,42 @@ superiority_lordly_feud = {
 	war_name = LORDLY_FEUD_NAME
 }
 
-superiority_defend_the_wall = {
+superiority_preemptive_strike = {
 	type = superiority
 	
 	attacker = {
 		badboy_factor = 1
 		prestige_factor = 2
 		peace_cost_factor = 1
+
+		allowed_provinces = { is_core = ROOT }
+		allowed_provinces_are_eligible = yes
 	
 		peace_options = {
+			po_concede_defeat
+			po_gold
+			po_become_tributary_state
 			po_demand_provinces
 		}
+
+		prov_desc = ALL_CORES
 	}
 	defender = {
 		badboy_factor = 0.5
 		prestige_factor = 1
 		peace_cost_factor = 0.5
+
+		allowed_provinces = { is_core = ROOT }
+		allowed_provinces_are_eligible = yes
         
         peace_options = {
+			po_concede_defeat
+			po_gold
+			po_become_tributary_state
 			po_demand_provinces
 		}
+
+		prov_desc = ALL_CORES
 	}
 	
 	war_name = DEFEND_THE_WALL_NAME

@@ -1974,7 +1974,7 @@ ascension_cult_reform = {
 # Mythical
 #------------------------------------------------------------
 army_of_the_dead_reform = {
-	icon = "castle"
+	icon = "army_of_the_dead"
 	
 	potential = {
 		has_reform = army_of_the_dead_reform
@@ -1986,14 +1986,15 @@ army_of_the_dead_reform = {
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
 	
+	heir = no
 	rulers_can_be_generals = yes
 	maintain_dynasty = yes
 	
 	free_concentrate_development = yes
 	
 	modifiers = {
-		discipline = 0.1
-		land_morale = 0.1
-		max_absolutism = 50
+		discipline = 0.05
+		shock_damage = 0.125
+		capped_by_forcelimit = yes
 	}
 }

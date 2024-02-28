@@ -1287,19 +1287,16 @@ nights_watch_reform = {
 	modifiers = {
 		free_land_leader_pool = 2
 		naval_forcelimit = -8
-		nw_rangers_influence = 0.02
 	}
 	custom_attributes = {
 		election_on_death = yes
 		locked_government_type = yes
 		force_general_leader = yes
-		elections_increase_factions_influence = yes
+		has_tributaries = yes
 	}
 
-	factions = {
-		nw_stewards
-		nw_builders
-		nw_rangers
+	government_abilities = {
+		nights_watch_orders_mechanic
 	}
 
 	ai = {

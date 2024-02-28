@@ -33,15 +33,6 @@ add_influence_to_adm_faction = {
 	}
 	if = {
 		limit = { 
-			has_faction = nw_rangers 
-		}
-		add_faction_influence = {
-			faction = nw_rangers
-			influence = $influence$
-		}				
-	}
-	if = {
-		limit = { 
 			has_faction = sedentary_chieftains 
 		}
 		add_faction_influence = {
@@ -63,15 +54,6 @@ add_influence_to_dip_faction = {
 	}
 	if = {
 		limit = { 
-			has_faction = nw_builders 
-		}
-		add_faction_influence = {
-			faction = nw_builders
-			influence = $influence$
-		}				
-	}
-	if = {
-		limit = { 
 			has_faction = mercantile_chieftains 
 		}
 		add_faction_influence = {
@@ -88,15 +70,6 @@ add_influence_to_mil_faction = {
 		}
 		add_faction_influence = {
 			faction = crw_militarists
-			influence = $influence$
-		}				
-	}
-	if = {
-		limit = { 
-			has_faction = nw_rangers 
-		}
-		add_faction_influence = {
-			faction = nw_rangers
 			influence = $influence$
 		}				
 	}

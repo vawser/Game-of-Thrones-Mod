@@ -1,0 +1,151 @@
+nights_watch_orders_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 3
+	available = {
+		has_dlc = "Cradle of Civilization"
+	}
+	
+	powers = {
+		stewards_loyalty = {
+			max = 100
+			default = 40
+			monarch_power = ADM
+			reset_on_new_ruler = yes
+			base_monthly_growth = 0.12
+
+			scaled_modifier = {
+				start_value = 50
+				end_value = 100
+				extend_beyond_value = no
+				modifier = {
+					global_tax_modifier = 0.125
+					production_efficiency = 0.10
+					monthly_stewards_loyalty = -1.0
+				}
+			}
+			reverse_scaled_modifier = {
+				start_value = 0
+				end_value = 50
+				extend_beyond_value = no
+				modifier = {
+					global_tax_modifier = -0.125
+					production_efficiency = -0.10
+					monthly_stewards_loyalty = 0.33
+				}
+			}
+		}
+		builders_loyalty = {
+			max = 100
+			default = 40
+			monarch_power = DIP
+			reset_on_new_ruler = yes
+			base_monthly_growth = 0.12
+
+			scaled_modifier = {
+				start_value = 50
+				end_value = 100
+				extend_beyond_value = no
+				modifier = {
+					build_cost = -0.20
+					build_time = -0.15
+					monthly_builders_loyalty = -1.0
+				}
+			}
+			reverse_scaled_modifier = {
+				start_value = 0
+				end_value = 50
+				extend_beyond_value = no
+				modifier = {
+					build_cost = 0.20
+					build_time = 0.15
+					monthly_builders_loyalty = 0.33
+				}
+			}
+		}
+		rangers_loyalty = {
+			max = 100
+			default = 40
+			monarch_power = MIL
+			reset_on_new_ruler = yes
+			base_monthly_growth = 0.12
+
+			scaled_modifier = {
+				start_value = 50
+				end_value = 100
+				extend_beyond_value = no
+				modifier = {
+					land_morale = 0.10
+					discipline = 0.05
+					monthly_rangers_loyalty = -1.0
+				}
+			}
+			reverse_scaled_modifier = {
+				start_value = 0
+				end_value = 50
+				extend_beyond_value = no
+				modifier = {
+					land_morale = -0.10
+					discipline = -0.05
+					monthly_rangers_loyalty = 0.33
+				}
+			}
+		}
+	}
+	
+	interactions = {
+		promote_loyalty_stewards = {
+			icon = GFX_stewards_order_button
+			cost_type = stewards_loyalty
+			trigger = {
+			}
+			effect = {
+				add_government_power = {
+					mechanic_type = nights_watch_orders_mechanic
+					power_type = stewards_loyalty
+					value = 5
+				}
+			}
+			cooldown_years = 5
+			cooldown_token = ngt_cooldown
+			ai_chance = {
+				factor = 100
+			}
+		}
+		promote_loyalty_builders = {
+			icon = GFX_builders_order_button
+			cost_type = builders_loyalty
+			effect = { 
+				add_government_power = {
+					mechanic_type = nights_watch_orders_mechanic
+					power_type = builders_loyalty
+					value = 5
+				}
+			}
+			cooldown_years = 5
+			cooldown_token = ngt_cooldown
+			ai_chance = {
+				factor = 100
+			}
+		}
+		promote_loyalty_rangers = {
+			icon = GFX_rangers_order_button
+			cost_type = rangers_loyalty
+			effect = {
+				add_government_power = {
+					mechanic_type = nights_watch_orders_mechanic
+					power_type = rangers_loyalty
+					value = 5
+				}
+				if = {
+					limit = { has_dlc = "Cradle of Civilization" }
+					add_army_professionalism = 0.01
+				}
+			}
+			cooldown_years = 5
+			cooldown_token = ngt_cooldown
+			ai_chance = {
+				factor = 100
+			}
+		}
+	}
+}

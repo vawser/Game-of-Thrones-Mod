@@ -286,6 +286,14 @@ country_event = {
 				influence = 20
 			}
 		}
+		if = {
+			limit = { has_government_mechanic = nights_watch_orders_mechanic }
+			set_government_power = {
+				mechanic_type = nights_watch_orders_mechanic
+				power_type = stewards_loyalty
+				value = 100
+			}
+		}
         
 		ai_chance = {
 			factor = 100
@@ -315,6 +323,14 @@ country_event = {
 				influence = 20
 			}
 		}
+		if = {
+			limit = { has_government_mechanic = nights_watch_orders_mechanic }
+			set_government_power = {
+				mechanic_type = nights_watch_orders_mechanic
+				power_type = builders_loyalty
+				value = 100
+			}
+		}
         
 		ai_chance = {
 			factor = 100
@@ -342,6 +358,14 @@ country_event = {
 			limit = { has_government_attribute = elections_increase_factions_influence }
 			add_influence_to_mil_faction = {
 				influence = 20
+			}
+		}
+		if = {
+			limit = { has_government_mechanic = nights_watch_orders_mechanic }
+			set_government_power = {
+				mechanic_type = nights_watch_orders_mechanic
+				power_type = rangers_loyalty
+				value = 100
 			}
 		}
 

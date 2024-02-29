@@ -124,23 +124,24 @@ nights_watch_orders_mechanic = {
 					limit = { has_government_attribute = bonuses_from_wall_forts }
 					1590 = {
 						add_province_modifier = {
-							name = "bonuses_from_wall_forts_modifier"
+							name = "order_builders_bonus_province_improved"
 							duration = 1825
 						}
 					}
-					custom_tooltip = "Every province in the Westwatch and Eastwatch areas will also receive the same modifier."
-					area_westwatch = {
-						limit = { NOT = { has_province_modifier = abandoned_castle } }
-						add_province_modifier = {
-							name = "bonuses_from_wall_forts_modifier"
-							duration = 1825
-						}
+					if = {
+						limit = { 1590 = { NOT = { has_province_modifier = "order_builders_bonus_province_improved" } } }
+						custom_tooltip = "order_builders_defense_bonus_tt"
 					}
-					area_eastwatch = {
-						limit = { NOT = { has_province_modifier = abandoned_castle } }
-						add_province_modifier = {
-							name = "bonuses_from_wall_forts_modifier"
-							duration = 1825
+					hidden_effect = {
+						every_owned_province = {
+							limit = {
+								NOT = { has_province_modifier = abandoned_castle }
+								OR = { area = area_westwatch area = area_eastwatch }
+							}
+							add_province_modifier = {
+								name = "order_builders_bonus_province_improved"
+								duration = 1825
+							}
 						}
 					}
 				}

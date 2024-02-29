@@ -730,17 +730,6 @@ motte_and_bailey = {
 		}
 		if = {
 			limit = {
-				FROM = { has_government_attribute = bonuses_from_wall_forts }
-				NOT = { has_province_modifier = bonuses_from_wall_forts_modifier }
-				province_is_a_castle_on_the_wall = yes
-			}
-			add_province_modifier = {
-				name = bonuses_from_wall_forts_modifier
-				duration = -1
-			}
-		}
-		if = {
-			limit = {
 				has_province_modifier = abandoned_castle
 				province_is_a_castle_on_the_wall = yes
 			}
@@ -818,17 +807,6 @@ castle = {
 						loyalty = 5
 					}
 				}
-			}
-		}
-		if = {
-			limit = {
-				FROM = { has_government_attribute = bonuses_from_wall_forts }				
-				NOT = { has_province_modifier = bonuses_from_wall_forts_modifier }
-				province_is_a_castle_on_the_wall = yes
-			}
-			add_province_modifier = {
-				name = bonuses_from_wall_forts_modifier
-				duration = -1
 			}
 		}
 		if = {
@@ -914,17 +892,6 @@ fortress = {
 		}
 		if = {
 			limit = {
-				FROM = { has_government_attribute = bonuses_from_wall_forts }
-				NOT = { has_province_modifier = bonuses_from_wall_forts_modifier }
-				province_is_a_castle_on_the_wall = yes
-			}
-			add_province_modifier = {
-				name = bonuses_from_wall_forts_modifier
-				duration = -1
-			}
-		}
-		if = {
-			limit = {
 				has_province_modifier = abandoned_castle
 				province_is_a_castle_on_the_wall = yes
 			}
@@ -1003,17 +970,6 @@ citadel = {
 						loyalty = 5
 					}
 				}
-			}
-		}
-		if = {
-			limit = {
-				FROM = { has_government_attribute = bonuses_from_wall_forts }
-				NOT = { has_province_modifier = bonuses_from_wall_forts_modifier }
-				province_is_a_castle_on_the_wall = yes
-			}
-			add_province_modifier = {
-				name = bonuses_from_wall_forts_modifier
-				duration = -1
 			}
 		}
 		if = {

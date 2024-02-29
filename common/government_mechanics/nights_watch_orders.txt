@@ -10,7 +10,6 @@ nights_watch_orders_mechanic = {
 			max = 100
 			default = 40
 			monarch_power = ADM
-			reset_on_new_ruler = yes
 			base_monthly_growth = 0.12
 
 			scaled_modifier = {
@@ -38,7 +37,6 @@ nights_watch_orders_mechanic = {
 			max = 100
 			default = 40
 			monarch_power = DIP
-			reset_on_new_ruler = yes
 			base_monthly_growth = 0.12
 
 			scaled_modifier = {
@@ -66,7 +64,6 @@ nights_watch_orders_mechanic = {
 			max = 100
 			default = 40
 			monarch_power = MIL
-			reset_on_new_ruler = yes
 			base_monthly_growth = 0.12
 
 			scaled_modifier = {
@@ -99,6 +96,10 @@ nights_watch_orders_mechanic = {
 			trigger = {
 			}
 			effect = {
+				add_country_modifier = {
+					name = "order_stewards_bonus_country"
+					duration = 1825
+				}
 				add_government_power = {
 					mechanic_type = nights_watch_orders_mechanic
 					power_type = stewards_loyalty
@@ -114,7 +115,17 @@ nights_watch_orders_mechanic = {
 		promote_loyalty_builders = {
 			icon = GFX_builders_order_button
 			cost_type = builders_loyalty
-			effect = { 
+			trigger = {
+				owns = 1590
+				controls = 1590
+			}
+			effect = {
+				1590 = {
+					add_province_modifier = {
+						name = "order_builders_bonus_province"
+						duration = 1825
+					}
+				}
 				add_government_power = {
 					mechanic_type = nights_watch_orders_mechanic
 					power_type = builders_loyalty
@@ -131,14 +142,27 @@ nights_watch_orders_mechanic = {
 			icon = GFX_rangers_order_button
 			cost_type = rangers_loyalty
 			effect = {
+				if = {
+					limit = { has_dlc = "Cradle of Civilization" }
+					if = {
+						limit = { NOT = { army_professionalism = 0.10 } }
+						add_army_professionalism = 0.005
+					}
+					add_country_modifier = {
+						name = "order_rangers_bonus_country_dlc"
+						duration = 1825
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "order_rangers_bonus_country"
+						duration = 1825
+					}
+				}
 				add_government_power = {
 					mechanic_type = nights_watch_orders_mechanic
 					power_type = rangers_loyalty
 					value = 5
-				}
-				if = {
-					limit = { has_dlc = "Cradle of Civilization" }
-					add_army_professionalism = 0.01
 				}
 			}
 			cooldown_years = 5

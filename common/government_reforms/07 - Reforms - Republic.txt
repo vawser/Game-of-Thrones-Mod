@@ -228,6 +228,25 @@ got_union_of_states_reform = {
 	}
 }
 
+got_wildling_tributaries_reform = {
+	icon = "wall_of_ice"
+	allow_normal_conversion = yes
+	potential = {
+		is_nights_watch_government = yes
+	}
+
+	modifiers = {
+		monthly_rangers_loyalty = 0.05
+	}
+
+	custom_attributes = {
+		has_tributaries = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
+
 got_watchmen_fortline_reform = {
 	icon = "wall_of_ice"
 	allow_normal_conversion = yes
@@ -235,21 +254,9 @@ got_watchmen_fortline_reform = {
 		is_nights_watch_government = yes
 	}
 
-	effect = {
-	#	hidden_effect = {
-			every_owned_province = {
-				limit = {
-					OR = {
-						area = area_westwatch
-						area = area_eastwatch
-					}
-				}
-				add_province_modifier = {
-					name = bonuses_from_wall_forts_modifier
-					duration = -1
-				}
-			}
-	#	}
+	modifiers = {
+		monthly_builders_loyalty = 0.05
+		monthly_rangers_loyalty = -0.05
 	}
 
 	custom_attributes = {
@@ -271,6 +278,7 @@ got_expand_the_gift_reform = {
 	modifiers = {
 		development_cost = -0.05
 		local_tax_modifier = 0.125
+		monthly_stewards_loyalty = 0.05
 	}
 	custom_attributes = {
 		

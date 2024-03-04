@@ -93,6 +93,7 @@ country_event = {
 		name = GOT_ELECTIONS.100.option.d
 		trigger = {
 			has_regency = no
+			NOT = { has_ruler_flag = leader_has_been_pushed_out }
 		}
 		ai_chance = { 
 			factor = 60

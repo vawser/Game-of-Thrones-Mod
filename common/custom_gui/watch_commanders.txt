@@ -1,0 +1,138 @@
+custom_icon = {
+	name = watch_commanders_frame
+	potential = { has_reform = nights_watch_reform }
+}
+
+custom_button = {
+	name = watch_commanders_bttn
+	potential = { has_reform = nights_watch_reform }
+	trigger = { }
+	effect = {
+		if = {
+			limit = { NOT = { has_country_flag = commander_gui_active } }
+			set_country_flag = commander_gui_active
+			play_sound = for_the_watch
+		}
+		else = { clr_country_flag = commander_gui_active }
+	}
+	tooltip = "castle_leaders_tt"
+}
+
+custom_text_box = {
+	name = watch_commander_explanation
+	potential = { has_reform = nights_watch_reform }
+}
+
+custom_icon = {
+	name = watch_commander_gui_background
+	potential = {
+		has_reform = nights_watch_reform
+		has_country_flag = commander_gui_active
+	}
+}
+
+custom_button = {
+	name = shadowtower_bttn
+	potential = {
+		has_reform = nights_watch_reform
+		has_country_flag = commander_gui_active
+	}
+	trigger = {
+		if = {
+			limit = { castle_abandoned = { province_id = 16 } }
+			castle_not_abandoned = { province_id = 16 }
+		}
+		else = { had_commander_for_five_years = { castle = shadowtower } }
+	}
+	effect = {
+		if = {
+			limit = { has_watch_commander = { castle = shadowtower } }
+			remove_watch_commander = { castle = shadowtower }
+		}
+	}
+	tooltip = "shadowtower_tt"
+}
+
+custom_button = {
+	name = nightfort_bttn
+	potential = {
+		has_reform = nights_watch_reform
+		has_country_flag = commander_gui_active
+	}
+	trigger = {
+		if = {
+			limit = { castle_abandoned = { province_id = 1580 } }
+			castle_not_abandoned = { province_id = 1580 }
+		}
+		else = { had_commander_for_five_years = { castle = nightfort } }
+	}
+	effect = {
+		if = {
+			limit = { has_watch_commander = { castle = nightfort } }
+			remove_watch_commander = { castle = nightfort }
+		}
+	}
+	tooltip = "nightfort_tt"
+}
+
+custom_button = {
+	name = castleblack_bttn
+	potential = {
+		has_reform = nights_watch_reform
+		has_country_flag = commander_gui_active
+	}
+	trigger = {
+		#months_of_ruling = 60
+	}
+	effect = {
+		# custom_tooltip = "You will resign as Lord Commander, triggering an election."
+		# country_event = {
+		# 	id = GOT_ELECTIONS.100
+		# }
+	}
+	tooltip = "castleblack_tt"
+}
+
+custom_button = {
+	name = woodswatch_bttn
+	potential = {
+		has_reform = nights_watch_reform
+		has_country_flag = commander_gui_active
+	}
+	trigger = {
+		if = {
+			limit = { castle_abandoned = { province_id = 1584 } }
+			castle_not_abandoned = { province_id = 1584 }
+		}
+		else = { had_commander_for_five_years = { castle = woodswatch } }
+	}
+	effect = {
+		if = {
+			limit = { has_watch_commander = { castle = woodswatch } }
+			remove_watch_commander = { castle = woodswatch }
+		}
+	}
+	tooltip = "woodswatch_tt"
+}
+
+custom_button = {
+	name = eastwatch_bttn
+	potential = {
+		has_reform = nights_watch_reform
+		has_country_flag = commander_gui_active
+	}
+	trigger = {
+		if = {
+			limit = { castle_abandoned = { province_id = 18 } }
+			castle_not_abandoned = { province_id = 18 }
+		}
+		else = { had_commander_for_five_years = { castle = eastwatch } }
+	}
+	effect = {
+		if = {
+			limit = { has_watch_commander = { castle = eastwatch } }
+			remove_watch_commander = { castle = eastwatch }
+		}
+	}
+	tooltip = "eastwatch_tt"
+}

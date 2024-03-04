@@ -7,17 +7,13 @@ on_startup = {
 
 	# Set YiTi Emperor
 	if = {
-		limit = {
-			is_emperor_of_china = yes
-		}
+		limit = { is_emperor_of_china = yes }
 		save_global_event_target_as = YiTiEmperor
 	}
 
 	# Assigning Age Nation Bonuses
 	if = {
-		limit = {
-			NOT = { has_global_flag = age_nation_bonuses_applied }
-		}
+		limit = { NOT = { has_global_flag = age_nation_bonuses_applied } }
 		set_global_flag = age_nation_bonuses_applied
 		if = {
 			limit = { current_age = age_of_fire }
@@ -31,15 +27,14 @@ on_startup = {
 
 	# Kingsroad Benefit
 	if = {
-		limit = {
-			NOT = { has_global_flag = kingsroad_bonuses }
-		}
+		limit = { NOT = { has_global_flag = kingsroad_bonuses } }
 		set_global_flag = kingsroad_bonuses
 		kingsroad = {
 			add_province_triggered_modifier = kingsroad_province_bonus
 		}
 	}
 
+	on_startup_watch_commanders_effect = yes
 	on_startup_great_projects_effect = yes
 	
 	#Sets up Countries
@@ -1299,9 +1294,21 @@ on_siberian_pulse = {
 
 # country random events
 on_monthly_pulse = {
-	if = { 
-		limit = { has_global_flag = enable_onaction_logging }
-		log = "DEBUG - [Root.GetName]: on_monthly_pulse "
+	if = {
+		limit = { NGT = { has_no_watch_commander = { castle = shadowtower } } castle_not_abandoned = { province_id = 16 } }
+		NGT = { set_watch_commander = { castle = shadowtower option = 0 } }
+	}
+	if = {
+		limit = { NGT = { has_no_watch_commander = { castle = nightfort } } castle_not_abandoned = { province_id = 1580 } }
+		NGT = { set_watch_commander = { castle = nightfort option = 1 } }
+	}
+	if = {
+		limit = { NGT = { has_no_watch_commander = { castle = woodswatch } } castle_not_abandoned = { province_id = 1584 } }
+		NGT = { set_watch_commander = { castle = woodswatch option = 2 } }
+	}
+	if = {
+		limit = { NGT = { has_no_watch_commander = { castle = eastwatch } } castle_not_abandoned = { province_id = 18 } }
+		NGT = { set_watch_commander = { castle = eastwatch option = 3 } }
 	}
 }
 

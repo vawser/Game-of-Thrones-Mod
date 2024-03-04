@@ -108,6 +108,27 @@ on_alliance_broken_effect = {
 	# }
 }
 
+on_startup_watch_commanders_effect = {
+	NGT = {
+		if = {
+			limit = { has_no_watch_commander = { castle = shadowtower } }
+			set_watch_commander = { castle = shadowtower option = 0 }
+		}
+		# if = { # ABANDONED CASTLE
+		# 	limit = { has_no_watch_commander = { castle = nightfort } }
+		# 	set_watch_commander = { castle = nightfort option = 1 }
+		# }
+		# if = { # ABANDONED CASTLE
+		# 	limit = { has_no_watch_commander = { castle = woodswatch } }
+		# 	set_watch_commander = { castle = woodswatch option = 2 }
+		# }
+		if = {
+			limit = { has_no_watch_commander = { castle = eastwatch } }
+			set_watch_commander = { castle = eastwatch option = 3 }
+		}
+	}
+}
+
 on_startup_great_projects_effect = {
 	if = {
 		limit = {

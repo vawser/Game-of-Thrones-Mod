@@ -1,0 +1,52 @@
+# # Criminal Rating Mechanic
+
+# type : bandits, street gangs, syndicate
+has_criminal_activity = {
+	has_province_flag = criminal_activity_$type$
+}
+
+has_no_criminal_activity = {
+	NOT = { has_province_flag = criminal_activity_$type$ }
+}
+
+has_any_criminal_activity = {
+	OR = {
+		has_criminal_activity = { type = bandits }
+		has_criminal_activity = { type = street_gangs }
+		has_criminal_activity = { type = syndicate }
+	}
+}
+
+# # Watch Commanders Mechanic
+
+# castle : shadowtower, nightfort, woodswatch, eastwatch
+has_watch_commander = {
+	has_global_flag = $castle$_commander_active
+}
+has_no_watch_commander = {
+	NOT = { has_global_flag = $castle$_commander_active }
+}
+has_any_watch_commander = {
+	OR = {
+		has_watch_commander = { castle = shadowtower }
+		has_watch_commander = { castle = nightfort }
+		has_watch_commander = { castle = woodswatch }
+		has_watch_commander = { castle = eastwatch }
+	}
+}
+had_commander_for_five_years = {
+	custom_trigger_tooltip = {
+		tooltip = "commander_active_for_5_years"
+		had_global_flag = {
+			flag = $castle$_commander_active
+			days = 1825
+		}
+	}
+}
+# province_id : 16, 1580, 1584, 18
+castle_abandoned = {
+	$province_id$ = { has_province_modifier = abandoned_castle }
+}
+castle_not_abandoned = {
+	$province_id$ = { NOT = { has_province_modifier = abandoned_castle } }
+}

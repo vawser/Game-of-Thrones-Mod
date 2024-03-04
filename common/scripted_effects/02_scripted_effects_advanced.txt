@@ -90,3 +90,41 @@ clear_council_country = {
 	clear_council_position_cf = { sm_council_position = masterofships }
 	clear_council_position_cf = { sm_council_position = masterofwhisperers }
 }
+
+# Effect to set a Watch Commander for a castle
+# (country scope)
+set_watch_commander = {
+	set_global_flag = $castle$_commander_active
+	random_list = {
+		50 = {
+			define_exiled_ruler = {
+				exiled_as = $castle$_commander
+				[[option] option = $option$ ]
+				min_age = 20
+				max_age = 40
+				change_adm = -1
+				change_dip = -1
+				change_mil = 1
+			}
+		}
+		50 = {
+			define_exiled_ruler = {
+				exiled_as = $castle$_commander
+				[[option] option = $option$ ]
+				min_age = 30
+				max_age = 50
+				change_adm = 1
+				change_dip = 1
+				change_mil = -1
+			}
+		}
+	}
+}
+
+# Effect to remove a Watch Commander for a castle
+# (country scope)
+remove_watch_commander = {
+	custom_tooltip = "Commander will be removed. A new Commander will automatically be generated."
+	clr_global_flag = $castle$_commander_active
+	clear_exiled_ruler = $castle$_commander
+}

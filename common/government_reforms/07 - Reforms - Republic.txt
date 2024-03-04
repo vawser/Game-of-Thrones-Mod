@@ -229,20 +229,19 @@ got_union_of_states_reform = {
 	}
 }
 
-got_wildling_tributaries_reform = {
-	icon = "wall_of_ice"
+got_expand_the_gift_reform = {
+	icon = "farmfields"
 	allow_normal_conversion = yes
 	potential = {
 		is_nights_watch_government = yes
 	}
 
 	modifiers = {
-		monthly_rangers_loyalty = 0.05
+		development_cost_in_primary_culture = -0.10
+		state_maintenance_modifier = -0.25
+		monthly_stewards_loyalty = 0.02
 	}
 
-	custom_attributes = {
-		has_tributaries = yes
-	}
 	ai = {
 		factor = 1
 	}
@@ -256,8 +255,7 @@ got_watchmen_fortline_reform = {
 	}
 
 	modifiers = {
-		monthly_builders_loyalty = 0.05
-		monthly_rangers_loyalty = -0.05
+		monthly_builders_loyalty = 0.02
 	}
 
 	custom_attributes = {
@@ -269,22 +267,21 @@ got_watchmen_fortline_reform = {
 	}
 }
 
-got_expand_the_gift_reform = {
-	icon = "farmfields"
+got_wildling_tributaries_reform = {
+	icon = "wildlings_kneeling"
 	allow_normal_conversion = yes
 	potential = {
 		is_nights_watch_government = yes
 	}
 
 	modifiers = {
-		development_cost = -0.05
-		local_tax_modifier = 0.125
-		monthly_stewards_loyalty = 0.05
-	}
-	custom_attributes = {
-		
+		reduced_liberty_desire = 5
+		monthly_rangers_loyalty = 0.02
 	}
 
+	custom_attributes = {
+		has_tributaries = yes
+	}
 	ai = {
 		factor = 1
 	}

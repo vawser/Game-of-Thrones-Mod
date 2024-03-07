@@ -128,3 +128,10 @@ remove_watch_commander = {
 	clr_global_flag = $castle$_commander_active
 	clear_exiled_ruler = $castle$_commander
 }
+
+# Effect when a Watch Commander get elected as LC
+# (country scope)
+elect_watch_commander = {
+	set_ruler = $castle$_commander
+	clr_global_flag = $castle$_commander_active
+}

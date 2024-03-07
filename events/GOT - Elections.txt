@@ -374,6 +374,27 @@ country_event = {
 			factor = 100
 		}
 	}
+
+	option = {
+		name = GOT_ELECTIONS.101.option.d
+		trigger = { has_watch_commander = { castle = shadowtower } }
+		elect_watch_commander = { castle = shadowtower }
+	}
+	option = {
+		name = GOT_ELECTIONS.101.option.e
+		trigger = { has_watch_commander = { castle = nightfort } }
+		elect_watch_commander = { castle = nightfort }
+	}
+	option = {
+		name = GOT_ELECTIONS.101.option.f
+		trigger = { has_watch_commander = { castle = woodswatch } }
+		elect_watch_commander = { castle = woodswatch }
+	}
+	option = {
+		name = GOT_ELECTIONS.101.option.g
+		trigger = { has_watch_commander = { castle = eastwatch } }
+		elect_watch_commander = { castle = eastwatch }
+	}
 }
 
 # On Replace Governor

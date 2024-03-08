@@ -85,10 +85,11 @@ custom_button = {
 		#months_of_ruling = 60
 	}
 	effect = {
-		# custom_tooltip = "You will resign as Lord Commander, triggering an election."
-		# country_event = {
-		# 	id = GOT_ELECTIONS.100
-		# }
+		custom_tooltip = "lordcommander_resignation_tt"
+		hidden_effect = { set_ruler_flag = ruler_resignation }
+		country_event = {
+			id = elections.100
+		}
 	}
 	tooltip = "castleblack_tt"
 }

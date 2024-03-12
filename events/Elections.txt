@@ -1,3 +1,18 @@
+########################################
+# Events for Elections
+#
+# Re-Written by Emperor Nuclear
+########################################
+#
+# Table of Contents
+#
+# 100 : Term Elections
+# 101 : On Death Elections
+# 102 : On Replace Governor Elections
+# 200 : States General Elections
+# 201 : States General On Death Elections
+########################################
+
 namespace = elections
 
 # On Term Election
@@ -108,7 +123,7 @@ country_event = {
         hidden_effect = { country_event = { id = GOT_EDUCATION.2 days = 1 } }
 	}
     option = {
-		name = elections.100.option.d
+		name = "elections.100.option.d"
 		trigger = {
 			has_regency = no
 			NOT = { has_ruler_flag = leader_has_been_pushed_out }
@@ -269,7 +284,7 @@ country_event = {
 		}
 	}
     option = {
-		name = elections.100.option.e
+		name = "elections.100.option.e"
 		trigger = {
 			has_government_attribute = enables_nepotism
 		}
@@ -287,22 +302,22 @@ country_event = {
 	}
 
 	option = {
-		name = elections.101.option.d
+		name = "elections.101.option.d"
 		trigger = { has_watch_commander = { castle = shadowtower } }
 		elect_watch_commander = { castle = shadowtower }
 	}
 	option = {
-		name = elections.101.option.e
+		name = "elections.101.option.e"
 		trigger = { has_watch_commander = { castle = nightfort } }
 		elect_watch_commander = { castle = nightfort }
 	}
 	option = {
-		name = elections.101.option.f
+		name = "elections.101.option.f"
 		trigger = { has_watch_commander = { castle = woodswatch } }
 		elect_watch_commander = { castle = woodswatch }
 	}
 	option = {
-		name = elections.101.option.g
+		name = "elections.101.option.g"
 		trigger = { has_watch_commander = { castle = eastwatch } }
 		elect_watch_commander = { castle = eastwatch }
 	}
@@ -311,14 +326,14 @@ country_event = {
 # On Death election
 country_event = {
 	id = elections.101
-	title = elections.101.title
+	title = "elections.101.ti"
 	desc = {
 		trigger = { NOT = { government = dictatorship } }	
-		desc = elections.101.desc
+		desc = "elections.101.de"
 	}
 	desc = {
 		trigger = { government = dictatorship }
-		desc = elections.101d.desc
+		desc = "elections.101d.de"
 	}
 	picture = IMPORTANT_STATUE_eventPicture
 	
@@ -333,7 +348,7 @@ country_event = {
 	}
 	
 	option = {
-		name = elections.101.option.a
+		name = "elections.101.option.a"
 		ai_chance = { factor = 20 }
 		define_ruler = {
 			adm = 4
@@ -363,7 +378,7 @@ country_event = {
 	}
 	
 	option = {
-		name = elections.101.option.b
+		name = "elections.101.option.b"
 		ai_chance = { factor = 20 }
 		define_ruler = {
 			adm = 1
@@ -393,7 +408,7 @@ country_event = {
 	}
 	
 	option = {
-		name = elections.101.option.c
+		name = "elections.101.option.c"
 		ai_chance = { factor = 40 }
 		define_ruler = {
 			adm = 1
@@ -423,22 +438,22 @@ country_event = {
 	}
 
 	option = {
-		name = elections.101.option.d
+		name = "elections.101.option.d"
 		trigger = { has_watch_commander = { castle = shadowtower } }
 		elect_watch_commander = { castle = shadowtower }
 	}
 	option = {
-		name = elections.101.option.e
+		name = "elections.101.option.e"
 		trigger = { has_watch_commander = { castle = nightfort } }
 		elect_watch_commander = { castle = nightfort }
 	}
 	option = {
-		name = elections.101.option.f
+		name = "elections.101.option.f"
 		trigger = { has_watch_commander = { castle = woodswatch } }
 		elect_watch_commander = { castle = woodswatch }
 	}
 	option = {
-		name = elections.101.option.g
+		name = "elections.101.option.g"
 		trigger = { has_watch_commander = { castle = eastwatch } }
 		elect_watch_commander = { castle = eastwatch }
 	}
@@ -447,14 +462,14 @@ country_event = {
 # On Replace Governor
 country_event = {
 	id = elections.102
-	title = elections.102.title
-	desc = elections.102.desc
+	title = "elections.102.ti"
+	desc = "elections.102.de"
 	picture = ELECTION_REPUBLICAN_eventPicture
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = elections.102.option.a
+		name = "elections.102.option.a"
 		ai_chance = { factor = 20 }
 		FROM = {
 			define_ruler = {
@@ -471,7 +486,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = elections.102.option.b
+		name = "elections.102.option.b"
 		ai_chance = { factor = 20 }
 		FROM = {
 			define_ruler = {
@@ -488,7 +503,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = elections.102.option.c
+		name = "elections.102.option.c"
 		ai_chance = { factor = 20 }
 		FROM = {
 			define_ruler = {

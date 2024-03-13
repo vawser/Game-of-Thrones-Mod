@@ -71,7 +71,6 @@ country_event = {
 				loyalty = 10
 			}
 		}
-        #add_republican_tradition = 5
 	}
 	option = {
 		name = "elections.100.option.b"
@@ -93,7 +92,6 @@ country_event = {
 				loyalty = 10
 			}
 		}
-        #add_republican_tradition = 5
 	}
 	option = {
 		name = "elections.100.option.c"
@@ -115,7 +113,6 @@ country_event = {
 				loyalty = 10
 			}
 		}
-        #add_republican_tradition = 5
 	}
     option = {
 		name = "elections.100.option.d"
@@ -163,8 +160,7 @@ country_event = {
 			limit = {
 				is_tribal = no 
 				government = republic
-				NOT = { republican_tradition = 20 }				
-				# NOT = { is_revolutionary_republic_trigger = yes }
+				NOT = { republican_tradition = 20 }
 				has_dlc = "Res Publica"
 				NOT = { has_government_attribute = cannot_become_dictatorship }
 			}
@@ -181,7 +177,6 @@ country_event = {
 			limit = {
 				government = republic
 				NOT = { republican_tradition = 20 }	
-				# is_revolutionary_republic_trigger = yes
 			}
 			change_government_to_monarchy = yes
 			add_government_reform = revolutionary_empire_reform
@@ -195,14 +190,6 @@ country_event = {
 				NOT = { has_government_attribute = cannot_become_dictatorship }
 			}
 			change_government_to_monarchy = yes
-			#set_legacy_government = despotic_monarchy
-		}
-		if = {
-			limit = {
-				has_country_flag = strengthened_signoria_flag
-			}
-			custom_tooltip = strengthened_signoria_election_tt
-			clr_country_flag = strengthened_signoria_flag
 		}
 		else = {
 			if = {
@@ -217,15 +204,9 @@ country_event = {
 			}
 		}
 		random_list = {
-			10 = {
-				add_adm_power = 50
-			}
-			10 = {
-				add_dip_power = 50
-			}
-			10 = {
-				add_mil_power = 50
-			}
+			10 = { add_adm_power = 50 }
+			10 = { add_dip_power = 50 }
+			10 = { add_mil_power = 50 }
 		}
         if = {
 			limit = {
@@ -352,15 +333,11 @@ country_event = {
 		}
 		if = {
 			limit = { has_government_attribute = elections_increase_factions_influence }
-			add_influence_to_adm_faction = {
-				influence = 20
-			}
+			add_influence_to_adm_faction = { influence = 20 }
 		}
 		if = {
 			limit = { has_government_attribute = elections_influence_estates }
-			add_estate_loyalty_by_class_adm = {
-				loyalty = 10
-			}
+			add_estate_loyalty_by_class_adm = { loyalty = 10 }
 		}
 		if = {
 			limit = { has_government_mechanic = nights_watch_orders_mechanic }
@@ -382,15 +359,11 @@ country_event = {
 		}
 		if = {
 			limit = { has_government_attribute = elections_increase_factions_influence }
-			add_influence_to_dip_faction = {
-				influence = 20
-			}
+			add_influence_to_dip_faction = { influence = 20 }
 		}
 		if = {
 			limit = { has_government_attribute = elections_influence_estates }
-			add_estate_loyalty_by_class_dip = {
-				loyalty = 10
-			}
+			add_estate_loyalty_by_class_dip = { loyalty = 10 }
 		}
 		if = {
 			limit = { has_government_mechanic = nights_watch_orders_mechanic }
@@ -412,15 +385,11 @@ country_event = {
 		}
 		if = {
 			limit = { has_government_attribute = elections_increase_factions_influence }
-			add_influence_to_mil_faction = {
-				influence = 20
-			}
+			add_influence_to_mil_faction = { influence = 20 }
 		}
 		if = {
 			limit = { has_government_attribute = elections_influence_estates }
-			add_estate_loyalty_by_class_mil = {
-				loyalty = 10
-			}
+			add_estate_loyalty_by_class_mil = { loyalty = 10 }
 		}
 		if = {
 			limit = { has_government_mechanic = nights_watch_orders_mechanic }
@@ -474,8 +443,6 @@ country_event = {
                 hide_skills = yes
             }
 			set_ruler_flag = appointed_by_overlord
-            
-            add_republican_tradition = 5
 		}
 	}
 	option = {
@@ -489,8 +456,6 @@ country_event = {
                 hide_skills = yes
             }
 			set_ruler_flag = appointed_by_overlord
-            
-            add_republican_tradition = 5
 		}
 	}
 	option = {
@@ -504,8 +469,6 @@ country_event = {
                 hide_skills = yes
             }
 			set_ruler_flag = appointed_by_overlord
-            
-            add_republican_tradition = 5
 		}
 	}
 }

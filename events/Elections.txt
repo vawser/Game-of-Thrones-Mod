@@ -9,6 +9,7 @@
 # 100 : Term Elections
 # 101 : On Death Elections
 # 102 : On Replace Governor Elections
+# 103 : Sortion (Lottery) Elections
 # 200 : States General Elections
 # 201 : States General On Death Elections
 ########################################
@@ -32,7 +33,7 @@ country_event = {
 	
 	trigger = {
 		NOT = { has_states_general_mechanic = yes }
-		#NOT = { has_government_attribute = lottery_election }
+		NOT = { has_government_attribute = lottery_election }
 		NOT = { has_reform = military_dictatorship_reform }
         NOT = { has_reform = volantis_city_reform }
         NOT = { has_reform = got_admiralty_reform }
@@ -320,14 +321,14 @@ country_event = {
 # On Death election
 country_event = {
 	id = elections.101
-	title = "elections.101.ti"
+	title = "elections.100.ti"
 	desc = {
 		trigger = { NOT = { government = dictatorship } }	
 		desc = "elections.101.de"
 	}
 	desc = {
 		trigger = { government = dictatorship }
-		desc = "elections.101d.de"
+		desc = "elections.101.de_dictator"
 	}
 	picture = IMPORTANT_STATUE_eventPicture
 	
@@ -336,13 +337,13 @@ country_event = {
 	trigger = {
 		NOT = { has_reform = volantis_city_reform }
         NOT = { has_states_general_mechanic = yes }
-		#NOT = { has_government_attribute = lottery_election }
+		NOT = { has_government_attribute = lottery_election }
         NOT = { has_reform = got_admiralty_reform }
         NOT = { has_reform = military_dictatorship_reform }
 	}
 	
 	option = {
-		name = "elections.101.option.a"
+		name = "elections.100.option.a"
 		ai_chance = { factor = 20 }
 		define_ruler = {
 			adm = 4
@@ -372,7 +373,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "elections.101.option.b"
+		name = "elections.100.option.b"
 		ai_chance = { factor = 20 }
 		define_ruler = {
 			adm = 1
@@ -402,7 +403,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "elections.101.option.c"
+		name = "elections.100.option.c"
 		ai_chance = { factor = 40 }
 		define_ruler = {
 			adm = 1
@@ -508,6 +509,307 @@ country_event = {
 		}
 	}
 }
+
+# Lottery Election by Daniel Tolman
+country_event = {
+	id = elections.103
+	title = "elections.100.ti"
+	desc = "elections.103.de"
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_government_attribute = lottery_election
+	}
+	
+	immediate = {
+		hidden_effect = {
+			define_exiled_ruler = {
+				exiled_as = lottery_candidate_a_@ROOT
+				min_age = 40
+				max_age = 65
+				change_adm = 2
+				change_dip = -1
+				change_mil = -1
+				option = 0
+			}
+			define_exiled_ruler = {
+				exiled_as = lottery_candidate_b_@ROOT
+				min_age = 40
+				max_age = 65
+				change_adm = -1
+				change_dip = 2
+				change_mil = -1
+				option = 1
+			}
+			define_exiled_ruler = {
+				exiled_as = lottery_candidate_c_@ROOT
+				min_age = 40
+				max_age = 65
+				change_adm = -1
+				change_dip = -1
+				change_mil = 2
+				option = 2
+			}
+		}
+	}
+	
+	option = {
+		name = "elections.103.option.a"
+		set_ruler = lottery_candidate_a_@ROOT
+		add_republican_tradition = -25
+		# if = {
+		# 	limit = { has_government_mechanic = nights_watch_orders_mechanic }
+		# 	add_government_power = {
+		# 		mechanic_type = nights_watch_orders_mechanic
+		# 		power_type = stewards_loyalty
+		# 		value = 10
+		# 	}			
+		# }
+		custom_tooltip = " "
+		custom_tooltip = lottery_candidate_bonus_one
+		if = {
+			limit = { has_government_attribute = bonus_stats_for_elected_ruler }
+			custom_tooltip = bonus_stats_for_elected_ruler_tt
+		}
+		if = {
+			limit = { has_government_attribute = elections_influence_estates }
+			add_estate_loyalty_by_class_adm = { loyalty = 10 }
+		}
+		ai_chance = { factor = 0 }
+	}
+
+	option = {
+		name = "elections.103.option.b"
+		set_ruler = lottery_candidate_b_@ROOT
+		add_republican_tradition = -25
+		# if = {
+		# 	limit = { has_government_mechanic = nights_watch_orders_mechanic }
+		# 	add_government_power = {
+		# 		mechanic_type = nights_watch_orders_mechanic
+		# 		power_type = builders_loyalty
+		# 		value = 10
+		# 	}			
+		# }
+		custom_tooltip = " "
+		custom_tooltip = lottery_candidate_bonus_one
+		if = {
+			limit = { has_government_attribute = bonus_stats_for_elected_ruler }
+			custom_tooltip = bonus_stats_for_elected_ruler_tt
+		}
+		if = {
+			limit = { has_government_attribute = elections_influence_estates }
+			add_estate_loyalty_by_class_dip = { loyalty = 10 }
+		}
+		ai_chance = { factor = 0 }
+	}
+
+	option = {
+		name = "elections.103.option.c"
+		set_ruler = lottery_candidate_c_@ROOT
+		add_republican_tradition = -25
+		# if = {
+		# 	limit = { has_government_mechanic = nights_watch_orders_mechanic }
+		# 	add_government_power = {
+		# 		mechanic_type = nights_watch_orders_mechanic
+		# 		power_type = rangers_loyalty
+		# 		value = 10
+		# 	}			
+		# }
+		custom_tooltip = " "
+		custom_tooltip = lottery_candidate_bonus_one
+		if = {
+			limit = { has_government_attribute = bonus_stats_for_elected_ruler }
+			custom_tooltip = bonus_stats_for_elected_ruler_tt
+		}
+		if = {
+			limit = { has_government_attribute = elections_influence_estates }
+			add_estate_loyalty_by_class_mil = { loyalty = 10 }
+		}
+		ai_chance = { factor = 0 }
+	}
+
+	option = { # lottery
+		name = "elections.103.option.d"
+		random_list = {
+			33 = { 
+				set_ruler = lottery_candidate_a_@ROOT 
+				# if = {
+				# 	limit = { has_government_mechanic = nights_watch_orders_mechanic }
+				# 	add_government_power = {
+				# 		mechanic_type = nights_watch_orders_mechanic
+				# 		power_type = stewards_loyalty
+				# 		value = 5
+				# 	}			
+				# }
+				# if = {
+				# 	limit = { 
+				# 		has_faction = nw_stewards 
+				# 	}
+				# 	add_faction_influence = {
+				# 		faction = nw_stewards
+				# 		influence = 20
+				# 	}				
+				# }
+				if = {
+					limit = { has_government_attribute = elections_influence_estates }
+					add_estate_loyalty_by_class_adm = { loyalty = 10 }
+				}
+			}
+			33 = { 
+				set_ruler = lottery_candidate_b_@ROOT 
+				# if = {
+				# 	limit = { has_government_mechanic = nights_watch_orders_mechanic }
+				# 	add_government_power = {
+				# 		mechanic_type = nights_watch_orders_mechanic
+				# 		power_type = builders_loyalty
+				# 		value = 5
+				# 	}			
+				# }
+				# if = {
+				# 	limit = { 
+				# 		has_faction = nw_builders 
+				# 	}
+				# 	add_faction_influence = {
+				# 		faction = nw_builders
+				# 		influence = 20
+				# 	}				
+				# }
+				if = {
+					limit = { has_government_attribute = elections_influence_estates }
+					add_estate_loyalty_by_class_dip = { loyalty = 10 }
+				}
+			}
+			33 = { 
+				set_ruler = lottery_candidate_c_@ROOT 
+				# if = {
+				# 	limit = { has_government_mechanic = nights_watch_orders_mechanic }
+				# 	add_government_power = {
+				# 		mechanic_type = nights_watch_orders_mechanic
+				# 		power_type = rangers_loyalty
+				# 		value = 5
+				# 	}			
+				# }
+				# if = {
+				# 	limit = { 
+				# 		has_faction = nw_rangers 
+				# 	}
+				# 	add_faction_influence = {
+				# 		faction = nw_rangers
+				# 		influence = 20
+				# 	}				
+				# }
+				if = {
+					limit = { has_government_attribute = elections_influence_estates }
+					add_estate_loyalty_by_class_mil = { loyalty = 10 }
+				}
+			}
+		}
+		custom_tooltip = " "
+		custom_tooltip = lottery_candidate_bonus_plural
+		if = {
+			limit = { has_government_attribute = bonus_stats_for_elected_ruler }
+			custom_tooltip = bonus_stats_for_elected_ruler_tt
+		}
+		ai_chance = { factor = 90 }
+	}
+
+	option = { # nepotism
+		name = "elections.100.option.e"
+		trigger = {
+			has_government_attribute = enables_nepotism
+		}
+		ai_chance = { factor = 10 }
+		if = {
+			limit = {
+				has_country_flag = strengthened_signoria_flag
+			}
+			custom_tooltip = strengthened_signoria_election_tt
+			clr_country_flag = strengthened_signoria_flag
+		}
+		else = {
+			add_republican_tradition = -15
+		}
+		if = {
+			limit = {
+				NOT = { has_reform = signoria_reform }
+			}
+			define_ruler = {
+				min_age = 30
+				max_age = 50
+				change_mil = -1
+				change_adm = -1
+				change_dip = -1
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = signoria_reform
+			}
+			define_ruler = {
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = signoria_reform
+			}
+			define_ruler = {
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+			}
+		}
+		else = {
+			define_ruler = {
+				min_age = 30
+				max_age = 50
+				change_mil = -1
+				change_adm = -1
+				change_dip = -1
+				name = "lastname"
+			}
+		}
+		if = {
+			limit = { 
+				has_faction = mr_aristocrats 
+			}
+			add_faction_influence = {
+				faction = mr_aristocrats
+				influence = 10
+			}				
+		}
+		if = {
+			limit = { has_government_attribute = elections_influence_estates }
+			add_estate_loyalty = {
+				estate = all
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = {
+				has_government_attribute = bonus_stats_for_elected_ruler
+			}
+			custom_tooltip = bonus_stats_for_elected_ruler_tt
+		}
+		ai_chance = { factor = 10 }
+	}
+
+	after = {
+		clear_exiled_ruler = lottery_candidate_a_@ROOT
+		clear_exiled_ruler = lottery_candidate_b_@ROOT
+		clear_exiled_ruler = lottery_candidate_c_@ROOT
+		if = {
+			limit = { has_government_attribute = bonus_stats_for_elected_ruler }
+			change_adm = 1
+			change_dip = 1
+			change_mil = 1
 		}
 	}
 }
@@ -608,7 +910,7 @@ country_event = {
 # State's General Death Election Cycle
 country_event = {
 	id = elections.201
-	title = "elections.201.ti"
+	title = "elections.200.ti"
 	desc = "elections.201.de"
 	picture = ELECTION_REPUBLICAN_eventPicture
 	
@@ -661,7 +963,7 @@ country_event = {
 	}
 
 	option = {
-		name = "elections.201.option.a"
+		name = "elections.200.option.a"
 		trigger = { 
 			
 		}
@@ -669,7 +971,7 @@ country_event = {
 		change_statists_vs_orangists = -0.40
 	}
 	option = {
-		name = "elections.201.option.b"
+		name = "elections.200.option.b"
 		trigger = { 
 			
 		}
@@ -677,7 +979,7 @@ country_event = {
 		change_statists_vs_orangists = -0.30
 	}
 	option = {
-		name = "elections.201.option.c"
+		name = "elections.200.option.c"
 		trigger = { 
 			
 		}

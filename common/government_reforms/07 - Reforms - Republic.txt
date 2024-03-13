@@ -75,7 +75,6 @@ got_frequent_elections_reform = {
 			is_revolutionary = no
 			NOT = { has_dlc = "Emperor" }
 		}
-	#	NOT = { is_nights_watch_government = yes }
 	}
 	trigger = {
 		OR = {
@@ -83,7 +82,6 @@ got_frequent_elections_reform = {
 				tooltip = "NEEDS_REGULAR_ELECTIONS"
 				has_government_attribute = has_term_election
 			}
-			has_reform = got_lottery_reform
 		}
 	}
     
@@ -105,13 +103,6 @@ got_consolidation_of_power_reform = {
 			is_revolutionary = no
 			NOT = { has_dlc = "Emperor" }
 		}
-	#	NOT = { is_nights_watch_government = yes }
-	}
-	trigger = {
-		custom_trigger_tooltip = {
-			tooltip = "NEEDS_REGULAR_ELECTIONS"
-			has_government_attribute = has_term_election
-		}
 	}
     
 	modifiers = {
@@ -130,7 +121,7 @@ got_consolidation_of_power_reform = {
 }
 
 got_lottery_reform = {
-	icon = "electoral_crowd"
+	icon = "paper_with_seal_3"
 	allow_normal_conversion = yes
 	potential = {
 		is_colonial_nation = no
@@ -139,7 +130,9 @@ got_lottery_reform = {
 			NOT = { has_dlc = "Emperor" }
 		}
 		NOT = { has_government_attribute = is_pirate_republic_reform }
-	#	NOT = { is_nights_watch_government = yes }
+	}
+	trigger = {
+		NOT = { is_nights_watch_government = yes }
 	}
     
 	has_term_election = no
@@ -148,7 +141,7 @@ got_lottery_reform = {
 		monarch_lifespan = 0.25
 	}
 	custom_attributes = {
-		#lottery_election = yes
+		lottery_election = yes
 		election_on_death = yes
 		bonus_stats_for_elected_ruler = yes
 	}
@@ -180,72 +173,25 @@ force_reelection_reform = {
 	custom_attributes = {
 		can_force_election = yes
 	}
+	ai = {
+		factor = 1
+	}
 }
 
 got_uphold_life_term_reform = {
 	icon = "armored_knight"
 	allow_normal_conversion = yes
 	potential = {
-	#	is_nights_watch_government = yes
-	}
-	trigger = {
-		custom_trigger_tooltip = {
-			tooltip = "NEEDS_REGULAR_ELECTIONS"
-			has_government_attribute = has_term_election
-		}
+		is_nights_watch_government = yes
 	}
 
 	modifiers = {
 		candidate_random_bonus = 1
-		advisor_cost = -0.125
-	}
-
-	ai = {
-		factor = 1
-	}
-}
-
-got_introduce_term_limits_reform = {
-	icon = "gavel_on_paper"
-	allow_normal_conversion = yes
-	potential = {
-	#	is_nights_watch_government = yes
-	}
-	trigger = {
-	#	is_nights_watch_government = yes
-	}
-
-	has_term_election = yes
-	duration = 8
-
-	effect = {
-		add_republican_tradition = -20
-	}
-	modifiers = {
-		yearly_corruption = -0.05
-		max_terms = 3
+		advisor_cost = -0.025
 	}
 	custom_attributes = {
-		enables_term_limits = yes
-		has_limited_terms = yes
+		cannot_resign = yes
 	}
-	effect = {
-		hidden_effect = {
-			set_variable = {
-				which = election_term
-				value = 1
-			}
-		}
-	}
-	removed_effect = {
-		hidden_effect = {
-			set_variable = {
-				which = election_term
-				value = 1
-			}
-		}
-	}
-
 	ai = {
 		factor = 1
 	}

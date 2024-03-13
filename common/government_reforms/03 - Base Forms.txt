@@ -1266,16 +1266,16 @@ nights_watch_reform = {
 	nation_designer_cost = 35
 	potential = {
 		OR = {
-			has_reform = nights_watch_reform
 			tag = NGT
-			tag = CBK
-			tag = EAS
-			tag = SWT
-			tag = NGF
-			tag = WWT
-			tag = GRE
-			tag = WOO
-			tag = GGD
+			has_reform = nights_watch_reform
+			is_or_was_tag = { tag = CBK }
+			is_or_was_tag = { tag = EAS }
+			is_or_was_tag = { tag = SWT }
+			is_or_was_tag = { tag = NGF }
+			is_or_was_tag = { tag = WWT }
+			is_or_was_tag = { tag = GRE }
+			is_or_was_tag = { tag = WOO }
+			is_or_was_tag = { tag = GGD }
 		}
 	}
 	trigger = {

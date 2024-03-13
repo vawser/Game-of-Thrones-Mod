@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
  # Use for all hidden events
  hidden_event.ti: "Hidden Event"
  hidden_event.de: "This is a hidden event."
@@ -578,12 +578,8 @@ l_english:
  elections.100.option.d: "There is but one choice; §Y[Root.Monarch.GetName]§!"
  elections.100.option.e: "A relative of [Root.Monarch.GetName] will do."
 
- elections.101.ti: "Election for the [Root.Monarch.GetTitle]"
  elections.101.de: "[Root.Monarch.GetName] has passed away. In accordance with the electoral traditions of our people, we must organize an election for the next [Root.Monarch.GetTitle]. Three candidates are presented to the electoral council, each with their own unique skills.\n\nIt is now our duty to review all three candidates and make the right choice for the future of our people."
- elections.101d.de: "At long last, [Root.Monarch.GetName] is dead and [Root.Monarch.GetHerHis] council has assumed control over the country, however, everyone knows the dictatorial period is over with the death of [Root.Monarch.GetName]. We must now organize an election for the successor. Three candidates are presented to the electoral council, each with their own unique skills and, most importantly, not too politically ambitious.\n\nWith the power restored back to the appropriate bodies of government, it is our duty to review all three candidates and make the right choice for the future of our people. We must ensure a man the likes of [Root.Monarch.GetName] does not seize power ever again!"
- elections.101.option.a: "A strong §YBureaucratic§! focus is often the best strategy."
- elections.101.option.b: "A solid §YDiplomatic§! plan will maintain the peace."
- elections.101.option.c: "A strengthened §YMilitary§! is our sole chance for survival."
+ elections.101.de_dictator: "At long last, [Root.Monarch.GetName] is dead and [Root.Monarch.GetHerHis] council has assumed control over the country, however, everyone knows the dictatorial period is over with the death of [Root.Monarch.GetName]. We must now organize an election for the successor. Three candidates are presented to the electoral council, each with their own unique skills and, most importantly, not too politically ambitious.\n\nWith the power restored back to the appropriate bodies of government, it is our duty to review all three candidates and make the right choice for the future of our people. We must ensure a man the likes of [Root.Monarch.GetName] does not seize power ever again!"
  elections.101.option.d: "Elevate the Commander of §Y[16.GetCapitalName]§!."
  elections.101.option.e: "Elevate the Commander of §Y[1580.GetCapitalName]§!."
  elections.101.option.f: "Elevate the Commander of §Y[1584.GetCapitalName]§!."
@@ -595,6 +591,12 @@ l_english:
  elections.102.option.b: "A seasoned §YDiplomatic§! candidate."
  elections.102.option.c: "A tactical §YMilitary§! candidate."
 
+ elections.103.de: "[Root.Monarch.GetName] has passed away. After several rounds of secret allotment, three candidates have been presented each representing powerful factions within [Root.Country.GetName]. The election should be decided by lottery, however we could pull some strings..."
+ elections.103.option.a: "Have §Y[lottery_candidate_a_@ROOT.GetName]§! elected."
+ elections.103.option.b: "Have §Y[lottery_candidate_b_@ROOT.GetName]§! elected."
+ elections.103.option.c: "Have §Y[lottery_candidate_c_@ROOT.GetName]§! elected."
+ elections.103.option.d: "Let the Lottery decide."
+
  elections.200.ti: "[Root.Monarch.GetTitle] of [Root.GetName]"
  elections.200.de: "In accordance with the elective succession of our house, [Root.Monarch.GetTitle] [Root.Monarch.GetName] must step down as Dynasty Head and allow for another dynasty member to rule over the domain. Our nobles present us with three possible choices, each in a different age group from the other. The variety in age also brings about differences in levels of experience, often the eldest being the best choice. In the end, it is our choice for who should succeed.\n\nWe could also deny all presented candidates and maintain our position as Dynasty Head for another term, though this will undoubtably anger the nobles and weaken our overall control over the domain..."
  elections.200.option.a: "Have [dynasty_candidate_a_@ROOT.GetName] elected."
@@ -602,11 +604,7 @@ l_english:
  elections.200.option.c: "Have [dynasty_candidate_c_@ROOT.GetName] elected."
  elections.200.option.d: "Re-elect [Root.Monarch.GetTitle] [Root.Monarch.GetName]"
 
- elections.201.ti: "[Root.Monarch.GetTitle] of [Root.GetName]"
  elections.201.de: "The unfortunate passing of [Root.Monarch.GetName] forces us to hold an election for the Dynasty Head and [Root.Monarch.GetTitle] of [Root.GetName]. Our nobles present us with three possible choices, each in a different age group from the other. The variety in age also brings about differences in levels of experience, often the eldest being the best choice. In the end, it is our choice for who should succeed. However, if the nobles think ill of the chosen [Root.Monarch.GetTitle], there is likely to be pretenders to the position."
- elections.201.option.a: "Have [dynasty_candidate_a_@ROOT.GetName] elected."
- elections.201.option.b: "Have [dynasty_candidate_b_@ROOT.GetName] elected."
- elections.201.option.c: "Have [dynasty_candidate_c_@ROOT.GetName] elected."
 
  #----------------------------------------------------------------------
  # Government

@@ -1,8 +1,20 @@
 #-----------------------------------------
 # "Republican Virtues"
 #-----------------------------------------
+got_republicanism_reform = {
+	icon = "assembly_hall"
+	allow_normal_conversion = yes
+
+	modifiers = {
+		republican_tradition = 0.2
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
 got_republican_authoritarianism_reform = {
-	icon = "merchant"
+	icon = "commander_king"
 	allow_normal_conversion = yes
     
 	modifiers = {
@@ -16,41 +28,29 @@ got_republican_authoritarianism_reform = {
 }
 
 got_nepotism_reform = {
-	icon = "man_and_children"
+	icon = "political_dynasty"
 	allow_normal_conversion = yes
 
-	trigger = {
-		NOT = { 
-			OR = {
-				has_reform = nights_watch_reform
-				has_reform = watchmen_outpost_reform
-			}
-		}
-	}
 	modifiers = {
 		candidate_random_bonus = 1
 	}
-
 	custom_attributes = {
 		enables_nepotism = yes
 	}
-	ai = { factor = 1 }
-}
-
-got_republicanism_reform = {
-	icon = "assembly_hall"
-	allow_normal_conversion = yes
-
-	modifiers = {
-		republican_tradition = 0.2
+	
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 0
+			is_nights_watch_government = yes
+		}
 	}
-	ai = { factor = 1.5 }
 }
 
 got_brotherhood_of_the_black_reform = {
 	icon = "three_black_brothers"
 	allow_normal_conversion = yes
-	potential = {
+	trigger = {
 		is_nights_watch_government = yes
 	}
 
@@ -59,7 +59,9 @@ got_brotherhood_of_the_black_reform = {
 		monthly_stewards_loyalty = 0.08
 		monthly_rangers_loyalty = 0.08
 	}
-	ai = { factor = 1 }
+	ai = {
+		factor = 1
+	}
 }
 
 #-----------------------------------------

@@ -178,6 +178,29 @@ castle_black_subsidies = {
 }
 
 #--------------------------------
+# The Gift Abandoned
+#--------------------------------
+the_gift_provinces_abandoned = {
+	potential = {
+		OR = {
+			exists = NGT
+			any_country = { has_reform = nights_watch_reform }
+		}
+	}
+	trigger = {
+		area = area_the_gift
+		owner = { NOT = { has_reform = got_expand_the_gift_reform } }
+	}
+
+	local_state_maintenance_modifier = 1.0
+	min_local_autonomy = 33
+	local_unrest = 2
+
+	on_activation = { }
+	on_deactivation = { }
+}
+
+#--------------------------------
 # High Tide and Spicetown
 #--------------------------------
 high_tide_bonus = {

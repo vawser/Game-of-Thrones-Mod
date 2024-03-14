@@ -2253,30 +2253,23 @@ on_mercenary_recruited = {
 
 # Province - ROOT = One province in the state
 on_add_pasha = {
-	if = { 
-		limit = { has_global_flag = enable_onaction_logging }
-		log = "DEBUG - [Root.GetName]: on_add_pasha "
-	}
+	
 }
 
 # Province - ROOT = One province in the state
 on_remove_pasha = {
-	if = { 
-		limit = { has_global_flag = enable_onaction_logging }
-		log = "DEBUG - [Root.GetName]: on_remove_pasha "
-	}
 	
-	hidden_effect = {
-		owner = {
-			save_event_target_as = province_owner
-		}
-		remove_province_modifier = pasha_removed_modifier
-	}
+	# hidden_effect = {
+	# 	owner = {
+	# 		save_event_target_as = province_owner
+	# 	}
+	# 	remove_province_modifier = pasha_removed_modifier
+	# }
 
-	area = {
-		limit = { owned_by = event_target:province_owner }
-		add_or_extend_province_modifier_effect = { MODIFIER = pasha_removed_modifier DURATION = 3650 }
-	}
+	# area = {
+	# 	limit = { owned_by = event_target:province_owner }
+	# 	add_or_extend_province_modifier_effect = { MODIFIER = pasha_removed_modifier DURATION = 3650 }
+	# }
 }
 
 # Province 

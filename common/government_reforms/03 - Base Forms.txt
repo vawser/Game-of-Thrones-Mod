@@ -1265,25 +1265,27 @@ nights_watch_reform = {
 	valid_for_nation_designer = yes
 	nation_designer_cost = 35
 	potential = {
-		OR = {
+		if = {
+			limit = { exists = NGT }
 			tag = NGT
-			has_reform = nights_watch_reform
-			is_or_was_tag = { tag = CBK }
-			is_or_was_tag = { tag = EAS }
-			is_or_was_tag = { tag = SWT }
-			is_or_was_tag = { tag = NGF }
-			is_or_was_tag = { tag = WWT }
-			is_or_was_tag = { tag = GRE }
-			is_or_was_tag = { tag = WOO }
-			is_or_was_tag = { tag = GGD }
 		}
-	}
-	trigger = {
-		tag = NGT
+		else = {
+			OR = {
+				has_reform = nights_watch_reform
+				is_or_was_tag = { tag = CBK }
+				is_or_was_tag = { tag = EAS }
+				is_or_was_tag = { tag = SWT }
+				is_or_was_tag = { tag = NGF }
+				is_or_was_tag = { tag = WWT }
+				is_or_was_tag = { tag = GRE }
+				is_or_was_tag = { tag = WOO }
+				is_or_was_tag = { tag = GGD }
+			}
+		}
 	}
 
 	has_term_election = no
-	
+		
 	modifiers = {
 		free_land_leader_pool = 2
 		naval_forcelimit = -8

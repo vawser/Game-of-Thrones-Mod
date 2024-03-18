@@ -9,7 +9,27 @@ province_event = {
 	title = "banditry.1.title"
 	desc = "banditry.1.desc"
 	picture = VILLAGE_RAIDED_eventPicture
-	is_triggered_only = yes
+
+	trigger = {
+		has_no_criminal_activity = { type = bandits }
+		unrest = 6
+		NOT = { units_in_province = owner }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+		# Neighboring province with banditry will spread
+		modifier = {
+			factor = 0.1
+			any_neighbor_province = { has_criminal_activity = { type = bandits } }
+		}
+		# More likely if no provinces have banditry
+		modifier = {
+			factor = 0.1
+			owner = { any_owned_province = { NOT = { has_criminal_activity = { type = bandits } } } }
+		}
+	}
+	is_mtth_scaled_to_size = 1
 
 	immediate = {
 		hidden_effect = {
@@ -37,7 +57,23 @@ province_event = {
 	desc = "banditry.2.desc"
 	picture = STREET_SPEECH_eventPicture
 
-	is_triggered_only = yes
+	trigger = {
+		has_criminal_activity = { type = bandits }
+		NOT = { current_crime_lvl = { amount = 5 } }
+	}
+
+	mean_time_to_happen = {
+		months = 1
+		modifier = {
+			factor = 0.1
+			units_in_province = owner
+		}
+		modifier = {
+			factor = 0.1
+			has_no_crime_lvl = yes
+		}
+	}
+	is_mtth_scaled_to_size = 1
 
 	immediate = {
 		hidden_effect = {
@@ -76,18 +112,19 @@ province_event = {
 		name = "banditry.11.option.a"
 		owner = { add_prestige = -1 }
 		add_nationalism = 10
+		increase_crime_lvl_medium = yes
 		ai_chance = { factor = 10 }
 	}
 
 	option = {
 		name = "banditry.11.option.b"
-		owner = { add_years_of_income = -0.75 }
+		owner = { add_years_of_income = -0.10 }
 		reduce_crime_lvl = { amount = 2 }
 		ai_chance = {
 			factor = 90
 			modifier = {
 				factor = 0
-				NOT = { owner = { years_of_income = 0.75 } }
+				NOT = { owner = { years_of_income = 0.10 } }
 			}
 		}
 	}
@@ -122,18 +159,19 @@ province_event = {
 			33 = { add_base_production = -1 }
 			33 = { add_base_manpower = -1 }
 		}
+		increase_crime_lvl_medium = yes
 		ai_chance = { factor = 10 }
 	}
 
 	option = {
 		name = "banditry.12.option.b"
-		owner = { add_years_of_income = -1.0 }
-		reduce_crime_lvl = { amount = 2 }
+		owner = { add_years_of_income = -0.35 }
+		reduce_crime_lvl = { amount = 4 }
 		ai_chance = {
 			factor = 90
 			modifier = {
 				factor = 0
-				NOT = { owner = { years_of_income = 1.0 } }
+				NOT = { owner = { years_of_income = 0.35 } }
 			}
 		}
 	}
@@ -162,19 +200,20 @@ province_event = {
 	option = {
 		name = "banditry.13.option.a"
 		owner = { add_prestige = -1 }
-		add_unrest = 6
+		add_unrest = 4
+		increase_crime_lvl_medium = yes
 		ai_chance = { factor = 10 }
 	}
 
 	option = {
 		name = "banditry.13.option.b"
-		owner = { add_years_of_income = -0.90 }
-		reduce_crime_lvl = { amount = 2 }
+		owner = { add_years_of_income = -0.20 }
+		reduce_crime_lvl = { amount = 3 }
 		ai_chance = {
 			factor = 90
 			modifier = {
 				factor = 0
-				NOT = { owner = { years_of_income = 0.90 } }
+				NOT = { owner = { years_of_income = 0.20 } }
 			}
 		}
 	}
@@ -205,21 +244,22 @@ province_event = {
 		owner = { add_prestige = -1 }
 		add_unrest = 2
 		if = {
-			limit = { province_has_center_of_trade_of_level = 1 }
+			limit = { province_has_center_of_trade_of_level = 2 }
 			add_center_of_trade_level = -1
 		}
+		increase_crime_lvl_medium = yes
 		ai_chance = { factor = 10 }
 	}
 
 	option = {
 		name = "banditry.14.option.b"
-		owner = { add_years_of_income = -0.65 }
+		owner = { add_years_of_income = -0.40 }
 		reduce_crime_lvl = { amount = 2 }
 		ai_chance = {
 			factor = 90
 			modifier = {
 				factor = 0
-				NOT = { owner = { years_of_income = 0.65 } }
+				NOT = { owner = { years_of_income = 0.40 } }
 			}
 		}
 	}
@@ -258,23 +298,25 @@ province_event = {
 			limit = { province_has_center_of_trade_of_level = 2 }
 			add_center_of_trade_level = -1
 		}
+		increase_crime_lvl_medium = yes
 		ai_chance = { factor = 10 }
 	}
 
 	option = {
 		name = "banditry.15.option.b"
-		owner = { add_years_of_income = -0.95 }
-		reduce_crime_lvl = { amount = 2 }
+		owner = { add_years_of_income = -0.50 }
+		reduce_crime_lvl = { amount = 4 }
 		ai_chance = {
 			factor = 90
 			modifier = {
 				factor = 0
-				NOT = { owner = { years_of_income = 0.95 } }
+				NOT = { owner = { years_of_income = 0.50 } }
 			}
 		}
 	}
 }
 
+# Raid from Neighbor Province
 province_event = {
 	id = banditry.16
 	title = "banditry.16.title"
@@ -296,6 +338,7 @@ province_event = {
 	option = {
 		name = "banditry.16.option.a"
 		owner = { add_prestige = -1 }
+		increase_crime_lvl_medium = yes
 		ai_chance = { factor = 10 }
 	}
 
@@ -303,12 +346,12 @@ province_event = {
 		name = "banditry.16.option.b"
 		goto = banditprovince
 		tooltip = {
-			owner = { add_years_of_income = -0.85 }
+			owner = { add_years_of_income = -0.25 }
 			reduce_crime_lvl = { amount = 2 }
 		}
 		hidden_effect = {
 			event_target:banditprovince = {
-				owner = { add_years_of_income = -0.85 }
+				owner = { add_years_of_income = -0.25 }
 				reduce_crime_lvl = { amount = 2 }
 			}
 		}
@@ -316,12 +359,13 @@ province_event = {
 			factor = 90
 			modifier = {
 				factor = 0
-				NOT = { owner = { years_of_income = 0.85 } }
+				NOT = { owner = { years_of_income = 0.25 } }
 			}
 		}
 	}
 }
 
+# Bandits Expand
 province_event = {
 	id = banditry.17
 	title = "banditry.17.title"
@@ -340,6 +384,7 @@ province_event = {
 	option = {
 		name = "banditry.17.option.a"
 		owner = { add_prestige = -1 }
+		increase_crime_lvl_medium = yes
 		ai_chance = { factor = 10 }
 	}
 
@@ -348,7 +393,7 @@ province_event = {
 		highlight = yes
 		trigger = {
 			custom_trigger_tooltip = {
-				tooltip = "banditry.17.option.b.tt"
+				tooltip = "banditry.has_one_unit.tt"
 				num_of_units_in_province = {
 					amount = 1
 					who = owner

@@ -39,4 +39,38 @@ country_decisions = {
 			factor = 1
 		}
 	}
+	cede_brannburh_province = {
+		potential = {
+			owns = 20
+		}
+		allow = {
+			tag = NGT
+			20 = {
+				any_neighbor_province = { owned_by = I36 }
+			}
+		}
+		effect = {
+			add_years_of_income = 2.33
+			20 = { cede_province = I36 }
+			remove_core = 20
+			add_prestige = -10
+		}
+	}
+	cede_vuaridge_province = {
+		potential = {
+			owns = 19
+		}
+		allow = {
+			tag = NGT
+			19 = {
+				any_neighbor_province = { owned_by = I37 }
+			}
+		}
+		effect = {
+			add_years_of_income = 1.66
+			19 = { cede_province = I37 }
+			remove_core = 19
+			add_prestige = -10
+		}
+	}
 }

@@ -186,18 +186,20 @@ the_gift_provinces_abandoned = {
 			exists = NGT
 			any_country = { has_reform = nights_watch_reform }
 		}
+		area = area_the_gift # Only for The Gift area
 	}
 	trigger = {
-		area = area_the_gift
 		owner = { NOT = { has_reform = got_expand_the_gift_reform } }
 	}
 
+	local_unrest = 2
 	local_state_maintenance_modifier = 1.0
 	min_local_autonomy = 33
-	local_unrest = 2
 
 	on_activation = { }
 	on_deactivation = { }
+
+	picture = "abandoned_village"
 }
 
 #--------------------------------

@@ -1,21 +1,31 @@
 # Allows switching to a different country tag while keeping your current ruler
 # Triggers in place to also transfer consort and heir, if you had one
 switch_tag_with_ruler = {
-	exile_ruler_as = {
-		name = $ruler_string$
-		kill_monarch = no 
+	[[ruler_tt] custom_tooltip = $ruler_tt$ ]
+	hidden_effect = {
+		exile_ruler_as = {
+			name = $ruler_string$
+			kill_monarch = no 
+		}
 	}
 	if = {
 		limit = { has_consort = yes }
-		exile_consort_as = $consort_string$
-		$new_tag$ = { set_country_flag = consort_exists }
+		[[consort_tt] custom_tooltip = $consort_tt$ ]
+		hidden_effect = {
+			exile_consort_as = $consort_string$
+			$new_tag$ = { set_country_flag = consort_exists }
+		}
 	}
 	if = {
 		limit = { has_heir = yes }
-		exile_heir_as = $heir_string$
-		$new_tag$ = { set_country_flag = heir_exists }
+		[[heir_tt] custom_tooltip = $heir_tt$ ]
+		hidden_effect = {
+			exile_heir_as = $heir_string$
+			$new_tag$ = { set_country_flag = heir_exists }
+		}
 	}
-	switch_tag = $new_tag$
+	# Switch to the new tag
+	hidden_effect = { switch_tag = $new_tag$ }
 	$new_tag$ = {
 		set_ruler = $ruler_string$
 		if = {

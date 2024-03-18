@@ -151,25 +151,6 @@ on_startup_great_projects_effect = {
 	}
 }
 
-on_yearly_pulse_spawn_clear_bandits_effect = {
-	# Spawn in Bandits
-	random_owned_province = {
-		limit = {
-			unrest = 6
-			has_no_criminal_activity = { type = bandits }
-		}
-		province_event = { id = banditry.1 }
-	}
-	# Clear Bandits
-	random_owned_province = {
-		limit = {
-			NOT = { current_crime_lvl = { amount = 5 } }
-			has_criminal_activity = { type = bandits }
-		}
-		province_event = { id = banditry.2 }
-	}
-}
-
 on_yearly_pulse_bandits_events_effect = {
 	random_owned_province = {
 		limit = { has_criminal_activity = { type = bandits } }

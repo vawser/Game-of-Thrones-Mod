@@ -198,12 +198,18 @@ set_criminal_activity = {
 	custom_tooltip = set_criminal_activity_$type$
 	increase_crime_lvl_large = yes
 	set_province_flag = criminal_activity_$type$
+	add_province_modifier = {
+		name = "active_bandits"
+		duration = -1
+		hidden = yes
+	}
 }
 
 clear_criminal_activity = {
 	custom_tooltip = clr_criminal_activity_$type$
 	decrease_crime_lvl_large = yes
 	clr_province_flag = criminal_activity_$type$
+	remove_province_modifier = "active_bandits"
 }
 
 # Increase by 25

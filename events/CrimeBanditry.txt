@@ -9,7 +9,19 @@ province_event = {
 	title = "banditry.1.title"
 	desc = "banditry.1.desc"
 	picture = VILLAGE_RAIDED_eventPicture
-	is_triggered_only = yes
+
+	#is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			current_crime_lvl = { amount = 10 }
+			unrest = 6
+		}
+		has_no_criminal_activity = { type = bandits }
+	}
+
+	mean_time_to_happen = { months = 1 }
+	is_mtth_scaled_to_size = 1
 
 	immediate = {
 		hidden_effect = {
@@ -37,7 +49,15 @@ province_event = {
 	desc = "banditry.2.desc"
 	picture = STREET_SPEECH_eventPicture
 
-	is_triggered_only = yes
+	#is_triggered_only = yes
+
+	trigger = {
+		NOT = { current_crime_lvl = { amount = 5 } }
+ 		has_criminal_activity = { type = bandits }
+	}
+
+	mean_time_to_happen = { months = 1 }
+	is_mtth_scaled_to_size = 1
 
 	immediate = {
 		hidden_effect = {

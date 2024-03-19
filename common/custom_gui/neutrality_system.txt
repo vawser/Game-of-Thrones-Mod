@@ -5,7 +5,7 @@ custom_button = {
 	effect = {
 		# To display tt for neutral countries
 		every_country = {
-			limit = { has_country_flag = truce_flag_with_@ROOT }
+			limit = { has_ruler_flag = truce_flag_with_@ROOT }
 			custom_tooltip = "cannot_declare_war_on_us_tt"
 		}
 		hidden_effect = {
@@ -15,16 +15,16 @@ custom_button = {
 				if = {
 					# Remove neutrality
 					limit = {
-						has_country_flag = truce_flag_with_@FROM
-						FROM = { has_country_flag = truce_flag_with_@ROOT }
+						has_ruler_flag = truce_flag_with_@FROM
+						FROM = { has_ruler_flag = truce_flag_with_@ROOT }
 					}
-					clr_country_flag = truce_flag_with_@FROM
-					FROM = { clr_country_flag = truce_flag_with_@ROOT }
+					clr_ruler_flag = truce_flag_with_@FROM
+					FROM = { clr_ruler_flag = truce_flag_with_@ROOT }
 				}
 				# Add neutrality
 				else = {
-					set_country_flag = truce_flag_with_@FROM
-					FROM = { set_country_flag = truce_flag_with_@ROOT }
+					set_ruler_flag = truce_flag_with_@FROM
+					FROM = { set_ruler_flag = truce_flag_with_@ROOT }
 				}
 			}
 		}

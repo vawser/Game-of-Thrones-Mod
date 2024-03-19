@@ -435,6 +435,10 @@ on_monarch_death = {
 		remove_country_modifier = sought_after_bachelor
 	}
 
+	every_country = {
+		limit = { has_ruler_flag = truce_flag_with_@ROOT }
+		clr_ruler_flag = truce_flag_with_@ROOT
+	}
 	# In case of death of current council member, this will clear
 	# all flags and event targets as well as ruler modifiers
 	clear_council_country = yes

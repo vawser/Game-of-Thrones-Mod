@@ -607,42 +607,40 @@ country_event = {
 # On Actions
 country_event = {
 	id = sk_event.110
-	title = sk_event.110.title
-	desc = sk_event.110.desc
+	title = "sk_event.110.title"
+	desc = "sk_event.110.desc"
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
 	is_triggered_only = yes
 	major = yes
 
 	option = {
-		name = sk_event.110.option.a
+		name = "sk_event.110.option.a"
 	
 		hidden_effect = {
 			set_country_flag = iron_throne_transition
 			save_event_target_as = originalCOU
 		}
 		
-		tooltip = { add_prestige = 10 }
+		tooltip = { add_prestige = 25 }
 
-		#hidden_effect = {
-			# Moving over ruler to The Crownlands
-			switch_tag_with_ruler = {
-				ruler_string = King_of_Andals
-				ruler_tt = "sk9_change_tag_tt"
-				consort_string = Queen_of_Andals
-				consort_tt = "sk9_consort_tt"
-				heir_string = Heir_of_Andals
-				heir_tt = "sk9_heir_tt"
-				new_tag = CRW
-			}
-		#}
-		custom_tooltip = sk9_union_tag_tt
+		# Moving over ruler to The Crownlands
+		switch_tag_with_ruler = {
+			ruler_string = King_of_Andals
+			ruler_tt = "sk9_change_tag_tt"
+			consort_string = Queen_of_Andals
+			consort_tt = "sk9_consort_tt"
+			heir_string = Heir_of_Andals
+			heir_tt = "sk9_heir_tt"
+			new_tag = CRW
+		}
+		custom_tooltip = "sk9_union_tag_tt"
 		hidden_effect = {
 			set_country_flag = iron_throne_transition # Event Trigger blocker
 			save_global_event_target_as = IronThroneKing # Global Variable
 			create_union = event_target:originalCOU # Get PU over old country
 			set_emperor = yes
-			add_prestige = 10
+			add_prestige = 25
 		}
 
 		# Peace out all wars to stop glitchiness
@@ -657,10 +655,9 @@ country_event = {
 	}
 	
 	option = {
-		name = sk_event.110.option.b
+		name = "sk_event.110.option.b"
 		ai_chance = {
 			factor = 100
-			
 			modifier = {
 				factor = 0
 				is_dynasty_government = yes

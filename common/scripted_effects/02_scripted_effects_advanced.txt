@@ -10,7 +10,7 @@ switch_tag_with_ruler = {
 	}
 	if = {
 		limit = { has_consort = yes }
-		[[consort_tt] custom_tooltip = $consort_tt$ ]
+		custom_tooltip = "join_consort_tt"
 		hidden_effect = {
 			exile_consort_as = $consort_string$
 			$new_tag$ = { set_country_flag = consort_exists }
@@ -18,7 +18,7 @@ switch_tag_with_ruler = {
 	}
 	if = {
 		limit = { has_heir = yes }
-		[[heir_tt] custom_tooltip = $heir_tt$ ]
+		custom_tooltip = "join_heir_tt"
 		hidden_effect = {
 			exile_heir_as = $heir_string$
 			$new_tag$ = { set_country_flag = heir_exists }

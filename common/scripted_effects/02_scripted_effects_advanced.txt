@@ -104,28 +104,28 @@ clear_council_country = {
 # Effect to set a Watch Commander for a castle
 # (country scope)
 set_watch_commander = {
-	set_global_flag = $castle$_commander_active
+	$province_id$ = { set_province_flag = castlecommander_active }
 	random_list = {
 		50 = {
 			define_exiled_ruler = {
-				exiled_as = $castle$_commander
+				exiled_as = $province_id$_castlecommander
 				[[option] option = $option$ ]
-				min_age = 20
-				max_age = 40
-				change_adm = -1
-				change_dip = -1
+				min_age = 28
+				max_age = 42
+				change_adm = -2
+				change_dip = -2
 				change_mil = 1
 			}
 		}
 		50 = {
 			define_exiled_ruler = {
-				exiled_as = $castle$_commander
+				exiled_as = $province_id$_castlecommander
 				[[option] option = $option$ ]
-				min_age = 30
-				max_age = 50
-				change_adm = 1
-				change_dip = 1
-				change_mil = -1
+				min_age = 38
+				max_age = 56
+				change_adm = -1
+				change_dip = -1
+				change_mil = -2
 			}
 		}
 	}
@@ -134,14 +134,14 @@ set_watch_commander = {
 # Effect to remove a Watch Commander for a castle
 # (country scope)
 remove_watch_commander = {
-	custom_tooltip = "Commander will be removed. A new Commander will automatically be generated."
-	clr_global_flag = $castle$_commander_active
-	clear_exiled_ruler = $castle$_commander
+	custom_tooltip = "remove_castlecommander_tt"
+	$province_id$ = { clr_province_flag = castlecommander_active }
+	clear_exiled_ruler = $province_id$_castlecommander
 }
 
 # Effect when a Watch Commander get elected as LC
 # (country scope)
 elect_watch_commander = {
-	set_ruler = $castle$_commander
-	clr_global_flag = $castle$_commander_active
+	set_ruler = $province_id$_castlecommander
+	$province_id$ = { clr_province_flag = castlecommander_active }
 }

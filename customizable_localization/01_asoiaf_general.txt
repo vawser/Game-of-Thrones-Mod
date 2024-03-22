@@ -1034,11 +1034,11 @@ defined_text = {
 	name = GetShadowtowerCommander
 	text = {
 		localisation_key = "string_shadowtower"
-		trigger = { has_global_flag = shadowtower_commander_active }
+		trigger = { has_watch_commander = { province_id = 16 } }
 	}
 	text = {
 		localisation_key = "string_shadowtower_abandoned"
-		trigger = { 72 = { has_province_modifier = abandoned_castle } }
+		trigger = { castle_abandoned = { province_id = 16 } }
 	}
 	text = { localisation_key = "string_shadowtower_inactive" }
 }
@@ -1047,11 +1047,11 @@ defined_text = {
 	name = GetNightfortCommander
 	text = {
 		localisation_key = "string_nightfort"
-		trigger = { has_global_flag = nightfort_commander_active }
+		trigger = { has_watch_commander = { province_id = 1580 } }
 	}
 	text = {
 		localisation_key = "string_nightfort_abandoned"
-		trigger = { 1580 = { has_province_modifier = abandoned_castle } }
+		trigger = { castle_abandoned = { province_id = 1580 } }
 	}
 	text = { localisation_key = "string_nightfort_inactive" }
 }
@@ -1060,11 +1060,11 @@ defined_text = {
 	name = GetWoodswatchCommander
 	text = {
 		localisation_key = "string_woodswatch"
-		trigger = { has_global_flag = woodswatch_commander_active }
+		trigger = { has_watch_commander = { province_id = 1584 } }
 	}
 	text = {
 		localisation_key = "string_woodswatch_abandoned"
-		trigger = { 1584 = { has_province_modifier = abandoned_castle } }
+		trigger = { castle_abandoned = { province_id = 1584 } }
 	}
 	text = { localisation_key = "string_woodswatch_inactive" }
 }
@@ -1073,11 +1073,11 @@ defined_text = {
 	name = GetEastwatchCommander
 	text = {
 		localisation_key = "string_eastwatch"
-		trigger = { has_global_flag = eastwatch_commander_active }
+		trigger = { has_watch_commander = { province_id = 18 } }
 	}
 	text = {
 		localisation_key = "string_eastwatch_abandoned"
-		trigger = { 18 = { has_province_modifier = abandoned_castle } }
+		trigger = { castle_abandoned = { province_id = 18 } }
 	}
 	text = { localisation_key = "string_eastwatch_inactive" }
 }

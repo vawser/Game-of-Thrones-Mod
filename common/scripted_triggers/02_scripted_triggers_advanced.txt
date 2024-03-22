@@ -19,31 +19,33 @@ has_any_criminal_activity = {
 
 # # Watch Commanders Mechanic
 
-# castle : shadowtower, nightfort, woodswatch, eastwatch
+# shadowtower, nightfort, woodswatch, eastwatch
+# province_id : 16, 1580, 1584, 18
 has_watch_commander = {
-	has_global_flag = $castle$_commander_active
+	$province_id$ = { has_province_flag = castlecommander_active }
 }
 has_no_watch_commander = {
-	NOT = { has_global_flag = $castle$_commander_active }
+	$province_id$ = { NOT = { has_province_flag = castlecommander_active } }
 }
 has_any_watch_commander = {
 	OR = {
-		has_watch_commander = { castle = shadowtower }
-		has_watch_commander = { castle = nightfort }
-		has_watch_commander = { castle = woodswatch }
-		has_watch_commander = { castle = eastwatch }
+		has_watch_commander = { province_id = 16 }
+		has_watch_commander = { province_id = 1580 }
+		has_watch_commander = { province_id = 1584 }
+		has_watch_commander = { province_id = 18 }
 	}
 }
 had_commander_for_five_years = {
 	custom_trigger_tooltip = {
 		tooltip = "commander_active_for_5_years"
-		had_global_flag = {
-			flag = $castle$_commander_active
-			days = 1825
+		$province_id$ = {
+			had_province_flag = {
+				flag = castlecommander_active
+				days = 1825
+			}
 		}
 	}
 }
-# province_id : 16, 1580, 1584, 18
 castle_abandoned = {
 	$province_id$ = { has_province_modifier = abandoned_castle }
 }

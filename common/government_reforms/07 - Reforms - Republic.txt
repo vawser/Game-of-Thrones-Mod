@@ -40,17 +40,13 @@ got_nepotism_reform = {
 	
 	ai = {
 		factor = 1
-		modifier = {
-			factor = 0
-			is_nights_watch_government = yes
-		}
 	}
 }
 
 got_brotherhood_of_the_black_reform = {
 	icon = "three_black_brothers"
 	allow_normal_conversion = yes
-	trigger = {
+	potential = {
 		is_nights_watch_government = yes
 	}
 
@@ -61,6 +57,10 @@ got_brotherhood_of_the_black_reform = {
 	}
 	ai = {
 		factor = 1
+		modifier = {
+			factor = 10
+			is_nights_watch_government = yes
+		}
 	}
 }
 
@@ -86,7 +86,7 @@ got_frequent_elections_reform = {
 	}
     
 	modifiers = {
-		max_absolutism = -10
+		max_absolutism = -5
 		election_cycle = -2
 	}
     
@@ -110,11 +110,6 @@ got_consolidation_of_power_reform = {
 		election_cycle = 2
 		max_terms = 1
 	}
-	effect = {
-		hidden_effect = {
-			
-		}
-	}
 	custom_attributes = {
 		reelection_depowers_estates = yes
 	}
@@ -130,9 +125,6 @@ got_lottery_reform = {
 			NOT = { has_dlc = "Emperor" }
 		}
 		NOT = { has_government_attribute = is_pirate_republic_reform }
-	}
-	trigger = {
-		NOT = { is_nights_watch_government = yes }
 	}
     
 	has_term_election = no
@@ -178,6 +170,62 @@ force_reelection_reform = {
 	}
 }
 
+got_term_limits_reform = {
+	icon = "parliament"
+	valid_for_nation_designer = no
+	allow_normal_conversion = no
+	potential = {
+		has_dlc = "Domination"
+		NOT = { has_reform = crown_colony_government }
+		NOT = { has_reform = private_enterprise_colony_government }
+		NOT = { has_reform = self_governing_colony_government }
+	}
+	modifiers = {
+		candidate_random_bonus = 1
+		all_estate_influence_modifier = -0.05
+		max_terms = 2
+	}
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = "NEEDS_REGULAR_ELECTIONS"
+			has_government_attribute = has_term_election
+		}
+	}
+
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		custom_attributes = {
+			enables_plutocratic_idea_group = yes
+			enables_aristocratic_idea_group = no
+			has_limited_terms = yes
+		}
+	}
+
+	conditional = {
+		allow = { NOT = { has_dlc = "Domination" } }
+		custom_attributes = {
+			enables_plutocratic_idea_group = yes
+			enables_aristocratic_idea_group = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			set_variable = {
+				which = election_term
+				value = 1
+			}
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			set_variable = {
+				which = election_term
+				value = 1
+			}
+		}
+	}
+}
+
 got_uphold_life_term_reform = {
 	icon = "armored_knight"
 	allow_normal_conversion = yes
@@ -200,33 +248,38 @@ got_uphold_life_term_reform = {
 #-----------------------------------------
 # "Regionalism"
 #-----------------------------------------
-got_provincial_governments_reform = {
+provincial_governments_reform = {
 	icon = "landscape"
 	allow_normal_conversion = yes
-	potential = {
-		NOT = { is_nights_watch_government = yes }
-	}
-    
+
 	modifiers = {
 		state_maintenance_modifier = -0.25
+		global_prosperity_growth = 0.5
 	}
-    
+	custom_attributes = {
+	}
 	ai = {
 		factor = 1
 	}
 }
 
-got_administrative_divisions_reform = {
+administrative_divisions_reform = {
 	icon = "map"
 	allow_normal_conversion = yes
-	potential = {
-		NOT = { is_nights_watch_government = yes }
-	}
-    
+
 	modifiers = {
-		governing_capacity = 250
+		expand_administration_cost = -0.125
+		governing_capacity_modifier = 0.66
 	}
-    
+	conditional = {
+		allow = {
+			OR = {
+				has_dlc = "Cradle of Civilization"
+				has_dlc = "Domination"
+			}
+		}
+		has_pashas = yes
+	}
 	ai = {
 		factor = 1
 		modifier = {
@@ -244,44 +297,74 @@ got_administrative_divisions_reform = {
 				is_territorial_core = root
 			}
 		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_reform = merchants_reform
+				has_reform = venice_merchants_reform
+			}
+		}
 	}
 }
 
-got_union_of_states_reform = {
-	icon = "merchant_ship"
+union_of_states_reform = {
+	icon = "constitution"
 	allow_normal_conversion = yes
 	potential = {
-		NOT = { is_nights_watch_government = yes }
+		NOT = { has_government_attribute = is_pirate_republic_reform }
 	}
-    
 	modifiers = {
 		global_trade_power = 0.1
 	}
-    
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+		}
+		can_use_trade_post = yes
+	}
+	trigger = {
+		NOT = { has_government_attribute = is_pirate_republic_reform }
+	}
+	boost_income = yes
 	ai = {
 		factor = 1
 		modifier = {
 			factor = 1.5
 			trade_income_percentage = 0.35
 		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_reform = merchants_reform
+				has_reform = venice_merchants_reform
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_cities = 2 }
+			is_part_of_hre = yes
+		}
 	}
 }
 
-got_expand_the_gift_reform = {
-	icon = "farmfields"
+cultural_administration_reform = {
+	icon = "conciliarism_reform"
 	allow_normal_conversion = yes
-	potential = {
-		is_nights_watch_government = yes
-	}
-
 	modifiers = {
-		development_cost_in_primary_culture = -0.10
-		state_maintenance_modifier = -0.25
-		monthly_stewards_loyalty = 0.02
+		num_accepted_cultures = 2
+		promote_culture_cost = -0.5
 	}
-
 	ai = {
 		factor = 1
+		modifier = {
+			factor = 0.25
+			NOT = {
+				any_owned_province = {
+					has_owner_accepted_culture = no
+					has_owner_culture = no
+				}
+			}
+		}
 	}
 }
 
@@ -372,118 +455,6 @@ got_municipal_self_defense_reform = {
 		factor = 1.5
 	}
 }
-
-# Regionalism
-provincial_governments_reform = {
-	icon = "landscape"
-	allow_normal_conversion = yes
-	modifiers = {
-		state_maintenance_modifier = -0.25
-		global_prosperity_growth = 0.5
-	}
-	ai = {
-		factor = 1
-	}
-}
-
-administrative_divisions_reform = {
-	icon = "map"
-	allow_normal_conversion = yes
-	modifiers = {
-		governing_capacity = 250
-	}
-	ai = {
-		factor = 1
-		modifier = {
-			factor = 0
-			has_reform = free_city
-		}
-		modifier = {
-			factor = 0.5
-			NOT = {
-				any_owned_province = {
-					is_territorial_core = root
-				}
-			}
-		}
-		modifier = {
-			factor = 2.5
-			num_of_owned_provinces_with = {
-				value = 10
-				is_territorial_core = root
-			}
-		}
-		modifier = {
-			factor = 0.25
-			OR = {
-				has_reform = merchants_reform
-				has_reform = venice_merchants_reform
-			}
-		}
-	}
-}
-
-union_of_states_reform = {
-	icon = "constitution"
-	allow_normal_conversion = yes
-	potential = {
-		NOT = { has_government_attribute = is_pirate_republic_reform }
-	}
-	modifiers = {
-		global_trade_power = 0.1
-	}
-	conditional = {
-		allow = {
-			has_dlc = "Res Publica"
-		}
-		can_use_trade_post = yes
-	}
-	trigger = {
-		NOT = { has_government_attribute = is_pirate_republic_reform }
-	}
-	boost_income = yes
-	ai = {
-		factor = 1
-		modifier = {
-			factor = 1.5
-			trade_income_percentage = 0.35
-		}
-		modifier = {
-			factor = 2
-			OR = {
-				has_reform = merchants_reform
-				has_reform = venice_merchants_reform
-			}
-		}
-		modifier = {
-			factor = 0
-			NOT = { num_of_cities = 2 }
-			is_part_of_hre = yes
-		}
-	}
-}
-
-cultural_administration_reform = {
-	icon = "conciliarism_reform"
-	allow_normal_conversion = yes
-	modifiers = {
-		num_accepted_cultures = 2
-		promote_culture_cost = -0.5
-	}
-	ai = {
-		factor = 1
-		modifier = {
-			factor = 0.25
-			NOT = {
-				any_owned_province = {
-					has_owner_accepted_culture = no
-					has_owner_culture = no
-				}
-			}
-		}
-	}
-}
-
 #-----------------------------------------
 # "Consolidation of Power"
 #-----------------------------------------

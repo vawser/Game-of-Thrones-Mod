@@ -83,13 +83,7 @@ custom_button = {
 	}
 	trigger = {
 		months_of_ruling = 60
-		if = {
-			limit = { has_government_attribute = cannot_resign }
-			custom_trigger_tooltip = {
-				tooltip = "ruler_can_resign_tt"
-				NOT = { has_government_attribute = cannot_resign }
-			}
-		}
+		ruler_can_resign = yes
 	}
 	effect = {
 		make_republic_ruler_resign = yes

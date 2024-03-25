@@ -254,6 +254,16 @@ westeros_government_great_house = {
 	}
 }
 
+ruler_can_resign = {
+#	if = {
+#		limit = { has_government_attribute = cannot_resign }
+		custom_trigger_tooltip = {
+			tooltip = "ruler_can_resign_tt"
+			NOT = { has_government_attribute = cannot_resign }
+		}
+#	}
+}
+
 # SK Mechanic Triggers
 sk_centralization = {
 	custom_trigger_tooltip = {

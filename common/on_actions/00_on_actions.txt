@@ -262,10 +262,7 @@ on_battle_lost_unit = {
 		}
 		CRW = {
 			set_country_flag = daemon_defeated_flag
-			every_owned_province = {
-				#limit = { has_rebel_faction = REB }
-				clear_rebels = yes
-			}
+			every_owned_province = { clear_rebels = yes }
 			every_owned_province = {
 				limit = { controlled_by = REB }
 				change_controller = CRW

@@ -21,4 +21,68 @@ country_decisions = {
 			factor = 1
 		}
 	}
+	name_blackfyre_heir = {
+		potential = {
+			current_age = age_of_fire
+			dynasty = "Targaryen"
+			NOT = { heir_dynasty = "Blackfyre" }
+			NOT = { has_country_flag = had_blackfyre_rebellion }
+		}
+		allow = {
+			NOT = { has_disaster = blackfyre_rebellion }
+		}
+		effect = {
+			define_heir = {
+				name = "Daemon"
+				monarch_name = "Daemon I"
+				dynasty = "Blackfyre"
+				birth_date = 170.7.3
+				claim = 10
+				adm = 3
+				dip = 3
+				mil = 5
+				hidden = yes
+				block_disinherit = yes
+				no_consort_with_heir = yes
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	visit_summerhall = {
+		major = yes
+		potential = {
+			OR = {
+				tag = CRW
+				tag = A10
+			}
+			OR = {
+				dynasty = "Targaryen"
+				dynasty = "Blackfyre"
+			}
+			owns = 306
+		}
+		allow = {
+			controls = 306
+			custom_trigger_tooltip = {
+				tooltip = "NOT_VISITED_SUMMERHALL_TT"
+				OR = {
+					NOT = { has_ruler_flag = visited_castle_summerhall }
+					had_ruler_flag = {
+						flag = visited_castle_summerhall
+						days = 365
+					}
+				}
+			}
+		}
+		effect = {
+			add_legitimacy = 2
+			add_years_of_income = -0.07
+			hidden_effect = {
+				clr_ruler_flag = visited_castle_summerhall
+				set_ruler_flag = visited_castle_summerhall
+			}
+		}
+	}
 }

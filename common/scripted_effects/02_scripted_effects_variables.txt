@@ -63,6 +63,26 @@ set_manpower_variable = {
 	}
 	multiply_variable = {
 		which = $manpower_var$
+		value = 1000
+	}
+	multiply_variable = {
+		which = $manpower_var$
+		value = $percent_amount$
+	}
+}
+
+set_manpower_variable_with_tag = {
+	export_to_variable = {
+		value = manpower
+		which = $manpower_var$
+		who = $tag$
+	}
+	multiply_variable = {
+		which = $manpower_var$
+		value = 1000
+	}
+	multiply_variable = {
+		which = $manpower_var$
 		value = $percent_amount$
 	}
 }
@@ -78,9 +98,9 @@ transfer_manpower = {
 					}
 				}
 				$taker$ = {
-					add_manpower = 1
+					add_manpower = 0.001
 				}
-				add_manpower = -1
+				add_manpower = -0.001
 				subtract_variable = {
 					which = $variable$
 					value = 1

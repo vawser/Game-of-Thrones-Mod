@@ -166,6 +166,7 @@ country_event = {
 				limit = {
 					NOT = { has_country_flag = sent_help_to_targaryen }
 					NOT = { has_country_flag = sent_help_to_blackfyre }
+					NOT = { tag = FAT }
 				}
 				set_country_flag = sent_help_to_targaryen
 				save_event_target_as = targaryen_helper

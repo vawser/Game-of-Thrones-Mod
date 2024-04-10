@@ -86,12 +86,7 @@ got_warparty_reform = {
 got_figurehead_leader_reform = {
 	icon = "spiritual_leader"
 	allow_normal_conversion = yes
-	trigger = {
-		if = {
-			limit = { is_wildling_culture = yes }
-			NOT = { has_reform = got_look_to_the_future_reform }
-		}
-	}
+
 	modifiers = {
 		country_admin_power = 1
 		global_unrest = -2
@@ -118,7 +113,6 @@ got_look_to_the_future_reform = {
 	lock_level_when_selected = yes
 	potential = {
 		is_wildling_government = yes
-		#NOT = { has_reform = got_maintain_traditionalist_ways_reform }
 	}
 	trigger = {
 		OR = {
@@ -128,10 +122,6 @@ got_look_to_the_future_reform = {
 			}
 			faction_in_power = sedentary_chieftains
 			faction_in_power = mercantile_chieftains
-		}
-		custom_trigger_tooltip = {
-			tooltip = "figurehead_leader_lock_tt"
-			NOT = { has_reform = got_figurehead_leader_reform }
 		}
 	}
 	modifiers = {
@@ -161,7 +151,6 @@ got_maintain_traditionalist_ways_reform = {
 	lock_level_when_selected = yes
 	potential = {
 		is_wildling_government = yes
-		#NOT = { has_reform = got_look_to_the_future_reform }
 	}
 	trigger = {
 		OR = {
@@ -572,7 +561,7 @@ got_precision_raiding_reform = {
 # Tier 7
 ################
 got_reinforce_tribal_hierarchy_reform = {
-	icon = "retain_tribal_hierarchy"
+	icon = "tribal_campfire"
 	allow_normal_conversion = yes
 	
 	modifiers = {

@@ -442,8 +442,10 @@ got_penal_colonies_reform = {
 got_become_dynasty_government_reform = {
 	icon = "king_2"
 	allow_normal_conversion = yes
-	trigger = {
+	potential = {
 		NOT = { has_government_attribute_short_desc = locked_government_type }
+	}
+	trigger = {
 		is_emperor = no
 		NOT = { is_lesser_in_union = yes }
 		if = {
@@ -452,6 +454,10 @@ got_become_dynasty_government_reform = {
 				tooltip = "figurehead_leader_lock_tt"
 				NOT = { has_reform = got_figurehead_leader_reform }
 			}
+		}
+		if = {
+			limit = { has_country_modifier = centralizing_our_clan }
+			NOT = { has_country_modifier = centralizing_our_clan }
 		}
 	}
 	
@@ -467,9 +473,10 @@ got_become_dynasty_government_reform = {
 got_become_a_monarchy_reform = {
 	icon = "king_2_highlighted"
 	allow_normal_conversion = yes
-
-	trigger = {
+	potential = {
 		NOT = { has_government_attribute_short_desc = locked_government_type }
+	}
+	trigger = {
 		is_emperor = no
 		NOT = { is_lesser_in_union = yes }
 		if = {
@@ -478,6 +485,10 @@ got_become_a_monarchy_reform = {
 				tooltip = "figurehead_leader_lock_tt"
 				NOT = { has_reform = got_figurehead_leader_reform }
 			}
+		}
+		if = {
+			limit = { has_country_modifier = centralizing_our_clan }
+			NOT = { has_country_modifier = centralizing_our_clan }
 		}
 	}
 	
@@ -502,9 +513,10 @@ got_become_a_monarchy_reform = {
 got_become_a_republic_reform = {
 	icon = "parliament_highlighted"
 	allow_normal_conversion = yes
-
-	trigger = {
+	potential = {
 		NOT = { has_government_attribute_short_desc = locked_government_type }
+	}
+	trigger = {
 		is_emperor = no
 		NOT = { is_lesser_in_union = yes }
 		if = {
@@ -513,6 +525,10 @@ got_become_a_republic_reform = {
 				tooltip = "figurehead_leader_lock_tt"
 				NOT = { has_reform = got_figurehead_leader_reform }
 			}
+		}
+		if = {
+			limit = { has_country_modifier = centralizing_our_clan }
+			NOT = { has_country_modifier = centralizing_our_clan }
 		}
 	}
 	
@@ -528,9 +544,10 @@ got_become_a_republic_reform = {
 got_become_a_theocracy_reform = {
 	icon = "pope_highlighted"
 	allow_normal_conversion = yes
-
-	trigger = {
+	potential = {
 		NOT = { has_government_attribute_short_desc = locked_government_type }
+	}
+	trigger = {
 		is_emperor = no
 		NOT = { is_lesser_in_union = yes }
 		if = {
@@ -539,6 +556,10 @@ got_become_a_theocracy_reform = {
 				tooltip = "figurehead_leader_lock_tt"
 				NOT = { has_reform = got_figurehead_leader_reform }
 			}
+		}
+		if = {
+			limit = { has_country_modifier = centralizing_our_clan }
+			NOT = { has_country_modifier = centralizing_our_clan }
 		}
 	}
 	
@@ -567,12 +588,23 @@ got_become_a_warband_reform = {
 				NOT = { has_reform = got_figurehead_leader_reform }
 			}
 		}
+		NOT = { has_government_attribute_short_desc = locked_government_type }
 	}
 	
 	trigger = {
-		NOT = { has_government_attribute_short_desc = locked_government_type }
 		is_emperor = no
 		NOT = { is_lesser_in_union = yes }
+		if = {
+			limit = { government = tribal }
+			custom_trigger_tooltip = {
+				tooltip = "figurehead_leader_lock_tt"
+				NOT = { has_reform = got_figurehead_leader_reform }
+			}
+		}
+		if = {
+			limit = { has_country_modifier = centralizing_our_clan }
+			NOT = { has_country_modifier = centralizing_our_clan }
+		}
 	}
 	
 	effect = {

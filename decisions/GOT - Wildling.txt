@@ -37,14 +37,12 @@ country_decisions = {
 		}
 	}
 	permit_westerosi_ideas = {
-		major = yes
 		potential = {
 			technology_group = wildling
 			has_country_flag = feudal_structure_block
 		}
 		allow = {
 			has_reform = got_look_to_the_future_reform
-			stability = 1
 			has_government_power = {
 				mechanic_type = clan_cohesion_mechanic
 				power_type = clan_cohesion
@@ -54,14 +52,13 @@ country_decisions = {
 		effect = {
 			custom_tooltip = "tt_permit_westerosi_ideas"
 			clr_country_flag = feudal_structure_block
-			add_stability = -2
-			add_adm_power = -250
-			add_dip_power = -250
-			add_mil_power = -250
+			add_adm_power = -350
+			add_dip_power = -350
+			add_mil_power = -350
 			add_government_power = {
 				mechanic_type = clan_cohesion_mechanic
 				power_type = clan_cohesion
-				value = -20
+				value = -30
 			}
 		}
 	}
@@ -76,9 +73,13 @@ country_decisions = {
 				NOT = { has_reform = got_figurehead_leader_reform }
 			}
 			custom_trigger_tooltip = {
-				tooltip = "reform_progress_betwee_6_and_7_tt"
-				has_reform_on_level = 5
-				NOT = { has_reform_on_level = 6 }
+				tooltip = "reform_progress_reached_7_tt"
+				has_reform_on_level = 6
+			}
+			has_government_power = {
+				mechanic_type = clan_cohesion_mechanic
+				power_type = clan_cohesion
+				value = 50
 			}
 		}
 		effect = {
@@ -92,7 +93,7 @@ country_decisions = {
 			custom_tooltip = adopt_free_folk_polity_reform_tt
 			add_country_modifier = {
 				name = centralizing_our_clan
-				duration = 365
+				duration = 1825
 			}
 			hidden_effect = { add_government_reform = new_wildling_clan_reform }
 		}

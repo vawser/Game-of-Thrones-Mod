@@ -164,24 +164,12 @@ on_battle_won_country = {
 	if = {
 		limit = {
 			is_nomad = yes
-			FROM = {
-				NOT = { tag = REB }
-			}
+			FROM = { NOT = { tag = REB } }
 		}
-		
 		add_horde_unity = 5
 	}
-	if = {
-		limit = {
-			has_government_attribute = battle_victory_clan_cohesion_increase
-			has_government_mechanic = clan_cohesion_mechanic
-		}
-		add_government_power = {
-			mechanic_type = clan_cohesion_mechanic
-			power_type = clan_cohesion
-			value = 0.5
-		}
-	}
+	
+	on_battle_won_country_effect = yes
 	
 	random_events = {
 		1000 = GOT_RULER_IMPROVEMENT.1

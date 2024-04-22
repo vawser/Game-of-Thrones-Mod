@@ -480,10 +480,11 @@ got_brutes_and_steel_reform = {
 	icon = "brutes_and_steel"
 	modifiers = {
 		leader_land_shock = 2
-		shock_damage = 0.05
-		morale_damage = 0.05
+		shock_damage = 0.025
 	}
-	
+	custom_attributes = {
+		manpower_from_defeating_armies = yes
+	}
 	ai = {
 		factor = 1
 		modifier = {
@@ -505,15 +506,29 @@ got_cavalry_horde_reform = {
 	allow_normal_conversion = yes
 	icon = "cavalry_horde"
 	modifiers = {
-		movement_speed = 0.10
 		cav_to_inf_ratio = 0.20
-		cavalry_cost = -0.15
+		cavalry_cost = -0.125
+	}
+	effect = {
+		if = {
+			limit = { primary_culture = dothraki_culture }
+			add_country_modifier = {
+				name = "dothraki_riders"
+				duration = -1
+			}
+		}
+	}
+	removed_effect = {
+		if = {
+			limit = { has_country_modifier = "dothraki_riders" }
+			remove_country_modifier = "dothraki_riders"
+		}
 	}
 	ai = {
 		factor = 1
 		modifier = {
 			factor = 10
-			culture = dothraki_culture
+			primary_culture = dothraki_culture
 		}
 	}
 }
@@ -544,7 +559,7 @@ got_precision_raiding_reform = {
 	allow_normal_conversion = yes
 	icon = "small_raiding_party"
 	modifiers = {
-		siege_ability = 0.125
+		siege_ability = 0.10
 		loot_amount = 0.25
 		available_province_loot = 0.33
 	}

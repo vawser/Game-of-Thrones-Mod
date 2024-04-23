@@ -487,6 +487,59 @@ got_devolution_of_powers_reform = {
 }
 
 #-----------------------------------------
+# "Guiding Principles of State"
+#-----------------------------------------
+political_principle_reform = {
+	icon = "paper_with_seal_3"
+	allow_normal_conversion = yes
+	modifiers = {
+		possible_adm_policy = 1
+	}
+}
+
+moral_principle_reform = {
+	icon = "parliament_hall"
+	allow_normal_conversion = yes
+	modifiers = {
+		possible_dip_policy = 1
+	}
+}
+
+stability_principle_reform = {
+	icon = "soldiers_6"
+	allow_normal_conversion = yes
+	modifiers = {
+		possible_mil_policy = 1
+	}
+}
+
+enlightened_principle_reform = {
+	icon = "enlightenment"
+	allow_normal_conversion = yes
+	trigger = {
+		OR = {
+			has_institution = enlightenment
+		}
+	}
+	modifiers = {
+		years_of_nationalism = -10
+	}
+}
+
+military_principle_reform = {
+	icon = "soldiers_3"
+	allow_normal_conversion = yes
+	modifiers = {
+		republican_tradition = -0.5
+		max_absolutism = 10
+		years_of_nationalism = -5
+	}
+	custom_attributes = {
+		winning_wars_gives_rt = yes
+	}
+}
+
+#-----------------------------------------
 # "Electorate"
 #-----------------------------------------
 got_landholders_reform = {

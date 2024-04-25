@@ -86,8 +86,6 @@
  theocracy_desc: "In a Theocracy, authority is derived from a divine power. The ruling class will often be the clergy itself and the head of state their leader."
  tribal: "Tribal"
  tribal_desc: "This state is a tribe. While there is a clear leader and aristocracy it does not have the government institutions of a Monarchy or Republic."
- pirate: "Piratical"
- pirate_desc: ""
  occult: "Occult"
  occult_desc: ""
  mythical: "Mythical"
@@ -97,12 +95,15 @@
  # Government Types
  #---------------------------------------------
  dynasty_name: "Dynasty"
- government_dynasty: "§Y[Root.GetName]'s§! Government is §YDynasty§!"
+ government_dynasty: "§Y[Root.GetName]'s§! Government is §YDynastistic§!"
  monarchy_name: "Monarchy"
+ government_monarchy: "§Y[Root.GetName]'s§! Government is §YMonarchical§!"
  republic_name: "Republic"
+ government_republic: "§Y[Root.GetName]'s§! Government is §YRepublican§!"
  theocracy_name: "Theocracy"
+ government_theocracy: "§Y[Root.GetName]'s§! Government is §YTheocratic§!"
  tribal_name: "Tribal"
- pirate_name: "Piratical"
+ government_tribal: "§Y[Root.GetName]'s§! Government is §YTribal§!"
  occult_name: "Occult"
  mythical_name: "Mythical"
  government_mythical: "§Y[Root.GetName]'s§! Government is §YMythical§!"
@@ -454,6 +455,15 @@
  watchmen_outpost_legacy: "Outpost of the Watch"
  watchmen_outpost_legacy_desc: "Often times, the §YThe Night's Watch§! will establish semi-independent castles to defend a designated target or location. The castle and surrounding land which was ceded to them is officially designated as an §Y'Outpost'§!, subservient to §YCastle Black§!.\n\nA §MCommander§! administers the outpost, operating their own garrison force and fielding troops separate from the main Watch force. They are still expected to obey orders given by the §MLord Commander§! and cannot pursue independent military actions without prior approval."
 
+ pirate_kingdom_reform: "Pirate Kingdom"
+ pirate_kingdom_reform_desc: "A band of pirates whom are particularly wealthy and influential."
+ pirate_kingdom_legacy: "Pirate Kingdom"
+ pirate_kingdom_legacy_desc: "A band of pirates whom are particularly wealthy and influential."
+
+ pirate_republic_reform: "Pirate Republic"
+ pirate_republic_reform_desc: "A band of pirates whom are particularly wealthy and influential."
+ pirate_republic_legacy: "Pirate Republic"
+ pirate_republic_legacy_desc: "A band of pirates whom are particularly wealthy and influential."
  
  #---------------------------------------------
  # Government Form (Theocracy)
@@ -543,19 +553,6 @@
  jhattar_legacy_desc: "A group of nomadic men and women whom follow their khal across grasslands."
  
  #---------------------------------------------
- # Piratical
- #---------------------------------------------
- pirate_kingdom_reform: "Pirate Kingdom"
- pirate_kingdom_reform_desc: "A band of pirates whom are particularly wealthy and influential."
- pirate_kingdom_legacy: "Pirate Kingdom"
- pirate_kingdom_legacy_desc: "A band of pirates whom are particularly wealthy and influential."
-
- pirate_republic_reform: "Pirate Republic"
- pirate_republic_reform_desc: "A band of pirates whom are particularly wealthy and influential."
- pirate_republic_legacy: "Pirate Republic"
- pirate_republic_legacy_desc: "A band of pirates whom are particularly wealthy and influential."
- 
- #---------------------------------------------
  # Occult
  #---------------------------------------------
  shadow_cult_reform: "Shadow Cult"
@@ -633,11 +630,6 @@
  tier_tribal_tribal_military: "Military Composition"
  tier_tribal_tribal_structure: "Tribal Structure"
  tier_tribal_tribal_modernization: "Modernization"
- 
- tier_pirate_government_form: "Government Form"
- tier_pirate_governance: "Piratical Governance"
- tier_pirate_principles: "Piratical Principles"
- tier_pirate_reformation: "Reformation of Government"
  
  tier_occult_government_form: "Government Form"
  tier_occult_guiding_occult_principle: "Guiding Occult Principle"
@@ -908,6 +900,15 @@
  got_brotherhood_of_the_black_reform: "Brotherhood of the Black"
  got_brotherhood_of_the_black_reform_desc: "The military order of the Night's Watch isn't a centralized institution like many other republics. Our authority comes from the support of the Order of Stewards, Builders, and Rangers."
 
+ got_council_of_captains_reform: "Council of Captains"
+ got_council_of_captains_reform_desc: "The Pirate Republic should be governed by the will of its greatest captains. It is their alliance that holds our nation together, and so their decisions must take precedence over any other authority."
+ 
+ got_articles_of_agreement_reform: "Articles of Agreement"
+ got_articles_of_agreement_reform_desc: "The Articles of Agreement are the cornerstone of the social order on board a pirate ship. They guarantee that every crewman has an equal vote in all matters and an equal share of all plunder. Articles such as these should be established for the government itself, so that the liberty and equality of all pirates is secured."
+ 
+ got_smugglers_haven_reform: "Smugglers Haven"
+ got_smugglers_haven_reform_desc: "A pirate enterprise cannot function without a way to sell their stolen goods. We must ensure that conditions in the Republic are favorable for smuggling operations."
+
  #
  
  got_frequent_elections_reform: "Frequent Elections"
@@ -1168,27 +1169,6 @@
 
  got_introduce_the_estates_reform: "The Estates"
  got_introduce_the_estates_reform_desc: "PLACEHOLDER"
- 
- #---------------------------------------------
- # Pirate
- #---------------------------------------------
- got_council_of_captains_reform: "Council of Captains"
- got_council_of_captains_reform_desc: "The Pirate Republic should be governed by the will of its greatest captains. It is their alliance that holds our nation together, and so their decisions must take precedence over any other authority."
- 
- got_articles_of_agreement_reform: "Articles of Agreement"
- got_articles_of_agreement_reform_desc: "The Articles of Agreement are the cornerstone of the social order on board a pirate ship. They guarantee that every crewman has an equal vote in all matters and an equal share of all plunder. Articles such as these should be established for the government itself, so that the liberty and equality of all pirates is secured."
- 
- got_smugglers_haven_reform: "Smugglers Haven"
- got_smugglers_haven_reform_desc: "A pirate enterprise cannot function without a way to sell their stolen goods. We must ensure that conditions in the Republic are favorable for smuggling operations."
- 
- got_war_against_the_world_doctrine_reform: "War Against the World Doctrine"
- got_war_against_the_world_doctrine_reform_desc: "The tyrants of the world must be unseated! We can no longer tolerate kings and despots making slaves of our fellow man. And so we shall adopt a new doctrine: war against the world!"
- 
- got_black_market_consortium_reform: "Black Market Consortium"
- got_black_market_consortium_reform_desc: "The pirates that run amok in the state cannot be trusted to bathe themselves, let alone to govern a nation whose future hands on the edge of a cutlass. A Consortium formed of the most influential black market merchants shall be established as its true governors. Profit must come before liberty."
- 
- got_strengthen_pirate_unity: "Strengthen Piratical Unity"
- got_strengthen_pirate_unity_desc: "The pirates have been brought together from throughout the world. Let us formalize our bonds and unleash hell upon those that seek to crush us!"
  
  #---------------------------------------------
  # Occult

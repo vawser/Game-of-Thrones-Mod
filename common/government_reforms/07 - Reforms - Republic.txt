@@ -64,6 +64,48 @@ got_brotherhood_of_the_black_reform = {
 	}
 }
 
+got_council_of_captains_reform = {
+	icon = "council_of_captains"
+	allow_normal_conversion = yes
+	
+	modifiers = {
+		pr_captains_influence = 0.1
+		privateer_efficiency = 0.33
+	}
+    
+	ai = {
+		factor = 2.5
+	}
+}
+
+got_articles_of_agreement_reform = {
+	icon = "articles_of_agreement"
+	allow_normal_conversion = yes
+
+	modifiers = {
+		pr_buccaneers_influence = 0.1
+		republican_tradition = 0.5
+		global_sailors_modifier = 0.1
+	}
+    
+	ai = {
+		factor = 2.5
+	}
+}
+
+got_smugglers_haven_reform = {
+	icon = "smugglers_haven"
+	allow_normal_conversion = yes
+    
+	modifiers = {
+		pr_smugglers_influence = 0.1
+		global_foreign_trade_power = 0.3
+	}
+	ai = {
+		factor = 2.5
+	}
+}
+
 #-----------------------------------------
 # "Frequency of Elections"
 #-----------------------------------------

@@ -1344,6 +1344,47 @@ watchmen_outpost_reform = {
 	}
 }
 
+pirate_republic_reform = {
+	icon = "trading_city" 
+	allow_normal_conversion = no
+	potential = {
+		has_reform = pirate_republic_reform
+	}
+	trigger = {
+		OR = {
+			has_government_attribute = is_pirate_republic_reform
+			crown_stronger_than_estate = { estate = all }
+		}
+	}
+
+	has_term_election = yes
+	duration = 4
+
+	legacy_equivalent = pirate_republic_legacy
+	
+	modifiers = {
+		republican_tradition = -1
+		max_absolutism = 10
+		naval_forcelimit_modifier = 0.5
+		capture_ship_chance = 0.33
+		state_governing_cost = 0.75
+		may_perform_slave_raid_on_same_religion = yes
+		allowed_marine_fraction = 0.5
+	}
+	
+	custom_attributes = {
+		locked_government_type = yes
+		force_admiral_leader = yes
+		is_pirate_republic_reform = yes
+		elections_increase_factions_influence = yes
+		cannot_become_dictatorship = yes
+	}
+	
+	ai = {
+		factor = 0
+	}
+}
+
 #------------------------------------------------------------
 # Theocracy
 #------------------------------------------------------------
@@ -1813,81 +1854,6 @@ jhattar_reform = {
 	
 	custom_attributes = {
 		enables_nomadic_ideagroup = yes
-	}
-}
-
-#------------------------------------------------------------
-# Pirate
-#------------------------------------------------------------
-pirate_republic_reform = {
-	icon = "trading_city" 
-	allow_normal_conversion = no
-	potential = {
-		has_reform = pirate_republic_reform
-	}
-	trigger = {
-		OR = {
-			has_government_attribute = is_pirate_republic_reform
-			crown_stronger_than_estate = { estate = all }
-		}
-	}
-
-	has_term_election = yes
-	duration = 4
-
-	legacy_equivalent = pirate_republic_legacy
-	
-	modifiers = {
-		republican_tradition = -1
-		max_absolutism = 10
-		naval_forcelimit_modifier = 0.5
-		capture_ship_chance = 0.33
-		state_governing_cost = 0.75
-		may_perform_slave_raid_on_same_religion = yes
-		allowed_marine_fraction = 0.5
-	}
-	
-	custom_attributes = {
-		locked_government_type = yes
-		force_admiral_leader = yes
-		is_pirate_republic_reform = yes
-		elections_increase_factions_influence = yes
-		cannot_become_dictatorship = yes
-	}
-	
-	ai = {
-		factor = 0
-	}
-}
-
-pirate_kingdom_reform = {
-	icon = "trading_city"
-	allow_normal_conversion = no
-	potential = {
-		has_reform = pirate_kingdom_reform
-	}
-	
-	has_term_election = no
-	
-	legacy_equivalent = pirate_kingdom_legacy
-	
-	modifiers = {
-		republican_tradition = -1
-		max_absolutism = -50
-		naval_forcelimit_modifier = 0.5
-		capture_ship_chance = 0.33
-		pr_captains_influence = 0.1
-		harsh_treatment_cost = -0.2
-		leader_naval_fire = 1
-		may_perform_slave_raid_on_same_religion = yes
-	}
-	
-	custom_attributes = {
-		admirals_become_rulers = yes
-	}
-	
-	ai = {
-		factor = 0
 	}
 }
 

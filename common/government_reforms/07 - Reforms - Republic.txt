@@ -453,7 +453,7 @@ got_wildling_tributaries_reform = {
 }
 
 #-----------------------------------------
-# "Separation of Powe"
+# "Separation of Power"
 #-----------------------------------------
 got_presidential_reform = {
 	icon = "man_on_podium"
@@ -499,6 +499,26 @@ got_municipal_self_defense_reform = {
 		factor = 1.5
 	}
 }
+
+got_pirate_king_reform = {
+	icon = "king"
+	allow_normal_conversion = yes
+	potential = {
+		has_government_attribute = is_pirate_republic_reform
+	}
+
+	modifiers = {
+		harsh_treatment_cost = -0.20
+		leader_naval_fire = 1
+		pr_captains_influence = 0.1
+	}
+
+	custom_attributes = {
+		admirals_become_rulers = yes
+		election_on_death = yes
+	}
+}
+
 #-----------------------------------------
 # "Consolidation of Power"
 #-----------------------------------------

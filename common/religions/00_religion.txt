@@ -16,20 +16,103 @@ religion_westeros = {
 	faith_of_the_seven = {
 		color = { 1.0 1.0 1.0 }
 		icon = 1
+		allowed_conversion = {
+			old_gods
+		}
 		country = {
 			tolerance_own = 1
 			stability_cost_modifier = -0.1
 		}
+
 		country_as_secondary = {
 			tolerance_own = 1
 			stability_cost_modifier = -0.1
 		}
+
 		hre_religion = yes
 
+		heretic = { BAELORISM }
+
+		on_convert = {
+			change_religion = faith_of_the_seven
+			add_prestige = -100
+			
+			# remove_country_modifier = the_test_act
+			# remove_country_modifier = superintendent_office
+			# remove_country_modifier = the_popery_act
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		
+		}
+		
 		papacy = {
 			papal_tag = FAT
 			election_cost = 5
 			seat_of_papacy = 226
+
+			#Council of Trent Positions
+			harsh = {
+				relation_with_heretics = -10
+				global_religious_conversion_resistance = 0.25
+				global_institution_spread = -0.25
+				global_missionary_strength = 0.02
+			}
+			neutral = {
+				global_religious_conversion_resistance = -0.33
+			}
+			concilatory = {
+				relation_with_heretics = 5
+				global_religious_conversion_resistance = 0.25
+				global_heretic_missionary_strength = -0.05
+				improve_relation_modifier = 0.25
+			}
+
+			#Council of Trent Concessions
+			concessions = {
+				first_concession = {
+					harsh = {
+						relation_with_heretics = -10
+						global_heretic_missionary_strength  = 0.02
+					}	
+					concilatory = {
+						relation_with_heretics = 5
+						tolerance_heretic = 2
+					}
+				}
+				second_concession = {
+					harsh = {
+						relation_with_heretics = -10
+						institution_spread_from_true_faith = 0.30
+					}	
+					concilatory = {
+						relation_with_heretics = 5
+						global_institution_spread = 0.10
+					}
+				}
+				third_concession = {
+					harsh = {
+						relation_with_heretics = -10
+						manpower_in_true_faith_provinces  = 0.1
+					}	
+					concilatory = {
+						relation_with_heretics = 5
+						global_manpower_modifier = 0.05
+					}
+				}
+				fourth_concession = {
+					harsh = {
+						relation_with_heretics = -10
+						warscore_cost_vs_other_religion  = -0.10
+					}	
+					concilatory = {
+						relation_with_heretics = 5
+						curia_powers_cost = -0.10
+					}
+				}
+			}
 			
 			appeal_to_the_father = {
                 curia_treasury_cost = 100
@@ -265,16 +348,19 @@ religion_westeros = {
 	old_gods = {
 		color = { 0.65 0.82 0.93 }
 		icon = 2
+		allowed_conversion = {
+			faith_of_the_seven
+		}
 		country = {
-			stability_cost_modifier = -0.10
+			stability_cost_modifier = -0.1
 			tolerance_own = 1
 		}
 		country_as_secondary = {
-			tolerance_heretic = 1
-            global_unrest = -1
+			global_colonial_growth = 10
+			tolerance_own = 1
 		}
 		province = {
-			local_missionary_strength = 0.02
+			local_missionary_strength = -0.01
 		}
         
 		# Zealotry
@@ -284,7 +370,9 @@ religion_westeros = {
         orthodox_icons = { 
             deity_raven = {
                 idea_cost = -0.05
-                
+                visible = {
+					always = yes
+				}
 				allow = {
 					always = yes
 				}
@@ -294,7 +382,9 @@ religion_westeros = {
 			}
             deity_boar = {
                 recover_army_morale_speed = 0.1
-                
+                visible = {
+					always = yes
+				}
 				allow = {
 					always = yes
 				}
@@ -304,7 +394,9 @@ religion_westeros = {
 			}
             deity_horse = {
                 movement_speed = 0.1
-                
+                visible = {
+					always = yes
+				}
 				allow = {
 					always = yes
 				}
@@ -314,7 +406,9 @@ religion_westeros = {
 			}
 			deity_wolf = {
 				infantry_power = 0.05
-				
+				visible = {
+					always = yes
+				}
 				allow = {
 					always = yes
 				}
@@ -332,7 +426,9 @@ religion_westeros = {
 			}
             deity_rabbit = {
                 global_manpower_modifier = 0.1
-                
+                visible = {
+					always = yes
+				}
 				allow = {
 					always = yes
 				}

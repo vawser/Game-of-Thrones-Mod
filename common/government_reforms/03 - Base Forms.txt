@@ -1347,20 +1347,37 @@ watchmen_outpost_reform = {
 pirate_republic_reform = {
 	icon = "trading_city" 
 	allow_normal_conversion = no
+	legacy_equivalent = pirate_republic_legacy
+	lock_level_when_selected = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
 	potential = {
 		has_reform = pirate_republic_reform
+		OR = {
+			has_dlc = "Lions of the North"
+			has_dlc = "Golden Century"
+		}
 	}
 	trigger = {
-		OR = {
-			has_government_attribute = is_pirate_republic_reform
-			crown_stronger_than_estate = { estate = all }
+		# OR = {
+		# 	has_government_attribute = is_pirate_republic_reform
+		# 	crown_stronger_than_estate = { estate = all }
+		# }
+		capital_scope = {
+			region = region_stepstones
 		}
 	}
 
 	has_term_election = yes
 	duration = 4
+	can_form_trade_league = no
 
-	legacy_equivalent = pirate_republic_legacy
+	factions_frame = 9
+	factions = {
+		pr_buccaneers
+		pr_smugglers
+		pr_captains
+	}
 	
 	modifiers = {
 		republican_tradition = -1
@@ -1378,6 +1395,21 @@ pirate_republic_reform = {
 		is_pirate_republic_reform = yes
 		elections_increase_factions_influence = yes
 		cannot_become_dictatorship = yes
+	}
+
+	nation_designer_trigger = {
+		OR = {
+			has_dlc = "Lions of the North"
+			has_dlc = "Golden Century"
+		}
+		capital_scope = {
+			has_port = yes
+			OR = {
+				province_is_on_an_island = yes
+				region = region_stepstones
+			}
+		}
+		NOT = { technology_group = westerosi }
 	}
 	
 	ai = {

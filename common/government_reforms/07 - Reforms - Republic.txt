@@ -4,6 +4,9 @@
 got_republicanism_reform = {
 	icon = "assembly_hall"
 	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_government_attribute = is_pirate_republic_reform }
+	}
 
 	modifiers = {
 		republican_tradition = 0.2
@@ -16,6 +19,9 @@ got_republicanism_reform = {
 got_republican_authoritarianism_reform = {
 	icon = "commander_king"
 	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_government_attribute = is_pirate_republic_reform }
+	}
     
 	modifiers = {
 		global_unrest = -1
@@ -30,6 +36,9 @@ got_republican_authoritarianism_reform = {
 got_nepotism_reform = {
 	icon = "political_dynasty"
 	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_government_attribute = is_pirate_republic_reform }
+	}
 
 	modifiers = {
 		candidate_random_bonus = 1
@@ -67,6 +76,9 @@ got_brotherhood_of_the_black_reform = {
 got_council_of_captains_reform = {
 	icon = "council_of_captains"
 	allow_normal_conversion = yes
+	potential = {
+		has_government_attribute = is_pirate_republic_reform
+	}
 	
 	modifiers = {
 		pr_captains_influence = 0.1
@@ -81,6 +93,9 @@ got_council_of_captains_reform = {
 got_articles_of_agreement_reform = {
 	icon = "articles_of_agreement"
 	allow_normal_conversion = yes
+	potential = {
+		has_government_attribute = is_pirate_republic_reform
+	}
 
 	modifiers = {
 		pr_buccaneers_influence = 0.1
@@ -96,6 +111,9 @@ got_articles_of_agreement_reform = {
 got_smugglers_haven_reform = {
 	icon = "smugglers_haven"
 	allow_normal_conversion = yes
+	potential = {
+		has_government_attribute = is_pirate_republic_reform
+	}
     
 	modifiers = {
 		pr_smugglers_influence = 0.1

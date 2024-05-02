@@ -323,9 +323,7 @@ got_rely_on_levies_reform = {
 	}
 	trigger = {
 		if = {
-			limit = {
-				has_dlc = "Cradle of Civilization"
-			}
+			limit = { has_dlc = "Cradle of Civilization" }
 			NOT = { army_professionalism = 0.40 }
 		}
 		else = {
@@ -382,9 +380,7 @@ got_standing_army_reform = {
 	}
 	trigger = {
 		if = {
-			limit = {
-				has_dlc = "Cradle of Civilization"
-			}
+			limit = { has_dlc = "Cradle of Civilization" }
 			army_professionalism = 0.40
 		}
 		else = {
@@ -421,7 +417,10 @@ got_standing_army_reform = {
 		}
 	}
 	effect = {
-		custom_tooltip = got_standing_army_reform_tt
+		if = {
+			limit = { government_type = { dynasty = yes } }
+			custom_tooltip = "got_standing_army_reform_tt"
+		}
 	}
 	modifiers = {
 		land_forcelimit_modifier = 0.25
@@ -449,7 +448,10 @@ got_naval_supremacy_reform = {
 		}
 	}
 	effect = {
-		custom_tooltip = got_naval_supremacy_reform_tt
+		if = {
+			limit = { government_type = { dynasty = yes } }
+			custom_tooltip = "got_naval_supremacy_reform_tt"
+		}
 	}
 	modifiers = {
 		naval_forcelimit_modifier = 0.50

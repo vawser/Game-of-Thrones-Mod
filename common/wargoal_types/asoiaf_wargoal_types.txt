@@ -71,8 +71,8 @@ superiority_undead_conquest = {
 			po_demand_provinces
 		}
 	}
-    
-	war_name = UNDEAD_CONQUEST_NAME
+	
+	war_name = "UNDEAD_CONQUEST_NAME"
 }
 
 take_capital_take_iron_throne = {
@@ -87,7 +87,6 @@ take_capital_take_iron_throne = {
 			po_seize_the_iron_throne
 		}
 	}
-	
 	defender = {
 		badboy_factor = 0.5
 		prestige_factor = 1.5
@@ -98,7 +97,7 @@ take_capital_take_iron_throne = {
 		}
 	}
 	
-	war_name = SEIZE_THE_IRON_THRONE_WAR_NAME
+	war_name = "SEIZE_THE_IRON_THRONE_WAR_NAME"
 }
 
 take_capital_usurp_overlord = {
@@ -117,9 +116,8 @@ take_capital_usurp_overlord = {
 			po_concede_defeat
 		}
 
-		prov_desc = ALL_CORES
+		prov_desc = "ALL_CORES"
 	}
-	
 	defender = {
 		badboy_factor = 0.5
 		prestige_factor = 1.5
@@ -132,10 +130,10 @@ take_capital_usurp_overlord = {
 			po_concede_defeat
 		}
 
-		prov_desc = ALL_CORES
+		prov_desc = "ALL_CORES"
 	}
 	
-	war_name = USURP_OVERLORD_WAR_NAME
+	war_name = "USURP_OVERLORD_WAR_NAME"
 }
 
 superiority_lordly_feud = {
@@ -158,7 +156,7 @@ superiority_lordly_feud = {
 			po_trade_power
 		}
 
-		prov_desc = ALL_CORES
+		prov_desc = "ALL_CORES"
 	}
 	defender = {
 		badboy_factor = 1
@@ -167,8 +165,8 @@ superiority_lordly_feud = {
 		
 		allowed_provinces = { is_core = FROM }
 		allowed_provinces_are_eligible = yes
-        
-        peace_options = {
+		
+		peace_options = {
 			po_demand_provinces
 			po_vassalize_feudatory
 			po_gold
@@ -177,10 +175,10 @@ superiority_lordly_feud = {
 			po_trade_power
 		}
 
-		prov_desc = ALL_CORES
+		prov_desc = "ALL_CORES"
 	}
 	
-	war_name = LORDLY_FEUD_NAME
+	war_name = "LORDLY_FEUD_NAME"
 }
 
 superiority_preemptive_strike = {
@@ -201,7 +199,7 @@ superiority_preemptive_strike = {
 			po_demand_provinces
 		}
 
-		prov_desc = ALL_CORES
+		prov_desc = "ALL_CORES"
 	}
 	defender = {
 		badboy_factor = 0.5
@@ -210,18 +208,18 @@ superiority_preemptive_strike = {
 
 		allowed_provinces = { is_core = ROOT }
 		allowed_provinces_are_eligible = yes
-        
-        peace_options = {
+		
+		peace_options = {
 			po_concede_defeat
 			po_gold
 			po_become_tributary_state
 			po_demand_provinces
 		}
 
-		prov_desc = ALL_CORES
+		prov_desc = "ALL_CORES"
 	}
 	
-	war_name = DEFEND_THE_WALL_NAME
+	war_name = "DEFEND_THE_WALL_NAME"
 }
 
 superiority_wildling_assault = {
@@ -229,49 +227,79 @@ superiority_wildling_assault = {
 	
 	attacker = {
 		badboy_factor = 1
-		prestige_factor = 1
-		peace_cost_factor = 1
+		prestige_factor = 1.5
+		peace_cost_factor = 0.25
 	
+		allowed_provinces = { is_core = ROOT }
+		allowed_provinces_are_eligible = yes
+
 		peace_options = {
+			po_gold
+			po_concede_defeat
+			po_trade_power
 			po_demand_provinces
 		}
+
+		prov_desc = "ALL_CORES"
 	}
 	defender = {
 		badboy_factor = 0.5
 		prestige_factor = 1
 		peace_cost_factor = 0.5
-        
-        peace_options = {
+		
+		allowed_provinces = { always = no }
+		allowed_provinces_are_eligible = yes
+
+		peace_options = {
+			po_gold
+			po_concede_defeat
 			po_demand_provinces
 		}
+
+		prov_desc = "ALL_CORES"
 	}
 	
-	war_name = WILDLING_ASSAULT_NAME
+	war_name = "WILDLING_ASSAULT_NAME"
 }
 
 superiority_wildling_feud = {
 	type = superiority
-	
+
 	attacker = {
 		badboy_factor = 1
-		prestige_factor = 2
-		peace_cost_factor = 1
-	
+		prestige_factor = 1.25
+		peace_cost_factor = 0.75
+
+		allowed_provinces = { is_core = ROOT }
+		allowed_provinces_are_eligible = yes
+
 		peace_options = {
+			po_gold
+			po_concede_defeat
+			po_trade_power
 			po_demand_provinces
 		}
+
+		prov_desc = "ALL_CORES"
 	}
 	defender = {
-		badboy_factor = 0.5
-		prestige_factor = 1
-		peace_cost_factor = 0.5
-        
-        peace_options = {
+		badboy_factor = 1.0
+		prestige_factor = 2.0
+		peace_cost_factor = 1.0
+
+		allowed_provinces = { is_core = ROOT }
+		allowed_provinces_are_eligible = yes
+
+		peace_options = {
+			po_gold
+			po_concede_defeat
 			po_demand_provinces
 		}
+
+		prov_desc = "ALL_CORES"
 	}
 	
-	war_name = WILDLING_FEUD_NAME
+	war_name = "WILDLING_FEUD_NAME"
 }
 
 loe_jogos_nhai_raid_goal = {

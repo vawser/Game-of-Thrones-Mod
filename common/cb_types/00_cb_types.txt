@@ -1114,8 +1114,10 @@ cb_preemptive_strike = {
 	valid_for_subject = no
 	ai_peace_desire = -50
 	
-	prerequisites = {
+	prerequisites_self = {
 		has_reform = nights_watch_reform
+	}
+	prerequisites = {
 		FROM = { government_type = { wildling = yes } }
 	}
 
@@ -1135,10 +1137,23 @@ cb_preemptive_strike = {
 
 cb_wildling_assault = {
 	valid_for_subject = no
-	
-	prerequisites = {
+
+	prerequisites_self = {
 		government_type = { wildling = yes }
+	}
+	prerequisites = {
 		FROM = { NOT = { government_type = { wildling = yes } } }
+	}
+
+	attacker_disabled_po = {
+		po_demand_provinces
+		po_release_vassals
+		po_release_annexed
+		po_return_cores
+		po_become_vassal
+		po_subjugate_vassal
+		po_form_personal_union
+		po_transfer_vassals
 	}
 	
 	war_goal = superiority_wildling_assault
@@ -1147,9 +1162,28 @@ cb_wildling_assault = {
 cb_wildling_feud = {
 	valid_for_subject = no
 	
-	prerequisites = {
+	prerequisites_self = {
 		government_type = { wildling = yes }
-		FROM = { government_type = { wildling = yes } }
+	}
+	prerequisites = {
+		FROM = {
+			government_type = { wildling = yes }
+			NOT = {
+				border_distance = {
+					who = ROOT
+					distance = 100
+				}
+			}
+		}
+	}
+
+	attacker_disabled_po = {
+		po_release_vassals
+		po_transfer_vassals
+		po_release_annexed
+		po_form_personal_union
+		po_become_vassal
+		po_subjugate_vassal
 	}
 	
 	war_goal = superiority_wildling_feud

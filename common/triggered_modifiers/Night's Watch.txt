@@ -28,3 +28,22 @@ supporting_the_watch = {
     reinforce_cost_modifier = -0.20
 	monthly_stewards_loyalty = 0.05
 }
+
+war_with_the_southerners = {
+	potential = {
+		is_wildling_culture = yes
+		government_type = { wildling = yes }
+	}
+	trigger = {
+		any_country = {
+			technology_group = westerosi
+			hidden_trigger = { capital_scope = { continent = westeros } }
+			is_in_war = {
+				casus_belli = cb_wildling_assault
+				attacker_leader = ROOT
+			}
+		}
+	}
+	morale_damage_received = -0.33
+	reinforce_cost_modifier = -0.10
+}

@@ -118,7 +118,7 @@ declarewar = {
 				limit = { hre_size = 1 }
 				is_part_of_hre = yes
 			}
-			else = { is_dynasty_government = yes }
+			else = { government_type = { dynasty = yes } }
 		}
 		allow = { always = no }
 	}
@@ -306,8 +306,8 @@ fabricate_claim = {
 	# condition = {
 	# 	tooltip = "Nobles houses of Westeros cannot fabricate claims on each other's lands"
 	# 	potential = {
-	# 		is_dynasty_government = yes
-	# 		FROM = { is_dynasty_government = yes }
+	# 		government_type = { dynasty = yes }
+	# 		FROM = { government_type = { dynasty = yes } }
 	# 		#is_subject_of_type = feudatory
 	# 	}
 	# 	allow = {

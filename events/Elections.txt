@@ -168,7 +168,7 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				is_free_city_government = yes
+				government_type = { free_city = yes }
 				NOT = { republican_tradition = 20 }
 			}
 			add_government_reform = military_dictatorship_reform	

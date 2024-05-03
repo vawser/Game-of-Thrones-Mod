@@ -2,7 +2,7 @@ country_decisions = {
     # Economic - Debt and Loans
 	negotiate_with_the_iron_bank = {
 		potential = {
-			NOT = { is_primitive_government = yes } 
+			NOT = { government_type = { primitive = yes } } 
             NOT = { has_ruler_modifier = iron_bank_agreement }
             OR = {
                 any_known_country = {  

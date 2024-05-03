@@ -6,7 +6,7 @@ estate_church_land_rights = {
 	max_absolutism = -5
 	is_valid = {
 		if = {
-			limit = { is_dynasty_government = yes }
+			limit = { government_type = { dynasty = yes } }
 			dynasty_base_privileges_valid = {
 				estate_privilege = estate_church_land_rights
 			}
@@ -14,7 +14,7 @@ estate_church_land_rights = {
 	}
 	can_select = {
 		if = {
-			limit = { is_dynasty_government = yes }
+			limit = { government_type = { dynasty = yes } }
 			dynasty_base_privileges_trigger = yes
 		}
 	}
@@ -136,7 +136,7 @@ estate_church_religious_state = {
 	max_absolutism = -5
 	is_valid = {
 		if = {
-			limit = { is_dynasty_government = yes }
+			limit = { government_type = { dynasty = yes } }
 			dynasty_base_privileges_valid = {
 				estate_privilege = estate_church_land_rights
 			}
@@ -144,7 +144,7 @@ estate_church_religious_state = {
 	}
 	can_select = {
 		if = {
-			limit = { is_dynasty_government = yes }
+			limit = { government_type = { dynasty = yes } }
 			dynasty_base_privileges_trigger = yes
 		}
 	}

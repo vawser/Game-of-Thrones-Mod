@@ -44,11 +44,11 @@ defined_text = {
 		trigger = {
 			OR = {
 				AND = {
-					is_nights_watch_government = yes
+					government_type = { nights_watch = yes }
 					capital_scope = { region = region_nights_watch }
 				}
 				AND = {
-					is_wildling_government = yes
+					government_type = { wildling = yes }
 					capital_scope = { region = region_beyond_the_wall }
 				}
 			}

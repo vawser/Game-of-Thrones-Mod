@@ -55,7 +55,7 @@ got_council_of_chiefs_reform = {
 got_warparty_reform = {
 	icon = "war_charge"
 	allow_normal_conversion = yes
-	potential = { is_wildling_government = yes }
+	potential = { government_type = { wildling = yes } }
 	modifiers = {
 		army_tradition_from_battle = 0.33
 		warlike_chieftains_influence = 0.10
@@ -112,7 +112,7 @@ got_look_to_the_future_reform = {
 	allow_normal_conversion = yes
 	lock_level_when_selected = yes
 	potential = {
-		is_wildling_government = yes
+		government_type = { wildling = yes }
 	}
 	trigger = {
 		OR = {
@@ -149,9 +149,7 @@ got_maintain_traditionalist_ways_reform = {
 	icon = "wildlings"
 	allow_normal_conversion = yes
 	lock_level_when_selected = yes
-	potential = {
-		is_wildling_government = yes
-	}
+	potential = { government_type = { wildling = yes } }
 	trigger = {
 		OR = {
 			custom_trigger_tooltip = {
@@ -174,9 +172,7 @@ got_maintain_traditionalist_ways_reform = {
 got_generic_principle_reform = {
 	icon = "paper_money_map"
 	allow_normal_conversion = yes
-	potential = {
-		NOT = { is_wildling_government = yes }
-	}
+	potential = { NOT = { government_type = { wildling = yes } } }
 	modifiers = {
 		prestige = 0.10
 	}
@@ -193,7 +189,7 @@ got_clan_towns_reforms = {
 	allow_normal_conversion = yes
 	icon = "clan_towns"
 	potential = {
-		is_wildling_government = yes
+		government_type = { wildling = yes }
 		OR = {
 			NOT = { has_reform_on_level = 2 }
 			has_reform = got_look_to_the_future_reform
@@ -216,7 +212,7 @@ got_wildling_settlers_reform = {
 	allow_normal_conversion = yes
 	icon = "self_governing_colony_government"
 	potential = {
-		is_wildling_government = yes
+		government_type = { wildling = yes }
 		OR = {
 			NOT = { has_reform_on_level = 2 }
 			has_reform = got_look_to_the_future_reform
@@ -239,7 +235,7 @@ got_trading_with_the_crows_reform = {
 	allow_normal_conversion = yes
 	icon = "with_the_watch"
 	potential = {
-		is_wildling_government = yes
+		government_type = { wildling = yes }
 		OR = {
 			NOT = { has_reform_on_level = 2 }
 			has_reform = got_look_to_the_future_reform
@@ -289,7 +285,7 @@ got_wildling_alliances_reform = {
 	allow_normal_conversion = yes
 	icon = "wildling_allies"
 	potential = {
-		is_wildling_government = yes
+		government_type = { wildling = yes }
 		OR = {
 			NOT = { has_reform_on_level = 2 }
 			has_reform = got_maintain_traditionalist_ways_reform
@@ -315,7 +311,7 @@ got_feud_with_wildlings_reform = {
 	allow_normal_conversion = yes
 	icon = "feud_with_wildlings"
 	potential = {
-		is_wildling_government = yes
+		government_type = { wildling = yes }
 		OR = {
 			NOT = { has_reform_on_level = 2 }
 			has_reform = got_maintain_traditionalist_ways_reform
@@ -339,7 +335,7 @@ got_feud_with_crows_reform = {
 	allow_normal_conversion = yes
 	icon = "feud_with_the_crows"
 	potential = {
-		is_wildling_government = yes
+		government_type = { wildling = yes }
 		OR = {
 			NOT = { has_reform_on_level = 2 }
 			has_reform = got_maintain_traditionalist_ways_reform
@@ -364,7 +360,7 @@ got_martial_society_reform = {
 	allow_normal_conversion = yes
 	icon = "tribal_martial_society"
 	potential = {
-		NOT = { is_wildling_government = yes }
+		NOT = { government_type = { wildling = yes } }
 	}
 	modifiers = {
 		global_manpower_modifier = 0.2
@@ -385,7 +381,7 @@ got_civil_society_reform = {
 	allow_normal_conversion = yes
 	icon = "tribal_civil_society"
 	potential = {
-		NOT = { is_wildling_government = yes }
+		NOT = { government_type = { wildling = yes } }
 	}
 	modifiers = {
 		global_tax_modifier = 0.05

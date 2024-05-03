@@ -1,9 +1,7 @@
 edict_enforce_religious_unity = {
 	potential = {
 		if = { # Only available with 'Expand the Administrative Arm' gov't reform
-			limit = {
-				is_dynasty_government = yes
-			}
+			limit = { government_type = { dynasty = yes } }
 			has_government_attribute = unlock_more_state_edicts
 		}
 		else = {

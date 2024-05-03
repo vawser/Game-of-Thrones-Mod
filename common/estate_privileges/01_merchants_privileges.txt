@@ -6,7 +6,7 @@ estate_merchants_land_rights = {
 	influence = 0.05
 	is_valid = {
 		if = {
-			limit = { is_dynasty_government = yes }
+			limit = { government_type = { dynasty = yes } }
 			dynasty_base_privileges_valid = {
 				estate_privilege = estate_merchants_land_rights
 			}
@@ -14,7 +14,7 @@ estate_merchants_land_rights = {
 	}
 	can_select = {
 		if = {
-			limit = { is_dynasty_government = yes }
+			limit = { government_type = { dynasty = yes } }
 			dynasty_base_privileges_trigger = yes
 		}
 	}
@@ -92,7 +92,7 @@ estate_merchants_land_of_commerce = {
 	influence = 0.10
 	is_valid = {
 		if = {
-			limit = { is_dynasty_government = yes }
+			limit = { government_type = { dynasty = yes } }
 			dynasty_base_privileges_valid = {
 				estate_privilege = estate_merchants_land_rights
 			}
@@ -100,7 +100,7 @@ estate_merchants_land_of_commerce = {
 	}
 	can_select = {
 		if = {
-			limit = { is_dynasty_government = yes }
+			limit = { government_type = { dynasty = yes } }
 			dynasty_base_privileges_trigger = yes
 		}
 	}

@@ -25,7 +25,7 @@ country_decisions = {
 			NOT = { has_country_modifier = hire_privateers }
 			num_of_ports = 1
             NOT = { has_reform = army_of_the_dead_reform }
-			NOT = { is_primitive_government = yes }
+			NOT = { government_type = { primitive = yes } }
 		}
 		allow = {
 			navy_size_percentage = 0.5

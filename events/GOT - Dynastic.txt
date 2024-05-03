@@ -13,7 +13,7 @@ country_event = {
 		has_regency = no
 		is_female = no
 		is_lesser_in_union = no
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
         religion = faith_of_the_seven
 		dip = 2
 	}
@@ -55,7 +55,7 @@ country_event = {
 		is_female = no
 		is_lesser_in_union = no
 		has_regency = no
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		any_owned_province = {
 			num_free_building_slots = 1
 			NOT = { has_any_religion_building = yes }
@@ -113,7 +113,7 @@ country_event = {
 			stability = -2
 		}
 		has_regency = no
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 	}
 	
 	mean_time_to_happen = {
@@ -161,7 +161,7 @@ country_event = {
 				has_female_consort = no
 			}
 		}
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		heir_age = 4
 	}
 	
@@ -194,7 +194,7 @@ country_event = {
 	picture = COURT_eventPicture
 	
 	trigger = {
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		is_month = 3
 		NOT = { is_month = 6 }
 		has_heir = no
@@ -207,7 +207,7 @@ country_event = {
 		}
 		any_known_country = {
 			religion = ROOT
-			is_monarchy_government = yes
+			government_type = { monarchy = yes }
 			is_lesser_in_union = no
 			alliance_with = ROOT
 			ai = yes
@@ -228,7 +228,7 @@ country_event = {
 			random_known_country = {
 				limit = {
 					religion = ROOT
-					is_monarchy_government = yes
+					government_type = { monarchy = yes }
 					is_lesser_in_union = no
 					alliance_with = ROOT
 					NOT = { marriage_with = ROOT }
@@ -251,7 +251,7 @@ country_event = {
 		trigger = {
 			any_known_country = {
 				religion = ROOT
-				is_monarchy_government = yes
+				government_type = { monarchy = yes }
 				is_lesser_in_union = no
 				alliance_with = ROOT
 				NOT = { marriage_with = ROOT }
@@ -284,7 +284,7 @@ country_event = {
 	trigger = {
 		has_heir = no
 		is_lesser_in_union = no
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		has_regency = no
 	}
 	
@@ -389,7 +389,7 @@ country_event = {
 	
 	trigger = {
 		has_heir = yes
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		has_regency = no
 		is_lesser_in_union = no
 	}
@@ -444,7 +444,7 @@ country_event = {
 	trigger = {
 		has_heir = no
 		is_lesser_in_union = no
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		has_regency = no
 	}
 	
@@ -594,11 +594,11 @@ country_event = {
 	trigger = {
 		stability = 3
 		treasury = 100
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		has_regency = no
 		any_known_country = {
 			dynasty = ROOT
-			is_monarchy_government = yes
+			government_type = { monarchy = yes }
 			NOT = { stability = -2 }
 			NOT = { senior_union_with = ROOT }
 			NOT = { junior_union_with = ROOT }
@@ -614,7 +614,7 @@ country_event = {
 		random_country = {
 			limit = {
 				dynasty = ROOT
-				is_monarchy_government = yes
+				government_type = { monarchy = yes }
 				NOT = { stability = -2 }
 				NOT = { senior_union_with = ROOT }
 				NOT = { junior_union_with = ROOT }
@@ -630,7 +630,7 @@ country_event = {
 		random_country = {
 			limit = { 
 				dynasty = ROOT
-				is_monarchy_government = yes
+				government_type = { monarchy = yes }
 				NOT = { stability = -2 }
 				NOT = { senior_union_with = ROOT }
 				NOT = { junior_union_with = ROOT }
@@ -715,7 +715,7 @@ country_event = {
 	trigger = {
 		NOT = { stability = -1 }
 		is_lesser_in_union = no
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		NOT = { legitimacy_or_horde_unity = 50 }
 		has_regency = yes
 		has_consort_regency = no
@@ -751,7 +751,7 @@ country_event = {
 	picture = NEW_HEIR_eventPicture
 	
 	trigger = {
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		is_lesser_in_union = no
 		has_heir = no
 		has_regency = no
@@ -811,12 +811,12 @@ country_event = {
 	picture = DIPLOMACY_eventPicture
 	
 	trigger = {
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		has_regency = no
 		is_lesser_in_union = no
 		num_of_royal_marriages = 4
 		any_country = {
-			is_monarchy_government = yes
+			government_type = { monarchy = yes }
 			marriage_with = ROOT
 			NOT = { dynasty = ROOT }
 			has_heir = no
@@ -828,7 +828,7 @@ country_event = {
 		hidden_effect = {
 			random_country = {
 				limit = {
-					is_monarchy_government = yes
+					government_type = { monarchy = yes }
 					marriage_with = ROOT
 					NOT = { dynasty = ROOT }
 					has_heir = no
@@ -1029,7 +1029,7 @@ country_event = {
 	
 	trigger = {
 		prestige = 30
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		is_lesser_in_union = no
 		is_at_war = no
 		has_regency = no
@@ -1044,7 +1044,7 @@ country_event = {
 		}
 		any_known_country = {
 			religion = ROOT
-			is_monarchy_government = yes
+			government_type = { monarchy = yes }
 			is_lesser_in_union = no
 			alliance_with = ROOT
 			ai = yes
@@ -1064,7 +1064,7 @@ country_event = {
 		random_country = {
 			limit = {
 				religion = ROOT
-				is_monarchy_government = yes
+				government_type = { monarchy = yes }
 				is_lesser_in_union = no
 				alliance_with = ROOT
 				ai = yes
@@ -1095,10 +1095,10 @@ country_event = {
 		any_known_country = {
 			has_country_modifier = sought_after_bachelor
 			is_lesser_in_union = no
-			is_monarchy_government = yes
+			government_type = { monarchy = yes }
 			religion_group = ROOT
 		}
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		is_lesser_in_union = no
 	}
 	
@@ -1205,7 +1205,7 @@ country_event = {
 	picture = MILITARY_CAMP_eventPicture
 	
 	trigger = {
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		has_heir = yes
 		is_heir_leader = yes
 		heir_age = 20
@@ -1281,7 +1281,7 @@ country_event = {
 	
 	trigger = {
 		is_lesser_in_union = no
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		has_heir = no
 		is_female = no
 		has_regency = no
@@ -1326,7 +1326,7 @@ country_event = {
 	trigger = {
 		has_heir = no
 		ruler_age = 40
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		is_lesser_in_union = no
 	}
 	
@@ -1419,7 +1419,7 @@ country_event = {
 	trigger = {
 		has_heir = no
 		ruler_age = 20
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		is_lesser_in_union = no
 		NOT = {
 			has_country_modifier = dyn_newborn_daughter
@@ -1467,7 +1467,7 @@ country_event = {
 	trigger = {
 		has_heir = no
 		ruler_age = 40
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		is_lesser_in_union = no
 		NOT = { has_ruler_flag = talented_daughter_happened }
 	}
@@ -1552,10 +1552,10 @@ country_event = {
 		num_of_cities = 2
 		has_regency = yes
 		is_lesser_in_union = no
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 
 		any_known_country = {
-			is_monarchy_government = yes
+			government_type = { monarchy = yes }
 
 			has_regency = no
 			is_free_or_tributary_trigger = yes
@@ -1577,7 +1577,7 @@ country_event = {
 		hidden_effect = {
 			random_known_country = {
 				limit = {
-					is_monarchy_government = yes
+					government_type = { monarchy = yes }
 
 					has_regency = no
 					is_free_or_tributary_trigger = yes
@@ -1662,14 +1662,14 @@ country_event = {
 	
 	trigger = {
 		has_heir = no
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 		is_free_or_tributary_trigger = yes
 		ruler_age = 16
 		NOT = {
 			ruler_age = 40
 		}
 		any_neighbor_country = {
-			is_monarchy_government = yes
+			government_type = { monarchy = yes }
 			has_heir = no
 			ruler_age = 16
 			NOT = {
@@ -1722,7 +1722,7 @@ country_event = {
 	immediate = {
 		random_neighbor_country = {
 			limit = {
-				is_monarchy_government = yes
+				government_type = { monarchy = yes }
 				has_heir = no
 				ruler_age = 16
 				NOT = {
@@ -1770,7 +1770,7 @@ country_event = {
 		name = GOT_DYNASTIC.33.option.a
 		random_neighbor_country = {
 			limit = {
-				is_monarchy_government = yes
+				government_type = { monarchy = yes }
 				has_heir = no
 				ruler_age = 16
 				NOT = {
@@ -1909,7 +1909,7 @@ country_event = {
 		has_heir = yes
 		heir_age = 15
 		is_lesser_in_union = no
-		is_monarchy_government = yes
+		government_type = { monarchy = yes }
 	}
 	
 	mean_time_to_happen = {

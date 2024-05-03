@@ -6,7 +6,7 @@ estate_nobility_land_rights = {
 	max_absolutism = -5
 	is_valid = {
 		if = {
-			limit = { is_dynasty_government = yes }
+			limit = { government_type = { dynasty = yes } }
 			dynasty_base_privileges_valid = {
 				estate_privilege = estate_nobility_land_rights
 			}
@@ -14,7 +14,7 @@ estate_nobility_land_rights = {
 	}
 	can_select = {
 		if = {
-			limit = { is_dynasty_government = yes }
+			limit = { government_type = { dynasty = yes } }
 			dynasty_base_privileges_trigger = yes
 		}
 	}
@@ -136,7 +136,7 @@ estate_nobility_nobility_primacy = {
 	max_absolutism = -5
 	is_valid = {
 		if = {
-			limit = { is_dynasty_government = yes }
+			limit = { government_type = { dynasty = yes } }
 			dynasty_base_privileges_valid = {
 				estate_privilege = estate_nobility_nobility_primacy
 			}
@@ -144,7 +144,7 @@ estate_nobility_nobility_primacy = {
 	}
 	can_select = {
 		if = {
-			limit = { is_dynasty_government = yes }
+			limit = { government_type = { dynasty = yes } }
 			dynasty_base_privileges_trigger = yes
 		}
 	}
@@ -781,7 +781,7 @@ estate_nobles_peasant_drills = {
 		has_dlc = "Cradle of Civilization"
 	}
 	can_select = {
-		is_dynasty_government = yes
+		government_type = { dynasty = yes }
 	}
 	
 	on_granted = {

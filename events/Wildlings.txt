@@ -1,0 +1,26 @@
+namespace = wildling_evt
+
+country_event = {
+	id = wildling_evt.1
+	title = "wildling_evt.1.ti"
+	desc = "wildling_evt.1.de"
+	picture = GENERALS_DISCUSSING_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = U92
+		has_ruler = "Benedar II"
+	}
+
+	option = {
+		name = "wildling_evt.1.option.a"
+		add_ruler_modifier = {
+			name = "legendary_wildling_leader"
+			duration = -1
+		}
+		add_adm_power = 33
+		add_dip_power = 33
+		add_mil_power = 33
+	}
+}

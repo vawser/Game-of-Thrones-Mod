@@ -29,9 +29,7 @@ on_startup = {
 	if = {
 		limit = { NOT = { has_global_flag = kingsroad_bonuses } }
 		set_global_flag = kingsroad_bonuses
-		kingsroad = {
-			add_province_triggered_modifier = kingsroad_province_bonus
-		}
+		kingsroad = { add_province_triggered_modifier = kingsroad_province_bonus }
 	}
 
 	on_startup_watch_commanders_effect = yes
@@ -41,6 +39,7 @@ on_startup = {
 	events = {
 		GOT_SYSTEM.1	# Global
 		GOT_SYSTEM.2	# Country
+		wildling_evt.1
 		yiti.1			# YiTi startup
 	}
 }

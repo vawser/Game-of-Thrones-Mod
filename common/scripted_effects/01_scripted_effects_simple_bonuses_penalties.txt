@@ -1,22 +1,18 @@
 add_or_extend_province_modifier_effect = {
 	if = {
-		limit = {
-			has_province_modifier = $MODIFIER$
-		}
+		limit = { has_province_modifier = $MODIFIER$ }
 		extend_province_modifier = { name = $MODIFIER$ duration = $DURATION$ }
 	}
-	else = {
-		add_province_modifier = { name = $MODIFIER$ duration = $DURATION$ }
-	}
+	else = { add_province_modifier = { name = $MODIFIER$ duration = $DURATION$ } }
 }
 
 add_king_titles = {
 	add_ruler_modifier = {
-		name = got_lord_of_seven_kingdoms
+		name = "got_lord_of_seven_kingdoms"
 		duration = -1
 	}
 	add_ruler_modifier = {
-		name = got_protector_of_the_realm
+		name = "got_protector_of_the_realm"
 		duration = -1
 	}
 }
@@ -28,18 +24,14 @@ make_republic_ruler_resign = {
 
 add_influence_to_adm_faction = {
 	if = {
-		limit = { 
-			has_faction = crw_loyalists 
-		}
+		limit = { has_faction = crw_loyalists }
 		add_faction_influence = {
 			faction = crw_loyalists
 			influence = $influence$
 		}				
 	}
 	if = {
-		limit = { 
-			has_faction = sedentary_chieftains 
-		}
+		limit = { has_faction = sedentary_chieftains }
 		add_faction_influence = {
 			faction = sedentary_chieftains
 			influence = $influence$
@@ -49,18 +41,14 @@ add_influence_to_adm_faction = {
 
 add_influence_to_dip_faction = {
 	if = {
-		limit = { 
-			has_faction = crw_pragmatists 
-		}
+		limit = { has_faction = crw_pragmatists }
 		add_faction_influence = {
 			faction = crw_pragmatists
 			influence = $influence$
 		}				
 	}
 	if = {
-		limit = { 
-			has_faction = mercantile_chieftains 
-		}
+		limit = { has_faction = mercantile_chieftains }
 		add_faction_influence = {
 			faction = mercantile_chieftains
 			influence = $influence$
@@ -70,18 +58,14 @@ add_influence_to_dip_faction = {
 
 add_influence_to_mil_faction = {
 	if = {
-		limit = { 
-			has_faction = crw_militarists 
-		}
+		limit = { has_faction = crw_militarists }
 		add_faction_influence = {
 			faction = crw_militarists
 			influence = $influence$
 		}				
 	}
 	if = {
-		limit = { 
-			has_faction = warlike_chieftains 
-		}
+		limit = { has_faction = warlike_chieftains }
 		add_faction_influence = {
 			faction = warlike_chieftains
 			influence = $influence$
@@ -146,6 +130,8 @@ add_permanent_power_projection = {
 		type = $type$
 		amount = $amount$
 	}
+	custom_tooltip = "PERMANENT_POWER_PROJECTION_TT"
+}
 
 fifty_percent_merc_army_professionalism_cost = {
 	custom_tooltip = "fifty_percent_merc_army_professionalism_cost_tt"

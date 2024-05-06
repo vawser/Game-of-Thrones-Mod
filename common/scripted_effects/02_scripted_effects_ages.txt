@@ -1,11 +1,7 @@
 ages_effect_bonus = {
 	if = {
-		limit = {
-			has_country_modifier = am_$bonus_name$_4
-		}
-		hidden_effect = {
-			remove_country_modifier = am_$bonus_name$_4
-		}
+		limit = { has_country_modifier = am_$bonus_name$_4 }
+		hidden_effect = { remove_country_modifier = am_$bonus_name$_4 }
 		custom_tooltip = "ages_perm_effect_upgrade_tt"
 		add_country_modifier = {
 			name = am_$bonus_name$_5
@@ -13,12 +9,8 @@ ages_effect_bonus = {
 		}
 	}
 	else_if = {
-		limit = {
-			has_country_modifier = am_$bonus_name$_3
-		}
-		hidden_effect = {
-			remove_country_modifier = am_$bonus_name$_3
-		}
+		limit = { has_country_modifier = am_$bonus_name$_3 }
+		hidden_effect = { remove_country_modifier = am_$bonus_name$_3 }
 		custom_tooltip = "ages_perm_effect_upgrade_tt"
 		add_country_modifier = {
 			name = am_$bonus_name$_4
@@ -26,12 +18,8 @@ ages_effect_bonus = {
 		}
 	}
 	else_if = {
-		limit = {
-			has_country_modifier = am_$bonus_name$_2
-		}
-		hidden_effect = {
-			remove_country_modifier = am_$bonus_name$_2
-		}
+		limit = { has_country_modifier = am_$bonus_name$_2 }
+		hidden_effect = { remove_country_modifier = am_$bonus_name$_2 }
 		custom_tooltip = "ages_perm_effect_upgrade_tt"
 		add_country_modifier = {
 			name = am_$bonus_name$_3
@@ -39,12 +27,8 @@ ages_effect_bonus = {
 		}
 	}
 	else_if = {
-		limit = {
-			has_country_modifier = am_$bonus_name$_1
-		}
-		hidden_effect = {
-			remove_country_modifier = am_$bonus_name$_1
-		}
+		limit = { has_country_modifier = am_$bonus_name$_1 }
+		hidden_effect = { remove_country_modifier = am_$bonus_name$_1 }
 		custom_tooltip = "ages_perm_effect_upgrade_tt"
 		add_country_modifier = {
 			name = am_$bonus_name$_2

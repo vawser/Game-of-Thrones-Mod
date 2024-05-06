@@ -145,9 +145,7 @@ on_startup_great_projects_effect = {
 		limit = {
 			NOT = { has_dlc = "Leviathan" }
 		}
-		27 = {
-			add_province_triggered_modifier = great_sept_of_baelor
-		}
+		27 = { add_province_triggered_modifier = great_sept_of_baelor }
 	}
 }
 
@@ -313,7 +311,6 @@ on_province_owner_change_government_effect = {
 		add_province_modifier = {
 			name = cheaper_pasturelands_development
 			duration = -1
-			#hidden = yes
 		}
 	}
 	if = {
@@ -355,9 +352,7 @@ on_war_ended_usurp_overlord_effect = {
 #Country effect
 enable_annexation_penalty = {
 	custom_tooltip = enable_annexation_penalty_tt
-	hidden_effect = {
-		clr_country_flag = no_integrate_penalty
-	}
+	hidden_effect = { clr_country_flag = no_integrate_penalty }
 }
 
 #Country effect

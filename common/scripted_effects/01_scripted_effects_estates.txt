@@ -93,20 +93,14 @@ estate_action = {
 
 enable_estate_action = {
 	custom_tooltip = enable_estate_action_$estate_action$_tt
-	custom_tooltip = estate_action_potential_effect
-	tooltip = {
-		estate_action_$estate_action$ = yes
-	}
-	hidden_effect = {
-		set_country_flag = enable_estate_action_$estate_action$
-	}
+	custom_tooltip = "estate_action_potential_effect"
+	tooltip = { estate_action_$estate_action$ = yes }
+	hidden_effect = { set_country_flag = enable_estate_action_$estate_action$ }
 }
 
 disable_estate_action = {
 	custom_tooltip = disable_estate_action_$estate_action$_tt
-	hidden_effect = {
-		clr_country_flag = enable_estate_action_$estate_action$
-	}
+	hidden_effect = { clr_country_flag = enable_estate_action_$estate_action$ }
 }
 
 set_estate_action_cooldown = {

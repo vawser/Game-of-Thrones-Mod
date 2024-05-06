@@ -328,6 +328,23 @@ on_province_owner_change_government_effect = {
 	}
 }
 
+# THIS = Province, FROM = Country, ROOT = Merc Unit
+on_mercenary_recruited_effect = {
+	if = {
+		limit = {
+			FROM = { NOT = { has_government_attribute = mercs_do_not_cost_army_professionalism } }
+			NOT = { mercenary_company = merc_golden_company }
+		}
+		if = {
+			limit = { FROM = { has_country_flag = fifty_percent_merc_army_professionalism_cost } }
+			FROM = { add_army_professionalism = -0.025 }
+		}
+		else = { 
+			FROM = { add_army_professionalism = -0.05 } 
+		}
+	}
+}
+
 # Used for 'Usurp Overlord' casus belli aftermath
 on_war_ended_usurp_overlord_effect = {
 	# KEEP AT THE BOTTOM

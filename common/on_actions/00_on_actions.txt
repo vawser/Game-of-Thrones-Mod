@@ -1607,9 +1607,7 @@ on_regiment_recruited = {
 
 # Province - ROOT = Province, FROM = Country
 on_mercenary_recruited = {
-	FROM = {
-		add_army_professionalism = -0.02
-	}
+	on_mercenary_recruited_effect = yes
 }
 
 # Province - ROOT = One province in the state

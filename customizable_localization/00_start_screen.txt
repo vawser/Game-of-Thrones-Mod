@@ -96,9 +96,35 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = string_start_nights_watch
+		localisation_key = "string_start_nights_watch"
 		trigger = {
 			tag = NGT
+		}
+	}
+	text = {
+		localisation_key = "string_start_benedar_ii"
+		trigger = {
+			tag = U92
+			has_ruler = "Benedar II"
+		}
+	}
+	text = {
+		localisation_key = "string_start_clan_thenn"
+		trigger = {
+			tag = Q06
+		}
+	}
+	text = {
+		localisation_key = "string_start_clan_iceguard"
+		trigger = {
+			tag = U94
+		}
+	}
+	text = {
+		localisation_key = "string_start_wildlings"
+		trigger = {
+			is_wildling_culture = yes
+			capital_scope = { region = region_beyond_the_wall }
 		}
 	}
 	text = {

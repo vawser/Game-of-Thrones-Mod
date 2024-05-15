@@ -330,7 +330,7 @@ on_mercenary_recruited_effect = {
 	if = {
 		limit = {
 			FROM = { NOT = { has_government_attribute = mercs_do_not_cost_army_professionalism } }
-			NOT = { mercenary_company = merc_golden_company }
+			#NOT = { mercenary_company = merc_golden_company }
 		}
 		if = {
 			limit = { FROM = { has_country_flag = fifty_percent_merc_army_professionalism_cost } }

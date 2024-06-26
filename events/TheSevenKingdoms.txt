@@ -59,8 +59,8 @@ country_event = {
 # Cent. Reform
 country_event = {
 	id = sk_event.3
-	title = sk_event.3.title
-	desc = sk_event.3.desc
+	title = "sk_event.3.title"
+	desc = "sk_event.3.desc"
 	picture = COURT_eventPicture
 
 	is_triggered_only = yes
@@ -81,8 +81,8 @@ country_event = {
 # Cent. Reform
 country_event = {
 	id = sk_event.4
-	title = sk_event.4.title
-	desc = sk_event.4.desc
+	title = "sk_event.4.title"
+	desc = "sk_event.4.desc"
 	picture = COURT_eventPicture
 
 	is_triggered_only = yes
@@ -606,16 +606,16 @@ country_event = {
 # Claim the Iron Throne
 # On Actions
 country_event = {
-	id = sk_event.110
-	title = sk_event.110.title
-	desc = sk_event.110.desc
+	id = sk_event.109
+	title = "sk_event.109.title"
+	desc = "sk_event.109.desc"
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
 	is_triggered_only = yes
 	major = yes
 
 	option = {
-		name = sk_event.110.option.a
+		name = "sk_event.109.option.a"
 	
 		hidden_effect = {
 			set_country_flag = iron_throne_transition
@@ -624,7 +624,7 @@ country_event = {
 		
 		tooltip = { add_prestige = 10 }
 
-		custom_tooltip = sk9_change_tag_tt
+		custom_tooltip = "sk9_change_tag_tt"
 		hidden_effect = {
 			# Moving over ruler to The Crownlands
 			switch_tag_with_ruler = {
@@ -657,7 +657,7 @@ country_event = {
 	}
 	
 	option = {
-		name = sk_event.110.option.b
+		name = sk_event.109.option.b
 		ai_chance = {
 			factor = 100
 			
@@ -671,6 +671,22 @@ country_event = {
 		add_dip_power = 200
 		add_mil_power = 200
 		add_adm_power = 200
+	}
+}
+
+# The Kingdom Dismantled
+# On Actions
+country_event = {
+	id = sk_event.110
+	title = "sk_event.110.title"
+	desc = "sk_event.110.desc"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = "sk_event.110.option.a"
 	}
 }
 

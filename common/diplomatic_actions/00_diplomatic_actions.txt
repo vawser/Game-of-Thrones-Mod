@@ -101,15 +101,15 @@ declarewar = {
 			}
 		}
 	}
-	condition = {
-		potential = {
-			tag = NGT
-			ai = yes
-		}
-		allow = {
-			FROM = { has_reform = wildling_clan_reform }
-		}
-	}
+	# condition = {
+	# 	potential = {
+	# 		tag = NGT
+	# 		ai = yes
+	# 	}
+	# 	allow = {
+	# 		FROM = { has_reform = wildling_clan_reform }
+	# 	}
+	# }
 	condition = {
 		tooltip = CANT_FIGHT_NIGHTS_WATCH
 		potential = {
@@ -119,6 +119,18 @@ declarewar = {
 				is_part_of_hre = yes
 			}
 			else = { government_type = { dynasty = yes } }
+		}
+		allow = { always = no }
+	}
+	condition = {
+		tooltip = CANT_FIGHT_NIGHTS_WATCH
+		potential = {
+			tag = NGT
+			if = {
+				limit = { hre_size = 1 }
+				FROM = { is_part_of_hre = yes }
+			}
+			else = { FROM = { government_type = { dynasty = yes } } }
 		}
 		allow = { always = no }
 	}

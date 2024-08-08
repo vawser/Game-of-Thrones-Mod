@@ -113,24 +113,24 @@ declarewar = {
 	condition = {
 		tooltip = CANT_FIGHT_NIGHTS_WATCH
 		potential = {
-			FROM = { tag = NGT }
-			if = {
-				limit = { hre_size = 1 }
-				is_part_of_hre = yes
+			OR = {
+				AND = {
+					FROM = { tag = NGT }
+					if = {
+						limit = { hre_size = 1 }
+						is_part_of_hre = yes
+					}
+					else = { government_type = { dynasty = yes } }
+				}
+				AND = {
+					tag = NGT
+					if = {
+						limit = { hre_size = 1 }
+						FROM = { is_part_of_hre = yes }
+					}
+					else = { FROM = { government_type = { dynasty = yes } } }
+				}
 			}
-			else = { government_type = { dynasty = yes } }
-		}
-		allow = { always = no }
-	}
-	condition = {
-		tooltip = CANT_FIGHT_NIGHTS_WATCH
-		potential = {
-			tag = NGT
-			if = {
-				limit = { hre_size = 1 }
-				FROM = { is_part_of_hre = yes }
-			}
-			else = { FROM = { government_type = { dynasty = yes } } }
 		}
 		allow = { always = no }
 	}

@@ -52,3 +52,12 @@ castle_abandoned = {
 castle_not_abandoned = {
 	$province_id$ = { NOT = { has_province_modifier = abandoned_castle } }
 }
+
+# # Neutrality System
+
+has_neutrality_pact = {
+	AND = {
+		has_ruler_flag = truce_flag_with_@FROM
+		FROM = { has_ruler_flag = truce_flag_with_@ROOT }
+	}
+}

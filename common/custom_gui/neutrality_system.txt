@@ -8,26 +8,22 @@ custom_button = {
 			limit = { has_ruler_flag = truce_flag_with_@ROOT }
 			custom_tooltip = "cannot_declare_war_on_us_tt"
 		}
-		hidden_effect = {
-			if = {
-				# Cannot target self
-				limit = { NOT = { tag = FROM } }
-				if = {
-					# Remove neutrality
-					limit = {
-						has_ruler_flag = truce_flag_with_@FROM
-						FROM = { has_ruler_flag = truce_flag_with_@ROOT }
-					}
-					clr_ruler_flag = truce_flag_with_@FROM
-					FROM = { clr_ruler_flag = truce_flag_with_@ROOT }
-				}
-				# Add neutrality
-				else = {
-					set_ruler_flag = truce_flag_with_@FROM
-					FROM = { set_ruler_flag = truce_flag_with_@ROOT }
-				}
-			}
-		}
+		# DEBUG ACTION
+		# hidden_effect = {
+		# 	if = {
+		# 		# Cannot target self
+		# 		limit = { NOT = { tag = FROM } }
+		# 		if = {
+		# 			# Remove neutrality
+		# 			limit = { has_neutrality_pact = yes }
+		# 			remove_neutrality_pact = yes
+		# 		}
+		# 		# Add neutrality
+		# 		else = {
+		# 			add_neutrality_pact = yes
+		# 		}
+		# 	}
+		# }
 	}
 	tooltip = "neutrality_button_tt"
 }

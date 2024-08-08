@@ -60,3 +60,93 @@ bribe_for_support = {
 		always = no
 	}
 }
+
+establish_neutrality_pact = {
+	category = relation
+
+	alert_index = 39
+	alert_tooltip = bribe_for_support_alert_tooltip
+
+	require_acceptance = yes
+	
+	is_visible = {
+		ai = no
+	}
+	is_allowed = {
+		custom_trigger_tooltip = {
+			tooltip = "neutality_pact_active_tt"
+			NOT = { has_neutrality_pact = yes }
+		}
+	}
+	on_accept = {
+		add_neutrality_pact = yes
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = AIWEIGHT_BASE
+			export_to_variable = {
+				variable_name = ai_value
+				value = -20
+			}
+		}
+		add_entry = {
+			name = NEIGHBOR_COUNTRY_STARTS
+			limit = {
+				is_neighbor_of = FROM
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 30
+			}
+		}
+		add_entry = {
+			name = diplomatic_reputation
+			limit = { }
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 9
+			multiply_variable = {
+				which = ai_value
+				value = 9
+			}
+		}
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 0.4
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.2
+			}
+		}
+	}
+
+	ai_will_do = {
+		always = no
+	}
+}

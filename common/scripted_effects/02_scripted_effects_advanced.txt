@@ -145,3 +145,17 @@ elect_watch_commander = {
 	set_ruler = $province_id$_castlecommander
 	$province_id$ = { clr_province_flag = castlecommander_active }
 }
+
+# Effect to add a neutrality pact
+# (country scope)
+add_neutrality_pact = {
+	set_ruler_flag = truce_flag_with_@FROM
+	FROM = { set_ruler_flag = truce_flag_with_@ROOT }
+}
+
+#Effect to remove a neutrality pact
+# (country scope)
+remove_neutrality_pact = {
+	clr_ruler_flag = truce_flag_with_@FROM
+	FROM = { clr_ruler_flag = truce_flag_with_@ROOT }
+}

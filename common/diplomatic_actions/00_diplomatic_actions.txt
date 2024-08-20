@@ -152,7 +152,12 @@ declarewar = {
 	}
 	condition = {
 		tooltip = NEUTRALITY_PACT_RESTRICTION
-		potential = { has_ruler_flag = truce_flag_with_@FROM }
+		potential = {
+			OR = {
+				has_neutrality_pact = yes
+				any_subject_country = { has_neutrality_pact = yes }
+			}
+		}
 		allow = { always = no }
 	}
 	effect = {
@@ -716,6 +721,13 @@ callaction = {
 			FROM = {
 				has_disaster = blackfyre_rebellion
 			}
+		}
+		allow = { always = no }
+	}
+	condition = {
+		tooltip = NEUTRALITY_PACT_RESTRICTION
+		potential = {
+			any_war_enemy_country = { has_neutrality_pact = yes }
 		}
 		allow = { always = no }
 	}

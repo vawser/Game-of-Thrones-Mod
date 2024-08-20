@@ -1068,6 +1068,7 @@ cb_usurp_overlord = {
 cb_lordly_feud = {
 	prerequisites = {
 		westeros_government_not_king_nor_great_house = yes
+		NOT = { has_neutrality_pact = yes }
 		FROM = {
 			westeros_government_not_king_nor_great_house = yes
 			NOT = { alliance_with = ROOT }
@@ -1119,6 +1120,7 @@ cb_preemptive_strike = {
 	}
 	prerequisites = {
 		FROM = { government_type = { wildling = yes } }
+		NOT = { has_neutrality_pact = yes }
 	}
 
 	attacker_disabled_po = {
@@ -1143,6 +1145,7 @@ cb_wildling_assault = {
 	}
 	prerequisites = {
 		FROM = { NOT = { government_type = { wildling = yes } } }
+		NOT = { has_neutrality_pact = yes }
 	}
 
 	attacker_disabled_po = {
@@ -1164,6 +1167,7 @@ cb_wildling_feud = {
 	
 	prerequisites_self = {
 		government_type = { wildling = yes }
+		NOT = { has_neutrality_pact = yes }
 	}
 	prerequisites = {
 		FROM = {

@@ -73,9 +73,39 @@ establish_neutrality_pact = {
 		ai = no
 	}
 	is_allowed = {
-		custom_trigger_tooltip = {
-			tooltip = "neutality_pact_active_tt"
-			NOT = { has_neutrality_pact = yes }
+		if = {
+			limit = { has_country_flag = established_neutrality_pact }
+			custom_trigger_tooltip = {
+				tooltip = "not_created_pact_in_last_year_tt"
+				OR = {
+					NOT = { has_country_flag = established_neutrality_pact }
+					had_country_flag = {
+						flag = established_neutrality_pact
+						days = 365
+					}
+				}
+			}
+		}
+		if = { # Not have a Neutrality Pact
+			limit = { has_neutrality_pact = yes }
+			custom_trigger_tooltip = {
+				tooltip = "neutality_pact_active_tt"
+				NOT = { has_neutrality_pact = yes }
+			}
+		}
+		if = { # Is not King of SK
+			limit = { FROM = { is_emperor = yes } }
+			custom_trigger_tooltip = {
+				tooltip = "no_pacts_with_sk_king_tt"
+				NOT = { FROM = { is_emperor = yes } }
+			}
+		}
+		if = { # Is not a subject
+			limit = { FROM = { is_subject_of = ROOT } }
+			custom_trigger_tooltip = {
+				tooltip = "no_pacts_with_subjects_tt"
+				NOT = { FROM = { is_subject_of = ROOT } }
+			}
 		}
 	}
 	on_accept = {
@@ -101,16 +131,39 @@ establish_neutrality_pact = {
 			}
 		}
 		add_entry = {
+			name = historical_friend
+			limit = {
+				OR = {
+					historical_friend_with = FROM
+					FROM = { historical_friend_with = ROOT }
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 25
+			}
+		}
+		add_entry = {
+			name = attitude_threatened
+			limit = {
+				FROM = { is_threat = ROOT }
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 20
+			}
+		}
+		add_entry = {
 			name = diplomatic_reputation
 			limit = { }
 			export_to_variable = {
 				variable_name = ai_value
 				value = trigger_value:diplomatic_reputation
 			}
-			#1 rep = 9
+			#1 rep = 6
 			multiply_variable = {
 				which = ai_value
-				value = 9
+				value = 6
 			}
 		}
 		add_entry = {
@@ -125,10 +178,10 @@ establish_neutrality_pact = {
 				which = ai_value
 				value = 50
 			}
-			#1 trust = +4 ai points
+			#10 trust = +-6 ai points
 			multiply_variable = {
 				which = ai_value
-				value = 0.4
+				value = 0.6
 			}
 		}
 		add_entry = {
@@ -141,7 +194,7 @@ establish_neutrality_pact = {
 			}
 			multiply_variable = {
 				which = ai_value 
-				value = 0.2
+				value = 0.1
 			}
 		}
 	}

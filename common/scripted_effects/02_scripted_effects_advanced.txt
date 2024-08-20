@@ -149,6 +149,7 @@ elect_watch_commander = {
 # Effect to add a neutrality pact
 # (country scope)
 add_neutrality_pact = {
+	set_country_flag = established_neutrality_pact
 	set_ruler_flag = truce_flag_with_@FROM
 	FROM = { set_ruler_flag = truce_flag_with_@ROOT }
 }

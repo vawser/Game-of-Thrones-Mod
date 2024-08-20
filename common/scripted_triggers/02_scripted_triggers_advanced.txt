@@ -56,8 +56,5 @@ castle_not_abandoned = {
 # # Neutrality System
 
 has_neutrality_pact = {
-	AND = {
-		has_ruler_flag = truce_flag_with_@FROM
-		FROM = { has_ruler_flag = truce_flag_with_@ROOT }
-	}
+	has_ruler_flag = truce_flag_with_@FROM	
 }

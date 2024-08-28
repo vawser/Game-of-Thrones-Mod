@@ -11,135 +11,316 @@ religion = old_gods
 
 capital = 36
 
-# Shattered World
-100.1.1 = {
+#-------------------------------
+# Rulers
+#-------------------------------
+# Lord Karlon Slate
+103.9.2 = {
     monarch = {
-        name = "Karlon"
+        name = "Karlon I"
         dynasty = "Slate"
-        adm = 5
-        dip = 0
-        mil = 3
-        birth_date = 61.1.1
-    }
-}
-
-# War for the Stepstones
-106.1.1 = {
-    monarch = {
-        name = "Erik"
-        dynasty = "Slate"
-        adm = 0
-        dip = 0
-        mil = 2
-        birth_date = 69.1.1
-    }
-}
-
-# The Dance of Dragons
-129.1.1 = {
-    monarch = {
-        name = "Dolf"
-        dynasty = "Slate"
-        adm = 3
+        birth_date = 73.3.10
+        adm = 4
         dip = 3
         mil = 5
-        birth_date = 98.1.1
     }
-}
-
-# Conquest of Dorne
-157.1.1 = {
-    monarch = {
-        name = "Garth"
+    heir = {
+        name = "Erik"
+        monarch_name = "Erik I"
         dynasty = "Slate"
-        adm = 0
-        dip = 0
-        mil = 2
-        birth_date = 121.1.1
-    }
-}
-
-# Blackfyre Rebellion
-196.1.1 = {
-    monarch = {
-        name = "Jhiqui"
-        dynasty = "Slate"
+        birth_date = 100.2.12
+        death_date = 125.2.12
         adm = 3
         dip = 4
-        mil = 1
-        birth_date = 161.1.1
+        mil = 4
+        claim = 100
     }
 }
 
-# After Spring
-211.1.1 = {
+# Lord Erik Slate
+125.2.12 = {
     monarch = {
-        name = "Lyle"
+        name = "Erik I"
         dynasty = "Slate"
-        adm = 1
-        dip = 1
-        mil = 0
-        birth_date = 167.1.1
-    }
-}
-
-# War of the Ninepenny Kings
-260.1.1 = {
-    monarch = {
-        name = "Gillam"
-        dynasty = "Slate"
-        adm = 0
-        dip = 2
-        mil = 0
-        birth_date = 221.1.1
-    }
-}
-
-# Robert's Rebellion
-282.1.1 = {
-    monarch = {
-        name = "Perwyn"
-        dynasty = "Slate"
+        birth_date = 100.2.12
         adm = 3
-        dip = 0
-        mil = 3
-        birth_date = 256.1.1
+        dip = 4
+        mil = 4
     }
-}
-
-# The Greyjoy Rebellion
-289.1.1 = {
-    monarch = {
-        name = "Chiggen"
+    heir = {
+        name = "Dolf"
+        monarch_name = "Dolf I"
         dynasty = "Slate"
-        adm = 0
+        birth_date = 120.7.18
+        death_date = 145.7.18
+        adm = 4
         dip = 3
-        mil = 2
-        birth_date = 247.1.1
+        mil = 5
+        claim = 100
     }
 }
 
-# War of the Five Kings
-298.1.1 = {
+# Lord Dolf Slate
+145.7.18 = {
     monarch = {
-        name = "Morrec"
+        name = "Dolf I"
         dynasty = "Slate"
+        birth_date = 120.7.18
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    heir = {
+        name = "Lyle"
+        monarch_name = "Lyle I"
+        dynasty = "Slate"
+        birth_date = 135.5.4
+        death_date = 160.5.4
         adm = 5
-        dip = 5
-        mil = 1
-        birth_date = 242.1.1
+        dip = 2
+        mil = 4
+        claim = 100
     }
 }
 
-# The Night King
-304.1.1 = {
+# Lord Lyle Slate
+160.5.4 = {
     monarch = {
-        name = "Raymar"
+        name = "Lyle I"
         dynasty = "Slate"
+        birth_date = 135.5.4
+        adm = 5
+        dip = 2
+        mil = 4
+    }
+    heir = {
+        name = "Perwyn"
+        monarch_name = "Perwyn I"
+        dynasty = "Slate"
+        birth_date = 150.9.19
+        death_date = 175.9.19
+        adm = 4
+        dip = 3
+        mil = 5
+        claim = 100
+    }
+}
+
+# Lord Perwyn Slate
+175.9.19 = {
+    monarch = {
+        name = "Perwyn I"
+        dynasty = "Slate"
+        birth_date = 150.9.19
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    heir = {
+        name = "Raymar"
+        monarch_name = "Raymar I"
+        dynasty = "Slate"
+        birth_date = 165.1.10
+        death_date = 190.1.10
+        adm = 5
+        dip = 3
+        mil = 4
+        claim = 100
+    }
+}
+
+# Lord Raymar Slate
+190.1.10 = {
+    monarch = {
+        name = "Raymar I"
+        dynasty = "Slate"
+        birth_date = 165.1.10
+        adm = 5
+        dip = 3
+        mil = 4
+    }
+    heir = {
+        name = "Karlon"
+        monarch_name = "Karlon II"
+        dynasty = "Slate"
+        birth_date = 175.3.22
+        death_date = 200.3.22
         adm = 3
         dip = 4
-        mil = 2
-        birth_date = 272.1.1
+        mil = 5
+        claim = 100
     }
 }
 
+# Lord Karlon Slate
+200.3.22 = {
+    monarch = {
+        name = "Karlon II"
+        dynasty = "Slate"
+        birth_date = 175.3.22
+        adm = 3
+        dip = 4
+        mil = 5
+    }
+    heir = {
+        name = "Erik"
+        monarch_name = "Erik II"
+        dynasty = "Slate"
+        birth_date = 185.4.16
+        death_date = 210.4.16
+        adm = 4
+        dip = 3
+        mil = 5
+        claim = 100
+    }
+}
+
+# Lord Erik Slate
+210.4.16 = {
+    monarch = {
+        name = "Erik II"
+        dynasty = "Slate"
+        birth_date = 185.4.16
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    heir = {
+        name = "Dolf"
+        monarch_name = "Dolf II"
+        dynasty = "Slate"
+        birth_date = 195.8.7
+        death_date = 220.8.7
+        adm = 5
+        dip = 3
+        mil = 4
+        claim = 100
+    }
+}
+
+# Lord Dolf Slate
+220.8.7 = {
+    monarch = {
+        name = "Dolf II"
+        dynasty = "Slate"
+        birth_date = 195.8.7
+        adm = 5
+        dip = 3
+        mil = 4
+    }
+    heir = {
+        name = "Lyle"
+        monarch_name = "Lyle II"
+        dynasty = "Slate"
+        birth_date = 205.6.10
+        death_date = 230.6.10
+        adm = 4
+        dip = 3
+        mil = 5
+        claim = 100
+    }
+}
+
+# Lord Lyle Slate
+230.6.10 = {
+    monarch = {
+        name = "Lyle II"
+        dynasty = "Slate"
+        birth_date = 205.6.10
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    heir = {
+        name = "Perwyn"
+        monarch_name = "Perwyn II"
+        dynasty = "Slate"
+        birth_date = 215.9.3
+        death_date = 240.9.3
+        adm = 5
+        dip = 2
+        mil = 4
+        claim = 100
+    }
+}
+
+# Lord Perwyn Slate
+240.9.3 = {
+    monarch = {
+        name = "Perwyn II"
+        dynasty = "Slate"
+        birth_date = 215.9.3
+        adm = 5
+        dip = 2
+        mil = 4
+    }
+    heir = {
+        name = "Raymar"
+        monarch_name = "Raymar II"
+        dynasty = "Slate"
+        birth_date = 225.5.12
+        death_date = 250.5.12
+        adm = 4
+        dip = 3
+        mil = 5
+        claim = 100
+    }
+}
+
+# Lord Raymar Slate
+250.5.12 = {
+    monarch = {
+        name = "Raymar II"
+        dynasty = "Slate"
+        birth_date = 225.5.12
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    heir = {
+        name = "Karlon"
+        monarch_name = "Karlon III"
+        dynasty = "Slate"
+        birth_date = 235.7.1
+        death_date = 265.7.1
+        adm = 3
+        dip = 4
+        mil = 5
+        claim = 100
+    }
+}
+
+# Lord Karlon Slate
+265.7.1 = {
+    monarch = {
+        name = "Karlon III"
+        dynasty = "Slate"
+        birth_date = 235.7.1
+        adm = 3
+        dip = 4
+        mil = 5
+    }
+    heir = {
+        name = "Erik"
+        monarch_name = "Erik III"
+        dynasty = "Slate"
+        birth_date = 255.2.14
+        death_date = 292.3.2
+        adm = 5
+        dip = 3
+        mil = 4
+        claim = 100
+    }
+}
+
+# Lord Erik Slate
+292.3.2 = {
+    monarch = {
+        name = "Erik III"
+        dynasty = "Slate"
+        birth_date = 255.2.14
+        adm = 5
+        dip = 3
+        mil = 4
+    }
+}

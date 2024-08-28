@@ -11,135 +11,201 @@ religion = old_gods
 
 capital = 74
 
-# Shattered World
-100.1.1 = {
+#-------------------------------
+# Rulers
+#-------------------------------
+# Lord Thoros Flint
+105.8.15 = {
     monarch = {
+        name = "Thoros I"
+        dynasty = "Flint"
+        birth_date = 75.4.3
+        adm = 5
+        dip = 3
+        mil = 4
+    }
+    heir = {
         name = "Thoros"
+        monarch_name = "Thoros II"
         dynasty = "Flint"
-        adm = 5
-        dip = 1
-        mil = 0
-        birth_date = 71.1.1
-    }
-}
-
-# War for the Stepstones
-106.1.1 = {
-    monarch = {
-        name = "Aerion"
-        dynasty = "Flint"
-        adm = 0
-        dip = 5
-        mil = 5
-        birth_date = 79.1.1
-    }
-}
-
-# The Dance of Dragons
-129.1.1 = {
-    monarch = {
-        name = "Briar"
-        dynasty = "Flint"
+        birth_date = 100.2.20
+        death_date = 120.9.10
         adm = 4
         dip = 2
-        mil = 4
-        birth_date = 83.1.1
-    }
-}
-
-# Conquest of Dorne
-157.1.1 = {
-    monarch = {
-        name = "Annara"
-        dynasty = "Flint"
-        adm = 4
-        dip = 3
-        mil = 0
-        birth_date = 122.1.1
-    }
-}
-
-# Blackfyre Rebellion
-196.1.1 = {
-    monarch = {
-        name = "Utherydes"
-        dynasty = "Flint"
-        adm = 0
-        dip = 5
-        mil = 4
-        birth_date = 140.1.1
-    }
-}
-
-# After Spring
-211.1.1 = {
-    monarch = {
-        name = "Alesander"
-        dynasty = "Flint"
-        adm = 1
-        dip = 5
-        mil = 0
-        birth_date = 155.1.1
-    }
-}
-
-# War of the Ninepenny Kings
-260.1.1 = {
-    monarch = {
-        name = "Triston"
-        dynasty = "Flint"
-        adm = 4
-        dip = 3
-        mil = 1
-        birth_date = 214.1.1
-    }
-}
-
-# Robert's Rebellion
-282.1.1 = {
-    monarch = {
-        name = "Mandon"
-        dynasty = "Flint"
-        adm = 5
-        dip = 1
-        mil = 1
-        birth_date = 231.1.1
-    }
-}
-
-# The Greyjoy Rebellion
-289.1.1 = {
-    monarch = {
-        name = "Mord"
-        dynasty = "Flint"
-        adm = 3
-        dip = 2
-        mil = 5
-        birth_date = 266.1.1
-    }
-}
-
-# War of the Five Kings
-298.1.1 = {
-    monarch = {
-        name = "Lyonel"
-        dynasty = "Flint"
-        adm = 4
-        dip = 3
-        mil = 1
-        birth_date = 280.1.1
-    }
-}
-
-# The Night King
-304.1.1 = {
-    monarch = {
-        name = "Qalen"
-        dynasty = "Flint"
-        adm = 4
-        dip = 1
         mil = 3
-        birth_date = 265.1.1
+        claim = 100
     }
 }
 
+# Lord Thoros Flint
+120.9.10 = {
+    monarch = {
+        name = "Thoros II"
+        dynasty = "Flint"
+        birth_date = 100.2.20
+        adm = 4
+        dip = 2
+        mil = 3
+    }
+    heir = {
+        name = "Aerion"
+        monarch_name = "Aerion I"
+        dynasty = "Flint"
+        birth_date = 130.5.17
+        death_date = 150.8.22
+        adm = 2
+        dip = 3
+        mil = 2
+        claim = 100
+    }
+}
+
+# Lord Aerion Flint
+150.8.22 = {
+    monarch = {
+        name = "Aerion I"
+        dynasty = "Flint"
+        birth_date = 130.5.17
+        adm = 2
+        dip = 3
+        mil = 2
+    }
+    heir = {
+        name = "Briar"
+        monarch_name = "Briar I"
+        dynasty = "Flint"
+        birth_date = 160.4.12
+        death_date = 180.7.18
+        adm = 4
+        dip = 3
+        mil = 5
+        claim = 100
+    }
+}
+
+# Lord Briar Flint
+180.7.18 = {
+    monarch = {
+        name = "Briar I"
+        dynasty = "Flint"
+        birth_date = 160.4.12
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    queen = {
+        country_of_origin = I17
+        name = "Alysanne"
+        dynasty = "Woolfield"
+        birth_date = 163.6.1
+        death_date = 214.6.30
+        adm = 3
+        dip = 4
+        mil = 2
+        female = yes
+    }
+    heir = {
+        name = "Utherydes"
+        monarch_name = "Utherydes I"
+        dynasty = "Flint"
+        birth_date = 190.5.10
+        death_date = 214.6.30
+        adm = 3
+        dip = 4
+        mil = 2
+        claim = 100
+    }
+}
+
+# Lord Utherydes Flint
+214.6.30 = {
+    monarch = {
+        name = "Utherydes I"
+        dynasty = "Flint"
+        birth_date = 190.5.10
+        adm = 3
+        dip = 4
+        mil = 2
+    }
+    queen = {
+        country_of_origin = I21
+        name = "Myranda"
+        dynasty = "Bolton"
+        birth_date = 192.7.1
+        death_date = 249.5.14
+        adm = 4
+        dip = 3
+        mil = 2
+        female = yes
+    }
+    heir = {
+        name = "Utherydes"
+        monarch_name = "Utherydes II"
+        dynasty = "Flint"
+        birth_date = 210.3.20
+        death_date = 249.5.14
+        adm = 4
+        dip = 3
+        mil = 5
+        claim = 100
+    }
+}
+
+# Lord Utherydes Flint
+249.5.14 = {
+    monarch = {
+        name = "Utherydes II"
+        dynasty = "Flint"
+        birth_date = 210.3.20
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    heir = {
+        name = "Briar"
+        monarch_name = "Briar II"
+        dynasty = "Flint"
+        birth_date = 230.7.11
+        death_date = 269.6.25
+        adm = 3
+        dip = 4
+        mil = 2
+        claim = 100
+    }
+}
+
+# Lord Briar Flint
+269.6.25 = {
+    monarch = {
+        name = "Briar II"
+        dynasty = "Flint"
+        birth_date = 230.7.11
+        adm = 3
+        dip = 4
+        mil = 2
+    }
+    heir = {
+        name = "Rickard"
+        monarch_name = "Rickard I"
+        dynasty = "Flint"
+        birth_date = 250.9.3
+        death_date = 275.9.3
+        adm = 5
+        dip = 3
+        mil = 4
+        claim = 100
+    }
+}
+
+# Lord Rickard Flint
+275.9.3 = {
+    monarch = {
+        name = "Rickard I"
+        dynasty = "Flint"
+        birth_date = 250.9.3
+        adm = 5
+        dip = 3
+        mil = 4
+        claim = 100
+    }
+}

@@ -13,135 +13,166 @@ capital = 35
 historical_friend = A01
 historical_friend = I28
 
-# Shattered World
-100.1.1 = {
+#-------------------------------
+# Rulers
+#-------------------------------
+# Lord Galbart Glover
+105.8.21 = {
     monarch = {
-        name = "Ulwyck"
+        name = "Galbart I"
         dynasty = "Glover"
-        adm = 2
-        dip = 1
-        mil = 1
-        birth_date = 43.1.1
-    }
-}
-
-# War for the Stepstones
-106.1.1 = {
-    monarch = {
-        name = "Whalen"
-        dynasty = "Glover"
-        adm = 0
-        dip = 3
-        mil = 1
-        birth_date = 74.1.1
-    }
-}
-
-# The Dance of Dragons
-129.1.1 = {
-    monarch = {
-        name = "Zhoe"
-        dynasty = "Glover"
+        birth_date = 75.4.11
         adm = 4
         dip = 3
-        mil = 3
-        birth_date = 85.1.1
+        mil = 5
     }
-}
-
-# Conquest of Dorne
-157.1.1 = {
-    monarch = {
-        name = "Garin"
+    heir = {
+        name = "Robett"
+        monarch_name = "Robett I"
         dynasty = "Glover"
-        adm = 1
-        dip = 2
-        mil = 0
-        birth_date = 108.1.1
-    }
-}
-
-# Blackfyre Rebellion
-196.1.1 = {
-    monarch = {
-        name = "Enderhar"
-        dynasty = "Glover"
+        birth_date = 100.6.18
+        death_date = 130.6.18
         adm = 3
         dip = 4
-        mil = 1
-        birth_date = 154.1.1
+        mil = 4
+        claim = 100
     }
 }
 
-# After Spring
-211.1.1 = {
+# Lord Robett Glover
+130.6.18 = {
     monarch = {
-        name = "Merrett"
+        name = "Robett I"
         dynasty = "Glover"
+        birth_date = 100.6.18
+        adm = 3
+        dip = 4
+        mil = 4
+    }
+    heir = {
+        name = "Ulwyck"
+        monarch_name = "Ulwyck I"
+        dynasty = "Glover"
+        birth_date = 125.4.21
+        death_date = 157.5.3
         adm = 4
-        dip = 5
-        mil = 2
-        birth_date = 179.1.1
-    }
-}
-
-# War of the Ninepenny Kings
-260.1.1 = {
-    monarch = {
-        name = "Dilly"
-        dynasty = "Glover"
-        adm = 0
-        dip = 1
-        mil = 0
-        birth_date = 203.1.1
-    }
-}
-
-# Robert's Rebellion
-282.1.1 = {
-    monarch = {
-        name = "Rolder"
-        dynasty = "Glover"
-        adm = 2
         dip = 3
-        mil = 0
-        birth_date = 259.1.1
-    }
-}
-
-# The Greyjoy Rebellion
-289.1.1 = {
-    monarch = {
-        name = "Maron"
-        dynasty = "Glover"
-        adm = 2
-        dip = 5
-        mil = 0
-        birth_date = 231.1.1
-    }
-}
-
-# War of the Five Kings
-298.1.1 = {
-    monarch = {
-        name = "Praed"
-        dynasty = "Glover"
-        adm = 5
-        dip = 5
-        mil = 2
-        birth_date = 272.1.1
-    }
-}
-
-# The Night King
-304.1.1 = {
-    monarch = {
-        name = "Harlen"
-        dynasty = "Glover"
-        adm = 4
-        dip = 2
         mil = 5
-        birth_date = 285.1.1
+        claim = 100
     }
 }
 
+# Lord Ulwyck Glover
+157.5.3 = {
+    monarch = {
+        name = "Ulwyck I"
+        dynasty = "Glover"
+        birth_date = 125.4.21
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    heir = {
+        name = "Ulwyck"
+        monarch_name = "Ulwyck II"
+        dynasty = "Glover"
+        birth_date = 160.8.12
+        death_date = 191.3.10
+        adm = 3
+        dip = 4
+        mil = 5
+        claim = 100
+    }
+}
+
+# Lord Ulwyck Glover
+191.3.10 = {
+    monarch = {
+        name = "Ulwyck II"
+        dynasty = "Glover"
+        birth_date = 160.8.12
+        adm = 3
+        dip = 4
+        mil = 5
+    }
+    heir = {
+        name = "Enderhar"
+        monarch_name = "Enderhar I"
+        dynasty = "Glover"
+        birth_date = 200.7.18
+        death_date = 234.2.1
+        adm = 5
+        dip = 3
+        mil = 4
+        claim = 100
+    }
+}
+
+# Lord Enderhar Glover
+234.2.1 = {
+    monarch = {
+        name = "Enderhar I"
+        dynasty = "Glover"
+        birth_date = 200.7.18
+        adm = 5
+        dip = 3
+        mil = 4
+    }
+    heir = {
+        name = "Galbart"
+        monarch_name = "Galbart II"
+        dynasty = "Glover"
+        birth_date = 245.3.5
+        death_date = 276.10.2
+        adm = 4
+        dip = 5
+        mil = 3
+        claim = 100
+    }
+}
+
+# Lord Galbart Glover
+276.10.2 = {
+    monarch = {
+        name = "Galbart II"
+        dynasty = "Glover"
+        birth_date = 245.3.5
+        adm = 4
+        dip = 5
+        mil = 3
+    }
+    heir = {
+        name = "Robett"
+        monarch_name = "Robett II"
+        dynasty = "Glover"
+        birth_date = 251.4.19
+        death_date = 299.9.26
+        adm = 5
+        dip = 3
+        mil = 4
+        claim = 100
+    }
+}
+
+# Lord Robett Glover
+299.9.26 = {
+    monarch = {
+        name = "Robett II"
+        dynasty = "Glover"
+        birth_date = 251.4.19
+        adm = 5
+        dip = 3
+        mil = 4
+    }
+    heir = {
+        name = "Gawen"
+        monarch_name = "Gawen I"
+        dynasty = "Glover"
+        birth_date = 270.8.14
+        death_date = 305.8.14
+        adm = 4
+        dip = 5
+        mil = 3
+        claim = 100
+    }
+}

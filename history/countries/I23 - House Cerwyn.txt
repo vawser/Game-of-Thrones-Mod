@@ -11,135 +11,200 @@ religion = old_gods
 
 capital = 49
 
-# Shattered World
-100.1.1 = {
+#-------------------------------
+# Rulers
+#-------------------------------
+# Lord Jon Cerwyn
+103.7.15 = {
     monarch = {
-        name = "Perros"
+        name = "Jon I"
         dynasty = "Cerwyn"
-        adm = 1
-        dip = 1
-        mil = 1
-        birth_date = 52.1.1
-    }
-}
-
-# War for the Stepstones
-106.1.1 = {
-    monarch = {
-        name = "Erik"
-        dynasty = "Cerwyn"
-        adm = 5
-        dip = 5
-        mil = 3
-        birth_date = 71.1.1
-    }
-}
-
-# The Dance of Dragons
-129.1.1 = {
-    monarch = {
-        name = "Galazza"
-        dynasty = "Cerwyn"
-        adm = 2
-        dip = 2
-        mil = 4
-        birth_date = 102.1.1
-    }
-}
-
-# Conquest of Dorne
-157.1.1 = {
-    monarch = {
-        name = "Joth"
-        dynasty = "Cerwyn"
-        adm = 5
-        dip = 2
-        mil = 0
-        birth_date = 132.1.1
-    }
-}
-
-# Blackfyre Rebellion
-196.1.1 = {
-    monarch = {
-        name = "Meryn"
-        dynasty = "Cerwyn"
-        adm = 0
-        dip = 0
-        mil = 3
-        birth_date = 138.1.1
-    }
-}
-
-# After Spring
-211.1.1 = {
-    monarch = {
-        name = "Jammos"
-        dynasty = "Cerwyn"
-        adm = 1
-        dip = 2
-        mil = 5
-        birth_date = 188.1.1
-    }
-}
-
-# War of the Ninepenny Kings
-260.1.1 = {
-    monarch = {
-        name = "Helman"
-        dynasty = "Cerwyn"
-        adm = 5
+        birth_date = 73.3.12
+        adm = 4
         dip = 3
-        mil = 0
-        birth_date = 231.1.1
+        mil = 5
+    }
+    queen = {
+        country_of_origin = I21
+        name = "Maege"
+        dynasty = "Bolton"
+        birth_date = 75.6.8
+        death_date = 140.5.3
+        adm = 3
+        dip = 4
+        mil = 2
+        female = yes
+    }
+    heir = {
+        name = "Edric"
+        monarch_name = "Edric I"
+        dynasty = "Cerwyn"
+        birth_date = 95.11.10
+        death_date = 140.9.22
+        adm = 3
+        dip = 4
+        mil = 4
+        claim = 100
     }
 }
 
-# Robert's Rebellion
-282.1.1 = {
+# Lord Edric Cerwyn
+140.9.22 = {
     monarch = {
-        name = "Tregar"
+        name = "Edric I"
         dynasty = "Cerwyn"
-        adm = 2
+        birth_date = 95.11.10
+        adm = 3
+        dip = 4
+        mil = 4
+    }
+    heir = {
+        name = "Damon"
+        monarch_name = "Damon I"
+        dynasty = "Cerwyn"
+        birth_date = 118.4.5
+        death_date = 160.11.15
+        adm = 4
+        dip = 3
+        mil = 5
+        claim = 100
+    }
+}
+
+# Lord Damon Cerwyn
+160.11.15 = {
+    monarch = {
+        name = "Damon I"
+        dynasty = "Cerwyn"
+        birth_date = 118.4.5
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    heir = {
+        name = "Roderick"
+        monarch_name = "Roderick I"
+        dynasty = "Cerwyn"
+        birth_date = 140.7.23
+        death_date = 190.6.18
+        adm = 5
+        dip = 2
+        mil = 3
+        claim = 100
+    }
+}
+
+# Lord Roderick Cerwyn
+190.6.18 = {
+    monarch = {
+        name = "Roderick I"
+        dynasty = "Cerwyn"
+        birth_date = 140.7.23
+        adm = 5
+        dip = 2
+        mil = 3
+    }
+    heir = {
+        name = "Harrold"
+        monarch_name = "Harrold I"
+        dynasty = "Cerwyn"
+        birth_date = 160.12.3
+        death_date = 210.9.25
+        adm = 3
+        dip = 4
+        mil = 4
+        claim = 100
+    }
+}
+
+# Lord Harrold Cerwyn
+210.9.25 = {
+    monarch = {
+        name = "Harrold I"
+        dynasty = "Cerwyn"
+        birth_date = 160.12.3
+        adm = 3
+        dip = 4
+        mil = 4
+    }
+    heir = {
+        name = "Brandon"
+        monarch_name = "Brandon I"
+        dynasty = "Cerwyn"
+        birth_date = 185.2.16
+        death_date = 230.8.10
+        adm = 4
+        dip = 3
+        mil = 5
+        claim = 100
+    }
+}
+
+# Lord Brandon Cerwyn
+230.8.10 = {
+    monarch = {
+        name = "Brandon I"
+        dynasty = "Cerwyn"
+        birth_date = 185.2.16
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    heir = {
+        name = "Eddard"
+        monarch_name = "Eddard I"
+        dynasty = "Cerwyn"
+        birth_date = 210.6.30
+        death_date = 255.5.18
+        adm = 3
+        dip = 4
+        mil = 3
+        claim = 100
+    }
+}
+
+# Lord Eddard Cerwyn
+255.5.18 = {
+    monarch = {
+        name = "Eddard I"
+        dynasty = "Cerwyn"
+        birth_date = 210.6.30
+        adm = 3
+        dip = 4
+        mil = 3
+    }
+    heir = {
+        name = "Wylis"
+        monarch_name = "Wylis I"
+        dynasty = "Cerwyn"
+        birth_date = 235.8.15
+        death_date = 280.9.20
+        adm = 5
         dip = 3
         mil = 2
-        birth_date = 258.1.1
+        claim = 100
     }
 }
 
-# The Greyjoy Rebellion
-289.1.1 = {
+# Lord Wylis Cerwyn
+280.9.20 = {
     monarch = {
-        name = "Garizon"
+        name = "Wylis I"
         dynasty = "Cerwyn"
-        adm = 4
-        dip = 0
-        mil = 3
-        birth_date = 250.1.1
-    }
-}
-
-# War of the Five Kings
-298.1.1 = {
-    monarch = {
-        name = "Elbert"
-        dynasty = "Cerwyn"
+        birth_date = 235.8.15
         adm = 5
-        dip = 1
-        mil = 0
-        birth_date = 240.1.1
+        dip = 3
+        mil = 2
     }
-}
-
-# The Night King
-304.1.1 = {
-    monarch = {
-        name = "Jarl"
+    heir = {
+        name = "Rodrik"
+        monarch_name = "Rodrik II"
         dynasty = "Cerwyn"
-        adm = 1
-        dip = 0
-        mil = 5
-        birth_date = 246.1.1
+        birth_date = 260.4.10
+        death_date = 300.2.1
+        adm = 4
+        dip = 2
+        mil = 3
+        claim = 100
     }
 }
-

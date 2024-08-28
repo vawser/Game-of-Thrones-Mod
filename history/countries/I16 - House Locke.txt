@@ -11,135 +11,216 @@ religion = old_gods
 
 capital = 65
 
-# Shattered World
-100.1.1 = {
+#-------------------------------
+# Rulers
+#-------------------------------
+# Lord Lorren Locke
+105.3.20 = {
     monarch = {
-        name = "Preston"
+        name = "Lorren I"
         dynasty = "Locke"
-        adm = 1
-        dip = 0
-        mil = 5
-        birth_date = 69.1.1
-    }
-}
-
-# War for the Stepstones
-106.1.1 = {
-    monarch = {
-        name = "Hother"
-        dynasty = "Locke"
-        adm = 3
+        birth_date = 75.6.15
+        adm = 4
         dip = 3
-        mil = 1
-        birth_date = 61.1.1
+        mil = 5
     }
-}
-
-# The Dance of Dragons
-129.1.1 = {
-    monarch = {
-        name = "Erren"
+    heir = {
+        name = "Preston"
+        monarch_name = "Preston I"
         dynasty = "Locke"
-        adm = 2
-        dip = 0
-        mil = 2
-        birth_date = 109.1.1
-    }
-}
-
-# Conquest of Dorne
-157.1.1 = {
-    monarch = {
-        name = "Allar"
-        dynasty = "Locke"
-        adm = 0
-        dip = 2
-        mil = 1
-        birth_date = 133.1.1
-    }
-}
-
-# Blackfyre Rebellion
-196.1.1 = {
-    monarch = {
-        name = "Raynald"
-        dynasty = "Locke"
-        adm = 1
+        birth_date = 100.9.10
+        death_date = 129.4.1
+        adm = 3
         dip = 4
-        mil = 2
-        birth_date = 151.1.1
+        mil = 4
+        claim = 100
     }
 }
 
-# After Spring
-211.1.1 = {
+# Lord Preston Locke
+129.4.1 = {
     monarch = {
-        name = "Bryon"
+        name = "Preston I"
         dynasty = "Locke"
-        adm = 5
+        birth_date = 100.9.10
+        adm = 3
+        dip = 4
+        mil = 4
+    }
+    heir = {
+        name = "Lorren"
+        monarch_name = "Lorren II"
+        dynasty = "Locke"
+        birth_date = 120.5.17
+        death_date = 145.5.17
+        adm = 4
+        dip = 3
+        mil = 5
+        claim = 100
+    }
+}
+
+# Lord Lorren Locke
+145.5.17 = {
+    monarch = {
+        name = "Lorren II"
+        dynasty = "Locke"
+        birth_date = 120.5.17
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    heir = {
+        name = "Lorren"
+        monarch_name = "Lorren III"
+        dynasty = "Locke"
+        birth_date = 125.8.3
+        death_date = 151.7.12
+        adm = 3
+        dip = 4
+        mil = 3
+        claim = 100
+    }
+}
+
+# Heir Erren Locke
+151.7.12 = {
+    heir = {
+        name = "Erren"
+        monarch_name = "Erren I"
+        dynasty = "Locke"
+        birth_date = 139.7.12
+        death_date = 161.7.8
+        adm = 4
         dip = 3
         mil = 4
-        birth_date = 187.1.1
+        claim = 100
     }
 }
 
-# War of the Ninepenny Kings
-260.1.1 = {
+# Lord Erren Locke
+161.7.8 = {
     monarch = {
-        name = "Petyr"
+        name = "Erren I"
         dynasty = "Locke"
+        birth_date = 151.7.12
         adm = 4
-        dip = 5
-        mil = 5
-        birth_date = 224.1.1
-    }
-}
-
-# Robert's Rebellion
-282.1.1 = {
-    monarch = {
-        name = "Murenmure"
-        dynasty = "Locke"
-        adm = 2
         dip = 3
-        mil = 3
-        birth_date = 240.1.1
+        mil = 4
     }
-}
-
-# The Greyjoy Rebellion
-289.1.1 = {
-    monarch = {
-        name = "Rawney"
+    heir = {
+        name = "Hother"
+        monarch_name = "Hother I"
         dynasty = "Locke"
+        birth_date = 170.4.10
+        death_date = 195.4.10
         adm = 3
         dip = 5
-        mil = 5
-        birth_date = 240.1.1
-    }
-}
-
-# War of the Five Kings
-298.1.1 = {
-    monarch = {
-        name = "Annara"
-        dynasty = "Locke"
-        adm = 3
-        dip = 1
         mil = 2
-        birth_date = 241.1.1
+        claim = 100
     }
 }
 
-# The Night King
-304.1.1 = {
+# Lord Hother Locke
+195.4.10 = {
     monarch = {
-        name = "Dudley"
+        name = "Hother I"
         dynasty = "Locke"
+        birth_date = 170.4.10
+        adm = 3
+        dip = 5
+        mil = 2
+    }
+    heir = {
+        name = "Raynald"
+        monarch_name = "Raynald I"
+        dynasty = "Locke"
+        birth_date = 180.6.25
+        death_date = 205.6.25
+        adm = 4
+        dip = 3
+        mil = 4
+        claim = 100
+    }
+}
+
+# Lord Raynald Locke
+205.6.25 = {
+    monarch = {
+        name = "Raynald I"
+        dynasty = "Locke"
+        birth_date = 180.6.25
+        adm = 4
+        dip = 3
+        mil = 4
+    }
+    heir = {
+        name = "Jared"
+        monarch_name = "Jared I"
+        dynasty = "Locke"
+        birth_date = 210.8.12
+        death_date = 239.8.12
+        adm = 5
+        dip = 3
+        mil = 2
+        claim = 100
+    }
+}
+
+# Lord Jared Locke
+239.8.12 = {
+    monarch = {
+        name = "Jared I"
+        dynasty = "Locke"
+        birth_date = 210.8.12
+        adm = 5
+        dip = 3
+        mil = 2
+    }
+    heir = {
+        name = "Raynald"
+        monarch_name = "Raynald II"
+        dynasty = "Locke"
+        birth_date = 230.3.7
+        death_date = 259.3.7
+        adm = 4
+        dip = 3
+        mil = 5
+        claim = 100
+    }
+}
+
+# Lord Raynald Locke
+259.3.7 = {
+    monarch = {
+        name = "Raynald II"
+        dynasty = "Locke"
+        birth_date = 230.3.7
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    heir = {
+        name = "Allar"
+        monarch_name = "Allar I"
+        dynasty = "Locke"
+        birth_date = 250.6.12
+        death_date = 293.5.1
         adm = 3
         dip = 4
-        mil = 3
-        birth_date = 254.1.1
+        mil = 4
+        claim = 100
     }
 }
 
+# Lord Allar Locke
+293.5.1 = {
+    monarch = {
+        name = "Allar I"
+        dynasty = "Locke"
+        birth_date = 250.6.12
+        adm = 3
+        dip = 4
+        mil = 4
+    }
+}

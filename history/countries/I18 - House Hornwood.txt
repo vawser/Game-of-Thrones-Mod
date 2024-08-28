@@ -11,135 +11,222 @@ religion = old_gods
 
 capital = 60
 
-# Shattered World
-100.1.1 = {
+#-------------------------------
+# Rulers
+#-------------------------------
+# Lord Merlon Hornwood
+103.2.5 = {
     monarch = {
-        name = "Merlon"
+        name = "Merlon I"
         dynasty = "Hornwood"
+        birth_date = 73.7.18
+        adm = 4
+        dip = 3
+        mil = 5
+    }
+    queen = {
+        country_of_origin = I12
+        name = "Ellyn"
+        dynasty = "Tallhart"
+        birth_date = 76.5.10
+        death_date = 140.4.12
         adm = 3
-        dip = 5
-        mil = 0
-        birth_date = 73.1.1
-    }
-}
-
-# War for the Stepstones
-106.1.1 = {
-    monarch = {
-        name = "Terro"
-        dynasty = "Hornwood"
-        adm = 2
-        dip = 1
-        mil = 0
-        birth_date = 47.1.1
-    }
-}
-
-# The Dance of Dragons
-129.1.1 = {
-    monarch = {
-        name = "Arryk"
-        dynasty = "Hornwood"
-        adm = 0
-        dip = 5
-        mil = 4
-        birth_date = 109.1.1
-    }
-}
-
-# Conquest of Dorne
-157.1.1 = {
-    monarch = {
-        name = "Borroq"
-        dynasty = "Hornwood"
-        adm = 5
-        dip = 5
-        mil = 0
-        birth_date = 99.1.1
-    }
-}
-
-# Blackfyre Rebellion
-196.1.1 = {
-    monarch = {
-        name = "Whalen"
-        dynasty = "Hornwood"
-        adm = 2
         dip = 4
         mil = 2
-        birth_date = 149.1.1
+        female = yes
     }
-}
-
-# After Spring
-211.1.1 = {
-    monarch = {
-        name = "Tumco"
+    heir = {
+        name = "Gareth"
+        monarch_name = "Gareth I"
         dynasty = "Hornwood"
-        adm = 4
-        dip = 4
-        mil = 0
-        birth_date = 176.1.1
-    }
-}
-
-# War of the Ninepenny Kings
-260.1.1 = {
-    monarch = {
-        name = "Lyn"
-        dynasty = "Hornwood"
-        adm = 1
+        birth_date = 95.11.3
+        death_date = 140.4.12
+        adm = 3
         dip = 4
         mil = 4
-        birth_date = 218.1.1
+        claim = 100
     }
 }
 
-# Robert's Rebellion
-282.1.1 = {
+# Lord Gareth Hornwood
+140.4.12 = {
     monarch = {
-        name = "Fell"
+        name = "Gareth I"
         dynasty = "Hornwood"
-        adm = 5
-        dip = 0
-        mil = 1
-        birth_date = 237.1.1
-    }
-}
-
-# The Greyjoy Rebellion
-289.1.1 = {
-    monarch = {
-        name = "Eglantine"
-        dynasty = "Hornwood"
-        adm = 4
-        dip = 2
-        mil = 5
-        birth_date = 270.1.1
-    }
-}
-
-# War of the Five Kings
-298.1.1 = {
-    monarch = {
-        name = "Bennet"
-        dynasty = "Hornwood"
-        adm = 5
-        dip = 1
-        mil = 3
-        birth_date = 245.1.1
-    }
-}
-
-# The Night King
-304.1.1 = {
-    monarch = {
-        name = "Larys"
-        dynasty = "Hornwood"
-        adm = 1
+        birth_date = 95.11.3
+        adm = 3
         dip = 4
+        mil = 4
+    }
+    heir = {
+        name = "Jorah"
+        monarch_name = "Jorah I"
+        dynasty = "Hornwood"
+        birth_date = 124.2.9
+        death_date = 151.2.5
+        adm = 3
+        dip = 1
         mil = 0
-        birth_date = 277.1.1
+        claim = 100
     }
 }
 
+# Lord Jorah Hornwood
+151.2.5 = {
+    monarch = {
+        name = "Jorah I"
+        dynasty = "Hornwood"
+        birth_date = 124.2.9
+        adm = 3
+        dip = 1
+        mil = 0
+    }
+    queen = {
+        country_of_origin = I21
+        name = "Wynafryd"
+        dynasty = "Bolton"
+        birth_date = 126.8.14
+        death_date = 175.8.25
+        adm = 4
+        dip = 3
+        mil = 1
+        female = yes
+    }
+    heir = {
+        name = "Benjen"
+        monarch_name = "Benjen I"
+        dynasty = "Hornwood"
+        birth_date = 150.2.1
+        death_date = 175.8.25
+        adm = 4
+        dip = 3
+        mil = 4
+        claim = 100
+    }
+}
+
+# Lord Harlon Hornwood
+175.8.25 = {
+    monarch = {
+        name = "Harlon I"
+        dynasty = "Hornwood"
+        birth_date = 162.2.4
+        adm = 4
+        dip = 5
+        mil = 3
+    }
+    queen = {
+        country_of_origin = I15
+        name = "Alannys"
+        dynasty = "Manderly"
+        birth_date = 165.4.10
+        death_date = 220.3.15
+        adm = 3
+        dip = 4
+        mil = 1
+        female = yes
+    }
+    heir = {
+        name = "Torrhen"
+        monarch_name = "Torrhen I"
+        dynasty = "Hornwood"
+        birth_date = 180.6.12
+        death_date = 220.3.15
+        adm = 3
+        dip = 4
+        mil = 2
+        claim = 100
+    }
+}
+
+# Lord Torrhen Hornwood
+220.3.15 = {
+    monarch = {
+        name = "Torrhen I"
+        dynasty = "Hornwood"
+        birth_date = 180.6.12
+        adm = 3
+        dip = 4
+        mil = 2
+    }
+    heir = {
+        name = "Jorah"
+        monarch_name = "Jorah II"
+        dynasty = "Hornwood"
+        birth_date = 202.9.23
+        death_date = 245.7.30
+        adm = 4
+        dip = 3
+        mil = 3
+        claim = 100
+    }
+}
+
+# Lord Jorah Hornwood
+245.7.30 = {
+    monarch = {
+        name = "Jorah II"
+        dynasty = "Hornwood"
+        birth_date = 202.9.23
+        adm = 4
+        dip = 3
+        mil = 3
+    }
+    heir = {
+        name = "Harrold"
+        monarch_name = "Harrold I"
+        dynasty = "Hornwood"
+        birth_date = 225.5.17
+        death_date = 265.6.12
+        adm = 3
+        dip = 4
+        mil = 4
+        claim = 100
+    }
+}
+
+# Lord Harrold Hornwood
+265.6.12 = {
+    monarch = {
+        name = "Harrold I"
+        dynasty = "Hornwood"
+        birth_date = 225.5.17
+        adm = 3
+        dip = 4
+        mil = 4
+    }
+    heir = {
+        name = "Merlon"
+        monarch_name = "Merlon II"
+        dynasty = "Hornwood"
+        birth_date = 245.3.1
+        death_date = 295.8.30
+        adm = 4
+        dip = 3
+        mil = 2
+        claim = 100
+    }
+}
+
+# Lord Merlon Hornwood
+295.8.30 = {
+    monarch = {
+        name = "Merlon II"
+        dynasty = "Hornwood"
+        birth_date = 245.3.1
+        adm = 4
+        dip = 3
+        mil = 2
+    }
+    heir = {
+        name = "Rodrik"
+        monarch_name = "Rodrik I"
+        dynasty = "Hornwood"
+        birth_date = 270.4.19
+        death_date = 320.6.10
+        adm = 3
+        dip = 5
+        mil = 4
+        claim = 100
+    }
+}

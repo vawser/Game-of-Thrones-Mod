@@ -38,6 +38,26 @@ kingdom_reform = {
 		enables_monarchy_ideagroup = yes
 	}
 }
+dynasty_reform = {
+	icon = "small_castle"
+
+	potential = {
+	}
+	trigger = {
+	}
+
+	allow_normal_conversion = yes
+	legacy_equivalent = kingdom_legacy
+
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	maintain_dynasty = yes
+
+	modifiers = {
+		governing_capacity = -0.25
+		legitimacy = 0.5
+	}
+}
 noble_house_reform = {
 	icon = "small_castle"
 	

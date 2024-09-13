@@ -999,7 +999,7 @@ cb_push_back_colonizers = {
 cb_seize_the_iron_throne = {
 	valid_for_subject = no
 	
-	 prerequisites = {
+	prerequisites = {
 		NOT = { is_subject_of = FROM }
 		OR = {
 			has_reform = great_house_reform
@@ -1034,6 +1034,36 @@ cb_seize_the_iron_throne = {
 	}
 	
 	war_goal = take_capital_take_iron_throne
+}
+
+cb_leave_the_kingdom = {
+	valid_for_subject = no
+
+	prerequisites = {
+		is_part_of_hre = yes
+		is_subject = no
+		has_reform = great_house_reform
+		# ai = no
+		FROM = { 
+			is_emperor = yes
+		}
+	}
+
+	attacker_disabled_po = {
+		po_demand_provinces
+		po_revoke_cores
+		po_release_vassals
+		po_release_annexed
+		po_return_cores
+		po_become_vassal
+		po_subjugate_vassal
+		po_become_tributary_state
+		po_subjugate_tributary_state
+		po_form_personal_union
+		po_transfer_vassals
+	}
+	
+	war_goal = take_capital_leave_the_kingdom
 }
 
 cb_usurp_overlord = {

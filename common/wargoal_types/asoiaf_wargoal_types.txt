@@ -100,6 +100,31 @@ take_capital_take_iron_throne = {
 	war_name = "SEIZE_THE_IRON_THRONE_WAR_NAME"
 }
 
+take_capital_leave_the_kingdom = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 1
+
+		peace_options = {
+			po_leave_the_kingdom
+		}
+	}
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1.5
+		peace_cost_factor = 2.0
+
+		peace_options = {
+			po_concede_defeat
+		}
+	}
+	
+	war_name = "LEAVE_THE_KINGDOM_WAR_NAME"
+}
+
 take_capital_usurp_overlord = {
 	type = take_capital
 	

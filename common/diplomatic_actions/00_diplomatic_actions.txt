@@ -163,6 +163,14 @@ declarewar = {
 	effect = {
 		# Used for 'Usurp Overlord' casus belli aftermath
 		assign_temp_overlord_flag_effect = yes
+		
+		if = {
+			limit = { is_in_war = { casus_belli = cb_seize_the_iron_throne } }
+			add_country_modifier = {
+				name = "got_pretender_king"
+				duration = -1
+			}
+		}
 	}
 }
 
@@ -661,7 +669,12 @@ break_alliance = {
 }
 
 requestpeace = {
-	
+	effect = {
+		if = {
+			limit = { has_country_modifier = "got_pretender_king" }
+			remove_country_modifier = "got_pretender_king"
+		}
+	}
 }
 
 support_independence_action = {

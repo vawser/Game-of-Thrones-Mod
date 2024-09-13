@@ -1,0 +1,54 @@
+name = "War for Stannis' Claim"
+
+war_goal = {
+	type = take_capital_take_iron_throne
+	casus_belli = cb_seize_the_iron_throne
+	tag = CRW
+}
+
+298.5.17 = {
+	# House Baratheon (Stannis), Velaryon, Florent
+	add_attacker = A39
+	add_attacker = A43
+	add_attacker = F66
+	
+	# House Baratheon, Lannister, Crakehall, Swyft, Brax, Lefford, Parren
+	add_defender = CRW
+	add_defender = A06
+
+	add_defender = G01
+	add_defender = G05
+	add_defender = G21
+	add_defender = G29
+	add_defender = G09
+}
+
+299.4.12 = {
+	# House Baratheon (Stormlands), Tyrell
+	add_attacker = A07
+	
+	# Morrigen, Penrose, Caron, Swann, Tarth, Wylde
+	add_attacker = B20
+	add_attacker = B23
+	add_attacker = B36
+	add_attacker = B05
+	add_attacker = B27
+	add_attacker = B32
+}
+
+305.1.1 = {	
+	# House Baratheon (Stannis), Velaryon, Florent
+	rem_attacker = A39
+	rem_attacker = A43
+	rem_attacker = F66
+	
+	# House Baratheon, Lannister, Crakehall, Swyft, Brax, Lefford, Parren
+	rem_defender = CRW
+	rem_defender = A06
+
+	rem_defender = G01
+	rem_defender = G05
+	rem_defender = G21
+	rem_defender = G29
+	rem_defender = G09
+}

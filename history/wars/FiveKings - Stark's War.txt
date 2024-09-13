@@ -1,0 +1,61 @@
+name = "The Stark's War for the North"
+
+war_goal = {
+	type = take_capital_leave_the_kingdom
+	casus_belli = cb_leave_the_kingdom
+	tag = CRW
+}
+
+298.5.17 = {
+	#House Stark, House Tully
+	add_attacker = A01
+    add_attacker = A03
+
+	# House Reed, Umber, Karstark, Glover, Bolton, Manderly
+	add_attacker = I01
+	add_attacker = I36
+	add_attacker = I25
+	add_attacker = I33
+	add_attacker = I15
+
+	# Switchers (Bolton and Frey)
+	add_attacker = I21
+	add_attacker = M15
+	
+	# House Baratheon, Lannister, Crakehall, Swyft, Brax, Lefford, Parren
+	add_defender = CRW
+	add_defender = A06
+
+	add_defender = G01
+	add_defender = G05
+	add_defender = G21
+	add_defender = G29
+	add_defender = G09
+}
+
+299.11.24 = {
+	#House Stark, House Tully
+    rem_attacker = A01
+    rem_attacker = A03
+
+	# House Reed, Umber, Karstark, Glover, Bolton, Manderly
+	rem_attacker = I01
+	rem_attacker = I36
+	rem_attacker = I25
+	rem_attacker = I33
+	rem_attacker = I15
+
+	# Switchers
+	rem_attacker = I21
+	rem_attacker = M15
+
+	# House Baratheon, Lannister, Frey
+	rem_defender = CRW
+	rem_defender = A06
+
+	rem_defender = G05
+	rem_defender = G21
+	rem_defender = G29
+	rem_defender = G09
+}
+

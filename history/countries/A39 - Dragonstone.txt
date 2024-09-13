@@ -95,11 +95,22 @@ historical_friend = CRW
 	}
 }
 
-298.1.29 = {
+298.5.17 = {
+	government = dynasty
+	add_government_reform = noble_house_reform
+	
 	monarch = {
-		adm = 0
-		dip = 0
-		mil = 0
-		regent = yes
+		name = "Stannis"
+		dynasty = "Baratheon"
+		adm = 5
+		dip = 2
+		mil = 4
+		birth_date = 264.7.3
+		death_date = 302.1.1
+	}
+
+	add_country_modifier = {
+		name = "got_pretender_king"
+		duration = -1
 	}
 }

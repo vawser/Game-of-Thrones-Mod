@@ -220,7 +220,7 @@ historical_rival = I21
     
 	heir = {
 		name = "Robb"
-		monarch_name = "Robb 'the Young Wolf' I"
+		monarch_name = "Robb I"
 		dynasty = "Stark"
 		birth_date = 267.1.1
 		death_date = 298.5.17
@@ -234,7 +234,7 @@ historical_rival = I21
 # Lord Robb Stark of Winterfell (fixed)
 298.5.17 = {
 	monarch = {
-		name = "Robb 'the Young Wolf' I"
+		name = "Robb I"
 		dynasty = "Stark"
 		adm = 3
 		dip = 4
@@ -251,6 +251,11 @@ historical_rival = I21
 		adm = 4
 		dip = 5
 		mil = 2
+	}
+
+	add_country_modifier = {
+		name = "got_pretender_king"
+		duration = -1
 	}
 }
 

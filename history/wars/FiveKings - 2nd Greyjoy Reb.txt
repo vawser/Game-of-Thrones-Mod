@@ -1,0 +1,39 @@
+name = "2nd Greyjoy Rebellion"
+
+war_goal = {
+	type = take_capital_leave_the_kingdom
+	casus_belli = cb_leave_the_kingdom
+	tag = CRW
+}
+
+298.5.17 = {
+	# House Greyjoy and the Iron Islands
+	add_attacker = M09
+	add_attacker = M12
+	add_attacker = M07
+	add_attacker = M06
+	add_attacker = M03
+	
+	# House Baratheon, Lannister, Crakehall, Swyft, Brax, Lefford, Parren
+	add_defender = CRW
+	add_defender = A06
+
+	add_defender = G01
+	add_defender = G05
+	add_defender = G21
+	add_defender = G29
+	add_defender = G09
+}
+
+305.1.1 = {
+    rem_attacker = M09
+	rem_attacker = M12
+	rem_attacker = M07
+	rem_attacker = M06
+	rem_attacker = M03
+	rem_attacker = M03
+	
+	rem_defender = A07
+	rem_defender = A06
+	rem_defender = F20
+ }

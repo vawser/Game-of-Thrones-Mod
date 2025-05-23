@@ -20,7 +20,14 @@ province_event = {
 		has_no_criminal_activity = { type = bandits }
 	}
 
-	mean_time_to_happen = { months = 1 }
+	mean_time_to_happen = {
+		months = 1
+
+		modifier = {
+			factor = 0.50
+			owner = { has_country_modifier = "pardoned_criminals" }
+		}
+	}
 	is_mtth_scaled_to_size = 1
 
 	immediate = {

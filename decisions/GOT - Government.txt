@@ -39,6 +39,115 @@ country_decisions = {
 			factor = 1
 		}
 	}
+	organize_a_feast = {
+		potential = {
+			is_at_war = no
+		}
+		allow = {
+			years_of_income = 0.21
+			NOT = { has_country_modifier = "hosted_feast" }
+		}
+		effect = {
+			add_years_of_income = -0.21
+			add_country_modifier = {
+				name = "hosted_feast"
+				duration = 3650
+			}
+			every_neighbor_country = {
+				limit = {
+					NOT = { is_rival = ROOT }
+					NOT = { is_enemy = ROOT }
+					NOT = { historical_rival_with = ROOT }
+					has_opinion = {
+						who = ROOT
+						value = 10
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = hosted_feast
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 0.21 }
+			}
+		}
+	}
+	levy_new_tax = {
+		potential = {
+			
+		}
+		allow = {
+			NOT = { has_country_modifier = "five_percent_tax" }
+		}
+		effect = {
+			add_years_of_income = 0.63
+			add_country_modifier = {
+				name = "five_percent_tax"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	contract_essosi_mercenaries = {
+		potential = {
+			# is_at_war = yes
+			capital_scope = { continent = westeros }
+		}
+		allow = {
+			NOT = { has_country_modifier = "contracted_mercs" }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "contracted_mercs"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	recruit_criminal_soldiers = {
+		potential = {
+			# is_at_war = yes
+		}
+		allow = {
+			NOT = { has_country_modifier = "criminal_soldiery" }
+		}
+		effect = {
+			add_yearly_manpower = 0.13
+			add_country_modifier = {
+				name = "criminal_soldiery"
+				duration = 3650
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	pardon_criminals = {
+		potential = {
+			# is_at_war = no
+		}
+		allow = {
+			NOT = { has_country_modifier = "pardoned_criminals" }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "pardoned_criminals"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	cede_brannburh_province = {
 		potential = {
 			owns = 20

@@ -23,6 +23,7 @@ country_decisions = {
 	}
 	name_blackfyre_heir = {
 		major = yes
+		color = { 204 0 0 }
 		potential = {
 			current_age = age_of_fire
 			dynasty = "Targaryen"
@@ -60,6 +61,7 @@ country_decisions = {
 		}
 	}
 	visit_summerhall = {
+		color = { 204 0 0 }
 		potential = {
 			OR = {
 				tag = CRW
@@ -73,6 +75,12 @@ country_decisions = {
 		}
 		allow = {
 			controls = 306
+			is_at_war = no
+			custom_trigger_tooltip = {
+				tooltip = "NO_REB_ACTIVITY"
+				NOT = { num_of_rebel_armies = 1 }
+				NOT = { num_of_rebel_controlled_provinces = 1 }
+			}
 			custom_trigger_tooltip = {
 				tooltip = "NOT_VISITED_SUMMERHALL_TT"
 				OR = {
@@ -88,7 +96,10 @@ country_decisions = {
 			add_legitimacy = 2
 			add_years_of_income = -0.07
 			hidden_effect = {
-				clr_ruler_flag = visited_castle_summerhall
+				if = {
+					limit = { has_ruler_flag = visited_castle_summerhall }
+					clr_ruler_flag = visited_castle_summerhall
+				}
 				set_ruler_flag = visited_castle_summerhall
 			}
 		}

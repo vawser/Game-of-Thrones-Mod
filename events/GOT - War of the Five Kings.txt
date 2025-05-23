@@ -11,7 +11,9 @@ country_event = {
     
 	trigger = {
         tag = CRW
-        start_date = 298.5.17
+        has_ruler = "Robert I"
+        is_year = 298
+        is_month = 4
         NOT = { has_global_flag = war_of_the_five_kings }
         NOT = { has_global_flag = shattered_world }
     }
@@ -32,19 +34,19 @@ country_event = {
         A01 = {
             declare_war_with_cb = {
                 who = CRW
-                casus_belli = cb_independence_war
+                casus_belli = cb_leave_the_kingdom
             }
         }
         M09 = {
             declare_war_with_cb = {
-                who = A01
-                casus_belli = cb_lordly_feud
+                who = CRW
+                casus_belli = cb_leave_the_kingdom
             }
         }
         A39 = {
             declare_war_with_cb = {
                 who = CRW
-                casus_belli = cb_independence_war
+                casus_belli = cb_seize_the_iron_throne
             }
         }
 	}

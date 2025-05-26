@@ -112,5 +112,5 @@ tags={
 }
 picture="thumbnail.png"
 version="1.0"
-supported_version="1.36.*"
+supported_version="1.37.*"
 remote_file_id="276456014"

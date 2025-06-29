@@ -17,16 +17,36 @@ custom_button = {
 				NOT = { has_province_modifier = anticrime_campaign }
 				has_any_crime_lvl = yes
 			}
+			hidden_effect = {
+				export_to_variable = {
+					which = counter
+					value = development
+				}
+			}
 			if = {
 				limit = { units_in_province = owner }
-				FROM = { add_years_of_income = -0.15 }
+				hidden_effect = {
+					multiply_variable = {
+						which = counter
+						value = 0.5
+					}
+				}
 				custom_tooltip = "discounted_by_troops_tt"
 			}
-			else = { FROM = { add_years_of_income = -0.65 } }
 			decrease_crime_lvl_medium = yes
 			add_province_modifier = {
 				name = "anticrime_campaign"
 				duration = 1825
+			}
+			hidden_effect = {
+				while = {
+					limit = { check_variable = { which = counter value = 0 } }
+					FROM = { add_treasury = -10 }
+					change_variable = {
+						which = counter
+						value = -1
+					}
+				}
 			}
 		}
 	}

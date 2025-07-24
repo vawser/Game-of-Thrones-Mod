@@ -11,46 +11,49 @@ province_event = {
 	picture = VILLAGE_RAIDED_eventPicture
 
 	#is_triggered_only = yes
-	
+	# From master
+	# trigger = {
+	# 	OR = {
+	# 		current_crime_lvl = { amount = 10 }
+	# 		unrest = 6
+	# 	}
+	# 	has_no_criminal_activity = { type = bandits }
+	# }
+
+	# mean_time_to_happen = {
+	# 	months = 1
+
+	# 	modifier = {
+	# 		factor = 0.50
+	# 		owner = { has_country_modifier = "pardoned_criminals" }
+	# 	}
+	# }
+	# is_mtth_scaled_to_size = 1
+
+	# From bug-fixes
 	trigger = {
-		OR = {
-			current_crime_lvl = { amount = 10 }
-			unrest = 6
-		}
 		has_no_criminal_activity = { type = bandits }
+		OR = {
+			unrest = 6
+			current_crime_lvl = { amount = 10 }
+		}
+		NOT = { units_in_province = owner }
 	}
 
 	mean_time_to_happen = {
-		months = 1
-
+		months = 3
+		# Neighboring province with banditry will spread
 		modifier = {
-			factor = 0.50
-			owner = { has_country_modifier = "pardoned_criminals" }
+			factor = 0.1
+			any_neighbor_province = { has_criminal_activity = { type = bandits } }
+		}
+		# More likely if no provinces have banditry
+		modifier = {
+			factor = 0.1
+			owner = { any_owned_province = { NOT = { has_criminal_activity = { type = bandits } } } }
 		}
 	}
 	is_mtth_scaled_to_size = 1
-
-	# From bug-fixes
-	#trigger = {
-	#	has_no_criminal_activity = { type = bandits }
-	#	unrest = 6
-	#	NOT = { units_in_province = owner }
-	#}
-
-	#mean_time_to_happen = {
-	#	months = 3
-	#	# Neighboring province with banditry will spread
-	#	modifier = {
-	#		factor = 0.1
-	#		any_neighbor_province = { has_criminal_activity = { type = bandits } }
-	#	}
-	#	# More likely if no provinces have banditry
-	#	modifier = {
-	#		factor = 0.1
-	#		owner = { any_owned_province = { NOT = { has_criminal_activity = { type = bandits } } } }
-	#	}
-	#}
-	#is_mtth_scaled_to_size = 1
 
 	immediate = {
 		hidden_effect = {

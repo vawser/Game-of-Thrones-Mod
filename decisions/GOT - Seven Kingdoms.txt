@@ -67,4 +67,22 @@ country_decisions = {
 			custom_tooltip = "vote_bribe_tt"
 		}
 	}
+	allow_leaving_the_kingdom = {
+		major = no
+		potential = {
+			is_part_of_hre = yes
+			NOT = { has_global_flag = enable_leaving_kingdom }
+		}
+		allow = {
+			ai = no
+			custom_trigger_tooltip = {
+				tooltip = "Has enabled leaving the kingdom."
+				NOT = { has_global_flag = enable_leaving_kingdom }
+			}
+		}
+		effect = {
+			custom_tooltip = "You will now be able to leave the Seven Kingdoms willingly."
+			set_global_flag = enable_leaving_kingdom
+		}
+	}
 }

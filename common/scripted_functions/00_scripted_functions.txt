@@ -214,4 +214,13 @@ can_join_hre = {
 }
 
 can_leave_hre = {
+	condition = {
+		potential = {
+			is_hre_member = yes
+		}
+		allow = {
+			has_global_flag = enable_leaving_kingdom
+		}
+		tooltip = "You cannot leave the Seven Kingdoms willingly."
+	}
 }

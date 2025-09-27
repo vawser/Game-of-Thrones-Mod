@@ -150,19 +150,24 @@ country_decisions = {
 	}
 	cede_brannburh_province = {
 		potential = {
+			tag = NGT
 			owns = 20
+			NOT = { has_country_flag = sold_brannburh }
 		}
 		allow = {
 			tag = NGT
-			20 = {
-				any_neighbor_province = { owned_by = I36 }
-			}
+			20 = { any_neighbor_province = { owned_by = I36 } }
 		}
 		effect = {
 			add_years_of_income = 2.33
-			20 = { cede_province = I36 }
+			20 = {
+				cede_province = I36
+				add_core = I36
+				hidden_effect = { remove_province_triggered_modifier = the_gift_provinces_abandoned }
+			}
 			remove_core = 20
 			add_prestige = -10
+			set_country_flag = sold_brannburh
 		}
 		ai_will_do = {
 			factor = 0
@@ -170,19 +175,24 @@ country_decisions = {
 	}
 	cede_vuaridge_province = {
 		potential = {
+			tag = NGT
 			owns = 19
+			NOT = { has_country_flag = sold_vuaridge }
 		}
 		allow = {
 			tag = NGT
-			19 = {
-				any_neighbor_province = { owned_by = I37 }
-			}
+			19 = { any_neighbor_province = { owned_by = I37 } }
 		}
 		effect = {
 			add_years_of_income = 1.66
-			19 = { cede_province = I37 }
+			19 = {
+				cede_province = I37
+				add_core = I37
+				hidden_effect = { remove_province_triggered_modifier = the_gift_provinces_abandoned }
+			}
 			remove_core = 19
 			add_prestige = -10
+			set_country_flag = sold_vuaridge
 		}
 		ai_will_do = {
 			factor = 0

@@ -1108,6 +1108,20 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetCrimeCost
+	random = no
+
+	text = {
+		localisation_key = "string_crime_cost"
+		trigger = { NOT = { units_in_province = owner } }
+	}
+	text = {
+		localisation_key = "string_crime_cost_halved"
+		trigger = { units_in_province = owner }
+	}
+}
+
+defined_text = {
 	name = GetCrimeActivity
 	random = no
 

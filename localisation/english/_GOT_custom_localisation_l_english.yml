@@ -79,8 +79,10 @@
  string_eastwatch_inactive: "§Y[18.GetCapitalName]§! has no Commander."
 
  # Criminal Activity Tooltips
- string_showcrime: "§R[Root.crime_lvl.GetValue]§!"
- string_nocrime: "§GNone§!"
+ string_showcrime: "§R[Root.crime_lvl.GetValue]%§!"
+ string_nocrime: "§G0%§!"
+ string_crime_cost: "Cost to reduce crime: §R[Root.crime_cost.GetValue]¤§!"
+ string_crime_cost_halved: "Cost to reduce crime: §R[Root.halved_crime_cost.GetValue]¤§!\n§YHalved due to presence of troops.§!"
  string_criminal_activity: "--------------\nActive Crime in §Y[Root.GetName]§!:\n[Root.GetIfHasBandits][Root.GetIfHasStreetGangs][Root.GetIfHasSyndicates]"
  string_has_bandits: "- §lBanditry§!\n"
  string_has_street_gangs: "- §RStreet Gangs§!\n"

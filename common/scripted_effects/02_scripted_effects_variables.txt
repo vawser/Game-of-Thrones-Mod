@@ -163,34 +163,46 @@ remove_treasury = {
 	hidden_effect = {
 		$giver$ = {
 			while = {
-				limit = {
-					check_variable = {
-						which = $variable$
-						value = 1
-					}
-				}
+				limit = { check_variable = { which = $variable$ value = 1 } }
 				add_treasury = -1
 				subtract_variable = {
 					which = $variable$
 					value = 1
 				}
 			}
-			multiply_variable = {
-				which = $variable$
-				value = 100
-			}
+			multiply_variable = { which = $variable$ value = 100 }
 			while = {
-				limit = {
-					check_variable = {
-						which = $variable$
-						value = 1
-					}
-				}
+				limit = { check_variable = { which = $variable$ value = 1 } }
 				add_treasury = -0.01
 				subtract_variable = {
 					which = $variable$
 					value = 1
 				}
+			}
+		}
+	}
+	[[custom_tooltip]
+		custom_tooltip = $custom_tooltip$
+	]
+}
+
+remove_treasury_prov = {
+	hidden_effect = {
+		while = {
+			limit = { check_variable = { which = $variable$ value = 1 } }
+			FROM = { add_treasury = -1 }
+			subtract_variable = {
+				which = $variable$
+				value = 1
+			}
+		}
+		multiply_variable = { which = $variable$ value = 100 }
+		while = {
+			limit = { check_variable = { which = $variable$ value = 1 } }
+			FROM = { add_treasury = -0.01 }
+			subtract_variable = {
+				which = $variable$
+				value = 1
 			}
 		}
 	}
@@ -222,19 +234,19 @@ clear_criminal_activity = {
 
 # Increase by 25
 increase_crime_lvl_huge = {
-	change_crime_lvl = { amount = 25 }
+	increase_crime_lvl = { amount = 25 }
 }
 # Increase by 10
 increase_crime_lvl_large = {
-	change_crime_lvl = { amount = 10 }
+	increase_crime_lvl = { amount = 10 }
 }
 # Increase by 5
 increase_crime_lvl_medium = {
-	change_crime_lvl = { amount = 5 }
+	increase_crime_lvl = { amount = 5 }
 }
 # Increase by 1
 increase_crime_lvl_small = {
-	change_crime_lvl = { amount = 1 }
+	increase_crime_lvl = { amount = 1 }
 }
 # Decrease by 25
 decrease_crime_lvl_huge = {
@@ -249,24 +261,33 @@ decrease_crime_lvl_medium = {
 	reduce_crime_lvl = { amount = 5 }
 }
 # Decrease by 1
-decrease_crime_lvl_huge = {
+decrease_crime_lvl_small = {
 	reduce_crime_lvl = { amount = 1 }
 }
 
-# Custom effect to change crime lvl
-change_crime_lvl = {
-	change_variable = {
-		which = crime_lvl
-		value = $amount$
+# Strictly use when increasing crime lvl
+# to prevent exceeding max (100)
+increase_crime_lvl = {
+	tooltip = { change_variable = { which = crime_lvl value = $amount$ } }
+	for = {
+		amount = $amount$
+		effect = "
+			if = {
+				limit = { NOT = { has_max_crime_lvl = yes } }
+				change_variable = {
+					which = crime_lvl
+					value = 1
+				}
+			}
+		"
 	}
+	set_anti_crime_cost = yes
 }
 
 # Strictly use when reducing crime lvl
 # to prevent negative values
 reduce_crime_lvl = {
-	tooltip = {
-		change_crime_lvl = { amount = -$amount$ }
-	}
+	tooltip = { change_variable = { which = crime_lvl value = -$amount$ } }
 	for = {
 		amount = $amount$
 		effect = "
@@ -278,5 +299,35 @@ reduce_crime_lvl = {
 				}
 			}
 		"
+	}
+	set_anti_crime_cost = yes
+}
+
+# Will set the cost to reduce crime lvl
+set_anti_crime_cost = {
+	hidden_effect = {
+		# Get base development value
+		export_to_variable = {
+			which = crime_cost
+			value = development
+		}
+		# Cost scales with crime lvl
+		multiply_variable = {
+			which = crime_cost
+			which = crime_lvl
+		}
+		multiply_variable = {
+			which = crime_cost
+			value = 0.25
+		}
+		# Get value for halved cost
+		set_variable = {
+			which = halved_crime_cost
+			which = crime_cost
+		}
+		multiply_variable = {
+			which = halved_crime_cost
+			value = 0.5
+		}
 	}
 }

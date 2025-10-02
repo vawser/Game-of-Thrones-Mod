@@ -347,37 +347,6 @@ country_event = { #Happens when Azure and Orange emperor fight each other for th
 	}
 }
 
-country_event = { #Simulate the Jogos Nhai war, Yiti slow with attrition, Jogos fast and cause devastation
-	id = yiti.14
-	title = "yiti.14.t"
-	desc = "yiti.14.d"
-	picture = BIG_BOOK_eventPicture #TBD
-	is_triggered_only = yes
-
-	trigger = {
-		NOT = { has_country_modifier = loe_jogos_war_yiti }
-	}
-
-	immediate = {
-		hidden_effect = {
-			add_country_modifier = {
-				name = loe_jogos_war_yiti
-				duration = -1
-			}
-		}
-	}
-
-	option = {
-		name = "yiti.14.t1"
-		tooltip = {
-			add_country_modifier = {
-				name = loe_jogos_war_yiti
-				duration = -1
-			}
-		}
-	}
-}
-
 country_event = { #Be able to start the search of the golden skull via decision
 	id = yiti.15
 	title = "yiti.15.t"
@@ -943,72 +912,6 @@ country_event = { #Stop giving legitimacy after the intended war is over
 	option = {
 		name = "loe_hidden"
 		clr_country_flag = loe_legitimacy_battle
-	}
-}
-
-country_event = { #Give respective flags to Jogos and Yiti #TBD Merge 12 and 14 together?
-	id = yiti.12
-	title = "loe_hidden"
-	desc = "loe_hidden"
-	picture = BIG_BOOK_eventPicture
-	hidden = yes
-	mean_time_to_happen = { days = 1 }
-
-	trigger = {
-		capital_scope = {
-			region = region_dry_bones
-		}
-		is_nomadic_government = yes
-		any_war_enemy_country = {
-			tag = R68
-		}
-		NOT = { has_country_flag = loe_jogos_nhai_war }
-	}
-
-	immediate = {
-		set_country_flag = loe_jogos_nhai_war
-		R68 = { set_country_flag = loe_jogos_nhai_war }
-	}
-
-	option = {
-		country_event = {
-			id = jogosnhai.1
-		}
-		R68 = {
-			country_event = {
-				id = yiti.14
-			}
-		}
-	}
-}
-
-country_event = { #Removes respective modifiers after jogos-yiti war is over
-	id = yiti.13
-	title = "loe_hidden"
-	desc = "loe_hidden"
-	picture = BIG_BOOK_eventPicture
-	hidden = yes
-	mean_time_to_happen = { months = 1 }
-
-	trigger = {
-		has_country_flag = loe_jogos_nhai_war
-		is_at_war = no
-	}
-	option = {
-		clr_country_flag = loe_jogos_nhai_war
-		
-		if = {
-			limit = {
-				has_country_modifier = loe_jogos_war_jogos
-			}
-			remove_country_modifier = loe_jogos_war_jogos
-		}
-		if = {
-			limit = {
-				has_country_modifier = loe_jogos_war_yiti
-			}
-			remove_country_modifier = loe_jogos_war_yiti
-		}
 	}
 }
 

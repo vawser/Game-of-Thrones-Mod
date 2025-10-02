@@ -15,8 +15,6 @@ loe_prathama = {
 
 	custom_attributes = {
 		enables_nomadic_ideagroup = yes
-		loe_is_jogos_leader = yes
-		loe_can_prepare_raid = yes
 	}
 }
 
@@ -36,7 +34,6 @@ loe_sthaurin = {
 	custom_attributes = {
 		enables_nomadic_ideagroup = yes
 		loe_is_jogos_follower = yes
-		loe_can_prepare_raid = yes
 	}
 }
 
@@ -164,22 +161,4 @@ loe_adopt_the_woodlands = {
 	}
 
 	#TBD Copy the become monarchy, but add a modifier that maintains some of the bonuses (with if x_reform then reward:) but with slower reform progress
-}
-
-
-loe_perpetual_warfare = {
-    icon = "rioting_burning_2"
-	potential = {
-		culture_group = culture_jogos_nhai
-	}
-
-	modifiers = {
-		war_exhaustion = -0.02
-		war_taxes_cost_modifier = -1
-	}
-
-	custom_attributes = {
-		loe_raid_dev = yes #TBD Gain dev on occupation, reducing province's dev, works with slave raids
-		loe_simultaneous_wars = yes #TBD Gain bonuses while being at war with different countries
-	}
 }

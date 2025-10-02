@@ -663,8 +663,6 @@ cb_tribal_feud = {
             has_reform = khalasar_reform
             has_reform = jhattar_reform
 			is_nomad = yes
-			NOT = { has_reform = loe_prathama }
-			NOT = { has_reform = loe_sthaurin }
 		}
 		FROM = {
 			OR = {
@@ -1228,14 +1226,4 @@ cb_pirates = {
 	months = 120
 
 	war_goal = blockade_ports
-}
-
-loe_jogos_nhai_raid = {
-	is_triggered_only = yes
-
-	prerequisites = {
-		culture = jogos_nhai
-	}
-
-	war_goal = loe_jogos_nhai_raid_goal
 }

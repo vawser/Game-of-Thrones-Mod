@@ -1535,34 +1535,34 @@ norvos_city_reform = {
 #------------------------------------------------------------
 # Tribal
 #------------------------------------------------------------
-tribe_reform = {
-	icon = "castle"
-	
-	potential = {
-		NOT = { has_reform = wildling_clan_reform }
-		NOT = { has_reform = new_wildling_clan_reform }
-		NOT = { has_reform = kingdom_beyond_the_wall_reform }
-		NOT = { has_reform = lhazar_clan_reform }
-		NOT = { has_reform = ibben_clan_reform }
-		NOT = { has_reform = omber_clan_reform }
-		NOT = { has_reform = faros_clan_reform }
-		NOT = { has_reform = naath_clan_reform }
-		NOT = { has_reform = summer_islander_clan_reform }
-	}
-
+tribal_despotism = {
+	icon = "tribal_council"
 	allow_normal_conversion = yes
-	legacy_equivalent = tribe_legacy
-	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
-	
 	modifiers = {
-		stability_cost_modifier = -0.25
-		max_absolutism = -30
+		core_creation = -0.1
 	}
-	
 	custom_attributes = {
 		enables_tribal_ideagroup = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
+tribal_kingdom = {
+	icon = "indian_crown"
+	allow_normal_conversion = no
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		vassal_income = 0.2
+	}
+	custom_attributes = {
+		enables_tribal_ideagroup = yes
+	}
+	ai = {
+		factor = 1
 	}
 }
 stateless_society = {

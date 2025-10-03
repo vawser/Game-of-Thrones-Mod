@@ -10,28 +10,8 @@ province_event = {
 	desc = "banditry.1.desc"
 	picture = VILLAGE_RAIDED_eventPicture
 
-	#is_triggered_only = yes
-	# From master
-	# trigger = {
-	# 	OR = {
-	# 		current_crime_lvl = { amount = 10 }
-	# 		unrest = 6
-	# 	}
-	# 	has_no_criminal_activity = { type = bandits }
-	# }
-
-	# mean_time_to_happen = {
-	# 	months = 1
-
-	# 	modifier = {
-	# 		factor = 0.50
-	# 		owner = { has_country_modifier = "pardoned_criminals" }
-	# 	}
-	# }
-	# is_mtth_scaled_to_size = 1
-
-	# From bug-fixes
 	trigger = {
+		owner = { is_ai = no }
 		has_no_criminal_activity = { type = bandits }
 		OR = {
 			unrest = 6

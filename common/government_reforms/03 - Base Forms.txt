@@ -1991,12 +1991,27 @@ ascension_cult_reform = {
 #------------------------------------------------------------
 # Mythical
 #------------------------------------------------------------
+
+the_night_king_reform = {
+	icon = "the_night_king"
+	
+	allow_normal_conversion = yes
+	legacy_equivalent = the_night_king_legacy
+	
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	maintain_dynasty = yes
+
+	modifiers = {
+		reform_progress_growth = 0.5
+		can_not_declare_war = yes
+		development_cost = -0.125
+	}
+}
+
 army_of_the_dead_reform = {
 	icon = "army_of_the_dead"
-	
-	potential = {
-		has_reform = army_of_the_dead_reform
-	}
 	
 	allow_normal_conversion = yes
 	legacy_equivalent = army_of_the_dead_legacy
@@ -2004,8 +2019,6 @@ army_of_the_dead_reform = {
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
 	
-	heir = no
-	rulers_can_be_generals = yes
 	maintain_dynasty = yes
 	
 	free_concentrate_development = yes
@@ -2013,6 +2026,5 @@ army_of_the_dead_reform = {
 	modifiers = {
 		discipline = 0.05
 		shock_damage = 0.125
-		capped_by_forcelimit = yes
 	}
 }

@@ -546,55 +546,6 @@ crackclaw_ideas = {
 }
 
 #---------------------------------------
-# Wildling
-#---------------------------------------
-wildling_ideas = {
-	start = {
-		global_regiment_cost = -0.15
-		reinforce_cost_modifier = -0.25
-	}
-	
-	bonus = {
-		land_forcelimit_modifier = 0.25 
-	}
-	
-	trigger = {
-		technology_group = wildling
-		NOT = { tag = Z01 }
-	}
-	free = yes
-	
-	# The Wall
-	wildling_1 = {
-		land_attrition = -0.2
-	}
-	# Freefolk Spirit
-	wildling_2 = {
-		prestige_decay = -0.01
-	}
-	# Hatred of Crows
-	wildling_3 = {
-		recover_army_morale_speed = 0.2
-	}
-	# Spearwives
-	wildling_4 = {
-		global_manpower_modifier = 0.2
-	}
-	# Raids on the North
-	wildling_5 = {
-		loot_amount = 0.33
-	}
-	# Employ of Giants
-	wildling_6 = {
-		infantry_shock = 1
-	}
-	# Traditions of the First Men
-	wildling_7 = {
-		army_tradition = 1
-	}
-}
-
-#---------------------------------------
 # Freefolk
 #---------------------------------------
 freefolk_ideas = {
@@ -688,6 +639,60 @@ white_walker_ideas = {
 	# The Night King
 	white_walker_7 = {
 		all_power_cost = -0.25
+	}
+}
+
+#---------------------------------------
+# Wildling
+#---------------------------------------
+wildling_ideas = {
+	start = {
+		manpower_recovery_speed = 0.15
+		hostile_attrition = 1
+	}
+	
+	bonus = {
+		land_forcelimit_modifier = 0.25 
+	}
+	
+	trigger = {
+		technology_group = wildling
+		NOT = { tag = Z01 }
+	}
+	free = yes
+
+	# "The First Men"
+	wildling_id1 = {
+		reform_progress_growth = 0.1
+		stability_cost_modifier = -0.15
+	}
+	# "Raiders Beyond the Wall"
+	wildling_id2 = {
+		loot_amount = 0.33
+		morale_damage = 0.05
+	}
+	# "Masters of Winter"
+	wildling_id3 = {
+		land_attrition = -0.20
+	}
+	# "We Do Not Kneel"
+	wildling_id4 = {
+		global_unrest = -1
+		leader_land_shock = 2
+	}
+	# "Absolute Freedom"
+	wildling_id5 = {
+		all_power_cost = -0.05
+		prestige = 0.10
+	}
+	# "Veteran Fighters"
+	wildling_id6 = {
+		army_tradition = 0.5
+	}
+	# "Sworn to Kill"
+	wildling_id7 = {
+		shock_damage_received = -0.125
+		discipline = 0.05
 	}
 }
 

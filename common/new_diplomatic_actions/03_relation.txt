@@ -113,13 +113,15 @@ establish_neutrality_pact = {
 	}
 
 	ai_acceptance = {
+		# Base AI weight -30
 		add_entry = {
 			name = AIWEIGHT_BASE
 			export_to_variable = {
 				variable_name = ai_value
-				value = -20
+				value = -30
 			}
 		}
+		# If the countries are neighbors, add 10 points
 		add_entry = {
 			name = NEIGHBOR_COUNTRY_STARTS
 			limit = {
@@ -127,9 +129,10 @@ establish_neutrality_pact = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
-				value = 30
+				value = 10
 			}
 		}
+		# If the countries have a historical friendship, add 25 points
 		add_entry = {
 			name = historical_friend
 			limit = {
@@ -143,6 +146,7 @@ establish_neutrality_pact = {
 				value = 25
 			}
 		}
+		# If one country is threatened by the other, add 20 points
 		add_entry = {
 			name = attitude_threatened
 			limit = {
@@ -150,9 +154,10 @@ establish_neutrality_pact = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
-				value = 20
+				value = 25
 			}
 		}
+		# If the countries have a good diplomatic reputation, add 6 points per rep
 		add_entry = {
 			name = diplomatic_reputation
 			limit = { }
@@ -166,6 +171,7 @@ establish_neutrality_pact = {
 				value = 6
 			}
 		}
+		# Add/reduce based on trust, baseline 50 trust and +/-6 points per 10 trust
 		add_entry = {
 			name = TRUST
 			export_to_variable = {
@@ -184,6 +190,7 @@ establish_neutrality_pact = {
 				value = 0.6
 			}
 		}
+		# Add 0.1 points per opinion
 		add_entry = {
 			name = OPINION
 			export_to_variable = {

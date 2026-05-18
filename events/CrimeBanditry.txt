@@ -11,7 +11,8 @@ province_event = {
 	picture = VILLAGE_RAIDED_eventPicture
 
 	trigger = {
-		owner = { is_ai = no }
+		owner = { is_ai = no } # Disabled for AI
+		owner = { NOT = { tag = WIT } } # Disabled for White Walkers
 		has_no_criminal_activity = { type = bandits }
 		OR = {
 			unrest = 6

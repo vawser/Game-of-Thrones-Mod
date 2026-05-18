@@ -17,9 +17,14 @@ defined_text = {
 	name = StartScreenTitle
 	random = no
 	
-	
 	text = {
-		localisation_key = string_screen_title
+		localisation_key = "string_screen_title_the_others"
+		trigger = {
+			tag = WIT
+		}
+	}
+	text = {
+		localisation_key = "string_screen_title"
 		trigger = {
 			always = yes
 		}
@@ -32,7 +37,7 @@ defined_text = {
 	random = no
 
 	text = {
-		localisation_key = string_start_title_the_targaryens
+		localisation_key = "string_start_title_the_targaryens"
 		trigger = {
 			tag = CRW
 			started_in = 196.2.26
@@ -40,7 +45,7 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = string_start_beyond_the_wall
+		localisation_key = "string_start_beyond_the_wall"
 		trigger = {
 			OR = {
 				AND = {
@@ -55,7 +60,13 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = string_start_title_fallback
+		localisation_key = "string_start_the_long_night"
+		trigger = {
+			tag = WIT
+		}
+	}
+	text = {
+		localisation_key = "string_start_title_fallback"
 		trigger = {
 			always = yes
 		}
@@ -89,7 +100,7 @@ defined_text = {
 
 	# Westeros
 	text = {
-		localisation_key = string_start_the_targaryens
+		localisation_key = "string_start_the_targaryens"
 		trigger = {
 			tag = CRW
 			NOT = { is_year = 197 }
@@ -125,6 +136,12 @@ defined_text = {
 		trigger = {
 			is_wildling_culture = yes
 			capital_scope = { region = region_beyond_the_wall }
+		}
+	}
+	text = {
+		localisation_key = "string_start_the_others"
+		trigger = {
+			tag = WIT
 		}
 	}
 	text = {

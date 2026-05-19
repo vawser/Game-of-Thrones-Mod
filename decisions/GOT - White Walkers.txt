@@ -1,0 +1,123 @@
+country_decisions = {
+	# march_out_of_worlds_end = {
+	# 	major = yes
+	# 	color = { 204 0 0 }
+	# 	potential = {
+	# 		tag = WIT
+	# 		NOT = { mission_completed = wit_march_out_of_worlds_end }
+	# 	}
+	# 	allow = {
+	# 		years_of_income = 1.5
+	# 		adm_power = 33
+	# 		dip_power = 33
+	# 	}
+	# 	effect = {
+	# 		complete_mission = wit_march_out_of_worlds_end
+	# 		add_years_of_income = -1.5
+	# 		add_adm_power = -33
+	# 		add_dip_power = -33
+	# 		discover_province = 2050
+	# 		discover_province = 2051
+	# 		if = {
+	# 			limit = { 2048 = { is_empty = yes} }
+	# 			2048 = {
+	# 				hidden_effect = { change_trade_goods = silver }
+	# 				cede_province = ROOT
+	# 				add_core = ROOT
+	# 				hidden_effect = {
+	# 					set_base_tax = 1
+	# 					set_base_production = 2
+	# 					set_base_manpower = 1
+	# 					set_local_autonomy = 0
+	# 					change_religion = ROOT
+	# 					change_culture = ROOT
+	# 				}
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = { 2049 = { is_empty = yes } }
+	# 			2049 = {
+	# 				hidden_effect = { change_trade_goods = silver }
+	# 				cede_province = ROOT
+	# 				add_core = ROOT
+	# 				hidden_effect = {
+	# 					set_base_tax = 1
+	# 					set_base_production = 2
+	# 					set_base_manpower = 1
+	# 					set_local_autonomy = 0
+	# 					change_religion = ROOT
+	# 					change_culture = ROOT
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# }
+	fortify_the_north = {
+		color = { 191 255 249 }
+		potential = {
+			tag = WIT
+			NOT = { owns = 2050 }
+			mission_completed = wit_develop_nightstone
+		}
+		allow = {
+			years_of_income = 1.75
+			adm_power = 50
+			dip_power = 50
+			mil_power = 50
+			NOT = { owns = 2050 }
+		}
+		effect = {
+			add_years_of_income = -1.75
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+			2050 = {
+				hidden_effect = { change_trade_goods = silver }
+				cede_province = ROOT
+				add_core = ROOT
+				hidden_effect = {
+					set_base_tax = 1
+					set_base_production = 1
+					set_base_manpower = 2
+					set_local_autonomy = 0
+					change_religion = ROOT
+					change_culture = ROOT
+				}
+			}
+		}
+	}
+	fortify_the_south = {
+		color = { 191 255 249 }
+		potential = {
+			tag = WIT
+			NOT = { owns = 2051 }
+			mission_completed = wit_develop_frostfort
+		}
+		allow = {
+			years_of_income = 1.75
+			adm_power = 50
+			dip_power = 50
+			mil_power = 50
+			NOT = { owns = 2051 }
+		}
+		effect = {
+			add_years_of_income = -1.75
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+			2051 = {
+				hidden_effect = { change_trade_goods = silver }
+				cede_province = ROOT
+				add_core = ROOT
+				hidden_effect = {
+					set_base_tax = 1
+					set_base_production = 1
+					set_base_manpower = 2
+					set_local_autonomy = 0
+					change_religion = ROOT
+					change_culture = ROOT
+				}
+			}
+		}
+	}
+}

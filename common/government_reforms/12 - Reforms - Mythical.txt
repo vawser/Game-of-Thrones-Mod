@@ -1,0 +1,83 @@
+################
+# Tier 2
+################
+got_ice_lieutenants_reform = {
+	icon = "ice_lieutenants"
+	allow_normal_conversion = yes
+	potential = {
+		
+	}
+	trigger = {
+		
+	}
+	modifiers = {
+		land_morale = 0.10
+		army_tradition_decay = -0.01
+	}
+}
+
+got_wight_bearers_reform = {
+	icon = "wight_bearers"
+	allow_normal_conversion = yes
+	potential = {
+		
+	}
+	trigger = {
+		
+	}
+	modifiers = {
+		land_forcelimit_modifier = 0.10
+		movement_speed = 0.05
+		global_regiment_cost = -0.10
+	}
+}
+
+got_frost_giants_reform = {
+	icon = "frost_giants"
+	allow_normal_conversion = yes
+	potential = {
+		
+	}
+	trigger = {
+		mission_completed = wit_awaken_ice_giants
+	}
+	modifiers = {
+		land_attrition = -0.05
+		siege_ability = 0.10
+	}
+	conditional = {
+		allow = { has_dlc = "Origins" }
+		allow_cawa = yes
+	}
+}
+
+################
+# Tier 3
+################
+got_throne_of_endless_winter_reform = {
+	icon = "ice_lieutenants"
+	allow_normal_conversion = yes
+	potential = {
+		
+	}
+	trigger = {
+		
+	}
+	modifiers = {
+		
+	}
+}
+
+got_court_of_winter_reform = {
+	icon = "court_of_winter"
+	allow_normal_conversion = yes
+	potential = {
+		
+	}
+	trigger = {
+		
+	}
+	modifiers = {
+		legitimacy = 0.10
+	}
+}

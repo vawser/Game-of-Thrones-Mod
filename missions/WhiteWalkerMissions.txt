@@ -131,6 +131,7 @@ wwu_NAME_column_2 = {
 			area_land_of_always_winter = {
 				type = all
 				owned_by = ROOT
+				development = 6
 			}
 		}
 		effect = {
@@ -192,6 +193,7 @@ wwu_NAME_column_3 = {
 				}
 			}
 			area_chilling_shore = { discover_country = ROOT }
+			custom_tooltip = "wit_prepare_for_war_tt"
 		}
 	}
 }
@@ -216,9 +218,11 @@ wwu_NAME_column_4 = {
 		}
 		trigger = {
 			mission_completed = wit_secure_our_border
+			is_year = 210
 		}
 		effect = {
-			
+			custom_tooltip = "wit_unlock_ice_giants_tt"
+			add_prestige = 10
 		}
 	}
 
@@ -233,7 +237,8 @@ wwu_NAME_column_4 = {
 			
 		}
 		effect = {
-			
+			custom_tooltip = "wit_invasion_of_westeros_tt"
+			remove_country_modifier = "summer_reigns"
 		}
 	}
 }
@@ -258,10 +263,11 @@ wwu_NAME_column_5 = {
 		}
 		trigger = {
 			mission_completed = wit_secure_our_border
+			is_year = 210
 		}
 		effect = {
 			remove_country_modifier = "army_disarmament"
-			remove_country_modifier = "navy_disarmament"
+			#remove_country_modifier = "navy_disarmament"
 		}
 	}
 
@@ -273,10 +279,11 @@ wwu_NAME_column_5 = {
 			
 		}
 		trigger = {
-			
+			army_size_percentage = 0.75
+			manpower_percentage = 0.80
 		}
 		effect = {
-			
+			add_army_tradition = 25
 		}
 	}
 }

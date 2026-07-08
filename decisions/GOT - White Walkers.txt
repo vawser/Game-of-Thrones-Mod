@@ -54,6 +54,7 @@ country_decisions = {
 	# }
 	fortify_the_north = {
 		color = { 191 255 249 }
+		major = yes
 		potential = {
 			tag = WIT
 			NOT = { owns = 2050 }
@@ -85,9 +86,14 @@ country_decisions = {
 				}
 			}
 		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
 	}
 	fortify_the_south = {
 		color = { 191 255 249 }
+		major = yes
 		potential = {
 			tag = WIT
 			NOT = { owns = 2051 }
@@ -119,5 +125,9 @@ country_decisions = {
 				}
 			}
 		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
 	}
 }

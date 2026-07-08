@@ -2,77 +2,16 @@ wwu_NAME_column_1 = {
 	slot = 1
 	generic = no
 	ai = yes
-	
 	potential = {
 		tag = WIT
 	}
-	
 	has_country_shield = yes
-	
-	wit_march_out_of_worlds_end = {
-		icon = mission_army_in_the_winter
-		required_missions = { }
-		position = 1
-		provinces_to_highlight = {
-			NOT = { owned_by = ROOT }
-			OR = {
-				province_id = 2048
-				province_id = 2049
-			}
-		}
-		trigger = {
-			years_of_income = 3.75
-			adm_power = 50
-			dip_power = 50
-			mil_power = 50
-			NOT = { owns = 2048 }
-			NOT = { owns = 2049 }
-		}
-		effect = {
-			add_years_of_income = -3.75
-			add_adm_power = -50
-			add_dip_power = -50
-			add_mil_power = -50
-			if = {
-				limit = { 2048 = { is_empty = yes} }
-				2048 = {
-					hidden_effect = { change_trade_goods = silver }
-					cede_province = ROOT
-					add_core = ROOT
-					hidden_effect = {
-						set_base_tax = 1
-						set_base_production = 2
-						set_base_manpower = 1
-						set_local_autonomy = 0
-						change_religion = ROOT
-						change_culture = ROOT
-					}
-				}
-			}
-			if = {
-				limit = { 2049 = { is_empty = yes } }
-				2049 = {
-					hidden_effect = { change_trade_goods = silver }
-					cede_province = ROOT
-					add_core = ROOT
-					hidden_effect = {
-						set_base_tax = 1
-						set_base_production = 2
-						set_base_manpower = 1
-						set_local_autonomy = 0
-						change_religion = ROOT
-						change_culture = ROOT
-					}
-				}
-			}
-			custom_tooltip = "wit_march_out_of_worlds_end_tt"
-		}
-	}
-
 	wit_develop_nightstone = {
 		icon = mission_high_income
-		required_missions =  { wit_march_out_of_worlds_end }
-		position = 1
+		required_missions = {
+			wit_march_out_of_worlds_end
+		}
+		position = 2
 		provinces_to_highlight = {
 			province_id = 2048
 		}
@@ -93,16 +32,93 @@ wwu_NAME_column_2 = {
 	slot = 2
 	generic = no
 	ai = yes
-	
 	potential = {
 		tag = WIT
 	}
-	
 	has_country_shield = yes
-	
+	wit_march_out_of_worlds_end = {
+		icon = mission_army_in_the_winter
+		required_missions = {
+		}
+		position = 1
+		provinces_to_highlight = {
+			NOT = {
+				owned_by = ROOT
+			}
+			OR = {
+				province_id = 2048
+				province_id = 2049
+			}
+		}
+		trigger = {
+			years_of_income = 3.75
+			adm_power = 50
+			dip_power = 50
+			mil_power = 50
+			NOT = {
+				owns = 2048
+			}
+			NOT = {
+				owns = 2049
+			}
+		}
+		effect = {
+			add_years_of_income = -3.75
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+			if = {
+				limit = {
+					2048 = {
+						is_empty = yes
+					}
+				}
+				2048 = {
+					hidden_effect = {
+						change_trade_goods = silver
+					}
+					cede_province = ROOT
+					add_core = ROOT
+					hidden_effect = {
+						set_base_tax = 1
+						set_base_production = 2
+						set_base_manpower = 1
+						set_local_autonomy = 0
+						change_religion = ROOT
+						change_culture = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					2049 = {
+						is_empty = yes
+					}
+				}
+				2049 = {
+					hidden_effect = {
+						change_trade_goods = silver
+					}
+					cede_province = ROOT
+					add_core = ROOT
+					hidden_effect = {
+						set_base_tax = 1
+						set_base_production = 2
+						set_base_manpower = 1
+						set_local_autonomy = 0
+						change_religion = ROOT
+						change_culture = ROOT
+					}
+				}
+			}
+			custom_tooltip = "wit_march_out_of_worlds_end_tt"
+		}
+	}
 	wit_develop_frostfort = {
 		icon = mission_high_income
-		required_missions = { wit_march_out_of_worlds_end }
+		required_missions = {
+			wit_march_out_of_worlds_end
+		}
 		position = 2
 		provinces_to_highlight = {
 			province_id = 2049
@@ -116,15 +132,20 @@ wwu_NAME_column_2 = {
 		effect = {
 			discover_province = 2051
 			custom_tooltip = "wit_develop_frostfort_tt"
-			
 		}
 	}
 	wit_solidify_worlds_end = {
 		icon = mission_fortified_ice_fortress
-		required_missions = { wit_develop_nightstone wit_develop_frostfort wit_secure_our_border }
+		required_missions = {
+			wit_develop_nightstone
+			wit_develop_frostfort
+			wit_secure_our_border
+		}
 		position = 3
 		provinces_to_highlight = {
-			NOT = { owned_by = ROOT }
+			NOT = {
+				owned_by = ROOT
+			}
 			area = area_land_of_always_winter
 		}
 		trigger = {
@@ -135,7 +156,7 @@ wwu_NAME_column_2 = {
 			}
 		}
 		effect = {
-			add_stability_or_adm_power = yes # 1 stab or 50 adm power
+			add_stability_or_adm_power = yes			# 1 stab or 50 adm power
 			1 = {
 				add_base_tax = 1
 				add_base_production = 1
@@ -149,19 +170,20 @@ wwu_NAME_column_3 = {
 	slot = 3
 	generic = no
 	ai = yes
-	
 	potential = {
 		tag = WIT
 	}
-	
 	has_country_shield = yes
-	
 	wit_secure_our_border = {
 		icon = mission_wall_of_the_dead
-		required_missions = { wit_march_out_of_worlds_end }
+		required_missions = {
+			wit_march_out_of_worlds_end
+		}
 		position = 2
 		provinces_to_highlight = {
-			NOT = { owned_by = ROOT }
+			NOT = {
+				owned_by = ROOT
+			}
 			OR = {
 				province_id = 2050
 				province_id = 2051
@@ -192,32 +214,21 @@ wwu_NAME_column_3 = {
 					duration = -1
 				}
 			}
-			area_chilling_shore = { discover_country = ROOT }
+			area_chilling_shore = {
+				discover_country = ROOT
+			}
 			custom_tooltip = "wit_prepare_for_war_tt"
 		}
 	}
-}
-
-wwu_NAME_column_4 = {
-	slot = 4
-	generic = no
-	ai = yes
-	
-	potential = {
-		tag = WIT
-	}
-	
-	has_country_shield = yes
-
 	wit_awaken_ice_giants = {
 		icon = mission_ice_giant
-		required_missions = { }
-		position = 1
+		required_missions = {
+			wit_secure_our_border
+		}
+		position = 3
 		provinces_to_highlight = {
-			
 		}
 		trigger = {
-			mission_completed = wit_secure_our_border
 			is_year = 210
 		}
 		effect = {
@@ -225,16 +236,16 @@ wwu_NAME_column_4 = {
 			add_prestige = 10
 		}
 	}
-
 	wit_beyond_the_ice_wall = {
 		icon = mission_army_in_the_winter
-		required_missions = { wit_secure_our_border wit_raise_the_frozen_host wit_awaken_ice_giants }
-		position = 3
+		required_missions = {
+			wit_raise_the_frozen_host
+			wit_awaken_ice_giants
+		}
+		position = 5
 		provinces_to_highlight = {
-			
 		}
 		trigger = {
-			
 		}
 		effect = {
 			custom_tooltip = "wit_invasion_of_westeros_tt"
@@ -243,26 +254,23 @@ wwu_NAME_column_4 = {
 	}
 }
 
-wwu_NAME_column_5 = {
-	slot = 5
+wwu_NAME_column_4 = {
+	slot = 4
 	generic = no
 	ai = yes
-	
 	potential = {
 		tag = WIT
 	}
-	
 	has_country_shield = yes
-
 	wit_reanimate_the_fallen = {
 		icon = mission_reanimate_the_dead
-		required_missions = { }
-		position = 1
+		required_missions = {
+			wit_secure_our_border
+		}
+		position = 3
 		provinces_to_highlight = {
-			
 		}
 		trigger = {
-			mission_completed = wit_secure_our_border
 			is_year = 210
 		}
 		effect = {
@@ -270,17 +278,18 @@ wwu_NAME_column_5 = {
 			#remove_country_modifier = "navy_disarmament"
 		}
 	}
-
 	wit_raise_the_frozen_host = {
 		icon = mission_raising_the_host
-		required_missions = { wit_reanimate_the_fallen wit_awaken_ice_giants }
-		position = 2
+		required_missions = {
+			wit_reanimate_the_fallen
+			wit_awaken_ice_giants
+		}
+		position = 4
 		provinces_to_highlight = {
-			
 		}
 		trigger = {
 			army_size_percentage = 0.75
-			manpower_percentage = 0.80
+			manpower_percentage = 0.8
 		}
 		effect = {
 			add_army_tradition = 25

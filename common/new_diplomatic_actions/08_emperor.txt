@@ -116,10 +116,6 @@ appoint_hand_of_the_king = {
 			name = AIWEIGHT_POWERF
 			export_to_variable = {
 				variable_name = ai_value
-				value = 1
-			}
-			multiply_variable = {
-				which = ai_value
 				value = 50
 			}
 		}
@@ -130,11 +126,17 @@ appoint_hand_of_the_king = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
-				value = 1
+				value = 250
 			}
-			multiply_variable = {
-				which = ai_value
-				value = 1000
+		}
+		add_entry = {
+			name = AIWEIGHT_RIVALS
+			limit = {
+				FROM = { is_rival = ROOT }
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1000
 			}
 		}
 	}
@@ -246,7 +248,7 @@ appoint_master_of_coin = {
 			}
 			multiply_variable = {
 				which = ai_value
-				value = 50
+				value = 25
 			}
 		}
 		add_entry = {
@@ -256,11 +258,17 @@ appoint_master_of_coin = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
-				value = 1
+				value = 250
 			}
-			multiply_variable = {
-				which = ai_value
-				value = 1000
+		}
+		add_entry = {
+			name = AIWEIGHT_RIVALS
+			limit = {
+				FROM = { is_rival = ROOT }
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1000
 			}
 		}
 	}
@@ -376,7 +384,7 @@ appoint_master_of_laws = {
 			}
 			multiply_variable = {
 				which = ai_value
-				value = 50
+				value = 25
 			}
 		}
 		add_entry = {
@@ -386,11 +394,17 @@ appoint_master_of_laws = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
-				value = 1
+				value = 250
 			}
-			multiply_variable = {
-				which = ai_value
-				value = 1000
+		}
+		add_entry = {
+			name = AIWEIGHT_RIVALS
+			limit = {
+				FROM = { is_rival = ROOT }
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1000
 			}
 		}
 	}
@@ -502,10 +516,6 @@ appoint_master_of_ships = {
 			name = AIWEIGHT_POWERF
 			export_to_variable = {
 				variable_name = ai_value
-				value = 1
-			}
-			multiply_variable = {
-				which = ai_value
 				value = 50
 			}
 		}
@@ -516,11 +526,17 @@ appoint_master_of_ships = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
-				value = 1
+				value = 250
 			}
-			multiply_variable = {
-				which = ai_value
-				value = 1000
+		}
+		add_entry = {
+			name = AIWEIGHT_RIVALS
+			limit = {
+				FROM = { is_rival = ROOT }
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1000
 			}
 		}
 	}
@@ -639,10 +655,6 @@ appoint_master_of_whisperers = {
 			name = AIWEIGHT_POWERF
 			export_to_variable = {
 				variable_name = ai_value
-				value = 1
-			}
-			multiply_variable = {
-				which = ai_value
 				value = 50
 			}
 		}
@@ -653,11 +665,17 @@ appoint_master_of_whisperers = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
-				value = 1
+				value = 250
 			}
-			multiply_variable = {
-				which = ai_value
-				value = 1000
+		}
+		add_entry = {
+			name = AIWEIGHT_RIVALS
+			limit = {
+				FROM = { is_rival = ROOT }
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1000
 			}
 		}
 	}

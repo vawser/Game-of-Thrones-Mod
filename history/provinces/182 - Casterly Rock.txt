@@ -5,9 +5,9 @@ owner = A06
 controller = A06
 add_core = A06
 
-base_tax = 8
+base_tax = 5
 base_production = 7
-base_manpower = 8
+base_manpower = 6
 
 culture = men_of_the_westerlands
 religion = faith_of_the_seven
@@ -18,3 +18,8 @@ hre = yes
 discovered_by = westerosi
 
 add_building = castle
+
+add_permanent_province_modifier = {
+	name = westerlands_gold_mines
+	duration = -1
+}

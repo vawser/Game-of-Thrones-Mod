@@ -89,22 +89,20 @@ set_manpower_variable_with_tag = {
 
 transfer_manpower = {
 	hidden_effect = {
-		$giver$ = {
-			while = {
-				limit = {
-					check_variable = {
-						which = $variable$
-						value = 1
-					}
-				}
-				$taker$ = {
-					add_manpower = 0.001
-				}
-				add_manpower = -0.001
-				subtract_variable = {
+		while = {
+			limit = {
+				check_variable = {
 					which = $variable$
 					value = 1
 				}
+			}
+			$receiver$ = {
+				add_manpower = 0.001
+			}
+			add_manpower = -0.001
+			subtract_variable = {
+				which = $variable$
+				value = 1
 			}
 		}
 	}
@@ -115,42 +113,40 @@ transfer_manpower = {
 
 transfer_treasury = {
 	hidden_effect = {
-		$giver$ = {
-			while = {
-				limit = {
-					check_variable = {
-						which = $variable$
-						value = 1
-					}
-				}
-				$taker$ = {
-					add_treasury = 1
-				}
-				add_treasury = -1
-				subtract_variable = {
+		while = {
+			limit = {
+				check_variable = {
 					which = $variable$
 					value = 1
 				}
 			}
-			multiply_variable = {
+			$receiver$ = {
+				add_treasury = 1
+			}
+			add_treasury = -1
+			subtract_variable = {
 				which = $variable$
-				value = 100
+				value = 1
 			}
-			while = {
-				limit = {
-					check_variable = {
-						which = $variable$
-						value = 1
-					}
-				}
-				$taker$ = {
-					add_treasury = 0.01
-				}
-				add_treasury = -0.01
-				subtract_variable = {
+		}
+		multiply_variable = {
+			which = $variable$
+			value = 100
+		}
+		while = {
+			limit = {
+				check_variable = {
 					which = $variable$
 					value = 1
 				}
+			}
+			$receiver$ = {
+				add_treasury = 0.01
+			}
+			add_treasury = -0.01
+			subtract_variable = {
+				which = $variable$
+				value = 1
 			}
 		}
 	}
@@ -161,23 +157,21 @@ transfer_treasury = {
 
 remove_treasury = {
 	hidden_effect = {
-		$giver$ = {
-			while = {
-				limit = { check_variable = { which = $variable$ value = 1 } }
-				add_treasury = -1
-				subtract_variable = {
-					which = $variable$
-					value = 1
-				}
+		while = {
+			limit = { check_variable = { which = $variable$ value = 1 } }
+			add_treasury = -1
+			subtract_variable = {
+				which = $variable$
+				value = 1
 			}
-			multiply_variable = { which = $variable$ value = 100 }
-			while = {
-				limit = { check_variable = { which = $variable$ value = 1 } }
-				add_treasury = -0.01
-				subtract_variable = {
-					which = $variable$
-					value = 1
-				}
+		}
+		multiply_variable = { which = $variable$ value = 100 }
+		while = {
+			limit = { check_variable = { which = $variable$ value = 1 } }
+			add_treasury = -0.01
+			subtract_variable = {
+				which = $variable$
+				value = 1
 			}
 		}
 	}

@@ -192,14 +192,12 @@ country_event = {
 		event_target:targaryen_helper = {
 			transfer_treasury = {
 				variable = targaryen_money_support
-				giver = event_target:targaryen_helper
-				taker = ROOT
+				receiver = ROOT
 				custom_tooltip = targaryen_reb_support_money_tt
 			}
 			transfer_manpower = {
 				variable = targaryen_manpower_support
-				giver = event_target:targaryen_helper
-				taker = ROOT
+				receiver = ROOT
 				custom_tooltip = targaryen_reb_support_manpower_tt
 			}
 		}
@@ -273,7 +271,6 @@ country_event = {
 		event_target:blackfyre_helper = {
 			remove_treasury = {
 				variable = blackfyre_money_support
-				giver = event_target:blackfyre_helper
 			}
 			custom_tooltip = blackfyre_reb_support_money_tt
 		}

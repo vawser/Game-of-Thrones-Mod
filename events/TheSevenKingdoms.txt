@@ -10,6 +10,7 @@
 # 10-20 : Diplo Action Events
 # 100-110 : On Action Events
 # 200-290 : SK Incidents
+# 500-599 : Decisions
 ########################################
 
 namespace = sk_event
@@ -830,5 +831,169 @@ country_event = {
 	after = {
 		event_target:potential_greathouse = { clr_country_flag = petition_for_great_house_subject }
 		event_target:current_greathouse = { clr_country_flag = petition_for_great_house_overlord }
+	}
+}
+
+country_event = {
+	id = sk_event.500
+	title = "sk_event.500.title"
+	desc = "sk_event.500.desc"
+	picture = SWEARING_FEALTY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			every_subject_country = {
+				set_treasury_variable = {
+					treasury_var = fealty_tax
+					percent_amount = 0.05
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "sk_event.500.option.a"
+		ai_chance = { factor = 100 }
+		every_subject_country = {
+			if = {
+				limit = {
+					OR = {
+						historical_rival_with = ROOT
+						ROOT = { historical_rival_with = PREV }
+						NOT = { has_opinion = { who = ROOT value = 0 } }
+						liberty_desire = 45
+						ai_attitude = { who = ROOT attitude = attitude_disloyal }
+					}
+				}
+				custom_tooltip = "we_dont_kneel_tt"
+				hidden_effect = {
+					add_opinion = {
+						who = ROOT
+						modifier = outrageous_demands
+					}
+					add_liberty_desire = 10
+				}
+			}
+			else = {
+				custom_tooltip = "we_kneel_tt"
+				transfer_treasury = {
+					variable = fealty_tax
+					receiver = ROOT
+					custom_tooltip = "fealty_tax_tt"
+				}
+				hidden_effect = { add_liberty_desire = -5 }
+			}
+		}
+	}
+
+	option = {
+		name = "sk_event.500.option.b"
+		ai_chance = { factor = 0 }
+		add_legitimacy = -10
+		hidden_effect = { remove_country_modifier = "oaths_of_fealty" }
+	}
+
+	after = {
+		country_event = { id = sk_event.501 }
+	}
+}
+
+country_event = {
+	id = sk_event.501
+	title = "sk_event.501.title"
+	desc = "sk_event.501.desc"
+	picture = SWEARING_FEALTY_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_subject_country = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = outrageous_demands
+			}
+		}
+	}
+
+	option = {
+		name = "sk_event.501.option.a"
+		ai_chance = { factor = 100 }
+		every_subject_country = {
+			limit = {
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = outrageous_demands
+				}
+			}
+			custom_tooltip = "Did not bend the knee."
+			tooltip = {
+				add_liberty_desire = 10
+			}
+		}
+	}
+}
+
+country_event = {
+	id = sk_event.502
+	title = "sk_event.502.title"
+	desc = "sk_event.502.desc"
+	picture = SWEARING_FEALTY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			every_subject_country = {
+				if = {
+					limit = { historical_friend_with = ROOT }
+					set_treasury_variable = {
+						treasury_var = vassal_tax_reduced
+						percent_amount = 0.10
+					}
+				}
+				else = {
+					set_treasury_variable = {
+						treasury_var = vassal_tax
+						percent_amount = 0.25
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "sk_event.502.option.a"
+		ai_chance = { factor = 100 }
+		every_subject_country = {
+			limit = { historical_friend_with = ROOT }
+			transfer_treasury = {
+				variable = vassal_tax_reduced
+				receiver = ROOT
+				custom_tooltip = "vassal_tax_reduced_tt"
+			}
+		}
+		every_subject_country = {
+			limit = { NOT = { historical_friend_with = ROOT } }
+			transfer_treasury = {
+				variable = vassal_tax
+				receiver = ROOT
+				custom_tooltip = "vassal_tax_tt"
+			}
+			hidden_effect = {
+				add_liberty_desire = 20
+				add_opinion = {
+					who = ROOT
+					modifier = insulted
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "sk_event.502.option.b"
+		ai_chance = { factor = 0 }
+		hidden_effect = { remove_country_modifier = "lords_tax" }
 	}
 }

@@ -88,4 +88,65 @@ country_decisions = {
 			factor = 0
 		}
 	}
+	demand_oaths_of_fealty = {
+		color = { 229 193 51 }
+		potential = {
+			has_subject_of_type = feudatory
+		}
+		allow = {
+			NOT = { has_country_modifier = "oaths_of_fealty" }
+		}
+		effect = {
+			country_event = {
+				id = sk_event.500
+				days = 7
+			}
+			add_ruler_modifier = {
+				name = "oaths_of_fealty"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	levy_lords_tax = {
+		color = { 229 193 51 }
+		potential = {
+			has_subject_of_type = feudatory
+		}
+		allow = {
+			NOT = { has_country_modifier = "lords_tax" }
+			NOT = { has_country_modifier = "reduced_vassal_tax" }
+		}
+		effect = {
+			country_event = {
+				id = sk_event.502
+				days = 7
+			}
+			add_country_modifier = {
+				name = "lords_tax"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	reduce_the_vassal_tax = {
+		color = { 229 193 51 }
+		potential = {
+			has_subject_of_type = feudatory
+		}
+		allow = {
+			NOT = { has_country_modifier = "lords_tax" }
+			NOT = { has_country_modifier = "reduced_vassal_tax" }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "reduced_vassal_tax"
+				duration = 7300
+			}
+		}
+	}
 }

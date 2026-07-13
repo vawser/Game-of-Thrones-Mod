@@ -30,3 +30,23 @@
  order_builders_defense_bonus_tt: "Every province in the §YWestwatch§! and §YEastwatch§! areas which do NOT have the modifier §YAbandoned Castle§! will also receive the same modifier.\n"
  promote_loyalty_rangers: "Prepare the Brothers for Battle"
  promote_loyalty_rangers_desc: "Allocate our limited resources to the §YOrder of Rangers§! to prepare for a future armed conflict with the Wildlings, training them for all possible encounters.\n\n§RYou may only activate one effect from any §YOrder§! of the Watch every five years.§!\n "
+
+ # Vassal Taxation Mechanic
+ sk_event.500.title: "Demand Oaths of Fealty"
+ sk_event.500.desc: "The realm is in a state of unrest, and it is imperative that we ensure the loyalty of our vassal lords. We will demand that all of our vassal lords swear oaths of fealty to us, pledging their allegiance and support in these trying times.\n\nSome of our more unruly vassals may not find this demand to be in their best interest. A public declaration against our authority could mean rebellion in the future.\n\nEvery vassal lord who kneels will provide §G5%§! of their current treasury as tribute.\nEvery vassal lord who refuses to kneel will be §Routraged§! by our unacceptable decision."
+ sk_event.500.option.a: "They will kneel before me!"
+ sk_event.500.option.b: "Perhaps this is not the best approach."
+ fealty_tax_tt: "Pays §Y[fealty_tax.GetValue]§! ducats to §Y[Root.GetName]§!."
+ we_kneel_tt: "[This.Monarch.GetTitle] §Y[This.Monarch.GetName]§! will kneel."
+ we_dont_kneel_tt: "[This.Monarch.GetTitle] §Y[This.Monarch.GetName]§! will §RNOT§! kneel."
+ 
+ sk_event.501.title: "Steward's Report: Oaths of Fealty"
+ sk_event.501.desc: "Our stewards have compiled a report for us showing us which of our lords bent the knee and which have decided to stand against us."
+ sk_event.501.option.a: "Most unfortunate."
+
+ sk_event.502.title: "The Lords' Tax"
+ sk_event.502.desc: "In dire times, it is sometimes necessary, for the good of the realm, to levy additional taxes on our vassal lords. We will demand that all of our vassal lords pay a §R25%§! tax, which will be used to maintain the realm and fund our armies. This is a temporary measure, but no doubt our vassals will be displeased with this decision. We must be cautious, as this may lead to a loss of trust and opinion from our vassals, and possibly even rebellion. We must weigh the benefits of this tax against the potential consequences.\n\nEvery vassal lord will provide §G25%§! of their current treasury as tribute and will be greatly upset with us. Historical friends will only provide §G10%§! of their current treasury as tribute."
+ sk_event.502.option.a: "They will pay their dues!"
+ sk_event.502.option.b: "Perhaps this is not the best approach."
+ vassal_tax_tt: "[This.Monarch.GetTitle] §Y[This.Monarch.GetName]§! pays §Y[vassal_tax.GetValue]§! ducats to §Y[Root.GetName]§!."
+ vassal_tax_reduced_tt: "[This.Monarch.GetTitle] §Y[This.Monarch.GetName]§! pays §Y[vassal_tax_reduced.GetValue]§! ducats to §Y[Root.GetName]§!."

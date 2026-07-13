@@ -350,14 +350,14 @@ defined_text  = {
 	text = {
 		localisation_key = string_start_government_dynasty
 		trigger = {
-			government = dynasty
+			government_type = { dynasty = yes }
 		}
 	}
 	text = {
 		localisation_key = string_start_government_monarchy_regency
 		trigger = {
 			#has_regency = yes
-			government = monarchy
+			government_type = { monarchy = yes }
 		}
 	}
 	text = {
@@ -422,9 +422,6 @@ defined_text = {
 			westeros_government_king = yes
 			hre_reform_passed = king_introduce_an_elective_monarchy
 		}
-	}
-	text = {
-		localisation_key = string_start_monarchy
 	}
 }
 

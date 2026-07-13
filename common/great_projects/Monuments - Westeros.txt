@@ -882,27 +882,14 @@ gp_casterly_rock = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_defensiveness = 0.25
-			trade_goods_size = 0.33
+			local_defensiveness = 0.10
+			trade_goods_size = 0.20
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			monthly_gold_inflation_modifier = -0.10
-			vassal_income = 0.10
-		}
-		conditional_modifier = {
-			trigger = {
-				owner = {
-					dynasty = "Lannister"
-				}
-			}
-			modifier = {
-				legitimacy = 0.25
-			}
 		}
 		on_upgraded = {
-			add_base_production = 1
 		}
 	}
 	tier_2 = {
@@ -913,28 +900,19 @@ gp_casterly_rock = {
 			factor = 2500
 		}
 		province_modifiers = {
-			local_defensiveness = 0.50
-			trade_goods_size = 0.66
-			local_gold_depletion_chance_modifier = -0.10
+			local_defensiveness = 0.25
+			trade_goods_size = 0.40
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			monthly_gold_inflation_modifier = -0.25
-			vassal_income = 0.20
+			monthly_gold_inflation_modifier = -0.125
 		}
 		conditional_modifier = {
-			trigger = {
-				owner = {
-					dynasty = "Lannister"
-				}
-			}
-			modifier = {
-				legitimacy = 0.5
-			}
+			trigger = { owner = { dynasty = "Lannister" } }
+			modifier = { legitimacy = 0.25 }
 		}
 		on_upgraded = {
-			add_base_production = 1
 		}
 	}
 	tier_3 = {
@@ -945,28 +923,20 @@ gp_casterly_rock = {
 			factor = 5000
 		}
 		province_modifiers = {
-			local_defensiveness = 1.0
-			trade_goods_size = 1.0
-			local_gold_depletion_chance_modifier = -0.25
+			local_defensiveness = 0.33
+			trade_goods_size = 0.60
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			monthly_gold_inflation_modifier = -0.50
-			vassal_income = 0.30
+			monthly_gold_inflation_modifier = -0.25
+			vassal_income = 0.20
 		}
 		conditional_modifier = {
-			trigger = {
-				owner = {
-					dynasty = "Lannister"
-				}
-			}
-			modifier = {
-				legitimacy = 1.0
-			}
+			trigger = { owner = { dynasty = "Lannister" } }
+			modifier = { legitimacy = 0.50 }
 		}
 		on_upgraded = {
-			add_base_production = 1
 		}
 	}
 }

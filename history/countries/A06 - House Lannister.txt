@@ -45,11 +45,37 @@ historical_friend = G37
 # Loren's I 'the Last' Reign
 2.1.1 = {
 	monarch = {
-		name = "Loren I"
+		name = "Loren I 'the Last'"
 		dynasty = "Lannister"
 		adm = 3
 		dip = 4
 		mil = 4
+	}
+
+	queen = {
+		country_of_origin = G21
+		name = "Sera"
+		dynasty = "Brax"
+		birth_date = 1.1.1
+		death_date = 29.4.19
+		adm = 3
+		dip = 1
+		mil = 3
+		female = yes
+	}
+}
+
+13.9.22 = {
+	heir = {
+		name = "Lyman"
+		monarch_name = "Lyman I"
+		dynasty = "Lannister"
+		birth_date = 13.9.22
+		death_date = 41.5.11
+		adm = 2
+		dip = 4
+		mil = 3
+		claim = 100
 	}
 }
 
@@ -58,14 +84,14 @@ historical_friend = G37
 	monarch = {
 		name = "Lyman I"
 		dynasty = "Lannister"
+		birth_date = 13.9.22
 		adm = 2
 		dip = 4
 		mil = 3
-		birth_date = 13.9.22
 	}
 
 	queen = {
-		country_of_origin = CRW # Tarbeck
+		country_of_origin = G30 # Tarbeck
 		name = "Jocasta"
 		dynasty = "Tarbeck"
 		birth_date = 18.9.20
@@ -74,6 +100,18 @@ historical_friend = G37
 		dip = 3
 		mil = 2
 		female = yes
+	}
+
+	heir = {
+		name = "Loren"
+		monarch_name = "Loren II"
+		dynasty = "Lannister"
+		birth_date = 40.7.2
+		death_date = 59.4.3
+		adm = 2
+		dip = 1
+		mil = 2
+		claim = 100
 	}
 }
 
@@ -86,6 +124,18 @@ historical_friend = G37
 		dip = 1
 		mil = 2
 		birth_date = 40.7.2
+	}
+
+	queen = {
+		country_of_origin = G05
+		name = "Jemma"
+		dynasty = "Swyft"
+		birth_date = 43.9.24
+		death_date = 60.9.13
+		adm = 6
+		dip = 5
+		mil = 3
+		female = yes
 	}
 }
 
@@ -111,6 +161,18 @@ historical_friend = G37
 		dip = 5
 		mil = 3
 		birth_date = 60.9.13
+	}
+
+	queen = {
+		country_of_origin = A09
+		name = "Johanna"
+		dynasty = "Martell"
+		birth_date = 69.3.3
+		death_date = 125.8.29
+		adm = 3
+		dip = 3
+		mil = 4
+		female = yes
 	}
 
 	heir = {
@@ -164,6 +226,7 @@ historical_friend = G37
 	}
 }
 
+# Regency for Loreon I
 130.5.17 = {
 	monarch = {
 		name = "Johanna"
@@ -189,17 +252,55 @@ historical_friend = G37
 	}
 }
 
-
-
-# Blackfyre Rebellion
-195.1.1 = {
+# Loreon's I Reign
+142.3.14 = {
 	monarch = {
-		name = "Damon"
+		name = "Loreon I"
 		dynasty = "Lannister"
+		birth_date = 126.3.14
+		adm = 5
+		dip = 3
+		mil = 4
+	}
+}
+
+148.5.4 = {
+	queen = {
+		country_of_origin = G32
+		name = "Lorna"
+		dynasty = "Marbrand"
+		birth_date = 131.1.9
+		death_date = 178.2.3
+		adm = 3
+		dip = 2
+		mil = 4
+		female = yes
+	}
+}
+
+156.3.5 = {
+	heir = {
+		name = "Damon"
+		monarch_name = "Damon I"
+		dynasty = "Lannister"
+		birth_date = 156.3.5
+		death_date = 194.8.14
 		adm = 4
 		dip = 3
 		mil = 4
-		birth_date = 156.1.1
+		claim = 100
+	}
+}
+
+# Damon's I Reign (Blackfyre Rebellion)
+194.8.14 = {
+	monarch = {
+		name = "Damon I"
+		dynasty = "Lannister"
+		birth_date = 156.3.5
+		adm = 4
+		dip = 3
+		mil = 4
 	}
 	
     queen = {
@@ -216,7 +317,7 @@ historical_friend = G37
     
 	heir = {
 		name = "Tybolt"
-		monarch_name = "Tybolt"
+		monarch_name = "Tybolt I"
 		dynasty = "Lannister"
 		birth_date = 190.1.1
 		death_date = 210.4.13
@@ -227,35 +328,228 @@ historical_friend = G37
 	}
 }
 
+# Tybolt's I Reign (Spring Sickness)
 210.4.13 = {
 	monarch = {
-		name = "Tybolt"
+		name = "Tybolt I"
 		dynasty = "Lannister"
+		birth_date = 190.1.1
 		adm = 2
 		dip = 5
 		mil = 4
-		birth_date = 190.1.1
+	}
+
+	queen = {
+		name = "Teora"
+		dynasty = "Kyndall"
+		birth_date = 193.3.4
+		death_date = 212.6.1
+		adm = 2
+		dip = 2
+		mil = 2
+		female = yes
+	}
+
+	heir = {
+		name = "Cerelle"
+		monarch_name = "Cerelle I"
+		dynasty = "Lannister"
+		birth_date = 209.5.17
+		death_date = 213.3.15
+		adm = 3
+		dip = 4
+		mil = 4
+		claim = 100
+		female = yes
 	}
 }
 
+# Gerold's I Reign (Regent)
+212.6.1 = {
+	monarch = {
+		name = "Gerold I"
+		birth_date = 193.3.4
+		adm = 4
+		dip = 5
+		mil = 6
+		regent = yes
+		#regency = { estate = estate_nobles }
+	}
+
+	heir = {
+		name = "Cerelle"
+		monarch_name = "Cerelle I"
+		dynasty = "Lannister"
+		birth_date = 209.5.17
+		death_date = 213.3.15
+		adm = 3
+		dip = 4
+		mil = 4
+		claim = 60
+		female = yes
+	}
+}
+
+# Gerold's I Reign (Not Regent)
+213.3.15 = {
+	monarch = {
+		name = "Gerold I"
+		dynasty = "Lannister"
+		birth_date = 193.3.4
+		adm = 4
+		dip = 5
+		mil = 6
+	}
+	add_ruler_personality = benevolent_personality
+
+	queen = {
+		name = "Alysanne"
+		dynasty = "Farmen"
+		birth_date = 195.8.9
+		adm = 2
+		dip = 1
+		mil = 3
+	}
+}
+
+215.10.11 = {
+	queen = {
+		name = "Rohanne"
+		dynasty = "Webber"
+		birth_date = 185.5.18
+		death_date = 230.7.16
+		adm = 3
+		dip = 4
+		mil = 1
+		female = yes
+	}
+}
+
+217.4.10 = {
+	heir = {
+		name = "Tywald"
+		monarch_name = "Tywald I"
+		dynasty = "Lannister"
+		birth_date = 217.4.10
+		death_date = 233.12.5
+		adm = 3
+		dip = 2
+		mil = 5
+		claim = 100
+	}
+}
+
+233.12.5 = {
+	heir = {
+		name = "Tion"
+		monarch_name = "Tion I"
+		dynasty = "Lannister"
+		birth_date = 217.4.10
+		death_date = 236.8.13
+		adm = 2
+		dip = 6
+		mil = 4
+		claim = 100
+	}
+}
+
+236.8.13 = {
+	heir = {
+		name = "Tytos"
+		monarch_name = "Tytos I"
+		dynasty = "Lannister"
+		birth_date = 220.9.23
+		death_date = 244.3.18
+		adm = 2
+		dip = 6
+		mil = 4
+		claim = 100
+	}
+}
+
+# Tytos' I Reign (Laughing Lion)
+244.3.18 = {
+	monarch = {
+		name = "Tytos I"
+		dynasty = "Lannister"
+		birth_date = 220.9.23
+		adm = 2
+		dip = 6
+		mil = 4
+	}
+	add_ruler_personality = naive_personality
+
+	queen = {
+		country_of_origin = G32
+		name = "Jeyne"
+		dynasty = "Marbrand"
+		birth_date = 222.11.28
+		death_date = 255.5.17
+		adm = 4
+		dip = 3
+		mil = 1
+		female = yes
+	}
+
+	heir = {
+		name = "Tywin"
+		monarch_name = "Tywin I"
+		dynasty = "Lannister"
+		birth_date = 242.3.2
+		death_date = 267.8.3
+		adm = 5
+		dip = 6
+		mil = 6
+		claim = 100
+	}
+}
+
+# Tywin's I Reign
 267.8.3 = {
 	monarch = {
-		name = "Tywin"
+		name = "Tywin I"
 		dynasty = "Lannister"
+		birth_date = 242.3.2
 		adm = 5
-		dip = 5
-		mil = 5
-		birth_date = 242.1.1
+		dip = 6
+		mil = 6
+	}
+	add_ruler_personality = cruel_personality
+
+	queen = {
+		name = "Joanna"
+		dynasty = "Lannister"
+		birth_date = 249.1.10
+		death_date = 273.5.9
+		adm = 4
+		dip = 3
+		mil = 1
+		female = yes
 	}
 
 	heir = {
 		name = "Jaime"
+		monarch_name = "Jaime I"
 		dynasty = "Lannister"
 		birth_date = 266.5.2
-		death_date = 350.1.1
+		death_date = 281.7.4
+		adm = 2
+		dip = 4
+		mil = 6
 		claim = 100
-		adm = 3
+	}
+}
+
+281.7.4 = {
+	heir = {
+		name = "Tyrion"
+		monarch_name = "Tyrion I"
+		dynasty = "Lannister"
+		birth_date = 273.5.21
+		death_date = 302.2.3
+		adm = 6
 		dip = 5
-		mil = 5
+		mil = 2
+		claim = 100
 	}
 }

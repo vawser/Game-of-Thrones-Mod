@@ -11,15 +11,21 @@ imposed_will = {
 
 # Permanent Modifiers
 city_watch_dlc = {
-	local_manpower = 1
-	regiment_recruit_speed = -0.50
+	local_unrest = -1
+	local_manpower = 0.5
 	local_regiment_cost = -0.10
 }
 
 city_watch_no_dlc = {
-    local_manpower = 1
-	regiment_recruit_speed = -0.50
+	local_unrest = -1
+	local_manpower = 0.5
 	local_regiment_cost = -0.10
+}
+
+city_watch_lannisport = {
+	local_unrest = -2
+	tax_income = -6
+	local_manpower = 0.5
 }
 
 # Trade (Province) Modifiers

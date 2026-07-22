@@ -1117,23 +1117,8 @@ gp_red_keep = {
 		}
 	}
 	on_built = {
-		if = {
-			limit = {
-				NOT = { has_province_modifier = city_watch_dlc }
-			}
-			add_province_modifier = {
-				name = city_watch_dlc
-				duration = -1
-			}
-		}
 	}
 	on_destroyed = {
-		if = {
-			limit = {
-				has_province_modifier = city_watch_dlc
-			}
-			remove_province_modifier = city_watch_dlc
-		}
 	}
 	
 	can_use_modifiers_trigger = {
@@ -1278,8 +1263,19 @@ gp_seven_gates = {
 	build_trigger = {
 	}
 	on_built = {
+		if = {
+			limit = { NOT = { has_province_modifier = "city_watch_dlc" } }
+			add_permanent_province_modifier = {
+				name = "city_watch_dlc"
+				duration = -1
+			}
+		}
 	}
 	on_destroyed = {
+		if = {
+			limit = { has_province_modifier = "city_watch_dlc" }
+			remove_province_modifier = "city_watch_dlc"
+		}
 	}
 	
 	can_use_modifiers_trigger = {

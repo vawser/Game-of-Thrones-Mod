@@ -224,3 +224,141 @@ establish_neutrality_pact = {
 		always = no
 	}
 }
+
+invite_to_faction = {
+	category = relation
+
+	alert_index = 39
+	alert_tooltip = bribe_for_support_alert_tooltip
+
+	require_acceptance = yes
+	
+	is_visible = {
+		ai = no
+		overlord = { overlord_of = FROM }
+	}
+	is_allowed = {
+		NOT = {
+			OR = {
+				is_rival = FROM
+				is_enemy = FROM
+			}
+		}
+	}
+	on_accept = {
+		FROM = { set_ruler_flag = AbdicationFaction@overlord }
+	}
+
+	ai_acceptance = {
+		# Base AI weight -40
+		add_entry = {
+			name = AIWEIGHT_BASE
+			export_to_variable = {
+				variable_name = ai_value
+				value = -40
+			}
+		}
+		# If the countries have a good diplomatic reputation, add 5 points per rep
+		add_entry = {
+			name = diplomatic_reputation
+			limit = { }
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 5
+			multiply_variable = {
+				which = ai_value
+				value = 5
+			}
+		}
+		# Add 0.2 points per opinion
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.2
+			}
+		}
+		# Add 0.5 points per negative opinion with overlord
+		add_entry = {
+			name = OPINIONOVERLORD
+			limit = {
+				FROM = {
+					overlord = {
+						NOT = {
+							reverse_has_opinion = {
+								who = PREV
+								value = 0
+							}
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = overlord
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
+		# Add -25 points flat if loyal to overlord
+		add_entry = {
+			name = LOYAL
+			limit = {
+				overlord = {
+					FROM = {
+						ai_attitude = {
+							who = PREV
+							attitude = attitude_loyal
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -25
+			}
+		}
+		# Add 50 points flat if disloyal to overlord
+		add_entry = {
+			name = DISLOYAL
+			limit = {
+				overlord = {
+					FROM = {
+						ai_attitude = {
+							who = PREV
+							attitude = attitude_disloyal
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 50
+			}
+		}
+	}
+
+	ai_will_do = {
+		always = no
+	}
+}

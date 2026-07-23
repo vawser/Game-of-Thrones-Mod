@@ -88,6 +88,42 @@ country_decisions = {
 			factor = 0
 		}
 	}
+	demand_abdication = {
+		color = { 102 0 102 }
+		potential = {
+			is_part_of_hre = yes
+			is_elector = no
+			is_subject_of_type = feudatory
+			overlord = { is_elector = yes }
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = "faction_does_exist_tt"
+				overlord = {
+					all_subject_country = {
+						NOT = { has_ruler_flag = AbdicationFaction@PREV }
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = "same_overlord_ally_tt"
+			hidden_effect = {
+				set_ruler_flag = AbdicationFaction@overlord
+				overlord = {
+					every_subject_country = {
+						limit = { alliance_with = ROOT }
+						set_ruler_flag = AbdicationFaction@overlord
+						set_country_flag = keepAlliance
+					}
+				}
+			}
+			country_event = {
+				id = sk_event.503
+				days = 1
+			}
+		}
+	}
 	demand_oaths_of_fealty = {
 		color = { 229 193 51 }
 		potential = {
@@ -147,6 +183,71 @@ country_decisions = {
 				name = "reduced_vassal_tax"
 				duration = 7300
 			}
+		}
+	}
+	exhaust_the_goldmines = {
+		color = { 229 193 51 }
+		potential = {
+			capital_scope = { region = region_westerlands }
+			any_owned_province = { trade_goods = gold }
+			any_owned_province = {
+				trade_goods = gold
+				NOT = { has_province_modifier = "exhausted_goldmines" }
+			}
+		}
+		allow = {
+			
+		}
+		effect = {
+			add_years_of_owned_provinces_production_income = {
+				years = 7.5
+				trigger = { trade_goods = gold }
+				custom_tooltip = "from_the_goldmines_tt"
+			}
+			custom_tooltip = "no_income_gold_tt"
+			hidden_effect = {
+				every_owned_province = {
+					limit = { trade_goods = gold }
+					add_province_modifier = {
+						name = "exhausted_goldmines"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	clear_flea_bottom = {
+		color = { 229 193 51 }
+		potential = {
+			owns = 226
+		}
+		allow = {
+			226 = {
+				OR = {
+					has_province_modifier = city_watch_dlc
+					has_province_modifier = city_watch_no_dlc
+				}
+			}
+		}
+		effect = {
+			226 = { decrease_crime_lvl_large = yes }
+		}
+	}
+
+	take_the_throne = {
+		color = { 229 193 51 }
+		potential = {
+			has_regency = yes
+			has_heir = yes
+		}
+		allow = {
+			#years_of_income = 1.0
+		}
+		effect = {
+			#add_years_of_income = -1.0
+			#remove_heir = { allow_new_heir = no }
+			change_estate_regent_to_ruler = yes
+			set_dynasty = original_dynasty
 		}
 	}
 }

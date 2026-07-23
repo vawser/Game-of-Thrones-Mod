@@ -1,0 +1,13 @@
+custom_button = {
+	name = faction_icon
+	potential = { has_subject_of_type = feudatory }
+	trigger = {  }
+	effect = {
+		# To display tt for Abdication Faction countries
+		every_country = {
+			limit = { has_ruler_flag = AbdicationFaction@ROOT }
+			custom_tooltip = "abdication_faction_member_tt"
+		}
+	}
+	tooltip = "factions_button_tt"
+}

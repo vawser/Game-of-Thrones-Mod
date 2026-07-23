@@ -997,3 +997,60 @@ country_event = {
 		hidden_effect = { remove_country_modifier = "lords_tax" }
 	}
 }
+
+country_event = {
+	id = sk_event.503
+	title = "sk_event.503.title"
+	desc = "sk_event.503.desc"
+	picture = SWEARING_FEALTY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			overlord = { save_event_target_as = overlord_scope }
+			event_target:overlord_scope = {
+				every_country = {
+					limit = { has_ruler_flag = AbdicationFaction@PREV NOT = { tag = ROOT } }
+					create_alliance = ROOT
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "sk_event.503.option.a"
+		ai_chance = { factor = 100 }
+		declare_war_with_cb = {
+			casus_belli = cb_independence_war
+			who = overlord
+		}
+		every_country = {
+			limit = { alliance_with = ROOT has_ruler_flag = AbdicationFaction@event_target:overlord_scope }
+			custom_tooltip = "Joins the Abdication Faction's war"
+		}
+	}
+
+	option = {
+		name = "sk_event.503.option.b"
+		ai_chance = { factor = 0 }
+		custom_tooltip = "The Abdication Faction will dissolve without achieving their goals."
+	}
+
+	after = {
+		hidden_effect = {
+			every_ally = {
+				limit = { NOT = { has_country_flag = keepAlliance } }
+				break_alliance = ROOT
+			}
+			every_ally = {
+				limit = { has_country_flag = keepAlliance }
+				clr_country_flag = keepAlliance
+			}
+			every_country = {
+				limit = { has_ruler_flag = AbdicationFaction@event_target:overlord_scope }
+				clr_ruler_flag = AbdicationFaction@event_target:overlord_scope
+			}
+		}
+	}
+}

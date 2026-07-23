@@ -223,6 +223,20 @@ allianceaction = {
 		}
 	}
 	condition = {
+		tooltip = FEUDATORY_NO_MORE_THAN_2_ALLIES
+		potential = {
+			is_subject_of_type = feudatory
+			calc_true_if = {
+				amount = 2
+				all_country = {
+					alliance_with = ROOT
+					# overlord = { overlord_of = ROOT }
+				}
+			}
+		}
+		allow = { always = no }
+	}
+	condition = {
 		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
 		potential = {
 			OR = {

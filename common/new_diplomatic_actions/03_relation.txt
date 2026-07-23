@@ -70,6 +70,21 @@ establish_neutrality_pact = {
 	
 	is_visible = {
 		ai = no
+		OR = {
+			# Night's Watch with the wildlings
+			AND = {
+				tag = NGT
+				FROM = { capital_scope = { region = region_beyond_the_wall } }
+			}
+			# Wildlings with the Night's Watch and other wildlings
+			AND = {
+				capital_scope = { region = region_beyond_the_wall }
+				OR = {
+					FROM = { tag = NGT }
+					FROM = { capital_scope = { region = region_beyond_the_wall } }
+				}
+			}
+		}
 	}
 	is_allowed = {
 		if = {

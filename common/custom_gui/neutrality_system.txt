@@ -1,6 +1,11 @@
 custom_button = {
 	name = truce_icon
-	potential = {  }
+	potential = {
+		OR = {
+			tag = NGT
+			capital_scope = { region = region_beyond_the_wall }
+		}
+	}
 	trigger = {  }
 	effect = {
 		# To display tt for neutral countries

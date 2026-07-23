@@ -5,7 +5,7 @@ NDefines.NGame.GREAT_POWER_FRENZY_START = "300.1.1" -- Latest date for the start
 
 NDefines.NDiplomacy.DESIRED_NUM_OF_ELECTORS = 8
 NDefines.NDiplomacy.MAX_FREE_CITIES = 6
-NDefines.NDiplomacy.HRE_PRINCE_AUTHORITY_THRESHOLD = 100 -- Threshold below which you lose IA, and above which you gain it
+NDefines.NDiplomacy.HRE_PRINCE_AUTHORITY_THRESHOLD = 80 -- Threshold below which you lose IA, and above which you gain it
 NDefines.NDiplomacy.IMPERIAL_AUTHORITY_FROM_PRINCES = 0.40 -- Scales to threshold
 NDefines.NDiplomacy.HRE_HERETIC_PENALTY = 0.00 -- Per heretic prince (halved by Peace of Westphalia)
 NDefines.NDiplomacy.LACK_OF_ELECTORS_HIT = 0.0 -- Also applied to vassalized electors
@@ -20,7 +20,8 @@ NDefines.NDiplomacy.CELESTIAL_EMPIRE_MANDATE_PER_5_LOANS = -0.36 -- Yearly chang
 NDefines.NDiplomacy.TRIBUTE_BASE_CASH = 0.175 -- Tributary State: Part of yearly income given in tribute
 
 NDefines.NCountry.CORRUPTION_COST = 0.125 -- cost for monthly combat per development
-NDefines.NCountry.STATE_MAINTENANCE_DEV_FACTOR = 0.011 -- per dev
+NDefines.NCountry.STATE_MAINTENANCE_DEV_FACTOR = 0.013 -- per dev
+NDefines.NCountry.STATE_MAINTENANCE_DISTANCE_FACTOR = 0.004	-- distance
 NDefines.NCountry.STATE_MAINTENANCE_CONTINENT_FACTOR = 0.33 -- different continet
 NDefines.NCountry.MIN_DEV_FOR_FREE_CITY = 6 -- Capital must have at least this much development to be a free city
 NDefines.NCountry.HRE_INCIDENT_ELECTOR_SUPPORT_IA = 2 -- How much worth an elector support is in an incident

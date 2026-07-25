@@ -433,6 +433,14 @@ on_monarch_death = {
 		}
 		add_stability = -1
 	}
+	if = {
+		limit = {
+			has_country_flag = AbdicationFactionLiege
+			is_in_war = { casus_belli = cb_abdication_war }
+		}
+		clr_country_flag = AbdicationFactionLiege
+		every_war_enemy_country = { white_peace = ROOT }
+	}
 }
 
 # Country

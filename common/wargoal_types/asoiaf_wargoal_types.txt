@@ -326,3 +326,39 @@ superiority_wildling_feud = {
 	
 	war_name = "WILDLING_FEUD_NAME"
 }
+
+take_capital_enforce_faction = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 2.0
+		peace_cost_factor = 1.0
+
+		allowed_provinces = { is_core = ROOT }
+		allowed_provinces_are_eligible = yes
+
+		peace_options = {
+			po_abdicate_throne
+			po_concede_defeat
+		}
+
+		prov_desc = "ALL_CORES"
+	}
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1.5
+		peace_cost_factor = 2.0
+
+		allowed_provinces = { is_core = ROOT }
+		allowed_provinces_are_eligible = yes
+
+		peace_options = {
+			po_concede_defeat
+		}
+
+		prov_desc = "ALL_CORES"
+	}
+	
+	war_name = "ENFORCE_FACTION_WAR_NAME"
+}

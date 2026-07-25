@@ -1022,12 +1022,15 @@ country_event = {
 		name = "sk_event.503.option.a"
 		ai_chance = { factor = 100 }
 		declare_war_with_cb = {
-			casus_belli = cb_independence_war
+			casus_belli = cb_abdication_war
 			who = overlord
 		}
 		every_country = {
 			limit = { alliance_with = ROOT has_ruler_flag = AbdicationFaction@event_target:overlord_scope }
 			custom_tooltip = "Joins the Abdication Faction's war"
+		}
+		hidden_effect = {
+			event_target:overlord_scope = { set_country_flag = AbdicationFactionLiege }
 		}
 	}
 
@@ -1035,6 +1038,13 @@ country_event = {
 		name = "sk_event.503.option.b"
 		ai_chance = { factor = 0 }
 		custom_tooltip = "The Abdication Faction will dissolve without achieving their goals."
+		every_country = {
+			limit = { alliance_with = ROOT has_ruler_flag = AbdicationFaction@event_target:overlord_scope }
+			add_opinion = {
+				who = ROOT
+				modifier = insulted
+			}
+		}
 	}
 
 	after = {

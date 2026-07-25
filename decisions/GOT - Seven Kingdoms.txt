@@ -185,37 +185,6 @@ country_decisions = {
 			}
 		}
 	}
-	exhaust_the_goldmines = {
-		color = { 229 193 51 }
-		potential = {
-			capital_scope = { region = region_westerlands }
-			any_owned_province = { trade_goods = gold }
-			any_owned_province = {
-				trade_goods = gold
-				NOT = { has_province_modifier = "exhausted_goldmines" }
-			}
-		}
-		allow = {
-			
-		}
-		effect = {
-			add_years_of_owned_provinces_production_income = {
-				years = 7.5
-				trigger = { trade_goods = gold }
-				custom_tooltip = "from_the_goldmines_tt"
-			}
-			custom_tooltip = "no_income_gold_tt"
-			hidden_effect = {
-				every_owned_province = {
-					limit = { trade_goods = gold }
-					add_province_modifier = {
-						name = "exhausted_goldmines"
-						duration = -1
-					}
-				}
-			}
-		}
-	}
 	clear_flea_bottom = {
 		color = { 229 193 51 }
 		potential = {

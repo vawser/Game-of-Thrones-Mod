@@ -2,24 +2,24 @@
 # Tyrosh
 #--------------------------------------
 gp_tyrosh = {
-    type = monument
-    
+	type = monument
+	
 	start = 367
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -27,8 +27,8 @@ gp_tyrosh = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -36,7 +36,7 @@ gp_tyrosh = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -48,17 +48,17 @@ gp_tyrosh = {
 			factor = 0
 		}
 		province_modifiers = {
-            province_trade_power_modifier = 0.1
+			province_trade_power_modifier = 0.1
 		}
 		area_modifier = {
-            trade_goods_size_modifier = 0.25
+			trade_goods_size_modifier = 0.25
 		}
 		country_modifiers = {
-            merchants = 1
-            trade_efficiency = 0.025
+			merchants = 1
+			trade_efficiency = 0.025
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -69,17 +69,17 @@ gp_tyrosh = {
 			factor = 1000
 		}
 		province_modifiers = {
-            province_trade_power_modifier = 0.25
+			province_trade_power_modifier = 0.25
 		}
 		area_modifier = {
-            trade_goods_size_modifier = 0.5
+			trade_goods_size_modifier = 0.5
 		}
 		country_modifiers = {
-            merchants = 1
-            trade_efficiency = 0.05
+			merchants = 1
+			trade_efficiency = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -90,17 +90,17 @@ gp_tyrosh = {
 			factor = 2000
 		}
 		province_modifiers = {
-            province_trade_power_modifier = 0.33
+			province_trade_power_modifier = 0.33
 		}
 		area_modifier = {
-            trade_goods_size_modifier = 0.75
+			trade_goods_size_modifier = 0.75
 		}
 		country_modifiers = {
-            merchants = 1
-            trade_efficiency = 0.075
+			merchants = 1
+			trade_efficiency = 0.075
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -111,43 +111,43 @@ gp_tyrosh = {
 			factor = 3000
 		}
 		province_modifiers = {
-            province_trade_power_modifier = 0.5
+			province_trade_power_modifier = 0.5
 		}
 		area_modifier = {
-            trade_goods_size_modifier = 1.0
+			trade_goods_size_modifier = 1.0
 		}
 		country_modifiers = {
-            merchants = 1
-            trade_efficiency = 0.1
+			merchants = 1
+			trade_efficiency = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Lys
 #--------------------------------------
 gp_lys = {
-    type = monument
-    
+	type = monument
+	
 	start = 368
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -155,8 +155,8 @@ gp_lys = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -164,7 +164,7 @@ gp_lys = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -176,17 +176,17 @@ gp_lys = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_prosperity_growth = 0.1
+			local_prosperity_growth = 0.1
 		}
 		area_modifier = {
-            local_tax_modifier = 0.1
+			local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            spy_offence = 0.05
-            global_spy_defence = 0.05
+			spy_offence = 0.05
+			global_spy_defence = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -197,17 +197,17 @@ gp_lys = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_prosperity_growth = 0.25
+			local_prosperity_growth = 0.25
 		}
 		area_modifier = {
-            local_tax_modifier = 0.25
+			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-            spy_offence = 0.1
-            global_spy_defence = 0.1
+			spy_offence = 0.1
+			global_spy_defence = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -218,17 +218,17 @@ gp_lys = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_prosperity_growth = 0.33
+			local_prosperity_growth = 0.33
 		}
 		area_modifier = {
-            local_tax_modifier = 0.33
+			local_tax_modifier = 0.33
 		}
 		country_modifiers = {
-            spy_offence = 0.15
-            global_spy_defence = 0.15
+			spy_offence = 0.15
+			global_spy_defence = 0.15
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -239,43 +239,43 @@ gp_lys = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_prosperity_growth = 0.5
+			local_prosperity_growth = 0.5
 		}
 		area_modifier = {
-            local_tax_modifier = 0.5
+			local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-            spy_offence = 0.2
-            global_spy_defence = 0.2
+			spy_offence = 0.2
+			global_spy_defence = 0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Myr
 #--------------------------------------
 gp_myr = {
-    type = monument
-    
+	type = monument
+	
 	start = 378
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -283,8 +283,8 @@ gp_myr = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -292,7 +292,7 @@ gp_myr = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -304,17 +304,17 @@ gp_myr = {
 			factor = 0
 		}
 		province_modifiers = {
-            province_trade_power_modifier = 0.1
+			province_trade_power_modifier = 0.1
 		}
 		area_modifier = {
-            trade_goods_size_modifier = 0.1
+			trade_goods_size_modifier = 0.1
 		}
 		country_modifiers = {
-            merchants = 1
-            placed_merchant_power = 2
+			merchants = 1
+			placed_merchant_power = 2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -325,17 +325,17 @@ gp_myr = {
 			factor = 1000
 		}
 		province_modifiers = {
-            province_trade_power_modifier = 0.25
+			province_trade_power_modifier = 0.25
 		}
 		area_modifier = {
-            trade_goods_size_modifier = 0.25
+			trade_goods_size_modifier = 0.25
 		}
 		country_modifiers = {
-            merchants = 1
-            placed_merchant_power = 4
+			merchants = 1
+			placed_merchant_power = 4
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -346,17 +346,17 @@ gp_myr = {
 			factor = 2000
 		}
 		province_modifiers = {
-            province_trade_power_modifier = 0.33
+			province_trade_power_modifier = 0.33
 		}
 		area_modifier = {
-            trade_goods_size_modifier = 0.33
+			trade_goods_size_modifier = 0.33
 		}
 		country_modifiers = {
-            merchants = 1
-            placed_merchant_power = 6
+			merchants = 1
+			placed_merchant_power = 6
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -367,43 +367,43 @@ gp_myr = {
 			factor = 3000
 		}
 		province_modifiers = {
-            province_trade_power_modifier = 0.5
+			province_trade_power_modifier = 0.5
 		}
 		area_modifier = {
-            trade_goods_size_modifier = 0.5
+			trade_goods_size_modifier = 0.5
 		}
 		country_modifiers = {
-            merchants = 1
-            placed_merchant_power = 8
+			merchants = 1
+			placed_merchant_power = 8
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Volantis
 #--------------------------------------
 gp_volantis = {
-    type = monument
-    
+	type = monument
+	
 	start = 417
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -411,8 +411,8 @@ gp_volantis = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -420,7 +420,7 @@ gp_volantis = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -432,17 +432,17 @@ gp_volantis = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_development_cost = -0.05
+			local_development_cost = -0.05
 		}
 		area_modifier = {
-            global_tax_modifier = 0.1
+			global_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            merchants = 1
-            trade_steering = 0.05
+			merchants = 1
+			trade_steering = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -453,17 +453,17 @@ gp_volantis = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_development_cost = -0.1
+			local_development_cost = -0.1
 		}
 		area_modifier = {
-            global_tax_modifier = 0.25
+			global_tax_modifier = 0.25
 		}
 		country_modifiers = {
-            merchants = 1
-            trade_steering = 0.1
+			merchants = 1
+			trade_steering = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -474,17 +474,17 @@ gp_volantis = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_development_cost = -0.15
+			local_development_cost = -0.15
 		}
 		area_modifier = {
-            global_tax_modifier = 0.33
+			global_tax_modifier = 0.33
 		}
 		country_modifiers = {
-            merchants = 1
-            trade_steering = 0.15
+			merchants = 1
+			trade_steering = 0.15
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -495,43 +495,43 @@ gp_volantis = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_development_cost = -0.2
+			local_development_cost = -0.2
 		}
 		area_modifier = {
-            global_tax_modifier = 0.5
+			global_tax_modifier = 0.5
 		}
 		country_modifiers = {
-            merchants = 1
-            trade_steering = 0.2
+			merchants = 1
+			trade_steering = 0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Temple of the Lord of Light
 #--------------------------------------
 gp_temple_of_the_lord_of_light = {
-    type = monument
-    
+	type = monument
+	
 	start = 418
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -539,8 +539,8 @@ gp_temple_of_the_lord_of_light = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		religion = rhllor
 	}
@@ -548,7 +548,7 @@ gp_temple_of_the_lord_of_light = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -560,17 +560,17 @@ gp_temple_of_the_lord_of_light = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_unrest = -1
+			local_unrest = -1
 		}
 		area_modifier = {
-            local_monthly_devastation = -0.015
+			local_monthly_devastation = -0.015
 		}
 		country_modifiers = {
-            missionaries = 1
-            global_missionary_strength = 0.01
+			missionaries = 1
+			global_missionary_strength = 0.01
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -581,17 +581,17 @@ gp_temple_of_the_lord_of_light = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_unrest = -2
+			local_unrest = -2
 		}
 		area_modifier = {
-            local_monthly_devastation = -0.03
+			local_monthly_devastation = -0.03
 		}
 		country_modifiers = {
-            missionaries = 1
-            global_missionary_strength = 0.02
+			missionaries = 1
+			global_missionary_strength = 0.02
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -602,17 +602,17 @@ gp_temple_of_the_lord_of_light = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_unrest = -3
+			local_unrest = -3
 		}
 		area_modifier = {
-            local_monthly_devastation = -0.045
+			local_monthly_devastation = -0.045
 		}
 		country_modifiers = {
-            missionaries = 1
-            global_missionary_strength = 0.03
+			missionaries = 1
+			global_missionary_strength = 0.03
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -623,43 +623,43 @@ gp_temple_of_the_lord_of_light = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_unrest = -4
+			local_unrest = -4
 		}
 		area_modifier = {
-            local_monthly_devastation = -0.06
+			local_monthly_devastation = -0.06
 		}
 		country_modifiers = {
-            missionaries = 1
-            global_missionary_strength = 0.04
+			missionaries = 1
+			global_missionary_strength = 0.04
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Pentos
 #--------------------------------------
 gp_pentos = {
-    type = monument
-    
+	type = monument
+	
 	start = 406
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -667,8 +667,8 @@ gp_pentos = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -676,7 +676,7 @@ gp_pentos = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -688,17 +688,17 @@ gp_pentos = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.1
+			local_tax_modifier = 0.1
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.1
+			local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            improve_relation_modifier = 0.05
-            monthly_favor_modifier = 0.05
+			improve_relation_modifier = 0.05
+			monthly_favor_modifier = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -709,17 +709,17 @@ gp_pentos = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.25
+			local_tax_modifier = 0.25
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.25
+			local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            improve_relation_modifier = 0.1
-            monthly_favor_modifier = 0.1
+			improve_relation_modifier = 0.1
+			monthly_favor_modifier = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -730,17 +730,17 @@ gp_pentos = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.33
+			local_tax_modifier = 0.33
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.33
+			local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            improve_relation_modifier = 0.15
-            monthly_favor_modifier = 0.15
+			improve_relation_modifier = 0.15
+			monthly_favor_modifier = 0.15
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -751,43 +751,36 @@ gp_pentos = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.5
+			local_tax_modifier = 0.5
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+			local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            improve_relation_modifier = 0.2
-            monthly_favor_modifier = 0.2
+			improve_relation_modifier = 0.2
+			monthly_favor_modifier = 0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Titan of Braavos
 #--------------------------------------
 gp_titan_of_braavos = {
-    type = monument
-    
 	start = 470
-
-	date = 100.01.01
+	date = 2.1.1
+	time = { months = 0 }
+	build_cost = 0
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
-	time = {
-		months = 0
-	}
+	starting_tier = 2
+	type = monument
 
-	starting_tier = 0
-
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
 	}
 	on_built = {
 		
@@ -795,16 +788,14 @@ gp_titan_of_braavos = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
-		always = yes
 	}
 	can_upgrade_trigger = {
-		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -816,17 +807,14 @@ gp_titan_of_braavos = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_ship_cost = -0.1
+			local_defensiveness = -0.10
+			blockade_force_required = -0.25
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.1
 		}
 		country_modifiers = {
-            navy_tradition = 0.5
-            global_sailors_modifier = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -837,17 +825,15 @@ gp_titan_of_braavos = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_ship_cost = -0.25
+			local_defensiveness = 0.10
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.25
+			
 		}
 		country_modifiers = {
-            navy_tradition = 1.0
-            global_sailors_modifier = 0.1
+			
 		}
 		on_upgraded = {
-            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -858,188 +844,57 @@ gp_titan_of_braavos = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_ship_cost = -0.33
+			local_defensiveness = 0.20
+			blockade_force_required = 0.25
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.33
+			local_own_coast_naval_combat_bonus = 1
 		}
 		country_modifiers = {
-            navy_tradition = 1.5
-            global_sailors_modifier = 0.15
+			
 		}
 		on_upgraded = {
-            add_prestige = 25
 		}
 	}
 	tier_3 = {
 		upgrade_time = {
-			months = 360
+			months = 480
 		}
 		cost_to_upgrade = {
-			factor = 3000
+			factor = 5000
 		}
 		province_modifiers = {
-            local_ship_cost = -0.5
+			fort_level = 1
+			local_defensiveness = 0.30
+			blockade_force_required = 0.5
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.5
+			local_own_coast_naval_combat_bonus = 2
 		}
 		country_modifiers = {
-            navy_tradition = 2.0
-            global_sailors_modifier = 0.2
+			leader_naval_fire = 1
+			leader_naval_manuever = 1
 		}
 		on_upgraded = {
-            add_prestige = 25
-		}
-    }
-}
-
-#--------------------------------------
-# Hall of Truth
-#--------------------------------------
-gp_hall_of_truth = {
-    type = monument
-    
-	start = 470
-
-	date = 100.01.01
-	can_be_moved = no
-	move_days_per_unit_distance = 10
-    
-    build_cost = 0
-	time = {
-		months = 0
-	}
-
-	starting_tier = 0
-
-    # Construction
-	build_trigger = {
-        always = yes
-	}
-	on_built = {
-		
-	}
-	on_destroyed = {
-		
-	}
-    
-    # Conditions
-	can_use_modifiers_trigger = {
-		always = yes
-	}
-	can_upgrade_trigger = {
-		always = yes
-	}
-	keep_trigger = {
-        
-	}
-
-	# Tiers
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-            local_tax_modifier = 0.1
-		}
-		area_modifier = {
-            local_monthly_devastation = -0.015
-		}
-		country_modifiers = {
-            years_of_nationalism = -2
-		}
-		on_upgraded = {
-            add_prestige = 25
 		}
 	}
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-            local_tax_modifier = 0.25
-		}
-		area_modifier = {
-            local_monthly_devastation = -0.03
-		}
-		country_modifiers = {
-            years_of_nationalism = -4
-		}
-		on_upgraded = {
-            add_prestige = 25
-		}
-	}
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2000
-		}
-		province_modifiers = {
-            local_tax_modifier = 0.33
-		}
-		area_modifier = {
-            local_monthly_devastation = -0.045
-		}
-		country_modifiers = {
-            years_of_nationalism = -6
-		}
-		on_upgraded = {
-            add_prestige = 25
-		}
-	}
-	tier_3 = {
-		upgrade_time = {
-			months = 360
-		}
-		cost_to_upgrade = {
-			factor = 3000
-		}
-		province_modifiers = {
-            local_tax_modifier = 0.5
-		}
-		area_modifier = {
-            local_monthly_devastation = -0.06
-		}
-		country_modifiers = {
-            years_of_nationalism = -8
-		}
-		on_upgraded = {
-            add_prestige = 25
-		}
-    }
 }
 
 #--------------------------------------
 # Iron Bank
 #--------------------------------------
 gp_iron_bank = {
-    type = monument
-    
 	start = 470
-
-	date = 100.01.01
-	can_be_moved = no
+	date = 2.1.1
+	time = { months = 0 }
+	build_cost = 0
+	can_be_moved = yes
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
-	time = {
-		months = 0
-	}
+	starting_tier = 2
+	type = monument
 
-	starting_tier = 0
-
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
 	}
 	on_built = {
 		
@@ -1047,16 +902,14 @@ gp_iron_bank = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
-		always = yes
 	}
 	can_upgrade_trigger = {
-		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -1068,17 +921,12 @@ gp_iron_bank = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.1
 		}
 		area_modifier = {
-            local_development_cost = -0.05
 		}
 		country_modifiers = {
-            interest = -0.5
-            inflation_reduction = 0.01
 		}
 		on_upgraded = {
-            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -1089,17 +937,15 @@ gp_iron_bank = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.25
+			tax_income = 24
 		}
 		area_modifier = {
-            local_development_cost = -0.1
 		}
 		country_modifiers = {
-            interest = -1.0
-            inflation_reduction = 0.02
+			interest = -1
+			global_tax_modifier = 0.10
 		}
 		on_upgraded = {
-            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -1110,64 +956,58 @@ gp_iron_bank = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.33
+			tax_income = 24
 		}
 		area_modifier = {
-            local_development_cost = -0.15
+			local_development_cost = -0.1
 		}
 		country_modifiers = {
-            interest = -1.5
-            inflation_reduction = 0.03
+			interest = -1
+			global_tax_modifier = 0.10
+			inflation_reduction = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
 		}
 	}
 	tier_3 = {
 		upgrade_time = {
-			months = 360
+			months = 480
 		}
 		cost_to_upgrade = {
-			factor = 3000
+			factor = 5000
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.5
+			tax_income = 48
 		}
 		area_modifier = {
-            local_development_cost = -0.2
+			allowed_num_of_buildings = 1
+			local_development_cost = -0.1
 		}
 		country_modifiers = {
-            interest = -2.0
-            inflation_reduction = 0.04
+			interest = -2
+			global_tax_modifier = 0.10
+			inflation_reduction = 0.10
 		}
 		on_upgraded = {
-            add_prestige = 25
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Sealord's Palace
 #--------------------------------------
 gp_sealords_palace = {
-    type = monument
-    
 	start = 470
-
-	date = 100.01.01
+	date = 2.1.1
+	time = { months = 0 }
+	build_cost = 0
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
-	time = {
-		months = 0
-	}
+	starting_tier = 1
+	type = monument
 
-	starting_tier = 0
-
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
 	}
 	on_built = {
 		
@@ -1175,16 +1015,14 @@ gp_sealords_palace = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
-		always = yes
 	}
 	can_upgrade_trigger = {
-		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -1196,18 +1034,12 @@ gp_sealords_palace = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_ship_cost = -0.1
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.1
 		}
 		country_modifiers = {
-            navy_tradition = 0.5
-            admiral_cost = -0.1
-            admiral_skill_gain_modifier = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
 		}
 	}
 	tier_1 = {
@@ -1218,18 +1050,14 @@ gp_sealords_palace = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_ship_cost = -0.25
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.25
 		}
 		country_modifiers = {
-            navy_tradition = 1.0
-            admiral_cost = -0.15
-            admiral_skill_gain_modifier = 0.15
+			republican_tradition = 0.5
+			diplomatic_reputation = 1
 		}
 		on_upgraded = {
-            add_prestige = 25
 		}
 	}
 	tier_2 = {
@@ -1240,190 +1068,65 @@ gp_sealords_palace = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_ship_cost = -0.33
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.33
+			local_state_maintenance_modifier = -0.10
 		}
 		country_modifiers = {
-            navy_tradition = 1.5
-            admiral_cost = -0.2
-            admiral_skill_gain_modifier = 0.2
+			republican_tradition = 0.5
+			diplomatic_reputation = 1
+			prestige_decay = -0.01
 		}
 		on_upgraded = {
-            add_prestige = 25
 		}
 	}
 	tier_3 = {
 		upgrade_time = {
-			months = 360
+			months = 480
 		}
 		cost_to_upgrade = {
-			factor = 3000
+			factor = 5000
 		}
 		province_modifiers = {
-            local_ship_cost = -0.5
+			allowed_num_of_buildings = 1
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.5
+			local_state_maintenance_modifier = -0.10
+			local_unrest = -1
 		}
 		country_modifiers = {
-            navy_tradition = 2.0
-            admiral_cost = -0.25
-            admiral_skill_gain_modifier = 0.25
+			republican_tradition = 0.5
+			diplomatic_reputation = 2
+			prestige_decay = -0.01
 		}
 		on_upgraded = {
-            add_prestige = 25
-		}
-    }
-}
-
-#--------------------------------------
-# House of Black and White
-#--------------------------------------
-gp_house_of_black_and_white = {
-    type = monument
-    
-	start = 470
-
-	date = 100.01.01
-	can_be_moved = no
-	move_days_per_unit_distance = 10
-    
-    build_cost = 0
-	time = {
-		months = 0
-	}
-
-	starting_tier = 0
-
-    # Construction
-	build_trigger = {
-        always = yes
-	}
-	on_built = {
-		
-	}
-	on_destroyed = {
-		
-	}
-    
-    # Conditions
-	can_use_modifiers_trigger = {
-		always = yes
-	}
-	can_upgrade_trigger = {
-		always = yes
-	}
-	keep_trigger = {
-        
-	}
-
-	# Tiers
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-            local_unrest = -1
-		}
-		area_modifier = {
-            local_hostile_attrition = 1
-		}
-		country_modifiers = {
-            infantry_power = 0.025
-		}
-		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-            local_unrest = -2
-		}
-		area_modifier = {
-            local_hostile_attrition = 2
-		}
-		country_modifiers = {
-            infantry_power = 0.05
-		}
-		on_upgraded = {
-            add_prestige = 25
-		}
-	}
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2000
-		}
-		province_modifiers = {
-            local_unrest = -3
-		}
-		area_modifier = {
-            local_hostile_attrition = 3
-		}
-		country_modifiers = {
-            infantry_power = 0.075
-		}
-		on_upgraded = {
-            add_prestige = 25
-		}
-	}
-	tier_3 = {
-		upgrade_time = {
-			months = 360
-		}
-		cost_to_upgrade = {
-			factor = 3000
-		}
-		province_modifiers = {
-            local_unrest = -4
-		}
-		area_modifier = {
-            local_hostile_attrition = 4
-		}
-		country_modifiers = {
-            infantry_power = 0.1
-		}
-		on_upgraded = {
-            add_prestige = 25
-		}
-    }
 }
 
 #--------------------------------------
 # Lorath
 #--------------------------------------
 gp_lorath = {
-    type = monument
-    
+	type = monument
+	
 	start = 471
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -1431,8 +1134,8 @@ gp_lorath = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -1440,7 +1143,7 @@ gp_lorath = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -1452,17 +1155,17 @@ gp_lorath = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_development_cost = -0.05
+			local_development_cost = -0.05
 		}
 		area_modifier = {
-            local_build_cost = -0.1
-            local_build_time = -0.1
+			local_build_cost = -0.1
+			local_build_time = -0.1
 		}
 		country_modifiers = {
-            state_maintenance_modifier = -0.1
+			state_maintenance_modifier = -0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -1473,17 +1176,17 @@ gp_lorath = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_development_cost = -0.1
+			local_development_cost = -0.1
 		}
 		area_modifier = {
-            local_build_cost = -0.25
-            local_build_time = -0.25
+			local_build_cost = -0.25
+			local_build_time = -0.25
 		}
 		country_modifiers = {
-            state_maintenance_modifier = -0.2
+			state_maintenance_modifier = -0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -1494,17 +1197,17 @@ gp_lorath = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_development_cost = -0.15
+			local_development_cost = -0.15
 		}
 		area_modifier = {
-            local_build_cost = -0.33
-            local_build_time = -0.33
+			local_build_cost = -0.33
+			local_build_time = -0.33
 		}
 		country_modifiers = {
-            state_maintenance_modifier = -0.3
+			state_maintenance_modifier = -0.3
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -1515,43 +1218,43 @@ gp_lorath = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_development_cost = -0.2
+			local_development_cost = -0.2
 		}
 		area_modifier = {
-            local_build_cost = -0.5
-            local_build_time = -0.5
+			local_build_cost = -0.5
+			local_build_time = -0.5
 		}
 		country_modifiers = {
-            state_maintenance_modifier = -0.4
+			state_maintenance_modifier = -0.4
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Norvos
 #--------------------------------------
 gp_norvos = {
-    type = monument
-    
+	type = monument
+	
 	start = 433
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -1559,8 +1262,8 @@ gp_norvos = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -1568,7 +1271,7 @@ gp_norvos = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -1580,16 +1283,16 @@ gp_norvos = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_defensiveness = 0.1
+			local_defensiveness = 0.1
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.1
+			local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            infantry_shock = 0.25
+			infantry_shock = 0.25
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -1600,16 +1303,16 @@ gp_norvos = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_defensiveness = 0.25
+			local_defensiveness = 0.25
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.25
+			local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            infantry_shock = 0.5
+			infantry_shock = 0.5
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -1620,16 +1323,16 @@ gp_norvos = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_defensiveness = 0.33
+			local_defensiveness = 0.33
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.33
+			local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            infantry_shock = 0.75
+			infantry_shock = 0.75
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -1640,42 +1343,42 @@ gp_norvos = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_defensiveness = 0.5
+			local_defensiveness = 0.5
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+			local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            infantry_shock = 1.0
+			infantry_shock = 1.0
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Qohor
 #--------------------------------------
 gp_qohor = {
-    type = monument
-    
+	type = monument
+	
 	start = 476
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -1683,8 +1386,8 @@ gp_qohor = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -1692,7 +1395,7 @@ gp_qohor = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -1704,16 +1407,16 @@ gp_qohor = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_development_cost = -0.05
+			local_development_cost = -0.05
 		}
 		area_modifier = {
-            local_production_efficiency = 0.1
+			local_production_efficiency = 0.1
 		}
 		country_modifiers = {
-            trade_goods_size_modifier = 0.025
+			trade_goods_size_modifier = 0.025
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -1724,16 +1427,16 @@ gp_qohor = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_development_cost = -0.1
+			local_development_cost = -0.1
 		}
 		area_modifier = {
-            local_production_efficiency = 0.25
+			local_production_efficiency = 0.25
 		}
 		country_modifiers = {
-            trade_goods_size_modifier = 0.05
+			trade_goods_size_modifier = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -1744,16 +1447,16 @@ gp_qohor = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_development_cost = -0.15
+			local_development_cost = -0.15
 		}
 		area_modifier = {
-            local_production_efficiency = 0.33
+			local_production_efficiency = 0.33
 		}
 		country_modifiers = {
-            trade_goods_size_modifier = 0.075
+			trade_goods_size_modifier = 0.075
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -1764,42 +1467,42 @@ gp_qohor = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_development_cost = -0.2
+			local_development_cost = -0.2
 		}
 		area_modifier = {
-            local_production_efficiency = 0.5
+			local_production_efficiency = 0.5
 		}
 		country_modifiers = {
-            trade_goods_size_modifier = 0.1
+			trade_goods_size_modifier = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Meereen
 #--------------------------------------
 gp_meereen = {
-    type = monument
-    
+	type = monument
+	
 	start = 606
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -1807,8 +1510,8 @@ gp_meereen = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -1816,7 +1519,7 @@ gp_meereen = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -1828,17 +1531,17 @@ gp_meereen = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_defensiveness = 0.1
+			local_defensiveness = 0.1
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.1
+			local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            land_forcelimit_modifier = 0.05
-            land_maintenance_modifier = -0.05
+			land_forcelimit_modifier = 0.05
+			land_maintenance_modifier = -0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -1849,17 +1552,17 @@ gp_meereen = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_defensiveness = 0.25
+			local_defensiveness = 0.25
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.25
+			local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            land_forcelimit_modifier = 0.1
-            land_maintenance_modifier = -0.1
+			land_forcelimit_modifier = 0.1
+			land_maintenance_modifier = -0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -1870,17 +1573,17 @@ gp_meereen = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_defensiveness = 0.33
+			local_defensiveness = 0.33
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.33
+			local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            land_forcelimit_modifier = 0.15
-            land_maintenance_modifier = -0.15
+			land_forcelimit_modifier = 0.15
+			land_maintenance_modifier = -0.15
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -1891,43 +1594,43 @@ gp_meereen = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_defensiveness = 0.5
+			local_defensiveness = 0.5
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+			local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            land_forcelimit_modifier = 0.2
-            land_maintenance_modifier = -0.2
+			land_forcelimit_modifier = 0.2
+			land_maintenance_modifier = -0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Temple of the Graces
 #--------------------------------------
 gp_temple_of_the_graces = {
-    type = monument
-    
+	type = monument
+	
 	start = 606
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -1935,8 +1638,8 @@ gp_temple_of_the_graces = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -1944,7 +1647,7 @@ gp_temple_of_the_graces = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -1956,17 +1659,17 @@ gp_temple_of_the_graces = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_unrest = -1
+			local_unrest = -1
 		}
 		area_modifier = {
-            local_tax_modifier = 0.1
+			local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            missionaries = 1
-            global_missionary_strength = 0.01
+			missionaries = 1
+			global_missionary_strength = 0.01
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -1977,17 +1680,17 @@ gp_temple_of_the_graces = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_unrest = -2
+			local_unrest = -2
 		}
 		area_modifier = {
-            local_tax_modifier = 0.25
+			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-            missionaries = 1
-            global_missionary_strength = 0.02
+			missionaries = 1
+			global_missionary_strength = 0.02
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -1998,17 +1701,17 @@ gp_temple_of_the_graces = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_unrest = -3
+			local_unrest = -3
 		}
 		area_modifier = {
-            local_tax_modifier = 0.33
+			local_tax_modifier = 0.33
 		}
 		country_modifiers = {
-            missionaries = 1
-            global_missionary_strength = 0.03
+			missionaries = 1
+			global_missionary_strength = 0.03
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -2019,43 +1722,43 @@ gp_temple_of_the_graces = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_unrest = -4
+			local_unrest = -4
 		}
 		area_modifier = {
-            local_tax_modifier = 0.5
+			local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-            missionaries = 1
-            global_missionary_strength = 0.04
+			missionaries = 1
+			global_missionary_strength = 0.04
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Yunkai
 #--------------------------------------
 gp_yunkai = {
-    type = monument
-    
+	type = monument
+	
 	start = 610
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -2063,8 +1766,8 @@ gp_yunkai = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -2072,7 +1775,7 @@ gp_yunkai = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -2084,17 +1787,17 @@ gp_yunkai = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_defensiveness = 0.1
+			local_defensiveness = 0.1
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.1
+			local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            army_tradition_decay = -0.005
-            global_manpower_modifier = 0.05
+			army_tradition_decay = -0.005
+			global_manpower_modifier = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -2105,17 +1808,17 @@ gp_yunkai = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_defensiveness = 0.25
+			local_defensiveness = 0.25
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.25
+			local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            army_tradition_decay = -0.01
-            global_manpower_modifier = 0.1
+			army_tradition_decay = -0.01
+			global_manpower_modifier = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -2126,17 +1829,17 @@ gp_yunkai = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_defensiveness = 0.33
+			local_defensiveness = 0.33
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.33
+			local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            army_tradition_decay = -0.015
-            global_manpower_modifier = 0.15
+			army_tradition_decay = -0.015
+			global_manpower_modifier = 0.15
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -2147,43 +1850,43 @@ gp_yunkai = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_defensiveness = 0.5
+			local_defensiveness = 0.5
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+			local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            army_tradition_decay = -0.02
-            global_manpower_modifier = 0.2
+			army_tradition_decay = -0.02
+			global_manpower_modifier = 0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Astapor
 #--------------------------------------
 gp_astapor = {
-    type = monument
-    
+	type = monument
+	
 	start = 613
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -2191,8 +1894,8 @@ gp_astapor = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -2200,7 +1903,7 @@ gp_astapor = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -2212,17 +1915,17 @@ gp_astapor = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_defensiveness = 0.1
+			local_defensiveness = 0.1
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.1
+			local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            global_regiment_cost = -0.05
-            army_tradition_from_battle = 0.25
+			global_regiment_cost = -0.05
+			army_tradition_from_battle = 0.25
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -2233,17 +1936,17 @@ gp_astapor = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_defensiveness = 0.25
+			local_defensiveness = 0.25
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.25
+			local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            global_regiment_cost = -0.1
-            army_tradition_from_battle = 0.5
+			global_regiment_cost = -0.1
+			army_tradition_from_battle = 0.5
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -2254,17 +1957,17 @@ gp_astapor = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_defensiveness = 0.33
+			local_defensiveness = 0.33
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.33
+			local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            global_regiment_cost = -0.15
-            army_tradition_from_battle = 0.75
+			global_regiment_cost = -0.15
+			army_tradition_from_battle = 0.75
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -2275,43 +1978,43 @@ gp_astapor = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_defensiveness = 0.5
+			local_defensiveness = 0.5
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+			local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            global_regiment_cost = -0.2
-            army_tradition_from_battle = 1.0
+			global_regiment_cost = -0.2
+			army_tradition_from_battle = 1.0
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Plaza of Pride
 #--------------------------------------
 gp_plaza_of_pride = {
-    type = monument
-    
+	type = monument
+	
 	start = 613
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -2319,8 +2022,8 @@ gp_plaza_of_pride = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -2328,7 +2031,7 @@ gp_plaza_of_pride = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -2340,16 +2043,16 @@ gp_plaza_of_pride = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_unrest = -1
+			local_unrest = -1
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.1
+			local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            discipline = 0.025
+			discipline = 0.025
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -2360,16 +2063,16 @@ gp_plaza_of_pride = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_unrest = -2
+			local_unrest = -2
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.25
+			local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            discipline = 0.05
+			discipline = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -2380,16 +2083,16 @@ gp_plaza_of_pride = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_unrest = -3
+			local_unrest = -3
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.33
+			local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            discipline = 0.075
+			discipline = 0.075
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -2400,42 +2103,42 @@ gp_plaza_of_pride = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_unrest = -4
+			local_unrest = -4
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+			local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            discipline = 0.1
+			discipline = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Qarth
 #--------------------------------------
 gp_qarth = {
-    type = monument
-    
+	type = monument
+	
 	start = 663
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -2443,8 +2146,8 @@ gp_qarth = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -2452,7 +2155,7 @@ gp_qarth = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -2464,17 +2167,17 @@ gp_qarth = {
 			factor = 0
 		}
 		province_modifiers = {
-            institution_growth = 1
+			institution_growth = 1
 		}
 		area_modifier = {
-            local_tax_modifier = 0.1
+			local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            trade_steering = 0.05
-            global_trade_power = 0.05
+			trade_steering = 0.05
+			global_trade_power = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -2485,17 +2188,17 @@ gp_qarth = {
 			factor = 1000
 		}
 		province_modifiers = {
-            institution_growth = 2
+			institution_growth = 2
 		}
 		area_modifier = {
-            local_tax_modifier = 0.25
+			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-            trade_steering = 0.1
-            global_trade_power = 0.1
+			trade_steering = 0.1
+			global_trade_power = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -2506,17 +2209,17 @@ gp_qarth = {
 			factor = 2000
 		}
 		province_modifiers = {
-            institution_growth = 3
+			institution_growth = 3
 		}
 		area_modifier = {
-            local_tax_modifier = 0.33
+			local_tax_modifier = 0.33
 		}
 		country_modifiers = {
-            trade_steering = 0.15
-            global_trade_power = 0.15
+			trade_steering = 0.15
+			global_trade_power = 0.15
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -2527,43 +2230,43 @@ gp_qarth = {
 			factor = 3000
 		}
 		province_modifiers = {
-            institution_growth = 4
+			institution_growth = 4
 		}
 		area_modifier = {
-            local_tax_modifier = 0.5
+			local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-            trade_steering = 0.2
-            global_trade_power = 0.2
+			trade_steering = 0.2
+			global_trade_power = 0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # House of the Undying
 #--------------------------------------
 gp_house_of_the_undying = {
-    type = monument
-    
+	type = monument
+	
 	start = 1150
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -2571,8 +2274,8 @@ gp_house_of_the_undying = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -2580,7 +2283,7 @@ gp_house_of_the_undying = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -2592,16 +2295,16 @@ gp_house_of_the_undying = {
 			factor = 0
 		}
 		province_modifiers = {
-            allowed_num_of_buildings = 1
+			allowed_num_of_buildings = 1
 		}
 		area_modifier = {
-            local_monthly_devastation = -0.015
+			local_monthly_devastation = -0.015
 		}
 		country_modifiers = {
-            all_power_cost = -0.025
+			all_power_cost = -0.025
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -2612,16 +2315,16 @@ gp_house_of_the_undying = {
 			factor = 1000
 		}
 		province_modifiers = {
-            allowed_num_of_buildings = 2
+			allowed_num_of_buildings = 2
 		}
 		area_modifier = {
-            local_monthly_devastation = -0.03
+			local_monthly_devastation = -0.03
 		}
 		country_modifiers = {
-            all_power_cost = -0.05
+			all_power_cost = -0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -2632,16 +2335,16 @@ gp_house_of_the_undying = {
 			factor = 2000
 		}
 		province_modifiers = {
-            allowed_num_of_buildings = 3
+			allowed_num_of_buildings = 3
 		}
 		area_modifier = {
-            local_monthly_devastation = -0.045
+			local_monthly_devastation = -0.045
 		}
 		country_modifiers = {
-            all_power_cost = -0.075
+			all_power_cost = -0.075
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -2652,42 +2355,42 @@ gp_house_of_the_undying = {
 			factor = 3000
 		}
 		province_modifiers = {
-            allowed_num_of_buildings = 4
+			allowed_num_of_buildings = 4
 		}
 		area_modifier = {
-            local_monthly_devastation = -0.06
+			local_monthly_devastation = -0.06
 		}
 		country_modifiers = {
-            all_power_cost = -0.1
+			all_power_cost = -0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Yin
 #--------------------------------------
 gp_yin = {
-    type = monument
-    
+	type = monument
+	
 	start = 765
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -2695,8 +2398,8 @@ gp_yin = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -2704,7 +2407,7 @@ gp_yin = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -2716,17 +2419,17 @@ gp_yin = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_development_cost = -0.05
+			local_development_cost = -0.05
 		}
 		area_modifier = {
-            local_tax_modifier = 0.1
+			local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            governing_capacity_modifier = 0.05
-            state_maintenance_modifier = -0.1
+			governing_capacity_modifier = 0.05
+			state_maintenance_modifier = -0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -2737,17 +2440,17 @@ gp_yin = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_development_cost = -0.1
+			local_development_cost = -0.1
 		}
 		area_modifier = {
-            local_tax_modifier = 0.25
+			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-            governing_capacity_modifier = 0.1
-            state_maintenance_modifier = -0.2
+			governing_capacity_modifier = 0.1
+			state_maintenance_modifier = -0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -2758,17 +2461,17 @@ gp_yin = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_development_cost = -0.15
+			local_development_cost = -0.15
 		}
 		area_modifier = {
-            local_tax_modifier = 0.33
+			local_tax_modifier = 0.33
 		}
 		country_modifiers = {
-            governing_capacity_modifier = 0.15
-            state_maintenance_modifier = -0.3
+			governing_capacity_modifier = 0.15
+			state_maintenance_modifier = -0.3
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -2779,43 +2482,43 @@ gp_yin = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_development_cost = -0.2
+			local_development_cost = -0.2
 		}
 		area_modifier = {
-            local_tax_modifier = 0.5
+			local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-            governing_capacity_modifier = 0.2
-            state_maintenance_modifier = -0.4
+			governing_capacity_modifier = 0.2
+			state_maintenance_modifier = -0.4
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Five Forts
 #--------------------------------------
 gp_the_five_forts = {
-    type = monument
-    
+	type = monument
+	
 	start = 820
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -2823,8 +2526,8 @@ gp_the_five_forts = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -2832,7 +2535,7 @@ gp_the_five_forts = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -2844,16 +2547,16 @@ gp_the_five_forts = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_defensiveness = 1.0
+			local_defensiveness = 1.0
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.1
+			local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            hostile_attrition = 1
+			hostile_attrition = 1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -2864,16 +2567,16 @@ gp_the_five_forts = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_defensiveness = 1.0
+			local_defensiveness = 1.0
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.25
+			local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            hostile_attrition = 2
+			hostile_attrition = 2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -2884,16 +2587,16 @@ gp_the_five_forts = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_defensiveness = 1.0
+			local_defensiveness = 1.0
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.33
+			local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            hostile_attrition = 3
+			hostile_attrition = 3
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -2904,42 +2607,42 @@ gp_the_five_forts = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_defensiveness = 1.0
+			local_defensiveness = 1.0
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+			local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            hostile_attrition = 4
+			hostile_attrition = 4
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
-    }
+	}
 }
 
 #--------------------------------------
 # Asshai
 #--------------------------------------
 gp_asshai = {
-    type = monument
-    
+	type = monument
+	
 	start = 795
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -2947,8 +2650,8 @@ gp_asshai = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -2956,7 +2659,7 @@ gp_asshai = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -2968,16 +2671,16 @@ gp_asshai = {
 			factor = 0
 		}
 		province_modifiers = {
-            institution_growth = 1
+			institution_growth = 1
 		}
 		area_modifier = {
-            allowed_num_of_manufactories = 1
+			allowed_num_of_manufactories = 1
 		}
 		country_modifiers = {
-            technology_cost = -0.025
+			technology_cost = -0.025
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -2988,16 +2691,16 @@ gp_asshai = {
 			factor = 1000
 		}
 		province_modifiers = {
-            institution_growth = 2
+			institution_growth = 2
 		}
 		area_modifier = {
-            allowed_num_of_manufactories = 2
+			allowed_num_of_manufactories = 2
 		}
 		country_modifiers = {
-            technology_cost = -0.05
+			technology_cost = -0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -3008,16 +2711,16 @@ gp_asshai = {
 			factor = 2000
 		}
 		province_modifiers = {
-            institution_growth = 3
+			institution_growth = 3
 		}
 		area_modifier = {
-            allowed_num_of_manufactories = 3
+			allowed_num_of_manufactories = 3
 		}
 		country_modifiers = {
-            technology_cost = -0.075
+			technology_cost = -0.075
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -3028,16 +2731,16 @@ gp_asshai = {
 			factor = 3000
 		}
 		province_modifiers = {
-            institution_growth = 4
+			institution_growth = 4
 		}
 		area_modifier = {
-            allowed_num_of_manufactories = 4
+			allowed_num_of_manufactories = 4
 		}
 		country_modifiers = {
-            technology_cost = -0.1
+			technology_cost = -0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 }
@@ -3046,24 +2749,24 @@ gp_asshai = {
 # Trader Town
 #--------------------------------------
 gp_trader_town = {
-    type = monument
-    
+	type = monument
+	
 	start = 847
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -3071,8 +2774,8 @@ gp_trader_town = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -3080,7 +2783,7 @@ gp_trader_town = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -3092,17 +2795,17 @@ gp_trader_town = {
 			factor = 0
 		}
 		province_modifiers = {
-            trade_goods_size_modifier = 0.1
+			trade_goods_size_modifier = 0.1
 		}
 		area_modifier = {
-            province_trade_power_modifier = 0.1
+			province_trade_power_modifier = 0.1
 		}
 		country_modifiers = {
-            merchants = 1
-            caravan_power = 0.05
+			merchants = 1
+			caravan_power = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -3113,17 +2816,17 @@ gp_trader_town = {
 			factor = 1000
 		}
 		province_modifiers = {
-            trade_goods_size_modifier = 0.25
+			trade_goods_size_modifier = 0.25
 		}
 		area_modifier = {
-            province_trade_power_modifier = 0.25
+			province_trade_power_modifier = 0.25
 		}
 		country_modifiers = {
-            merchants = 1
-            caravan_power = 0.1
+			merchants = 1
+			caravan_power = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -3134,17 +2837,17 @@ gp_trader_town = {
 			factor = 2000
 		}
 		province_modifiers = {
-            trade_goods_size_modifier = 0.33
+			trade_goods_size_modifier = 0.33
 		}
 		area_modifier = {
-            province_trade_power_modifier = 0.33
+			province_trade_power_modifier = 0.33
 		}
 		country_modifiers = {
-            merchants = 1
-            caravan_power = 0.15
+			merchants = 1
+			caravan_power = 0.15
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -3155,17 +2858,17 @@ gp_trader_town = {
 			factor = 3000
 		}
 		province_modifiers = {
-            trade_goods_size_modifier = 0.5
+			trade_goods_size_modifier = 0.5
 		}
 		area_modifier = {
-            province_trade_power_modifier = 0.5
+			province_trade_power_modifier = 0.5
 		}
 		country_modifiers = {
-            merchants = 1
-            caravan_power = 0.2
+			merchants = 1
+			caravan_power = 0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 }
@@ -3174,24 +2877,24 @@ gp_trader_town = {
 # Leng Ma
 #--------------------------------------
 gp_leng_ma = {
-    type = monument
-    
+	type = monument
+	
 	start = 791
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -3199,8 +2902,8 @@ gp_leng_ma = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -3208,7 +2911,7 @@ gp_leng_ma = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -3220,17 +2923,17 @@ gp_leng_ma = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_development_cost = -0.05
+			local_development_cost = -0.05
 		}
 		area_modifier = {
-            local_tax_modifier = 0.1
+			local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            prestige = 0.5
-            diplomats = 1
+			prestige = 0.5
+			diplomats = 1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -3241,17 +2944,17 @@ gp_leng_ma = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_development_cost = -0.1
+			local_development_cost = -0.1
 		}
 		area_modifier = {
-            local_tax_modifier = 0.25
+			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-            prestige = 1.0
-            diplomats = 1
+			prestige = 1.0
+			diplomats = 1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -3262,17 +2965,17 @@ gp_leng_ma = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_development_cost = -0.15
+			local_development_cost = -0.15
 		}
 		area_modifier = {
-            local_tax_modifier = 0.33
+			local_tax_modifier = 0.33
 		}
 		country_modifiers = {
-            prestige = 1.5
-            diplomats = 1
+			prestige = 1.5
+			diplomats = 1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -3283,17 +2986,17 @@ gp_leng_ma = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_development_cost = -0.2
+			local_development_cost = -0.2
 		}
 		area_modifier = {
-            local_tax_modifier = 0.5
+			local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-            prestige = 2.0
-            diplomats = 1
+			prestige = 2.0
+			diplomats = 1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 }
@@ -3302,24 +3005,24 @@ gp_leng_ma = {
 # Tall Trees Town
 #--------------------------------------
 gp_tall_trees_town = {
-    type = monument
-    
+	type = monument
+	
 	start = 500
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -3327,8 +3030,8 @@ gp_tall_trees_town = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -3336,7 +3039,7 @@ gp_tall_trees_town = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -3348,16 +3051,16 @@ gp_tall_trees_town = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_production_efficiency = 0.1
+			local_production_efficiency = 0.1
 		}
 		area_modifier = {
-            local_prosperity_growth = 0.1
+			local_prosperity_growth = 0.1
 		}
 		country_modifiers = {
-            development_cost = -0.05
+			development_cost = -0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -3368,16 +3071,16 @@ gp_tall_trees_town = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_production_efficiency = 0.25
+			local_production_efficiency = 0.25
 		}
 		area_modifier = {
-            local_prosperity_growth = 0.25
+			local_prosperity_growth = 0.25
 		}
 		country_modifiers = {
-            development_cost = -0.1
+			development_cost = -0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -3388,16 +3091,16 @@ gp_tall_trees_town = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_production_efficiency = 0.33
+			local_production_efficiency = 0.33
 		}
 		area_modifier = {
-            local_prosperity_growth = 0.33
+			local_prosperity_growth = 0.33
 		}
 		country_modifiers = {
-            development_cost = -0.15
+			development_cost = -0.15
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -3408,16 +3111,16 @@ gp_tall_trees_town = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_production_efficiency = 0.5
+			local_production_efficiency = 0.5
 		}
 		area_modifier = {
-            local_prosperity_growth = 0.5
+			local_prosperity_growth = 0.5
 		}
 		country_modifiers = {
-            development_cost = -0.2
+			development_cost = -0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 }
@@ -3426,24 +3129,24 @@ gp_tall_trees_town = {
 # Valyria
 #--------------------------------------
 gp_valyria = {
-    type = monument
-    
+	type = monument
+	
 	start = 597
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -3451,8 +3154,8 @@ gp_valyria = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -3460,7 +3163,7 @@ gp_valyria = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -3472,17 +3175,17 @@ gp_valyria = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.1
+			local_tax_modifier = 0.1
 		}
 		area_modifier = {
-            local_prosperity_growth = 0.1
+			local_prosperity_growth = 0.1
 		}
 		country_modifiers = {
-            free_policy = 1
-            global_autonomy = -0.025
+			free_policy = 1
+			global_autonomy = -0.025
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -3493,17 +3196,17 @@ gp_valyria = {
 			factor = 10000
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.25
+			local_tax_modifier = 0.25
 		}
 		area_modifier = {
-            local_prosperity_growth = 0.25
+			local_prosperity_growth = 0.25
 		}
 		country_modifiers = {
-            free_policy = 1
-            global_autonomy = -0.05
+			free_policy = 1
+			global_autonomy = -0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -3514,17 +3217,17 @@ gp_valyria = {
 			factor = 20000
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.33
+			local_tax_modifier = 0.33
 		}
 		area_modifier = {
-            local_prosperity_growth = 0.33
+			local_prosperity_growth = 0.33
 		}
 		country_modifiers = {
-            free_policy = 1
-            global_autonomy = -0.075
+			free_policy = 1
+			global_autonomy = -0.075
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -3535,17 +3238,17 @@ gp_valyria = {
 			factor = 30000
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.5
+			local_tax_modifier = 0.5
 		}
 		area_modifier = {
-            local_prosperity_growth = 0.5
+			local_prosperity_growth = 0.5
 		}
 		country_modifiers = {
-            free_policy = 1
-            global_autonomy = -0.1
+			free_policy = 1
+			global_autonomy = -0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 }
@@ -3554,24 +3257,24 @@ gp_valyria = {
 # Vaes Dothrak
 #--------------------------------------
 gp_vaes_dothrak = {
-    type = monument
-    
+	type = monument
+	
 	start = 709
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -3579,8 +3282,8 @@ gp_vaes_dothrak = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -3588,7 +3291,7 @@ gp_vaes_dothrak = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -3600,17 +3303,17 @@ gp_vaes_dothrak = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_unrest = -1
+			local_unrest = -1
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.1
+			local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            cavalry_power = 0.025
-            movement_speed = 0.025
+			cavalry_power = 0.025
+			movement_speed = 0.025
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -3621,17 +3324,17 @@ gp_vaes_dothrak = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_unrest = -2
+			local_unrest = -2
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.25
+			local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            cavalry_power = 0.05
-            movement_speed = 0.05
+			cavalry_power = 0.05
+			movement_speed = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -3642,17 +3345,17 @@ gp_vaes_dothrak = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_unrest = -3
+			local_unrest = -3
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.33
+			local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            cavalry_power = 0.075
-            movement_speed = 0.075
+			cavalry_power = 0.075
+			movement_speed = 0.075
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -3663,17 +3366,17 @@ gp_vaes_dothrak = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_unrest = -4
+			local_unrest = -4
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+			local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            cavalry_power = 0.1
-            movement_speed = 0.1
+			cavalry_power = 0.1
+			movement_speed = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 }
@@ -3682,24 +3385,24 @@ gp_vaes_dothrak = {
 # Palace with a Thousand Rooms
 #--------------------------------------
 gp_palace_with_a_thousand_rooms = {
-    type = monument
-    
+	type = monument
+	
 	start = 544
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -3707,8 +3410,8 @@ gp_palace_with_a_thousand_rooms = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -3716,7 +3419,7 @@ gp_palace_with_a_thousand_rooms = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -3728,16 +3431,16 @@ gp_palace_with_a_thousand_rooms = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.1
+			local_tax_modifier = 0.1
 		}
 		area_modifier = {
-            local_autonomy = -0.025
+			local_autonomy = -0.025
 		}
 		country_modifiers = {
-            min_autonomy_in_territories = -0.025
+			min_autonomy_in_territories = -0.025
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -3748,16 +3451,16 @@ gp_palace_with_a_thousand_rooms = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.25
+			local_tax_modifier = 0.25
 		}
 		area_modifier = {
-            local_autonomy = -0.05
+			local_autonomy = -0.05
 		}
 		country_modifiers = {
-            min_autonomy_in_territories = -0.05
+			min_autonomy_in_territories = -0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -3768,16 +3471,16 @@ gp_palace_with_a_thousand_rooms = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.33
+			local_tax_modifier = 0.33
 		}
 		area_modifier = {
-            local_autonomy = -0.075
+			local_autonomy = -0.075
 		}
 		country_modifiers = {
-            min_autonomy_in_territories = -0.075
+			min_autonomy_in_territories = -0.075
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -3788,16 +3491,16 @@ gp_palace_with_a_thousand_rooms = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_tax_modifier = 0.5
+			local_tax_modifier = 0.5
 		}
 		area_modifier = {
-            local_autonomy = -0.1
+			local_autonomy = -0.1
 		}
 		country_modifiers = {
-            min_autonomy_in_territories = -0.1
+			min_autonomy_in_territories = -0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 }
@@ -3806,24 +3509,24 @@ gp_palace_with_a_thousand_rooms = {
 # Spearhold
 #--------------------------------------
 gp_spearhold = {
-    type = monument
-    
+	type = monument
+	
 	start = 585
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -3831,8 +3534,8 @@ gp_spearhold = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -3840,7 +3543,7 @@ gp_spearhold = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -3852,17 +3555,17 @@ gp_spearhold = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_manpower_modifier = 0.1
+			local_manpower_modifier = 0.1
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.1
+			local_sailors_modifier = 0.1
 		}
 		country_modifiers = {
-            navy_tradition = 0.5
-            heavy_ship_power = 0.05
+			navy_tradition = 0.5
+			heavy_ship_power = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -3873,17 +3576,17 @@ gp_spearhold = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_manpower_modifier = 0.25
+			local_manpower_modifier = 0.25
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.25
+			local_sailors_modifier = 0.25
 		}
 		country_modifiers = {
-            navy_tradition = 1.0
-            heavy_ship_power = 0.1
+			navy_tradition = 1.0
+			heavy_ship_power = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -3894,17 +3597,17 @@ gp_spearhold = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_manpower_modifier = 0.33
+			local_manpower_modifier = 0.33
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.33
+			local_sailors_modifier = 0.33
 		}
 		country_modifiers = {
-            navy_tradition = 1.5
-            heavy_ship_power = 0.15
+			navy_tradition = 1.5
+			heavy_ship_power = 0.15
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -3915,17 +3618,17 @@ gp_spearhold = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_manpower_modifier = 0.5
+			local_manpower_modifier = 0.5
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.5
+			local_sailors_modifier = 0.5
 		}
 		country_modifiers = {
-            navy_tradition = 2.0
-            heavy_ship_power = 0.2
+			navy_tradition = 2.0
+			heavy_ship_power = 0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 }
@@ -3934,24 +3637,24 @@ gp_spearhold = {
 # Kayakayanaya
 #--------------------------------------
 gp_kayakayanaya = {
-    type = monument
-    
+	type = monument
+	
 	start = 680
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -3959,8 +3662,8 @@ gp_kayakayanaya = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -3968,7 +3671,7 @@ gp_kayakayanaya = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -3980,16 +3683,16 @@ gp_kayakayanaya = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_defensiveness = 1.0
+			local_defensiveness = 1.0
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.1
+			local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
-            defensiveness = 0.05
+			defensiveness = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -4000,16 +3703,16 @@ gp_kayakayanaya = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_defensiveness = 1.0
+			local_defensiveness = 1.0
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.25
+			local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
-            defensiveness = 0.1
+			defensiveness = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -4020,16 +3723,16 @@ gp_kayakayanaya = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_defensiveness = 1.0
+			local_defensiveness = 1.0
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.33
+			local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-            defensiveness = 0.15
+			defensiveness = 0.15
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -4040,16 +3743,16 @@ gp_kayakayanaya = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_defensiveness = 1.0
+			local_defensiveness = 1.0
 		}
 		area_modifier = {
-            local_manpower_modifier = 0.5
+			local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
-            defensiveness = 0.2
+			defensiveness = 0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 }
@@ -4058,24 +3761,24 @@ gp_kayakayanaya = {
 # Palace of Sorrow
 #--------------------------------------
 gp_palace_of_sorrow = {
-    type = monument
-    
+	type = monument
+	
 	start = 413
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -4083,8 +3786,8 @@ gp_palace_of_sorrow = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -4092,7 +3795,7 @@ gp_palace_of_sorrow = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -4104,16 +3807,16 @@ gp_palace_of_sorrow = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_unrest = -1
+			local_unrest = -1
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.1
+			local_sailors_modifier = 0.1
 		}
 		country_modifiers = {
-            capture_ship_chance = 0.05
+			capture_ship_chance = 0.05
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -4124,16 +3827,16 @@ gp_palace_of_sorrow = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_unrest = -2
+			local_unrest = -2
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.25
+			local_sailors_modifier = 0.25
 		}
 		country_modifiers = {
-            capture_ship_chance = 0.1
+			capture_ship_chance = 0.1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -4144,16 +3847,16 @@ gp_palace_of_sorrow = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_unrest = -3
+			local_unrest = -3
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.33
+			local_sailors_modifier = 0.33
 		}
 		country_modifiers = {
-            capture_ship_chance = 0.15
+			capture_ship_chance = 0.15
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -4164,16 +3867,16 @@ gp_palace_of_sorrow = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_unrest = -4
+			local_unrest = -4
 		}
 		area_modifier = {
-            local_sailors_modifier = 0.5
+			local_sailors_modifier = 0.5
 		}
 		country_modifiers = {
-            capture_ship_chance = 0.2
+			capture_ship_chance = 0.2
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 }
@@ -4182,24 +3885,24 @@ gp_palace_of_sorrow = {
 # Pearl Palace
 #--------------------------------------
 gp_pearl_palace = {
-    type = monument
-    
+	type = monument
+	
 	start = 502
 
 	date = 100.01.01
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-    
-    build_cost = 0
+	
+	build_cost = 0
 	time = {
 		months = 0
 	}
 
 	starting_tier = 0
 
-    # Construction
+	# Construction
 	build_trigger = {
-        always = yes
+		always = yes
 	}
 	on_built = {
 		
@@ -4207,8 +3910,8 @@ gp_pearl_palace = {
 	on_destroyed = {
 		
 	}
-    
-    # Conditions
+	
+	# Conditions
 	can_use_modifiers_trigger = {
 		always = yes
 	}
@@ -4216,7 +3919,7 @@ gp_pearl_palace = {
 		always = yes
 	}
 	keep_trigger = {
-        
+		
 	}
 
 	# Tiers
@@ -4228,17 +3931,17 @@ gp_pearl_palace = {
 			factor = 0
 		}
 		province_modifiers = {
-            local_development_cost = -0.05
+			local_development_cost = -0.05
 		}
 		area_modifier = {
-            local_tax_modifier = 0.1
+			local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-            prestige = 0.5
-            free_dip_policy = 1
+			prestige = 0.5
+			free_dip_policy = 1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_1 = {
@@ -4249,17 +3952,17 @@ gp_pearl_palace = {
 			factor = 1000
 		}
 		province_modifiers = {
-            local_development_cost = -0.1
+			local_development_cost = -0.1
 		}
 		area_modifier = {
-            local_tax_modifier = 0.25
+			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-            prestige = 1
-            free_dip_policy = 1
+			prestige = 1
+			free_dip_policy = 1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_2 = {
@@ -4270,17 +3973,17 @@ gp_pearl_palace = {
 			factor = 2000
 		}
 		province_modifiers = {
-            local_development_cost = -0.15
+			local_development_cost = -0.15
 		}
 		area_modifier = {
-            local_tax_modifier = 0.33
+			local_tax_modifier = 0.33
 		}
 		country_modifiers = {
-            prestige = 1.5
-            free_dip_policy = 1
+			prestige = 1.5
+			free_dip_policy = 1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 	tier_3 = {
@@ -4291,17 +3994,17 @@ gp_pearl_palace = {
 			factor = 3000
 		}
 		province_modifiers = {
-            local_development_cost = -0.2
+			local_development_cost = -0.2
 		}
 		area_modifier = {
-            local_tax_modifier = 0.5
+			local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-            prestige = 2
-            free_dip_policy = 1
+			prestige = 2
+			free_dip_policy = 1
 		}
 		on_upgraded = {
-            add_prestige = 25
+			owner = { add_prestige = 25 }
 		}
 	}
 }

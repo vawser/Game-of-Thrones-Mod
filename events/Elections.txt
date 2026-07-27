@@ -279,22 +279,22 @@ country_event = {
 
 	option = {
 		name = "elections.101.option.d"
-		trigger = { has_watch_commander = { province_id = 16 } }
+		trigger = { has_reform = nights_watch_reform has_watch_commander = { province_id = 16 } }
 		elect_watch_commander = { province_id = 16 }
 	}
 	option = {
 		name = "elections.101.option.e"
-		trigger = { has_watch_commander = { province_id = 1580 } }
+		trigger = { has_reform = nights_watch_reform has_watch_commander = { province_id = 1580 } }
 		elect_watch_commander = { province_id = 1580 }
 	}
 	option = {
 		name = "elections.101.option.f"
-		trigger = { has_watch_commander = { province_id = 1584 } }
+		trigger = { has_reform = nights_watch_reform has_watch_commander = { province_id = 1584 } }
 		elect_watch_commander = { province_id = 1584 }
 	}
 	option = {
 		name = "elections.101.option.g"
-		trigger = { has_watch_commander = { province_id = 18 } }
+		trigger = { has_reform = nights_watch_reform has_watch_commander = { province_id = 18 } }
 		elect_watch_commander = { province_id = 18 }
 	}
 }
@@ -400,25 +400,43 @@ country_event = {
 			}
 		}
 	}
+	
+    option = {
+		name = "elections.100.option.e"
+		trigger = {
+			has_government_attribute = enables_nepotism
+		}
+		ai_chance = { factor = 10 }
+		add_scaled_republican_tradition = -4
+        define_ruler = {
+            mil = -2
+            adm = -2
+            dip = -2
+            min_age = 30
+            max_age = 50
+            name = "lastname"
+            random_gender = yes # Allows random gender for republics
+        }
+	}
 
 	option = {
 		name = "elections.101.option.d"
-		trigger = { has_watch_commander = { province_id = 16 } }
+		trigger = { has_reform = nights_watch_reform has_watch_commander = { province_id = 16 } }
 		elect_watch_commander = { province_id = 16 }
 	}
 	option = {
 		name = "elections.101.option.e"
-		trigger = { has_watch_commander = { province_id = 1580 } }
+		trigger = { has_reform = nights_watch_reform has_watch_commander = { province_id = 1580 } }
 		elect_watch_commander = { province_id = 1580 }
 	}
 	option = {
 		name = "elections.101.option.f"
-		trigger = { has_watch_commander = { province_id = 1584 } }
+		trigger = { has_reform = nights_watch_reform has_watch_commander = { province_id = 1584 } }
 		elect_watch_commander = { province_id = 1584 }
 	}
 	option = {
 		name = "elections.101.option.g"
-		trigger = { has_watch_commander = { province_id = 18 } }
+		trigger = { has_reform = nights_watch_reform has_watch_commander = { province_id = 18 } }
 		elect_watch_commander = { province_id = 18 }
 	}
 }

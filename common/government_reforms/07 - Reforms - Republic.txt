@@ -1,21 +1,6 @@
 #-----------------------------------------
 # "Republican Virtues"
 #-----------------------------------------
-got_republicanism_reform = {
-	icon = "assembly_hall"
-	allow_normal_conversion = yes
-	potential = {
-		NOT = { has_government_attribute = is_pirate_republic_reform }
-	}
-
-	modifiers = {
-		republican_tradition = 0.2
-	}
-	ai = {
-		factor = 1.5
-	}
-}
-
 got_republican_authoritarianism_reform = {
 	icon = "commander_king"
 	allow_normal_conversion = yes
@@ -49,6 +34,21 @@ got_nepotism_reform = {
 	
 	ai = {
 		factor = 1
+	}
+}
+
+got_republicanism_reform = {
+	icon = "assembly_hall"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_government_attribute = is_pirate_republic_reform }
+	}
+
+	modifiers = {
+		republican_tradition = 0.2
+	}
+	ai = {
+		factor = 1.5
 	}
 }
 

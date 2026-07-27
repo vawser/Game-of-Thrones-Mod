@@ -2,29 +2,29 @@
 # Monarchy
 #--------------------------------------------
 monarchy = {
-    color = { 66 134 244 }
-    
-    basic_reform = monarchy_mechanic
-    
-    reform_levels = {
-        tier_monarchy_government_form = {
+	color = { 66 134 244 }
+	
+	basic_reform = monarchy_mechanic
+	
+	reform_levels = {
+		tier_monarchy_government_form = {
 			reforms = {
-                kingdom_reform
+				kingdom_reform
 				kingdom_of_westeros_reform
-                yiti_city_reform
-                yiti_empire_reform
-                qarth_city_reform
-                nefer_city_reform
-                hyrkoon_city_reform
-                valyria_city_reform
-                meereen_city_reform
-                yunkai_city_reform
-                astapor_city_reform
-                ghis_city_reform
-                daenerys_host_reform
+				yiti_city_reform
+				yiti_empire_reform
+				qarth_city_reform
+				nefer_city_reform
+				hyrkoon_city_reform
+				valyria_city_reform
+				meereen_city_reform
+				yunkai_city_reform
+				astapor_city_reform
+				ghis_city_reform
+				daenerys_host_reform
 			}
 		}
-        tier_monarchy_hereditary_vs_nobility = {
+		tier_monarchy_hereditary_vs_nobility = {
 			reforms = {
 				got_enforce_privileges_reform
 				got_quash_noble_power_reform
@@ -46,7 +46,7 @@ monarchy = {
 				got_decentralize_reform
 				got_westerosi_recruitment
 				got_jade_signet_reform
-                got_penal_colonies_reform
+				got_penal_colonies_reform
 			}
 		}
 		tier_monarchy_growth_of_administration = {
@@ -81,15 +81,11 @@ monarchy = {
 				got_become_a_theocracy_reform
 			}
 		}
-    }
-    
-    legacy_government = {
-        kingdom_legacy
-    }
+	}
 }
 
 loe_monarchy = {
-    basic_reform = monarchy_mechanic
+	basic_reform = monarchy_mechanic
 
 	color = { 237  152  18 }
 
@@ -286,57 +282,53 @@ dynasty = {
 			}
 		}
 	}
-
-	legacy_government = {
-        kingdom_legacy
-    }
 }
 
 #--------------------------------------------
 # Republic
 #--------------------------------------------
 republic = {
-    color = { 66 244 113 }
-    
-    basic_reform = republic_mechanic
-    
-    reform_levels = {
-        tier_republic_government_form = {
+	color = { 66 244 113 }
+	
+	basic_reform = republic_mechanic
+	
+	reform_levels = {
+		tier_republic_government_form = {
 			reforms = {
 				oligarchy_reform
 				anocracy_reform
 				royal_city_reform
 				valyrian_citystate_reform
-                merchant_republic_reform
-                trading_outpost_reform
-                tyrosh_city_reform
-                myr_city_reform
-                lys_city_reform
-                volantis_city_reform
-                pentos_city_reform
-                braavos_city_reform
-                lorath_city_reform
-                saath_city_reform
-                trader_city_reform
-                andal_city_reform
-                expeditionary_company_reform
-                rhoynar_city_reform
-                nights_watch_reform
+				merchant_republic_reform
+				trading_outpost_reform
+				tyrosh_city_reform
+				myr_city_reform
+				lys_city_reform
+				volantis_city_reform
+				pentos_city_reform
+				braavos_citystate_reform
+				lorath_city_reform
+				saath_city_reform
+				trader_city_reform
+				andal_city_reform
+				expeditionary_company_reform
+				rhoynar_city_reform
+				nights_watch_reform
 				watchmen_outpost_reform
-                military_dictatorship_reform
+				military_dictatorship_reform
 				republican_dictatorship_reform
 				castellany_of_dragonstone_reform
 
 				pirate_republic_reform
 			}
 		}
-        tier_republic_republican_virtues = {
+		tier_republic_republican_virtues = {
 			reforms = {
-				got_republicanism_reform
 				got_republican_authoritarianism_reform
 				got_nepotism_reform
+				got_republicanism_reform
 				got_brotherhood_of_the_black_reform
-
+				# Pirates
 				got_council_of_captains_reform
 				got_articles_of_agreement_reform
 				got_smugglers_haven_reform
@@ -364,8 +356,8 @@ republic = {
 			reforms = {
 				got_parliamentary_reform
 				got_presidential_reform
-                got_republican_diplomacy_reform
-                got_municipal_self_defense_reform
+				got_republican_diplomacy_reform
+				got_municipal_self_defense_reform
 				got_pirate_king_reform
 			}
 		}
@@ -438,33 +430,27 @@ republic = {
 				got_reinforce_republican_values_reform
 			}
 		}
-    }
-
-    legacy_government = {
-        republic_legacy
-
-		pirate_republic_legacy
-    }
+	}
 }
 
 #--------------------------------------------
 # Theocracy
 #--------------------------------------------
 theocracy = {
-    color = { 244 203 66 }
-    
-    basic_reform = theocracy_mechanic
-    
-    reform_levels = {
-        tier_theocracy_government_form = {
+	color = { 244 203 66 }
+	
+	basic_reform = theocracy_mechanic
+	
+	reform_levels = {
+		tier_theocracy_government_form = {
 			reforms = {
-                theocracy_reform
-                the_faith_reform
-                qohor_city_reform
-                norvos_city_reform
+				theocracy_reform
+				the_faith_reform
+				qohor_city_reform
+				norvos_city_reform
 			}
 		}
-        tier_theocracy_internal_vs_external_mission = {
+		tier_theocracy_internal_vs_external_mission = {
 			reforms = {
 				got_internal_mission_reform
 				got_external_mission_reform
@@ -494,8 +480,8 @@ theocracy = {
 			reforms = {
 				got_maintain_religious_head_reform
 				got_partial_secularisation_reform
-                got_become_a_monarchy_reform
-                got_become_a_republic_reform
+				got_become_a_monarchy_reform
+				got_become_a_republic_reform
 			}
 		}
 		tier_theocracy_separation_of_power = {
@@ -522,38 +508,34 @@ theocracy = {
 				got_proclaim_religious_head_reform
 			}
 		}
-    }
-    
-    legacy_government = {
-        theocracy_legacy
-    }
+	}
 }
 
 #--------------------------------------------
 # Tribal
 #--------------------------------------------
 tribal = {
-    color = { 244 69 66 }
-    
-    basic_reform = tribal_mechanic
-    
-    reform_levels = {
-        tier_tribal_government_form = {
+	color = { 244 69 66 }
+	
+	basic_reform = tribal_mechanic
+	
+	reform_levels = {
+		tier_tribal_government_form = {
 			reforms = {
 				tribal_despotism
 				tribal_kingdom
-                wildling_clan_reform
+				wildling_clan_reform
 				new_wildling_clan_reform
 				kingdom_beyond_the_wall_reform
-                lhazar_clan_reform
-                ibben_clan_reform
-                omber_clan_reform
-                faros_clan_reform
-                naath_clan_reform
-                summer_islander_clan_reform
-                warband_reform
-                khalasar_reform
-                jhattar_reform
+				lhazar_clan_reform
+				ibben_clan_reform
+				omber_clan_reform
+				faros_clan_reform
+				naath_clan_reform
+				summer_islander_clan_reform
+				warband_reform
+				khalasar_reform
+				jhattar_reform
 				stateless_society
 			}
 		}
@@ -572,7 +554,7 @@ tribal = {
 				got_generic_principle_reform
 			}
 		}
-        tier_tribal_clan_doctrine = {
+		tier_tribal_clan_doctrine = {
 			reforms = {
 				got_clan_towns_reforms
 				got_wildling_settlers_reform
@@ -615,11 +597,7 @@ tribal = {
 				got_become_a_warband_reform
 			}
 		}
-    }
-    
-    legacy_government = {
-        tribe_legacy
-    }
+	}
 
 	# Cannot centralize with Titular Chieftain
 	exclusive_reforms = {
@@ -684,9 +662,6 @@ loe_tribal = {
 native = {
 	basic_reform = native_mechanic
 
-	legacy_government = {
-		native_council_legacy
-	}
 	color = { 194 127 209 }
 }
 
@@ -696,57 +671,51 @@ native = {
 occult = {
 	basic_reform = occult_mechanic
 
-    reform_levels = {
-        tier_occult_government_form = {
+	reform_levels = {
+		tier_occult_government_form = {
 			reforms = {
-                shadow_cult_reform
-                necromantic_cult_reform
-                ascension_cult_reform
+				shadow_cult_reform
+				necromantic_cult_reform
+				ascension_cult_reform
 			}
 		}
-        tier_occult_guiding_occult_principle = {
-            reforms = {
-                got_strengthen_shadowfolk
-                got_strengthen_bloodless_folk
-                got_strengthen_carcosan_folk
-            }
-        }
-        tier_occult_the_nature_of_our_magic = {
-            reforms = {
-                got_outward_influence
-                got_inward_influence
-                got_uplift_the_savage
-                got_educate_the_masses
-            }
-        }
-        tier_occult_the_magicratic_cadre = {
-            reforms = {
-                got_religious_magicrats
-                got_mercantile_magicrats
-                got_landed_magicrats
-                got_centralize_magicrats
-            }
-        }
-        tier_occult_absolute_rule_vs_constitutional = {
-            reforms = {
-                got_absolute_oversight
-                got_regional_concessions
-            }
-        }
-        tier_occult_question_of_power = {
-            reforms = {
-                got_broaden_cult_influence
-                got_devolution_of_cult
-                got_become_a_republic_reform
-                got_become_a_theocracy_reform
-            }
-        }
-    }
-    
-	legacy_government = {
-		shadow_cult_legacy
-        necromantic_cult_legacy
-        ascension_cult_legacy
+		tier_occult_guiding_occult_principle = {
+			reforms = {
+				got_strengthen_shadowfolk
+				got_strengthen_bloodless_folk
+				got_strengthen_carcosan_folk
+			}
+		}
+		tier_occult_the_nature_of_our_magic = {
+			reforms = {
+				got_outward_influence
+				got_inward_influence
+				got_uplift_the_savage
+				got_educate_the_masses
+			}
+		}
+		tier_occult_the_magicratic_cadre = {
+			reforms = {
+				got_religious_magicrats
+				got_mercantile_magicrats
+				got_landed_magicrats
+				got_centralize_magicrats
+			}
+		}
+		tier_occult_absolute_rule_vs_constitutional = {
+			reforms = {
+				got_absolute_oversight
+				got_regional_concessions
+			}
+		}
+		tier_occult_question_of_power = {
+			reforms = {
+				got_broaden_cult_influence
+				got_devolution_of_cult
+				got_become_a_republic_reform
+				got_become_a_theocracy_reform
+			}
+		}
 	}
 	color = { 120 151 215 }
 }
@@ -757,11 +726,11 @@ occult = {
 mythical = {
 	basic_reform = mythical_mechanic
 
-    reform_levels = {
-        tier_mythical_government_form = {
+	reform_levels = {
+		tier_mythical_government_form = {
 			reforms = {
 				the_night_king_reform
-                army_of_the_dead_reform
+				army_of_the_dead_reform
 			}
 		}
 		tier_mythical_the_right_hand = {
@@ -777,10 +746,6 @@ mythical = {
 		# 		got_court_of_winter_reform
 		# 	}
 		# }
-    }
-    
-	legacy_government = {
-		army_of_the_dead_legacy
 	}
 	color = { 214 24 45 }
 }

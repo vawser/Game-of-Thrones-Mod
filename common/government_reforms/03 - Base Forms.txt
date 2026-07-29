@@ -565,7 +565,7 @@ royal_city_reform = {
 	icon = "royal_city"
 	allow_normal_conversion = no
 	lock_level_when_selected = yes
-	duration = 
+	duration = 4
 
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -763,6 +763,7 @@ braavos_citystate_reform = {
 	}
 
 	custom_attributes = {
+		locked_government_type = yes
 		enables_republic_ideagroup = yes
 		election_on_death = yes
 		is_merchant_republic = yes

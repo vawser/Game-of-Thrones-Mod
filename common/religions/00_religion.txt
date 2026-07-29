@@ -10,9 +10,9 @@ religion_westeros = {
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 18 }
 	
-    #--------------------------------------------------
-    # Faith of the Seven
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# Faith of the Seven
+	#--------------------------------------------------
 	faith_of_the_seven = {
 		color = { 1.0 1.0 1.0 }
 		icon = 1
@@ -115,7 +115,7 @@ religion_westeros = {
 			}
 			
 			appeal_to_the_father = {
-                curia_treasury_cost = 100
+				curia_treasury_cost = 100
 				cost = 50
 				potential = { }
 				allow = {
@@ -123,16 +123,16 @@ religion_westeros = {
 				}
 				effect = {
 					add_country_modifier = {
-                        name = blessing_of_the_father
-                        duration = 7300
-                    }
+						name = blessing_of_the_father
+						duration = 7300
+					}
 				}
 				ai_will_do = {
 					factor = 1
 				}
 			}
 			appeal_to_the_mother = {
-                curia_treasury_cost = 100
+				curia_treasury_cost = 100
 				cost = 50
 				potential = { }
 				allow = {
@@ -140,16 +140,16 @@ religion_westeros = {
 				}
 				effect = {
 					add_country_modifier = {
-                        name = blessing_of_the_mother
-                        duration = 7300
-                    }
+						name = blessing_of_the_mother
+						duration = 7300
+					}
 				}
 				ai_will_do = {
 					factor = 1
 				}
 			}
 			appeal_to_the_warrior = {
-                curia_treasury_cost = 100
+				curia_treasury_cost = 100
 				cost = 50
 				potential = { }
 				allow = {
@@ -157,9 +157,9 @@ religion_westeros = {
 				}
 				effect = {
 					add_country_modifier = {
-                        name = blessing_of_the_warrior
-                        duration = 7300
-                    }
+						name = blessing_of_the_warrior
+						duration = 7300
+					}
 				}
 				ai_will_do = {
 					factor = 1
@@ -167,7 +167,7 @@ religion_westeros = {
 			}
 			# Legitimacy
 			appeal_to_the_maiden = {
-                curia_treasury_cost = 100
+				curia_treasury_cost = 100
 				cost = 50
 				potential = { }
 				allow = {
@@ -175,9 +175,9 @@ religion_westeros = {
 				}
 				effect = {
 					add_country_modifier = {
-                        name = blessing_of_the_maiden
-                        duration = 7300
-                    }
+						name = blessing_of_the_maiden
+						duration = 7300
+					}
 				}
 				ai_will_do = {
 					factor = 1
@@ -185,7 +185,7 @@ religion_westeros = {
 			}
 			# Goods
 			appeal_to_the_smith = {
-                curia_treasury_cost = 100
+				curia_treasury_cost = 100
 				cost = 50
 				potential = { }
 				allow = {
@@ -193,16 +193,16 @@ religion_westeros = {
 				}
 				effect = {
 					add_country_modifier = {
-                        name = blessing_of_the_smith
-                        duration = 7300
-                    }
+						name = blessing_of_the_smith
+						duration = 7300
+					}
 				}
 				ai_will_do = {
 					factor = 1
 				}
 			}		
 			appeal_to_the_crone = {
-                curia_treasury_cost = 100
+				curia_treasury_cost = 100
 				cost = 50
 				potential = { }
 				allow = {
@@ -210,16 +210,16 @@ religion_westeros = {
 				}
 				effect = {
 					add_country_modifier = {
-                        name = blessing_of_the_crone
-                        duration = 7300
-                    }
+						name = blessing_of_the_crone
+						duration = 7300
+					}
 				}
 				ai_will_do = {
 					factor = 1
 				}
 			}
 			appeal_to_the_stranger = {
-                curia_treasury_cost = 100
+				curia_treasury_cost = 100
 				cost = 50
 				potential = { }
 				allow = {
@@ -227,15 +227,15 @@ religion_westeros = {
 				}
 				effect = {
 					add_country_modifier = {
-                        name = blessing_of_the_stranger
-                        duration = 7300
-                    }
+						name = blessing_of_the_stranger
+						duration = 7300
+					}
 				}
 				ai_will_do = {
 					factor = 1
 				}
 			}
-            investigate_heresy = {
+			investigate_heresy = {
 				curia_treasury_cost = 1000
 				potential = {
 					is_papal_controller = yes
@@ -250,18 +250,18 @@ religion_westeros = {
 				}
 				ai_will_do = {
 					factor = 1
-                    modifier = {
-                        factor = 0
-                        NOT = { reform_desire = 0.5 }
-                    }
+					modifier = {
+						factor = 0
+						NOT = { reform_desire = 0.5 }
+					}
 				}
 			}
 		}
 	}
 
-    #--------------------------------------------------
-    # The Drowned God
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# The Drowned God
+	#--------------------------------------------------
 	drowned_god = {
 		color = { 0.28 0.28 0.54 }
 		icon = 5
@@ -280,12 +280,12 @@ religion_westeros = {
 		# Zealotry
 		has_patriarchs = yes
 
-        orthodox_icons = { 
-            # If no icon has ai_will_do above 1 - <current patriarch authority> , the AI will not enact it. (60% PA = 0.6 -> ai_will_do has to be at least 0.4)
+		orthodox_icons = { 
+			# If no icon has ai_will_do above 1 - <current patriarch authority> , the AI will not enact it. (60% PA = 0.6 -> ai_will_do has to be at least 0.4)
 
 			deity_kraken = {
-                heavy_ship_power = 0.05
-                
+				heavy_ship_power = 0.05
+				
 				allow = {
 					always = yes
 				}
@@ -293,10 +293,10 @@ religion_westeros = {
 					factor = 1
 				}
 			}
-            
-            deity_squid = {
-                sunk_ship_morale_hit_recieved = -0.1
-                
+			
+			deity_squid = {
+				sunk_ship_morale_hit_recieved = -0.1
+				
 				allow = {
 					always = yes
 				}
@@ -304,10 +304,10 @@ religion_westeros = {
 					factor = 1
 				}
 			}
-            
-            deity_whale = {
-                ship_durability = 0.05
-                
+			
+			deity_whale = {
+				ship_durability = 0.05
+				
 				allow = {
 					always = yes
 				}
@@ -315,9 +315,9 @@ religion_westeros = {
 					factor = 1
 				}
 			}
-            
-            deity_seal = {
-                recover_navy_morale_speed = 0.05
+			
+			deity_seal = {
+				recover_navy_morale_speed = 0.05
 
 				allow = {
 					always = yes
@@ -326,9 +326,9 @@ religion_westeros = {
 					factor = 1
 				}
 			}
-            
-            deity_fish = {
-                naval_attrition = -0.1
+			
+			deity_fish = {
+				naval_attrition = -0.1
 
 				allow = {
 					always = yes
@@ -337,14 +337,14 @@ religion_westeros = {
 					factor = 1
 				}
 			}
-        }
+		}
 
 		heretic = { STORM_GOD }
 	}
 	
-    #--------------------------------------------------
-    # The Old Gods
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# The Old Gods
+	#--------------------------------------------------
 	old_gods = {
 		color = { 0.65 0.82 0.93 }
 		icon = 2
@@ -362,15 +362,15 @@ religion_westeros = {
 		province = {
 			local_missionary_strength = -0.01
 		}
-        
+		
 		# Zealotry
 		has_patriarchs = yes
 		misguided_heretic = yes
 
-        orthodox_icons = { 
-            deity_raven = {
-                idea_cost = -0.05
-                visible = {
+		orthodox_icons = { 
+			deity_raven = {
+				idea_cost = -0.05
+				visible = {
 					always = yes
 				}
 				allow = {
@@ -380,9 +380,9 @@ religion_westeros = {
 					factor = 1
 				}
 			}
-            deity_boar = {
-                recover_army_morale_speed = 0.1
-                visible = {
+			deity_boar = {
+				recover_army_morale_speed = 0.1
+				visible = {
 					always = yes
 				}
 				allow = {
@@ -392,9 +392,9 @@ religion_westeros = {
 					factor = 1
 				}
 			}
-            deity_horse = {
-                movement_speed = 0.1
-                visible = {
+			deity_horse = {
+				movement_speed = 0.1
+				visible = {
 					always = yes
 				}
 				allow = {
@@ -424,9 +424,9 @@ religion_westeros = {
 					}
 				}
 			}
-            deity_rabbit = {
-                global_manpower_modifier = 0.1
-                visible = {
+			deity_rabbit = {
+				global_manpower_modifier = 0.1
+				visible = {
 					always = yes
 				}
 				allow = {
@@ -436,7 +436,7 @@ religion_westeros = {
 					factor = 1
 				}
 			}
-        }
+		}
 
 		heretic = { ANCIENT_OLD_GODS }
 	}
@@ -454,9 +454,9 @@ religion_essos = {
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 18 }
 
-    #--------------------------------------------------
-    # R'hllor
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# R'hllor
+	#--------------------------------------------------
 	rhllor = {
 		color = { 0.81 0.46 0.45 }
 		icon = 3
@@ -471,7 +471,7 @@ religion_essos = {
 		province = {
 			local_missionary_strength = -0.02
 		}
-        
+		
 		uses_church_power = yes
 		aspects = {
 			vision_of_grandeur
@@ -487,12 +487,12 @@ religion_essos = {
 			vision_of_legitimacy
 			vision_of_cruelty
 		}
-        aspects_name = RHLLOR_ASPECTS
+		aspects_name = RHLLOR_ASPECTS
 	}
 	
-    #--------------------------------------------------
-    # Mother Rhoyne
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# Mother Rhoyne
+	#--------------------------------------------------
 	mother_rhoyne = {
 		color = { 0.47 0.56 0.36  }
 		icon = 7
@@ -508,22 +508,22 @@ religion_essos = {
 			local_missionary_strength = 0.02
 		}	
 
-        fervor = yes
+		fervor = yes
 	}
 	
-    #--------------------------------------------------
+	#--------------------------------------------------
 	# Lady of the Waves
-    #--------------------------------------------------
+	#--------------------------------------------------
 	lady_of_the_waves = {
 		color = { 0.56 0.57 0.36 }
 		icon = 25
 		country = {
 			naval_forcelimit_modifier = 0.1
-            loot_amount = 0.1
+			loot_amount = 0.1
 		}
 		country_as_secondary = {
 			naval_forcelimit_modifier = 0.1
-            loot_amount = 0.1
+			loot_amount = 0.1
 		}
 		province = {
 			local_missionary_strength = 0.03
@@ -533,18 +533,18 @@ religion_essos = {
 		
 		aspects = {
 			enforce_rule_action
-            raid_local_villages_action
-            display_wealth_action
-            impress_travelers_action
-            purchase_slaves_action
-            explore_the_high_seas_action
+			raid_local_villages_action
+			display_wealth_action
+			impress_travelers_action
+			purchase_slaves_action
+			explore_the_high_seas_action
 		}
 		aspects_name = PIRATE_ASPECTS		
 	}
-    
-    #--------------------------------------------------
-    # Trios
-    #--------------------------------------------------
+	
+	#--------------------------------------------------
+	# Trios
+	#--------------------------------------------------
 	trios = {
 		color = { 0.36 0.36 0.56 }
 		icon = 8
@@ -556,13 +556,13 @@ religion_essos = {
 			trade_efficiency = 0.1
 			global_unrest = -1
 		}
-        
-        fervor = yes
+		
+		fervor = yes
 	}
 	
-    #--------------------------------------------------
-    # The Bearded Priests
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# The Bearded Priests
+	#--------------------------------------------------
 	bearded_priests = {
 		color = { 0.36 0.56 0.54 }
 		icon = 9
@@ -578,20 +578,20 @@ religion_essos = {
 		}	
 
 		uses_anglican_power = yes
-        aspects = {
-            divine_inspiration_action
-            oust_opposition_action
-            bolster_holy_guard_action
-            mass_indoctrination_action
-            public_flagellation_action
-            ritual_drilling_action
-        }
-        aspects_name = BEARDED_PRIESTS_ASPECTS
+		aspects = {
+			divine_inspiration_action
+			oust_opposition_action
+			bolster_holy_guard_action
+			mass_indoctrination_action
+			public_flagellation_action
+			ritual_drilling_action
+		}
+		aspects_name = BEARDED_PRIESTS_ASPECTS
 	}
 	
-    #--------------------------------------------------
-    # Remnants of Boash
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# Remnants of Boash
+	#--------------------------------------------------
 	remnants_of_boash = {
 		color = { 0.56 0.36 0.40 }
 		icon = 10
@@ -603,13 +603,13 @@ religion_essos = {
 			yearly_corruption = -0.05
 			global_unrest = -1
 		}
-        
-        fervor = yes
+		
+		fervor = yes
 	}
 
-    #--------------------------------------------------
-    # Black Goat
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# Black Goat
+	#--------------------------------------------------
 	black_goat = {
 		color = { 0.49 0.36 0.56 }
 		icon = 6
@@ -633,9 +633,9 @@ religion_essos = {
 		}		
 	}
 	
-    #--------------------------------------------------
-    # Hooded Wayfarer
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# Hooded Wayfarer
+	#--------------------------------------------------
 	hooded_wayfarer = {
 		color = { 0.43 0.61 0.81  }
 		icon = 11
@@ -647,8 +647,8 @@ religion_essos = {
 			years_of_nationalism = -5
 			global_unrest = -1
 		}
-        
-        fervor = yes
+		
+		fervor = yes
 	}
 	
 	crusade_name = RELIGIOUS_CRUSADE
@@ -664,36 +664,36 @@ religion_ghiscari = {
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 18 }
 	
-    #--------------------------------------------------
+	#--------------------------------------------------
 	# Ghiscari Pantheon
-    #--------------------------------------------------
+	#--------------------------------------------------
 	ghiscari_pantheon = {
 		color = { 0.81 0.65 0.43 }
 		icon = 12
 		country = {
 			global_manpower_modifier = 0.1
-            land_maintenance_modifier = -0.1
+			land_maintenance_modifier = -0.1
 		}
 		country_as_secondary = {
 			global_manpower_modifier = 0.1
-            land_maintenance_modifier = -0.1
+			land_maintenance_modifier = -0.1
 		}		
-        
-        uses_anglican_power = yes
-        aspects = {
-            host_fighting_pits_action
-            vision_of_a_green_grace_action
-            garner_legitimacy_action
-            echo_of_ghis_action
-            cull_unruly_slaves_action
-            conscript_orphans_action
-        }
-        aspects_name = GHISCARI_ASPECTS
+		
+		uses_anglican_power = yes
+		aspects = {
+			host_fighting_pits_action
+			vision_of_a_green_grace_action
+			garner_legitimacy_action
+			echo_of_ghis_action
+			cull_unruly_slaves_action
+			conscript_orphans_action
+		}
+		aspects_name = GHISCARI_ASPECTS
 	}
 	
-    #--------------------------------------------------
-    # The Great Shepherd
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# The Great Shepherd
+	#--------------------------------------------------
 	great_shepherd = {
 		color = { 0.81 0.43 0.52 }
 		icon = 15
@@ -708,22 +708,22 @@ religion_ghiscari = {
 		province = {
 			local_missionary_strength = 0.01
 		}   
-        
-        uses_church_power = yes
-        aspects = {
-            chant_of_protection
-            chant_of_preservation
-            chant_of_shelter
-            chant_of_stability
-            chant_of_nourishment
-            chant_of_acrimony
-            chant_of_enmity
-            chant_of_flight
-        }
-        aspects_name = GREAT_SHEPHERD_ASPECTS
+		
+		uses_church_power = yes
+		aspects = {
+			chant_of_protection
+			chant_of_preservation
+			chant_of_shelter
+			chant_of_stability
+			chant_of_nourishment
+			chant_of_acrimony
+			chant_of_enmity
+			chant_of_flight
+		}
+		aspects_name = GREAT_SHEPHERD_ASPECTS
 	}
 	
-    crusade_name = RELIGIOUS_CRUSADE
+	crusade_name = RELIGIOUS_CRUSADE
 }
 
 #--------------------------------------------------
@@ -735,10 +735,10 @@ religion_ibbish = {
 
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 18 }
-    
-    #--------------------------------------------------
-    # Ib
-    #--------------------------------------------------
+	
+	#--------------------------------------------------
+	# Ib
+	#--------------------------------------------------
 	ib = {
 		color = { 0.52 0.45 0.44 }
 		icon = 16
@@ -750,24 +750,24 @@ religion_ibbish = {
 			ship_durability = 0.05
 			global_unrest = -1
 		}
-        
-        uses_church_power = yes
-        aspects = {
-            boon_of_the_earth
-            boon_of_the_wind
-            boon_of_the_sea
-            boon_of_the_sky
-            boon_of_the_depths
-            boon_of_the_mountains
-            boon_of_the_sands
-            boon_of_the_plains
-            boon_of_the_deep
-            boon_of_the_forest
-        }
-        aspects_name = IB_ASPECTS
+		
+		uses_church_power = yes
+		aspects = {
+			boon_of_the_earth
+			boon_of_the_wind
+			boon_of_the_sea
+			boon_of_the_sky
+			boon_of_the_depths
+			boon_of_the_mountains
+			boon_of_the_sands
+			boon_of_the_plains
+			boon_of_the_deep
+			boon_of_the_forest
+		}
+		aspects_name = IB_ASPECTS
 	}
-    
-    crusade_name = RELIGIOUS_CRUSADE
+	
+	crusade_name = RELIGIOUS_CRUSADE
 }
 
 #--------------------------------------------------
@@ -780,19 +780,19 @@ religion_yitish = {
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 18 }
 	
-    #--------------------------------------------------
-    # Lion of the Night
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# Lion of the Night
+	#--------------------------------------------------
 	lion_of_the_night = {
 		color = { 0.43 0.81 0.57  }
 		icon = 17
 		country = {
-            army_tradition = 1
-            land_attrition = -0.05
+			army_tradition = 1
+			land_attrition = -0.05
 		}
 		country_as_secondary = {
 			army_tradition = 1
-            land_attrition = -0.05
+			land_attrition = -0.05
 		}
 		province = {
 			local_missionary_strength = -0.02
@@ -800,12 +800,12 @@ religion_yitish = {
 		
 		has_patriarchs = yes		# Uses patriarch authority
 
-        orthodox_icons = {
+		orthodox_icons = {
 			# If no icon has ai_will_do above 1 - <current patriarch authority> , the AI will not enact it. (60% PA = 0.6 -> ai_will_do has to be at least 0.4)
 
-            deity_lion = {
-                war_exhaustion = -0.05
-                
+			deity_lion = {
+				war_exhaustion = -0.05
+				
 				allow = {
 					always = yes
 				}
@@ -813,10 +813,10 @@ religion_yitish = {
 					factor = 1
 				}
 			}
-            
-            deity_tiger = {
-                infantry_shock = 1
-                
+			
+			deity_tiger = {
+				infantry_shock = 1
+				
 				allow = {
 					always = yes
 				}
@@ -824,10 +824,10 @@ religion_yitish = {
 					factor = 1
 				}
 			}
-            
-            deity_manticore = {
-                shock_damage_received = -0.05
-                
+			
+			deity_manticore = {
+				shock_damage_received = -0.05
+				
 				allow = {
 					always = yes
 				}
@@ -835,10 +835,10 @@ religion_yitish = {
 					factor = 1
 				}
 			}
-            
-            deity_basilisk = {
-                fire_damage_received = -0.05
-                
+			
+			deity_basilisk = {
+				fire_damage_received = -0.05
+				
 				allow = {
 					always = yes
 				}
@@ -846,10 +846,10 @@ religion_yitish = {
 					factor = 1
 				}
 			}
-            
-            deity_elephant = {
-                manpower_recovery_speed = 0.1
-                
+			
+			deity_elephant = {
+				manpower_recovery_speed = 0.1
+				
 				allow = {
 					always = yes
 				}
@@ -857,10 +857,10 @@ religion_yitish = {
 					factor = 1
 				}
 			}
-		}        
+		}		
 	}
-    
-    crusade_name = RELIGIOUS_CRUSADE
+	
+	crusade_name = RELIGIOUS_CRUSADE
 }
 
 #--------------------------------------------------
@@ -872,88 +872,88 @@ religion_hyrkooni = {
 
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 18 }
-    
-    #--------------------------------------------------
-    # Gods of Hyrkoon
-    #--------------------------------------------------
+	
+	#--------------------------------------------------
+	# Gods of Hyrkoon
+	#--------------------------------------------------
 	gods_of_hyrkoon = {
 		color = { 0.79 0.79 0.43 }
 		icon = 19
 		country = {
 			hostile_attrition = 1
-            global_garrison_growth = 0.25
+			global_garrison_growth = 0.25
 		}
 		country_as_secondary = {
 			hostile_attrition = 1
-            global_garrison_growth = 0.25
+			global_garrison_growth = 0.25
 		}
-        
-        has_patriarchs = yes
-        orthodox_icons = { 
-            deity_mountain_lion = {
-                infantry_power = 0.05
-                
-                allow = {
-                    always = yes
-                }
-                ai_will_do = {
-                    factor = 1
-                }
-            }
-            deity_elk = {
-                movement_speed = 0.1
-                
-                allow = {
-                    always = yes
-                }
-                ai_will_do = {
-                    factor = 1
-                }
-            }
-            deity_goat = {
-                reinforce_speed = 0.1
-                
-                allow = {
-                    always = yes
-                }
-                ai_will_do = {
-                    factor = 1
-                }
-            }
-            deity_bear = {
-                land_maintenance_modifier = -0.05
-                
-                allow = {
-                    always = yes
-                }
-                ai_will_do = {
-                    factor = 1
-                }
-            }
-            deity_timber_wolf = {
-                years_of_nationalism = -5
-                
-                allow = {
-                    always = yes
-                }
-                ai_will_do = {
-                    factor = 1
-                }
-            }
-            deity_toad = {
-                global_missionary_strength = 0.03
-                
-                allow = {
-                    always = yes
-                }
-                ai_will_do = {
-                    factor = 1
-                }
-            }
-        }
+		
+		has_patriarchs = yes
+		orthodox_icons = { 
+			deity_mountain_lion = {
+				infantry_power = 0.05
+				
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			deity_elk = {
+				movement_speed = 0.1
+				
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			deity_goat = {
+				reinforce_speed = 0.1
+				
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			deity_bear = {
+				land_maintenance_modifier = -0.05
+				
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			deity_timber_wolf = {
+				years_of_nationalism = -5
+				
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			deity_toad = {
+				global_missionary_strength = 0.03
+				
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
 	}
-    
-    crusade_name = RELIGIOUS_CRUSADE
+	
+	crusade_name = RELIGIOUS_CRUSADE
 }
 
 #--------------------------------------------------
@@ -965,31 +965,36 @@ religion_jogos_nhai = {
 
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 18 }
-    
-    #--------------------------------------------------
-    # Moonsingers
-    #--------------------------------------------------
+	
+	#--------------------------------------------------
+	# Moonsingers
+	#--------------------------------------------------
 	moonsingers = {
 		color = { 0.43 0.55 0.55 }
 		icon = 20
 		country = {
-			manpower_recovery_speed = 0.1
+			stability_cost_modifier = -0.125
+			core_decay_on_your_own = -0.10
 		}
 		country_as_secondary = {
-			manpower_recovery_speed = 0.1
-		}		
-        
-        uses_church_power = yes
-        aspects = {
-            gift_of_strength
-            gift_of_dexterity
-            gift_of_intelligence
-            gift_of_faith
-            gift_of_luck
-            gift_of_vigor
-            gift_of_vitality
-        }
-        aspects_name = MOONSINGERS_ASPECTS
+			stability_cost_modifier = -0.05
+			core_decay_on_your_own = -0.05
+		}
+		province = {
+			local_unrest = -1
+		}
+		
+		uses_church_power = yes
+		aspects = {
+			gift_of_strength
+			gift_of_dexterity
+			gift_of_intelligence
+			gift_of_faith
+			gift_of_luck
+			gift_of_vigor
+			gift_of_vitality
+		}
+		aspects_name = MOONSINGERS_ASPECTS
 	}
 
 	crusade_name = RELIGIOUS_CRUSADE
@@ -1005,9 +1010,9 @@ religion_occult = {
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 18 }
 	
-    #--------------------------------------------------
-    # Cult of Shadows
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# Cult of Shadows
+	#--------------------------------------------------
 	cult_of_shadows = {
 		color = { 0.3 0.2 0.1  }
 		icon = 21
@@ -1019,23 +1024,23 @@ religion_occult = {
 			technology_cost = -0.05
 			tolerance_heathen = -2
 		}
-        
-        uses_anglican_power = yes
-        aspects = {
-            occult_inspiration_action
-            devotion_to_the_occult_action
-            conjure_gold_action
-            dazzle_the_masses_action
-            purge_the_feeble_action
-            look_upon_the_forbidden_action
-        }
-        aspects_name = OCCULT_ASPECTS	
+		
+		uses_anglican_power = yes
+		aspects = {
+			occult_inspiration_action
+			devotion_to_the_occult_action
+			conjure_gold_action
+			dazzle_the_masses_action
+			purge_the_feeble_action
+			look_upon_the_forbidden_action
+		}
+		aspects_name = OCCULT_ASPECTS	
 	}
-    
-    #--------------------------------------------------
-    # Cult of Pallor
-    #--------------------------------------------------
-    cult_of_pallor = {
+	
+	#--------------------------------------------------
+	# Cult of Pallor
+	#--------------------------------------------------
+	cult_of_pallor = {
 		color = { 0.55 0.5 0.6  }
 		icon = 26
 		country = {
@@ -1046,23 +1051,23 @@ religion_occult = {
 			land_morale = 0.1
 			tolerance_heathen = -2
 		}
-        
-        uses_anglican_power = yes
-        aspects = {
-            occult_inspiration_action
-            devotion_to_the_occult_action
-            conjure_gold_action
-            dazzle_the_masses_action
-            purge_the_feeble_action
-            look_upon_the_forbidden_action
-        }
-        aspects_name = OCCULT_ASPECTS	
+		
+		uses_anglican_power = yes
+		aspects = {
+			occult_inspiration_action
+			devotion_to_the_occult_action
+			conjure_gold_action
+			dazzle_the_masses_action
+			purge_the_feeble_action
+			look_upon_the_forbidden_action
+		}
+		aspects_name = OCCULT_ASPECTS	
 	}
-    
-    #--------------------------------------------------
-    # Cult of Ascension
-    #--------------------------------------------------
-    cult_of_ascension = {
+	
+	#--------------------------------------------------
+	# Cult of Ascension
+	#--------------------------------------------------
+	cult_of_ascension = {
 		color = { 0.7 0.4 0.7  }
 		icon = 27
 		country = {
@@ -1073,19 +1078,19 @@ religion_occult = {
 			movement_speed = 0.25
 			tolerance_heathen = -2
 		}
-        
-        uses_anglican_power = yes
-        aspects = {
-            occult_inspiration_action
-            devotion_to_the_occult_action
-            conjure_gold_action
-            dazzle_the_masses_action
-            purge_the_feeble_action
-            look_upon_the_forbidden_action
-        }
-        aspects_name = OCCULT_ASPECTS	
+		
+		uses_anglican_power = yes
+		aspects = {
+			occult_inspiration_action
+			devotion_to_the_occult_action
+			conjure_gold_action
+			dazzle_the_masses_action
+			purge_the_feeble_action
+			look_upon_the_forbidden_action
+		}
+		aspects_name = OCCULT_ASPECTS	
 	}
-    
+	
 	crusade_name = RELIGIOUS_CRUSADE
 }
 
@@ -1099,31 +1104,31 @@ religion_dothraki = {
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 18 }
 	
-    #--------------------------------------------------
-    # The Great Stallion
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# The Great Stallion
+	#--------------------------------------------------
 	great_stallion = {
 		color = { 0.67 0.81 0.43 }
 		icon = 4
 		country = {
 			cavalry_flanking = 0.1
-            cavalry_shock = 1
+			cavalry_shock = 1
 		}
 		country_as_secondary = {
 			cavalry_flanking = 0.1
-            cavalry_shock = 1
+			cavalry_shock = 1
 		}
-        
-        uses_anglican_power = yes
-        aspects = {
-            riders_of_the_stallion_action
-            ready_the_khalasar_action
-            crack_the_whip_action
-            offerings_to_the_stallion_action
-            cull_the_sickly_action
-            cultivate_discipline_action
-        }
-        aspects_name = GREAT_STALLION_ASPECTS	    
+		
+		uses_anglican_power = yes
+		aspects = {
+			riders_of_the_stallion_action
+			ready_the_khalasar_action
+			crack_the_whip_action
+			offerings_to_the_stallion_action
+			cull_the_sickly_action
+			cultivate_discipline_action
+		}
+		aspects_name = GREAT_STALLION_ASPECTS		
 	}
 	
 	crusade_name = RELIGIOUS_CRUSADE
@@ -1139,9 +1144,9 @@ religion_tribal = {
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 18 }
 	
-    #--------------------------------------------------
-    # Stone Cow of Faros
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# Stone Cow of Faros
+	#--------------------------------------------------
 	stone_cow = {
 		color = { 0.7 0.43 0.81 }
 		icon = 18
@@ -1153,43 +1158,43 @@ religion_tribal = {
 			tolerance_own = 1
 			war_exhaustion_cost = -0.2
 		}
-        
-        uses_karma = yes
+		
+		uses_karma = yes
 	}
-    
-    #--------------------------------------------------
-    # The Summer Gods
-    #--------------------------------------------------
+	
+	#--------------------------------------------------
+	# The Summer Gods
+	#--------------------------------------------------
 	summer_gods = {
 		color = { 0.43 0.81 0.81 }
 		icon = 22
 		country = {
 			naval_forcelimit_modifier = 0.1
-            global_unrest = -1
+			global_unrest = -1
 		}
 		country_as_secondary = {
 			naval_forcelimit_modifier = 0.1
-            global_unrest = -1
+			global_unrest = -1
 		}		
-        
-        uses_church_power = yes
-        aspects = {
-            blessing_of_strength
-            blessing_of_courage
-            blessing_of_fortitude
-            blessing_of_valor
-            blessing_of_alacrity
-            blessing_of_endurance
-            blessing_of_bounty
-            blessing_of_charisma
-            blessing_of_gallantry
-        }
-        aspects_name = SUN_GOD_ASPECTS
+		
+		uses_church_power = yes
+		aspects = {
+			blessing_of_strength
+			blessing_of_courage
+			blessing_of_fortitude
+			blessing_of_valor
+			blessing_of_alacrity
+			blessing_of_endurance
+			blessing_of_bounty
+			blessing_of_charisma
+			blessing_of_gallantry
+		}
+		aspects_name = SUN_GOD_ASPECTS
 	}
 	
-    #--------------------------------------------------
-    # Lord of Harmony
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# Lord of Harmony
+	#--------------------------------------------------
 	lord_of_harmony = {
 		color = { 0.6 0.5 0.3 }
 		icon = 23
@@ -1201,70 +1206,70 @@ religion_tribal = {
 			tolerance_own = 3
 			global_unrest = -2
 		}
-        
-        fervor = yes
+		
+		fervor = yes
 	}
-    
-    #--------------------------------------------------
+	
+	#--------------------------------------------------
 	# Idol Worship
-    #--------------------------------------------------
+	#--------------------------------------------------
 	idol_worship = {
 		color = { 0.30 0.45 0.7 }
 		icon = 24
 		
 		country = {
 			land_forcelimit_modifier = 0.1
-            global_unrest = -1
+			global_unrest = -1
 		}
 		country_as_secondary = {
 			land_forcelimit_modifier = 0.1
-            global_unrest = -1
+			global_unrest = -1
 		}
 		province = {
 			local_missionary_strength = 0.002
 		}
 	}
 	
-    #--------------------------------------------------
+	#--------------------------------------------------
 	# Mavka
-    #--------------------------------------------------
+	#--------------------------------------------------
 	mavka = {
 		color = { 0.5 0.3 0.2 }
 		icon = 28
 		
 		country = {
 			shock_damage = 0.1
-            movement_speed = 0.05
+			movement_speed = 0.05
 		}
 		country_as_secondary = {
 			shock_damage = 0.1
-            movement_speed = 0.05
+			movement_speed = 0.05
 		}
 		province = {
 			local_missionary_strength = 0.002
 		}
 	}
-    
-    #--------------------------------------------------
+	
+	#--------------------------------------------------
 	# Drekavac
-    #--------------------------------------------------
+	#--------------------------------------------------
 	drekavac = {
 		color = { 0.6 0.4 0.65 }
 		icon = 29
 		
 		country = {
 			core_creation = -0.1
-            global_unrest = -2
+			global_unrest = -2
 		}
 		country_as_secondary = {
 			core_creation = -0.1
-            global_unrest = -2
+			global_unrest = -2
 		}
 		province = {
 			local_missionary_strength = 0.002
 		}
 	}
-    
+	
 	crusade_name = RELIGIOUS_CRUSADE
 }
 
@@ -1278,9 +1283,9 @@ religion_mythological = {
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 18 }
 	
-    #--------------------------------------------------
-    # Cyromancy
-    #--------------------------------------------------
+	#--------------------------------------------------
+	# Cyromancy
+	#--------------------------------------------------
 	cyromancy = {
 		color = { 0 0 0 }
 		icon = 13
@@ -1290,22 +1295,22 @@ religion_mythological = {
 		}	
 		country_as_secondary = {
 			discipline = 0.05
-            land_morale = 0.05
+			land_morale = 0.05
 		}	
 		province = {
 			local_missionary_strength = -0.05
 		}
-        
-        uses_church_power = yes
+		
+		uses_church_power = yes
 		aspects = {
 			enchantment_of_might
-            enchantment_of_power
-            enchantment_of_submission
-            enchantment_of_control
-            enchantment_of_death
-            enchantment_of_ice
-            enchantment_of_endurance
+			enchantment_of_power
+			enchantment_of_submission
+			enchantment_of_control
+			enchantment_of_death
+			enchantment_of_ice
+			enchantment_of_endurance
 		}
-        aspects_name = WHITE_WALKER_ASPECTS
+		aspects_name = WHITE_WALKER_ASPECTS
 	}
 }

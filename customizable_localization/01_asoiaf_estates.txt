@@ -48,6 +48,14 @@ defined_text = {
 		}
 	}
     
+	text = {
+		localisation_key = estate_keyholders
+		trigger = {
+            has_estate = estate_merchants
+			has_reform = braavos_citystate_reform
+		}
+	}
+
     text = {
 		localisation_key = estate_merchants
 		trigger = {
@@ -74,6 +82,14 @@ defined_text = {
 		trigger = {
             has_estate = estate_nobles
 			has_reform = wildling_clan_reform
+		}
+	}
+
+    text = {
+		localisation_key = estate_magisters
+		trigger = {
+            has_estate = estate_nobles
+			has_reform = braavos_citystate_reform
 		}
 	}
     

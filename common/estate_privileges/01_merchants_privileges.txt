@@ -1236,6 +1236,28 @@ estate_merchants_statutory_rights = {
 	cooldown_years = 20
 }
 
+estate_merchants_iron_bank = {
+	icon = privilege_give_money
+	max_absolutism = -20
+	loyalty = -0.10
+	influence = 0.20
+	is_valid = {
+		owns = 470
+	}
+	can_select = {
+		is_or_was_tag = { tag = U25 }
+		has_reform = braavos_citystate_reform
+	}
+	penalties = {
+		prestige_decay = 0.01
+		reform_progress_growth = -0.33
+		yearly_corruption = 0.05
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
 loe_estate_cant_seize_traders = {
 	icon = privilege_royal_authority
 	max_absolutism = -5

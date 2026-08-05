@@ -732,9 +732,10 @@ braavos_citystate_reform = {
 	nation_designer_cost = 0
 	
 	modifiers = {
-		global_unrest = -2
-		global_ship_cost = -0.1
+		merchants = 1
+		max_absolutism = 20
 		state_maintenance_modifier = -0.05
+		trade_efficiency = 0.10
 	}
 	
 	conditional = {
@@ -760,6 +761,10 @@ braavos_citystate_reform = {
 		can_use_trade_post = yes
 		can_form_trade_league = yes
 		trade_city_reform = trading_outpost_reform
+	}
+
+	government_abilities = {
+		office_of_the_sealord_mechanic
 	}
 
 	custom_attributes = {

@@ -1,0 +1,47 @@
+office_of_the_sealord_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 5
+
+	powers = {
+		sealord_influence = {
+			gui = leverage_gov_mech
+			max = 100
+			default = 60
+			reset_on_new_ruler = yes
+			base_monthly_growth = 0.20
+			show_before_interactions = yes
+			
+			scaled_modifier = {
+				modifier = {
+					prestige_decay = -0.01
+					advisor_cost = -0.10
+					monthly_sealord_influence = -0.33
+				}
+			}
+			scaled_modifier = {
+				start_value = 50
+				end_value = 100
+				modifier = {
+					nobles_loyalty_modifier = 0.10
+					merchants_loyalty_modifier = 0.10
+				}
+			}
+			reverse_scaled_modifier = {
+				start_value = 0
+				end_value = 50
+				modifier = {
+					nobles_loyalty_modifier = -0.10
+					nobles_influence_modifier = 0.10
+					merchants_loyalty_modifier = -0.10
+					merchants_influence_modifier = 0.10
+				}
+			}
+			on_min_reached = {
+				custom_tooltip = ousted_ruler_tt
+				add_prestige = -25
+				add_corruption = 5
+				hidden_effect = { kill_ruler = yes }
+			}
+		}
+	}
+}

@@ -131,21 +131,23 @@ on_startup_watch_commanders_effect = {
 
 on_startup_great_projects_effect = {
 	if = {
-		limit = {
-			NOT = { has_dlc = "Leviathan" }
-		}
+		limit = { NOT = { has_dlc = "Leviathan" } }
+		# Visenya's Hill
+		27 = { add_province_triggered_modifier = great_sept_of_baelor }
+		# King's Landing
 		226 = {
 			add_province_modifier = {
-				name = city_watch_no_dlc
+				name = "city_watch_no_dlc"
 				duration = -1
 			}
 		}
-	}
-	if = {
-		limit = {
-			NOT = { has_dlc = "Leviathan" }
+		# Braavos
+		470 = {
+			add_permanent_province_modifier = {
+				name = "the_iron_bank"
+				duration = -1
+			}
 		}
-		27 = { add_province_triggered_modifier = great_sept_of_baelor }
 	}
 }
 

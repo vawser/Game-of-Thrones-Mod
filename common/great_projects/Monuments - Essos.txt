@@ -872,8 +872,9 @@ gp_titan_of_braavos = {
 			local_own_coast_naval_combat_bonus = 2
 		}
 		country_modifiers = {
-			leader_naval_fire = 1
+			#leader_naval_fire = 1
 			leader_naval_manuever = 1
+			all_estate_loyalty_equilibrium = 0.05
 		}
 		on_upgraded = {
 		}
@@ -940,10 +941,10 @@ gp_iron_bank = {
 			tax_income = 24
 		}
 		area_modifier = {
+			local_tax_modifier = 0.10
 		}
 		country_modifiers = {
 			interest = -1
-			global_tax_modifier = 0.10
 		}
 		on_upgraded = {
 		}
@@ -960,11 +961,12 @@ gp_iron_bank = {
 		}
 		area_modifier = {
 			local_development_cost = -0.1
+			local_tax_modifier = 0.10
 		}
 		country_modifiers = {
 			interest = -1
-			global_tax_modifier = 0.10
 			inflation_reduction = 0.05
+			merchants_influence_modifier = 0.05
 		}
 		on_upgraded = {
 		}
@@ -982,11 +984,12 @@ gp_iron_bank = {
 		area_modifier = {
 			allowed_num_of_buildings = 1
 			local_development_cost = -0.1
+			local_tax_modifier = 0.10
 		}
 		country_modifiers = {
 			interest = -2
-			global_tax_modifier = 0.10
 			inflation_reduction = 0.10
+			merchants_influence_modifier = 0.10
 		}
 		on_upgraded = {
 		}

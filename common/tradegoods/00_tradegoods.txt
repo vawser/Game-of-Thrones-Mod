@@ -6,7 +6,10 @@
 grain = {
 	color = { 0.96 0.93 0.58 }
 	modifier = {
-		land_forcelimit_modifier = 0.05
+		land_forcelimit_modifier = 0.20
+	}
+	province = {
+		land_forcelimit = 0.5
 	}
 	chance = {
 		factor = 35
@@ -71,7 +74,10 @@ grain = {
 wine = {
 	color = { 0.36 0.13 0.28 }
 	modifier = {
-		stability_cost_modifier = -0.1
+		global_unrest = -1
+	}
+	province = {
+		local_unrest = -1
 	}
 	chance = {
 		factor = 5
@@ -115,6 +121,9 @@ wool = {
 	modifier = {
 		global_ship_cost = -0.05
 	}
+	province = {
+		local_friendly_movement_speed = 0.10
+	}
 	chance = {
 		factor = 30
 		modifier = {
@@ -153,7 +162,10 @@ wool = {
 cloth = {
 	color = { 0.86 0.19 0.19 }
 	modifier = {
-		merc_maintenance_modifier = -0.1
+		merc_maintenance_modifier = -0.15
+	}
+	province = {
+		local_development_cost = -0.1
 	}
 	chance = {
 		factor = 10
@@ -171,7 +183,10 @@ cloth = {
 fish = {
 	color = { 0.55 0.82 0.97 }
 	modifier = {
-		culture_conversion_cost = -0.1
+		global_sailors_modifier = 0.25
+	}
+	province = {
+		local_sailors_modifier = 0.25
 	}
 	chance = {
 		factor = 20
@@ -196,8 +211,12 @@ fish = {
 fur = {
 	color = { 0.54 0.40 0.31 }
 	modifier = {
-		prestige = 1
+		prestige = 0.5
 	}
+	province = {
+		province_trade_power_modifier = 0.10
+	}
+	
 	chance = {
 		factor = 15
 		modifier = {
@@ -252,6 +271,9 @@ salt = {
 	modifier = {
 		land_maintenance_modifier = -0.05
 	}
+	province = {
+		local_defensiveness = 0.15
+	}
 	chance = {
 		factor = 5
 		modifier = {
@@ -277,8 +299,12 @@ salt = {
 naval_supplies = {
 	color = { 0.11 0.17 0.4 }
 	modifier = {
-		naval_forcelimit_modifier = 0.05
+		naval_forcelimit_modifier = 0.20
 	}
+	province = {
+		naval_forcelimit = 0.5
+	}
+
 	chance = {
 		factor = 15
 		modifier = {
@@ -326,7 +352,10 @@ naval_supplies = {
 copper = {
 	color = { 0.85 0.46 0.15 }
 	modifier = {
-		global_regiment_recruit_speed = -0.1
+		global_regiment_recruit_speed = -0.2
+	}
+	province = {
+		regiment_recruit_speed = -0.2
 	}
 	chance = {
 		factor = 15
@@ -387,6 +416,9 @@ iron = {
 	modifier = {
 		global_regiment_cost = -0.05
 	}
+	province = {
+		local_build_time = -0.2
+	}
 	chance = {
 		factor = 10
 		modifier = {
@@ -406,7 +438,10 @@ iron = {
 slaves = {
 	color = { 0.0 0.0 0.0 }
 	modifier = {
-		global_manpower_modifier = 0.1
+		global_tariffs = 0.25
+	}
+	province = {
+		local_missionary_strength = 0.01
 	}
 	chance = {
 		factor = 15
@@ -416,8 +451,12 @@ slaves = {
 ivory = {
 	color = { 0.75 0.7 0.63 }
 	modifier = {
-		diplomatic_reputation = 1
+		diplomatic_reputation = 2
 	}
+	province = {
+		local_state_maintenance_modifier = -0.2
+	}
+
 	chance = {
 		factor = 15
 		modifier = {
@@ -441,7 +480,10 @@ ivory = {
 tea = {
 	color = { 0.07 0.33 0.09 }
 	modifier = {
-		advisor_cost = -0.1
+		advisor_cost = -0.10
+	}
+	province = {
+		garrison_growth = 0.25
 	}
 	chance = {
 		factor = 15
@@ -471,7 +513,16 @@ chinaware = {
 	color = { 0.18 0.57 0.8 }
 	modifier = {
 		legitimacy = 0.25
+		devotion = 0.25
+		horde_unity = 0.25
+		republican_tradition = 0.12
+		meritocracy = 0.1
 	}
+	province = {
+		local_autonomy = -0.1
+
+	}
+
 	chance = {
 		factor = 15
 		modifier = {
@@ -484,7 +535,10 @@ chinaware = {
 spices = {
 	color = { 0.4 0.65 0.38 }
 	modifier = {
-		spy_offence = 0.2
+		spy_offence = 0.25
+	}
+	province = {
+		local_monthly_devastation = -0.1
 	}
 	chance = {
 		factor = 25
@@ -500,7 +554,10 @@ spices = {
 coffee = {
 	color = { 0.22 0.15 0.09 }
 	modifier = {
-		defensiveness = 0.1
+		global_institution_spread = 0.05
+	}
+	province = {
+		local_institution_spread = 0.1
 	}
 	chance = {
 		factor = 15
@@ -521,7 +578,10 @@ coffee = {
 cotton = {
 	color = { 0.52 0.68 0.6 }
 	modifier = {
-		colonist_placement_chance = 0.05
+		global_colonial_growth = 20
+	}
+	province = {
+		local_development_cost = -0.1
 	}
 	chance = {
 		factor = 20
@@ -556,6 +616,9 @@ sugar = {
 	modifier = {
 		war_exhaustion_cost = -0.2
 	}
+	province = {
+		local_unrest = -1
+	}
 	chance = {
 		factor = 15
 		modifier = {
@@ -579,7 +642,10 @@ sugar = {
 tobacco = {
 	color = { 0.33 0.56 0.38 }
 	modifier = {
-		global_spy_defence = 0.2
+		global_spy_defence = 0.25
+	}
+	province = {
+		province_trade_power_modifier = 0.10
 	}
 	chance = {
 		factor = 15
@@ -606,6 +672,10 @@ cocoa = {
 	modifier = {
 		manpower_recovery_speed = 0.05
 	}
+	province = {
+		local_manpower_modifier = 0.10
+	}
+
 	chance = {
 		factor = 15
 		modifier = {
@@ -631,6 +701,9 @@ silk = {
 	modifier = {
 		num_accepted_cultures = 1
 	}
+	province = {
+		province_trade_power_value = 2
+	}
 	chance = {
 		factor = 10
 		modifier = {
@@ -654,8 +727,12 @@ silk = {
 dyes = {
 	color = { 0.63 0.17 0.50 }
 	modifier = {
-		heir_chance = 0.25
+		heir_chance = 0.33
 	}
+	province = {
+		province_trade_power_modifier = 0.10
+	}
+	
 	chance = {
 		factor = 15
 		modifier = {
@@ -679,6 +756,9 @@ tropical_wood = {
 	color = { 0.45 0.47 0.09 }
 	modifier = {
 		development_cost = -0.05
+	}
+	province = {
+		local_build_cost = -0.2
 	}
 	chance = {
 		factor = 25
@@ -749,9 +829,11 @@ livestock = {
 
 ironwood = {
 	color = { 0.5 0.45 0.75 }
-	
 	modifier = {
 		naval_maintenance_modifier = -0.05
+	}
+	province = {
+		local_ship_cost = -0.10
 	}
 	chance = {
 		factor = 0
@@ -907,7 +989,10 @@ coal = {
 fruit = {
 	color = { 0.28 0.64 0.36 }
 	modifier = {
-		advisor_pool = 1
+		trade_efficiency = 0.05
+	}
+	province = {
+		province_trade_power_modifier = 0.2
 	}
 	chance = {
 		factor = 35
@@ -971,7 +1056,12 @@ fruit = {
 
 silver = {
 	color = { 0.45 0.45 0.45 }
-
+	modifier = {
+		ae_impact = -0.20
+	}
+	province = {
+		province_trade_power_modifier = 0.10
+	}
 	chance = {
 		factor = 5
 		modifier = {

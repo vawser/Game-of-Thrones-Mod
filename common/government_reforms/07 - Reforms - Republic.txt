@@ -1,54 +1,145 @@
 #-----------------------------------------
 # "Republican Virtues"
 #-----------------------------------------
-got_republican_authoritarianism_reform = {
+republican_authoritarianism_reform = {
 	icon = "commander_king"
 	allow_normal_conversion = yes
 	potential = {
-		NOT = { has_government_attribute = is_pirate_republic_reform }
+		NOT = {
+			has_government_attribute = is_pirate_republic_reform
+		}
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
 	}
-    
 	modifiers = {
 		global_unrest = -1
 		max_absolutism = 5
 	}
-    
 	ai = {
 		factor = 1
 	}
 }
 
-got_nepotism_reform = {
+nepotism_reform = {
 	icon = "political_dynasty"
 	allow_normal_conversion = yes
 	potential = {
-		NOT = { has_government_attribute = is_pirate_republic_reform }
+		NOT = {
+			has_government_attribute = is_pirate_republic_reform
+		}
+		NOT = { has_reform = signoria_reform }
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
 	}
-
+	trigger = {
+		NOT = { 
+			OR = {
+				has_reform = braavos_citystate_reform
+				has_reform = military_dictatorship_reform
+			}
+		}
+	}
 	modifiers = {
 		candidate_random_bonus = 1
 	}
+
 	custom_attributes = {
 		enables_nepotism = yes
 	}
-	
 	ai = {
 		factor = 1
 	}
 }
 
-got_republicanism_reform = {
+republicanism_reform = {
 	icon = "assembly_hall"
 	allow_normal_conversion = yes
 	potential = {
-		NOT = { has_government_attribute = is_pirate_republic_reform }
+		NOT = {
+			has_government_attribute = is_pirate_republic_reform
+		}
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
 	}
-
 	modifiers = {
 		republican_tradition = 0.2
 	}
 	ai = {
 		factor = 1.5
+	}
+}
+
+democratic_values_reform = {
+	icon = "equal_electorate_reform"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = {
+			has_government_attribute = is_pirate_republic_reform
+		}
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+	}
+	modifiers = {
+		global_trade_goods_size_modifier = 0.05
+		merchants_influence_modifier = 0.1
+		merchants_loyalty_modifier = 0.05
+		may_recruit_female_generals = yes
+		female_advisor_chance = 0.25
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+aristocratic_values_reform = {
+	icon = "politeia"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = {
+			has_government_attribute = is_pirate_republic_reform
+		}
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+	}
+	modifiers = {
+		global_manpower_modifier = 0.1
+		nobles_influence_modifier = 0.1
+		nobles_loyalty_modifier = 0.05
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+religious_values_reform = {
+	icon = "religious_leader"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = {
+			has_government_attribute = is_pirate_republic_reform
+		}
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+	}
+	modifiers = {
+		missionaries = 1
+		church_influence_modifier = 0.1
+		church_loyalty_modifier = 0.05
+	}
+	ai = {
+		factor = 1
 	}
 }
 
@@ -127,7 +218,7 @@ got_smugglers_haven_reform = {
 #-----------------------------------------
 # "Frequency of Elections"
 #-----------------------------------------
-got_frequent_elections_reform = {
+frequent_elections_reform = {
 	icon = "man_casting_vote"
 	allow_normal_conversion = yes
 	potential = {
@@ -142,20 +233,19 @@ got_frequent_elections_reform = {
 				tooltip = "NEEDS_REGULAR_ELECTIONS"
 				has_government_attribute = has_term_election
 			}
+			has_reform = lottery_reform
 		}
 	}
-    
 	modifiers = {
-		max_absolutism = -5
-		election_cycle = -2
+		max_absolutism = -10
+		election_cycle = -1
 	}
-    
 	ai = {
 		factor = 1
 	}
 }
 
-got_consolidation_of_power_reform = {
+consolidation_of_power_reform = {
 	icon = "constitution_document"
 	allow_normal_conversion = yes
 	potential = {
@@ -164,18 +254,22 @@ got_consolidation_of_power_reform = {
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
-    
 	modifiers = {
 		max_absolutism = 10
 		election_cycle = 2
 		max_terms = 1
+	}
+	effect = {
+		hidden_effect = {
+			
+		}
 	}
 	custom_attributes = {
 		reelection_depowers_estates = yes
 	}
 }
 
-got_lottery_reform = {
+lottery_reform = {
 	icon = "paper_with_seal_3"
 	allow_normal_conversion = yes
 	potential = {
@@ -186,9 +280,14 @@ got_lottery_reform = {
 		}
 		NOT = { has_government_attribute = is_pirate_republic_reform }
 	}
-    
-	has_term_election = no
-
+	trigger = {
+		NOT = { 
+			OR = {
+				has_reform = braavos_citystate_reform
+				has_reform = military_dictatorship_reform
+			}
+		}
+	}
 	modifiers = {
 		monarch_lifespan = 0.25
 	}
@@ -197,7 +296,7 @@ got_lottery_reform = {
 		election_on_death = yes
 		bonus_stats_for_elected_ruler = yes
 	}
-    
+	has_term_election = no
 	ai = {
 		factor = 1
 	}
@@ -230,62 +329,6 @@ force_reelection_reform = {
 	}
 }
 
-got_term_limits_reform = {
-	icon = "parliament"
-	valid_for_nation_designer = no
-	allow_normal_conversion = no
-	potential = {
-		has_dlc = "Domination"
-		NOT = { has_reform = crown_colony_government }
-		NOT = { has_reform = private_enterprise_colony_government }
-		NOT = { has_reform = self_governing_colony_government }
-	}
-	modifiers = {
-		candidate_random_bonus = 1
-		all_estate_influence_modifier = -0.05
-		max_terms = 2
-	}
-	trigger = {
-		custom_trigger_tooltip = {
-			tooltip = "NEEDS_REGULAR_ELECTIONS"
-			has_government_attribute = has_term_election
-		}
-	}
-
-	conditional = {
-		allow = { has_dlc = "Domination" }
-		custom_attributes = {
-			enables_plutocratic_idea_group = yes
-			enables_aristocratic_idea_group = no
-			has_limited_terms = yes
-		}
-	}
-
-	conditional = {
-		allow = { NOT = { has_dlc = "Domination" } }
-		custom_attributes = {
-			enables_plutocratic_idea_group = yes
-			enables_aristocratic_idea_group = no
-		}
-	}
-	effect = {
-		hidden_effect = {
-			set_variable = {
-				which = election_term
-				value = 1
-			}
-		}
-	}
-	removed_effect = {
-		hidden_effect = {
-			set_variable = {
-				which = election_term
-				value = 1
-			}
-		}
-	}
-}
-
 got_uphold_life_term_reform = {
 	icon = "armored_knight"
 	allow_normal_conversion = yes
@@ -311,7 +354,6 @@ got_uphold_life_term_reform = {
 provincial_governments_reform = {
 	icon = "landscape"
 	allow_normal_conversion = yes
-
 	modifiers = {
 		state_maintenance_modifier = -0.25
 		global_prosperity_growth = 0.5
@@ -327,7 +369,7 @@ administrative_divisions_reform = {
 
 	modifiers = {
 		expand_administration_cost = -0.125
-		governing_capacity_modifier = 0.66
+		governing_capacity_modifier = 0.33
 	}
 	conditional = {
 		allow = {

@@ -324,9 +324,12 @@ republic = {
 		}
 		tier_republic_republican_virtues = {
 			reforms = {
-				got_republican_authoritarianism_reform
-				got_nepotism_reform
-				got_republicanism_reform
+				republican_authoritarianism_reform
+				nepotism_reform
+				republicanism_reform
+				democratic_values_reform
+				aristocratic_values_reform
+				religious_values_reform
 				got_brotherhood_of_the_black_reform
 				# Pirates
 				got_council_of_captains_reform
@@ -336,29 +339,18 @@ republic = {
 		}
 		tier_republic_frequency_of_elections = {
 			reforms = {
-				got_frequent_elections_reform
-				got_consolidation_of_power_reform
-				got_lottery_reform
+				frequent_elections_reform
+				consolidation_of_power_reform
+				lottery_reform
 				force_reelection_reform
-				got_term_limits_reform
 				got_uphold_life_term_reform
 			}
 		}
-		tier_republic_regionalism = {
+		tier_republic_religion = {
 			reforms = {
-				provincial_governments_reform
-				administrative_divisions_reform
-				union_of_states_reform
-				cultural_administration_reform
-			}
-		}
-		tier_republic_separation_of_power = {
-			reforms = {
-				got_parliamentary_reform
-				got_presidential_reform
-				got_republican_diplomacy_reform
-				got_municipal_self_defense_reform
-				got_pirate_king_reform
+				curtail_clergy_power_reform
+				secure_clergy_power_reform
+				separate_clergy_from_state_affairs_reform
 			}
 		}
 		military_doctrines = {
@@ -376,11 +368,21 @@ republic = {
 				got_wildling_tributaries_reform
 			}
 		}
-		tier_republic_religion = {
+		tier_republic_separation_of_power = {
 			reforms = {
-				curtail_clergy_power_reform
-				secure_clergy_power_reform
-				separate_clergy_from_state_affairs_reform
+				got_parliamentary_reform
+				got_presidential_reform
+				got_republican_diplomacy_reform
+				got_municipal_self_defense_reform
+				got_pirate_king_reform
+			}
+		}
+		tier_republic_regionalism = {
+			reforms = {
+				provincial_governments_reform
+				administrative_divisions_reform
+				union_of_states_reform
+				cultural_administration_reform
 			}
 		}
 		tier_republic_economical_matters = {

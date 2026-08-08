@@ -124,6 +124,18 @@ country_decisions = {
 				days = 365
 			}
 		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					historical_friend_with = overlord
+					overlord = { historical_friend_with = ROOT }
+					NOT = { liberty_desire = 50 }
+					NOT = { ai_attitude = { who = overlord attitude = attitude_disloyal } }
+				}
+			}
+		}
 	}
 	demand_oaths_of_fealty = {
 		color = { 229 193 51 }

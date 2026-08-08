@@ -237,7 +237,7 @@ allianceaction = {
 		allow = { always = no }
 	}
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
@@ -286,7 +286,7 @@ royal_marriage = {
 		}
 	}
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
@@ -299,7 +299,7 @@ royal_marriage = {
 
 guaranteeaction = {
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
@@ -434,7 +434,7 @@ annexationaction = {
 		}
 	}
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
@@ -479,7 +479,7 @@ integrationaction = {
 	# 	}
 	# }
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
@@ -516,7 +516,7 @@ vassalaction = {
 	}
 	
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
@@ -569,7 +569,7 @@ form_coalition = {
 		}
 	}
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
@@ -693,12 +693,20 @@ requestpeace = {
 
 support_independence_action = {
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
 				tag = WIT
 			}
+		}
+		allow = { always = no }
+	}
+	condition = {
+		tooltip = "FEUDATORY_PROTECTION"
+		potential = {
+			is_part_of_hre = yes
+			FROM = { is_part_of_hre = yes is_subject = yes }
 		}
 		allow = { always = no }
 	}
@@ -710,7 +718,7 @@ embargoaction = {
 
 warningaction = {
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
@@ -824,7 +832,7 @@ excommunicate_action = {
 
 improve_relation = {
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
@@ -845,7 +853,7 @@ transfer_trade_power = {
 
 infiltrate_administration = {
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
@@ -858,7 +866,7 @@ infiltrate_administration = {
 
 sabotage_reputation = {
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
@@ -871,7 +879,7 @@ sabotage_reputation = {
 
 support_rebels = {
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }
@@ -888,7 +896,7 @@ sow_discontent = {
 
 agitate_for_liberty = {
 	condition = {
-		tooltip = WHITE_WALKER_BLOCKED_ACTION_TT
+		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {
 				FROM = { tag = WIT }

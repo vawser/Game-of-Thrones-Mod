@@ -29,7 +29,12 @@ on_startup = {
 	if = {
 		limit = { NOT = { has_global_flag = kingsroad_bonuses } }
 		set_global_flag = kingsroad_bonuses
-		kingsroad = { add_province_triggered_modifier = "kingsroad_province_bonus" }
+		kingsroad = {
+			add_permanent_province_modifier = {
+				name = "kingsroad_province_bonus"
+				duration = -1
+			}
+		}
 	}
 
 	on_startup_watch_commanders_effect = yes

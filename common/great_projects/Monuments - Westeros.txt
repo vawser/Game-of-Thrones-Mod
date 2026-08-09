@@ -194,13 +194,12 @@ gp_winterfell = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_defensiveness = 0.15
+			local_defensiveness = 0.10
 			local_garrison_size = 0.10
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			prestige_decay = -0.002
 			reduced_liberty_desire_on_same_continent = 5
 		}
 		conditional_modifier = {
@@ -227,16 +226,16 @@ gp_winterfell = {
 			factor = 2500
 		}
 		province_modifiers = {
-			local_defensiveness = 0.30
-			local_garrison_size = 0.10
 			local_hostile_attrition = 1
+			local_defensiveness = 0.10
+			local_garrison_size = 0.10
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
 			prestige_decay = -0.005
-			reduced_liberty_desire_on_same_continent = 5
-			vassal_income = 0.10
+			reduced_liberty_desire_on_same_continent = 10
+			vassal_income = 0.05
 		}
 		conditional_modifier = {
 			trigger = {
@@ -262,17 +261,16 @@ gp_winterfell = {
 			factor = 500
 		}
 		province_modifiers = {
-			local_defensiveness = 0.50
-			local_garrison_size = 0.20
 			local_hostile_attrition = 2
+			local_defensiveness = 0.20
+			local_garrison_size = 0.20
 		}
 		area_modifier = {
-			local_defender_dice_roll_bonus = 1
 		}
 		country_modifiers = {
-			prestige_decay = -0.01
-			reduced_liberty_desire_on_same_continent = 10
-			vassal_income = 0.25
+			prestige_decay = -0.005
+			reduced_liberty_desire_on_same_continent = 20
+			vassal_income = 0.10
 		}
 		conditional_modifier = {
 			trigger = {
@@ -345,11 +343,11 @@ gp_the_moat = {
 			factor = 1000
 		}
 		province_modifiers = {
-			province_trade_power_value = 2
-			local_defensiveness = 0.20
+			local_defensiveness = 0.10
 		}
 		area_modifier = {
 			local_defender_dice_roll_bonus = 1
+			supply_limit_modifier = 0.10
 		}
 		country_modifiers = {
 			land_attrition = -0.05
@@ -365,14 +363,15 @@ gp_the_moat = {
 			factor = 2500
 		}
 		province_modifiers = {
-			province_trade_power_value = 6
-			local_defensiveness = 0.40
+			province_trade_power_value = 4
+			local_defensiveness = 0.25
 		}
 		area_modifier = {
 			local_defender_dice_roll_bonus = 2
+			supply_limit_modifier = 0.20
 		}
 		country_modifiers = {
-			land_attrition = -0.10
+			land_attrition = -0.05
 		}
 		on_upgraded = {
 		}
@@ -386,13 +385,15 @@ gp_the_moat = {
 		}
 		province_modifiers = {
 			province_trade_power_value = 10
-			local_defensiveness = 0.60
+			local_defensiveness = 0.50
+			garrison_growth = 0.10
 		}
 		area_modifier = {
 			local_defender_dice_roll_bonus = 2
+			supply_limit_modifier = 0.20
 		}
 		country_modifiers = {
-			land_attrition = -0.20
+			land_attrition = -0.10
 		}
 		on_upgraded = {
 		}

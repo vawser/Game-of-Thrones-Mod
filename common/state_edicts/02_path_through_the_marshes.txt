@@ -1,0 +1,48 @@
+edict_path_through_the_marshes = {
+	potential = {
+		FROM = { area = area_moat_cailin }
+	}
+
+	allow = {
+		if = { # Be at War
+			limit = {
+				is_at_war = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = AT_WAR_TRIGGER
+				is_at_war = yes
+			}
+		}
+		if = { # All provinces controlled by owner
+			limit = {
+				FROM = {
+					any_province_in_state = {
+						owned_by = ROOT
+						NOT = {
+							controlled_by = ROOT
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = PROVINCE_IS_OCCUPIED_TRIGGER
+				FROM = {
+					all_province_in_state = {
+						controlled_by = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		local_friendly_movement_speed = 0.50
+		supply_limit_modifier = 0.33
+	}
+
+	color = { 206 147 95 }
+
+	ai_will_do = {
+		factor = 0
+	}
+}

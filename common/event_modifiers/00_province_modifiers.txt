@@ -52,14 +52,21 @@ local_trading_hub = {
 	picture = "province_trade_power_value"
 }
 
+kingsroad_province_bonus = {
+	local_friendly_movement_speed = 0.125
+	supply_limit_modifier = 0.20
+	picture = "the_kingsroad"
+}
+
 granary_of_westeros = {
 	trade_goods_size = 2
 	picture = "trade_value_modifier"
 }
 
 marshes_of_the_neck = {
-	local_hostile_movement_speed = 0.5
-	local_friendly_movement_speed = -0.5
+	local_hostile_movement_speed = -1.0
+	local_friendly_movement_speed = -1.0
+	local_development_cost = 0.66
 	supply_limit_modifier = -0.75
 	picture = "marshes_province_modifier"
 }

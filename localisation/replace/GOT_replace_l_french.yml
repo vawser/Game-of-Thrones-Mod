@@ -323,6 +323,27 @@
  RAJPUT_FORCELIMIT: "We can recruit up $VAL|%Y$ of our force-limit as §GUnsullied§! of $FL$ due to:\n"
  enables_rajput_regiments: "Unsullied Regiments"
  RAJPUT_REGIMENT_TYPE: "Unsullied"
+
+ #----------------------------------------------------
+ # Winged Hussars (Bloodriders)
+ #----------------------------------------------------
+ HUSSARS_NAME: "$HOME$'s $NUM$$ORDER$ Bloodriders"
+ MODIFIER_HAS_HUSSARS: "Allows Bloodriders"
+ HUSSARS_CANT_HAVE: "Your nation cannot raise Bloodriders."
+ HUSSARS_DESC: "\nThe Dothraki are an old people of nomadic culture, widely known for having some of the fiercest warriors in the Dothraki Sea of Essos. The Bloodriders are the sworn protectors of the great Khals of the Dothraki horde.\n\nThe number of §YBloodriders§! is calculated based on the development of provinces with accepted cultures at a rate of 1 unit per 100 development."
+ REGCAT_hussars: "Bloodriders"
+ hussars_regiment: "Bloodriders"
+ ADD_HUSSARS_SUB_UNIT_EFFECT: "Get '§GBloodriders§!' $UNIT$ in $WHERE|Y$."
+ HUSSARS_REGIMENT: "Bloodriders Regiment\n$EFFECT$"
+ HAVE_LESS_HUSSARS_THAN: "Have less Bloodriders Regiments than $VALUE|Y$.\n"
+ HAVE_AT_LEAST_HUSSARS_THAN: "Have at least $VALUE|Y$ Bloodriders Regiments.\n"
+ MODIFIER_AMOUNT_OF_HUSSARS: "Possible Bloodriders"
+ MODIFIER_LOCAL_AMOUNT_OF_HUSSARS: "Possible Bloodriders from development"
+ MODIFIER_CAN_RECRUIT_HUSSARS: "May recruit §YBloodriders§!"
+ HUSSARS_REGIMENT_TYPE: "Bloodriders"
+ STATE_HUSSARS_CREATED_REGIMENTS: "This will cost $MILAMOUNT|Y$ £mil£, and $NUM|Y$ Bloodriders will spawn in $PROV|Y$.\nDo you want to create a Bloodriders regiment?"
+ ONLY_HUSSARS_MODIFIER: "§YAffects only Bloodriders Regiments§!"
+ HUSSARS_LIMIT_CULTURE: "$PROVINCE$ is a $CULTURE$ province, so you cannot recruit Bloodriders Regiments here."
  
  #----------------------------------------------------
  # Institutions
@@ -463,8 +484,8 @@
  COUNCIL_HARSH_TRIG: "Harsh"
  
  # Curia tithe
- CURIA_TREASURY: "The holy treasury contain $VALUE|Y$¤"
- CURIA_TREASURY_DESC: "Every month, as a demonstration of faith, the Faith of the Seven countries all around the World will offer a Tithe to the High Septon to fill the Treasury. The estimate Tithe for this month is $INCREMENT|Y$¤, depending on the amount of land the Clergy has in the Faith of the Seven Countries:\n$WHY$"
+ CURIA_TREASURY: "The current Holy Treasury: $VALUE|Y$¤\n\n"
+ CURIA_TREASURY_DESC: "Every month, as a demonstration of faith, realms of the §YKnown World§! following the §MFaith of the Seven§! will offer a Tithe to the High Septon to fill the Treasury. The estimated tithe for this month is $INCREMENT|Y$¤, depending on the amount of land the Clergy has in the realms following the Faith:\n\n$WHY$"
  EXPENSE_PAPAL_ACTION: "The Faith Actions"
  USE_CURIA_TREASURY: "Use the Holy Treasury"
  CURIA_TREASURY_NOT_CURIA_CONTROLLER: "§ROnly the Faith Controller can use the Holy Treasury!§!"
@@ -966,6 +987,26 @@
  MAX_CONDOTTIERI_MERC: "This value would be furthered modified by any Modifiers to §YAvailable Mercenaries§!."
  CONNECT_TO_SHIP_PENDING_CONDOTTIERI: "You cannot attach a unit to a ship when you have offered to rent it out as Sellswords."
  CONNECT_TO_SHIP_CONDOTTIERI: "Sellswords can only be attached to ships belonging to the country that is paying for them, and only if the whole unit can fit onto the ship."
+ #------------------------------------------------------
+ # Governor (Pasha)
+ #------------------------------------------------------
+ mechanic_has_pashas_yes: "Can appoint §YGovernors§!."
+ ADD_PASHA_BUTTON: "Appoint Governor"
+ REMOVE_PASHA_BUTTON: "Remove Governor"
+ ADD_PASHA_TOOLTIP: "§YAppoint Governor§!"
+ REMOVE_PASHA_TOOLTIP: "§YRemove Governor§!"
+ ADD_PASHA_TOOLTIP_DESC: "Appointing a Governor in the $STATE|Y$ will give us the following effects:\n$EFFECT$"
+ REMOVE_PASHA_TOOLTIP_DESC: "Removing the Governor in the $STATE|Y$ will give us the following effects:\n$EFFECT$"
+ CONFIRMADDPASHA: "Appoint Governor"
+ CONFIRMADDPASHA_TEXT: "Assigning a Governor in $STATE|Y$ will give us the following effects:\n$EFFECT$"
+ CONFIRMREMOVEPASHA: "Remove Governor"
+ CONFIRMREMOVEPASHA_TEXT: "Removing the Governor in $STATE|Y$ will give us the following effects:\n$EFFECT$"
+ pasha_removed_modifier: "Governor Removed"
+ PASHA_MODIFIER: "Regional Governor in Power"
+ PASHA_MODIFIER_desc: "A Governor has been assigned to oversee this state on our behalf."
+ pasha_state: "Governor"
+ PASHA_WRONG_GOVERNMENT: "\n§RYou cannot appoint Governors§!"
+ PASHA_CORRECT_GOVERNMENT: "Due to our §YCentralized government§!, we are capable of appointing regional Governors in our owned states.\n"
  
  #------------------------------------------------------
  # Holy Order
@@ -1659,3 +1700,27 @@
  DECIMPERIALREALMWARWITHOTHER_3: "a Royal Conquest against $RECIPIENT$"
  DECIMPERIALREALMWARWITHOTHER_6: "This surely will shake up Westeros..."
  DECIMPERIALREALMWARWITHOTHER_LOG: "$ACTOR$ have declared a Royal Conquest against $RECIPIENT$!"
+
+ # CAWA UNITS
+ CAWA_NAME:0 "$HOME$'s $NUM$$ORDER$ Frost Giants"
+ MODIFIER_AMOUNT_OF_CAWA:0 "Possible Frost Giants"
+ MODIFIER_LOCAL_AMOUNT_OF_CAWA:0 "Possible Frost Giants"
+ mechanic_allow_cawa_yes:1 "Allows recruiting §YFrost Giants§!"
+ mechanic_allow_cawa_no:0 ""
+ CAWA_CANT_HAVE:0 "Your nation cannot raise Frost Giants."
+ CAWA_DESC:0 "\nFrost Giants are the undead reanimated corpses of the ancient giants from beyond the Wall, believed to be part of old folklore. Now they stand ready to conquer the world for the Night King. They can be recruited from owned states or from states owned by subjects."
+ REGCAT_cawa:0 "Frost Giants"
+ CAWA_REGIMENT:0 "Frost Giant Regiment\n$EFFECT$"
+ HAVE_LESS_CAWA_THAN:0 "Have less Frost Giant Regiments than $VALUE|Y$.\n"
+ HAVE_AT_LEAST_CAWA_THAN:0 "Have at least $VALUE|Y$ Frost Giant Regiments.\n"
+ CAWA_REGIMENT_TYPE:0 "Frost Giants"
+ ONLY_CAWA_MODIFIER:0 "§YAffects only Frost Giant Regiments§!"
+ CREATECAWA:0 "Conscript Frost Giants"
+ STATE_CAWA_CREATED_REGIMENTS:0 "This will cost $MILAMOUNT|Y$ £mil£, and $NUM|Y$ Frost Giants will spawn in $PROV|Y$.\nDo you want to create a Frost Giant regiment?"
+ CAWA_FROM_TT:0 "§YFrost Giant Forcelimit§!\nThis is the amount of current and possible Frost Giants our nation can have. Frost Giants are raised from the state's full core provinces.\n\n$NAME$ provides a Force Limit of $AMOUNT|Y$ Frost Giants due to the development in:\n"
+ MODIFIER_CAWA_COST:0 "Frost Giants Regiment Cost"
+ MODIFIER_CAN_RECRUIT_CAWA:0 "Can recruit Frost Giants"
+ ADD_CAWA_SUB_UNIT_EFFECT:0 "Get '§GFrost Giants§!' $UNIT$ in $WHERE|Y$."
+ cawa_regiment:0 "Frost Giants"
+ custom_amount_of_cawa:0 "Elite Traing Camps"
+ custom_amount_of_cawa_desc:0 "The Frost Giants are the backbone of our military. Due to their training though, they are few in numbers. With the establishment of elite training camps it is possible for us to field a larger amount of frost giants regiments than ever before."

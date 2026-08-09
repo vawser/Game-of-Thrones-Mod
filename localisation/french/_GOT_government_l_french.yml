@@ -2,24 +2,14 @@
  #---------------------------------------------
  # Mechanic Tooltips
  #---------------------------------------------
- mechanic_is_merchant_republic_yes: "Is Merchant Republic: §GYes§!"
- mechanic_can_use_trade_post_yes: "Can Establish Trading Outpost: §GYes§!"
- mechanic_can_form_trade_league_yes: "Can Form Trade League: §GYes§!"
  mechanic_trade_city_reform: ""
- mechanic_boost_income_yes: ""
- mechanic_is_trading_city_yes: "Is Trading City: §GYes§!"
- mechanic_has_term_election_yes: "Has Term Elections: §GYes§!"
- mechanic_has_term_election_no: "Has Term Elections: §RNo§!"
- mechanic_fixed_rank: "Has Fixed Rank: §GYes§!"
- mechanic_claim_states_yes: "Can Claim States: §GYes§!"
- mechanic_has_meritocracy_yes: "Has Meritocracy: §GYes§!"
- mechanic_assimilation_cultures: "Can Assimilate Cultures: §GYes§!"
- mechanic_states_general_mechanic: "Has States General: §GYes§!"
- mechanic_has_devotion_yes: "Has Devotion: §GYes§!"
- mechanic_has_harem_yes: ""
- mechanic_allow_banners_yes: "Can Raise Bannermen: §GYes§!"
+ mechanic_allow_banners_yes: "Allows raising §YBanners§!"
+ mechanic_has_term_election_yes: "Allows traditional §YElections§!"
+ mechanic_has_term_election_no: "Disallows traditional §YElections§!"
 
+ # Custom
  mechanic_cannot_fabricate_claims_yes: "Cannot fabricate claims"
+ mechanic_disables_estates_yes: "Disables all §YEstates§!."
 
  mechanic_enables_estate_church_yes: "Enables §YClergy§! estate."
  mechanic_enables_estate_nobles_yes: "Enables §YNobility§! estate."
@@ -27,16 +17,8 @@
 
  mechanic_seizing_land_no_rebels_from_estate_merchants_yes: "Seizing Land from the §YMerchantry§! does not trigger Particularist rebels"
  
- mechanic_monarchy_yes: "Is Monarchy: §GYes§!"
- mechanic_republic_yes: "Is Republic: §GYes§!"
- mechanic_religion_yes: "Is Theocracy: §GYes§!"
- mechanic_tribal_yes: "Is Tribal: §GYes§!"
- mechanic_nomad_yes: "Is Nomad: §GYes§!"
- mechanic_monastic_yes: "Is Monastic: §GYes§!"
- mechanic_papacy_yes: "The Faith: §GYes§!"
- mechanic_dictatorship_yes: "Is Dictatorship: §GYes§!"
-
- mechanic_disables_estates_yes: "Disables all §YEstates§!."
+ mechanic_nomad_yes: "Is §YNomadic§!"
+ mechanic_papacy_yes: "Is the §YHigh Septon§!."
  
  mechanic_enables_monarchy_ideagroup_yes: "Allows §YMonarchy§! Idea Group"
  mechanic_enables_republic_ideagroup_yes: "Allows §YRepublic§! Idea Group"
@@ -52,9 +34,11 @@
  mechanic_guaranteed_masterofships_yes: "Guaranteed as the §YMaster of Ships§!."
  mechanic_guaranteed_masterofwhisperers_yes: "Guaranteed as the §YMaster of Whisperers§!."
 
+ mechanic_cannot_resign: "Cannot resign as ruler."
+ mechanic_cannot_resign_yes: "Cannot resign as ruler."
  mechanic_among_us_yes: "The impostor is among us..."
 
- mechanic_bonuses_from_wall_forts_yes: "Castles along the §YWall§! are reinforced."
+ mechanic_bonuses_from_wall_forts_yes: "The §YFortify Castles along the Wall§! interaction has improved bonuses and extends to provinces in §YWestwatch§! and §YEastwatch§! areas."
  
  mechanic_native_mechanic_no: "Native Mechanic: §RNo§!"
 
@@ -124,6 +108,7 @@
  SEALORD: "Sealord"
  SEALADY: "Sealady"
  TRIARCH: "Triarch"
+ MAGNAR: "Magnar"
  CHIEF: "Chief"
  CHIEFTESS: "Chieftess"
  HIGH_CHIEFTAIN: "High Chieftain"
@@ -261,20 +246,17 @@
  lord_of_the_tides_reform: "Lord of the Tides"
  lord_of_the_tides_reform_desc: "Generations of lords from House Velaryon of Driftmark have been known as the §YLord of the Tides§! since Aegon's Conquest, a title which indictated their naval dominance. As long as the island of Driftmark is in the hands of House Velaryon, they will continue to bear the title and safeguard the shores of Westeros."
 
+ dynasty_reform: "Dynast's Rule"
+ dynasty_reform_desc: "A dynasty led by the dynasty head, also known as the §YDynast§!, and all companions."
+
  noble_house_reform: "Minor House of Westeros"
  noble_house_reform_desc: "Nobles swearing fealty to a §YGreat House§! of the §YSeven Kingdoms§! with an insignificant personal domain hail from a Minor House.\n\nWhile Lords of a Minor House may seem to hold little to no influence due to their rather small demesne, they often form alliances with other Minor Houses and form the backbone of the feudal powerbase."
- noble_house_legacy: "Minor House of Westeros"
- noble_house_legacy_desc: "Nobles swearing fealty to a §YGreat House§! of the §YSeven Kingdoms§! with an insignificant personal domain hail from a Minor House.\n\nWhile Lords of a Minor House may seem to hold little to no influence due to their rather small demesne, they often form alliances with other Minor Houses and form the backbone of the feudal powerbase"
  
  great_house_reform: "Great House of Westeros"
  great_house_reform_desc: "Nobles swearing fealty to the §YIron Throne§! whilst having vassals of their own and a considerably large estate hail from a Great House.\n\nSince much of the §YSeven Kingdoms§! is controlled under a feudal system, Lords of Great Houses often have an immense sway in the realm's administration when they command the respect of their men."
- great_house_legacy: "Great House of Westeros"
- great_house_legacy_desc: "Nobles swearing fealty to the §YIron Throne§! whilst having vassals of their own and a considerably large estate hail from a Great House.\n\nSince much of the §YSeven Kingdoms§! is controlled under a feudal system, Lords of Great Houses often have an immense sway in the realm's administration when they command the respect of their men."
  
  royal_house_reform: "The Royal House of Westeros"
  royal_house_reform_desc: "The Royal House of Westeros is the current dynasty that sits on the §YIron Throne§! and rules the §YSeven Kingdoms§!.\n\nThe head of the dynasty is the §MSovereign of the Andals, the Rhoynar, and the First Men§! and oversees a collective of provinces known as the Crownlands. Much of the realm is governed by subordinate Great Houses, but the Royal House has the ultimate say in any matter."
- royal_house_legacy: "The Royal House"
- royal_house_legacy_desc: "The Royal House of Westeros is the current dynasty that sits on the §YIron Throne§! and rules the §YSeven Kingdoms§!.\n\nThe head of the dynasty is the §MSovereign of the Andals, the Rhoynar, and the First Men§! and oversees a collective of provinces known as the Crownlands. Much of the realm is governed by subordinate Great Houses and the minor Lords swearing fealty to each house, but the Royal House has the ultimate say in any matter."
  mechanic_iron_throne_small_council_yes: "Can appoint Lords to the §YSmall Council§!:\n - Hand of the King\n - Master of Coin\n - Master of Laws\n - Master of Ships\n - Master of Whisperers"
  
  #---------------------------------------------
@@ -282,74 +264,46 @@
  #---------------------------------------------
  kingdom_reform: "Kingdom"
  kingdom_reform_desc: "A realm ruled over by a despotic king or queen."
- kingdom_legacy: "Kingdom"
- kingdom_legacy_desc: "A realm ruled over by a despotic king or queen."
  
  kingdom_of_westeros_reform: "Kingdom of Westeros"
  kingdom_of_westeros_reform_desc: "Having united the entirety of the §YSeven Kingdoms§! under one central government, the Seven Kingdoms can be regarded as the one true Kingdom of Westeros.\n\nWhile provinces may still be administered by minor Lords, they are considered the personal property of the Crown and the old feudal hereditary hierarchy no longer enforces the will of the Sovereign. Everything is administered under legally established government bodies acting on behalf of the Sovereign throughout the entire realm."
- kingdom_of_westeros_legacy: "Kingdom of Westeros"
- kingdom_of_westeros_legacy_desc: "Having united the entirety of the §YSeven Kingdoms§! under one central government, the Seven Kingdoms can be regarded as the one true Kingdom of Westeros.\n\nWhile provinces may still be administered by minor Lords, they are considered the personal property of the Crown and the old feudal hereditary hierarchy no longer enforces the will of the Sovereign. Everything is administered under legally established government bodies acting on behalf of the Sovereign throughout the entire realm."
 
  qarth_city_reform: "City of Qarth"
  qarth_city_reform_desc: "The ancient city of Qarth is home to warlocks and merchant princes, ruled over by the Pureborn."
- qarth_city_legacy: "City of Qarth"
- qarth_city_legacy_desc: "The ancient city of Qarth is home to warlocks and merchant princes, ruled over by the Pureborn."
 
  yiti_city_reform: "Yitish City"
  yiti_city_reform_desc: "The local lord of a region of the Yi Ti lands, ruled over by the Yi Ti Emperor."
- yiti_city_legacy: "Yitish City"
- yiti_city_legacy_desc: "The local lord of a region of the Yi Ti lands, ruled over by the Yi Ti Emperor."
  
  yiti_empire_reform: "Yitish Empire"
  yiti_empire_reform_desc: "The empire of Yi Ti, situated in the far east of Essos. Once ruled over by a Golden Emperor."
- yiti_empire_legacy: "Yitish Empire"
- yiti_empire_legacy_desc: "The empire of Yi Ti, situated in the far east of Essos. Once ruled over by a Golden Emperor."
  
  nefer_city_reform: "Neferi City"
  nefer_city_reform_desc: "The last remnants of the Neferi Kingdom, having been decimated by the Jogos Nhai."
- nefer_city_legacy: "Neferi City"
- nefer_city_legacy_desc: "The last remnants of the Neferi Kingdom, having been decimated by the Jogos Nhai."
 
  hyrkoon_city_reform: "Hyrkooni City"
  hyrkoon_city_reform_desc: "The remnants of the once great Patriarchy of Hyrkoon, high up in the Bone Mountains."
- hyrkoon_city_legacy: "Hyrkooni City"
- hyrkoon_city_legacy_desc: "The remnants of the once great Patriarchy of Hyrkoon, high up in the Bone Mountains."
  
  valyria_city_reform: "Valyrian City"
  valyria_city_reform_desc: "A successor state to the original Valyrian Empire."
- valyria_city_legacy: "Valyrian City"
- valyria_city_legacy_desc: "A successor state to the original Valyrian Empire."
  
  meereen_city_reform: "Meereenese City"
  meereen_city_reform_desc: "A city in the Slaver's Bay region."
- meereen_city_legacy: "Meereenese City"
- meereen_city_legacy_desc: "A city in the Slaver's Bay region."
  
  yunkai_city_reform: "Yunkai City"
  yunkai_city_reform_desc: "A city in the Slaver's Bay region."
- yunkai_city_legacy: "Yunkai City"
- yunkai_city_legacy_desc: "A city in the Slaver's Bay region."
  
  astapor_city_reform: "Astapori City"
  astapor_city_reform_desc: "A city in the Slaver's Bay region."
- astapor_city_legacy: "Astapori City"
- astapor_city_legacy_desc: "A city in the Slaver's Bay region."
  
  ghis_city_reform: "Ghiscari City"
  ghis_city_reform_desc: "A city in the Slaver's Bay region."
- ghis_city_legacy: "Ghiscari City"
- ghis_city_legacy_desc: "A city in the Slaver's Bay region."
  
  daenerys_host_reform: "Daenerys's Host"
  daenerys_host_reform_desc: "Daenerys Targaryen's war host."
- daenerys_host_legacy: "Daenerys's Host"
- daenerys_host_legacy_desc: "Daenerys Targaryen's war host."
  
  #---------------------------------------------
  # Government Form (Republic)
  #---------------------------------------------
- republic_legacy: "Republic"
- republic_legacy_desc: "A republic a system of government whereby a select group of people are considered the electorate and elect one person to govern on their behalf."
  oligarchy_reform: "Oligarchy"
  oligarchy_reform_desc: "In an Oligarchy, the ruler is elected from a small group of very influential politicians at the very top of society. This ruling class is also the only group that the head of government answers directly to and it is their sole support the state relies upon, completely neglecting the commonfolk and merchant class."
 
@@ -357,7 +311,10 @@
  anocracy_reform_desc: "In an Anocracy, the regime is characterized by its unique mix of democratic and autocratic style of government. Despite being authoritarian, elections are still held for the head of state at regular intervals though much of the democratic process can easily be subverted. The government, in reality, rubber stamps most of the anocrat's policies."
 
  valyrian_citystate_reform: "Valyrian City-State"
- valyrian_citystate_reform_desc: "Following the collapse of the §YValyrian Freehold§! as a result of the §RDoom of Valyria§!, many city-states rose to prominence and began to govern the former colonies of the freehold independently. Due to the geographic history of the region, High Valyrian is still a widely spoken language."
+ valyrian_citystate_reform_desc: "Following the collapse of the §YValyrian Freehold§! as a result of the §RDoom of Valyria§!, many autocratic city-states rose to prominence and began to govern the former colonies of the freehold independently. Due to the geographic history of the region, §YHigh Valyrian§! is still a widely spoken language."
+
+ braavos_citystate_reform: "Braavos of the Hundred Isles"
+ braavos_citystate_reform_desc: "Founded by escaped slaves in a hidden lagoon, the great city of Braavos stands as one of the wealthiest and most powerful of the §YFree Cities§!. Built upon a vast network of islands and canals, the city is led by an elected '§YSealord§!' and through a balance of guilds and merchant houses. United by trade, wealth, and a fierce devotion to liberty, the Hundred Isles have forged a decentralized state whose prosperity and naval power ensure that no tyrant shall ever rule Braavos again."
 
  castellany_of_dragonstone_reform: "Castellany of Dragonstone"
  castellany_of_dragonstone_reform_desc: "The heir to the Iron Throne has always held the title of Prince of Dragonstone since King Aenys granted the title to his own heir, Prince Aegon. However, the princedom is left in the hands of a designated Castellan to govern as the Prince or Princess spends their time on mainland Westeros."
@@ -370,127 +327,75 @@
  
  military_dictatorship_reform: "Military Dictatorship"
  military_dictatorship_reform_desc: "A realm ruled by a military council."
- military_dictatorship_legacy: "Military Dictatorship"
- military_dictatorship_legacy_desc: "A realm ruled by a military council."
  
  merchant_republic_reform: "Merchant Republic"
  merchant_republic_reform_desc: "A realm ruled over by a merchant council."
- merchant_republic_legacy: "Merchant Republic"
- merchant_republic_legacy_desc: "A realm ruled over by a merchant council."
  
  trading_outpost_reform: "Trading Outpost"
  trading_outpost_reform_desc: "A trading outpost ruled over by a governor."
- trading_outpost_legacy: "Trading Outpost"
- trading_outpost_legacy_desc: "A trading outpost ruled over by a governor."
  
  tyrosh_city_reform: "Tyrosi City"
  tyrosh_city_reform_desc: "A free city of Essos. The free cities practise a form of democracy where the lord is elected by the realm's most important men and women."
- tyrosh_city_legacy: "Tyrosi City"
- tyrosh_city_legacy_desc: "A free city of Essos. The free cities practise a form of democracy where the lord is elected by the realm's most important men and women."
  
  myr_city_reform: "Myrish City"
  myr_city_reform_desc: "The origin of Myr is murky, with certain maesters connecting Myrmen and the Rhoynar."
- myr_city_legacy: "Myrish City"
- myr_city_legacy_desc: "The origin of Myr is murky, with certain maesters connecting Myrmen and the Rhoynar."
 
  lys_city_reform: "Lysene City"
  lys_city_reform_desc: "Lys, or Lys the Lovely is known for the alchemists who work in the city, making various poisons."
- lys_city_legacy: "Lysene City"
- lys_city_legacy_desc: "Lys, or Lys the Lovely is known for the alchemists who work in the city, making various poisons."
  
  volantis_city_reform: "Triarchy"
  volantis_city_reform_desc: "Volantis is ruled over by three triarchs, each of whom rules for five years. Every five years the freeborn landholders of Volantis can elect a new triarch or reelect a current one. There are precious few voters west of the river Rhoyne. The elections are ten days of madness, with much campaigning and bribery."
- volantis_city_legacy: "Triarchy"
- volantis_city_legacy_desc: "Volantis is ruled over by three triarchs, each of whom rules for a year. Each year the freeborn landholders of Volantis can elect a new triarch or reelect a current one. There are precious few voters west of the river Rhoyne. The elections are ten days of madness, with much campaigning and bribery."
 
  pentos_city_reform: "Pentosi City"
  pentos_city_reform_desc: "Wealth equals power in Pentos. The Prince of Pentos is chosen by a council of magisters. whom are the considered the power behind the throne."
- pentos_city_legacy: "Pentosi City"
- pentos_city_legacy_desc: "Wealth equals power in Pentos. The Prince of Pentos is chosen by a council of magisters. whom are the considered the power behind the throne."
-
- braavos_citystate_reform: "Braavosi City"
- braavos_citystate_reform_desc: "The office of Sealord is not hereditary, so when the Sealord dies a new one is chosen by popular opinion. This tends to lead to fights."
- braavos_city_legacy: "Braavosi City"
- braavos_city_legacy_desc: "The office of Sealord is not hereditary, so when the Sealord dies a new one is chosen by popular opinion. This tends to lead to fights."
  
  lorath_city_reform: "Lorathi City"
  lorath_city_reform_desc: "Lorath is one of the poorest of the Free Cities, and after the Century of Blood, weak magisters now administer the city."
- lorath_city_legacy: "Lorathi City"
- lorath_city_legacy_desc: "Lorath is one of the poorest of the Free Cities, and after the Century of Blood, weak magisters now administer the city."
 
  saath_city_reform: "Saathi City"
  saath_city_reform_desc: ""
- saath_city_legacy: "Saathi City"
- saath_city_legacy_desc: ""
  
  trader_city_reform: "Trader City"
  trader_city_reform_desc: ""
- trader_city_legacy: "Trader City"
- trader_city_legacy_desc: ""
 
  andal_city_reform: "Andal City"
  andal_city_reform_desc: ""
- andal_city_legacy: "Andal City"
- andal_city_legacy_desc: ""
  
  expeditionary_company_reform: "Expeditionary Company"
  expeditionary_company_reform_desc: "An expeditionary company sent by its host nation to colonize far away lands."
- expeditionary_company_legacy: "Expeditionary Company"
- expeditionary_company_legacy_desc: "An expeditionary company sent by its host nation to colonize far away lands."
  
  rhoynar_city_reform: "Rhoynish City"
  rhoynar_city_reform_desc: ""
- rhoynar_city_legacy: "Rhoynish City"
- rhoynar_city_legacy_desc: ""
  
  nights_watch_reform: "Lordship of the Watch"
  nights_watch_reform_desc: "The military order known as §YThe Night's Watch§! has manned the Wall and protected the realms of men against the northern free folk, the §Y'Wildlings'§!, and the mystical species known as §Y'The Others'§! since their foundation during the Age of Heroes.\n\nThe §MLord Commander§! oversees the order and serves in office until the day he dies, at which point an election is held for their replacement. The leadership consists of the §MLord Steward§!, the §MFirst Builder§!, and the §MFirst Ranger§! as well as commanders of subordinate castles and their maesters."
- nights_watch_legacy: "Lordship of the Watch"
- nights_watch_legacy_desc: "The military order known as §YThe Night's Watch§! has manned the Wall and protected the realms of men against the northern free folk, the §Y'Wildlings'§!, and the mystical species known as §Y'The Others'§! since their foundation during the Age of Heroes.\n\nThe §MLord Commander§! oversees the order and serves in office until the day he dies, at which point an election is held for their replacement. The leadership consists of the §MLord Steward§!, the §MFirst Builder§!, and the §MFirst Ranger§! as well as commanders of subordinate castles and their maesters."
 
  watchmen_outpost_reform: "Outpost of the Watch"
  watchmen_outpost_reform_desc: "Often times, the §YThe Night's Watch§! will establish semi-independent castles to defend a designated target or location. The castle and surrounding land which was ceded to them is officially designated as an §Y'Outpost'§!, subservient to §YCastle Black§!.\n\nA §MCommander§! administers the outpost, operating their own garrison force and fielding troops separate from the main Watch force. They are still expected to obey orders given by the §MLord Commander§! and cannot pursue independent military actions without prior approval."
- watchmen_outpost_legacy: "Outpost of the Watch"
- watchmen_outpost_legacy_desc: "Often times, the §YThe Night's Watch§! will establish semi-independent castles to defend a designated target or location. The castle and surrounding land which was ceded to them is officially designated as an §Y'Outpost'§!, subservient to §YCastle Black§!.\n\nA §MCommander§! administers the outpost, operating their own garrison force and fielding troops separate from the main Watch force. They are still expected to obey orders given by the §MLord Commander§! and cannot pursue independent military actions without prior approval."
 
  pirate_republic_reform: "Pirate Republic"
  pirate_republic_reform_desc: "Taking haven in the scattered islands of the §YStepstones§!, the infamous pirates of the Known World prey on honest men of Westeros and Essos. The §MPirate Lords§! of the Stepstones may venture as far as the Valyrian Sea and along the coasts of the Yi-Tish Empire in the far east."
- pirate_republic_legacy: "Pirate Republic"
- pirate_republic_legacy_desc: "A band of pirates whom are particularly wealthy and influential."
-
+ 
  #---------------------------------------------
  # Government Form (Theocracy)
  #---------------------------------------------
  theocracy_reform: "Theocracy"
  theocracy_reform_desc: "A realm ruled by a religious figurehead."
- theocracy_legacy: "Theocracy"
- theocracy_legacy_desc: "A realm ruled by a religious figurehead."
  
  the_faith_reform: "The Faith"
  the_faith_reform_desc: "The land owned by the Faith, representing the Seven."
- the_faith_legacy: "The Faith"
- the_faith_legacy_desc: "The land owned by the Faith, representing the Seven."
  
  qohor_city_reform: "Qohorik City"
  qohor_city_reform_desc: "Known as the City of Sorcerers in folklore, Qohor was founded by religious dissidents who abandoned Valyria to practice the worship of their god, the Black Goat of Qohor."
- qohor_city_legacy: "Qohorik City"
- qohor_city_legacy_desc: "Known as the City of Sorcerers in folklore, Qohor was founded by religious dissidents who abandoned Valyria to practice the worship of their god, the Black Goat of Qohor."
  
  norvos_city_reform: "Norvosi City"
  norvos_city_reform_desc: "The city of Norvos is ruled over by a High Magister, who in advised by a council of religious protectors. These are chosen by the bearded priests."
- norvos_city_legacy: "Norvosi City"
- norvos_city_legacy_desc: "The city of Norvos is ruled over by a High Magister, who in advised by a council of religious protectors. These are chosen by the bearded priests."
 
  #---------------------------------------------
  # Government Form (Tribal)
  #---------------------------------------------
- tribe_legacy: "Tribe"
- tribe_legacy_desc: "A realm ruled by a tribal chieftain."
- 
  wildling_clan_reform: "Wildling Clan"
  wildling_clan_reform_desc: "Having lived north of the Wall for hundreds of generations, the §YFree Folk§! recognize no inherent or hereditary political authority except for leaders whom they choose to follow.\n\nThe designated §MChieftain§! of the tribe often leads them through trival times, engaging in skirmishes with neighboring wildling clans and the §YThe Night's Watch§!."
- wildling_clan_legacy: "Wildling Clan"
- wildling_clan_legacy_desc: "Having lived north of the Wall for hundreds of generations, the §YFree Folk§! recognize no inherent or hereditary political authority except for leaders whom they choose to follow.\n\nThe designated §MChieftain§! of the tribe often leads them through trival times, engaging in skirmishes with neighboring wildling clans and the §YThe Night's Watch§!."
 
  new_wildling_clan_reform: "Free Folk Polity"
  new_wildling_clan_reform_desc: "Through careful guidance, our clan has managed to survive through enough hardships to finally accept heavy reform to our way of life. By adopting a structure similar to the §YWesterosi§! houses, we can begin the modernization process."
@@ -500,74 +405,51 @@
  
  lhazar_clan_reform: "Lhazar Clan"
  lhazar_clan_reform_desc: ""
- lhazar_clan_legacy: "Lhazar Clan"
- lhazar_clan_legacy_desc: ""
  
  ibben_clan_reform: "Ibben Clan"
  ibben_clan_reform_desc: ""
- ibben_clan_legacy: "Ibben Clan"
- ibben_clan_legacy_desc: ""
 
  omber_clan_reform: "Omber Clan"
  omber_clan_reform_desc: ""
- omber_clan_legacy: "Omber Clan"
- omber_clan_legacy_desc: ""
  
  faros_clan_reform: "Faros Clan"
  faros_clan_reform_desc: ""
- faros_clan_legacy: "Faros Clan"
- faros_clan_legacy_desc: ""
 
  naath_clan_reform: "Naath Clan"
  naath_clan_reform_desc: ""
- naath_clan_legacy: "Naath Clan"
- naath_clan_legacy_desc: ""
  
  summer_islander_clan_reform: "Summer Islander Clan"
  summer_islander_clan_reform_desc: ""
- summer_islander_clan_legacy: "Summer Islander Clan"
- summer_islander_clan_legacy_desc: ""
  
  warband_reform: "Warband"
- warband_reform_desc: "A realm ruled by a warlord."
- warband_legacy: "Warband"
- warband_legacy_desc: "A realm ruled by a warlord."
+ warband_reform_desc: "In a warband, governance is inseparable from warfare. Authority flows from a warlord who maintains power through raids, tribute, and the loyalty of warriors sworn to his cause."
  
  khalasar_reform: "Khalasar"
- khalasar_reform_desc: "A group of nomadic men and women whom follow their khal across grasslands."
- khalasar_legacy: "Khalasar"
- khalasar_legacy_desc: "A group of nomadic men and women whom follow their khal across grasslands."
+ khalasar_reform_desc: "A group of nomadic men and women whom follow their khal across grasslands.
 
  jhattar_reform: "Jhattar"
  jhattar_reform_desc: "A group of nomadic men and women whom follow their khal across grasslands."
- jhattar_legacy: "Jhattar"
- jhattar_legacy_desc: "A group of nomadic men and women whom follow their khal across grasslands."
-
+ 
  #---------------------------------------------
  # Occult
  #---------------------------------------------
  shadow_cult_reform: "Shadow Cult"
  shadow_cult_reform_desc: "A realm ruled by a shadow cult."
- shadow_cult_legacy: "Shadow Cult"
- shadow_cult_legacy_desc: "A realm ruled by a shadow cult."
  
  necromantic_cult_reform: "Necromantic Cult"
  necromantic_cult_reform_desc: "A realm ruled by a necromantic cult."
- necromantic_cult_legacy: "Necromantic Cult"
- necromantic_cult_legacy_desc: "A realm ruled by a necromantic cult."
  
  ascension_cult_reform: "Ascension Cult"
  ascension_cult_reform_desc: "A realm ruled by an ascension cult."
- ascension_cult_legacy: "Ascension Cult"
- ascension_cult_legacy_desc: "A realm ruled by an ascension cult."
  
  #---------------------------------------------
  # Mythical
  #---------------------------------------------
+ the_night_king_reform: "The Night King"
+ the_night_king_reform_desc: "The Night King stands as the singular will behind the endless host, an ancient being whose purpose is as cold and absolute as the winter he commands. Every wight, every White Walker moves at his command, bound not by loyalty but by an unbreakable force beyond life and death. His rule is not maintained through fear or favor, but through total control."
+
  army_of_the_dead_reform: "Army of the Dead"
- army_of_the_dead_reform_desc: "The undead swarm enthralled by the Night King."
- army_of_the_dead_legacy: "Army of the Dead"
- army_of_the_dead_legacy_desc: "The undead swarm enthralled by the Night King."
+ army_of_the_dead_reform_desc: "The White Walkers are an ancient force, older than memory, driven by a silent and unyielding will. Where they march, warmth fades, life withers, and the dead rise to serve. They do not bargain, they do not break, and they do not stop. Theirs is not a rule of crowns or councils, but of inevitability. The long night comes, and with it, the end of all things."
  
  #---------------------------------------------
  # Tiers
@@ -591,15 +473,18 @@
  tier_dynasty_governing_cadre: "The Governing Cadre"					# 9
  tier_dynasty_deliberative_assembly: "Deliberative Assembly"			# 10
  
- tier_republic_government_form: "Government Form"
- tier_republic_republican_virtues: "Republican Virtues"
- tier_republic_frequency_of_elections: "Frequency of Elections"
- tier_republic_religion: "Territorial Administration"
- tier_republic_separation_of_power: "Separation of Power"
- tier_republic_consolidation_of_power: "Consolidation of Power"
- tier_republic_electorate: "Electorate"
- tier_republic_office_selection: "Office Selection"
- tier_republic_question_of_dictatorship: "Question of Dictatorship"
+ tier_republic_government_form: "Government Form"						# 1
+ tier_republic_republican_virtues: "Core Virtues"					# 2
+ tier_republic_frequency_of_elections: "Electoral Bylaws"			# 3
+ tier_republic_regionalism: "Regionalism"								# 4
+ tier_republic_separation_of_power: "Separation of Power"				# 5
+ tier_republic_religion: "Religion in the Republic"						# 7
+ tier_republic_economical_matters: "Economical Matters"					# 8
+ tier_republic_consolidation_of_power: "Consolidation of Power"			# 9
+ tier_republic_guiding_principle: "Guiding Principles of State"			# 10
+ tier_republic_electorate: "Electorate"									# 11
+ tier_republic_office_selection: "Office Selection"						# 12
+ tier_republic_question_of_dictatorship: "Question of Dictatorship"		# 13
  
  tier_theocracy_government_form: "Government Form"
  tier_theocracy_internal_vs_external_mission: "Internal & External Mission"
@@ -611,7 +496,7 @@
  tier_theocracy_faith_and_the_world: "Our Faith and the World"
  
  tier_tribal_government_form: "Power Dynamic"
- tier_tribal_junior_leaders: "Leadership of Our People"
+ tier_tribal_junior_leaders: "Tribal Leadership"
  tier_tribal_guiding_principle: "Guiding Principles"
  tier_tribal_clan_doctrine: "Clan Doctrine"
  tier_tribal_tribal_religion: "Religious Tolerance"
@@ -627,6 +512,7 @@
  tier_occult_question_of_power: "Question of Power"
  
  tier_mythical_government_form: "Government Form"
+ tier_mythical_the_right_hand: "The Right Hand"
  
  #---------------------------------------------
  # Dynasty Reforms
@@ -876,16 +762,10 @@
  #---------------------------------------------
  # Republic Reforms
  #---------------------------------------------
- got_republican_authoritarianism_reform: "Authoritarianism"
- got_republican_authoritarianism_reform_desc: "While it is no Monarchy, this republic values law and order above all else and will act forcefully to ensure that the authority of the central government is respected throughout the country."
- 
- got_nepotism_reform: "Political Dynasties"
- got_nepotism_reform_desc: "In this country a number of families have over time emerged as very willing to assume the responsibilities of state. So much so that it has become both expected of them to shoulder that responsibility, and expected of the state to offer it to their scions."
- 
- got_republicanism_reform: "Republicanism"
- got_republicanism_reform_desc: "This Republic has made itself a guardian of Republican ideals, citizen power and everyone working together for the common good."
+ got_brotherhood_of_the_black_reform: "Brotherhood of the Black"
+ got_brotherhood_of_the_black_reform_desc: "The military order of the Night's Watch isn't a centralized institution like many other republics. Our authority comes from the support of the Order of Stewards, Builders, and Rangers."
 
-got_council_of_captains_reform: "Council of Captains"
+ got_council_of_captains_reform: "Council of Captains"
  got_council_of_captains_reform_desc: "The Pirate Republic should be governed by the will of its greatest captains. It is their alliance that holds our nation together, and so their decisions must take precedence over any other authority."
  
  got_articles_of_agreement_reform: "Articles of Agreement"
@@ -895,15 +775,6 @@ got_council_of_captains_reform: "Council of Captains"
  got_smugglers_haven_reform_desc: "A pirate enterprise cannot function without a way to sell their stolen goods. We must ensure that conditions in the Republic are favorable for smuggling operations."
 
  #
- 
- got_frequent_elections_reform: "Frequent Elections"
- got_frequent_elections_reform_desc: "Long terms make rulers reckless and the very idea that someone would rule for a long time is contrary to the very idea of a republic. Let us reform our election system to ensure better accountability from our elected officials."
- 
- got_consolidation_of_power_reform: "Consolidation of Power"
- got_consolidation_of_power_reform_desc: "The current terms for officials are too short to see through larger projects. This only feeds populism and leads to short-sighted policies. Let us reform our election system to allow for longer terms so that our elected officials have the power they need to conduct their office."
- 
- got_lottery_reform: "Lottery Election"
- got_lottery_reform_desc: "Elections by majority votes are prone to corruption or worse, populism. We shall employ a complex system of allotment to determine who should lead our Republic by selecting almost at random from among a pool of suitable candidates."
 
  got_uphold_life_term_reform: "Uphold Life Term"
  got_uphold_life_term_reform_desc: "No matter how controversial the indefinite term may seem, the head of state needs to govern without concern for his position. If they're poised with election campaigns and governing, nothing will be done properly. Instead, we must trust our rulers will do the right and maintain the life term tradition."
@@ -922,6 +793,9 @@ got_council_of_captains_reform: "Council of Captains"
  got_watchmen_fortline_reform: "Reinforce the Wall"
  got_watchmen_fortline_reform_desc: "The Night's Watch does not govern land the same was as a noble governs their land. While lands have been gifted to the Night's Watch over many generations for them to expand, the most important chunk of land under their jurisdiction is the Wall and the forts that defend it."
 
+ got_wildling_tributaries_reform: "Tributaries Beyond the Wall"
+ got_wildling_tributaries_reform_desc: "The best way to ensure the security of the Westeros and our own survival, establishing a web of tributary Wildling nations beyond the Wall will guarantee our collective safety."
+
  #
  
  got_presidential_reform: "Presidential System"
@@ -932,6 +806,11 @@ got_council_of_captains_reform: "Council of Captains"
  
  got_municipal_self_defense_reform: "Municipal Self-Defense"
  got_municipal_self_defense_reform_desc: "Only by relying on the military capabilities of our city state can we ensure our survival. We shall allocate more political power to the captains of the City Watch and ensure that they have all they need to provide for our defense."
+
+ got_pirate_king_reform: "Pirate King"
+ got_pirate_king_reform_desc: "Every great empire stands in opposition to us. To stand any chance of survival we must rally behind our own Pirate King, and the King's word will be law."
+
+ #
  
  got_broaden_executive_powers_reform: "Broaden Executive Powers"
  got_broaden_executive_powers_reform_desc: "As the country grows so does the need to be able to act swiftly and efficiently. The only way to ensure this is by broadening the powers of the executive branch so that it has the tools it needs."
@@ -1068,15 +947,15 @@ got_council_of_captains_reform: "Council of Captains"
  got_warparty_reform_desc: "By combining forces with other wildling clans, whether they be our allies or subjects, we can ensure the protection of our unified peoples from outside forces who wish to do us harm. This way, we can ensure both our safety and the safety of our brethern outside of our direct influence.\n\n§GNote: The bonus will still apply if you have a mix of alliances and subjects that meet the requirements:\n - Having two §YWildling§! allies and one §YWildling§! subject.\n - Having two §YWildling§! subjects and one §YWildling§! ally.§!"
 
  got_figurehead_leader_reform: "Titular Chief"
- got_figurehead_leader_reform_desc: "The purpose of a centralized figure in our clan isn't one that is necessary. We have no need to follow one single leader when we live in a decentralized institution. Instead, they'll symbolically represent our clan's unity without the power to cause change in our society.\n\n§RNote: You will NOT be able to change your §YBase Reform§! or the §YGovernment Type§! while this reform is active.§!"
+ got_figurehead_leader_reform_desc: "The purpose of a centralized figure in our clan isn't one that is necessary. We have no need to follow one single leader when we live in a decentralized institution. Instead, they'll symbolically represent our clan's unity without the power to cause change in our society.\n\n§RNote: You will NOT be able to go down the §YCentralization§! path of your society while this reform is active.§!"
 
  #
  
  got_look_to_the_future_reform: "Evolving Society"
- got_look_to_the_future_reform_desc: "For generations, our ancestors have upheld our ancient way of life and kept Westerosi influence at bay. But times are changing and we must embrace the change if we're to survive the coming turbulence.\n\nThis reform will take you down the §Y"Centralization"§! path of the Wildling society, allowing us to eventually unify the free folk under one banner.\n\n§RNote: You will NOT be able to change this reform later.§!"
+ got_look_to_the_future_reform_desc: "For generations, our ancestors have upheld our ancient way of life and kept Westerosi influence at bay. But times are changing and we must embrace the change if we're to survive the coming turbulence.\n\nThis reform will take you down the §Y"Centralization"§! path of the Wildling society, allowing us to eventually unify the free folk under one banner.\n\n§RNote: You will NOT be able to change this §YReform§! later.§!"
  
  got_maintain_traditionalist_ways_reform: "True Wildling Society"
- got_maintain_traditionalist_ways_reform_desc: "Many may think that the right way forward is to reform our way of life and adopt a societal structure similar to that of the Westerosi peoples down south. That's not how we've survived for thousands of years, so we will continue with our normal way of life.\n\nThis reform will take you down the §Y"Decentralization"§! path of the Wildling society, allowing us to build up our independent cultural identity.\n\n§RNote: You will NOT be able to change this reform later.§!"
+ got_maintain_traditionalist_ways_reform_desc: "Many may think that the right way forward is to reform our way of life and adopt a societal structure similar to that of the Westerosi peoples down south. That's not how we've survived for thousands of years, so we will continue with our normal way of life.\n\nThis reform will take you down the §Y"Decentralization"§! path of the Wildling society, allowing us to build up our independent cultural identity.\n\n§RNote: You will NOT be able to change this §YReform§! later.§!"
  figurehead_leader_lock_tt: "The §YTitular Chief§! reform is NOT active."
 
  got_generic_principle_reform: "Steady Onwards"
@@ -1200,6 +1079,18 @@ got_council_of_captains_reform: "Council of Captains"
  #---------------------------------------------
  # Mythical
  #---------------------------------------------
+ # T2
+ got_ice_lieutenants_reform: "The Ice Lieutenants"
+ got_ice_lieutenants_reform_desc: "The Ice Lieutenants are the most battle-hardened and cunning of our forces, being of significantly higher intellect than the rest of our army. They will form the backbone of our forces and lead our peoples to victory in the coming wars."
+ got_wight_bearers_reform: "The Wight Bearers"
+ got_wight_bearers_reform_desc: "The Wight Bearers have resurrected a majority of our army for the coming wars, knowing the full capability of our newfound forces. They will form the backbone of our forces and lead our peoples to victory in the coming wars."
+ got_frost_giants_reform: "The Frost Giants"
+ got_frost_giants_reform_desc: "The Frost Giants are an ancient race, revived from the dead to serve the Night King's conquest of the world. They will form the backbone of our forces and lead our peoples to victory in the coming wars."
+ # T3
+ got_throne_of_endless_winter_reform: "Throne of Endless Winter"
+ got_throne_of_endless_winter_reform_desc: "Sitting atop the Throne of Endless Winter, the Night King commands his forces with an iron fist unchallenged. He controls his people without question, as his rule is absolute and his power unmatched."
+ got_court_of_winter_reform: "Court of Winter"
+ got_court_of_winter_reform_desc: "The Court of Winter is a place of great power and influence, where the Night King's will is enforced by his most trustworthy soldiers. He remains at the top of the social hierarchy, with his most trusted generals and lieutenants below him carrying out his orders and ensuring the stability of his realm."
  
  #---------------------------------------------
  # Shared Reforms
@@ -1209,18 +1100,16 @@ got_council_of_captains_reform: "Council of Captains"
  
  got_penal_colonies_reform: "Exile Colonial Companies"
  got_penal_colonies_reform_desc: "The Distant South is a place of great opportunity, and for us it is an opportunity to establish Exile Colonies and rid our nation of convicts and minorities. By allowing colonial companies to claim sovereignty over our undesirables, we will create harmony at home and expand our influence in the South."
- 
- got_become_a_republic_reform: "Become a Republic"
- got_become_a_republic_reform_desc: "Monarchy has run its course for this country. It is time we reform the government at its very top and institute a republic with electable rulers."
- 
- got_become_a_theocracy_reform: "Become a Theocracy"
- got_become_a_theocracy_reform_desc: "Religion is the only truly viable way to judge right and wrong. Let us reform the government at its very core and have the divine guide us from now on."
- 
- got_become_a_monarchy_reform: "Become a Monarchy"
- got_become_a_monarchy_reform_desc: "Our government has served us well but it is time we empower a strong ruler to take our state into a new era."
 
- got_become_dynasty_government_reform: "Become a Dynasty"
- got_become_dynasty_government_reform_desc: "We've lived in disunity for far too long now. It's time to unite our society behind one family, to guide us through thick and thin for all time."
+ # Switch Governments
+ got_become_dynasty_government_reform: "Adopt Dynastic Practices"
+ got_become_dynasty_government_reform_desc: "We've lived in disunity for far too long now. It's time we unite our society behind one powerful family, to guide us through thick and thin for all time."
+ got_become_a_monarchy_reform: "Install Ruling Monarch"
+ got_become_a_monarchy_reform_desc: "There is so much to be done, but we are held back by our societal traditions. We must do away with the old ways and rally behind a strong ruler to lead us to glory."
+ got_become_a_republic_reform: "Elect a Ruling Body"
+ got_become_a_republic_reform_desc: "Autocratic rule has run its course for our realm. It is time we reform the government at its very top and institute a republic with electable rulers."
+ got_become_a_theocracy_reform: "Proclaim Divine Guidance"
+ got_become_a_theocracy_reform_desc: "Divine guidance and not popular support must be the governing rule in our state. Let us appoint someone who will truly care for the moral well-being of our subjects."
  
  got_become_a_warband_reform: "Become a Warband"
  got_become_a_warband_reform_desc: "Our government has served us well but it is time we empower a strong ruler to take our state into a new era."

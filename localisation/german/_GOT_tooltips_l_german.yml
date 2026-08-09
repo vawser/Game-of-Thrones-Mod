@@ -69,7 +69,27 @@
  resign_from_council_effect_tt: "You will resign from your position on the §MSmall Council§!.\n@[Root.GetTag] §Y[Root.GetIfHouseName]§! gives up its seat on the council.\n\nThere is a §Y33%§! chance §Y[IronThroneKing.Monarch.GetTitle] [IronThroneKing.Monarch.GetName] [IronThroneKing.Monarch.Dynasty.GetName]§! will be insulted by this move, reducing their opinion of you by §R-50§!."
  sovereign_specialactions_tt: "The §YSovereign of the Seven Kingdoms§! has access to additional diplomatic actions to strengthen the throne: -§GBureaucratic:§!\n  -Appoint Hand of the King\n  -Appoint Mst. of Coin\n  -Appoint Mst. of Laws\n  -Appoint Mst. of Ships\n  -Appoint Mst. of Whisperers\n -§MDiplomatic:§!\n  -Appoint Lord Protector of the Realm\n  -Enforce Religious Unity\n  -Grant Royal City Status\n  -Demand Unlawful Territory\n  -Invite to Kingdom\n  -Bestow Royal Grace"
 
+ castle_leaders_tt: "§YCommanders of the Watch:§!\nIn order to provide ample defenses for the Wall, the handful of castles that we have left must be competently commanded to ensure maximum effectiveness.\n\n[Root.GetShadowtowerCommander]\n\n[Root.GetNightfortCommander]\n\nCommander of §Y[17.GetCapitalName]§!:\n[Root.Monarch.GetTitle] §Y[Root.Monarch.GetName]§! ([Root.Monarch.GetAdm]/[Root.Monarch.GetDip]/[Root.Monarch.GetMil])\n\n[Root.GetWoodswatchCommander]\n\n[Root.GetEastwatchCommander]"
+ watch_commander_explanation: "In addition to the traditional three candidates that can be elected to the position of §MLord Commander§!, the handful of castle commanders of the Watch may cast in their candidacy for the position during the elections."
+ ruler_can_resign_tt: "§YRuler§! can resign from office."
+ ruler_resignation_tt: "You will resign as §M[Root.Monarch.GetTitle]§!, triggering an election."
+ remove_castlecommander_tt: "§MCommander§! will be removed. A new §MCommander§! will automatically be generated."
+ commander_active_for_5_years: "Has had §YCommander§! for at least §Y60§! months"
+ shadowtower_tt: "[Root.GetShadowtowerCommander]"
+ nightfort_tt: "[Root.GetNightfortCommander]"
+ castleblack_tt: "Commander of §Y[17.GetCapitalName]§!:\n[Root.Monarch.GetTitle] §Y[Root.Monarch.GetName]§! ([Root.Monarch.GetAdm]/[Root.Monarch.GetDip]/[Root.Monarch.GetMil])"
+ woodswatch_tt: "[Root.GetWoodswatchCommander]"
+ eastwatch_tt: "[Root.GetEastwatchCommander]"
+
+ crime_lvl: "Criminal Rating"
  criminal_rating_tt: "Criminal Rating in [Root.GetName]: [Root.GetCriminalRating]\n--------------\nWhile §YUnrest§! and §YAutonomy§! can easily be managed by a competent administrator, the §YCriminal Rating§! of a city is not so easily influenced. It can have long-term effects on the management of the province. Though, in some cases, collaborating with §YCrime Syndicates§! may be more beneficial than attempting to root them out.\n[Root.GetCrimeActivity]"
+ crime_cost_reduction_tt: "[Root.GetCrimeCost]"
+ 
+ neutrality_button_tt: "A §YNeutrality Pact§! is a informal aggreement between two rulers to prevent hostilities. Since this pact does not have the same binding nature as a traditional §YTruce§!, it can be broken at anytime in either ruler's lifetime and will expire upon either ruler's death."
+ cannot_declare_war_on_us_tt: "Cannot declare war on us.
+
+ factions_button_tt: "A §YFaction§! is a temporary agreement between two or more rulers working to achieve a common goal. Factions usually consist of disgruntled nobles and target overlords with the intent to §Roverthrow§! or §Rundermine§! them. If grown large enough, a faction may attempt to achieve their goals through §Rforce§! on the battlefield."
+ abdication_faction_member_tt: "Part of the Abdication Faction"
 
  # Scripted Effects
  clr_handoftheking_tt: "§Y[et_handoftheking.Monarch.GetName]§! will be removed from the Council."
@@ -84,6 +104,9 @@
  clr_criminal_activity_bandits: "§lBanditry§! will no longer be active in [Root.GetName]"
  clr_criminal_activity_street_gangs: "§RStreet Gangs§! will no longer be active in [Root.GetName]"
  clr_criminal_activity_syndicate: "§VSyndicates§! will no longer be active in [Root.GetName]"
+
+ join_consort_tt: "Our Consort (§Y[Root.Consort.GetName]§!) will join us."
+ join_heir_tt: "Our Heir (§Y[Root.Heir.GetName]§!) will join us."
 
  # Scripted Triggers
  has_lvl_3_adm_advisor_tooltip: "Employs a skill level §Y3§! Administrative advisor or better."

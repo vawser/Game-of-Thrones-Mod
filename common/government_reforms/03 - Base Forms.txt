@@ -537,27 +537,24 @@ valyrian_citystate_reform = {
 	icon = "valyrian_ruler"
 	allow_normal_conversion = yes
 	duration = 6
-
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
-
+	royal_marriage = yes
 	potential = {
 		capital_scope = {
 			superregion = west_essos_superregion
 		}
 	}
-	trigger = {
-		capital_scope = {
-			superregion = west_essos_superregion
-		}
-	}
-
 	modifiers = {
-		all_estate_influence_modifier = 0.10
+		all_estate_influence_modifier = 0.05
+		max_absolutism = 10
 	}
-
 	custom_attributes = {
 		enables_republic_ideagroup = yes
+		enables_nepotism = yes
+	}
+	ai = {
+		factor = 10
 	}
 }
 
@@ -642,9 +639,9 @@ republican_dictatorship_reform = {
 }
 
 military_dictatorship_reform = {
+	icon = "parliament_hall"
 	allow_normal_conversion = no
 	lock_level_when_selected = yes
-	icon = "parliament_hall"
 
 	potential = {
 		has_reform = military_dictatorship_reform
@@ -667,13 +664,12 @@ military_dictatorship_reform = {
 	}
 }
 merchant_republic_reform = {
-	icon = "castle"
+	icon = "politician"
+	allow_normal_conversion = yes
 	
 	potential = {
 		has_reform = merchant_republic_reform
 	}
-	
-	allow_normal_conversion = yes
 	
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -733,9 +729,8 @@ braavos_citystate_reform = {
 	
 	modifiers = {
 		merchants = 1
-		max_absolutism = 20
 		state_maintenance_modifier = -0.05
-		trade_efficiency = 0.10
+		max_absolutism = 20
 	}
 	
 	conditional = {

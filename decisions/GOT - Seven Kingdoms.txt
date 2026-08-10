@@ -198,38 +198,21 @@ country_decisions = {
 			}
 		}
 	}
-	clear_flea_bottom = {
-		color = { 229 193 51 }
-		potential = {
-			owns = 226
-		}
-		allow = {
-			226 = {
-				OR = {
-					has_province_modifier = city_watch_dlc
-					has_province_modifier = city_watch_no_dlc
-				}
-			}
-		}
-		effect = {
-			226 = { decrease_crime_lvl_large = yes }
-		}
-	}
 
-	take_the_throne = {
-		color = { 229 193 51 }
-		potential = {
-			has_regency = yes
-			has_heir = yes
-		}
-		allow = {
-			#years_of_income = 1.0
-		}
-		effect = {
-			#add_years_of_income = -1.0
-			#remove_heir = { allow_new_heir = no }
-			change_estate_regent_to_ruler = yes
-			set_dynasty = original_dynasty
-		}
-	}
+	# take_the_throne = {
+	# 	color = { 229 193 51 }
+	# 	potential = {
+	# 		has_regency = yes
+	# 		has_heir = yes
+	# 	}
+	# 	allow = {
+	# 		#years_of_income = 1.0
+	# 	}
+	# 	effect = {
+	# 		#add_years_of_income = -1.0
+	# 		#remove_heir = { allow_new_heir = no }
+	# 		change_estate_regent_to_ruler = yes
+	# 		set_dynasty = original_dynasty
+	# 	}
+	# }
 }

@@ -1084,6 +1084,41 @@ silver = {
 	}
 }
 
+dragonglass = {
+	color = { 0.0 1.0 1.0 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 7 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		development_discounting_tribal = 20
+		provincial_institution_progress = {
+			which = high_engineering
+			value = 100
+		}
+		owner = { has_institution = high_engineering }
+		OR = {
+			province_id = 221 # Dragonstone
+			province_id = 220 # Driftmark
+			province_id = 226 # King's Landing
+			province_id = 233 # Stonedance
+		}
+	}
+	
+	modifier = {
+		shock_damage = 0.10
+	}
+	
+	province = {
+		defensiveness = 0.15
+	}
+
+	chance = {
+		factor = 1
+	}
+}
+
 unknown = {
 	color = { 0.5 0.5 0.5 }
 }

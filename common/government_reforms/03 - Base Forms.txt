@@ -125,7 +125,13 @@ great_house_reform = {
 		}
 	}
 	trigger = {
-		is_elector = yes
+		OR = {
+			is_elector = yes
+			AND = {
+				is_subject = no
+				num_of_subjects = 6
+			}
+		}
 	}
 	
 	allow_normal_conversion = yes
@@ -154,7 +160,7 @@ royal_house_reform = {
 		}
 	}
 	trigger = {
-			is_emperor = yes
+		is_emperor = yes
 	}
 	
 	allow_normal_conversion = yes

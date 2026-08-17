@@ -912,7 +912,7 @@ country_event = {
 				OR = {
 					liberty_desire = 50
 					ai_attitude = {
-						who = overlord
+						who = FROM
 						attitude = attitude_disloyal
 					}
 				}
@@ -920,14 +920,14 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					historical_friend_with = overlord
-					overlord = { historical_friend_with = ROOT }
+					historical_friend_with = FROM
+					FROM = { historical_friend_with = ROOT }
 				}
 			}
 		}
 		custom_tooltip = "we_dont_kneel_tt"
 		add_opinion = {
-			who = overlord
+			who = FROM
 			modifier = outrageous_demands
 		}
 		add_liberty_desire = 10
@@ -967,6 +967,8 @@ country_event = {
 	}
 }
 
+### The Lord's Tax event line
+
 country_event = {
 	id = sk_event.503
 	title = "sk_event.503.title"
@@ -975,58 +977,136 @@ country_event = {
 
 	is_triggered_only = yes
 
-	immediate = {
-		hidden_effect = {
-			every_subject_country = {
-				if = {
-					limit = { historical_friend_with = ROOT }
-					set_treasury_variable = {
-						treasury_var = vassal_tax_reduced
-						percent_amount = 0.10
-					}
-				}
-				else = {
-					set_treasury_variable = {
-						treasury_var = vassal_tax
-						percent_amount = 0.25
-					}
-				}
-			}
-		}
-	}
-
 	option = {
 		name = "sk_event.503.option.a"
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 80 }
 		every_subject_country = {
-			limit = { historical_friend_with = ROOT }
-			transfer_treasury = {
-				variable = vassal_tax_reduced
-				receiver = ROOT
-				custom_tooltip = "vassal_tax_reduced_tt"
-			}
-		}
-		every_subject_country = {
-			limit = { NOT = { historical_friend_with = ROOT } }
-			transfer_treasury = {
-				variable = vassal_tax
-				receiver = ROOT
-				custom_tooltip = "vassal_tax_tt"
-			}
-			hidden_effect = {
-				add_liberty_desire = 20
-				add_opinion = {
-					who = ROOT
-					modifier = insulted
-				}
+			country_event = {
+				id = sk_event.504
+				days = 3
 			}
 		}
 	}
 
 	option = {
 		name = "sk_event.503.option.b"
-		ai_chance = { factor = 0 }
+		ai_chance = { factor = 20 }
 		hidden_effect = { remove_country_modifier = "lords_tax" }
+	}
+
+	after = {
+		country_event = {
+			id = sk_event.505
+			days = 14
+		}
+	}
+}
+
+country_event = {
+	id = sk_event.504
+	title = "sk_event.504.title"
+	desc = "sk_event.504.desc"
+	picture = SWEARING_FEALTY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { historical_friend_with = FROM }
+				set_treasury_variable = {
+					treasury_var = vassal_tax_reduced
+					percent_amount = 0.10
+				}
+			}
+			else = {
+				set_treasury_variable = {
+					treasury_var = vassal_tax
+					percent_amount = 0.25
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "sk_event.504.option.a"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { years_of_income = 0.25 }
+					liberty_desire = 40
+					ai_attitude = {
+						who = FROM
+						attitude = attitude_disloyal
+					}
+				}
+			}
+		}
+		if = {
+			limit = { historical_friend_with = FROM }
+			transfer_treasury = {
+				variable = vassal_tax_reduced
+				receiver = FROM
+				custom_tooltip = "vassal_tax_reduced_tt"
+			}
+		}
+		else = {
+			transfer_treasury = {
+				variable = vassal_tax
+				receiver = FROM
+				custom_tooltip = "vassal_tax_tt"
+			}
+			hidden_effect = {
+				add_liberty_desire = 5
+				add_opinion = {
+					who = FROM
+					modifier = refused_lords_tax
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "sk_event.504.option.b"
+		ai_chance = {
+			factor = 50
+		}
+		add_liberty_desire = 10
+	}
+}
+
+country_event = {
+	id = sk_event.505
+	title = "sk_event.505.title"
+	desc = "sk_event.505.desc"
+	picture = SWEARING_FEALTY_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_subject_country = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = refused_lords_tax
+			}
+		}
+	}
+
+	option = {
+		name = "sk_event.505.option.a"
+		ai_chance = { factor = 100 }
+		every_subject_country = {
+			limit = {
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = refused_lords_tax
+				}
+			}
+			custom_tooltip = "subjects_who_did_not_pay"
+			tooltip = { add_liberty_desire = 10 }
+		}
 	}
 }
 

@@ -59,8 +59,18 @@
  sk_event.503.desc: "In dire times, it is sometimes necessary, for the good of the realm, to levy additional taxes on our vassal lords. We will demand that all of our vassal lords pay a §R25%§! tax, which will be used to maintain the realm and fund our armies. This is a temporary measure, but no doubt our vassals will be displeased with this decision. We must be cautious, as this may lead to a loss of trust and opinion from our vassals, and possibly even rebellion. We must weigh the benefits of this tax against the potential consequences.\n\nEvery vassal lord will provide §G25%§! of their current treasury as tribute and will be greatly upset with us. Historical friends will only provide §G10%§! of their current treasury as tribute."
  sk_event.503.option.a: "They will pay their dues!"
  sk_event.503.option.b: "Perhaps this is not the best approach."
- vassal_tax_tt: "[This.Monarch.GetTitle] §Y[This.Monarch.GetName]§! pays §Y[vassal_tax.GetValue]§! ducats to §Y[Root.GetName]§!."
- vassal_tax_reduced_tt: "[This.Monarch.GetTitle] §Y[This.Monarch.GetName]§! pays §Y[vassal_tax_reduced.GetValue]§! ducats to §Y[Root.GetName]§!."
+
+ sk_event.504.title: "Our Lord's Tax"
+ sk_event.504.desc: "An envoy from our liege-lord, [Root.Overlord.Monarch.GetTitle] [Root.Overlord.Monarch.GetName], has arrived with a special tax to fill [Root.Overlord.Monarch.GetHerHis] coffers. Not providing for this tax will no doubt anger our lord, so we must be cautious with our next moves."
+ sk_event.504.option.a: "We will give [Root.Overlord.Monarch.GetHerHim] [Root.Overlord.Monarch.GetHerHis] gold."
+ sk_event.504.option.b: "Expel the envoy."
+ vassal_tax_tt: "§Y[Root.GetIfHouseName]§! pays §Y[vassal_tax.GetValue]§! ducats to §Y[From.GetIfHouseName]§!."
+ vassal_tax_reduced_tt: "§Y[Root.GetIfHouseName]§! pays §Y[vassal_tax_reduced.GetValue]§! ducats to §Y[From.GetIfHouseName]§!.\nThis amount is reduced due to §Ggreat§! relations."
+
+ sk_event.505.title: "Steward's Report: Lord's Tax"
+ sk_event.505.desc: "Our stewards have compiled a report for us showing us which of our lords refused to pay the tax."
+ sk_event.505.option.a: "Most unfortunate."
+ subjects_who_did_not_pay: "§Y[This.Monarch.GetTitle] [This.Monarch.GetName]§! did not pay."
 
  sk_event.506.title: "The Abdication Faction"
  sk_event.506.desc: "After gathering our strength for the last year, our allies meet with us in [Root.Capital.GetName]. We all know our liege-lord, [Root.Overlord.Monarch.GetTitle] [Root.Overlord.Monarch.GetName] [Root.Overlord.Monarch.Dynasty.GetName] will not give up his seat without a fight. We can either drop our demands to avoid bloodshed or press forward on the field of battle. We may not come out on top, and the loss may be devasting should we fail to achieve our goal. Come what may, our allies will help us."

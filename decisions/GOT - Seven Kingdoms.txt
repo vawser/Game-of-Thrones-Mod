@@ -174,15 +174,62 @@ country_decisions = {
 		effect = {
 			country_event = {
 				id = sk_event.503
-				days = 7
 			}
 			add_country_modifier = {
 				name = "lords_tax"
-				duration = 7300
+				duration = 10950
 			}
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 1.5
+				NOT = { years_of_income = 0.20 }
+			}
+			modifier = {
+				factor = 3
+				NOT = { years_of_income = 0.05 }
+			}
+			modifier = {
+				factor = 0
+				current_income_balance = 3
+			}
+			modifier = {
+				factor = 0.9
+				calc_true_if = {
+					amount = 1
+					all_subject_country = {
+						liberty_desire = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				calc_true_if = {
+					amount = 2
+					all_subject_country = {
+						liberty_desire = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.6
+				calc_true_if = {
+					amount = 4
+					all_subject_country = {
+						liberty_desire = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				calc_true_if = {
+					amount = 6
+					all_subject_country = {
+						liberty_desire = 40
+					}
+				}
+			}
 		}
 	}
 	reduce_the_vassal_tax = {

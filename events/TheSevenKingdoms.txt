@@ -834,6 +834,9 @@ country_event = {
 	}
 }
 
+
+### Oaths of Fealty event line
+
 country_event = {
 	id = sk_event.500
 	title = "sk_event.500.title"
@@ -842,61 +845,40 @@ country_event = {
 
 	is_triggered_only = yes
 
-	immediate = {
-		hidden_effect = {
-			every_subject_country = {
-				set_treasury_variable = {
-					treasury_var = fealty_tax
-					percent_amount = 0.05
+	option = {
+		name = "sk_event.500.option.a"
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0.50
+				calc_true_if = {
+					amount = 2
+					all_subject_country = {
+						liberty_desire = 40
+					}
 				}
 			}
 		}
-	}
-
-	option = {
-		name = "sk_event.500.option.a"
-		ai_chance = { factor = 100 }
 		every_subject_country = {
-			if = {
-				limit = {
-					OR = {
-						historical_rival_with = ROOT
-						ROOT = { historical_rival_with = PREV }
-						NOT = { has_opinion = { who = ROOT value = 0 } }
-						liberty_desire = 45
-						ai_attitude = { who = ROOT attitude = attitude_disloyal }
-					}
-				}
-				custom_tooltip = "we_dont_kneel_tt"
-				hidden_effect = {
-					add_opinion = {
-						who = ROOT
-						modifier = outrageous_demands
-					}
-					add_liberty_desire = 10
-				}
-			}
-			else = {
-				custom_tooltip = "we_kneel_tt"
-				transfer_treasury = {
-					variable = fealty_tax
-					receiver = ROOT
-					custom_tooltip = "fealty_tax_tt"
-				}
-				hidden_effect = { add_liberty_desire = -5 }
+			country_event = {
+				id = sk_event.501
+				days = 3
 			}
 		}
 	}
 
 	option = {
 		name = "sk_event.500.option.b"
-		ai_chance = { factor = 0 }
+		ai_chance = { factor = 20 }
 		add_legitimacy = -10
 		hidden_effect = { remove_country_modifier = "oaths_of_fealty" }
 	}
 
 	after = {
-		country_event = { id = sk_event.501 }
+		country_event = {
+			id = sk_event.502
+			days = 14
+		}
 	}
 }
 
@@ -904,6 +886,58 @@ country_event = {
 	id = sk_event.501
 	title = "sk_event.501.title"
 	desc = "sk_event.501.desc"
+	picture = SWEARING_FEALTY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "sk_event.501.option.a"
+		ai_chance = {
+			factor = 60
+		}
+		custom_tooltip = "we_kneel_tt"
+		add_favors = {
+			who = FROM
+			amount = 10
+		}
+		add_liberty_desire = -10
+	}
+
+	option = {
+		name = "sk_event.501.option.b"
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 2
+				OR = {
+					liberty_desire = 50
+					ai_attitude = {
+						who = overlord
+						attitude = attitude_disloyal
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					historical_friend_with = overlord
+					overlord = { historical_friend_with = ROOT }
+				}
+			}
+		}
+		custom_tooltip = "we_dont_kneel_tt"
+		add_opinion = {
+			who = overlord
+			modifier = outrageous_demands
+		}
+		add_liberty_desire = 10
+	}
+}
+
+country_event = {
+	id = sk_event.502
+	title = "sk_event.502.title"
+	desc = "sk_event.502.desc"
 	picture = SWEARING_FEALTY_eventPicture
 
 	is_triggered_only = yes
@@ -918,7 +952,7 @@ country_event = {
 	}
 
 	option = {
-		name = "sk_event.501.option.a"
+		name = "sk_event.502.option.a"
 		ai_chance = { factor = 100 }
 		every_subject_country = {
 			limit = {
@@ -927,18 +961,16 @@ country_event = {
 					modifier = outrageous_demands
 				}
 			}
-			custom_tooltip = "Did not bend the knee."
-			tooltip = {
-				add_liberty_desire = 10
-			}
+			custom_tooltip = "subjects_who_didnt_kneel_tt"
+			tooltip = { add_liberty_desire = 10 }
 		}
 	}
 }
 
 country_event = {
-	id = sk_event.502
-	title = "sk_event.502.title"
-	desc = "sk_event.502.desc"
+	id = sk_event.503
+	title = "sk_event.503.title"
+	desc = "sk_event.503.desc"
 	picture = SWEARING_FEALTY_eventPicture
 
 	is_triggered_only = yes
@@ -964,7 +996,7 @@ country_event = {
 	}
 
 	option = {
-		name = "sk_event.502.option.a"
+		name = "sk_event.503.option.a"
 		ai_chance = { factor = 100 }
 		every_subject_country = {
 			limit = { historical_friend_with = ROOT }
@@ -992,16 +1024,16 @@ country_event = {
 	}
 
 	option = {
-		name = "sk_event.502.option.b"
+		name = "sk_event.503.option.b"
 		ai_chance = { factor = 0 }
 		hidden_effect = { remove_country_modifier = "lords_tax" }
 	}
 }
 
 country_event = {
-	id = sk_event.503
-	title = "sk_event.503.title"
-	desc = "sk_event.503.desc"
+	id = sk_event.506
+	title = "sk_event.506.title"
+	desc = "sk_event.506.desc"
 	picture = SWEARING_FEALTY_eventPicture
 
 	is_triggered_only = yes
@@ -1019,8 +1051,7 @@ country_event = {
 	}
 
 	option = {
-		name = "sk_event.503.option.a"
-		ai_chance = { factor = 100 }
+		name = "sk_event.506.option.a"
 		declare_war_with_cb = {
 			casus_belli = cb_abdication_war
 			who = overlord
@@ -1035,7 +1066,7 @@ country_event = {
 	}
 
 	option = {
-		name = "sk_event.503.option.b"
+		name = "sk_event.506.option.b"
 		ai_chance = { factor = 0 }
 		custom_tooltip = "The Abdication Faction will dissolve without achieving their goals."
 		every_country = {

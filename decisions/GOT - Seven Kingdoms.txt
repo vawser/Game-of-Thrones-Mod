@@ -148,7 +148,6 @@ country_decisions = {
 		effect = {
 			country_event = {
 				id = sk_event.500
-				days = 7
 			}
 			add_ruler_modifier = {
 				name = "oaths_of_fealty"
@@ -156,7 +155,11 @@ country_decisions = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+			modifier = {
+				factor = 0
+				legitimacy = 85
+			}
 		}
 	}
 	levy_lords_tax = {
@@ -170,7 +173,7 @@ country_decisions = {
 		}
 		effect = {
 			country_event = {
-				id = sk_event.502
+				id = sk_event.503
 				days = 7
 			}
 			add_country_modifier = {

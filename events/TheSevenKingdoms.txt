@@ -1121,24 +1121,29 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			overlord = { save_event_target_as = overlord_scope }
-			event_target:overlord_scope = {
-				every_country = {
-					limit = { has_ruler_flag = AbdicationFaction@PREV NOT = { tag = ROOT } }
-					create_alliance = ROOT
-				}
-			}
 		}
 	}
 
 	option = {
 		name = "sk_event.506.option.a"
+		trigger = {
+			is_at_war = no
+			NOT = { overlord = { is_in_war = { casus_belli = cb_abdication_war } } }
+			NOT = { overlord = { has_country_modifier = "factionwar_cooldown" } }
+		}
+		ai_chance = { factor = 80 }
+		every_country = {
+			limit = { has_country_flag = AbdicationFaction@event_target:overlord_scope }
+			hidden_effect = { grant_independence = yes }
+		}
 		declare_war_with_cb = {
 			casus_belli = cb_abdication_war
-			who = overlord
+			who = event_target:overlord_scope
 		}
 		every_country = {
-			limit = { alliance_with = ROOT has_ruler_flag = AbdicationFaction@event_target:overlord_scope }
+			limit = { has_country_flag = AbdicationFaction@event_target:overlord_scope }
 			custom_tooltip = "Joins the Abdication Faction's war"
+			hidden_effect = { join_all_offensive_wars_of = ROOT }
 		}
 		hidden_effect = {
 			event_target:overlord_scope = { set_country_flag = AbdicationFactionLiege }
@@ -1147,10 +1152,10 @@ country_event = {
 
 	option = {
 		name = "sk_event.506.option.b"
-		ai_chance = { factor = 0 }
-		custom_tooltip = "The Abdication Faction will dissolve without achieving their goals."
+		ai_chance = { factor = 20 }
+		custom_tooltip = "The Abdication Faction will dissolve."
 		every_country = {
-			limit = { alliance_with = ROOT has_ruler_flag = AbdicationFaction@event_target:overlord_scope }
+			limit = { has_country_flag = AbdicationFaction@event_target:overlord_scope }
 			add_opinion = {
 				who = ROOT
 				modifier = insulted
@@ -1160,14 +1165,6 @@ country_event = {
 
 	after = {
 		hidden_effect = {
-			every_ally = {
-				limit = { NOT = { has_country_flag = keepAlliance } }
-				break_alliance = ROOT
-			}
-			every_ally = {
-				limit = { has_country_flag = keepAlliance }
-				clr_country_flag = keepAlliance
-			}
 			every_country = {
 				limit = { has_ruler_flag = AbdicationFaction@event_target:overlord_scope }
 				clr_ruler_flag = AbdicationFaction@event_target:overlord_scope

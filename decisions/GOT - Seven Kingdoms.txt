@@ -34,6 +34,7 @@ country_decisions = {
 		major = yes
 		color = { 102 0 102 }
 		potential = {
+			ai = no
 			is_part_of_hre = yes
 			is_elector = no
 			is_subject_of_type = feudatory
@@ -65,6 +66,9 @@ country_decisions = {
 			}
 			set_imperial_incident = incident_change_great_house
 			custom_tooltip = "vote_bribe_tt"
+		}
+		ai_will_do = {
+			factor = 0
 		}
 	}
 	allow_leaving_the_kingdom = {
@@ -101,31 +105,33 @@ country_decisions = {
 				tooltip = "faction_does_exist_tt"
 				overlord = {
 					all_subject_country = {
-						NOT = { has_ruler_flag = AbdicationFaction@PREV }
+						NOT = { has_country_flag = AbdicationFaction@PREV }
 					}
 				}
 			}
-			overlord = { has_regency = no }
+			overlord = {
+				has_regency = no
+				NOT = { has_country_modifier = "factionwar_cooldown" }
+			}
 		}
 		effect = {
 			custom_tooltip = "same_overlord_ally_tt"
 			hidden_effect = {
-				set_ruler_flag = AbdicationFaction@overlord
+				set_country_flag = AbdicationFaction@overlord
 				overlord = {
 					every_subject_country = {
 						limit = { alliance_with = ROOT }
-						set_ruler_flag = AbdicationFaction@overlord
-						set_country_flag = keepAlliance
+						set_country_flag = AbdicationFaction@overlord
 					}
 				}
 			}
 			country_event = {
-				id = sk_event.503
+				id = sk_event.506
 				days = 365
 			}
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 1
 			modifier = {
 				factor = 0
 				OR = {
@@ -133,6 +139,7 @@ country_decisions = {
 					overlord = { historical_friend_with = ROOT }
 					NOT = { liberty_desire = 50 }
 					NOT = { ai_attitude = { who = overlord attitude = attitude_disloyal } }
+					overlord = { NOT = { stability = 1 } }
 				}
 			}
 		}
@@ -245,6 +252,44 @@ country_decisions = {
 			add_country_modifier = {
 				name = "reduced_vassal_tax"
 				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2.5
+				years_of_income = 1.5
+			}
+			modifier = {
+				factor = 2
+				current_income_balance = 1
+			}
+			modifier = {
+				factor = 1.2
+				calc_true_if = {
+					amount = 2
+					all_subject_country = {
+						liberty_desire = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 1.2
+				calc_true_if = {
+					amount = 4
+					all_subject_country = {
+						liberty_desire = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				calc_true_if = {
+					amount = 6
+					all_subject_country = {
+						liberty_desire = 40
+					}
+				}
 			}
 		}
 	}

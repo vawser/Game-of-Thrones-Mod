@@ -246,7 +246,7 @@ invite_to_faction = {
 		}
 	}
 	on_accept = {
-		FROM = { set_ruler_flag = AbdicationFaction@overlord }
+		FROM = { set_country_flag = AbdicationFaction@overlord }
 	}
 
 	ai_acceptance = {
@@ -354,6 +354,19 @@ invite_to_faction = {
 			multiply_variable = {
 				which = ai_value
 				value = 50
+			}
+		}
+		# Add -1000 points flat if historical friends with overlord
+		add_entry = {
+			name = HISFRIENDS
+			limit = {
+				overlord = {
+					FROM = { historical_friend_with = PREV }
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1000
 			}
 		}
 	}

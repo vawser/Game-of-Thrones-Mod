@@ -322,40 +322,46 @@ got_rely_on_levies_reform = {
 		is_revolutionary = no
 	}
 	trigger = {
-		if = {
-			limit = { has_dlc = "Cradle of Civilization" }
-			NOT = { army_professionalism = 0.40 }
-		}
-		else = {
-			OR = {
-				num_of_subjects = 5
-				variable_arithmetic_trigger = {
-					custom_tooltip = got_25_dev_of_subjects_max_tt
-					export_to_variable = {
-						which = total_dev
-						value = trigger_value:total_own_and_non_tributary_subject_development # 449
-					}
-					export_to_variable = {
-						which = our_dev
-						value = trigger_value:total_development # 83
-					}
-					export_to_variable = {
-						which = sub_dev
-						value = trigger_value:total_own_and_non_tributary_subject_development # 449
-					}
-					subtract_variable = {
-						which = sub_dev # 366
-						which = our_dev
-					}
-					multiply_variable = { # 332
-						which = our_dev
-						value = 4
-					}
-					check_variable = { # 332 <= 366?	
-						which = sub_dev
-						which = our_dev
+		OR = {
+			if = {
+				limit = { has_dlc = "Cradle of Civilization" }
+				NOT = { army_professionalism = 0.40 }
+			}
+			else = {
+				OR = {
+					num_of_subjects = 5
+					variable_arithmetic_trigger = {
+						custom_tooltip = got_25_dev_of_subjects_max_tt
+						export_to_variable = {
+							which = total_dev
+							value = trigger_value:total_own_and_non_tributary_subject_development # 449
+						}
+						export_to_variable = {
+							which = our_dev
+							value = trigger_value:total_development # 83
+						}
+						export_to_variable = {
+							which = sub_dev
+							value = trigger_value:total_own_and_non_tributary_subject_development # 449
+						}
+						subtract_variable = {
+							which = sub_dev # 366
+							which = our_dev
+						}
+						multiply_variable = { # 332
+							which = our_dev
+							value = 4
+						}
+						check_variable = { # 332 <= 366?	
+							which = sub_dev
+							which = our_dev
+						}
 					}
 				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = government_reform_enacted_tooltip
+				has_reform = got_rely_on_levies_reform
 			}
 		}
 	}
@@ -379,40 +385,46 @@ got_standing_army_reform = {
 		is_revolutionary = no
 	}
 	trigger = {
-		if = {
-			limit = { has_dlc = "Cradle of Civilization" }
-			army_professionalism = 0.40
-		}
-		else = {
-			OR = {
-				NOT = { num_of_subjects = 5 }
-				variable_arithmetic_trigger = {
-					custom_tooltip = got_25_dev_of_subjects_min_tt
-					export_to_variable = {
-						which = total_dev
-						value = trigger_value:total_own_and_non_tributary_subject_development # 449
-					}
-					export_to_variable = {
-						which = our_dev
-						value = trigger_value:total_development # 83
-					}
-					export_to_variable = {
-						which = sub_dev
-						value = trigger_value:total_own_and_non_tributary_subject_development # 449
-					}
-					subtract_variable = {
-						which = sub_dev # 366
-						which = our_dev
-					}
-					multiply_variable = { # 332
-						which = our_dev
-						value = 4
-					}
-					check_variable = { # 332 >= 366?
-						which = our_dev
-						which = sub_dev
+		OR = {
+			if = {
+				limit = { has_dlc = "Cradle of Civilization" }
+				army_professionalism = 0.40
+			}
+			else = {
+				OR = {
+					NOT = { num_of_subjects = 5 }
+					variable_arithmetic_trigger = {
+						custom_tooltip = got_25_dev_of_subjects_min_tt
+						export_to_variable = {
+							which = total_dev
+							value = trigger_value:total_own_and_non_tributary_subject_development # 449
+						}
+						export_to_variable = {
+							which = our_dev
+							value = trigger_value:total_development # 83
+						}
+						export_to_variable = {
+							which = sub_dev
+							value = trigger_value:total_own_and_non_tributary_subject_development # 449
+						}
+						subtract_variable = {
+							which = sub_dev # 366
+							which = our_dev
+						}
+						multiply_variable = { # 332
+							which = our_dev
+							value = 4
+						}
+						check_variable = { # 332 >= 366?
+							which = our_dev
+							which = sub_dev
+						}
 					}
 				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = government_reform_enacted_tooltip
+				has_reform = got_standing_army_reform
 			}
 		}
 	}
@@ -424,7 +436,6 @@ got_standing_army_reform = {
 	}
 	modifiers = {
 		land_forcelimit_modifier = 0.25
-		army_tradition_decay = -0.005
 		general_cost = -0.10
 	}
 	ai = {
@@ -433,18 +444,15 @@ got_standing_army_reform = {
 }
 
 got_naval_supremacy_reform = {
-	icon = "naval_supremacy"
+	icon = "war_ship"
 	allow_normal_conversion = yes
 	potential = {
 		is_revolutionary = no
 	}
 	trigger = {
-		OR = {
-			num_of_total_ports = 2
-			AND = {
-				navy_size = 6
-				num_of_heavy_ship = 1
-			}
+		AND = {
+			navy_size = 6
+			num_of_heavy_ship = 1
 		}
 	}
 	effect = {
@@ -456,7 +464,30 @@ got_naval_supremacy_reform = {
 	modifiers = {
 		naval_forcelimit_modifier = 0.50
 		navy_tradition_decay = -0.005
-		admiral_cost = -0.10
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+got_coastal_fleet_reform = {
+	icon = "fleet_in_being"
+	allow_normal_conversion = yes
+	potential = {
+		is_revolutionary = no
+	}
+	trigger = {
+		num_of_total_ports = 3
+	}
+	effect = {
+		if = {
+			limit = { government_type = { dynasty = yes } }
+			custom_tooltip = "got_coastal_fleet_reform_tt"
+		}
+	}
+	modifiers = {
+		naval_forcelimit_modifier = 0.25
+		local_own_coast_naval_combat_bonus = 1
 	}
 	ai = {
 		factor = 1

@@ -21,18 +21,19 @@ got_prince_of_westeros = {
 # Small Council
 got_handoftheking = {
 	prestige = 0.50
-	stability_cost_modifier = -0.075
+	diplomatic_reputation = 1
 }
 got_masterofcoin = {
 	tax_income = 12
 	global_tax_modifier = 0.15
 }
 got_masteroflaws = {
-	local_unrest = -2
+	local_unrest = -1
+	stability_cost_modifier = -0.075
 }
 got_masterofships = {
-	naval_forcelimit = 10
-	naval_forcelimit_modifier = 0.15
+	naval_forcelimit = 4
+	naval_maintenance_modifier = -0.10
 }
 got_masterofwhisperers = {
 	spy_offence = 0.33
@@ -64,10 +65,14 @@ factionwar_cooldown = {
 }
 
 # Special SK Case modifiers
+velaryon_fleet = {
+	naval_forcelimit = 20
+	naval_forcelimit_modifier = 0.05
+}
+
 redwyne_fleet = {
 	naval_forcelimit = 20
-	naval_forcelimit_modifier = 0.10
-	naval_maintenance_modifier = -0.15
+	naval_forcelimit_modifier = 0.05
 }
 
 # Tribal

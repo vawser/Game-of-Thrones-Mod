@@ -39,6 +39,7 @@ on_startup = {
 
 	on_startup_watch_commanders_effect = yes
 	on_startup_great_projects_effect = yes
+	calculate_royal_fleet_size_effect = yes
 	
 	#Sets up Countries
 	events = {
@@ -1002,6 +1003,8 @@ on_monthly_pulse = {
 		limit = { has_no_watch_commander = { province_id = 18 } castle_not_abandoned = { province_id = 18 } }
 		NGT = { set_watch_commander = { province_id = 18 option = 3 } }
 	}
+
+	calculate_royal_fleet_size_effect = yes
 }
 
 on_yearly_pulse = {

@@ -325,3 +325,32 @@ set_anti_crime_cost = {
 		}
 	}
 }
+
+calculate_royal_fleet_size_effect = {
+	if = {
+		limit = { tag = CRW }
+		CRW = {
+			export_to_variable = {
+				variable_name = CrownlandsFleetSize
+				value = trigger_value:navy_size
+			}
+			export_to_variable = {
+				variable_name = VelaryonFleetSize
+				value = trigger_value:navy_size
+				who = A43
+			}
+			set_variable = {
+				which = RoyalFleetSize
+				value = 0
+			}
+			change_variable = {
+				which = RoyalFleetSize
+				which = CrownlandsFleetSize
+			}
+			change_variable = {
+				which = RoyalFleetSize
+				which = VelaryonFleetSize
+			}
+		}
+	}
+}

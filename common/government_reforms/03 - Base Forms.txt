@@ -67,8 +67,9 @@ noble_house_reform = {
 		}
 	}
 	trigger = {
-		is_emperor = no
-		NOT = { is_elector = yes }
+		capital_scope = {
+			continent = westeros
+		}
 	}
 	
 	allow_normal_conversion = yes
@@ -105,7 +106,8 @@ lord_of_the_tides_reform = {
 	#is_eligible_for_hre_emperor = yes
 	
 	modifiers = {
-		naval_forcelimit_modifier = 0.10
+		leader_naval_fire = 1
+		naval_attrition = -0.10
 		naval_maintenance_modifier = -0.33
 	}
 

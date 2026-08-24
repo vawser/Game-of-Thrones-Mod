@@ -348,13 +348,14 @@ take_capital_enforce_faction = {
 	defender = {
 		badboy_factor = 0.5
 		prestige_factor = 1.5
-		peace_cost_factor = 2.0
+		peace_cost_factor = 0.5
 
-		allowed_provinces = { is_core = ROOT }
-		allowed_provinces_are_eligible = yes
+		#allowed_provinces = { is_core = ROOT }
+		#allowed_provinces_are_eligible = yes
 
 		peace_options = {
 			po_concede_defeat
+			po_demand_provinces
 		}
 
 		prov_desc = "ALL_CORES"

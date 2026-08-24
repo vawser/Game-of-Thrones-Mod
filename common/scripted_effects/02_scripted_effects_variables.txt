@@ -326,6 +326,28 @@ set_anti_crime_cost = {
 	}
 }
 
+check_for_watch_commanders_effect = {
+	if = {
+		limit = { tag = NGT }
+		if = {
+			limit = { has_no_watch_commander = { province_id = 16 } castle_not_abandoned = { province_id = 16 } }
+			NGT = { set_watch_commander = { province_id = 16 option = 0 } }
+		}
+		if = {
+			limit = { has_no_watch_commander = { province_id = 1580 } castle_not_abandoned = { province_id = 1580 } }
+			NGT = { set_watch_commander = { province_id = 1580 option = 1 } }
+		}
+		if = {
+			limit = { has_no_watch_commander = { province_id = 1584 } castle_not_abandoned = { province_id = 1584 } }
+			NGT = { set_watch_commander = { province_id = 1584 option = 2 } }
+		}
+		if = {
+			limit = { has_no_watch_commander = { province_id = 18 } castle_not_abandoned = { province_id = 18 } }
+			NGT = { set_watch_commander = { province_id = 18 option = 3 } }
+		}
+	}
+}
+
 calculate_royal_fleet_size_effect = {
 	if = {
 		limit = { tag = CRW }

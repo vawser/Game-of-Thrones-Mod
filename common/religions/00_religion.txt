@@ -115,9 +115,10 @@ religion_westeros = {
 			}
 			
 			appeal_to_the_father = {
-				curia_treasury_cost = 100
 				cost = 50
-				potential = { }
+				potential = {
+					NOT = { tag = FAT }
+				}
 				allow = {
 					NOT = { has_country_modifier = blessing_of_the_father }
 				}
@@ -132,9 +133,10 @@ religion_westeros = {
 				}
 			}
 			appeal_to_the_mother = {
-				curia_treasury_cost = 100
 				cost = 50
-				potential = { }
+				potential = {
+					NOT = { tag = FAT }
+				}
 				allow = {
 					NOT = { has_country_modifier = blessing_of_the_mother }
 				}
@@ -149,9 +151,10 @@ religion_westeros = {
 				}
 			}
 			appeal_to_the_warrior = {
-				curia_treasury_cost = 100
 				cost = 50
-				potential = { }
+				potential = {
+					NOT = { tag = FAT }
+				}
 				allow = {
 					NOT = { has_country_modifier = blessing_of_the_warrior }
 				}
@@ -167,9 +170,10 @@ religion_westeros = {
 			}
 			# Legitimacy
 			appeal_to_the_maiden = {
-				curia_treasury_cost = 100
 				cost = 50
-				potential = { }
+				potential = {
+					NOT = { tag = FAT }
+				}
 				allow = {
 					NOT = { has_country_modifier = blessing_of_the_maiden }
 				}
@@ -185,9 +189,10 @@ religion_westeros = {
 			}
 			# Goods
 			appeal_to_the_smith = {
-				curia_treasury_cost = 100
 				cost = 50
-				potential = { }
+				potential = {
+					NOT = { tag = FAT }
+				}
 				allow = {
 					NOT = { has_country_modifier = blessing_of_the_smith }
 				}
@@ -202,9 +207,10 @@ religion_westeros = {
 				}
 			}		
 			appeal_to_the_crone = {
-				curia_treasury_cost = 100
 				cost = 50
-				potential = { }
+				potential = {
+					NOT = { tag = FAT }
+				}
 				allow = {
 					NOT = { has_country_modifier = blessing_of_the_crone }
 				}
@@ -219,9 +225,10 @@ religion_westeros = {
 				}
 			}
 			appeal_to_the_stranger = {
-				curia_treasury_cost = 100
 				cost = 50
-				potential = { }
+				potential = {
+					NOT = { tag = FAT }
+				}
 				allow = {
 					NOT = { has_country_modifier = blessing_of_the_stranger }
 				}
@@ -238,7 +245,9 @@ religion_westeros = {
 			investigate_heresy = {
 				curia_treasury_cost = 1000
 				potential = {
+					has_dlc = "Emperor"
 					is_papal_controller = yes
+					tag = FAT
 				}
 				allow = {
 					is_papal_controller = yes

@@ -19,6 +19,7 @@ province_event = {
 			current_crime_lvl = { amount = 10 }
 		}
 		NOT = { units_in_province = owner }
+		always = no # disabled
 	}
 
 	mean_time_to_happen = {
@@ -64,7 +65,7 @@ province_event = {
 
 	trigger = {
 		has_criminal_activity = { type = bandits }
-		NOT = { current_crime_lvl = { amount = 5 } }
+		# NOT = { current_crime_lvl = { amount = 5 } }
 	}
 
 	mean_time_to_happen = {

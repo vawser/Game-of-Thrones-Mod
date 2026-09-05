@@ -158,6 +158,7 @@
  NOBLE_HOUSE: "Noble House"
  GREAT_HOUSE: "Great House"
  ROYAL_HOUSE: "Royal House"
+ DOMAIN: "Domain"
  VOLANTEANE_REPUBLIC: "Volanteane Republic"
  WILDLING_CLAN: "Wildling Clan"
  WILDLING_CONFEDERATION: "Wildling Confederation"
@@ -250,10 +251,11 @@
  dynasty_reform_desc: "A dynasty led by the dynasty head, also known as the §YDynast§!, and all companions."
 
  noble_house_reform: "Minor House of Westeros"
- noble_house_reform_desc: "Nobles swearing fealty to a §YGreat House§! of the §YSeven Kingdoms§! with an insignificant personal domain hail from a Minor House.\n\nWhile Lords of a Minor House may seem to hold little to no influence due to their rather small demesne, they often form alliances with other Minor Houses and form the backbone of the feudal powerbase."
+ noble_house_reform_desc: "The minor houses of the Seven Kingdoms make up a large chunk of the Westerosi nobility. Individually, these minor lords hold very insignificant levels of power as many rise and fall all the time. However, when in a larger alliance block, the minor houses tend to form the backbone of the feudal powerbase on the continent."
  
  great_house_reform: "Great House of Westeros"
  great_house_reform_desc: "Nobles swearing fealty to the §YIron Throne§! whilst having vassals of their own and a considerably large estate hail from a Great House.\n\nSince much of the §YSeven Kingdoms§! is controlled under a feudal system, Lords of Great Houses often have an immense sway in the realm's administration when they command the respect of their men."
+ mechanic_annex_only_neighbor_subjects_yes: "Only §Yneighboring§! subjects can be annexed."
  
  royal_house_reform: "The Royal House of Westeros"
  royal_house_reform_desc: "The Royal House of Westeros is the current dynasty that sits on the §YIron Throne§! and rules the §YSeven Kingdoms§!.\n\nThe head of the dynasty is the §MSovereign of the Andals, the Rhoynar, and the First Men§! and oversees a collective of provinces known as the Crownlands. Much of the realm is governed by subordinate Great Houses, but the Royal House has the ultimate say in any matter."
@@ -467,7 +469,7 @@
  tier_dynasty_laws_on_demesne: "Laws on the Demesne"					# 3
  tier_dynasty_diplomatic_strategy: "Diplomatic Strategy"				# 4
  tier_dynasty_noble_rights: "Rights of the Nobility"					# 5
- tier_dynasty_military_organization: "Military Composition"				# 6
+ tier_dynasty_military_organization: "Military Organization"				# 6
  tier_dynasty_house_religion: "Religion under our Banner"				# 7
  tier_dynasty_merchantry_rules: "Rules on the Merchantry"				# 8
  tier_dynasty_governing_cadre: "The Governing Cadre"					# 9
@@ -579,9 +581,13 @@
  got_rely_on_levies_reform: "Rely on Levy Forces"
  got_rely_on_levies_reform_desc: "For generations, our forces have been mainly supplied by the noble lords who swear fealty to us. With the signficant amount of land being controlled by these lords, fielding levy armies is not such a terrible idea and will ensure that our noble vassals remain loyal to us for more generations to come. Those who stand in the way of our realm will feel the full force our vassal armies on the battlefield."
  
- got_naval_supremacy_reform: "Dominate the Coastal Waters"
- got_naval_supremacy_reform_desc: "While it may be an overlooked aspect of the realm, the navy can serve a great purpose for mighty coastal powers. The open sea provides us with an great opportunity to outmaneuver and flank any opposing force by navigating the coastal waters. It may even be necessary to prevent the enemy from attempting such a tactic against us as well, giving us another solid reason to raise a fleet of warships."
+ got_naval_supremacy_reform: "Dominate the High Seas"
+ got_naval_supremacy_reform_desc: "While it may be an overlooked aspect of the realm, the navy can serve a great purpose for mighty coastal powers. The open sea provides us with an great opportunity to outmaneuver and flank any opposing force by navigating around coastal waters. It may even be necessary to prevent the enemy from attempting such a tactic against us as well, giving us another solid reason to raise a fleet of warships."
  got_naval_supremacy_reform_tt: "§GThis reform compensates for the Naval Forcelimit penalty from the base form §YDynasty Mechanic§! §R(-50.0%)§!.§!"
+
+ got_coastal_fleet_reform: "The Coastal Fleet"
+ got_coastal_fleet_reform_desc: "While maintaining a strong naval force should be our priority, we must prioritize the safety of our coastal waters. By shoring up the defenses along our coastline, our fleet will remain well-prepared in the event of a battle."
+ got_coastal_fleet_reform_tt: "§GThis reform compensates for §YHALF§! the Naval Forcelimit penalty from the base form §YDynasty Mechanic§! §R(-50.0%)§!.§!"
  
  #
  
@@ -684,8 +690,8 @@
  got_grant_noble_castle_rights_reform: "Grant Noble Castle Rights"
  got_grant_noble_castle_rights_reform_desc: "The Nobility of our country is in direct competition with the Crown for the ownership of the lands. By granting the Nobility the rights to own their own castles and villages around it, we can ease the conflicts between the monarchy and the nobles."
  
- #got_maintain_nobles_status_quo_reform: "Compromise with the Nobility"
- #got_maintain_nobles_status_quo_reform_desc: "The balance of power within our state between the estates and the Crown is a delicate matter. Our best decision is to keep this balance intact by neither cartering more privileges for the noble class nor curtailing its power."
+ got_maintain_nobles_status_quo_reform: "Compromise with the Nobility"
+ got_maintain_nobles_status_quo_reform_desc: "The balance of power within our state between the estates and the Crown is a delicate matter. Our best decision is to keep this balance intact by neither cartering more privileges for the noble class nor curtailing its power."
  
  got_volantene_traders_reform: "Strengthen Volantene Traders"
  got_volantene_traders_reform_desc: "While Volantis and the Rhoyne are rich lands, the estuary has always attracted traders and acted, above all else, as the port to Essos. This land was taken with sword in hand but ship owners and traders are as influential and as vital to our state as noble officers."

@@ -434,6 +434,13 @@ annexationaction = {
 		}
 	}
 	condition = {
+		tooltip = "NEIGHBORING_ANNEXATIONACTION_TT"
+		potential = { has_government_attribute = annex_only_neighbor_subjects }
+		allow = {
+			FROM = { is_neighbor_of = ROOT }
+		}
+	}
+	condition = {
 		tooltip = "WHITE_WALKER_BLOCKED_ACTION_TT"
 		potential = {
 			OR = {

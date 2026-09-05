@@ -716,12 +716,6 @@ estate_nobles_feudatory_annexation = {
 			crw_loyalists_influence = 0.05
 		}
 	}
-	conditional_modifier = {
-		trigger = { NOT = { has_faction = crw_loyalists } }
-		modifier = {
-			yearly_absolutism = 0.50
-		}
-	}
 	cooldown_years = 10
 	ai_will_do = {
 		factor = 10
